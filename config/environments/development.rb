@@ -15,3 +15,9 @@ config.action_controller.perform_caching             = false
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
+
+FEDORA_URL = 'https://dor-test.stanford.edu/fedora'
+CERT_FILE = File.join(RAILS_ROOT, "config", "certs", "ls-test.crt")
+KEY_FILE = File.join(RAILS_ROOT, "config", "certs", "ls-test.key")
+KEY_PASS = 'lstest'
+
