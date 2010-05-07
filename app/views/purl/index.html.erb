@@ -1,21 +1,16 @@
-<html>
-  <head>Landing Page</head>
-  <body>
-    <div style="border: 1px solid black;">
-      <p>Titles: </p>
-        <% titles = @metadata.titles
-           titles.length.times do |i| %>
-             <p><%=titles[i]%></p>
-        <% end %>
-      <p>Creators:</p>
-        <% creators = @metadata.creators
-           creators.length.times do |i| %>
-             <p><%=creators[i]%></p>
-        <% end %>
-      <p>Object Type: "<%= @metadata.objectType %>"</p>
-      <p>Tags: "<%= @metadata.tags %>"</p>
-      <p>Embargo: "<%= @metadata.embargo %>"</p>
-      <p>Page Tags: "<%= @metadata.page_tags %>"</p>
-	</div>
-  </body>
-</html>
+<div>
+  <p>Titles: </p>
+    <% titles = @metadata.titles
+       titles.length.times do |i| %>
+         <p><%=titles[i]%></p>
+    <% end %>
+  <p>Creators:</p>
+    <% creators = @metadata.creators
+       creators.length.times do |i| %>
+         <p><%=creators[i]%></p>
+    <% end %>
+  <p>Object Type: "<%= @metadata.objectType %>"</p>
+  <p>Tags: "<%= @metadata.tags %>"</p>
+  <p>Embargo: "<%= @metadata.embargo %>"</p>
+  <p>Page Tags: "<%= @metadata.page_tags %>"</p>
+</div>
