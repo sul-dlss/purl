@@ -1,0 +1,4205 @@
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-01 16:41:19) [GET]
+  Parameters: {"id"=>"druid:px491tp4561"}
+Rendering /Users/dougkim/DLSS/projects/digital_stacks/development/purl/public/404.html (404)
+Filter chain halted as [:validate_id] rendered_or_redirected.
+Completed in 81ms (View: 80, DB: 0) | 404 Not Found [http://localhost/druid:px491tp4561]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-01 16:41:22) [GET]
+  Parameters: {"id"=>"druid:px491tp4561"}
+Rendering /Users/dougkim/DLSS/projects/digital_stacks/development/purl/public/404.html (404)
+Filter chain halted as [:validate_id] rendered_or_redirected.
+Completed in 2ms (View: 1, DB: 0) | 404 Not Found [http://localhost/druid:px491tp4561.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-01 16:41:25) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+
+Nokogiri::XML::XPath::SyntaxError (Undefined namespace prefix
+):
+  nokogiri (1.3.3) lib/nokogiri/xml/node.rb:140:in `evaluate'
+  nokogiri (1.3.3) lib/nokogiri/xml/node.rb:140:in `xpath'
+  nokogiri (1.3.3) lib/nokogiri/xml/node.rb:137:in `map'
+  nokogiri (1.3.3) lib/nokogiri/xml/node.rb:137:in `xpath'
+  app/helpers/purl_helper.rb:26:in `extract_dc_metadata'
+  app/helpers/purl_helper.rb:8:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (94.8ms)
+Rendered rescues/_request_and_response (2.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-01 16:41:34) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+
+Nokogiri::XML::XPath::SyntaxError (Undefined namespace prefix
+):
+  nokogiri (1.3.3) lib/nokogiri/xml/node.rb:140:in `evaluate'
+  nokogiri (1.3.3) lib/nokogiri/xml/node.rb:140:in `xpath'
+  nokogiri (1.3.3) lib/nokogiri/xml/node.rb:137:in `map'
+  nokogiri (1.3.3) lib/nokogiri/xml/node.rb:137:in `xpath'
+  app/helpers/purl_helper.rb:26:in `extract_dc_metadata'
+  app/helpers/purl_helper.rb:8:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (183.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-01 16:52:29) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Completed in 167ms (View: 45, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-01 16:53:53) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering purl/index
+Completed in 465ms (View: 374, DB: 0) | 200 OK [http://localhost/px491tp4561.xml]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 09:30:56) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Completed in 289ms (View: 124, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 09:39:44) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Completed in 154ms (View: 10, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 09:39:46) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Completed in 50ms (View: 2, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 09:51:15) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (Missing template purl/_footer.erb in view path app/views) on line #16 of app/views/layouts/application.html.erb:
+13:         <%= yield %>
+14:       </div>
+15: 	  <div id="footer">
+16:         <%= render :partial => 'footer' %>
+17: 	  </div>
+18: 	</div>
+19:   </body>
+
+    app/views/layouts/application.html.erb:16
+
+Rendered rescues/_trace (84.8ms)
+Rendered rescues/_request_and_response (2.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 09:51:54) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (1.1ms)
+Completed in 77ms (View: 15, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 09:51:54) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 09:51:54) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/rosette.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 09:52:38) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 189ms (View: 2, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 09:52:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 09:52:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/rosette.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 09:52:39) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 60ms (View: 2, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 09:52:39) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 09:52:39) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/rosette.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 09:52:40) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 53ms (View: 3, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 09:52:40) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 09:52:40) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/rosette.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 09:53:59) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 69ms (View: 3, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 09:53:59) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 09:53:59) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/rosette.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 09:54:00) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 68ms (View: 2, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 09:54:00) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 09:54:00) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/rosette.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 09:54:12) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 98ms (View: 3, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 09:54:12) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/background.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 09:54:12) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/rosette.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 09:54:13) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 76ms (View: 3, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 09:54:13) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/background.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 09:54:13) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/rosette.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:03:43) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 75ms (View: 12, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:03:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:03:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/rosette.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:03:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/availability-header.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:03:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/32px-Nuvola_mimetypes_pdf.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:03:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/32px-Nuvola_mimetypes_spreadsheet.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:04:30) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 87ms (View: 12, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:04:30) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:04:30) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/rosette.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:04:30) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/availability-header.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:04:30) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/32px-Nuvola_mimetypes_pdf.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:04:31) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/32px-Nuvola_mimetypes_spreadsheet.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:04:56) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 98ms (View: 11, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:04:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:04:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/rosette.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:04:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/availability-header.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:04:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/32px-Nuvola_mimetypes_pdf.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:04:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/32px-Nuvola_mimetypes_spreadsheet.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:06:41) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 76ms (View: 11, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:06:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:06:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/rosette.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:06:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/availability-header.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:06:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/32px-Nuvola_mimetypes_pdf.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:06:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/32px-Nuvola_mimetypes_spreadsheet.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:07:35) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 158ms (View: 88, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:07:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:07:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/rosette.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:07:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/availability-header.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:07:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/32px-Nuvola_mimetypes_pdf.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:07:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/32px-Nuvola_mimetypes_spreadsheet.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:08:50) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 97ms (View: 13, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:08:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:08:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/rosette.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:08:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/availability-header.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:08:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/32px-Nuvola_mimetypes_pdf.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:08:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/32px-Nuvola_mimetypes_spreadsheet.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:09:24) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 70ms (View: 2, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:09:24) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/rosette.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:09:25) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/availability-header.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:09:25) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/32px-Nuvola_mimetypes_pdf.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 10:09:25) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/32px-Nuvola_mimetypes_spreadsheet.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:09:54) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.3ms)
+Completed in 76ms (View: 3, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:11:31) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 149ms (View: 86, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:11:45) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 74ms (View: 13, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-02 10:12:03) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering purl/index
+Completed in 99ms (View: 29, DB: 0) | 200 OK [http://localhost/px491tp4561.xml]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:12:43) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 72ms (View: 9, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:16:47) [GET]
+  Parameters: {"id"=>"gc497qr2572"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:13:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:18:in `retrieve_document'
+  app/helpers/purl_helper.rb:24:in `extract_dc_metadata'
+  app/helpers/purl_helper.rb:8:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (66.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-02 10:29:54) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering purl/index
+
+ActionView::TemplateError (undefined method `creators' for #<Metadata:0x10430ce10>) on line #3 of app/views/purl/index.rxml:
+1: xml.publicObject do
+2:   xml.titles(@metadata.titles)
+3:   xml.creators(@metadata.creators)
+4:   xml.objectType(@metadata.objectType)
+5:   xml.tags(@metadata.tags)
+6:   xml.embargo(@metadata.embargo)
+
+    app/views/purl/index.rxml:3:in `_run_rxml_app47views47purl47index46rxml'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `call'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `_nested_structures'
+    builder (2.1.2) lib/builder/xmlbase.rb:58:in `method_missing'
+    app/views/purl/index.rxml:1:in `_run_rxml_app47views47purl47index46rxml'
+
+Rendered rescues/_trace (78.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-02 10:30:03) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering purl/index
+
+ActionView::TemplateError (undefined method `objectType' for #<Metadata:0x104492348>) on line #4 of app/views/purl/index.rxml:
+1: xml.publicObject do
+2:   xml.titles(@metadata.titles)
+3:   xml.authors(@metadata.authors)
+4:   xml.objectType(@metadata.objectType)
+5:   xml.tags(@metadata.tags)
+6:   xml.embargo(@metadata.embargo)
+7:   xml.page_tags(@metadata.page_tags)
+
+    app/views/purl/index.rxml:4:in `_run_rxml_app47views47purl47index46rxml'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `call'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `_nested_structures'
+    builder (2.1.2) lib/builder/xmlbase.rb:58:in `method_missing'
+    app/views/purl/index.rxml:1:in `_run_rxml_app47views47purl47index46rxml'
+
+Rendered rescues/_trace (80.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-02 10:30:13) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering purl/index
+
+ActionView::TemplateError (undefined method `objectType' for #<Metadata:0x1041a5568>) on line #4 of app/views/purl/index.rxml:
+1: xml.metadata do
+2:   xml.titles(@metadata.titles)
+3:   xml.authors(@metadata.authors)
+4:   xml.objectType(@metadata.objectType)
+5:   xml.tags(@metadata.tags)
+6:   xml.embargo(@metadata.embargo)
+7:   xml.page_tags(@metadata.page_tags)
+
+    app/views/purl/index.rxml:4:in `_run_rxml_app47views47purl47index46rxml'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `call'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `_nested_structures'
+    builder (2.1.2) lib/builder/xmlbase.rb:58:in `method_missing'
+    app/views/purl/index.rxml:1:in `_run_rxml_app47views47purl47index46rxml'
+
+Rendered rescues/_trace (169.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-02 10:30:24) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering purl/index
+Completed in 74ms (View: 9, DB: 0) | 200 OK [http://localhost/px491tp4561.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-02 10:30:45) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering purl/index
+Completed in 84ms (View: 3, DB: 0) | 200 OK [http://localhost/px491tp4561.xml]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:30:51) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 80ms (View: 11, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:35:43) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (undefined local variable or method `main_doc_url' for #<ActionView::Base:0x10449d950>) on line #34 of app/views/purl/index.html.erb:
+31:       <th>Access</th>
+32:     </tr>
+33:     <tr>
+34:       <td class="file_pdf"><a href="<%=main_doc_url%>"><%=main_doc_title%></a></td>
+35:       <td>Thesis</td>
+36:       <td>Stanford only until May 2011</td>
+37:     </tr>
+
+    app/views/purl/index.html.erb:34
+
+Rendered rescues/_trace (76.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:47:10) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (undefined local variable or method `main_doc_url' for #<ActionView::Base:0x1041aba08>) on line #35 of app/views/purl/index.html.erb:
+32:     </tr>
+33: <!--
+34:     <tr>
+35:       <td class="file_pdf"><a href="<%=main_doc_url%>"><%=main_doc_title%></a></td>
+36:       <td>Thesis</td>
+37:       <td>Stanford only until May 2011</td>
+38:     </tr>
+
+    app/views/purl/index.html.erb:35
+
+Rendered rescues/_trace (81.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:47:11) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (undefined local variable or method `main_doc_url' for #<ActionView::Base:0x104299ac8>) on line #35 of app/views/purl/index.html.erb:
+32:     </tr>
+33: <!--
+34:     <tr>
+35:       <td class="file_pdf"><a href="<%=main_doc_url%>"><%=main_doc_title%></a></td>
+36:       <td>Thesis</td>
+37:       <td>Stanford only until May 2011</td>
+38:     </tr>
+
+    app/views/purl/index.html.erb:35
+
+Rendered rescues/_trace (160.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:47:17) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 69ms (View: 10, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:48:47) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (undefined local variable or method `main_doc_url' for #<ActionView::Base:0x104372080>) on line #34 of app/views/purl/index.html.erb:
+31:       <th>Access</th>
+32:     </tr>
+33:     <tr>
+34:       <td class="file_pdf"><a href="<%=main_doc_url%>"><%=main_doc_title%></a></td>
+35:       <td>Thesis</td>
+36:       <td>Stanford only until May 2011</td>
+37:     </tr>
+
+    app/views/purl/index.html.erb:34
+
+Rendered rescues/_trace (75.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:49:12) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 74ms (View: 11, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:49:29) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 63ms (View: 3, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:49:34) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 49ms (View: 3, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:50:53) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 122ms (View: 2, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 10:54:55) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 136ms (View: 3, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-02 10:58:12) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering purl/index
+Completed in 58ms (View: 3, DB: 0) | 200 OK [http://localhost/px491tp4561.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-02 11:06:38) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering purl/index
+Completed in 57ms (View: 3, DB: 0) | 200 OK [http://localhost/px491tp4561.xml]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 11:18:41) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 61ms (View: 2, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 13:24:46) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 62ms (View: 2, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 13:31:52) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 121ms (View: 2, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-02 13:54:14) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 58ms (View: 2, DB: 0) | 200 OK [http://localhost/px491tp4561]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-02 13:57:16) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+Rendering purl/index
+Completed in 131ms (View: 29, DB: 0) | 200 OK [http://localhost/px491tp4561.xml]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 15:56:28) [GET]
+  Parameters: {"id"=>"druid:px491tp4561"}
+Rendering /Users/dougkim/DLSS/projects/digital_stacks/development/purl/public/404.html (404)
+Filter chain halted as [:validate_id] rendered_or_redirected.
+Completed in 59ms (View: 59, DB: 0) | 404 Not Found [http://localhost/druid:px491tp4561]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 15:56:30) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:13:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:18:in `retrieve_document'
+  app/helpers/purl_helper.rb:24:in `extract_dc_metadata'
+  app/helpers/purl_helper.rb:8:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (73.5ms)
+Rendered rescues/_request_and_response (2.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:00:23) [GET]
+  Parameters: {"id"=>"px491tp4561"}
+
+OpenSSL::SSL::SSLError (SSL_connect returned=1 errno=0 state=SSLv3 read finished A: tlsv1 alert unknown ca):
+  /usr/local/lib/ruby/1.8/net/http.rb:586:in `connect'
+  /usr/local/lib/ruby/1.8/net/http.rb:586:in `connect'
+  /usr/local/lib/ruby/1.8/net/http.rb:553:in `do_start'
+  /usr/local/lib/ruby/1.8/net/http.rb:542:in `start'
+  lib/dor/connection.rb:50:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:13:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:18:in `retrieve_document'
+  app/helpers/purl_helper.rb:24:in `extract_dc_metadata'
+  app/helpers/purl_helper.rb:8:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (70.7ms)
+Rendered rescues/_request_and_response (2.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:01:36) [GET]
+  Parameters: {"id"=>"druid:md207fj0698"}
+Rendering /Users/dougkim/DLSS/projects/digital_stacks/development/purl/public/404.html (404)
+Filter chain halted as [:validate_id] rendered_or_redirected.
+Completed in 8ms (View: 8, DB: 0) | 404 Not Found [http://localhost/druid:md207fj0698]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:01:39) [GET]
+  Parameters: {"id"=>"md207fj0698"}
+
+Nokogiri::XML::XPath::SyntaxError (Undefined namespace prefix
+):
+  nokogiri (1.3.3) lib/nokogiri/xml/node.rb:140:in `evaluate'
+  nokogiri (1.3.3) lib/nokogiri/xml/node.rb:140:in `xpath'
+  nokogiri (1.3.3) lib/nokogiri/xml/node.rb:137:in `map'
+  nokogiri (1.3.3) lib/nokogiri/xml/node.rb:137:in `xpath'
+  app/helpers/purl_helper.rb:26:in `extract_dc_metadata'
+  app/helpers/purl_helper.rb:8:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (69.9ms)
+Rendered rescues/_request_and_response (2.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:02:07) [GET]
+  Parameters: {"id"=>"rk464yc0651"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:13:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:18:in `retrieve_document'
+  app/helpers/purl_helper.rb:38:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:9:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (154.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:04:07) [GET]
+  Parameters: {"id"=>"rk464yc0651"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:13:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:18:in `retrieve_document'
+  app/helpers/purl_helper.rb:38:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:9:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (70.0ms)
+Rendered rescues/_request_and_response (2.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:04:29) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:13:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:18:in `retrieve_document'
+  app/helpers/purl_helper.rb:38:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:9:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (145.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:08:31) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:13:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:18:in `retrieve_document'
+  app/helpers/purl_helper.rb:40:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:9:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (66.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:09:13) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:13:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:18:in `retrieve_document'
+  app/helpers/purl_helper.rb:43:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:9:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (152.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:09:33) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:13:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:18:in `retrieve_document'
+  app/helpers/purl_helper.rb:41:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:9:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (65.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:09:57) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (15.2ms)
+Completed in 356ms (View: 110, DB: 0) | 200 OK [http://localhost/mj151qw9093]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:10:04) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:13:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:18:in `retrieve_document'
+  app/helpers/purl_helper.rb:40:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:9:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (66.5ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:10:11) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 223ms (View: 4, DB: 0) | 200 OK [http://localhost/mj151qw9093]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:10:24) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:13:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:18:in `retrieve_document'
+  app/helpers/purl_helper.rb:56:in `extract_content_metadata'
+  app/helpers/purl_helper.rb:11:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (146.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:10:32) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 190ms (View: 3, DB: 0) | 200 OK [http://localhost/mj151qw9093]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:12:11) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:13:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:18:in `retrieve_document'
+  app/helpers/purl_helper.rb:41:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:9:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (65.4ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:13:20) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:13:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:18:in `retrieve_document'
+  app/helpers/purl_helper.rb:40:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:9:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (66.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:13:53) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:13:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:18:in `retrieve_document'
+  app/helpers/purl_helper.rb:40:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:9:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (67.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:14:05) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:13:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:18:in `retrieve_document'
+  app/helpers/purl_helper.rb:40:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:9:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (75.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:15:16) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (1.0ms)
+Completed in 463ms (View: 33, DB: 0) | 200 OK [http://localhost/mj151qw9093]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:15:57) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 407ms (View: 3, DB: 0) | 200 OK [http://localhost/mj151qw9093]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:17:10) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 402ms (View: 3, DB: 0) | 200 OK [http://localhost/mj151qw9093]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:17:56) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 435ms (View: 2, DB: 0) | 200 OK [http://localhost/mj151qw9093]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:18:11) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/helpers/purl_helper.rb:58:in `extract_content_metadata'
+  app/helpers/purl_helper.rb:11:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (66.2ms)
+Rendered rescues/_request_and_response (2.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:18:20) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 424ms (View: 2, DB: 0) | 200 OK [http://localhost/mj151qw9093]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:18:24) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/helpers/purl_helper.rb:58:in `extract_content_metadata'
+  app/helpers/purl_helper.rb:11:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (63.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:31:04) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 434ms (View: 2, DB: 0) | 200 OK [http://localhost/mj151qw9093]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:40:31) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 621ms (View: 3, DB: 0) | 200 OK [http://localhost/mj151qw9093]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:40:35) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/helpers/purl_helper.rb:58:in `extract_content_metadata'
+  app/helpers/purl_helper.rb:11:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (64.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:42:13) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/helpers/purl_helper.rb:62:in `extract_content_metadata'
+  app/helpers/purl_helper.rb:11:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (63.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:42:44) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/helpers/purl_helper.rb:51:in `extract_content_metadata'
+  app/helpers/purl_helper.rb:11:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (62.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:43:00) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/helpers/purl_helper.rb:52:in `extract_content_metadata'
+  app/helpers/purl_helper.rb:11:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (146.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:43:27) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/helpers/purl_helper.rb:52:in `extract_content_metadata'
+  app/helpers/purl_helper.rb:11:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (62.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:44:09) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/helpers/purl_helper.rb:54:in `extract_content_metadata'
+  app/helpers/purl_helper.rb:11:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (141.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:44:24) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/helpers/purl_helper.rb:55:in `extract_content_metadata'
+  app/helpers/purl_helper.rb:12:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (62.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:44:39) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/helpers/purl_helper.rb:55:in `extract_content_metadata'
+  app/helpers/purl_helper.rb:12:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (63.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:45:53) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/helpers/purl_helper.rb:55:in `extract_content_metadata'
+  app/helpers/purl_helper.rb:12:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (65.0ms)
+Rendered rescues/_request_and_response (3.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:46:07) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (1.0ms)
+Completed in 803ms (View: 109, DB: 0) | 200 OK [http://localhost/mj151qw9093]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:48:13) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 678ms (View: 2, DB: 0) | 200 OK [http://localhost/mj151qw9093]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:48:21) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/helpers/purl_helper.rb:55:in `extract_content_metadata'
+  app/helpers/purl_helper.rb:12:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (63.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:50:12) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/helpers/purl_helper.rb:56:in `extract_content_metadata'
+  app/helpers/purl_helper.rb:12:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (76.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:51:05) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/helpers/purl_helper.rb:56:in `extract_content_metadata'
+  app/helpers/purl_helper.rb:12:in `extract_metadata'
+  app/models/purl.rb:5:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (144.2ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:51:36) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/helpers/purl_helper.rb:56:in `extract_content_metadata'
+  app/helpers/purl_helper.rb:12:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (64.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:56:39) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:10:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:19:in `retrieve_document'
+  app/helpers/purl_helper.rb:40:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:10:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (77.2ms)
+Rendered rescues/_request_and_response (2.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:56:51) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:10:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:19:in `retrieve_document'
+  app/helpers/purl_helper.rb:40:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:10:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (145.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:58:13) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:10:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:19:in `retrieve_document'
+  app/helpers/purl_helper.rb:40:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:10:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (66.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:58:42) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:10:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:19:in `retrieve_document'
+  app/helpers/purl_helper.rb:40:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:10:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (210.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 16:59:43) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:10:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:23:in `retrieve_document'
+  app/helpers/purl_helper.rb:44:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:11:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (70.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:00:44) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:10:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:24:in `retrieve_document'
+  app/helpers/purl_helper.rb:46:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:11:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (238.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:01:12) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:11:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:24:in `retrieve_document'
+  app/helpers/purl_helper.rb:46:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:11:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (68.6ms)
+Rendered rescues/_request_and_response (2.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:01:45) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:11:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:24:in `retrieve_document'
+  app/helpers/purl_helper.rb:46:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:11:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (171.7ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:01:58) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+Net::HTTPServerException (404 "Not Found"):
+  /usr/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  lib/dor/connection.rb:55:in `connect'
+  lib/dor/connection.rb:10:in `get'
+  lib/dor/dor_service.rb:12:in `get_datastream_contents'
+  app/helpers/purl_helper.rb:24:in `retrieve_document'
+  app/helpers/purl_helper.rb:46:in `extract_identity_metadata'
+  app/helpers/purl_helper.rb:11:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (70.2ms)
+Rendered rescues/_request_and_response (2.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:03:04) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/helpers/purl_helper.rb:63:in `extract_content_metadata'
+  app/helpers/purl_helper.rb:15:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (66.5ms)
+Rendered rescues/_request_and_response (2.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:05:26) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.root):
+  app/helpers/purl_helper.rb:34:in `extract_dc_metadata'
+  app/helpers/purl_helper.rb:9:in `extract_metadata'
+  app/models/purl.rb:4:in `extract_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (239.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:06:22) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.length) on line #3 of app/views/purl/index.html.erb:
+1: 
+2: <% titles = @metadata.titles
+3:    titles.length.times do |i| %>
+4:      <h2><%=titles[i]%></h2>
+5: <% end %>
+6: <dl>
+
+    app/views/purl/index.html.erb:3
+
+Rendered rescues/_trace (74.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:07:55) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #2 of app/views/purl/index.html.erb:
+1: 
+2: <% @metadata.titles.each do |title| %>
+3:   <h2><%=title%></h2>
+4: <% end %>
+5: <dl>
+
+    app/views/purl/index.html.erb:2
+
+Rendered rescues/_trace (77.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:09:10) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #2 of app/views/purl/index.html.erb:
+1: 
+2: <% @metadata.titles.each do |title| %>
+3:   <h2><%=title%></h2>
+4: <% end %>
+5: <dl>
+
+    app/views/purl/index.html.erb:2
+
+Rendered rescues/_trace (154.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:10:54) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.each_key) on line #2 of app/views/purl/index.html.erb:
+1: 
+2: <% @metadata.titles.each_key do |title| %>
+3:   <h2><%=title%></h2>
+4: <% end %>
+5: <dl>
+
+    app/views/purl/index.html.erb:2
+
+Rendered rescues/_trace (74.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:13:28) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+ERROR: compiling _run_erb_app47views47purl47index46html46erb RAISED compile error
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.html.erb:45: syntax error, unexpected kENSURE, expecting kEND
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.html.erb:47: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_erb_app47views47purl47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n"
+;  titles = @metadata.titles
+   if( titles != nil )
+     titles.each_key do |title| ; @output_buffer.concat "\n     <h2>"
+; @output_buffer.concat((title).to_s); @output_buffer.concat "</h2>\n"
+;  end ; @output_buffer.concat "\n<dl>\n  <dt>Author:</dt>\n  "
+
+
+;  authors = @metadata.authors
+     if( authors != nil )
+       authors.each_key do |author| ; @output_buffer.concat "\n       <dd>"
+; @output_buffer.concat((author).to_s); @output_buffer.concat "</dd>\n  "
+;  end ; @output_buffer.concat "\n  <dt>Publisher:</dt>\n  <dd>Stanford University, 2010</dd>\n</dl>\n<div id=\"metadata\">\n  <div class=\"swlink\">&raquo; <a>View in SearchWorks</a></div>\n  <p><span>&copy; 2010 </span>\n\t <span>\n\t   "
+
+
+
+
+
+
+
+;  if( authors != nil )
+	        authors.each_key do |author| ; @output_buffer.concat "\n\t        <dd>"
+; @output_buffer.concat((author).to_s); @output_buffer.concat "</dd>\n\t   "
+;  end ; @output_buffer.concat "\n\t </span>\n  </p>\n  <p><a href=\"http://creativecommons.org/licenses/by/3.0/\" rel=\"license\"><img src=\"http://i.creativecommons.org/l/by/3.0/88x31.png\" style=\"border-width: 0pt;\" alt=\"Creative Commons License\"></a> <br  />This work is licensed under a <a href=\"http://creativecommons.org/licenses/by/3.0/\" rel=\"license\">Creative Commons Attribution 3.0 Unported License</a></p>\n</div>\n<div id=\"filelist\">         \n  <table id=\"assets\">\n    <tr>\n      <th>File (Download)</th>\n      <th>Description</th>\n      <th>Access</th>\n    </tr>\n    <tr>\n      <td class=\"file_pdf\"><a href=\""
+
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer.concat((@metadata.main_doc_url).to_s); @output_buffer.concat "\">"; @output_buffer.concat((@metadata.main_doc_title).to_s); @output_buffer.concat "</a></td>\n      <td>Thesis</td>\n      <td>Stanford only until May 2011</td>\n    </tr>\n  </table>\n</div>\n<br clear=\"all\"  />\n"
+
+
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.html.erb:47:in `compile!'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:343:in `_render_with_layout'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:257:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.html.erb:45: syntax error, unexpected kENSURE, expecting kEND
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.html.erb:47: syntax error, unexpected $end, expecting kEND) on line #45 of app/views/purl/index.html.erb:
+42: </div>
+43: <br clear="all"  />
+
+    app/views/purl/index.html.erb:47:in `compile!'
+
+Rendered rescues/_trace (78.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:14:48) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.9ms)
+Completed in 716ms (View: 20, DB: 0) | 200 OK [http://localhost/mj151qw9093]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:14:56) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 653ms (View: 3, DB: 0) | 200 OK [http://localhost/mj151qw9093]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:15:17) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 662ms (View: 3, DB: 0) | 200 OK [http://localhost/mj151qw9093]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:15:24) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 1307ms (View: 2, DB: 0) | 200 OK [http://localhost/mj151qw9093]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:15:49) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 958ms (View: 3, DB: 0) | 200 OK [http://localhost/mj151qw9093]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:16:42) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.9ms)
+Completed in 755ms (View: 33, DB: 0) | 200 OK [http://localhost/mj151qw9093]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:17:16) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (undefined method `each_key' for ["Molecular Mechanisms of Centromeric Chromatin Assembly"]:Array) on line #4 of app/views/purl/index.html.erb:
+1: 
+2: <% titles = @metadata.titles %>
+3: <% if( titles != nil ) %>
+4:   <% titles.each_key do |title| %>
+5:     <h2><%=title%></h2>
+6:   <% end %>
+7: <% end %>
+
+    app/views/purl/index.html.erb:4
+
+Rendered rescues/_trace (153.6ms)
+Rendered rescues/_request_and_response (2.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:17:38) [GET]
+  Parameters: {"id"=>"mj151qw9093"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 664ms (View: 12, DB: 0) | 200 OK [http://localhost/mj151qw9093]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:19:24) [GET]
+  Parameters: {"id"=>"bk785hw9223"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 785ms (View: 2, DB: 0) | 200 OK [http://localhost/bk785hw9223]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-07 17:21:18) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 715ms (View: 3, DB: 0) | 200 OK [http://localhost/yk906vy1195]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 08:51:21) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+
+ArgumentError (wrong number of arguments (0 for 2)):
+  app/controllers/purl_controller.rb:11:in `extract_dc_metadata'
+  app/controllers/purl_controller.rb:11:in `index'
+
+Rendered rescues/_trace (61.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 08:53:13) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+
+NoMethodError (undefined method `retrieve_document' for Purl:Class):
+  app/models/purl.rb:5:in `extract_dc_metadata'
+  app/controllers/purl_controller.rb:11:in `index'
+
+Rendered rescues/_trace (60.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 08:53:17) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+
+NoMethodError (undefined method `retrieve_document' for Purl:Class):
+  app/models/purl.rb:5:in `extract_dc_metadata'
+  app/controllers/purl_controller.rb:11:in `index'
+
+Rendered rescues/_trace (143.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 08:53:27) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+
+NoMethodError (undefined method `retrieve_document' for Purl:Class):
+  app/models/purl.rb:5:in `extract_dc_metadata'
+  app/controllers/purl_controller.rb:12:in `index'
+
+Rendered rescues/_trace (64.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 08:53:31) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+
+NoMethodError (undefined method `retrieve_document' for Purl:Class):
+  app/models/purl.rb:5:in `extract_dc_metadata'
+  app/controllers/purl_controller.rb:12:in `index'
+
+Rendered rescues/_trace (143.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 08:54:01) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.titles) on line #2 of app/views/purl/index.html.erb:
+1: 
+2: <% titles = @metadata.titles %>
+3: <% if( titles != nil ) %>
+4:   <% titles.each do |title| %>
+5:     <h2><%=title%></h2>
+
+    app/views/purl/index.html.erb:2
+
+Rendered rescues/_trace (81.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 08:54:20) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+Rendering template within layouts/application
+Rendering purl/xml
+Rendered purl/_footer (0.1ms)
+Completed in 101ms (View: 14, DB: 0) | 200 OK [http://localhost/yk906vy1195]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 08:55:17) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+Rendering template within layouts/application
+Rendering purl/xml
+Rendered purl/_footer (0.1ms)
+Completed in 129ms (View: 3, DB: 0) | 200 OK [http://localhost/yk906vy1195]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 08:55:51) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+
+NoMethodError (undefined method `extract_dc_metadata' for #<PurlController:0x1044e0750>):
+  app/controllers/purl_controller.rb:12:in `index'
+
+Rendered rescues/_trace (60.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 08:55:59) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+
+NoMethodError (undefined method `extract_dc_metadata' for #<PurlController:0x104313cd8>):
+  app/controllers/purl_controller.rb:12:in `index'
+
+Rendered rescues/_trace (61.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 08:56:14) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+
+NoMethodError (undefined method `extract_dc_metadata' for #<PurlController:0x104174940>):
+  app/controllers/purl_controller.rb:12:in `index'
+
+Rendered rescues/_trace (146.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 08:56:18) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+Rendering template within layouts/application
+Rendering purl/xml
+Rendered purl/_footer (0.1ms)
+Completed in 135ms (View: 9, DB: 0) | 200 OK [http://localhost/yk906vy1195]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 08:56:47) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+Rendering purl/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.titles) on line #2 of app/views/purl/index.html.erb:
+1: 
+2: <% titles = @metadata.titles %>
+3: <% if( titles != nil ) %>
+4:   <% titles.each do |title| %>
+5:     <h2><%=title%></h2>
+
+    app/views/purl/index.html.erb:2
+    app/controllers/purl_controller.rb:14:in `index'
+
+Rendered rescues/_trace (73.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 08:59:13) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.titles) on line #2 of app/views/purl/index.html.erb:
+1: 
+2: <% titles = @metadata.titles %>
+3: <% if( titles != nil ) %>
+4:   <% titles.each do |title| %>
+5:     <h2><%=title%></h2>
+
+    app/views/purl/index.html.erb:2
+
+Rendered rescues/_trace (74.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 08:59:46) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+Rendering purl/index
+Completed in 148ms (View: 16, DB: 0) | 200 OK [http://localhost/yk906vy1195.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 09:00:18) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+Rendering purl/index
+ERROR: compiling _run_rxml_app47views47purl47index46rxml RAISED compile error
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:2: syntax error, unexpected '<'
+  <%@dc%>
+   ^
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:2: unterminated string meets end of file
+Function body:           def _run_rxml_app47views47purl47index46rxml(local_assigns)
+            old_output_buffer = output_buffer;;_set_controller_content_type(Mime::XML);xml = ::Builder::XmlMarkup.new(:indent => 2);self.output_buffer = xml.target!;xml.objectType do
+  <%@dc%>
+end
+;xml.target!;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:2:in `compile!'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:2: syntax error, unexpected '<'
+  <%@dc%>
+   ^
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:2: unterminated string meets end of file) on line #2 of app/views/purl/index.rxml:
+1: xml.objectType do
+2:   <%@dc%>
+3: end
+
+    app/views/purl/index.rxml:2:in `compile!'
+
+Rendered rescues/_trace (149.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 09:00:26) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+Rendering purl/index
+ERROR: compiling _run_rxml_app47views47purl47index46rxml RAISED compile error
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:2: syntax error, unexpected '<'
+  <%=@dc%>
+   ^
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:6: syntax error, unexpected tIDENTIFIER, expecting kEND
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:7: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_rxml_app47views47purl47index46rxml(local_assigns)
+            old_output_buffer = output_buffer;;_set_controller_content_type(Mime::XML);xml = ::Builder::XmlMarkup.new(:indent => 2);self.output_buffer = xml.target!;xml.objectType do
+  <%=@dc%>
+end
+;xml.target!;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:7:in `compile!'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:2: syntax error, unexpected '<'
+  <%=@dc%>
+   ^
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:6: syntax error, unexpected tIDENTIFIER, expecting kEND
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:7: syntax error, unexpected $end, expecting kEND) on line #2 of app/views/purl/index.rxml:
+1: xml.objectType do
+2:   <%=@dc%>
+3: end
+
+    app/views/purl/index.rxml:7:in `compile!'
+
+Rendered rescues/_trace (80.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 09:01:07) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 224ms (View: 9, DB: 0) | 200 OK [http://localhost/yk906vy1195]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 09:01:15) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 99ms (View: 9, DB: 0) | 200 OK [http://localhost/yk906vy1195]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 09:10:47) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+Rendering purl/index
+ERROR: compiling _run_rxml_app47views47purl47index46rxml RAISED compile error
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:6: syntax error, unexpected tIDENTIFIER, expecting kEND
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:7: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_rxml_app47views47purl47index46rxml(local_assigns)
+            old_output_buffer = output_buffer;;_set_controller_content_type(Mime::XML);xml = ::Builder::XmlMarkup.new(:indent => 2);self.output_buffer = xml.target!;xml.objectType do
+  xml <%=@dc%>
+end
+;xml.target!;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:7:in `compile!'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:6: syntax error, unexpected tIDENTIFIER, expecting kEND
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:7: syntax error, unexpected $end, expecting kEND) on line #6 of app/views/purl/index.rxml:
+3: end
+
+    app/views/purl/index.rxml:7:in `compile!'
+
+Rendered rescues/_trace (73.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 09:10:54) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+Rendering purl/index
+ERROR: compiling _run_rxml_app47views47purl47index46rxml RAISED compile error
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:2: syntax error, unexpected '<'
+  <%=@dc%>
+   ^
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:6: syntax error, unexpected tIDENTIFIER, expecting kEND
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:7: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_rxml_app47views47purl47index46rxml(local_assigns)
+            old_output_buffer = output_buffer;;_set_controller_content_type(Mime::XML);xml = ::Builder::XmlMarkup.new(:indent => 2);self.output_buffer = xml.target!;xml.objectType do
+  <%=@dc%>
+end
+;xml.target!;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:7:in `compile!'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:2: syntax error, unexpected '<'
+  <%=@dc%>
+   ^
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:6: syntax error, unexpected tIDENTIFIER, expecting kEND
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:7: syntax error, unexpected $end, expecting kEND) on line #2 of app/views/purl/index.rxml:
+1: xml.objectType do
+2:   <%=@dc%>
+3: end
+
+    app/views/purl/index.rxml:7:in `compile!'
+
+Rendered rescues/_trace (71.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 09:16:00) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.titles) on line #2 of app/views/purl/index.html.erb:
+1: 
+2: <% titles = @metadata.titles %>
+3: <% if( titles != nil ) %>
+4:   <% titles.each do |title| %>
+5:     <h2><%=title%></h2>
+
+    app/views/purl/index.html.erb:2
+
+Rendered rescues/_trace (155.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 09:16:05) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+Rendering purl/index
+ERROR: compiling _run_rxml_app47views47purl47index46rxml RAISED compile error
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:2: syntax error, unexpected '<'
+  <%=@dc%>
+   ^
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:6: syntax error, unexpected tIDENTIFIER, expecting kEND
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:7: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_rxml_app47views47purl47index46rxml(local_assigns)
+            old_output_buffer = output_buffer;;_set_controller_content_type(Mime::XML);xml = ::Builder::XmlMarkup.new(:indent => 2);self.output_buffer = xml.target!;xml.objectType do
+  <%=@dc%>
+end
+;xml.target!;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:7:in `compile!'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:2: syntax error, unexpected '<'
+  <%=@dc%>
+   ^
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:6: syntax error, unexpected tIDENTIFIER, expecting kEND
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:7: syntax error, unexpected $end, expecting kEND) on line #2 of app/views/purl/index.rxml:
+1: xml.objectType do
+2:   <%=@dc%>
+3: end
+
+    app/views/purl/index.rxml:7:in `compile!'
+
+Rendered rescues/_trace (69.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 09:17:14) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+Rendering purl/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::DOUG) on line #1 of app/views/purl/index.rxml:
+1: DOUG
+
+    app/views/purl/index.rxml:1:in `_run_rxml_app47views47purl47index46rxml'
+
+Rendered rescues/_trace (78.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 09:17:22) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+Rendering purl/index
+Completed in 242ms (View: 8, DB: 0) | 200 OK [http://localhost/yk906vy1195.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 09:18:10) [GET]
+  Parameters: {"id"=>"yk906vy1195"}
+Rendering purl/index
+Completed in 272ms (View: 2, DB: 0) | 200 OK [http://localhost/yk906vy1195.xml]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:22:18) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.titles) on line #2 of app/views/purl/index.html.erb:
+1: 
+2: <% titles = @metadata.titles %>
+3: <% if( titles != nil ) %>
+4:   <% titles.each do |title| %>
+5:     <h2><%=title%></h2>
+
+    app/views/purl/index.html.erb:2
+
+Rendered rescues/_trace (80.6ms)
+Rendered rescues/_request_and_response (2.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 11:22:26) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 336ms (View: 8, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 11:23:28) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 336ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 11:23:55) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 296ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:25:32) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.titles) on line #2 of app/views/purl/index.html.erb:
+1: 
+2: <% titles = @metadata.titles %>
+3: <% if( titles != nil ) %>
+4:   <% titles.each do |title| %>
+5:     <h2><%=title%></h2>
+
+    app/views/purl/index.html.erb:2
+
+Rendered rescues/_trace (147.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:25:42) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.titles) on line #2 of app/views/purl/index.html.erb:
+1: 
+2: <% titles = @metadata.titles %>
+3: <% if( titles != nil ) %>
+4:   <% titles.each do |title| %>
+5:     <h2><%=title%></h2>
+
+    app/views/purl/index.html.erb:2
+
+Rendered rescues/_trace (75.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:28:38) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.titles) on line #2 of app/views/purl/index.html.erb:
+1: 
+2: <% titles = @metadata.titles %>
+3: <% if( titles != nil ) %>
+4:   <% titles.each do |title| %>
+5:     <h2><%=title%></h2>
+
+    app/views/purl/index.html.erb:2
+
+Rendered rescues/_trace (83.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:29:11) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.main_doc_url) on line #38 of app/views/purl/index.html.erb:
+35:       <th>Access</th>
+36:     </tr>
+37:     <tr>
+38:       <td class="file_pdf"><a href="<%=@metadata.main_doc_url%>"><%=@metadata.main_doc_title%></a></td>
+39:       <td>Thesis</td>
+40:       <td>Stanford only until May 2011</td>
+41:     </tr>
+
+    app/views/purl/index.html.erb:38
+
+Rendered rescues/_trace (160.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:29:24) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (1.0ms)
+Completed in 281ms (View: 24, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:31:51) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NameError (undefined local variable or method `doc' for #<Purl:0x1042fe720>):
+  app/models/purl.rb:25:in `extract_dc_metadata'
+  app/models/purl.rb:14:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (138.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:32:13) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.root):
+  app/models/purl.rb:42:in `extract_content_metadata'
+  app/models/purl.rb:17:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (61.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:32:40) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 326ms (View: 3, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:33:39) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 411ms (View: 3, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:33:47) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (1.0ms)
+Completed in 304ms (View: 35, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:34:53) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 335ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:35:53) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (undefined local variable or method `titles' for #<ActionView::Base:0x1042ddd90>) on line #2 of app/views/purl/index.html.erb:
+1: 
+2: <% if( titles != nil ) %>
+3:   <% titles.each do |title| %>
+4:     <h2><%=title%></h2>
+5:   <% end %>
+
+    app/views/purl/index.html.erb:2
+
+Rendered rescues/_trace (78.5ms)
+Rendered rescues/_request_and_response (2.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 11:37:13) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 331ms (View: 8, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:37:14) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 344ms (View: 13, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:37:49) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 266ms (View: 11, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:38:00) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 266ms (View: 11, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:38:07) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.titles) on line #2 of app/views/purl/index.html.erb:
+1: 
+2: <%=@purl.titles%>
+3: 
+4: <% if( @titles != nil ) %>
+5:   <% @titles.each do |title| %>
+
+    app/views/purl/index.html.erb:2
+
+Rendered rescues/_trace (75.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:38:12) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+
+ActionView::TemplateError (undefined local variable or method `purl' for #<ActionView::Base:0x1043039c8>) on line #2 of app/views/purl/index.html.erb:
+1: 
+2: <%=purl.titles%>
+3: 
+4: <% if( @titles != nil ) %>
+5:   <% @titles.each do |title| %>
+
+    app/views/purl/index.html.erb:2
+
+Rendered rescues/_trace (162.2ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:39:44) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+ActionView::MissingTemplate (Missing template purl/_index.erb in view path app/views):
+  app/controllers/purl_controller.rb:11:in `index'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:39:50) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 280ms (View: 10, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:40:19) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+ActionView::MissingTemplate (Missing template purl/_index.erb in view path app/views):
+  app/controllers/purl_controller.rb:11:in `index'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:40:25) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 338ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:40:45) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 264ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:50:47) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 1048ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:51:10) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (1.1ms)
+Completed in 341ms (View: 32, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:52:16) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 408ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:54:17) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 327ms (View: 3, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:55:19) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 335ms (View: 11, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 11:56:09) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 942ms (View: 9, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 11:56:13) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 238ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to png (for 127.0.0.1 at 2010-06-08 11:56:54) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 375ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133.png]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 11:56:58) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 250ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to php (for 127.0.0.1 at 2010-06-08 11:57:02) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 274ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133.php]
+
+
+Processing PurlController#index to rb (for 127.0.0.1 at 2010-06-08 11:57:05) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 257ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133.rb]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:57:07) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 244ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 11:58:57) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 555ms (View: 28, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 11:59:02) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 248ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 11:59:36) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+TypeError (can't convert Symbol into String):
+  app/controllers/purl_controller.rb:12:in `+'
+  app/controllers/purl_controller.rb:12:in `index'
+
+Rendered rescues/_trace (67.0ms)
+Rendered rescues/_request_and_response (2.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 11:59:53) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 254ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 12:01:58) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.instruct!) on line #1 of app/views/purl/index.rxml:
+1: @xml.instruct! :xml, :version=>"1.0"  
+2: @xml.objectType {
+3:   @xml.dc(@purl.dc)
+4: }
+
+    app/views/purl/index.rxml:1:in `_run_rxml_app47views47purl47index46rxml'
+
+Rendered rescues/_trace (89.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 12:02:12) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+
+ActionView::TemplateError (undefined local variable or method `purl' for #<ActionView::Base:0x104171588>) on line #3 of app/views/purl/index.rxml:
+1: xml.instruct! :xml, :version=>"1.0"  
+2: xml.objectType {
+3:   xml.dc(purl.dc)
+4: }
+
+    app/views/purl/index.rxml:3:in `_run_rxml_app47views47purl47index46rxml'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `call'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `_nested_structures'
+    builder (2.1.2) lib/builder/xmlbase.rb:58:in `method_missing'
+    app/views/purl/index.rxml:2:in `_run_rxml_app47views47purl47index46rxml'
+
+Rendered rescues/_trace (77.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 12:02:19) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+
+ActionView::TemplateError (undefined local variable or method `dude' for #<ActionView::Base:0x1042652a0>) on line #3 of app/views/purl/index.rxml:
+1: xml.instruct! :xml, :version=>"1.0"  
+2: xml.objectType {
+3:   xml.dc(dude)
+4: }
+
+    app/views/purl/index.rxml:3:in `_run_rxml_app47views47purl47index46rxml'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `call'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `_nested_structures'
+    builder (2.1.2) lib/builder/xmlbase.rb:58:in `method_missing'
+    app/views/purl/index.rxml:2:in `_run_rxml_app47views47purl47index46rxml'
+
+Rendered rescues/_trace (161.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 12:02:27) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 266ms (View: 9, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 12:02:32) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 249ms (View: 9, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 12:02:42) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 345ms (View: 9, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 12:03:02) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 284ms (View: 13, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 12:03:15) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 269ms (View: 12, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 12:03:18) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+
+ActionView::TemplateError (undefined method `xml' for #<ActionView::Base:0x1043076e0>) on line #3 of app/views/purl/index.rxml:
+1: xml.instruct! :xml, :version=>"1.0"  
+2: xml.objectType {
+3:   xml(@purl.dc)
+4: }
+
+    app/views/purl/index.rxml:3:in `_run_rxml_app47views47purl47index46rxml'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `call'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `_nested_structures'
+    builder (2.1.2) lib/builder/xmlbase.rb:58:in `method_missing'
+    app/views/purl/index.rxml:2:in `_run_rxml_app47views47purl47index46rxml'
+
+Rendered rescues/_trace (85.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 12:03:26) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 267ms (View: 13, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 12:05:08) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 406ms (View: 13, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 12:05:09) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 389ms (View: 6, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 12:07:24) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 423ms (View: 16, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 12:07:39) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+ERROR: compiling _run_rxml_app47views47purl47index46rxml RAISED compile error
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:1: syntax error, unexpected '<', expecting kEND
+....output_buffer = xml.target!;<%=@purl.dc%>;xml.target!;
+                              ^
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:3: syntax error, unexpected tIDENTIFIER, expecting kEND
+Function body:           def _run_rxml_app47views47purl47index46rxml(local_assigns)
+            old_output_buffer = output_buffer;;_set_controller_content_type(Mime::XML);xml = ::Builder::XmlMarkup.new(:indent => 2);self.output_buffer = xml.target!;<%=@purl.dc%>;xml.target!;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:4:in `compile!'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/dougkim/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:1: syntax error, unexpected '<', expecting kEND
+....output_buffer = xml.target!;<%=@purl.dc%>;xml.target!;
+                              ^
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/views/purl/index.rxml:3: syntax error, unexpected tIDENTIFIER, expecting kEND) on line #1 of app/views/purl/index.rxml:
+1: <%=@purl.dc%>
+
+    app/views/purl/index.rxml:4:in `compile!'
+
+Rendered rescues/_trace (152.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:26:28) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering purl/index
+Completed in 689ms (View: 13, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing ApplicationController#index to xml (for 127.0.0.1 at 2010-06-08 13:29:19) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+SyntaxError (/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/controllers/purl_controller.rb:14: syntax error, unexpected '}', expecting kEND
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/controllers/purl_controller.rb:37: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (80.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:29:27) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (undefined method `xml' for #<PurlController:0x10423f528>):
+  app/controllers/purl_controller.rb:13:in `index'
+  app/controllers/purl_controller.rb:12:in `index'
+
+Rendered rescues/_trace (149.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index to xml (for 127.0.0.1 at 2010-06-08 13:30:42) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+SyntaxError (/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/controllers/purl_controller.rb:13: syntax error, unexpected '}'
+      xml { redner :xml => }@purl.dc }
+                            ^):
+  
+
+Rendered rescues/_trace (64.3ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:30:48) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (undefined method `xml' for #<PurlController:0x10426bd58>):
+  app/controllers/purl_controller.rb:13:in `index'
+  app/controllers/purl_controller.rb:12:in `index'
+
+Rendered rescues/_trace (187.0ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:31:01) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 308ms (View: 48, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:32:27) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+TypeError (can't convert nil into String):
+  app/models/purl.rb:13:in `+'
+  app/models/purl.rb:13:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (67.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:32:43) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (undefined method `root' for "":String):
+  app/models/purl.rb:42:in `extract_content_metadata'
+  app/models/purl.rb:18:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (67.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:32:56) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (undefined method `root' for "":String):
+  app/models/purl.rb:44:in `extract_content_metadata'
+  app/models/purl.rb:20:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (68.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:33:36) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (undefined method `root' for "":String):
+  app/models/purl.rb:44:in `extract_content_metadata'
+  app/models/purl.rb:20:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (70.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:33:42) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (undefined method `root' for "":String):
+  app/models/purl.rb:44:in `extract_content_metadata'
+  app/models/purl.rb:20:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (69.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:34:14) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (undefined method `root' for "":String):
+  app/models/purl.rb:44:in `extract_content_metadata'
+  app/models/purl.rb:20:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (66.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:34:32) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (undefined method `root' for "":String):
+  app/models/purl.rb:44:in `extract_content_metadata'
+  app/models/purl.rb:20:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (68.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:34:47) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (undefined method `root' for "":String):
+  app/models/purl.rb:44:in `extract_content_metadata'
+  app/models/purl.rb:20:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (63.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:35:12) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (undefined method `root' for "":String):
+  app/models/purl.rb:43:in `extract_content_metadata'
+  app/models/purl.rb:19:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (62.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:35:33) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (undefined method `root' for "":String):
+  app/models/purl.rb:43:in `extract_content_metadata'
+  app/models/purl.rb:19:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (81.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:35:57) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (undefined method `root' for "":String):
+  app/models/purl.rb:46:in `extract_content_metadata'
+  app/models/purl.rb:22:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (149.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:36:13) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (undefined method `root' for "":String):
+  app/models/purl.rb:49:in `extract_content_metadata'
+  app/models/purl.rb:25:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (71.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:37:21) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 1236ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:38:11) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 323ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:39:25) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 300ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:47:37) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 329ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:50:40) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 340ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:51:02) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.dc):
+  app/models/purl.rb:13:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (147.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:51:13) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 253ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:51:22) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 264ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 13:51:37) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 263ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 13:51:47) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 352ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 13:51:56) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 272ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:52:53) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 311ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 13:52:55) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 259ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:54:41) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 332ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:56:49) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 372ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 13:56:56) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 321ms (View: 3, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 13:58:46) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 320ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index to html (for 127.0.0.1 at 2010-06-08 13:58:50) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 248ms (View: 1, DB: 0) | 406 Not Acceptable [http://localhost/wr056zx7133.html]
+
+
+Processing PurlController#index to html (for 127.0.0.1 at 2010-06-08 13:58:57) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 256ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133.html]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 13:59:01) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 264ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 13:59:06) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 251ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:00:47) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+SyntaxError (/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/models/purl.rb:57: syntax error, unexpected '<', expecting kEND
+      <?xml version="1.0"?>
+       ^
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/models/purl.rb:57: syntax error, unexpected '>'):
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (70.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:01:01) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 430ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:03:32) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+SyntaxError (/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/models/purl.rb:16: syntax error, unexpected '<', expecting kEND
+    <?xml version="1.0"?>
+     ^
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/models/purl.rb:16: syntax error, unexpected '>'
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/models/purl.rb:67: syntax error, unexpected $end, expecting kEND):
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (70.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:04:37) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+SyntaxError (/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/models/purl.rb:16: syntax error, unexpected '<', expecting kEND
+    <?xml version="1.0"?>
+     ^
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/models/purl.rb:16: syntax error, unexpected '>'
+/Users/dougkim/DLSS/projects/digital_stacks/development/purl/app/models/purl.rb:68: syntax error, unexpected $end, expecting kEND):
+  app/controllers/purl_controller.rb:9:in `index'
+
+Rendered rescues/_trace (81.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:04:51) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 347ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:06:16) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 302ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:06:38) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 348ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:07:20) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 323ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:07:41) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 395ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:08:14) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 319ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:08:31) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 292ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:08:48) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 260ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 14:08:49) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 301ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 14:08:58) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 363ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 14:09:06) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 306ms (View: 3, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:09:09) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 251ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:09:10) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 247ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:12:37) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 409ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 14:12:55) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.1ms)
+Completed in 286ms (View: 2, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 14:13:59) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (undefined method `root' for #<String:0x1043963b8>):
+  app/models/purl.rb:27:in `extract_dc_metadata'
+  app/models/purl.rb:15:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (63.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 14:17:36) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NameError (undefined local variable or method `datastream' for #<Purl:0x1041e4e70>):
+  app/models/purl.rb:38:in `extract_identity_metadata'
+  app/models/purl.rb:16:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (64.3ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 14:17:44) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/models/purl.rb:45:in `extract_content_metadata'
+  app/models/purl.rb:17:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (62.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 14:18:03) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/models/purl.rb:47:in `extract_content_metadata'
+  app/models/purl.rb:17:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (61.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 14:18:17) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/models/purl.rb:47:in `extract_content_metadata'
+  app/models/purl.rb:17:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (63.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:19:35) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/models/purl.rb:47:in `extract_content_metadata'
+  app/models/purl.rb:17:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (62.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:22:49) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/models/purl.rb:47:in `extract_content_metadata'
+  app/models/purl.rb:17:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (65.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:23:54) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/models/purl.rb:47:in `extract_content_metadata'
+  app/models/purl.rb:17:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (62.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:24:07) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/models/purl.rb:48:in `extract_content_metadata'
+  app/models/purl.rb:17:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (62.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:24:19) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/models/purl.rb:48:in `extract_content_metadata'
+  app/models/purl.rb:17:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (67.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:24:28) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/models/purl.rb:48:in `extract_content_metadata'
+  app/models/purl.rb:17:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (66.5ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:25:13) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 300ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:25:17) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 271ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:25:20) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 242ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:25:23) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.xpath):
+  app/models/purl.rb:48:in `extract_content_metadata'
+  app/models/purl.rb:17:in `retrieve_metadata'
+  app/controllers/purl_controller.rb:10:in `index'
+
+Rendered rescues/_trace (133.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 14:25:53) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 315ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]
+
+
+Processing PurlController#index (for 127.0.0.1 at 2010-06-08 14:25:54) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Rendering template within layouts/application
+Rendering purl/index
+Rendered purl/_footer (0.2ms)
+Completed in 246ms (View: 3, DB: 0) | 200 OK [http://localhost/wr056zx7133]
+
+
+Processing PurlController#index to xml (for 127.0.0.1 at 2010-06-08 16:06:31) [GET]
+  Parameters: {"id"=>"wr056zx7133"}
+Completed in 317ms (View: 1, DB: 0) | 200 OK [http://localhost/wr056zx7133.xml]

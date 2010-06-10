@@ -1,16 +1,44 @@
-<div>
-  <p>Titles: </p>
-    <% titles = @metadata.titles
-       titles.length.times do |i| %>
-         <p><%=titles[i]%></p>
+
+<% if( @purl.titles != nil ) %>
+  <% @purl.titles.each do |title| %>
+    <h2><%=title%></h2>
+  <% end %>
+<% end %>
+<dl>
+  <dt>Author:</dt>
+  <% if( @purl.authors != nil ) %>
+    <% @purl.authors.each do |author| %>
+      <dd><%=author%></dd>
     <% end %>
-  <p>Creators:</p>
-    <% creators = @metadata.creators
-       creators.length.times do |i| %>
-         <p><%=creators[i]%></p>
-    <% end %>
-  <p>Object Type: "<%= @metadata.objectType %>"</p>
-  <p>Tags: "<%= @metadata.tags %>"</p>
-  <p>Embargo: "<%= @metadata.embargo %>"</p>
-  <p>Page Tags: "<%= @metadata.page_tags %>"</p>
+  <% end %>
+  <dt>Publisher:</dt>
+  <dd>Stanford University, 2010</dd>
+</dl>
+<div id="metadata">
+  <div class="swlink">&raquo; <a>View in SearchWorks</a></div>
+  <p><span>&copy; 2010 </span>
+	 <span>
+	   <% if( @purl.authors != nil ) %>
+	     <% @purl.authors.each do |author| %>
+	       <dd><%=author%></dd>
+	     <% end %>
+	   <% end %>
+	 </span>
+  </p>
+  <p><a href="http://creativecommons.org/licenses/by/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by/3.0/88x31.png" style="border-width: 0pt;" alt="Creative Commons License"></a> <br  />This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Attribution 3.0 Unported License</a></p>
 </div>
+<div id="filelist">         
+  <table id="assets">
+    <tr>
+      <th>File (Download)</th>
+      <th>Description</th>
+      <th>Access</th>
+    </tr>
+    <tr>
+      <td class="file_pdf"><a href="<%=@main_doc_url%>"><%=@main_doc_title%></a></td>
+      <td>Thesis</td>
+      <td>Stanford only until May 2011</td>
+    </tr>
+  </table>
+</div>
+<br clear="all"  />

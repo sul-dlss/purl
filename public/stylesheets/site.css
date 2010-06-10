@@ -1,0 +1,125 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+}
+body {
+        line-height: 1;
+}
+ol, ul {
+        list-style: none;
+}
+blockquote, q {
+        quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+        content: '';
+        content: none;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+        text-decoration: none;
+}
+del {
+        text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+        border-collapse: collapse;
+        border-spacing: 0;
+}
+
+
+/*  SearchWorks  */
+
+body {background-color: #4f4f4f; background-image: url(/images/background.png); background-repeat: repeat-x; text-align: center; font-size: 11px; font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif; line-height: 1.3em;   color: #000000;}
+h1 {font-size: 2em; font-weight: bold; padding: 25px 0px; color: #f6f6f6; 
+text-shadow: -1px -1px 0px #333333;
+filter: dropshadow(color=#333333, offx=-1, offy=-1) }
+
+h2 {font-size: 1.4em; font-weight: normal; margin: 0 0 .5em 0; line-height: 1.2em;}
+h3 {font-size: 1.1em; font-weight: normal;}
+
+a  {color: #00388e /*#2E4F81*/; text-decoration:none;}
+a:hover {border-bottom: 1px dotted;}
+a:active {color: #4f4f4f;}
+
+#container {position: relative; width: 80%; margin: 0 auto; text-align: left; }
+
+#header {height: 30px; overflow: hidden;}
+#header img {padding-top: 4px; padding-left: 1px;}
+#headerlinks {position: absolute; right: 0; top: 7px; width: auto;}
+
+#headerlinks ul li {list-style-type: none; display: inline; padding: 0 0 0 15px;}
+
+#headerlinks ul li a {color: #ffffff /*#52c1e1*/; text-transform: uppercase; text-decoration: none; font-size: 11px;}
+#headerlinks ul li a:hover {border-bottom: 1px dotted;}
+
+#banner {height: 70px; background-image: url(/images/rosette.png); background-position: right top; background-repeat: no-repeat;}
+
+
+#contents {background-color: #f6f6f6; padding: 15px; margin-bottom: 15px;}
+
+
+#record {}
+
+
+#metadata {float: right; width: 30%;}
+.swlink {padding: 0 0 15px 0; margin: 0 0 15px 0; font-size: 1.1em; border-bottom: 1px dotted #cccccc;s}
+
+dl {margin: 0 0 1em 0;}
+dt {clear: both; float: left; color: #555555; width: 7.5em; padding: 2px .5em 2px 0;} 
+dd {margin-left: 8em; padding: 2px 0px;}
+dd img {vertical-align: middle;}
+        
+        
+#filelist {float: left; width: 65%;}    
+table#assets {border: 1px solid #787676; background-color: #FFFFFF;}
+#assets th {text-align: left; font-size: 11px; padding: 6px 10px; background-color: #555555; background-image: url(/images/availability-header.png); background-repeat: repeat-x; color: #ffffff; text-shadow: -1px -1px 0px #333333;
+filter: dropshadow(color=#333333, offx=-1, offy=-1)}
+#assets td {padding: 6px 10px; background-color: #ffffff; border-bottom: 1px solid #cccccc;}
+#assets td.file_pdf {height: 32px; padding: 6px 10px 6px 42px;background-image: url(/images/32px-Nuvola_mimetypes_pdf.png); background-repeat:no-repeat; background-position: 6px}
+#assets td.file_xls {height: 32px; padding: 6px 10px 6px 42px;background-image: url(/images/32px-Nuvola_mimetypes_spreadsheet.png); background-repeat:no-repeat; background-position: 6px;}
+#assets a  {font-weight: bold;}
+
+.nowrap {white-space: nowrap;}
+
+#copyright {clear: both; margin-top: 15px; padding-top: 15px; text-align: center;}
+p {margin: 15px 0;}
+
+
+#footer {color: #ffffff; text-align: center; margin: 0 0 35px 0;}
+#footer p {margin: 10px 0; font-size: .9em;}
+#footer a {color: #ffffff /*#52c1e1*/;}
+#footer a:hover {color: #ffffff /*#52c1e1*/; border-bottom: 1px dotted;}
+
+/* 
+
+highlight colour for browse by callnum:  #e5f1f4
+
+
+*/
+
+
+
