@@ -2,9 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Purl Landing Page</title>
+    <title>Electronic Theses &amp; Dissertations Landing Page</title>
+    <%= stylesheet_link_tag 'site' %> 
   </head>
   <body>
-    <%= yield %>
+    <div id="container">
+      <div id="header"></div>
+      <div id="banner"><h1>Electronic Theses &amp; Dissertations Landing Page</h1></div>
+      <div id="contents">
+        <%= yield %>
+      </div>
+	  <div id="footer">
+        <%= render :partial => 'footer' %>
+	  </div>
+	</div>
   </body>
 </html>

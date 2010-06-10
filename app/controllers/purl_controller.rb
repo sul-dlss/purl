@@ -6,7 +6,12 @@ class PurlController < ApplicationController
 
   # entry point into the application
   def index
-    @metadata = Purl.extract_metadata( params[:id] )
+    @purl = Purl.new
+    @purl.retrieve_metadata(params[:id])
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @purl.xml }
+    end
   end
 
   private

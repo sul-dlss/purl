@@ -1,8 +1,0 @@
-xml.metadata do
-  xml.titles(@metadata.titles)
-  xml.creators(@metadata.creators)
-  xml.objectType(@metadata.objectType)
-  xml.tags(@metadata.tags)
-  xml.embargo(@metadata.embargo)
-  xml.page_tags(@metadata.page_tags)
-end
