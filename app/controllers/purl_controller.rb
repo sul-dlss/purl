@@ -6,6 +6,13 @@ class PurlController < ApplicationController
 
   # entry point into the application
   def index
+
+    # handle an exception
+    if(params[:id] == 'ir:rs276tc2764')
+      redirect_to "/ir:rs276tc2764/index.html"
+      return
+    end
+
     @purl = Purl.new
     @purl.retrieve_metadata(params[:id])
 

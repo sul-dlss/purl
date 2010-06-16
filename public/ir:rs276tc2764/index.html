@@ -1,0 +1,45 @@
+<!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Supplementary data for "Reassessing Authorship of the Book of Mormon Using Delta and
+            Nearest Shrunken Centroid Classification</title>
+    </head>
+    <body>
+        <h2>Supplementary data for: </h2>
+        <p>Matthew L. Jockers; Daniela M. Witten; Craig S. Criddle.  "Reassessing authorship of the Book of Mormon using delta and nearest shrunken centroid classification." <em>Literary and Linguistic Computing</em>, 2008; doi: 10.1093/llc/fqn040.</p>
+        <p><b>PLEASE NOTE</b>: Shortly after publication of the online "Advance Access" version of "Reassessing authorship of the <em>Book of Mormon</em> using delta and nearest shrunken centroid classification," Jockers discovered an error he made in the preprocessing of the textual data. In tokenizing the texts, Jockers's original script failed to account for the possible presence of two hyphens ("--") as substitutes for the em dash. This resulted in a very small number of word types being incorrect and an even smaller number of miscounted correct word types. For example, the ngram "age--and" was tokenized as a unique word type instead of being counted as one instance each of the words "aged" and "and." This ngram occurred once in the entire corpus, in one of the Pratt samples, and its presence meant that the counts for occurrences of "age" and "and" in the Pratt sample were thus off by one. There were other similar cases.</p>
+        
+        <p>Jockers became aware of this error on January 9, 2009 and immediately corrected his tokenization script and reprocessed the data. Witten then reran both the winnowing algorithm and the NSC and Delta procedures. The minor corrections to the data file did not result in any changes to the winnowed result set of words used by NSC. In all but one case, the classification results given by NSC were also unchanged. The only change in classification occurred in chapter 147 (Alma 52) of the <em>Book of Mormon</em>. Instead of Rigdon being the most likely candidate and Spaulding the second most likley, NSC reported the reverse, Spalding as most likely and Rigdon second most likely. In the original results, NSC ranked Rigdon at 0.4646 and Spalding at 0.4628. With the corrected data, NSC ranked Rigdon at 0.4626 and Spalding at 0.46525.</p>
+
+        
+        <ul>
+            <li><a href="#1">Cluster Dendrograms Referenced in Paper</a></li>
+            <li><a href="/ir:rs276tc2764/bom.xml">Book of Mormon XML file (1.5 MB)</a></li>
+            <li><a href="/ir:rs276tc2764/dataMatrix.txt">Full data Matrix of word frequencies (48.1 MB)</a></li>
+        </ul>
+        
+        <h2>Cluster Dendrograms</h2>
+        <p id="1">Fifty novels written by fifteen different authors (twelve male, three female) were
+            selected from the Chadwyck Healey Nineteenth Century American Literature collection.
+            Selection was based solely on publication date (e.g. chronological proximity to the 1830
+            publication of the <em>Book of Mormon</em>). From these texts we extracted word
+            frequency data for frequently occurring words and employed hierarchal clustering
+            ("hclust" function in R with complete linkage) to group the texts based on their similarity.
+            Shown below are three dendrograms produced using three different feature sets.</p>
+        <h2>Feature Set: the 72 words occurring in the corpus with a mean relative frequency above
+            1%</h2>
+        <p>
+            <img src="/ir:rs276tc2764/cluster1.jpg" alt="dendrogram 1"/>
+        </p>
+
+        <h2>Feature Set: 53 closed-class words</h2>
+        <p>
+            <img src="/ir:rs276tc2764/cluster2.jpg" alt="dendrogram 2"/>
+        </p>
+
+        <h2>Feature Set: 17 frequently occurring function words </h2>
+        <p>
+            <img src="/ir:rs276tc2764/cluster3.jpg" alt="dendrogram 3"/>
+        </p>
+    </body>
+</html>
