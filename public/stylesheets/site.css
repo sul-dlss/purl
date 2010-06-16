@@ -98,9 +98,9 @@ dd img {vertical-align: middle;}
 table#assets {border: 1px solid #787676; background-color: #FFFFFF;}
 #assets th {text-align: left; font-size: 11px; padding: 6px 10px; background-color: #555555; background-image: url(/images/availability-header.png); background-repeat: repeat-x; color: #ffffff; text-shadow: -1px -1px 0px #333333;
 filter: dropshadow(color=#333333, offx=-1, offy=-1)}
-#assets td {padding: 6px 10px; background-color: #ffffff; border-bottom: 1px solid #cccccc;}
-#assets td.file_pdf {height: 32px; padding: 6px 10px 6px 42px;background-image: url(/images/32px-Nuvola_mimetypes_pdf.png); background-repeat:no-repeat; background-position: 6px}
-#assets td.file_xls {height: 32px; padding: 6px 10px 6px 42px;background-image: url(/images/32px-Nuvola_mimetypes_spreadsheet.png); background-repeat:no-repeat; background-position: 6px;}
+#assets td {height: 25px; padding: 0px 10px 0px 50px; background-color: #ffffff; border-bottom: 1px solid #cccccc;}
+#assets td.file_pdf {background-image: url(/images/32px-Nuvola_mimetypes_pdf.png); background-repeat:no-repeat; background-position: 6px}
+#assets td.file_xls {background-image: url(/images/32px-Nuvola_mimetypes_spreadsheet.png); background-repeat:no-repeat; background-position: 6px;}
 #assets a  {font-weight: bold;}
 
 .nowrap {white-space: nowrap;}

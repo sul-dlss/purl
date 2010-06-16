@@ -15,8 +15,9 @@
   <dd>Stanford University, 2010</dd>
 </dl>
 <div id="metadata">
-  <div class="swlink">&raquo; <a>View in SearchWorks</a>
-  </div>
+  <% if( @purl.catalog_key != '' ) %>
+    <div class="swlink">&raquo; <a href="http://searchworks.stanford.edu/view/<%=@purl.catalog_key%>">View in SearchWorks</a></div>
+  <% end %>
   <p><span>&copy; 2010 </span>
 	 <span>
 	   <% unless( @purl.authors.nil? ) %>
@@ -26,14 +27,17 @@
 	   <% end %>
 	 </span>
   </p>
-  <p><a href="http://creativecommons.org/licenses/by/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by/3.0/88x31.png" style="border-width: 0pt;" alt="Creative Commons License"></a> <br/>This work is licensed under a <a href="" rel="license"><%=@purl.cclicense%></a></p>
+  <p><a href="http://creativecommons.org/licenses/by/3.0/"><img src="http://i.creativecommons.org/l/by/3.0/88x31.png"></a><br/>This work is licensed under a <a href=""><%=@purl.cclicense%></a></p>
 </div>
 <div id="filelist">         
   <table id="assets">
     <tr>
       <th>File (Download)</th>
       <th>Description</th>
-      <th>Access</th>
+<%puts "Embargo Date : '#{@purl.embargo_date}'"%>
+	  <% if( !@purl.embargo_date.nil? && @purl.embargo_date != '' ) %>
+        <th>Access</th>
+      <% end %>
     </tr>
     <% unless( @purl.primary_files.nil? ) %>
       <% @purl.primary_files.each do |primary_file| %>
@@ -46,9 +50,14 @@
             <td>
 	      <% end %>
 	        <a href="<%=primary_file.url%>"><%=primary_file.filename%></a>
+	        <% if( primary_file.size != '') %>
+	 		  (<%=primary_file.size%>)
+	 	    <% end %>
 		  </td>
           <td></td>
-          <td></td>
+		  <% if( !@purl.embargo_date.nil? && @purl.embargo_date != '' ) %>
+            <td>Stanford only until <%=@purl.embargo_date%></td>
+		  <% end %>
         </tr>
       <% end %>
     <% end %>
@@ -63,12 +72,17 @@
             <td>
 	      <% end %>
             <a href="<%=supplemental_file.url%>"><%=supplemental_file.filename%></a>
+	        <% if( supplemental_file.size != '') %>
+	 		  (<%=supplemental_file.size%>)
+	 	    <% end %>
           </td>
           <td></td>
-          <td></td>
+		  <% if( !@purl.embargo_date.nil? && @purl.embargo_date != '' ) %>
+            <td>Stanford only until <%=@purl.embargo_date%></td>
+		  <% end %>
         </tr>
       <% end %>
     <% end %>
   </table>
 </div>
-<br clear="all"  />
+<br clear="all" />
