@@ -37,21 +37,14 @@ module Dor
   
     #
     # This method determines whether the resource for the given id is ready for delivery
+    # based on the 'shelve' workflow status
     #
-    def self.exists_resource(id)
-
-      # TODO : dougkim
-      # make sure that the requested resource is an etd
-      # rels_ext_md = DorService.new.get_datastream_contents(id,'RELS-EXT')
-      # puts rels_ext_md
-      # doc = Nokogiri::XML(rels_ext_md)
-      # fedora_content_model = doc.root.xpath("//conformsTo[@rdf:resource]").collect(&:text)
-      # puts "Content Model : #{fedora_content_model}"
-      
-      # resource ready for delivery must have a 'shelve' workflow status of 'released'
-
-      # for now, pretend as if the resource always exists
-      true
+    def self.is_shelved?(id)
+      shelve_status = WorkflowService.get_workflow_status(id,'etdAccessionWF','shelve')
+      if( "#{shelve_status}".eql? "completed" )
+        return true
+      end
+      return false
     end
 
   end

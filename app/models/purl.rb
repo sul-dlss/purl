@@ -3,7 +3,7 @@ require 'nokogiri'
 class Purl
 
   attr_accessor :dc, :properties, :identity, :content, :rights, :xml
-  attr_accessor :titles, :authors, :cclicense
+  attr_accessor :titles, :authors, :cclicense, :catalog_key, :embargo_date
   attr_accessor :primary_files, :supplemental_files
 
   def retrieve_metadata(id) 
@@ -47,6 +47,10 @@ class Purl
   def extract_identity_metadata(id,metadata)
     if( metadata != '' )
       doc = Nokogiri::XML(metadata)
+      elements = doc.root.xpath("//otherId[@name='catkey']").collect(&:text)
+      elements.each do |elem|
+        @catalog_key = elem.to_s
+      end
     end
   end
 
@@ -96,6 +100,10 @@ class Purl
   def extract_rights_metadata(id,metadata)
     if( metadata != '' )
       doc = Nokogiri::XML(metadata)
+      elements = doc.root.xpath("//embargoReleaseDate").collect(&:text)
+      elements.each do |elem|
+        @embargo_date = elem.to_s
+      end
     end
   end
 
