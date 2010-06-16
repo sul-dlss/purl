@@ -54,7 +54,7 @@
 	 		  (<%=primary_file.size%>)
 	 	    <% end %>
 		  </td>
-          <td></td>
+          <td><%=primary_file.description_label%></td>
 		  <% if( !@purl.embargo_date.nil? && @purl.embargo_date != '' ) %>
             <td>Stanford only until <%=@purl.embargo_date%></td>
 		  <% end %>
@@ -76,7 +76,7 @@
 	 		  (<%=supplemental_file.size%>)
 	 	    <% end %>
           </td>
-          <td></td>
+          <td><%=supplemental_file.description_label%></td>
 		  <% if( !@purl.embargo_date.nil? && @purl.embargo_date != '' ) %>
             <td>Stanford only until <%=@purl.embargo_date%></td>
 		  <% end %>
