@@ -3,7 +3,7 @@ require 'nokogiri'
 class Purl
 
   attr_accessor :dc, :properties, :identity, :content, :rights, :xml
-  attr_accessor :titles, :authors, :cclicense, :catalog_key, :embargo_date
+  attr_accessor :titles, :authors, :degreeconfyr, :cclicense, :cclicensetype, :catalog_key, :embargo_date
   attr_accessor :primary_files, :supplemental_files
 
   def retrieve_metadata(id) 
@@ -38,8 +38,12 @@ class Purl
   def extract_properties_metadata(id,metadata)
     if( metadata != '' )
       doc = Nokogiri::XML(metadata)
-      elements = doc.root.xpath("//cclicensetype").collect(&:text)
+      elements = doc.root.xpath("//degreeconfyr").collect(&:text)
+      @degreeconfyr = elements.map {|e| e.to_s}
+      elements = doc.root.xpath("//cclicense").collect(&:text)
       @cclicense = elements.map {|e| e.to_s}
+      elements = doc.root.xpath("//cclicensetype").collect(&:text)
+      @cclicensetype = elements.map {|e| e.to_s}
     end
   end
 
