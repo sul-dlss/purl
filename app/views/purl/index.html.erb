@@ -18,45 +18,32 @@
   <% if( @purl.catalog_key != '' ) %>
     <div class="swlink">&raquo; <a href="http://searchworks.stanford.edu/view/<%=@purl.catalog_key%>">View in SearchWorks</a></div>
   <% end %>
-  <p><span>&copy; 2010 </span>
-	 <span>
-	   <% unless( @purl.authors.nil? ) %>
-	     <% @purl.authors.each do |author| %>
-	       <%=Dor::Util.reverse_name(author)%>
-	     <% end %>
-	   <% end %>
-	 </span>
-  </p>
-  <p><a href="http://creativecommons.org/licenses/by/3.0/"><img src="http://i.creativecommons.org/l/by/3.0/88x31.png"></a><br/>This work is licensed under a <a href=""><%=@purl.cclicense%></a></p>
+  <%= render(:partial => "purl/publication_copyright" ) %>
 </div>
 <div id="filelist">         
   <table id="assets">
     <tr>
       <th>File (Download)</th>
       <th>Description</th>
-<%puts "Embargo Date : '#{@purl.embargo_date}'"%>
-	  <% if( !@purl.embargo_date.nil? && @purl.embargo_date != '' ) %>
+	  <% if( !@purl.embargo_date.nil? and @purl.embargo_date != '' ) %>
         <th>Access</th>
       <% end %>
     </tr>
     <% unless( @purl.primary_files.nil? ) %>
       <% @purl.primary_files.each do |primary_file| %>
         <tr>
-		  <% if( primary_file.mimetype.to_s.eql? 'application/pdf' )%>
-            <td class="file_pdf">
-		  <% elsif( primary_file.mimetype.to_s.eql? 'application/excel' )%>
-            <td class="file_xls">
-	      <% else %>
-            <td>
-	      <% end %>
-	        <a href="<%=primary_file.url%>"><%=primary_file.filename%></a>
-	        <% if( primary_file.size != '') %>
-	 		  (<%=primary_file.size%>)
-	 	    <% end %>
+	      <td class="file">
+	        <div class="file_icon"><%= render(:partial => "purl/fileIcon", :locals => {:fileName => primary_file.filename.to_s}) %></div>
+	        <div class="file_link">
+		      <a href="<%=primary_file.url%>"><%=primary_file.filename%></a>
+	          <% if( primary_file.size != '') %>
+	 		    (<%=primary_file.size%> KB)
+	 	      <% end %>
+    		</div>
 		  </td>
-          <td><%=primary_file.description_label%></td>
-		  <% if( !@purl.embargo_date.nil? && @purl.embargo_date != '' ) %>
-            <td>Stanford only until <%=@purl.embargo_date%></td>
+          <td class="description"><%=primary_file.description_label%></td>
+		  <% if( !@purl.embargo_date.nil? and @purl.embargo_date != '' ) %>
+            <td class="access">Stanford only until <%=@purl.embargo_date%></td>
 		  <% end %>
         </tr>
       <% end %>
@@ -64,20 +51,17 @@
     <% unless( @purl.supplemental_files.nil? ) %>
       <% @purl.supplemental_files.each do |supplemental_file| %>
         <tr>
-		  <% if( supplemental_file.mimetype.to_s.eql? 'application/pdf' )%>
-            <td class="file_pdf">
-		  <% elsif( supplemental_file.mimetype.to_s.eql? 'application/excel' )%>
-            <td class="file_xls">
-	      <% else %>
-            <td>
-	      <% end %>
-            <a href="<%=supplemental_file.url%>"><%=supplemental_file.filename%></a>
-	        <% if( supplemental_file.size != '') %>
-	 		  (<%=supplemental_file.size%>)
-	 	    <% end %>
+	      <td>
+	        <div class="file_icon"><%= render(:partial => "purl/fileIcon", :locals => {:fileName => supplemental_file.filename.to_s}) %></div>
+	        <div class="file_link">
+              <a href="<%=supplemental_file.url%>"><%=supplemental_file.filename%></a>
+	          <% if( supplemental_file.size != '') %>
+	 		    (<%=supplemental_file.size%> KB)
+	 	      <% end %>
+			</div>
           </td>
           <td><%=supplemental_file.description_label%></td>
-		  <% if( !@purl.embargo_date.nil? && @purl.embargo_date != '' ) %>
+		  <% if( !@purl.embargo_date.nil? and @purl.embargo_date != '' ) %>
             <td>Stanford only until <%=@purl.embargo_date%></td>
 		  <% end %>
         </tr>
