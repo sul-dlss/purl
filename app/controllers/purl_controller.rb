@@ -17,7 +17,7 @@ class PurlController < ApplicationController
     @purl.retrieve_metadata(params[:id])
 
     # validate that the id is ready for delivery
-    if( @purl.content == '' && !Dor::Util.is_shelved?(params[:id]) )
+    if( !Dor::Util.is_shelved?(params[:id]) )
       render :partial => "purl/unavailable", :layout => "application"
       return false
     end
