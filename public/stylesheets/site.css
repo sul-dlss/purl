@@ -96,7 +96,7 @@ dd img {vertical-align: middle;}
         
 #filelist {float: left; width: 65%;}    
 table#assets {border: 1px solid #787676; background-color: #FFFFFF;}
-#assets th {text-align: left; font-size: 11px; padding: 6px 10px; background-color: #555555; background-image: url(/images/availability-header.png); background-repeat: repeat-x; color: #ffffff; text-shadow: -1px -1px 0px #333333;
+#assets th {text-align: left; font-size: 11px; padding: 5px; background-color: #555555; background-image: url(/images/availability-header.png); background-repeat: repeat-x; color: #ffffff; text-shadow: -1px -1px 0px #333333;
 filter: dropshadow(color=#333333, offx=-1, offy=-1)}
 #assets td {padding: 5px; background-color: #ffffff; border-bottom: 1px solid #cccccc;}
 #assets a  {font-weight: bold;}
