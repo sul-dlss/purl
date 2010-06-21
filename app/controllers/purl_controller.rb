@@ -24,8 +24,8 @@ class PurlController < ApplicationController
 
     # render the landing page based on the format
     respond_to do |format|
-      format.xml { render :xml => @purl.xml }
       format.html
+      format.xml { render :xml => @purl.xml }
     end
   end
 
