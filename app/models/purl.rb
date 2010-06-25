@@ -3,7 +3,7 @@ require 'nokogiri'
 class Purl
 
   attr_accessor :dc, :properties, :identity, :content, :rights, :xml
-  attr_accessor :titles, :authors, :degreeconfyr, :cclicense, :cclicensetype, :catalog_key, :embargo_date
+  attr_accessor :titles, :authors, :degreeconfyr, :cclicense, :cclicensetype, :catalog_key, :read_group, :embargo_release_date
   attr_accessor :primary_files, :supplemental_files
 
   def retrieve_metadata(id) 
@@ -23,14 +23,20 @@ class Purl
   
   private
 
+  def extract_xpath_contents(doc,xpath)
+    elements = doc.root.xpath(xpath).collect(&:text)
+    elements.each do |elem|
+      return elem.to_s
+    end
+    ''
+  end
+
   # extract the relevant fields from the DC datastream
   def extract_dc_metadata(id,metadata)
     if( metadata != '' )
       doc = Nokogiri::XML(metadata)
-      elements = doc.root.xpath("//dcterms:title").collect(&:text)
-      @titles = elements.map {|e| e.to_s}       # titles
-      elements = doc.root.xpath("//dcterms:creator").collect(&:text)
-      @authors = elements.map {|e| e.to_s}      # authors
+      @titles = extract_xpath_contents(doc,"//dcterms:title")
+      @authors = extract_xpath_contents(doc,"//dcterms:creator")
     end
   end
   
@@ -38,12 +44,9 @@ class Purl
   def extract_properties_metadata(id,metadata)
     if( metadata != '' )
       doc = Nokogiri::XML(metadata)
-      elements = doc.root.xpath("//degreeconfyr").collect(&:text)
-      @degreeconfyr = elements.map {|e| e.to_s}
-      elements = doc.root.xpath("//cclicense").collect(&:text)
-      @cclicense = elements.map {|e| e.to_s}
-      elements = doc.root.xpath("//cclicensetype").collect(&:text)
-      @cclicensetype = elements.map {|e| e.to_s}
+      @degreeconfyr = extract_xpath_contents(doc,"//degreeconfyr")
+      @cclicense = extract_xpath_contents(doc,"//cclicense")
+      @cclicensetype = extract_xpath_contents(doc,"//cclicensetype")
     end
   end
 
@@ -51,10 +54,7 @@ class Purl
   def extract_identity_metadata(id,metadata)
     if( metadata != '' )
       doc = Nokogiri::XML(metadata)
-      elements = doc.root.xpath("//otherId[@name='catkey']").collect(&:text)
-      elements.each do |elem|
-        @catalog_key = elem.to_s
-      end
+      @catalog_key = extract_xpath_contents(doc,"//otherId[@name='catkey']")
     end
   end
 
@@ -104,9 +104,11 @@ class Purl
   def extract_rights_metadata(id,metadata)
     if( metadata != '' )
       doc = Nokogiri::XML(metadata)
-      elements = doc.root.xpath("//embargoReleaseDate").collect(&:text)
-      elements.each do |elem|
-        @embargo_date = elem.to_s
+      @read_group = extract_xpath_contents(doc,"//access[@type='read']/machine/group")
+      @embargo_release_date = extract_xpath_contents(doc,"//embargoReleaseDate")
+      if( !@embargo_release_date.nil? and @embargo_release_date != '' )
+        embargo_date_time = Time.parse(@embargo_release_date)
+        @embargo_release_date = '' unless embargo_date_time.future?
       end
     end
   end
