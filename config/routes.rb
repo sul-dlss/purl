@@ -1,6 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
   # The priority is based upon order of creation: first created -> highest priority.
 
+  # support a static grandfathered purl
+  map.connect '/ir:rs276tc2764', :controller => 'purl', :action => 'index'
+
+  # all other purls should map to these routes
   map.connect '/:id', :controller => 'purl', :action => 'index'
   map.connect '/:id.:format', :controller => 'purl', :action => 'index'
 
