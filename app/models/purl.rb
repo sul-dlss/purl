@@ -2,6 +2,8 @@ require 'nokogiri'
 
 class Purl
 
+  include PurlHelper
+
   attr_accessor :dc, :properties, :identity, :content, :rights, :xml
   attr_accessor :titles, :authors, :degreeconfyr, :cclicense, :cclicensetype, :catalog_key, :read_group, :embargo_release_date
   attr_accessor :primary_files, :supplemental_files
@@ -66,35 +68,39 @@ class Purl
       @primary_files = Array.new
       resource_xmls = doc.root.xpath("//resource[@type='main-augmented']")
       resource_xmls.each do |resource_xml|
+        resource_doc = Nokogiri::XML(resource_xml.to_s)
         resource = Resource.new
-        resource.objectId = resource_xml.xpath("@objectId").collect(&:text)
-        resource.type = resource_xml.xpath("@type").collect(&:text)
-        resource.mimetype = resource_xml.xpath("file/@mimetype").collect(&:text)
-        resource.size = resource_xml.xpath("file/@size").collect(&:text)
-        resource.shelve = resource_xml.xpath("file/@shelve").collect(&:text)
-        resource.preserve = resource_xml.xpath("file/@preserve").collect(&:text)
-        resource.deliver = resource_xml.xpath("file/@deliver").collect(&:text)
-        resource.description_label = resource_xml.xpath("attr[@name='label']").collect(&:text)
-        resource.filename = resource_xml.xpath("file/@id").collect(&:text)
-        resource.url = resource_xml.xpath("file/location[@type='url']").collect(&:text)
+        resource.objectId = extract_xpath_contents(resource_doc,"@objectId")
+        resource.type = extract_xpath_contents(resource_doc,"@type")
+        resource.mimetype = extract_xpath_contents(resource_doc,"file/@mimetype")
+        size = extract_xpath_contents(resource_doc,"file/@size")
+        resource.size = round_to(size.to_f/1000,2)
+        resource.shelve = extract_xpath_contents(resource_doc,"file/@shelve")
+        resource.preserve = extract_xpath_contents(resource_doc,"file/@preserve")
+        resource.deliver = extract_xpath_contents(resource_doc,"file/@deliver")
+        resource.description_label = extract_xpath_contents(resource_doc,"attr[@name='label']")
+        resource.filename = extract_xpath_contents(resource_doc,"file/@id")
+        resource.url = extract_xpath_contents(resource_doc,"file/location[@type='url']")
         @primary_files.push(resource)
       end
       # extract supplemental file metadata
       @supplemental_files = Array.new
       resource_xmls = doc.root.xpath("//resource[@type='supplement']")
       resource_xmls.each do |resource_xml|
+        resource_doc = Nokogiri::XML(resource_xml.to_s)
         resource = Resource.new
-        resource.objectId = resource_xml.xpath("@objectId").collect(&:text)
-        resource.type = resource_xml.xpath("@type").collect(&:text)
-        resource.mimetype = resource_xml.xpath("file/@mimetype").collect(&:text)
-        resource.size = resource_xml.xpath("file/@size").collect(&:text)
-        resource.shelve = resource_xml.xpath("file/@shelve").collect(&:text)
-        resource.preserve = resource_xml.xpath("file/@preserve").collect(&:text)
-        resource.deliver = resource_xml.xpath("file/@deliver").collect(&:text)
-        resource.sequence = resource_xml.xpath("@sequence").collect(&:text)
-        resource.description_label = resource_xml.xpath("attr[@name='label']").collect(&:text)
-        resource.filename = resource_xml.xpath("file/@id").collect(&:text)
-        resource.url = resource_xml.xpath("file/location[@type='url']").collect(&:text)
+        resource.objectId = extract_xpath_contents(resource_doc,"@objectId")
+        resource.type = extract_xpath_contents(resource_doc,"@type")
+        resource.mimetype = extract_xpath_contents(resource_doc,"file/@mimetype")
+        size = extract_xpath_contents(resource_doc,"file/@size")
+        resource.size = round_to(size.to_f/1000,2)
+        resource.shelve = extract_xpath_contents(resource_doc,"file/@shelve")
+        resource.preserve = extract_xpath_contents(resource_doc,"file/@preserve")
+        resource.deliver = extract_xpath_contents(resource_doc,"file/@deliver")
+        resource.sequence = extract_xpath_contents(resource_doc,"@sequence")
+        resource.description_label = extract_xpath_contents(resource_doc,"attr[@name='label']")
+        resource.filename = extract_xpath_contents(resource_doc,"file/@id")
+        resource.url = extract_xpath_contents(resource_doc,"file/location[@type='url']")
         @supplemental_files.push(resource)
       end
     end
