@@ -123,7 +123,12 @@ class Purl
     metadata = Dor::DorService.new.get_datastream_contents(id,datastream)
     if( metadata != nil )
       # remove the xml declaration if one exists
-      metadata.gsub(/\<\?xml version=\"1\.0\"\?>/,'')
+      metadata.gsub!(/\<\?xml version=\"1\.0\"\?>/,'')
+      # replace stacks urls with stacks-test urls in the contentMetadata depending on the environment
+      if( !RAILS_ENV.eql? 'production' )
+        metadata.gsub!('stacks.stanford.edu','stacks-test.stanford.edu')
+      end
+      return metadata
     else
       ''
     end
