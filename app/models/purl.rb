@@ -4,23 +4,29 @@ class Purl
 
   include PurlHelper
 
-  attr_accessor :dc, :properties, :identity, :content, :rights, :xml
-  attr_accessor :titles, :authors, :degreeconfyr, :cclicense, :cclicensetype, :catalog_key, :read_group, :embargo_release_date
-  attr_accessor :primary_files, :supplemental_files
+  attr_accessor :public_xml
+  attr_accessor :titles, :authors                           # dc
+  attr_accessor :degreeconfyr, :cclicense, :cclicensetype   # properites
+  attr_accessor :catalog_key                                # identity
+  attr_accessor :read_group, :embargo_release_date          # rights
+  attr_accessor :primary_files, :supplemental_files         # content
 
-  def retrieve_metadata(id) 
-    @dc = retrieve_datastream_contents(id,'DC')
-    @properties = retrieve_datastream_contents(id,'properties')
-    @identity = retrieve_datastream_contents(id,'identityMetadata')
-    @content = retrieve_datastream_contents(id,'contentMetadata')
-    @rights = retrieve_datastream_contents(id,'rightsMetadata')
-    @xml = "<objectType>#{@dc}#{@identity}#{@content}#{@rights}</objectType>"
+  # constants
+  # DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'
+  DOCUMENT_CACHE_ROOT = '/Users/dougkim/DLSS/projects/digital_stacks/development/document_cache'
 
-    extract_dc_metadata(id,@dc)
-    extract_properties_metadata(id,@properties)
-    extract_identity_metadata(id,@identity)
-    extract_content_metadata(id,@content)
-    extract_rights_metadata(id,@rights)
+  def extract_metadata(id)
+    dc = get_metadata(id,'dc')
+    properties = get_metadata(id,'properties')
+    identityMetadata = get_metadata(id,'identityMetadata')
+    contentMetadata = get_metadata(id,'contentMetadata')
+    rightsMetadata = get_metadata(id,'rightsMetadata')
+    @public_xml = get_metadata(id,'public')
+    extract_dc_metadata(id,dc)
+    extract_properties_metadata(id,properties)
+    extract_identity_metadata(id,identityMetadata)
+    extract_content_metadata(id,contentMetadata)
+    extract_rights_metadata(id,rightsMetadata)
   end
   
   private
@@ -33,7 +39,7 @@ class Purl
     ''
   end
 
-  # extract the relevant fields from the DC datastream
+  # extract the relevant fields from the dc metadata
   def extract_dc_metadata(id,metadata)
     if( metadata != '' )
       doc = Nokogiri::XML(metadata)
@@ -42,7 +48,7 @@ class Purl
     end
   end
   
-  # extract the relevant fields from the properties datastream
+  # extract the relevant fields from the properties metadata
   def extract_properties_metadata(id,metadata)
     if( metadata != '' )
       doc = Nokogiri::XML(metadata)
@@ -52,7 +58,7 @@ class Purl
     end
   end
 
-  # extract the relevant fields from the identityMetadata datastream
+  # extract the relevant fields from the identityMetadata metadata
   def extract_identity_metadata(id,metadata)
     if( metadata != '' )
       doc = Nokogiri::XML(metadata)
@@ -60,7 +66,7 @@ class Purl
     end
   end
 
-  # extract the relevant fields from the contentMetadata datastream
+  # extract the relevant fields from the content metadata
   def extract_content_metadata(id,metadata)
     if( metadata != '' )
       doc = Nokogiri::XML(metadata)
@@ -106,7 +112,7 @@ class Purl
     end
   end
 
-  # extract the relevant fields from the rightsMetadata datastream
+  # extract the relevant fields from the rights metadata
   def extract_rights_metadata(id,metadata)
     if( metadata != '' )
       doc = Nokogiri::XML(metadata)
@@ -119,19 +125,21 @@ class Purl
     end
   end
 
-  def retrieve_datastream_contents(id,datastream)
-    metadata = Dor::DorService.new.get_datastream_contents(id,datastream)
-    if( metadata != nil )
-      # remove the xml declaration if one exists
-      metadata.gsub!(/\<\?xml version=\"1\.0\"\?>/,'')
-      # replace stacks urls with stacks-test urls in the contentMetadata depending on the environment
-      if( !RAILS_ENV.eql? 'production' )
-        metadata.gsub!('stacks.stanford.edu','stacks-test.stanford.edu')
+  # retrieve the given document from the document cache for the given object identifier
+  def get_metadata(id,doc_name)
+    pair_tree = create_pair_tree(id)
+    unless( pair_tree.nil? )
+      file = File.open(File.join(DOCUMENT_CACHE_ROOT,pair_tree,doc_name),"r")
+      unless( file.nil? )
+        contents = file.read
+        # replace stacks urls with stacks-test urls in the contentMetadata depending on the environment
+        if( !RAILS_ENV.eql? 'production' )
+          contents.gsub!('stacks.stanford.edu','stacks-test.stanford.edu')
+        end
+        return contents
       end
-      return metadata
-    else
-      ''
     end
+    ''
   end
 
 end

@@ -8,7 +8,7 @@ class PurlController < ApplicationController
   def index
 
     @purl = Purl.new
-    @purl.retrieve_metadata(params[:id])
+    @purl.extract_metadata(params[:id])
 
     # validate that the id is ready for delivery
     if( !Dor::Util.is_shelved?(params[:id]) )
@@ -19,7 +19,7 @@ class PurlController < ApplicationController
     # render the landing page based on the format
     respond_to do |format|
       format.html
-      format.xml { render :xml => @purl.xml }
+      format.xml { render :xml => @purl.public_xml }
     end
   end
 
