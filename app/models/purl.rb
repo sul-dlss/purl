@@ -15,8 +15,7 @@ class Purl
   attr_accessor :primary_files, :supplemental_files         # content
 
   # constants
-  # DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'
-  DOCUMENT_CACHE_ROOT = '/Users/dougkim/DLSS/projects/digital_stacks/development/document_cache'
+  DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'
 
   def initialize(id)
     @pid = id
