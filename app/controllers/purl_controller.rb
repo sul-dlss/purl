@@ -7,11 +7,10 @@ class PurlController < ApplicationController
   # entry point into the application
   def index
 
-    @purl = Purl.new
-    @purl.extract_metadata(params[:id])
+    @purl = Purl.new(params[:id])
 
-    # validate that the id is ready for delivery
-    if( !Dor::Util.is_shelved?(params[:id]) )
+    # validate that the metadata is ready for delivery
+    if( !@purl.is_ready? )
       render :partial => "purl/unavailable", :layout => "application"
       return false
     end

@@ -1,9 +1,12 @@
 require 'nokogiri'
 
+require "dor/util"
+
 class Purl
 
   include PurlHelper
 
+  attr_accessor :pid
   attr_accessor :public_xml
   attr_accessor :titles, :authors                           # dc
   attr_accessor :degreeconfyr, :cclicense, :cclicensetype   # properites
@@ -14,6 +17,11 @@ class Purl
   # constants
   # DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'
   DOCUMENT_CACHE_ROOT = '/Users/dougkim/DLSS/projects/digital_stacks/development/document_cache'
+
+  def initialize(id)
+    @pid = id
+    extract_metadata(@pid)
+  end
 
   def extract_metadata(id)
     dc = get_metadata(id,'dc')
@@ -27,6 +35,13 @@ class Purl
     extract_identity_metadata(id,identityMetadata)
     extract_content_metadata(id,contentMetadata)
     extract_rights_metadata(id,rightsMetadata)
+  end
+  
+  def is_ready?
+    if( @public_xml == '' || @public_xml.nil? || !Dor::Util.is_shelved?(@pid) )
+      return false
+    end
+    return true
   end
   
   private
@@ -129,8 +144,9 @@ class Purl
   def get_metadata(id,doc_name)
     pair_tree = create_pair_tree(id)
     unless( pair_tree.nil? )
-      file = File.open(File.join(DOCUMENT_CACHE_ROOT,pair_tree,doc_name),"r")
-      unless( file.nil? )
+      file_path = File.join(DOCUMENT_CACHE_ROOT,pair_tree,doc_name)
+      if( File::exists? file_path )
+        file = File.new(file_path,'r')
         contents = file.read
         # replace stacks urls with stacks-test urls in the contentMetadata depending on the environment
         if( !RAILS_ENV.eql? 'production' )
