@@ -14,9 +14,6 @@ class Purl
   attr_accessor :read_group, :embargo_release_date          # rights
   attr_accessor :primary_files, :supplemental_files         # content
 
-  # constants
-  DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'
-
   def initialize(id)
     @pid = id
     extract_metadata(@pid)
@@ -93,8 +90,7 @@ class Purl
         resource.objectId = extract_xpath_contents(resource_doc,"@objectId")
         resource.type = extract_xpath_contents(resource_doc,"@type")
         resource.mimetype = extract_xpath_contents(resource_doc,"file/@mimetype")
-        size = extract_xpath_contents(resource_doc,"file/@size")
-        resource.size = round_to(size.to_f/1000,2)
+        resource.size = extract_xpath_contents(resource_doc,"file/@size")
         resource.shelve = extract_xpath_contents(resource_doc,"file/@shelve")
         resource.preserve = extract_xpath_contents(resource_doc,"file/@preserve")
         resource.deliver = extract_xpath_contents(resource_doc,"file/@deliver")
@@ -112,8 +108,7 @@ class Purl
         resource.objectId = extract_xpath_contents(resource_doc,"@objectId")
         resource.type = extract_xpath_contents(resource_doc,"@type")
         resource.mimetype = extract_xpath_contents(resource_doc,"file/@mimetype")
-        size = extract_xpath_contents(resource_doc,"file/@size")
-        resource.size = round_to(size.to_f/1000,2)
+        resource.size = extract_xpath_contents(resource_doc,"file/@size")
         resource.shelve = extract_xpath_contents(resource_doc,"file/@shelve")
         resource.preserve = extract_xpath_contents(resource_doc,"file/@preserve")
         resource.deliver = extract_xpath_contents(resource_doc,"file/@deliver")

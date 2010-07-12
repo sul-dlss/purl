@@ -31,3 +31,6 @@ FEDORA_URL = 'https://fedoraAdmin:1y83r73am@dor-prod.stanford.edu/fedora'
 CERT_FILE = File.join(RAILS_ROOT, "config", "certs", "etd-prod.crt")
 KEY_FILE = File.join(RAILS_ROOT, "config", "certs", "etd-prod.key")
 KEY_PASS = 'etdprod'
+
+# document cache location
+DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'

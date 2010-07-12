@@ -23,3 +23,5 @@ CERT_FILE = File.join(RAILS_ROOT, "config", "certs", "ls-test.crt")
 KEY_FILE = File.join(RAILS_ROOT, "config", "certs", "ls-test.key")
 KEY_PASS = 'lstest'
 
+# document cache location
+DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'
