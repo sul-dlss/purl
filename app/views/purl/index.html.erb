@@ -33,7 +33,7 @@
 	        <div class="file_link">
 		      <a href="<%=primary_file.url%>"><%=primary_file.filename%></a>
 	          <% if( primary_file.size != '') %>
-	 		    (<%=primary_file.size%> KB)
+	 		    (<%=number_to_human_size(primary_file.size,:precision => 1)%>)
 	 	      <% end %>
     		</div>
 		  </td>
@@ -59,7 +59,7 @@
 	        <div class="file_link">
               <a href="<%=supplemental_file.url%>"><%=supplemental_file.filename%></a>
 	          <% if( supplemental_file.size != '') %>
-	 		    (<%=supplemental_file.size%> KB)
+	 		    (<%=number_to_human_size(supplemental_file.size,:precision => 1)%>)
 	 	      <% end %>
 			</div>
           </td>
