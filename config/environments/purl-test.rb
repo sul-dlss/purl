@@ -18,6 +18,10 @@ config.action_mailer.raise_delivery_errors = false
 
 # FEDORA_URL = 'https://dor-test.stanford.edu/fedora'
 # FEDORA_URL = 'http://localhost:8983/fedora'
+module Dor
+  WF_URI = 'http://lyberservices-test.stanford.edu/workflow'
+end
+
 FEDORA_URL = 'https://fedoraAdmin:fedoraAdmin@dor-test.stanford.edu/fedora'
 CERT_FILE = File.join(RAILS_ROOT, "config", "certs", "ls-test.crt")
 KEY_FILE = File.join(RAILS_ROOT, "config", "certs", "ls-test.key")

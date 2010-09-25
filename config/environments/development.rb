@@ -16,6 +16,10 @@ config.action_controller.perform_caching             = false
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
 
+module Dor
+  WF_URI = 'http://lyberservices-dev.stanford.edu/workflow'
+end
+
 FEDORA_URL = 'https://fedoraAdmin:1y83r73am@dor-prod.stanford.edu/fedora'
 CERT_FILE = File.join(RAILS_ROOT, "config", "certs", "etd-prod.crt")
 KEY_FILE = File.join(RAILS_ROOT, "config", "certs", "etd-prod.key")

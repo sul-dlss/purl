@@ -27,6 +27,10 @@ config.action_view.cache_template_loading            = true
 # Enable threaded mode
 # config.threadsafe!
 
+module Dor
+  WF_URI = 'http://lyberservices-prod.stanford.edu/workflow'
+end
+
 FEDORA_URL = 'https://fedoraAdmin:1y83r73am@dor-prod.stanford.edu/fedora'
 CERT_FILE = File.join(RAILS_ROOT, "config", "certs", "etd-prod.crt")
 KEY_FILE = File.join(RAILS_ROOT, "config", "certs", "etd-prod.key")
