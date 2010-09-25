@@ -1,4 +1,5 @@
 require "nokogiri"
+require 'dor/workflow_service'
 
 module Dor
 
