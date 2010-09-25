@@ -39,17 +39,17 @@ module Dor
   end
   
   # retrieve workflow status
-  def WorkflowService.get_workflow_status(druid, workflow, process)
-    begin
-      url = "#{FEDORA_URL}/objects/druid:#{druid}/datastreams/#{workflow}/content"
-      workflow_md = Connection.get(url)
-      if( workflow_md != '' )
-        doc = Nokogiri::XML(workflow_md)
-        return doc.root.xpath("//process[@name='#{process}']/@status").collect(&:text)
-      end
-    rescue
-      ''
-    end
+  # TODO: use lybercore
+  def WorkflowService.get_workflow_status(repo, druid, workflow, process)
+      uri = ''
+      uri << Dor::WF_URI << '/' << repo << '/objects/' << druid << '/workflows/' << workflow
+      workflow_md = Dor::Connection.get(uri)
+
+      doc = Nokogiri::XML(workflow_md)
+      return '' if(doc.root.nil?)
+      
+      status = doc.root.at_xpath("//process[@name='#{process}']/@status").content
+      return status
   end
     
   end

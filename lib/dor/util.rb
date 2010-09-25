@@ -40,7 +40,7 @@ module Dor
     # based on the 'shelve' workflow status
     #
     def self.is_shelved?(id)
-      shelve_status = WorkflowService.get_workflow_status(id,'etdAccessionWF','shelve')
+      shelve_status = WorkflowService.get_workflow_status('dor', 'druid:' + id,'etdAccessionWF','shelve')
       if( "#{shelve_status}".eql? "completed" )
         return true
       end
