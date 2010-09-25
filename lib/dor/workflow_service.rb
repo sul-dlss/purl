@@ -4,6 +4,7 @@ require 'uri'
 require 'cgi'
 require 'rexml/document'
 require 'nokogiri'
+require 'dor/connection'
 
 include REXML
 
