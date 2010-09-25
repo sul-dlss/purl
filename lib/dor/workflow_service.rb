@@ -39,17 +39,18 @@ module Dor
   end
   
   # retrieve workflow status
-  def WorkflowService.get_workflow_status(druid, workflow, process)
-    begin
-      url = "#{FEDORA_URL}/objects/druid:#{druid}/datastreams/#{workflow}/content"
-      workflow_md = Connection.get(url)
-      if( workflow_md != '' )
-        doc = Nokogiri::XML(workflow_md)
-        return doc.root.xpath("//process[@name='#{process}']/@status").collect(&:text)
-      end
-    rescue
-      ''
-    end
+  # Copied from lyber-core > 0.9.2
+  # TODO: need to use lyber-core
+  def WorkflowService.get_workflow_status(repo, druid, workflow, process)
+      uri = ''
+      uri << Dor::WF_URI << '/' << repo << '/objects/' << druid << '/workflows/' << workflow
+      workflow_md = LyberCore::Connection.get(uri)
+
+      doc = Nokogiri::XML(workflow_md)
+      raise Exception.new("Unable to parse response:\n#{workflow_md}") if(doc.root.nil?)
+      
+      status = doc.root.at_xpath("//process[@name='#{process}']/@status").content
+      return status
   end
     
   end
