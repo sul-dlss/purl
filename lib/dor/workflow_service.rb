@@ -38,19 +38,5 @@ module Dor
     Dor::Connection.put(uri, process_xml) {|response| true}
   end
   
-  # retrieve workflow status
-  # TODO: use lybercore
-  def WorkflowService.get_workflow_status(repo, druid, workflow, process)
-      uri = ''
-      uri << Dor::WF_URI << '/' << repo << '/objects/' << druid << '/workflows/' << workflow
-      workflow_md = Dor::Connection.get(uri)
-
-      doc = Nokogiri::XML(workflow_md)
-      return '' if(doc.root.nil?)
-      
-      status = doc.root.at_xpath("//process[@name='#{process}']/@status").content
-      return status
-  end
-    
   end
 end

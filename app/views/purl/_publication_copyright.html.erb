@@ -1,6 +1,6 @@
-<div>&copy; <%=@purl.degreeconfyr.to_s%> by <%=Dor::Util.reverse_name(@purl.authors.to_s)%></div>
-<div style="margin: 10px 0px 0px 0px;">
-  <% if !@purl.cclicense.to_s.nil? and !@purl.cclicense.to_s.empty? %>
+<% if !@purl.cclicense.to_s.nil? and !@purl.cclicense.to_s.empty? %>
+  <div>&copy; <%=@purl.degreeconfyr.to_s%> by <%=Dor::Util.reverse_name(@purl.authors.to_s)%></div>
+  <div style="margin: 10px 0px 0px 0px;">
     <% if @purl.cclicense.to_s.eql? '1' %>
       <div class="cc_by">
         <a href="http://creativecommons.org/licenses/by/3.0/" _target="blank">This work is licensed under a Creative Commons Attribution 3.0 Unported License</a>
@@ -28,5 +28,5 @@
     <% else %>
        <%= @purl.cclicensetype.to_s %>
     <% end %>
-  <% end %>
-</div>
+  </div>
+<% end %>
