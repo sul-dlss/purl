@@ -2,6 +2,7 @@
 <% unless( @purl.titles.nil? ) %>
   <h2><%=@purl.titles%></h2>
 <% end %>
+
 <dl>
   <% unless @purl.authors.nil? or @purl.authors.empty? %>
     <dt>Author:</dt>
@@ -10,12 +11,14 @@
   <dt>Publisher:</dt>
   <dd>Stanford University, 2010</dd>
 </dl>
+
 <div id="metadata">
   <% if( @purl.catalog_key != '' ) %>
     <div class="swlink">&raquo; <a href="http://searchworks.stanford.edu/view/<%=@purl.catalog_key%>">View in SearchWorks</a></div>
   <% end %>
   <%= render(:partial => "purl/publication_copyright" ) %>
 </div>
+
 <div id="filelist">         
   <table id="assets">
     <tr>

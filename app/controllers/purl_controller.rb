@@ -17,8 +17,16 @@ class PurlController < ApplicationController
 
     # render the landing page based on the format
     respond_to do |format|
-      format.html
-      format.xml { render :xml => @purl.public_xml }
+      format.html {
+        # if the object is an image, render image specific layout
+        if (@purl.is_image?)
+          render :partial => "purl/image/contents", :layout => "purl_image"
+        end        
+      }
+      
+      format.xml { 
+        render :xml => @purl.public_xml 
+      }
     end
   end
 
