@@ -1,0 +1,338 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+/* remember to highlight inserts somehow! */
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* -- end css reset -- */
+
+/*  Image Stacks  */
+
+a { color: #00388e /*#2E4F81*/; text-decoration:none; }
+a:hover { border-bottom: 1px dotted; }
+a:active { color: #4f4f4f; }
+
+body { 
+  background: #474747 url(../images/purl-image-background.png) top left repeat-x;
+  color: #000000; 
+	font: 11px/1.3em "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+	text-align: center; 
+}
+
+h1 {
+	color: #f6f6f6; 
+	filter: dropshadow(color=#333333, offx=-1, offy=-1); 
+	font: normal normal normal 1.9em "Myriad Pro", "Droid Sans", "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;  
+	letter-spacing: 1px; 
+	text-shadow: -1px -1px 0px #333; 
+}
+
+h2 { 
+  font-size: 1.4em; 
+	font-weight: normal; 
+	line-height: 1.2em; 
+	margin: 0 0 .5em 0; 
+}
+
+h3 { 
+  font-size: 1.1em; 
+	font-weight: normal; 
+}
+
+#container { 
+	margin: 0 auto;
+  overflow: hidden;
+  position: relative; 
+	text-align: left; 
+	width: 90%; 
+}
+
+#banner { 
+  background: url('../images/sulair_rosette_30x30.png') top left no-repeat; 
+	height: 35px; 
+	margin: 8px 0 4px 0; 
+	padding-left: 40px; 
+}
+
+#banner h1 { 
+  padding-top: 6px; 
+}
+
+#contents { 
+  position: relative;
+  width: 100%;
+}
+	
+#panes-container {
+  overflow: auto; 
+  position: relative; 
+  width: 200%; 
+}
+
+#pane-toc-metadata {
+  background: #fff url(../images/contents_bg.png) top left repeat-x;
+  height: auto;
+  overflow: auto;
+  position: absolute;
+  padding: 0 0 20px 0;
+  width: 100%;
+}
+
+#pane-img-viewer {
+  background: #fff url(../images/contents_bg.png) top left repeat-x;
+  overflow: auto;
+  position: absolute;
+  width: 100%;
+}
+
+#title-metadata {
+  padding: 20px 30px;
+}
+
+#title-metadata dl { 
+  margin: 15px 0; 
+}
+
+#title-metadata dt { 
+  clear: both; 
+  color: #555555; 
+  float: left; 
+  padding: 2px 0; 
+  width: 10em; 
+} 
+
+#title-metadata dd { 
+  margin-left: 8em; 
+  padding: 2px 0px; 
+} 
+
+#toc-and-metadata {
+  clear: left;
+  padding: 0 30px;
+}
+
+ol#toc {
+  float: left;
+  width: 70%;
+}
+
+ol#toc > li {
+  background: #fff url('../images/item-header-bg.png') left 2px repeat-x;   
+  border: 1px solid #ccc;
+  margin: 5px 5px 0 0;
+  overflow: auto;
+  width: 350px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+a.item-header {
+  background: transparent url('../images/icon-show.png') 328px 16px no-repeat;
+  color: #000;   
+  display: block; 
+  outline: none;
+  overflow: auto; 
+  padding: 5px 5px 0 5px;
+}
+
+ol#toc > li > a.item-header-hide {
+  background-image: url('../images/icon-hide.png');
+}
+
+a.item-header:hover {
+  border-width: 0;
+}
+
+.sq-thumbnail-img {
+  float: left;  
+  padding: 2px 2px 5px 2px;   
+  height: 30px;
+  width: 30px;
+}
+
+.img-item-label-container {
+  float: left;
+  margin-top: 10px;  
+  text-align: center;
+  width: 270px;
+}
+
+.icon-show-hide {
+  float: right;
+  width: 20px;
+}
+
+.icon-show-hide img {
+  border-width: 0;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.icon-show-hide img:hover, .sq-thumbnail img:hover {
+  cursor: pointer;
+}
+
+.img-title {
+  color: #333;
+}
+
+.img-options ul {
+  border-top: 1px solid #ddd;
+  clear: both;
+  list-style-type: none;
+  padding: 10px 5px;
+  margin-bottom: 10px;
+}
+
+.img-options li {
+  float: left;
+  line-height: 1.5em;
+  width: 25%;
+  text-align: center;
+}
+
+.img-size {
+  color: #777;
+  font-size: .9em;
+}
+
+.full-img-box {
+  clear: both;
+  padding: 10px 0 5px 0;
+  text-align: center;
+}
+
+.full-img-box img {
+  /*background-color: #f6f6f6;
+  border: 1px solid #ccc;*/
+  padding: 5px;
+}
+
+.img-item-label {
+  color: #00388e;
+  cursor: pointer;
+}
+
+.img-item-label:hover {
+  border-bottom: 1px dotted;
+  cursor: pointer;
+}  
+
+#links-rights {
+  border-left: 1px dotted #aaa;
+  float: left;
+  padding: 18px 0 18px 18px;
+  width: 27%
+}
+
+#links-rights dl { margin: 0 0 1em 0em; }
+#links-rights dt { clear: both; float: left; color: #555555; padding: 5px 0 0 0; margin-top: 5px; } 
+#links-rights dd { clear: both; float: left; padding: 2px 0 2px 0; } 
+
+#img-viewfinder {
+  background: url('../images/loader.gif') 30px 30px no-repeat;
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+
+#img-canvas {
+  margin: 10px;
+}
+
+#img-viewer-links {
+  border-bottom: 1px dotted #aaa;
+  overflow: auto;
+  padding: 20px 20px 0 20px;
+}
+
+#img-viewer-links ul {
+  float: left;
+  padding-bottom: 10px;
+}
+
+#img-viewer-links ul li {
+  float: left;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.viewer-nav-links {
+  background-color: #A20001;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 10px;
+  padding: 4px 8px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;  
+}
+
+.available-sizes {
+  color: #000;
+  font-weight: bold;
+  margin-right: 10px;
+  padding: 4px 8px;
+}
+
+.viewer-nav-link-disable {
+  background-color: #aaa;
+  cursor: default;
+}
+
+.viewer-nav-links a:link, .viewer-nav-links a:active, .viewer-nav-links a:visited { 
+  color: #fff;
+}
+
+#footer { 
+  clear: both; 
+  color: #ffffff; 
+  display: none;
+  margin: 20px 0 35px 0; 
+  text-align: center; 
+}
+
+#footer a, #footer a:hover { 
+  color: #ffffff;
+  text-decoration: none; 
+}
+
+#footer a:hover { 
+  border-bottom: 1px dotted #ccc; 
+}
+
+.obscure {
+  height: 1px;
+  margin-left: -9999px;
+  position: absolute;
+  width: 1px;
+}
+
