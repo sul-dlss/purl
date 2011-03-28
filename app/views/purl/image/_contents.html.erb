@@ -1,0 +1,31 @@
+<div id="pane-toc-metadata">
+	
+  <div id="title-metadata">             
+		<% unless (@purl.titles.nil?) %>
+		  <h2><%= @purl.titles %></h2>
+		<% end %>
+
+    <dl>
+	    <% unless (@purl.authors.nil?) %>
+        <dt>Creator :</dt><dd><%= @purl.authors %></dd>
+      <% end %>
+
+	    <% unless (@purl.source.nil?) %>
+        <dt>Source :</dt><dd><%= @purl.source %></dd>
+      <% end %>
+
+	    <% unless (@purl.date.nil?) %>
+        <dt>Date :</dt><dd><%= @purl.date %></dd>
+      <% end %>
+
+	    <% unless (@purl.relation.nil?) %>
+        <dt>Collection :</dt><dd><%= @purl.relation %></dd>
+      <% end %>
+    </dl>          
+  </div>
+
+  <%= render :partial => 'purl/image/toc_and_metadata' %>
+</div>
+
+
+<%= render :partial => 'purl/image/pane_img_viewer' %>
