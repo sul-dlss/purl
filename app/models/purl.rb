@@ -8,11 +8,11 @@ class Purl
 
   attr_accessor :pid
   attr_accessor :public_xml
-  attr_accessor :titles, :authors                           # dc
-  attr_accessor :degreeconfyr, :cclicense, :cclicensetype   # properites
-  attr_accessor :catalog_key                                # identity
-  attr_accessor :read_group, :embargo_release_date          # rights
-  attr_accessor :deliverable_files                          # content
+  attr_accessor :titles, :authors, :type, :source, :date, :relation # dc
+  attr_accessor :degreeconfyr, :cclicense, :cclicensetype           # properites
+  attr_accessor :catalog_key                                        # identity
+  attr_accessor :read_group, :embargo_release_date                  # rights
+  attr_accessor :deliverable_files                                  # content
 
   def initialize(id)
     @pid = id
@@ -26,6 +26,7 @@ class Purl
     contentMetadata = get_metadata(id,'contentMetadata')
     rightsMetadata = get_metadata(id,'rightsMetadata')
     @public_xml = get_metadata(id,'public')
+    
     extract_dc_metadata(id,dc)
     extract_properties_metadata(id,properties)
     extract_identity_metadata(id,identityMetadata)
@@ -38,6 +39,14 @@ class Purl
       return false
     end
     return true
+  end
+  
+  # check if this object is of type image
+  def is_image?
+    if !@type.nil? && @type =~ /Image/i
+      return true
+    end  
+    return false
   end
   
   private
@@ -55,8 +64,13 @@ class Purl
     if( metadata != '' )
       doc = Nokogiri::XML(metadata)
       doc.remove_namespaces!
-      @titles = extract_xpath_contents(doc,"title")
-      @authors = extract_xpath_contents(doc,"creator")
+      
+      @titles   = extract_xpath_contents(doc,"title")
+      @authors  = extract_xpath_contents(doc,"creator")
+      @type     = extract_xpath_contents(doc,"type")
+      @source   = extract_xpath_contents(doc,"source")
+      @date     = extract_xpath_contents(doc,"date")
+      @relation = extract_xpath_contents(doc,"relation").gsub /^Collection\s*:\s*/, ''
     end
   end
   
@@ -82,27 +96,37 @@ class Purl
   def extract_content_metadata(id,metadata)
     if( metadata != '' )
       doc = Nokogiri::XML(metadata)
+      
       # extract deliverable files
       @deliverable_files = Array.new
       resource_xmls = doc.root.xpath("//resource")
+      
       resource_xmls.each do |resource_xml|
         resource_doc = Nokogiri::XML(resource_xml.to_s)
         files_xmls = resource_doc.xpath("//file[@deliver='yes']")
+        
         files_xmls.each do |file_xml|
           file_doc = Nokogiri::XML(file_xml.to_s)
           resource = Resource.new
+          
           resource.objectId = extract_xpath_contents(resource_doc,"@objectId")
-          resource.type = extract_xpath_contents(resource_doc,"@type")
+          resource.type     = extract_xpath_contents(resource_doc,"@type")
           resource.description_label = extract_xpath_contents(resource_doc,"attr[@name='label']")
           resource.mimetype = extract_xpath_contents(file_doc,"@mimetype")
-          resource.size = extract_xpath_contents(file_doc,"@size")
-          resource.shelve = extract_xpath_contents(file_doc,"@shelve")
+          resource.size     = extract_xpath_contents(file_doc,"@size")
+          resource.shelve   = extract_xpath_contents(file_doc,"@shelve")
           resource.preserve = extract_xpath_contents(file_doc,"@preserve")
-          resource.deliver = extract_xpath_contents(file_doc,"@deliver")
+          resource.deliver  = extract_xpath_contents(file_doc,"@deliver")
           resource.filename = extract_xpath_contents(file_doc,"@id")
-          resource.url = extract_xpath_contents(file_doc,"location[@type='url']")
+          resource.url      = extract_xpath_contents(file_doc,"location[@type='url']")
+          
+          resource.imagesvc = extract_xpath_contents(file_doc,"location[@type='imagesvc']")
+          resource.width    = extract_xpath_contents(file_doc,"imageData/@width")
+          resource.height   = extract_xpath_contents(file_doc,"imageData/@height")
+
           @deliverable_files.push(resource)
         end
+        
       end
     end
   end

@@ -26,4 +26,25 @@ module PurlHelper
     end
   end
 
+  # get id from JP2 filename
+  def get_jp2_id(filename)
+    filename = filename.gsub /\.jp2$/i, ''
+    return filename
+  end
+
+  # construct JSON array for delivering image objects
+  def get_image_json_array
+    json_array = Array.new
+    
+    @purl.deliverable_files.each do |deliverable_file|
+      json_array.push(
+        "{ \"id\": \"" +  get_jp2_id(deliverable_file.filename.to_s) + "\"," + 
+	      "\"width\": " + deliverable_file.width.to_s + "," + 
+	      "\"height\": " + deliverable_file.height.to_s + 
+	      "}")
+    end   
+    
+    return json_array.join(',')
+  end
+
 end

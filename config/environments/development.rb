@@ -26,4 +26,5 @@ KEY_FILE = File.join(RAILS_ROOT, "config", "certs", "etd-prod.key")
 KEY_PASS = 'etdprod'
 
 # document cache location
-DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'
+##DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'
+DOCUMENT_CACHE_ROOT = '/Users/jchris/work/document_cache'
