@@ -3,9 +3,9 @@
   <h2><%=@purl.titles%></h2>
 <% end %>
 <dl>
-  <dt>Author:</dt>
-  <% unless( @purl.authors.nil? ) %>
-    <dd><%=Dor::Util.reverse_name(@purl.authors)%></dd>
+  <% unless @purl.authors.nil? or @purl.authors.empty? %>
+    <dt>Author:</dt>
+    <dd><%=@purl.authors%></dd>
   <% end %>
   <dt>Publisher:</dt>
   <dd>Stanford University, 2010</dd>
@@ -25,47 +25,21 @@
         <th>Access</th>
       <% end %>
     </tr>
-    <% unless( @purl.primary_files.nil? ) %>
-      <% @purl.primary_files.each do |primary_file| %>
+    <% unless( @purl.deliverable_files.nil? ) %>
+      <% @purl.deliverable_files.each do |deliverable_file| %>
         <tr>
 	      <td class="file">
-	        <div class="file_icon"><%= render(:partial => "purl/fileIcon", :locals => {:fileName => primary_file.filename.to_s}) %></div>
+	        <div class="file_icon"><%= render(:partial => "purl/fileIcon", :locals => {:fileName => deliverable_file.filename.to_s}) %></div>
 	        <div class="file_link">
-		      <a href="<%=primary_file.url%>"><%=primary_file.filename%></a>
-	          <% if( primary_file.size != '') %>
-	 		    (<%=number_to_human_size(primary_file.size,:precision => 1)%>)
+		      <a href="<%=deliverable_file.url%>"><%=deliverable_file.filename%></a>
+	          <% if( deliverable_file.size != '') %>
+	 		    (<%=number_to_human_size(deliverable_file.size,:precision => 1)%>)
 	 	      <% end %>
     		</div>
 		  </td>
-          <td class="description"><%=primary_file.description_label%></td>
+          <td class="description"><%=deliverable_file.description_label%></td>
 		  <% if( !@purl.read_group.nil? and @purl.read_group != '') %>
             <td class="access">
-	          <% if( @purl.read_group == 'stanford' ) %>
-	            Stanford only 
-			  <% end %>
-	          <% if( !@purl.embargo_release_date.nil? and @purl.embargo_release_date != '' ) %>
-	            until <%=@purl.embargo_release_date%>
-			  <% end %>
-	        </td>
-		  <% end %>
-        </tr>
-      <% end %>
-    <% end %>
-    <% unless( @purl.supplemental_files.nil? ) %>
-      <% @purl.supplemental_files.each do |supplemental_file| %>
-        <tr>
-	      <td>
-	        <div class="file_icon"><%= render(:partial => "purl/fileIcon", :locals => {:fileName => supplemental_file.filename.to_s}) %></div>
-	        <div class="file_link">
-              <a href="<%=supplemental_file.url%>"><%=supplemental_file.filename%></a>
-	          <% if( supplemental_file.size != '') %>
-	 		    (<%=number_to_human_size(supplemental_file.size,:precision => 1)%>)
-	 	      <% end %>
-			</div>
-          </td>
-          <td><%=supplemental_file.description_label%></td>
-		  <% if( !@purl.read_group.nil? and @purl.read_group != '') %>
-            <td>
 	          <% if( @purl.read_group == 'stanford' ) %>
 	            Stanford only 
 			  <% end %>
