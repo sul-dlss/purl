@@ -18,6 +18,10 @@
         <dt>Date :</dt><dd><%= @purl.date %></dd>
       <% end %>
 
+	    <% unless (@purl.description.nil?) %>
+        <dt>Description :</dt><dd><%= @purl.description %></dd>
+      <% end %>
+
 	    <% unless (@purl.relation.nil?) %>
         <dt>Collection :</dt><dd><%= @purl.relation %></dd>
       <% end %>

@@ -8,11 +8,11 @@ class Purl
 
   attr_accessor :pid
   attr_accessor :public_xml
-  attr_accessor :titles, :authors, :type, :source, :date, :relation # dc
-  attr_accessor :degreeconfyr, :cclicense, :cclicensetype           # properites
-  attr_accessor :catalog_key                                        # identity
-  attr_accessor :read_group, :embargo_release_date                  # rights
-  attr_accessor :deliverable_files                                  # content
+  attr_accessor :titles, :authors, :type, :source, :date, :relation, :description # dc
+  attr_accessor :degreeconfyr, :cclicense, :cclicensetype  # properites
+  attr_accessor :catalog_key                               # identity
+  attr_accessor :read_group, :embargo_release_date         # rights
+  attr_accessor :deliverable_files                         # content
 
   def initialize(id)
     @pid = id
@@ -65,12 +65,13 @@ class Purl
       doc = Nokogiri::XML(metadata)
       doc.remove_namespaces!
       
-      @titles   = extract_xpath_contents(doc,"title")
-      @authors  = extract_xpath_contents(doc,"creator")
-      @type     = extract_xpath_contents(doc,"type")
-      @source   = extract_xpath_contents(doc,"source")
-      @date     = extract_xpath_contents(doc,"date")
-      @relation = extract_xpath_contents(doc,"relation").gsub /^Collection\s*:\s*/, ''
+      @titles      = extract_xpath_contents(doc,"title")
+      @authors     = extract_xpath_contents(doc,"creator")
+      @type        = extract_xpath_contents(doc,"type")
+      @source      = extract_xpath_contents(doc,"source")
+      @date        = extract_xpath_contents(doc,"date")
+      @description = extract_xpath_contents(doc,"description")
+      @relation    = extract_xpath_contents(doc,"relation").gsub /^Collection\s*:\s*/, ''
     end
   end
   
