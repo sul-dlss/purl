@@ -1,3 +1,7 @@
+<%
+  djatokaURL = "http://isis-dev.stanford.edu/adore-djatoka/resolver?url_ver=Z39.88-2004&amp;svc_val_fmt=info:ofi/fmt:kev:mtx:jpeg2000&amp;svc_id=info:lanl-repo/svc/getRegion"
+%>
+
   <div id="toc-and-metadata">
     <h3 class="obscure">Table of contents</h3> 
     <ol id="toc">
@@ -12,7 +16,7 @@
           </a>
           <div id="data-links-<%= img_id %>" class="img-options" style="display: none;">
             <ul>
-              <li class="img-title">Available sizes:</li>
+              <li class="img-title">Available <br/> sizes:</li>
               <li>
                 <a id="small-<%= img_id %>" href="#" title="View at 294 x 368 pixels"><span class="obscure">View the </span>small<span class="obscure"> size of image 1</span></a>&nbsp;
                 <a id="small-download-<%= img_id %>" href="<%= base_url %>_small.jpg?action=download" title="Download <%= img_id %>_small.jpg"><span class="obscure">Download the small size of image 1</span><img src="images/icon-download.png" alt=""/></a> <br/>
@@ -28,10 +32,13 @@
                 <a id="large-download-<%= img_id %>" href="<%= base_url %>_large.jpg?action=download" title="Download <%= img_id %>_large.jpg"><span class="obscure">Download the large size of image 1</span><img src="images/icon-download.png" alt=""/></a> <br/>
                 <span id="large-size-<%= img_id %>" class="img-size"></span>
               </li>
+              <li>
+                <a id="zoom-<%= img_id %>" href="#" title="Zoom View">zoom <br/> view<span class="obscure"> of image 1</span></a>                
+              </li>
             </ul>
           </div>
           <div id="full-img-<%= img_id %>" class="full-img-box" style="display: none;">
-            <img src="http://isis-dev.stanford.edu/adore-djatoka/resolver?url_ver=Z39.88-2004&amp;svc_val_fmt=info:ofi/fmt:kev:mtx:jpeg2000&amp;svc_id=info:lanl-repo/svc/getRegion&amp;rft_id=file:///stacks/<%= create_pair_tree(img_id[0..10]) %>/<%= img_id %>.jp2&amp;svc.level=2&amp;svc.scale=325," alt="" />
+            <img src="<%= djatokaURL %>&amp;rft_id=file:///stacks/<%= create_pair_tree(img_id[0..10]) %>/<%= img_id %>.jp2&amp;svc.level=2&amp;svc.scale=325," alt="" />
           </div>
         </li>                
 	
