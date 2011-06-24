@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>Stanford Digital Repository</title>
-    <%= stylesheet_link_tag 'purl_image' %> 
+    <%= stylesheet_link_tag 'purl_image', 'zpr' %> 
   </head>
   <body>
     <div id="container">
@@ -19,7 +19,7 @@
       </div>            
     </div>
 
-    <%= javascript_include_tag "jquery", "purl_image" %>
+    <%= javascript_include_tag 'jquery', 'purl_image', 'zpr' %>
     <%= render :partial => 'purl/image/json' %>
   </body>
 </html>

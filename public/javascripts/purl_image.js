@@ -4,7 +4,8 @@ var sizes = ['small', 'medium', 'large'];
 var selectedSize = sizes[0];    
 
 $(document).ready(function() {
-      
+  
+  // set toggle and links for clickable item header    
   $('ol#toc li > a').each(function () {
     var id = $(this).attr('id');
         
@@ -14,6 +15,7 @@ $(document).ready(function() {
     }
   });
 
+  // calculate dimensions for each size and display 
   for (var i = 0; i < imgInfo.length; i++) {
     var id = imgInfo[i]['id'];
     var width = imgInfo[i]['width'];
@@ -35,6 +37,7 @@ $(document).ready(function() {
 });
 
 
+// set toggle action
 function setToggle(elemId, imgId) {
   $('#' + elemId).click(function(){
     if ($('#data-links-' + imgId).is(':visible')) {
@@ -60,6 +63,10 @@ function setViewerLinks(id) {
       showImg(this.id, id);
     });
   }   
+
+	$('#zoom-' + id).click(function() {
+		showImg(this.id, id);
+	});
 }
 
 function changeDownloadFormat(name) {
@@ -112,12 +119,17 @@ function showImg(elemId, id) {
   $('#pane-img-viewer').animate({
     'left': 0 + 'px'
   }, 500, function() {
-    loadImage(id, size);
+		if (size == 'zoom') {
+			loadZpr(id);
+		} else {
+	    loadImage(id, size);			
+		}
   });
   
   $('#small-img-viewer').click(function() { loadImage(id, 'small'); });
   $('#medium-img-viewer').click(function() { loadImage(id, 'medium'); });
   $('#large-img-viewer').click(function() { loadImage(id, 'large'); });
+  $('#zoom-img-viewer').click(function() { loadZpr(id); });
 
   $('#small-img-viewer-id').html(imgNumber);
   $('#medium-img-viewer-id').html(imgNumber);
@@ -195,10 +207,9 @@ function loadImage(id, size) {
   var imgWidth = dimensions[1];
   var imgHeight = dimensions[2];
 
-  //if (imgHeight < viewfinderHeight) {
-    //viewfinderHeight = parseInt(imgHeight, 10) + 20;
-  //}
-
+	$('#zpr-frame').hide();
+	$('#img-canvas').show();	
+	
   $('#img-viewfinder').height(viewfinderHeight + 'px');
 
   $('#img-canvas')
@@ -210,6 +221,30 @@ function loadImage(id, size) {
     'height': imgHeight + 'px',       
     'width': imgWidth + 'px'
   });            
+}
+
+
+function loadZpr(id) {
+	var druid = getDruid(id);
+	var index = getArrayIndex(id);
+
+  var viewfinderHeight = parseInt($(window).height(), 10) - 100;
+
+  $('#img-viewfinder').height(viewfinderHeight + 'px');
+
+	$('#img-canvas').hide();
+	$('#zpr-frame').show();
+	
+	$('#zpr-frame').width(($('#img-viewfinder').width() - 20) + 'px');
+	$('#zpr-frame').height((viewfinderHeight - 20) + 'px');
+
+	var z = new zpr('zpr-frame', { 
+		'jp2URL': 'file:///stacks/' + getPairTree(druid) + '/' + id + '.jp2', 
+		'width': imgInfo[index]['width'], 
+		'height': imgInfo[index]['height'], 
+		'marqueeImgSize': 150  
+	});
+	
 }
 
 
@@ -244,6 +279,17 @@ function getArrayIndex(id) {
   }
   
   return -1;
+}
+
+function getPairTree(id) {
+	var pairTree = '';
+	
+  if (/^[a-z]{2}[0-9]{3}[a-z]{2}[0-9]{4}/.test(id)) {
+    pairTree = id.substr(0, 2) + '/' + id.substr(2, 3) + '/' + 
+			id.substr(5, 2) + '/' + id.substr(7, 4);
+  }	
+
+	return pairTree;
 }
 
 

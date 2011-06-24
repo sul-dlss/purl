@@ -150,13 +150,13 @@ ol#toc > li {
   border: 1px solid #ccc;
   margin: 5px 5px 0 0;
   overflow: auto;
-  width: 350px;
+  width: 400px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
 
 a.item-header {
-  background: transparent url('../images/icon-show.png') 328px 16px no-repeat;
+  background: transparent url('../images/icon-show.png') 378px 16px no-repeat;
   color: #000;   
   display: block; 
   outline: none;
@@ -216,7 +216,7 @@ a.item-header:hover {
 .img-options li {
   float: left;
   line-height: 1.5em;
-  width: 25%;
+  width: 20%;
   text-align: center;
 }
 
@@ -259,7 +259,7 @@ a.item-header:hover {
 #links-rights dd { clear: both; float: left; padding: 2px 0 2px 0; } 
 
 #img-viewfinder {
-  background: url('../images/loader.gif') 30px 30px no-repeat;
+  /*background: url('../images/loader.gif') 30px 30px no-repeat;*/
   display: block;
   overflow: auto;
   width: 100%;
@@ -267,6 +267,12 @@ a.item-header:hover {
 
 #img-canvas {
   margin: 10px;
+}
+
+#zpr-frame {
+	left: 10px;
+	position: absolute;
+	top: 50px;
 }
 
 #img-viewer-links {

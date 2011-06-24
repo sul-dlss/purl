@@ -13,7 +13,7 @@
 </dl>
 
 <div id="metadata">
-  <% if( @purl.catalog_key != '' ) %>
+  <% if( !@purl.catalog_key.nil? ) %>
     <div class="swlink">&raquo; <a href="http://searchworks.stanford.edu/view/<%=@purl.catalog_key%>">View in SearchWorks</a></div>
   <% end %>
   <%= render(:partial => "purl/publication_copyright" ) %>
