@@ -43,7 +43,7 @@ class Purl
   
   # check if this object is of type image
   def is_image?
-    if !@type.nil? && @type =~ /Image/i
+    if !@type.nil? && @type =~ /Image|Map/i
       return true
     end  
     return false
