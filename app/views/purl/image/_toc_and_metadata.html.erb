@@ -7,12 +7,12 @@
     <ol id="toc">
 	    <% @purl.deliverable_files.each do |deliverable_file| %>
 	      <% img_id = get_jp2_id(deliverable_file.filename.to_s) %>
-	      <% base_url = deliverable_file.imagesvc.to_s %>
-
+	      <% base_url = get_img_base_url(deliverable_file) %>
+				
         <li>
           <a id="<%= img_id %>" href="#" class="item-header">            
 	          <%= image_tag "#{base_url}_square.jpg", :id => "square-img-#{img_id}", :class => "sq-thumbnail-img", :alt => "" %>
-	          <div class="img-item-label-container"><%= deliverable_file.description_label %></div>
+	          <div class="img-item-label-container"><%= get_file_label(deliverable_file) %></div>
           </a>
           <div id="data-links-<%= img_id %>" class="img-options" style="display: none;">
             <ul>

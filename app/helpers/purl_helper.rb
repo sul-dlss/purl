@@ -47,4 +47,26 @@ module PurlHelper
     return json_array.join(',')
   end
 
+  # construct base URL using stacks URL
+  def get_img_base_url(deliverable_file)
+    img_id = get_jp2_id(deliverable_file.filename.to_s)
+    base_url = deliverable_file.imagesvc.to_s
+    
+    if (base_url.empty?)
+      base_url = STACKS_URL + "/image/" + img_id[0..10] + "/" + img_id
+    end
+    
+    return base_url
+  end
+
+  # get file label (if available) or jp2 id
+  def get_file_label(deliverable_file)
+    label = get_jp2_id(deliverable_file.filename.to_s)
+    
+    if (!deliverable_file.description_label.nil? && !deliverable_file.description_label.empty?)
+      label = deliverable_file.description_label.to_s
+    end
+    
+    return label
+  end
 end

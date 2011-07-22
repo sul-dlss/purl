@@ -139,17 +139,17 @@ function showImg(elemId, id) {
   $('#large-img-viewer-download-id').html(imgNumber);
   
   $('#small-img-viewer-download').attr({
-    'href': 'https://stacks-test.stanford.edu/image/' + druid + '/' + id + '_small.jpg?action=download',
+    'href': stacksURL + '/image/' + druid + '/' + id + '_small.jpg?action=download',
     'title': 'Download ' + id + '_small.jpg'
   });
   
   $('#medium-img-viewer-download').attr({
-    'href': 'https://stacks-test.stanford.edu/image/' + druid + '/' + id + '_medium.jpg?action=download',
+    'href': stacksURL + '/image/' + druid + '/' + id + '_medium.jpg?action=download',
     'title': 'Download ' + id + '_medium.jpg'
   });
   
   $('#large-img-viewer-download').attr({
-    'href': 'https://stacks-test.stanford.edu/image/' + druid + '/' + id + '_large.jpg?action=download',
+    'href': stacksURL + '/image/' + druid + '/' + id + '_large.jpg?action=download',
     'title': 'Download ' + id + '_large.jpg'
   });
   
@@ -172,8 +172,35 @@ function showImg(elemId, id) {
     $('#img-viewer-next').click(function() { next(id, size); });
     $('#img-viewer-next').removeClass('viewer-nav-link-disable');
   }
-    
-  
+}
+
+function loadImage(id, size) {
+  var druid = getDruid(id);
+  var index = getArrayIndex(id);
+
+  var url = stacksURL + '/image/' + druid + '/' + id + '_' + size + '.jpg';
+  var strDimensions = getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], size);
+  var dimensions = strDimensions.match(/(\d+) x (\d+)/);
+  var viewfinderHeight = parseInt($(window).height(), 10) - 100;
+  var imgWidth = dimensions[1];
+  var imgHeight = dimensions[2];
+
+	selectedSize = size;
+
+	$('#zpr-frame').hide();
+	$('#img-canvas').show();	
+	
+  $('#img-viewfinder').height(viewfinderHeight + 'px');
+
+  $('#img-canvas')
+  .removeAttr('src')
+  .attr({
+    'src': url,    
+  })
+  .css({
+    'height': imgHeight + 'px',       
+    'width': imgWidth + 'px'
+  });            
 }
 
 function changeImgViewerDownloadFormat() {
@@ -196,40 +223,13 @@ function changeImgViewerDownloadFormat() {
 }
 
 
-function loadImage(id, size) {
-  var druid = getDruid(id);
-  var index = getArrayIndex(id);
-  
-  var url = 'https://stacks-test.stanford.edu/image/' + druid + '/' + id + '_' + size + '.jpg';
-  var strDimensions = getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], size);
-  var dimensions = strDimensions.match(/(\d+) x (\d+)/);
-  var viewfinderHeight = parseInt($(window).height(), 10) - 100;
-  var imgWidth = dimensions[1];
-  var imgHeight = dimensions[2];
-
-	$('#zpr-frame').hide();
-	$('#img-canvas').show();	
-	
-  $('#img-viewfinder').height(viewfinderHeight + 'px');
-
-  $('#img-canvas')
-  .removeAttr('src')
-  .attr({
-    'src': url,    
-  })
-  .css({
-    'height': imgHeight + 'px',       
-    'width': imgWidth + 'px'
-  });            
-}
-
-
 function loadZpr(id) {
 	var druid = getDruid(id);
 	var index = getArrayIndex(id);
-
   var viewfinderHeight = parseInt($(window).height(), 10) - 100;
 
+	selectedSize = 'zoom';
+	
   $('#img-viewfinder').height(viewfinderHeight + 'px');
 
 	$('#img-canvas').hide();
@@ -238,13 +238,14 @@ function loadZpr(id) {
 	$('#zpr-frame').width(($('#img-viewfinder').width() - 20) + 'px');
 	$('#zpr-frame').height((viewfinderHeight - 20) + 'px');
 
+	$('#zpr-frame').html('');
+	
 	var z = new zpr('zpr-frame', { 
 		'jp2URL': 'file:///stacks/' + getPairTree(druid) + '/' + id + '.jp2', 
 		'width': imgInfo[index]['width'], 
 		'height': imgInfo[index]['height'], 
 		'marqueeImgSize': 150  
-	});
-	
+	});	
 }
 
 
@@ -314,21 +315,17 @@ function getDimensions(width, height, maxLevels, size) {
 
 function prev(id, size) {
   var index = getArrayIndex(id);
-  index -= 1;
-  
-  var id = imgInfo[index]["id"];
-  
-  showImg(size + "-" + id, id);
+  var id = imgInfo[--index]["id"];
+
+  showImg(selectedSize + "-" + id, id);
 }
 
 
 function next(id, size) {
   var index = getArrayIndex(id);
-  index += 1;
-  
-  var id = imgInfo[index]["id"];
+  var id = imgInfo[++index]["id"];
 
-  showImg(size + "-" + id, id);
+  showImg(selectedSize + "-" + id, id);
 }
 
 
