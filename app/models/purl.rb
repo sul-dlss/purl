@@ -49,7 +49,7 @@ class Purl
       resource.size     = file['size']
       resource.shelve   = file['shelve']
       resource.preserve = file['preserve']
-      resource.deliver  = file['deliver'] || file_element['publish']
+      resource.deliver  = file['deliver'] || file['publish']
       resource.filename = file['id']
       resource.objectId = file.parent['objectId']
       resource.type     = file.parent['type']
