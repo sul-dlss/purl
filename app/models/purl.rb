@@ -23,7 +23,7 @@ class Purl
   def initialize(id)
     @pid = id
     @public_xml = get_metadata('public')
-#    extract_metadata
+    extract_metadata
   end
 
   def extract_metadata
