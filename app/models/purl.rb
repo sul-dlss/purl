@@ -7,38 +7,80 @@ class Purl
   include PurlHelper
 
   attr_accessor :pid
-  attr_accessor :public_xml
+  attr_accessor :public_xml, :public_ng_xml
   attr_accessor :titles, :authors, :type, :source, :date, :relation, :description # dc
   attr_accessor :degreeconfyr, :cclicense, :cclicensetype  # properites
   attr_accessor :catalog_key                               # identity
   attr_accessor :read_group, :embargo_release_date         # rights
   attr_accessor :deliverable_files                         # content
 
+  NAMESPACES = { 
+    'oai_dc' => "http://www.openarchives.org/OAI/2.0/oai_dc/", 
+    'dc' => 'http://purl.org/dc/elements/1.1/', 
+    'dcterms' => 'http://purl.org/dc/terms/'
+  }
+
   def initialize(id)
     @pid = id
-    extract_metadata(@pid)
+    @public_xml = get_metadata('public')
+#    extract_metadata
   end
 
-  def extract_metadata(id)
-    dc = get_metadata(id,'dc')
-    properties = get_metadata(id,'properties')
-    identityMetadata = get_metadata(id,'identityMetadata')
-    contentMetadata = get_metadata(id,'contentMetadata')
-    rightsMetadata = get_metadata(id,'rightsMetadata')
-    @public_xml = get_metadata(id,'public')
+  def extract_metadata
+    doc = ng_xml('dc','identityMetadata','contentMetadata','rightsMetadata','fields')
     
-    extract_dc_metadata(id,dc)
-    extract_properties_metadata(id,properties)
-    extract_identity_metadata(id,identityMetadata)
-    extract_content_metadata(id,contentMetadata)
-    extract_rights_metadata(id,rightsMetadata)
+    # DC Metadata
+    dc = doc.root.at_xpath('*[local-name() = "dc"]', NAMESPACES)
+    @titles = dc.xpath('dc:title/text()', NAMESPACES).collect { |t| t.to_s }
+    @authors = dc.xpath('dc:creator/text()|dcterms:creator/text()', NAMESPACES).collect { |t| t.to_s }
+    @type = dc.at_xpath('dc:type/text()', NAMESPACES).to_s
+    @source = dc.at_xpath('dc:source/text()', NAMESPACES).to_s
+    @date = dc.at_xpath('dc:date/text()', NAMESPACES).to_s
+    @description = dc.at_xpath('dc:description/text()|dcterms:abstract/text()', NAMESPACES).to_s
+    @relation = dc.at_xpath('dc:relation/text()', NAMESPACES).to_s.gsub /^Collection\s*:\s*/, ''
+    
+    # Identity Metadata
+    @catalog_key = doc.root.at_xpath('identityMetadata/otherId[@name="catkey"]/text()').to_s
+    
+    # Content Metadata
+    @deliverable_files = doc.root.xpath('contentMetadata/resource/file[@deliver="yes" or @publish="yes"]').collect do |file|
+      resource = Resource.new
+      resource.mimetype = file['mimetype']
+      resource.size     = file['size']
+      resource.shelve   = file['shelve']
+      resource.preserve = file['preserve']
+      resource.deliver  = file['deliver'] || file_element['publish']
+      resource.filename = file['id']
+      resource.objectId = file.parent['objectId']
+      resource.type     = file.parent['type']
+      resource.width    = file.at_xpath('imageData/@width').to_s
+      resource.height   = file.at_xpath('imageData/@height').to_s
+      resource.imagesvc = file.at_xpath('location[@type="imagesvc"]/text()').to_s
+      resource.url      = file.at_xpath('location[@type="url"]/text()').to_s
+      resource
+    end
+    
+    # Rights Metadata
+    rights = doc.root.at_xpath('rightsMetadata')
+    read = rights.at_xpath('access[@type="read"]/machine/*')
+    unless read.nil?
+      @read_group = read.name == 'group' ? read.text : read.name
+    end
+    @embargo_release_date = rights.at_xpath(".//embargoReleaseDate/text()").to_s
+    if( !@embargo_release_date.nil? and @embargo_release_date != '' )
+      embargo_date_time = Time.parse(@embargo_release_date)
+      @embargo_release_date = '' unless embargo_date_time.future?
+    end
+    
+    # Properties
+    fields = doc.root.at_xpath('fields')
+    @degreeconfyr = fields.at_xpath("degreeconfyr/text()").to_s
+    @cclicense = fields.at_xpath("cclicense/text()").to_s
+    @cclicensetype = fields.at_xpath("cclicensetype/text()").to_s
   end
   
   def is_ready?
-    if @public_xml == '' or @public_xml.nil?
-      return false
-    end
-    return true
+    not (@public_xml.nil? or @public_xml.empty?)
   end
   
   # check if this object is of type image
@@ -49,118 +91,41 @@ class Purl
     return false
   end
   
-  private
-
-  def extract_xpath_contents(doc,xpath)
-    elements = doc.root.xpath(xpath).collect(&:text)
-    elements.each do |elem|
-      return elem.to_s
-    end
-    ''
-  end
-
-  # extract the relevant fields from the dc metadata
-  def extract_dc_metadata(id,metadata)
-    if( metadata != '' )
-      doc = Nokogiri::XML(metadata)
-      doc.remove_namespaces!
-      
-      @titles      = extract_xpath_contents(doc,"title")
-      @authors     = extract_xpath_contents(doc,"creator")
-      @type        = extract_xpath_contents(doc,"type")
-      @source      = extract_xpath_contents(doc,"source")
-      @date        = extract_xpath_contents(doc,"date")
-      @description = extract_xpath_contents(doc,"description")
-      @relation    = extract_xpath_contents(doc,"relation").gsub /^Collection\s*:\s*/, ''
-    end
-  end
-  
-  # extract the relevant fields from the properties metadata
-  def extract_properties_metadata(id,metadata)
-    if( metadata != '' )
-      doc = Nokogiri::XML(metadata)
-      @degreeconfyr = extract_xpath_contents(doc,"//degreeconfyr")
-      @cclicense = extract_xpath_contents(doc,"//cclicense")
-      @cclicensetype = extract_xpath_contents(doc,"//cclicensetype")
-    end
-  end
-
-  # extract the relevant fields from the identityMetadata metadata
-  def extract_identity_metadata(id,metadata)
-    if( metadata != '' )
-      doc = Nokogiri::XML(metadata)
-      @catalog_key = extract_xpath_contents(doc,"//otherId[@name='catkey']")
-    end
-  end
-
-  # extract the relevant fields from the content metadata
-  def extract_content_metadata(id,metadata)
-    if( metadata != '' )
-      doc = Nokogiri::XML(metadata)
-      
-      # extract deliverable files
-      @deliverable_files = Array.new
-      resource_xmls = doc.root.xpath("//resource")
-      
-      resource_xmls.each do |resource_xml|
-        resource_doc = Nokogiri::XML(resource_xml.to_s)
-        files_xmls = resource_doc.xpath("//file[@deliver='yes']")
-        
-        files_xmls.each do |file_xml|
-          file_doc = Nokogiri::XML(file_xml.to_s)
-          resource = Resource.new
-          
-          resource.objectId = extract_xpath_contents(resource_doc,"@objectId")
-          resource.type     = extract_xpath_contents(resource_doc,"@type")
-          resource.description_label = extract_xpath_contents(resource_doc,"attr[@name='label']")
-          resource.mimetype = extract_xpath_contents(file_doc,"@mimetype")
-          resource.size     = extract_xpath_contents(file_doc,"@size")
-          resource.shelve   = extract_xpath_contents(file_doc,"@shelve")
-          resource.preserve = extract_xpath_contents(file_doc,"@preserve")
-          resource.deliver  = extract_xpath_contents(file_doc,"@deliver")
-          resource.filename = extract_xpath_contents(file_doc,"@id")
-          resource.url      = extract_xpath_contents(file_doc,"location[@type='url']")
-          
-          resource.imagesvc = extract_xpath_contents(file_doc,"location[@type='imagesvc']")
-          resource.width    = extract_xpath_contents(file_doc,"imageData/@width")
-          resource.height   = extract_xpath_contents(file_doc,"imageData/@height")
-
-          @deliverable_files.push(resource)
-        end
-        
-      end
-    end
-  end
-
-  # extract the relevant fields from the rights metadata
-  def extract_rights_metadata(id,metadata)
-    if( metadata != '' )
-      doc = Nokogiri::XML(metadata)
-      @read_group = extract_xpath_contents(doc,"//access[@type='read']/machine/group")
-      @embargo_release_date = extract_xpath_contents(doc,"//embargoReleaseDate")
-      if( !@embargo_release_date.nil? and @embargo_release_date != '' )
-        embargo_date_time = Time.parse(@embargo_release_date)
-        @embargo_release_date = '' unless embargo_date_time.future?
-      end
-    end
-  end
+#  private
 
   # retrieve the given document from the document cache for the given object identifier
-  def get_metadata(id,doc_name)
-    pair_tree = create_pair_tree(id)
-    unless( pair_tree.nil? )
+  def get_metadata(doc_name)
+    pair_tree = create_pair_tree(@pid)
+    contents = "<#{doc_name}/>"
+    unless pair_tree.nil?
       file_path = File.join(DOCUMENT_CACHE_ROOT,pair_tree,doc_name)
-      if( File::exists? file_path )
-        file = File.new(file_path,'r')
-        contents = file.read
-        # replace stacks urls with stacks-test urls in the contentMetadata depending on the environment
-        if( !RAILS_ENV.eql? 'production' )
-          contents.gsub!('stacks.stanford.edu','stacks-test.stanford.edu')
-        end
-        return contents
+      if File.exists?(file_path)
+        contents = File.read(file_path)
+      end
+      if( !RAILS_ENV.eql? 'production' )
+        contents.gsub!('stacks.stanford.edu','stacks-test.stanford.edu')
       end
     end
-    ''
+    return contents
+  end
+
+  def ng_xml(*streams)
+    if @ng_xml.nil?
+      content = @public_xml
+      if content.nil? or content.strip.empty?
+        content = "<publicObject objectId='#{@pid}'/>"
+      end
+      @ng_xml = Nokogiri::XML(content)
+      streams.each do |doc_name|
+        if @ng_xml.root.at_xpath(%{*[local-name() = "#{doc_name}"]}).nil?
+          stream_content = get_metadata(doc_name)
+          unless stream_content.empty?
+            @ng_xml.root.add_child(Nokogiri::XML(stream_content).root)
+          end
+        end
+      end
+    end
+    @ng_xml
   end
 
 end
