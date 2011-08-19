@@ -27,17 +27,19 @@ class Purl
   end
 
   def extract_metadata
-    doc = ng_xml('dc','identityMetadata','contentMetadata','rightsMetadata','fields')
+    doc = ng_xml('dc','identityMetadata','contentMetadata','rightsMetadata','properties')
     
     # DC Metadata
     dc = doc.root.at_xpath('*[local-name() = "dc"]', NAMESPACES)
-    @titles = dc.xpath('dc:title/text()', NAMESPACES).collect { |t| t.to_s }
-    @authors = dc.xpath('dc:creator/text()|dcterms:creator/text()', NAMESPACES).collect { |t| t.to_s }
-    @type = dc.at_xpath('dc:type/text()', NAMESPACES).to_s
-    @source = dc.at_xpath('dc:source/text()', NAMESPACES).to_s
-    @date = dc.at_xpath('dc:date/text()', NAMESPACES).to_s
-    @description = dc.at_xpath('dc:description/text()|dcterms:abstract/text()', NAMESPACES).to_s
-    @relation = dc.at_xpath('dc:relation/text()', NAMESPACES).to_s.gsub /^Collection\s*:\s*/, ''
+    unless dc.nil?
+      @titles = dc.xpath('dc:title/text()', NAMESPACES).collect { |t| t.to_s }
+      @authors = dc.xpath('dc:creator/text()|dcterms:creator/text()', NAMESPACES).collect { |t| t.to_s }
+      @type = dc.at_xpath('dc:type/text()', NAMESPACES).to_s
+      @source = dc.at_xpath('dc:source/text()', NAMESPACES).to_s
+      @date = dc.at_xpath('dc:date/text()', NAMESPACES).to_s
+      @description = dc.at_xpath('dc:description/text()|dcterms:abstract/text()', NAMESPACES).to_s
+      @relation = dc.at_xpath('dc:relation/text()', NAMESPACES).to_s.gsub /^Collection\s*:\s*/, ''
+    end
     
     # Identity Metadata
     @catalog_key = doc.root.at_xpath('identityMetadata/otherId[@name="catkey"]/text()').to_s
@@ -62,21 +64,25 @@ class Purl
     
     # Rights Metadata
     rights = doc.root.at_xpath('rightsMetadata')
-    read = rights.at_xpath('access[@type="read"]/machine/*')
-    unless read.nil?
-      @read_group = read.name == 'group' ? read.text : read.name
-    end
-    @embargo_release_date = rights.at_xpath(".//embargoReleaseDate/text()").to_s
-    if( !@embargo_release_date.nil? and @embargo_release_date != '' )
-      embargo_date_time = Time.parse(@embargo_release_date)
-      @embargo_release_date = '' unless embargo_date_time.future?
+    unless rights.nil?
+      read = rights.at_xpath('access[@type="read"]/machine/*')
+      unless read.nil?
+        @read_group = read.name == 'group' ? read.text : read.name
+      end
+      @embargo_release_date = rights.at_xpath(".//embargoReleaseDate/text()").to_s
+      if( !@embargo_release_date.nil? and @embargo_release_date != '' )
+        embargo_date_time = Time.parse(@embargo_release_date)
+        @embargo_release_date = '' unless embargo_date_time.future?
+      end
     end
     
     # Properties
-    fields = doc.root.at_xpath('fields')
-    @degreeconfyr = fields.at_xpath("degreeconfyr/text()").to_s
-    @cclicense = fields.at_xpath("cclicense/text()").to_s
-    @cclicensetype = fields.at_xpath("cclicensetype/text()").to_s
+    fields = doc.root.at_xpath('fields|properties/fields')
+    unless fields.nil?
+      @degreeconfyr = fields.at_xpath("degreeconfyr/text()").to_s
+      @cclicense = fields.at_xpath("cclicense/text()").to_s
+      @cclicensetype = fields.at_xpath("cclicensetype/text()").to_s
+    end
   end
   
   def is_ready?
