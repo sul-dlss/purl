@@ -6,13 +6,19 @@ class Purl
 
   include PurlHelper
 
+  DEFERRED_TEMPLATE = %{def %1$s; extract_metadata unless @extracted; instance_variable_get("@%1$s"); end}
+  def self.attr_deferred(*args)
+    args.each { |a| eval(DEFERRED_TEMPLATE % a) }
+  end
+  
   attr_accessor :pid
-  attr_accessor :public_xml, :public_ng_xml
-  attr_accessor :titles, :authors, :type, :source, :date, :relation, :description # dc
-  attr_accessor :degreeconfyr, :cclicense, :cclicensetype  # properites
-  attr_accessor :catalog_key                               # identity
-  attr_accessor :read_group, :embargo_release_date         # rights
-  attr_accessor :deliverable_files                         # content
+  attr_accessor :public_xml
+  
+  attr_deferred :titles, :authors, :type, :source, :date, :relation, :description # dc
+  attr_deferred :degreeconfyr, :cclicense, :cclicensetype  # properites
+  attr_deferred :catalog_key                               # identity
+  attr_deferred :read_group, :embargo_release_date         # rights
+  attr_deferred :deliverable_files                         # content
 
   NAMESPACES = { 
     'oai_dc' => "http://www.openarchives.org/OAI/2.0/oai_dc/", 
@@ -23,7 +29,7 @@ class Purl
   def initialize(id)
     @pid = id
     @public_xml = get_metadata('public')
-    extract_metadata
+    @extracted = false
   end
 
   def extract_metadata
@@ -83,6 +89,7 @@ class Purl
       @cclicense = fields.at_xpath("cclicense/text()").to_s
       @cclicensetype = fields.at_xpath("cclicensetype/text()").to_s
     end
+    @extracted = true
   end
   
   def is_ready?
