@@ -98,13 +98,13 @@ class Purl
   
   # check if this object is of type image
   def is_image?
-    if !@type.nil? && @type =~ /Image|Map/i
+    if !type.nil? && type =~ /Image|Map/i
       return true
     end  
     return false
   end
   
-#  private
+  private
 
   # retrieve the given document from the document cache for the given object identifier
   def get_metadata(doc_name)
