@@ -51,7 +51,7 @@ class Purl
     @catalog_key = doc.root.at_xpath('identityMetadata/otherId[@name="catkey"]/text()').to_s
     
     # Content Metadata
-    @deliverable_files = doc.root.xpath('contentMetadata/resource/file[@deliver="yes" or @publish="yes"]').collect do |file|
+    @deliverable_files = doc.root.xpath('contentMetadata/resource/file[not(@deliver="no" or @publish="no")]').collect do |file|
       resource = Resource.new
       resource.mimetype = file['mimetype']
       resource.size     = file['size']
