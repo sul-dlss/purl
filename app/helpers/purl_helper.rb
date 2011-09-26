@@ -29,7 +29,7 @@ module PurlHelper
   # get id from JP2 filename
   def get_jp2_id(filename)
     filename = filename.gsub /\.jp2$/i, ''
-    return filename
+    filename
   end
 
   # construct JSON array for delivering image objects
@@ -39,12 +39,13 @@ module PurlHelper
     @purl.deliverable_files.each do |deliverable_file|
       json_array.push(
         "{ \"id\": \"" +  get_jp2_id(deliverable_file.filename.to_s) + "\"," + 
-	      "\"width\": " + deliverable_file.width.to_s + "," + 
-	      "\"height\": " + deliverable_file.height.to_s + 
+           "\"label\": \"" + get_file_label(deliverable_file) + "\"," + 
+	         "\"width\": " + deliverable_file.width.to_s + "," + 
+	         "\"height\": " + deliverable_file.height.to_s + 
 	      "}")
     end   
     
-    return json_array.join(',')
+    json_array.join(',')
   end
 
   # construct base URL using stacks URL
@@ -56,7 +57,7 @@ module PurlHelper
       base_url = STACKS_URL + "/image/" + img_id[0..10] + "/" + img_id
     end
     
-    return base_url
+    base_url
   end
 
   # get file label (if available) or jp2 id
@@ -67,6 +68,21 @@ module PurlHelper
       label = deliverable_file.description_label.to_s
     end
     
-    return label
+    if label.length > 45
+      label = label[0 .. 44] + '...'
+    end
+    
+    label
+  end
+  
+  # get field value
+  def print_field_value(field_name, label = '')
+    html = ''
+    
+    if not(@purl.nil? or eval("@purl.#{field_name}.nil?") or eval("@purl.#{field_name}.empty?"))
+      html = "<dt>" + label + ":</dt><dd>" + eval("@purl.#{field_name}.to_s") + "</dd>"
+    end
+    
+    html
   end
 end

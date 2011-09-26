@@ -53,10 +53,15 @@ table {
 
 /*  SearchWorks  */
 
-body {background-color: #4f4f4f; background-image: url(/images/background.png); background-repeat: repeat-x; text-align: center; font-size: 11px; font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif; line-height: 1.3em;   color: #000000;}
-h1 {font-size: 2em; font-weight: bold; padding: 25px 0px; color: #f6f6f6; 
-text-shadow: -1px -1px 0px #333333;
-filter: dropshadow(color=#333333, offx=-1, offy=-1) }
+body {background: #474747 url(../images/purl-image-background.png) top left repeat-x; text-align: center; font-size: 11px; font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif; line-height: 1.3em;   color: #000000;}
+h1 {
+	color: #f6f6f6; 
+	filter: dropshadow(color=#333333, offx=-1, offy=-1); 
+	font: normal normal normal 1.9em "Myriad Pro", "Droid Sans", "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;  
+	letter-spacing: 1px; 
+	text-shadow: -1px -1px 0px #333; 
+	padding-top: 6px;
+}
 
 h2 {font-size: 1.4em; font-weight: normal; margin: 0 0 .5em 0; line-height: 1.2em;}
 h3 {font-size: 1.1em; font-weight: normal;}
@@ -65,7 +70,13 @@ a  {color: #00388e /*#2E4F81*/; text-decoration:none;}
 a:hover {border-bottom: 1px dotted;}
 a:active {color: #4f4f4f;}
 
-#container {position: relative; width: 80%; margin: 0 auto; text-align: left; }
+#container {
+	margin: 0 auto;
+  overflow: hidden;
+  position: relative; 
+	text-align: left; 
+	width: 90%; 
+}
 
 #header {height: 30px; overflow: hidden;}
 #header img {padding-top: 4px; padding-left: 1px;}
@@ -76,14 +87,18 @@ a:active {color: #4f4f4f;}
 #headerlinks ul li a {color: #ffffff /*#52c1e1*/; text-transform: uppercase; text-decoration: none; font-size: 11px;}
 #headerlinks ul li a:hover {border-bottom: 1px dotted;}
 
-#banner {height: 70px; background-image: url(/images/rosette.png); background-position: right top; background-repeat: no-repeat;}
+#banner { 
+  background: url('../images/sulair_rosette_30x30.png') top left no-repeat; 
+	height: 35px; 
+	margin: 8px 0 4px 0; 
+	padding-left: 40px; 
+}
 
-
-#contents {background-color: #f6f6f6; padding: 15px; margin-bottom: 15px;}
-
-
-#record {}
-
+#contents { 
+  background: #fff url(../images/contents_bg.png) top left repeat-x;  
+  padding: 20px 30px;
+  position: relative;  
+}
 
 #metadata {float: right; width: 30%;}
 .swlink {padding: 0 0 15px 0; margin: 0 0 15px 0; font-size: 1.1em; border-bottom: 1px dotted #cccccc;s}
@@ -126,8 +141,9 @@ highlight colour for browse by callnum:  #e5f1f4
 .file_link { margin: 0px 0px 0px 40px;}
 
 .cc_by, .cc_by_nc, .cc_by_nd, .cc_by_sa, .cc_by_nc_sa, .cc_by_nc_nd {
-  background: transparent url('/images/cc_by.png') no-repeat 0px 6px;
+  background: transparent url('/images/cc_by.png') no-repeat 0px 0px;
   padding: 0 0 0 100px;
+  min-height: 30px;
 }
 .cc_by_nc { background-image: url('/images/cc_by_nc.png'); }
 .cc_by_nd { background-image: url('/images/cc_by_nd.png'); }

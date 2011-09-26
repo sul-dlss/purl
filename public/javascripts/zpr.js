@@ -5,17 +5,16 @@ var zpr = function(viewFinderId, inputValues) {
   var imgFrameId = viewFinderId + "-img-frame";
   
   var settings = {
-    tileSize: 256,         // dimension for a square tile 
-    preloadTilesOffset: 2, // rows/columns of tiles to preload
-    marqueeImgSize: 125       // max marquee dimension
+    tileSize: 512,         // dimension for a square tile 
+    preloadTilesOffset: 0, // rows/columns of tiles to preload
+    marqueeImgSize: 125    // max marquee dimension
   };  
   
   var jp2 = {
     width: 0,
     height: 0,
     levels: undefined,    
-    url: '',     
-    djatokaURL: "http://isis-dev.stanford.edu/adore-djatoka/resolver?url_ver=Z39.88-2004&svc_id=info:lanl-repo/svc/getRegion&svc_val_fmt=info:ofi/fmt:kev:mtx:jpeg2000&svc.format=image/jpeg"
+    url: '', 
   }
       
   var currentLevel = 1;
@@ -23,17 +22,20 @@ var zpr = function(viewFinderId, inputValues) {
   var imgFrameAttrs = { relativeLoc: {}, proportionalWidth: 0, proportionalHeight: 0 };
   var marqueeAttrs = { imgWidth: 0, imgHeight: 0, width: 0, height: 0 }; 
 
-
   /* init() function */
   var init = function() {
     // copy data from function arguments
     jp2.url    = inputValues.jp2URL;
     jp2.width  = inputValues.width;
     jp2.height = inputValues.height;    
+    jp2.imgURL = inputValues.imageStacksURL;
     settings.marqueeImgSize = inputValues.marqueeImgSize;
     
-    jp2.levels = getNumLevels();  
-    jp2.djatokaURL = jp2.djatokaURL + '&rft_id=' + escape(jp2.url);
+    if (typeof inputValues.levels !== 'undefined') { 
+      jp2.levels  = inputValues.levels;
+    } else {
+      jp2.levels = getNumLevels();  
+    }
     
     viewFinder.addClass('zpr-view-finder');
     
@@ -163,7 +165,6 @@ var zpr = function(viewFinderId, inputValues) {
   
   /* get list of visible tiles */
   var getVisibleTiles = function() {
-    
     var visibleImgSpace = { left: 0, top: 0, right: 0, bottom: 0 };
     var visibleTileIds  = { leftmost: 0, topmost: 0, rightmost: 0, bottommost: 0 };
     var numVisibleTiles = { x: 0, y: 0 };
@@ -212,7 +213,7 @@ var zpr = function(viewFinderId, inputValues) {
     visibleTileIds.rightmost  = visibleTileIds.leftmost + numVisibleTiles.x;
     visibleTileIds.bottommost = visibleTileIds.topmost + numVisibleTiles.y;
     
-    // preload extra tiles for better user experience
+    // preload/cache extra tiles for better user experience
     visibleTileIds.leftmost   -= settings.preloadTilesOffset;
     visibleTileIds.topmost    -= settings.preloadTilesOffset;
     visibleTileIds.rightmost  += settings.preloadTilesOffset;
@@ -257,12 +258,14 @@ var zpr = function(viewFinderId, inputValues) {
       var attrs = { x: visibleTiles[i][0], y: visibleTiles[i][1] };      
       var tile = undefined;
       
-      var insetValueX = attrs.x * tileSize * multiplier;
-      var insetValueY = attrs.y * tileSize * multiplier;        
+      var insetValueX = attrs.x * tileSize;
+      var insetValueY = attrs.y * tileSize;        
       //console.log('x=' + attrs.x + ', y=' + attrs.y);
       
       attrs.id = 'tile-x' + attrs.x + 'y' + attrs.y + 'z' + currentLevel + 'r' + currentRotation + '-' + viewFinderId;      
-      attrs.src = jp2.djatokaURL + '&svc.level=' + currentLevel + '&svc.region=' + insetValueY + ',' + insetValueX + ',' + tileSize + ',' + tileSize + '&svc.rotate=' + currentRotation;
+      attrs.src = jp2.imgURL + '.jpg?zoom=' + util.getZoomFromLevel(currentLevel) + 
+                  '&region=' + insetValueX + ',' + insetValueY + ',' + tileSize + ',' + tileSize + 
+                  '&rotate=' + currentRotation;
       
       visibleTilesMap[attrs.id] = true; // useful for removing unused tiles       
       tile = $('#' + attrs.id);
@@ -560,11 +563,8 @@ var zpr = function(viewFinderId, inputValues) {
     
     storeRelativeLocation();
     setMarqueeImgDimensions();
-        
-    var marqueeURL = jp2.djatokaURL + 
-      '&svc.level=' + level + 
-      '&svc.scale=' + marqueeAttrs.imgWidth + ',' + marqueeAttrs.imgHeight + 
-      '&svc.rotate=' + currentRotation;
+             
+    var marqueeURL = jp2.imgURL + '.jpg?w=' + marqueeAttrs.imgWidth + '&h=' + marqueeAttrs.imgHeight + '&rotate=' + currentRotation;   
       
     viewFinder
     .append($('<div>', { 'id': marqueeBoxId, 'class': 'zpr-marquee-box' })
@@ -622,7 +622,7 @@ var zpr = function(viewFinderId, inputValues) {
   };  
   
   var setMarqueeDimensions = function() {
-    marqueeAttrs.width = Math.ceil((viewFinder.width() / imgFrameAttrs.proportionalWidth) * marqueeAttrs.imgWidth) - 4;
+    marqueeAttrs.width  = Math.ceil((viewFinder.width() / imgFrameAttrs.proportionalWidth) * marqueeAttrs.imgWidth) - 4;
     marqueeAttrs.height = Math.ceil((viewFinder.height() / imgFrameAttrs.proportionalHeight) * marqueeAttrs.imgHeight) - 4;    
   }
 
@@ -633,8 +633,20 @@ var zpr = function(viewFinderId, inputValues) {
       if (level < 0) { level = 0; }
       if (level > jp2.levels) { level = jp2.levels; }    
       return level;
+    },
+    
+    // get image stacks zoom value (0 to 100) for a level
+    getZoomFromLevel: function(level) {
+      var zoom = 0;
+      
+      level = util.clampLevel(level);
+      zoom = (100 / Math.pow(2, jp2.levels - currentLevel)).toFixed(5);
+      
+      return zoom;
     }
   };
   
   init();
 };
+
+
