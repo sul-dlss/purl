@@ -8,7 +8,7 @@
 }
 
 .zpr-img-frame {
-  background-image: url("../images/loader_256x256.gif");
+  background-image: url("../images/loader_512x512.gif");
   background-color: #ddd;
   cursor: -moz-grab;
   cursor: -webkit-grab;

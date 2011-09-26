@@ -10,24 +10,24 @@ class PurlController < ApplicationController
     @purl = Purl.new(params[:id])
 
     # validate that the metadata is ready for delivery
-    if( !@purl.is_ready? )
+    if( @purl.is_ready? )
+      # render the landing page based on the format
+      respond_to do |format|
+        format.html {
+          # if the object is an image, render image specific layout
+          if (@purl.is_image?)
+            render :partial => "purl/image/contents", :layout => "purl_image"
+          end        
+        }
+      
+        format.xml { 
+          render :xml => @purl.public_xml 
+        }
+      end
+    else
       render :partial => "purl/unavailable", :layout => "application"
       return false
-    end
-
-    # render the landing page based on the format
-    respond_to do |format|
-      format.html {
-        # if the object is an image, render image specific layout
-        if (@purl.is_image?)
-          render :partial => "purl/image/contents", :layout => "purl_image"
-        end        
-      }
-      
-      format.xml { 
-        render :xml => @purl.public_xml 
-      }
-    end
+    end  
   end
 
   private

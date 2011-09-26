@@ -31,6 +31,10 @@ $(document).ready(function() {
     $('#large-size-' + id).html('(' + imgInfo[i]['large'] + ')');
   }
 
+  if (imgInfo.length == 1) {
+	  $('#' + imgInfo[0]['id']).click(); 
+  }
+
   $('#container').height(parseInt($(window).height(), 10) - 10);  
   $('#pane-toc-metadata').height(parseInt($(window).height(), 10) - 80);
   $('#pane-img-viewer').css('left', parseInt($('#pane-toc-metadata').width(), 10));
@@ -157,21 +161,26 @@ function showImg(elemId, id) {
   $('#medium-size-img-viewer').html('(' + getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], 'medium') + ')' );
   $('#large-size-img-viewer').html('(' + getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], 'large') + ')' );
 
+	$('#img-viewer-item-label').html('(' +  imgInfo[index]['label'] + ')');
+	$('#img-viewer-pagination').html((index + 1) + ' of ' + imgInfo.length);
 
-  $('#img-viewer-prev').addClass('viewer-nav-link-disable');
-  $('#img-viewer-next').addClass('viewer-nav-link-disable');
-  $('#img-viewer-prev').unbind();
-  $('#img-viewer-next').unbind();
+	if ($('#img-viewer-prev').length != 0 && $('#img-viewer-next').length != 0) {
+				
+	  $('#img-viewer-prev').addClass('viewer-nav-link-disable');
+	  $('#img-viewer-next').addClass('viewer-nav-link-disable');
+	  $('#img-viewer-prev').unbind();
+	  $('#img-viewer-next').unbind();
 
-  if ((index - 1) >= 0) {
-    $('#img-viewer-prev').click(function() { prev(id, size); });
-    $('#img-viewer-prev').removeClass('viewer-nav-link-disable');
-  }  
+	  if ((index - 1) >= 0) {
+	    $('#img-viewer-prev').click(function() { prev(id, size); });
+	    $('#img-viewer-prev').removeClass('viewer-nav-link-disable');
+	  }  
   
-  if ((index + 1) < imgInfo.length) {
-    $('#img-viewer-next').click(function() { next(id, size); });
-    $('#img-viewer-next').removeClass('viewer-nav-link-disable');
-  }
+	  if ((index + 1) < imgInfo.length) {
+	    $('#img-viewer-next').click(function() { next(id, size); });
+	    $('#img-viewer-next').removeClass('viewer-nav-link-disable');
+	  }		
+	}
 }
 
 function loadImage(id, size) {
@@ -226,7 +235,7 @@ function changeImgViewerDownloadFormat() {
 function loadZpr(id) {
 	var druid = getDruid(id);
 	var index = getArrayIndex(id);
-  var viewfinderHeight = parseInt($(window).height(), 10) - 100;
+  var viewfinderHeight = parseInt($(window).height(), 10) - 130;
 
 	selectedSize = 'zoom';
 	
@@ -241,7 +250,7 @@ function loadZpr(id) {
 	$('#zpr-frame').html('');
 	
 	var z = new zpr('zpr-frame', { 
-		'jp2URL': 'file:///stacks/' + getPairTree(druid) + '/' + id + '.jp2', 
+		'imageStacksURL': stacksURL + '/image/' + druid + '/' + id, 
 		'width': imgInfo[index]['width'], 
 		'height': imgInfo[index]['height'], 
 		'marqueeImgSize': 150  

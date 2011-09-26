@@ -1,18 +1,21 @@
 <div class="dialog">
   <h2>The item you requested is not yet available.</h2>
+
   <dl>
-	<% if( @purl.titles != nil ) %>
+	  <% if (!@purl.titles.empty? ) %>
       <dt>Title:</dt>
       <% @purl.titles.each do |title| %>
-        <dd><%=title%></dd>
+        <dd><%= title %></dd>
       <% end %>
     <% end %>
-    <% if( @purl.authors != nil ) %>
+
+    <% if (!@purl.authors.empty?) %>
       <dt>Author:</dt>
       <% @purl.authors.each do |author| %>
-        <dd><%=author%></dd>
+        <dd><%= author %></dd>
       <% end %>
     <% end %>
   </dl>
+
   <p>This document has not yet been released. It will be available at this URL and through Socrates and SearchWorks when processing is completed.</p>
 </div>

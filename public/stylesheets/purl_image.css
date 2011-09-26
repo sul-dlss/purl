@@ -181,9 +181,10 @@ a.item-header:hover {
 
 .img-item-label-container {
   float: left;
+  margin-left: 10px;
   margin-top: 10px;  
   text-align: center;
-  width: 270px;
+  width: 320px;
 }
 
 .icon-show-hide {
@@ -248,15 +249,16 @@ a.item-header:hover {
 }  
 
 #links-rights {
-  border-left: 1px dotted #aaa;
   float: left;
   padding: 18px 0 18px 18px;
   width: 27%
 }
 
+/*
 #links-rights dl { margin: 0 0 1em 0em; }
 #links-rights dt { clear: both; float: left; color: #555555; padding: 5px 0 0 0; margin-top: 5px; } 
-#links-rights dd { clear: both; float: left; padding: 2px 0 2px 0; } 
+#links-rights dd { clear: both; float: left; padding: 2px 0 2px 0; width: 100%; } 
+*/
 
 #img-viewfinder {
   /*background: url('../images/loader.gif') 30px 30px no-repeat;*/
@@ -272,13 +274,23 @@ a.item-header:hover {
 #zpr-frame {
 	left: 10px;
 	position: absolute;
-	top: 50px;
+	top: 85px;
+}
+
+#img-viewer-metadata {
+	float: left; 
+	height: 20px;
+	padding: 20px 20px 0 20px;
 }
 
 #img-viewer-links {
+  clear: both; 
   border-bottom: 1px dotted #aaa;
+  float: left; 
+  margin: 0 10px;
   overflow: auto;
-  padding: 20px 20px 0 20px;
+  padding: 10px 0px 0 0px;
+  width: 100%;
 }
 
 #img-viewer-links ul {
@@ -296,7 +308,7 @@ a.item-header:hover {
   background-color: #A20001;
   color: #fff;
   cursor: pointer;
-  margin-right: 10px;
+  margin: 0 10px;
   padding: 4px 8px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;  
@@ -340,5 +352,11 @@ a.item-header:hover {
   margin-left: -9999px;
   position: absolute;
   width: 1px;
+}
+
+.swlink {padding: 0 0 15px 0; margin: 0 0 15px 0; font-size: 1.1em; border-bottom: 1px dotted #cccccc; }
+
+.sidebar-stmt {
+	padding: 0 0 15px 0; 
 }
 

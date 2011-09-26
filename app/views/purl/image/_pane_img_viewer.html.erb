@@ -1,6 +1,12 @@
 <div id="pane-img-viewer">
-  <div id='img-viewer-links'>
-    <div style="float: left">                  
+  <div id="img-viewer-metadata">
+		<% unless (@purl.titles.nil?) %>
+		  <%= @purl.titles %> 
+		<% end %>		  
+		<span id="img-viewer-item-label"></span>
+	</div>
+  <div id="img-viewer-links">
+    <div style="float: left;">                  
       <a class="viewer-nav-links" href="javascript:viewTOC();">&larr; Return to TOC</a>      
       Available sizes: 
     </div>
@@ -21,10 +27,14 @@
         <a id="zoom-img-viewer" href="#" title="Zoom View">zoom view<span class="obscure"> of image 1</span></a>                				
 			</li>
     </ul>
+
+		<% if @purl.deliverable_files.count > 1 %>
     <div class="img-viewer-nav">
       <a id="img-viewer-prev" class="viewer-nav-links">&laquo; Previous Image</a>  
+      <span id="img-viewer-pagination"></span>
       <a id="img-viewer-next" class="viewer-nav-links">Next Image &raquo;</a>
     </div>
+    <% end %>
   </div>
   <div id="img-viewfinder">
       <img id="img-canvas" src="" title="" alt="" />
