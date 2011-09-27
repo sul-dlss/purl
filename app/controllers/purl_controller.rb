@@ -7,7 +7,12 @@ class PurlController < ApplicationController
   # entry point into the application
   def index
 
-    @purl = Purl.new(params[:id])
+    @purl = Purl.find(params[:id])
+    # Catch well formed druids that don't exist in the document cache
+    if(@purl.nil?)
+      render :status => 404, :file => "#{RAILS_ROOT}/public/404.html"
+      return
+    end
 
     # validate that the metadata is ready for delivery
     if( @purl.is_ready? )
