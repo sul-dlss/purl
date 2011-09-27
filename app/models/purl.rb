@@ -3,8 +3,36 @@ require 'nokogiri'
 require "dor/util"
 
 class Purl
-
+  
   include PurlHelper
+  
+  def Purl.find(id)
+    pair_tree = Purl.create_pair_tree(id)
+    return nil if(pair_tree.nil?)
+    
+    file_path = File.join(DOCUMENT_CACHE_ROOT,pair_tree)
+    # This will catch well formatted druids that do not have a directory in the document cache
+    return nil unless(File.exists?(file_path))
+    
+    Purl.new(id)
+  end
+  
+  #
+  # This method returns the pair tree directory structure based on the given object identifier.
+  # The object identifier must be of the following format, otherwise nil is returned.
+  #
+  #     druid:xxyyyxxyyyy
+  #
+  #       where 'x' is an alphabetic character
+  #       where 'y' is a numeric character
+  #
+  def Purl.create_pair_tree(pid)
+    if(pid =~ /^([a-z]{2})(\d{3})([a-z]{2})(\d{4})$/)
+      return File.join($1, $2, $3, $4)
+    else
+      return nil
+    end
+  end
 
   DEFERRED_TEMPLATE = %{def %1$s; extract_metadata unless @extracted; instance_variable_get("@%1$s"); end}
   def self.attr_deferred(*args)
@@ -121,7 +149,7 @@ class Purl
 
   # retrieve the given document from the document cache for the given object identifier
   def get_metadata(doc_name)
-    pair_tree = create_pair_tree(@pid)
+    pair_tree = Purl.create_pair_tree(@pid)
     contents = "<#{doc_name}/>"
     
     unless pair_tree.nil?
