@@ -3,17 +3,10 @@ require "dor/util"
 class PurlController < ApplicationController
 
   before_filter :validate_id
+  before_filter :load_purl
 
   # entry point into the application
   def index
-
-    @purl = Purl.find(params[:id])
-    # Catch well formed druids that don't exist in the document cache
-    if(@purl.nil?)
-      render :status => 404, :file => "#{RAILS_ROOT}/public/404.html"
-      return
-    end
-
     # validate that the metadata is ready for delivery
     if( @purl.is_ready? )
       # render the landing page based on the format
@@ -47,6 +40,16 @@ class PurlController < ApplicationController
     end
 
     if( !Dor::Util.validate_druid(params[:id]) )
+      render :status => 404, :file => "#{RAILS_ROOT}/public/404.html"
+      return false
+    end
+    true
+  end
+  
+  def load_purl
+    @purl = Purl.find(params[:id])
+    # Catch well formed druids that don't exist in the document cache
+    if(@purl.nil?)
       render :status => 404, :file => "#{RAILS_ROOT}/public/404.html"
       return false
     end
