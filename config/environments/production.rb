@@ -36,7 +36,7 @@ CERT_FILE = File.join(RAILS_ROOT, "config", "certs", "etd-prod.crt")
 KEY_FILE = File.join(RAILS_ROOT, "config", "certs", "etd-prod.key")
 KEY_PASS = 'etdprod'
 
-STACKS_URL = 'http://stacks-test.stanford.edu'
+STACKS_URL = 'https://stacks.stanford.edu'
 
 # document cache location
 DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'
