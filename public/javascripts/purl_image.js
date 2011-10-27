@@ -2,6 +2,7 @@ var imgInfo;
 
 var sizes = ['small', 'medium', 'large'];
 var selectedSize = sizes[0];    
+var resizeTimer;
 
 $(document).ready(function() {
   
@@ -32,14 +33,24 @@ $(document).ready(function() {
   }
 
   if (imgInfo.length == 1) {
-	  $('#' + imgInfo[0]['id']).click(); 
+	$('#' + imgInfo[0]['id']).click(); 
   }
 
   $('#container').height(parseInt($(window).height(), 10) - 10);  
   $('#pane-toc-metadata').height(parseInt($(window).height(), 10) - 80);
   $('#pane-img-viewer').css('left', parseInt($('#pane-toc-metadata').width(), 10));
+
+  $(window).bind('resize',function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(reloadPage, 100);
+  });
+
 });
 
+// reload page on resize
+function reloadPage() {
+  location.reload();
+};
 
 // set toggle action
 function setToggle(elemId, imgId) {
@@ -106,7 +117,7 @@ function replaceTitleExt(str, ext) {
 function showImg(elemId, id) {
   var regex = new RegExp('-' + id, 'i');  
   var size = elemId.replace(regex, '');
-  var druid = getDruid(id);
+  var druid = pid;
   var index = getArrayIndex(id);
 
   if (index < 0) return;
@@ -184,21 +195,21 @@ function showImg(elemId, id) {
 }
 
 function loadImage(id, size) {
-  var druid = getDruid(id);
+  var druid = pid;
   var index = getArrayIndex(id);
 
   var url = stacksURL + '/image/' + druid + '/' + id + '_' + size + '.jpg';
   var strDimensions = getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], size);
   var dimensions = strDimensions.match(/(\d+) x (\d+)/);
-  var viewfinderHeight = parseInt($(window).height(), 10) - 100;
+  var viewfinderHeight = parseInt($(window).height(), 10) - parseInt($('#img-viewer-metadata').height(), 10) - 120;
   var imgWidth = dimensions[1];
   var imgHeight = dimensions[2];
 
-	selectedSize = size;
+  selectedSize = size;
 
-	$('#zpr-frame').hide();
-	$('#img-canvas').show();	
-	
+  $('#zpr-frame').hide();
+  $('#img-canvas').show();	
+
   $('#img-viewfinder').height(viewfinderHeight + 'px');
 
   $('#img-canvas')
@@ -233,11 +244,11 @@ function changeImgViewerDownloadFormat() {
 
 
 function loadZpr(id) {
-	var druid = getDruid(id);
-	var index = getArrayIndex(id);
-  var viewfinderHeight = parseInt($(window).height(), 10) - 130;
+  var druid = pid;
+  var index = getArrayIndex(id);
+  var viewfinderHeight = parseInt($(window).height(), 10) - parseInt($('#img-viewer-metadata').height(), 10) - 120;
 
-	selectedSize = 'zoom';
+  selectedSize = 'zoom';
 	
   $('#img-viewfinder').height(viewfinderHeight + 'px');
 

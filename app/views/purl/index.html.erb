@@ -24,7 +24,7 @@
     <tr>
       <th>File (Download)</th>
       <th>Description</th>
-	  <% if( !@purl.read_group.nil? and @purl.read_group != '') %>
+	  <% if( !@purl.read_group.nil? and !@purl.read_group.empty? and @purl.read_group !~ /^world$/i ) %>
         <th>Access</th>
       <% end %>
     </tr>
@@ -41,7 +41,7 @@
     		</div>
 		  </td>
           <td class="description"><%=deliverable_file.description_label%></td>
-		  <% if( !@purl.read_group.nil? and @purl.read_group != '') %>
+		  <% if( !@purl.read_group.nil? and !@purl.read_group.empty? and @purl.read_group !~ /^world$/i ) %>
             <td class="access">
 	          <% if( @purl.read_group == 'stanford' ) %>
 	            Stanford only 

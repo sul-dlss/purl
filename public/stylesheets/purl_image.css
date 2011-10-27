@@ -109,7 +109,7 @@ h3 {
 
 #pane-img-viewer {
   background: #fff url(../images/contents_bg.png) top left repeat-x;
-  overflow: auto;
+  overflow: hidden;
   position: absolute;
   width: 100%;
 }
@@ -131,9 +131,13 @@ h3 {
 } 
 
 #title-metadata dd { 
-	float: left;
+  margin-left: 8em;	
   padding: 2px 0px; 
 } 
+
+#title-metadata dd p { 
+  margin-bottom: 8px;
+}
 
 #toc-and-metadata {
   clear: left;
@@ -279,7 +283,7 @@ a.item-header:hover {
 
 #img-viewer-metadata {
 	float: left; 
-	height: 20px;
+	line-height: 1.6;	
 	padding: 20px 20px 0 20px;
 }
 

@@ -66,11 +66,11 @@ class Purl
     # DC Metadata
     dc = doc.root.at_xpath('*[local-name() = "dc"]', NAMESPACES)
     unless dc.nil?
-      @titles = dc.xpath('dc:title/text()', NAMESPACES).collect { |t| t.to_s }
+      @titles = dc.xpath('dc:title/text()', NAMESPACES).collect { |t| t.to_s + " " }
       @authors = dc.xpath('dc:creator/text()|dcterms:creator/text()', NAMESPACES).collect { |t| t.to_s }
       @source = dc.at_xpath('dc:source/text()', NAMESPACES).to_s
       @date = dc.at_xpath('dc:date/text()', NAMESPACES).to_s
-      @description = dc.at_xpath('dc:description/text()|dcterms:abstract/text()', NAMESPACES).to_s
+      @description = dc.xpath('dc:description/text()|dcterms:abstract/text()', NAMESPACES).collect { |t| '<p>' + t.to_s + '</p>' }      
       @relation = dc.at_xpath('dc:relation/text()', NAMESPACES).to_s.gsub /^Collection\s*:\s*/, ''
     end
     
@@ -95,7 +95,12 @@ class Purl
       resource.imagesvc = file.at_xpath('location[@type="imagesvc"]/text()').to_s
       resource.url      = file.at_xpath('location[@type="url"]/text()').to_s
       
-      resource.description_label = file.parent.at_xpath('attr[@name="label"]/text()').to_s || file.parent.at_xpath('label/text()').to_s
+      if !file.parent.at_xpath('attr[@name="label"]/text()').nil?
+        resource.description_label = file.parent.at_xpath('attr[@name="label"]/text()').to_s
+      elsif !file.parent.at_xpath('label/text()').nil?
+        resource.description_label = file.parent.at_xpath('label/text()').to_s
+      end
+      
       resource
     end
     

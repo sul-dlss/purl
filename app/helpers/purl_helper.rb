@@ -37,7 +37,7 @@ module PurlHelper
     base_url = deliverable_file.imagesvc.to_s
     
     if (base_url.empty?)
-      base_url = STACKS_URL + "/image/" + img_id[0..10] + "/" + img_id
+      base_url = STACKS_URL + "/image/" + @purl.pid + "/" + img_id
     end
     
     base_url
