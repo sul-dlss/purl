@@ -44,7 +44,7 @@
   <div id="links-rights">
     <h3 class="obscure">Links &amp; rights</h3> 
     <% if not(@purl.catalog_key.nil? or @purl.catalog_key.empty?) %>
-       <div class="swlink">&raquo; <%= link_to "View in SearchWorks", "#" %></div>  
+       <div class="swlink">&raquo; <a href="http://searchworks.stanford.edu/view/<%=@purl.catalog_key%>">View in SearchWorks</a></div>
      <% end %>                
 
     <% if not(@purl.copyright_stmt.nil? or @purl.copyright_stmt.empty?) %>
