@@ -1,10 +1,8 @@
 
 module PurlHelper
 
-  #
-  # This method round the given number to the given number of decimal points
-  #
-  def round_to(num,decimals=0)
+  # Method to round the given number to the given number of decimal points
+  def round_to(num, decimals=0)
     factor = 10.0**decimals
     (num*factor).round / factor
   end
@@ -67,5 +65,12 @@ module PurlHelper
     end
     
     html
+  end
+  
+  # remove trailing period from name
+  def add_copyright_symbol(copyright_stmt)
+    copyright_stmt = copyright_stmt.gsub /\(c\) Copyright/i, '&copy;'
+    
+    copyright_stmt
   end
 end

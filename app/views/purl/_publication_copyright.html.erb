@@ -1,32 +1,7 @@
-<% if !@purl.cclicense.to_s.nil? and !@purl.cclicense.to_s.empty? %>
-  <div>&copy; <%=@purl.degreeconfyr.to_s%> by <%=Dor::Util.reverse_name(@purl.authors.to_s)%></div>
-  <div style="margin: 10px 0px 0px 0px;">
-    <% if @purl.cclicense.to_s.eql? '1' %>
-      <div class="cc_by">
-        <a href="http://creativecommons.org/licenses/by/3.0/" _target="blank">This work is licensed under a Creative Commons Attribution 3.0 Unported License</a>
-      </div>
-    <% elsif @purl.cclicense.to_s.eql? '2' %>
-      <div class="cc_by_sa">
-        <a href="http://creativecommons.org/licenses/by-sa/3.0/" _target="blank">This work is licensed under a Creative Commons Attribution-Share Alike 3.0 Unported License</a>
-      </div>
-    <% elsif @purl.cclicense.to_s.eql? '3' %>
-      <div class="cc_by_nd">
-        <a href="http://creativecommons.org/licenses/by-nd/3.0/" _target="blank">This work is licensed under a Creative Commons Attribution-No Derivative Works 3.0 Unported License</a>
-      </div>
-    <% elsif @purl.cclicense.to_s.eql? '4' %>
-      <div class="cc_by_nc">
-        <a href="http://creativecommons.org/licenses/by-nc/3.0/" _target="blank">This work is licensed under a Creative Commons Attribution-Noncommercial 3.0 Unported License</a>
-      </div>
-    <% elsif @purl.cclicense.to_s.eql? '5' %>
-      <div class="cc_by_nc_sa">
-        <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" _target="blank">This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License</a>
-      </div>
-    <% elsif @purl.cclicense.to_s.eql? '6' %>
-      <div class="cc_by_nc_nd">
-        <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" _target="blank">This work is licensed under a Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported License</a>
-      </div>
-    <% else %>
-       <%= @purl.cclicensetype.to_s %>
-    <% end %>
-  </div>
+<% if not(@purl.copyright_stmt.nil? or @purl.copyright_stmt.empty?) %>
+  <div><%= add_copyright_symbol(@purl.copyright_stmt.to_s) %></div>
 <% end %>
+
+<div style="margin: 10px 0px 0px 0px;">
+  <%= render :partial => 'purl/rights_stmts' %>
+</div>

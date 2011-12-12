@@ -364,3 +364,16 @@ a.item-header:hover {
 	padding: 0 0 15px 0; 
 }
 
+.cc_by, .cc_by_nc, .cc_by_nd, .cc_by_sa, .cc_by_nc_sa, .cc_by_nc_nd {
+  background: transparent url('/images/cc_by.png') no-repeat 0px 0px;
+  padding: 0 0 0 100px;
+  min-height: 30px;
+}
+
+.cc_by_nc { background-image: url('/images/cc_by_nc.png'); }
+.cc_by_nd { background-image: url('/images/cc_by_nd.png'); }
+.cc_by_sa { background-image: url('/images/cc_by_sa.png'); }
+.cc_by_nc_sa { background-image: url('/images/cc_by_nc_sa.png'); }
+.cc_by_nc_nd { background-image: url('/images/cc_by_nc_nd.png'); }
+
+
