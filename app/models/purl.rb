@@ -43,7 +43,7 @@ class Purl
   attr_accessor :public_xml
   
   attr_deferred :titles, :authors, :source, :date, :relation, :description                       # dc
-  attr_deferred :degreeconfyr, :cclicense, :cclicensetype                                        # properites
+  attr_deferred :degreeconfyr, :cclicense, :cclicensetype, :cclicense_symbol                     # properties
   attr_deferred :catalog_key                                                                     # identity
   attr_deferred :read_group, :embargo_release_date, :copyright_stmt, :use_and_reproduction_stmt  # rights
   attr_deferred :deliverable_files, :type                                                        # content
@@ -66,12 +66,12 @@ class Purl
     # DC Metadata
     dc = doc.root.at_xpath('*[local-name() = "dc"]', NAMESPACES)
     unless dc.nil?
-      @titles = dc.xpath('dc:title/text()', NAMESPACES).collect { |t| t.to_s + " " }
-      @authors = dc.xpath('dc:creator/text()|dcterms:creator/text()', NAMESPACES).collect { |t| t.to_s }
-      @source = dc.at_xpath('dc:source/text()', NAMESPACES).to_s
-      @date = dc.at_xpath('dc:date/text()', NAMESPACES).to_s
+      @titles      = dc.xpath('dc:title/text()', NAMESPACES).collect { |t| t.to_s + " " }
+      @authors     = dc.xpath('dc:creator/text()|dcterms:creator/text()', NAMESPACES).collect { |t| t.to_s }
+      @source      = dc.at_xpath('dc:source/text()', NAMESPACES).to_s
+      @date        = dc.at_xpath('dc:date/text()', NAMESPACES).to_s
       @description = dc.xpath('dc:description/text()|dcterms:abstract/text()', NAMESPACES).collect { |t| '<p>' + t.to_s + '</p>' }      
-      @relation = dc.at_xpath('dc:relation/text()', NAMESPACES).to_s.gsub /^Collection\s*:\s*/, ''
+      @relation    = dc.at_xpath('dc:relation/text()', NAMESPACES).to_s.gsub /^Collection\s*:\s*/, ''
     end
     
     # Identity Metadata
@@ -120,15 +120,20 @@ class Purl
         @embargo_release_date = '' unless embargo_date_time.future?
       end
       
-      @copyright_stmt = rights.at_xpath('copyright/human[@type="copyright"]/text()').to_s 
-      @use_and_reproduction_stmt = rights.at_xpath('use/human[@type="creativecommons"]/text()').to_s      
+      @copyright_stmt = rights.at_xpath('copyright/human/text()').to_s 
+      @use_and_reproduction_stmt = rights.at_xpath('use/human[@type="useAndReproduction"]/text()').to_s           
+      @cclicense_symbol = rights.at_xpath('use/machine[@type="creativeCommons"]/text()').to_s
+      
+      if (@cclicense_symbol.nil? || @cclicense_symbol.empty?)
+        @cclicense_symbol = rights.at_xpath('use/machine[@type="creativecommons"]/text()').to_s
+      end
     end
     
     # Properties
     fields = doc.root.at_xpath('fields|properties/fields')
     unless fields.nil?
-      @degreeconfyr = fields.at_xpath("degreeconfyr/text()").to_s
-      @cclicense = fields.at_xpath("cclicense/text()").to_s
+      @degreeconfyr  = fields.at_xpath("degreeconfyr/text()").to_s
+      @cclicense     = fields.at_xpath("cclicense/text()").to_s
       @cclicensetype = fields.at_xpath("cclicensetype/text()").to_s
     end
     @extracted = true

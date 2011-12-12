@@ -45,15 +45,9 @@
     <h3 class="obscure">Links &amp; rights</h3> 
     <% if not(@purl.catalog_key.nil? or @purl.catalog_key.empty?) %>
        <div class="swlink">&raquo; <a href="http://searchworks.stanford.edu/view/<%=@purl.catalog_key%>">View in SearchWorks</a></div>
-     <% end %>                
-
-    <% if not(@purl.copyright_stmt.nil? or @purl.copyright_stmt.empty?) %>
-     	<div class="sidebar-stmt"><%= @purl.copyright_stmt %></div>                  
     <% end %>                
 
-    <% if not(@purl.use_and_reproduction_stmt.nil? or @purl.use_and_reproduction_stmt.empty?) %>
-     	<div class="sidebar-stmt"><%= @purl.use_and_reproduction_stmt %></div>                  
-    <% end %>                
+	<%= render :partial => 'purl/rights_stmts' %>
   </div>
 
 </div>
