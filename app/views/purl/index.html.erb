@@ -1,16 +1,17 @@
 
-<% unless( @purl.titles.nil? ) %>
-  <h2><%=@purl.titles%></h2>
-<% end %>
+<div id="title-metadata">             
+	<% unless (@purl.titles.nil?) %>
+	  <h2><%= @purl.titles %></h2>
+	<% end %>
 
-<dl>
-  <% unless @purl.authors.nil? or @purl.authors.empty? %>
-    <dt>Author:</dt>
-    <dd><%=@purl.authors%></dd>
-  <% end %>
-  <dt>Publisher:</dt>
-  <dd>Stanford University, 2010</dd>
-</dl>
+  <dl>
+    <%= print_field_value("authors", "Creator") %>
+    <%= print_field_value("contributors", "Contributor(s)") %>
+    <%= print_field_value("source", "Source") %>
+    <%= print_field_value("date", "Date") %>
+    <%= print_field_value("description", "Description") %>	    
+  </dl>          
+</div>
 
 <div id="metadata">
   <% if( !@purl.catalog_key.nil? ) %>
@@ -24,7 +25,7 @@
     <tr>
       <th>File (Download)</th>
       <th>Description</th>
-	  <% if( !@purl.read_group.nil? and !@purl.read_group.empty? and @purl.read_group !~ /^world$/i ) %>
+	    <% if( !@purl.read_group.nil? and !@purl.read_group.empty? and @purl.read_group !~ /^world$/i ) %>
         <th>Access</th>
       <% end %>
     </tr>
