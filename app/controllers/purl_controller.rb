@@ -8,7 +8,9 @@ class PurlController < ApplicationController
   # entry point into the application
   def index
     # validate that the metadata is ready for delivery
+    
     if( @purl.is_ready? )
+    
       # render the landing page based on the format
       respond_to do |format|
         format.html {
@@ -20,6 +22,14 @@ class PurlController < ApplicationController
       
         format.xml { 
           render :xml => @purl.public_xml 
+        }
+
+        format.mods { 
+          if @purl.has_mods
+            render :xml => @purl.mods_xml 
+          else
+            render_404 
+          end
         }
       end
     else
@@ -40,7 +50,7 @@ class PurlController < ApplicationController
     end
 
     if( !Dor::Util.validate_druid(params[:id]) )
-      render :status => 404, :file => "#{RAILS_ROOT}/public/404.html"
+      render_404
       return false
     end
     true
@@ -50,10 +60,14 @@ class PurlController < ApplicationController
     @purl = Purl.find(params[:id])
     # Catch well formed druids that don't exist in the document cache
     if(@purl.nil?)
-      render :status => 404, :file => "#{RAILS_ROOT}/public/404.html"
+      render_404
       return false
     end
     true
+  end
+
+  def render_404 
+    render :status => 404, :file => "#{RAILS_ROOT}/public/404.html"
   end
 
 end

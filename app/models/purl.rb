@@ -41,6 +41,7 @@ class Purl
   
   attr_accessor :pid
   attr_accessor :public_xml
+  attr_accessor :mods_xml
   
   attr_deferred :titles, :authors, :source, :date, :relation, :description, :contributors        # dc
   attr_deferred :degreeconfyr, :cclicense, :cclicensetype, :cclicense_symbol                     # properties
@@ -57,6 +58,7 @@ class Purl
   def initialize(id)
     @pid = id
     @public_xml = get_metadata('public')
+    @mods_xml = get_metadata('mods')
     @extracted = false
   end
 
@@ -145,7 +147,7 @@ class Purl
       return true
     end
     
-    return false
+    false
   end
   
   # check if this object is of type image
@@ -153,9 +155,19 @@ class Purl
     if !type.nil? && type =~ /Image|Map|Manuscript/i
       return true
     end  
-    return false
+    
+    false
   end
   
+  # check if this object has mods content
+  def has_mods
+    if !@mods_xml.nil? and !@mods_xml.empty? and @mods_xml != "<mods/>"    
+      return true
+    end
+    
+    false
+  end    
+    
   private
 
   # retrieve the given document from the document cache for the given object identifier
@@ -165,9 +177,11 @@ class Purl
     
     unless pair_tree.nil?
       file_path = File.join(DOCUMENT_CACHE_ROOT,pair_tree,doc_name)
+      
       if File.exists?(file_path)
         contents = File.read(file_path)
       end
+      
       if( !RAILS_ENV.eql? 'production' )
         contents.gsub!('stacks.stanford.edu','stacks-test.stanford.edu')
       end
@@ -179,10 +193,13 @@ class Purl
   def ng_xml(*streams)
     if @ng_xml.nil?
       content = @public_xml
+
       if content.nil? or content.strip.empty?
         content = "<publicObject objectId='#{@pid}'/>"
       end
+
       @ng_xml = Nokogiri::XML(content)
+
       streams.each do |doc_name|
         if @ng_xml.root.at_xpath(%{*[local-name() = "#{doc_name}"]}).nil?
           stream_content = get_metadata(doc_name)
