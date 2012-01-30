@@ -114,39 +114,63 @@ h3 {
   width: 100%;
 }
 
-#title-metadata {
-  padding: 20px 30px;
+#links-and-metadata {
+	margin: 20px 30px;	
+	overflow: auto;
 }
 
-#title-metadata dl { 
+#links-column {
+	border-left: 1px dotted #aaa;
+	margin-top: 30px;
+	padding: 10px 0 10px 15px;
+	float: right;
+	width: 14%;
+}
+
+#rights-metadata {
+	padding-top: 10px;
+}
+
+#title-metadata, #rights-metadata {
+	width: 82%;
+  float: left;  
+}
+
+#rights-metadata {
+	width: 100%;
+}
+
+#title-metadata dl, #rights-metadata dl { 
   margin: 15px 0; 
 }
 
-#title-metadata dt { 
+#title-metadata dt, #rights-metadata dt { 
   clear: both; 
   color: #555555; 
   float: left; 
   padding: 2px 0; 
-  width: 8em; 
+  width: 12em; 
 } 
 
-#title-metadata dd { 
-  margin-left: 8em;	
+#title-metadata dd, #rights-metadata dd { 
+  margin-left: 12em;	
   padding: 2px 0px; 
 } 
 
-#title-metadata dd p { 
+#title-metadata dd p, #rights-metadata dd p { 
   margin-bottom: 8px;
 }
 
 #toc-and-metadata {
   clear: left;
-  padding: 20px 30px 0 30px;
+  overflow: auto;
+  margin: 10px 30px 0 30px;
+  padding-top: 10px;
 }
 
 ol#toc {
   float: left;
-  width: 70%;
+  width: 100%;
 }
 
 ol#toc > li {
@@ -159,6 +183,59 @@ ol#toc > li {
   -webkit-border-radius: 3px;
 }
 
+ol#gallery {
+  float: left;
+  width: 100%;
+}
+
+ol#gallery > li {
+  background: #fff url('../images/gallery-item-bg.png') left bottom repeat-x;   
+  border: 1px solid #ccc;
+  float: left;
+  margin: 5px 5px 0 0;
+  overflow: auto;
+  padding: 5px;
+  text-align: center;
+  width: 240px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+ol#gallery .img-block {
+	height: 240px;
+	position: relative;
+	width: 240px;
+}
+
+.img-block a {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
+
+.img-block a:hover {
+	border: 0;
+}
+
+.img-group-nav {	
+	height: 10px;
+	padding: 10px 0 10px 0;
+}
+
+.img-group-nav a:hover {
+	border: 0;
+}
+
+.img-group-label-container {
+	padding: 5px;
+}
+
+.gallery-img-nav-icon {
+	padding: 0 2px;
+}
+
 a.item-header {
   background: transparent url('../images/icon-show.png') 378px 16px no-repeat;
   color: #000;   
@@ -168,9 +245,15 @@ a.item-header {
   padding: 5px 5px 0 5px;
 }
 
+
 ol#toc > li > a.item-header-hide {
   background-image: url('../images/icon-hide.png');
 }
+
+#icon-gallery-view, #icon-list-view {
+	cursor: pointer;
+}
+
 
 a.item-header:hover {
   border-width: 0;
@@ -267,18 +350,20 @@ a.item-header:hover {
 #img-viewfinder {
   /*background: url('../images/loader.gif') 30px 30px no-repeat;*/
   display: block;
+  left: 140px;
   overflow: auto;
-  width: 100%;
+  position: absolute;
+  top: 128px;
 }
 
-#img-canvas {
+#img-canvas {	
   margin: 10px;
 }
 
 #zpr-frame {
-	left: 10px;
+	left: 8px;
 	position: absolute;
-	top: 85px;
+	top: 8px;
 }
 
 #img-viewer-metadata {
@@ -293,19 +378,20 @@ a.item-header:hover {
   float: left; 
   margin: 0 10px;
   overflow: auto;
-  padding: 10px 0px 0 0px;
-  width: 100%;
+  padding: 10px 0px 10px 0px;
 }
 
 #img-viewer-links ul {
   float: left;
-  padding-bottom: 10px;
+  padding: 10px 0 0 0;
 }
 
 #img-viewer-links ul li {
   float: left;
+  line-height: 1.8;
   padding: 0 10px;
   text-align: center;
+  width: 80px;
 }
 
 .viewer-nav-links {
@@ -334,6 +420,27 @@ a.item-header:hover {
   color: #fff;
 }
 
+.img-viewer-nav {	 
+	float: left;
+	text-align: center;
+	width: 285px;
+}
+
+#img-viewer-prev > img, #img-viewer-next > img {	
+	cursor: pointer;
+	padding-bottom: 10px;
+}
+
+a#img-viewer-prev:hover, a#img-viewer-next:hover { 
+	border: 0;
+}
+
+.viewer-h-nav-img {
+	display: inline;
+	margin: 1px 3px;
+	padding: 2px;	
+}
+
 #footer { 
   clear: both; 
   color: #ffffff; 
@@ -341,6 +448,28 @@ a.item-header:hover {
   margin: 20px 0 35px 0; 
   text-align: center; 
 }
+
+.viewer-selected-img {
+	border: 2px solid #a2000a;	
+}
+
+#viewer-v-nav {
+	border-right: 1px dotted #aaa;
+	float: left;
+	margin: 5px 10px;
+	padding: 5px;
+	width: 115px;
+}
+
+#viewer-v-nav img {	
+	padding: 2px;
+	margin-bottom: 15px;
+}
+
+#viewer-v-nav a:hover {	
+	border: 0;
+}
+
 
 #footer a, #footer a:hover { 
   color: #ffffff;
@@ -357,8 +486,6 @@ a.item-header:hover {
   position: absolute;
   width: 1px;
 }
-
-.swlink {padding: 0 0 15px 0; margin: 0 0 15px 0; font-size: 1.1em; border-bottom: 1px dotted #cccccc; }
 
 .sidebar-stmt {
 	padding: 0 0 15px 0; 

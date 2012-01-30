@@ -83,28 +83,64 @@ class Purl
     # Content Metadata
     @type = doc.root.xpath('contentMetadata/@type').to_s
     
-    @deliverable_files = doc.root.xpath('contentMetadata/resource/file[not(@deliver="no" or @publish="no")]').collect do |file|
+    #@deliverable_files = doc.root.xpath('contentMetadata/resource/file[not(@deliver="no" or @publish="no")]').collect do |file|
+    
+    @deliverable_files = doc.root.xpath('contentMetadata/resource').collect do |resource_xml|
+      file = resource_xml.at_xpath('file')
       resource = Resource.new
-      resource.mimetype = file['mimetype']
-      resource.size     = file['size']
-      resource.shelve   = file['shelve']
-      resource.preserve = file['preserve']
-      resource.deliver  = file['deliver'] || file['publish']
-      resource.filename = file['id']
-      resource.objectId = file.parent['objectId']
-      resource.type     = file.parent['type']
-      resource.width    = file.at_xpath('imageData/@width').to_s
-      resource.height   = file.at_xpath('imageData/@height').to_s
-      resource.imagesvc = file.at_xpath('location[@type="imagesvc"]/text()').to_s
-      resource.url      = file.at_xpath('location[@type="url"]/text()').to_s
       
-      if !file.parent.at_xpath('attr[@name="label"]/text()').nil?
-        resource.description_label = file.parent.at_xpath('attr[@name="label"]/text()').to_s
-      elsif !file.parent.at_xpath('label/text()').nil?
-        resource.description_label = file.parent.at_xpath('label/text()').to_s
+      if (!file.nil? and not(file['deliver'] == "no" or file['publish'] == "no"))
+        resource.mimetype = file['mimetype']
+        resource.size     = file['size']
+        resource.shelve   = file['shelve']
+        resource.preserve = file['preserve']
+        resource.deliver  = file['deliver'] || file['publish']
+        resource.filename = file['id']
+        resource.objectId = file.parent['objectId']
+        resource.type     = file.parent['type'].to_s
+        resource.width    = file.at_xpath('imageData/@width').to_s
+        resource.height   = file.at_xpath('imageData/@height').to_s
+        resource.imagesvc = file.at_xpath('location[@type="imagesvc"]/text()').to_s
+        resource.url      = file.at_xpath('location[@type="url"]/text()').to_s        
+      end  
+            
+      if !resource_xml.at_xpath('attr[@name="label"]/text()').nil?
+        resource.description_label = resource_xml.at_xpath('attr[@name="label"]/text()').to_s
+      elsif !resource_xml.at_xpath('label/text()').nil?
+        resource.description_label = resource_xml.at_xpath('label/text()').to_s
       end
+
+      resource.sequence = resource_xml['sequence'].to_s || 0        
       
-      resource
+      resource.sub_resources = resource_xml.xpath('resource').collect do |sub_resource_xml|
+        sub_file = sub_resource_xml.at_xpath('file')
+        sub_resource = Resource.new
+
+        if (!sub_file.nil? and not(sub_file['deliver'] == "no" or sub_file['publish'] == "no"))
+          sub_resource.mimetype = sub_file['mimetype']
+          sub_resource.size     = sub_file['size']
+          sub_resource.shelve   = sub_file['shelve']
+          sub_resource.preserve = sub_file['preserve']
+          sub_resource.deliver  = sub_file['deliver'] || file['publish']
+          sub_resource.filename = sub_file['id']
+          sub_resource.objectId = sub_file.parent['objectId']
+          sub_resource.type     = sub_file.parent['type']
+          sub_resource.width    = sub_file.at_xpath('imageData/@width').to_s
+          sub_resource.height   = sub_file.at_xpath('imageData/@height').to_s
+          sub_resource.imagesvc = sub_file.at_xpath('location[@type="imagesvc"]/text()').to_s
+          sub_resource.url      = sub_file.at_xpath('location[@type="url"]/text()').to_s        
+        end  
+
+        if !sub_resource_xml.at_xpath('attr[@name="label"]/text()').nil?
+          sub_resource.description_label = sub_resource_xml.at_xpath('attr[@name="label"]/text()').to_s
+        elsif !sub_resource_xml.at_xpath('label/text()').nil?
+          sub_resource.description_label = sub_resource_xml.at_xpath('label/text()').to_s
+        end        
+        
+        sub_resource
+      end  
+      
+      resource || nil
     end
     
     # Rights Metadata

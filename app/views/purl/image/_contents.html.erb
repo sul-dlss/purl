@@ -1,16 +1,24 @@
 <div id="pane-toc-metadata">
-	
-  <div id="title-metadata">             
-		<% unless (@purl.titles.nil?) %>
-		  <h2><%= @purl.titles %></h2>
-		<% end %>
 
-    <dl>
-	    <%= print_field_value("authors", "Creator") %>
-	    <%= print_field_value("source", "Source") %>
-	    <%= print_field_value("date", "Date") %>
-	    <%= print_field_value("description", "Description") %>	    
-    </dl>          
+  <div id="links-and-metadata">	
+	  <div id="title-metadata">             
+			<% unless (@purl.titles.nil?) %>
+			  <h2><%= @purl.titles %></h2>
+			<% end %>
+
+	    <dl>
+		    <%= print_field_value("authors", "Creator") %>
+		    <%= print_field_value("source", "Source") %>
+		    <%= print_field_value("date", "Date") %>
+		    <%= print_field_value("description", "Description") %>	    
+	    </dl>          
+	  </div>
+
+    <% if not(@purl.catalog_key.nil? or @purl.catalog_key.empty?) %>
+		  <div id="links-column">
+	       &raquo; <a href="http://searchworks.stanford.edu/view/<%=@purl.catalog_key%>">View in SearchWorks</a>
+			</div>
+    <% end %>                		
   </div>
 
   <%= render :partial => 'purl/image/toc_and_metadata' %>
