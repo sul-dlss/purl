@@ -334,6 +334,8 @@ function loadZpr(id) {
 		'height': imgInfo[index]['height'], 
 		'marqueeImgSize': 150  
 	});	
+	
+	loadImgsInVerticalNavigation(id, index);   
 }
 
 
