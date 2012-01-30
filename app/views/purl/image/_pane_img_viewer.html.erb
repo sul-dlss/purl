@@ -6,38 +6,62 @@
 		<span id="img-viewer-item-label"></span>
 	</div>
   <div id="img-viewer-links">
-    <div style="float: left;">                  
+    <div style="float: left; padding-top: 25px;">                  
       <a class="viewer-nav-links" href="javascript:viewTOC();">&larr; Return to TOC</a>      
-      Available sizes: 
     </div>
     <ul>
       <li>
-        <a id="small-img-viewer" href="#"><span class="obscure">View the</span> small <span class="obscure"> size of image </span><span class="obscure" id="small-img-viewer-id"></span></a> <span id="small-size-img-viewer" class="img-size"></span>&nbsp;
+        <a id="small-img-viewer" href="#"><span class="obscure">View the</span> small <span class="obscure"> size of image </span><span class="obscure" id="small-img-viewer-id"></span></a> &nbsp;
         <a id="small-img-viewer-download"><span class="obscure">Download the small size of image </span><span class="obscure" id="small-img-viewer-download-id"></span><img src="images/icon-download.png" alt="" title=""/></a> 
+        <br/>
+        <span id="small-size-img-viewer" class="img-size"></span>
       </li>
       <li>
-        <a id="medium-img-viewer" href="#"><span class="obscure">View the</span> medium <span class="obscure"> size of image </span><span class="obscure" id="medium-img-viewer-id"></span></a> <span id="medium-size-img-viewer" class="img-size"></span>&nbsp;
+        <a id="medium-img-viewer" href="#"><span class="obscure">View the</span> medium <span class="obscure"> size of image </span><span class="obscure" id="medium-img-viewer-id"></span></a> &nbsp;
         <a id="medium-img-viewer-download"><span class="obscure">Download the medium size of image </span><span class="obscure" id="medium-img-viewer-download-id"></span><img src="images/icon-download.png" alt="" title=""/></a>
+        <br/>
+        <span id="medium-size-img-viewer" class="img-size"></span>
       </li>
       <li>
-        <a id="large-img-viewer" href="#"><span class="obscure">View the</span> large <span class="obscure"> size of image </span><span class="obscure" id="large-img-viewer-id"></span></a> <span id="large-size-img-viewer" class="img-size"></span>&nbsp;
+        <a id="large-img-viewer" href="#"><span class="obscure">View the</span> large <span class="obscure"> size of image </span><span class="obscure" id="large-img-viewer-id"></span></a> &nbsp;
         <a id="large-img-viewer-download"><span class="obscure">Download the large size of image </span><span class="obscure" id="large-img-viewer-download-id"></span><img src="images/icon-download.png" alt="" title=""/></a>
+        <br/>
+        <span id="large-size-img-viewer" class="img-size"></span>
+      </li>                
+      <li>
+        <a id="xlarge-img-viewer" href="#"><span class="obscure">View the</span> xlarge <span class="obscure"> size of image </span><span class="obscure" id="xlarge-img-viewer-id"></span></a> &nbsp;
+        <a id="xlarge-img-viewer-download"><span class="obscure">Download the xlarge size of image </span><span class="obscure" id="xlarge-img-viewer-download-id"></span><img src="images/icon-download.png" alt="" title=""/></a>
+        <br/>
+        <span id="xlarge-size-img-viewer" class="img-size"></span>
+      </li>                
+      <li>
+        <a id="full-img-viewer" href="#"><span class="obscure">View the</span> full <span class="obscure"> size of image </span><span class="obscure" id="full-img-viewer-id"></span></a> &nbsp;
+        <a id="full-img-viewer-download"><span class="obscure">Download the full size of image </span><span class="obscure" id="full-img-viewer-download-id"></span><img src="images/icon-download.png" alt="" title=""/></a>
+        <br/>
+        <span id="full-size-img-viewer" class="img-size"></span>
       </li>                
 			<li>
-        <a id="zoom-img-viewer" href="#" title="Zoom View">zoom view<span class="obscure"> of image 1</span></a>                				
+        <a id="zoom-img-viewer" href="#" title="Zoom View">zoom<span class="obscure"> of image 1</span></a>                				
 			</li>
     </ul>
 
 		<% if @purl.deliverable_files.length > 1 %>
-    <div class="img-viewer-nav">
-      <a id="img-viewer-prev" class="viewer-nav-links">&laquo; Previous Image</a>  
-      <span id="img-viewer-pagination"></span>
-      <a id="img-viewer-next" class="viewer-nav-links">Next Image &raquo;</a>
-    </div>
+	    <div class="img-viewer-nav">
+	      <a id="img-viewer-prev"><img src="images/img-view-group-prev-inactive.png"></a>  
+	      <img id="viewer-h-nav-img-01" class="viewer-h-nav-img" src=""> 
+	      <img id="viewer-h-nav-img-02" class="viewer-h-nav-img viewer-selected-img" src=""> 
+	      <img id="viewer-h-nav-img-03" class="viewer-h-nav-img" src=""> 
+	      <a id="img-viewer-next"><img src="images/img-view-group-next-inactive.png"></a>
+	      <br/>
+	      <span id="img-viewer-pagination"></span>	      
+	    </div>
     <% end %>
   </div>
-  <div id="img-viewfinder">
-      <img id="img-canvas" src="" title="" alt="" />
-			<div id="zpr-frame" style="display: none;"></div>
+  <div>
+	  <div id="viewer-v-nav"></div>
+	  <div id="img-viewfinder">
+	    <img id="img-canvas" src="" title="" alt="" />
+		  <div id="zpr-frame" style="display: none;"></div>
+	  </div>
   </div>            
 </div>

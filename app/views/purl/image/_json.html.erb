@@ -1,5 +1,10 @@
 <script type="text/javascript">
+  <% if @purl.pid == "dm907qj6498" %>
+  var stacksURL = "<%= STACKS_URL.gsub /\-test/i, '' %>";
+  <% else %>
   var stacksURL = "<%= STACKS_URL %>";
+  <% end %>
+
   var pid = "<%= @purl.pid %>";
   imgInfo = [ <%= get_image_json_array %> ];
 </script>
