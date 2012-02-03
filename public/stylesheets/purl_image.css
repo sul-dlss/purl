@@ -222,6 +222,10 @@ ol.gallery .img-block {
 	width: 240px;
 }
 
+.img-block {
+	background: #fff url('../images/loader_16x16.gif') center center no-repeat;
+}
+
 .img-block a {
 	bottom: 0;
 	left: 0;
