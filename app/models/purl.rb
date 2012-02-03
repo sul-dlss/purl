@@ -73,8 +73,10 @@ class Purl
       @contributors = dc.xpath('dc:contributor/text()|dcterms:contributor/text()', NAMESPACES).collect { |t| t.to_s + '<br/>' }      
       @source       = dc.at_xpath('dc:source/text()', NAMESPACES).to_s
       @date         = dc.at_xpath('dc:date/text()', NAMESPACES).to_s
-      @description  = dc.xpath('dc:description/text()|dcterms:abstract/text()', NAMESPACES).collect { |t| '<p>' + t.to_s + '</p>' }      
       @relation     = dc.at_xpath('dc:relation/text()', NAMESPACES).to_s.gsub /^Collection\s*:\s*/, ''
+
+      @description  = Array.new
+      dc.xpath('dc:description/text()|dcterms:abstract/text()', NAMESPACES).collect { |d| @description.push(d.to_s) }      
     end
     
     # Identity Metadata

@@ -168,6 +168,16 @@ h3 {
   padding-top: 10px;
 }
 
+#list-gallery-toggle-box {
+	padding-right: 10px;
+	text-align: right;
+}
+
+#gallery-pagination {
+	padding: 10px 0;
+	text-align: left;
+}
+
 ol#toc {
   float: left;
   width: 100%;
@@ -183,12 +193,17 @@ ol#toc > li {
   -webkit-border-radius: 3px;
 }
 
-ol#gallery {
+#gallery-content {
+	float: left;
+	width: 100%;
+}
+
+ol.gallery {
   float: left;
   width: 100%;
 }
 
-ol#gallery > li {
+ol.gallery  li {
   background: #fff url('../images/gallery-item-bg.png') left bottom repeat-x;   
   border: 1px solid #ccc;
   float: left;
@@ -201,7 +216,7 @@ ol#gallery > li {
   -webkit-border-radius: 3px;
 }
 
-ol#gallery .img-block {
+ol.gallery .img-block {
 	height: 240px;
 	position: relative;
 	width: 240px;
@@ -254,6 +269,24 @@ ol#toc > li > a.item-header-hide {
 	cursor: pointer;
 }
 
+.gallery-page-nav-active {
+	background-color: #930009;
+	border: 1px solid #6f0108;
+	color: #fff;
+	padding: 2px 4px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;  	
+}
+
+a.gallery-page-nav-link {
+	border: 1px solid transparent;	
+	padding: 2px 4px;
+	margin-right: 4px;
+}
+
+a:hover.gallery-page-nav-link {
+	border: 1px solid #6f0108;
+}
 
 a.item-header:hover {
   border-width: 0;
@@ -503,4 +536,4 @@ a#img-viewer-prev:hover, a#img-viewer-next:hover {
 .cc_by_nc_sa { background-image: url('/images/cc_by_nc_sa.png'); }
 .cc_by_nc_nd { background-image: url('/images/cc_by_nc_nd.png'); }
 
-
+.truncator-link { font-weight: bold; }
