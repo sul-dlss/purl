@@ -95,11 +95,33 @@ module PurlHelper
     
     html
   end
+
+  # get field value
+  def print_description_value(label = '')
+    html = ''
+    
+    if not(@purl.nil? or @purl.description.nil? or @purl.description.empty?)
+      html = "<dt>" + label + ":</dt><dd>"
+
+      @purl.description.each do |d|
+        html = html + "<p><span class=\"desc-content\">" + d + "</span></p>"
+      end
+
+      html = html + "</dd>"
+    end
+        
+    html
+  end
+
   
   # remove trailing period from name
   def add_copyright_symbol(copyright_stmt)
     copyright_stmt = copyright_stmt.gsub /\(c\) Copyright/i, '&copy;'
     
     copyright_stmt
+  end
+  
+  def get_gallery_items_per_page_count()
+    return 15
   end
 end

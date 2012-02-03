@@ -60,15 +60,17 @@ $(document).ready(function() {
 	  $('#icon-list-view').attr('src', 'images/icon-list-view-active.png');
 	  $('#icon-gallery-view').attr('src', 'images/icon-gallery-view-inactive.png');
 	  $('ol#toc').show();
-	  $('ol#gallery').hide();
+	  $('div#gallery-content').hide();
   });
 
   $('#icon-gallery-view').click(function() { 
 	  $('#icon-list-view').attr('src', 'images/icon-list-view-inactive.png');
 	  $('#icon-gallery-view').attr('src', 'images/icon-gallery-view-active.png');
-	  $('ol#gallery').show();
+	  $('div#gallery-content').show();
 	  $('ol#toc').hide();
   });
+
+  setupGalleryPageNavigation(1);
 
 });
 
@@ -510,4 +512,53 @@ function loadImgsInVerticalNavigation(id, index) {
 		  }
 	  }	
 	}
+}
+
+function setupGalleryPageNavigation(pageNo) {	
+	var offset = 3; 
+  var totalPages = $('.gallery').length;
+  var startingPageNo = 1, endingPageNo = totalPages;
+	
+	if (totalPages == 1) { return; }
+		
+  if (pageNo > offset) { startingPageNo = pageNo - offset; }
+  if ((pageNo + offset) > totalPages) { startingPageNo = totalPages - (2 * offset); }
+
+  if (startingPageNo < 1) { startingPageNo = 1; }
+  if (startingPageNo > totalPages) { startingPageNo = totalPages; }
+
+   endingPageNo = startingPageNo + (2 * offset);
+
+   if (endingPageNo > totalPages) { endingPageNo = totalPages; }
+
+  $('#gallery-pagination').empty();
+
+  if (startingPageNo != 1) {
+	  $('#gallery-pagination').append(' ... ');
+  }
+  
+  for (i = startingPageNo; i <= endingPageNo; i++) {
+    if (i == pageNo) {
+      $('#gallery-pagination').append("<a class=\"gallery-page-nav-link gallery-page-nav-active\" id=\"gallery-page-nav-" + i + "\" href=\"javascript:;\">" + i + "</a>"); 		
+    } else {
+      $('#gallery-pagination').append("<a class=\"gallery-page-nav-link\" id=\"gallery-page-nav-" + i + "\" href=\"javascript:;\">" + i + "</a>"); 				
+    }
+  }
+
+  if (endingPageNo != totalPages) {
+	  $('#gallery-pagination').append(' ... ');
+  }		
+	
+	$('.gallery-page-nav-link').each(function(){
+		var id = this.id;
+		id = id.replace(/^gallery-page-nav-/, '');
+		
+		$('#gallery-page-nav-' + id).click(function() {	
+		  $('.gallery').hide();		  
+		  $('#gallery-page-items-' + id).show();
+			
+	    setupGalleryPageNavigation(parseInt(id)); 
+		});   
+		
+	});
 }

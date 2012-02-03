@@ -173,3 +173,5 @@ highlight colour for browse by callnum:  #e5f1f4
 .cc_by_nc_sa { background-image: url('/images/cc_by_nc_sa.png'); }
 .cc_by_nc_nd { background-image: url('/images/cc_by_nc_nd.png'); }
 
+.truncator-link { font-weight: bold; }
+
