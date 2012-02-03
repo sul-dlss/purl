@@ -515,10 +515,21 @@ function loadImgsInVerticalNavigation(id, index) {
 }
 
 function setupGalleryPageNavigation(pageNo) {	
+	var druid = pid;
 	var offset = 3; 
   var totalPages = $('.gallery').length;
   var startingPageNo = 1, endingPageNo = totalPages;
-	
+
+  $("ol#[id^=gallery-page-items-] img[id^=img-src-]").each(function() { 
+	  $(this).removeAttr('src');
+	});
+
+	$('#gallery-page-items-' + pageNo + " img[id^=img-src-]").each(function() { 
+		var img_id = this.id;
+		img_id = img_id.replace(/^img-src-/, '');
+		this.src = stacksURL + '/image/' + druid + '/' + img_id + '?w=240&h=240';
+	});
+
 	if (totalPages == 1) { return; }
 		
   if (pageNo > offset) { startingPageNo = pageNo - offset; }
@@ -561,4 +572,5 @@ function setupGalleryPageNavigation(pageNo) {
 		});   
 		
 	});
+	
 }

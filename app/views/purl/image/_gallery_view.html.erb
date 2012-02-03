@@ -28,11 +28,7 @@
     <li>
       <div class="img-block">
 	       <a href="javascript:showImg('zoom-<%= img_id %>', '<%= img_id %>');">
-	        <% if @purl.pid == "dm907qj6498" %>
-	          <img src="<%= STACKS_URL.gsub /\-test/i,'' %>/image/<%= @purl.pid %>/<%= img_id %>?w=240&h=240" alt="" />
-	        <% else %>
-            <img src="<%= STACKS_URL %>/image/<%= @purl.pid %>/<%= img_id %>?w=240&h=240" alt="" /> 
-          <% end %>
+	         <img id="img-src-<%= img_id %>" alt="">
         </a> 
       </div>
       <div class="img-group-nav">
@@ -59,11 +55,7 @@
 			    <div id="<%= @purl.pid.to_s + '_seq_' + sequence + '_img_' + sno.to_s %>" style="display: <%= display %>;">
 					  <div class="img-block">
 					   <a href="javascript:showImg('zoom-<%= img_id %>', '<%= img_id %>');">
-					     <% if @purl.pid == "dm907qj6498" %>
-					       <img src="<%= STACKS_URL.gsub /\-test/i,'' %>/image/<%= @purl.pid %>/<%= img_id %>?w=240&h=240" alt="" />
-					     <% else %>
-					        <img src="<%= STACKS_URL %>/image/<%= @purl.pid %>/<%= img_id %>?w=240&h=240" alt="" /> 
-					      <% end %>
+						   <img id="img-src-<%= img_id %>" alt="">
 				      </a> 
 				    </div>
 				    <div class="img-group-nav">
