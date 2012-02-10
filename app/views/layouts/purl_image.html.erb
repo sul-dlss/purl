@@ -8,16 +8,13 @@
     <div id="container">
       <div id="banner">
         <h1>Stanford Digital Repository</h1>
-      </div>      
-      
+      </div>            
       <div id="contents">
 	      <%= yield %>
       </div>
-
-      <div id="footer">
-        <%= render :partial => 'purl/footer' %>
-      </div>            
     </div>
+
+    <%= render :partial => 'purl/image/footer' %>
 
     <%= javascript_include_tag 'jquery', 'jquery.truncator', 'application', 'purl_image', 'zpr' %>
     <%= render :partial => 'purl/image/json' %>
