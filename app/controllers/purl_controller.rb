@@ -31,6 +31,14 @@ class PurlController < ApplicationController
             render_404 
           end
         }
+
+        format.flipbook {
+          if (@purl.is_book?) 
+            render :json => @purl.flipbook_json
+          else
+            render :json => nil
+          end
+        }
       end
     else
       render :partial => "purl/unavailable", :layout => "application"
