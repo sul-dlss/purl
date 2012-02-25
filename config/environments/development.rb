@@ -29,4 +29,5 @@ STACKS_URL = 'http://stacks-test.stanford.edu'
 
 # document cache location
 ##DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'
-DOCUMENT_CACHE_ROOT = '/Users/jchris/work/document_cache'
+#DOCUMENT_CACHE_ROOT = '/Users/jchris/work/document_cache'
+DOCUMENT_CACHE_ROOT = '/Users/renzo/dev/document_cache'

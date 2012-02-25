@@ -1,10 +1,10 @@
 require 'nokogiri'
 
-require "dor/util"
+require "lib/purl/util"
 
 class Purl
   
-  include PurlHelper
+  include PurlUtils
   
   def Purl.find(id)
     pair_tree = Purl.create_pair_tree(id)
@@ -42,7 +42,8 @@ class Purl
   attr_accessor :pid
   attr_accessor :public_xml
   attr_accessor :mods_xml
-  
+  attr_accessor :flipbook_json 
+ 
   attr_deferred :titles, :authors, :source, :date, :relation, :description, :contributors        # dc
   attr_deferred :degreeconfyr, :cclicense, :cclicensetype, :cclicense_symbol                     # properties
   attr_deferred :catalog_key                                                                     # identity
@@ -59,6 +60,8 @@ class Purl
     @pid = id
     @public_xml = get_metadata('public')
     @mods_xml = get_metadata('mods')
+    @flipbook_json = get_flipbook_json
+
     @extracted = false
   end
 
@@ -85,7 +88,7 @@ class Purl
     # Content Metadata
     @type = doc.root.xpath('contentMetadata/@type').to_s
     
-    #@deliverable_files = doc.root.xpath('contentMetadata/resource/file[not(@deliver="no" or @publish="no")]').collect do |file|
+    #deliverable_files = doc.root.xpath('contentMetadata/resource/file[not(@deliver="no" or @publish="no")]').collect do |file|
     
     @deliverable_files = doc.root.xpath('contentMetadata/resource').collect do |resource_xml|
       file = resource_xml.at_xpath('file')
@@ -102,6 +105,8 @@ class Purl
         resource.type     = file.parent['type'].to_s
         resource.width    = file.at_xpath('imageData/@width').to_s
         resource.height   = file.at_xpath('imageData/@height').to_s
+        # http://sourceforge.net/apps/mediawiki/djatoka/index.php?title=Djatoka_Level_Logic 
+        resource.levels   = (( Math.log([resource.width, resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1 
         resource.imagesvc = file.at_xpath('location[@type="imagesvc"]/text()').to_s
         resource.url      = file.at_xpath('location[@type="url"]/text()').to_s        
       end  
@@ -129,6 +134,7 @@ class Purl
           sub_resource.type     = sub_file.parent['type']
           sub_resource.width    = sub_file.at_xpath('imageData/@width').to_s
           sub_resource.height   = sub_file.at_xpath('imageData/@height').to_s
+          sub_resource.levels   = (( Math.log([sub_resource.width, sub_resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1 
           sub_resource.imagesvc = sub_file.at_xpath('location[@type="imagesvc"]/text()').to_s
           sub_resource.url      = sub_file.at_xpath('location[@type="url"]/text()').to_s        
         end  
@@ -190,13 +196,21 @@ class Purl
   
   # check if this object is of type image
   def is_image?
-    if !type.nil? && type =~ /Image|Map|Manuscript/i
+    if !type.nil? && type =~ /Image|Map/i
       return true
     end  
     
     false
   end
-  
+
+  def is_book?
+    if !type.nil? && type =~ /Book|Manuscript/i
+      return true
+    end  
+    
+    false
+  end  
+ 
   # check if this object has mods content
   def has_mods
     if !@mods_xml.nil? and !@mods_xml.empty? and @mods_xml != "<mods/>"    
@@ -227,6 +241,30 @@ class Purl
 
     return contents
   end
+  
+  # map the given document public xml to json
+  def get_flipbook_json
+    self.extract_metadata 
+ 
+    return { 
+      :pid => "#{@pid}",
+      :defaultViewMode => 2,
+      :bookTitle => @titles.first,
+      :bookURL => !(@catalog_key.nil? or @catalog_key.empty?) ? "http://searchworks.stanford.edu/view/#{@catalog_key}" : "",
+      :pages =>  @deliverable_files.collect { |file| {
+          :height => file.height,
+          :width => file.width,
+          :levels => file.levels,
+          :resourceType => file.type,
+          :label => file.description_label,
+          :stacksURL => get_img_base_url(@pid, STACKS_URL,file)
+        }
+      }
+    }
+
+
+  end
+
 
   def ng_xml(*streams)
     if @ng_xml.nil?
