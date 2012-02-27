@@ -49,6 +49,7 @@ class Purl
   attr_deferred :catalog_key                                                                     # identity
   attr_deferred :read_group, :embargo_release_date, :copyright_stmt, :use_and_reproduction_stmt  # rights
   attr_deferred :deliverable_files, :type                                                        # content
+  attr_deferred :reading_order, :page_start # flipbook specific
 
   NAMESPACES = {     
     'oai_dc' => "http://www.openarchives.org/OAI/2.0/oai_dc/", 
@@ -87,7 +88,11 @@ class Purl
     
     # Content Metadata
     @type = doc.root.xpath('contentMetadata/@type').to_s
-    
+
+    # Book data
+    @reading_order = doc.root.xpath('contentMetadata/bookData/@readingOrder').to_s
+    @page_start = doc.root.xpath('contentMetadata/bookData/@pageStart').to_s
+ 
     #deliverable_files = doc.root.xpath('contentMetadata/resource/file[not(@deliver="no" or @publish="no")]').collect do |file|
     
     @deliverable_files = doc.root.xpath('contentMetadata/resource').collect do |resource_xml|
@@ -247,9 +252,12 @@ class Purl
     self.extract_metadata 
  
     return { 
-      :pid => "#{@pid}",
+      :id => "#{@catalog_key}",
+      :objectId => "#{@pid}",
       :defaultViewMode => 2,
       :bookTitle => @titles.first,
+      :readingOrder => @reading_order,  # "rtl"
+      :pageStart =>  page_start,  #"left"
       :bookURL => !(@catalog_key.nil? or @catalog_key.empty?) ? "http://searchworks.stanford.edu/view/#{@catalog_key}" : "",
       :pages =>  @deliverable_files.collect { |file| {
           :height => file.height,
