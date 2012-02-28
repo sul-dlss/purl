@@ -110,10 +110,13 @@ class Purl
         resource.filename = file['id']
         resource.objectId = file.parent['objectId']
         resource.type     = file.parent['type'].to_s
-        resource.width    = file.at_xpath('imageData/@width').to_s
-        resource.height   = file.at_xpath('imageData/@height').to_s
-        # http://sourceforge.net/apps/mediawiki/djatoka/index.php?title=Djatoka_Level_Logic 
-        resource.levels   = (( Math.log([resource.width, resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1 
+        resource.width    = file.at_xpath('imageData/@width').to_i || 0
+        resource.height   = file.at_xpath('imageData/@height').to_i || 0 
+
+        if (resource.type == "image" and resource.width > 0 and resource.height > 0) 
+          resource.levels = (( Math.log([resource.width, resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1           
+        end
+        
         resource.imagesvc = file.at_xpath('location[@type="imagesvc"]/text()').to_s
         resource.url      = file.at_xpath('location[@type="url"]/text()').to_s        
       end  
@@ -139,9 +142,13 @@ class Purl
           sub_resource.filename = sub_file['id']
           sub_resource.objectId = sub_file.parent['objectId']
           sub_resource.type     = sub_file.parent['type']
-          sub_resource.width    = sub_file.at_xpath('imageData/@width').to_s
-          sub_resource.height   = sub_file.at_xpath('imageData/@height').to_s
-          sub_resource.levels   = (( Math.log([sub_resource.width, sub_resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1 
+          sub_resource.width    = sub_file.at_xpath('imageData/@width').to_i || 0
+          sub_resource.height   = sub_file.at_xpath('imageData/@height').to_i || 0
+          
+          if (sub_resource.type == "image" and sub_resource.width > 0 and sub_resource.height > 0) 
+            sub_resource.levels   = (( Math.log([sub_resource.width, sub_resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1 
+          end
+          
           sub_resource.imagesvc = sub_file.at_xpath('location[@type="imagesvc"]/text()').to_s
           sub_resource.url      = sub_file.at_xpath('location[@type="url"]/text()').to_s        
         end  
@@ -252,7 +259,7 @@ class Purl
   # map the given document public xml to json
   def get_flipbook_json
     self.extract_metadata 
- 
+  
     return { 
       :id => "#{@catalog_key}",
       :objectId => "#{@pid}",
