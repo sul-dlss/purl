@@ -1,10 +1,12 @@
 require 'nokogiri'
 
 require "lib/purl/util"
+require "htmlentities"
 
 class Purl
   
   include PurlUtils
+  @@coder = HTMLEntities.new
   
   def Purl.find(id)
     pair_tree = Purl.create_pair_tree(id)
@@ -72,7 +74,7 @@ class Purl
     # DC Metadata
     dc = doc.root.at_xpath('*[local-name() = "dc"]', NAMESPACES)
     unless dc.nil?
-      @titles       = dc.xpath('dc:title/text()|dcterms:title/text()', NAMESPACES).collect { |t| t.to_s + " " }
+      @titles       = @@coder.decode(dc.xpath('dc:title/text()|dcterms:title/text()', NAMESPACES).collect { |t| t.to_s + " " })
       @authors      = dc.xpath('dc:creator/text()|dcterms:creator/text()', NAMESPACES).collect { |t| t.to_s }
       @contributors = dc.xpath('dc:contributor/text()|dcterms:contributor/text()', NAMESPACES).collect { |t| t.to_s + '<br/>' }      
       @source       = dc.at_xpath('dc:source/text()', NAMESPACES).to_s
@@ -255,7 +257,7 @@ class Purl
       :id => "#{@catalog_key}",
       :objectId => "#{@pid}",
       :defaultViewMode => 2,
-      :bookTitle => @titles.first,
+      :bookTitle => @titles,
       :readingOrder => @reading_order,  # "rtl"
       :pageStart =>  page_start,  #"left"
       :bookURL => !(@catalog_key.nil? or @catalog_key.empty?) ? "http://searchworks.stanford.edu/view/#{@catalog_key}" : "",
@@ -264,7 +266,7 @@ class Purl
           :width => file.width,
           :levels => file.levels,
           :resourceType => file.type,
-          :label => file.description_label,
+          :label => @@coder.decode(file.description_label),
           :stacksURL => get_img_base_url(@pid, STACKS_URL,file)
         }
       }
