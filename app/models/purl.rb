@@ -110,10 +110,10 @@ class Purl
         resource.filename = file['id']
         resource.objectId = file.parent['objectId']
         resource.type     = file.parent['type'].to_s
-        resource.width    = file.at_xpath('imageData/@width/text()').to_i || 0
-        resource.height   = file.at_xpath('imageData/@height/text()').to_i || 0 
+        resource.width    = file.at_xpath('imageData/@width').to_s.to_i || 0
+        resource.height   = file.at_xpath('imageData/@height').to_s.to_i || 0 
 
-        if (resource.type == "image" and resource.width > 0 and resource.height > 0) 
+        if (resource.width > 0 and resource.height > 0) 
           resource.levels = (( Math.log([resource.width, resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1           
         end
         
@@ -142,10 +142,10 @@ class Purl
           sub_resource.filename = sub_file['id']
           sub_resource.objectId = sub_file.parent['objectId']
           sub_resource.type     = sub_file.parent['type']
-          sub_resource.width    = sub_file.at_xpath('imageData/@width/text()').to_i || 0
-          sub_resource.height   = sub_file.at_xpath('imageData/@height/text()').to_i || 0
+          sub_resource.width    = sub_file.at_xpath('imageData/@width').to_s.to_i || 0
+          sub_resource.height   = sub_file.at_xpath('imageData/@height').to_s.to_i || 0
           
-          if (sub_resource.type == "image" and sub_resource.width > 0 and sub_resource.height > 0) 
+          if (sub_resource.width > 0 and sub_resource.height > 0) 
             sub_resource.levels   = (( Math.log([sub_resource.width, sub_resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1 
           end
           
