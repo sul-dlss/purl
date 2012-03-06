@@ -14,7 +14,7 @@
 </div>
 
 <div id="metadata">
-  <% if( !@purl.catalog_key.nil? ) %>
+  <% if !@purl.catalog_key.nil? and !@purl.catalog_key.empty? %>
     <div class="swlink">&raquo; <a href="http://searchworks.stanford.edu/view/<%=@purl.catalog_key%>">View in SearchWorks</a></div>
   <% end %>
   <%= render(:partial => "purl/publication_copyright" ) %>
@@ -35,9 +35,9 @@
 	      <td class="file">
 	        <div class="file_icon"><%= render(:partial => "purl/fileIcon", :locals => {:fileName => deliverable_file.filename.to_s}) %></div>
 	        <div class="file_link">
-		      <a href="<%=deliverable_file.url%>"><%=deliverable_file.filename%></a>
-	          <% if( deliverable_file.size != '') %>
-	 		    (<%=number_to_human_size(deliverable_file.size,:precision => 1)%>)
+		      <a href="<%= get_file_url(@purl.pid, deliverable_file) %>"><%= deliverable_file.filename %></a>
+	        <% if( deliverable_file.size != '') %>
+	 		      (<%=number_to_human_size(deliverable_file.size,:precision => 1)%>)
 	 	      <% end %>
     		</div>
 		  </td>

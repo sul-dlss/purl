@@ -78,5 +78,16 @@ module PurlUtils
     label
   end
   
-  module_function :get_jp2_id, :get_image_json_array, :get_img_base_url, :get_file_label 
+  # get file URL (for type != image)
+  def get_file_url(pid, deliverable_file) 
+    url = deliverable_file.url || ""
+    
+    if !url.nil? and url.empty?
+      url = STACKS_URL + "/file/druid:" + pid + "/" + deliverable_file.filename
+    end  
+    
+    url
+  end
+  
+  module_function :get_jp2_id, :get_image_json_array, :get_img_base_url, :get_file_label, :get_file_url 
 end
