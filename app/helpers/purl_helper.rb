@@ -28,6 +28,11 @@ module PurlHelper
     PurlUtils.get_file_label(deliverable_file)
   end
   
+  # get file URL (for type != image)
+  def get_file_url(pid, deliverable_file)
+    PurlUtils.get_file_url(pid, deliverable_file)
+  end
+  
   # get field value
   def print_field_value(field_name, label = '')
     html = ''
