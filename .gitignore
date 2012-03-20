@@ -1,2 +1,11 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+.DS_Store
+.powenv
+config/certs
+public/.htaccess
+.sass-cache
 log/*
 db/*.sqlite3
