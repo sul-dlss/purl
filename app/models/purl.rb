@@ -262,6 +262,7 @@ class Purl
   
     return { 
       :id => "#{@catalog_key}",
+      :readGroup => @read_group,
       :objectId => "#{@pid}",
       :defaultViewMode => 2,
       :bookTitle => @titles,
