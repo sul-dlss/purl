@@ -8,50 +8,22 @@ class Purl
   include PurlUtils
   @@coder = HTMLEntities.new
   
-  def Purl.find(id)
-    pair_tree = Purl.create_pair_tree(id)
-    return nil if(pair_tree.nil?)
-    
-    file_path = File.join(DOCUMENT_CACHE_ROOT,pair_tree)
-    # This will catch well formatted druids that do not have a directory in the document cache
-    return nil unless(File.exists?(file_path))
-    
-    Purl.new(id)
-  end
-  
-  #
-  # This method returns the pair tree directory structure based on the given object identifier.
-  # The object identifier must be of the following format, otherwise nil is returned.
-  #
-  #     druid:xxyyyxxyyyy
-  #
-  #       where 'x' is an alphabetic character
-  #       where 'y' is a numeric character
-  #
-  def Purl.create_pair_tree(pid)
-    if(pid =~ /^([a-z]{2})(\d{3})([a-z]{2})(\d{4})$/)
-      return File.join($1, $2, $3, $4)
-    else
-      return nil
-    end
-  end
-
   DEFERRED_TEMPLATE = %{def %1$s; extract_metadata unless @extracted; instance_variable_get("@%1$s"); end}
   def self.attr_deferred(*args)
     args.each { |a| eval(DEFERRED_TEMPLATE % a) }
   end
-  
+
   attr_accessor :pid
   attr_accessor :public_xml
   attr_accessor :mods_xml
   attr_accessor :flipbook_json 
  
-  attr_deferred :titles, :authors, :source, :date, :relation, :description, :contributors        # dc
+  attr_deferred :titles, :authors, :source, :date, :relation, :description, :contributors, :repository, :collection, :location # dc
   attr_deferred :degreeconfyr, :cclicense, :cclicensetype, :cclicense_symbol                     # properties
   attr_deferred :catalog_key                                                                     # identity
   attr_deferred :read_group, :embargo_release_date, :copyright_stmt, :use_and_reproduction_stmt  # rights
   attr_deferred :deliverable_files, :type                                                        # content
-  attr_deferred :reading_order, :page_start # flipbook specific
+  attr_deferred :reading_order, :page_start                                                      # flipbook specific
 
   NAMESPACES = {     
     'oai_dc' => "http://www.openarchives.org/OAI/2.0/oai_dc/", 
@@ -59,15 +31,42 @@ class Purl
     'dcterms' => 'http://purl.org/dc/terms/'
   }
 
-  def initialize(id)
-    @pid = id
-    @public_xml = get_metadata('public')
-    @mods_xml = get_metadata('mods')
-    @flipbook_json = get_flipbook_json
-
-    @extracted = false
+  # Checks if the pair tree directory exists in the document cache for a given druid
+  #
+  def Purl.find(id)    
+    purl = nil
+    pair_tree = Purl.create_pair_tree(id)
+    
+    unless pair_tree.nil?
+      file_path = File.join(DOCUMENT_CACHE_ROOT, pair_tree)
+      purl = Purl.new(id) if File.exists?(file_path)
+    end
+    
+    purl
+  end
+  
+  # Returns the pair tree directory for a given, valid druid
+  #
+  def Purl.create_pair_tree(pid)
+    pair_tree = nil 
+    
+    if pid =~ /^([a-z]{2})(\d{3})([a-z]{2})(\d{4})$/
+      pair_tree = File.join($1, $2, $3, $4)
+    end
+    
+    pair_tree
   end
 
+  # initializes the object with metadata and service streams
+  #
+  def initialize(id)
+    @pid = id
+    @public_xml    = get_metadata('public')
+    @mods_xml      = get_metadata('mods')
+    @flipbook_json = get_flipbook_json
+    @extracted     = false
+  end
+  
   def extract_metadata
     doc = ng_xml('dc','identityMetadata','contentMetadata','rightsMetadata','properties')
     
@@ -80,6 +79,9 @@ class Purl
       @source       = dc.at_xpath('dc:source/text()', NAMESPACES).to_s
       @date         = dc.at_xpath('dc:date/text()', NAMESPACES).to_s
       @relation     = dc.at_xpath('dc:relation/text()', NAMESPACES).to_s.gsub /^Collection\s*:\s*/, ''
+      @repository   = dc.at_xpath('dc:relation[@type="repository"]', NAMESPACES).to_s
+      @collection   = dc.at_xpath('dc:relation[@type="collection"]', NAMESPACES).to_s
+      @location     = dc.at_xpath('dc:relation[@type="location"]', NAMESPACES).to_s
 
       @description  = Array.new
       dc.xpath('dc:description/text()|dcterms:abstract/text()', NAMESPACES).collect { |d| @description.push(d.to_s) }      
@@ -94,14 +96,16 @@ class Purl
     # Book data
     @reading_order = doc.root.xpath('contentMetadata/bookData/@readingOrder').to_s
     @page_start = doc.root.xpath('contentMetadata/bookData/@pageStart').to_s
- 
-    #deliverable_files = doc.root.xpath('contentMetadata/resource/file[not(@deliver="no" or @publish="no")]').collect do |file|
+     
+    # File data 
+    #@deliverable_files = doc.root.xpath('contentMetadata/resource/file[not(@deliver="no" or @publish="no")]').collect do |file|
+    @deliverable_files = Array.new
     
-    @deliverable_files = doc.root.xpath('contentMetadata/resource').collect do |resource_xml|
+    doc.root.xpath('contentMetadata/resource').collect do |resource_xml|
       file = resource_xml.at_xpath('file')
       resource = Resource.new
-      
-      if (!file.nil? and not(file['deliver'] == "no" or file['publish'] == "no"))
+
+      if is_file_ready(file)
         resource.mimetype = file['mimetype']
         resource.size     = file['size']
         resource.shelve   = file['shelve']
@@ -116,11 +120,11 @@ class Purl
         if (resource.width > 0 and resource.height > 0) 
           resource.levels = (( Math.log([resource.width, resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1           
         end
-        
+    
         resource.imagesvc = file.at_xpath('location[@type="imagesvc"]/text()').to_s
         resource.url      = file.at_xpath('location[@type="url"]/text()').to_s        
       end  
-            
+          
       if !resource_xml.at_xpath('attr[@name="label"]/text()').nil?
         resource.description_label = resource_xml.at_xpath('attr[@name="label"]/text()').to_s
       elsif !resource_xml.at_xpath('label/text()').nil?
@@ -128,12 +132,12 @@ class Purl
       end
 
       resource.sequence = resource_xml['sequence'].to_s || 0        
-      
+    
       resource.sub_resources = resource_xml.xpath('resource').collect do |sub_resource_xml|
         sub_file = sub_resource_xml.at_xpath('file')
         sub_resource = Resource.new
 
-        if (!sub_file.nil? and not(sub_file['deliver'] == "no" or sub_file['publish'] == "no"))
+        if is_file_ready(sub_file)  
           sub_resource.mimetype = sub_file['mimetype']
           sub_resource.size     = sub_file['size']
           sub_resource.shelve   = sub_file['shelve']
@@ -144,11 +148,11 @@ class Purl
           sub_resource.type     = sub_file.parent['type']
           sub_resource.width    = sub_file.at_xpath('imageData/@width').to_s.to_i || 0
           sub_resource.height   = sub_file.at_xpath('imageData/@height').to_s.to_i || 0
-          
+        
           if (sub_resource.width > 0 and sub_resource.height > 0) 
             sub_resource.levels   = (( Math.log([sub_resource.width, sub_resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1 
           end
-          
+        
           sub_resource.imagesvc = sub_file.at_xpath('location[@type="imagesvc"]/text()').to_s
           sub_resource.url      = sub_file.at_xpath('location[@type="url"]/text()').to_s        
         end  
@@ -158,12 +162,18 @@ class Purl
         elsif !sub_resource_xml.at_xpath('label/text()').nil?
           sub_resource.description_label = sub_resource_xml.at_xpath('label/text()').to_s
         end        
-        
+      
+        sub_resource.sequence = sub_resource_xml['sequence'].to_s || 0        
+      
         sub_resource
       end  
       
-      resource || nil
-    end
+      # if the resource has a deliverable file or at least one sub_resource, add it to the array
+      if is_file_ready(file) or resource.sub_resources.length > 0
+        @deliverable_files.push(resource)
+      end
+      
+    end  
     
     # Rights Metadata
     rights = doc.root.at_xpath('rightsMetadata')

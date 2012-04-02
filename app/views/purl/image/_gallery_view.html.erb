@@ -11,6 +11,7 @@
 </div>
 
 <% @purl.deliverable_files.each do |deliverable_file| %>
+  <% sequence = deliverable_file.sequence.to_s %>
 
 	<% if item_count == 1 %>
 	  <% if page_no == 1 %>	   
@@ -27,7 +28,7 @@
 		
     <li>
       <div class="img-block">
-	       <a href="javascript:showImg('zoom-<%= img_id %>', '<%= img_id %>');">
+	       <a href="javascript:showImg('<%= sequence %>', 'zoom');">
 	         <img id="img-src-<%= img_id %>" alt="">
         </a> 
       </div>
@@ -39,14 +40,14 @@
   <% elsif deliverable_file.sub_resources.length > 0 %>
     <% 
       img_files = Array.new 
-      sno = 1
-      sequence = deliverable_file.sequence.to_s
+      sno = 1    
       img_files.concat(deliverable_file.sub_resources) 	        
     %>
 
     <li>	
 			<% img_files.each do |img_file| %>
-			  <% img_id = get_jp2_id(img_file.filename.to_s) %>				
+			  <% img_id = get_jp2_id(img_file.filename.to_s) %>		
+			  <% img_sequence = img_file.sequence.to_s %>		
 
 			  <% if !img_id.nil? and !img_id.empty? %>
 			    <% base_url = get_img_base_url(img_file) %>
@@ -54,7 +55,7 @@
 		
 			    <div id="<%= @purl.pid.to_s + '_seq_' + sequence + '_img_' + sno.to_s %>" style="display: <%= display %>;">
 					  <div class="img-block">
-					   <a href="javascript:showImg('zoom-<%= img_id %>', '<%= img_id %>');">
+					   <a href="javascript:showImg('<%= sequence %>.<%= img_sequence %>', 'small');">
 						   <img id="img-src-<%= img_id %>" alt="">
 				      </a> 
 				    </div>

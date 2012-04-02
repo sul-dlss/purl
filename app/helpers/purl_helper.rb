@@ -33,6 +33,11 @@ module PurlHelper
     PurlUtils.get_file_url(pid, deliverable_file)
   end
   
+  # check if file is ready (deliver = yes or publish = yes)
+  def is_file_ready(file)
+    PurlUtils.is_file_ready(file)
+  end
+  
   # get field value
   def print_field_value(field_name, label = '')
     html = ''

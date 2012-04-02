@@ -8,16 +8,15 @@ class PurlController < ApplicationController
   # entry point into the application
   def index
     # validate that the metadata is ready for delivery
-    
-    if( @purl.is_ready? )
-    
+        
+    if @purl.is_ready?     
       # render the landing page based on the format
       respond_to do |format|
         format.html {
           # if the object is an image, render image specific layout
-          if (@purl.is_image?)
+          if @purl.is_image?
             render :partial => "purl/image/contents", :layout => "purl_image"
-          end        
+          end                  
         }
       
         format.xml { 
@@ -49,8 +48,7 @@ class PurlController < ApplicationController
   private
 
   # validate that the id is of the proper format
-  def validate_id
-    
+  def validate_id    
     # handle a single static grandfathered exception
     if(params[:id] == 'ir:rs276tc2764')
       redirect_to "/ir:rs276tc2764/index.html"
