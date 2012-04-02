@@ -6,14 +6,24 @@ module PurlUtils
     filename
   end
 
+  # check if file is ready (deliver = yes or publish = yes)
+  def is_file_ready(file)
+    if !file.nil? and not(file['deliver'] == "no" or file['publish'] == "no")
+      return true
+    end
+    
+    false
+  end
+
   # construct JSON array for delivering image objects
   def get_image_json_array(deliverable_files)
     json_array = Array.new
     
     deliverable_files.each do |deliverable_file|
-      id     = get_jp2_id(deliverable_file.filename.to_s)
-      width  = deliverable_file.width.to_s.empty? ? '0' : deliverable_file.width.to_s
-      height = deliverable_file.height.to_s.empty? ? '0' : deliverable_file.height.to_s
+      id       = get_jp2_id(deliverable_file.filename.to_s)
+      width    = deliverable_file.width.to_s.empty? ? 0 : deliverable_file.width.to_i
+      height   = deliverable_file.height.to_s.empty? ? 0 : deliverable_file.height.to_i
+      sequence = deliverable_file.sequence.to_s.empty? ? '0' : deliverable_file.sequence.to_s
       
       if !id.nil? and !id.empty?
         json_array.push(
@@ -21,14 +31,14 @@ module PurlUtils
              "\"label\": \"" + get_file_label(deliverable_file) + "\"," + 
   	         "\"width\": " + width.to_s + "," + 
   	         "\"height\": " + height.to_s + "," + 
-  	         "\"sequence\": " + deliverable_file.sequence.to_s + 
+  	         "\"sequence\": " + sequence + 
   	      "}")
   	  else 
   	    if deliverable_file.sub_resources.length > 0 
   	      deliverable_file.sub_resources.each do |img_file|
             id     = get_jp2_id(img_file.filename.to_s)
-            width  = img_file.width.to_s.empty? ? '0' : img_file.width.to_s
-            height = img_file.height.to_s.empty? ? '0' : img_file.height.to_s
+            width  = img_file.width.to_s.empty? ? 0 : img_file.width.to_i
+            height = img_file.height.to_s.empty? ? 0 : img_file.height.to_i
 
             if !id.nil? and !id.empty?
               json_array.push(
@@ -36,14 +46,14 @@ module PurlUtils
                    "\"label\": \"" + get_file_label(img_file) + "\"," + 
         	         "\"width\": " + width.to_s + "," + 
         	         "\"height\": " + height.to_s + "," +  
-        	         "\"sequence\": " + deliverable_file.sequence.to_s + 
+        	         "\"sequence\": " + sequence + '.' + img_file.sequence.to_s + 
         	      "}")
         	  end      	        
   	      end
         end    
 	    end  
     end   
-    
+
     json_array.join(',')
   end
 

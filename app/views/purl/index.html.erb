@@ -35,7 +35,7 @@
 	      <td class="file">
 	        <div class="file_icon"><%= render(:partial => "purl/fileIcon", :locals => {:fileName => deliverable_file.filename.to_s}) %></div>
 	        <div class="file_link">
-		      <a href="<%= get_file_url(@purl.pid, deliverable_file) %>"><%= deliverable_file.filename %></a>
+		      <a href="<%= get_file_url(@purl.pid, deliverable_file) %>"><%= deliverable_file.filename.to_s %></a>
 	        <% if( deliverable_file.size != '') %>
 	 		      (<%=number_to_human_size(deliverable_file.size,:precision => 1)%>)
 	 	      <% end %>
