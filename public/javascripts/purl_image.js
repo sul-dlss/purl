@@ -6,10 +6,29 @@ var resizeTimer;
 var groups = [];
 var urlSuffix = "";
 
-Array.prototype.unique = function() { var o = {}, i, l = this.length, r = [];    for(i=0; i<l;i+=1) o[this[i]] = this[i];    for(i in o) r.push(o[i]); return r;};
+Array.prototype.unique = function() { 
+	var o = {}, i, l = this.length, r = [];    
+	for(i=0; i<l;i+=1) o[this[i]] = this[i];    
+	for(i in o) r.push(o[i]); return r;
+};
+
+(function($){
+  $.fn.moveTo = function(selector) {
+    return this.each(function(){
+      var cl = $(this).clone();
+      $(cl).appendTo(selector);
+      $(this).remove();
+    });
+  }
+})(jQuery);
+
 
 $(document).ready(function() {
   
+	$(window).bind('hashchange', function(){
+		setURLSuffix();
+	});
+
   // set toggle and links for clickable item header    
   $('ol#toc li > a').each(function () {
     var id = $(this).attr('id');
@@ -191,64 +210,15 @@ function showImg(sequence, size, animate) {
   });
   
   selectedSize = size;
+  loadImgsInHorizontalNavigation(id, index);
+  loadImgsInVerticalNavigation(id, index); 
 
-  $('#small-img-viewer').click(function() { loadImage(id, 'small'); });
-  $('#medium-img-viewer').click(function() { loadImage(id, 'medium'); });
-  $('#large-img-viewer').click(function() { loadImage(id, 'large'); });
-  $('#xlarge-img-viewer').click(function() { loadImage(id, 'xlarge'); });
-  $('#full-img-viewer').click(function() { loadImage(id, 'full'); });
-  $('#zoom-img-viewer').click(function() { loadZpr(id); });
 
-  $('#small-img-viewer-id').html(imgNumber);
-  $('#medium-img-viewer-id').html(imgNumber);
-  $('#large-img-viewer-id').html(imgNumber);
-  $('#xlarge-img-viewer-id').html(imgNumber);
-  $('#full-img-viewer-id').html(imgNumber);
-
-  $('#small-img-viewer-download-id').html(imgNumber);
-  $('#medium-img-viewer-download-id').html(imgNumber);
-  $('#large-img-viewer-download-id').html(imgNumber);
-  $('#xlarge-img-viewer-download-id').html(imgNumber);
-  $('#full-img-viewer-download-id').html(imgNumber);
-  
-  $('#small-img-viewer-download').attr({
-    'href': stacksURL + '/image/' + druid + '/' + id + '_small.jpg?action=download',
-    'title': 'Download ' + id + '_small.jpg'
-  });
-  
-  $('#medium-img-viewer-download').attr({
-    'href': stacksURL + '/image/' + druid + '/' + id + '_medium.jpg?action=download',
-    'title': 'Download ' + id + '_medium.jpg'
-  });
-  
-  $('#large-img-viewer-download').attr({
-    'href': stacksURL + '/image/' + druid + '/' + id + '_large.jpg?action=download',
-    'title': 'Download ' + id + '_large.jpg'
-  });
-
-  $('#xlarge-img-viewer-download').attr({
-    'href': stacksURL + '/image/' + druid + '/' + id + '_xlarge.jpg?action=download',
-    'title': 'Download ' + id + '_xlarge.jpg'
-  });
-
-  $('#full-img-viewer-download').attr({
-    'href': stacksURL + '/image/' + druid + '/' + id + '_full.jpg?action=download',
-    'title': 'Download ' + id + '_full.jpg'
-  });
-  
-  $('#small-size-img-viewer').html('(' + getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], 'small') + ')' );
-  $('#medium-size-img-viewer').html('(' + getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], 'medium') + ')' );
-  $('#large-size-img-viewer').html('(' + getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], 'large') + ')' );
-  $('#xlarge-size-img-viewer').html('(' + getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], 'xlarge') + ')' );
-  $('#full-size-img-viewer').html('(' + getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], 'full') + ')' );
 
 	$('#img-viewer-item-label').html('(' +  imgInfo[index]['label'] + ')');
 	
 	$('#img-viewer-pagination').html((getSequenceIndex(index) + 1) + ' of ' + groups.length);
 	
-  loadImgsInHorizontalNavigation(id, index);
-  loadImgsInVerticalNavigation(id, index); 
-
 	if ($('#img-viewer-prev').length != 0 && $('#img-viewer-next').length != 0) {				
 	  $('#img-viewer-prev > img').attr('src', 'images/img-view-group-prev-inactive.png');
 	  $('#img-viewer-next > img').attr('src', 'images/img-view-group-next-inactive.png');	  
@@ -267,36 +237,87 @@ function showImg(sequence, size, animate) {
 	}
 }
 
-
-/*function showImg(elemId, id) {
-  var regex = new RegExp('-' + id + '.*', 'i');  
-  var size = elemId.replace(regex, '');
+function loadImage(id, size) {
   var druid = pid;
   var index = getArrayIndex(id);
-  var seqIndex = getSequenceIndex(index);
 
-  if (index < 0) return;
+  if (typeof size === "undefined") {
+	  size = selectedSize;
+  } else {
+	  selectedSize = size;	
+  }
 
+  $(location).attr('href', '#image/' + imgInfo[index]['sequence'] + '/' + size);
+
+  if (size == "zoom") {
+	  loadZpr(id);
+	  return;
+  }
+
+  loadImgsInVerticalNavigation(id, index); 
+
+  var url = stacksURL + '/image/' + druid + '/' + id + '_' + size + '.jpg';
+  var strDimensions = getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], size);
+  var dimensions = strDimensions.match(/(\d+) x (\d+)/);
+  var viewfinderHeight = parseInt($(window).height(), 10) - parseInt($('#img-viewer-metadata').height(), 10) - 50;
+  var imgWidth = dimensions[1];
+  var imgHeight = dimensions[2];
+
+  $('#zpr-frame').hide();
+  $('#img-canvas').show();	
+
+  $('#pane-img-viewer').height(viewfinderHeight + 'px');  
+
+  $('#img-viewfinder').height((viewfinderHeight - 115) + 'px');
+  $('#img-viewfinder').width(($('#pane-img-viewer').width() - 200) + 'px');
+
+  $('#img-canvas')
+  .removeAttr('src')
+  .attr({
+    'src': url,    
+  })
+  .css({
+    'height': imgHeight + 'px',       
+    'width': imgWidth + 'px'
+  });            
+
+}
+
+function loadZpr(id) {
+  var druid = pid;
+  var index = getArrayIndex(id);
+  var viewfinderHeight = parseInt($(window).height(), 10) - parseInt($('#img-viewer-metadata').height(), 10) - 50;
+
+  selectedSize = 'zoom';
+
+  $(location).attr('href', '#image/' + imgInfo[index]['sequence'] + '/zoom');
+
+  $('#pane-img-viewer').height(viewfinderHeight + 'px');  
+
+  $('#img-viewfinder').height((viewfinderHeight - 115) + 'px');
+  $('#img-viewfinder').width(($('#pane-img-viewer').width() - 200) + 'px');
+
+	$('#img-canvas').hide();
+	$('#zpr-frame').show();
+	
+  $('#zpr-frame').width(($('#pane-img-viewer').width() - 212) + 'px');	
+	$('#zpr-frame').height((viewfinderHeight - 128) + 'px');
+
+	$('#zpr-frame').html('');
+	
+	var z = new zpr('zpr-frame', { 
+		'imageStacksURL': stacksURL + '/image/' + druid + '/' + id, 
+		'width': imgInfo[index]['width'], 
+		'height': imgInfo[index]['height'], 
+		'marqueeImgSize': 50  
+	});	
+	
+	loadImgsInVerticalNavigation(id, index); 
+}
+
+function updateViewerSizesLinks(id, index) {
+  var druid = pid;
   var imgNumber = parseInt(index, 10) + 1;
-
-  var slideWidth = parseInt($('#pane-toc-metadata').width(), 10);
-  slideWidth = slideWidth - (2*slideWidth);
-  
-  $('#pane-toc-metadata').animate({
-    'left': slideWidth + 'px'
-  }, 500, function() {});
-  
-  $('#pane-img-viewer').animate({
-    'left': 0 + 'px'
-  }, 500, function() {
-		if (size == 'zoom') {
-			loadZpr(id);
-		} else {
-	    loadImage(id, size);			
-		}
-  });
-  
-  selectedSize = size;
 
   $('#small-img-viewer').click(function() { loadImage(id, 'small'); });
   $('#medium-img-viewer').click(function() { loadImage(id, 'medium'); });
@@ -347,131 +368,7 @@ function showImg(sequence, size, animate) {
   $('#large-size-img-viewer').html('(' + getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], 'large') + ')' );
   $('#xlarge-size-img-viewer').html('(' + getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], 'xlarge') + ')' );
   $('#full-size-img-viewer').html('(' + getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], 'full') + ')' );
-
-	$('#img-viewer-item-label').html('(' +  imgInfo[index]['label'] + ')');
-	
-	$('#img-viewer-pagination').html((getSequenceIndex(index) + 1) + ' of ' + sequences.length);
-	
-  loadImgsInHorizontalNavigation(id, index);
-  loadImgsInVerticalNavigation(id, index); 
-
-	if ($('#img-viewer-prev').length != 0 && $('#img-viewer-next').length != 0) {
-				
-	  $('#img-viewer-prev > img').attr('src', 'images/img-view-group-prev-inactive.png');
-	  $('#img-viewer-next > img').attr('src', 'images/img-view-group-next-inactive.png');	  
-	  $('#img-viewer-prev').unbind().css('cursor', 'default');
-	  $('#img-viewer-next').unbind().css('cursor', 'default');
-
-	  if ((seqIndex - 1) >= 0) {
-	    $('#img-viewer-prev').click(function() { prev(id, size, seqIndex); }).css('cursor', 'pointer');
-		  $('#img-viewer-prev > img').attr('src', 'images/img-view-group-prev-active.png');
-	  }  
-  
-	  if ((seqIndex + 1) < sequences.length) {
-	    $('#img-viewer-next').click(function() { next(id, size, seqIndex); }).css('cursor', 'pointer');
-		  $('#img-viewer-next > img').attr('src', 'images/img-view-group-next-active.png');
-	  }		
-	}
 }
-*/
-
-function loadImage(id, size) {
-  var druid = pid;
-  var index = getArrayIndex(id);
-
-  if (typeof size === "undefined") {
-	  size = selectedSize;
-  } else {
-	  selectedSize = size;	
-  }
-
-  $(location).attr('href', '#image/' + imgInfo[index]['sequence'] + '/' + size);
-
-  if (size == "zoom") {
-	  loadZpr(id);
-	  return;
-  }
-
-  var url = stacksURL + '/image/' + druid + '/' + id + '_' + size + '.jpg';
-  var strDimensions = getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], size);
-  var dimensions = strDimensions.match(/(\d+) x (\d+)/);
-  var viewfinderHeight = parseInt($(window).height(), 10) - parseInt($('#img-viewer-metadata').height(), 10) - 50;
-  var imgWidth = dimensions[1];
-  var imgHeight = dimensions[2];
-
-  $('#zpr-frame').hide();
-  $('#img-canvas').show();	
-
-  $('#pane-img-viewer').height(viewfinderHeight + 'px');  
-
-  $('#img-viewfinder').height((viewfinderHeight - 130) + 'px');
-  $('#img-viewfinder').width(($('#pane-img-viewer').width() - 140) + 'px');
-
-  $('#img-canvas')
-  .removeAttr('src')
-  .attr({
-    'src': url,    
-  })
-  .css({
-    'height': imgHeight + 'px',       
-    'width': imgWidth + 'px'
-  });            
-
-  loadImgsInVerticalNavigation(id, index); 
-}
-
-function changeImgViewerDownloadFormat() {
-  var ext = $('#img-viewer-download-format').val();    
-      
-  $('#small-img-viewer-download').attr({
-    'href': replaceHrefExt($('#small-img-viewer-download').attr('href'), ext),
-    'title': replaceTitleExt($('#small-img-viewer-download').attr('title'), ext)
-  });
-
-  $('#medium-img-viewer-download').attr({
-    'href': replaceHrefExt($('#medium-img-viewer-download').attr('href'), ext),
-    'title': replaceTitleExt($('#medium-img-viewer-download').attr('title'), ext)
-  });
-
-  $('#large-img-viewer-download').attr({
-    'href': replaceHrefExt($('#large-img-viewer-download').attr('href'), ext),
-    'title': replaceTitleExt($('#large-img-viewer-download').attr('title'), ext)
-  });
-}
-
-
-function loadZpr(id) {
-  var druid = pid;
-  var index = getArrayIndex(id);
-  var viewfinderHeight = parseInt($(window).height(), 10) - parseInt($('#img-viewer-metadata').height(), 10) - 50;
-
-  selectedSize = 'zoom';
-
-  $(location).attr('href', '#image/' + imgInfo[index]['sequence'] + '/zoom');
-
-  $('#pane-img-viewer').height(viewfinderHeight + 'px');  
-
-  $('#img-viewfinder').height((viewfinderHeight - 130) + 'px');
-  $('#img-viewfinder').width(($('#pane-img-viewer').width() - 140) + 'px');
-
-	$('#img-canvas').hide();
-	$('#zpr-frame').show();
-	
-  $('#zpr-frame').width(($('#pane-img-viewer').width() - 160) + 'px');	
-	$('#zpr-frame').height((viewfinderHeight - 145) + 'px');
-
-	$('#zpr-frame').html('');
-	
-	var z = new zpr('zpr-frame', { 
-		'imageStacksURL': stacksURL + '/image/' + druid + '/' + id, 
-		'width': imgInfo[index]['width'], 
-		'height': imgInfo[index]['height'], 
-		'marqueeImgSize': 150  
-	});	
-	
-	loadImgsInVerticalNavigation(id, index); 
-}
-
 
 function viewTOC() {
   var slideWidth = parseInt($('#pane-toc-metadata').width(), 10);
@@ -671,12 +568,22 @@ function loadImgsInVerticalNavigation(id, index) {
 		  url = stacksURL + '/image/' + druid + '/' + imgInfo[i]["id"] + '?w=100';
 		
 		  if (index == i) {
-			  $('#viewer-v-nav').append("<img src=\"" + url + "\" class=\"viewer-selected-img\">");			
+			  $('#viewer-v-nav').append("<li id=\"viewer-v-nav-selected-img\"><img src=\"" + url + "\"></li>");			
 		  } else {
-			  $('#viewer-v-nav').append("<a href=\"javascript:loadImage('" + imgInfo[i]["id"] + "')\"><img src=\"" + url + "\"></a>");			
+			  $('#viewer-v-nav').append("<li class=\"viewer-v-nav-img\"><a href=\"javascript:loadImage('" + imgInfo[i]['id'] + "')\"><img src=\"" + url + "\"></a></li>");			
 		  }
 	  }	
 	}
+	
+	$('#viewer-v-nav-selected-img').append($('<ul id=\"viewer-sizes-nav\"></ul>'));
+	
+	$.each(sizes, function(i, size) { 
+		$("#viewer-sizes-nav").append("<li> <div class=\"viewer-sizes-links\">  <a id=\"" + size + "-img-viewer\" href=\"javascript:;\"><span class=\"obscure\">View the</span> " + size + " <span class=\"obscure\"> size of image </span><span class=\"obscure\" id=\"" + size + "-img-viewer-id\"></span></a>  <span id=\"" + size + "-size-img-viewer\" class=\"img-size\"></span> </div> <div class=\"viewer-sizes-download\"> <a id=\"" + size + "-img-viewer-download\"><span class=\"obscure\">Download the " + size + " size of image </span><span class=\"obscure\" id=\"" + size + "-img-viewer-download-id\"></span><img src=\"images/icon-download.png\" alt=\"\" title=\"\"/></a>  </div> </li>");
+	});
+	
+	$("#viewer-sizes-nav").append("<li><a id=\"zoom-img-viewer\" href=\"javascript:;\" title=\"Zoom View\">zoom<span class=\"obscure\"> of image 1</span></a></li>");
+	
+	updateViewerSizesLinks(id, index);  
 }
 
 function setupGalleryPageNavigation(pageNo) {	
@@ -745,6 +652,7 @@ function setURLSuffix() {
   var pageNo = 1;
   var sequence = 1; 
   var size = "zoom";
+  var flag = false;
 
   if (/#gallery/.test(href)) {
 	  match = /#gallery\/(\d+)/.exec(href);
@@ -760,7 +668,13 @@ function setURLSuffix() {
 		}  
 
 	  if (typeof match[3] !== 'undefined' && match[3].length > 0) { 
-		  size = match[3];
+		  size = match[3].toLowerCase();
+		  
+		  $.each(sizes, function(i, value) {
+			  if (size == value) { flag = true; }
+		  });		  
+		
+		  if (!flag) { size = "zoom"; }
 		}  
 		
 		showImg(sequence, size, false);

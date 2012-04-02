@@ -1,0 +1,26 @@
+
+<div id="title-metadata">             
+	<% unless (@purl.titles.nil?) %>
+	  <h2><%= @purl.titles %></h2>
+	<% end %>
+
+  <dl>
+    <%= print_field_value("authors", "Creator") %>
+    <%= print_field_value("contributors", "Contributor(s)") %>
+    <%= print_field_value("source", "Source") %>
+    <%= print_field_value("date", "Date") %>
+    <%= print_description_value("Description") %>	    
+  </dl>          
+</div>
+
+<div id="metadata">
+  <% if !@purl.catalog_key.nil? and !@purl.catalog_key.empty? %>
+    <div class="swlink">&raquo; <a href="http://searchworks.stanford.edu/view/<%=@purl.catalog_key%>">View in SearchWorks</a></div>
+  <% end %>
+  <%= render(:partial => "purl/publication_copyright" ) %>
+</div>
+
+<div id="filelist">         
+  <iframe src='http://sul-reader.stanford.edu/flipbook2/embed.jsp?id=<%= @purl.pid %>' width='575px' height='400px' style='border: 1px solid #999; padding: 0; margin: 0;' ></iframe>
+</div>
+<br clear="all" />
