@@ -69,12 +69,17 @@ module PurlHelper
   
   # remove trailing period from name
   def add_copyright_symbol(copyright_stmt)
-    copyright_stmt = copyright_stmt.gsub /\(c\) Copyright/i, '&copy;'
-    
+    copyright_stmt = copyright_stmt.gsub /\(c\) Copyright/i, '&copy;'    
     copyright_stmt
   end
   
   def get_gallery_items_per_page_count()
     return 15
+  end
+  
+  def trim_text(text)
+    text = text.gsub /\s+/, ' '
+    text = text.gsub /[\n\r]/, ''
+    text
   end
 end
