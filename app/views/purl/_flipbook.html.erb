@@ -13,11 +13,17 @@
   </dl>          
 </div>
 
+<% if not(@purl.catalog_key.nil? or @purl.catalog_key.empty?) %>
+  <div id="links-column">
+     &raquo; <a href="http://searchworks.stanford.edu/view/<%=@purl.catalog_key%>">View in SearchWorks</a>
+	</div>
+<% end %>                		
+
+
 <div id="filelist">         
   <iframe id="embed-flipbook" src='http://sul-reader.stanford.edu/flipbook2/embed.jsp?id=<%= @purl.pid %>' width='575px' height='400px' style='border: 1px solid #999; padding: 0; margin: 0;' ></iframe> <br/>
   <a href="javascript:ffs();">Full screen view</a>
 </div>
-<br clear="all" />
 
 <div id="rights-metadata">
   <dl>
