@@ -84,7 +84,7 @@ class Purl
       @location     = dc.at_xpath('dc:relation[@type="location"]', NAMESPACES).to_s
 
       @description  = Array.new
-      dc.xpath('dc:description/text()|dcterms:abstract/text()', NAMESPACES).collect { |d| @description.push(d.to_s) }      
+      dc.xpath('dc:description/text()|dcterms:abstract/text()', NAMESPACES).collect { |d| @description.push(d.to_s) }            
     end
     
     # Identity Metadata
@@ -285,7 +285,7 @@ class Purl
           :levels => file.levels,
           :resourceType => file.type,
           :label => @@coder.decode(file.description_label),
-          :stacksURL => get_img_base_url(@pid, STACKS_URL,file)
+          :stacksURL => get_img_base_url(@pid, STACKS_URL,file)          
         }
       }
     }

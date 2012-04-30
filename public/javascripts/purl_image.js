@@ -268,7 +268,7 @@ function loadImage(id, size) {
 
   $('#pane-img-viewer').height(viewfinderHeight + 'px');  
 
-  $('#img-viewfinder').height((viewfinderHeight - 115) + 'px');
+  $('#img-viewfinder').height((viewfinderHeight - 100) + 'px');
   $('#img-viewfinder').width(($('#pane-img-viewer').width() - 200) + 'px');
 
   $('#img-canvas')
@@ -294,7 +294,7 @@ function loadZpr(id) {
 
   $('#pane-img-viewer').height(viewfinderHeight + 'px');  
 
-  $('#img-viewfinder').height((viewfinderHeight - 115) + 'px');
+  $('#img-viewfinder').height((viewfinderHeight - 100) + 'px');
   $('#img-viewfinder').width(($('#pane-img-viewer').width() - 200) + 'px');
 
 	$('#img-canvas').hide();
@@ -373,7 +373,7 @@ function updateViewerSizesLinks(id, index) {
 function viewTOC() {
   var slideWidth = parseInt($('#pane-toc-metadata').width(), 10);
   
-  $(location).attr('href', '#');
+  $(location).attr('href', '');
 
   $('#pane-img-viewer').animate({
     'left': slideWidth + 'px'
