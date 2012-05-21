@@ -4,15 +4,13 @@
   <dl>
 	  <% if (!@purl.titles.empty? ) %>
       <dt>Title:</dt>
-      <% @purl.titles.each do |title| %>
-        <dd><%= title %></dd>
-      <% end %>
+      <dd><%= print_title_value() %></dd>
     <% end %>
 
-    <% if (!@purl.authors.empty?) %>
-      <dt>Author:</dt>
-      <% @purl.authors.each do |author| %>
-        <dd><%= author %></dd>
+    <% if (!@purl.creators.empty?) %>
+      <dt>Creator:</dt>
+      <% @purl.creators.each do |creator| %>
+        <dd><%= creator %></dd>
       <% end %>
     <% end %>
   </dl>
