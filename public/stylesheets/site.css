@@ -97,7 +97,8 @@ a:active {color: #4f4f4f;}
 #contents { 
   background: #fff url(../images/contents_bg.png) top left repeat-x;  
   padding: 20px 30px;
-  position: relative;  
+  position: relative;
+  overflow: auto;
 }
 
 #metadata {float: right; width: 30%;}
@@ -137,25 +138,48 @@ highlight colour for browse by callnum:  #e5f1f4
 
 */
 
-#title-metadata dl { 
+
+#title-metadata, #rights-metadata {
+	width: 82%;
+	float: left;
+}
+
+#title-metadata {
+	padding-bottom: 20px;
+}
+
+#rights-metadata {
+	clear: both;
+	padding-top: 20px;
+}
+
+#title-metadata dl, #rights-metadata dl { 
   margin: 15px 0; 
 }
 
-#title-metadata dt { 
+#title-metadata dt, #rights-metadata dt { 
   clear: both; 
   color: #555555; 
   float: left; 
-  padding: 2px 0; 
-  width: 8em; 
+  padding: 4px 0; 
+  width: 12em; 
 } 
 
-#title-metadata dd { 
-  margin-left: 8em;	
-  padding: 2px 0px; 
+#title-metadata dd, #rights-metadata dd { 
+  margin-left: 12em;	
+  padding: 4px 0px; 
 } 
 
-#title-metadata dd p { 
+#title-metadata dd p, #rights-metadata dd p { 
   margin-bottom: 8px;
+}
+
+#links-column {
+	border-left: 1px dotted #aaa;
+	margin-top: 30px;
+	padding: 10px 0 10px 15px;
+	float: right;
+	width: 14%;
 }
 
 

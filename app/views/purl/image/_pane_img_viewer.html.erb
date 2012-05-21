@@ -18,7 +18,7 @@
     <% end %>
 	  <div id="img-viewer-metadata">
 			<% unless (@purl.titles.nil?) %>
-			  <h3><%= trim_text(@purl.titles) %></h3> 
+			  <h3><%= trim_text(print_title_value()) %></h3> 
 			<% end %>		  
 			<span id="img-viewer-item-label"></span>
 		</div>

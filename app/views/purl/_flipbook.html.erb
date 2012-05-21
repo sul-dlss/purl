@@ -1,67 +1,9 @@
-
-<div id="title-metadata">             
-	<% unless (@purl.titles.nil?) %>
-	  <h2><%= @purl.titles %></h2>
-	<% end %>
-
-  <dl>
-    <%= print_field_value("authors", "Creator") %>
-    <%= print_field_value("contributors", "Contributor(s)") %>
-    <%= print_field_value("source", "Source") %>
-    <%= print_field_value("date", "Date") %>
-    <%= print_description_value("Description") %>	    
-  </dl>          
-</div>
-
-<% if not(@purl.catalog_key.nil? or @purl.catalog_key.empty?) %>
-  <div id="links-column">
-     &raquo; <a href="http://searchworks.stanford.edu/view/<%=@purl.catalog_key%>">View in SearchWorks</a>
-	</div>
-<% end %>                		
-
+<%= render(:partial => "purl/citation_info_dc" ) %>
+<%= render(:partial => "purl/sidebar_navigation" ) %>
 
 <div id="filelist">         
   <iframe id="embed-flipbook" src='http://sul-reader.stanford.edu/flipbook2/embed.jsp?id=<%= @purl.pid %>' width='575px' height='400px' style='border: 1px solid #999; padding: 0; margin: 0;' ></iframe> <br/>
   <a href="javascript:ffs();">Full screen view</a>
 </div>
 
-<div id="rights-metadata">
-  <dl>
-	  <% if not(@purl.cclicense_symbol.nil? or @purl.cclicense_symbol.empty?) %>
-      <dt>Rights :</dt>
-      <dd>
-			  <% if @purl.cclicense_symbol.to_s.eql? 'by' %>
-			    <div class="cc_by">
-				  <a href="http://creativecommons.org/licenses/by/3.0/" _target="blank">This work is licensed under a Creative Commons Attribution 3.0 Unported License</a>
-				</div>
-			  <% elsif @purl.cclicense_symbol.to_s.eql? 'by-sa' %>
-			    <div class="cc_by_sa">
-				    <a href="http://creativecommons.org/licenses/by-sa/3.0/" _target="blank">This work is licensed under a Creative Commons Attribution-Share Alike 3.0 Unported License</a>
-			    </div>
-			  <% elsif @purl.cclicense_symbol.to_s.eql? 'by-nd' %>
-			    <div class="cc_by_nd">
-				    <a href="http://creativecommons.org/licenses/by-nd/3.0/" _target="blank">This work is licensed under a Creative Commons Attribution-No Derivative Works 3.0 Unported License</a>
-			    </div>
-			  <% elsif @purl.cclicense_symbol.to_s.eql? 'by-nc' %>
-			    <div class="cc_by_nc">
-				    <a href="http://creativecommons.org/licenses/by-nc/3.0/" _target="blank">This work is licensed under a Creative Commons Attribution-Noncommercial 3.0 Unported License</a>
-			    </div>
-			  <% elsif @purl.cclicense_symbol.to_s.eql? 'by-nc-sa' %>
-			    <div class="cc_by_nc_sa">
-				    <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" _target="blank">This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License</a>
-			    </div>
-			  <% elsif @purl.cclicense_symbol.to_s.eql? 'by-nc-nd' %>
-			    <div class="cc_by_nc_nd">
-				    <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" _target="blank">This work is licensed under a Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported License</a>
-			    </div>
-			  <% else %>
-				   <%= @purl.cclicensetype.to_s %>
-			  <% end %>
-	    </dd>
-		<% end %>	
-
-    <%= print_field_value("use_and_reproduction_stmt", "Use and Reproduction") %>	    
-  </dl>          
-
-</div>
-
+<%= render(:partial => "purl/rights_and_usage" ) %>

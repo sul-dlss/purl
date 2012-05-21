@@ -66,6 +66,17 @@ module PurlHelper
     html
   end
 
+  # get title value
+  def print_title_value()
+    title = ''
+    
+    if not(@purl.nil? or @purl.titles.nil? or @purl.titles.empty?)
+      title = @purl.titles.join(" -- ")
+    end
+    
+    title
+  end
+
   
   # remove trailing period from name
   def add_copyright_symbol(copyright_stmt)

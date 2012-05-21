@@ -18,7 +18,7 @@ class Purl
   attr_accessor :mods_xml
   attr_accessor :flipbook_json 
  
-  attr_deferred :titles, :authors, :source, :date, :relation, :description, :contributors, :repository, :collection, :location # dc
+  attr_deferred :titles, :creators, :publisher, :source, :date, :description, :contributors, :relation, :identifier, :repository, :collection, :location # dc
   attr_deferred :degreeconfyr, :cclicense, :cclicensetype, :cclicense_symbol                     # properties
   attr_deferred :catalog_key                                                                     # identity
   attr_deferred :read_group, :embargo_release_date, :copyright_stmt, :use_and_reproduction_stmt  # rights
@@ -73,18 +73,22 @@ class Purl
     # DC Metadata
     dc = doc.root.at_xpath('*[local-name() = "dc"]', NAMESPACES)
     unless dc.nil?
-      @titles       = @@coder.decode(dc.xpath('dc:title/text()|dcterms:title/text()', NAMESPACES).collect { |t| t.to_s + " " })
-      @authors      = dc.xpath('dc:creator/text()|dcterms:creator/text()', NAMESPACES).collect { |t| t.to_s }
+      @titles = Array.new
+      @description  = Array.new
+      
+      @@coder.decode(dc.xpath('dc:title/text()|dcterms:title/text()', NAMESPACES).collect { |t| @titles.push(t.to_s) }) # title
+      dc.xpath('dc:description/text()|dcterms:abstract/text()', NAMESPACES).collect { |d| @description.push(d.to_s) } # description            
+      
+      @creators     = dc.xpath('dc:creator/text()|dcterms:creator/text()', NAMESPACES).collect { |t| t.to_s }
       @contributors = dc.xpath('dc:contributor/text()|dcterms:contributor/text()', NAMESPACES).collect { |t| t.to_s + '<br/>' }      
+      @publisher    = dc.xpath('dc:publisher/text()|dcterms:publisher/text()', NAMESPACES).to_s
       @source       = dc.at_xpath('dc:source/text()', NAMESPACES).to_s
       @date         = dc.at_xpath('dc:date/text()', NAMESPACES).to_s
-      @relation     = dc.at_xpath('dc:relation/text()', NAMESPACES).to_s.gsub /^Collection\s*:\s*/, ''
+      @relation     = dc.at_xpath('dc:relation/text()', NAMESPACES).to_s
       @repository   = dc.at_xpath('dc:relation[@type="repository"]', NAMESPACES).to_s
       @collection   = dc.at_xpath('dc:relation[@type="collection"]', NAMESPACES).to_s
       @location     = dc.at_xpath('dc:relation[@type="location"]', NAMESPACES).to_s
-
-      @description  = Array.new
-      dc.xpath('dc:description/text()|dcterms:abstract/text()', NAMESPACES).collect { |d| @description.push(d.to_s) }            
+      @identifier   = dc.at_xpath('dc:identifier/text()', NAMESPACES).to_s
     end
     
     # Identity Metadata
@@ -102,77 +106,78 @@ class Purl
     @deliverable_files = Array.new
     
     doc.root.xpath('contentMetadata/resource').collect do |resource_xml|
-      file = resource_xml.at_xpath('file')
-      resource = Resource.new
+      resource_xml.xpath('file').collect do |file|
+        resource = Resource.new
 
-      if is_file_ready(file)
-        resource.mimetype = file['mimetype']
-        resource.size     = file['size']
-        resource.shelve   = file['shelve']
-        resource.preserve = file['preserve']
-        resource.deliver  = file['deliver'] || file['publish']
-        resource.filename = file['id']
-        resource.objectId = file.parent['objectId']
-        resource.type     = file.parent['type'].to_s
-        resource.width    = file.at_xpath('imageData/@width').to_s.to_i || 0
-        resource.height   = file.at_xpath('imageData/@height').to_s.to_i || 0 
+        if is_file_ready(file)
+          resource.mimetype = file['mimetype']
+          resource.size     = file['size']
+          resource.shelve   = file['shelve']
+          resource.preserve = file['preserve']
+          resource.deliver  = file['deliver'] || file['publish']
+          resource.filename = file['id']
+          resource.objectId = file.parent['objectId']
+          resource.type     = file.parent['type'].to_s
+          resource.width    = file.at_xpath('imageData/@width').to_s.to_i || 0
+          resource.height   = file.at_xpath('imageData/@height').to_s.to_i || 0 
 
-        if (resource.width > 0 and resource.height > 0) 
-          resource.levels = (( Math.log([resource.width, resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1           
-        end
-    
-        resource.imagesvc = file.at_xpath('location[@type="imagesvc"]/text()').to_s
-        resource.url      = file.at_xpath('location[@type="url"]/text()').to_s        
-      end  
-          
-      if !resource_xml.at_xpath('attr[@name="label"]/text()').nil?
-        resource.description_label = resource_xml.at_xpath('attr[@name="label"]/text()').to_s
-      elsif !resource_xml.at_xpath('label/text()').nil?
-        resource.description_label = resource_xml.at_xpath('label/text()').to_s
-      end
-
-      resource.sequence = resource_xml['sequence'].to_s || 0        
-    
-      resource.sub_resources = resource_xml.xpath('resource').collect do |sub_resource_xml|
-        sub_file = sub_resource_xml.at_xpath('file')
-        sub_resource = Resource.new
-
-        if is_file_ready(sub_file)  
-          sub_resource.mimetype = sub_file['mimetype']
-          sub_resource.size     = sub_file['size']
-          sub_resource.shelve   = sub_file['shelve']
-          sub_resource.preserve = sub_file['preserve']
-          sub_resource.deliver  = sub_file['deliver'] || file['publish']
-          sub_resource.filename = sub_file['id']
-          sub_resource.objectId = sub_file.parent['objectId']
-          sub_resource.type     = sub_file.parent['type']
-          sub_resource.width    = sub_file.at_xpath('imageData/@width').to_s.to_i || 0
-          sub_resource.height   = sub_file.at_xpath('imageData/@height').to_s.to_i || 0
-        
-          if (sub_resource.width > 0 and sub_resource.height > 0) 
-            sub_resource.levels   = (( Math.log([sub_resource.width, sub_resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1 
+          if (resource.width > 0 and resource.height > 0) 
+            resource.levels = (( Math.log([resource.width, resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1           
           end
-        
-          sub_resource.imagesvc = sub_file.at_xpath('location[@type="imagesvc"]/text()').to_s
-          sub_resource.url      = sub_file.at_xpath('location[@type="url"]/text()').to_s        
+    
+          resource.imagesvc = file.at_xpath('location[@type="imagesvc"]/text()').to_s
+          resource.url      = file.at_xpath('location[@type="url"]/text()').to_s        
         end  
+          
+        if !resource_xml.at_xpath('attr[@name="label"]/text()').nil?
+          resource.description_label = resource_xml.at_xpath('attr[@name="label"]/text()').to_s
+        elsif !resource_xml.at_xpath('label/text()').nil?
+          resource.description_label = resource_xml.at_xpath('label/text()').to_s
+        end
 
-        if !sub_resource_xml.at_xpath('attr[@name="label"]/text()').nil?
-          sub_resource.description_label = sub_resource_xml.at_xpath('attr[@name="label"]/text()').to_s
-        elsif !sub_resource_xml.at_xpath('label/text()').nil?
-          sub_resource.description_label = sub_resource_xml.at_xpath('label/text()').to_s
-        end        
+        resource.sequence = resource_xml['sequence'].to_s || 0        
+    
+        resource.sub_resources = resource_xml.xpath('resource').collect do |sub_resource_xml|
+          sub_file = sub_resource_xml.at_xpath('file')
+          sub_resource = Resource.new
+
+          if is_file_ready(sub_file)  
+            sub_resource.mimetype = sub_file['mimetype']
+            sub_resource.size     = sub_file['size']
+            sub_resource.shelve   = sub_file['shelve']
+            sub_resource.preserve = sub_file['preserve']
+            sub_resource.deliver  = sub_file['deliver'] || file['publish']
+            sub_resource.filename = sub_file['id']
+            sub_resource.objectId = sub_file.parent['objectId']
+            sub_resource.type     = sub_file.parent['type']
+            sub_resource.width    = sub_file.at_xpath('imageData/@width').to_s.to_i || 0
+            sub_resource.height   = sub_file.at_xpath('imageData/@height').to_s.to_i || 0
+        
+            if (sub_resource.width > 0 and sub_resource.height > 0) 
+              sub_resource.levels   = (( Math.log([sub_resource.width, sub_resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1 
+            end
+        
+            sub_resource.imagesvc = sub_file.at_xpath('location[@type="imagesvc"]/text()').to_s
+            sub_resource.url      = sub_file.at_xpath('location[@type="url"]/text()').to_s        
+          end  
+
+          if !sub_resource_xml.at_xpath('attr[@name="label"]/text()').nil?
+            sub_resource.description_label = sub_resource_xml.at_xpath('attr[@name="label"]/text()').to_s
+          elsif !sub_resource_xml.at_xpath('label/text()').nil?
+            sub_resource.description_label = sub_resource_xml.at_xpath('label/text()').to_s
+          end        
       
-        sub_resource.sequence = sub_resource_xml['sequence'].to_s || 0        
+          sub_resource.sequence = sub_resource_xml['sequence'].to_s || 0        
       
-        sub_resource
-      end  
+          sub_resource
+        end  
       
-      # if the resource has a deliverable file or at least one sub_resource, add it to the array
-      if is_file_ready(file) or resource.sub_resources.length > 0
-        @deliverable_files.push(resource)
+        # if the resource has a deliverable file or at least one sub_resource, add it to the array
+        if is_file_ready(file) or resource.sub_resources.length > 0
+          @deliverable_files.push(resource)
+        end
+      
       end
-      
     end  
     
     # Rights Metadata

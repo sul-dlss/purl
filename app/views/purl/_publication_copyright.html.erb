@@ -1,7 +1,0 @@
-<% if not(@purl.copyright_stmt.nil? or @purl.copyright_stmt.empty?) %>
-  <div><%= add_copyright_symbol(@purl.copyright_stmt.to_s) %></div>
-<% end %>
-
-<div style="margin: 10px 0px 0px 0px;">
-  <%= render :partial => 'purl/rights_stmts' %>
-</div>
