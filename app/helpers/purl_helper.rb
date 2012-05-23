@@ -77,6 +77,30 @@ module PurlHelper
     title
   end
 
+  # get creator(s) value
+  def print_creator_value(label = '')
+    html = ''
+    
+    if not(@purl.nil? or @purl.creators.nil? or @purl.creators.empty?)
+      html = "<dt>" + label + ":</dt><dd>"
+      html = html + @purl.creators.join("<br/>") + "</dd>"
+    end
+    
+    html
+  end
+
+  # get field value from array
+  def print_field_array_value(field_name, label = '', separator = ' ')
+    html = ''
+    
+    if not(@purl.nil? or eval("@purl.#{field_name}.nil?") or eval("@purl.#{field_name}.empty?"))      
+      html = "<dt>" + label + ":</dt><dd>"
+      html = html + eval("@purl.#{field_name}").join(separator) + "</dd>"
+    end
+    
+    html
+  end
+
   
   # remove trailing period from name
   def add_copyright_symbol(copyright_stmt)
