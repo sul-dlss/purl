@@ -18,7 +18,7 @@ class Purl
   attr_accessor :mods_xml
   attr_accessor :flipbook_json 
  
-  attr_deferred :titles, :creators, :publisher, :source, :date, :description, :contributors, :relation, :identifier, :repository, :collection, :location # dc
+  attr_deferred :titles, :creators, :publisher, :source, :date, :description, :contributors, :relations, :identifiers, :repository, :collection, :location # dc
   attr_deferred :degreeconfyr, :cclicense, :cclicensetype, :cclicense_symbol                     # properties
   attr_deferred :catalog_key                                                                     # identity
   attr_deferred :read_group, :embargo_release_date, :copyright_stmt, :use_and_reproduction_stmt  # rights
@@ -75,20 +75,25 @@ class Purl
     unless dc.nil?
       @titles = Array.new
       @description  = Array.new
+      @creators = Array.new
+      @relations = Array.new
+      @identifiers = Array.new
       
       @@coder.decode(dc.xpath('dc:title/text()|dcterms:title/text()', NAMESPACES).collect { |t| @titles.push(t.to_s) }) # title
-      dc.xpath('dc:description/text()|dcterms:abstract/text()', NAMESPACES).collect { |d| @description.push(d.to_s) } # description            
+      dc.xpath('dc:description/text()|dcterms:abstract/text()', NAMESPACES).collect { |d| @description.push(d.to_s) } # description     
+      dc.xpath('dc:creator/text()|dcterms:creator/text()', NAMESPACES).collect { |c| @creators.push(c.to_s) } # creators
+      dc.xpath('dc:relation[not(@*)]', NAMESPACES).collect { |r| @relations.push(r.to_s) } # relations
+      dc.xpath('dc:identifier', NAMESPACES).collect { |c| @identifiers.push(c.to_s) } # identifiers
       
-      @creators     = dc.xpath('dc:creator/text()|dcterms:creator/text()', NAMESPACES).collect { |t| t.to_s }
       @contributors = dc.xpath('dc:contributor/text()|dcterms:contributor/text()', NAMESPACES).collect { |t| t.to_s + '<br/>' }      
       @publisher    = dc.xpath('dc:publisher/text()|dcterms:publisher/text()', NAMESPACES).to_s
       @source       = dc.at_xpath('dc:source/text()', NAMESPACES).to_s
       @date         = dc.at_xpath('dc:date/text()', NAMESPACES).to_s
-      @relation     = dc.at_xpath('dc:relation/text()', NAMESPACES).to_s
+      #@relation     = dc.at_xpath('dc:relation/text()', NAMESPACES).to_s
       @repository   = dc.at_xpath('dc:relation[@type="repository"]', NAMESPACES).to_s
       @collection   = dc.at_xpath('dc:relation[@type="collection"]', NAMESPACES).to_s
       @location     = dc.at_xpath('dc:relation[@type="location"]', NAMESPACES).to_s
-      @identifier   = dc.at_xpath('dc:identifier/text()', NAMESPACES).to_s
+      #@identifiers   = dc.at_xpath('dc:identifier/text()', NAMESPACES).to_s
     end
     
     # Identity Metadata

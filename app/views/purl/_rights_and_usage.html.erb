@@ -4,7 +4,7 @@
     <%= print_field_value("copyright_stmt", "Copyright") %>	    		
 
 	  <% if not(@purl.cclicense_symbol.nil? or @purl.cclicense_symbol.empty?) %>
-      <dt>License :</dt>
+      <dt>License:</dt>
       <dd>
 			  <% if @purl.cclicense_symbol.to_s.eql? 'by' %>
 			    <div class="cc_by">

@@ -188,14 +188,14 @@ highlight colour for browse by callnum:  #e5f1f4
 
 .cc_by, .cc_by_nc, .cc_by_nd, .cc_by_sa, .cc_by_nc_sa, .cc_by_nc_nd {
   background: transparent url('/images/cc_by.png') no-repeat 0px 0px;
-  padding: 0 0 0 100px;
+  padding: 0 0 0 90px;
   min-height: 30px;
 }
-.cc_by_nc { background-image: url('/images/cc_by_nc.png'); }
-.cc_by_nd { background-image: url('/images/cc_by_nd.png'); }
-.cc_by_sa { background-image: url('/images/cc_by_sa.png'); }
-.cc_by_nc_sa { background-image: url('/images/cc_by_nc_sa.png'); }
-.cc_by_nc_nd { background-image: url('/images/cc_by_nc_nd.png'); }
+.cc_by_nc { background-image: url('/images/cc_by_nc_80x15.png'); }
+.cc_by_nd { background-image: url('/images/cc_by_nd_80x15.png'); }
+.cc_by_sa { background-image: url('/images/cc_by_sa_80x15.png'); }
+.cc_by_nc_sa { background-image: url('/images/cc_by_nc_sa_80x15.png'); }
+.cc_by_nc_nd { background-image: url('/images/cc_by_nc_nd_80x15.png'); }
 
 .truncator-link { font-weight: bold; }
 
