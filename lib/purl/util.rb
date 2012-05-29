@@ -24,6 +24,8 @@ module PurlUtils
       width    = deliverable_file.width.to_s.empty? ? 0 : deliverable_file.width.to_i
       height   = deliverable_file.height.to_s.empty? ? 0 : deliverable_file.height.to_i
       sequence = deliverable_file.sequence.to_s.empty? ? '0' : deliverable_file.sequence.to_s
+      access_stanford = deliverable_file.access_stanford.to_s
+      access_world = deliverable_file.access_world.to_s
       
       if !id.nil? and !id.empty?
         json_array.push(
@@ -31,7 +33,9 @@ module PurlUtils
              "\"label\": \"" + get_file_label(deliverable_file) + "\"," + 
   	         "\"width\": " + width.to_s + "," + 
   	         "\"height\": " + height.to_s + "," + 
-  	         "\"sequence\": " + sequence + 
+  	         "\"sequence\": " + sequence + "," + 
+  	         "\"accessStanford\": \"" + access_stanford.to_s + "\"," +  
+  	         "\"accessWorld\": \"" + access_world.to_s + "\"" +  	         
   	      "}")
   	  else 
   	    if deliverable_file.sub_resources.length > 0 

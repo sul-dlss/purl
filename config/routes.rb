@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   # The priority is based upon order of creation: first created -> highest priority.
   map.connect '/:id', :controller => 'purl', :action => 'index'
+  map.connect 'auth/:id', :controller => 'purl', :action => 'index'
   map.connect '/:id.:format', :controller => 'purl', :action => 'index'
 
   # Sample of regular route:

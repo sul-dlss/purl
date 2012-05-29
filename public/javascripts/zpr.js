@@ -59,16 +59,16 @@ var zpr = function(viewFinderId, inputValues) {
     viewFinder
     .append($('<div>').attr({ 'class': 'zpr-controls' })
       .append($('<img>')
-        .attr({ 'id': viewFinderId + '-zoom-in', 'src': 'images/zpr-zoom-in.png' })
+        .attr({ 'id': viewFinderId + '-zoom-in', 'src': '/images/zpr-zoom-in.png' })
         .click(function() { zoom('in'); }))
       .append($('<img>')
-        .attr({ 'id': viewFinderId + '-zoom-out', 'src': 'images/zpr-zoom-out.png' })
+        .attr({ 'id': viewFinderId + '-zoom-out', 'src': '/images/zpr-zoom-out.png' })
         .click(function() { zoom('out'); }))
       .append($('<img>')
-        .attr({ 'id': viewFinderId + '-rotate-cw', 'src': 'images/zpr-rotate-cw.png' })
+        .attr({ 'id': viewFinderId + '-rotate-cw', 'src': '/images/zpr-rotate-cw.png' })
         .click(function() { rotate('cw'); }))
       .append($('<img>')
-        .attr({ 'id': viewFinderId + '-rotate-ccw', 'src': 'images/zpr-rotate-ccw.png' })
+        .attr({ 'id': viewFinderId + '-rotate-ccw', 'src': '/images/zpr-rotate-ccw.png' })
         .click(function() { rotate('ccw'); }))
     );
 
