@@ -238,6 +238,10 @@ ol.gallery .img-block {
 	border: 0;
 }
 
+.img-block-thumb {
+	width: 240;
+}
+
 .img-group-nav {	
 	height: 10px;
 	padding: 10px 0 10px 0;
@@ -387,7 +391,7 @@ a.item-header:hover {
 #img-viewfinder {
   /*background: url('../images/loader.gif') 30px 30px no-repeat;*/
   display: block;
-  left: 186px;
+  left: 206px;
   overflow: auto;
   position: absolute;
   top: 102px;
@@ -533,11 +537,11 @@ a#img-viewer-prev:hover, a#img-viewer-next:hover {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	width: 140px;
+	width: 180px;
 }
 
 #viewer-sizes-nav li {
-  width: 140px;	
+  width: 160px;	
 }
 
 .viewer-sizes-links {
@@ -549,7 +553,7 @@ a#img-viewer-prev:hover, a#img-viewer-next:hover {
 .viewer-sizes-download {
   float: left;
   padding: 4px 0;
-  width: 12px;	
+  width: 30px;	
 }
 
 .viewer-selected-img {
@@ -557,19 +561,20 @@ a#img-viewer-prev:hover, a#img-viewer-next:hover {
 }
 
 #viewer-v-nav {
-	border-right: 1px dotted #aaa;
+	border-right: 0px dotted #aaa;
 	float: left;
 	margin: 5px 10px;
 	padding: 5px 12px 5px 5px;
-	width: 160px;
+	width: 200px;
 }
 
 #viewer-v-nav-selected-img {
 	border: 1px solid #a2000a;
 	border-top: 2px solid #a2000a;
+	overflow: auto;
 	padding: 10px;
 	text-align: center;
-	width: 140px;
+	width: 170px;
 }
 
 .viewer-v-nav-img {
@@ -584,6 +589,9 @@ a#img-viewer-prev:hover, a#img-viewer-next:hover {
 	border: 0;
 }
 
+.icon-stanford-only {
+	margin-left: 5px;
+}
 
 #footer a, #footer a:hover { 
   color: #ffffff;

@@ -73,10 +73,10 @@ class Purl
     # DC Metadata
     dc = doc.root.at_xpath('*[local-name() = "dc"]', NAMESPACES)
     unless dc.nil?
-      @titles = Array.new
-      @description  = Array.new
-      @creators = Array.new
-      @relations = Array.new
+      @titles      = Array.new
+      @description = Array.new
+      @creators    = Array.new
+      @relations   = Array.new
       @identifiers = Array.new
       
       @@coder.decode(dc.xpath('dc:title/text()|dcterms:title/text()', NAMESPACES).collect { |t| @titles.push(t.to_s) }) # title
@@ -89,11 +89,9 @@ class Purl
       @publisher    = dc.xpath('dc:publisher/text()|dcterms:publisher/text()', NAMESPACES).to_s
       @source       = dc.at_xpath('dc:source/text()', NAMESPACES).to_s
       @date         = dc.at_xpath('dc:date/text()', NAMESPACES).to_s
-      #@relation     = dc.at_xpath('dc:relation/text()', NAMESPACES).to_s
       @repository   = dc.at_xpath('dc:relation[@type="repository"]', NAMESPACES).to_s
       @collection   = dc.at_xpath('dc:relation[@type="collection"]', NAMESPACES).to_s
       @location     = dc.at_xpath('dc:relation[@type="location"]', NAMESPACES).to_s
-      #@identifiers   = dc.at_xpath('dc:identifier/text()', NAMESPACES).to_s
     end
     
     # Identity Metadata
@@ -107,7 +105,6 @@ class Purl
     @page_start = doc.root.xpath('contentMetadata/bookData/@pageStart').to_s
      
     # File data 
-    #@deliverable_files = doc.root.xpath('contentMetadata/resource/file[not(@deliver="no" or @publish="no")]').collect do |file|
     @deliverable_files = Array.new
     
     doc.root.xpath('contentMetadata/resource').collect do |resource_xml|
@@ -189,7 +186,7 @@ class Purl
     rights = doc.root.at_xpath('rightsMetadata')
     unless rights.nil?
       read = rights.at_xpath('access[@type="read"]/machine/*')
-      
+
       unless read.nil?
         @read_group = read.name == 'group' ? read.text : read.name
       end
@@ -208,6 +205,13 @@ class Purl
       if (@cclicense_symbol.nil? || @cclicense_symbol.empty?)
         @cclicense_symbol = rights.at_xpath('use/machine[@type="creativecommons"]/text()').to_s
       end
+      
+      add_global_access_info(@read_group)
+      
+      rights.xpath('access[@type="read"]/file').collect do |file_rights| 
+        add_access_info(file_rights)
+      end
+      
     end
     
     # Properties
@@ -324,6 +328,52 @@ class Purl
       end
     end
     @ng_xml
+  end
+
+
+  def add_global_access_info(read_group)
+    @deliverable_files.each_with_index do |deliverable_file, i|
+      @deliverable_files[i].access_stanford = "all"
+      
+      if read_group == "stanford"
+        @deliverable_files[i].access_world = "none"
+      elsif read_group == "world"
+        @deliverable_files[i].access_world = "all"
+      end
+    end  
+  end
+
+
+  def add_access_info(file_rights)
+    filename = file_rights['id']
+    
+    return if @deliverable_files.nil?
+    
+    @deliverable_files.each_with_index do |deliverable_file, i|
+      if @deliverable_files[i].filename == filename
+        world = file_rights.at_xpath("machine/world")
+        stanford = file_rights.at_xpath("machine/stanford")
+        
+        if (!world.nil?)          
+          if (!world["rule"].nil?)
+            @deliverable_files[i].access_world = world["rule"]
+          else
+            @deliverable_files[i].access_world = "all"
+          end
+        else   
+          @deliverable_files[i].access_world = "none"
+        end
+        
+        if (!stanford.nil?)          
+          if (!stanford["rule"].nil?)
+            @deliverable_files[i].access_stanford = stanford["rule"]
+          else
+            @deliverable_files[i].access_stanford = "all"
+          end
+        end        
+      end
+    end
+        
   end
 
 end

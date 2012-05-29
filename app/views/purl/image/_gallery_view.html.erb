@@ -28,13 +28,15 @@
 		
     <li>
       <div class="img-block">
-	       <a href="javascript:showImg('<%= sequence %>', 'zoom');">
-	         <img id="img-src-<%= img_id %>" alt="">
+	       <a href="javascript:showImg('<%= sequence %>', 'thumb');">
+	         <img id="img-src-<%= img_id %>" alt="" class="img-block-thumb">
         </a> 
       </div>
       <div class="img-group-nav">
       </div>
-      <div class="img-group-label-container"><%= get_file_label(deliverable_file) %></div>
+      <div class="img-group-label-container">
+        <%= get_file_label(deliverable_file) %>
+	    </div>
     </li>                
 
   <% elsif deliverable_file.sub_resources.length > 0 %>
@@ -55,14 +57,14 @@
 		
 			    <div id="<%= @purl.pid.to_s + '_seq_' + sequence + '_img_' + sno.to_s %>" style="display: <%= display %>;">
 					  <div class="img-block">
-					   <a href="javascript:showImg('<%= sequence %>.<%= img_sequence %>', 'zoom');">
+					   <a href="javascript:showImg('<%= sequence %>.<%= img_sequence %>', 'thumb');">
 						   <img id="img-src-<%= img_id %>" alt="">
 				      </a> 
 				    </div>
 				    <div class="img-group-nav">
-					    <a href="javascript:showGalleryImg('<%= sno %>', '<%= img_files.length %>', '<%= @purl.pid %>', '<%= sequence %>', -1);"><img class="gallery-img-nav-icon" src="images/gallery-img-prev.png"></a>						
+					    <a href="javascript:showGalleryImg('<%= sno %>', '<%= img_files.length %>', '<%= @purl.pid %>', '<%= sequence %>', -1);"><img class="gallery-img-nav-icon" src="/images/gallery-img-prev.png"></a>						
 					    <%= sno %> of <%= img_files.length %>
-				      <a href="javascript:showGalleryImg('<%= sno %>', '<%= img_files.length %>', '<%= @purl.pid %>', '<%= sequence %>', 1);"><img class="gallery-img-nav-icon" src="images/gallery-img-next.png"></a>
+				      <a href="javascript:showGalleryImg('<%= sno %>', '<%= img_files.length %>', '<%= @purl.pid %>', '<%= sequence %>', 1);"><img class="gallery-img-nav-icon" src="/images/gallery-img-next.png"></a>
 					  </div>
 				    <div class="img-group-label-container"><%= get_file_label(img_file) %></div>
 			    </div>
