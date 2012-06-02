@@ -230,7 +230,7 @@ class Purl
   
   # check if this object is of type image
   def is_image?
-    if !type.nil? && type =~ /Image|Map/i
+    if !type.nil? && type =~ /Image|Map|Manuscript/i
       return true
     end  
     
@@ -238,7 +238,7 @@ class Purl
   end
 
   def is_book?
-    if !type.nil? && type =~ /Book|Manuscript/i
+    if !type.nil? && type =~ /Book/i
       return true
     end  
     
