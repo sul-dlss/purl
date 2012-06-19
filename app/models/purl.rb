@@ -131,8 +131,6 @@ class Purl
           resource.rights_world, resource.rights_world_rule = parsed_rights.world_rights_for_file(resource.filename)
           resource.rights_stanford, resource.rights_stanford_rule = parsed_rights.stanford_only_rights_for_file(resource.filename)          
 
-          Rails.logger.info(resource.filename + " = " + resource.rights_stanford.to_s + " - " + resource.rights_stanford_rule.to_s)  
-
           if (resource.width > 0 and resource.height > 0) 
             resource.levels = (( Math.log([resource.width, resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1           
           end
