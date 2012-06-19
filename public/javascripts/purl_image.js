@@ -233,6 +233,7 @@ function loadImage(id, size) {
 
   $(location).attr('href', '#image/' + imgInfo[index]['sequence'] + '/' + size);
   //$(location).attr('href', getLocationURL(index, size, location) + '#image/' + imgInfo[index]['sequence'] + '/' + size);
+  //$(location).attr('href', getLocationURL(index, size, location) + '#image/' + imgInfo[index]['sequence'] + '/' + size);
 
   if (size == "zoom") {
     loadZpr(id);
@@ -483,7 +484,7 @@ function getDimensions(width, height, maxLevels, size) {
 
 
 function getThumbDimensions(imgId) {
-  var dimensions = getDimensionsToFitBox(500, 500, imgId);
+  var dimensions = getDimensionsToFitBox(400, 400, imgId);
   return dimensions[0] + ' x ' + dimensions[1];
 }
 
@@ -641,7 +642,7 @@ function loadImgsInVerticalNavigation(id, index) {
   if (imgInfo[index]['rightsStanford'] === "true") {
     if (imgInfo[index]['rightsStanfordRule'] !== "no-download") { 
       $.each(sizes, function(i, size) { 
-        var url = "http://" + $(location).attr('host') + '/auth' +       
+        var url = "https://" + $(location).attr('host') + '/auth' +       
           $(location).attr('pathname').replace(/^\/auth/, '') + 
           $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, size);
       
@@ -840,36 +841,25 @@ function getLocationURL(index, size, location) {
 	  hasAuthString = true;
 	}
 
-  if (imgInfo[index]["accessStanford"] === "all") {
-	  addAuthString = true;
-  }
-  else if (imgInfo[index]["accessStanford"] === "no-download" && (size === "thumb" || size === "zoom"))  {
-	  addAuthString = false;
-  }
-
-  if (imgInfo[index]["accessWorld"] === "all") {
-	  addAuthString = false;
-  }  
-  else if (imgInfo[index]["accessWorld"] === "none") {
-	  addAuthString = true;
-  }  
-  else if (imgInfo[index]["accessWorld"] === "no-download" && (size === "thumb" || size === "zoom"))  {
-	  addAuthString = false;
+  if (imgInfo[index]['rightsStanford'] === "true") {
+  	addAuthString = true;
+  } else if (imgInfo[index]['rightsWorld'] === "true") {
+  	addAuthString = false;
   }
 
+  if (size === "thumb") {
+  	addAuthString = false;
+  }
+	
   // add '/auth' string  
   if (addAuthString && !hasAuthString) {
-	  //currentURL = $(location).attr('origin') + '/auth' + $(location).attr('pathname'); 
+	  currentURL = $(location).attr('origin') + '/auth' + $(location).attr('pathname'); 
 	}
-	
-	console.log("hasAuthString = " + hasAuthString + ", addAuthString = " + addAuthString);
-	
 	// remove '/auth' string  
-	if (!addAuthString && hasAuthString) { 
-		currentURL = currentURL.replace(/auth\//, '');
+	else if (!addAuthString && hasAuthString) { 
+		//currentURL = currentURL.replace(/auth\//, '');
+		currentURL = $(location).attr('origin') + $(location).attr('pathname').replace(/auth\//, ''); 
 	}
-	
-	console.log("currentURL: " + currentURL);
 	
 	return currentURL;
 }
