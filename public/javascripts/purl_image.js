@@ -7,27 +7,16 @@ var groups = [];
 var urlSuffix = "";
 
 Array.prototype.unique = function() { 
-	var o = {}, i, l = this.length, r = [];    
-	for(i=0; i<l;i+=1) o[this[i]] = this[i];    
-	for(i in o) r.push(o[i]); return r;
+  var o = {}, i, l = this.length, r = [];    
+  for(i=0; i<l;i+=1) o[this[i]] = this[i];    
+  for(i in o) r.push(o[i]); return r;
 };
-
-(function($){
-  $.fn.moveTo = function(selector) {
-    return this.each(function(){
-      var cl = $(this).clone();
-      $(cl).appendTo(selector);
-      $(this).remove();
-    });
-  }
-})(jQuery);
-
 
 $(document).ready(function() {
   
-	$(window).bind('hashchange', function(){
-		setURLSuffix();
-	});
+  $(window).bind('hashchange', function(){
+    setURLSuffix();
+  });
 
   // set toggle and links for clickable item header    
   $('ol#toc li > a').each(function () {
@@ -58,17 +47,12 @@ $(document).ready(function() {
 
     groupId = getGroupId(sequence);
     groups.push(groupId);
-
-    $('#thumb-size-' + id).html('(' + imgInfo[i]['thumb'] + ')');    
-    $('#small-size-' + id).html('(' + imgInfo[i]['small'] + ')');
-    $('#medium-size-' + id).html('(' + imgInfo[i]['medium'] + ')');
-    $('#large-size-' + id).html('(' + imgInfo[i]['large'] + ')');
   }
 
   groups = groups.unique();
 
   if (imgInfo.length == 1) {
-	  $('#' + imgInfo[0]['id']).click(); 
+    $('#' + imgInfo[0]['id']).click(); 
   }
 
   $('#container').height(parseInt($(window).height(), 10) - 10);  
@@ -84,27 +68,27 @@ $(document).ready(function() {
   });
 
   $('#icon-list-view').click(function() { 
-	  $('#icon-list-view').attr('src', '/images/icon-list-view-active.png');
-	  $('#icon-gallery-view').attr('src', '/images/icon-gallery-view-inactive.png');
-	  $('ol#toc').show();
-	  $('div#gallery-content').hide();
+    $('#icon-list-view').attr('src', '/images/icon-list-view-active.png');
+    $('#icon-gallery-view').attr('src', '/images/icon-gallery-view-inactive.png');
+    $('ol#toc').show();
+    $('div#gallery-content').hide();
   });
 
   $('#icon-gallery-view').click(function() { 
-	  $('#icon-list-view').attr('src', '/images/icon-list-view-inactive.png');
-	  $('#icon-gallery-view').attr('src', '/images/icon-gallery-view-active.png');
-	  $('div#gallery-content').show();
-	  $('ol#toc').hide();
+    $('#icon-list-view').attr('src', '/images/icon-list-view-inactive.png');
+    $('#icon-gallery-view').attr('src', '/images/icon-gallery-view-active.png');
+    $('div#gallery-content').show();
+    $('ol#toc').hide();
   });
 
   $('#footer-show-hide').toggle(
-	  function() {
-	    $('#footer-contents').show();
-		  $('#footer-show-hide').css('background-image', 'url("/images/icon-img-footer-hide.png")');
-	  }, 
-	  function () {
-		  $('#footer-contents').hide();
-		  $('#footer-show-hide').css('background-image', 'url("/images/icon-img-footer-show.png")');
+    function() {
+      $('#footer-contents').show();
+      $('#footer-show-hide').css('background-image', 'url("/images/icon-img-footer-hide.png")');
+    }, 
+    function () {
+      $('#footer-contents').hide();
+      $('#footer-show-hide').css('background-image', 'url("/images/icon-img-footer-show.png")');
     }
   );
 
@@ -144,9 +128,9 @@ function setViewerLinks(id) {
     });
   }   
 
-	$('#zoom-' + id).click(function() {
-		showImg(this.id, id);
-	});
+  $('#zoom-' + id).click(function() {
+    showImg(this.id, id);
+  });
 }
 
 function changeDownloadFormat(name) {
@@ -187,7 +171,7 @@ function showImg(sequence, size, animate) {
   var duration = 400;
 
   if (typeof animate === 'undefined' || animate == false) {
-	  duration = 0;
+    duration = 0;
   }
 
   if (index < 0) return;
@@ -204,37 +188,37 @@ function showImg(sequence, size, animate) {
   $('#pane-img-viewer').animate({
     'left': 0 + 'px'
   }, duration, function() {
-		if (size == 'zoom') {
-			loadZpr(id);
-		} else {
-	    loadImage(id, size);			
-		}
+    if (size == 'zoom') {
+      loadZpr(id);
+    } else {
+      loadImage(id, size);      
+    }
   });
   
   selectedSize = size;
   loadImgsInHorizontalNavigation(id, index);
   loadImgsInVerticalNavigation(id, index); 
 
-	$('#img-viewer-item-label').html('(' +  imgInfo[index]['label'] + ')');
-	
-	$('#img-viewer-pagination').html((getSequenceIndex(index) + 1) + ' of ' + groups.length);
-	
-	if ($('#img-viewer-prev').length != 0 && $('#img-viewer-next').length != 0) {				
-	  $('#img-viewer-prev > img').attr('src', '/images/img-view-group-prev-inactive.png');
-	  $('#img-viewer-next > img').attr('src', '/images/img-view-group-next-inactive.png');	  
-	  $('#img-viewer-prev').unbind().css('cursor', 'default');
-	  $('#img-viewer-next').unbind().css('cursor', 'default');
-
-	  if ((seqIndex - 1) >= 0) {
-	    $('#img-viewer-prev').click(function() { prev(seqIndex); }).css('cursor', 'pointer');
-		  $('#img-viewer-prev > img').attr('src', '/images/img-view-group-prev-active.png');
-	  }  
+  $('#img-viewer-item-label').html('(' +  imgInfo[index]['label'] + ')');
   
-	  if ((seqIndex + 1) < groups.length) {
-	    $('#img-viewer-next').click(function() { next(seqIndex); }).css('cursor', 'pointer');
-		  $('#img-viewer-next > img').attr('src', '/images/img-view-group-next-active.png');
-	  }		
-	}
+  $('#img-viewer-pagination').html((getSequenceIndex(index) + 1) + ' of ' + groups.length);
+  
+  if ($('#img-viewer-prev').length != 0 && $('#img-viewer-next').length != 0) {        
+    $('#img-viewer-prev > img').attr('src', '/images/img-view-group-prev-inactive.png');
+    $('#img-viewer-next > img').attr('src', '/images/img-view-group-next-inactive.png');    
+    $('#img-viewer-prev').unbind().css('cursor', 'default');
+    $('#img-viewer-next').unbind().css('cursor', 'default');
+
+    if ((seqIndex - 1) >= 0) {
+      $('#img-viewer-prev').click(function() { prev(seqIndex); }).css('cursor', 'pointer');
+      $('#img-viewer-prev > img').attr('src', '/images/img-view-group-prev-active.png');
+    }  
+  
+    if ((seqIndex + 1) < groups.length) {
+      $('#img-viewer-next').click(function() { next(seqIndex); }).css('cursor', 'pointer');
+      $('#img-viewer-next > img').attr('src', '/images/img-view-group-next-active.png');
+    }    
+  }
 }
 
 function loadImage(id, size) {
@@ -242,16 +226,17 @@ function loadImage(id, size) {
   var index = getArrayIndex(id);
 
   if (typeof size === "undefined") {
-	  size = selectedSize;
+    size = selectedSize;
   } else {
-	  selectedSize = size;	
-  }
+    selectedSize = size;  
+  }	
 
   $(location).attr('href', '#image/' + imgInfo[index]['sequence'] + '/' + size);
+  //$(location).attr('href', getLocationURL(index, size, location) + '#image/' + imgInfo[index]['sequence'] + '/' + size);
 
   if (size == "zoom") {
-	  loadZpr(id);
-	  return;
+    loadZpr(id);
+    return;
   }
 
   loadImgsInVerticalNavigation(id, index); 
@@ -260,7 +245,7 @@ function loadImage(id, size) {
   var strDimensions = getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], size);
   
   if (size == 'thumb') {
-	  strDimensions = getThumbDimensions(id);
+    strDimensions = getThumbDimensions(id);
   }
 
   var dimensions = strDimensions.match(/(\d+) x (\d+)/);
@@ -269,7 +254,7 @@ function loadImage(id, size) {
   var imgHeight = dimensions[2];
 
   $('#zpr-frame').hide();
-  $('#img-canvas').show();	
+  $('#img-canvas').show();  
 
   $('#pane-img-viewer').height(viewfinderHeight + 'px');  
 
@@ -302,22 +287,22 @@ function loadZpr(id) {
   $('#img-viewfinder').height((viewfinderHeight - 100) + 'px');
   $('#img-viewfinder').width(($('#pane-img-viewer').width() - 220) + 'px');
 
-	$('#img-canvas').hide();
-	$('#zpr-frame').show();
-	
-  $('#zpr-frame').width(($('#pane-img-viewer').width() - 232) + 'px');	
-	$('#zpr-frame').height((viewfinderHeight - 128) + 'px');
+  $('#img-canvas').hide();
+  $('#zpr-frame').show();
+  
+  $('#zpr-frame').width(($('#pane-img-viewer').width() - 232) + 'px');  
+  $('#zpr-frame').height((viewfinderHeight - 128) + 'px');
 
-	$('#zpr-frame').html('');
-	
-	var z = new zpr('zpr-frame', { 
-		'imageStacksURL': stacksURL + '/image/' + druid + '/' + id, 
-		'width': imgInfo[index]['width'], 
-		'height': imgInfo[index]['height'], 
-		'marqueeImgSize': 50  
-	});	
-	
-	loadImgsInVerticalNavigation(id, index); 
+  $('#zpr-frame').html('');
+  
+  var z = new zpr('zpr-frame', { 
+    'imageStacksURL': stacksURL + '/image/' + druid + '/' + id, 
+    'width': imgInfo[index]['width'], 
+    'height': imgInfo[index]['height'], 
+    'marqueeImgSize': 50  
+  });  
+  
+  loadImgsInVerticalNavigation(id, index); 
 }
 
 function updateViewerSizesLinks(id, index) {
@@ -431,9 +416,9 @@ function getArrayIndexUsingSequence(sequence) {
 
 
 function getSequenceIndex(index) {
-	var sequence = imgInfo[index]["sequence"];
-	var groupId = getGroupId(sequence); 
-	
+  var sequence = imgInfo[index]["sequence"];
+  var groupId = getGroupId(sequence); 
+  
   for (var i = 0; i < groups.length; i++) {
     if (groupId == groups[i]) {
       return i;
@@ -444,8 +429,8 @@ function getSequenceIndex(index) {
 }
 
 function getGroupId(sequence) {
-  var groupId;	
-	var str = sequence.toString().split(/\./);
+  var groupId;  
+  var str = sequence.toString().split(/\./);
   groupId = str[0];
   
   return groupId;
@@ -454,35 +439,34 @@ function getGroupId(sequence) {
 
 function getIndexForFirstImgInSequence(index) {
   for (var i = 0; i < imgInfo.length; i++) {
-	  var sequence = imgInfo[i]['sequence'];
-	
+    var sequence = imgInfo[i]['sequence'];
+  
     if (groups[index] == getGroupId(sequence)) {
       return i;
     }
   }
   
-  return -1;	
+  return -1;  
 }
 
 function getPairTree(id) {
-	var pairTree = '';
-	
+  var pairTree = '';
+  
   if (/^[a-z]{2}[0-9]{3}[a-z]{2}[0-9]{4}/.test(id)) {
-    pairTree = id.substr(0, 2) + '/' + id.substr(2, 3) + '/' + 
-			id.substr(5, 2) + '/' + id.substr(7, 4);
-  }	
+    pairTree = id.substr(0, 2) + '/' + id.substr(2, 3) + '/' + id.substr(5, 2) + '/' + id.substr(7, 4);
+  }  
 
-	return pairTree;
+  return pairTree;
 }
 
 
 function getDimensions(width, height, maxLevels, size) {  
   var mappingLevels = {
-    'small': parseInt(maxLevels) - 3,
-    'medium': parseInt(maxLevels) - 2, 
-    'large': parseInt(maxLevels) - 1,
-    'xlarge': parseInt(maxLevels) ,
-    'full': parseInt(maxLevels) + 1
+    'small': parseInt(maxLevels, 10) - 3,
+    'medium': parseInt(maxLevels, 10) - 2, 
+    'large': parseInt(maxLevels, 10) - 1,
+    'xlarge': parseInt(maxLevels, 10) ,
+    'full': parseInt(maxLevels, 10) + 1
   }
       
   var diffLevel = maxLevels - mappingLevels[size];
@@ -499,8 +483,8 @@ function getDimensions(width, height, maxLevels, size) {
 
 
 function getThumbDimensions(imgId) {
-	var dimensions = getDimensionsToFitBox(500, 500, imgId);
-	return dimensions[0] + ' x ' + dimensions[1];
+  var dimensions = getDimensionsToFitBox(500, 500, imgId);
+  return dimensions[0] + ' x ' + dimensions[1];
 }
 
 function prev(seqIndex) {
@@ -533,186 +517,192 @@ function calculateLevel(width, height) {
 
 
 function showGalleryImg(currentImgId, totalImgCount, pid, seqId, direction) {
-	var nextImgId = parseInt(currentImgId) + direction;
-	
-	if (nextImgId < 1) {
-	  nextImgId = parseInt(totalImgCount);	
-	}
-	
-	if (nextImgId > parseInt(totalImgCount)) {
-		nextImgId = 1;
-	}
-	
-	$('#' + pid + '_seq_' + seqId + '_img_' + currentImgId).hide();
-	$('#' + pid + '_seq_' + seqId + '_img_' + nextImgId).show();
-	
-	return;
+  var nextImgId = parseInt(currentImgId, 10) + direction;
+  
+  if (nextImgId < 1) {
+    nextImgId = parseInt(totalImgCount, 10);  
+  }
+  
+  if (nextImgId > parseInt(totalImgCount, 10)) {
+    nextImgId = 1;
+  }
+  
+  $('#' + pid + '_seq_' + seqId + '_img_' + currentImgId).hide();
+  $('#' + pid + '_seq_' + seqId + '_img_' + nextImgId).show();
+  
+  return;
 }
 
 function loadImgsInHorizontalNavigation(id, index) {
-	var druid = pid; 
-	var seqIndex = getSequenceIndex(index);
-	var i, index, thumbDimensions;
-	
-	if (seqIndex <= 0) { 
+  var druid = pid; 
+  var seqIndex = getSequenceIndex(index);
+  var i, index, thumbDimensions;
+  
+  if (seqIndex <= 0) { 
     $('#viewer-h-nav-img-01')
       .attr('src', '/images/img-view-first-ptr.png')
       .css({'cursor': 'auto', 'width': 65, 'height': 40})
-		  .click(function() {});    
-	} else {
-		index = getIndexForFirstImgInSequence(seqIndex-1);
-		thumbDimensions = getDimensionsToFitBox(65, 40, imgInfo[index]['id']);
-		
-		$('#viewer-h-nav-img-01')
-		  .attr('src', stacksURL + '/image/' + druid + '/' + imgInfo[index]["id"] + '_thumb')
-		  .css({'cursor': 'pointer', 'width': thumbDimensions[0], 'height': thumbDimensions[1]})
-		  .click(function() { prev(seqIndex); });
-	}
-
-	index = getIndexForFirstImgInSequence(seqIndex);
-	thumbDimensions = getDimensionsToFitBox(65, 40, imgInfo[index]['id']);
-	$('#viewer-h-nav-img-02')
-	  .attr('src', stacksURL + '/image/' + druid + '/' + imgInfo[index]['id'] + '_thumb')	
-	  .css({'width': thumbDimensions[0], 'height': thumbDimensions[1] });
-	
-	if ((seqIndex + 1) == groups.length) {
-		$('#viewer-h-nav-img-03')
-		  .attr('src', '/images/img-view-last-ptr.png')		
-		  .css({'cursor': 'auto', 'width': 65, 'height': 40})
-		  .click(function() {});    
+      .click(function() {});    
   } else {
-		index = getIndexForFirstImgInSequence(seqIndex+1);
-		thumbDimensions = getDimensionsToFitBox(65, 40, imgInfo[index]['id']);	
-
-	  $('#viewer-h-nav-img-03')
-	    .attr('src', stacksURL + '/image/' + druid + '/' + imgInfo[index]['id'] + '_thumb')		  
-		  .css({ 'cursor': 'pointer', 'width': thumbDimensions[0], 'height': thumbDimensions[1] })
-		  .click(function() { next(seqIndex); });
+    index = getIndexForFirstImgInSequence(seqIndex-1);
+    thumbDimensions = getDimensionsToFitBox(65, 40, imgInfo[index]['id']);
+    
+    $('#viewer-h-nav-img-01')
+      .attr('src', stacksURL + '/image/' + druid + '/' + imgInfo[index]["id"] + '_thumb')
+      .css({'cursor': 'pointer', 'width': thumbDimensions[0], 'height': thumbDimensions[1]})
+      .click(function() { prev(seqIndex); });
   }
-	
+
+  index = getIndexForFirstImgInSequence(seqIndex);
+  thumbDimensions = getDimensionsToFitBox(65, 40, imgInfo[index]['id']);
+  $('#viewer-h-nav-img-02')
+    .attr('src', stacksURL + '/image/' + druid + '/' + imgInfo[index]['id'] + '_thumb')  
+    .css({'width': thumbDimensions[0], 'height': thumbDimensions[1] });
+  
+  if ((seqIndex + 1) == groups.length) {
+    $('#viewer-h-nav-img-03')
+      .attr('src', '/images/img-view-last-ptr.png')    
+      .css({'cursor': 'auto', 'width': 65, 'height': 40})
+      .click(function() {});    
+  } else {
+    index = getIndexForFirstImgInSequence(seqIndex+1);
+    thumbDimensions = getDimensionsToFitBox(65, 40, imgInfo[index]['id']);  
+
+    $('#viewer-h-nav-img-03')
+      .attr('src', stacksURL + '/image/' + druid + '/' + imgInfo[index]['id'] + '_thumb')      
+      .css({ 'cursor': 'pointer', 'width': thumbDimensions[0], 'height': thumbDimensions[1] })
+      .click(function() { next(seqIndex); });
+  }
+  
 }
 
 function loadImgsInVerticalNavigation(id, index) {
-	var druid = pid;
-	var seqIndex = getSequenceIndex(index);	
-	var url, height;
-	var html = "";			
-	
-	$('#viewer-v-nav').html('');
-	
-	for (var i = 0; i < imgInfo.length; i++) {
-	  if (groups[seqIndex] == getGroupId(imgInfo[i]['sequence'])) {
-		  url = stacksURL + '/image/' + druid + '/' + imgInfo[i]['id'] + '_thumb';
-		  height = getAspectRatioBasedHeight(100, imgInfo[i]['id']);
-		
-		  if (index == i) {
-			  $('#viewer-v-nav').append("<li id=\"viewer-v-nav-selected-img\"><img src=\"" + url  + "\" style=\"width: 100px; height:" + height + "px\"></li>");			
-		  } else {
-			  $('#viewer-v-nav').append("<li class=\"viewer-v-nav-img\"><a href=\"javascript:loadImage('" + imgInfo[i]['id'] + "')\"><img src=\"" + url + "\"></a></li>");			
-		  }
-	  }	
-	}
-	
-	$('#viewer-v-nav-selected-img').append($('<ul id=\"viewer-sizes-nav\">'));
-	
-	html = "";
-	html = "<li>" + 
-	  "<div class=\"viewer-sizes-links\">" + 
-	    "<a id=\"thumb-img-viewer\" href=\"javascript:;\"><span class=\"obscure\">View the</span> thumb <span class=\"obscure\"> size of image </span><span class=\"obscure\" id=\"thumb-img-viewer-id\"></span></a>" +  
-	    "<span id=\"thumb-size-img-viewer\" class=\"img-size\"></span>" + 
-	  "</div>" + 
-	  "<div class=\"viewer-sizes-download\"> " + 
-	    "<a id=\"thumb-img-viewer-download\">" + 
-	      "<span class=\"obscure\">Download the thumb size of image </span>" + 
-	      "<span class=\"obscure\" id=\"thumb-img-viewer-download-id\"></span>" + 
-	      "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
-	    "</a>" + 
-	  "</div>" + 
-	"</li>";		
-	$("#viewer-sizes-nav").append(html);
-	
-	
-	if (imgInfo[index]['accessWorld'] === "all") {
-		$.each(sizes, function(i, size) { 
-			html = "";
-			html = "<li>" + 
-			  "<div class=\"viewer-sizes-links\">" + 
-			    "<a id=\"" + size + "-img-viewer\" href=\"javascript:;\"><span class=\"obscure\">View the</span> " + size + " <span class=\"obscure\"> size of image </span><span class=\"obscure\" id=\"" + size + "-img-viewer-id\"></span></a>" +  
-			    "<span id=\"" + size + "-size-img-viewer\" class=\"img-size\"></span>" + 
-			  "</div>" + 
-			  "<div class=\"viewer-sizes-download\"> " + 
-			    "<a id=\"" + size + "-img-viewer-download\">" + 
-			      "<span class=\"obscure\">Download the " + size + " size of image </span>" + 
-			      "<span class=\"obscure\" id=\"" + size +  "-img-viewer-download-id\"></span>" + 
-			      "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
-			    "</a>" + 
-			  "</div>" + 
-			"</li>";		
-			$("#viewer-sizes-nav").append(html);			
-		});				
-	}
-	else if (imgInfo[index]['accessStanford'] === "all") {				
-		$.each(sizes, function(i, size) { 
-			var url = "http://" + $(location).attr('host') + '/auth' + $(location).attr('pathname').replace(/^\/auth/, '') + $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, size);
-			html = "";		
-			html = "<li>" + 
-			  "<div class=\"viewer-sizes-links\">" + 
-			    "<a id=\"" + size + "-img-viewer\" href=\"" + url + "\" class=\"su\"><span class=\"obscure\">View the</span> " + size + " <span class=\"obscure\"> size of image </span><span class=\"obscure\" id=\"" + size + "-img-viewer-id\"></span></a>" +  
-			    "<span id=\"" + size + "-size-img-viewer\" class=\"img-size\"></span>" + 
-			  "</div>" + 
-			  "<div class=\"viewer-sizes-download\"> " + 
-			    "<a id=\"" + size + "-img-viewer-download\">" + 
-			      "<span class=\"obscure\">Download the " + size + " size of image </span>" + 
-			      "<span class=\"obscure\" id=\"" + size +  "-img-viewer-download-id\"></span>" + 
-			      "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
-			    "</a>" + 
-	        "<img src=\"/images/icon-stanford-only.png\" class=\"icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>" + 
-			  "</div>" + 
-			"</li>";		
-			$("#viewer-sizes-nav").append(html);			
-		});				
-	}
-	
-	if (imgInfo[index]['accessWorld'] !== "none") {
-		$("#viewer-sizes-nav").append("<li style=\"float: left;\"><a id=\"zoom-img-viewer\" href=\"javascript:;\" title=\"Zoom View\">zoom<span class=\"obscure\"> of image 1</span></a></li>");				
-	}
-	else if (imgInfo[index]['accessStanford'] !== "none") {
-		var url = "http://" + $(location).attr('host') + '/auth' + $(location).attr('pathname').replace(/^\/auth/, '') + $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, 'zoom');		
-		$("#viewer-sizes-nav").append("<li style=\"float: left;\"><a id=\"zoom-img-viewer\" href=\"" + url + "\" class=\"su\" title=\"Zoom View\">zoom<span class=\"obscure\"> of image 1</span></a><img src=\"/images/icon-stanford-only.png\" class=\"icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/></li>");				
-	}
-	
-	
-	$("#viewer-sizes-nav").append("</ul>");
-	
-	updateViewerSizesLinks(id, index);  
+  var druid = pid;
+  var seqIndex = getSequenceIndex(index);  
+  var url, height;
+  var html = "";      
+  
+  $('#viewer-v-nav').html('');
+  
+  for (var i = 0; i < imgInfo.length; i++) {
+    if (groups[seqIndex] == getGroupId(imgInfo[i]['sequence'])) {
+      url = stacksURL + '/image/' + druid + '/' + imgInfo[i]['id'] + '_thumb';
+      height = getAspectRatioBasedHeight(100, imgInfo[i]['id']);
+    
+      if (index == i) {
+        $('#viewer-v-nav').append("<li id=\"viewer-v-nav-selected-img\"><img src=\"" + url  + "\" style=\"width: 100px; height:" + height + "px\"></li>");      
+      } else {
+        $('#viewer-v-nav').append("<li class=\"viewer-v-nav-img\"><a href=\"javascript:loadImage('" + imgInfo[i]['id'] + "')\"><img src=\"" + url + "\"></a></li>");      
+      }
+    }  
+  }
+  
+  $('#viewer-v-nav-selected-img').append($('<ul id=\"viewer-sizes-nav\">'));
+  
+  html = "";
+  html = "<li>" + 
+    "<div class=\"viewer-sizes-links\">" + 
+      "<a id=\"thumb-img-viewer\" href=\"javascript:;\"><span class=\"obscure\">View the</span> thumb <span class=\"obscure\"> size of image </span><span class=\"obscure\" id=\"thumb-img-viewer-id\"></span></a>" +  
+      "<span id=\"thumb-size-img-viewer\" class=\"img-size\"></span>" + 
+    "</div>" + 
+    "<div class=\"viewer-sizes-download\"> " + 
+      "<a id=\"thumb-img-viewer-download\">" + 
+        "<span class=\"obscure\">Download the thumb size of image </span>" + 
+        "<span class=\"obscure\" id=\"thumb-img-viewer-download-id\"></span>" + 
+        "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
+      "</a>" + 
+    "</div>" + 
+  "</li>";    
+  $("#viewer-sizes-nav").append(html);
+
+  if (imgInfo[index]['rightsWorld'] === "true") {
+    if (imgInfo[index]['rightsStanford'] === "false" && imgInfo[index]['rightsWorldRule'] === "") {
+      $.each(sizes, function(i, size) { 
+        html = "";
+        html = "<li>" + 
+          "<div class=\"viewer-sizes-links\">" + 
+            "<a id=\"" + size + "-img-viewer\" href=\"javascript:;\"><span class=\"obscure\">View the</span> " + size + " <span class=\"obscure\"> size of image </span><span class=\"obscure\" id=\"" + size + "-img-viewer-id\"></span></a>" +  
+            "<span id=\"" + size + "-size-img-viewer\" class=\"img-size\"></span>" + 
+          "</div>" + 
+          "<div class=\"viewer-sizes-download\"> " + 
+            "<a id=\"" + size + "-img-viewer-download\">" + 
+              "<span class=\"obscure\">Download the " + size + " size of image </span>" + 
+              "<span class=\"obscure\" id=\"" + size +  "-img-viewer-download-id\"></span>" + 
+              "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
+            "</a>" + 
+          "</div>" + 
+        "</li>";    
+        
+        $("#viewer-sizes-nav").append(html);      
+      });
+    }  
+  }
+    
+  if (imgInfo[index]['rightsStanford'] === "true") {
+    if (imgInfo[index]['rightsStanfordRule'] !== "no-download") { 
+      $.each(sizes, function(i, size) { 
+        var url = "http://" + $(location).attr('host') + '/auth' +       
+          $(location).attr('pathname').replace(/^\/auth/, '') + 
+          $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, size);
+      
+        html = "";    
+        html = "<li>" + 
+          "<div class=\"viewer-sizes-links\">" + 
+            "<a id=\"" + size + "-img-viewer\" href=\"" + url + "\" class=\"su\"><span class=\"obscure\">View the</span> " + size + " <span class=\"obscure\"> size of image </span><span class=\"obscure\" id=\"" + size + "-img-viewer-id\"></span></a>" +  
+            "<span id=\"" + size + "-size-img-viewer\" class=\"img-size\"></span>" + 
+          "</div>" + 
+          "<div class=\"viewer-sizes-download\"> " + 
+            "<a id=\"" + size + "-img-viewer-download\">" + 
+              "<span class=\"obscure\">Download the " + size + " size of image </span>" + 
+              "<span class=\"obscure\" id=\"" + size +  "-img-viewer-download-id\"></span>" + 
+              "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
+            "</a>" + 
+            "<img src=\"/images/icon-stanford-only.png\" class=\"icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>" + 
+          "</div>" + 
+        "</li>";    
+        $("#viewer-sizes-nav").append(html);      
+      });        
+    }
+  }  
+    
+  if (imgInfo[index]['rightsWorld'] === "true") {
+    $("#viewer-sizes-nav").append("<li style=\"float: left;\"><a id=\"zoom-img-viewer\" href=\"javascript:;\" title=\"Zoom View\">zoom<span class=\"obscure\"> of image 1</span></a></li>");                  
+  } else if (imgInfo[index]['rightsStanford'] === "true") {
+    var url = "http://" + $(location).attr('host') + '/auth' + $(location).attr('pathname').replace(/^\/auth/, '') + $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, 'zoom');    
+    $("#viewer-sizes-nav").append("<li style=\"float: left;\"><a id=\"zoom-img-viewer\" href=\"" + url + "\" class=\"su\" title=\"Zoom View\">zoom<span class=\"obscure\"> of image 1</span></a><img src=\"/images/icon-stanford-only.png\" class=\"icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/></li>");                  
+  }    
+    
+  $("#viewer-sizes-nav").append("</ul>");
+  
+  updateViewerSizesLinks(id, index);  
 }
 
-function setupGalleryPageNavigation(pageNo) {	
-	var druid = pid;
-	var offset = 3; 
-	var elemId, imgId, thumbDimensions;
+function setupGalleryPageNavigation(pageNo) {  
+  var druid = pid;
+  var offset = 3; 
+  var elemId, imgId, thumbDimensions;
   var totalPages = $('.gallery').length;
   var startingPageNo = 1, endingPageNo = totalPages;  
 
-  $('.gallery').hide();		  
+  $('.gallery').hide();      
   $('#gallery-page-items-' + pageNo).show();
 
   $("ol#[id^=gallery-page-items-] img[id^=img-src-]").each(function() { 
-	  $(this).removeAttr('src');
-	});
+    $(this).removeAttr('src');
+  });
 
-	$('#gallery-page-items-' + pageNo + " img[id^=img-src-]").each(function() { 
-		elemId = this.id;
-		imgId = elemId.replace(/^img-src-/, '');
-		thumbDimensions = getDimensionsToFitBox(240, 240, imgId);
-		$("#" + elemId)
-		  .attr('src', stacksURL + '/image/' + druid + '/' + imgId + '_thumb')
-		  .css({'width': thumbDimensions[0], 'height': thumbDimensions[1]}
-		);		
-	});
+  $('#gallery-page-items-' + pageNo + " img[id^=img-src-]").each(function() { 
+    elemId = this.id;
+    imgId = elemId.replace(/^img-src-/, '');
+    thumbDimensions = getDimensionsToFitBox(240, 240, imgId);
+    $("#" + elemId)
+      .attr('src', stacksURL + '/image/' + druid + '/' + imgId + '_thumb')
+      .css({'width': thumbDimensions[0], 'height': thumbDimensions[1]}
+    );    
+  });
 
-	if (totalPages == 1) { return; }
-		
+  if (totalPages == 1) { return; }
+    
   if (pageNo > offset) { startingPageNo = pageNo - offset; }
   if ((pageNo + offset) > totalPages) { startingPageNo = totalPages - (2 * offset); }
 
@@ -726,34 +716,34 @@ function setupGalleryPageNavigation(pageNo) {
   $('#gallery-pagination').empty();
 
   if (startingPageNo != 1) {
-	  $('#gallery-pagination').append(' ... ');
+    $('#gallery-pagination').append(' ... ');
   }
   
   for (i = startingPageNo; i <= endingPageNo; i++) {
     if (i == pageNo) {
-      $('#gallery-pagination').append("<a class=\"gallery-page-nav-link gallery-page-nav-active\" id=\"gallery-page-nav-" + i + "\" href=\"javascript:;\">" + i + "</a>"); 		
+      $('#gallery-pagination').append("<a class=\"gallery-page-nav-link gallery-page-nav-active\" id=\"gallery-page-nav-" + i + "\" href=\"javascript:;\">" + i + "</a>");     
     } else {
-      $('#gallery-pagination').append("<a class=\"gallery-page-nav-link\" id=\"gallery-page-nav-" + i + "\" href=\"javascript:;\">" + i + "</a>"); 				
+      $('#gallery-pagination').append("<a class=\"gallery-page-nav-link\" id=\"gallery-page-nav-" + i + "\" href=\"javascript:;\">" + i + "</a>");         
     }
   }
 
   if (endingPageNo != totalPages) {
-	  $('#gallery-pagination').append(' ... ');
-  }		
-	
-	$('.gallery-page-nav-link').each(function(){
-		var galleryPageNo = this.id;
-		galleryPageNo = galleryPageNo.replace(/^gallery-page-nav-/, '');
-		
-		$('#gallery-page-nav-' + galleryPageNo).click(function() {	
-	    $(location).attr('href', '#gallery/' + galleryPageNo);		
-	    setupGalleryPageNavigation(parseInt(galleryPageNo)); 	
-		});   		
-	});	
+    $('#gallery-pagination').append(' ... ');
+  }    
+  
+  $('.gallery-page-nav-link').each(function(){
+    var galleryPageNo = this.id;
+    galleryPageNo = galleryPageNo.replace(/^gallery-page-nav-/, '');
+    
+    $('#gallery-page-nav-' + galleryPageNo).click(function() {  
+      $(location).attr('href', '#gallery/' + galleryPageNo);    
+      setupGalleryPageNavigation(parseInt(galleryPageNo, 10));   
+    });       
+  });  
 }
 
 function setURLSuffix() {
-	var href = $(location).attr('href');
+  var href = $(location).attr('href');
   var match; 
   var pageNo = 1;
   var sequence = 1; 
@@ -761,83 +751,125 @@ function setURLSuffix() {
   var flag = false;
 
   if (/#gallery/.test(href)) {
-	  match = /#gallery\/(\d+)/.exec(href);
-	  pageNo = match[1];
-	  setupGalleryPageNavigation(validateGalleryPageNo(pageNo));
-	}
+    match = /#gallery\/(\d+)/.exec(href);
+    pageNo = match[1];
+    setupGalleryPageNavigation(validateGalleryPageNo(pageNo));
+  }
 
   if (/#image/.test(href)) {
-	  match = /#image\/([0-9]+(\.[0-9]+)?)\/?(\w+)?/.exec(href);	 
+    match = /#image\/([0-9]+(\.[0-9]+)?)\/?(\w+)?/.exec(href);   
 
-	  if (typeof match[1] !== 'undefined' && match[1].length > 0) { 
-		  sequence = match[1];
-		}  
+    if (typeof match[1] !== 'undefined' && match[1].length > 0) { 
+      sequence = match[1];
+    }  
 
-	  if (typeof match[3] !== 'undefined' && match[3].length > 0) { 
-		  size = match[3].toLowerCase();
-		  
-		  $.each(sizes, function(i, value) {
-			  if (size == value) { flag = true; }
-		  });		  
-		
-		  if (size == 'thumb') { flag = true; }
-		
-		  if (!flag) { size = "zoom"; }
-		}  
-		
-		showImg(sequence, size, false);
-	}
+    if (typeof match[3] !== 'undefined' && match[3].length > 0) { 
+      size = match[3].toLowerCase();
+      
+      $.each(sizes, function(i, value) {
+        if (size == value) { flag = true; }
+      });      
+    
+      if (size == 'thumb') { flag = true; }
+    
+      if (!flag) { size = "zoom"; }
+    }  
+    
+    showImg(sequence, size, false);
+  }
 }
 
 function validateGalleryPageNo(pageNo) {
-	var totalPages = $('.gallery').length;
-	pageNo = parseInt(pageNo, 10);
-	
-	if (pageNo <= 0) { 
-		pageNo = 1; 
-	}
-	
-	if (pageNo > totalPages) {
-		pageNo = totalPages;
-	}
-	
-	return pageNo;
+  var totalPages = $('.gallery').length;
+  pageNo = parseInt(pageNo, 10);
+  
+  if (pageNo <= 0) { 
+    pageNo = 1; 
+  }
+  
+  if (pageNo > totalPages) {
+    pageNo = totalPages;
+  }
+  
+  return pageNo;
 }
 
 function getAspectRatioBasedHeight(width, imgId) {
-	var index = getArrayIndex(imgId);
-	var fullWidth = imgInfo[index]['width'];
-	var fullHeight = imgInfo[index]['height'];
-	var height;
+  var index = getArrayIndex(imgId);
+  var fullWidth = imgInfo[index]['width'];
+  var fullHeight = imgInfo[index]['height'];
+  var height;
 
-	height = parseInt((fullHeight/fullWidth)*width, 10);
-	
-	return height;	
+  height = parseInt((fullHeight/fullWidth)*width, 10);
+  
+  return height;  
 }
 
 function getAspectRatioBasedWidth(height, imgId) {
-	var index = getArrayIndex(imgId);
-	var fullWidth = imgInfo[index]['width'];
-	var fullHeight = imgInfo[index]['height'];
-	var width;
+  var index = getArrayIndex(imgId);
+  var fullWidth = imgInfo[index]['width'];
+  var fullHeight = imgInfo[index]['height'];
+  var width;
 
-	width = parseInt((fullWidth/fullHeight)*height, 10);
-	
-	return width;	
+  width = parseInt((fullWidth/fullHeight)*height, 10);
+  
+  return width;  
 }
 
 function getDimensionsToFitBox(boxWidth, boxHeight, imgId) {
-	var index = getArrayIndex(imgId);
+  var index = getArrayIndex(imgId);
   var width, height;
 
   height = boxHeight;
   width  = getAspectRatioBasedWidth(height, imgId);
 
   if (width > boxWidth) {
-	  width  = boxWidth;
-	  height = getAspectRatioBasedHeight(width, imgId);
-  }	
+    width  = boxWidth;
+    height = getAspectRatioBasedHeight(width, imgId);
+  }  
 
   return [width, height];
 }
 
+function getLocationURL(index, size, location) {
+	var currentURL = $(location).attr('href');
+  var hasAuthString = false;
+  var addAuthString = false;
+
+  if (/auth\//.test(currentURL)) {
+	  hasAuthString = true;
+	}
+
+  if (imgInfo[index]["accessStanford"] === "all") {
+	  addAuthString = true;
+  }
+  else if (imgInfo[index]["accessStanford"] === "no-download" && (size === "thumb" || size === "zoom"))  {
+	  addAuthString = false;
+  }
+
+  if (imgInfo[index]["accessWorld"] === "all") {
+	  addAuthString = false;
+  }  
+  else if (imgInfo[index]["accessWorld"] === "none") {
+	  addAuthString = true;
+  }  
+  else if (imgInfo[index]["accessWorld"] === "no-download" && (size === "thumb" || size === "zoom"))  {
+	  addAuthString = false;
+  }
+
+  // add '/auth' string  
+  if (addAuthString && !hasAuthString) {
+	  //currentURL = $(location).attr('origin') + '/auth' + $(location).attr('pathname'); 
+	}
+	
+	console.log("hasAuthString = " + hasAuthString + ", addAuthString = " + addAuthString);
+	
+	// remove '/auth' string  
+	if (!addAuthString && hasAuthString) { 
+		currentURL = currentURL.replace(/auth\//, '');
+	}
+	
+	console.log("currentURL: " + currentURL);
+	
+	return currentURL;
+}

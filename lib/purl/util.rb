@@ -1,5 +1,5 @@
 module PurlUtils
-  
+    
   # get id from JP2 filename
   def get_jp2_id(filename)
     filename = filename.gsub /\.jp2$/i, ''
@@ -24,8 +24,11 @@ module PurlUtils
       width    = deliverable_file.width.to_s.empty? ? 0 : deliverable_file.width.to_i
       height   = deliverable_file.height.to_s.empty? ? 0 : deliverable_file.height.to_i
       sequence = deliverable_file.sequence.to_s.empty? ? '0' : deliverable_file.sequence.to_s
-      access_stanford = deliverable_file.access_stanford.to_s
-      access_world = deliverable_file.access_world.to_s
+      
+      rights_world         = deliverable_file.rights_world.to_s
+      rights_world_rule    = deliverable_file.rights_world_rule.to_s
+      rights_stanford      = deliverable_file.rights_stanford.to_s
+      rights_stanford_rule = deliverable_file.rights_stanford_rule.to_s
       
       if !id.nil? and !id.empty?
         json_array.push(
@@ -34,8 +37,10 @@ module PurlUtils
   	         "\"width\": " + width.to_s + "," + 
   	         "\"height\": " + height.to_s + "," + 
   	         "\"sequence\": " + sequence + "," + 
-  	         "\"accessStanford\": \"" + access_stanford.to_s + "\"," +  
-  	         "\"accessWorld\": \"" + access_world.to_s + "\"" +  	         
+  	         "\"rightsWorld\": \"" + rights_world.to_s + "\"," +  	         
+  	         "\"rightsWorldRule\": \"" + rights_world_rule.to_s + "\"," +  	         
+  	         "\"rightsStanford\": \"" + rights_stanford.to_s + "\"," +  
+  	         "\"rightsStanfordRule\": \"" + rights_stanford_rule.to_s + "\"" +  
   	      "}")
   	  else 
   	    if deliverable_file.sub_resources.length > 0 

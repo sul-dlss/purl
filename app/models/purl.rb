@@ -2,6 +2,7 @@ require 'nokogiri'
 
 require "lib/purl/util"
 require "htmlentities"
+require 'dor/rights_auth'
 
 class Purl
   
@@ -70,6 +71,10 @@ class Purl
   def extract_metadata
     doc = ng_xml('dc','identityMetadata','contentMetadata','rightsMetadata','properties')
     
+    # Rights metadata
+    rights = doc.root.at_xpath('rightsMetadata').to_s    
+    parsed_rights = Dor::RightsAuth.parse rights
+    
     # DC Metadata
     dc = doc.root.at_xpath('*[local-name() = "dc"]', NAMESPACES)
     unless dc.nil?
@@ -122,6 +127,11 @@ class Purl
           resource.type     = file.parent['type'].to_s
           resource.width    = file.at_xpath('imageData/@width').to_s.to_i || 0
           resource.height   = file.at_xpath('imageData/@height').to_s.to_i || 0 
+          
+          resource.rights_world, resource.rights_world_rule = parsed_rights.world_rights_for_file(resource.filename)
+          resource.rights_stanford, resource.rights_stanford_rule = parsed_rights.stanford_only_rights_for_file(resource.filename)          
+
+          Rails.logger.info(resource.filename + " = " + resource.rights_stanford.to_s + " - " + resource.rights_stanford_rule.to_s)  
 
           if (resource.width > 0 and resource.height > 0) 
             resource.levels = (( Math.log([resource.width, resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1           
@@ -172,7 +182,7 @@ class Purl
           sub_resource.sequence = sub_resource_xml['sequence'].to_s || 0        
       
           sub_resource
-        end  
+        end            
       
         # if the resource has a deliverable file or at least one sub_resource, add it to the array
         if is_file_ready(file) or resource.sub_resources.length > 0
@@ -206,12 +216,11 @@ class Purl
         @cclicense_symbol = rights.at_xpath('use/machine[@type="creativecommons"]/text()').to_s
       end
       
-      add_global_access_info(@read_group)
+      #add_global_access_info(@read_group)
       
-      rights.xpath('access[@type="read"]/file').collect do |file_rights| 
-        add_access_info(file_rights)
-      end
-      
+      #rights.xpath('access[@type="read"]/file').collect do |file_rights| 
+        #add_access_info(file_rights)
+      #end      
     end
     
     # Properties
@@ -328,9 +337,10 @@ class Purl
       end
     end
     @ng_xml
-  end
+  end  
 
-
+  
+  # add global access info to deliverable file
   def add_global_access_info(read_group)
     @deliverable_files.each_with_index do |deliverable_file, i|
       @deliverable_files[i].access_stanford = "all"
@@ -344,6 +354,7 @@ class Purl
   end
 
 
+  # add differential/individual access info to deliverable file
   def add_access_info(file_rights)
     filename = file_rights['id']
     
