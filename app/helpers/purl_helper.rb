@@ -104,7 +104,7 @@ module PurlHelper
   
   # remove trailing period from name
   def add_copyright_symbol(copyright_stmt)
-    copyright_stmt = copyright_stmt.gsub /\(c\) Copyright/i, '&copy;'    
+    copyright_stmt = copyright_stmt.gsub /\(c\) Copyright/i, '&copy; Copyright'    
     copyright_stmt
   end
   
