@@ -199,3 +199,8 @@ highlight colour for browse by callnum:  #e5f1f4
 
 .truncator-link { font-weight: bold; }
 
+.icon-stanford-only {
+	margin-bottom: -2px;
+	margin-left: 2px;
+}
+
