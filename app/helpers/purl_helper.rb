@@ -32,7 +32,7 @@ module PurlHelper
   def get_file_url(pid, deliverable_file)
     PurlUtils.get_file_url(pid, deliverable_file)
   end
-  
+
   # check if file is ready (deliver = yes or publish = yes)
   def is_file_ready(file)
     PurlUtils.is_file_ready(file)

@@ -107,6 +107,6 @@ module PurlUtils
     
     url
   end
-  
+
   module_function :get_jp2_id, :get_image_json_array, :get_img_base_url, :get_file_label, :get_file_url 
 end

@@ -16,13 +16,19 @@
         <tr>
 	      <td class="file">
 	        <div class="file_icon"><%= render(:partial => "purl/fileIcon", :locals => {:fileName => deliverable_file.filename.to_s}) %></div>
-	        <div class="file_link">
-		      <a href="<%= get_file_url(@purl.pid, deliverable_file) %>"><%= deliverable_file.filename.to_s %></a>
-	        <% if( deliverable_file.size != '') %>
-	 		      (<%=number_to_human_size(deliverable_file.size,:precision => 1)%>)
-	 	      <% end %>
-    		</div>
-		  </td>
+
+  	        <div class="file_link">
+  		        <a href="<%= get_file_url(@purl.pid, deliverable_file) %>"><%= deliverable_file.filename.to_s %></a>
+  	          <% if( deliverable_file.size != '') %>
+  	 		        (<%=number_to_human_size(deliverable_file.size,:precision => 1)%>)
+  	 	        <% end %>
+              
+              <% if deliverable_file.rights_stanford.to_s == "true" %>
+                <img src="/images/icon-stanford-only.png" class="icon-stanford-only" alt="Stanford Only" title="Stanford Only">
+              <% end %>              
+      		  </div>
+          
+		    </td>
           <td class="description"><%=deliverable_file.description_label%></td>
 		  <% if( !@purl.read_group.nil? and !@purl.read_group.empty? and @purl.read_group !~ /^world$/i ) %>
             <td class="access">
