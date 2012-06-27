@@ -2,21 +2,22 @@
 <%= render(:partial => "purl/citation_info_dc" ) %>
 <%= render(:partial => "purl/sidebar_navigation" ) %>
 
-<div id="filelist">         
+<div id="filelist">    
+  <% if (!@purl.embargo_release_date.nil? and @purl.embargo_release_date != '') %>
+    <div class="embargo-block">
+      Access: Stanford only until <%=@purl.embargo_release_date%>
+    </div>      
+  <% end %>       
   <table id="assets">
     <tr>
       <th>File (Download)</th>
       <th>Description</th>
-	    <% if( !@purl.read_group.nil? and !@purl.read_group.empty? and @purl.read_group !~ /^world$/i ) %>
-        <th>Access</th>
-      <% end %>
     </tr>
     <% unless( @purl.deliverable_files.nil? ) %>
       <% @purl.deliverable_files.each do |deliverable_file| %>
         <tr>
 	      <td class="file">
 	        <div class="file_icon"><%= render(:partial => "purl/fileIcon", :locals => {:fileName => deliverable_file.filename.to_s}) %></div>
-
   	        <div class="file_link">
   		        <a href="<%= get_file_url(@purl.pid, deliverable_file) %>"><%= deliverable_file.filename.to_s %></a>
   	          <% if( deliverable_file.size != '') %>
@@ -26,20 +27,9 @@
               <% if deliverable_file.rights_stanford.to_s == "true" %>
                 <img src="/images/icon-stanford-only.png" class="icon-stanford-only" alt="Stanford Only" title="Stanford Only">
               <% end %>              
-      		  </div>
-          
-		    </td>
+      		  </div>          
+		      </td>
           <td class="description"><%=deliverable_file.description_label%></td>
-		  <% if( !@purl.read_group.nil? and !@purl.read_group.empty? and @purl.read_group !~ /^world$/i ) %>
-            <td class="access">
-	          <% if( @purl.read_group == 'stanford' ) %>
-	            Stanford only 
-			  <% end %>
-	          <% if( !@purl.embargo_release_date.nil? and @purl.embargo_release_date != '' ) %>
-	            until <%=@purl.embargo_release_date%>
-			  <% end %>
-	        </td>
-		  <% end %>
         </tr>
       <% end %>
     <% end %>
