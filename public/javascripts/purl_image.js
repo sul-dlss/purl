@@ -669,7 +669,7 @@ function loadImgsInVerticalNavigation(id, index) {
   if (imgInfo[index]['rightsWorld'] === "true") {
     $("#viewer-sizes-nav").append("<li style=\"float: left;\"><a id=\"zoom-img-viewer\" href=\"javascript:;\" title=\"Zoom View\">zoom<span class=\"obscure\"> of image 1</span></a></li>");                  
   } else if (imgInfo[index]['rightsStanford'] === "true") {
-    var url = "http://" + $(location).attr('host') + '/auth' + $(location).attr('pathname').replace(/^\/auth/, '') + $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, 'zoom');    
+    var url = "https://" + $(location).attr('host') + '/auth' + $(location).attr('pathname').replace(/^\/auth/, '') + $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, 'zoom');    
     $("#viewer-sizes-nav").append("<li style=\"float: left;\"><a id=\"zoom-img-viewer\" href=\"" + url + "\" class=\"su\" title=\"Zoom View\">zoom<span class=\"obscure\"> of image 1</span></a><img src=\"/images/icon-stanford-only.png\" class=\"icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/></li>");                  
   }    
     
