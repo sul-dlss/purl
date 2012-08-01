@@ -43,7 +43,7 @@ class Purl
       purl = Purl.new(id) if File.exists?(file_path)
     end
     
-    purl
+    return purl
   end
   
   # Returns the pair tree directory for a given, valid druid
@@ -55,13 +55,14 @@ class Purl
       pair_tree = File.join($1, $2, $3, $4)
     end
     
-    pair_tree
+    return pair_tree
   end
 
   # initializes the object with metadata and service streams
   #
   def initialize(id)
     @pid = id
+    
     @public_xml    = get_metadata('public')
     @mods_xml      = get_metadata('mods')
     @flipbook_json = get_flipbook_json
@@ -83,15 +84,16 @@ class Purl
       @creators    = Array.new
       @relations   = Array.new
       @identifiers = Array.new
+      @publisher   = Array.new
       
       @@coder.decode(dc.xpath('dc:title/text()|dcterms:title/text()', NAMESPACES).collect { |t| @titles.push(t.to_s) }) # title
       dc.xpath('dc:description/text()|dcterms:abstract/text()', NAMESPACES).collect { |d| @description.push(d.to_s) } # description     
       dc.xpath('dc:creator/text()|dcterms:creator/text()', NAMESPACES).collect { |c| @creators.push(c.to_s) } # creators
       dc.xpath('dc:relation[not(@*)]', NAMESPACES).collect { |r| @relations.push(r.to_s) } # relations
       dc.xpath('dc:identifier', NAMESPACES).collect { |c| @identifiers.push(c.to_s) } # identifiers
+      dc.xpath('dc:publisher/text()|dcterms:publisher/text()', NAMESPACES).collect { |c| @publisher.push(c.to_s) } # publishers
       
       @contributors = dc.xpath('dc:contributor/text()|dcterms:contributor/text()', NAMESPACES).collect { |t| t.to_s + '<br/>' }      
-      @publisher    = dc.xpath('dc:publisher/text()|dcterms:publisher/text()', NAMESPACES).to_s
       @source       = dc.at_xpath('dc:source/text()', NAMESPACES).to_s
       @date         = dc.at_xpath('dc:date/text()', NAMESPACES).to_s
       @repository   = dc.at_xpath('dc:relation[@type="repository"]', NAMESPACES).to_s
@@ -230,7 +232,7 @@ class Purl
       return true
     end
     
-    false
+    return false
   end
   
   # check if this object is of type image
@@ -239,7 +241,7 @@ class Purl
       return true
     end  
     
-    false
+    return false
   end
 
   def is_book?
@@ -247,7 +249,7 @@ class Purl
       return true
     end  
     
-    false
+    return false
   end  
  
   # check if this object has mods content
@@ -256,7 +258,7 @@ class Purl
       return true
     end
     
-    false
+    return false
   end    
     
   private
@@ -273,7 +275,7 @@ class Purl
         contents = File.read(file_path)
       end
       
-      if( !RAILS_ENV.eql? 'production' )
+      if !RAILS_ENV.eql? 'production'
         contents.gsub!('stacks.stanford.edu','stacks-test.stanford.edu')
       end
     end
@@ -330,53 +332,5 @@ class Purl
     end
     @ng_xml
   end  
-
-  
-  # add global access info to deliverable file
-  def add_global_access_info(read_group)
-    @deliverable_files.each_with_index do |deliverable_file, i|
-      @deliverable_files[i].access_stanford = "all"
-      
-      if read_group == "stanford"
-        @deliverable_files[i].access_world = "none"
-      elsif read_group == "world"
-        @deliverable_files[i].access_world = "all"
-      end
-    end  
-  end
-
-
-  # add differential/individual access info to deliverable file
-  def add_access_info(file_rights)
-    filename = file_rights['id']
-    
-    return if @deliverable_files.nil?
-    
-    @deliverable_files.each_with_index do |deliverable_file, i|
-      if @deliverable_files[i].filename == filename
-        world = file_rights.at_xpath("machine/world")
-        stanford = file_rights.at_xpath("machine/stanford")
-        
-        if (!world.nil?)          
-          if (!world["rule"].nil?)
-            @deliverable_files[i].access_world = world["rule"]
-          else
-            @deliverable_files[i].access_world = "all"
-          end
-        else   
-          @deliverable_files[i].access_world = "none"
-        end
-        
-        if (!stanford.nil?)          
-          if (!stanford["rule"].nil?)
-            @deliverable_files[i].access_stanford = stanford["rule"]
-          else
-            @deliverable_files[i].access_stanford = "all"
-          end
-        end        
-      end
-    end
-        
-  end
 
 end
