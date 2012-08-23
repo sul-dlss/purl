@@ -71,6 +71,7 @@ class Purl
   
   def extract_metadata
     doc = ng_xml('dc','identityMetadata','contentMetadata','rightsMetadata','properties')
+    doc.encoding = 'UTF-8'
     
     # Rights metadata
     rights = doc.root.at_xpath('rightsMetadata').to_s    
@@ -86,11 +87,11 @@ class Purl
       @identifiers = Array.new
       @publisher   = Array.new
       
-      @@coder.decode(dc.xpath('dc:title/text()|dcterms:title/text()', NAMESPACES).collect { |t| @titles.push(t.to_s) }) # title
+      dc.xpath('dc:title/text()|dcterms:title/text()', NAMESPACES).collect { |t| @titles.push(t) } # title
       dc.xpath('dc:description/text()|dcterms:abstract/text()', NAMESPACES).collect { |d| @description.push(d.to_s) } # description     
       dc.xpath('dc:creator/text()|dcterms:creator/text()', NAMESPACES).collect { |c| @creators.push(c.to_s) } # creators
       dc.xpath('dc:relation[not(@*)]', NAMESPACES).collect { |r| @relations.push(r.to_s) } # relations
-      dc.xpath('dc:identifier', NAMESPACES).collect { |c| @identifiers.push(c.to_s) } # identifiers
+      dc.xpath('dc:identifier/text()', NAMESPACES).collect { |c| @identifiers.push(c.to_s) } # identifiers
       dc.xpath('dc:publisher/text()|dcterms:publisher/text()', NAMESPACES).collect { |c| @publisher.push(c.to_s) } # publishers
       
       @contributors = dc.xpath('dc:contributor/text()|dcterms:contributor/text()', NAMESPACES).collect { |t| t.to_s + '<br/>' }      
@@ -287,12 +288,12 @@ class Purl
   def get_flipbook_json
     self.extract_metadata 
   
-    return { 
+    return {       
       :id => "#{@catalog_key}",
       :readGroup => @read_group,
       :objectId => "#{@pid}",
       :defaultViewMode => 2,
-      :bookTitle => @titles,
+      :bookTitle => @@coder.decode(@titles.join(" -- ")),
       :readingOrder => @reading_order,  # "rtl"
       :pageStart =>  page_start,  #"left"
       :bookURL => !(@catalog_key.nil? or @catalog_key.empty?) ? "http://searchworks.stanford.edu/view/#{@catalog_key}" : "",
@@ -301,7 +302,7 @@ class Purl
           :width => file.width,
           :levels => file.levels,
           :resourceType => file.type,
-          :label => @@coder.decode(file.description_label),
+          :label => file.description_label,
           :stacksURL => get_img_base_url(@pid, STACKS_URL,file)          
         }
       }

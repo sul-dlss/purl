@@ -2,16 +2,16 @@
 	<h2><%= print_title_value() %></h2>
 
   <dl>
-    <%= print_field_array_value("creators", "Creator", "<br/>") %>
+    <%= print_field_value("creators", "Creator", "<br/>") %>
     <%= print_field_value("contributors", "Contributor") %>
-    <%= print_field_array_value("publisher", "Publisher", "<br/>") %>
+    <%= print_field_value("publisher", "Publisher", "<br/>", true) %>
     <%= print_field_value("source", "Source") %>
     <%= print_field_value("date", "Date") %>
-    <%= print_description_value("Description") %>    
+    <%= print_description_value("Description", true) %>    
     <%= print_field_value("repository", "Repository") %>
     <%= print_field_value("collection", "Collection") %>
     <%= print_field_value("location", "Location") %>
-    <%= print_field_array_value("relations", "Relation", "<br/>") %>
-    <%= print_field_array_value("identifiers", "Identifier", "<br/>") %>   
+    <%= print_field_value("relations", "Relation", "<br/>") %>
+    <%= print_field_value("identifiers", "Identifier", "<br/>", true) %>   
   </dl>          
 </div>

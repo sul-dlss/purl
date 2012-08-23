@@ -1,5 +1,5 @@
-<% if not(@purl.catalog_key.nil? or @purl.catalog_key.empty?) %>
+<% if !get_sidebar_links.empty? %>
   <div id="links-column">
-     &raquo; <a href="http://searchworks.stanford.edu/view/<%=@purl.catalog_key%>">View in SearchWorks</a>
-	</div>
-<% end %>                		
+    <%= get_sidebar_links %>
+  </div>
+<% end %>

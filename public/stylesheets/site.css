@@ -193,11 +193,22 @@ highlight colour for browse by callnum:  #e5f1f4
 #links-column {
 	border-left: 1px dotted #aaa;
 	margin-top: 30px;
-	padding: 10px 0 10px 15px;
+  padding: 8px 0 8px 15px;
 	float: right;
 	width: 14%;
 }
 
+#links-column ul {
+  list-style-type: disc;
+  padding-top: 6px;
+}
+
+#links-column li {
+  color: #555;
+  line-height: 1.6em;
+  margin-left: 15px;
+  padding: 0 0 5px 0;
+}
 
 .file_icon { float: left; }
 .file_link { margin: 0px 0px 0px 40px;}

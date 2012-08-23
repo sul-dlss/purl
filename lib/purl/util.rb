@@ -75,11 +75,7 @@ module PurlUtils
       base_url = stacks_url  + "/image/" + pid + "/" + img_id
     end
     
-    if pid == "dm907qj6498"
-      base_url = base_url.gsub /\-test/i, ''
-    end
-    
-    base_url
+    return base_url
   end
 
   # get file label (if available) or jp2 id
@@ -94,7 +90,7 @@ module PurlUtils
       label = label[0 .. 44] + '...'
     end
     
-    label
+    return label
   end
   
   # get file URL (for type != image)
@@ -105,7 +101,7 @@ module PurlUtils
       url = STACKS_URL + "/file/druid:" + pid + "/" + deliverable_file.filename
     end  
     
-    url
+    return url
   end
 
   module_function :get_jp2_id, :get_image_json_array, :get_img_base_url, :get_file_label, :get_file_url 
