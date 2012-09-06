@@ -6,4 +6,3 @@
 
 Mime::Type.register "application/xml", :mods
 Mime::Type.register "application/json", :flipbook
-

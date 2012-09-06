@@ -205,8 +205,6 @@ function showImg(sequence, size, animate) {
   
   if ($('#img-viewer-prev').length != 0 && $('#img-viewer-next').length != 0) {        
     $('#img-viewer-prev > img').attr('src', '/images/img-view-group-prev-inactive.png');
-    $('#img-viewer-next > img').attr('src', '/images/img-view-group-next-inactive.png');    
-    $('#img-viewer-prev').unbind().css('cursor', 'default');
     $('#img-viewer-next').unbind().css('cursor', 'default');
 
     if ((seqIndex - 1) >= 0) {

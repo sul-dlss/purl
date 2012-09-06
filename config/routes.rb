@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   # The priority is based upon order of creation: first created -> highest priority.
   map.connect '/:id', :controller => 'purl', :action => 'index'
+  map.connect ':id/embed', :controller => 'embed', :action => 'index'  
   map.connect 'auth/:id', :controller => 'purl', :action => 'index'
   map.connect 'auth/:id.:format', :controller => 'purl', :action => 'index'
   map.connect '/:id.:format', :controller => 'purl', :action => 'index'
@@ -44,5 +45,4 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing or commenting them out if you're using named routes and resources.
   # map.connect ':controller/:action/:id'
   # map.connect ':controller/:action/:id.:format'
-
 end
