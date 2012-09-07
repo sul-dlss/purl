@@ -6,7 +6,7 @@ Array.prototype.unique = function() {
 };
 
 $(function() {
-  var pe = new purlEmbed(newImgInfo);
+  var pe = new purlEmbed(imgInfo);
 });
 
 /* Main purlEmbed function comprising private variables and methods */
@@ -27,9 +27,14 @@ var purlEmbed = (function(data) {
   function init() {
     if (typeof data !== 'undefined') {
       imgData = data;  
-      console.log(imgData);
+
+      $(window).bind('hashchange', function(){
+        setURLSuffix();
+      });
 
       setProperties();        
+      setURLSuffix();
+      
       showImg(imgData[0].sequence, currentSize);
     }  
   }
@@ -57,12 +62,16 @@ var purlEmbed = (function(data) {
 
     druid = pid;
     groups.unique(); // clear duplicate group ids   
+
+    $('.pe-container')
+      .width($(window).width() - 20)
+      .height($(window).height() - 20);
   }
 
   /* show image for a given sequence and size */
   function showImg(sequence, size) {
     var index = getArrayIndexUsingSequence(sequence);
-    var id = imgInfo[index].id;
+    var id = imgData[index].id;
     var seqIndex = getSequenceIndex(index);
     var imgNumber;
 
@@ -72,17 +81,88 @@ var purlEmbed = (function(data) {
     imgNumber = parseInt(index, 10) + 1;
 
     if (size === 'zoom') {
-      //loadZpr(id);
+      loadZpr(index);
     } else {
-      //loadImage(id, size);      
+      loadImage(index, size);      
     }
 
     loadImgsInHorizontalNavigation(index);
-    //loadImgsInVerticalNavigation(index); 
+    loadImgsInVerticalNavigation(index); 
 
     $('.pe-h-nav-pagination').html((getSequenceIndex(index) + 1) + ' of ' + groups.length);
+
     setHorizontalNavigationLinks(seqIndex);
   }
+
+  /* Loads the image for a given size */
+  function loadImage(index, size) {
+    var id = imgData[index].id;
+    var url, dimensions;
+    var imgWidth, imgHeight;
+
+    if (typeof size === "undefined") {
+      size = currentSize;
+    } else {
+      currentSize = size;  
+    } 
+
+    $(location).attr('href', '#image/' + imgData[index]['sequence'] + '/' + size);
+
+    if (size == "zoom") {
+      loadZpr(index);
+      return;
+    }
+
+    loadImgsInVerticalNavigation(index); 
+
+    url = getImgStacksURL(index, size);
+    dimensions = getDimensionsForSize(index, size);
+    imgWidth = dimensions.width;
+    imgHeight = dimensions.height;
+
+    $('#pe-zpr-frame').hide();
+
+    $('.pe-img-viewfinder')    
+      .width(parseInt($('.pe-container').width(), 10) - parseInt($('.pe-v-nav').width(), 10) - 10);
+
+    if ($('.pe-h-nav').length)  {
+      $('.pe-img-viewfinder').height(parseInt($('.pe-container').height(), 10) - 85 - 10);
+    } else {
+      $('.pe-img-viewfinder').height(parseInt($('.pe-container').height(), 10) - 10);
+    }
+
+    $('.pe-img-canvas')      
+      .removeAttr('src').attr({ 'src': url })
+      .width(imgWidth).height(imgHeight)
+      .show();
+  }
+
+  /* Loads the image in ZPR UI */
+  function loadZpr(index) {
+    var id = imgData[index].id;
+    var z;
+
+    currentSize = 'zoom';
+    $(location).attr('href', '#image/' + imgData[index]['sequence'] + '/zoom');
+
+    $('.pe-img-canvas').hide();
+
+    $('#pe-zpr-frame')
+      .html('')
+      .height(parseInt($('.pe-container').height(), 10) - 85 - 20)
+      .width(parseInt($('.pe-container').width(), 10) - parseInt($('.pe-v-nav').width(), 10) - 20)
+      .show();
+    
+    z = new zpr('pe-zpr-frame', { 
+      'imageStacksURL': stacksURL + '/image/' + druid + '/' + id, 
+      'width': imgData[index].width, 
+      'height': imgData[index].height, 
+      'marqueeImgSize': 40  
+    });  
+    
+    loadImgsInVerticalNavigation(index); 
+  }
+
 
   /* Load images in horizontal navigation bar */
   function loadImgsInHorizontalNavigation(index) {
@@ -92,7 +172,7 @@ var purlEmbed = (function(data) {
     if (seqIndex <= 0) { 
       $('.pe-h-nav-img-01')
         .attr('src', '/images/img-view-first-ptr.png')
-        .addClass('pe-h-nav-empty-img')
+        .width(65).height(40)
         .click(function() {});    
     } else {
       index = getIndexForFirstImgInSequence(seqIndex-1);
@@ -101,7 +181,7 @@ var purlEmbed = (function(data) {
       $('.pe-h-nav-img-01')
         .attr('src', getImgStacksURL(index, 'thumb'))
         .addClass('pe-cursor-pointer')
-        .css({'width': thumbDimensions[0], 'height': thumbDimensions[1]})
+        .width(thumbDimensions[0]).height(thumbDimensions[1])
         .click(function() { prev(seqIndex); });
     }
 
@@ -110,12 +190,12 @@ var purlEmbed = (function(data) {
 
     $('.pe-h-nav-img-02')
       .attr('src', getImgStacksURL(index, 'thumb'))
-      .css({'width': thumbDimensions[0], 'height': thumbDimensions[1] });
+      .width(thumbDimensions[0]).height(thumbDimensions[1]);
     
     if ((seqIndex + 1) == groups.length) {
       $('.pe-h-nav-img-03')
         .attr('src', '/images/img-view-last-ptr.png')    
-        .addClass('pe-h-nav-empty-img')
+        .width(65).height(40)
         .click(function() {});    
     } else {
       index = getIndexForFirstImgInSequence(seqIndex+1);
@@ -123,8 +203,8 @@ var purlEmbed = (function(data) {
 
       $('.pe-h-nav-img-03')
         .attr('src', getImgStacksURL(index, 'thumb'))
-        .addClass('pe-cursor-pointer')
-        .css({ 'width': thumbDimensions[0], 'height': thumbDimensions[1] })
+        .addClass('pe-cursor-pointer')      
+        .width(thumbDimensions[0]).height(thumbDimensions[1])
         .click(function() { next(seqIndex); });
     }    
   }
@@ -134,6 +214,8 @@ var purlEmbed = (function(data) {
     if ($('.pe-h-nav-prev').length != 0 && $('.pe-h-nav-next').length != 0) {        
 
       $('.pe-h-nav-prev > img').attr('src', '/images/img-view-group-prev-inactive.png');
+      $('.pe-h-nav-next > img').attr('src', '/images/img-view-group-next-inactive.png');      
+      $('.pe-h-nav-prev').unbind().css('cursor', 'default');      
       $('.pe-h-nav-next').unbind().css('cursor', 'default');
 
       if ((seqIndex - 1) >= 0) {
@@ -158,106 +240,171 @@ var purlEmbed = (function(data) {
 
   /* Load images in vertical navigation bar */
   function loadImgsInVerticalNavigation(index) {
-    var druid = pid;
     var seqIndex = getSequenceIndex(index);  
-    var url, height;
-    var html = "";      
+    var url, height, html = "", li;          
+
+    $('.pe-v-nav').html("");
     
-    $('#viewer-v-nav').html('');
-    
-    for (var i = 0; i < imgInfo.length; i++) {
-      if (groups[seqIndex] == getGroupId(imgInfo[i]['sequence'])) {
-        url = stacksURL + '/image/' + druid + '/' + imgInfo[i]['id'] + '_thumb';
-        height = getAspectRatioBasedHeight(100, imgInfo[i]['id']);
-      
+    for (var i = 0; i < imgData.length; i++) {
+      if (groups[seqIndex] == getGroupId(imgData[i].sequence)) {
+        height = getAspectRatioBasedHeight(100, i);
+        url = getImgStacksURL(i, 'thumb');
+
         if (index == i) {
-          $('#viewer-v-nav').append("<li id=\"viewer-v-nav-selected-img\"><img src=\"" + url  + "\" style=\"width: 100px; height:" + height + "px\"></li>");      
+          li = "<li class=\"pe-v-nav-selected-img\"><img src=\"" +  url  + "\" style=\"width: 100px; height:" + height + "px\"></li>";
         } else {
-          $('#viewer-v-nav').append("<li class=\"viewer-v-nav-img\"><a href=\"javascript:loadImage('" + imgInfo[i]['id'] + "')\"><img src=\"" + url + "\"></a></li>");      
+          li = "<li class=\"pe-v-nav-img\"><a href=\"javascript:loadImage('" + imgData[i].id + "')\"><img src=\"" + url + "\"></a></li>"
         }
+
+        $('.pe-v-nav').append(li);
       }  
     }
     
-    $('#viewer-v-nav-selected-img').append($('<ul id=\"viewer-sizes-nav\">'));
+    $('.pe-v-nav-selected-img').append($('<ul class=\"pe-v-nav-sizes\">'));
     
-    html = "";
-    html = "<li>" + 
-      "<div class=\"viewer-sizes-links\">" + 
-        "<a id=\"thumb-img-viewer\" href=\"javascript:;\"><span class=\"obscure\">View the</span> thumb <span class=\"obscure\"> size of image </span><span class=\"obscure\" id=\"thumb-img-viewer-id\"></span></a>" +  
-        "<span id=\"thumb-size-img-viewer\" class=\"img-size\"></span>" + 
+    html = "<div class=\"pe-v-nav-sizes-links\">" + 
+        "<a class=\"pe-thumb-img-viewer\" href=\"javascript:;\">" + 
+        "<span class=\"pe-obscure\">View the</span> thumb <span class=\"pe-obscure\"> size of image </span>" + 
+        "<span class=\"pe-obscure\" id=\"pe-thumb-img-viewer-id\"></span></a>" +  
+        "<span class=\"pe-thumb-size-img-viewer pe-v-nav-img-size\"></span>" + 
       "</div>" + 
-      "<div class=\"viewer-sizes-download\"> " + 
-        "<a id=\"thumb-img-viewer-download\">" + 
-          "<span class=\"obscure\">Download the thumb size of image </span>" + 
-          "<span class=\"obscure\" id=\"thumb-img-viewer-download-id\"></span>" + 
+      "<div class=\"pe-v-nav-sizes-download\"> " + 
+        "<a class=\"pe-thumb-img-viewer-download\">" + 
+          "<span class=\"pe-obscure\">Download the thumb size of image </span>" + 
+          "<span class=\"pe-obscure pe-thumb-img-viewer-download-id\"></span>" + 
           "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
         "</a>" + 
-      "</div>" + 
-    "</li>";    
-    $("#viewer-sizes-nav").append(html);
+      "</div>";    
+    $(".pe-v-nav-sizes").append("<li>" + html + "</li>");
 
-    if (imgInfo[index]['rightsWorld'] === "true") {
-      if (imgInfo[index]['rightsStanford'] === "false" && imgInfo[index]['rightsWorldRule'] === "") {
+    if (imgData[index].rightsWorld === "true") {
+      if (imgData[index].rightsStanford === "false" && imgData[index].rightsWorldRule === "") {
         $.each(sizes, function(i, size) { 
           html = "";
-          html = "<li>" + 
-            "<div class=\"viewer-sizes-links\">" + 
-              "<a id=\"" + size + "-img-viewer\" href=\"javascript:;\"><span class=\"obscure\">View the</span> " + size + " <span class=\"obscure\"> size of image </span><span class=\"obscure\" id=\"" + size + "-img-viewer-id\"></span></a>" +  
-              "<span id=\"" + size + "-size-img-viewer\" class=\"img-size\"></span>" + 
+          html = "<div class=\"pe-v-nav-sizes-links\">" + 
+              "<a class=\"pe-" + size + "-img-viewer\" href=\"javascript:;\">" + 
+              "<span class=\"pe-obscure\">View the</span> " + size + " <span class=\"pe-obscure\"> size of image </span>" + 
+              "<span class=\"pe-obscure pe-" + size + "-img-viewer-id\"></span></a>" +  
+              "<span class=\"pe-" + size + "-size-img-viewer pe-v-nav-img-size\"></span>" + 
             "</div>" + 
-            "<div class=\"viewer-sizes-download\"> " + 
-              "<a id=\"" + size + "-img-viewer-download\">" + 
-                "<span class=\"obscure\">Download the " + size + " size of image </span>" + 
-                "<span class=\"obscure\" id=\"" + size +  "-img-viewer-download-id\"></span>" + 
+            "<div class=\"pe-v-nav-sizes-download\"> " + 
+              "<a class=\"pe-" + size + "-img-viewer-download\">" + 
+                "<span class=\"pe-obscure\">Download the " + size + " size of image </span>" + 
+                "<span class=\"pe-obscure pe-" + size +  "-img-viewer-download-id\"></span>" + 
                 "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
               "</a>" + 
-            "</div>" + 
-          "</li>";    
-          
-          $("#viewer-sizes-nav").append(html);      
+            "</div>";    
+
+          if (size !== "thumb") { 
+            $(".pe-v-nav-sizes").append("<li>" + html + "</li>");      
+          }
         });
       }  
     }
       
-    if (imgInfo[index]['rightsStanford'] === "true") {
-      if (imgInfo[index]['rightsStanfordRule'] !== "no-download") { 
+    if (imgData[index].rightsStanford === "true") {
+      if (imgData[index].rightsStanfordRule !== "no-download") { 
         $.each(sizes, function(i, size) { 
           var url = "https://" + $(location).attr('host') + '/auth' +       
             $(location).attr('pathname').replace(/^\/auth/, '') + 
             $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, size);
-        
+          
           html = "";    
-          html = "<li>" + 
-            "<div class=\"viewer-sizes-links\">" + 
-              "<a id=\"" + size + "-img-viewer\" href=\"" + url + "\" class=\"su\"><span class=\"obscure\">View the</span> " + size + " <span class=\"obscure\"> size of image </span><span class=\"obscure\" id=\"" + size + "-img-viewer-id\"></span></a>" +  
-              "<span id=\"" + size + "-size-img-viewer\" class=\"img-size\"></span>" + 
+          html = "<div class=\"pe-v-nav-sizes-links\">" + 
+              "<a class=\"pe-" + size + "-img-viewer\" href=\"" + url + "\" class=\"su\">" + 
+              "<span class=\"pe-obscure\">View the</span> " + size + " <span class=\"pe-obscure\"> size of image </span>" + 
+              "<span class=\"pe-obscure pe-" + size + "-img-viewer-id\"></span></a>" +  
+              "<span class=\"pe-" + size + "-size-img-viewer pe-v-nav-img-size\"></span>" + 
             "</div>" + 
-            "<div class=\"viewer-sizes-download\"> " + 
-              "<a id=\"" + size + "-img-viewer-download\">" + 
-                "<span class=\"obscure\">Download the " + size + " size of image </span>" + 
-                "<span class=\"obscure\" id=\"" + size +  "-img-viewer-download-id\"></span>" + 
+            "<div class=\"pe-v-nav-sizes-download\"> " + 
+              "<a class=\"pe-" + size + "-img-viewer-download\">" + 
+                "<span class=\"pe-obscure\">Download the " + size + " size of image </span>" + 
+                "<span class=\"pe-obscure pe-" + size +  "-img-viewer-download-id\"></span>" + 
                 "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
               "</a>" + 
-              "<img src=\"/images/icon-stanford-only.png\" class=\"icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>" + 
-            "</div>" + 
-          "</li>";    
-          $("#viewer-sizes-nav").append(html);      
+              "<img src=\"/images/icon-stanford-only.png\" class=\"pe-icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>" + 
+            "</div>";    
+
+          if (size !== "thumb") {   
+            $(".pe-v-nav-sizes").append("<li>" + html + "</li>");      
+          }  
         });        
       }
     }  
       
-    if (imgInfo[index]['rightsWorld'] === "true") {
-      $("#viewer-sizes-nav").append("<li style=\"float: left;\"><a id=\"zoom-img-viewer\" href=\"javascript:;\" title=\"Zoom View\">zoom<span class=\"obscure\"> of image 1</span></a></li>");                  
-    } else if (imgInfo[index]['rightsStanford'] === "true") {
-      var url = "https://" + $(location).attr('host') + '/auth' + $(location).attr('pathname').replace(/^\/auth/, '') + $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, 'zoom');    
-      $("#viewer-sizes-nav").append("<li style=\"float: left;\"><a id=\"zoom-img-viewer\" href=\"" + url + "\" class=\"su\" title=\"Zoom View\">zoom<span class=\"obscure\"> of image 1</span></a><img src=\"/images/icon-stanford-only.png\" class=\"icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/></li>");                  
+    if (imgData[index].rightsWorld === "true") {
+      li = "<a class=\"pe-zoom-img-viewer\" href=\"javascript:;\" title=\"Zoom View\">zoom<span class=\"pe-obscure\"> of image 1</span></a>";
+    } else if (imgData[index].rightsStanford === "true") {
+      var url = "https://" + $(location).attr('host') + '/auth' + $(location).attr('pathname').replace(/^\/auth/, '') + 
+        $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, 'zoom');    
+
+      li = "<a class=\"pe-zoom-img-viewer su\" href=\"" + url + "\" title=\"Zoom View\">zoom<span class=\"pe-obscure\"> of image 1</span></a>" + 
+        "<img src=\"/images/icon-stanford-only.png\" class=\"pe-icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>";
     }    
-      
-    $("#viewer-sizes-nav").append("</ul>");
+
+    $(".pe-v-nav-sizes").append("<li><div class=\"pe-v-nav-sizes-links\">" + li + "</div></li></ul>");                  
     
-    updateViewerSizesLinks(id, index);  
+    updateViewerSizesLinks(index);  
   }
 
+  /* Update link attributes in the image viewer pane */
+  function updateViewerSizesLinks(index) {
+    var imgNumber = parseInt(index, 10) + 1;
+
+    $('.pe-thumb-img-viewer').click(function() { loadImage(index, 'thumb'); });
+    $('.pe-zoom-img-viewer').click(function() { if (!$(this).hasClass('su')) { loadZpr(index); }});
+
+    $('.pe-small-img-viewer').click(function() { if (!$(this).hasClass('su')) { loadImage(index, 'small'); }});
+    $('.pe-medium-img-viewer').click(function() { if (!$(this).hasClass('su')) { loadImage(index, 'medium'); }});
+    $('.pe-large-img-viewer').click(function() { if (!$(this).hasClass('su')) { loadImage(index, 'large'); }});
+    $('.pe-xlarge-img-viewer').click(function() { if (!$(this).hasClass('su')) { loadImage(index, 'xlarge'); }});
+    $('.pe-full-img-viewer').click(function() { if (!$(this).hasClass('su')) { loadImage(index, 'full'); }});
+
+    $.each(sizes, function(i, size) {
+      $('.pe-' + size + '-img-viewer-id').html(imgNumber);
+      $('.pe-' + size + '-img-viewer-download-id').html(imgNumber);
+
+      $('.pe-' + size + '-img-viewer-download').attr({
+        'href': stacksURL + '/image/' + druid + '/' + imgData[index].id + '_' + size + '.jpg?action=download',
+        'title': 'Download ' + imgData[index].id + '_' + size + '.jpg'
+      });
+
+      $('.pe-' + size + '-size-img-viewer').html('(' + getDimensionsForSizeWxH(index, size) + ')' );        
+    });
+  }
+
+
+  /* Parse URL hash params */
+  function setURLSuffix() {
+    var href = $(location).attr('href');
+    var match; 
+    var pageNo = 1;
+    var sequence = 1; 
+    var size = currentSize;
+    var flag = false;
+
+    if (/#image/.test(href)) {
+      match = /#image\/([0-9]+(\.[0-9]+)?)\/?(\w+)?/.exec(href);   
+
+      if (typeof match[1] !== 'undefined' && match[1].length > 0) { 
+        sequence = match[1];
+      }  
+
+      if (typeof match[3] !== 'undefined' && match[3].length > 0) { 
+        size = match[3].toLowerCase();
+        
+        $.each(sizes, function(i, value) {
+          if (size == value) { flag = true; }
+        });      
+      
+        if (size == 'thumb') { flag = true; }
+      
+        if (!flag) { size = "zoom"; }
+      }  
+      
+      showImg(sequence, size, false);
+    }
+  }
 
 
   /* Calculate number of levels for a given JP2 height and width */
@@ -272,6 +419,13 @@ var purlEmbed = (function(data) {
   
     return level;
   }
+
+  /* Get dimensions for a given size (thumb, small etc.) in 'width x height' format */
+  function getDimensionsForSizeWxH(imgIndex, size) {
+    var dimensions = getDimensionsForSize(imgIndex, size);
+    return (dimensions.width + ' x ' + dimensions.height);
+  }
+
 
   /* Get dimensions for a given size (thumb, small etc.) */
   function getDimensionsForSize(imgIndex, size) {  
@@ -354,6 +508,23 @@ var purlEmbed = (function(data) {
     return -1;
   }
 
+  /* Display prev image from the group */
+  function prev(seqIndex) {
+    var index = getIndexForFirstImgInSequence(seqIndex - 1);
+    var sequence = imgData[index].sequence;
+
+    showImg(sequence, currentSize);
+  }
+
+  /* Display next image from the group */
+  function next(seqIndex) {
+    var index = getIndexForFirstImgInSequence(seqIndex + 1);
+    var sequence = imgData[index].sequence;
+
+    showImg(sequence, currentSize);
+  }
+
+
   /* Get group id for a given sequence */
   function getGroupId(sequence) {
     var groupId;  
@@ -365,8 +536,8 @@ var purlEmbed = (function(data) {
 
   /* Get image index for first image in sequence */
   function getIndexForFirstImgInSequence(index) {
-    for (var i = 0; i < imgInfo.length; i++) {
-      var sequence = imgInfo[i]['sequence'];
+    for (var i = 0; i < imgData.length; i++) {
+      var sequence = imgData[i].sequence;
     
       if (groups[index] == getGroupId(sequence)) {
         return i;
