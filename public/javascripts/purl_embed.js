@@ -149,9 +149,14 @@ var purlEmbed = (function(data) {
 
     $('#pe-zpr-frame')
       .html('')
-      .height(parseInt($('.pe-container').height(), 10) - 85 - 20)
       .width(parseInt($('.pe-container').width(), 10) - parseInt($('.pe-v-nav').width(), 10) - 20)
       .show();
+
+    if ($('.pe-h-nav').length)  {
+      $('#pe-zpr-frame').height(parseInt($('.pe-container').height(), 10) - 85 - 20);      
+    } else {
+      $('#pe-zpr-frame').height(parseInt($('.pe-container').height(), 10) - 20);      
+    }
     
     z = new zpr('pe-zpr-frame', { 
       'imageStacksURL': stacksURL + '/image/' + druid + '/' + id, 
