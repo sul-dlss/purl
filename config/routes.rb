@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   # The priority is based upon order of creation: first created -> highest priority.
   map.connect '/:id', :controller => 'purl', :action => 'index'
   map.connect ':id/embed', :controller => 'embed', :action => 'index'  
+  map.connect ':id/embed-js', :controller => 'embed', :action => 'embed_js'  
   map.connect 'auth/:id', :controller => 'purl', :action => 'index'
   map.connect 'auth/:id.:format', :controller => 'purl', :action => 'index'
   map.connect '/:id.:format', :controller => 'purl', :action => 'index'

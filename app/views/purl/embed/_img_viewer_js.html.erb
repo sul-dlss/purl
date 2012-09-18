@@ -1,0 +1,24 @@
+<% base_url = request.scheme + "://" + request.host_with_port %>
+
+<div class="pe-img-viewer">  
+  <% if @purl.deliverable_files.length > 1 %>
+    <div class="pe-h-nav">
+      <a class="pe-h-nav-prev"><img src="<%= base_url %>/images/img-view-group-prev-inactive.png"></a>  
+      <img class="pe-h-nav-img-01 pe-h-nav-img" src=""> 
+      <div class="pe-h-nav-selected-tab">
+        <img class="pe-h-nav-img-02 pe-h-nav-img pe-h-nav-selected-img" src=""> <br/>
+        <span class="pe-h-nav-pagination"></span>        
+      </div>
+      <img class="pe-h-nav-img-03 pe-h-nav-img" src=""> 
+      <a class="pe-h-nav-next"><img src="<%= base_url %>/images/img-view-group-next-inactive.png"></a>      
+    </div>  
+  <% end %>
+
+  <div>
+    <ul class="pe-v-nav"></ul>
+    <div class="pe-img-viewfinder">
+      <img class="pe-img-canvas" src="" title="" alt="" />
+      <div id="pe-zpr-frame" style="display: none;"></div>
+    </div>    
+  </div>
+</div>

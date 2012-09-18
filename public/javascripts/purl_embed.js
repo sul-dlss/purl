@@ -5,12 +5,14 @@ Array.prototype.unique = function() {
   for (i in o) r.push(o[i]); return r;
 };
 
-$(function() {
-  var pe = new purlEmbed(imgInfo);
-});
+Array.prototype.contains = function(obj) {
+  var i = this.length;
+  while (i--) { if (this[i] === obj) { return true; } }
+  return false;
+}
 
 /* Main purlEmbed function comprising private variables and methods */
-var purlEmbed = (function(data) {
+var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
   var imgData, currentSequence, druid;
   var groups = [];
   var constants = { 'djatokaBaseResolution': 92, 'thumbSize': 400 };
@@ -34,13 +36,26 @@ var purlEmbed = (function(data) {
 
       setProperties();        
       setURLSuffix();
+
+      currentSequence = imgData[0].sequence;
+
+      if (typeof inputSequence !== 'undefined') {
+        currentSequence = validateSequence(inputSequence);
+      }
       
-      showImg(imgData[0].sequence, currentSize);
+      if (typeof inputSequence !== 'undefined' && (sizes.contains(inputSize) || views.contains(inputSize))) {
+        currentSize = inputSize;
+      }  
+
+      showImg(currentSequence, currentSize);
     }  
   }
 
   /* Calculate properties for each file and store them in JSON data object */
   function setProperties() {    
+    var containerWidth = $(window).width(); 
+    var containerHeight = $(window).height();
+
     $.each(imgData, function(index, imgObj) {
       var seq = imgObj.sequence;
       var levels = getJP2NumOfLevels(imgObj.width, imgObj.height);     
@@ -63,9 +78,17 @@ var purlEmbed = (function(data) {
     druid = pid;
     groups.unique(); // clear duplicate group ids   
 
+    if (typeof peContainerWidth !== 'undefined') {
+      containerWidth = parseInt(peContainerWidth, 10);
+    }  
+
+    if (typeof peContainerHeight !== 'undefined') {
+      containerHeight = parseInt(peContainerHeight, 10);
+    }  
+
     $('.pe-container')
-      .width($(window).width() - 20)
-      .height($(window).height() - 20);
+      .width(containerWidth - 20)
+      .height(containerHeight - 20);
   }
 
   /* show image for a given sequence and size */
@@ -176,7 +199,7 @@ var purlEmbed = (function(data) {
     
     if (seqIndex <= 0) { 
       $('.pe-h-nav-img-01')
-        .attr('src', '/images/img-view-first-ptr.png')
+        .attr('src', peServerURL + '/images/img-view-first-ptr.png')
         .width(65).height(40)
         .click(function() {});    
     } else {
@@ -199,7 +222,7 @@ var purlEmbed = (function(data) {
     
     if ((seqIndex + 1) == groups.length) {
       $('.pe-h-nav-img-03')
-        .attr('src', '/images/img-view-last-ptr.png')    
+        .attr('src', peServerURL + '/images/img-view-last-ptr.png')    
         .width(65).height(40)
         .click(function() {});    
     } else {
@@ -218,8 +241,8 @@ var purlEmbed = (function(data) {
   function setHorizontalNavigationLinks(seqIndex) {    
     if ($('.pe-h-nav-prev').length != 0 && $('.pe-h-nav-next').length != 0) {        
 
-      $('.pe-h-nav-prev > img').attr('src', '/images/img-view-group-prev-inactive.png');
-      $('.pe-h-nav-next > img').attr('src', '/images/img-view-group-next-inactive.png');      
+      $('.pe-h-nav-prev > img').attr('src', peServerURL + '/images/img-view-group-prev-inactive.png');
+      $('.pe-h-nav-next > img').attr('src', peServerURL + '/images/img-view-group-next-inactive.png');      
       $('.pe-h-nav-prev').unbind().css('cursor', 'default');      
       $('.pe-h-nav-next').unbind().css('cursor', 'default');
 
@@ -229,7 +252,7 @@ var purlEmbed = (function(data) {
           .addClass('pe-cursor-pointer');
 
         $('.pe-h-nav-prev > img')
-          .attr('src', '/images/img-view-group-prev-active.png');
+          .attr('src', peServerURL + '/images/img-view-group-prev-active.png');
       }  
     
       if ((seqIndex + 1) < groups.length) {
@@ -238,7 +261,7 @@ var purlEmbed = (function(data) {
           .addClass('pe-cursor-pointer');
 
         $('.pe-h-nav-next > img')
-          .attr('src', '/images/img-view-group-next-active.png');
+          .attr('src', peServerURL + '/images/img-view-group-next-active.png');
       }    
     }
   }
@@ -277,7 +300,7 @@ var purlEmbed = (function(data) {
         "<a class=\"pe-thumb-img-viewer-download\">" + 
           "<span class=\"pe-obscure\">Download the thumb size of image </span>" + 
           "<span class=\"pe-obscure pe-thumb-img-viewer-download-id\"></span>" + 
-          "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
+          "<img src=\"" + peServerURL + "/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
         "</a>" + 
       "</div>";    
     $(".pe-v-nav-sizes").append("<li>" + html + "</li>");
@@ -296,7 +319,7 @@ var purlEmbed = (function(data) {
               "<a class=\"pe-" + size + "-img-viewer-download\">" + 
                 "<span class=\"pe-obscure\">Download the " + size + " size of image </span>" + 
                 "<span class=\"pe-obscure pe-" + size +  "-img-viewer-download-id\"></span>" + 
-                "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
+                "<img src=\"" + peServerURL + "/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
               "</a>" + 
             "</div>";    
 
@@ -325,9 +348,9 @@ var purlEmbed = (function(data) {
               "<a class=\"pe-" + size + "-img-viewer-download\">" + 
                 "<span class=\"pe-obscure\">Download the " + size + " size of image </span>" + 
                 "<span class=\"pe-obscure pe-" + size +  "-img-viewer-download-id\"></span>" + 
-                "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
+                "<img src=\"" + peServerURL + "/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
               "</a>" + 
-              "<img src=\"/images/icon-stanford-only.png\" class=\"pe-icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>" + 
+              "<img src=\"" + peServerURL + "/images/icon-stanford-only.png\" class=\"pe-icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>" + 
             "</div>";    
 
           if (size !== "thumb") {   
@@ -344,7 +367,7 @@ var purlEmbed = (function(data) {
         $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, 'zoom');    
 
       li = "<a class=\"pe-zoom-img-viewer su\" href=\"" + url + "\" title=\"Zoom View\">zoom<span class=\"pe-obscure\"> of image 1</span></a>" + 
-        "<img src=\"/images/icon-stanford-only.png\" class=\"pe-icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>";
+        "<img src=\"" + peServerURL + "/images/icon-stanford-only.png\" class=\"pe-icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>";
     }    
 
     $(".pe-v-nav-sizes").append("<li><div class=\"pe-v-nav-sizes-links\">" + li + "</div></li></ul>");                  
@@ -585,6 +608,19 @@ var purlEmbed = (function(data) {
   /* Get stacks URL for a given index and size */
   function getImgStacksURL(index, size) {
     return (stacksURL + '/image/' + druid + '/' + imgData[index].id + '_' + size);
+  }
+
+  /* Validate input sequence */
+  function validateSequence(inputSeq) {
+    var flag = false;
+
+    for (var i = 0; i < imgData.length; i++) {
+      if (imgData[i].sequence === inputSeq) {
+        flag = true;
+      }
+    }    
+    
+    return flag ? inputSeq : imgData[0].sequence;
   }
 
   init();

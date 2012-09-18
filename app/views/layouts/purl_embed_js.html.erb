@@ -1,0 +1,8 @@
+<div class="pe-container">
+  <%= render :partial => 'purl/image/json_embed' %>
+  <script type="text/javascript">
+    var peContainerWidth = <%= params[:peContainerWidth] %>;
+    var peContainerHeight = <%= params[:peContainerHeight] %>;    
+  </script>
+  <%= yield %>
+</div>
