@@ -5,6 +5,7 @@ var selectedSize = sizes[0];
 var resizeTimer;
 var groups = [];
 var urlSuffix = "";
+var gallery = { view: false, pageNo: 1 };
 
 Array.prototype.unique = function() { 
   var o = {}, i, l = this.length, r = [];    
@@ -370,8 +371,12 @@ function updateViewerSizesLinks(id, index) {
 
 function viewTOC() {
   var slideWidth = parseInt($('#pane-toc-metadata').width(), 10);
-  
-  $(location).attr('href', '');
+
+  if (gallery.view) {
+    $(location).attr('href', '#gallery/' + gallery.pageNo);          
+  } else {    
+    $(location).attr('href', '');
+  } 
 
   $('#pane-img-viewer').animate({
     'left': slideWidth + 'px'
@@ -735,10 +740,14 @@ function setupGalleryPageNavigation(pageNo) {
     galleryPageNo = galleryPageNo.replace(/^gallery-page-nav-/, '');
     
     $('#gallery-page-nav-' + galleryPageNo).click(function() {  
-      $(location).attr('href', '#gallery/' + galleryPageNo);    
-      setupGalleryPageNavigation(parseInt(galleryPageNo, 10));   
+      $(location).attr('href', '#gallery/' + galleryPageNo);          
+      setupGalleryPageNavigation(parseInt(galleryPageNo, 10));  
+      gallery.view = true;
+      gallery.pageNo = galleryPageNo; 
     });       
   });  
+
+  $('#viewer-return-to-label').html('Gallery');
 }
 
 function setURLSuffix() {
