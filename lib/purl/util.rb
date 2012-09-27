@@ -18,7 +18,7 @@ module PurlUtils
   # construct JSON array for delivering image objects
   def get_image_json_array(deliverable_files)
     json_array = Array.new
-    
+
     deliverable_files.each do |deliverable_file|
       id       = get_jp2_id(deliverable_file.filename.to_s)
       width    = deliverable_file.width.to_s.empty? ? 0 : deliverable_file.width.to_i
@@ -44,10 +44,15 @@ module PurlUtils
   	      "}")
   	  else 
   	    if deliverable_file.sub_resources.length > 0 
-  	      deliverable_file.sub_resources.each do |img_file|
+          deliverable_file.sub_resources.each do |img_file|
             id     = get_jp2_id(img_file.filename.to_s)
             width  = img_file.width.to_s.empty? ? 0 : img_file.width.to_i
             height = img_file.height.to_s.empty? ? 0 : img_file.height.to_i
+
+            rights_world         = img_file.rights_world.to_s
+            rights_world_rule    = img_file.rights_world_rule.to_s
+            rights_stanford      = img_file.rights_stanford.to_s
+            rights_stanford_rule = img_file.rights_stanford_rule.to_s
 
             if !id.nil? and !id.empty?
               json_array.push(
@@ -55,7 +60,11 @@ module PurlUtils
                    "\"label\": \"" + get_file_label(img_file) + "\"," + 
         	         "\"width\": " + width.to_s + "," + 
         	         "\"height\": " + height.to_s + "," +  
-        	         "\"sequence\": " + sequence + '.' + img_file.sequence.to_s + 
+        	         "\"sequence\": \"" + sequence + '.' + img_file.sequence.to_s +  "\"," + 
+                   "\"rightsWorld\": \"" + rights_world.to_s + "\"," +             
+                   "\"rightsWorldRule\": \"" + rights_world_rule.to_s + "\"," +            
+                   "\"rightsStanford\": \"" + rights_stanford.to_s + "\"," +  
+                   "\"rightsStanfordRule\": \"" + rights_stanford_rule.to_s + "\"" +                     
         	      "}")
         	  end      	        
   	      end
