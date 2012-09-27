@@ -596,7 +596,7 @@ function loadImgsInVerticalNavigation(id, index) {
       if (index == i) {
         $('#viewer-v-nav').append("<li id=\"viewer-v-nav-selected-img\"><img src=\"" + url  + "\" style=\"width: 100px; height:" + height + "px\"></li>");      
       } else {
-        $('#viewer-v-nav').append("<li class=\"viewer-v-nav-img\"><a href=\"javascript:loadImage('" + imgInfo[i]['id'] + "')\"><img src=\"" + url + "\"></a></li>");      
+        $('#viewer-v-nav').append("<li class=\"viewer-v-nav-img\"><a href=\"javascript:loadImage('" + imgInfo[i]['id'] + "')\"><img src=\"" + url + "\""  + " \" style=\"width: 100px; height:" + height + "px\"></a></li>");      
       }
     }  
   }

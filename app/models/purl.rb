@@ -116,8 +116,8 @@ class Purl
     @deliverable_files = Array.new
     
     doc.root.xpath('contentMetadata/resource').collect do |resource_xml|
-      resource_xml.xpath('file').collect do |file|
         resource = Resource.new
+      resource_xml.xpath('file').collect do |file|
 
         if is_file_ready(file)
           resource.mimetype = file['mimetype']
@@ -141,6 +141,7 @@ class Purl
           resource.imagesvc = file.at_xpath('location[@type="imagesvc"]/text()').to_s
           resource.url      = file.at_xpath('location[@type="url"]/text()').to_s        
         end  
+      end   
           
         if !resource_xml.at_xpath('attr[@name="label"]/text()').nil?
           resource.description_label = resource_xml.at_xpath('attr[@name="label"]/text()').to_s
@@ -149,48 +150,50 @@ class Purl
         end
 
         resource.sequence = resource_xml['sequence'].to_s || 0        
+
+      resource.sub_resources = resource_xml.xpath('resource').collect do |sub_resource_xml|
+        sub_file = sub_resource_xml.at_xpath('file')
+        sub_resource = Resource.new
+
+        if is_file_ready(sub_file)  
+          sub_resource.mimetype = sub_file['mimetype']
+          sub_resource.size     = sub_file['size']
+          sub_resource.shelve   = sub_file['shelve']
+          sub_resource.preserve = sub_file['preserve']
+          sub_resource.deliver  = sub_file['deliver'] || file['publish']
+          sub_resource.filename = sub_file['id']
+          sub_resource.objectId = sub_file.parent['objectId']
+          sub_resource.type     = sub_file.parent['type']
+          sub_resource.width    = sub_file.at_xpath('imageData/@width').to_s.to_i || 0
+          sub_resource.height   = sub_file.at_xpath('imageData/@height').to_s.to_i || 0
+
+          sub_resource.rights_world, sub_resource.rights_world_rule = parsed_rights.world_rights_for_file(sub_resource.filename)
+          sub_resource.rights_stanford, sub_resource.rights_stanford_rule = parsed_rights.stanford_only_rights_for_file(sub_resource.filename)          
+      
+          if (sub_resource.width > 0 and sub_resource.height > 0) 
+            sub_resource.levels   = (( Math.log([sub_resource.width, sub_resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1 
+          end
+      
+          sub_resource.imagesvc = sub_file.at_xpath('location[@type="imagesvc"]/text()').to_s
+          sub_resource.url      = sub_file.at_xpath('location[@type="url"]/text()').to_s        
+        end  
+
+        if !sub_resource_xml.at_xpath('attr[@name="label"]/text()').nil?
+          sub_resource.description_label = sub_resource_xml.at_xpath('attr[@name="label"]/text()').to_s
+        elsif !sub_resource_xml.at_xpath('label/text()').nil?
+          sub_resource.description_label = sub_resource_xml.at_xpath('label/text()').to_s
+        end        
     
-        resource.sub_resources = resource_xml.xpath('resource').collect do |sub_resource_xml|
-          sub_file = sub_resource_xml.at_xpath('file')
-          sub_resource = Resource.new
-
-          if is_file_ready(sub_file)  
-            sub_resource.mimetype = sub_file['mimetype']
-            sub_resource.size     = sub_file['size']
-            sub_resource.shelve   = sub_file['shelve']
-            sub_resource.preserve = sub_file['preserve']
-            sub_resource.deliver  = sub_file['deliver'] || file['publish']
-            sub_resource.filename = sub_file['id']
-            sub_resource.objectId = sub_file.parent['objectId']
-            sub_resource.type     = sub_file.parent['type']
-            sub_resource.width    = sub_file.at_xpath('imageData/@width').to_s.to_i || 0
-            sub_resource.height   = sub_file.at_xpath('imageData/@height').to_s.to_i || 0
-        
-            if (sub_resource.width > 0 and sub_resource.height > 0) 
-              sub_resource.levels   = (( Math.log([sub_resource.width, sub_resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1 
-            end
-        
-            sub_resource.imagesvc = sub_file.at_xpath('location[@type="imagesvc"]/text()').to_s
-            sub_resource.url      = sub_file.at_xpath('location[@type="url"]/text()').to_s        
-          end  
-
-          if !sub_resource_xml.at_xpath('attr[@name="label"]/text()').nil?
-            sub_resource.description_label = sub_resource_xml.at_xpath('attr[@name="label"]/text()').to_s
-          elsif !sub_resource_xml.at_xpath('label/text()').nil?
-            sub_resource.description_label = sub_resource_xml.at_xpath('label/text()').to_s
-          end        
+        sub_resource.sequence = sub_resource_xml['sequence'].to_s || 0        
+    
+        sub_resource
+      end            
       
-          sub_resource.sequence = sub_resource_xml['sequence'].to_s || 0        
-      
-          sub_resource
-        end            
-      
-        # if the resource has a deliverable file or at least one sub_resource, add it to the array
-        if is_file_ready(file) or resource.sub_resources.length > 0
-          @deliverable_files.push(resource)
-        end
-      
+      # if the resource has a deliverable file or at least one sub_resource, add it to the array
+      if !resource.nil? or resource.sub_resources.length > 0
+        @deliverable_files.push(resource)
       end
+      
     end  
     
     # Rights Metadata
