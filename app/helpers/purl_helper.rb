@@ -100,6 +100,8 @@ module PurlHelper
           desc = add_links_to_URIs(desc)
         end
 
+        desc = desc.gsub(/\\n/, '<br/>') 
+
         html += "<p><span class=\"desc-content\">" + desc + "</span></p>"
       end
 
