@@ -289,18 +289,12 @@ class Purl
   
   # map the given document public xml to json
   def get_flipbook_json
+    pages = Array.new
     self.extract_metadata 
-  
-    return {       
-      :id => "#{@catalog_key}",
-      :readGroup => @read_group,
-      :objectId => "#{@pid}",
-      :defaultViewMode => 2,
-      :bookTitle => @@coder.decode(@titles.join(" -- ")),
-      :readingOrder => @reading_order,  # "rtl"
-      :pageStart =>  page_start,  #"left"
-      :bookURL => !(@catalog_key.nil? or @catalog_key.empty?) ? "http://searchworks.stanford.edu/view/#{@catalog_key}" : "",
-      :pages =>  @deliverable_files.collect { |file| {
+
+    @deliverable_files.collect do |file| 
+      if file.mimetype == 'image/jp2' && file.height > 0 && file.width > 0 
+        page = {
           :height => file.height,
           :width => file.width,
           :levels => file.levels,
@@ -308,9 +302,31 @@ class Purl
           :label => file.description_label,
           :stacksURL => get_img_base_url(@pid, STACKS_URL,file)          
         }
-      }
-    }
 
+        pages.push(page)
+      end
+    end
+
+    return {       
+      :id => "#{@catalog_key}",
+      :readGroup => @read_group,
+      :objectId => "#{@pid}",
+      :defaultViewMode => 2,
+      :bookTitle => @@coder.decode(@titles.join(" -- ")),
+      :readingOrder => @reading_order,  # "rtl"
+      :pageStart =>  page_start,  # "left"
+      :bookURL => !(@catalog_key.nil? or @catalog_key.empty?) ? "http://searchworks.stanford.edu/view/#{@catalog_key}" : "",
+      :pages => pages
+      # :pages =>  @deliverable_files.collect { |file| {
+      #     :height => file.height,
+      #     :width => file.width,
+      #     :levels => file.levels,
+      #     :resourceType => file.type,
+      #     :label => file.description_label,
+      #     :stacksURL => get_img_base_url(@pid, STACKS_URL,file)          
+      #   }
+      #}
+    }
 
   end
 
