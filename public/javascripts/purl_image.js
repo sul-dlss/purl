@@ -699,10 +699,10 @@ function setupGalleryPageNavigation(pageNo) {
     elemId = this.id;
     imgId = elemId.replace(/^img-src-/, '');
     thumbDimensions = getDimensionsToFitBox(240, 240, imgId);
-    $("#" + elemId)
+
+    $(this)
       .attr('src', stacksURL + '/image/' + druid + '/' + imgId + '_thumb')
-      .css({'width': thumbDimensions[0], 'height': thumbDimensions[1]}
-    );    
+      .width(thumbDimensions[0]).height(thumbDimensions[1]);
   });
 
   if (totalPages == 1) { return; }
