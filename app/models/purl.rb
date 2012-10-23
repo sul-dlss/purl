@@ -317,15 +317,6 @@ class Purl
       :pageStart =>  page_start,  # "left"
       :bookURL => !(@catalog_key.nil? or @catalog_key.empty?) ? "http://searchworks.stanford.edu/view/#{@catalog_key}" : "",
       :pages => pages
-      # :pages =>  @deliverable_files.collect { |file| {
-      #     :height => file.height,
-      #     :width => file.width,
-      #     :levels => file.levels,
-      #     :resourceType => file.type,
-      #     :label => file.description_label,
-      #     :stacksURL => get_img_base_url(@pid, STACKS_URL,file)          
-      #   }
-      #}
     }
 
   end
