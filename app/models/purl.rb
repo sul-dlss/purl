@@ -23,7 +23,7 @@ class Purl
   attr_deferred :degreeconfyr, :cclicense, :cclicensetype, :cclicense_symbol                     # properties
   attr_deferred :catalog_key                                                                     # identity
   attr_deferred :read_group, :embargo_release_date, :copyright_stmt, :use_and_reproduction_stmt  # rights
-  attr_deferred :deliverable_files, :type                                                        # content
+  attr_deferred :deliverable_files, :downloadable_files, :type                                   # content
   attr_deferred :reading_order, :page_start                                                      # flipbook specific
 
   NAMESPACES = {     
@@ -86,6 +86,7 @@ class Purl
       @relations   = Array.new
       @identifiers = Array.new
       @publisher   = Array.new
+      @downloadable_files = Array.new
       
       dc.xpath('dc:title/text()|dcterms:title/text()', NAMESPACES).collect { |t| @titles.push(t) } # title
       dc.xpath('dc:description/text()|dcterms:abstract/text()', NAMESPACES).collect { |d| @description.push(d.to_s) } # description     
@@ -191,7 +192,11 @@ class Purl
       
       # if the resource has a deliverable file or at least one sub_resource, add it to the array
       if !resource.nil? or resource.sub_resources.length > 0
-        @deliverable_files.push(resource)
+        if resource.type != 'object'
+          @deliverable_files.push(resource)
+        else
+          @downloadable_files.push(resource)
+        end
       end
       
     end  

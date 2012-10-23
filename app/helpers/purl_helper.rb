@@ -149,18 +149,18 @@ module PurlHelper
   def get_download_links
     links = []
 
-    @purl.deliverable_files.each do |deliverable_file|
-      if deliverable_file.type == 'object' and !deliverable_file.filename.nil?
-        link_label = deliverable_file.filename
+    @purl.downloadable_files.each do |downloadable_file|
+      if !downloadable_file.filename.nil?
+        link_label = downloadable_file.filename
 
-        if not(deliverable_file.description_label.nil? or deliverable_file.description_label.empty?)
-          link_label = deliverable_file.description_label
+        if not(downloadable_file.description_label.nil? or downloadable_file.description_label.empty?)
+          link_label = downloadable_file.description_label
         end
 
-        link = "<a href=\"" + STACKS_URL + "/file/druid:" + @purl.pid + "/" + deliverable_file.filename + "\">" + link_label + "</a>"
+        link = "<a href=\"" + STACKS_URL + "/file/druid:" + @purl.pid + "/" + downloadable_file.filename + "\">" + link_label + "</a>"
 
-        if not(deliverable_file.size.nil? or deliverable_file.size.empty?)
-          link += " (" + number_to_human_size(deliverable_file.size,:precision => 1) + ")"          
+        if not(downloadable_file.size.nil? or downloadable_file.size.empty?)
+          link += " (" + number_to_human_size(downloadable_file.size,:precision => 1) + ")"          
         end
 
         link += "&nbsp; <img src=\"/images/icon-download.png\">"
