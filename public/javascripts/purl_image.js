@@ -691,7 +691,7 @@ function setupGalleryPageNavigation(pageNo) {
   $('.gallery').hide();      
   $('#gallery-page-items-' + pageNo).show();
 
-  $("ol#[id^=gallery-page-items-] img[id^=img-src-]").each(function() { 
+  $('img[id^=img-src-]').each(function() { 
     $(this).removeAttr('src');
   });
 

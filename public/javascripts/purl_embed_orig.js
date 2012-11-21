@@ -29,7 +29,6 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
   function init() {
     if (typeof data !== 'undefined') {
       imgData = data;  
-      console.log(imgData);
 
       $(window).bind('hashchange', function(){
         setURLSuffix();
@@ -87,9 +86,9 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
       containerHeight = parseInt(peContainerHeight, 10);
     }  
 
-    // $('.pe-container')
-      // .width(containerWidth - 20)
-      // .height(containerHeight - 20);
+    $('.pe-container')
+      .width(containerWidth - 20)
+      .height(containerHeight - 20);
   }
 
   /* show image for a given sequence and size */
@@ -132,17 +131,6 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
 
     $(location).attr('href', '#image/' + imgData[index]['sequence'] + '/' + size);
 
-    $('#pe-zpr-frame').hide();
-
-    $('.pe-img-viewfinder')    
-      .width(parseInt($('.pe-container').width(), 10) - 12);
-
-    if ($('.pe-h-nav').length)  {
-      $('.pe-img-viewfinder').height(parseInt($('.pe-container').height(), 10) - 126 - 10);
-    } else {
-      $('.pe-img-viewfinder').height(parseInt($('.pe-container').height(), 10) - 66);
-    }
-
     if (size == "zoom") {
       loadZpr(index);
       return;
@@ -154,6 +142,17 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
     dimensions = getDimensionsForSize(index, size);
     imgWidth = dimensions.width;
     imgHeight = dimensions.height;
+
+    $('#pe-zpr-frame').hide();
+
+    $('.pe-img-viewfinder')    
+      .width(parseInt($('.pe-container').width(), 10) - parseInt($('.pe-v-nav').width(), 10) - 10);
+
+    if ($('.pe-h-nav').length)  {
+      $('.pe-img-viewfinder').height(parseInt($('.pe-container').height(), 10) - 85 - 10);
+    } else {
+      $('.pe-img-viewfinder').height(parseInt($('.pe-container').height(), 10) - 10);
+    }
 
     $('.pe-img-canvas')      
       .removeAttr('src').attr({ 'src': url })
@@ -177,9 +176,9 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
       .show();
 
     if ($('.pe-h-nav').length)  {
-      $('#pe-zpr-frame').height(parseInt($('.pe-container').height(), 10) - 125 - 20);      
+      $('#pe-zpr-frame').height(parseInt($('.pe-container').height(), 10) - 85 - 20);      
     } else {
-      $('#pe-zpr-frame').height(parseInt($('.pe-img-viewfinder').height(), 10) - 5);      
+      $('#pe-zpr-frame').height(parseInt($('.pe-container').height(), 10) - 20);      
     }
     
     z = new zpr('pe-zpr-frame', { 
@@ -271,7 +270,8 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
   function loadImgsInVerticalNavigation(index) {
     var seqIndex = getSequenceIndex(index);  
     var url, height, html = "", li;          
-    var cselectJson = [];
+
+    $('.pe-v-nav').html("");
     
     for (var i = 0; i < imgData.length; i++) {
       if (groups[seqIndex] == getGroupId(imgData[i].sequence)) {
@@ -283,28 +283,48 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
         } else {
           li = "<li class=\"pe-v-nav-img\"><a href=\"javascript:loadImage('" + imgData[i].id + "', '" + currentSize + "')\"><img src=\"" + url + "\" style=\"width: 100px; height:" + height + "px\"></a></li>"
         }
+
+        $('.pe-v-nav').append(li);
       }  
     }
     
     $('.pe-v-nav-selected-img').append($('<ul class=\"pe-v-nav-sizes\">'));
     
-    html = "<span class=\"pe-thumb-img-viewer\" href=\"javascript:;\">thumb</span>" + 
-        "<span class=\"pe-v-nav-img-size\"> (" +  getDimensionsForSizeWxH(index, 'thumb') + ")</span>";
-
+    html = "<div class=\"pe-v-nav-sizes-links\">" + 
+        "<a class=\"pe-thumb-img-viewer\" href=\"javascript:;\">" + 
+        "<span class=\"pe-obscure\">View the</span> thumb <span class=\"pe-obscure\"> size of image </span>" + 
+        "<span class=\"pe-obscure\" id=\"pe-thumb-img-viewer-id\"></span></a>" +  
+        "<span class=\"pe-thumb-size-img-viewer pe-v-nav-img-size\"></span>" + 
+      "</div>" + 
+      "<div class=\"pe-v-nav-sizes-download\"> " + 
+        "<a class=\"pe-thumb-img-viewer-download\">" + 
+          "<span class=\"pe-obscure\">Download the thumb size of image </span>" + 
+          "<span class=\"pe-obscure pe-thumb-img-viewer-download-id\"></span>" + 
+          "<img src=\"" + peServerURL + "/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
+        "</a>" + 
+      "</div>";    
     $(".pe-v-nav-sizes").append("<li>" + html + "</li>");
-    cselectJson.push({ 'html': html, 'size': 'thumb', 'index': index });
 
     if (imgData[index].rightsWorld === "true") {
       if (imgData[index].rightsStanford === "false" && imgData[index].rightsWorldRule === "") {
         $.each(sizes, function(i, size) { 
           html = "";
-          html = "<span class=\"pe-" + size + "-img-viewer\" href=\"javascript:;\">" + size + "</span>" + 
-              "<span class=\"pe-v-nav-img-size\"> ("  + getDimensionsForSizeWxH(index, size) + ")</span>" + 
-              "<a href=\"" + getDownloadLink(index, size) + "\" class=\"pe-" + size + "-img-viewer-download pe-download-icon\"></a>";
+          html = "<div class=\"pe-v-nav-sizes-links\">" + 
+              "<a class=\"pe-" + size + "-img-viewer\" href=\"javascript:;\">" + 
+              "<span class=\"pe-obscure\">View the</span> " + size + " <span class=\"pe-obscure\"> size of image </span>" + 
+              "<span class=\"pe-obscure pe-" + size + "-img-viewer-id\"></span></a>" +  
+              "<span class=\"pe-" + size + "-size-img-viewer pe-v-nav-img-size\"></span>" + 
+            "</div>" + 
+            "<div class=\"pe-v-nav-sizes-download\"> " + 
+              "<a class=\"pe-" + size + "-img-viewer-download\">" + 
+                "<span class=\"pe-obscure\">Download the " + size + " size of image </span>" + 
+                "<span class=\"pe-obscure pe-" + size +  "-img-viewer-download-id\"></span>" + 
+                "<img src=\"" + peServerURL + "/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
+              "</a>" + 
+            "</div>";    
 
           if (size !== "thumb") { 
-            $(".pe-v-nav-sizes").append("<li>" + html + "</li>");   
-            cselectJson.push({ 'html': html, 'size': size, 'index': index });   
+            $(".pe-v-nav-sizes").append("<li>" + html + "</li>");      
           }
         });
       }  
@@ -318,36 +338,41 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
             $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, size);
           
           html = "";    
-          html = "<span class=\"pe-" + size + "-img-viewer\" href=\"" + url + "\" class=\"su\">" + size + "</span>" + 
-              "<span class=\"pe-v-nav-img-size\"> (" + getDimensionsForSizeWxH(index, size)  + ")</span>" + 
-              "<a class=\"pe-" + size + "-img-viewer-download pe-download-icon\">" + 
+          html = "<div class=\"pe-v-nav-sizes-links\">" + 
+              "<a class=\"pe-" + size + "-img-viewer\" href=\"" + url + "\" class=\"su\">" + 
+              "<span class=\"pe-obscure\">View the</span> " + size + " <span class=\"pe-obscure\"> size of image </span>" + 
+              "<span class=\"pe-obscure pe-" + size + "-img-viewer-id\"></span></a>" +  
+              "<span class=\"pe-" + size + "-size-img-viewer pe-v-nav-img-size\"></span>" + 
+            "</div>" + 
+            "<div class=\"pe-v-nav-sizes-download\"> " + 
+              "<a class=\"pe-" + size + "-img-viewer-download\">" + 
+                "<span class=\"pe-obscure\">Download the " + size + " size of image </span>" + 
+                "<span class=\"pe-obscure pe-" + size +  "-img-viewer-download-id\"></span>" + 
                 "<img src=\"" + peServerURL + "/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
               "</a>" + 
-              "<img src=\"" + peServerURL + "/images/icon-stanford-only.png\" class=\"pe-icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>";
+              "<img src=\"" + peServerURL + "/images/icon-stanford-only.png\" class=\"pe-icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>" + 
+            "</div>";    
 
           if (size !== "thumb") {   
             $(".pe-v-nav-sizes").append("<li>" + html + "</li>");      
-            cselectJson.push({ 'html': html, 'size': size, 'index': imgData[index].id  });
           }  
         });        
       }
     }  
       
     if (imgData[index].rightsWorld === "true") {
-      li = "<span class=\"pe-zoom-img-viewer\" href=\"javascript:;\" title=\"Zoom View\">zoom</span>";
+      li = "<a class=\"pe-zoom-img-viewer\" href=\"javascript:;\" title=\"Zoom View\">zoom<span class=\"pe-obscure\"> of image 1</span></a>";
     } else if (imgData[index].rightsStanford === "true") {
       var url = "https://" + $(location).attr('host') + '/auth' + $(location).attr('pathname').replace(/^\/auth/, '') + 
         $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, 'zoom');    
 
-      li = "<span class=\"pe-zoom-img-viewer su\" href=\"" + url + "\" title=\"Zoom View\">zoom</span>" + 
+      li = "<a class=\"pe-zoom-img-viewer su\" href=\"" + url + "\" title=\"Zoom View\">zoom<span class=\"pe-obscure\"> of image 1</span></a>" + 
         "<img src=\"" + peServerURL + "/images/icon-stanford-only.png\" class=\"pe-icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>";
     }    
 
-    $(".pe-v-nav-sizes").append("<li><div class=\"pe-v-nav-sizes-links\">" + li + "</div></li></ul>");    
-    cselectJson.push({ 'html': li, 'size': 'zoom', 'index': index  });              
+    $(".pe-v-nav-sizes").append("<li><div class=\"pe-v-nav-sizes-links\">" + li + "</div></li></ul>");                  
     
     updateViewerSizesLinks(index);  
-    renderCselect(cselectJson);
   }
 
   /* Update link attributes in the image viewer pane */
@@ -363,26 +388,19 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
     $('.pe-xlarge-img-viewer').click(function() { if (!$(this).hasClass('su')) { loadImage(index, 'xlarge'); }});
     $('.pe-full-img-viewer').click(function() { if (!$(this).hasClass('su')) { loadImage(index, 'full'); }});
 
-  }
+    $.each(sizes, function(i, size) {
+      $('.pe-' + size + '-img-viewer-id').html(imgNumber);
+      $('.pe-' + size + '-img-viewer-download-id').html(imgNumber);
 
+      $('.pe-' + size + '-img-viewer-download').attr({
+        'href': stacksURL + '/image/' + druid + '/' + imgData[index].id + '_' + size + '.jpg?action=download',
+        'title': 'Download ' + imgData[index].id + '_' + size + '.jpg'
+      });
 
-  function getDownloadLink(index, size) {
-    var href = stacksURL + '/image/' + druid + '/' + imgData[index].id + '_' + size + '.jpg?action=download';
-    return href;
-  }
-
-
-  function renderCselect(cselectJson) {
-    $('.pe-dd-cselect').cselect({
-      data: cselectJson, 
-      width: 220,
-      //selectText: 'Select a size',
-      selectedIndex: 0,
-      onSelected: function(data) {
-        loadImage(data.selectedData.index, data.selectedData.size);
-      }      
+      $('.pe-' + size + '-size-img-viewer').html('(' + getDimensionsForSizeWxH(index, size) + ')' );        
     });
   }
+
 
   /* Parse URL hash params */
   function setURLSuffix() {
