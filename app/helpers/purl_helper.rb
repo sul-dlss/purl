@@ -28,7 +28,7 @@ module PurlHelper
   def get_file_label(deliverable_file)
     PurlUtils.get_file_label(deliverable_file)
   end
-  
+
   # get file URL (for type != image)
   def get_file_url(pid, deliverable_file)
     PurlUtils.get_file_url(pid, deliverable_file)
@@ -38,7 +38,7 @@ module PurlHelper
   def is_file_ready(file)
     PurlUtils.is_file_ready(file)
   end
-  
+
 
   # get field value
   #
@@ -60,30 +60,30 @@ module PurlHelper
       end
 
       html += output + "</dd>"
-    end      
+    end
 
     html
   end
 
 
   # get field value with extracted URIs in HTML tags
-  def add_links_to_URIs(str)     
+  def add_links_to_URIs(str)
     output = str
-    
+
     # http://www.regular-expressions.info/email.html
     regex_email = /[A-Z0-9_\.%\+\-\']+@(?:[A-Z0-9\-]+\.)+(?:[A-Z]{2,4}|museum|travel)/i
 
     # http://daringfireball.net/2010/07/improved_regex_for_matching_urls
     regex_url = /(?i)\b(?:https?:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\([^\s()<>]+|\([^\s()<>]+\)*\))+(?:\([^\s()<>]+|\([^\s()<>]+\)*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’])/i
 
-    str.scan(regex_email).uniq.each do |uri|     
+    str.scan(regex_email).uniq.each do |uri|
       output = output.gsub(/#{uri}/, '<a href="mailto:' + uri + '">' + uri + '</a>')
     end
 
-    str.scan(regex_url).uniq.each do |uri|     
+    str.scan(regex_url).uniq.each do |uri|
       output = output.gsub(/#{uri}/, '<a href="' + uri + '">' + uri + '</a>')
     end
-    
+
     output
   end
 
@@ -91,54 +91,54 @@ module PurlHelper
   # get field value
   def print_description_value(label = '', add_links_to_URIs = false)
     html = ''
-    
+
     if not(@purl.nil? or @purl.description.nil? or @purl.description.empty?)
       html = "<dt>" + label + ":</dt><dd>"
 
       @purl.description.each do |desc|
-        if add_links_to_URIs 
+        if add_links_to_URIs
           desc = add_links_to_URIs(desc)
         end
 
-        desc = desc.gsub(/\\n/, '<br/>') 
+        desc = desc.gsub(/(\\n|&amp;#10;|&#10;)/, '<br/>')
 
         html += "<p><span class=\"desc-content\">" + desc + "</span></p>"
       end
 
       html += "</dd>"
     end
-        
+
     html
   end
 
   # get title value
   def print_title_value()
     title = ''
-    
+
     if not(@purl.nil? or @purl.titles.nil? or @purl.titles.empty?)
       title = @purl.titles.join(" -- ")
     end
-    
+
     title
   end
 
   # get creator(s) value
   def print_creator_value(label = '')
     html = ''
-    
+
     if not(@purl.nil? or @purl.creators.nil? or @purl.creators.empty?)
       html = "<dt>" + label + ":</dt><dd>" + @purl.creators.join("<br/>") + "</dd>"
     end
-    
+
     html
   end
-  
+
   # get searchworks link
-  def get_searchworks_link 
+  def get_searchworks_link
     link = nil
     catkey = @purl.catalog_key
 
-    if not(catkey.nil? or catkey.empty?) 
+    if not(catkey.nil? or catkey.empty?)
       link = "<a href=\"http://searchworks.stanford.edu/view/" + catkey + "\">View in SearchWorks</a>"
     end
 
@@ -160,12 +160,12 @@ module PurlHelper
         link = "<a href=\"" + STACKS_URL + "/file/druid:" + @purl.pid + "/" + downloadable_file.filename + "\">" + link_label + "</a>"
 
         if not(downloadable_file.size.nil? or downloadable_file.size.empty?)
-          link += " (" + number_to_human_size(downloadable_file.size,:precision => 1) + ")"          
+          link += " (" + number_to_human_size(downloadable_file.size,:precision => 1) + ")"
         end
 
         link += "&nbsp; <img src=\"/images/icon-download.png\">"
 
-        links.push(link)        
+        links.push(link)
       end
     end
 
@@ -173,8 +173,8 @@ module PurlHelper
   end
 
 
-  # get links for side bar 
-  def get_sidebar_links 
+  # get links for side bar
+  def get_sidebar_links
     html = ''
 
     if !get_searchworks_link.nil?
@@ -183,7 +183,7 @@ module PurlHelper
 
     if get_download_links.size > 0
       html += "<br/><p><strong>Available download formats:</strong> </p> <ul>"
-      
+
       get_download_links.each do |link|
         html += "<li>" + link + "</li>"
       end
@@ -196,16 +196,16 @@ module PurlHelper
 
   # remove trailing period from name
   def add_copyright_symbol(copyright_stmt)
-    copyright_stmt = copyright_stmt.gsub /\(c\) Copyright/i, '&copy; Copyright'    
+    copyright_stmt = copyright_stmt.gsub /\(c\) Copyright/i, '&copy; Copyright'
     copyright_stmt
   end
-  
+
   # get number of gallery items per page
   def get_gallery_items_per_page_count()
     return 15
   end
-  
-  # prune text 
+
+  # prune text
   def trim_text(text)
     text = text.gsub /\s+/, ' '
     text = text.gsub /[\n\r]/, ''

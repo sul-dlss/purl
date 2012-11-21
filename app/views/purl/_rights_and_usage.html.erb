@@ -35,6 +35,27 @@
 			  <% end %>
 	    </dd>
 		<% end %>	
+		
+	  <% if not(@purl.odc_license.nil? or @purl.odc_license.empty?) %>
+      <dt>License:</dt>
+      <dd>
+			  <% if @purl.odc_license.to_s.eql? 'odc-pddl' %>
+			    <div>
+				  <a href="http://opendatacommons.org/licenses/pddl/" _target="blank">This work is licensed under a Open Data Commons Public Domain Dedication and License (PDDL)</a>
+				  </div>
+			  <% elsif @purl.odc_license.to_s.eql? 'odc-by' %>
+			    <div>
+				  <a href="http://opendatacommons.org/licenses/by/" _target="blank">This work is licensed under a Open Data Commons Attribution License</a>
+				  </div>
+			  <% elsif @purl.odc_license.to_s.eql? 'odc-odbl' %>
+			    <div>
+				  <a href="http://opendatacommons.org/licenses/odbl/" _target="blank">This work is licensed under a Open Data Commons Open Database License (ODbL)</a>
+				  </div>
+				<% else %>
+					<%= @purl.odc_type.to_s %>  
+			  <% end %>
+	    </dd>
+		<% end %>	
 
   </dl>          
 
