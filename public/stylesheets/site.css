@@ -55,15 +55,15 @@ table {
 
 body {background: #474747 url(../images/purl-image-background.png) top left repeat-x; text-align: center; font-size: 11px; font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif; line-height: 1.3em;   color: #000000;}
 h1 {
-	color: #f6f6f6; 
-	filter: dropshadow(color=#333333, offx=-1, offy=-1); 
-	font: normal normal normal 1.9em "Myriad Pro", "Droid Sans", "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;  
-	letter-spacing: 1px; 
-	text-shadow: -1px -1px 0px #333; 
+	color: #f6f6f6;
+	filter: dropshadow(color=#333333, offx=-1, offy=-1);
+	font: normal normal normal 1.9em "Myriad Pro", "Droid Sans", "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+	letter-spacing: 1px;
+	text-shadow: -1px -1px 0px #333;
 	padding-top: 6px;
 }
 
-h2 {font-size: 1.4em; font-weight: normal; margin: 0 0 .5em 0; line-height: 1.2em;}
+h2 {font-size: 1.4em; font-weight: normal; margin: 0 0 .5em 0; line-height: 1.2em; padding-bottom: 10px;}
 h3 {font-size: 1.1em; font-weight: normal;}
 
 a  {color: #00388e /*#2E4F81*/; text-decoration:none;}
@@ -73,9 +73,9 @@ a:active {color: #4f4f4f;}
 #container {
 	margin: 0 auto;
   overflow: hidden;
-  position: relative; 
-	text-align: left; 
-	width: 90%; 
+  position: relative;
+	text-align: left;
+	width: 90%;
 }
 
 #header {height: 30px; overflow: hidden;}
@@ -87,15 +87,15 @@ a:active {color: #4f4f4f;}
 #headerlinks ul li a {color: #ffffff /*#52c1e1*/; text-transform: uppercase; text-decoration: none; font-size: 11px;}
 #headerlinks ul li a:hover {border-bottom: 1px dotted;}
 
-#banner { 
-  background: url('../images/sulair_rosette_30x30.png') top left no-repeat; 
-	height: 35px; 
-	margin: 8px 0 4px 0; 
-	padding-left: 40px; 
+#banner {
+  background: url('../images/sulair_rosette_30x30.png') top left no-repeat;
+	height: 35px;
+	margin: 8px 0 4px 0;
+	padding-left: 40px;
 }
 
-#contents { 
-  background: #fff url(../images/contents_bg.png) top left repeat-x;  
+#contents {
+  background: #fff url(../images/contents_bg.png) top left repeat-x;
   padding: 20px 30px;
   position: relative;
   overflow: auto;
@@ -105,28 +105,31 @@ a:active {color: #4f4f4f;}
 .swlink {padding: 0 0 15px 0; margin: 0 0 15px 0; font-size: 1.1em; border-bottom: 1px dotted #cccccc;s}
 
 dl {margin: 0 0 1em 0;}
-dt {clear: both; float: left; color: #555555; width: 7.5em; padding: 2px .5em 2px 0;} 
+dt {clear: both; float: left; color: #555555; width: 7.5em; padding: 2px .5em 2px 0;}
 dd {margin-left: 8em; padding: 2px 0px;}
 dd img {vertical-align: middle;}
-        
-        
-#filelist { float: left; width: 65%; }    
-.embargo-block {
-  background: url('/images/icon-info.png') left center no-repeat; 
-  border-top: 1px dotted #999; 
-  padding: 8px 0; 
-  text-indent: 20px;
-  width: 100%; 
+
+
+#filelist {
+  float: left; width: 65%;
 }
-table#assets {border: 1px solid #787676; background-color: #FFFFFF;}
+.embargo-block {
+  background: url('/images/icon-info.png') left bottom no-repeat;
+  border-top: 1px dotted #999;
+  margin-top: 20px;
+  padding: 8px 0 0 0;
+  text-indent: 20px;
+  width: 100%;
+}
+table#assets {border: 1px solid #787676; background-color: #FFFFFF; margin: 12px 0 20px 0;}
 #assets th {
-  text-align: left; 
-  font-size: 11px; 
-  padding: 5px; 
-  background-color: #222; 
-  background-image: url(/images/availability-header.png); 
-  background-repeat: repeat-x; 
-  color: #ffffff; 
+  text-align: left;
+  font-size: 11px;
+  padding: 5px;
+  background-color: #222;
+  background-image: url(/images/availability-header.png);
+  background-repeat: repeat-x;
+  color: #ffffff;
   text-shadow: -1px -1px 0px #666;
   filter: dropshadow(color=#333333, offx=-1, offy=-1)
 }
@@ -147,7 +150,7 @@ table#assets {border: 1px solid #787676; background-color: #FFFFFF;}
 #footer a {color: #ffffff /*#52c1e1*/;}
 #footer a:hover {color: #ffffff /*#52c1e1*/; border-bottom: 1px dotted;}
 
-/* 
+/*
 
 highlight colour for browse by callnum:  #e5f1f4
 
@@ -161,32 +164,31 @@ highlight colour for browse by callnum:  #e5f1f4
 }
 
 #title-metadata {
-	padding-bottom: 20px;
 }
 
 #rights-metadata {
 	clear: both;
-	padding-top: 20px;
+
 }
 
-#title-metadata dl, #rights-metadata dl { 
-  margin: 15px 0; 
+#title-metadata dl, #rights-metadata dl {
+  margin: 0 0 0 0;
 }
 
-#title-metadata dt, #rights-metadata dt { 
-  clear: both; 
-  color: #555555; 
-  float: left; 
-  padding: 4px 0; 
-  width: 12em; 
-} 
+#title-metadata dt, #rights-metadata dt {
+  clear: both;
+  color: #555555;
+  float: left;
+  padding: 4px 0;
+  width: 12em;
+}
 
-#title-metadata dd, #rights-metadata dd { 
-  margin-left: 12em;	
-  padding: 4px 0px; 
-} 
+#title-metadata dd, #rights-metadata dd {
+  margin-left: 12em;
+  padding: 4px 0px;
+}
 
-#title-metadata dd p, #rights-metadata dd p { 
+#title-metadata dd p, #rights-metadata dd p {
   margin-bottom: 8px;
 }
 

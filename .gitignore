@@ -1,11 +1,10 @@
-.bundle
-db/*.sqlite3
-log/*.log
-tmp/
 .DS_Store
+.bundle
 .powenv
-config/certs
-public/.htaccess
 .sass-cache
-log/*
+config/certs
 db/*.sqlite3
+log/*
+public/.htaccess
+public/bf973rp9392-embed.html
+tmp/
