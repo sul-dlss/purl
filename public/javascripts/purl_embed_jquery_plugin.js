@@ -1,6 +1,12 @@
 (function( $ ){
-  $.fn.embedPurl = function(druid, sequence, size) {
-    var serverURL = 'http://' + $(location).attr('host');
+  var serverUrls = {
+    'test': 'http://purl-test.stanford.edu',
+    'prod': 'http://purl-prod.stanford.edu',
+    'local': 'http://localhost:3000'
+  }
+
+  $.fn.embedPurl = function(server, druid, sequence, size) {
+    var serverURL = serverUrls[server];
     var $this = $(this);
 
     $.ajax({
