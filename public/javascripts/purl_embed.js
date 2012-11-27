@@ -1,7 +1,7 @@
 /* Function to make an array unique */
-Array.prototype.unique = function() { 
-  var o = {}, i, l = this.length, r = [];    
-  for (i = 0; i < l; i = i+1) o[this[i]] = this[i];    
+Array.prototype.unique = function() {
+  var o = {}, i, l = this.length, r = [];
+  for (i = 0; i < l; i = i+1) o[this[i]] = this[i];
   for (i in o) r.push(o[i]); return r;
 };
 
@@ -24,18 +24,17 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
     'non-restricted': ['thumb'],
     'restricted': ['small', 'medium', 'large', 'xlarge', 'full', 'zoom']
   };
-  
+
   /* Constructor function */
   function init() {
     if (typeof data !== 'undefined') {
-      imgData = data;  
-      console.log(imgData);
+      imgData = data;
 
       $(window).bind('hashchange', function(){
         setURLSuffix();
       });
 
-      setProperties();        
+      setProperties();
       setURLSuffix();
 
       currentSequence = imgData[0].sequence;
@@ -43,49 +42,49 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
       if (typeof inputSequence !== 'undefined') {
         currentSequence = validateSequence(inputSequence);
       }
-      
+
       if (typeof inputSequence !== 'undefined' && (sizes.contains(inputSize) || views.contains(inputSize))) {
         currentSize = inputSize;
-      }  
+      }
 
       showImg(currentSequence, currentSize);
-    }  
+    }
   }
 
   /* Calculate properties for each file and store them in JSON data object */
-  function setProperties() {    
-    var containerWidth = $(window).width(); 
+  function setProperties() {
+    var containerWidth = $(window).width();
     var containerHeight = $(window).height();
 
     $.each(imgData, function(index, imgObj) {
       var seq = imgObj.sequence;
-      var levels = getJP2NumOfLevels(imgObj.width, imgObj.height);     
+      var levels = getJP2NumOfLevels(imgObj.width, imgObj.height);
       var groupId = parseInt(getGroupIdFromSequence(imgObj['sequence']), 10);
 
       imgData[index].numLevels = levels;
-      imgData[index].aspectRatio = parseFloat(imgObj['width']/imgObj['height']).toFixed(2);        
+      imgData[index].aspectRatio = parseFloat(imgObj['width']/imgObj['height']).toFixed(2);
       imgData[index].groupId = groupId;
 
       groups.push(groupId);
-      
+
       $.each(sizes, function(j, size) {
         return (function(s) {
           imgData[index][s] = getDimensionsForSize(index, s);
-          imgData[index]['level-for-' + s] = getLevelForSize(s, index);            
+          imgData[index]['level-for-' + s] = getLevelForSize(s, index);
         })(size);
-      });      
+      });
     });
 
     druid = pid;
-    groups.unique(); // clear duplicate group ids   
+    groups.unique(); // clear duplicate group ids
 
     if (typeof peContainerWidth !== 'undefined') {
       containerWidth = parseInt(peContainerWidth, 10);
-    }  
+    }
 
     if (typeof peContainerHeight !== 'undefined') {
       containerHeight = parseInt(peContainerHeight, 10);
-    }  
+    }
 
     // $('.pe-container')
       // .width(containerWidth - 20)
@@ -100,18 +99,18 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
     var imgNumber;
 
     if (index < 0) return;
-    
+
     currentSize = size;
     imgNumber = parseInt(index, 10) + 1;
 
     if (size === 'zoom') {
       loadZpr(index);
     } else {
-      loadImage(index, size);      
+      loadImage(index, size);
     }
 
     loadImgsInHorizontalNavigation(index);
-    loadImgsInVerticalNavigation(index); 
+    loadImgsInVerticalNavigation(index);
 
     $('.pe-h-nav-pagination').html((getSequenceIndex(index) + 1) + ' of ' + groups.length);
 
@@ -127,14 +126,14 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
     if (typeof size === "undefined") {
       size = currentSize;
     } else {
-      currentSize = size;  
-    } 
+      currentSize = size;
+    }
 
     $(location).attr('href', '#image/' + imgData[index]['sequence'] + '/' + size);
 
     $('#pe-zpr-frame').hide();
 
-    $('.pe-img-viewfinder')    
+    $('.pe-img-viewfinder')
       .width(parseInt($('.pe-container').width(), 10) - 12);
 
     if ($('.pe-h-nav').length)  {
@@ -148,14 +147,14 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
       return;
     }
 
-    loadImgsInVerticalNavigation(index); 
+    loadImgsInVerticalNavigation(index);
 
     url = getImgStacksURL(index, size);
     dimensions = getDimensionsForSize(index, size);
     imgWidth = dimensions.width;
     imgHeight = dimensions.height;
 
-    $('.pe-img-canvas')      
+    $('.pe-img-canvas')
       .removeAttr('src').attr({ 'src': url })
       .width(imgWidth).height(imgHeight)
       .show();
@@ -177,19 +176,19 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
       .show();
 
     if ($('.pe-h-nav').length)  {
-      $('#pe-zpr-frame').height(parseInt($('.pe-container').height(), 10) - 125 - 20);      
+      $('#pe-zpr-frame').height(parseInt($('.pe-container').height(), 10) - 125 - 20);
     } else {
-      $('#pe-zpr-frame').height(parseInt($('.pe-img-viewfinder').height(), 10) - 5);      
+      $('#pe-zpr-frame').height(parseInt($('.pe-img-viewfinder').height(), 10) - 5);
     }
-    
-    z = new zpr('pe-zpr-frame', { 
-      'imageStacksURL': stacksURL + '/image/' + druid + '/' + id, 
-      'width': imgData[index].width, 
-      'height': imgData[index].height, 
-      'marqueeImgSize': 40  
-    });  
-    
-    loadImgsInVerticalNavigation(index); 
+
+    z = new zpr('pe-zpr-frame', {
+      'imageStacksURL': stacksURL + '/image/' + druid + '/' + id,
+      'width': imgData[index].width,
+      'height': imgData[index].height,
+      'marqueeImgSize': 40
+    });
+
+    loadImgsInVerticalNavigation(index);
   }
 
 
@@ -197,16 +196,16 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
   function loadImgsInHorizontalNavigation(index) {
     var seqIndex = getSequenceIndex(index);
     var i, index, thumbDimensions;
-    
-    if (seqIndex <= 0) { 
+
+    if (seqIndex <= 0) {
       $('.pe-h-nav-img-01')
         .attr('src', peServerURL + '/images/img-view-first-ptr.png')
         .width(65).height(40)
-        .click(function() {});    
+        .click(function() {});
     } else {
       index = getIndexForFirstImgInSequence(seqIndex-1);
       thumbDimensions = getDimensionsToFitBox(65, 40, index);
-      
+
       $('.pe-h-nav-img-01')
         .attr('src', getImgStacksURL(index, 'thumb'))
         .addClass('pe-cursor-pointer')
@@ -220,31 +219,31 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
     $('.pe-h-nav-img-02')
       .attr('src', getImgStacksURL(index, 'thumb'))
       .width(thumbDimensions[0]).height(thumbDimensions[1]);
-    
+
     if ((seqIndex + 1) == groups.length) {
       $('.pe-h-nav-img-03')
-        .attr('src', peServerURL + '/images/img-view-last-ptr.png')    
+        .attr('src', peServerURL + '/images/img-view-last-ptr.png')
         .width(65).height(40)
-        .click(function() {});    
+        .click(function() {});
     } else {
       index = getIndexForFirstImgInSequence(seqIndex+1);
-      thumbDimensions = getDimensionsToFitBox(65, 40, index);  
+      thumbDimensions = getDimensionsToFitBox(65, 40, index);
 
       $('.pe-h-nav-img-03')
         .attr('src', getImgStacksURL(index, 'thumb'))
-        .addClass('pe-cursor-pointer')      
+        .addClass('pe-cursor-pointer')
         .width(thumbDimensions[0]).height(thumbDimensions[1])
         .click(function() { next(seqIndex); });
-    }    
+    }
   }
 
   /* Enable/disable navigation links for horizontal navigation */
-  function setHorizontalNavigationLinks(seqIndex) {    
-    if ($('.pe-h-nav-prev').length != 0 && $('.pe-h-nav-next').length != 0) {        
+  function setHorizontalNavigationLinks(seqIndex) {
+    if ($('.pe-h-nav-prev').length != 0 && $('.pe-h-nav-next').length != 0) {
 
       $('.pe-h-nav-prev > img').attr('src', peServerURL + '/images/img-view-group-prev-inactive.png');
-      $('.pe-h-nav-next > img').attr('src', peServerURL + '/images/img-view-group-next-inactive.png');      
-      $('.pe-h-nav-prev').unbind().css('cursor', 'default');      
+      $('.pe-h-nav-next > img').attr('src', peServerURL + '/images/img-view-group-next-inactive.png');
+      $('.pe-h-nav-prev').unbind().css('cursor', 'default');
       $('.pe-h-nav-next').unbind().css('cursor', 'default');
 
       if ((seqIndex - 1) >= 0) {
@@ -254,8 +253,8 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
 
         $('.pe-h-nav-prev > img')
           .attr('src', peServerURL + '/images/img-view-group-prev-active.png');
-      }  
-    
+      }
+
       if ((seqIndex + 1) < groups.length) {
         $('.pe-h-nav-next')
           .click(function() { next(seqIndex); })
@@ -263,16 +262,16 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
 
         $('.pe-h-nav-next > img')
           .attr('src', peServerURL + '/images/img-view-group-next-active.png');
-      }    
+      }
     }
   }
 
   /* Load images in vertical navigation bar */
   function loadImgsInVerticalNavigation(index) {
-    var seqIndex = getSequenceIndex(index);  
-    var url, height, html = "", li;          
+    var seqIndex = getSequenceIndex(index);
+    var url, height, html = "", li;
     var cselectJson = [];
-    
+
     for (var i = 0; i < imgData.length; i++) {
       if (groups[seqIndex] == getGroupId(imgData[i].sequence)) {
         height = getAspectRatioBasedHeight(100, i);
@@ -283,12 +282,12 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
         } else {
           li = "<li class=\"pe-v-nav-img\"><a href=\"javascript:loadImage('" + imgData[i].id + "', '" + currentSize + "')\"><img src=\"" + url + "\" style=\"width: 100px; height:" + height + "px\"></a></li>"
         }
-      }  
+      }
     }
-    
+
     $('.pe-v-nav-selected-img').append($('<ul class=\"pe-v-nav-sizes\">'));
-    
-    html = "<span class=\"pe-thumb-img-viewer\" href=\"javascript:;\">thumb</span>" + 
+
+    html = "<span class=\"pe-thumb-img-viewer\" href=\"javascript:;\">thumb</span>" +
         "<span class=\"pe-v-nav-img-size\"> (" +  getDimensionsForSizeWxH(index, 'thumb') + ")</span>";
 
     $(".pe-v-nav-sizes").append("<li>" + html + "</li>");
@@ -296,57 +295,57 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
 
     if (imgData[index].rightsWorld === "true") {
       if (imgData[index].rightsStanford === "false" && imgData[index].rightsWorldRule === "") {
-        $.each(sizes, function(i, size) { 
+        $.each(sizes, function(i, size) {
           html = "";
-          html = "<span class=\"pe-" + size + "-img-viewer\" href=\"javascript:;\">" + size + "</span>" + 
-              "<span class=\"pe-v-nav-img-size\"> ("  + getDimensionsForSizeWxH(index, size) + ")</span>" + 
+          html = "<span class=\"pe-" + size + "-img-viewer\" href=\"javascript:;\">" + size + "</span>" +
+              "<span class=\"pe-v-nav-img-size\"> ("  + getDimensionsForSizeWxH(index, size) + ")</span>" +
               "<a href=\"" + getDownloadLink(index, size) + "\" class=\"pe-" + size + "-img-viewer-download pe-download-icon\"></a>";
 
-          if (size !== "thumb") { 
-            $(".pe-v-nav-sizes").append("<li>" + html + "</li>");   
-            cselectJson.push({ 'html': html, 'size': size, 'index': index });   
+          if (size !== "thumb") {
+            $(".pe-v-nav-sizes").append("<li>" + html + "</li>");
+            cselectJson.push({ 'html': html, 'size': size, 'index': index });
           }
         });
-      }  
+      }
     }
-      
+
     if (imgData[index].rightsStanford === "true") {
-      if (imgData[index].rightsStanfordRule !== "no-download") { 
-        $.each(sizes, function(i, size) { 
-          var url = "https://" + $(location).attr('host') + '/auth' +       
-            $(location).attr('pathname').replace(/^\/auth/, '') + 
+      if (imgData[index].rightsStanfordRule !== "no-download") {
+        $.each(sizes, function(i, size) {
+          var url = "https://" + $(location).attr('host') + '/auth' +
+            $(location).attr('pathname').replace(/^\/auth/, '') +
             $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, size);
-          
-          html = "";    
-          html = "<span class=\"pe-" + size + "-img-viewer\" href=\"" + url + "\" class=\"su\">" + size + "</span>" + 
-              "<span class=\"pe-v-nav-img-size\"> (" + getDimensionsForSizeWxH(index, size)  + ")</span>" + 
-              "<a class=\"pe-" + size + "-img-viewer-download pe-download-icon\">" + 
-                "<img src=\"" + peServerURL + "/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
-              "</a>" + 
+
+          html = "";
+          html = "<span class=\"pe-" + size + "-img-viewer\" href=\"" + url + "\" class=\"su\">" + size + "</span>" +
+              "<span class=\"pe-v-nav-img-size\"> (" + getDimensionsForSizeWxH(index, size)  + ")</span>" +
+              "<a class=\"pe-" + size + "-img-viewer-download pe-download-icon\">" +
+                "<img src=\"" + peServerURL + "/images/icon-download.png\" alt=\"\" title=\"\"/>" +
+              "</a>" +
               "<img src=\"" + peServerURL + "/images/icon-stanford-only.png\" class=\"pe-icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>";
 
-          if (size !== "thumb") {   
-            $(".pe-v-nav-sizes").append("<li>" + html + "</li>");      
+          if (size !== "thumb") {
+            $(".pe-v-nav-sizes").append("<li>" + html + "</li>");
             cselectJson.push({ 'html': html, 'size': size, 'index': imgData[index].id  });
-          }  
-        });        
+          }
+        });
       }
-    }  
-      
+    }
+
     if (imgData[index].rightsWorld === "true") {
       li = "<span class=\"pe-zoom-img-viewer\" href=\"javascript:;\" title=\"Zoom View\">zoom</span>";
     } else if (imgData[index].rightsStanford === "true") {
-      var url = "https://" + $(location).attr('host') + '/auth' + $(location).attr('pathname').replace(/^\/auth/, '') + 
-        $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, 'zoom');    
+      var url = "https://" + $(location).attr('host') + '/auth' + $(location).attr('pathname').replace(/^\/auth/, '') +
+        $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, 'zoom');
 
-      li = "<span class=\"pe-zoom-img-viewer su\" href=\"" + url + "\" title=\"Zoom View\">zoom</span>" + 
+      li = "<span class=\"pe-zoom-img-viewer su\" href=\"" + url + "\" title=\"Zoom View\">zoom</span>" +
         "<img src=\"" + peServerURL + "/images/icon-stanford-only.png\" class=\"pe-icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>";
-    }    
+    }
 
-    $(".pe-v-nav-sizes").append("<li><div class=\"pe-v-nav-sizes-links\">" + li + "</div></li></ul>");    
-    cselectJson.push({ 'html': li, 'size': 'zoom', 'index': index  });              
-    
-    updateViewerSizesLinks(index);  
+    $(".pe-v-nav-sizes").append("<li><div class=\"pe-v-nav-sizes-links\">" + li + "</div></li></ul>");
+    cselectJson.push({ 'html': li, 'size': 'zoom', 'index': index  });
+
+    updateViewerSizesLinks(index);
     renderCselect(cselectJson);
   }
 
@@ -374,44 +373,44 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
 
   function renderCselect(cselectJson) {
     $('.pe-dd-cselect').cselect({
-      data: cselectJson, 
+      data: cselectJson,
       width: 220,
       //selectText: 'Select a size',
       selectedIndex: 0,
       onSelected: function(data) {
         loadImage(data.selectedData.index, data.selectedData.size);
-      }      
+      }
     });
   }
 
   /* Parse URL hash params */
   function setURLSuffix() {
     var href = $(location).attr('href');
-    var match; 
+    var match;
     var pageNo = 1;
-    var sequence = 1; 
+    var sequence = 1;
     var size = currentSize;
     var flag = false;
 
     if (/#image/.test(href)) {
-      match = /#image\/([0-9]+(\.[0-9]+)?)\/?(\w+)?/.exec(href);   
+      match = /#image\/([0-9]+(\.[0-9]+)?)\/?(\w+)?/.exec(href);
 
-      if (typeof match[1] !== 'undefined' && match[1].length > 0) { 
+      if (typeof match[1] !== 'undefined' && match[1].length > 0) {
         sequence = match[1];
-      }  
+      }
 
-      if (typeof match[3] !== 'undefined' && match[3].length > 0) { 
+      if (typeof match[3] !== 'undefined' && match[3].length > 0) {
         size = match[3].toLowerCase();
-        
+
         $.each(sizes, function(i, value) {
           if (size == value) { flag = true; }
-        });      
-      
+        });
+
         if (size == 'thumb') { flag = true; }
-      
+
         if (!flag) { size = "zoom"; }
-      }  
-      
+      }
+
       showImg(sequence, size, false);
     }
   }
@@ -426,7 +425,7 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
       ++level;
       longestSideDimension = Math.round(longestSideDimension/2);
     }
-  
+
     return level;
   }
 
@@ -438,21 +437,21 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
 
 
   /* Get dimensions for a given size (thumb, small etc.) */
-  function getDimensionsForSize(imgIndex, size) {  
-    var wxh; 
+  function getDimensionsForSize(imgIndex, size) {
+    var wxh;
     var imgObj = imgData[imgIndex];
     var width  = imgObj.width;
     var height = imgObj.height;
     var levelDiff = imgObj.numLevels - getLevelForSize(size, imgIndex);
-    
+
     // 'thumb': fixed length on longest side, no dependency on JP2 levels
     if (size === 'thumb') {
       return getDimensionsForThumb(imgIndex);
     }
 
     for (i = 0; i <= levelDiff; i++) {
-      width = Math.round(width/2);  
-      height = Math.round(height/2);  
+      width = Math.round(width/2);
+      height = Math.round(height/2);
     }
 
     return {'width': width, 'height': height};
@@ -460,7 +459,7 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
 
   /* Calculate aspect-ratio based width for a given height */
   function getAspectRatioBasedWidth(height, imgIndex) {
-    var imgObj = imgData[imgIndex];     
+    var imgObj = imgData[imgIndex];
     var aspectRatio = parseFloat(imgObj.aspectRatio);
 
     return parseInt(aspectRatio * height, 10);
@@ -468,20 +467,20 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
 
   /* Calculate aspect-ratio based height for a given width */
   function getAspectRatioBasedHeight(width, imgIndex) {
-    var imgObj = imgData[imgIndex]; 
-    var aspectRatio = parseFloat(imgObj.aspectRatio);  
+    var imgObj = imgData[imgIndex];
+    var aspectRatio = parseFloat(imgObj.aspectRatio);
     return parseInt((1 / aspectRatio) * width, 10);
   }
 
   /* Get aspect-based width and height to fit in a given box dimensions */
   function getDimensionsToFitBox(boxWidth, boxHeight, imgIndex) {
     var height = parseInt(boxHeight, 10);
-    var width  = getAspectRatioBasedWidth(height, imgIndex);    
+    var width  = getAspectRatioBasedWidth(height, imgIndex);
 
     if (width > boxWidth) {
       width  = parseInt(boxWidth, 10);
       height = getAspectRatioBasedHeight(width, imgIndex);
-    }  
+    }
 
     return [width, height];
   }
@@ -489,8 +488,8 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
   /* Get image array index for a given image id from JSON image object */
   function getArrayIndex(imgId) {
     $.each(imgData, function(index, imgObj) {
-      if (imgId === imgObj.id) { return i; }        
-    });        
+      if (imgId === imgObj.id) { return i; }
+    });
     return -1;
   }
 
@@ -500,21 +499,21 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
       if (sequence == imgData[i].sequence) {
         return i;
       }
-    }    
+    }
     return -1;
   }
 
   /* Get sequence index for a given image index */
   function getSequenceIndex(index) {
     var sequence = imgData[index].sequence;
-    var groupId  = getGroupId(sequence); 
-    
+    var groupId  = getGroupId(sequence);
+
     for (var i = 0; i < groups.length; i++) {
       if (groupId == groups[i]) {
         return i;
       }
     }
-    
+
     return -1;
   }
 
@@ -537,10 +536,10 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
 
   /* Get group id for a given sequence */
   function getGroupId(sequence) {
-    var groupId;  
+    var groupId;
     var str = sequence.toString().split(/\./);
     groupId = str[0];
-    
+
     return groupId;
   }
 
@@ -548,12 +547,12 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
   function getIndexForFirstImgInSequence(index) {
     for (var i = 0; i < imgData.length; i++) {
       var sequence = imgData[i].sequence;
-    
+
       if (groups[index] == getGroupId(sequence)) {
         return i;
       }
-    }    
-    return -1;  
+    }
+    return -1;
   }
 
 
@@ -570,12 +569,12 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
   function getLevelForSize(size, imgIndex) {
     var imgObj = imgData[imgIndex];
     var level = 0;
-  
-    // thumb has fixed size (refer 'constants.thumbSize')  
+
+    // thumb has fixed size (refer 'constants.thumbSize')
     if (size !== 'thumb') {
       level = parseInt(imgObj.numLevels + sizeLevelMapping[size], 10);
     }
-  
+
     return level;
   }
 
@@ -600,8 +599,8 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
       if (imgData[i].sequence === inputSeq) {
         flag = true;
       }
-    }    
-    
+    }
+
     return flag ? inputSeq : imgData[0].sequence;
   }
 
