@@ -186,6 +186,11 @@ body { margin: 0; padding: 0; }
   margin-top: 5px;
 }
 
+img.pe-img-canvas {
+  max-height: none !important;
+  max-width: none !important;
+}
+
 .pe-download-icon {
   background: transparent url('/images/icon-download.png') left top no-repeat;
   margin-left: 20px;
