@@ -215,7 +215,7 @@ a.active .pe-download-icon, a:visited .pe-download-icon {
 }
 
 .pe-purl-url {
-  background-color: #fafafa;
+  background-color: transparent;
   bottom: 0;
   border-top: 1px dotted #ccc;  display: block;
   padding: 4px 0;
