@@ -319,14 +319,12 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
           html = "";
           html = "<span class=\"pe-" + size + "-img-viewer\" href=\"" + url + "\" class=\"su\">" + size + "</span>" +
               "<span class=\"pe-v-nav-img-size\"> (" + getDimensionsForSizeWxH(index, size)  + ")</span>" +
-              "<a class=\"pe-" + size + "-img-viewer-download pe-download-icon\">" +
-                "<img src=\"" + peServerURL + "/images/icon-download.png\" alt=\"\" title=\"\"/>" +
-              "</a>" +
+              "<a class=\"pe-" + size + "-img-viewer-download pe-download-icon\"></a>" +
               "<img src=\"" + peServerURL + "/images/icon-stanford-only.png\" class=\"pe-icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>";
 
           if (size !== "thumb") {
             $(".pe-v-nav-sizes").append("<li>" + html + "</li>");
-            cselectJson.push({ 'html': html, 'size': size, 'index': imgData[index].id  });
+            cselectJson.push({ 'html': html, 'size': size, 'index': index });
           }
         });
       }
