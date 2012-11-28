@@ -107,7 +107,7 @@ module PurlUtils
     url = deliverable_file.url || ""
 
     if !url.nil? and url.empty?
-      url = STACKS_URL + "/file/druid:" + pid + "/"
+      url = STACKS_URL + "/file/druid:" + pid + "/" + deliverable_file.filename
     end
 
     return url
