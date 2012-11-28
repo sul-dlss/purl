@@ -2,19 +2,19 @@
 <%= render(:partial => "purl/citation_info_dc" ) %>
 <%= render(:partial => "purl/sidebar_navigation" ) %>
 
-<div id="filelist">    
+<div id="filelist">
   <% if (!@purl.embargo_release_date.nil? and @purl.embargo_release_date != '') %>
     <div class="embargo-block">
       Access: Stanford only until <%=@purl.embargo_release_date%>
-    </div>      
-  <% end %>  
+    </div>
+  <% end %>
   <% unless( @purl.deliverable_files.nil? or @purl.deliverable_files.empty?) %>
     <table id="assets">
       <tr>
         <th>File (Download)</th>
         <th>Description</th>
       </tr>
-        <% @purl.deliverable_files.each do |deliverable_file| %>        
+        <% @purl.deliverable_files.each do |deliverable_file| %>
           <tr>
   	      <td class="file">
   	        <div class="file_icon"><%= render(:partial => "purl/fileIcon", :locals => {:fileName => deliverable_file.filename.to_s}) %></div>
@@ -23,11 +23,11 @@
     	          <% if( deliverable_file.size != '') %>
     	 		        (<%=number_to_human_size(deliverable_file.size,:precision => 1)%>)
     	 	        <% end %>
-                
+
                 <% if deliverable_file.rights_stanford.to_s == "true" %>
                   <img src="/images/icon-stanford-only.png" class="icon-stanford-only" alt="Stanford Only" title="Stanford Only">
-                <% end %>              
-        		  </div>          
+                <% end %>
+        		  </div>
   		      </td>
             <td class="description"><%=deliverable_file.description_label%></td>
           </tr>

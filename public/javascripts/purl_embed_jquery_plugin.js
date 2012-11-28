@@ -5,13 +5,21 @@
     'local': 'http://localhost:3000'
   }
 
-  $.fn.embedPurl = function(server, druid, sequence, size) {
-    var serverURL = serverUrls[server];
+  $.fn.embedPurl = function(config) {
+    var serverURL = serverUrls[config.server];
     var $this = $(this);
+
+    if (!isNaN(parseInt(config.width), 10)) {
+      $this.width(config.width);
+    }
+
+    if (!isNaN(parseInt(config.height), 10)) {
+      $this.height(config.height);
+    }
 
     $.ajax({
       type: "GET",
-      url: serverURL + '/' + druid + '/embed-js',
+      url: serverURL + '/' + config.druid + '/embed-js',
       contentType: "text/html; charset=utf-8",
       data: { peContainerWidth: $this.width() , peContainerHeight: $this.height() },
       dataType: "html",
@@ -26,11 +34,11 @@
 
         $.getScript(serverURL + '/javascripts/purl_embed.js', function() {
           $this.html(html);
-          var pe = new purlEmbed(peImgInfo, pePid, peStacksURL, sequence, size);
+          var pe = new purlEmbed(peImgInfo, pePid, peStacksURL, config.sequence, config.size);
         });
       },
       error: function() {
-        $this.html("Error loading images for " + druid);
+        $this.html("Error loading images for " + config.druid);
       }
     });
   };

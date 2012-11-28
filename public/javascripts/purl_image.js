@@ -1,42 +1,42 @@
 var imgInfo;
 
 var sizes = ['small', 'medium', 'large', 'xlarge', 'full'];
-var selectedSize = sizes[0];    
+var selectedSize = sizes[0];
 var resizeTimer;
 var groups = [];
 var urlSuffix = "";
 var gallery = { view: false, pageNo: 1 };
 
-Array.prototype.unique = function() { 
-  var o = {}, i, l = this.length, r = [];    
-  for(i=0; i<l;i+=1) o[this[i]] = this[i];    
+Array.prototype.unique = function() {
+  var o = {}, i, l = this.length, r = [];
+  for(i=0; i<l;i+=1) o[this[i]] = this[i];
   for(i in o) r.push(o[i]); return r;
 };
 
 $(document).ready(function() {
-  
+
   $(window).bind('hashchange', function(){
     setURLSuffix();
   });
 
-  // set toggle and links for clickable item header    
+  // set toggle and links for clickable item header
   $('ol#toc li > a').each(function () {
     var id = $(this).attr('id');
-        
+
     if (id != '') {
       setToggle(id, id);
       setViewerLinks(id);
     }
   });
 
-  // calculate dimensions for each size and display 
+  // calculate dimensions for each size and display
   for (var i = 0; i < imgInfo.length; i++) {
     var id = imgInfo[i]['id'];
     var width = imgInfo[i]['width'];
     var height = imgInfo[i]['height'];
     var sequence = imgInfo[i]['sequence'];
     var groupId, str;
-    
+
     imgInfo[i]['levels'] = calculateLevel(width, height);
 
     imgInfo[i]['thumb']  = getThumbDimensions(id);
@@ -53,12 +53,12 @@ $(document).ready(function() {
   groups = groups.unique();
 
   if (imgInfo.length == 1) {
-    $('#' + imgInfo[0]['id']).click(); 
+    $('#' + imgInfo[0]['id']).click();
   }
 
-  $('#container').height(parseInt($(window).height(), 10) - 10);  
+  $('#container').height(parseInt($(window).height(), 10) - 10);
   $('#contents').height(parseInt($(window).height(), 10) - 80);
-  
+
   $('#pane-toc-metadata').height(parseInt($(window).height(), 10) - 80);
   $('#pane-img-viewer').css('left', parseInt($('#pane-toc-metadata').width(), 10));
   $('#img-viewer-links').width(parseInt($('#pane-toc-metadata').width() - 20, 10));
@@ -68,14 +68,14 @@ $(document).ready(function() {
     resizeTimer = setTimeout(reloadPage, 100);
   });
 
-  $('#icon-list-view').click(function() { 
+  $('#icon-list-view').click(function() {
     $('#icon-list-view').attr('src', '/images/icon-list-view-active.png');
     $('#icon-gallery-view').attr('src', '/images/icon-gallery-view-inactive.png');
     $('ol#toc').show();
     $('div#gallery-content').hide();
   });
 
-  $('#icon-gallery-view').click(function() { 
+  $('#icon-gallery-view').click(function() {
     $('#icon-list-view').attr('src', '/images/icon-list-view-inactive.png');
     $('#icon-gallery-view').attr('src', '/images/icon-gallery-view-active.png');
     $('div#gallery-content').show();
@@ -86,7 +86,7 @@ $(document).ready(function() {
     function() {
       $('#footer-contents').show();
       $('#footer-show-hide').css('background-image', 'url("/images/icon-img-footer-hide.png")');
-    }, 
+    },
     function () {
       $('#footer-contents').hide();
       $('#footer-show-hide').css('background-image', 'url("/images/icon-img-footer-show.png")');
@@ -109,25 +109,25 @@ function setToggle(elemId, imgId) {
       $('a#' + imgId).removeClass('item-header-hide');
       $('#square-img-' + imgId).css('visibility', 'visible');
       $('#data-links-' + imgId).hide();
-      $('#full-img-' + imgId).hide();                    
+      $('#full-img-' + imgId).hide();
     } else {
       $('a#' + imgId).addClass('item-header-hide');
       $('#square-img-' + imgId).css('visibility', 'hidden');
       $('#data-links-' + imgId).show();
-      $('#full-img-' + imgId).fadeIn('fast');      
+      $('#full-img-' + imgId).fadeIn('fast');
     }
   });
 }
 
 
 function setViewerLinks(id) {
-  var len = sizes.length;  
-   
-  for (var i = 0; i < len; i++) {      
+  var len = sizes.length;
+
+  for (var i = 0; i < len; i++) {
     $('#' + sizes[i] + '-' + id).click(function() {
       showImg(this.id, id);
     });
-  }   
+  }
 
   $('#zoom-' + id).click(function() {
     showImg(this.id, id);
@@ -135,8 +135,8 @@ function setViewerLinks(id) {
 }
 
 function changeDownloadFormat(name) {
-  var ext = $('#download-format-' + name).val();    
-      
+  var ext = $('#download-format-' + name).val();
+
   $('#small-download-' + name).attr({
     'href': replaceHrefExt($('#small-download-' + name).attr('href'), ext),
     'title': replaceTitleExt($('#small-download-' + name).attr('title'), ext)
@@ -181,42 +181,42 @@ function showImg(sequence, size, animate) {
 
   var slideWidth = parseInt($('#pane-toc-metadata').width(), 10);
   slideWidth = slideWidth - (2*slideWidth);
-  
+
   $('#pane-toc-metadata').animate({
     'left': slideWidth + 'px'
   }, 500, function() {});
-  
+
   $('#pane-img-viewer').animate({
     'left': 0 + 'px'
   }, duration, function() {
     if (size == 'zoom') {
       loadZpr(id);
     } else {
-      loadImage(id, size);      
+      loadImage(id, size);
     }
   });
-  
+
   selectedSize = size;
   loadImgsInHorizontalNavigation(id, index);
-  loadImgsInVerticalNavigation(id, index); 
+  loadImgsInVerticalNavigation(id, index);
 
   $('#img-viewer-item-label').html('(' +  imgInfo[index]['label'] + ')');
-  
+
   $('#img-viewer-pagination').html((getSequenceIndex(index) + 1) + ' of ' + groups.length);
-  
-  if ($('#img-viewer-prev').length != 0 && $('#img-viewer-next').length != 0) {        
+
+  if ($('#img-viewer-prev').length != 0 && $('#img-viewer-next').length != 0) {
     $('#img-viewer-prev > img').attr('src', '/images/img-view-group-prev-inactive.png');
     $('#img-viewer-next').unbind().css('cursor', 'default');
 
     if ((seqIndex - 1) >= 0) {
       $('#img-viewer-prev').click(function() { prev(seqIndex); }).css('cursor', 'pointer');
       $('#img-viewer-prev > img').attr('src', '/images/img-view-group-prev-active.png');
-    }  
-  
+    }
+
     if ((seqIndex + 1) < groups.length) {
       $('#img-viewer-next').click(function() { next(seqIndex); }).css('cursor', 'pointer');
       $('#img-viewer-next > img').attr('src', '/images/img-view-group-next-active.png');
-    }    
+    }
   }
 }
 
@@ -227,8 +227,8 @@ function loadImage(id, size) {
   if (typeof size === "undefined") {
     size = selectedSize;
   } else {
-    selectedSize = size;  
-  }	
+    selectedSize = size;
+  }
 
   $(location).attr('href', '#image/' + imgInfo[index]['sequence'] + '/' + size);
   //$(location).attr('href', getLocationURL(index, size, location) + '#image/' + imgInfo[index]['sequence'] + '/' + size);
@@ -239,11 +239,11 @@ function loadImage(id, size) {
     return;
   }
 
-  loadImgsInVerticalNavigation(id, index); 
+  loadImgsInVerticalNavigation(id, index);
 
   var url = stacksURL + '/image/' + druid + '/' + id + '_' + size + '.jpg';
   var strDimensions = getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], size);
-  
+
   if (size == 'thumb') {
     strDimensions = getThumbDimensions(id);
   }
@@ -254,9 +254,9 @@ function loadImage(id, size) {
   var imgHeight = dimensions[2];
 
   $('#zpr-frame').hide();
-  $('#img-canvas').show();  
+  $('#img-canvas').show();
 
-  $('#pane-img-viewer').height(viewfinderHeight + 'px');  
+  $('#pane-img-viewer').height(viewfinderHeight + 'px');
 
   $('#img-viewfinder').height((viewfinderHeight - 100) + 'px');
   $('#img-viewfinder').width(($('#pane-img-viewer').width() - 220) + 'px');
@@ -264,12 +264,12 @@ function loadImage(id, size) {
   $('#img-canvas')
   .removeAttr('src')
   .attr({
-    'src': url,    
+    'src': url,
   })
   .css({
-    'height': imgHeight + 'px',       
+    'height': imgHeight + 'px',
     'width': imgWidth + 'px'
-  });            
+  });
 
 }
 
@@ -282,27 +282,27 @@ function loadZpr(id) {
 
   $(location).attr('href', '#image/' + imgInfo[index]['sequence'] + '/zoom');
 
-  $('#pane-img-viewer').height(viewfinderHeight + 'px');  
+  $('#pane-img-viewer').height(viewfinderHeight + 'px');
 
   $('#img-viewfinder').height((viewfinderHeight - 100) + 'px');
   $('#img-viewfinder').width(($('#pane-img-viewer').width() - 220) + 'px');
 
   $('#img-canvas').hide();
   $('#zpr-frame').show();
-  
-  $('#zpr-frame').width(($('#pane-img-viewer').width() - 232) + 'px');  
+
+  $('#zpr-frame').width(($('#pane-img-viewer').width() - 232) + 'px');
   $('#zpr-frame').height((viewfinderHeight - 128) + 'px');
 
   $('#zpr-frame').html('');
-  
-  var z = new zpr('zpr-frame', { 
-    'imageStacksURL': stacksURL + '/image/' + druid + '/' + id, 
-    'width': imgInfo[index]['width'], 
-    'height': imgInfo[index]['height'], 
-    'marqueeImgSize': 50  
-  });  
-  
-  loadImgsInVerticalNavigation(id, index); 
+
+  var z = new zpr('zpr-frame', {
+    'imageStacksURL': stacksURL + '/image/' + druid + '/' + id,
+    'width': imgInfo[index]['width'],
+    'height': imgInfo[index]['height'],
+    'marqueeImgSize': 40
+  });
+
+  loadImgsInVerticalNavigation(id, index);
 }
 
 function updateViewerSizesLinks(id, index) {
@@ -335,17 +335,17 @@ function updateViewerSizesLinks(id, index) {
     'href': stacksURL + '/image/' + druid + '/' + id + '_thumb.jpg?action=download',
     'title': 'Download ' + id + '_thumb.jpg'
   });
-  
+
   $('#small-img-viewer-download').attr({
     'href': stacksURL + '/image/' + druid + '/' + id + '_small.jpg?action=download',
     'title': 'Download ' + id + '_small.jpg'
   });
-  
+
   $('#medium-img-viewer-download').attr({
     'href': stacksURL + '/image/' + druid + '/' + id + '_medium.jpg?action=download',
     'title': 'Download ' + id + '_medium.jpg'
   });
-  
+
   $('#large-img-viewer-download').attr({
     'href': stacksURL + '/image/' + druid + '/' + id + '_large.jpg?action=download',
     'title': 'Download ' + id + '_large.jpg'
@@ -361,7 +361,7 @@ function updateViewerSizesLinks(id, index) {
     'title': 'Download ' + id + '_full.jpg'
   });
 
-  $('#thumb-size-img-viewer').html('(' + getThumbDimensions(imgInfo[index]['id']) + ')' );  
+  $('#thumb-size-img-viewer').html('(' + getThumbDimensions(imgInfo[index]['id']) + ')' );
   $('#small-size-img-viewer').html('(' + getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], 'small') + ')' );
   $('#medium-size-img-viewer').html('(' + getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], 'medium') + ')' );
   $('#large-size-img-viewer').html('(' + getDimensions(imgInfo[index]['width'], imgInfo[index]['height'], imgInfo[index]['levels'], 'large') + ')' );
@@ -373,15 +373,15 @@ function viewTOC() {
   var slideWidth = parseInt($('#pane-toc-metadata').width(), 10);
 
   if (gallery.view) {
-    $(location).attr('href', '#gallery/' + gallery.pageNo);          
-  } else {    
+    $(location).attr('href', '#gallery/' + gallery.pageNo);
+  } else {
     $(location).attr('href', '');
-  } 
+  }
 
   $('#pane-img-viewer').animate({
     'left': slideWidth + 'px'
   }, 400, function() {});
-  
+
   $('#pane-toc-metadata').animate({
     'left': 0 + 'px'
   }, 400, function() {});
@@ -390,12 +390,12 @@ function viewTOC() {
 
 function getDruid(id) {
   var druid = '';
-  
+
   if (/^[a-z]{2}[0-9]{3}[a-z]{2}[0-9]{4}/.test(id)) {
     druid = id.substr(0, 11);
   }
-  
-  return druid;  
+
+  return druid;
 }
 
 function getArrayIndex(id) {
@@ -404,7 +404,7 @@ function getArrayIndex(id) {
       return i;
     }
   }
-  
+
   return -1;
 }
 
@@ -414,29 +414,29 @@ function getArrayIndexUsingSequence(sequence) {
       return i;
     }
   }
-  
+
   return -1;
 }
 
 
 function getSequenceIndex(index) {
   var sequence = imgInfo[index]["sequence"];
-  var groupId = getGroupId(sequence); 
-  
+  var groupId = getGroupId(sequence);
+
   for (var i = 0; i < groups.length; i++) {
     if (groupId == groups[i]) {
       return i;
     }
   }
-  
+
   return -1;
 }
 
 function getGroupId(sequence) {
-  var groupId;  
+  var groupId;
   var str = sequence.toString().split(/\./);
   groupId = str[0];
-  
+
   return groupId;
 }
 
@@ -444,45 +444,45 @@ function getGroupId(sequence) {
 function getIndexForFirstImgInSequence(index) {
   for (var i = 0; i < imgInfo.length; i++) {
     var sequence = imgInfo[i]['sequence'];
-  
+
     if (groups[index] == getGroupId(sequence)) {
       return i;
     }
   }
-  
-  return -1;  
+
+  return -1;
 }
 
 function getPairTree(id) {
   var pairTree = '';
-  
+
   if (/^[a-z]{2}[0-9]{3}[a-z]{2}[0-9]{4}/.test(id)) {
     pairTree = id.substr(0, 2) + '/' + id.substr(2, 3) + '/' + id.substr(5, 2) + '/' + id.substr(7, 4);
-  }  
+  }
 
   return pairTree;
 }
 
 
-function getDimensions(width, height, maxLevels, size) {  
+function getDimensions(width, height, maxLevels, size) {
   var mappingLevels = {
     'small': parseInt(maxLevels, 10) - 3,
-    'medium': parseInt(maxLevels, 10) - 2, 
+    'medium': parseInt(maxLevels, 10) - 2,
     'large': parseInt(maxLevels, 10) - 1,
     'xlarge': parseInt(maxLevels, 10) ,
     'full': parseInt(maxLevels, 10) + 1
   }
-      
+
   var diffLevel = maxLevels - mappingLevels[size];
-  
+
   for (i = 0; i <= diffLevel; i++) {
-    width = Math.round(width/2);  
-    height = Math.round(height/2);  
+    width = Math.round(width/2);
+    height = Math.round(height/2);
   }
-  
+
   var dimension = width + ' x ' + height;
 
-  return dimension;  
+  return dimension;
 }
 
 
@@ -510,7 +510,7 @@ function next(seqIndex) {
 function calculateLevel(width, height) {
   var level = 0;
   var maxDimension = width > height ? width : height;
-  
+
   while (maxDimension >= 96) {
     ++level;
     maxDimension = Math.round(maxDimension/2);
@@ -522,35 +522,35 @@ function calculateLevel(width, height) {
 
 function showGalleryImg(currentImgId, totalImgCount, pid, seqId, direction) {
   var nextImgId = parseInt(currentImgId, 10) + direction;
-  
+
   if (nextImgId < 1) {
-    nextImgId = parseInt(totalImgCount, 10);  
+    nextImgId = parseInt(totalImgCount, 10);
   }
-  
+
   if (nextImgId > parseInt(totalImgCount, 10)) {
     nextImgId = 1;
   }
-  
+
   $('#' + pid + '_seq_' + seqId + '_img_' + currentImgId).hide();
   $('#' + pid + '_seq_' + seqId + '_img_' + nextImgId).show();
-  
+
   return;
 }
 
 function loadImgsInHorizontalNavigation(id, index) {
-  var druid = pid; 
+  var druid = pid;
   var seqIndex = getSequenceIndex(index);
   var i, index, thumbDimensions;
-  
-  if (seqIndex <= 0) { 
+
+  if (seqIndex <= 0) {
     $('#viewer-h-nav-img-01')
       .attr('src', '/images/img-view-first-ptr.png')
       .css({'cursor': 'auto', 'width': 65, 'height': 40})
-      .click(function() {});    
+      .click(function() {});
   } else {
     index = getIndexForFirstImgInSequence(seqIndex-1);
     thumbDimensions = getDimensionsToFitBox(65, 40, imgInfo[index]['id']);
-    
+
     $('#viewer-h-nav-img-01')
       .attr('src', stacksURL + '/image/' + druid + '/' + imgInfo[index]["id"] + '_thumb')
       .css({'cursor': 'pointer', 'width': thumbDimensions[0], 'height': thumbDimensions[1]})
@@ -560,142 +560,142 @@ function loadImgsInHorizontalNavigation(id, index) {
   index = getIndexForFirstImgInSequence(seqIndex);
   thumbDimensions = getDimensionsToFitBox(65, 40, imgInfo[index]['id']);
   $('#viewer-h-nav-img-02')
-    .attr('src', stacksURL + '/image/' + druid + '/' + imgInfo[index]['id'] + '_thumb')  
+    .attr('src', stacksURL + '/image/' + druid + '/' + imgInfo[index]['id'] + '_thumb')
     .css({'width': thumbDimensions[0], 'height': thumbDimensions[1] });
-  
+
   if ((seqIndex + 1) == groups.length) {
     $('#viewer-h-nav-img-03')
-      .attr('src', '/images/img-view-last-ptr.png')    
+      .attr('src', '/images/img-view-last-ptr.png')
       .css({'cursor': 'auto', 'width': 65, 'height': 40})
-      .click(function() {});    
+      .click(function() {});
   } else {
     index = getIndexForFirstImgInSequence(seqIndex+1);
-    thumbDimensions = getDimensionsToFitBox(65, 40, imgInfo[index]['id']);  
+    thumbDimensions = getDimensionsToFitBox(65, 40, imgInfo[index]['id']);
 
     $('#viewer-h-nav-img-03')
-      .attr('src', stacksURL + '/image/' + druid + '/' + imgInfo[index]['id'] + '_thumb')      
+      .attr('src', stacksURL + '/image/' + druid + '/' + imgInfo[index]['id'] + '_thumb')
       .css({ 'cursor': 'pointer', 'width': thumbDimensions[0], 'height': thumbDimensions[1] })
       .click(function() { next(seqIndex); });
   }
-  
+
 }
 
 function loadImgsInVerticalNavigation(id, index) {
   var druid = pid;
-  var seqIndex = getSequenceIndex(index);  
+  var seqIndex = getSequenceIndex(index);
   var url, height;
-  var html = "";      
-  
+  var html = "";
+
   $('#viewer-v-nav').html('');
-  
+
   for (var i = 0; i < imgInfo.length; i++) {
     if (groups[seqIndex] == getGroupId(imgInfo[i]['sequence'])) {
       url = stacksURL + '/image/' + druid + '/' + imgInfo[i]['id'] + '_thumb';
       height = getAspectRatioBasedHeight(100, imgInfo[i]['id']);
-    
+
       if (index == i) {
-        $('#viewer-v-nav').append("<li id=\"viewer-v-nav-selected-img\"><img src=\"" + url  + "\" style=\"width: 100px; height:" + height + "px\"></li>");      
+        $('#viewer-v-nav').append("<li id=\"viewer-v-nav-selected-img\"><img src=\"" + url  + "\" style=\"width: 100px; height:" + height + "px\"></li>");
       } else {
-        $('#viewer-v-nav').append("<li class=\"viewer-v-nav-img\"><a href=\"javascript:loadImage('" + imgInfo[i]['id'] + "')\"><img src=\"" + url + "\""  + " \" style=\"width: 100px; height:" + height + "px\"></a></li>");      
+        $('#viewer-v-nav').append("<li class=\"viewer-v-nav-img\"><a href=\"javascript:loadImage('" + imgInfo[i]['id'] + "')\"><img src=\"" + url + "\""  + " \" style=\"width: 100px; height:" + height + "px\"></a></li>");
       }
-    }  
+    }
   }
-  
+
   $('#viewer-v-nav-selected-img').append($('<ul id=\"viewer-sizes-nav\">'));
-  
+
   html = "";
-  html = "<li>" + 
-    "<div class=\"viewer-sizes-links\">" + 
-      "<a id=\"thumb-img-viewer\" href=\"javascript:;\"><span class=\"obscure\">View the</span> thumb <span class=\"obscure\"> size of image </span><span class=\"obscure\" id=\"thumb-img-viewer-id\"></span></a>" +  
-      "<span id=\"thumb-size-img-viewer\" class=\"img-size\"></span>" + 
-    "</div>" + 
-    "<div class=\"viewer-sizes-download\"> " + 
-      "<a id=\"thumb-img-viewer-download\">" + 
-        "<span class=\"obscure\">Download the thumb size of image </span>" + 
-        "<span class=\"obscure\" id=\"thumb-img-viewer-download-id\"></span>" + 
-        "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
-      "</a>" + 
-    "</div>" + 
-  "</li>";    
+  html = "<li>" +
+    "<div class=\"viewer-sizes-links\">" +
+      "<a id=\"thumb-img-viewer\" href=\"javascript:;\"><span class=\"obscure\">View the</span> thumb <span class=\"obscure\"> size of image </span><span class=\"obscure\" id=\"thumb-img-viewer-id\"></span></a>" +
+      "<span id=\"thumb-size-img-viewer\" class=\"img-size\"></span>" +
+    "</div>" +
+    "<div class=\"viewer-sizes-download\"> " +
+      "<a id=\"thumb-img-viewer-download\">" +
+        "<span class=\"obscure\">Download the thumb size of image </span>" +
+        "<span class=\"obscure\" id=\"thumb-img-viewer-download-id\"></span>" +
+        "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" +
+      "</a>" +
+    "</div>" +
+  "</li>";
   $("#viewer-sizes-nav").append(html);
 
   if (imgInfo[index]['rightsWorld'] === "true") {
     if (imgInfo[index]['rightsStanford'] === "false" && imgInfo[index]['rightsWorldRule'] === "") {
-      $.each(sizes, function(i, size) { 
+      $.each(sizes, function(i, size) {
         html = "";
-        html = "<li>" + 
-          "<div class=\"viewer-sizes-links\">" + 
-            "<a id=\"" + size + "-img-viewer\" href=\"javascript:;\"><span class=\"obscure\">View the</span> " + size + " <span class=\"obscure\"> size of image </span><span class=\"obscure\" id=\"" + size + "-img-viewer-id\"></span></a>" +  
-            "<span id=\"" + size + "-size-img-viewer\" class=\"img-size\"></span>" + 
-          "</div>" + 
-          "<div class=\"viewer-sizes-download\"> " + 
-            "<a id=\"" + size + "-img-viewer-download\">" + 
-              "<span class=\"obscure\">Download the " + size + " size of image </span>" + 
-              "<span class=\"obscure\" id=\"" + size +  "-img-viewer-download-id\"></span>" + 
-              "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
-            "</a>" + 
-          "</div>" + 
-        "</li>";    
-        
-        $("#viewer-sizes-nav").append(html);      
+        html = "<li>" +
+          "<div class=\"viewer-sizes-links\">" +
+            "<a id=\"" + size + "-img-viewer\" href=\"javascript:;\"><span class=\"obscure\">View the</span> " + size + " <span class=\"obscure\"> size of image </span><span class=\"obscure\" id=\"" + size + "-img-viewer-id\"></span></a>" +
+            "<span id=\"" + size + "-size-img-viewer\" class=\"img-size\"></span>" +
+          "</div>" +
+          "<div class=\"viewer-sizes-download\"> " +
+            "<a id=\"" + size + "-img-viewer-download\">" +
+              "<span class=\"obscure\">Download the " + size + " size of image </span>" +
+              "<span class=\"obscure\" id=\"" + size +  "-img-viewer-download-id\"></span>" +
+              "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" +
+            "</a>" +
+          "</div>" +
+        "</li>";
+
+        $("#viewer-sizes-nav").append(html);
       });
-    }  
-  }
-    
-  if (imgInfo[index]['rightsStanford'] === "true") {
-    if (imgInfo[index]['rightsStanfordRule'] !== "no-download") { 
-      $.each(sizes, function(i, size) { 
-        var url = "https://" + $(location).attr('host') + '/auth' +       
-          $(location).attr('pathname').replace(/^\/auth/, '') + 
-          $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, size);
-      
-        html = "";    
-        html = "<li>" + 
-          "<div class=\"viewer-sizes-links\">" + 
-            "<a id=\"" + size + "-img-viewer\" href=\"" + url + "\" class=\"su\"><span class=\"obscure\">View the</span> " + size + " <span class=\"obscure\"> size of image </span><span class=\"obscure\" id=\"" + size + "-img-viewer-id\"></span></a>" +  
-            "<span id=\"" + size + "-size-img-viewer\" class=\"img-size\"></span>" + 
-          "</div>" + 
-          "<div class=\"viewer-sizes-download\"> " + 
-            "<a id=\"" + size + "-img-viewer-download\">" + 
-              "<span class=\"obscure\">Download the " + size + " size of image </span>" + 
-              "<span class=\"obscure\" id=\"" + size +  "-img-viewer-download-id\"></span>" + 
-              "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" + 
-            "</a>" + 
-            "<img src=\"/images/icon-stanford-only.png\" class=\"icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>" + 
-          "</div>" + 
-        "</li>";    
-        $("#viewer-sizes-nav").append(html);      
-      });        
     }
-  }  
-    
+  }
+
+  if (imgInfo[index]['rightsStanford'] === "true") {
+    if (imgInfo[index]['rightsStanfordRule'] !== "no-download") {
+      $.each(sizes, function(i, size) {
+        var url = "https://" + $(location).attr('host') + '/auth' +
+          $(location).attr('pathname').replace(/^\/auth/, '') +
+          $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, size);
+
+        html = "";
+        html = "<li>" +
+          "<div class=\"viewer-sizes-links\">" +
+            "<a id=\"" + size + "-img-viewer\" href=\"" + url + "\" class=\"su\"><span class=\"obscure\">View the</span> " + size + " <span class=\"obscure\"> size of image </span><span class=\"obscure\" id=\"" + size + "-img-viewer-id\"></span></a>" +
+            "<span id=\"" + size + "-size-img-viewer\" class=\"img-size\"></span>" +
+          "</div>" +
+          "<div class=\"viewer-sizes-download\"> " +
+            "<a id=\"" + size + "-img-viewer-download\">" +
+              "<span class=\"obscure\">Download the " + size + " size of image </span>" +
+              "<span class=\"obscure\" id=\"" + size +  "-img-viewer-download-id\"></span>" +
+              "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" +
+            "</a>" +
+            "<img src=\"/images/icon-stanford-only.png\" class=\"icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>" +
+          "</div>" +
+        "</li>";
+        $("#viewer-sizes-nav").append(html);
+      });
+    }
+  }
+
   if (imgInfo[index]['rightsWorld'] === "true") {
-    $("#viewer-sizes-nav").append("<li style=\"float: left;\"><a id=\"zoom-img-viewer\" href=\"javascript:;\" title=\"Zoom View\">zoom<span class=\"obscure\"> of image 1</span></a></li>");                  
+    $("#viewer-sizes-nav").append("<li style=\"float: left;\"><a id=\"zoom-img-viewer\" href=\"javascript:;\" title=\"Zoom View\">zoom<span class=\"obscure\"> of image 1</span></a></li>");
   } else if (imgInfo[index]['rightsStanford'] === "true") {
-    var url = "https://" + $(location).attr('host') + '/auth' + $(location).attr('pathname').replace(/^\/auth/, '') + $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, 'zoom');    
-    $("#viewer-sizes-nav").append("<li style=\"float: left;\"><a id=\"zoom-img-viewer\" href=\"" + url + "\" class=\"su\" title=\"Zoom View\">zoom<span class=\"obscure\"> of image 1</span></a><img src=\"/images/icon-stanford-only.png\" class=\"icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/></li>");                  
-  }    
-    
+    var url = "https://" + $(location).attr('host') + '/auth' + $(location).attr('pathname').replace(/^\/auth/, '') + $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, 'zoom');
+    $("#viewer-sizes-nav").append("<li style=\"float: left;\"><a id=\"zoom-img-viewer\" href=\"" + url + "\" class=\"su\" title=\"Zoom View\">zoom<span class=\"obscure\"> of image 1</span></a><img src=\"/images/icon-stanford-only.png\" class=\"icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/></li>");
+  }
+
   $("#viewer-sizes-nav").append("</ul>");
-  
-  updateViewerSizesLinks(id, index);  
+
+  updateViewerSizesLinks(id, index);
 }
 
-function setupGalleryPageNavigation(pageNo) {  
+function setupGalleryPageNavigation(pageNo) {
   var druid = pid;
-  var offset = 3; 
+  var offset = 3;
   var elemId, imgId, thumbDimensions;
   var totalPages = $('.gallery').length;
-  var startingPageNo = 1, endingPageNo = totalPages;  
+  var startingPageNo = 1, endingPageNo = totalPages;
 
-  $('.gallery').hide();      
+  $('.gallery').hide();
   $('#gallery-page-items-' + pageNo).show();
 
-  $('img[id^=img-src-]').each(function() { 
+  $('img[id^=img-src-]').each(function() {
     $(this).removeAttr('src');
   });
 
-  $('#gallery-page-items-' + pageNo + " img[id^=img-src-]").each(function() { 
+  $('#gallery-page-items-' + pageNo + " img[id^=img-src-]").each(function() {
     elemId = this.id;
     imgId = elemId.replace(/^img-src-/, '');
     thumbDimensions = getDimensionsToFitBox(240, 240, imgId);
@@ -706,7 +706,7 @@ function setupGalleryPageNavigation(pageNo) {
   });
 
   if (totalPages == 1) { return; }
-    
+
   if (pageNo > offset) { startingPageNo = pageNo - offset; }
   if ((pageNo + offset) > totalPages) { startingPageNo = totalPages - (2 * offset); }
 
@@ -722,39 +722,39 @@ function setupGalleryPageNavigation(pageNo) {
   if (startingPageNo != 1) {
     $('#gallery-pagination').append(' ... ');
   }
-  
+
   for (i = startingPageNo; i <= endingPageNo; i++) {
     if (i == pageNo) {
-      $('#gallery-pagination').append("<a class=\"gallery-page-nav-link gallery-page-nav-active\" id=\"gallery-page-nav-" + i + "\" href=\"javascript:;\">" + i + "</a>");     
+      $('#gallery-pagination').append("<a class=\"gallery-page-nav-link gallery-page-nav-active\" id=\"gallery-page-nav-" + i + "\" href=\"javascript:;\">" + i + "</a>");
     } else {
-      $('#gallery-pagination').append("<a class=\"gallery-page-nav-link\" id=\"gallery-page-nav-" + i + "\" href=\"javascript:;\">" + i + "</a>");         
+      $('#gallery-pagination').append("<a class=\"gallery-page-nav-link\" id=\"gallery-page-nav-" + i + "\" href=\"javascript:;\">" + i + "</a>");
     }
   }
 
   if (endingPageNo != totalPages) {
     $('#gallery-pagination').append(' ... ');
-  }    
-  
+  }
+
   $('.gallery-page-nav-link').each(function(){
     var galleryPageNo = this.id;
     galleryPageNo = galleryPageNo.replace(/^gallery-page-nav-/, '');
-    
-    $('#gallery-page-nav-' + galleryPageNo).click(function() {  
-      $(location).attr('href', '#gallery/' + galleryPageNo);          
-      setupGalleryPageNavigation(parseInt(galleryPageNo, 10));  
+
+    $('#gallery-page-nav-' + galleryPageNo).click(function() {
+      $(location).attr('href', '#gallery/' + galleryPageNo);
+      setupGalleryPageNavigation(parseInt(galleryPageNo, 10));
       gallery.view = true;
-      gallery.pageNo = galleryPageNo; 
-    });       
-  });  
+      gallery.pageNo = galleryPageNo;
+    });
+  });
 
   $('#viewer-return-to-label').html('Gallery');
 }
 
 function setURLSuffix() {
   var href = $(location).attr('href');
-  var match; 
+  var match;
   var pageNo = 1;
-  var sequence = 1; 
+  var sequence = 1;
   var size = "zoom";
   var flag = false;
 
@@ -765,24 +765,24 @@ function setURLSuffix() {
   }
 
   if (/#image/.test(href)) {
-    match = /#image\/([0-9]+(\.[0-9]+)?)\/?(\w+)?/.exec(href);   
+    match = /#image\/([0-9]+(\.[0-9]+)?)\/?(\w+)?/.exec(href);
 
-    if (typeof match[1] !== 'undefined' && match[1].length > 0) { 
+    if (typeof match[1] !== 'undefined' && match[1].length > 0) {
       sequence = match[1];
-    }  
+    }
 
-    if (typeof match[3] !== 'undefined' && match[3].length > 0) { 
+    if (typeof match[3] !== 'undefined' && match[3].length > 0) {
       size = match[3].toLowerCase();
-      
+
       $.each(sizes, function(i, value) {
         if (size == value) { flag = true; }
-      });      
-    
+      });
+
       if (size == 'thumb') { flag = true; }
-    
+
       if (!flag) { size = "zoom"; }
-    }  
-    
+    }
+
     showImg(sequence, size, false);
   }
 }
@@ -790,15 +790,15 @@ function setURLSuffix() {
 function validateGalleryPageNo(pageNo) {
   var totalPages = $('.gallery').length;
   pageNo = parseInt(pageNo, 10);
-  
-  if (pageNo <= 0) { 
-    pageNo = 1; 
+
+  if (pageNo <= 0) {
+    pageNo = 1;
   }
-  
+
   if (pageNo > totalPages) {
     pageNo = totalPages;
   }
-  
+
   return pageNo;
 }
 
@@ -809,8 +809,8 @@ function getAspectRatioBasedHeight(width, imgId) {
   var height;
 
   height = parseInt((fullHeight/fullWidth)*width, 10);
-  
-  return height;  
+
+  return height;
 }
 
 function getAspectRatioBasedWidth(height, imgId) {
@@ -820,8 +820,8 @@ function getAspectRatioBasedWidth(height, imgId) {
   var width;
 
   width = parseInt((fullWidth/fullHeight)*height, 10);
-  
-  return width;  
+
+  return width;
 }
 
 function getDimensionsToFitBox(boxWidth, boxHeight, imgId) {
@@ -834,7 +834,7 @@ function getDimensionsToFitBox(boxWidth, boxHeight, imgId) {
   if (width > boxWidth) {
     width  = boxWidth;
     height = getAspectRatioBasedHeight(width, imgId);
-  }  
+  }
 
   return [width, height];
 }
@@ -857,16 +857,16 @@ function getLocationURL(index, size, location) {
   if (size === "thumb") {
   	addAuthString = false;
   }
-	
-  // add '/auth' string  
+
+  // add '/auth' string
   if (addAuthString && !hasAuthString) {
-	  currentURL = $(location).attr('origin') + '/auth' + $(location).attr('pathname'); 
+	  currentURL = $(location).attr('origin') + '/auth' + $(location).attr('pathname');
 	}
-	// remove '/auth' string  
-	else if (!addAuthString && hasAuthString) { 
+	// remove '/auth' string
+	else if (!addAuthString && hasAuthString) {
 		//currentURL = currentURL.replace(/auth\//, '');
-		currentURL = $(location).attr('origin') + $(location).attr('pathname').replace(/auth\//, ''); 
+		currentURL = $(location).attr('origin') + $(location).attr('pathname').replace(/auth\//, '');
 	}
-	
+
 	return currentURL;
 }
