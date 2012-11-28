@@ -1,4 +1,4 @@
-(function( $ ){
+(function($) {
   var serverUrls = {
     'test': 'http://purl-test.stanford.edu',
     'prod': 'http://purl-prod.stanford.edu',

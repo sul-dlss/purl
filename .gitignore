@@ -6,5 +6,5 @@ config/certs
 db/*.sqlite3
 log/*
 public/.htaccess
-public/bf973rp9392-embed.html
+public/*-embed.html
 tmp/
