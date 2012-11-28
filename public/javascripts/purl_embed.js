@@ -86,9 +86,9 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
       containerHeight = parseInt(peContainerHeight, 10);
     }
 
-    // $('.pe-container')
-      // .width(containerWidth - 20)
-      // .height(containerHeight - 20);
+    $('.pe-container')
+      .width(containerWidth)
+      .height(containerHeight);
   }
 
   /* show image for a given sequence and size */
