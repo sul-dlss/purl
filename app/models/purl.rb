@@ -123,9 +123,11 @@ class Purl
     # File data
     @deliverable_files = Array.new
 
+    # collect all files inside a resource
     doc.root.xpath('contentMetadata/resource').collect do |resource_xml|
-        resource = Resource.new
       resource_xml.xpath('file').collect do |file|
+
+        resource = Resource.new
 
         if is_file_ready(file)
           resource.mimetype = file['mimetype']
@@ -149,7 +151,6 @@ class Purl
           resource.imagesvc = file.at_xpath('location[@type="imagesvc"]/text()').to_s
           resource.url      = file.at_xpath('location[@type="url"]/text()').to_s
         end
-      end
 
         if !resource_xml.at_xpath('attr[@name="label"]/text()').nil?
           resource.description_label = resource_xml.at_xpath('attr[@name="label"]/text()').to_s
@@ -158,6 +159,25 @@ class Purl
         end
 
         resource.sequence = resource_xml['sequence'].to_s || 0
+
+        # if the resource has a deliverable file or at least one sub_resource, add it to the array
+        if !resource.nil?
+          if resource.type != 'object'
+            @deliverable_files.push(resource)
+          else
+            @downloadable_files.push(resource)
+          end
+        end
+
+      end
+
+    end
+
+
+    # collect all resources and files inside a resource
+    doc.root.xpath('contentMetadata/resource').collect do |resource_xml|
+      resource = Resource.new
+      resource.sequence = resource_xml['sequence'].to_s || 0
 
       resource.sub_resources = resource_xml.xpath('resource').collect do |sub_resource_xml|
         sub_file = sub_resource_xml.at_xpath('file')
@@ -198,7 +218,7 @@ class Purl
       end
 
       # if the resource has a deliverable file or at least one sub_resource, add it to the array
-      if !resource.nil? or resource.sub_resources.length > 0
+      if (!resource.nil? && !resource.filename.nil?) || resource.sub_resources.length > 0
         if resource.type != 'object'
           @deliverable_files.push(resource)
         else
@@ -308,7 +328,7 @@ class Purl
     self.extract_metadata
 
     @deliverable_files.collect do |file|
-      if file.mimetype == 'image/jp2' && file.height > 0 && file.width > 0
+      if file.mimetype == 'image/jp2' && file.height > 0 && file.width > 0 && (file.rights_stanford || file.rights_world)
         page = {
           :height => file.height,
           :width => file.width,

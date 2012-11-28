@@ -9,11 +9,11 @@ module Dor
     def Connection.get(full_url)
       Connection.connect(full_url, :get, nil, nil)
     end
-    
+
     def Connection.post(full_url, body, content_type = 'application/xml')
       Connection.connect(full_url, :post, body, content_type)
     end
-    
+
     def Connection.put(full_url, body, content_type = 'application/xml')
       Connection.connect(full_url, :put, body, content_type)
     end
@@ -34,7 +34,7 @@ module Dor
       end
       https
     end
-    
+
     def Connection.connect(full_url, method, body, content_type)
       url = URI.parse(full_url)
       case method

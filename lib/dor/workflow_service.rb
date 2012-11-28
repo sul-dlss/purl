@@ -1,4 +1,3 @@
-
 require 'net/http'
 require 'uri'
 require 'cgi'
@@ -15,7 +14,7 @@ module Dor
   # create workflow
   def WorkflowService.create_workflow(druid)
     full_uri = ''
-    full_uri << DOR_URI << '/objects/' << druid << '/workflows/etdSubmitWF'   
+    full_uri << DOR_URI << '/objects/' << druid << '/workflows/etdSubmitWF'
     res = Dor::Connection.put(full_uri, XML)
     case res
       when Net::HTTPSuccess
@@ -27,7 +26,7 @@ module Dor
       puts "Unable to create workflow\n" << e.to_s
     return false
   end
-  
+
   # update workflow
   def WorkflowService.update_workflow_status(druid, workflow, process, status)
     uri = ''
@@ -37,6 +36,6 @@ module Dor
     process_xml << '/>'
     Dor::Connection.put(uri, process_xml) {|response| true}
   end
-  
+
   end
 end
