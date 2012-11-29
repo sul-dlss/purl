@@ -1,4 +1,4 @@
-<% purl_url = request.scheme + "://" + request.host_with_port %>
+<% purl_url = request.scheme + "://" + request.host_with_port + "/" + @purl.pid %>
 
 <div class="pe-img-viewer">
   <% if @purl.deliverable_files.length > 1 %>
@@ -23,7 +23,7 @@
     </div>
   </div>
   <div class="pe-purl-url">
-    <a href="<%= purl_url %>" target="_blank"><%= purl_url + "/" + @purl.pid %></a>
+    <a href="<%= purl_url %>" target="_blank"><%= purl_url %></a>
   </div>
 
 </div>
