@@ -101,7 +101,6 @@ module PurlHelper
         end
 
         desc = desc.gsub(/(\\n|&amp;#10;|&#10;)/, '<br/>')
-
         html += "<p><span class=\"desc-content\">" + desc + "</span></p>"
       end
 
@@ -145,6 +144,25 @@ module PurlHelper
     link
   end
 
+
+  # print 'dc:relation type="url"' value
+  def print_relation_url(label = '', separator = ' ')
+    html = ''
+
+    if not(@purl.nil? or @purl.relation_url.nil? or @purl.relation_url.empty?)
+      html = "<dt>" + label + ":</dt><dd>"
+
+      @purl.relation_url.each do |item|
+        html += "<a href=\"" + item['url'] + "\">" + item['label'] + "</a>" + separator
+      end
+
+      html += "</dd>"
+    end
+
+    html
+  end
+
+
   # get download links
   def get_download_links
     links = []
@@ -164,7 +182,6 @@ module PurlHelper
         end
 
         link += "&nbsp; <img src=\"/images/icon-download.png\">"
-
         links.push(link)
       end
     end

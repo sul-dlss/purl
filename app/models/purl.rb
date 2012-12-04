@@ -19,8 +19,12 @@ class Purl
   attr_accessor :mods_xml
   attr_accessor :flipbook_json
 
-  attr_deferred :titles, :creators, :publisher, :source, :date, :description, :description_preferred_citation, :description_contact, :description_rel_publication, :contributors, :relations, :identifiers, :repository, :collection, :location # dc
-  attr_deferred :degreeconfyr, :cclicense, :cclicensetype, :cclicense_symbol, :odc_license, :odc_type       # properties
+  # properties
+  attr_deferred :titles, :creators, :publisher, :source, :date, :description
+  attr_deferred :description_preferred_citation, :description_contact, :description_rel_publication
+  attr_deferred :contributors, :relations, :identifiers, :repository, :collection, :location, :relation_url
+
+  attr_deferred :degreeconfyr, :cclicense, :cclicensetype, :cclicense_symbol, :odc_license, :odc_type
   attr_deferred :catalog_key                                                                     # identity
   attr_deferred :read_group, :embargo_release_date, :copyright_stmt, :use_and_reproduction_stmt  # rights
   attr_deferred :deliverable_files, :downloadable_files, :type                                   # content
@@ -90,6 +94,7 @@ class Purl
       @description_preferred_citation = Array.new
       @description_contact = Array.new
       @description_rel_publication = Array.new
+      @relation_url = Array.new
 
       dc.xpath('dc:title/text()|dcterms:title/text()', NAMESPACES).collect { |t| @titles.push(t) } # title
       dc.xpath('dc:creator/text()|dcterms:creator/text()', NAMESPACES).collect { |c| @creators.push(c.to_s) } # creators
@@ -101,6 +106,13 @@ class Purl
       dc.xpath('dc:description[@type="preferred citation"]/text()', NAMESPACES).collect { |d| @description_preferred_citation.push(d.to_s) } # description: preferred citation
       dc.xpath('dc:description[@type="citation/reference"]/text()', NAMESPACES).collect { |d| @description_rel_publication.push(d.to_s) } # description: citation/reference
       dc.xpath('dc:description[@type="contact"]/text()', NAMESPACES).collect { |d| @description_contact.push(d.to_s) } # description: contact
+
+      # relation: url
+      dc.xpath('dc:relation[@type="url"]/@href', NAMESPACES).collect { |url|
+        label = dc.xpath('dc:relation[@type="url" and @href="' + url + '"]/text()', NAMESPACES) || ''
+        if label.empty? then label = url end
+        @relation_url.push({ 'label' => label.to_s, 'url' => url.to_s })
+      }
 
       @contributors = dc.xpath('dc:contributor/text()|dcterms:contributor/text()', NAMESPACES).collect { |t| t.to_s + '<br/>' }
       @source       = dc.at_xpath('dc:source/text()', NAMESPACES).to_s
