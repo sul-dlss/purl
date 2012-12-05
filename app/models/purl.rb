@@ -265,7 +265,15 @@ class Purl
       end
 
       @odc_license = rights.at_xpath('use/machine[@type="opendatacommons"]/text()').to_s
-      @odc_type = rights.at_xpath('use/human[@type="opendatacommons"]/text()').to_s
+
+      if (@odc_license.nil? || @odc_license.empty?)
+        @odc_license = rights.at_xpath('use/machine[@type="openDataCommons"]/text()').to_s
+      end
+
+      if (@odc_type.nil? || @odc_type.empty?)
+        @odc_type = rights.at_xpath('use/human[@type="openDataCommons"]/text()').to_s
+      end
+
     end
 
     # Properties
