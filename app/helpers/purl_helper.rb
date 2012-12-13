@@ -100,7 +100,7 @@ module PurlHelper
           desc = add_links_to_URIs(desc)
         end
 
-        desc = desc.gsub(/(\\n|&amp;#10;|&#10;)/, '<br/>')
+        desc = desc.gsub(/(\n|\\n|&amp;#10;|&#10;|&#xA;)/, '<br/>')
         html += "<p><span class=\"desc-content\">" + desc + "</span></p>"
       end
 
@@ -229,5 +229,18 @@ module PurlHelper
     text
   end
 
+
+  # get first deliverable image file
+  def get_first_deliverable_image_file
+    @purl.deliverable_files.each do |deliverable_file|
+      Rails.logger.info(deliverable_file.filename.to_s)
+
+      if deliverable_file.mimetype == "image/jp2"
+        return deliverable_file
+      end
+    end
+
+    return nil
+  end
 
 end

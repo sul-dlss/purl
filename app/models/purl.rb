@@ -348,7 +348,7 @@ class Purl
     self.extract_metadata
 
     @deliverable_files.collect do |file|
-      if file.mimetype == 'image/jp2' && file.height > 0 && file.width > 0 && (file.rights_stanford || file.rights_world)
+      if file.mimetype == 'image/jp2' && (file.type == 'image' || file.type == 'page') && file.height > 0 && file.width > 0 && (file.rights_stanford || file.rights_world)
         page = {
           :height => file.height,
           :width => file.width,

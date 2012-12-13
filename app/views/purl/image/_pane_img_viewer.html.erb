@@ -1,25 +1,25 @@
 <div id="pane-img-viewer">
   <div id="img-viewer-links">
-    <div style="float: left; padding-top: 30px;">                  
-      <a class="viewer-nav-links" href="javascript:viewTOC();">&larr; Return to <span id="viewer-return-to-label">TOC</span></a>      
+    <div style="float: left; padding-top: 30px;">
+      <a class="viewer-nav-links" href="javascript:viewTOC();">&larr; Return to <span id="viewer-return-to-label">Gallery</span></a>
     </div>
 		<% if @purl.deliverable_files.length > 1 %>
 	    <div class="img-viewer-nav">
-	      <a id="img-viewer-prev"><img src="/images/img-view-group-prev-inactive.png"></a>  
-	      <img id="viewer-h-nav-img-01" class="viewer-h-nav-img" src=""> 
+	      <a id="img-viewer-prev"><img src="/images/img-view-group-prev-inactive.png"></a>
+	      <img id="viewer-h-nav-img-01" class="viewer-h-nav-img" src="">
 	      <div id="viewer-nav-selected-tab">
-	        <img id="viewer-h-nav-img-02" class="viewer-h-nav-img viewer-selected-img" src=""> 
+	        <img id="viewer-h-nav-img-02" class="viewer-h-nav-img viewer-selected-img" src="">
 	        <br/>
-		      <span id="img-viewer-pagination"></span>	      
+		      <span id="img-viewer-pagination"></span>
 	      </div>
-	      <img id="viewer-h-nav-img-03" class="viewer-h-nav-img" src=""> 
+	      <img id="viewer-h-nav-img-03" class="viewer-h-nav-img" src="">
 	      <a id="img-viewer-next"><img src="/images/img-view-group-next-inactive.png"></a>
 	    </div>
     <% end %>
 	  <div id="img-viewer-metadata">
 			<% unless (@purl.titles.nil?) %>
-			  <h3><%= trim_text(print_title_value()) %></h3> 
-			<% end %>		  
+			  <h3><%= trim_text(print_title_value()) %></h3>
+			<% end %>
 			<span id="img-viewer-item-label"></span>
 		</div>
   </div>
@@ -29,6 +29,6 @@
 	    <img id="img-canvas" src="" title="" alt="" />
 		  <div id="zpr-frame" style="display: none;"></div>
 	  </div>
-  </div>            
+  </div>
 
 </div>
