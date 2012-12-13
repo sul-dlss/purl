@@ -169,7 +169,7 @@ function showImg(sequence, size, animate) {
   var index = getArrayIndexUsingSequence(sequence);
   var id = imgInfo[index]["id"];
   var seqIndex = getSequenceIndex(index);
-  var duration = 400;
+  var duration = 100;
 
   if (typeof animate === 'undefined' || animate == false) {
     duration = 0;
@@ -184,7 +184,7 @@ function showImg(sequence, size, animate) {
 
   $('#pane-toc-metadata').animate({
     'left': slideWidth + 'px'
-  }, 500, function() {});
+  }, duration, function() {});
 
   $('#pane-img-viewer').animate({
     'left': 0 + 'px'

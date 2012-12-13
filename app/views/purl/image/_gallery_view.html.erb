@@ -1,5 +1,5 @@
 <div id="gallery-content">
-	
+
 <%
   items_per_page = get_gallery_items_per_page_count().to_i
   no_pages = (@purl.deliverable_files.length.to_f / items_per_page.to_f).ceil
@@ -14,73 +14,73 @@
   <% sequence = deliverable_file.sequence.to_s %>
 
 	<% if item_count == 1 %>
-	  <% if page_no == 1 %>	   
+	  <% if page_no == 1 %>
       <ol id="gallery-page-items-<%= page_no %>" class="gallery">
 	  <% else %>
       <ol id="gallery-page-items-<%= page_no %>" class="gallery" style="display: none;">
 	  <% end %>
-	<% end %> 
-	
-  <% img_id = get_jp2_id(deliverable_file.filename.to_s) %>				
+	<% end %>
+
+  <% img_id = get_jp2_id(deliverable_file.filename.to_s) %>
 
   <% if !img_id.nil? and !img_id.empty? %>
     <% base_url = get_img_base_url(deliverable_file) %>
-		
+
     <li>
       <div class="img-block">
 	       <a href="javascript:showImg('<%= sequence %>', 'thumb');">
 	         <img id="img-src-<%= img_id %>" alt="" class="img-block-thumb">
-        </a> 
+        </a>
       </div>
       <div class="img-group-nav">
       </div>
       <div class="img-group-label-container">
         <%= get_file_label(deliverable_file) %>
 	    </div>
-    </li>                
+    </li>
 
   <% elsif deliverable_file.sub_resources.length > 0 %>
-    <% 
-      img_files = Array.new 
-      sno = 1    
-      img_files.concat(deliverable_file.sub_resources) 	        
+    <%
+      img_files = Array.new
+      sno = 1
+      img_files.concat(deliverable_file.sub_resources)
     %>
 
-    <li>	
+    <li>
 			<% img_files.each do |img_file| %>
-			  <% img_id = get_jp2_id(img_file.filename.to_s) %>		
-			  <% img_sequence = img_file.sequence.to_s %>		
+			  <% img_id = get_jp2_id(img_file.filename.to_s) %>
+			  <% img_sequence = img_file.sequence.to_s %>
 
 			  <% if !img_id.nil? and !img_id.empty? %>
 			    <% base_url = get_img_base_url(img_file) %>
-			    <% display = sno == 1 ? "inline" : "none" %> 
-		
+			    <% display = sno == 1 ? "inline" : "none" %>
+
 			    <div id="<%= @purl.pid.to_s + '_seq_' + sequence + '_img_' + sno.to_s %>" style="display: <%= display %>;">
 					  <div class="img-block">
 					   <a href="javascript:showImg('<%= sequence %>.<%= img_sequence %>', 'thumb');">
 						   <img id="img-src-<%= img_id %>" alt="">
-				      </a> 
+				      </a>
 				    </div>
 				    <div class="img-group-nav">
-					    <a href="javascript:showGalleryImg('<%= sno %>', '<%= img_files.length %>', '<%= @purl.pid %>', '<%= sequence %>', -1);"><img class="gallery-img-nav-icon" src="/images/gallery-img-prev.png"></a>						
+					    <a href="javascript:showGalleryImg('<%= sno %>', '<%= img_files.length %>', '<%= @purl.pid %>', '<%= sequence %>', -1);"><img class="gallery-img-nav-icon" src="/images/gallery-img-prev.png"></a>
 					    <%= sno %> of <%= img_files.length %>
 				      <a href="javascript:showGalleryImg('<%= sno %>', '<%= img_files.length %>', '<%= @purl.pid %>', '<%= sequence %>', 1);"><img class="gallery-img-nav-icon" src="/images/gallery-img-next.png"></a>
 					  </div>
 				    <div class="img-group-label-container"><%= get_file_label(img_file) %></div>
 			    </div>
-			    <% sno += 1 %> 
+			    <% sno += 1 %>
 	      <% end %>
 	    <% end %>
-    </li>                				
+    </li>
   <% end %>
-	
+
   <% if item_count == items_per_page  %>
      </ol>
      <% item_count = 0 %>
      <% page_no += 1 %>
-	<% end %> 
-	
-	<% item_count += 1 %>	
+	<% end %>
+
+	<% item_count += 1 %>
 
 <% end %>
 

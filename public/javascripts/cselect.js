@@ -130,13 +130,13 @@
 
   // method for select index
   function selectIndex(obj, index) {
-    var pluginData = obj.data('cselectData'),
+    var pluginData      = obj.data('cselectData'),
         cselectSelected = obj.find('.cselect-selected'),
-        cselectOptions = obj.find('.cselect-options'),
-        selectedOption = cselectOptions.find('li').eq(index),
-        selectedLiItem = selectedOption.closest('li'),
-        settings = pluginData.settings,
-        selectedData = pluginData.settings.data[index];
+        cselectOptions  = obj.find('.cselect-options'),
+        selectedOption  = cselectOptions.find('li').eq(index),
+        selectedLiItem  = selectedOption.closest('li'),
+        settings        = pluginData.settings,
+        selectedData    = pluginData.settings.data[index];
 
     cselectOptions.find('li').removeClass('cselect-selected-option');
     selectedOption.addClass('cselect-selected-option');

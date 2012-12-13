@@ -1,0 +1,15 @@
+<div id="pane-flipbook">
+  <div id="fs-flipbook-links">
+    <div style="float: left; padding-top: 10px;">
+      <a class="fs-flipbook-nav-links" href="javascript:viewTOC();">&larr; Return to <span id="viewer-return-to-label">TOC</span></a>
+    </div>
+    <div id="fs-flipbook-metadata">
+      <% unless (@purl.titles.nil?) %>
+        <h3><%= trim_text(print_title_value()) %></h3>
+      <% end %>
+    </div>
+  </div>
+  <div class="fs-flipbook-viewer">
+    <iframe id="embed-flipbook" src=''>Loading...</iframe>
+  </div>
+</div>

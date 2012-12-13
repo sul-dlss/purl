@@ -1,0 +1,33 @@
+<%
+  deliverable_file = get_first_deliverable_image_file
+  href = "javascript:showFullScreen();"
+  label = ""
+  su_only = ""
+
+  if !deliverable_file.nil? && deliverable_file.rights_stanford
+    su_only = "<span class=\"icon-stanford-only\"></span>";
+    href = "https://" + request.host_with_port + "/auth/" + @purl.pid + "#flipbook"
+    label = " (Needs Stanford Authentication)"
+  end
+
+%>
+
+<div id="pane-toc-metadata">
+  <%= render(:partial => "purl/sidebar_navigation" ) %>
+  <div id="links-and-metadata">
+    <%= render(:partial => "purl/citation_info_dc" ) %>
+    <% if !deliverable_file.nil? %>
+      <div class="thumb-img-box">
+        <img src="<%= get_img_base_url(deliverable_file) %>_thumb">
+        <div class="view-in-bookreader">
+          <%= su_only %> <a href="<%= href %>">Read this book online</a> <%= label %>
+        </div>
+      </div>
+    <% end %>
+    <%= render :partial => 'purl/rights_and_usage' %>
+  </div>
+</div>
+
+<%= render :partial => 'purl/flipbook/pane_flipbook' %>
+
+<script type="text/javascript">var pid = "<%= @purl.pid %>";</script>
