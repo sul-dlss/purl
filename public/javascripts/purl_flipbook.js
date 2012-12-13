@@ -13,10 +13,14 @@ $(function() {
 });
 
 
-function showFullScreen() {
+function showFullScreen(animate) {
   var duration = 100;
   var slideWidth = parseInt($('#pane-toc-metadata').width(), 10);
   var iframeUrl = 'http://sul-reader.stanford.edu/flipbook2/embed.jsp?id=' + pid;
+
+  if (typeof animate !== 'undefined' && !animate) {
+    duration = 0;
+  }
 
   slideWidth = slideWidth - (2*slideWidth);
 
@@ -28,11 +32,11 @@ function showFullScreen() {
     'left': 0 + 'px'
   }, duration, function() {});
 
-  var flipbookViewerHeight = parseInt($(window).height(), 10) - parseInt($('#fs-flipbook-metadata').height(), 10) - 60;
+  var flipbookViewerHeight = $('#pane-toc-metadata').height();
 
   $('#pane-flipbook').height(flipbookViewerHeight);
 
-  $('.fs-flipbook-viewer').height((flipbookViewerHeight - 70));
+  $('.fs-flipbook-viewer').height((flipbookViewerHeight - parseInt($('#fs-flipbook-links').height(), 10) - 40));
   $('.fs-flipbook-viewer').width(($('#pane-flipbook').width() - 20));
 
   $('#embed-flipbook').height($('.fs-flipbook-viewer').height());
@@ -64,6 +68,6 @@ function setURLSuffix() {
   var href = $(location).attr('href');
 
   if (/#flipbook/.test(href)) {
-    showFullScreen();
+    showFullScreen(false);
   }
 }
