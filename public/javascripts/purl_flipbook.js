@@ -20,6 +20,8 @@ function showFullScreen(animate) {
 
   if (typeof animate !== 'undefined' && !animate) {
     duration = 0;
+  } else {
+    duration = 100;
   }
 
   slideWidth = slideWidth - (2*slideWidth);
@@ -50,18 +52,8 @@ function showFullScreen(animate) {
 }
 
 function viewTOC() {
-  var duration = 100;
-  var slideWidth = parseInt($('#pane-flipbook').width(), 10);
-
-  $(location).attr('href', '');
-
-  $('#pane-flipbook').animate({
-    'left': slideWidth + 'px'
-  }, duration, function() {}).hide();
-
-  $('#pane-toc-metadata').show().animate({
-    'left': 0 + 'px'
-  }, duration, function() {});
+  var url = purlServerURL + '/' + pid;
+  $(location).attr('href', url);
 }
 
 function setURLSuffix() {
