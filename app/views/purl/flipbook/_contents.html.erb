@@ -30,4 +30,7 @@
 
 <%= render :partial => 'purl/flipbook/pane_flipbook' %>
 
-<script type="text/javascript">var pid = "<%= @purl.pid %>";</script>
+<script type="text/javascript">
+  var pid = '<%= @purl.pid %>';
+  var purlServerURL = 'http://' + '<%= request.host_with_port %>';
+</script>
