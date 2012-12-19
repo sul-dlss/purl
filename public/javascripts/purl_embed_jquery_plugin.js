@@ -34,7 +34,7 @@
 
         $.getScript(serverURL + '/javascripts/purl_embed.js', function() {
           $this.html(html);
-          var pe = new purlEmbed(peImgInfo, pePid, peStacksURL, config.sequence, config.size);
+          var pe = new purlEmbed(peImgInfo, pePid, peStacksURL, config.sequence, config.size, $this.selector);
         });
       },
       error: function() {

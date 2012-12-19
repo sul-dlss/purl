@@ -12,7 +12,7 @@ Array.prototype.contains = function(obj) {
 }
 
 /* Main purlEmbed function comprising private variables and methods */
-var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
+var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parentSelector) {
   var imgData, currentSequence, druid;
   var groups = [];
   var constants = { 'djatokaBaseResolution': 92, 'thumbSize': 400 };
@@ -24,6 +24,8 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
     'non-restricted': ['thumb'],
     'restricted': ['small', 'medium', 'large', 'xlarge', 'full', 'zoom']
   };
+  var origContainerWidth, origContainerHeight;
+  var isFullScreenOn = false;
 
   /* Constructor function */
   function init() {
@@ -34,8 +36,28 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
         setURLSuffix();
       });
 
-      setProperties();
+      if (typeof peContainerWidth === 'undefined') {
+        peContainerWidth = undefined;
+        origContainerWidth = $(window).width();
+      } else {
+        origContainerWidth = parseInt(peContainerWidth, 10);
+      }
+
+      if (typeof peContainerHeight === 'undefined') {
+        peContainerHeight = undefined;
+        origContainerHeight = $(window).height();
+      } else {
+        origContainerHeight = parseInt(peContainerHeight, 10);
+      }
+
+      if (typeof parentSelector === 'undefined') {
+        $('.pe-full-screen-nav').hide();
+      }
+
+      setProperties(peContainerWidth, peContainerHeight);
+
       setURLSuffix();
+      setFullScreenControls();
 
       currentSequence = imgData[0].sequence;
 
@@ -52,9 +74,10 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
   }
 
   /* Calculate properties for each file and store them in JSON data object */
-  function setProperties() {
+  function setProperties(peContainerWidth, peContainerHeight) {
     var containerWidth = $(window).width();
     var containerHeight = $(window).height();
+    groups = [];
 
     $.each(imgData, function(index, imgObj) {
       var seq = imgObj.sequence;
@@ -86,9 +109,7 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
       containerHeight = parseInt(peContainerHeight, 10);
     }
 
-    $('.pe-container')
-      .width(containerWidth)
-      .height(containerHeight);
+    $('.pe-container').width(containerWidth).height(containerHeight);
   }
 
   /* show image for a given sequence and size */
@@ -133,8 +154,7 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
 
     $('#pe-zpr-frame').hide();
 
-    $('.pe-img-viewfinder')
-      .width(parseInt($('.pe-container').width(), 10) - 12);
+    $('.pe-img-viewfinder').width(parseInt($('.pe-container').width(), 10) - 12);
 
     if ($('.pe-h-nav').length)  {
       $('.pe-img-viewfinder').height(parseInt($('.pe-container').height(), 10) - 126 - 10);
@@ -600,6 +620,29 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize) {
     }
 
     return flag ? inputSeq : imgData[0].sequence;
+  }
+
+  function setFullScreenControls() {
+    $('.pe-full-screen-ctrl').click(function() {
+      if (!isFullScreenOn) {
+        $(parentSelector + " > .pe-container")
+        .addClass('pe-container-full-screen');
+
+        $('.pe-full-screen-ctrl').attr('src', '/images/icon-full-screen-contract.png');
+        setProperties($(window).width(), $(window).height());
+
+      } else {
+        $(parentSelector + " > .pe-container")
+        .removeClass('pe-container-full-screen');
+
+        $('.pe-full-screen-ctrl').attr('src', '/images/icon-full-screen-expand.png');
+        setProperties(origContainerWidth, origContainerHeight);
+        console.log(origContainerWidth, origContainerHeight);
+      }
+
+      showImg(currentSequence, currentSize);
+      isFullScreenOn = !isFullScreenOn;
+    });
   }
 
   init();
