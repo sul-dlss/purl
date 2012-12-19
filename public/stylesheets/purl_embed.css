@@ -217,9 +217,31 @@ a.active .pe-download-icon, a:visited .pe-download-icon {
 .pe-purl-url {
   background-color: transparent;
   bottom: 0;
-  border-top: 1px dotted #ccc;  display: block;
+  border-top: 1px dotted #ccc;
+  clear: both;
+  display: block;
   padding: 4px 0;
   position: absolute;
   text-indent: 5px;
   width: 100%;
+}
+
+.pe-full-screen-nav {
+  float: right;
+  margin: 25px 10px 0 0;
+  overflow: auto;
+}
+
+.pe-container-full-screen {
+  background-color: #fff;
+  display: block;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.pe-full-screen-ctrl {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
 }

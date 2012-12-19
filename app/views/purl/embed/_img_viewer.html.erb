@@ -1,16 +1,22 @@
-<% purl_url = request.scheme + "://" + request.host_with_port + "/" + @purl.pid %>
+<%
+  purl_server = request.scheme + "://" + request.host_with_port
+  purl_url = purl_server + "/" + @purl.pid
+%>
 
 <div class="pe-img-viewer">
   <% if @purl.deliverable_files.length > 1 %>
     <div class="pe-h-nav">
-      <a class="pe-h-nav-prev"><img src="<%= purl_url %>/images/img-view-group-prev-inactive.png"></a>
+      <a class="pe-h-nav-prev"><img src="<%= purl_server %>/images/img-view-group-prev-inactive.png"></a>
       <img class="pe-h-nav-img-01 pe-h-nav-img" src="">
       <div class="pe-h-nav-selected-tab">
         <img class="pe-h-nav-img-02 pe-h-nav-img pe-h-nav-selected-img" src=""> <br/>
       </div>
       <img class="pe-h-nav-img-03 pe-h-nav-img" src="">
-      <a class="pe-h-nav-next"><img src="<%= purl_url %>/images/img-view-group-next-inactive.png"></a>
+      <a class="pe-h-nav-next"><img src="<%= purl_server %>/images/img-view-group-next-inactive.png"></a>
       <div class="pe-h-nav-pagination"></div>
+      <div class="pe-full-screen-nav">
+        <img class="pe-full-screen-ctrl" src="<%= purl_server %>/images/icon-full-screen-expand.png" title="Toggle fullscreen layout">
+      </div>
     </div>
   <% end %>
 
