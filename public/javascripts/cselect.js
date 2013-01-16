@@ -80,7 +80,9 @@
 
           // click anywhere to close
           $('body').click(function(event) {
-            if (!/^cselect/.test(event.srcElement.className)) {
+            var target = event.target || event.srcElement;
+
+            if (!/^cselect/.test(target.className)) {
               cselectOptions.slideUp('fast');
             }
           });
