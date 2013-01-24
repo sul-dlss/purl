@@ -33,13 +33,14 @@
 .zpr-controls img {
   cursor: pointer;
   height: 16px;
+  margin: 0;
   padding: 0 5px;
   width: 16px;
 }
 
 .zpr-marquee-box {
   background-color: #ddd;
-  border: 1px solid #666;  
+  border: 1px solid #666;
   bottom: 8px;
   overflow: hidden;
   padding: 2px;
@@ -60,5 +61,5 @@
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   -moz-opacity:0.5;
   -khtml-opacity: 0.5;
-  opacity: 0.5;  
+  opacity: 0.5;
 }
