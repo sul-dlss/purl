@@ -39,7 +39,7 @@
 	  <% if not(@purl.odc_license.nil? or @purl.odc_license.empty?) %>
       <dt>License:</dt>
       <dd>
-			  <% if @purl.odc_license.to_s.eql? 'odc-pddl' or if @purl.odc_license.to_s.eql? 'pddl' %>
+			  <% if @purl.odc_license.to_s.eql? 'odc-pddl' or @purl.odc_license.to_s.eql? 'pddl' %>
 			    <div>
 				  <a href="http://opendatacommons.org/licenses/pddl/" _target="blank">This work is licensed under a Open Data Commons Public Domain Dedication and License (PDDL)</a>
 				  </div>
