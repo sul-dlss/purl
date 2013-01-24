@@ -66,7 +66,7 @@
 
           // events
           // open select box with options
-          cselect.click(function() {
+          cselect.click(function(event) {
             // do not trigger if the selected option has HTML links
             if ((cselectSelected.has(event.target)).length == 0) {
               open(obj);
@@ -82,7 +82,7 @@
           $('body').click(function(event) {
             var target = event.target || event.srcElement;
 
-            if (!/^cselect/.test(target.className)) {
+            if (target && !/^cselect/.test(target.className)) {
               cselectOptions.slideUp('fast');
             }
           });
