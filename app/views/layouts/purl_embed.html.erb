@@ -1,8 +1,8 @@
 <html>
-  <head>   
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Stanford Digital Repository</title>
-    <%= stylesheet_link_tag 'purl_embed', 'zpr' %> 
+    <%= stylesheet_link_tag 'purl_embed', 'zpr' %>
   </head>
   <body>
     <div class="pe-container">
@@ -13,6 +13,6 @@
     <%= render :partial => 'purl/image/json_embed' %>
     <script type="text/javascript">
       $(function() { var pe = new purlEmbed(peImgInfo, pePid, peStacksURL); });
-    </script>        
+    </script>
   </body>
 </html>

@@ -30,6 +30,7 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
   /* Constructor function */
   function init() {
     if (typeof data !== 'undefined') {
+      var params;
       imgData = data;
 
       $(window).bind('hashchange', function(){
@@ -59,7 +60,13 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
       setURLSuffix();
       setFullScreenControls();
 
-      currentSequence = imgData[0].sequence;
+      if (typeof currentSequence === 'undefined') {
+        currentSequence = imgData[0].sequence;
+      }
+
+      if (typeof inputSize === 'undefined') {
+        inputSize = currentSize;
+      }
 
       if (typeof inputSequence !== 'undefined') {
         currentSequence = validateSequence(inputSequence);
@@ -120,8 +127,8 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
     var imgNumber;
 
     if (index < 0) return;
-
     currentSize = size;
+
     imgNumber = parseInt(index, 10) + 1;
 
     if (size === 'zoom') {
@@ -150,7 +157,7 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
       currentSize = size;
     }
 
-    $(location).attr('href', '#image/' + imgData[index]['sequence'] + '/' + size);
+    // $(location).attr('href', '#image/' + imgData[index]['sequence'] + '/' + size);
 
     $('#pe-zpr-frame').hide();
 
@@ -186,7 +193,7 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
     var z;
 
     currentSize = 'zoom';
-    $(location).attr('href', '#image/' + imgData[index]['sequence'] + '/zoom');
+    // $(location).attr('href', '#image/' + imgData[index]['sequence'] + '/zoom');
 
     $('.pe-img-canvas').hide();
 
@@ -394,7 +401,7 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
       data: cselectJson,
       width: 220,
       //selectText: 'Select a size',
-      selectedIndex: 0,
+      defaultSelectedIndex: getIndexForSize(inputSize, cselectJson),
       onSelected: function(data) {
         loadImage(data.selectedData.index, data.selectedData.size);
       }
@@ -403,6 +410,16 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
 
   /* Parse URL hash params */
   function setURLSuffix() {
+    var params = parseHashParams();
+    var sequence = params[0];
+    var size = params[1];
+
+    currentSequence = sequence;
+    currentSize = size;
+  }
+
+  /* Parse URL hash params */
+  function parseHashParams() {
     var href = $(location).attr('href');
     var match;
     var pageNo = 1;
@@ -428,9 +445,9 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
 
         if (!flag) { size = "zoom"; }
       }
-
-      showImg(sequence, size, false);
     }
+
+    return [sequence, size];
   }
 
 
@@ -609,6 +626,19 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
     return (stacksURL + '/image/' + druid + '/' + imgData[index].id + '_' + size);
   }
 
+  /* Get index for a given size (default is 0) */
+  function getIndexForSize(size, cselectJson) {
+    var index = 0;
+
+    for (var i = 0; i < cselectJson.length; i++) {
+      if (size === (cselectJson[i]).size) {
+        index = i;
+      }
+    }
+
+    return index;
+  }
+
   /* Validate input sequence */
   function validateSequence(inputSeq) {
     var flag = false;
@@ -637,7 +667,6 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
 
         $('.pe-full-screen-ctrl').attr('src', '/images/icon-full-screen-expand.png');
         setProperties(origContainerWidth, origContainerHeight);
-        console.log(origContainerWidth, origContainerHeight);
       }
 
       showImg(currentSequence, currentSize);
