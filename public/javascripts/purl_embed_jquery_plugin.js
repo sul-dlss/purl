@@ -1,7 +1,7 @@
 (function($) {
   var serverUrls = {
     'test': 'http://purl-test.stanford.edu',
-    'prod': 'http://purl-prod.stanford.edu',
+    'prod': 'http://purl.stanford.edu',
     'local': 'http://localhost:3000'
   }
 
@@ -29,8 +29,9 @@
           $('head').append('<link rel="stylesheet" href="' + serverURL + '/stylesheets/' + value + '.css" type="text/css" />')
         });
 
-        $.getScript(serverURL + '/javascripts/zpr.js', function() { });
-        $.getScript(serverURL + '/javascripts/cselect.js', function() { });
+        $.each(['zpr', 'cselect'], function(index, value) {
+          $.getScript(serverURL + '/javascripts/' + value + '.js', function() { });
+        });
 
         $.getScript(serverURL + '/javascripts/purl_embed.js', function() {
           $this.html(html);

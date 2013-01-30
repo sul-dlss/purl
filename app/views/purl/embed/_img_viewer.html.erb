@@ -1,5 +1,5 @@
 <%
-  purl_server = request.scheme + "://" + request.host_with_port.gsub(/^purl-prod/, 'purl')
+  purl_server = request.scheme + "://" + request.host_with_port
   purl_url = purl_server + "/" + @purl.pid
 %>
 
