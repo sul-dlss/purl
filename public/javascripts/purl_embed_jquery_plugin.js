@@ -29,14 +29,15 @@
           $('head').append('<link rel="stylesheet" href="' + serverURL + '/stylesheets/' + value + '.css" type="text/css" />')
         });
 
-        $.each(['zpr', 'cselect'], function(index, value) {
-          $.getScript(serverURL + '/javascripts/' + value + '.js', function() { });
+        $.getScript(serverURL + '/javascripts/zpr.js', function() {
+          $.getScript(serverURL + '/javascripts/cselect.js', function() {
+            $.getScript(serverURL + '/javascripts/purl_embed.js', function() {
+              $this.html(html);
+              var pe = new purlEmbed(peImgInfo, pePid, peStacksURL, config.sequence, config.size, $this.selector);
+            });
+          });
         });
 
-        $.getScript(serverURL + '/javascripts/purl_embed.js', function() {
-          $this.html(html);
-          var pe = new purlEmbed(peImgInfo, pePid, peStacksURL, config.sequence, config.size, $this.selector);
-        });
       },
       error: function() {
         $this.html("Error loading images for " + config.druid);

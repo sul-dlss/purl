@@ -199,7 +199,7 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
 
     $('#pe-zpr-frame')
       .html('')
-      .width(parseInt($('.pe-container').width(), 10) - parseInt($('.pe-v-nav').width(), 10) - 20)
+      .width(parseInt($('.pe-container').width(), 10) - 20)
       .show();
 
     if ($('.pe-h-nav').length)  {
@@ -658,14 +658,14 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
         $(parentSelector + " > .pe-container")
         .addClass('pe-container-full-screen');
 
-        $('.pe-full-screen-ctrl').attr('src', '/images/icon-full-screen-contract.png');
+        $('.pe-full-screen-ctrl').attr('src', peServerURL + '/images/icon-full-screen-contract.png');
         setProperties($(window).width(), $(window).height());
 
       } else {
         $(parentSelector + " > .pe-container")
         .removeClass('pe-container-full-screen');
 
-        $('.pe-full-screen-ctrl').attr('src', '/images/icon-full-screen-expand.png');
+        $('.pe-full-screen-ctrl').attr('src', peServerURL + '/images/icon-full-screen-expand.png');
         setProperties(origContainerWidth, origContainerHeight);
       }
 
