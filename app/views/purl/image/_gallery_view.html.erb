@@ -7,8 +7,10 @@
   item_count = 1
 %>
 
-<div id="gallery-pagination">
-</div>
+<% if @purl.deliverable_files.length > 0 %>
+  <div id="gallery-pagination">
+  </div>
+<% end %>
 
 <% @purl.deliverable_files.each do |deliverable_file| %>
   <% sequence = deliverable_file.sequence.to_s %>
