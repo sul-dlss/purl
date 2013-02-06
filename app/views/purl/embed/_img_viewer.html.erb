@@ -1,5 +1,6 @@
 <%
   purl_server = request.scheme + "://" + request.host_with_port
+  purl_server = purl_server.gsub(/image-viewer.stanford.edu/, 'purl.stanford.edu')
   purl_url = purl_server + "/" + @purl.pid
 %>
 

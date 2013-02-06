@@ -3,7 +3,7 @@
     'test': 'http://purl-test.stanford.edu',
     'prod': 'http://purl.stanford.edu',
     'local': 'http://localhost:3000'
-  }
+  };
 
   $.fn.embedPurl = function(config) {
     var serverURL = serverUrls[config.server];
