@@ -131,11 +131,11 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
 
     imgNumber = parseInt(index, 10) + 1;
 
-    if (size === 'zoom') {
-      loadZpr(index);
-    } else {
+    // if (size === 'zoom') {
+      // loadZpr(index);
+    // } else {
       loadImage(index, size);
-    }
+    // }
 
     loadImgsInHorizontalNavigation(index);
     loadImgsInVerticalNavigation(index);
@@ -168,6 +168,8 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
     } else {
       $('.pe-img-viewfinder').height(parseInt($('.pe-container').height(), 10) - 66);
     }
+
+    $('.pe-img-viewfinder').removeClass('pe-overflow-hidden');
 
     if (size == "zoom") {
       loadZpr(index);
@@ -207,6 +209,8 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
     } else {
       $('#pe-zpr-frame').height(parseInt($('.pe-img-viewfinder').height(), 10) - 5);
     }
+
+    $('.pe-img-viewfinder').addClass('pe-overflow-hidden');
 
     z = new zpr('pe-zpr-frame', {
       'imageStacksURL': stacksURL + '/image/' + druid + '/' + id,
