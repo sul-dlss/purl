@@ -17,6 +17,7 @@ body { margin: 0; padding: 0; }
 .pe-container a:active { color: #4f4f4f; }
 
 .pe-img-viewer {
+  overflow: auto;
   width: 100%;
 }
 
@@ -244,4 +245,8 @@ a.active .pe-download-icon, a:visited .pe-download-icon {
   cursor: pointer;
   height: 12px;
   width: 12px;
+}
+
+.pe-overflow-hidden {
+  overflow: hidden;
 }
