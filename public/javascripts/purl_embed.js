@@ -676,6 +676,12 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
       showImg(currentSequence, currentSize);
       isFullScreenOn = !isFullScreenOn;
     });
+
+    $(document).keyup(function(e) {
+      if (e.keyCode == 27 && isFullScreenOn) {
+        $('.pe-full-screen-ctrl').click();
+      } // escape key
+    });
   }
 
   init();
