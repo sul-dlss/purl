@@ -238,7 +238,7 @@ a.active .pe-download-icon, a:visited .pe-download-icon {
   background-color: #fff;
   display: block;
   left: 0;
-  position: absolute;
+  position: fixed;
   top: 0;
 }
 
