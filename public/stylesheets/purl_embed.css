@@ -5,7 +5,7 @@ body { margin: 0; padding: 0; }
 .pe-container {
   color: #000;
   font: 11px/1.3em "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
-  overflow: auto;
+  /*overflow: auto;*/
   position: relative;
   text-align: left;
   width: 100%;
