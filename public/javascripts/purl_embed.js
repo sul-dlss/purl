@@ -231,7 +231,7 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
     if (seqIndex <= 0) {
       $('.pe-h-nav-img-01')
         .attr('src', peServerURL + '/images/img-view-first-ptr.png')
-        .width(65).height(40)
+        .width(50).height(40)
         .click(function() {});
     } else {
       index = getIndexForFirstImgInSequence(seqIndex-1);
@@ -254,7 +254,7 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
     if ((seqIndex + 1) == groups.length) {
       $('.pe-h-nav-img-03')
         .attr('src', peServerURL + '/images/img-view-last-ptr.png')
-        .width(65).height(40)
+        .width(50).height(40)
         .click(function() {});
     } else {
       index = getIndexForFirstImgInSequence(seqIndex+1);
