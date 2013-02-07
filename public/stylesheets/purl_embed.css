@@ -37,7 +37,7 @@ body { margin: 0; padding: 0; }
 }
 
 .pe-h-nav {
-  background: transparent url('/images/embed/pe-h-nav-bg.png') left top repeat-x;
+  background: #fff url('/images/embed/pe-h-nav-bg.png') left top repeat-x;
   float: left;
   height: 72px;
   overflow: auto;
@@ -230,7 +230,7 @@ a.active .pe-download-icon, a:visited .pe-download-icon {
 
 .pe-full-screen-nav {
   float: right;
-  margin: 25px 10px 0 0;
+  margin: 5px 5px 0 0;
   overflow: auto;
 }
 
@@ -245,6 +245,7 @@ a.active .pe-download-icon, a:visited .pe-download-icon {
 .pe-full-screen-ctrl {
   cursor: pointer;
   height: 12px;
+  padding: 5px;
   width: 12px;
 }
 
