@@ -7,4 +7,5 @@ db/*.sqlite3
 log/*
 public/.htaccess
 public/*-embed.html
+public/*-plugin.html
 tmp/
