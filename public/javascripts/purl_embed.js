@@ -234,7 +234,7 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
         .width(50).height(40)
         .click(function() {});
     } else {
-      index = getIndexForFirstImgInSequence(seqIndex-1);
+      index = getIndexForFirstImgInSequence(seqIndex - 1);
       thumbDimensions = getDimensionsToFitBox(65, 40, index);
 
       $('.pe-h-nav-img-01')
@@ -257,7 +257,7 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
         .width(50).height(40)
         .click(function() {});
     } else {
-      index = getIndexForFirstImgInSequence(seqIndex+1);
+      index = getIndexForFirstImgInSequence(seqIndex + 1);
       thumbDimensions = getDimensionsToFitBox(65, 40, index);
 
       $('.pe-h-nav-img-03')
@@ -272,27 +272,24 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
   function setHorizontalNavigationLinks(seqIndex) {
     if ($('.pe-h-nav-prev').length != 0 && $('.pe-h-nav-next').length != 0) {
 
-      $('.pe-h-nav-prev > img').attr('src', peServerURL + '/images/img-view-group-prev-inactive.png');
-      $('.pe-h-nav-next > img').attr('src', peServerURL + '/images/img-view-group-next-inactive.png');
-      $('.pe-h-nav-prev').unbind().css('cursor', 'default');
-      $('.pe-h-nav-next').unbind().css('cursor', 'default');
+      $('.pe-h-nav-prev')
+        .removeClass('pe-h-nav-prev-active')
+        .unbind();
+
+      $('.pe-h-nav-next')
+        .removeClass('pe-h-nav-next-active')
+        .unbind();
 
       if ((seqIndex - 1) >= 0) {
         $('.pe-h-nav-prev')
           .click(function() { prev(seqIndex); })
-          .addClass('pe-cursor-pointer');
-
-        $('.pe-h-nav-prev > img')
-          .attr('src', peServerURL + '/images/img-view-group-prev-active.png');
+          .addClass('pe-h-nav-prev-active');
       }
 
       if ((seqIndex + 1) < groups.length) {
         $('.pe-h-nav-next')
           .click(function() { next(seqIndex); })
-          .addClass('pe-cursor-pointer');
-
-        $('.pe-h-nav-next > img')
-          .attr('src', peServerURL + '/images/img-view-group-next-active.png');
+          .addClass('pe-h-nav-next-active');
       }
     }
   }
@@ -678,9 +675,10 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
     });
 
     $(document).keyup(function(e) {
+      // escape key code is 27
       if (e.keyCode == 27 && isFullScreenOn) {
         $('.pe-full-screen-ctrl').click();
-      } // escape key
+      }
     });
   }
 
