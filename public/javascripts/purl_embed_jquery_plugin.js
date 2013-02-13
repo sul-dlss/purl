@@ -6,22 +6,19 @@
   };
 
   $.fn.embedPurl = function(config) {
-    var serverURL = serverUrls[config.server];
-    var $this = $(this);
+    var serverURL = serverUrls[config.server],
+        height = parseInt(config.height, 10),
+        width = parseInt(config.width, 10),
+        $this = $(this);
 
-    if (!isNaN(parseInt(config.width), 10)) {
-      $this.width(config.width);
-    }
-
-    if (!isNaN(parseInt(config.height), 10)) {
-      $this.height(config.height);
-    }
+    if (!isNaN(width)) $this.width(width);
+    if (!isNaN(height)) $this.height(height);
 
     $.ajax({
       type: "GET",
       url: serverURL + '/' + config.druid + '/embed-js',
       contentType: "text/html; charset=utf-8",
-      data: { peContainerWidth: $this.width() , peContainerHeight: $this.height() },
+      data: { peContainerWidth: $this.width(), peContainerHeight: $this.height() },
       dataType: "html",
 
       success: function(html) {
@@ -33,7 +30,7 @@
           $.getScript(serverURL + '/javascripts/cselect.js', function() {
             $.getScript(serverURL + '/javascripts/purl_embed.js', function() {
               $this.html(html);
-              var pe = new purlEmbed(peImgInfo, pePid, peStacksURL, config.sequence, config.size, $this.selector);
+              var pe = new purlEmbed(peImgInfo, pePid, peStacksURL, config, $this.selector);
             });
           });
         });
@@ -44,4 +41,6 @@
       }
     });
   };
+
+
 })(jQuery);

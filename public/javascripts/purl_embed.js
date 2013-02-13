@@ -12,7 +12,7 @@ Array.prototype.contains = function(obj) {
 }
 
 /* Main purlEmbed function comprising private variables and methods */
-var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parentSelector) {
+var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
   var imgData, currentSequence, druid;
   var groups = [];
   var constants = { 'djatokaBaseResolution': 92, 'thumbSize': 400 };
@@ -25,60 +25,66 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
     'restricted': ['small', 'medium', 'large', 'xlarge', 'full', 'zoom']
   };
   var origContainerWidth, origContainerHeight;
+  var inputSequence, inputSize, inputLayout;
   var isFullScreenOn = false;
 
   /* Constructor function */
-  function init() {
-    if (typeof data !== 'undefined') {
-      var params;
-      imgData = data;
+  (function init() {
+    var params;
 
-      $(window).bind('hashchange', function(){
-        setURLSuffix();
-      });
+    if (typeof data === 'undefined') return;
 
-      if (typeof peContainerWidth === 'undefined') {
-        peContainerWidth = undefined;
-        origContainerWidth = $(window).width();
-      } else {
-        origContainerWidth = parseInt(peContainerWidth, 10);
-      }
+    imgData = data;
+    inputSequence = config.sequence;
+    inputSize = config.size;
+    inputLayout = config.layout || 'default';
 
-      if (typeof peContainerHeight === 'undefined') {
-        peContainerHeight = undefined;
-        origContainerHeight = $(window).height();
-      } else {
-        origContainerHeight = parseInt(peContainerHeight, 10);
-      }
+    changeLayout(inputLayout);
 
-      if (typeof parentSelector === 'undefined') {
-        $('.pe-full-screen-nav').hide();
-      }
-
-      setProperties(peContainerWidth, peContainerHeight);
-
+    $(window).bind('hashchange', function(){
       setURLSuffix();
-      setFullScreenControls();
+    });
 
-      if (typeof currentSequence === 'undefined') {
-        currentSequence = imgData[0].sequence;
-      }
-
-      if (typeof inputSize === 'undefined') {
-        inputSize = currentSize;
-      }
-
-      if (typeof inputSequence !== 'undefined') {
-        currentSequence = validateSequence(inputSequence);
-      }
-
-      if (typeof inputSequence !== 'undefined' && (sizes.contains(inputSize) || views.contains(inputSize))) {
-        currentSize = inputSize;
-      }
-
-      showImg(currentSequence, currentSize);
+    if (typeof peContainerWidth === 'undefined') {
+      peContainerWidth = undefined;
+      origContainerWidth = $(window).width();
+    } else {
+      origContainerWidth = parseInt(peContainerWidth, 10);
     }
-  }
+
+    if (typeof peContainerHeight === 'undefined') {
+      peContainerHeight = undefined;
+      origContainerHeight = $(window).height();
+    } else {
+      origContainerHeight = parseInt(peContainerHeight, 10);
+    }
+
+    if (typeof parentSelector === 'undefined') {
+      $('.pe-full-screen-nav').hide();
+    }
+
+    setProperties(peContainerWidth, peContainerHeight);
+    setURLSuffix();
+    setFullScreenControls();
+
+    if (typeof currentSequence === 'undefined') {
+      currentSequence = imgData[0].sequence;
+    }
+
+    if (typeof inputSize === 'undefined') {
+      inputSize = currentSize;
+    }
+
+    if (typeof inputSequence !== 'undefined') {
+      currentSequence = validateSequence(inputSequence);
+    }
+
+    if (typeof inputSequence !== 'undefined' && (sizes.contains(inputSize) || views.contains(inputSize))) {
+      currentSize = inputSize;
+    }
+
+    showImg(currentSequence, currentSize);
+  })();
 
   /* Calculate properties for each file and store them in JSON data object */
   function setProperties(peContainerWidth, peContainerHeight) {
@@ -131,12 +137,7 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
 
     imgNumber = parseInt(index, 10) + 1;
 
-    // if (size === 'zoom') {
-      // loadZpr(index);
-    // } else {
-      loadImage(index, size);
-    // }
-
+    loadImage(index, size);
     loadImgsInHorizontalNavigation(index);
     loadImgsInVerticalNavigation(index);
 
@@ -682,7 +683,18 @@ var purlEmbed = (function(data, pid, stacksURL, inputSequence, inputSize, parent
     });
   }
 
-  init();
+  function changeLayout(layout) {
+    if (layout === 'thin-nav-bottom') {
+      $('.pe-img-viewer-default').remove();
+      $('.pe-img-viewer-thin-nav-bottom').show();
+    }
+    else {
+      $('.pe-img-viewer-default').show();
+      $('.pe-img-viewer-thin-nav-bottom').remove();
+    }
+  }
+
+
 });
 
 

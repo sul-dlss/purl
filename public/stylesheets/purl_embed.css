@@ -16,7 +16,7 @@ body { margin: 0; padding: 0; }
 .pe-container a:hover { border-bottom: 1px dotted; }
 .pe-container a:active { color: #4f4f4f; }
 
-.pe-img-viewer {
+.pe-img-viewer-default, .pe-img-viewer-thin-nav-bottom,  {
   overflow: auto;
   width: 100%;
 }
@@ -82,6 +82,7 @@ body { margin: 0; padding: 0; }
   background-image: url('/images/img-view-group-next-active.png');
   cursor: pointer;
 }
+
 
 .pe-h-nav-img {
   display: inline;
@@ -150,7 +151,7 @@ body { margin: 0; padding: 0; }
 }
 
 .pe-h-nav-pagination {
-  background-color: #e6e6e6;
+  background-color: #fff;
   border: 1px solid #c7c7c7;
   border-radius: 10px;
   float: left;
@@ -163,7 +164,6 @@ body { margin: 0; padding: 0; }
   font-size: .9em;
 }
 
-
 .pe-v-nav li {
   margin-bottom: 15px;
 }
@@ -175,7 +175,6 @@ body { margin: 0; padding: 0; }
 .pe-icon-stanford-only {
   margin: 0 0 0 5px !important;
 }
-
 
 .pe-v-nav-sizes {
   margin: 0;
@@ -262,6 +261,7 @@ a.active .pe-download-icon, a:visited .pe-download-icon {
   left: 0;
   position: fixed;
   top: 0;
+  z-index: 9999;
 }
 
 .pe-full-screen-ctrl {
@@ -274,3 +274,32 @@ a.active .pe-download-icon, a:visited .pe-download-icon {
 .pe-overflow-hidden {
   overflow: hidden;
 }
+
+
+/* Style for layout: thin-nav-bottom */
+
+.pe-img-viewer-thin-nav-bottom .pe-h-nav-prev, .pe-img-viewer-thin-nav-bottom .pe-h-nav-next {
+  background-position: 8px 5px;
+  padding-top: 0px;
+}
+
+.pe-img-viewer-thin-nav-bottom .pe-h-nav-prev {
+  margin-left: 20px;
+}
+
+.pe-img-viewer-thin-nav-bottom .pe-h-nav-pagination {
+  margin: 5px 5px 0 5px;
+}
+
+.pe-img-viewer-thin-nav-bottom .pe-img-viewfinder {
+  margin: 0 0 5px 0;
+}
+
+.pe-img-viewer-thin-nav-bottom img.pe-img-canvas {
+  margin-top: 0;
+}
+
+.pe-img-viewer-thin-nav-bottom .pe-dd-cselect {
+  margin-top: -3px;
+}
+
