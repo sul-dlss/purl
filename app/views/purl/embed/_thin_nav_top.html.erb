@@ -1,0 +1,27 @@
+<!-- Layout for 'thin-nav-bottom' -->
+<div class="pe-img-viewer-thin-nav-top" style="display: none;">
+  <div class="pe-nav-contents">
+
+    <div class="pe-dd-cselect"></div>
+
+    <% if @purl.deliverable_files.length > 1 %>
+      <a class="pe-h-nav-prev"></a>
+      <span class="pe-h-nav-pagination"></span>
+      <a class="pe-h-nav-next"></a>
+    <% end %>
+
+    <div class="pe-full-screen-nav">
+      <img class="pe-full-screen-ctrl" src="<%= purl_server %>/images/icon-full-screen-expand.png" title="Toggle fullscreen layout">
+    </div>
+
+    <div class="pe-img-viewfinder">
+      <img class="pe-img-canvas" src="" title="" alt="" />
+      <div id="pe-zpr-frame"></div>
+    </div>
+
+  </div>
+
+  <div class="pe-purl-url">
+    <a href="<%= purl_url %>" target="_blank"><%= purl_url %></a>
+  </div>
+</div>
