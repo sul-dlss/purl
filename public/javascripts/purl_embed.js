@@ -27,6 +27,7 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
   var origContainerWidth, origContainerHeight;
   var inputSequence, inputSize, inputLayout;
   var isFullScreenOn = false;
+  var layouts = [ 'thumbs-nav-top', 'thumbs-nav-bottom', 'thin-nav-top', 'thin-nav-bottom' ];
 
   /* Constructor function */
   (function init() {
@@ -37,7 +38,7 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     imgData = data;
     inputSequence = config.sequence;
     inputSize = config.size;
-    inputLayout = config.layout || 'default';
+    inputLayout = config.layout || 'thumbs-nav-top';
 
     changeLayout(inputLayout);
 
@@ -683,15 +684,14 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     });
   }
 
-  function changeLayout(layout) {
-    if (layout === 'thin-nav-bottom') {
-      $('.pe-img-viewer-default').remove();
-      $('.pe-img-viewer-thin-nav-bottom').show();
-    }
-    else {
-      $('.pe-img-viewer-default').show();
-      $('.pe-img-viewer-thin-nav-bottom').remove();
-    }
+  function changeLayout(currentLayout) {
+    $.each(layouts, function(i, layout) {
+      if (layout === currentLayout) {
+        $('.pe-img-viewer-' + layout).show();
+      } else {
+        $('.pe-img-viewer-' + layout).remove();
+      }
+    });
   }
 
 
