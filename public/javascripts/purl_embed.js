@@ -25,13 +25,13 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     'restricted': ['small', 'medium', 'large', 'xlarge', 'full', 'zoom']
   };
   var origContainerWidth, origContainerHeight;
-  var inputSequence, inputSize, inputLayout;
+  var inputSequence, inputSize, inputLayout, inputZoomIncrement;
   var isFullScreenOn = false;
   var layouts = [ 'thumbs-nav-top', 'thumbs-nav-bottom', 'thin-nav-top', 'thin-nav-bottom' ];
 
   /* Constructor function */
   (function init() {
-    var params;
+    var params, match;
 
     if (typeof data === 'undefined') return;
 
@@ -74,13 +74,23 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
 
     if (typeof inputSize === 'undefined') {
       inputSize = currentSize;
+    } else {
+      match = /^zoom([-+]\d+)$/.exec(inputSize);
+
+      if (match) {
+        inputSize = 'zoom';
+      }
+
+      if (match && match[1] !== 'undefined') {
+        inputZoomIncrement = parseInt(match[1], 10);
+      }
     }
 
     if (typeof inputSequence !== 'undefined') {
       currentSequence = validateSequence(inputSequence);
     }
 
-    if (typeof inputSequence !== 'undefined' && (sizes.contains(inputSize) || views.contains(inputSize))) {
+    if (typeof inputSequence !== 'undefined' && isValidSize(inputSize)) {
       currentSize = inputSize;
     }
 
@@ -159,8 +169,6 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
       currentSize = size;
     }
 
-    // $(location).attr('href', '#image/' + imgData[index]['sequence'] + '/' + size);
-
     $('#pe-zpr-frame').hide();
 
     $('.pe-img-viewfinder').width(parseInt($('.pe-container').width(), 10) - 12);
@@ -175,20 +183,21 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
 
     if (size == "zoom") {
       loadZpr(index);
-      return;
+
+    } else {
+      loadImgsInVerticalNavigation(index);
+
+      url = getImgStacksURL(index, size);
+      dimensions = getDimensionsForSize(index, size);
+      imgWidth = dimensions.width;
+      imgHeight = dimensions.height;
+
+      $('.pe-img-canvas')
+        .removeAttr('src').attr({ 'src': url })
+        .width(imgWidth).height(imgHeight)
+        .show();
     }
 
-    loadImgsInVerticalNavigation(index);
-
-    url = getImgStacksURL(index, size);
-    dimensions = getDimensionsForSize(index, size);
-    imgWidth = dimensions.width;
-    imgHeight = dimensions.height;
-
-    $('.pe-img-canvas')
-      .removeAttr('src').attr({ 'src': url })
-      .width(imgWidth).height(imgHeight)
-      .show();
   }
 
   /* Loads the image in ZPR UI */
@@ -197,7 +206,6 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     var z;
 
     currentSize = 'zoom';
-    // $(location).attr('href', '#image/' + imgData[index]['sequence'] + '/zoom');
 
     $('.pe-img-canvas').hide();
 
@@ -218,7 +226,8 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
       'imageStacksURL': stacksURL + '/image/' + druid + '/' + id,
       'width': imgData[index].width,
       'height': imgData[index].height,
-      'marqueeImgSize': 40
+      'marqueeImgSize': 40,
+      'zoomIncrement': inputZoomIncrement
     });
 
     loadImgsInVerticalNavigation(index);
@@ -655,6 +664,7 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     return flag ? inputSeq : imgData[0].sequence;
   }
 
+  /* Set full screen toggle options */
   function setFullScreenControls() {
     $('.pe-full-screen-ctrl').click(function() {
       if (!isFullScreenOn) {
@@ -684,6 +694,7 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     });
   }
 
+  /* Show selected layout and hide/remove other layouts */
   function changeLayout(currentLayout) {
     $.each(layouts, function(i, layout) {
       if (layout === currentLayout) {
@@ -694,6 +705,21 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     });
   }
 
+  /* Check if a given size value is valid */
+  function isValidSize(size) {
+    var valid = false;
+
+    $.each([sizes, views], function() {
+      $.each(this, function(i, availableSize) {
+        var regex = new RegExp('^' + availableSize + '$', 'i');
+        if (regex.test(size)) {
+          valid = true;
+        }
+      });
+    });
+
+    return valid;
+  }
 
 });
 
