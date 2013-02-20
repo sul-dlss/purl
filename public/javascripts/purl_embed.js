@@ -94,7 +94,8 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
       currentSize = inputSize;
     }
 
-    showImg(currentSequence, currentSize);
+    // showImg(currentSequence, currentSize);
+    loadImgsInVerticalNavigation(getArrayIndexUsingSequence(currentSequence));
   })();
 
   /* Calculate properties for each file and store them in JSON data object */
@@ -399,7 +400,6 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     $('.pe-large-img-viewer').click(function() { if (!$(this).hasClass('su')) { loadImage(index, 'large'); }});
     $('.pe-xlarge-img-viewer').click(function() { if (!$(this).hasClass('su')) { loadImage(index, 'xlarge'); }});
     $('.pe-full-img-viewer').click(function() { if (!$(this).hasClass('su')) { loadImage(index, 'full'); }});
-
   }
 
 
@@ -416,7 +416,8 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
       //selectText: 'Select a size',
       defaultSelectedIndex: getIndexForSize(inputSize, cselectJson),
       onSelected: function(data) {
-        loadImage(data.selectedData.index, data.selectedData.size);
+        // loadImage(data.selectedData.index, data.selectedData.size);
+        showImg(imgData[data.selectedData.index].sequence, data.selectedData.size);
       }
     });
   }
