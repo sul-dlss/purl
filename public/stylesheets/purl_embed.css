@@ -47,7 +47,7 @@ body { margin: 0; padding: 0; }
 }
 
 .pe-h-nav img {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 .pe-h-nav-empty-img {
