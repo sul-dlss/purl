@@ -169,7 +169,8 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
       currentSize = size;
     }
 
-    $('#pe-zpr-frame').hide();
+    $('#pe-zpr-frame').remove();
+    $('.pe-img-canvas').remove();
 
     $('.pe-img-viewfinder').width(parseInt($('.pe-container').width(), 10) - 12);
 
@@ -192,9 +193,10 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
       imgWidth = dimensions.width;
       imgHeight = dimensions.height;
 
-      $('.pe-img-canvas')
+      $('<img class="pe-img-canvas">')
         .removeAttr('src').attr({ 'src': url })
         .width(imgWidth).height(imgHeight)
+        .appendTo('.pe-img-viewfinder')
         .show();
     }
 
@@ -207,11 +209,10 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
 
     currentSize = 'zoom';
 
-    $('.pe-img-canvas').hide();
-
-    $('#pe-zpr-frame')
+    $('<div id="pe-zpr-frame">')
       .html('')
       .width(parseInt($('.pe-container').width(), 10) - 20)
+      .appendTo('.pe-img-viewfinder')
       .show();
 
     if ($('.pe-h-nav').length)  {
