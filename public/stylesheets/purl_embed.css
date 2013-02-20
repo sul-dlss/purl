@@ -46,6 +46,10 @@ body { margin: 0; padding: 0; }
   width: 100%;
 }
 
+.pe-h-nav img {
+  margin-bottom: 0;
+}
+
 .pe-h-nav-empty-img {
   cursor: 'auto';
   height: 40px;
