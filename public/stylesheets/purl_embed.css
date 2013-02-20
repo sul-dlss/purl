@@ -211,6 +211,7 @@ body { margin: 0; padding: 0; }
 img.pe-img-canvas {
   max-height: none !important;
   max-width: none !important;
+  margin-bottom: 0 !important;
 }
 
 .pe-download-icon {
@@ -270,6 +271,7 @@ a.active .pe-download-icon, a:visited .pe-download-icon {
   border-radius: 2px;
   cursor: pointer;
   height: 12px;
+  margin-bottom: 0 !important;
   padding: 5px;
   width: 12px;
 }
