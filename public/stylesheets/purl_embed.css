@@ -12,7 +12,12 @@ body { margin: 0; padding: 0; }
   height: 100%;
 }
 
-.pe-container a { color: #00388e; text-decoration:none; }
+.pe-container a {
+  border-bottom-width: 0;
+  color: #00388e;
+  text-decoration: none;
+}
+
 .pe-container a:hover { border-bottom: 1px dotted; }
 .pe-container a:active { color: #4f4f4f; }
 
