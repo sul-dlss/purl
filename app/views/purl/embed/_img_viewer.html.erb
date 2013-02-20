@@ -4,7 +4,7 @@
   purl_url = purl_server + "/" + @purl.pid
 %>
 
-<!-- Default layout: thumbs-nav-top -->
+<%# Default layout: thumbs-nav-top %>
 <div class="pe-img-viewer-default pe-img-viewer-thumbs-nav-top" style="display: none;">
   <% if @purl.deliverable_files.length > 1 %>
     <div class="pe-h-nav">
@@ -33,7 +33,6 @@
   <div class="pe-purl-url">
     <a href="<%= purl_url %>" target="_blank"><%= purl_url %></a>
   </div>
-
 </div>
 
 
