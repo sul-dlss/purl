@@ -144,7 +144,9 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     var imgNumber;
 
     if (index < 0) return;
+
     currentSize = size;
+    currentSequence = sequence;
 
     imgNumber = parseInt(index, 10) + 1;
 
