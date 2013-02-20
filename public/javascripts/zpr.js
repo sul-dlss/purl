@@ -18,6 +18,7 @@ function zpr(viewFinderId, inputValues) {
   var jp2 = { width: 0, height: 0, levels: undefined, imgURL: undefined }
   var imgFrameAttrs = { relativeLoc: {}, proportionalWidth: 0, proportionalHeight: 0 };
   var marqueeAttrs = { imgWidth: 0, imgHeight: 0, width: 0, height: 0 };
+  var hasZoomIncrement = false;
 
   /* init() function */
   function init() {
@@ -40,12 +41,15 @@ function zpr(viewFinderId, inputValues) {
 
     if (typeof inputValues.zoomIncrement !== 'undefined') {
       currentLevel = util.clampLevel(currentLevel + inputValues.zoomIncrement);
+      hasZoomIncrement = true;
     }
 
     setImgFrameSize(currentLevel);
     setupImgFrameDragging();
     storeRelativeLocation();
     addControlElements();
+
+    if (hasZoomIncrement) centerImgFrame();
   }
 
 
@@ -205,6 +209,15 @@ function zpr(viewFinderId, inputValues) {
        top = Math.round(viewFinder.height() / 2) - Math.ceil(imgFrameAttrs.relativeLoc.y * imgFrame.height());
     }
 
+    imgFrame.css({ 'top': top + 'px', 'left': left + 'px' });
+    showTiles();
+  }
+
+
+  /* center imgFrame */
+  function centerImgFrame() {
+    var left = Math.floor((viewFinder.width() / 2) - (imgFrame.width() / 2));
+    var top = Math.floor((viewFinder.height() / 2) - (imgFrame.height() / 2));
     imgFrame.css({ 'top': top + 'px', 'left': left + 'px' });
     showTiles();
   }
