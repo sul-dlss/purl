@@ -7,6 +7,7 @@
   var config = {
         backgroundColor: '#eee',
         defaultSelectedIndex: null,
+        reverseMenuDirection: false,
         selectText: '',
         width: 250,
         onSelected: function() {}
@@ -35,7 +36,7 @@
 
         // check if plugin is already initialized, and apply
         if (!obj.data('cselectData')) {
-          var cselect, cselectOptions, cselectSelected;
+          var cselect, cselectOptions, cselectSelected, marginTop;
 
           // append HTML to container
           obj.addClass('cselect-container').append(cselectHtml).append(cselectOptionsHtml);
@@ -72,6 +73,12 @@
               open(obj);
             }
           });
+
+          // make options open above
+          if (options.reverseMenuDirection) {
+            marginTop = (cselect.outerHeight(true) + cselectOptions.outerHeight(true) + 1) * -1;
+            cselectOptions.css('margin-top', marginTop);
+          }
 
           // select an options from the list
           cselectOptions.find('li').click(function() {

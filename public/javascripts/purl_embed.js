@@ -94,7 +94,6 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
       currentSize = inputSize;
     }
 
-    // showImg(currentSequence, currentSize);
     loadImgsInVerticalNavigation(getArrayIndexUsingSequence(currentSequence));
   })();
 
@@ -410,11 +409,18 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
 
 
   function renderCselect(cselectJson) {
+    var reverseMenuDirection = false;
+
+    if (inputLayout === 'thumbs-nav-bottom' || inputLayout === 'thin-nav-bottom' ) {
+      reverseMenuDirection = true;
+    }
+
     $('.pe-dd-cselect').cselect({
       data: cselectJson,
       width: 220,
       //selectText: 'Select a size',
       defaultSelectedIndex: getIndexForSize(inputSize, cselectJson),
+      reverseMenuDirection: reverseMenuDirection,
       onSelected: function(data) {
         // loadImage(data.selectedData.index, data.selectedData.size);
         showImg(imgData[data.selectedData.index].sequence, data.selectedData.size);
