@@ -425,7 +425,7 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
       reverseMenuDirection: reverseMenuDirection,
       onSelected: function(data) {
         // loadImage(data.selectedData.index, data.selectedData.size);
-        showImg(imgData[data.selectedData.index].sequence, data.selectedData.size);
+        showImg(currentSequence, data.selectedData.size);
       }
     });
   }
