@@ -244,7 +244,7 @@ a.active .pe-download-icon, a:visited .pe-download-icon {
 
 #pe-zpr-frame {
   display: none;
-  z-index: 5000;
+  z-index: 1000;
 }
 
 .pe-purl-url {
