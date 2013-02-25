@@ -436,7 +436,7 @@ function zpr(viewFinderId, inputValues) {
       left: 0,
       top: 0,
       drag: { left: 0, top: 0 },
-      start: { left: 0, top: 0 },
+      start: { left: 0, top: 0 }
     };
 
     imgFrame.bind({
@@ -491,7 +491,7 @@ function zpr(viewFinderId, inputValues) {
       left: 0,
       top: 0,
       drag: { left: 0, top: 0 },
-      start: { left: 0, top: 0 },
+      start: { left: 0, top: 0 }
     };
 
     var marquee = $('#' + marqueeId);

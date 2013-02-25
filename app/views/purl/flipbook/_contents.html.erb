@@ -19,9 +19,12 @@
     <% if !deliverable_file.nil? %>
       <div class="thumb-img-box">
         <img src="<%= get_img_base_url(deliverable_file) %>_thumb">
+
+        <% if deliverable_file.rights_stanford || deliverable_file.rights_world %>
         <div class="view-in-bookreader">
           <%= su_only %> <a href="<%= href %>">Read this book online</a> <%= label %>
         </div>
+        <% end %>
       </div>
     <% end %>
     <%= render :partial => 'purl/rights_and_usage' %>
