@@ -1,3 +1,5 @@
+$.support.cors = true;
+
 /* Function to make an array unique */
 Array.prototype.unique = function() {
   var o = {}, i, l = this.length, r = [];
@@ -34,8 +36,10 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     var params, match;
 
     if (typeof data === 'undefined') return;
+    if (!config) config = {};
 
     imgData = data;
+
     inputSequence = config.sequence;
     inputSize = config.size;
     inputLayout = config.layout || 'thumbs-nav-top';
