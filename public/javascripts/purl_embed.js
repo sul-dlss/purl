@@ -409,7 +409,7 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
 
 
   function getDownloadLink(index, size) {
-    var href = stacksURL + '/image/' + druid + '/' + imgData[index].id + '_' + size + '.jpg?action=download';
+    var href = stacksURL + '/image/' + druid + '/' + imgData[index].id + '_' + size + '?action=download';
     return href;
   }
 
