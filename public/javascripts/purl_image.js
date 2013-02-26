@@ -154,7 +154,7 @@ function changeDownloadFormat(name) {
 }
 
 function replaceHrefExt(str, ext) {
-  str = str.replace(/\.\w+\?action=/, '.' + ext + '?action=');
+  str = str.replace(/\.\w+\?action=/, '?action=');
   return str;
 }
 
@@ -332,32 +332,32 @@ function updateViewerSizesLinks(id, index) {
   $('#full-img-viewer-download-id').html(imgNumber);
 
   $('#thumb-img-viewer-download').attr({
-    'href': stacksURL + '/image/' + druid + '/' + id + '_thumb.jpg?action=download',
+    'href': stacksURL + '/image/' + druid + '/' + id + '_thumb?action=download',
     'title': 'Download ' + id + '_thumb.jpg'
   });
 
   $('#small-img-viewer-download').attr({
-    'href': stacksURL + '/image/' + druid + '/' + id + '_small.jpg?action=download',
+    'href': stacksURL + '/image/' + druid + '/' + id + '_small?action=download',
     'title': 'Download ' + id + '_small.jpg'
   });
 
   $('#medium-img-viewer-download').attr({
-    'href': stacksURL + '/image/' + druid + '/' + id + '_medium.jpg?action=download',
+    'href': stacksURL + '/image/' + druid + '/' + id + '_medium?action=download',
     'title': 'Download ' + id + '_medium.jpg'
   });
 
   $('#large-img-viewer-download').attr({
-    'href': stacksURL + '/image/' + druid + '/' + id + '_large.jpg?action=download',
+    'href': stacksURL + '/image/' + druid + '/' + id + '_large?action=download',
     'title': 'Download ' + id + '_large.jpg'
   });
 
   $('#xlarge-img-viewer-download').attr({
-    'href': stacksURL + '/image/' + druid + '/' + id + '_xlarge.jpg?action=download',
+    'href': stacksURL + '/image/' + druid + '/' + id + '_xlarge?action=download',
     'title': 'Download ' + id + '_xlarge.jpg'
   });
 
   $('#full-img-viewer-download').attr({
-    'href': stacksURL + '/image/' + druid + '/' + id + '_full.jpg?action=download',
+    'href': stacksURL + '/image/' + druid + '/' + id + '_full?action=download',
     'title': 'Download ' + id + '_full.jpg'
   });
 

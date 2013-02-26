@@ -2,25 +2,25 @@
   <% @purl.deliverable_files.each do |deliverable_file| %>
     <%
       img_files = Array.new
-      img_id = get_jp2_id(deliverable_file.filename.to_s) 
-    	    
-      if !img_id.nil? and !img_id.empty? 
-        img_files = img_files.push(deliverable_file) 
-      else 
-        if deliverable_file.sub_resources.length > 0 
-          img_files.concat(deliverable_file.sub_resources) 
-        end 
-      end 	
+      img_id = get_jp2_id(deliverable_file.filename.to_s)
+
+      if !img_id.nil? and !img_id.empty?
+        img_files = img_files.push(deliverable_file)
+      else
+        if deliverable_file.sub_resources.length > 0
+          img_files.concat(deliverable_file.sub_resources)
+        end
+      end
     %>
-					
+
 		<% img_files.each do |deliverable_file| %>
-		  <% img_id = get_jp2_id(deliverable_file.filename.to_s) %>				
-		
+		  <% img_id = get_jp2_id(deliverable_file.filename.to_s) %>
+
 	    <% if !img_id.nil? and !img_id.empty? %>
 		    <% base_url = get_img_base_url(deliverable_file) %>
-			
+
 	      <li>
-	        <a id="<%= img_id %>" href="#" class="item-header">            
+	        <a id="<%= img_id %>" href="#" class="item-header">
 		        <%= image_tag "#{base_url}_square.jpg", :id => "square-img-#{img_id}", :class => "sq-thumbnail-img", :alt => "" %>
 		        <div class="img-item-label-container"><%= get_file_label(deliverable_file) %></div>
 	        </a>
@@ -29,21 +29,21 @@
 		          <li class="img-title">Available <br/> sizes:</li>
 		          <li>
 		            <a id="small-<%= img_id %>" href="#" title="View at 294 x 368 pixels"><span class="obscure">View the </span>small<span class="obscure"> size of image 1</span></a>&nbsp;
-		            <a id="small-download-<%= img_id %>" href="<%= base_url %>_small.jpg?action=download" title="Download <%= img_id %>_small.jpg"><span class="obscure">Download the small size of image 1</span><img src="/images/icon-download.png" alt=""/></a> <br/>
+		            <a id="small-download-<%= img_id %>" href="<%= base_url %>_small?action=download" title="Download <%= img_id %>_small.jpg"><span class="obscure">Download the small size of image 1</span><img src="/images/icon-download.png" alt=""/></a> <br/>
 		            <span id="small-size-<%= img_id %>" class="img-size"></span>
 		          </li>
 		          <li>
 		            <a id="medium-<%= img_id %>" href="#" title="View at 587 x 736 pixels"><span class="obscure">View the </span>medium<span class="obscure"> size of image 1</span></a>&nbsp;
-		            <a id="medium-download-<%= img_id %>" href="<%= base_url %>_medium.jpg?action=download" title="Download <%= img_id %>_medium.jpg"><span class="obscure">Download the medium size of image 1</span><img src="/images/icon-download.png" alt=""/></a> <br/>
+		            <a id="medium-download-<%= img_id %>" href="<%= base_url %>_medium?action=download" title="Download <%= img_id %>_medium.jpg"><span class="obscure">Download the medium size of image 1</span><img src="/images/icon-download.png" alt=""/></a> <br/>
 		            <span id="medium-size-<%= img_id %>" class="img-size"></span>
 		          </li>
 		          <li>
 		            <a id="large-<%= img_id %>" href="#" title="View at 1174 x 1472 pixels"><span class="obscure">View the </span>large<span class="obscure"> size of image 1</span></a>&nbsp;
-		            <a id="large-download-<%= img_id %>" href="<%= base_url %>_large.jpg?action=download" title="Download <%= img_id %>_large.jpg"><span class="obscure">Download the large size of image 1</span><img src="/images/icon-download.png" alt=""/></a> <br/>
+		            <a id="large-download-<%= img_id %>" href="<%= base_url %>_large?action=download" title="Download <%= img_id %>_large.jpg"><span class="obscure">Download the large size of image 1</span><img src="/images/icon-download.png" alt=""/></a> <br/>
 		            <span id="large-size-<%= img_id %>" class="img-size"></span>
 		          </li>
 		          <li>
-		            <a id="zoom-<%= img_id %>" href="#" title="Zoom View">zoom <br/> view<span class="obscure"> of image 1</span></a>                
+		            <a id="zoom-<%= img_id %>" href="#" title="Zoom View">zoom <br/> view<span class="obscure"> of image 1</span></a>
 		          </li>
 	          </ul>
 	        </div>
@@ -55,7 +55,7 @@
 	          <% end %>
 	        </div>
 	      </li>
-      <% end %>          
-    <% end %>	
+      <% end %>
+    <% end %>
   <% end %>
 </ol>
