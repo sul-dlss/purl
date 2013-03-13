@@ -609,13 +609,13 @@ function loadImgsInVerticalNavigation(id, index) {
       "<a id=\"thumb-img-viewer\" href=\"javascript:;\"><span class=\"obscure\">View the</span> thumb <span class=\"obscure\"> size of image </span><span class=\"obscure\" id=\"thumb-img-viewer-id\"></span></a>" +
       "<span id=\"thumb-size-img-viewer\" class=\"img-size\"></span>" +
     "</div>" +
-    "<div class=\"viewer-sizes-download\"> " +
-      "<a id=\"thumb-img-viewer-download\">" +
-        "<span class=\"obscure\">Download the thumb size of image </span>" +
-        "<span class=\"obscure\" id=\"thumb-img-viewer-download-id\"></span>" +
-        "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" +
-      "</a>" +
-    "</div>" +
+    // "<div class=\"viewer-sizes-download\"> " +
+    //   "<a id=\"thumb-img-viewer-download\">" +
+    //     "<span class=\"obscure\">Download the thumb size of image </span>" +
+    //     "<span class=\"obscure\" id=\"thumb-img-viewer-download-id\"></span>" +
+    //     "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" +
+    //   "</a>" +
+    // "</div>" +
   "</li>";
   $("#viewer-sizes-nav").append(html);
 
