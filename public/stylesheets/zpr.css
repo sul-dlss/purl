@@ -23,6 +23,7 @@
   background-color: #777;
   border: 1px solid #666;
   left: 20px;
+  min-width: 105px\9; /*IE8 hack */
   padding: 5px;
   position: absolute;
   top: 20px;

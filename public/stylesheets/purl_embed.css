@@ -105,6 +105,7 @@ body { margin: 0; padding: 0; }
   border: 1px solid #bbb;
   float: left;
   min-height: 46px;
+  min-width: 42px\9; /* IE8 hack */
   padding: 4px;
   position: relative;
   text-align: center;
