@@ -262,7 +262,7 @@ a.active .pe-download-icon, a:visited .pe-download-icon {
 .pe-full-screen-nav {
   float: right;
   margin: 8px 5px 0 0;
-  overflow: auto;
+  /*overflow: auto;*/
 }
 
 .pe-container-full-screen {
