@@ -45,10 +45,6 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
       $.merge($.merge(availableSizes, sizes), views);
     }
 
-    $.extend(tooltipTexts, config.tooltipTexts);
-
-    console.log(tooltipTexts);
-
     changeLayout(inputLayout);
 
     $(window).bind('hashchange', function(){
@@ -757,6 +753,16 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
 
   /* function to set tooltip texts */
   function setTooltipTexts() {
+    var list = $('body').attr('class').match(/lang-\w\w/);
+
+    if (list && list.length > 0) {
+      lang = list[0].replace(/^lang-/, '');
+
+      if (config.tooltipTexts.hasOwnProperty(lang)) {
+        $.extend(tooltipTexts, config.tooltipTexts[lang]);
+      }
+    }
+
     $('.pe-full-screen-ctrl').attr('title', tooltipTexts.OpenInFullScreen);
     $('.pe-full-screen-close').attr('title', tooltipTexts.Close);
   }
