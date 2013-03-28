@@ -20,6 +20,7 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
   var inputSequence, inputSize, inputLayout, inputZoomIncrement;
   var isFullScreenOn = false;
   var layouts = [ 'thumbs-nav-top', 'thumbs-nav-bottom', 'thin-nav-top', 'thin-nav-bottom' ];
+  var cselectJson = [];
   var availableSizes = [];
   var tooltipTexts = {
     'OpenInFullScreen': 'Open in full screen',
@@ -43,6 +44,10 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
       availableSizes = validateSizes(config.availableSizes);
     } else {
       $.merge($.merge(availableSizes, sizes), views);
+    }
+
+    if (typeof config.zoomOnClick === 'undefined') {
+      config.zoomOnClick = true;
     }
 
     changeLayout(inputLayout);
@@ -210,8 +215,10 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
         .removeAttr('src').attr({ 'src': url })
         .width(imgWidth).height(imgHeight)
         .click(function() {
-          if (!isFullScreenOn) {
-            $('.pe-full-screen-ctrl').click();
+          if (config.zoomOnClick) {
+            if (!isFullScreenOn) {
+              $('.pe-full-screen-ctrl').click();
+            }
           }
         })
         .appendTo('.pe-img-viewfinder')
@@ -342,7 +349,6 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
   function loadImgsInVerticalNavigation(index) {
     var seqIndex = getSequenceIndex(index);
     var url, height, html = "", li;
-    var cselectJson = [];
 
     for (var i = 0; i < imgData.length; i++) {
       if (groups[seqIndex] == getGroupId(imgData[i].sequence)) {
@@ -708,6 +714,7 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
   /* Set full screen toggle options */
   function setFullScreenControls() {
     $('.pe-full-screen-ctrl').click(function() {
+
       if (!isFullScreenOn) {
         $(parentSelector + " > .pe-container")
           .addClass('pe-container-full-screen');
@@ -716,7 +723,13 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
         $('.pe-full-screen-close').show();
         setProperties($(window).width() - 40, $(window).height() - 40);
 
+        if (config.zoomOnClick && $.inArray('zoom', availableSizes) != -1) {
+          currentSize = 'zoom';
+        }
+
+        $('.pe-dd-cselect').cselect('select', { index: getIndexForSize(currentSize, cselectJson) });
         showImg(currentSequence, currentSize);
+
         isFullScreenOn = !isFullScreenOn;
       }
     });
