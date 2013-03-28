@@ -8,4 +8,5 @@ log/*
 public/.htaccess
 public/*-embed.html
 public/*-plugin.html
+public/javascripts/purl_embed_new.js
 tmp/

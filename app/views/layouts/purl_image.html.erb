@@ -1,14 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>Stanford Digital Repository</title>
-    <%= stylesheet_link_tag 'purl_image', 'zpr' %> 
+    <title><%= yield(:title) %>Stanford Digital Repository</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <%= stylesheet_link_tag 'purl_image', 'zpr' %>
   </head>
   <body>
     <div id="container">
       <div id="banner">
         <h1>Stanford Digital Repository</h1>
-      </div>            
+      </div>
       <div id="contents">
 	      <%= yield %>
       </div>

@@ -33,9 +33,10 @@
   <div class="pe-purl-url">
     <a href="<%= purl_url %>" target="_blank"><%= purl_url %></a>
   </div>
+  <div class="pe-full-screen-close"></div>
 </div>
-
 
 <%= render :partial => 'purl/embed/thumbs_nav_bottom', :locals => { :purl_url => purl_url, :purl_server => purl_server } %>
 <%= render :partial => 'purl/embed/thin_nav_top', :locals => { :purl_url => purl_url, :purl_server => purl_server } %>
 <%= render :partial => 'purl/embed/thin_nav_bottom', :locals => { :purl_url => purl_url, :purl_server => purl_server } %>
+

@@ -41,61 +41,61 @@ a { color: #00388e /*#2E4F81*/; text-decoration:none; }
 a:hover { border-bottom: 1px dotted; }
 a:active { color: #4f4f4f; }
 
-body { 
+body {
   background: #474747 url(../images/purl-image-background.png) top left repeat-x;
-  color: #000000; 
+  color: #000000;
 	font: 11px/1.3em "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
-	text-align: center; 
+	text-align: center;
 }
 
 h1 {
-	color: #f6f6f6; 
-	filter: dropshadow(color=#333333, offx=-1, offy=-1); 
-	font: normal normal normal 1.9em "Myriad Pro", "Droid Sans", "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;  
-	letter-spacing: 1px; 
-	text-shadow: -1px -1px 0px #333; 
+	color: #f6f6f6;
+	filter: dropshadow(color=#333333, offx=-1, offy=-1);
+	font: normal normal normal 1.9em "Myriad Pro", "Droid Sans", "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+	letter-spacing: 1px;
+	text-shadow: -1px -1px 0px #333;
 }
 
-h2 { 
-  font-size: 1.4em; 
-	font-weight: normal; 
-	line-height: 1.2em; 
-	margin: 0 0 .5em 0; 
+h2 {
+  font-size: 1.4em;
+	font-weight: normal;
+	line-height: 1.2em;
+	margin: 0 0 .5em 0;
 }
 
-h3 { 
-  font-size: 1.1em; 
-	font-weight: normal; 
+h3 {
+  font-size: 1.1em;
+	font-weight: normal;
 }
 
-#container { 
+#container {
 	margin: 0 auto;
   overflow: hidden;
-  position: relative; 
-	text-align: left; 
-	width: 90%; 
+  position: relative;
+	text-align: left;
+	width: 90%;
 }
 
-#banner { 
-  background: url('../images/sulair_rosette_30x30.png') top left no-repeat; 
-	height: 35px; 
-	margin: 8px 0 4px 0; 
-	padding-left: 40px; 
+#banner {
+  background: url('../images/sulair_rosette_30x30.png') top left no-repeat;
+	height: 35px;
+	margin: 8px 0 4px 0;
+	padding-left: 40px;
 }
 
-#banner h1 { 
-  padding-top: 6px; 
+#banner h1 {
+  padding-top: 6px;
 }
 
-#contents { 
+#contents {
   position: relative;
   width: 100%;
 }
-	
+
 #panes-container {
-  overflow: auto; 
-  position: relative; 
-  width: 200%; 
+  overflow: auto;
+  position: relative;
+  width: 200%;
 }
 
 #pane-toc-metadata {
@@ -115,7 +115,7 @@ h3 {
 }
 
 #links-and-metadata {
-	margin: 20px 30px 10px 30px;	
+	margin: 20px 30px 10px 30px;
 	overflow: auto;
 }
 
@@ -145,31 +145,37 @@ h3 {
 
 #title-metadata, #rights-metadata {
 	width: 82%;
-  float: left;  
+  float: left;
 }
 
 #rights-metadata {
 	width: 100%;
 }
 
-#title-metadata dl, #rights-metadata dl { 
-  margin: 15px 0; 
+#title-metadata dl, #rights-metadata dl {
+  margin: 15px 0;
 }
 
-#title-metadata dt, #rights-metadata dt { 
-  clear: both; 
-  color: #555555; 
-  float: left; 
-  padding: 2px 0; 
-  width: 12em; 
-} 
+#title-metadata dt, #rights-metadata dt {
+  clear: both;
+  color: #555555;
+  float: left;
+  padding: 2px 0;
+  width: 12em;
+}
 
-#title-metadata dd, #rights-metadata dd { 
-  margin-left: 12em;	
-  padding: 2px 0px; 
-} 
+#title-metadata dd, #rights-metadata dd {
+  line-height: 1.5;
+  margin-left: 12em;
+  padding: 2px 0px;
+}
 
-#title-metadata dd p, #rights-metadata dd p { 
+#title-metadata dd hr {
+  border-width: 0;
+  margin: 7px 0;
+}
+
+#title-metadata dd p, #rights-metadata dd p {
   margin-bottom: 8px;
 }
 
@@ -196,7 +202,7 @@ ol#toc {
 }
 
 ol#toc > li {
-  background: #fff url('../images/item-header-bg.png') left 2px repeat-x;   
+  background: #fff url('../images/item-header-bg.png') left 2px repeat-x;
   border: 1px solid #ccc;
   margin: 5px 5px 0 0;
   overflow: auto;
@@ -216,7 +222,7 @@ ol.gallery {
 }
 
 ol.gallery  li {
-  background: #fff url('../images/gallery-item-bg.png') left bottom repeat-x;   
+  background: #fff url('../images/gallery-item-bg.png') left bottom repeat-x;
   border: 1px solid #ccc;
   float: left;
   margin: 5px 5px 0 0;
@@ -254,7 +260,7 @@ ol.gallery .img-block {
 	width: 240px;
 }
 
-.img-group-nav {	
+.img-group-nav {
 	height: 10px;
 	padding: 10px 0 10px 0;
 }
@@ -273,10 +279,10 @@ ol.gallery .img-block {
 
 a.item-header {
   background: transparent url('../images/icon-show.png') 378px 16px no-repeat;
-  color: #000;   
-  display: block; 
+  color: #000;
+  display: block;
   outline: none;
-  overflow: auto; 
+  overflow: auto;
   padding: 5px 5px 0 5px;
 }
 
@@ -295,11 +301,11 @@ ol#toc > li > a.item-header-hide {
 	color: #fff;
 	padding: 2px 4px;
   -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;  	
+  -webkit-border-radius: 2px;
 }
 
 a.gallery-page-nav-link {
-	border: 1px solid transparent;	
+	border: 1px solid transparent;
 	padding: 2px 4px;
 	margin-right: 4px;
 }
@@ -313,8 +319,8 @@ a.item-header:hover {
 }
 
 .sq-thumbnail-img {
-  float: left;  
-  padding: 2px 2px 5px 2px;   
+  float: left;
+  padding: 2px 2px 5px 2px;
   height: 30px;
   width: 30px;
 }
@@ -322,7 +328,7 @@ a.item-header:hover {
 .img-item-label-container {
   float: left;
   margin-left: 10px;
-  margin-top: 10px;  
+  margin-top: 10px;
   text-align: center;
   width: 320px;
 }
@@ -386,7 +392,7 @@ a.item-header:hover {
 .img-item-label:hover {
   border-bottom: 1px dotted;
   cursor: pointer;
-}  
+}
 
 #links-rights {
   float: left;
@@ -396,8 +402,8 @@ a.item-header:hover {
 
 /*
 #links-rights dl { margin: 0 0 1em 0em; }
-#links-rights dt { clear: both; float: left; color: #555555; padding: 5px 0 0 0; margin-top: 5px; } 
-#links-rights dd { clear: both; float: left; padding: 2px 0 2px 0; width: 100%; } 
+#links-rights dt { clear: both; float: left; color: #555555; padding: 5px 0 0 0; margin-top: 5px; }
+#links-rights dd { clear: both; float: left; padding: 2px 0 2px 0; width: 100%; }
 */
 
 #img-viewfinder {
@@ -409,7 +415,7 @@ a.item-header:hover {
   top: 102px;
 }
 
-#img-canvas {	
+#img-canvas {
   margin: 10px;
 }
 
@@ -420,15 +426,15 @@ a.item-header:hover {
 }
 
 #img-viewer-metadata {
-	float: left; 
-	line-height: 1.6;	
+	float: left;
+	line-height: 1.6;
 	padding: 27px 10px 0 10px;
 }
 
 #img-viewer-links {
-  clear: both; 
+  clear: both;
   border-bottom: 1px solid #878787;
-  float: left; 
+  float: left;
   height: 81px;
   margin: 0 10px;
   overflow: auto;
@@ -442,7 +448,7 @@ a.item-header:hover {
   margin: 0 10px;
   padding: 4px 8px;
   -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;  
+  -webkit-border-radius: 5px;
 }
 
 .available-sizes {
@@ -457,11 +463,11 @@ a.item-header:hover {
   cursor: default;
 }
 
-.viewer-nav-links a:link, .viewer-nav-links a:active, .viewer-nav-links a:visited { 
+.viewer-nav-links a:link, .viewer-nav-links a:active, .viewer-nav-links a:visited {
   color: #fff;
 }
 
-.img-viewer-nav {	 
+.img-viewer-nav {
 	float: left;
 	margin-left: 30px;
 	text-align: center;
@@ -473,20 +479,20 @@ a.item-header:hover {
 	padding: 0 8px;
 }
 
-#img-viewer-prev > img, #img-viewer-next > img {	
+#img-viewer-prev > img, #img-viewer-next > img {
 	cursor: pointer;
 	padding-top: 26px;
 }
 
-a#img-viewer-prev:hover, a#img-viewer-next:hover { 
+a#img-viewer-prev:hover, a#img-viewer-next:hover {
 	border: 0;
 }
 
-.viewer-h-nav-img {	
+.viewer-h-nav-img {
 	display: inline;
-	float: left; 
+	float: left;
 	margin: 1px 3px;
-	padding: 14px 2px 2px 2px;	
+	padding: 14px 2px 2px 2px;
 }
 
 #viewer-nav-selected-tab {
@@ -495,7 +501,7 @@ a#img-viewer-prev:hover, a#img-viewer-next:hover {
 	border-right: 1px solid #878787;
 	border-left: 1px solid #878787;
   border-bottom: 1px solid #878787;
-	float: left;	
+	float: left;
 	padding: 10px 10px 5px 10px;
 	z-index: 10000;
 }
@@ -504,7 +510,7 @@ a#img-viewer-prev:hover, a#img-viewer-next:hover {
 	padding-top: 2px;
 }
 
-#footer { 
+#footer {
 	bottom: 0;
 	position: absolute;
 	width: 100%;
@@ -512,7 +518,7 @@ a#img-viewer-prev:hover, a#img-viewer-next:hover {
 }
 
 #footer-show-hide {
-  background: transparent url('/images/icon-img-footer-show.png') no-repeat 0px 0px;	
+  background: transparent url('/images/icon-img-footer-show.png') no-repeat 0px 0px;
   cursor: pointer;
   float: right;
 	height: 32px;
@@ -531,12 +537,12 @@ a#img-viewer-prev:hover, a#img-viewer-next:hover {
 	padding: 10px 0;
 	width: 100%;
 	opacity:0.9;
-	filter:alpha(opacity=90);	
+	filter:alpha(opacity=90);
 }
 
 #footer-links {
-  background: transparent url('/images/footer-stanford-logo.png') no-repeat 0px 6px;	
-	margin-left: 5%;	
+  background: transparent url('/images/footer-stanford-logo.png') no-repeat 0px 6px;
+	margin-left: 5%;
 	padding-left: 170px;
 	text-align: left;
 }
@@ -553,23 +559,23 @@ a#img-viewer-prev:hover, a#img-viewer-next:hover {
 }
 
 #viewer-sizes-nav li {
-  width: 160px;	
+  width: 160px;
 }
 
 .viewer-sizes-links {
   float: left;
   padding: 4px 0;
-  width: 125px;	
+  width: 125px;
 }
 
 .viewer-sizes-download {
   float: left;
   padding: 4px 0;
-  width: 30px;	
+  width: 30px;
 }
 
 .viewer-selected-img {
-	border: 2px solid #a2000a;	
+	border: 2px solid #a2000a;
 }
 
 #viewer-v-nav {
@@ -597,7 +603,7 @@ a#img-viewer-prev:hover, a#img-viewer-next:hover {
 	margin-bottom: 15px;
 }
 
-#viewer-v-nav a:hover {	
+#viewer-v-nav a:hover {
 	border: 0;
 }
 
@@ -605,13 +611,13 @@ a#img-viewer-prev:hover, a#img-viewer-next:hover {
 	margin-left: 5px;
 }
 
-#footer a, #footer a:hover { 
+#footer a, #footer a:hover {
   color: #ffffff;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
-#footer a:hover { 
-  border-bottom: 1px dotted #ccc; 
+#footer a:hover {
+  border-bottom: 1px dotted #ccc;
 }
 
 .obscure {
@@ -622,7 +628,7 @@ a#img-viewer-prev:hover, a#img-viewer-next:hover {
 }
 
 .sidebar-stmt {
-	padding: 0 0 15px 0; 
+	padding: 0 0 15px 0;
 }
 
 .cc_by, .cc_by_nc, .cc_by_nd, .cc_by_sa, .cc_by_nc_sa, .cc_by_nc_nd {

@@ -184,8 +184,14 @@ highlight colour for browse by callnum:  #e5f1f4
 }
 
 #title-metadata dd, #rights-metadata dd {
+  line-height: 1.5;
   margin-left: 12em;
   padding: 4px 0px;
+}
+
+#title-metadata dd hr {
+  border-width: 0;
+  margin: 7px 0;
 }
 
 #title-metadata dd p, #rights-metadata dd p {
