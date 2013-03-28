@@ -3,7 +3,7 @@
   <head>
     <title><%= yield(:title) %>Stanford Digital Repository</title>
     <link rel="shortcut icon" href="favicon.ico" />
-    <%= stylesheet_link_tag 'purl_flipbook' %>
+    <%= stylesheet_link_tag 'purl_flipbook', 'footer' %>
   </head>
   <body>
     <div id="container">
@@ -16,7 +16,7 @@
     </div>
 
     <%= render :partial => 'purl/image/footer' %>
-    <%= javascript_include_tag 'jquery', 'jquery.truncator', 'application', 'purl_flipbook' %>
+    <%= javascript_include_tag 'jquery', 'jquery.truncator', 'application', 'purl_flipbook', 'footer' %>
 
   </body>
 </html>
