@@ -21,6 +21,10 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
   var isFullScreenOn = false;
   var layouts = [ 'thumbs-nav-top', 'thumbs-nav-bottom', 'thin-nav-top', 'thin-nav-bottom' ];
   var availableSizes = [];
+  var tooltipTexts = {
+    'OpenInFullScreen': 'Open in full screen',
+    'Close': 'Close'
+  };
 
   /* Constructor function */
   (function init() {
@@ -40,6 +44,10 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     } else {
       $.merge($.merge(availableSizes, sizes), views);
     }
+
+    $.extend(tooltipTexts, config.tooltipTexts);
+
+    console.log(tooltipTexts);
 
     changeLayout(inputLayout);
 
@@ -139,6 +147,8 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     }
 
     $('.pe-container').width(containerWidth).height(containerHeight);
+
+    setTooltipTexts();
   }
 
   /* show image for a given sequence and size */
@@ -743,6 +753,12 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
       }
 
     });
+  }
+
+  /* function to set tooltip texts */
+  function setTooltipTexts() {
+    $('.pe-full-screen-ctrl').attr('title', tooltipTexts.OpenInFullScreen);
+    $('.pe-full-screen-close').attr('title', tooltipTexts.Close);
   }
 
   /* Show selected layout and hide/remove other layouts */
