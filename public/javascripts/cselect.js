@@ -1,4 +1,3 @@
-//
 // custom select jQuery plugin (Inspired by ddslick jQuery plugin)
 //
 (function($) {

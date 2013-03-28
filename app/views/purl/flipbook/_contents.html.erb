@@ -1,3 +1,5 @@
+<% content_for :title, print_title_value() + ' - ' %>
+
 <%
   deliverable_file = get_first_deliverable_image_file
   href = "javascript:showFullScreen();"
@@ -9,7 +11,6 @@
     href = "https://" + request.host_with_port + "/auth/" + @purl.pid + "#flipbook"
     label = " (Requires Stanford Authentication)"
   end
-
 %>
 
 <div id="pane-toc-metadata">

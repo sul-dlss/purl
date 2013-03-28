@@ -7,12 +7,6 @@ Array.prototype.unique = function() {
   for (i in o) r.push(o[i]); return r;
 };
 
-Array.prototype.contains = function(obj) {
-  var i = this.length;
-  while (i--) { if (this[i] === obj) { return true; } }
-  return false;
-}
-
 /* Main purlEmbed function comprising private variables and methods */
 var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
   var imgData, currentSequence, druid;
@@ -22,14 +16,11 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
   var sizes = [ 'thumb', 'small', 'medium', 'large', 'xlarge', 'full' ];
   var views = [ 'zoom' ];
   var sizeLevelMapping = { 'small':  -3, 'medium': -2, 'large': -1, 'xlarge': 0,'full': 1 };
-  var limits = {
-    'non-restricted': ['thumb'],
-    'restricted': ['small', 'medium', 'large', 'xlarge', 'full', 'zoom']
-  };
   var origContainerWidth, origContainerHeight;
   var inputSequence, inputSize, inputLayout, inputZoomIncrement;
   var isFullScreenOn = false;
   var layouts = [ 'thumbs-nav-top', 'thumbs-nav-bottom', 'thin-nav-top', 'thin-nav-bottom' ];
+  var availableSizes = [];
 
   /* Constructor function */
   (function init() {
@@ -43,6 +34,12 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     inputSequence = config.sequence;
     inputSize = config.size;
     inputLayout = config.layout || 'thumbs-nav-top';
+
+    if (config.availableSizes && config.availableSizes.length > 0) {
+      availableSizes = validateSizes(config.availableSizes);
+    } else {
+      $.merge($.merge(availableSizes, sizes), views);
+    }
 
     changeLayout(inputLayout);
 
@@ -74,6 +71,10 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
 
     if (typeof currentSequence === 'undefined') {
       currentSequence = imgData[0].sequence;
+    }
+
+    if ($.inArray(currentSize, availableSizes) === -1) {
+      currentSize = availableSizes[0];
     }
 
     if (typeof inputSize === 'undefined') {
@@ -118,7 +119,7 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
 
       groups.push(groupId);
 
-      $.each(sizes, function(j, size) {
+      $.each(nonZoomSizes(availableSizes), function(j, size) {
         return (function(s) {
           imgData[index][s] = getDimensionsForSize(index, s);
           imgData[index]['level-for-' + s] = getLevelForSize(s, index);
@@ -202,10 +203,14 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
       $('<img class="pe-img-canvas">')
         .removeAttr('src').attr({ 'src': url })
         .width(imgWidth).height(imgHeight)
+        .click(function() {
+          if (!isFullScreenOn) {
+            $('.pe-full-screen-ctrl').click();
+          }
+        })
         .appendTo('.pe-img-viewfinder')
         .show();
     }
-
   }
 
   /* Loads the image in ZPR UI */
@@ -298,16 +303,31 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
         .removeClass('pe-h-nav-next-active')
         .unbind();
 
+      $('.pe-img-hover-nav-prev').remove();
+      $('.pe-img-hover-nav-next').remove();
+
       if ((seqIndex - 1) >= 0) {
         $('.pe-h-nav-prev')
           .click(function() { prev(seqIndex); })
           .addClass('pe-h-nav-prev-active');
+
+        $('<div class="pe-img-hover-nav-prev"></div>')
+          .hover(function() { $(this).fadeTo('fast', 0.4); })
+          .mouseout(function() { $(this).fadeTo('fast', 0); })
+          .click(function() { prev(seqIndex); })
+          .appendTo('.pe-nav-contents');
       }
 
       if ((seqIndex + 1) < groups.length) {
         $('.pe-h-nav-next')
           .click(function() { next(seqIndex); })
           .addClass('pe-h-nav-next-active');
+
+        $('<div class="pe-img-hover-nav-next"></div>')
+          .hover(function() { $(this).fadeTo('fast', 0.4); })
+          .mouseout(function() { $(this).fadeTo('fast', 0); })
+          .click(function() { next(seqIndex); })
+          .appendTo('.pe-nav-contents');
       }
     }
   }
@@ -331,17 +351,19 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
       }
     }
 
-    $('.pe-v-nav-selected-img').append($('<ul class=\"pe-v-nav-sizes\">'));
+    if ($.inArray('thumb', availableSizes) >= 0) {
+      $('.pe-v-nav-selected-img').append($('<ul class=\"pe-v-nav-sizes\">'));
 
-    html = "<span class=\"pe-thumb-img-viewer\" href=\"javascript:;\">thumb</span>" +
-        "<span class=\"pe-v-nav-img-size\"> (" +  getDimensionsForSizeWxH(index, 'thumb') + ")</span>";
+      html = "<span class=\"pe-thumb-img-viewer\" href=\"javascript:;\">thumb</span>" +
+          "<span class=\"pe-v-nav-img-size\"> (" +  getDimensionsForSizeWxH(index, 'thumb') + ")</span>";
 
-    $(".pe-v-nav-sizes").append("<li>" + html + "</li>");
-    cselectJson.push({ 'html': html, 'size': 'thumb', 'index': index });
+      $(".pe-v-nav-sizes").append("<li>" + html + "</li>");
+      cselectJson.push({ 'html': html, 'size': 'thumb', 'index': index });
+    }
 
     if (imgData[index].rightsWorld === "true") {
       if (imgData[index].rightsStanford === "false" && imgData[index].rightsWorldRule === "") {
-        $.each(sizes, function(i, size) {
+        $.each(nonZoomSizes(availableSizes), function(i, size) {
           html = "";
           html = "<span class=\"pe-" + size + "-img-viewer\" href=\"javascript:;\">" + size + "</span>" +
               "<span class=\"pe-v-nav-img-size\"> ("  + getDimensionsForSizeWxH(index, size) + ")</span>" +
@@ -357,7 +379,7 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
 
     if (imgData[index].rightsStanford === "true") {
       if (imgData[index].rightsStanfordRule !== "no-download") {
-        $.each(sizes, function(i, size) {
+        $.each(nonZoomSizes(availableSizes), function(i, size) {
           var url = "https://" + $(location).attr('host') + '/auth' +
             $(location).attr('pathname').replace(/^\/auth/, '') +
             $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, size);
@@ -376,18 +398,21 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
       }
     }
 
-    if (imgData[index].rightsWorld === "true") {
-      li = "<span class=\"pe-zoom-img-viewer\" href=\"javascript:;\" title=\"Zoom View\">zoom</span>";
-    } else if (imgData[index].rightsStanford === "true") {
-      var url = "https://" + $(location).attr('host') + '/auth' + $(location).attr('pathname').replace(/^\/auth/, '') +
-        $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, 'zoom');
 
-      li = "<span class=\"pe-zoom-img-viewer su\" href=\"" + url + "\" title=\"Zoom View\">zoom</span>" +
-        "<img src=\"" + peServerURL + "/images/icon-stanford-only.png\" class=\"pe-icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>";
+    if ($.inArray('zoom', availableSizes) >= 0) {
+      if (imgData[index].rightsWorld === "true") {
+        li = "<span class=\"pe-zoom-img-viewer\" href=\"javascript:;\" title=\"Zoom View\">zoom</span>";
+      } else if (imgData[index].rightsStanford === "true") {
+        var url = "https://" + $(location).attr('host') + '/auth' + $(location).attr('pathname').replace(/^\/auth/, '') +
+          $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, 'zoom');
+
+        li = "<span class=\"pe-zoom-img-viewer su\" href=\"" + url + "\" title=\"Zoom View\">zoom</span>" +
+          "<img src=\"" + peServerURL + "/images/icon-stanford-only.png\" class=\"pe-icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>";
+      }
+
+      $(".pe-v-nav-sizes").append("<li><div class=\"pe-v-nav-sizes-links\">" + li + "</div></li></ul>");
+      cselectJson.push({ 'html': li, 'size': 'zoom', 'index': index  });
     }
-
-    $(".pe-v-nav-sizes").append("<li><div class=\"pe-v-nav-sizes-links\">" + li + "</div></li></ul>");
-    cselectJson.push({ 'html': li, 'size': 'zoom', 'index': index  });
 
     updateViewerSizesLinks(index);
     renderCselect(cselectJson);
@@ -424,11 +449,9 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     $('.pe-dd-cselect').cselect({
       data: cselectJson,
       width: 220,
-      //selectText: 'Select a size',
-      defaultSelectedIndex: getIndexForSize(inputSize, cselectJson),
+      defaultSelectedIndex: getIndexForSize(currentSize, cselectJson),
       reverseMenuDirection: reverseMenuDirection,
       onSelected: function(data) {
-        // loadImage(data.selectedData.index, data.selectedData.size);
         showImg(currentSequence, data.selectedData.size);
       }
     });
@@ -437,11 +460,9 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
   /* Parse URL hash params */
   function setURLSuffix() {
     var params = parseHashParams();
-    var sequence = params[0];
-    var size = params[1];
 
-    currentSequence = sequence;
-    currentSize = size;
+    currentSequence = params[0];
+    currentSize = params[1];
   }
 
   /* Parse URL hash params */
@@ -683,16 +704,24 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     $('.pe-full-screen-ctrl').click(function() {
       if (!isFullScreenOn) {
         $(parentSelector + " > .pe-container")
-        .addClass('pe-container-full-screen');
+          .addClass('pe-container-full-screen');
 
-        $('.pe-full-screen-ctrl').attr('src', peServerURL + '/images/icon-full-screen-contract.png');
-        setProperties($(window).width(), $(window).height());
+        $('.pe-full-screen-ctrl').hide();
+        $('.pe-full-screen-close').show();
+        setProperties($(window).width() - 40, $(window).height() - 40);
 
-      } else {
+        showImg(currentSequence, currentSize);
+        isFullScreenOn = !isFullScreenOn;
+      }
+    });
+
+    $('.pe-full-screen-close').click(function() {
+      if (isFullScreenOn) {
         $(parentSelector + " > .pe-container")
-        .removeClass('pe-container-full-screen');
+          .removeClass('pe-container-full-screen');
 
-        $('.pe-full-screen-ctrl').attr('src', peServerURL + '/images/icon-full-screen-expand.png');
+        $('.pe-full-screen-ctrl').show();
+        $('.pe-full-screen-close').hide();
         setProperties(origContainerWidth, origContainerHeight);
       }
 
@@ -703,8 +732,16 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     $(document).keyup(function(e) {
       // escape key code is 27
       if (e.keyCode == 27 && isFullScreenOn) {
-        $('.pe-full-screen-ctrl').click();
+        $('.pe-full-screen-close').click();
       }
+
+      // 'f' key code is 70
+      if (e.keyCode == 70) {
+        isFullScreenOn ?
+          $('.pe-full-screen-close').click() :
+          $('.pe-full-screen-ctrl').click();
+      }
+
     });
   }
 
@@ -733,6 +770,31 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     });
 
     return valid;
+  }
+
+  /* validate array of sizes */
+  function validateSizes(list) {
+    var validSizes = [];
+
+    $.each(list, function(i, size) {
+      if (isValidSize(size)) {
+        validSizes.push(size.toLowerCase());
+      }
+    });
+
+    return validSizes;
+  }
+
+  function nonZoomSizes(list) {
+    var nonZoomSizes = [];
+
+    $.each(list, function(i, size) {
+      if (size !== 'zoom') {
+        nonZoomSizes.push(size);
+      }
+    });
+
+    return nonZoomSizes;
   }
 
 });

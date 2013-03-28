@@ -22,11 +22,12 @@
 .zpr-controls {
   background-color: #777;
   border: 1px solid #666;
-  left: 20px;
+  left: 10px;
   min-width: 105px\9; /*IE8 hack */
   padding: 5px;
   position: absolute;
-  top: 20px;
+  top: 10px;
+  z-index: 8999;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
 }
@@ -37,6 +38,7 @@
   margin: 0 !important;
   padding: 0 5px;
   width: 16px;
+  z-index: 8999;
 }
 
 .zpr-marquee-box {
