@@ -5,7 +5,7 @@ function zpr(viewFinderId, inputValues) {
   var imgFrameId = viewFinderId + "-img-frame";
 
   var settings = {
-    tileSize: 512,            // dimension for a square tile
+    tileSize: 256,            // dimension for a square tile
     marqueeImgSize: 125,      // max marquee dimension (should be > 50)
     preloadTilesOffset: 0,    // rows/columns of tiles to preload
     djatokaBaseResolution: 92 // djatoka JP2 base resolution for levels
