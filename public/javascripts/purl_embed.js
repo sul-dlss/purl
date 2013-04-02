@@ -771,7 +771,7 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     if (list && list.length > 0) {
       lang = list[0].replace(/^lang-/, '');
 
-      if (config.tooltipTexts.hasOwnProperty(lang)) {
+      if (config.tooltipTexts && config.tooltipTexts.hasOwnProperty(lang)) {
         $.extend(tooltipTexts, config.tooltipTexts[lang]);
       }
     }
