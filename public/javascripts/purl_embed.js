@@ -766,18 +766,20 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
 
   /* function to set tooltip texts */
   function setTooltipTexts() {
-    var list = $('body').attr('class').match(/lang-\w\w/);
+    if ($('body').attr('class')) {
+      var list = $('body').attr('class').match(/lang-\w\w/);
 
-    if (list && list.length > 0) {
-      lang = list[0].replace(/^lang-/, '');
+      if (list && list.length > 0) {
+        lang = list[0].replace(/^lang-/, '');
 
-      if (config.tooltipTexts && config.tooltipTexts.hasOwnProperty(lang)) {
-        $.extend(tooltipTexts, config.tooltipTexts[lang]);
+        if (config.tooltipTexts && config.tooltipTexts.hasOwnProperty(lang)) {
+          $.extend(tooltipTexts, config.tooltipTexts[lang]);
+        }
       }
     }
 
-    $('.pe-full-screen-ctrl').attr('title', tooltipTexts.OpenInFullScreen);
-    $('.pe-full-screen-close').attr('title', tooltipTexts.Close);
+    $('.pe-full-screen-ctrl').attr('title', tooltipTexts.OpenInFullScreen || '');
+    $('.pe-full-screen-close').attr('title', tooltipTexts.Close || '');
   }
 
   /* Show selected layout and hide/remove other layouts */
