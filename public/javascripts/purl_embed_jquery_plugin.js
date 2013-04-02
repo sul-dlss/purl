@@ -4,19 +4,22 @@ if(!jQuery.support.cors&&window.XDomainRequest){var httpRegEx=/^https?:\/\//i;va
 
 (function($) {
   var serverUrls = {
-    'test': 'http://purl-test.stanford.edu',
-    'prod': 'http://purl.stanford.edu',
-    'local': 'http://localhost:3000'
+    'test': '//purl-test.stanford.edu',
+    'prod': '//purl.stanford.edu',
+    'local': '//localhost:3000'
   };
 
   $.fn.embedPurl = function(config) {
     var serverURL = serverUrls[config.server],
         height = parseInt(config.height, 10),
         width = parseInt(config.width, 10),
-        $this = $(this);
+        $this = $(this),
+        hp = ('https:' === document.location.protocol) ? 'https:' : 'http:';
 
     if (!isNaN(width)) $this.width(width);
     if (!isNaN(height)) $this.height(height);
+
+    serverURL = hp + serverURL;
 
     $.ajax({
       type: "GET",
