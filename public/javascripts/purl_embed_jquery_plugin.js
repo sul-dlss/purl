@@ -13,13 +13,13 @@ if(!jQuery.support.cors&&window.XDomainRequest){var httpRegEx=/^https?:\/\//i;va
     var serverURL = serverUrls[config.server],
         height = parseInt(config.height, 10),
         width = parseInt(config.width, 10),
-        $this = $(this),
-        hp = ('https:' === document.location.protocol) ? 'https:' : 'http:';
+        protocol = document.location.protocol,
+        $this = $(this);
 
     if (!isNaN(width)) $this.width(width);
     if (!isNaN(height)) $this.height(height);
 
-    serverURL = hp + serverURL;
+    serverURL = protocol + serverURL;
 
     $.ajax({
       type: "GET",
