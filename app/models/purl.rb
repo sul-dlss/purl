@@ -102,7 +102,7 @@ class Purl
       dc.xpath('dc:identifier/text()', NAMESPACES).collect { |c| @identifiers.push(c.to_s) } # identifiers
       dc.xpath('dc:publisher/text()|dcterms:publisher/text()', NAMESPACES).collect { |c| @publisher.push(c.to_s) } # publishers
 
-      dc.xpath('dc:description[not(@*)]/text()|dcterms:abstract/text()', NAMESPACES).collect { |d| @description.push(d.to_s) } # description
+      dc.xpath('dc:description[not(@type)]/text()|dcterms:abstract/text()', NAMESPACES).collect { |d| @description.push(d.to_s) } # description
       dc.xpath('dc:description[@type="preferred citation"]/text()', NAMESPACES).collect { |d| @description_preferred_citation.push(d.to_s) } # description: preferred citation
       dc.xpath('dc:description[@type="citation/reference"]/text()', NAMESPACES).collect { |d| @description_rel_publication.push(d.to_s) } # description: citation/reference
       dc.xpath('dc:description[@type="contact"]/text()', NAMESPACES).collect { |d| @description_contact.push(d.to_s) } # description: contact
