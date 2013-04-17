@@ -315,7 +315,7 @@ a.active .pe-download-icon, a:visited .pe-download-icon {
   position: absolute;
   top: 35%;
   width: 15%;
-  z-index: 3000;
+  z-index: 1000;
 }
 
 .pe-img-hover-nav-prev {
