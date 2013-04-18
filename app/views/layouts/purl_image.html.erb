@@ -18,5 +18,7 @@
     <%= render :partial => 'purl/image/footer' %>
     <%= javascript_include_tag 'jquery', 'jquery.truncator', 'application', 'purl_image', 'zpr', 'footer' %>
     <%= render :partial => 'purl/image/json' %>
+
+    <%= render :partial => 'purl/ga' if RAILS_ENV == 'production' %>
   </body>
 </html>

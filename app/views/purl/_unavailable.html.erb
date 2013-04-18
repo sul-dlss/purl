@@ -1,19 +1,4 @@
 <div class="dialog">
-  <h2>The item you requested is not yet available.</h2>
-
-  <dl>
-	  <% if (!@purl.titles.empty? ) %>
-      <dt>Title:</dt>
-      <dd><%= print_title_value() %></dd>
-    <% end %>
-
-    <% if (!@purl.creators.empty?) %>
-      <dt>Creator:</dt>
-      <% @purl.creators.each do |creator| %>
-        <dd><%= creator %></dd>
-      <% end %>
-    <% end %>
-  </dl>
-
-  <p>This document has not yet been released. It will be available at this URL and through Socrates and SearchWorks when processing is completed.</p>
+  <h2>The item you requested is not available.</h2>
+  <p>The item you requested is not yet available. It will be available at this URL when Library processing is completed.</p>
 </div>

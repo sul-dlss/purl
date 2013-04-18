@@ -13,7 +13,10 @@
         <%= yield %>
       </div>
     </div>
+
     <%= render :partial => 'purl/image/footer' %>
     <%= javascript_include_tag 'jquery', 'jquery.truncator', 'application', 'footer' %>
+
+    <%= render :partial => 'purl/ga' if RAILS_ENV == 'production' %>
   </body>
 </html>

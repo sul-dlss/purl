@@ -6,7 +6,7 @@
 <div id="filelist">
   <% if (!@purl.embargo_release_date.nil? and @purl.embargo_release_date != '') %>
     <div class="embargo-block">
-      Access: Stanford only until <%=@purl.embargo_release_date%>
+      Access: Stanford only until <%= format_date_string(@purl.embargo_release_date) %>
     </div>
   <% end %>
   <% unless( @purl.deliverable_files.nil? or @purl.deliverable_files.empty?) %>

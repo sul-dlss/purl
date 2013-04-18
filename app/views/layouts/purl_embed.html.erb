@@ -15,5 +15,7 @@
     <script type="text/javascript">
       $(function() { var pe = new purlEmbed(peImgInfo, pePid, peStacksURL); });
     </script>
+
+    <%= render :partial => 'purl/ga' if RAILS_ENV == 'production' %>
   </body>
 </html>
