@@ -211,6 +211,11 @@ module PurlHelper
     html
   end
 
+  # convert date string to YYYY-MM-DD
+  def format_date_string(str)
+    Date.strptime(str, '%Y-%m-%d')
+  end
+
   # remove trailing period from name
   def add_copyright_symbol(copyright_stmt)
     copyright_stmt = copyright_stmt.gsub /\(c\) Copyright/i, '&copy; Copyright'
@@ -228,7 +233,6 @@ module PurlHelper
     text = text.gsub /[\n\r]/, ''
     text
   end
-
 
   # get first deliverable image file
   def get_first_deliverable_image_file

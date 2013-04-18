@@ -44,7 +44,7 @@ class PurlController < ApplicationController
         }
       end
     else
-      render :partial => "purl/unavailable", :layout => "application"
+      render :partial => "purl/unavailable", :layout => "purl_image"
       return false
     end
   end
@@ -78,7 +78,7 @@ class PurlController < ApplicationController
   end
 
   def render_404(type)
-    render :status => 404, :file => "#{RAILS_ROOT}/public/404_" + type + ".html"
+    render :status => 404, :partial => "purl/" + type, :layout => "application"
   end
 
 end
