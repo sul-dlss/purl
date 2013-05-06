@@ -28,6 +28,7 @@ KEY_FILE = File.join(RAILS_ROOT, "config", "certs", "ls-test.key")
 KEY_PASS = 'lstest'
 
 STACKS_URL = 'http://stacks-test.stanford.edu'
+FLIPBOOK_URL = 'http://sul-reader.stanford.edu/flipbook2-test'
 
 # document cache location
 DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'

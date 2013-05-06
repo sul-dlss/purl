@@ -23,7 +23,9 @@
     <%= render :partial => 'purl/image/footer' %>
 
     <%= javascript_include_tag 'jquery', 'jquery.truncator', 'purl_book' %>
-  	<script type="text/javascript"> var pid = "<%= @purl.pid %>"; </script>
+  	<script type="text/javascript">
+      var pid = "<%= @purl.pid %>";
+    </script>
 
     <%= render :partial => 'purl/ga' if RAILS_ENV == 'production' %>
   </body>

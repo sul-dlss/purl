@@ -18,6 +18,10 @@
 
     <%= render :partial => 'purl/image/footer' %>
     <%= javascript_include_tag 'jquery', 'jquery.truncator', 'application', 'purl_flipbook', 'footer' %>
+    <script type="text/javascript">
+      var pid = "<%= @purl.pid %>";
+      var flipbookUrl = "<%= FLIPBOOK_URL %>";
+    </script>
 
     <%= render :partial => 'purl/ga' if RAILS_ENV == 'production' %>
   </body>

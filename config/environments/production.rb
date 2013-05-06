@@ -37,6 +37,7 @@ KEY_FILE = File.join(RAILS_ROOT, "config", "certs", "etd-prod.key")
 KEY_PASS = 'etdprod'
 
 STACKS_URL = 'https://stacks.stanford.edu'
+FLIPBOOK_URL = 'http://sul-reader.stanford.edu/flipbook2'
 
 # document cache location
 DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'
