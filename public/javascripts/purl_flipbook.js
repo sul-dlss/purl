@@ -16,7 +16,7 @@ $(function() {
 function showFullScreen(animate) {
   var duration = 100;
   var slideWidth = parseInt($('#pane-toc-metadata').width(), 10);
-  var iframeUrl = 'http://sul-reader.stanford.edu/flipbook2/embed.jsp?id=' + pid;
+  var iframeUrl =  flipbookUrl + '/embed.jsp?id=' + pid;
 
   if (typeof animate !== 'undefined' && !animate) {
     duration = 0;
