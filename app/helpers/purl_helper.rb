@@ -216,6 +216,29 @@ module PurlHelper
     Date.strptime(str, '%Y-%m-%d')
   end
 
+  # get embargo text
+  def get_embargo_text
+    text = ""
+
+    if !embargoExpired
+      text = @purl.read_group == "none" ? "Restricted" : "Stanford only"
+      text = "Access: " + text + " until " + format_date_string(@purl.embargo_release_date).to_s
+    end
+
+    text
+  end
+
+  def embargoExpired
+    expired = true
+
+    if !@purl.embargo_release_date.nil? and !@purl.embargo_release_date.empty?
+      expired = Date.parse(@purl.embargo_release_date.to_s) < Date.today
+    end
+
+    expired
+  end
+
+
   # remove trailing period from name
   def add_copyright_symbol(copyright_stmt)
     copyright_stmt = copyright_stmt.gsub /\(c\) Copyright/i, '&copy; Copyright'
