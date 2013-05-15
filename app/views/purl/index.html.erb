@@ -5,9 +5,7 @@
 
 <div id="filelist">
   <% if (!@purl.embargo_release_date.nil? and @purl.embargo_release_date != '') %>
-    <div class="embargo-block">
-      Access: Stanford only until <%= format_date_string(@purl.embargo_release_date) %>
-    </div>
+    <div class="embargo-block"><%= get_embargo_text() %></div>
   <% end %>
   <% unless( @purl.deliverable_files.nil? or @purl.deliverable_files.empty?) %>
     <table id="assets">
@@ -17,15 +15,19 @@
       </tr>
         <% @purl.deliverable_files.each do |deliverable_file| %>
           <tr>
-  	      <td class="file">
-  	        <div class="file_icon"><%= render(:partial => "purl/fileIcon", :locals => {:fileName => deliverable_file.filename.to_s}) %></div>
-    	        <div class="file_link">
-    		        <a href="<%= get_file_url(@purl.pid, deliverable_file) %>"><%= deliverable_file.filename.to_s %></a>
-    	          <% if( deliverable_file.size != '') %>
-    	 		        (<%=number_to_human_size(deliverable_file.size,:precision => 1)%>)
-    	 	        <% end %>
+          <td class="file">
+            <div class="file_icon"><%= render(:partial => "purl/fileIcon", :locals => {:fileName => deliverable_file.filename.to_s}) %></div>
+              <div class="file_link">
+                <% if @purl.read_group == "none" and !embargoExpired %>
+                  <%= deliverable_file.filename.to_s %>
+                <% else %>
+                  <a href="<%= get_file_url(@purl.pid, deliverable_file) %>"><%= deliverable_file.filename.to_s %></a>
+                <% end %>
 
-                <% if deliverable_file.rights_stanford.to_s == "true" %>
+                <% if( deliverable_file.size != '') %>
+                  (<%=number_to_human_size(deliverable_file.size,:precision => 1)%>)
+                <% end %>
+                <% if deliverable_file.rights_stanford.to_s == "true" && !embargoExpired %>
                   <img src="/images/icon-stanford-only.png" class="icon-stanford-only" alt="Stanford Only" title="Stanford Only">
                 <% end %>
         		  </div>
