@@ -50,6 +50,10 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
       config.zoomOnClick = true;
     }
 
+    if (typeof config.disableKeyboardShortcuts === 'undefined') {
+      config.disableKeyboardShortcuts = false;
+    }
+
     changeLayout(inputLayout);
 
     $(window).bind('hashchange', function(){
@@ -748,20 +752,24 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
       isFullScreenOn = !isFullScreenOn;
     });
 
-    $(document).keyup(function(e) {
-      // escape key code is 27
-      if (e.keyCode == 27 && isFullScreenOn) {
-        $('.pe-full-screen-close').click();
-      }
 
-      // 'f' key code is 70
-      if (e.keyCode == 70) {
-        isFullScreenOn ?
-          $('.pe-full-screen-close').click() :
-          $('.pe-full-screen-ctrl').click();
-      }
+    if (!config.disableKeyboardShortcuts) {
 
-    });
+      $(document).keyup(function(e) {
+        // escape key code is 27
+        if (e.keyCode == 27 && isFullScreenOn) {
+          $('.pe-full-screen-close').click();
+        }
+
+        // 'f' key code is 70
+        if (e.keyCode == 70) {
+          isFullScreenOn ?
+            $('.pe-full-screen-close').click() :
+            $('.pe-full-screen-ctrl').click();
+        }
+
+      });
+    }
   }
 
   /* function to set tooltip texts */
