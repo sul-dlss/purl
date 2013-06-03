@@ -27,7 +27,7 @@
                 <% if( deliverable_file.size != '') %>
                   (<%=number_to_human_size(deliverable_file.size,:precision => 1)%>)
                 <% end %>
-                <% if deliverable_file.rights_stanford.to_s == "true" && !embargoExpired %>
+                <% if deliverable_file.rights_stanford.to_s == "true" %>
                   <img src="/images/icon-stanford-only.png" class="icon-stanford-only" alt="Stanford Only" title="Stanford Only">
                 <% end %>
         		  </div>
