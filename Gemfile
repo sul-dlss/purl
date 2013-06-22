@@ -1,4 +1,4 @@
-source :rubygems
+source "https://rubygems.org"
 source "http://sulair-rails-dev.stanford.edu"
 
 gem 'rails', '2.3.18'
