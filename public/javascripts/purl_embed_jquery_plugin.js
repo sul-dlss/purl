@@ -21,6 +21,20 @@ if(!jQuery.support.cors&&window.XDomainRequest){var httpRegEx=/^https?:\/\//i;va
 
     serverURL = protocol + serverURL;
 
+    function cl(data) {
+      console.log(data);
+    }
+
+    $.ajax({
+      url: serverURL + '/' + config.druid + '/embed-html-json',
+      dataType: 'jsonp',
+      jsonpCallback: 'cl',
+      success: function(t) {
+        cl(t);
+      }
+    });
+
+
     $.ajax({
       type: "GET",
       url: serverURL + '/' + config.druid + '/embed-js',
