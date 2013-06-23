@@ -32,16 +32,17 @@ module PurlUtils
 
       if !id.nil? and !id.empty?
         json_array.push(
-          "{ \"id\": \"" +  get_jp2_id(deliverable_file.filename.to_s) + "\"," +
-             "\"label\": \"" + get_file_label(deliverable_file) + "\"," +
-  	         "\"width\": " + width.to_s + "," +
-  	         "\"height\": " + height.to_s + "," +
-  	         "\"sequence\": " + sequence + "," +
-  	         "\"rightsWorld\": \"" + rights_world.to_s + "\"," +
-  	         "\"rightsWorldRule\": \"" + rights_world_rule.to_s + "\"," +
-  	         "\"rightsStanford\": \"" + rights_stanford.to_s + "\"," +
-  	         "\"rightsStanfordRule\": \"" + rights_stanford_rule.to_s + "\"" +
-  	      "}")
+          '{ "id": "' + get_jp2_id(deliverable_file.filename.to_s) + '",' +
+            '"label": "' +  get_file_label(deliverable_file) + '",' +
+            '"width": ' + width.to_s + ',' +
+            '"height": ' + height.to_s + ',' +
+            '"sequence": ' + sequence + ',' +
+            '"rightsWorld": "' + rights_world.to_s + '",' +
+            '"rightsWorldRule": "' + rights_world_rule.to_s + '",' +
+            '"rightsStanford": "' + rights_stanford.to_s + '",' +
+            '"rightsStanfordRule": "' + rights_stanford_rule.to_s + '",' +
+  	      '}'
+          )
   	  else
   	    if deliverable_file.sub_resources.length > 0
           deliverable_file.sub_resources.each do |img_file|
@@ -56,15 +57,16 @@ module PurlUtils
 
             if !id.nil? and !id.empty?
               json_array.push(
-                "{ \"id\": \"" +  get_jp2_id(img_file.filename.to_s) + "\"," +
+                '{ "id": "' + get_jp2_id(deliverable_file.filename.to_s) + '",' +
+                # "{ \"id\": \"" +  get_jp2_id(img_file.filename.to_s) + "\"," +
                    "\"label\": \"" + get_file_label(img_file) + "\"," +
         	         "\"width\": " + width.to_s + "," +
-        	         "\"height\": " + height.to_s + "," +
-        	         "\"sequence\": \"" + sequence + '.' + img_file.sequence.to_s +  "\"," +
-                   "\"rightsWorld\": \"" + rights_world.to_s + "\"," +
-                   "\"rightsWorldRule\": \"" + rights_world_rule.to_s + "\"," +
-                   "\"rightsStanford\": \"" + rights_stanford.to_s + "\"," +
-                   "\"rightsStanfordRule\": \"" + rights_stanford_rule.to_s + "\"" +
+        	       #   "\"height\": " + height.to_s + "," +
+        	       #   "\"sequence\": \"" + sequence + '.' + img_file.sequence.to_s +  "\"," +
+                #    "\"rightsWorld\": \"" + rights_world.to_s + "\"," +
+                #    "\"rightsWorldRule\": \"" + rights_world_rule.to_s + "\"," +
+                #    "\"rightsStanford\": \"" + rights_stanford.to_s + "\"," +
+                #    "\"rightsStanfordRule\": \"" + rights_stanford_rule.to_s + "\"" +
         	      "}")
         	  end
   	      end

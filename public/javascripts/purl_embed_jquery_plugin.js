@@ -21,28 +21,17 @@ if(!jQuery.support.cors&&window.XDomainRequest){var httpRegEx=/^https?:\/\//i;va
 
     serverURL = protocol + serverURL;
 
-    function cl(data) {
-      console.log(data);
-    }
-
     $.ajax({
-      url: serverURL + '/' + config.druid + '/embed-html-json',
+      url: serverURL + '/' + config.druid + '/embed-html-json?callback=callback',
       dataType: 'jsonp',
-      jsonpCallback: 'cl',
-      success: function(t) {
-        cl(t);
-      }
-    });
-
-
-    $.ajax({
       type: "GET",
-      url: serverURL + '/' + config.druid + '/embed-js',
-      contentType: "text/html",
-      data: { peContainerWidth: $this.width(), peContainerHeight: $this.height() },
-      dataType: "html",
 
-      success: function(html) {
+      success: function(obj) {
+        purlServerURL = obj.purlServerURL;
+        peServerURL = obj.purlServerURL;
+        peContainerWidth  = $this.width();
+        peContainerHeight = $this.height();
+
         $.each(['purl_embed', 'zpr'], function(index, value) {
           $('head').append('<link rel="stylesheet" href="' + serverURL + '/stylesheets/' + value + '.css" type="text/css" />')
         });
@@ -50,8 +39,8 @@ if(!jQuery.support.cors&&window.XDomainRequest){var httpRegEx=/^https?:\/\//i;va
         $.getScript(serverURL + '/javascripts/zpr.js', function() {
           $.getScript(serverURL + '/javascripts/cselect.js', function() {
             $.getScript(serverURL + '/javascripts/purl_embed.js', function() {
-              $this.html(html);
-              var pe = new purlEmbed(peImgInfo, pePid, peStacksURL, config, $this.selector);
+              $this.html(obj.page);
+              var pe = new purlEmbed(obj.peImgInfo, obj.pePid, obj.peStacksURL, config, $this.selector);
             });
           });
         });

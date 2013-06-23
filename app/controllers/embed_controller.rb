@@ -2,6 +2,7 @@ require "dor/util"
 
 class EmbedController < ApplicationController
   include ImgEmbedHtmlHelper
+  include PurlHelper
 
   before_filter :validate_id
   before_filter :load_purl

@@ -9,6 +9,7 @@ Array.prototype.unique = function() {
 
 /* Main purlEmbed function comprising private variables and methods */
 var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
+  console.log(222);
   var imgData, currentSequence, druid;
   var groups = [];
   var constants = { 'djatokaBaseResolution': 92, 'thumbSize': 400 };
