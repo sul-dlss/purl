@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/:id', :controller => 'purl', :action => 'index'
   map.connect ':id/embed', :controller => 'embed', :action => 'index'
   map.connect ':id/embed-js', :controller => 'embed', :action => 'embed_js'
+  map.connect ':id/embed-html-json', :controller => 'embed', :action => 'embed_html_json'
   map.connect 'auth/:id', :controller => 'purl', :action => 'index'
   map.connect 'auth/:id.:format', :controller => 'purl', :action => 'index'
   map.connect '/:id.:format', :controller => 'purl', :action => 'index'

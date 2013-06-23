@@ -1,6 +1,7 @@
 require "dor/util"
 
 class EmbedController < ApplicationController
+  include ImgEmbedHtmlHelper
 
   before_filter :validate_id
   before_filter :load_purl
@@ -12,6 +13,15 @@ class EmbedController < ApplicationController
       render_404
     end
   end
+
+  def embed_html_json
+    if @purl.is_image?
+      render :json => imgEmbedHtml(params[:callback])
+    else
+      render_404
+    end
+  end
+
 
   def embed_js
     if @purl.is_image?
