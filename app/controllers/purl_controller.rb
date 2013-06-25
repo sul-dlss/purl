@@ -17,7 +17,7 @@ class PurlController < ApplicationController
         format.html {
           # if the object is an image, render image specific layout
           if @purl.is_image?
-            render :partial => "purl/image/contents", :layout => "purl_image"
+          #  render :partial => "purl/image/contents", :layout => "purl_image"
           elsif @purl.is_book?
             render :partial => "purl/flipbook/contents", :layout => "purl_flipbook"
           end
