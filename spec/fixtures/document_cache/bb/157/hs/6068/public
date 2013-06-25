@@ -1,0 +1,68 @@
+<publicObject id="druid:bb157hs6068" published="2013-06-13T17:22:27-07:00">
+  <identityMetadata>
+    <adminPolicy>druid:nk327xn8125</adminPolicy>
+    <agreementId>druid:wr729gb4199</agreementId>
+    <objectCreator>DOR</objectCreator>
+    <objectId>druid:bb157hs6068</objectId>
+    <objectLabel>NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES DIVERS MOUVEMENS DES PLANETES ET LEURS DIVERSES REVOLUTIONS, | AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE  Amsterdam: Chez L'Honor&#xE9; &amp; Ch&#xE2;telain MDCCXXI. Avec Privilege, (1721).</objectLabel>
+    <objectType>item</objectType>
+    <otherId name="mdtoolkit">bb157hs6068</otherId>
+    <otherId name="uuid">4e184fec-e3ba-11e0-8610-0016034322e2</otherId>
+    <tag>MDForm : mclaughlin</tag>
+    <tag>Project : McLaughlin Maps</tag>
+    <tag>Registered By : mbklein</tag>
+    <tag>Remediated By : 3.17.7</tag>
+  </identityMetadata>
+  <contentMetadata objectId="druid:bb157hs6068" type="map">
+    <resource id="0001" sequence="1" type="image">
+      <file format="JPEG2000" id="bb157hs6068_05_0001.jp2" mimetype="image/jp2" size="17867185">
+        <imageData height="9040" width="10481"/>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <copyright>
+      <human type="copyright">Property rights reside with the repository. Copyright &#xA9; Stanford University. All Rights Reserved.</human>
+    </copyright>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">To obtain permission to publish or reproduce, please contact the Head Librarian of the Branner Earth Science Library &amp; Map Collections at brannerlibrary@stanford.edu.</human>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:bb157hs6068">
+      <fedora:isMemberOf rdf:resource="info:fedora/druid:zb871zd0767"/>
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:zb871zd0767"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:type>map</dc:type>
+    <dc:type>Digital Maps</dc:type>
+    <dc:rights>Stanford University Libraries and Academic Information Resources - Terms of Use SULAIR Web sites are subject to Stanford University's standard Terms of Use (See http://www.stanford.edu/home/atoz/terms.html) These terms include a limited personal, non-exclusive, non-transferable license to access and use the sites, and to download - where permitted - material for personal, non-commercial, non-display use only. Please contact the University Librarian to request permission to use SULAIR Web sites and contents beyond the scope of the above license, including but not limited to republication to a group or republishing the Web site or parts of the Web site. SULAIR provides access to a variety of external databases and resources, which sites are governed by their own Terms of Use, as well as contractual access restrictions. The Terms of Use on these external sites always govern the data available there. Please consult with library staff if you have questions about data access and availability.</dc:rights>
+    <dc:identifier>1040</dc:identifier>
+    <dc:title>NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES DIVERS MOUVEMENS DES PLANETES ET LEURS DIVERSES REVOLUTIONS, AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE</dc:title>
+    <dc:date>1705</dc:date>
+    <dc:format>51.5 x 59.8 cm., including title along top and border, with 10 diagrams/maps and 6 columns of titled text.</dc:format>
+    <dc:contributor>Chatelain, Henri Abraham</dc:contributor>
+    <dc:type>Early Maps</dc:type>
+    <dc:description>Tom.1. No.9. (top right).</dc:description>
+    <dc:description type="references">LC 548, 579; Koeman II, Cha 1,2; UCB; Ashley Baynton-Williams.</dc:description>
+    <dc:description>California, with open northern edge, suggesting it may be an island and that northwest passage may exist, on 2 small hemisphere maps, each with 5 cm. diameter. First with title: Hemisphere terrestre pour faire | observer les 6 grands cercles de la sphere. Second with title: Hemisphere terrestre pour dis= tinguer les 4 petits cercles, et les 5 zo.</dc:description>
+    <dc:description>The larger diagrams are entitled: Le monde selon l'hypothese de copernic et la disposition des planetes ala naissance de Louis XIV, Sphere artificielle, Sisteme de Copernic sur les divers mouvemens des planetes, Sisteme de Ticho Brahe,Sisteme de Ptolom&#xE9;e, Idee generale pour faire comprendre les divers signes que la terre parcourt autour du soleil qui servent a regler les saisons (celestial chart).</dc:description>
+    <dc:description>The text is entitled: Remarque sur les divers mouvemens de la terre, Remarque sur le mouvemens et l'arrangement des planetes, Remarque sur la sphere, Remarque sur la maniere dont se font les saisons, Suite de la remarque sur la sphere, Conclusion et reflection morale, Comment l'hypothese de Copernic est conforme aux loix du mouvemens et de la nature, Inconveniens et difficultez qui resultent des sistemes de Ptoleme&#xE9; et Ticho Brahe.</dc:description>
+    <dc:description type="publications">First issued in his: Atlas historique, ou nouvelle introduction a l'histoire , &#xE0; la chronologie &amp; &#xE0; la g&#xE9;ographie ancienne &amp; moderne ... -- Amsterdam. 1705. Reissued in 1721 (with imprint as above).</dc:description>
+    <dc:description type="statement_of_responsibility" displayLabel="Statement of responsibility">[Henry Abraham Ch&#xE2;telain].</dc:description>
+    <dc:subject>Astronomy--Charts, diagrams, etc</dc:subject>
+    <dc:subject>California as an island--Maps</dc:subject>
+    <dc:relation type="collection">Glen McLaughlin Maps Collection -- California as an island</dc:relation>
+  </oai_dc:dc>
+</publicObject>

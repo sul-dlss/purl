@@ -1,0 +1,14 @@
+<contentMetadata objectId="druid:bb157hs6068" type="map">
+  <resource id="0001" sequence="1" type="image">
+    <file format="JPEG2000" id="bb157hs6068_05_0001.jp2" mimetype="image/jp2" preserve="yes" publish="yes" shelve="yes" size="17867185">
+      <imageData height="9040" width="10481"/>
+      <checksum type="md5">f1f46de5d29ec870d0cd9a245c3944ea</checksum>
+      <checksum type="sha1">627fc5ed052e3ca708c5fef3e1173e2fa56b05ec</checksum>
+    </file>
+    <file format="TIFF" id="bb157hs6068_00_0001.tif" mimetype="image/tiff" preserve="yes" publish="no" shelve="no" size="284269244">
+      <imageData height="9040" width="10481"/>
+      <checksum type="md5">2c2cb63f3cb71fde85581c4d72095cc7</checksum>
+      <checksum type="sha1">94244b5c26ec7de6bf30a51cee4c1de298bf7103</checksum>
+    </file>
+  </resource>
+</contentMetadata>
