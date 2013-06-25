@@ -1,6 +1,6 @@
 require 'nokogiri'
 
-require "lib/purl/util"
+require "purl/util"
 require "htmlentities"
 require 'dor/rights_auth'
 
@@ -287,11 +287,11 @@ class Purl
   end
 
   def is_ready?
-    if !@public_xml.nil? and !@public_xml.empty? and @public_xml != "<public/>"
+   # if !@public_xml.nil? and !@public_xml.empty? and @public_xml != "<public/>"
       return true
-    end
+  #  end
 
-    return false
+  #  return false
   end
 
   # check if this object is of type image
@@ -326,10 +326,10 @@ class Purl
   def get_metadata(doc_name)
     pair_tree = Purl.create_pair_tree(@pid)
     contents = "<#{doc_name}/>"
-
+Rails.logger.error('hi')
     unless pair_tree.nil?
       file_path = File.join(DOCUMENT_CACHE_ROOT,pair_tree,doc_name)
-
+Rails.logger.error(file_path)
       if File.exists?(file_path)
         contents = File.read(file_path)
       end
