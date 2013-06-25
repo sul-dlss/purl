@@ -29,7 +29,18 @@ config.action_mailer.delivery_method = :test
 
 config.gem 'rspec-rails', :version => '>= 1.3.2', :lib => false unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))
 
+module Dor
+  WF_URI = 'http://lyberservices-dev.stanford.edu/workflow'
+end
+
+FEDORA_URL = 'https://fedoraAdmin:1y83r73am@dor-prod.stanford.edu/fedora'
+CERT_FILE = File.join(RAILS_ROOT, "config", "certs", "etd-prod.crt")
+KEY_FILE = File.join(RAILS_ROOT, "config", "certs", "etd-prod.key")
+KEY_PASS = 'etdprod'
+
+STACKS_URL = 'http://stacks-test.stanford.edu'
 FLIPBOOK_URL = 'http://sul-reader.stanford.edu/flipbook2-test'
 
 # document cache location
-DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'
+## DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'
+DOCUMENT_CACHE_ROOT = 'spec/fixtures/document_cache'

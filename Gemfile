@@ -5,7 +5,7 @@ gem 'rails', '2.3.18'
 gem 'rake'
 gem 'test-unit', '1.2.3'
 #gem 'rack-webauth', :git => "git://github.com/sul-dlss/rack-webauth.git"
-
+gem 'mods_display'
 gem 'thin' # or thin
 gem 'htmlentities'
 gem 'dor-rights-auth'

@@ -287,11 +287,10 @@ class Purl
   end
 
   def is_ready?
-   # if !@public_xml.nil? and !@public_xml.empty? and @public_xml != "<public/>"
+    if !@public_xml.nil? and !@public_xml.empty? and @public_xml != "<public/>"
       return true
-  #  end
-
-  #  return false
+    end
+    return false
   end
 
   # check if this object is of type image
@@ -318,6 +317,11 @@ class Purl
     end
 
     return false
+  end
+  
+  def mods_display_object
+    @mods_display_object ||=ModsDisplayObject.new(get_metadata('mods'))
+    @mods_display_object
   end
 
   private
@@ -398,5 +402,6 @@ Rails.logger.error(file_path)
     end
     @ng_xml
   end
+  
 
 end
