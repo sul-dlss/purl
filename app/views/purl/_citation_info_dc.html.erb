@@ -18,4 +18,8 @@
     <%= print_field_value("identifiers", "Identifier", "<br/>", true) %>
     <%= print_relation_url("Related Link", "<br/>") %>
   </dl>
+  <dl>
+  <h2><%=render_mods_display(@purl.mods_display_object).title.first.html_safe%></h2>
+  <%=render_mods_display(@purl.mods_display_object).body.html_safe%>
+</dl>
 </div>

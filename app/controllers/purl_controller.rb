@@ -1,7 +1,7 @@
 require "dor/util"
 
 class PurlController < ApplicationController
-
+  include ModsDisplay::ControllerExtension
   before_filter :validate_id
   before_filter :load_purl
 
@@ -67,6 +67,7 @@ class PurlController < ApplicationController
   end
 
   def load_purl
+    puts 'id:'+params[:id]
     @purl = Purl.find(params[:id])
 
     # Catch well formed druids that don't exist in the document cache
