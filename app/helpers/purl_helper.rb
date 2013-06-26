@@ -59,10 +59,10 @@ module PurlHelper
         output = add_links_to_URIs(output)
       end
 
-      html += output + "</dd>"
+      html += output + "</dd>".html_safe
     end
 
-    html
+    html=html.html_safe
   end
 
 
@@ -84,7 +84,7 @@ module PurlHelper
       output = output.gsub(/#{uri}/, '<a href="' + uri + '">' + uri + '</a>')
     end
 
-    output
+    output.html_safe
   end
 
 
@@ -107,7 +107,7 @@ module PurlHelper
       html += "</dd>"
     end
 
-    html
+    html.html_safe
   end
 
   # get title value
@@ -118,7 +118,7 @@ module PurlHelper
       title = @purl.titles.join(" -- ")
     end
 
-    title
+    title.html_safe
   end
 
   # get creator(s) value
@@ -129,19 +129,19 @@ module PurlHelper
       html = "<dt>" + label + ":</dt><dd>" + @purl.creators.join("<br/>") + "</dd>"
     end
 
-    html
+    html.html_safe
   end
 
   # get searchworks link
   def get_searchworks_link
-    link = nil
+    link = ''
     catkey = @purl.catalog_key
 
     if not(catkey.nil? or catkey.empty?)
       link = "<a href=\"http://searchworks.stanford.edu/view/" + catkey + "\">View in SearchWorks</a>"
     end
 
-    link
+    link.html_safe
   end
 
 
@@ -159,7 +159,7 @@ module PurlHelper
       html += "</dd>"
     end
 
-    html
+    html.html_safe
   end
 
 
@@ -186,6 +186,9 @@ module PurlHelper
       end
     end
 
+    links.each do |link| 
+      link.html_safe
+    end
     links
   end
 
@@ -208,7 +211,7 @@ module PurlHelper
       html += "</ul>"
     end
 
-    html
+    html.html_safe
   end
 
   # convert date string to YYYY-MM-DD
@@ -242,7 +245,7 @@ module PurlHelper
   # remove trailing period from name
   def add_copyright_symbol(copyright_stmt)
     copyright_stmt = copyright_stmt.gsub /\(c\) Copyright/i, '&copy; Copyright'
-    copyright_stmt
+    copyright_stmt.html_safe
   end
 
   # get number of gallery items per page
