@@ -23,6 +23,6 @@
       var flipbookUrl = "<%= FLIPBOOK_URL %>";
     </script>
 
-    <%= render :partial => 'purl/ga' if RAILS_ENV == 'production' %>
+    <%= render :partial => 'purl/ga' if Rails.env == 'production' %>
   </body>
 </html>
