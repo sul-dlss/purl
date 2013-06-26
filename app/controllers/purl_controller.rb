@@ -68,7 +68,7 @@ class PurlController < ApplicationController
 
   def load_purl
     puts 'id:'+params[:id]
-    @purl = Purl.find(params[:id])
+    @purl = PurlObject.find(params[:id])
 
     # Catch well formed druids that don't exist in the document cache
     if @purl.nil?
