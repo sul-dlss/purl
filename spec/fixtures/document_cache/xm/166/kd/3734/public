@@ -1,0 +1,1564 @@
+<publicObject id="druid:xm166kd3734" published="2012-08-03T18:22:32-07:00">
+  <identityMetadata>
+    <sourceId source="WALTERS_W.12"/>
+    <objectId>druid:xm166kd3734</objectId>
+    <objectCreator>DOR</objectCreator>
+    <objectLabel>Walters MS 12</objectLabel>
+    <objectType>item</objectType>
+    <adminPolicy>druid:qc167qm9800</adminPolicy>
+    <otherId name="uuid">01ab163a-d5e5-11e1-ad48-0016034322e2</otherId>
+    <tag>Project : Walters Art Museum Manuscripts</tag>
+    <tag>Registered By : blalbrit</tag>
+    <tag>Remediated By : 3.6.2</tag>
+  </identityMetadata>
+  <contentMetadata objectId="druid:xm166kd3734" type="image">
+    <resource id="image_1" sequence="1" type="image">
+      <label>Upper board outside</label>
+      <file id="W12_000001_300.jp2" mimetype="image/jp2" format="JPEG2000" size="815834">
+        <imageData height="2376" width="1640"/>
+      </file>
+    </resource>
+    <resource id="image_2" sequence="2" type="image">
+      <label>Upper board inside</label>
+      <file id="W12_000002_300.jp2" mimetype="image/jp2" format="JPEG2000" size="677880">
+        <imageData height="2346" width="1533"/>
+      </file>
+    </resource>
+    <resource id="image_3" sequence="3" type="image">
+      <label>Front flyleaf i, r</label>
+      <file id="W12_000003_300.jp2" mimetype="image/jp2" format="JPEG2000" size="764917">
+        <imageData height="2236" width="1470"/>
+      </file>
+    </resource>
+    <resource id="image_4" sequence="4" type="image">
+      <label>Front flyleaf i, v</label>
+      <file id="W12_000004_300.jp2" mimetype="image/jp2" format="JPEG2000" size="474392">
+        <imageData height="2195" width="1361"/>
+      </file>
+    </resource>
+    <resource id="image_5" sequence="5" type="image">
+      <label>Front flyleaf ii, r</label>
+      <file id="W12_000005_300.jp2" mimetype="image/jp2" format="JPEG2000" size="621782">
+        <imageData height="2254" width="1400"/>
+      </file>
+    </resource>
+    <resource id="image_6" sequence="6" type="image">
+      <label>Front flyleaf ii, v</label>
+      <file id="W12_000006_300.jp2" mimetype="image/jp2" format="JPEG2000" size="630778">
+        <imageData height="2241" width="1379"/>
+      </file>
+    </resource>
+    <resource id="image_7" sequence="7" type="image">
+      <label>fol. 1r</label>
+      <file id="W12_000007_300.jp2" mimetype="image/jp2" format="JPEG2000" size="695813">
+        <imageData height="2226" width="1371"/>
+      </file>
+    </resource>
+    <resource id="image_8" sequence="8" type="image">
+      <label>fol. 1v</label>
+      <file id="W12_000008_300.jp2" mimetype="image/jp2" format="JPEG2000" size="650662">
+        <imageData height="2221" width="1337"/>
+      </file>
+    </resource>
+    <resource id="image_9" sequence="9" type="image">
+      <label>fol. 2r</label>
+      <file id="W12_000009_300.jp2" mimetype="image/jp2" format="JPEG2000" size="793306">
+        <imageData height="2241" width="1340"/>
+      </file>
+    </resource>
+    <resource id="image_10" sequence="10" type="image">
+      <label>fol. 2v</label>
+      <file id="W12_000010_300.jp2" mimetype="image/jp2" format="JPEG2000" size="703716">
+        <imageData height="2231" width="1329"/>
+      </file>
+    </resource>
+    <resource id="image_11" sequence="11" type="image">
+      <label>fol. 3r</label>
+      <file id="W12_000011_300.jp2" mimetype="image/jp2" format="JPEG2000" size="707712">
+        <imageData height="2256" width="1347"/>
+      </file>
+    </resource>
+    <resource id="image_12" sequence="12" type="image">
+      <label>fol. 3v</label>
+      <file id="W12_000012_300.jp2" mimetype="image/jp2" format="JPEG2000" size="663886">
+        <imageData height="2220" width="1332"/>
+      </file>
+    </resource>
+    <resource id="image_13" sequence="13" type="image">
+      <label>fol. 4r</label>
+      <file id="W12_000013_300.jp2" mimetype="image/jp2" format="JPEG2000" size="728558">
+        <imageData height="2244" width="1345"/>
+      </file>
+    </resource>
+    <resource id="image_14" sequence="14" type="image">
+      <label>fol. 4v</label>
+      <file id="W12_000014_300.jp2" mimetype="image/jp2" format="JPEG2000" size="659355">
+        <imageData height="2178" width="1353"/>
+      </file>
+    </resource>
+    <resource id="image_15" sequence="15" type="image">
+      <label>fol. 5r</label>
+      <file id="W12_000015_300.jp2" mimetype="image/jp2" format="JPEG2000" size="747857">
+        <imageData height="2257" width="1343"/>
+      </file>
+    </resource>
+    <resource id="image_16" sequence="16" type="image">
+      <label>fol. 5v</label>
+      <file id="W12_000016_300.jp2" mimetype="image/jp2" format="JPEG2000" size="680343">
+        <imageData height="2202" width="1343"/>
+      </file>
+    </resource>
+    <resource id="image_17" sequence="17" type="image">
+      <label>fol. 6r</label>
+      <file id="W12_000017_300.jp2" mimetype="image/jp2" format="JPEG2000" size="749293">
+        <imageData height="2231" width="1358"/>
+      </file>
+    </resource>
+    <resource id="image_18" sequence="18" type="image">
+      <label>fol. 6v</label>
+      <file id="W12_000018_300.jp2" mimetype="image/jp2" format="JPEG2000" size="664448">
+        <imageData height="2257" width="1356"/>
+      </file>
+    </resource>
+    <resource id="image_19" sequence="19" type="image">
+      <label>fol. 7r</label>
+      <file id="W12_000019_300.jp2" mimetype="image/jp2" format="JPEG2000" size="716365">
+        <imageData height="2231" width="1369"/>
+      </file>
+    </resource>
+    <resource id="image_20" sequence="20" type="image">
+      <label>fol. 7v</label>
+      <file id="W12_000020_300.jp2" mimetype="image/jp2" format="JPEG2000" size="675773">
+        <imageData height="2226" width="1361"/>
+      </file>
+    </resource>
+    <resource id="image_21" sequence="21" type="image">
+      <label>fol. 8r</label>
+      <file id="W12_000021_300.jp2" mimetype="image/jp2" format="JPEG2000" size="729312">
+        <imageData height="2244" width="1351"/>
+      </file>
+    </resource>
+    <resource id="image_22" sequence="22" type="image">
+      <label>fol. 8v</label>
+      <file id="W12_000022_300.jp2" mimetype="image/jp2" format="JPEG2000" size="611714">
+        <imageData height="2220" width="1351"/>
+      </file>
+    </resource>
+    <resource id="image_23" sequence="23" type="image">
+      <label>fol. 9r</label>
+      <file id="W12_000023_300.jp2" mimetype="image/jp2" format="JPEG2000" size="670778">
+        <imageData height="2241" width="1350"/>
+      </file>
+    </resource>
+    <resource id="image_24" sequence="24" type="image">
+      <label>fol. 9v</label>
+      <file id="W12_000024_300.jp2" mimetype="image/jp2" format="JPEG2000" size="676273">
+        <imageData height="2231" width="1364"/>
+      </file>
+    </resource>
+    <resource id="image_25" sequence="25" type="image">
+      <label>fol. 10r</label>
+      <file id="W12_000025_300.jp2" mimetype="image/jp2" format="JPEG2000" size="751473">
+        <imageData height="2218" width="1314"/>
+      </file>
+    </resource>
+    <resource id="image_26" sequence="26" type="image">
+      <label>fol. 10v</label>
+      <file id="W12_000026_300.jp2" mimetype="image/jp2" format="JPEG2000" size="694196">
+        <imageData height="2228" width="1353"/>
+      </file>
+    </resource>
+    <resource id="image_27" sequence="27" type="image">
+      <label>fol. 11r</label>
+      <file id="W12_000027_300.jp2" mimetype="image/jp2" format="JPEG2000" size="695612">
+        <imageData height="2192" width="1304"/>
+      </file>
+    </resource>
+    <resource id="image_28" sequence="28" type="image">
+      <label>fol. 11v</label>
+      <file id="W12_000028_300.jp2" mimetype="image/jp2" format="JPEG2000" size="679632">
+        <imageData height="2213" width="1374"/>
+      </file>
+    </resource>
+    <resource id="image_29" sequence="29" type="image">
+      <label>fol. 12r</label>
+      <file id="W12_000029_300.jp2" mimetype="image/jp2" format="JPEG2000" size="689926">
+        <imageData height="2218" width="1312"/>
+      </file>
+    </resource>
+    <resource id="image_30" sequence="30" type="image">
+      <label>fol. 12v</label>
+      <file id="W12_000030_300.jp2" mimetype="image/jp2" format="JPEG2000" size="667446">
+        <imageData height="2226" width="1356"/>
+      </file>
+    </resource>
+    <resource id="image_31" sequence="31" type="image">
+      <label>fol. 13r</label>
+      <file id="W12_000031_300.jp2" mimetype="image/jp2" format="JPEG2000" size="732303">
+        <imageData height="2218" width="1322"/>
+      </file>
+    </resource>
+    <resource id="image_32" sequence="32" type="image">
+      <label>fol. 13v</label>
+      <file id="W12_000032_300.jp2" mimetype="image/jp2" format="JPEG2000" size="733367">
+        <imageData height="2225" width="1353"/>
+      </file>
+    </resource>
+    <resource id="image_33" sequence="33" type="image">
+      <label>fol. 14r</label>
+      <file id="W12_000033_300.jp2" mimetype="image/jp2" format="JPEG2000" size="720912">
+        <imageData height="2228" width="1322"/>
+      </file>
+    </resource>
+    <resource id="image_34" sequence="34" type="image">
+      <label>fol. 14v</label>
+      <file id="W12_000034_300.jp2" mimetype="image/jp2" format="JPEG2000" size="647620">
+        <imageData height="2218" width="1364"/>
+      </file>
+    </resource>
+    <resource id="image_35" sequence="35" type="image">
+      <label>fol. 15r</label>
+      <file id="W12_000035_300.jp2" mimetype="image/jp2" format="JPEG2000" size="652089">
+        <imageData height="2207" width="1304"/>
+      </file>
+    </resource>
+    <resource id="image_36" sequence="36" type="image">
+      <label>fol. 15v</label>
+      <file id="W12_000036_300.jp2" mimetype="image/jp2" format="JPEG2000" size="685645">
+        <imageData height="2210" width="1369"/>
+      </file>
+    </resource>
+    <resource id="image_37" sequence="37" type="image">
+      <label>fol. 16r</label>
+      <file id="W12_000037_300.jp2" mimetype="image/jp2" format="JPEG2000" size="715454">
+        <imageData height="2213" width="1316"/>
+      </file>
+    </resource>
+    <resource id="image_38" sequence="38" type="image">
+      <label>fol. 16v</label>
+      <file id="W12_000038_300.jp2" mimetype="image/jp2" format="JPEG2000" size="673954">
+        <imageData height="2228" width="1340"/>
+      </file>
+    </resource>
+    <resource id="image_39" sequence="39" type="image">
+      <label>fol. 17r</label>
+      <file id="W12_000039_300.jp2" mimetype="image/jp2" format="JPEG2000" size="634360">
+        <imageData height="2202" width="1330"/>
+      </file>
+    </resource>
+    <resource id="image_40" sequence="40" type="image">
+      <label>fol. 17v</label>
+      <file id="W12_000040_300.jp2" mimetype="image/jp2" format="JPEG2000" size="634396">
+        <imageData height="2205" width="1338"/>
+      </file>
+    </resource>
+    <resource id="image_41" sequence="41" type="image">
+      <label>fol. 18r</label>
+      <file id="W12_000041_300.jp2" mimetype="image/jp2" format="JPEG2000" size="797232">
+        <imageData height="2212" width="1319"/>
+      </file>
+    </resource>
+    <resource id="image_42" sequence="42" type="image">
+      <label>fol. 18v</label>
+      <file id="W12_000042_300.jp2" mimetype="image/jp2" format="JPEG2000" size="677478">
+        <imageData height="2218" width="1332"/>
+      </file>
+    </resource>
+    <resource id="image_43" sequence="43" type="image">
+      <label>fol. 19r</label>
+      <file id="W12_000043_300.jp2" mimetype="image/jp2" format="JPEG2000" size="652656">
+        <imageData height="2225" width="1296"/>
+      </file>
+    </resource>
+    <resource id="image_44" sequence="44" type="image">
+      <label>fol. 19v</label>
+      <file id="W12_000044_300.jp2" mimetype="image/jp2" format="JPEG2000" size="688875">
+        <imageData height="2200" width="1316"/>
+      </file>
+    </resource>
+    <resource id="image_45" sequence="45" type="image">
+      <label>fol. 20r</label>
+      <file id="W12_000045_300.jp2" mimetype="image/jp2" format="JPEG2000" size="755717">
+        <imageData height="2218" width="1345"/>
+      </file>
+    </resource>
+    <resource id="image_46" sequence="46" type="image">
+      <label>fol. 20v</label>
+      <file id="W12_000046_300.jp2" mimetype="image/jp2" format="JPEG2000" size="643001">
+        <imageData height="2213" width="1337"/>
+      </file>
+    </resource>
+    <resource id="image_47" sequence="47" type="image">
+      <label>fol. 21r</label>
+      <file id="W12_000047_300.jp2" mimetype="image/jp2" format="JPEG2000" size="685596">
+        <imageData height="2233" width="1351"/>
+      </file>
+    </resource>
+    <resource id="image_48" sequence="48" type="image">
+      <label>fol. 21v</label>
+      <file id="W12_000048_300.jp2" mimetype="image/jp2" format="JPEG2000" size="709037">
+        <imageData height="2233" width="1372"/>
+      </file>
+    </resource>
+    <resource id="image_49" sequence="49" type="image">
+      <label>fol. 22r</label>
+      <file id="W12_000049_300.jp2" mimetype="image/jp2" format="JPEG2000" size="757478">
+        <imageData height="2241" width="1358"/>
+      </file>
+    </resource>
+    <resource id="image_50" sequence="50" type="image">
+      <label>fol. 22v</label>
+      <file id="W12_000050_300.jp2" mimetype="image/jp2" format="JPEG2000" size="620677">
+        <imageData height="2181" width="1351"/>
+      </file>
+    </resource>
+    <resource id="image_51" sequence="51" type="image">
+      <label>fol. 23r</label>
+      <file id="W12_000051_300.jp2" mimetype="image/jp2" format="JPEG2000" size="778664">
+        <imageData height="2236" width="1348"/>
+      </file>
+    </resource>
+    <resource id="image_52" sequence="52" type="image">
+      <label>fol. 23v</label>
+      <file id="W12_000052_300.jp2" mimetype="image/jp2" format="JPEG2000" size="702155">
+        <imageData height="2213" width="1361"/>
+      </file>
+    </resource>
+    <resource id="image_53" sequence="53" type="image">
+      <label>fol. 24r</label>
+      <file id="W12_000053_300.jp2" mimetype="image/jp2" format="JPEG2000" size="705095">
+        <imageData height="2225" width="1347"/>
+      </file>
+    </resource>
+    <resource id="image_54" sequence="54" type="image">
+      <label>fol. 24v</label>
+      <file id="W12_000054_300.jp2" mimetype="image/jp2" format="JPEG2000" size="642369">
+        <imageData height="2231" width="1364"/>
+      </file>
+    </resource>
+    <resource id="image_55" sequence="55" type="image">
+      <label>fol. 25r</label>
+      <file id="W12_000055_300.jp2" mimetype="image/jp2" format="JPEG2000" size="713502">
+        <imageData height="2239" width="1353"/>
+      </file>
+    </resource>
+    <resource id="image_56" sequence="56" type="image">
+      <label>fol. 25v</label>
+      <file id="W12_000056_300.jp2" mimetype="image/jp2" format="JPEG2000" size="770952">
+        <imageData height="2210" width="1374"/>
+      </file>
+    </resource>
+    <resource id="image_57" sequence="57" type="image">
+      <label>fol. 26r</label>
+      <file id="W12_000057_300.jp2" mimetype="image/jp2" format="JPEG2000" size="781415">
+        <imageData height="2245" width="1347"/>
+      </file>
+    </resource>
+    <resource id="image_58" sequence="58" type="image">
+      <label>fol. 26v</label>
+      <file id="W12_000058_300.jp2" mimetype="image/jp2" format="JPEG2000" size="707305">
+        <imageData height="2238" width="1361"/>
+      </file>
+    </resource>
+    <resource id="image_59" sequence="59" type="image">
+      <label>fol. 27r</label>
+      <file id="W12_000059_300.jp2" mimetype="image/jp2" format="JPEG2000" size="718529">
+        <imageData height="2228" width="1350"/>
+      </file>
+    </resource>
+    <resource id="image_60" sequence="60" type="image">
+      <label>fol. 27v</label>
+      <file id="W12_000060_300.jp2" mimetype="image/jp2" format="JPEG2000" size="707162">
+        <imageData height="2215" width="1361"/>
+      </file>
+    </resource>
+    <resource id="image_61" sequence="61" type="image">
+      <label>fol. 28r</label>
+      <file id="W12_000061_300.jp2" mimetype="image/jp2" format="JPEG2000" size="741223">
+        <imageData height="2223" width="1356"/>
+      </file>
+    </resource>
+    <resource id="image_62" sequence="62" type="image">
+      <label>fol. 28v</label>
+      <file id="W12_000062_300.jp2" mimetype="image/jp2" format="JPEG2000" size="706896">
+        <imageData height="2236" width="1361"/>
+      </file>
+    </resource>
+    <resource id="image_63" sequence="63" type="image">
+      <label>fol. 29r</label>
+      <file id="W12_000063_300.jp2" mimetype="image/jp2" format="JPEG2000" size="748855">
+        <imageData height="2220" width="1345"/>
+      </file>
+    </resource>
+    <resource id="image_64" sequence="64" type="image">
+      <label>fol. 29v</label>
+      <file id="W12_000064_300.jp2" mimetype="image/jp2" format="JPEG2000" size="803709">
+        <imageData height="2231" width="1361"/>
+      </file>
+    </resource>
+    <resource id="image_65" sequence="65" type="image">
+      <label>fol. 30r</label>
+      <file id="W12_000065_300.jp2" mimetype="image/jp2" format="JPEG2000" size="821973">
+        <imageData height="2234" width="1356"/>
+      </file>
+    </resource>
+    <resource id="image_66" sequence="66" type="image">
+      <label>fol. 30v</label>
+      <file id="W12_000066_300.jp2" mimetype="image/jp2" format="JPEG2000" size="665697">
+        <imageData height="2218" width="1364"/>
+      </file>
+    </resource>
+    <resource id="image_67" sequence="67" type="image">
+      <label>fol. 31r</label>
+      <file id="W12_000067_300.jp2" mimetype="image/jp2" format="JPEG2000" size="664100">
+        <imageData height="2218" width="1353"/>
+      </file>
+    </resource>
+    <resource id="image_68" sequence="68" type="image">
+      <label>fol. 31v</label>
+      <file id="W12_000068_300.jp2" mimetype="image/jp2" format="JPEG2000" size="665709">
+        <imageData height="2213" width="1369"/>
+      </file>
+    </resource>
+    <resource id="image_69" sequence="69" type="image">
+      <label>fol. 32r</label>
+      <file id="W12_000069_300.jp2" mimetype="image/jp2" format="JPEG2000" size="811553">
+        <imageData height="2228" width="1447"/>
+      </file>
+    </resource>
+    <resource id="image_70" sequence="70" type="image">
+      <label>fol. 32v</label>
+      <file id="W12_000070_300.jp2" mimetype="image/jp2" format="JPEG2000" size="642897">
+        <imageData height="2228" width="1356"/>
+      </file>
+    </resource>
+    <resource id="image_71" sequence="71" type="image">
+      <label>fol. 33r</label>
+      <file id="W12_000071_300.jp2" mimetype="image/jp2" format="JPEG2000" size="690500">
+        <imageData height="2194" width="1371"/>
+      </file>
+    </resource>
+    <resource id="image_72" sequence="72" type="image">
+      <label>fol. 33v</label>
+      <file id="W12_000072_300.jp2" mimetype="image/jp2" format="JPEG2000" size="713211">
+        <imageData height="2212" width="1340"/>
+      </file>
+    </resource>
+    <resource id="image_73" sequence="73" type="image">
+      <label>fol. 34r</label>
+      <file id="W12_000073_300.jp2" mimetype="image/jp2" format="JPEG2000" size="735767">
+        <imageData height="2230" width="1347"/>
+      </file>
+    </resource>
+    <resource id="image_74" sequence="74" type="image">
+      <label>fol. 34v</label>
+      <file id="W12_000074_300.jp2" mimetype="image/jp2" format="JPEG2000" size="689521">
+        <imageData height="2220" width="1363"/>
+      </file>
+    </resource>
+    <resource id="image_75" sequence="75" type="image">
+      <label>fol. 35r</label>
+      <file id="W12_000075_300.jp2" mimetype="image/jp2" format="JPEG2000" size="720989">
+        <imageData height="2223" width="1400"/>
+      </file>
+    </resource>
+    <resource id="image_76" sequence="76" type="image">
+      <label>fol. 35v</label>
+      <file id="W12_000076_300.jp2" mimetype="image/jp2" format="JPEG2000" size="713876">
+        <imageData height="2194" width="1356"/>
+      </file>
+    </resource>
+    <resource id="image_77" sequence="77" type="image">
+      <label>fol. 36r</label>
+      <file id="W12_000077_300.jp2" mimetype="image/jp2" format="JPEG2000" size="756591">
+        <imageData height="2218" width="1405"/>
+      </file>
+    </resource>
+    <resource id="image_78" sequence="78" type="image">
+      <label>fol. 36v</label>
+      <file id="W12_000078_300.jp2" mimetype="image/jp2" format="JPEG2000" size="717261">
+        <imageData height="2239" width="1364"/>
+      </file>
+    </resource>
+    <resource id="image_79" sequence="79" type="image">
+      <label>fol. 37r</label>
+      <file id="W12_000079_300.jp2" mimetype="image/jp2" format="JPEG2000" size="732191">
+        <imageData height="2210" width="1398"/>
+      </file>
+    </resource>
+    <resource id="image_80" sequence="80" type="image">
+      <label>fol. 37v</label>
+      <file id="W12_000080_300.jp2" mimetype="image/jp2" format="JPEG2000" size="747629">
+        <imageData height="2202" width="1343"/>
+      </file>
+    </resource>
+    <resource id="image_81" sequence="81" type="image">
+      <label>fol. 38r</label>
+      <file id="W12_000081_300.jp2" mimetype="image/jp2" format="JPEG2000" size="728806">
+        <imageData height="2228" width="1390"/>
+      </file>
+    </resource>
+    <resource id="image_82" sequence="82" type="image">
+      <label>fol. 38v</label>
+      <file id="W12_000082_300.jp2" mimetype="image/jp2" format="JPEG2000" size="651300">
+        <imageData height="2228" width="1351"/>
+      </file>
+    </resource>
+    <resource id="image_83" sequence="83" type="image">
+      <label>fol. 39r</label>
+      <file id="W12_000083_300.jp2" mimetype="image/jp2" format="JPEG2000" size="675099">
+        <imageData height="2236" width="1351"/>
+      </file>
+    </resource>
+    <resource id="image_84" sequence="84" type="image">
+      <label>fol. 39v</label>
+      <file id="W12_000084_300.jp2" mimetype="image/jp2" format="JPEG2000" size="729700">
+        <imageData height="2220" width="1363"/>
+      </file>
+    </resource>
+    <resource id="image_85" sequence="85" type="image">
+      <label>fol. 40r</label>
+      <file id="W12_000085_300.jp2" mimetype="image/jp2" format="JPEG2000" size="746905">
+        <imageData height="2218" width="1403"/>
+      </file>
+    </resource>
+    <resource id="image_86" sequence="86" type="image">
+      <label>fol. 40v</label>
+      <file id="W12_000086_300.jp2" mimetype="image/jp2" format="JPEG2000" size="670859">
+        <imageData height="2241" width="1364"/>
+      </file>
+    </resource>
+    <resource id="image_87" sequence="87" type="image">
+      <label>fol. 41r</label>
+      <file id="W12_000087_300.jp2" mimetype="image/jp2" format="JPEG2000" size="668144">
+        <imageData height="2233" width="1335"/>
+      </file>
+    </resource>
+    <resource id="image_88" sequence="88" type="image">
+      <label>fol. 41v</label>
+      <file id="W12_000088_300.jp2" mimetype="image/jp2" format="JPEG2000" size="703839">
+        <imageData height="2228" width="1392"/>
+      </file>
+    </resource>
+    <resource id="image_89" sequence="89" type="image">
+      <label>fol. 42r</label>
+      <file id="W12_000089_300.jp2" mimetype="image/jp2" format="JPEG2000" size="686826">
+        <imageData height="2215" width="1403"/>
+      </file>
+    </resource>
+    <resource id="image_90" sequence="90" type="image">
+      <label>fol. 42v</label>
+      <file id="W12_000090_300.jp2" mimetype="image/jp2" format="JPEG2000" size="666358">
+        <imageData height="2241" width="1369"/>
+      </file>
+    </resource>
+    <resource id="image_91" sequence="91" type="image">
+      <label>fol. 43r</label>
+      <file id="W12_000091_300.jp2" mimetype="image/jp2" format="JPEG2000" size="665948">
+        <imageData height="2226" width="1382"/>
+      </file>
+    </resource>
+    <resource id="image_92" sequence="92" type="image">
+      <label>fol. 43v</label>
+      <file id="W12_000092_300.jp2" mimetype="image/jp2" format="JPEG2000" size="706080">
+        <imageData height="2228" width="1363"/>
+      </file>
+    </resource>
+    <resource id="image_93" sequence="93" type="image">
+      <label>fol. 44r</label>
+      <file id="W12_000093_300.jp2" mimetype="image/jp2" format="JPEG2000" size="734098">
+        <imageData height="2239" width="1403"/>
+      </file>
+    </resource>
+    <resource id="image_94" sequence="94" type="image">
+      <label>fol. 44v</label>
+      <file id="W12_000094_300.jp2" mimetype="image/jp2" format="JPEG2000" size="650575">
+        <imageData height="2228" width="1361"/>
+      </file>
+    </resource>
+    <resource id="image_95" sequence="95" type="image">
+      <label>fol. 45r</label>
+      <file id="W12_000095_300.jp2" mimetype="image/jp2" format="JPEG2000" size="705356">
+        <imageData height="2233" width="1361"/>
+      </file>
+    </resource>
+    <resource id="image_96" sequence="96" type="image">
+      <label>fol. 45v</label>
+      <file id="W12_000096_300.jp2" mimetype="image/jp2" format="JPEG2000" size="716453">
+        <imageData height="2231" width="1363"/>
+      </file>
+    </resource>
+    <resource id="image_97" sequence="97" type="image">
+      <label>fol. 46r</label>
+      <file id="W12_000097_300.jp2" mimetype="image/jp2" format="JPEG2000" size="732843">
+        <imageData height="2226" width="1335"/>
+      </file>
+    </resource>
+    <resource id="image_98" sequence="98" type="image">
+      <label>fol. 46v</label>
+      <file id="W12_000098_300.jp2" mimetype="image/jp2" format="JPEG2000" size="697936">
+        <imageData height="2213" width="1400"/>
+      </file>
+    </resource>
+    <resource id="image_99" sequence="99" type="image">
+      <label>fol. 47r</label>
+      <file id="W12_000099_300.jp2" mimetype="image/jp2" format="JPEG2000" size="731159">
+        <imageData height="2220" width="1364"/>
+      </file>
+    </resource>
+    <resource id="image_100" sequence="100" type="image">
+      <label>fol. 47v</label>
+      <file id="W12_000100_300.jp2" mimetype="image/jp2" format="JPEG2000" size="722509">
+        <imageData height="2223" width="1366"/>
+      </file>
+    </resource>
+    <resource id="image_101" sequence="101" type="image">
+      <label>fol. 48r</label>
+      <file id="W12_000101_300.jp2" mimetype="image/jp2" format="JPEG2000" size="786628">
+        <imageData height="2199" width="1361"/>
+      </file>
+    </resource>
+    <resource id="image_102" sequence="102" type="image">
+      <label>fol. 48v</label>
+      <file id="W12_000102_300.jp2" mimetype="image/jp2" format="JPEG2000" size="763462">
+        <imageData height="2225" width="1363"/>
+      </file>
+    </resource>
+    <resource id="image_103" sequence="103" type="image">
+      <label>fol. 49r</label>
+      <file id="W12_000103_300.jp2" mimetype="image/jp2" format="JPEG2000" size="740142">
+        <imageData height="2223" width="1335"/>
+      </file>
+    </resource>
+    <resource id="image_104" sequence="104" type="image">
+      <label>fol. 49v</label>
+      <file id="W12_000104_300.jp2" mimetype="image/jp2" format="JPEG2000" size="712038">
+        <imageData height="2215" width="1359"/>
+      </file>
+    </resource>
+    <resource id="image_105" sequence="105" type="image">
+      <label>fol. 50r</label>
+      <file id="W12_000105_300.jp2" mimetype="image/jp2" format="JPEG2000" size="674603">
+        <imageData height="2207" width="1340"/>
+      </file>
+    </resource>
+    <resource id="image_106" sequence="106" type="image">
+      <label>fol. 50v</label>
+      <file id="W12_000106_300.jp2" mimetype="image/jp2" format="JPEG2000" size="694277">
+        <imageData height="2218" width="1343"/>
+      </file>
+    </resource>
+    <resource id="image_107" sequence="107" type="image">
+      <label>fol. 51r</label>
+      <file id="W12_000107_300.jp2" mimetype="image/jp2" format="JPEG2000" size="727236">
+        <imageData height="2205" width="1353"/>
+      </file>
+    </resource>
+    <resource id="image_108" sequence="108" type="image">
+      <label>fol. 51v</label>
+      <file id="W12_000108_300.jp2" mimetype="image/jp2" format="JPEG2000" size="684578">
+        <imageData height="2215" width="1348"/>
+      </file>
+    </resource>
+    <resource id="image_109" sequence="109" type="image">
+      <label>fol. 52r</label>
+      <file id="W12_000109_300.jp2" mimetype="image/jp2" format="JPEG2000" size="727383">
+        <imageData height="2231" width="1351"/>
+      </file>
+    </resource>
+    <resource id="image_110" sequence="110" type="image">
+      <label>fol. 52v</label>
+      <file id="W12_000110_300.jp2" mimetype="image/jp2" format="JPEG2000" size="752353">
+        <imageData height="2233" width="1356"/>
+      </file>
+    </resource>
+    <resource id="image_111" sequence="111" type="image">
+      <label>fol. 53r</label>
+      <file id="W12_000111_300.jp2" mimetype="image/jp2" format="JPEG2000" size="740970">
+        <imageData height="2226" width="1364"/>
+      </file>
+    </resource>
+    <resource id="image_112" sequence="112" type="image">
+      <label>fol. 53v</label>
+      <file id="W12_000112_300.jp2" mimetype="image/jp2" format="JPEG2000" size="720528">
+        <imageData height="2225" width="1371"/>
+      </file>
+    </resource>
+    <resource id="image_113" sequence="113" type="image">
+      <label>fol. 54r</label>
+      <file id="W12_000113_300.jp2" mimetype="image/jp2" format="JPEG2000" size="728205">
+        <imageData height="2210" width="1356"/>
+      </file>
+    </resource>
+    <resource id="image_114" sequence="114" type="image">
+      <label>fol. 54v</label>
+      <file id="W12_000114_300.jp2" mimetype="image/jp2" format="JPEG2000" size="711985">
+        <imageData height="2231" width="1384"/>
+      </file>
+    </resource>
+    <resource id="image_115" sequence="115" type="image">
+      <label>fol. 55r</label>
+      <file id="W12_000115_300.jp2" mimetype="image/jp2" format="JPEG2000" size="749073">
+        <imageData height="2207" width="1416"/>
+      </file>
+    </resource>
+    <resource id="image_116" sequence="116" type="image">
+      <label>fol. 55v</label>
+      <file id="W12_000116_300.jp2" mimetype="image/jp2" format="JPEG2000" size="665969">
+        <imageData height="2221" width="1361"/>
+      </file>
+    </resource>
+    <resource id="image_117" sequence="117" type="image">
+      <label>fol. 56r</label>
+      <file id="W12_000117_300.jp2" mimetype="image/jp2" format="JPEG2000" size="782165">
+        <imageData height="2228" width="1402"/>
+      </file>
+    </resource>
+    <resource id="image_118" sequence="118" type="image">
+      <label>fol. 56v</label>
+      <file id="W12_000118_300.jp2" mimetype="image/jp2" format="JPEG2000" size="784479">
+        <imageData height="2231" width="1371"/>
+      </file>
+    </resource>
+    <resource id="image_119" sequence="119" type="image">
+      <label>fol. 57r</label>
+      <file id="W12_000119_300.jp2" mimetype="image/jp2" format="JPEG2000" size="710846">
+        <imageData height="2231" width="1356"/>
+      </file>
+    </resource>
+    <resource id="image_120" sequence="120" type="image">
+      <label>fol. 57v</label>
+      <file id="W12_000120_300.jp2" mimetype="image/jp2" format="JPEG2000" size="659531">
+        <imageData height="2239" width="1361"/>
+      </file>
+    </resource>
+    <resource id="image_121" sequence="121" type="image">
+      <label>fol. 58r</label>
+      <file id="W12_000121_300.jp2" mimetype="image/jp2" format="JPEG2000" size="725140">
+        <imageData height="2213" width="1343"/>
+      </file>
+    </resource>
+    <resource id="image_122" sequence="122" type="image">
+      <label>fol. 58v</label>
+      <file id="W12_000122_300.jp2" mimetype="image/jp2" format="JPEG2000" size="767015">
+        <imageData height="2228" width="1369"/>
+      </file>
+    </resource>
+    <resource id="image_123" sequence="123" type="image">
+      <label>fol. 59r</label>
+      <file id="W12_000123_300.jp2" mimetype="image/jp2" format="JPEG2000" size="746245">
+        <imageData height="2215" width="1351"/>
+      </file>
+    </resource>
+    <resource id="image_124" sequence="124" type="image">
+      <label>fol. 59v</label>
+      <file id="W12_000124_300.jp2" mimetype="image/jp2" format="JPEG2000" size="773621">
+        <imageData height="2228" width="1363"/>
+      </file>
+    </resource>
+    <resource id="image_125" sequence="125" type="image">
+      <label>fol. 60r</label>
+      <file id="W12_000125_300.jp2" mimetype="image/jp2" format="JPEG2000" size="715374">
+        <imageData height="2246" width="1348"/>
+      </file>
+    </resource>
+    <resource id="image_126" sequence="126" type="image">
+      <label>fol. 60v</label>
+      <file id="W12_000126_300.jp2" mimetype="image/jp2" format="JPEG2000" size="664754">
+        <imageData height="2220" width="1395"/>
+      </file>
+    </resource>
+    <resource id="image_127" sequence="127" type="image">
+      <label>fol. 61r</label>
+      <file id="W12_000127_300.jp2" mimetype="image/jp2" format="JPEG2000" size="757285">
+        <imageData height="2225" width="1351"/>
+      </file>
+    </resource>
+    <resource id="image_128" sequence="128" type="image">
+      <label>fol. 61v</label>
+      <file id="W12_000128_300.jp2" mimetype="image/jp2" format="JPEG2000" size="714018">
+        <imageData height="2218" width="1366"/>
+      </file>
+    </resource>
+    <resource id="image_129" sequence="129" type="image">
+      <label>fol. 62r</label>
+      <file id="W12_000129_300.jp2" mimetype="image/jp2" format="JPEG2000" size="716180">
+        <imageData height="2231" width="1361"/>
+      </file>
+    </resource>
+    <resource id="image_130" sequence="130" type="image">
+      <label>fol. 62v</label>
+      <file id="W12_000130_300.jp2" mimetype="image/jp2" format="JPEG2000" size="737814">
+        <imageData height="2233" width="1371"/>
+      </file>
+    </resource>
+    <resource id="image_131" sequence="131" type="image">
+      <label>fol. 63r</label>
+      <file id="W12_000131_300.jp2" mimetype="image/jp2" format="JPEG2000" size="706780">
+        <imageData height="2215" width="1374"/>
+      </file>
+    </resource>
+    <resource id="image_132" sequence="132" type="image">
+      <label>fol. 63v</label>
+      <file id="W12_000132_300.jp2" mimetype="image/jp2" format="JPEG2000" size="668022">
+        <imageData height="2218" width="1361"/>
+      </file>
+    </resource>
+    <resource id="image_133" sequence="133" type="image">
+      <label>fol. 64r</label>
+      <file id="W12_000133_300.jp2" mimetype="image/jp2" format="JPEG2000" size="657871">
+        <imageData height="2228" width="1342"/>
+      </file>
+    </resource>
+    <resource id="image_134" sequence="134" type="image">
+      <label>fol. 64v</label>
+      <file id="W12_000134_300.jp2" mimetype="image/jp2" format="JPEG2000" size="721881">
+        <imageData height="2236" width="1358"/>
+      </file>
+    </resource>
+    <resource id="image_135" sequence="135" type="image">
+      <label>fol. 65r</label>
+      <file id="W12_000135_300.jp2" mimetype="image/jp2" format="JPEG2000" size="701139">
+        <imageData height="2218" width="1338"/>
+      </file>
+    </resource>
+    <resource id="image_136" sequence="136" type="image">
+      <label>fol. 65v</label>
+      <file id="W12_000136_300.jp2" mimetype="image/jp2" format="JPEG2000" size="653324">
+        <imageData height="2228" width="1358"/>
+      </file>
+    </resource>
+    <resource id="image_137" sequence="137" type="image">
+      <label>fol. 66r</label>
+      <file id="W12_000137_300.jp2" mimetype="image/jp2" format="JPEG2000" size="715732">
+        <imageData height="2213" width="1358"/>
+      </file>
+    </resource>
+    <resource id="image_138" sequence="138" type="image">
+      <label>fol. 66v</label>
+      <file id="W12_000138_300.jp2" mimetype="image/jp2" format="JPEG2000" size="776833">
+        <imageData height="2220" width="1358"/>
+      </file>
+    </resource>
+    <resource id="image_139" sequence="139" type="image">
+      <label>fol. 67r</label>
+      <file id="W12_000139_300.jp2" mimetype="image/jp2" format="JPEG2000" size="745779">
+        <imageData height="2223" width="1356"/>
+      </file>
+    </resource>
+    <resource id="image_140" sequence="140" type="image">
+      <label>fol. 67v</label>
+      <file id="W12_000140_300.jp2" mimetype="image/jp2" format="JPEG2000" size="697922">
+        <imageData height="2223" width="1366"/>
+      </file>
+    </resource>
+    <resource id="image_141" sequence="141" type="image">
+      <label>fol. 68r</label>
+      <file id="W12_000141_300.jp2" mimetype="image/jp2" format="JPEG2000" size="677215">
+        <imageData height="2228" width="1358"/>
+      </file>
+    </resource>
+    <resource id="image_142" sequence="142" type="image">
+      <label>fol. 68v</label>
+      <file id="W12_000142_300.jp2" mimetype="image/jp2" format="JPEG2000" size="753606">
+        <imageData height="2239" width="1364"/>
+      </file>
+    </resource>
+    <resource id="image_210" sequence="143" type="image">
+      <label>fol. 69r</label>
+      <file id="W12_000210_300.jp2" mimetype="image/jp2" format="JPEG2000" size="737804">
+        <imageData height="2232" width="1347"/>
+      </file>
+    </resource>
+    <resource id="image_211" sequence="144" type="image">
+      <label>fol. 69v</label>
+      <file id="W12_000211_300.jp2" mimetype="image/jp2" format="JPEG2000" size="656305">
+        <imageData height="2239" width="1374"/>
+      </file>
+    </resource>
+    <resource id="image_143" sequence="145" type="image">
+      <label>fol. 70r</label>
+      <file id="W12_000143_300.jp2" mimetype="image/jp2" format="JPEG2000" size="680735">
+        <imageData height="2210" width="1343"/>
+      </file>
+    </resource>
+    <resource id="image_144" sequence="146" type="image">
+      <label>fol. 70v</label>
+      <file id="W12_000144_300.jp2" mimetype="image/jp2" format="JPEG2000" size="722909">
+        <imageData height="2221" width="1371"/>
+      </file>
+    </resource>
+    <resource id="image_145" sequence="147" type="image">
+      <label>fol. 71r</label>
+      <file id="W12_000145_300.jp2" mimetype="image/jp2" format="JPEG2000" size="716694">
+        <imageData height="2225" width="1343"/>
+      </file>
+    </resource>
+    <resource id="image_146" sequence="148" type="image">
+      <label>fol. 71v</label>
+      <file id="W12_000146_300.jp2" mimetype="image/jp2" format="JPEG2000" size="659549">
+        <imageData height="2184" width="1345"/>
+      </file>
+    </resource>
+    <resource id="image_147" sequence="149" type="image">
+      <label>fol. 72r</label>
+      <file id="W12_000147_300.jp2" mimetype="image/jp2" format="JPEG2000" size="691008">
+        <imageData height="2218" width="1351"/>
+      </file>
+    </resource>
+    <resource id="image_148" sequence="150" type="image">
+      <label>fol. 72v</label>
+      <file id="W12_000148_300.jp2" mimetype="image/jp2" format="JPEG2000" size="761091">
+        <imageData height="2231" width="1363"/>
+      </file>
+    </resource>
+    <resource id="image_149" sequence="151" type="image">
+      <label>fol. 73r</label>
+      <file id="W12_000149_300.jp2" mimetype="image/jp2" format="JPEG2000" size="757986">
+        <imageData height="2234" width="1356"/>
+      </file>
+    </resource>
+    <resource id="image_249" sequence="152" type="image">
+      <label>fol. 73v</label>
+      <file id="W12_000249_300.jp2" mimetype="image/jp2" format="JPEG2000" size="666849">
+        <imageData height="2205" width="1345"/>
+      </file>
+    </resource>
+    <resource id="image_250" sequence="153" type="image">
+      <label>fol. 74r</label>
+      <file id="W12_000250_300.jp2" mimetype="image/jp2" format="JPEG2000" size="670339">
+        <imageData height="2228" width="1356"/>
+      </file>
+    </resource>
+    <resource id="image_150" sequence="154" type="image">
+      <label>fol. 74v</label>
+      <file id="W12_000150_300.jp2" mimetype="image/jp2" format="JPEG2000" size="647633">
+        <imageData height="2207" width="1327"/>
+      </file>
+    </resource>
+    <resource id="image_151" sequence="155" type="image">
+      <label>fol. 75r</label>
+      <file id="W12_000151_300.jp2" mimetype="image/jp2" format="JPEG2000" size="692533">
+        <imageData height="2227" width="1347"/>
+      </file>
+    </resource>
+    <resource id="image_152" sequence="156" type="image">
+      <label>fol. 75v</label>
+      <file id="W12_000152_300.jp2" mimetype="image/jp2" format="JPEG2000" size="611724">
+        <imageData height="2218" width="1337"/>
+      </file>
+    </resource>
+    <resource id="image_153" sequence="157" type="image">
+      <label>fol. 76r</label>
+      <file id="W12_000153_300.jp2" mimetype="image/jp2" format="JPEG2000" size="701459">
+        <imageData height="2226" width="1350"/>
+      </file>
+    </resource>
+    <resource id="image_154" sequence="158" type="image">
+      <label>fol. 76v</label>
+      <file id="W12_000154_300.jp2" mimetype="image/jp2" format="JPEG2000" size="792782">
+        <imageData height="2207" width="1345"/>
+      </file>
+    </resource>
+    <resource id="image_155" sequence="159" type="image">
+      <label>fol. 77r</label>
+      <file id="W12_000155_300.jp2" mimetype="image/jp2" format="JPEG2000" size="772867">
+        <imageData height="2228" width="1358"/>
+      </file>
+    </resource>
+    <resource id="image_156" sequence="160" type="image">
+      <label>fol. 77v</label>
+      <file id="W12_000156_300.jp2" mimetype="image/jp2" format="JPEG2000" size="621119">
+        <imageData height="2197" width="1345"/>
+      </file>
+    </resource>
+    <resource id="image_157" sequence="161" type="image">
+      <label>fol. 78r</label>
+      <file id="W12_000157_300.jp2" mimetype="image/jp2" format="JPEG2000" size="828025">
+        <imageData height="2244" width="1358"/>
+      </file>
+    </resource>
+    <resource id="image_158" sequence="162" type="image">
+      <label>fol. 78v</label>
+      <file id="W12_000158_300.jp2" mimetype="image/jp2" format="JPEG2000" size="665411">
+        <imageData height="2231" width="1385"/>
+      </file>
+    </resource>
+    <resource id="image_159" sequence="163" type="image">
+      <label>fol. 79r</label>
+      <file id="W12_000159_300.jp2" mimetype="image/jp2" format="JPEG2000" size="779861">
+        <imageData height="2228" width="1348"/>
+      </file>
+    </resource>
+    <resource id="image_160" sequence="164" type="image">
+      <label>fol. 79v</label>
+      <file id="W12_000160_300.jp2" mimetype="image/jp2" format="JPEG2000" size="657519">
+        <imageData height="2239" width="1353"/>
+      </file>
+    </resource>
+    <resource id="image_161" sequence="165" type="image">
+      <label>fol. 80r</label>
+      <file id="W12_000161_300.jp2" mimetype="image/jp2" format="JPEG2000" size="717683">
+        <imageData height="2227" width="1347"/>
+      </file>
+    </resource>
+    <resource id="image_162" sequence="166" type="image">
+      <label>fol. 80v</label>
+      <file id="W12_000162_300.jp2" mimetype="image/jp2" format="JPEG2000" size="730289">
+        <imageData height="2214" width="1376"/>
+      </file>
+    </resource>
+    <resource id="image_163" sequence="167" type="image">
+      <label>fol. 81r</label>
+      <file id="W12_000163_300.jp2" mimetype="image/jp2" format="JPEG2000" size="748212">
+        <imageData height="2236" width="1350"/>
+      </file>
+    </resource>
+    <resource id="image_164" sequence="168" type="image">
+      <label>fol. 81v</label>
+      <file id="W12_000164_300.jp2" mimetype="image/jp2" format="JPEG2000" size="620476">
+        <imageData height="2200" width="1338"/>
+      </file>
+    </resource>
+    <resource id="image_165" sequence="169" type="image">
+      <label>fol. 82r</label>
+      <file id="W12_000165_300.jp2" mimetype="image/jp2" format="JPEG2000" size="728611">
+        <imageData height="2241" width="1327"/>
+      </file>
+    </resource>
+    <resource id="image_166" sequence="170" type="image">
+      <label>fol. 82v</label>
+      <file id="W12_000166_300.jp2" mimetype="image/jp2" format="JPEG2000" size="668314">
+        <imageData height="2197" width="1332"/>
+      </file>
+    </resource>
+    <resource id="image_167" sequence="171" type="image">
+      <label>fol. 83r</label>
+      <file id="W12_000167_300.jp2" mimetype="image/jp2" format="JPEG2000" size="777226">
+        <imageData height="2228" width="1340"/>
+      </file>
+    </resource>
+    <resource id="image_168" sequence="172" type="image">
+      <label>fol. 83v</label>
+      <file id="W12_000168_300.jp2" mimetype="image/jp2" format="JPEG2000" size="620061">
+        <imageData height="2179" width="1332"/>
+      </file>
+    </resource>
+    <resource id="image_169" sequence="173" type="image">
+      <label>fol. 84r</label>
+      <file id="W12_000169_300.jp2" mimetype="image/jp2" format="JPEG2000" size="739179">
+        <imageData height="2233" width="1343"/>
+      </file>
+    </resource>
+    <resource id="image_170" sequence="174" type="image">
+      <label>fol. 84v</label>
+      <file id="W12_000170_300.jp2" mimetype="image/jp2" format="JPEG2000" size="661391">
+        <imageData height="2186" width="1335"/>
+      </file>
+    </resource>
+    <resource id="image_171" sequence="175" type="image">
+      <label>fol. 85r</label>
+      <file id="W12_000171_300.jp2" mimetype="image/jp2" format="JPEG2000" size="752288">
+        <imageData height="2225" width="1343"/>
+      </file>
+    </resource>
+    <resource id="image_172" sequence="176" type="image">
+      <label>fol. 85v</label>
+      <file id="W12_000172_300.jp2" mimetype="image/jp2" format="JPEG2000" size="648624">
+        <imageData height="2194" width="1332"/>
+      </file>
+    </resource>
+    <resource id="image_173" sequence="177" type="image">
+      <label>fol. 86r</label>
+      <file id="W12_000173_300.jp2" mimetype="image/jp2" format="JPEG2000" size="731151">
+        <imageData height="2241" width="1361"/>
+      </file>
+    </resource>
+    <resource id="image_174" sequence="178" type="image">
+      <label>fol. 86v</label>
+      <file id="W12_000174_300.jp2" mimetype="image/jp2" format="JPEG2000" size="686608">
+        <imageData height="2205" width="1363"/>
+      </file>
+    </resource>
+    <resource id="image_175" sequence="179" type="image">
+      <label>fol. 87r</label>
+      <file id="W12_000175_300.jp2" mimetype="image/jp2" format="JPEG2000" size="718155">
+        <imageData height="2231" width="1343"/>
+      </file>
+    </resource>
+    <resource id="image_176" sequence="180" type="image">
+      <label>fol. 87v</label>
+      <file id="W12_000176_300.jp2" mimetype="image/jp2" format="JPEG2000" size="614023">
+        <imageData height="2205" width="1340"/>
+      </file>
+    </resource>
+    <resource id="image_177" sequence="181" type="image">
+      <label>fol. 88r</label>
+      <file id="W12_000177_300.jp2" mimetype="image/jp2" format="JPEG2000" size="701802">
+        <imageData height="2239" width="1356"/>
+      </file>
+    </resource>
+    <resource id="image_178" sequence="182" type="image">
+      <label>fol. 88v</label>
+      <file id="W12_000178_300.jp2" mimetype="image/jp2" format="JPEG2000" size="694157">
+        <imageData height="2212" width="1345"/>
+      </file>
+    </resource>
+    <resource id="image_179" sequence="183" type="image">
+      <label>fol. 89r</label>
+      <file id="W12_000179_300.jp2" mimetype="image/jp2" format="JPEG2000" size="761206">
+        <imageData height="2236" width="1342"/>
+      </file>
+    </resource>
+    <resource id="image_180" sequence="184" type="image">
+      <label>fol. 89v</label>
+      <file id="W12_000180_300.jp2" mimetype="image/jp2" format="JPEG2000" size="674059">
+        <imageData height="2194" width="1332"/>
+      </file>
+    </resource>
+    <resource id="image_181" sequence="185" type="image">
+      <label>fol. 90r</label>
+      <file id="W12_000181_300.jp2" mimetype="image/jp2" format="JPEG2000" size="620019">
+        <imageData height="2186" width="1340"/>
+      </file>
+    </resource>
+    <resource id="image_182" sequence="186" type="image">
+      <label>fol. 90v</label>
+      <file id="W12_000182_300.jp2" mimetype="image/jp2" format="JPEG2000" size="658666">
+        <imageData height="2210" width="1361"/>
+      </file>
+    </resource>
+    <resource id="image_183" sequence="187" type="image">
+      <label>fol. 91r</label>
+      <file id="W12_000183_300.jp2" mimetype="image/jp2" format="JPEG2000" size="710942">
+        <imageData height="2241" width="1345"/>
+      </file>
+    </resource>
+    <resource id="image_184" sequence="188" type="image">
+      <label>fol. 91v</label>
+      <file id="W12_000184_300.jp2" mimetype="image/jp2" format="JPEG2000" size="621456">
+        <imageData height="2226" width="1385"/>
+      </file>
+    </resource>
+    <resource id="image_185" sequence="189" type="image">
+      <label>fol. 92r</label>
+      <file id="W12_000185_300.jp2" mimetype="image/jp2" format="JPEG2000" size="714096">
+        <imageData height="2241" width="1332"/>
+      </file>
+    </resource>
+    <resource id="image_186" sequence="190" type="image">
+      <label>fol. 92v</label>
+      <file id="W12_000186_300.jp2" mimetype="image/jp2" format="JPEG2000" size="751969">
+        <imageData height="2202" width="1345"/>
+      </file>
+    </resource>
+    <resource id="image_187" sequence="191" type="image">
+      <label>fol. 93r</label>
+      <file id="W12_000187_300.jp2" mimetype="image/jp2" format="JPEG2000" size="750628">
+        <imageData height="2241" width="1338"/>
+      </file>
+    </resource>
+    <resource id="image_188" sequence="192" type="image">
+      <label>fol. 93v</label>
+      <file id="W12_000188_300.jp2" mimetype="image/jp2" format="JPEG2000" size="665817">
+        <imageData height="2184" width="1309"/>
+      </file>
+    </resource>
+    <resource id="image_189" sequence="193" type="image">
+      <label>fol. 94r</label>
+      <file id="W12_000189_300.jp2" mimetype="image/jp2" format="JPEG2000" size="693866">
+        <imageData height="2251" width="1345"/>
+      </file>
+    </resource>
+    <resource id="image_190" sequence="194" type="image">
+      <label>fol. 94v</label>
+      <file id="W12_000190_300.jp2" mimetype="image/jp2" format="JPEG2000" size="691001">
+        <imageData height="2202" width="1317"/>
+      </file>
+    </resource>
+    <resource id="image_191" sequence="195" type="image">
+      <label>fol. 95r</label>
+      <file id="W12_000191_300.jp2" mimetype="image/jp2" format="JPEG2000" size="772572">
+        <imageData height="2236" width="1327"/>
+      </file>
+    </resource>
+    <resource id="image_192" sequence="196" type="image">
+      <label>fol. 95v</label>
+      <file id="W12_000192_300.jp2" mimetype="image/jp2" format="JPEG2000" size="720289">
+        <imageData height="2210" width="1306"/>
+      </file>
+    </resource>
+    <resource id="image_193" sequence="197" type="image">
+      <label>fol. 96r</label>
+      <file id="W12_000193_300.jp2" mimetype="image/jp2" format="JPEG2000" size="765774">
+        <imageData height="2246" width="1330"/>
+      </file>
+    </resource>
+    <resource id="image_194" sequence="198" type="image">
+      <label>fol. 96v</label>
+      <file id="W12_000194_300.jp2" mimetype="image/jp2" format="JPEG2000" size="661963">
+        <imageData height="2194" width="1317"/>
+      </file>
+    </resource>
+    <resource id="image_195" sequence="199" type="image">
+      <label>fol. 97r</label>
+      <file id="W12_000195_300.jp2" mimetype="image/jp2" format="JPEG2000" size="726731">
+        <imageData height="2231" width="1335"/>
+      </file>
+    </resource>
+    <resource id="image_196" sequence="200" type="image">
+      <label>fol. 97v</label>
+      <file id="W12_000196_300.jp2" mimetype="image/jp2" format="JPEG2000" size="690819">
+        <imageData height="2208" width="1324"/>
+      </file>
+    </resource>
+    <resource id="image_197" sequence="201" type="image">
+      <label>fol. 98r</label>
+      <file id="W12_000197_300.jp2" mimetype="image/jp2" format="JPEG2000" size="773803">
+        <imageData height="2241" width="1340"/>
+      </file>
+    </resource>
+    <resource id="image_198" sequence="202" type="image">
+      <label>fol. 98v</label>
+      <file id="W12_000198_300.jp2" mimetype="image/jp2" format="JPEG2000" size="676696">
+        <imageData height="2202" width="1311"/>
+      </file>
+    </resource>
+    <resource id="image_199" sequence="203" type="image">
+      <label>fol. 99r</label>
+      <file id="W12_000199_300.jp2" mimetype="image/jp2" format="JPEG2000" size="731063">
+        <imageData height="2212" width="1350"/>
+      </file>
+    </resource>
+    <resource id="image_200" sequence="204" type="image">
+      <label>fol. 99v</label>
+      <file id="W12_000200_300.jp2" mimetype="image/jp2" format="JPEG2000" size="677885">
+        <imageData height="2199" width="1329"/>
+      </file>
+    </resource>
+    <resource id="image_201" sequence="205" type="image">
+      <label>fol. 100r</label>
+      <file id="W12_000201_300.jp2" mimetype="image/jp2" format="JPEG2000" size="739504">
+        <imageData height="2218" width="1340"/>
+      </file>
+    </resource>
+    <resource id="image_202" sequence="206" type="image">
+      <label>fol. 100v</label>
+      <file id="W12_000202_300.jp2" mimetype="image/jp2" format="JPEG2000" size="704137">
+        <imageData height="2208" width="1340"/>
+      </file>
+    </resource>
+    <resource id="image_203" sequence="207" type="image">
+      <label>fol. 101r</label>
+      <file id="W12_000203_300.jp2" mimetype="image/jp2" format="JPEG2000" size="909049">
+        <imageData height="2220" width="1340"/>
+      </file>
+    </resource>
+    <resource id="image_204" sequence="208" type="image">
+      <label>fol. 101v</label>
+      <file id="W12_000204_300.jp2" mimetype="image/jp2" format="JPEG2000" size="709108">
+        <imageData height="2205" width="1340"/>
+      </file>
+    </resource>
+    <resource id="image_205" sequence="209" type="image">
+      <label>fol. 102r</label>
+      <file id="W12_000205_300.jp2" mimetype="image/jp2" format="JPEG2000" size="705784">
+        <imageData height="2231" width="1335"/>
+      </file>
+    </resource>
+    <resource id="image_206" sequence="210" type="image">
+      <label>fol. 102v</label>
+      <file id="W12_000206_300.jp2" mimetype="image/jp2" format="JPEG2000" size="657349">
+        <imageData height="2210" width="1338"/>
+      </file>
+    </resource>
+    <resource id="image_207" sequence="211" type="image">
+      <label>fol. 103r</label>
+      <file id="W12_000207_300.jp2" mimetype="image/jp2" format="JPEG2000" size="717952">
+        <imageData height="2254" width="1335"/>
+      </file>
+    </resource>
+    <resource id="image_208" sequence="212" type="image">
+      <label>fol. 103v</label>
+      <file id="W12_000208_300.jp2" mimetype="image/jp2" format="JPEG2000" size="732670">
+        <imageData height="2236" width="1377"/>
+      </file>
+    </resource>
+    <resource id="image_209" sequence="213" type="image">
+      <label>fol. 104r</label>
+      <file id="W12_000209_300.jp2" mimetype="image/jp2" format="JPEG2000" size="732744">
+        <imageData height="2233" width="1337"/>
+      </file>
+    </resource>
+    <resource id="image_212" sequence="214" type="image">
+      <label>fol. 104v</label>
+      <file id="W12_000212_300.jp2" mimetype="image/jp2" format="JPEG2000" size="660403">
+        <imageData height="2236" width="1351"/>
+      </file>
+    </resource>
+    <resource id="image_213" sequence="215" type="image">
+      <label>fol. 105r</label>
+      <file id="W12_000213_300.jp2" mimetype="image/jp2" format="JPEG2000" size="718474">
+        <imageData height="2236" width="1340"/>
+      </file>
+    </resource>
+    <resource id="image_214" sequence="216" type="image">
+      <label>fol. 105v</label>
+      <file id="W12_000214_300.jp2" mimetype="image/jp2" format="JPEG2000" size="700765">
+        <imageData height="2236" width="1366"/>
+      </file>
+    </resource>
+    <resource id="image_215" sequence="217" type="image">
+      <label>fol. 106r</label>
+      <file id="W12_000215_300.jp2" mimetype="image/jp2" format="JPEG2000" size="707768">
+        <imageData height="2236" width="1327"/>
+      </file>
+    </resource>
+    <resource id="image_216" sequence="218" type="image">
+      <label>fol. 106v</label>
+      <file id="W12_000216_300.jp2" mimetype="image/jp2" format="JPEG2000" size="639064">
+        <imageData height="2244" width="1353"/>
+      </file>
+    </resource>
+    <resource id="image_217" sequence="219" type="image">
+      <label>fol. 107r</label>
+      <file id="W12_000217_300.jp2" mimetype="image/jp2" format="JPEG2000" size="672611">
+        <imageData height="2213" width="1327"/>
+      </file>
+    </resource>
+    <resource id="image_218" sequence="220" type="image">
+      <label>fol. 107v</label>
+      <file id="W12_000218_300.jp2" mimetype="image/jp2" format="JPEG2000" size="649120">
+        <imageData height="2207" width="1314"/>
+      </file>
+    </resource>
+    <resource id="image_219" sequence="221" type="image">
+      <label>fol. 108r</label>
+      <file id="W12_000219_300.jp2" mimetype="image/jp2" format="JPEG2000" size="707470">
+        <imageData height="2231" width="1327"/>
+      </file>
+    </resource>
+    <resource id="image_220" sequence="222" type="image">
+      <label>fol. 108v</label>
+      <file id="W12_000220_300.jp2" mimetype="image/jp2" format="JPEG2000" size="691984">
+        <imageData height="2210" width="1312"/>
+      </file>
+    </resource>
+    <resource id="image_221" sequence="223" type="image">
+      <label>fol. 109r</label>
+      <file id="W12_000221_300.jp2" mimetype="image/jp2" format="JPEG2000" size="731085">
+        <imageData height="2233" width="1317"/>
+      </file>
+    </resource>
+    <resource id="image_222" sequence="224" type="image">
+      <label>fol. 109v</label>
+      <file id="W12_000222_300.jp2" mimetype="image/jp2" format="JPEG2000" size="694487">
+        <imageData height="2215" width="1303"/>
+      </file>
+    </resource>
+    <resource id="image_223" sequence="225" type="image">
+      <label>fol. 110r</label>
+      <file id="W12_000223_300.jp2" mimetype="image/jp2" format="JPEG2000" size="767216">
+        <imageData height="2233" width="1311"/>
+      </file>
+    </resource>
+    <resource id="image_224" sequence="226" type="image">
+      <label>fol. 110v</label>
+      <file id="W12_000224_300.jp2" mimetype="image/jp2" format="JPEG2000" size="769065">
+        <imageData height="2220" width="1322"/>
+      </file>
+    </resource>
+    <resource id="image_225" sequence="227" type="image">
+      <label>fol. 111r</label>
+      <file id="W12_000225_300.jp2" mimetype="image/jp2" format="JPEG2000" size="700935">
+        <imageData height="2186" width="1327"/>
+      </file>
+    </resource>
+    <resource id="image_226" sequence="228" type="image">
+      <label>fol. 111v</label>
+      <file id="W12_000226_300.jp2" mimetype="image/jp2" format="JPEG2000" size="704677">
+        <imageData height="2228" width="1317"/>
+      </file>
+    </resource>
+    <resource id="image_227" sequence="229" type="image">
+      <label>fol. 112r</label>
+      <file id="W12_000227_300.jp2" mimetype="image/jp2" format="JPEG2000" size="701502">
+        <imageData height="2191" width="1295"/>
+      </file>
+    </resource>
+    <resource id="image_228" sequence="230" type="image">
+      <label>fol. 112v</label>
+      <file id="W12_000228_300.jp2" mimetype="image/jp2" format="JPEG2000" size="695348">
+        <imageData height="2244" width="1359"/>
+      </file>
+    </resource>
+    <resource id="image_229" sequence="231" type="image">
+      <label>fol. 113r</label>
+      <file id="W12_000229_300.jp2" mimetype="image/jp2" format="JPEG2000" size="705421">
+        <imageData height="2228" width="1325"/>
+      </file>
+    </resource>
+    <resource id="image_230" sequence="232" type="image">
+      <label>fol. 113v</label>
+      <file id="W12_000230_300.jp2" mimetype="image/jp2" format="JPEG2000" size="678181">
+        <imageData height="2207" width="1309"/>
+      </file>
+    </resource>
+    <resource id="image_231" sequence="233" type="image">
+      <label>fol. 114r</label>
+      <file id="W12_000231_300.jp2" mimetype="image/jp2" format="JPEG2000" size="725892">
+        <imageData height="2231" width="1311"/>
+      </file>
+    </resource>
+    <resource id="image_232" sequence="234" type="image">
+      <label>fol. 114v</label>
+      <file id="W12_000232_300.jp2" mimetype="image/jp2" format="JPEG2000" size="687197">
+        <imageData height="2228" width="1312"/>
+      </file>
+    </resource>
+    <resource id="image_233" sequence="235" type="image">
+      <label>fol. 115r</label>
+      <file id="W12_000233_300.jp2" mimetype="image/jp2" format="JPEG2000" size="723769">
+        <imageData height="2223" width="1322"/>
+      </file>
+    </resource>
+    <resource id="image_234" sequence="236" type="image">
+      <label>fol. 115v</label>
+      <file id="W12_000234_300.jp2" mimetype="image/jp2" format="JPEG2000" size="695256">
+        <imageData height="2236" width="1346"/>
+      </file>
+    </resource>
+    <resource id="image_235" sequence="237" type="image">
+      <label>fol. 116r</label>
+      <file id="W12_000235_300.jp2" mimetype="image/jp2" format="JPEG2000" size="730224">
+        <imageData height="2246" width="1332"/>
+      </file>
+    </resource>
+    <resource id="image_236" sequence="238" type="image">
+      <label>fol. 116v</label>
+      <file id="W12_000236_300.jp2" mimetype="image/jp2" format="JPEG2000" size="682607">
+        <imageData height="2213" width="1296"/>
+      </file>
+    </resource>
+    <resource id="image_237" sequence="239" type="image">
+      <label>fol. 117r</label>
+      <file id="W12_000237_300.jp2" mimetype="image/jp2" format="JPEG2000" size="756487">
+        <imageData height="2223" width="1324"/>
+      </file>
+    </resource>
+    <resource id="image_238" sequence="240" type="image">
+      <label>fol. 117v</label>
+      <file id="W12_000238_300.jp2" mimetype="image/jp2" format="JPEG2000" size="748524">
+        <imageData height="2236" width="1314"/>
+      </file>
+    </resource>
+    <resource id="image_239" sequence="241" type="image">
+      <label>Back flyleaf ir</label>
+      <file id="W12_000239_300.jp2" mimetype="image/jp2" format="JPEG2000" size="743040">
+        <imageData height="2233" width="1358"/>
+      </file>
+    </resource>
+    <resource id="image_240" sequence="242" type="image">
+      <label>Back flyleaf iv</label>
+      <file id="W12_000240_300.jp2" mimetype="image/jp2" format="JPEG2000" size="519270">
+        <imageData height="2225" width="1314"/>
+      </file>
+    </resource>
+    <resource id="image_241" sequence="243" type="image">
+      <label>Back flyleaf iir</label>
+      <file id="W12_000241_300.jp2" mimetype="image/jp2" format="JPEG2000" size="600563">
+        <imageData height="2221" width="1351"/>
+      </file>
+    </resource>
+    <resource id="image_242" sequence="244" type="image">
+      <label>Back flyleaf iiv</label>
+      <file id="W12_000242_300.jp2" mimetype="image/jp2" format="JPEG2000" size="715036">
+        <imageData height="2205" width="1397"/>
+      </file>
+    </resource>
+    <resource id="image_243" sequence="245" type="image">
+      <label>Lower board inside</label>
+      <file id="W12_000243_300.jp2" mimetype="image/jp2" format="JPEG2000" size="663305">
+        <imageData height="2301" width="1541"/>
+      </file>
+    </resource>
+    <resource id="image_244" sequence="246" type="image">
+      <label>Lower board outside</label>
+      <file id="W12_000244_300.jp2" mimetype="image/jp2" format="JPEG2000" size="704616">
+        <imageData height="2337" width="1641"/>
+      </file>
+    </resource>
+    <resource id="image_245" sequence="247" type="image">
+      <label>Spine</label>
+      <file id="W12_000245_300.jp2" mimetype="image/jp2" format="JPEG2000" size="505111">
+        <imageData height="2669" width="1033"/>
+      </file>
+    </resource>
+    <resource id="image_246" sequence="248" type="image">
+      <label>Fore-edge</label>
+      <file id="W12_000246_300.jp2" mimetype="image/jp2" format="JPEG2000" size="569047">
+        <imageData height="2683" width="1110"/>
+      </file>
+    </resource>
+    <resource id="image_247" sequence="249" type="image">
+      <label>Head</label>
+      <file id="W12_000247_300.jp2" mimetype="image/jp2" format="JPEG2000" size="403506">
+        <imageData height="1144" width="2041"/>
+      </file>
+    </resource>
+    <resource id="image_248" sequence="250" type="image">
+      <label>Tail</label>
+      <file id="W12_000248_300.jp2" mimetype="image/jp2" format="JPEG2000" size="471513">
+        <imageData height="1103" width="2086"/>
+      </file>
+    </resource>
+    <resource id="image_251" sequence="251" type="image">
+      <label>Previous binding outer boards</label>
+      <file id="W12_000251_300.jp2" mimetype="image/jp2" format="JPEG2000" size="2857799">
+        <imageData height="2319" width="3183"/>
+      </file>
+    </resource>
+    <resource id="image_252" sequence="252" type="image">
+      <label>Previous binding inner boards</label>
+      <file id="W12_000252_300.jp2" mimetype="image/jp2" format="JPEG2000" size="1363425">
+        <imageData height="2309" width="3171"/>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <copyright>
+      <human type="copyright">All Walters manuscript images and descriptions provided here are copyrighted &#xA9; The Walters Art Museum.</human>
+    </copyright>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">Licensed for use under Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported Access Rights, http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode. Images are free for any noncommercial use, provided you follow the terms of this license. You do not need to apply to the Walters prior to using the images. We ask only that you cite the source of the images as the Walters Art Museum (see citation style at http://www.thedigitalwalters.org/03_ReadMe.html). Additionally, we request that a copy of any work created using these materials be sent to the Curator of Manuscripts and Rare Books at the Walters Art Museum, 600 N. Charles Street, Baltimore, MD 21201, mss-curator@thewalters.org.</human>
+    </use>
+    <use>
+      <machine type="creativeCommons">by-nc-sa</machine>
+      <human type="creativeCommons">Attribution-NonCommercial-ShareAlike 3.0 Unported</human>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:xm166kd3734">
+      <fedora:isMemberOf rdf:resource="info:fedora/druid:ww121ss5000"/>
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:ww121ss5000"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Walters Ms. W.12, On Christian rulers</dc:title>
+    <dc:creator>Sedulius, Scotus, fl. 848-860</dc:creator>
+    <dc:date>Mid 12th century CE</dc:date>
+    <dc:language>lat</dc:language>
+    <dc:format>Foliation: ii+117+ii</dc:format>
+    <dc:description>Created in the mid twelfth century in Germany, this manuscript contains the much earlier writings of the Irish scholar Sedulius Scotus. Writing in the mid ninth century at St. Lambert in Li&#xE8;ge, Scotus famously penned this treatise on the duties and ideals of the Christian king or prince. It is the earliest version of a genre that would become popular in the later medieval and Renaissance periods, often known as "mirrors for princes." This manuscript is the second oldest copy of Scotus' treatise known, the earliest being from the ninth century (Bremen, Stadtbibliothek Ms. C. 36). The text is virtually complete, missing only its first and last folios, and is written in a clear Romanesque Caroline minuscule script. The nine inhabited initials, which include dragons and cranes, as well as the seven decorated initials, have been left unfinished. In its script and decoration the manuscript is similar to a benedictional made in Constance (Folter, et al. Cimelia, p. 144, no. 33). For full description, see http://www.thedigitalwalters.org/Data/WaltersManuscripts/html/W12/description.html</dc:description>
+  </oai_dc:dc>
+</publicObject>

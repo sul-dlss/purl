@@ -1,0 +1,16 @@
+<identityMetadata>
+  <sourceId source="Hydrus">item-hfrost-2013-02-21T21:28:31.010Z</sourceId>
+  <objectId>druid:wp335yr5649</objectId>
+  <objectCreator>DOR</objectCreator>
+  <objectLabel>Code and Data supplement to "Deterministic Matrices Matching the Compressed Sensing Phase Transitions of Gaussian Random Matrices."</objectLabel>
+  <objectType>item</objectType>
+  <adminPolicy>druid:dd984qc3502</adminPolicy>
+  <otherId name="label"/>
+  <otherId name="uuid">e9e15fd2-454c-11e2-8323-0050569b3c3c</otherId>
+  <tag>Project : Stanford Research Data</tag>
+  <tag>Process : Content Type : File</tag>
+  <tag>Registered By : blalbrit</tag>
+  <tag>Project : Hydrus</tag>
+  <tag>Hydrus : dataset</tag>
+  <tag>Remediated By : 3.25.0</tag>
+</identityMetadata>

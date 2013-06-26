@@ -1,0 +1,68 @@
+/* ZPR */
+.zpr-view-finder {
+  background-color: #fff;
+  border: 1px solid #999;
+  margin: auto auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.zpr-img-frame {
+  background-image: url("../images/loader_512x512.gif");
+  background-color: #ddd;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+
+.zpr-controls {
+  background-color: #777;
+  border: 1px solid #666;
+  left: 10px;
+  min-width: 105px\9; /*IE8 hack */
+  padding: 5px;
+  position: absolute;
+  top: 10px;
+  z-index: 8999;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+}
+
+.zpr-controls img {
+  cursor: pointer;
+  height: 16px;
+  margin: 0 !important;
+  padding: 0 5px;
+  width: 16px;
+  z-index: 8999;
+}
+
+.zpr-marquee-box {
+  background-color: #ddd;
+  border: 1px solid #666;
+  bottom: 8px;
+  overflow: hidden;
+  padding: 2px;
+  position: absolute;
+  right: 8px;
+  -moz-box-shadow: 0px 0px 1px #666;
+}
+
+.zpr-marquee {
+  border: 2px solid #ff0000;
+  background-color: #888;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+  position: absolute;
+  z-index: 100;
+
+  filter: alpha(opacity=50);
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+}

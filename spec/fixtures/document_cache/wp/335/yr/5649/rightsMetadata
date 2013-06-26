@@ -1,0 +1,17 @@
+<rightsMetadata>
+  <access type="discover">
+    <machine>
+      <world/>
+    </machine>
+  </access>
+  <access type="read">
+    <machine>
+      <world/>
+    </machine>
+  </access>
+  <use>
+    <human type="useAndReproduction">User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or confidentiality rights of individuals. Content distributed via the Stanford Digital Repository may be subject to additional license and use restrictions applied by the depositor.</human>
+    <human type="openDataCommons">PDDL Public Domain Dedication and License</human>
+    <machine type="openDataCommons">pddl</machine>
+  </use>
+</rightsMetadata>

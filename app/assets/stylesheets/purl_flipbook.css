@@ -1,0 +1,329 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+/* remember to highlight inserts somehow! */
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* -- end css reset -- */
+
+/*  Image Stacks  */
+
+a { color: #00388e /*#2E4F81*/; text-decoration:none; }
+a:hover { border-bottom: 1px dotted; }
+a:active { color: #4f4f4f; }
+
+body {
+  background: #474747 url(../images/purl-image-background.png) top left repeat-x;
+  color: #000000;
+	font: 11px/1.3em "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+h1 {
+	color: #f6f6f6;
+	filter: dropshadow(color=#333333, offx=-1, offy=-1);
+	font: normal normal normal 1.9em "Myriad Pro", "Droid Sans", "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+	letter-spacing: 1px;
+	text-shadow: -1px -1px 0px #333;
+}
+
+h2 {
+  font-size: 1.4em;
+	font-weight: normal;
+	line-height: 1.2em;
+	margin: 0 0 .5em 0;
+}
+
+h3 {
+  font-size: 1.1em;
+	font-weight: normal;
+}
+
+#container {
+	margin: 0 auto;
+  overflow: auto;
+  position: relative;
+	text-align: left;
+	width: 90%;
+
+}
+
+#banner {
+  background: url('../images/sulair_rosette_30x30.png') top left no-repeat;
+	height: 35px;
+	margin: 8px 0 4px 0;
+	padding-left: 40px;
+}
+
+#banner h1 {
+  padding-top: 6px;
+}
+
+#contents {
+  position: relative;
+  width: 100%;
+}
+
+
+#links-and-metadata {
+	margin: 20px 30px;
+	overflow: auto;
+}
+
+#links-column {
+	border-left: 1px dotted #aaa;
+	margin-top: 30px;
+	padding: 10px 0 10px 15px;
+	float: right;
+	width: 14%;
+}
+
+#rights-metadata {
+	padding-top: 10px;
+}
+
+#title-metadata, #rights-metadata {
+	width: 82%;
+	float: left;
+}
+
+#title-metadata dl, #rights-metadata dl {
+  margin: 15px 0;
+}
+
+#title-metadata dt, #rights-metadata dt {
+  clear: both;
+  color: #555555;
+  float: left;
+  padding: 2px 0;
+  width: 12em;
+}
+
+#title-metadata dd, #rights-metadata dd {
+  line-height: 1.5;
+  margin-left: 12em;
+  padding: 2px 0px;
+}
+
+#title-metadata dd hr {
+  border-width: 0;
+  margin: 7px 0;
+}
+
+#title-metadata dd p, #rights-metadata dd p {
+  margin-bottom: 8px;
+}
+
+#toc-and-metadata {
+  clear: left;
+  overflow: auto;
+  margin: 10px 30px 0 30px;
+  padding-top: 10px;
+}
+
+#list-gallery-toggle-box {
+	padding-right: 10px;
+	text-align: right;
+}
+
+#gallery-pagination {
+	padding: 10px 0;
+	text-align: left;
+}
+
+ol#toc {
+  float: left;
+  width: 100%;
+}
+
+ol#toc > li {
+  background: #fff url('../images/item-header-bg.png') left 2px repeat-x;
+  border: 1px solid #ccc;
+  margin: 5px 5px 0 0;
+  overflow: auto;
+  width: 400px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.thumb-img-box {
+  background: transparent url(../images/loader_16x16_gray.gif) no-repeat 0 0;
+  clear: both;
+  min-height: 100px;
+  min-width: 100px;
+}
+
+.thumb-img-box img {
+  min-height: 100px;
+  min-width: 100px;
+}
+
+#footer a, #footer a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#footer a:hover {
+  border-bottom: 1px dotted #ccc;
+}
+
+.obscure {
+  height: 1px;
+  margin-left: -9999px;
+  position: absolute;
+  width: 1px;
+}
+
+.sidebar-stmt {
+	padding: 0 0 15px 0;
+}
+
+.cc_by, .cc_by_nc, .cc_by_nd, .cc_by_sa, .cc_by_nc_sa, .cc_by_nc_nd {
+  background: transparent url('/images/cc_by.png') no-repeat 0px 0px;
+  padding: 0 0 0 100px;
+  min-height: 30px;
+}
+
+.cc_by_nc { background-image: url('/images/cc_by_nc.png'); }
+.cc_by_nd { background-image: url('/images/cc_by_nd.png'); }
+.cc_by_sa { background-image: url('/images/cc_by_sa.png'); }
+.cc_by_nc_sa { background-image: url('/images/cc_by_nc_sa.png'); }
+.cc_by_nc_nd { background-image: url('/images/cc_by_nc_nd.png'); }
+
+.truncator-link { font-weight: bold; }
+
+#full-screen-book, #full-screen-bg, #full-screen-embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2000;
+}
+
+#full-screen-embed {
+	margin: auto;
+}
+
+#full-screen-bg {
+	background-color: #000;
+	opacity:0.7;
+	filter:alpha(opacity=70);
+}
+
+#full-screen-close {
+	cursor: pointer;
+	height: 30px;
+	width: 30px;
+  background: url('/images/icon-full-screen-close.png') no-repeat 0 0;
+	position: absolute;
+	top: 5px;
+	right: 24px;
+	z-index: 8000;
+}
+
+#pane-toc-metadata {
+  background: #fff url(../images/contents_bg.png) top left repeat-x;
+  float: left;
+  height: auto;
+  overflow: auto;
+  width: 100%;
+}
+
+#pane-flipbook {
+  background: #fff url(../images/contents_bg.png) top left repeat-x;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  display: none;
+}
+
+.fs-flipbook-return-toc {
+  display: block;
+  float: left;
+  padding-top: 10px;
+  width: 140px;
+}
+
+#fs-flipbook-links {
+  clear: both;
+  border-bottom: 1px solid #878787;
+  overflow: auto;
+  padding: 10px 0px;
+  width: 100%;
+}
+
+.fs-flipbook-nav-links {
+  background-color: #A20001;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px 10px;
+  padding: 4px 8px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+#fs-flipbook-metadata {
+  /*float: left;*/
+  line-height: 1.6;
+  margin-left: 140px;
+  padding: 7px 10px 0 10px;
+}
+
+
+.fs-flipbook-viewer {
+  background: transparent url(../images/loader_16x16_gray.gif) no-repeat 20px 20px;
+  clear: both;
+  padding: 10px;
+}
+
+.view-in-bookreader {
+  margin: 10px 0;
+}
+
+.view-in-bookreader a {
+  background: transparent url(../images/icon-book.png) no-repeat 0 center;
+  padding-left: 20px;
+}
+
+.icon-stanford-only {
+  background: transparent url(../images/icon-stanford-only.png) no-repeat 0 center;
+  padding-left: 20px;
+}
+
+#embed-flipbook {
+  border: 1px solid #999;
+  height: 400px;
+  padding: 0;
+  margin: 0;
+  width: 600px;
+}

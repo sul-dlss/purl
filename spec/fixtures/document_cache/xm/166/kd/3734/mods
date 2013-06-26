@@ -1,0 +1,30 @@
+<mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
+  <titleInfo>
+    <title>Walters Ms. W.12, On Christian rulers</title>
+  </titleInfo>
+  <name type="personal">
+    <namePart>Sedulius, Scotus</namePart>
+    <namePart type="date">fl. 848-860</namePart>
+    <role>
+      <roleTerm authority="marcrelator" type="text">creator</roleTerm>
+    </role>
+  </name>
+  <typeOfResource manuscript="yes">mixed material</typeOfResource>
+  <originInfo>
+    <place>
+      <placeTerm type="text">Westphalia(?), Germany</placeTerm>
+    </place>
+    <dateIssued>Mid 12th century CE</dateIssued>
+    <issuance>monographic</issuance>
+  </originInfo>
+  <language>
+    <languageTerm authority="iso639-2b" type="code">lat</languageTerm>
+  </language>
+  <physicalDescription>
+    <extent>Foliation: ii+117+ii</extent>
+  </physicalDescription>
+  <abstract>Created in the mid twelfth century in Germany, this manuscript contains the much earlier writings of the Irish scholar Sedulius Scotus. Writing in the mid ninth century at St. Lambert in Li&#xE8;ge, Scotus famously penned this treatise on the duties and ideals of the Christian king or prince. It is the earliest version of a genre that would become popular in the later medieval and Renaissance periods, often known as "mirrors for princes." This manuscript is the second oldest copy of Scotus' treatise known, the earliest being from the ninth century (Bremen, Stadtbibliothek Ms. C. 36). The text is virtually complete, missing only its first and last folios, and is written in a clear Romanesque Caroline minuscule script. The nine inhabited initials, which include dragons and cranes, as well as the seven decorated initials, have been left unfinished. In its script and decoration the manuscript is similar to a benedictional made in Constance (Folter, et al. Cimelia, p. 144, no. 33). For full description, see http://www.thedigitalwalters.org/Data/WaltersManuscripts/html/W12/description.html</abstract>
+  <location>
+    <physicalLocation>The Walters Art Museum, 600 North Charles Street, Baltimore MD 21201.</physicalLocation>
+  </location>
+</mods>

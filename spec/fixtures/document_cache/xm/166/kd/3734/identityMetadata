@@ -1,0 +1,12 @@
+<identityMetadata>
+  <sourceId source="WALTERS_W.12"/>
+  <objectId>druid:xm166kd3734</objectId>
+  <objectCreator>DOR</objectCreator>
+  <objectLabel>Walters MS 12</objectLabel>
+  <objectType>item</objectType>
+  <adminPolicy>druid:qc167qm9800</adminPolicy>
+  <otherId name="uuid">01ab163a-d5e5-11e1-ad48-0016034322e2</otherId>
+  <tag>Project : Walters Art Museum Manuscripts</tag>
+  <tag>Registered By : blalbrit</tag>
+  <tag>Remediated By : 3.6.2</tag>
+</identityMetadata>
