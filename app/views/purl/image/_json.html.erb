@@ -3,5 +3,5 @@
   var pid = "<%= @purl.pid %>";
   var purlServerURL = "<%= request.scheme %>" + "://" + "<%= request.host_with_port %>";
   var galleryItemsPerPage = parseInt(<%= get_gallery_items_per_page_count() %>);
-  var imgInfo = [ <%= get_image_json_array %> ];  
+  var imgInfo = [ <%= get_image_json_array.html_safe %> ];  
 </script>
