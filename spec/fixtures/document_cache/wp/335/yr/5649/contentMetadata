@@ -1,0 +1,30 @@
+<contentMetadata objectId="wp335yr5649" type="file">
+  <resource id="wp335yr5649_1" sequence="1" type="file">
+    <label>Contents of this data and code supplement package. Read this first.</label>
+    <file id="README.txt" preserve="yes" publish="yes" shelve="yes" mimetype="text/plain" size="2823">
+      <checksum type="md5">55b1da0dba98cf8a81dc3f852e11d0bb</checksum>
+      <checksum type="sha1">0bd6aa284eb75096d74653ca38213bff2cd553a4</checksum>
+    </file>
+  </resource>
+  <resource id="wp335yr5649_2" sequence="2" type="file">
+    <label>Example of accessing the SQLite database from Matlab</label>
+    <file id="example_using_DPT_observed.m" preserve="yes" publish="yes" shelve="yes" mimetype="text/plain" size="3979">
+      <checksum type="md5">dd3b78e9979da590effa82bc5fe7d17f</checksum>
+      <checksum type="sha1">adb8629ffdd307153bca3c8f568f999078c14ea2</checksum>
+    </file>
+  </resource>
+  <resource id="wp335yr5649_3" sequence="3" type="file">
+    <label>Raw observation dataset as a text file in CSV format</label>
+    <file id="DPT_observed.csv" preserve="yes" publish="yes" shelve="yes" mimetype="text/plain" size="13562472">
+      <checksum type="md5">b97b7fa3124d6d2785d58e4c825320c3</checksum>
+      <checksum type="sha1">f0a027b1a6836e37321656b1b772955ed55e3ff0</checksum>
+    </file>
+  </resource>
+  <resource id="wp335yr5649_4" sequence="4" type="file">
+    <label>Raw observation dataset as an SQLite3 database</label>
+    <file id="DPT_observed.db" preserve="yes" publish="yes" shelve="yes" mimetype="application/octet-stream" size="12660736">
+      <checksum type="md5">db778406364b853caae11c80fa192987</checksum>
+      <checksum type="sha1">5266ad763a8d7a09e717c60851f32346181f52c1</checksum>
+    </file>
+  </resource>
+</contentMetadata>

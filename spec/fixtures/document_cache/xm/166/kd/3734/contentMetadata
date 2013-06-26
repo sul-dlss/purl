@@ -1,0 +1,2025 @@
+<contentMetadata objectId="druid:xm166kd3734" type="image">
+   <resource id="image_1" sequence="1" type="image">
+      <label>Upper board outside</label>
+      <file id="W12_000001_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="815834">
+         <imageData height="2376" width="1640"/>
+         <checksum type="sha1">c6cd33844411d5bf23832fa4f0290d6658aa8427</checksum>
+         <checksum type="md5">d92f873996d57d9c135718637d35113b</checksum>
+      </file>
+   </resource>
+   <resource id="image_2" sequence="2" type="image">
+      <label>Upper board inside</label>
+      <file id="W12_000002_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="677880">
+         <imageData height="2346" width="1533"/>
+         <checksum type="sha1">3bda01f66715d1d965c63b9c68a9d40d602c7d93</checksum>
+         <checksum type="md5">480f088bfd5a18a77bc0c373120c5b0d</checksum>
+      </file>
+   </resource>
+   <resource id="image_3" sequence="3" type="image">
+      <label>Front flyleaf i, r</label>
+      <file id="W12_000003_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="764917">
+         <imageData height="2236" width="1470"/>
+         <checksum type="sha1">824128517b0f98dabb93264dd82c014bc39be489</checksum>
+         <checksum type="md5">54faff40f2fc106621725ebc6cac623a</checksum>
+      </file>
+   </resource>
+   <resource id="image_4" sequence="4" type="image">
+      <label>Front flyleaf i, v</label>
+      <file id="W12_000004_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="474392">
+         <imageData height="2195" width="1361"/>
+         <checksum type="sha1">82d4abb719d8445aa6b6444444e3a0ce95892386</checksum>
+         <checksum type="md5">84002997c0a5d354094dffa8517badb1</checksum>
+      </file>
+   </resource>
+   <resource id="image_5" sequence="5" type="image">
+      <label>Front flyleaf ii, r</label>
+      <file id="W12_000005_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="621782">
+         <imageData height="2254" width="1400"/>
+         <checksum type="sha1">5e1592ad1e7318e71d22c11145720aed906ea9d4</checksum>
+         <checksum type="md5">c00e23bd3a4a15776ea472a55a06b435</checksum>
+      </file>
+   </resource>
+   <resource id="image_6" sequence="6" type="image">
+      <label>Front flyleaf ii, v</label>
+      <file id="W12_000006_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="630778">
+         <imageData height="2241" width="1379"/>
+         <checksum type="sha1">e0d42df80d77221a16f47ed851816b9149ea14ec</checksum>
+         <checksum type="md5">602a4644f9ea58fb19fee56e7eecc077</checksum>
+      </file>
+   </resource>
+   <resource id="image_7" sequence="7" type="image">
+      <label>fol. 1r</label>
+      <file id="W12_000007_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="695813">
+         <imageData height="2226" width="1371"/>
+         <checksum type="sha1">ee45d57ad99c0814a6f54294c79721d5a256a7f6</checksum>
+         <checksum type="md5">1087421a801655616aab53019b72aa54</checksum>
+      </file>
+   </resource>
+   <resource id="image_8" sequence="8" type="image">
+      <label>fol. 1v</label>
+      <file id="W12_000008_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="650662">
+         <imageData height="2221" width="1337"/>
+         <checksum type="sha1">b5f83a5610c72b3b1487a5ae79f2b2f0213800b7</checksum>
+         <checksum type="md5">29d064810e0c138f904577816b3e3627</checksum>
+      </file>
+   </resource>
+   <resource id="image_9" sequence="9" type="image">
+      <label>fol. 2r</label>
+      <file id="W12_000009_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="793306">
+         <imageData height="2241" width="1340"/>
+         <checksum type="sha1">3fd3a5c28ef02ffd04269fbc2519507c3f84895e</checksum>
+         <checksum type="md5">75670162dc9a9b9e6297ce07c92ff589</checksum>
+      </file>
+   </resource>
+   <resource id="image_10" sequence="10" type="image">
+      <label>fol. 2v</label>
+      <file id="W12_000010_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="703716">
+         <imageData height="2231" width="1329"/>
+         <checksum type="sha1">a285fafa14ea91f00ea640f243d5b1a2332c013c</checksum>
+         <checksum type="md5">f6eafa76619bb057a726b48ad961e548</checksum>
+      </file>
+   </resource>
+   <resource id="image_11" sequence="11" type="image">
+      <label>fol. 3r</label>
+      <file id="W12_000011_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="707712">
+         <imageData height="2256" width="1347"/>
+         <checksum type="sha1">3a68ffa6ec1910c652007b371db7d82ce3f4d3a0</checksum>
+         <checksum type="md5">2825676d8d6c1326ea7168d2d255066e</checksum>
+      </file>
+   </resource>
+   <resource id="image_12" sequence="12" type="image">
+      <label>fol. 3v</label>
+      <file id="W12_000012_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="663886">
+         <imageData height="2220" width="1332"/>
+         <checksum type="sha1">50f83f232b091a2b5a6470b04da5edbd3535ee40</checksum>
+         <checksum type="md5">02da235a5d64aaaa4636f9fb432cee5f</checksum>
+      </file>
+   </resource>
+   <resource id="image_13" sequence="13" type="image">
+      <label>fol. 4r</label>
+      <file id="W12_000013_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="728558">
+         <imageData height="2244" width="1345"/>
+         <checksum type="sha1">452de785e9d26063699b9d4953ce5555d7fd9832</checksum>
+         <checksum type="md5">f4119fb42ef2035660165f3916ef0828</checksum>
+      </file>
+   </resource>
+   <resource id="image_14" sequence="14" type="image">
+      <label>fol. 4v</label>
+      <file id="W12_000014_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="659355">
+         <imageData height="2178" width="1353"/>
+         <checksum type="sha1">aa2464cb6bcc29ea113eecfef25f72a87341e566</checksum>
+         <checksum type="md5">ee78a142c733fd3c005f23421163731e</checksum>
+      </file>
+   </resource>
+   <resource id="image_15" sequence="15" type="image">
+      <label>fol. 5r</label>
+      <file id="W12_000015_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="747857">
+         <imageData height="2257" width="1343"/>
+         <checksum type="sha1">50adcae592de0c9857c9d48e9b377b46fe741fef</checksum>
+         <checksum type="md5">3a9e52e00b751d5b858222d4fe13398f</checksum>
+      </file>
+   </resource>
+   <resource id="image_16" sequence="16" type="image">
+      <label>fol. 5v</label>
+      <file id="W12_000016_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="680343">
+         <imageData height="2202" width="1343"/>
+         <checksum type="sha1">ae0c8c31d63771829daad3f454ec0802809bd230</checksum>
+         <checksum type="md5">15f41b5a9c122c4de12de4e7f75af6c7</checksum>
+      </file>
+   </resource>
+   <resource id="image_17" sequence="17" type="image">
+      <label>fol. 6r</label>
+      <file id="W12_000017_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="749293">
+         <imageData height="2231" width="1358"/>
+         <checksum type="sha1">e6565e7c0104147235f49517accad6de6c4a83b0</checksum>
+         <checksum type="md5">3ce495ed192217a0467790883dbc2636</checksum>
+      </file>
+   </resource>
+   <resource id="image_18" sequence="18" type="image">
+      <label>fol. 6v</label>
+      <file id="W12_000018_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="664448">
+         <imageData height="2257" width="1356"/>
+         <checksum type="sha1">976b254b03a8f41d7e1d7f50b8ca327f325a0b8e</checksum>
+         <checksum type="md5">1cff9758f67b08ebe3155ec90284f6b5</checksum>
+      </file>
+   </resource>
+   <resource id="image_19" sequence="19" type="image">
+      <label>fol. 7r</label>
+      <file id="W12_000019_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="716365">
+         <imageData height="2231" width="1369"/>
+         <checksum type="sha1">ea96f6c5f6c78d0f01e7d4f5d43df61720602408</checksum>
+         <checksum type="md5">22b57e9586b7b25de0a8d637e079d1dc</checksum>
+      </file>
+   </resource>
+   <resource id="image_20" sequence="20" type="image">
+      <label>fol. 7v</label>
+      <file id="W12_000020_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="675773">
+         <imageData height="2226" width="1361"/>
+         <checksum type="sha1">69e34aa664b9bfc4f7b63948fdcd50bcb1ab6f77</checksum>
+         <checksum type="md5">34c6cb2512c576b0b0c167988835f32e</checksum>
+      </file>
+   </resource>
+   <resource id="image_21" sequence="21" type="image">
+      <label>fol. 8r</label>
+      <file id="W12_000021_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="729312">
+         <imageData height="2244" width="1351"/>
+         <checksum type="sha1">8d5989df8ecabb9e0310e3fe8e9ccf3924682451</checksum>
+         <checksum type="md5">8d2712f40ba11155b1221ca59cfb098f</checksum>
+      </file>
+   </resource>
+   <resource id="image_22" sequence="22" type="image">
+      <label>fol. 8v</label>
+      <file id="W12_000022_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="611714">
+         <imageData height="2220" width="1351"/>
+         <checksum type="sha1">73cf891a14347c464297237767e847364a6b39da</checksum>
+         <checksum type="md5">cd84a2fa8e6110340d9a7bad3242ba1d</checksum>
+      </file>
+   </resource>
+   <resource id="image_23" sequence="23" type="image">
+      <label>fol. 9r</label>
+      <file id="W12_000023_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="670778">
+         <imageData height="2241" width="1350"/>
+         <checksum type="sha1">8518c38f6940f5dbb50fe02652eb4f3f91a7019a</checksum>
+         <checksum type="md5">6aad546a3215ed75ee0ce98678fa2de8</checksum>
+      </file>
+   </resource>
+   <resource id="image_24" sequence="24" type="image">
+      <label>fol. 9v</label>
+      <file id="W12_000024_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="676273">
+         <imageData height="2231" width="1364"/>
+         <checksum type="sha1">2f8eadde8ad2fd7e836e1cb12fe3fd6ee0c49f57</checksum>
+         <checksum type="md5">33d90fd4efee8f8273d3bed57e7ca7eb</checksum>
+      </file>
+   </resource>
+   <resource id="image_25" sequence="25" type="image">
+      <label>fol. 10r</label>
+      <file id="W12_000025_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="751473">
+         <imageData height="2218" width="1314"/>
+         <checksum type="sha1">8e187eead3b9a53f9d47dc14f513ea80a50a3415</checksum>
+         <checksum type="md5">500a0f4471e89c569ca3a8081c21aa10</checksum>
+      </file>
+   </resource>
+   <resource id="image_26" sequence="26" type="image">
+      <label>fol. 10v</label>
+      <file id="W12_000026_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="694196">
+         <imageData height="2228" width="1353"/>
+         <checksum type="sha1">747b5cb90f32d5367c6ba551fd73abd19084e974</checksum>
+         <checksum type="md5">4adb1633c93ff7494e8a5d560ebd3580</checksum>
+      </file>
+   </resource>
+   <resource id="image_27" sequence="27" type="image">
+      <label>fol. 11r</label>
+      <file id="W12_000027_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="695612">
+         <imageData height="2192" width="1304"/>
+         <checksum type="sha1">9400e4df339b295954125d3b513b297699fe7eff</checksum>
+         <checksum type="md5">c68142a57e318620c3ee6b2dc48e77d0</checksum>
+      </file>
+   </resource>
+   <resource id="image_28" sequence="28" type="image">
+      <label>fol. 11v</label>
+      <file id="W12_000028_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="679632">
+         <imageData height="2213" width="1374"/>
+         <checksum type="sha1">bb44ab68d3c954e72569ffe4d30ed504d5b0acb4</checksum>
+         <checksum type="md5">e47e30435f61212733d798289b9850c9</checksum>
+      </file>
+   </resource>
+   <resource id="image_29" sequence="29" type="image">
+      <label>fol. 12r</label>
+      <file id="W12_000029_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="689926">
+         <imageData height="2218" width="1312"/>
+         <checksum type="sha1">1f00554f3a2126ebd6b4b001895496e7364c23a7</checksum>
+         <checksum type="md5">27fc71e3bdcb2e28b6fe9542d543b98a</checksum>
+      </file>
+   </resource>
+   <resource id="image_30" sequence="30" type="image">
+      <label>fol. 12v</label>
+      <file id="W12_000030_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="667446">
+         <imageData height="2226" width="1356"/>
+         <checksum type="sha1">94dcecb1dcc036b66be600b66c50bab4a3ba8263</checksum>
+         <checksum type="md5">8f174867c8c30138a04eef9d11cce1e4</checksum>
+      </file>
+   </resource>
+   <resource id="image_31" sequence="31" type="image">
+      <label>fol. 13r</label>
+      <file id="W12_000031_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="732303">
+         <imageData height="2218" width="1322"/>
+         <checksum type="sha1">dbfc199241e581ce867c2e0d5fcd34e6b2c87b1a</checksum>
+         <checksum type="md5">87dfe6364d34897432321afd065f880c</checksum>
+      </file>
+   </resource>
+   <resource id="image_32" sequence="32" type="image">
+      <label>fol. 13v</label>
+      <file id="W12_000032_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="733367">
+         <imageData height="2225" width="1353"/>
+         <checksum type="sha1">150a767f73d8b21cbcb39c0f070aa7b15495c390</checksum>
+         <checksum type="md5">478cb624951c6ee6c715c94fe0407968</checksum>
+      </file>
+   </resource>
+   <resource id="image_33" sequence="33" type="image">
+      <label>fol. 14r</label>
+      <file id="W12_000033_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="720912">
+         <imageData height="2228" width="1322"/>
+         <checksum type="sha1">683ce6c6d694c29aa5b0fc722e8ecd99bb78f8c0</checksum>
+         <checksum type="md5">4ce918132865a7fdc73da16d79ccb68b</checksum>
+      </file>
+   </resource>
+   <resource id="image_34" sequence="34" type="image">
+      <label>fol. 14v</label>
+      <file id="W12_000034_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="647620">
+         <imageData height="2218" width="1364"/>
+         <checksum type="sha1">75d52bcb47ca9a485a6eddfef1fdcd0106562873</checksum>
+         <checksum type="md5">49653416521d3150393909fd5f68bf90</checksum>
+      </file>
+   </resource>
+   <resource id="image_35" sequence="35" type="image">
+      <label>fol. 15r</label>
+      <file id="W12_000035_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="652089">
+         <imageData height="2207" width="1304"/>
+         <checksum type="sha1">81e8829ed553cc7b2379c9c775bdb93d4ce1dcc2</checksum>
+         <checksum type="md5">02d41c232d32af77b91685ecd49dbb33</checksum>
+      </file>
+   </resource>
+   <resource id="image_36" sequence="36" type="image">
+      <label>fol. 15v</label>
+      <file id="W12_000036_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="685645">
+         <imageData height="2210" width="1369"/>
+         <checksum type="sha1">be48dd6fade32389e42f922b9c5115629836d046</checksum>
+         <checksum type="md5">cfa969e30d768575e995ac65cec5964f</checksum>
+      </file>
+   </resource>
+   <resource id="image_37" sequence="37" type="image">
+      <label>fol. 16r</label>
+      <file id="W12_000037_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="715454">
+         <imageData height="2213" width="1316"/>
+         <checksum type="sha1">4592678cf7d3b0b6cc46e32f0a16a4399f77efb4</checksum>
+         <checksum type="md5">1fd0cdaec99fff17605756ffce6ec8fb</checksum>
+      </file>
+   </resource>
+   <resource id="image_38" sequence="38" type="image">
+      <label>fol. 16v</label>
+      <file id="W12_000038_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="673954">
+         <imageData height="2228" width="1340"/>
+         <checksum type="sha1">ff30511d06ec0b09ea1b748c7ca341797a771123</checksum>
+         <checksum type="md5">471cca3a27d29b920c32c0a211c3989e</checksum>
+      </file>
+   </resource>
+   <resource id="image_39" sequence="39" type="image">
+      <label>fol. 17r</label>
+      <file id="W12_000039_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="634360">
+         <imageData height="2202" width="1330"/>
+         <checksum type="sha1">5b6ef4441004b6a751946af6f5c24957bf8acc9e</checksum>
+         <checksum type="md5">5acad2128f44c870941813138dba57b2</checksum>
+      </file>
+   </resource>
+   <resource id="image_40" sequence="40" type="image">
+      <label>fol. 17v</label>
+      <file id="W12_000040_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="634396">
+         <imageData height="2205" width="1338"/>
+         <checksum type="sha1">aeb14a2b7c1a9edb5bf7f9879023b935404d48ac</checksum>
+         <checksum type="md5">76d9ece99fc1880807ad59962ba40330</checksum>
+      </file>
+   </resource>
+   <resource id="image_41" sequence="41" type="image">
+      <label>fol. 18r</label>
+      <file id="W12_000041_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="797232">
+         <imageData height="2212" width="1319"/>
+         <checksum type="sha1">5ba3e94ec767d1da5b4aee71a6096fb318ecdaba</checksum>
+         <checksum type="md5">924e86555396dd43354fda5730e9b7b0</checksum>
+      </file>
+   </resource>
+   <resource id="image_42" sequence="42" type="image">
+      <label>fol. 18v</label>
+      <file id="W12_000042_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="677478">
+         <imageData height="2218" width="1332"/>
+         <checksum type="sha1">8ef886be7009610e6c44f5b2af6c1fbec03fe041</checksum>
+         <checksum type="md5">7ab3a3e8406b5e13a975e10706004d0b</checksum>
+      </file>
+   </resource>
+   <resource id="image_43" sequence="43" type="image">
+      <label>fol. 19r</label>
+      <file id="W12_000043_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="652656">
+         <imageData height="2225" width="1296"/>
+         <checksum type="sha1">bcf8764f2eab00d72698a26703530fefdfd6ba1f</checksum>
+         <checksum type="md5">bd2870e8707a8bee642042c3c3701e79</checksum>
+      </file>
+   </resource>
+   <resource id="image_44" sequence="44" type="image">
+      <label>fol. 19v</label>
+      <file id="W12_000044_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="688875">
+         <imageData height="2200" width="1316"/>
+         <checksum type="sha1">7c322557f864f00c90cdb4a48f39d6b5d6ac11a5</checksum>
+         <checksum type="md5">a604edf0fbea014908b61a57af8b914d</checksum>
+      </file>
+   </resource>
+   <resource id="image_45" sequence="45" type="image">
+      <label>fol. 20r</label>
+      <file id="W12_000045_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="755717">
+         <imageData height="2218" width="1345"/>
+         <checksum type="sha1">a685718858db8600890f460da2b3685ccf3c24c1</checksum>
+         <checksum type="md5">2630ab9843f1958af3838cb69e5e1e79</checksum>
+      </file>
+   </resource>
+   <resource id="image_46" sequence="46" type="image">
+      <label>fol. 20v</label>
+      <file id="W12_000046_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="643001">
+         <imageData height="2213" width="1337"/>
+         <checksum type="sha1">f94383e398706ba8948a024f2663f768674ea20d</checksum>
+         <checksum type="md5">8349c370d9f758022bc1d4bcb3c61a13</checksum>
+      </file>
+   </resource>
+   <resource id="image_47" sequence="47" type="image">
+      <label>fol. 21r</label>
+      <file id="W12_000047_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="685596">
+         <imageData height="2233" width="1351"/>
+         <checksum type="sha1">edd3059e73a0282ce7b473f3dd48f83f00143cb4</checksum>
+         <checksum type="md5">aed0a74dde5ef33575d1afdf61bcf7fd</checksum>
+      </file>
+   </resource>
+   <resource id="image_48" sequence="48" type="image">
+      <label>fol. 21v</label>
+      <file id="W12_000048_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="709037">
+         <imageData height="2233" width="1372"/>
+         <checksum type="sha1">d84c8d17113c6d71f331a9f544b0f37b04aded81</checksum>
+         <checksum type="md5">a4369b4918e507066d36afe88e471bb7</checksum>
+      </file>
+   </resource>
+   <resource id="image_49" sequence="49" type="image">
+      <label>fol. 22r</label>
+      <file id="W12_000049_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="757478">
+         <imageData height="2241" width="1358"/>
+         <checksum type="sha1">e949315014b9719f429947f92b28862009a29121</checksum>
+         <checksum type="md5">26583cf6c77eed9fda1dd29a222184f2</checksum>
+      </file>
+   </resource>
+   <resource id="image_50" sequence="50" type="image">
+      <label>fol. 22v</label>
+      <file id="W12_000050_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="620677">
+         <imageData height="2181" width="1351"/>
+         <checksum type="sha1">9e0fe8587126455216883448c1c80be7f0889809</checksum>
+         <checksum type="md5">82b127d41458bbcd74aef85410ebb054</checksum>
+      </file>
+   </resource>
+   <resource id="image_51" sequence="51" type="image">
+      <label>fol. 23r</label>
+      <file id="W12_000051_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="778664">
+         <imageData height="2236" width="1348"/>
+         <checksum type="sha1">57bc743255049e8d515762bd69702ee2835ee6df</checksum>
+         <checksum type="md5">b260792d3da0cf987d825315e3eb48e0</checksum>
+      </file>
+   </resource>
+   <resource id="image_52" sequence="52" type="image">
+      <label>fol. 23v</label>
+      <file id="W12_000052_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="702155">
+         <imageData height="2213" width="1361"/>
+         <checksum type="sha1">b583ec9044a11f22313d594e7b5da9d754fe6a82</checksum>
+         <checksum type="md5">9914dfd03ee08037e08b154715188ff3</checksum>
+      </file>
+   </resource>
+   <resource id="image_53" sequence="53" type="image">
+      <label>fol. 24r</label>
+      <file id="W12_000053_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="705095">
+         <imageData height="2225" width="1347"/>
+         <checksum type="sha1">81f60f4e344491d80e114f5421e6a98bb230ddf5</checksum>
+         <checksum type="md5">197c4b8c20b75fb61cb6e7dd5499a573</checksum>
+      </file>
+   </resource>
+   <resource id="image_54" sequence="54" type="image">
+      <label>fol. 24v</label>
+      <file id="W12_000054_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="642369">
+         <imageData height="2231" width="1364"/>
+         <checksum type="sha1">8cbb95153cf6adcd83d3c1eb992019cca864ad0f</checksum>
+         <checksum type="md5">f5fabe1aae8a0b0890ed08c732b7e957</checksum>
+      </file>
+   </resource>
+   <resource id="image_55" sequence="55" type="image">
+      <label>fol. 25r</label>
+      <file id="W12_000055_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="713502">
+         <imageData height="2239" width="1353"/>
+         <checksum type="sha1">9c687bc71d216fe9770a73e23b0f476040f19ebf</checksum>
+         <checksum type="md5">c4f61ddf9dbd5138e5cc6ebace8b53f8</checksum>
+      </file>
+   </resource>
+   <resource id="image_56" sequence="56" type="image">
+      <label>fol. 25v</label>
+      <file id="W12_000056_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="770952">
+         <imageData height="2210" width="1374"/>
+         <checksum type="sha1">9dccbe93e55422b8dff182e005b454462321d7f7</checksum>
+         <checksum type="md5">49fc771074f128f39ca35d6492aac2de</checksum>
+      </file>
+   </resource>
+   <resource id="image_57" sequence="57" type="image">
+      <label>fol. 26r</label>
+      <file id="W12_000057_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="781415">
+         <imageData height="2245" width="1347"/>
+         <checksum type="sha1">2c87e71cc8062fa99a5819bf6486436b089f5d2b</checksum>
+         <checksum type="md5">5c8e786ac98aa4d5c8a70ed2b20b28d9</checksum>
+      </file>
+   </resource>
+   <resource id="image_58" sequence="58" type="image">
+      <label>fol. 26v</label>
+      <file id="W12_000058_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="707305">
+         <imageData height="2238" width="1361"/>
+         <checksum type="sha1">16fef5793b301c6eb8f919639a72e3a50682df13</checksum>
+         <checksum type="md5">760a7e271041ce37957acdbc1fbf8ac2</checksum>
+      </file>
+   </resource>
+   <resource id="image_59" sequence="59" type="image">
+      <label>fol. 27r</label>
+      <file id="W12_000059_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="718529">
+         <imageData height="2228" width="1350"/>
+         <checksum type="sha1">70f4b3c278aece6401803d2f599df2b3be1c5032</checksum>
+         <checksum type="md5">8d82cb7f93111c1a2ce30b7a7e55a5b9</checksum>
+      </file>
+   </resource>
+   <resource id="image_60" sequence="60" type="image">
+      <label>fol. 27v</label>
+      <file id="W12_000060_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="707162">
+         <imageData height="2215" width="1361"/>
+         <checksum type="sha1">1c5802204846edbc99dc61f83ba8fe173f1fbc75</checksum>
+         <checksum type="md5">2763e5fef7b3700bfbc5e68ad37141f1</checksum>
+      </file>
+   </resource>
+   <resource id="image_61" sequence="61" type="image">
+      <label>fol. 28r</label>
+      <file id="W12_000061_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="741223">
+         <imageData height="2223" width="1356"/>
+         <checksum type="sha1">0ff7dad052b643801d9e4c2b94a40c23ff359170</checksum>
+         <checksum type="md5">ffa7f5d62ca69071e3ae5f1ef8a07b2a</checksum>
+      </file>
+   </resource>
+   <resource id="image_62" sequence="62" type="image">
+      <label>fol. 28v</label>
+      <file id="W12_000062_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="706896">
+         <imageData height="2236" width="1361"/>
+         <checksum type="sha1">6c2c420f730f1dd1bdc2c08d4fa694a0106323db</checksum>
+         <checksum type="md5">434514fb68575875eb3c931f8d2f2add</checksum>
+      </file>
+   </resource>
+   <resource id="image_63" sequence="63" type="image">
+      <label>fol. 29r</label>
+      <file id="W12_000063_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="748855">
+         <imageData height="2220" width="1345"/>
+         <checksum type="sha1">854504f5e3bc2b11f9c3a44d3cf1ed57c5fcb5c1</checksum>
+         <checksum type="md5">dfcda66ee860172c3e57df38f05d7dc3</checksum>
+      </file>
+   </resource>
+   <resource id="image_64" sequence="64" type="image">
+      <label>fol. 29v</label>
+      <file id="W12_000064_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="803709">
+         <imageData height="2231" width="1361"/>
+         <checksum type="sha1">3576bc08afcb0611f4c5907e5a0367c48b7e1713</checksum>
+         <checksum type="md5">5705a3141b8cd94ed7beb5ee12790078</checksum>
+      </file>
+   </resource>
+   <resource id="image_65" sequence="65" type="image">
+      <label>fol. 30r</label>
+      <file id="W12_000065_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="821973">
+         <imageData height="2234" width="1356"/>
+         <checksum type="sha1">55cffc421fe94e1007f2e7c9046ad3ddcdce778f</checksum>
+         <checksum type="md5">304a14be3a7f5b3fe7c103d1b2bdc186</checksum>
+      </file>
+   </resource>
+   <resource id="image_66" sequence="66" type="image">
+      <label>fol. 30v</label>
+      <file id="W12_000066_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="665697">
+         <imageData height="2218" width="1364"/>
+         <checksum type="sha1">6ecbddf566c71b9577566f107b7f6536556c3bca</checksum>
+         <checksum type="md5">efacecddc435f96df510a0b7d03c326e</checksum>
+      </file>
+   </resource>
+   <resource id="image_67" sequence="67" type="image">
+      <label>fol. 31r</label>
+      <file id="W12_000067_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="664100">
+         <imageData height="2218" width="1353"/>
+         <checksum type="sha1">258bdf5f35d8c71cdc87dea3d5cfda6ebc345850</checksum>
+         <checksum type="md5">20fef478a8857d4e42322b9f993463a9</checksum>
+      </file>
+   </resource>
+   <resource id="image_68" sequence="68" type="image">
+      <label>fol. 31v</label>
+      <file id="W12_000068_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="665709">
+         <imageData height="2213" width="1369"/>
+         <checksum type="sha1">3f9a5b71a555de598673f21edd86332b56037b6b</checksum>
+         <checksum type="md5">47b15a5e328701d783e9076f35a93cb2</checksum>
+      </file>
+   </resource>
+   <resource id="image_69" sequence="69" type="image">
+      <label>fol. 32r</label>
+      <file id="W12_000069_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="811553">
+         <imageData height="2228" width="1447"/>
+         <checksum type="sha1">aecc401e27f421260f9238b18c271a3781dcec78</checksum>
+         <checksum type="md5">e5bd77adb540551129e89a7fdb1d59b2</checksum>
+      </file>
+   </resource>
+   <resource id="image_70" sequence="70" type="image">
+      <label>fol. 32v</label>
+      <file id="W12_000070_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="642897">
+         <imageData height="2228" width="1356"/>
+         <checksum type="sha1">0284b3f9e3f2acf29f489abc08395d6da5935bba</checksum>
+         <checksum type="md5">15c9b733cd35b40c0ba44709a9a97d52</checksum>
+      </file>
+   </resource>
+   <resource id="image_71" sequence="71" type="image">
+      <label>fol. 33r</label>
+      <file id="W12_000071_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="690500">
+         <imageData height="2194" width="1371"/>
+         <checksum type="sha1">194defcec9010ac362d16199eed8f3a7cef3233e</checksum>
+         <checksum type="md5">984a9c025cdff48130d64c1863ef4dd6</checksum>
+      </file>
+   </resource>
+   <resource id="image_72" sequence="72" type="image">
+      <label>fol. 33v</label>
+      <file id="W12_000072_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="713211">
+         <imageData height="2212" width="1340"/>
+         <checksum type="sha1">a9c23d2969c4af0ebbff33bf20aec112c95b10e4</checksum>
+         <checksum type="md5">c7c0396c0506ec2ec229fd4ff6acb6d0</checksum>
+      </file>
+   </resource>
+   <resource id="image_73" sequence="73" type="image">
+      <label>fol. 34r</label>
+      <file id="W12_000073_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="735767">
+         <imageData height="2230" width="1347"/>
+         <checksum type="sha1">6bbf92043ce5a67781fec290a485a95ab84389ad</checksum>
+         <checksum type="md5">73b0535a923ca920d9a6d271ebe9e60b</checksum>
+      </file>
+   </resource>
+   <resource id="image_74" sequence="74" type="image">
+      <label>fol. 34v</label>
+      <file id="W12_000074_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="689521">
+         <imageData height="2220" width="1363"/>
+         <checksum type="sha1">916845ec6e1a7979765ae57a7f30ddc73c4c0c56</checksum>
+         <checksum type="md5">0932f2392ac179b367318afe1bf7ed8e</checksum>
+      </file>
+   </resource>
+   <resource id="image_75" sequence="75" type="image">
+      <label>fol. 35r</label>
+      <file id="W12_000075_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="720989">
+         <imageData height="2223" width="1400"/>
+         <checksum type="sha1">f3129db0bdd046f98280c38fd95075f75b75ae34</checksum>
+         <checksum type="md5">7cc64b4e86ffec30bf633a0d5e973712</checksum>
+      </file>
+   </resource>
+   <resource id="image_76" sequence="76" type="image">
+      <label>fol. 35v</label>
+      <file id="W12_000076_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="713876">
+         <imageData height="2194" width="1356"/>
+         <checksum type="sha1">99d9425c52fe3f0d010913d8938077cf2330f1f2</checksum>
+         <checksum type="md5">4894b30bc96d039ce9e2fab236e40ab5</checksum>
+      </file>
+   </resource>
+   <resource id="image_77" sequence="77" type="image">
+      <label>fol. 36r</label>
+      <file id="W12_000077_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="756591">
+         <imageData height="2218" width="1405"/>
+         <checksum type="sha1">2cd95c7861747c0d528fcf168127a8084cd6d988</checksum>
+         <checksum type="md5">b45257f7c898a98795b2882fb81bef97</checksum>
+      </file>
+   </resource>
+   <resource id="image_78" sequence="78" type="image">
+      <label>fol. 36v</label>
+      <file id="W12_000078_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="717261">
+         <imageData height="2239" width="1364"/>
+         <checksum type="sha1">764ae05b56e61f72becb476e3e928f6c147db781</checksum>
+         <checksum type="md5">b000d20f1f37f394326561450d721799</checksum>
+      </file>
+   </resource>
+   <resource id="image_79" sequence="79" type="image">
+      <label>fol. 37r</label>
+      <file id="W12_000079_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="732191">
+         <imageData height="2210" width="1398"/>
+         <checksum type="sha1">f402def23cbe15dc2234ef3612bd266b167968f7</checksum>
+         <checksum type="md5">0d16eaa077255908cd1f4215c15a7b79</checksum>
+      </file>
+   </resource>
+   <resource id="image_80" sequence="80" type="image">
+      <label>fol. 37v</label>
+      <file id="W12_000080_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="747629">
+         <imageData height="2202" width="1343"/>
+         <checksum type="sha1">85f772248148129c11319ed1b3f3eb7cd789c279</checksum>
+         <checksum type="md5">d125603204f0afe70b96027e80542ed6</checksum>
+      </file>
+   </resource>
+   <resource id="image_81" sequence="81" type="image">
+      <label>fol. 38r</label>
+      <file id="W12_000081_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="728806">
+         <imageData height="2228" width="1390"/>
+         <checksum type="sha1">a98122e3d7579945c2aa7be5a0aaa4267bc8e436</checksum>
+         <checksum type="md5">77d896db9ffb848fbfe85a2a5f87429c</checksum>
+      </file>
+   </resource>
+   <resource id="image_82" sequence="82" type="image">
+      <label>fol. 38v</label>
+      <file id="W12_000082_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="651300">
+         <imageData height="2228" width="1351"/>
+         <checksum type="sha1">c47979e0d4a3331fcec3962223eb945b1fa33c74</checksum>
+         <checksum type="md5">21e84b0c8e41212e5866f946ca96f15a</checksum>
+      </file>
+   </resource>
+   <resource id="image_83" sequence="83" type="image">
+      <label>fol. 39r</label>
+      <file id="W12_000083_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="675099">
+         <imageData height="2236" width="1351"/>
+         <checksum type="sha1">9f1511c410becb299a56e6c5a4a8eec327ab33dc</checksum>
+         <checksum type="md5">9e9cb2cfc6a3707e98b1ed8a9f0ea5bb</checksum>
+      </file>
+   </resource>
+   <resource id="image_84" sequence="84" type="image">
+      <label>fol. 39v</label>
+      <file id="W12_000084_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="729700">
+         <imageData height="2220" width="1363"/>
+         <checksum type="sha1">a2a8cc024bba82972e412a559277bbe55ef34699</checksum>
+         <checksum type="md5">b47a1c6f9526425d0ff06166d4067539</checksum>
+      </file>
+   </resource>
+   <resource id="image_85" sequence="85" type="image">
+      <label>fol. 40r</label>
+      <file id="W12_000085_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="746905">
+         <imageData height="2218" width="1403"/>
+         <checksum type="sha1">4f9b0deacb82f90ae861349410df64a3e16b01fd</checksum>
+         <checksum type="md5">1d6921323910c6170b5eec449e2d5479</checksum>
+      </file>
+   </resource>
+   <resource id="image_86" sequence="86" type="image">
+      <label>fol. 40v</label>
+      <file id="W12_000086_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="670859">
+         <imageData height="2241" width="1364"/>
+         <checksum type="sha1">bbc341e64bf33345f6d37f18f1f9833a92851a70</checksum>
+         <checksum type="md5">6a85475be6e2e28638534d6ec74a5f72</checksum>
+      </file>
+   </resource>
+   <resource id="image_87" sequence="87" type="image">
+      <label>fol. 41r</label>
+      <file id="W12_000087_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="668144">
+         <imageData height="2233" width="1335"/>
+         <checksum type="sha1">f6447af10e303618b953fd6c94bb1ad5fd6ecc48</checksum>
+         <checksum type="md5">f3b22baf8ce4fb5504be3a52d265299a</checksum>
+      </file>
+   </resource>
+   <resource id="image_88" sequence="88" type="image">
+      <label>fol. 41v</label>
+      <file id="W12_000088_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="703839">
+         <imageData height="2228" width="1392"/>
+         <checksum type="sha1">3c4cdf59d58f5f6e3b835527f5d521145ec3bb9b</checksum>
+         <checksum type="md5">e771be755026bf2871a52c53a6dc2010</checksum>
+      </file>
+   </resource>
+   <resource id="image_89" sequence="89" type="image">
+      <label>fol. 42r</label>
+      <file id="W12_000089_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="686826">
+         <imageData height="2215" width="1403"/>
+         <checksum type="sha1">7a2ae8e17d41770db66bf004d2635b7c5e7f01fa</checksum>
+         <checksum type="md5">9dcdbb426d6b751a95e8594c2589922f</checksum>
+      </file>
+   </resource>
+   <resource id="image_90" sequence="90" type="image">
+      <label>fol. 42v</label>
+      <file id="W12_000090_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="666358">
+         <imageData height="2241" width="1369"/>
+         <checksum type="sha1">21cc5dd8201fd2ab2053adc67e3e2d74d1cac7df</checksum>
+         <checksum type="md5">2c12ead027250640bbeacb6d7a8af883</checksum>
+      </file>
+   </resource>
+   <resource id="image_91" sequence="91" type="image">
+      <label>fol. 43r</label>
+      <file id="W12_000091_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="665948">
+         <imageData height="2226" width="1382"/>
+         <checksum type="sha1">0f32d9dce1720f2c05a5360bf47b9976a2db168a</checksum>
+         <checksum type="md5">d18af05ab0b41bb553cf158009918181</checksum>
+      </file>
+   </resource>
+   <resource id="image_92" sequence="92" type="image">
+      <label>fol. 43v</label>
+      <file id="W12_000092_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="706080">
+         <imageData height="2228" width="1363"/>
+         <checksum type="sha1">e85016290678d971b394c0005ec6c7a6ef1c5180</checksum>
+         <checksum type="md5">45a5feabd0ca61a0b13efd7d9a792826</checksum>
+      </file>
+   </resource>
+   <resource id="image_93" sequence="93" type="image">
+      <label>fol. 44r</label>
+      <file id="W12_000093_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="734098">
+         <imageData height="2239" width="1403"/>
+         <checksum type="sha1">519751ff40be210849861013a5149d981ac7e8a8</checksum>
+         <checksum type="md5">bfbfc71c6f46e31e8ced68029f550061</checksum>
+      </file>
+   </resource>
+   <resource id="image_94" sequence="94" type="image">
+      <label>fol. 44v</label>
+      <file id="W12_000094_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="650575">
+         <imageData height="2228" width="1361"/>
+         <checksum type="sha1">ba87d0ead4b2820af0406a3c200cc4122052d352</checksum>
+         <checksum type="md5">a9e816c805fe56737c5375823c254082</checksum>
+      </file>
+   </resource>
+   <resource id="image_95" sequence="95" type="image">
+      <label>fol. 45r</label>
+      <file id="W12_000095_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="705356">
+         <imageData height="2233" width="1361"/>
+         <checksum type="sha1">4f492fc1925dd0c84fd174428f6c666557151e35</checksum>
+         <checksum type="md5">66afb3a3967a8a00b17fc659875b1c57</checksum>
+      </file>
+   </resource>
+   <resource id="image_96" sequence="96" type="image">
+      <label>fol. 45v</label>
+      <file id="W12_000096_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="716453">
+         <imageData height="2231" width="1363"/>
+         <checksum type="sha1">77e373d9871244cc238bcded5d8a457b76fcb7a7</checksum>
+         <checksum type="md5">211038851e236a2fb01db10a2d62899c</checksum>
+      </file>
+   </resource>
+   <resource id="image_97" sequence="97" type="image">
+      <label>fol. 46r</label>
+      <file id="W12_000097_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="732843">
+         <imageData height="2226" width="1335"/>
+         <checksum type="sha1">6a480cc5d4c631d1911ee4e7d1277d1629d6143e</checksum>
+         <checksum type="md5">34dc5ac9f0804572ec4ea1534461307f</checksum>
+      </file>
+   </resource>
+   <resource id="image_98" sequence="98" type="image">
+      <label>fol. 46v</label>
+      <file id="W12_000098_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="697936">
+         <imageData height="2213" width="1400"/>
+         <checksum type="sha1">f1bc931bb1fb6f6c11bac113125a1347cbe3ed14</checksum>
+         <checksum type="md5">d60724686a61bc1ab8c36c39faa20fb8</checksum>
+      </file>
+   </resource>
+   <resource id="image_99" sequence="99" type="image">
+      <label>fol. 47r</label>
+      <file id="W12_000099_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="731159">
+         <imageData height="2220" width="1364"/>
+         <checksum type="sha1">9a7147e7f273c1570db2da7312ffcef53e201aae</checksum>
+         <checksum type="md5">9ef60fd9d16bdcd93bcb3865bb440a28</checksum>
+      </file>
+   </resource>
+   <resource id="image_100" sequence="100" type="image">
+      <label>fol. 47v</label>
+      <file id="W12_000100_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="722509">
+         <imageData height="2223" width="1366"/>
+         <checksum type="sha1">a6a084605f11cfa00cb893949c0aaeb98921d1b3</checksum>
+         <checksum type="md5">5d6bd38b2ec23d17b97e7f1259871900</checksum>
+      </file>
+   </resource>
+   <resource id="image_101" sequence="101" type="image">
+      <label>fol. 48r</label>
+      <file id="W12_000101_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="786628">
+         <imageData height="2199" width="1361"/>
+         <checksum type="sha1">eb1c57054b6a95f8c56e5019f2c5b2ff1e98d51f</checksum>
+         <checksum type="md5">0c5aa6193878ed9a05f685738f6113b4</checksum>
+      </file>
+   </resource>
+   <resource id="image_102" sequence="102" type="image">
+      <label>fol. 48v</label>
+      <file id="W12_000102_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="763462">
+         <imageData height="2225" width="1363"/>
+         <checksum type="sha1">a9effb8c6d9af0d0a0261bf9d197d2a35ff7d636</checksum>
+         <checksum type="md5">76972a092912c8dd6217de7d32e8f829</checksum>
+      </file>
+   </resource>
+   <resource id="image_103" sequence="103" type="image">
+      <label>fol. 49r</label>
+      <file id="W12_000103_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="740142">
+         <imageData height="2223" width="1335"/>
+         <checksum type="sha1">547000ca95decb3e55443f1a43dab498a8cc1798</checksum>
+         <checksum type="md5">996229fc0f7fb2f2f969da8d73170ade</checksum>
+      </file>
+   </resource>
+   <resource id="image_104" sequence="104" type="image">
+      <label>fol. 49v</label>
+      <file id="W12_000104_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="712038">
+         <imageData height="2215" width="1359"/>
+         <checksum type="sha1">b07a0f72db9b95f6907bd8bdafc54763db801587</checksum>
+         <checksum type="md5">c0a43ef56afefa8915d9072c7a2feb52</checksum>
+      </file>
+   </resource>
+   <resource id="image_105" sequence="105" type="image">
+      <label>fol. 50r</label>
+      <file id="W12_000105_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="674603">
+         <imageData height="2207" width="1340"/>
+         <checksum type="sha1">dbdb5f9b30a645a2950f03ac65651ff01318539e</checksum>
+         <checksum type="md5">d9d4897556afd79131cc76085d0087e2</checksum>
+      </file>
+   </resource>
+   <resource id="image_106" sequence="106" type="image">
+      <label>fol. 50v</label>
+      <file id="W12_000106_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="694277">
+         <imageData height="2218" width="1343"/>
+         <checksum type="sha1">0e5f8577b319596ccd93ae3061fa8ca7766f1553</checksum>
+         <checksum type="md5">243b7dfce938e6267b3519c23ba56da9</checksum>
+      </file>
+   </resource>
+   <resource id="image_107" sequence="107" type="image">
+      <label>fol. 51r</label>
+      <file id="W12_000107_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="727236">
+         <imageData height="2205" width="1353"/>
+         <checksum type="sha1">86a15628cf0d3543975a74f703b6689cf9f3f19a</checksum>
+         <checksum type="md5">5ccfcebf2d386aa806f7d75ec091dc9a</checksum>
+      </file>
+   </resource>
+   <resource id="image_108" sequence="108" type="image">
+      <label>fol. 51v</label>
+      <file id="W12_000108_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="684578">
+         <imageData height="2215" width="1348"/>
+         <checksum type="sha1">d2d3ea224f6268ed5aff7ee1a0618bbc23f4aefa</checksum>
+         <checksum type="md5">830e964b8b4ff735e3ec57a006e3cd0f</checksum>
+      </file>
+   </resource>
+   <resource id="image_109" sequence="109" type="image">
+      <label>fol. 52r</label>
+      <file id="W12_000109_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="727383">
+         <imageData height="2231" width="1351"/>
+         <checksum type="sha1">87ff114b539e06fd045b5ffa65dc6d5ef617bcb6</checksum>
+         <checksum type="md5">30620aadf78343e91ac3f1ad9ed2cd49</checksum>
+      </file>
+   </resource>
+   <resource id="image_110" sequence="110" type="image">
+      <label>fol. 52v</label>
+      <file id="W12_000110_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="752353">
+         <imageData height="2233" width="1356"/>
+         <checksum type="sha1">cbf88f0cf208e6c9c65bb081f5657f644c7721c8</checksum>
+         <checksum type="md5">2e28b09791b95fe49db511137a489daf</checksum>
+      </file>
+   </resource>
+   <resource id="image_111" sequence="111" type="image">
+      <label>fol. 53r</label>
+      <file id="W12_000111_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="740970">
+         <imageData height="2226" width="1364"/>
+         <checksum type="sha1">254ff2a867270d266dafc58b39e56b04312ecc7c</checksum>
+         <checksum type="md5">87e9c55d08fb79617e1b337404ed057b</checksum>
+      </file>
+   </resource>
+   <resource id="image_112" sequence="112" type="image">
+      <label>fol. 53v</label>
+      <file id="W12_000112_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="720528">
+         <imageData height="2225" width="1371"/>
+         <checksum type="sha1">b3ef3939e77ecdbf0b6a3d49c757293e5324e4e1</checksum>
+         <checksum type="md5">2885bf7cd0d11471d90bb918f593df33</checksum>
+      </file>
+   </resource>
+   <resource id="image_113" sequence="113" type="image">
+      <label>fol. 54r</label>
+      <file id="W12_000113_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="728205">
+         <imageData height="2210" width="1356"/>
+         <checksum type="sha1">9ffa9780eadbf30e7adeedbc2cd9d4310a395a38</checksum>
+         <checksum type="md5">6bdd7f4a427bd0d2a1e8410570bb24cf</checksum>
+      </file>
+   </resource>
+   <resource id="image_114" sequence="114" type="image">
+      <label>fol. 54v</label>
+      <file id="W12_000114_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="711985">
+         <imageData height="2231" width="1384"/>
+         <checksum type="sha1">c432fad16626bdaf5e3138788c8e701319301127</checksum>
+         <checksum type="md5">458086bd45a7b1738668334caba7f4ca</checksum>
+      </file>
+   </resource>
+   <resource id="image_115" sequence="115" type="image">
+      <label>fol. 55r</label>
+      <file id="W12_000115_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="749073">
+         <imageData height="2207" width="1416"/>
+         <checksum type="sha1">de4882f6b5403eac532e3d0f8ef7b74a50a2fdd1</checksum>
+         <checksum type="md5">bf732ff1def1e7e38b65a475bc85b36c</checksum>
+      </file>
+   </resource>
+   <resource id="image_116" sequence="116" type="image">
+      <label>fol. 55v</label>
+      <file id="W12_000116_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="665969">
+         <imageData height="2221" width="1361"/>
+         <checksum type="sha1">520c65cc72da37f49c6f92917b8a1b0db39cfb2b</checksum>
+         <checksum type="md5">613130bf9cff2a2683342db2782cb2ab</checksum>
+      </file>
+   </resource>
+   <resource id="image_117" sequence="117" type="image">
+      <label>fol. 56r</label>
+      <file id="W12_000117_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="782165">
+         <imageData height="2228" width="1402"/>
+         <checksum type="sha1">3650947beb484b259d3adb4300ac920f815207c7</checksum>
+         <checksum type="md5">95a4fedefd46d50c7edd75d5d0248a45</checksum>
+      </file>
+   </resource>
+   <resource id="image_118" sequence="118" type="image">
+      <label>fol. 56v</label>
+      <file id="W12_000118_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="784479">
+         <imageData height="2231" width="1371"/>
+         <checksum type="sha1">d1f1b5496de6aeac813c2567f18333dfe4dbe438</checksum>
+         <checksum type="md5">f48fe737eac22da98adadd3c5c14c995</checksum>
+      </file>
+   </resource>
+   <resource id="image_119" sequence="119" type="image">
+      <label>fol. 57r</label>
+      <file id="W12_000119_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="710846">
+         <imageData height="2231" width="1356"/>
+         <checksum type="sha1">8566c56e0931a002462b9725464d49fb9d74f621</checksum>
+         <checksum type="md5">fa557bcf8f2d98ad22d428707588f72d</checksum>
+      </file>
+   </resource>
+   <resource id="image_120" sequence="120" type="image">
+      <label>fol. 57v</label>
+      <file id="W12_000120_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="659531">
+         <imageData height="2239" width="1361"/>
+         <checksum type="sha1">2548fc5aa016b604a71a63e50c038416326d1de6</checksum>
+         <checksum type="md5">d39229df101d80872c61522d63836cd2</checksum>
+      </file>
+   </resource>
+   <resource id="image_121" sequence="121" type="image">
+      <label>fol. 58r</label>
+      <file id="W12_000121_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="725140">
+         <imageData height="2213" width="1343"/>
+         <checksum type="sha1">819e683c7d207e0794079eb5fe25c30a61462d5d</checksum>
+         <checksum type="md5">3972581575de8b2971d423a4854d29eb</checksum>
+      </file>
+   </resource>
+   <resource id="image_122" sequence="122" type="image">
+      <label>fol. 58v</label>
+      <file id="W12_000122_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="767015">
+         <imageData height="2228" width="1369"/>
+         <checksum type="sha1">2895ff879aac9a4b476bc7e2dcc3a541bf62a6d8</checksum>
+         <checksum type="md5">6777becf48e20e5520a663fba9f1b432</checksum>
+      </file>
+   </resource>
+   <resource id="image_123" sequence="123" type="image">
+      <label>fol. 59r</label>
+      <file id="W12_000123_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="746245">
+         <imageData height="2215" width="1351"/>
+         <checksum type="sha1">5577b13cbcb9037e4d09c2478c9e11325636ebe4</checksum>
+         <checksum type="md5">a4d82656398241d650dd2b423d64cac5</checksum>
+      </file>
+   </resource>
+   <resource id="image_124" sequence="124" type="image">
+      <label>fol. 59v</label>
+      <file id="W12_000124_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="773621">
+         <imageData height="2228" width="1363"/>
+         <checksum type="sha1">e283b7e434e6835b2d0da90029d1dd362d9ca626</checksum>
+         <checksum type="md5">1ba24db2dd518b1a87c8f37bd56fbc3e</checksum>
+      </file>
+   </resource>
+   <resource id="image_125" sequence="125" type="image">
+      <label>fol. 60r</label>
+      <file id="W12_000125_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="715374">
+         <imageData height="2246" width="1348"/>
+         <checksum type="sha1">a364f4037f5d439879972610a69ac0253132fe75</checksum>
+         <checksum type="md5">cd7edd357ba167e4755ec2e0614ceb41</checksum>
+      </file>
+   </resource>
+   <resource id="image_126" sequence="126" type="image">
+      <label>fol. 60v</label>
+      <file id="W12_000126_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="664754">
+         <imageData height="2220" width="1395"/>
+         <checksum type="sha1">88389c67aeaba44082fa3ed4abba2ea40f222dba</checksum>
+         <checksum type="md5">45c34f04fdb9093d8c582dad6d8931f6</checksum>
+      </file>
+   </resource>
+   <resource id="image_127" sequence="127" type="image">
+      <label>fol. 61r</label>
+      <file id="W12_000127_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="757285">
+         <imageData height="2225" width="1351"/>
+         <checksum type="sha1">42e17b2e655fd4f6a39b44bb7a64ea036f8924c4</checksum>
+         <checksum type="md5">3707d69da320b36514602465804add76</checksum>
+      </file>
+   </resource>
+   <resource id="image_128" sequence="128" type="image">
+      <label>fol. 61v</label>
+      <file id="W12_000128_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="714018">
+         <imageData height="2218" width="1366"/>
+         <checksum type="sha1">42c69a7554df693eecb2b84937f64a3c235df180</checksum>
+         <checksum type="md5">7336299efff547cfbd86a52bb042cd33</checksum>
+      </file>
+   </resource>
+   <resource id="image_129" sequence="129" type="image">
+      <label>fol. 62r</label>
+      <file id="W12_000129_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="716180">
+         <imageData height="2231" width="1361"/>
+         <checksum type="sha1">d01a91cf3eab51dfc926da69349856cbfb3ede1d</checksum>
+         <checksum type="md5">c9c8c3744d2dc89aca95d32433a843d5</checksum>
+      </file>
+   </resource>
+   <resource id="image_130" sequence="130" type="image">
+      <label>fol. 62v</label>
+      <file id="W12_000130_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="737814">
+         <imageData height="2233" width="1371"/>
+         <checksum type="sha1">d3cf3ffcf37e4c8111e3fad56ab8d2230d3f2c97</checksum>
+         <checksum type="md5">7aaadff904dbce04e1fdc40bf5221227</checksum>
+      </file>
+   </resource>
+   <resource id="image_131" sequence="131" type="image">
+      <label>fol. 63r</label>
+      <file id="W12_000131_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="706780">
+         <imageData height="2215" width="1374"/>
+         <checksum type="sha1">005cba34679b36bc1d7fc04c7608842f2b4468fd</checksum>
+         <checksum type="md5">f86836d1048c12853d3a1037ede2f9ec</checksum>
+      </file>
+   </resource>
+   <resource id="image_132" sequence="132" type="image">
+      <label>fol. 63v</label>
+      <file id="W12_000132_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="668022">
+         <imageData height="2218" width="1361"/>
+         <checksum type="sha1">22fb885c4c76440404906efed8612389141f905d</checksum>
+         <checksum type="md5">9ebd8fbc3e0c959bc2139dd6b067a806</checksum>
+      </file>
+   </resource>
+   <resource id="image_133" sequence="133" type="image">
+      <label>fol. 64r</label>
+      <file id="W12_000133_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="657871">
+         <imageData height="2228" width="1342"/>
+         <checksum type="sha1">6ae62d5c6926631b0586b5db80356c19f5b3b6e9</checksum>
+         <checksum type="md5">8068d32acc8ecfb9f138623aa5eb5c69</checksum>
+      </file>
+   </resource>
+   <resource id="image_134" sequence="134" type="image">
+      <label>fol. 64v</label>
+      <file id="W12_000134_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="721881">
+         <imageData height="2236" width="1358"/>
+         <checksum type="sha1">43bac216cc6cbb5b6b0142e25b228df78bafd40d</checksum>
+         <checksum type="md5">d7cc5acfe53996375a3470f3dcc3791b</checksum>
+      </file>
+   </resource>
+   <resource id="image_135" sequence="135" type="image">
+      <label>fol. 65r</label>
+      <file id="W12_000135_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="701139">
+         <imageData height="2218" width="1338"/>
+         <checksum type="sha1">a0e45f0ef89b033dc923b085c9a985a33b98eb0c</checksum>
+         <checksum type="md5">d64d50ff978c5988783a5aae728283f4</checksum>
+      </file>
+   </resource>
+   <resource id="image_136" sequence="136" type="image">
+      <label>fol. 65v</label>
+      <file id="W12_000136_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="653324">
+         <imageData height="2228" width="1358"/>
+         <checksum type="sha1">6142acd7fc9f99f5c6f78c7d20ed3a79addf17c8</checksum>
+         <checksum type="md5">231c2f915b707123528af2c2f13dafea</checksum>
+      </file>
+   </resource>
+   <resource id="image_137" sequence="137" type="image">
+      <label>fol. 66r</label>
+      <file id="W12_000137_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="715732">
+         <imageData height="2213" width="1358"/>
+         <checksum type="sha1">1a37564d66f9f6ee8b891e9569b41e238edd0d28</checksum>
+         <checksum type="md5">ddd14dad3a1e0d8a73257bcaab2e9871</checksum>
+      </file>
+   </resource>
+   <resource id="image_138" sequence="138" type="image">
+      <label>fol. 66v</label>
+      <file id="W12_000138_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="776833">
+         <imageData height="2220" width="1358"/>
+         <checksum type="sha1">63a5c79ce83372b3d05e1d1808b8c6cb0e1c3b07</checksum>
+         <checksum type="md5">00d6daa40666eb593bbf53a604fb6af9</checksum>
+      </file>
+   </resource>
+   <resource id="image_139" sequence="139" type="image">
+      <label>fol. 67r</label>
+      <file id="W12_000139_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="745779">
+         <imageData height="2223" width="1356"/>
+         <checksum type="sha1">d54319ddc02dbc8c162bd251c43818caf7b777a6</checksum>
+         <checksum type="md5">0e1428444121e0d09090880fe17fc0e4</checksum>
+      </file>
+   </resource>
+   <resource id="image_140" sequence="140" type="image">
+      <label>fol. 67v</label>
+      <file id="W12_000140_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="697922">
+         <imageData height="2223" width="1366"/>
+         <checksum type="sha1">882e2f706919bbdf16f3f8ac05694cc5534b5e47</checksum>
+         <checksum type="md5">338e3b003c3a6a1895becbd33e2d325f</checksum>
+      </file>
+   </resource>
+   <resource id="image_141" sequence="141" type="image">
+      <label>fol. 68r</label>
+      <file id="W12_000141_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="677215">
+         <imageData height="2228" width="1358"/>
+         <checksum type="sha1">3e2fb2603b94fb61542c2b6c4dd4339b57150dc0</checksum>
+         <checksum type="md5">ca15febb4ff2fb1d21a303da0c5a710f</checksum>
+      </file>
+   </resource>
+   <resource id="image_142" sequence="142" type="image">
+      <label>fol. 68v</label>
+      <file id="W12_000142_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="753606">
+         <imageData height="2239" width="1364"/>
+         <checksum type="sha1">0315ca272751a89a170119003c4ce4a955c5233b</checksum>
+         <checksum type="md5">5ed9c91ab93e33ad090fe945d0819b39</checksum>
+      </file>
+   </resource>
+   <resource id="image_210" sequence="143" type="image">
+      <label>fol. 69r</label>
+      <file id="W12_000210_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="737804">
+         <imageData height="2232" width="1347"/>
+         <checksum type="sha1">e5815319a1e9c2246d3a1d9d41dab91debfcd4a1</checksum>
+         <checksum type="md5">747e0175f02862caacc8006c74388465</checksum>
+      </file>
+   </resource>
+   <resource id="image_211" sequence="144" type="image">
+      <label>fol. 69v</label>
+      <file id="W12_000211_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="656305">
+         <imageData height="2239" width="1374"/>
+         <checksum type="sha1">04489224c2fcee014918f3f30102cec075c019d5</checksum>
+         <checksum type="md5">54ca7744c47f2835528682a5290c1b17</checksum>
+      </file>
+   </resource>
+   <resource id="image_143" sequence="145" type="image">
+      <label>fol. 70r</label>
+      <file id="W12_000143_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="680735">
+         <imageData height="2210" width="1343"/>
+         <checksum type="sha1">2191a887ea4803972352bf3a9275c4d9b9b1afcc</checksum>
+         <checksum type="md5">e2e32b0390bd3613ad6c7bfd4a628aea</checksum>
+      </file>
+   </resource>
+   <resource id="image_144" sequence="146" type="image">
+      <label>fol. 70v</label>
+      <file id="W12_000144_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="722909">
+         <imageData height="2221" width="1371"/>
+         <checksum type="sha1">a697f6f5f9f9660f836c128af2d58641115f117d</checksum>
+         <checksum type="md5">aae6a0c9b33bae911e9bd78cf316f3c9</checksum>
+      </file>
+   </resource>
+   <resource id="image_145" sequence="147" type="image">
+      <label>fol. 71r</label>
+      <file id="W12_000145_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="716694">
+         <imageData height="2225" width="1343"/>
+         <checksum type="sha1">f19e16f5f90e15914ca5f51e144469cac6cc1ca8</checksum>
+         <checksum type="md5">b59b60248aef74e3bffb9ff655e2f498</checksum>
+      </file>
+   </resource>
+   <resource id="image_146" sequence="148" type="image">
+      <label>fol. 71v</label>
+      <file id="W12_000146_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="659549">
+         <imageData height="2184" width="1345"/>
+         <checksum type="sha1">b8022512afc52f88eb114f2f0e8c1f2f5c3c99db</checksum>
+         <checksum type="md5">adc27cd0cbca4f99835ba99ebd7687a4</checksum>
+      </file>
+   </resource>
+   <resource id="image_147" sequence="149" type="image">
+      <label>fol. 72r</label>
+      <file id="W12_000147_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="691008">
+         <imageData height="2218" width="1351"/>
+         <checksum type="sha1">47a9bbfe4e08de5e2a56aae86465acf4104fda84</checksum>
+         <checksum type="md5">46c5bdb7c0788801ba07bb007799d0a4</checksum>
+      </file>
+   </resource>
+   <resource id="image_148" sequence="150" type="image">
+      <label>fol. 72v</label>
+      <file id="W12_000148_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="761091">
+         <imageData height="2231" width="1363"/>
+         <checksum type="sha1">d7bf7352d106a1e43980b57ed97c8f1ef205638e</checksum>
+         <checksum type="md5">e4885e437b621030bea0c3658e15a545</checksum>
+      </file>
+   </resource>
+   <resource id="image_149" sequence="151" type="image">
+      <label>fol. 73r</label>
+      <file id="W12_000149_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="757986">
+         <imageData height="2234" width="1356"/>
+         <checksum type="sha1">30a5df26be2c07afc9f2e56ac9b06d3901df6a3a</checksum>
+         <checksum type="md5">18950ac11f260f60a6683a436b920f9b</checksum>
+      </file>
+   </resource>
+   <resource id="image_249" sequence="152" type="image">
+      <label>fol. 73v</label>
+      <file id="W12_000249_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="666849">
+         <imageData height="2205" width="1345"/>
+         <checksum type="sha1">e5404843134f7b95fa88d67f85f799372603a173</checksum>
+         <checksum type="md5">5fac4e84ed6d4816ce12ad3e479dccd8</checksum>
+      </file>
+   </resource>
+   <resource id="image_250" sequence="153" type="image">
+      <label>fol. 74r</label>
+      <file id="W12_000250_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="670339">
+         <imageData height="2228" width="1356"/>
+         <checksum type="sha1">b2c9218dd45ce2a8e99733506e4557995d2bc4c1</checksum>
+         <checksum type="md5">e43c24be41110e6bbc0caa6469a629bc</checksum>
+      </file>
+   </resource>
+   <resource id="image_150" sequence="154" type="image">
+      <label>fol. 74v</label>
+      <file id="W12_000150_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="647633">
+         <imageData height="2207" width="1327"/>
+         <checksum type="sha1">314527c56de819da0d63dea3a88391d5dbcb1920</checksum>
+         <checksum type="md5">8d9196d5098ee33989817d059a0e5e71</checksum>
+      </file>
+   </resource>
+   <resource id="image_151" sequence="155" type="image">
+      <label>fol. 75r</label>
+      <file id="W12_000151_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="692533">
+         <imageData height="2227" width="1347"/>
+         <checksum type="sha1">eb25433a2003b4f9f54656d70cacc5d4b012c994</checksum>
+         <checksum type="md5">b8c986d64a1a43739ffeffd138ecddfe</checksum>
+      </file>
+   </resource>
+   <resource id="image_152" sequence="156" type="image">
+      <label>fol. 75v</label>
+      <file id="W12_000152_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="611724">
+         <imageData height="2218" width="1337"/>
+         <checksum type="sha1">4d6fd3b814a2ac6f68ec01e2d195baf1a762eede</checksum>
+         <checksum type="md5">9f5be16a80643b24758d7398c13e44a4</checksum>
+      </file>
+   </resource>
+   <resource id="image_153" sequence="157" type="image">
+      <label>fol. 76r</label>
+      <file id="W12_000153_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="701459">
+         <imageData height="2226" width="1350"/>
+         <checksum type="sha1">82fe8a910947d4021579f6e3bfbf8d0c2360f5ea</checksum>
+         <checksum type="md5">7817162cc32231f922e35adad9899996</checksum>
+      </file>
+   </resource>
+   <resource id="image_154" sequence="158" type="image">
+      <label>fol. 76v</label>
+      <file id="W12_000154_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="792782">
+         <imageData height="2207" width="1345"/>
+         <checksum type="sha1">c2f564e274187c7f87c842673570222c91346c99</checksum>
+         <checksum type="md5">1c668b9df3d9b341cc01ad61fe563570</checksum>
+      </file>
+   </resource>
+   <resource id="image_155" sequence="159" type="image">
+      <label>fol. 77r</label>
+      <file id="W12_000155_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="772867">
+         <imageData height="2228" width="1358"/>
+         <checksum type="sha1">c6909fac04549f8068a6c6a65e1d01d382abd916</checksum>
+         <checksum type="md5">3eae9b9d9b2185deb4eca94cd49a2919</checksum>
+      </file>
+   </resource>
+   <resource id="image_156" sequence="160" type="image">
+      <label>fol. 77v</label>
+      <file id="W12_000156_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="621119">
+         <imageData height="2197" width="1345"/>
+         <checksum type="sha1">9b254fcfc86163030210589dd2c1df26cae9aa55</checksum>
+         <checksum type="md5">3a6a3f66629c154b3fd41d91a18e17ee</checksum>
+      </file>
+   </resource>
+   <resource id="image_157" sequence="161" type="image">
+      <label>fol. 78r</label>
+      <file id="W12_000157_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="828025">
+         <imageData height="2244" width="1358"/>
+         <checksum type="sha1">fdddcd106011cb7625fabd9bd731c8bf362d87bb</checksum>
+         <checksum type="md5">47244de42b287d868152a74c84acd6d2</checksum>
+      </file>
+   </resource>
+   <resource id="image_158" sequence="162" type="image">
+      <label>fol. 78v</label>
+      <file id="W12_000158_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="665411">
+         <imageData height="2231" width="1385"/>
+         <checksum type="sha1">302cab80ee7f3a8b4ecee68807e493e085ca2a36</checksum>
+         <checksum type="md5">a6048811980bf29e01d6c0f22b5f607d</checksum>
+      </file>
+   </resource>
+   <resource id="image_159" sequence="163" type="image">
+      <label>fol. 79r</label>
+      <file id="W12_000159_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="779861">
+         <imageData height="2228" width="1348"/>
+         <checksum type="sha1">5ca1358915bc8be26a918b87e0060d68c12d8732</checksum>
+         <checksum type="md5">5ce35d645df82b08438bba9eb26b149d</checksum>
+      </file>
+   </resource>
+   <resource id="image_160" sequence="164" type="image">
+      <label>fol. 79v</label>
+      <file id="W12_000160_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="657519">
+         <imageData height="2239" width="1353"/>
+         <checksum type="sha1">a8798078cb877caed6685ec54fbb282f7b67d25e</checksum>
+         <checksum type="md5">3acf3c010d2ecfe34434c5972542d363</checksum>
+      </file>
+   </resource>
+   <resource id="image_161" sequence="165" type="image">
+      <label>fol. 80r</label>
+      <file id="W12_000161_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="717683">
+         <imageData height="2227" width="1347"/>
+         <checksum type="sha1">87416320deb54b1483dcbc3f46b130db9183db54</checksum>
+         <checksum type="md5">46de53e28017a5604425da0c4d765acc</checksum>
+      </file>
+   </resource>
+   <resource id="image_162" sequence="166" type="image">
+      <label>fol. 80v</label>
+      <file id="W12_000162_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="730289">
+         <imageData height="2214" width="1376"/>
+         <checksum type="sha1">50a7955c46df80bc6c7afb9ded181f81d559d9ab</checksum>
+         <checksum type="md5">81b3e8aad2617c3d074e22c0682103c3</checksum>
+      </file>
+   </resource>
+   <resource id="image_163" sequence="167" type="image">
+      <label>fol. 81r</label>
+      <file id="W12_000163_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="748212">
+         <imageData height="2236" width="1350"/>
+         <checksum type="sha1">73595418dcad14a4c908e5f4a688a1c4f434589c</checksum>
+         <checksum type="md5">6b9b1197c1a9b9879a9ef8e2432dbedf</checksum>
+      </file>
+   </resource>
+   <resource id="image_164" sequence="168" type="image">
+      <label>fol. 81v</label>
+      <file id="W12_000164_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="620476">
+         <imageData height="2200" width="1338"/>
+         <checksum type="sha1">445fc0cff12a7f6d1607af3a531c9ec0d2fa1177</checksum>
+         <checksum type="md5">78134849205c0225d0bf3d54865f8b5e</checksum>
+      </file>
+   </resource>
+   <resource id="image_165" sequence="169" type="image">
+      <label>fol. 82r</label>
+      <file id="W12_000165_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="728611">
+         <imageData height="2241" width="1327"/>
+         <checksum type="sha1">2dc7eefa100de19ee5ec4a73be6c7ac4208ad564</checksum>
+         <checksum type="md5">5766a2c35310f04265b146302db27c46</checksum>
+      </file>
+   </resource>
+   <resource id="image_166" sequence="170" type="image">
+      <label>fol. 82v</label>
+      <file id="W12_000166_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="668314">
+         <imageData height="2197" width="1332"/>
+         <checksum type="sha1">41b958c3e2cbb9457c3fdd05b6c2bac46a981ed5</checksum>
+         <checksum type="md5">dafd125d009f9929922ac504d4bd77e5</checksum>
+      </file>
+   </resource>
+   <resource id="image_167" sequence="171" type="image">
+      <label>fol. 83r</label>
+      <file id="W12_000167_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="777226">
+         <imageData height="2228" width="1340"/>
+         <checksum type="sha1">e16b9f1b9872fc39d61eb6d895804e82ffb8ca8c</checksum>
+         <checksum type="md5">8f37d1736425cc9b972977c95497bb8c</checksum>
+      </file>
+   </resource>
+   <resource id="image_168" sequence="172" type="image">
+      <label>fol. 83v</label>
+      <file id="W12_000168_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="620061">
+         <imageData height="2179" width="1332"/>
+         <checksum type="sha1">bb03b27eef2b154d7de38f5e0c425bd3c0684404</checksum>
+         <checksum type="md5">f09e8b96b4205c3987e774cceed15a02</checksum>
+      </file>
+   </resource>
+   <resource id="image_169" sequence="173" type="image">
+      <label>fol. 84r</label>
+      <file id="W12_000169_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="739179">
+         <imageData height="2233" width="1343"/>
+         <checksum type="sha1">93a49ee164c6a886f438691a435bebeeff72c976</checksum>
+         <checksum type="md5">6293968ee815881dc477050bfb8f908d</checksum>
+      </file>
+   </resource>
+   <resource id="image_170" sequence="174" type="image">
+      <label>fol. 84v</label>
+      <file id="W12_000170_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="661391">
+         <imageData height="2186" width="1335"/>
+         <checksum type="sha1">4b17ced8dc3d6212716fb60fde83e7e1eb7a3bf8</checksum>
+         <checksum type="md5">4cf86fdc758bcb1cac5c5ed66e210621</checksum>
+      </file>
+   </resource>
+   <resource id="image_171" sequence="175" type="image">
+      <label>fol. 85r</label>
+      <file id="W12_000171_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="752288">
+         <imageData height="2225" width="1343"/>
+         <checksum type="sha1">9ce12a5b1fd97c967fc460ff5e0259c75facfc04</checksum>
+         <checksum type="md5">dfc8e0cc624954af49c001aad8ab238c</checksum>
+      </file>
+   </resource>
+   <resource id="image_172" sequence="176" type="image">
+      <label>fol. 85v</label>
+      <file id="W12_000172_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="648624">
+         <imageData height="2194" width="1332"/>
+         <checksum type="sha1">a4d0313bfe20aec9c8d58a0b3263947e0ec71b88</checksum>
+         <checksum type="md5">5b233bd8d2c088abcde1cc773c6a50f7</checksum>
+      </file>
+   </resource>
+   <resource id="image_173" sequence="177" type="image">
+      <label>fol. 86r</label>
+      <file id="W12_000173_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="731151">
+         <imageData height="2241" width="1361"/>
+         <checksum type="sha1">5cb147e2b8dfa0b2389e92e00c75270561a7559f</checksum>
+         <checksum type="md5">d4bc9eb4d6a7c50e2030998daa3c9c06</checksum>
+      </file>
+   </resource>
+   <resource id="image_174" sequence="178" type="image">
+      <label>fol. 86v</label>
+      <file id="W12_000174_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="686608">
+         <imageData height="2205" width="1363"/>
+         <checksum type="sha1">36b3bad08fa508b6580d90d58dae136122c5fae7</checksum>
+         <checksum type="md5">4e700029a91eb6e5309c9457591da521</checksum>
+      </file>
+   </resource>
+   <resource id="image_175" sequence="179" type="image">
+      <label>fol. 87r</label>
+      <file id="W12_000175_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="718155">
+         <imageData height="2231" width="1343"/>
+         <checksum type="sha1">aa9b0827585b1a5666a3d1e55725a45f7c5b25a4</checksum>
+         <checksum type="md5">6e6ef2aa1ab2ac9acc3ed6c0f0751ef1</checksum>
+      </file>
+   </resource>
+   <resource id="image_176" sequence="180" type="image">
+      <label>fol. 87v</label>
+      <file id="W12_000176_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="614023">
+         <imageData height="2205" width="1340"/>
+         <checksum type="sha1">b665ef4400338f084ca8ea271133591910b1c3bc</checksum>
+         <checksum type="md5">06e887c8cdc1239eb8c190cb7820355b</checksum>
+      </file>
+   </resource>
+   <resource id="image_177" sequence="181" type="image">
+      <label>fol. 88r</label>
+      <file id="W12_000177_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="701802">
+         <imageData height="2239" width="1356"/>
+         <checksum type="sha1">55989f8a35d5dda8aec973cb1c72028381785fd2</checksum>
+         <checksum type="md5">cde4d8a2bb17683f35ab0d66df41e816</checksum>
+      </file>
+   </resource>
+   <resource id="image_178" sequence="182" type="image">
+      <label>fol. 88v</label>
+      <file id="W12_000178_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="694157">
+         <imageData height="2212" width="1345"/>
+         <checksum type="sha1">3e3beae47e6df2800c87282c622d336cfa339ebd</checksum>
+         <checksum type="md5">74a53b88fe9d59bdd52910e3ea111630</checksum>
+      </file>
+   </resource>
+   <resource id="image_179" sequence="183" type="image">
+      <label>fol. 89r</label>
+      <file id="W12_000179_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="761206">
+         <imageData height="2236" width="1342"/>
+         <checksum type="sha1">4c99e40f73bf5002111249d2c108e97ae334594e</checksum>
+         <checksum type="md5">8c2b308d9c108e0007700fce44c4afd1</checksum>
+      </file>
+   </resource>
+   <resource id="image_180" sequence="184" type="image">
+      <label>fol. 89v</label>
+      <file id="W12_000180_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="674059">
+         <imageData height="2194" width="1332"/>
+         <checksum type="sha1">c8c9d4f735d487cf17caa7c86769ca3713e1b756</checksum>
+         <checksum type="md5">bcfe949d339f3f726f0a86c3d72675af</checksum>
+      </file>
+   </resource>
+   <resource id="image_181" sequence="185" type="image">
+      <label>fol. 90r</label>
+      <file id="W12_000181_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="620019">
+         <imageData height="2186" width="1340"/>
+         <checksum type="sha1">d92de2bd3710d100ec94110048f3d325b9147422</checksum>
+         <checksum type="md5">358e6ce12aae1349037147fb7b39c4fa</checksum>
+      </file>
+   </resource>
+   <resource id="image_182" sequence="186" type="image">
+      <label>fol. 90v</label>
+      <file id="W12_000182_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="658666">
+         <imageData height="2210" width="1361"/>
+         <checksum type="sha1">ad4e873d222da87d602c2dbf885c18080ab7baf7</checksum>
+         <checksum type="md5">3ffa9e1a606fad9c893f01b783685390</checksum>
+      </file>
+   </resource>
+   <resource id="image_183" sequence="187" type="image">
+      <label>fol. 91r</label>
+      <file id="W12_000183_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="710942">
+         <imageData height="2241" width="1345"/>
+         <checksum type="sha1">933f09e1bd709be48576e87fead331806f923961</checksum>
+         <checksum type="md5">8410aeacd1f6ff70443e8ade5ac60d2c</checksum>
+      </file>
+   </resource>
+   <resource id="image_184" sequence="188" type="image">
+      <label>fol. 91v</label>
+      <file id="W12_000184_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="621456">
+         <imageData height="2226" width="1385"/>
+         <checksum type="sha1">81b308b30b9aded9dd5374303466fc21de1d46b1</checksum>
+         <checksum type="md5">7bab9363933a3e389101f48899982960</checksum>
+      </file>
+   </resource>
+   <resource id="image_185" sequence="189" type="image">
+      <label>fol. 92r</label>
+      <file id="W12_000185_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="714096">
+         <imageData height="2241" width="1332"/>
+         <checksum type="sha1">64088095a45503654a50796131a17401c6ab595f</checksum>
+         <checksum type="md5">4f72de8c4f6b3d8a04e84be5ccd38e34</checksum>
+      </file>
+   </resource>
+   <resource id="image_186" sequence="190" type="image">
+      <label>fol. 92v</label>
+      <file id="W12_000186_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="751969">
+         <imageData height="2202" width="1345"/>
+         <checksum type="sha1">fa10d00062088ab2ade576eae7f5e4729097581f</checksum>
+         <checksum type="md5">1920ba2fae2daa13f54d2118e0ebaa42</checksum>
+      </file>
+   </resource>
+   <resource id="image_187" sequence="191" type="image">
+      <label>fol. 93r</label>
+      <file id="W12_000187_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="750628">
+         <imageData height="2241" width="1338"/>
+         <checksum type="sha1">1b151ab02560ccfbb7d778bdd8d49054e21702dd</checksum>
+         <checksum type="md5">60d34eee69c792ef8b4c5cd8bd13f7b9</checksum>
+      </file>
+   </resource>
+   <resource id="image_188" sequence="192" type="image">
+      <label>fol. 93v</label>
+      <file id="W12_000188_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="665817">
+         <imageData height="2184" width="1309"/>
+         <checksum type="sha1">e21f343c403bd7d28507e9636a5f21b4f0115ff9</checksum>
+         <checksum type="md5">8df609666f9320c5d113c32c533f7f72</checksum>
+      </file>
+   </resource>
+   <resource id="image_189" sequence="193" type="image">
+      <label>fol. 94r</label>
+      <file id="W12_000189_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="693866">
+         <imageData height="2251" width="1345"/>
+         <checksum type="sha1">dc8d15549b80559f061f9c4af80bd40a229cc73d</checksum>
+         <checksum type="md5">7a787ab05b851d000fa5810960c19f1f</checksum>
+      </file>
+   </resource>
+   <resource id="image_190" sequence="194" type="image">
+      <label>fol. 94v</label>
+      <file id="W12_000190_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="691001">
+         <imageData height="2202" width="1317"/>
+         <checksum type="sha1">cc647a604d98714b705ce1d34f43b6b7609edc45</checksum>
+         <checksum type="md5">0c379c703dc434e45be48a8dbfffb5c0</checksum>
+      </file>
+   </resource>
+   <resource id="image_191" sequence="195" type="image">
+      <label>fol. 95r</label>
+      <file id="W12_000191_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="772572">
+         <imageData height="2236" width="1327"/>
+         <checksum type="sha1">1d17f3a712e7283d07fa1ff2e801d4cc69d69691</checksum>
+         <checksum type="md5">46783ed3ceae8714cf3096251c81cabd</checksum>
+      </file>
+   </resource>
+   <resource id="image_192" sequence="196" type="image">
+      <label>fol. 95v</label>
+      <file id="W12_000192_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="720289">
+         <imageData height="2210" width="1306"/>
+         <checksum type="sha1">72dc572def998a19f32d18b6a975fdb80248cc18</checksum>
+         <checksum type="md5">47f720b8c5b1f5363e35ffa97983a4f0</checksum>
+      </file>
+   </resource>
+   <resource id="image_193" sequence="197" type="image">
+      <label>fol. 96r</label>
+      <file id="W12_000193_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="765774">
+         <imageData height="2246" width="1330"/>
+         <checksum type="sha1">ba65c633fb6be1d25afaec2d2fda3e08d69ac939</checksum>
+         <checksum type="md5">94f6597169aaf78d4083a16efc23e436</checksum>
+      </file>
+   </resource>
+   <resource id="image_194" sequence="198" type="image">
+      <label>fol. 96v</label>
+      <file id="W12_000194_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="661963">
+         <imageData height="2194" width="1317"/>
+         <checksum type="sha1">9f9c3f3752a2558d0fea63281dbb6fd66622160a</checksum>
+         <checksum type="md5">94e75cd1c9f46a25a593738ddefb55b6</checksum>
+      </file>
+   </resource>
+   <resource id="image_195" sequence="199" type="image">
+      <label>fol. 97r</label>
+      <file id="W12_000195_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="726731">
+         <imageData height="2231" width="1335"/>
+         <checksum type="sha1">a7e009ed934de1d1823de333c0620619e24b85f3</checksum>
+         <checksum type="md5">a7b44e936091b2cbc1631f44c94be743</checksum>
+      </file>
+   </resource>
+   <resource id="image_196" sequence="200" type="image">
+      <label>fol. 97v</label>
+      <file id="W12_000196_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="690819">
+         <imageData height="2208" width="1324"/>
+         <checksum type="sha1">bd8249ea4283f6c9fe97cf0d0ce445af050c6acb</checksum>
+         <checksum type="md5">6e0a4d120e68c6e1550c173bc853ea31</checksum>
+      </file>
+   </resource>
+   <resource id="image_197" sequence="201" type="image">
+      <label>fol. 98r</label>
+      <file id="W12_000197_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="773803">
+         <imageData height="2241" width="1340"/>
+         <checksum type="sha1">6e4682006940cd443d926ba1e469c49f73f4a81b</checksum>
+         <checksum type="md5">8efa8c8f92205c80bf57b912063f354a</checksum>
+      </file>
+   </resource>
+   <resource id="image_198" sequence="202" type="image">
+      <label>fol. 98v</label>
+      <file id="W12_000198_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="676696">
+         <imageData height="2202" width="1311"/>
+         <checksum type="sha1">daf71c6a275d41f384208dd26d6784197ffd7c20</checksum>
+         <checksum type="md5">1096c879ccbcef1816610c2cd1bde20c</checksum>
+      </file>
+   </resource>
+   <resource id="image_199" sequence="203" type="image">
+      <label>fol. 99r</label>
+      <file id="W12_000199_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="731063">
+         <imageData height="2212" width="1350"/>
+         <checksum type="sha1">a1927f117ce1f544b6250aff4e55350b6d0af408</checksum>
+         <checksum type="md5">60bd90dfde6a0d6fafca13d65a562839</checksum>
+      </file>
+   </resource>
+   <resource id="image_200" sequence="204" type="image">
+      <label>fol. 99v</label>
+      <file id="W12_000200_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="677885">
+         <imageData height="2199" width="1329"/>
+         <checksum type="sha1">9979e45c0c3f13458bbee5bdec1f76eaceeb0274</checksum>
+         <checksum type="md5">5e68a983ed091f47847840094fc27cf2</checksum>
+      </file>
+   </resource>
+   <resource id="image_201" sequence="205" type="image">
+      <label>fol. 100r</label>
+      <file id="W12_000201_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="739504">
+         <imageData height="2218" width="1340"/>
+         <checksum type="sha1">fe3dfc481a398dedac5b9f9435d85204c452f1c9</checksum>
+         <checksum type="md5">e6aaa4c47596429b56c7a9b8e586377f</checksum>
+      </file>
+   </resource>
+   <resource id="image_202" sequence="206" type="image">
+      <label>fol. 100v</label>
+      <file id="W12_000202_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="704137">
+         <imageData height="2208" width="1340"/>
+         <checksum type="sha1">fedbb5d8b8d5f0faada34922884cecfbf5d7f5f9</checksum>
+         <checksum type="md5">4c4ffe39a9763ec86279c25a651d3dee</checksum>
+      </file>
+   </resource>
+   <resource id="image_203" sequence="207" type="image">
+      <label>fol. 101r</label>
+      <file id="W12_000203_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="909049">
+         <imageData height="2220" width="1340"/>
+         <checksum type="sha1">c43b91d9fdf4ff90a52093111aa3a230ec2e2d8d</checksum>
+         <checksum type="md5">9e8077253db043088690d60dbcbfb790</checksum>
+      </file>
+   </resource>
+   <resource id="image_204" sequence="208" type="image">
+      <label>fol. 101v</label>
+      <file id="W12_000204_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="709108">
+         <imageData height="2205" width="1340"/>
+         <checksum type="sha1">4a223948ecc1183b03baac28f8cbe093e75528e4</checksum>
+         <checksum type="md5">08346005af92acc38c02c41d25a5113f</checksum>
+      </file>
+   </resource>
+   <resource id="image_205" sequence="209" type="image">
+      <label>fol. 102r</label>
+      <file id="W12_000205_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="705784">
+         <imageData height="2231" width="1335"/>
+         <checksum type="sha1">c0eca41d527c097f84d25cbabdc2ca6f0defa18b</checksum>
+         <checksum type="md5">f26189c23be75737eb91bd4dbede9782</checksum>
+      </file>
+   </resource>
+   <resource id="image_206" sequence="210" type="image">
+      <label>fol. 102v</label>
+      <file id="W12_000206_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="657349">
+         <imageData height="2210" width="1338"/>
+         <checksum type="sha1">2ebd1f95d66a1a28cafb651fc68f846442f6acca</checksum>
+         <checksum type="md5">7b5838773ec0224450a13cc16fb3a6a5</checksum>
+      </file>
+   </resource>
+   <resource id="image_207" sequence="211" type="image">
+      <label>fol. 103r</label>
+      <file id="W12_000207_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="717952">
+         <imageData height="2254" width="1335"/>
+         <checksum type="sha1">2d64bda5f8804e8a7658a8ec54766586f6f972dc</checksum>
+         <checksum type="md5">4129a5419e746741ad83d449817c1609</checksum>
+      </file>
+   </resource>
+   <resource id="image_208" sequence="212" type="image">
+      <label>fol. 103v</label>
+      <file id="W12_000208_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="732670">
+         <imageData height="2236" width="1377"/>
+         <checksum type="sha1">59a8c177df6979a9476ee75f6412bbb184c57e9f</checksum>
+         <checksum type="md5">798344d3a71c1a9d0dd6c347b4abb033</checksum>
+      </file>
+   </resource>
+   <resource id="image_209" sequence="213" type="image">
+      <label>fol. 104r</label>
+      <file id="W12_000209_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="732744">
+         <imageData height="2233" width="1337"/>
+         <checksum type="sha1">0842711f098ee407919f1919632ee8466f1571a6</checksum>
+         <checksum type="md5">20b07bfd89ee682ef01bfdc787ec3b8f</checksum>
+      </file>
+   </resource>
+   <resource id="image_212" sequence="214" type="image">
+      <label>fol. 104v</label>
+      <file id="W12_000212_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="660403">
+         <imageData height="2236" width="1351"/>
+         <checksum type="sha1">5a8bb279cff4e09a0ead66421d891f193d3c2c0a</checksum>
+         <checksum type="md5">b0508808fc820b7d725ca642f8682001</checksum>
+      </file>
+   </resource>
+   <resource id="image_213" sequence="215" type="image">
+      <label>fol. 105r</label>
+      <file id="W12_000213_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="718474">
+         <imageData height="2236" width="1340"/>
+         <checksum type="sha1">153947c39abdf2ce6f30fa3f43efd7c426a400e1</checksum>
+         <checksum type="md5">21dfa810f37de3d2e08880b5f175828d</checksum>
+      </file>
+   </resource>
+   <resource id="image_214" sequence="216" type="image">
+      <label>fol. 105v</label>
+      <file id="W12_000214_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="700765">
+         <imageData height="2236" width="1366"/>
+         <checksum type="sha1">2e1db306847432addcbfc8701e4f71ca8d29946c</checksum>
+         <checksum type="md5">188e35a0b077d0a2fad5486602a3d8ba</checksum>
+      </file>
+   </resource>
+   <resource id="image_215" sequence="217" type="image">
+      <label>fol. 106r</label>
+      <file id="W12_000215_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="707768">
+         <imageData height="2236" width="1327"/>
+         <checksum type="sha1">fdf0b90cc8b7684d2a7037ed85100d40965e6840</checksum>
+         <checksum type="md5">bbf6acdf0ec978c086517d86cca891de</checksum>
+      </file>
+   </resource>
+   <resource id="image_216" sequence="218" type="image">
+      <label>fol. 106v</label>
+      <file id="W12_000216_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="639064">
+         <imageData height="2244" width="1353"/>
+         <checksum type="sha1">a6c4423d04a08c1c354fbec3e2d91694824b509f</checksum>
+         <checksum type="md5">a803a05872e9d40e6d8f87eacbc2c6ba</checksum>
+      </file>
+   </resource>
+   <resource id="image_217" sequence="219" type="image">
+      <label>fol. 107r</label>
+      <file id="W12_000217_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="672611">
+         <imageData height="2213" width="1327"/>
+         <checksum type="sha1">72bd5d7cbd4de80ed2c0be7b34fc11258fcb9715</checksum>
+         <checksum type="md5">45cd0f1dd799fa5416803ffe3bfd3f41</checksum>
+      </file>
+   </resource>
+   <resource id="image_218" sequence="220" type="image">
+      <label>fol. 107v</label>
+      <file id="W12_000218_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="649120">
+         <imageData height="2207" width="1314"/>
+         <checksum type="sha1">0f77491d349fec020b8adfc4920de4f966e2f63d</checksum>
+         <checksum type="md5">0aa8ddd15cef9af3ec78e0dec74cde08</checksum>
+      </file>
+   </resource>
+   <resource id="image_219" sequence="221" type="image">
+      <label>fol. 108r</label>
+      <file id="W12_000219_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="707470">
+         <imageData height="2231" width="1327"/>
+         <checksum type="sha1">4e458b8272ede90662a0ebc724da3c832581a181</checksum>
+         <checksum type="md5">aa17de272df728281c503ea7184a89e7</checksum>
+      </file>
+   </resource>
+   <resource id="image_220" sequence="222" type="image">
+      <label>fol. 108v</label>
+      <file id="W12_000220_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="691984">
+         <imageData height="2210" width="1312"/>
+         <checksum type="sha1">6ee8a82de8016556ef08f4d7d7f1630708ab61c9</checksum>
+         <checksum type="md5">fe0528cb49276ae1b5c3dfe51fc83324</checksum>
+      </file>
+   </resource>
+   <resource id="image_221" sequence="223" type="image">
+      <label>fol. 109r</label>
+      <file id="W12_000221_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="731085">
+         <imageData height="2233" width="1317"/>
+         <checksum type="sha1">602c02bde8808bedced79223002ecaeb43f4e82d</checksum>
+         <checksum type="md5">83084bab67fad403b3b2aeb9850d46da</checksum>
+      </file>
+   </resource>
+   <resource id="image_222" sequence="224" type="image">
+      <label>fol. 109v</label>
+      <file id="W12_000222_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="694487">
+         <imageData height="2215" width="1303"/>
+         <checksum type="sha1">bda30b239e781fb60d0d5286f9a5b610f9a638f1</checksum>
+         <checksum type="md5">bb7b11bf1ee398012091065d3567afa3</checksum>
+      </file>
+   </resource>
+   <resource id="image_223" sequence="225" type="image">
+      <label>fol. 110r</label>
+      <file id="W12_000223_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="767216">
+         <imageData height="2233" width="1311"/>
+         <checksum type="sha1">09c19d02b6b2a0f404e6b037be3d3e46cf8f9969</checksum>
+         <checksum type="md5">f5a4f39a762c1737ad7b26854d0e0a6b</checksum>
+      </file>
+   </resource>
+   <resource id="image_224" sequence="226" type="image">
+      <label>fol. 110v</label>
+      <file id="W12_000224_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="769065">
+         <imageData height="2220" width="1322"/>
+         <checksum type="sha1">ca2fca947086da59a447f615000e24d1e4bb7aa7</checksum>
+         <checksum type="md5">92db83fd2a572e0284ad7316f6eea81e</checksum>
+      </file>
+   </resource>
+   <resource id="image_225" sequence="227" type="image">
+      <label>fol. 111r</label>
+      <file id="W12_000225_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="700935">
+         <imageData height="2186" width="1327"/>
+         <checksum type="sha1">e4225b44e46c0625bddce9c9d04c37f2b8d362d4</checksum>
+         <checksum type="md5">bd9512be038d856dbad366944773317b</checksum>
+      </file>
+   </resource>
+   <resource id="image_226" sequence="228" type="image">
+      <label>fol. 111v</label>
+      <file id="W12_000226_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="704677">
+         <imageData height="2228" width="1317"/>
+         <checksum type="sha1">449d881026996942ba5efb2f7244fb5bdc576af3</checksum>
+         <checksum type="md5">58ccbeff99ff3fcc10e628f5c043e242</checksum>
+      </file>
+   </resource>
+   <resource id="image_227" sequence="229" type="image">
+      <label>fol. 112r</label>
+      <file id="W12_000227_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="701502">
+         <imageData height="2191" width="1295"/>
+         <checksum type="sha1">c64ef6e3726068dddab202fa6478d98ebc2a4ca7</checksum>
+         <checksum type="md5">46bee35b6a3792475ca6e7970843b7f7</checksum>
+      </file>
+   </resource>
+   <resource id="image_228" sequence="230" type="image">
+      <label>fol. 112v</label>
+      <file id="W12_000228_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="695348">
+         <imageData height="2244" width="1359"/>
+         <checksum type="sha1">0617a4018c11c1d14b9c5b02e831ecb5d382f5f0</checksum>
+         <checksum type="md5">5670b2c7fe60e9359fc8b26361edd069</checksum>
+      </file>
+   </resource>
+   <resource id="image_229" sequence="231" type="image">
+      <label>fol. 113r</label>
+      <file id="W12_000229_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="705421">
+         <imageData height="2228" width="1325"/>
+         <checksum type="sha1">06fa4f9940a4b9d51a82bfd3b6ab560f235d1454</checksum>
+         <checksum type="md5">6235b1c071a1e3c82e0d49804e91ade0</checksum>
+      </file>
+   </resource>
+   <resource id="image_230" sequence="232" type="image">
+      <label>fol. 113v</label>
+      <file id="W12_000230_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="678181">
+         <imageData height="2207" width="1309"/>
+         <checksum type="sha1">8ed5be75a3d7651d70232ef560506fa0872d7cd8</checksum>
+         <checksum type="md5">4e491fe0ef46c0b9ed787021b796fa9e</checksum>
+      </file>
+   </resource>
+   <resource id="image_231" sequence="233" type="image">
+      <label>fol. 114r</label>
+      <file id="W12_000231_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="725892">
+         <imageData height="2231" width="1311"/>
+         <checksum type="sha1">1a6f531b990bcbdf6a0588b1a0846e45b43492d1</checksum>
+         <checksum type="md5">66e70e4d2e43e7c12ec9b437cf306fcd</checksum>
+      </file>
+   </resource>
+   <resource id="image_232" sequence="234" type="image">
+      <label>fol. 114v</label>
+      <file id="W12_000232_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="687197">
+         <imageData height="2228" width="1312"/>
+         <checksum type="sha1">1fdb5fa47c3035cf98526eebf3c107b4bf9b877d</checksum>
+         <checksum type="md5">20db816c7cbc5d2bd824c9b98e71eefe</checksum>
+      </file>
+   </resource>
+   <resource id="image_233" sequence="235" type="image">
+      <label>fol. 115r</label>
+      <file id="W12_000233_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="723769">
+         <imageData height="2223" width="1322"/>
+         <checksum type="sha1">e93880da83a153cf1636a421a758142fe2012f4f</checksum>
+         <checksum type="md5">533709ee5e7974f63e0934630021d664</checksum>
+      </file>
+   </resource>
+   <resource id="image_234" sequence="236" type="image">
+      <label>fol. 115v</label>
+      <file id="W12_000234_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="695256">
+         <imageData height="2236" width="1346"/>
+         <checksum type="sha1">c621b53a47daf44ea6e86434cffca864bc16da83</checksum>
+         <checksum type="md5">4ca718086c468d4bc01de7f9f44f0076</checksum>
+      </file>
+   </resource>
+   <resource id="image_235" sequence="237" type="image">
+      <label>fol. 116r</label>
+      <file id="W12_000235_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="730224">
+         <imageData height="2246" width="1332"/>
+         <checksum type="sha1">a5e6535113c41248e391f196f9d13251ae693ebd</checksum>
+         <checksum type="md5">94a359413e6bc8d56767192df229a514</checksum>
+      </file>
+   </resource>
+   <resource id="image_236" sequence="238" type="image">
+      <label>fol. 116v</label>
+      <file id="W12_000236_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="682607">
+         <imageData height="2213" width="1296"/>
+         <checksum type="sha1">04d25c0289407f208d33e880349220f8cac746f1</checksum>
+         <checksum type="md5">3be24694356156573464f3b505e4aeef</checksum>
+      </file>
+   </resource>
+   <resource id="image_237" sequence="239" type="image">
+      <label>fol. 117r</label>
+      <file id="W12_000237_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="756487">
+         <imageData height="2223" width="1324"/>
+         <checksum type="sha1">818a953c42cdfbec5f305c6f470cb028868cfc66</checksum>
+         <checksum type="md5">17d0d6038f5c0364a6021af193dac948</checksum>
+      </file>
+   </resource>
+   <resource id="image_238" sequence="240" type="image">
+      <label>fol. 117v</label>
+      <file id="W12_000238_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="748524">
+         <imageData height="2236" width="1314"/>
+         <checksum type="sha1">b388130313cb29e86124d41484eb975d5567033c</checksum>
+         <checksum type="md5">30fbcfc8f3765e9b18e640226168004f</checksum>
+      </file>
+   </resource>
+   <resource id="image_239" sequence="241" type="image">
+      <label>Back flyleaf ir</label>
+      <file id="W12_000239_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="743040">
+         <imageData height="2233" width="1358"/>
+         <checksum type="sha1">3ce52b3be92d14d9987cc14d1546d82faa374802</checksum>
+         <checksum type="md5">ccb9533fc6b27053d017e20b337f4f1d</checksum>
+      </file>
+   </resource>
+   <resource id="image_240" sequence="242" type="image">
+      <label>Back flyleaf iv</label>
+      <file id="W12_000240_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="519270">
+         <imageData height="2225" width="1314"/>
+         <checksum type="sha1">469154a3002fdd2b9b1a3720a8fa93456047d76d</checksum>
+         <checksum type="md5">1bc6dea72747a2f920eacfd7b2501729</checksum>
+      </file>
+   </resource>
+   <resource id="image_241" sequence="243" type="image">
+      <label>Back flyleaf iir</label>
+      <file id="W12_000241_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="600563">
+         <imageData height="2221" width="1351"/>
+         <checksum type="sha1">c884e898e8f1ed679ea52b57068cdf3ff48e3753</checksum>
+         <checksum type="md5">0b4d8efab89eec5e369ec90a3f92d606</checksum>
+      </file>
+   </resource>
+   <resource id="image_242" sequence="244" type="image">
+      <label>Back flyleaf iiv</label>
+      <file id="W12_000242_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="715036">
+         <imageData height="2205" width="1397"/>
+         <checksum type="sha1">4c8783f1ff93f5630d61b01a24686d390cab5c4c</checksum>
+         <checksum type="md5">b21b6ad62754250c54689d01361dcd99</checksum>
+      </file>
+   </resource>
+   <resource id="image_243" sequence="245" type="image">
+      <label>Lower board inside</label>
+      <file id="W12_000243_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="663305">
+         <imageData height="2301" width="1541"/>
+         <checksum type="sha1">80da4f06c807bd56321a7cfdb526c1111aa45cbc</checksum>
+         <checksum type="md5">ec6f26339cdd9ca19d47fad0aa82a56d</checksum>
+      </file>
+   </resource>
+   <resource id="image_244" sequence="246" type="image">
+      <label>Lower board outside</label>
+      <file id="W12_000244_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="704616">
+         <imageData height="2337" width="1641"/>
+         <checksum type="sha1">987e1838d7a678cb8c762309a2765198ce871e29</checksum>
+         <checksum type="md5">b8ec8e636b6b827ab3fdaf6857324e46</checksum>
+      </file>
+   </resource>
+   <resource id="image_245" sequence="247" type="image">
+      <label>Spine</label>
+      <file id="W12_000245_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="505111">
+         <imageData height="2669" width="1033"/>
+         <checksum type="sha1">e0d29a420a116de2c17d804bf789e699ff3dc3e7</checksum>
+         <checksum type="md5">c2b8b990b489c188a83cac4431342954</checksum>
+      </file>
+   </resource>
+   <resource id="image_246" sequence="248" type="image">
+      <label>Fore-edge</label>
+      <file id="W12_000246_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="569047">
+         <imageData height="2683" width="1110"/>
+         <checksum type="sha1">d8a5f2a8761c0e586b242d596512cef83a68a208</checksum>
+         <checksum type="md5">90eefabefb1dbdc62c3de95ee084ff0c</checksum>
+      </file>
+   </resource>
+   <resource id="image_247" sequence="249" type="image">
+      <label>Head</label>
+      <file id="W12_000247_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="403506">
+         <imageData height="1144" width="2041"/>
+         <checksum type="sha1">a858d8d941289ee712c94445d91aeedf79491ff1</checksum>
+         <checksum type="md5">c6b65fdb053f2c55ffb472a7c8a6bc0e</checksum>
+      </file>
+   </resource>
+   <resource id="image_248" sequence="250" type="image">
+      <label>Tail</label>
+      <file id="W12_000248_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="471513">
+         <imageData height="1103" width="2086"/>
+         <checksum type="sha1">832ef5048e649df5826b1946604bb6ff3eea7c05</checksum>
+         <checksum type="md5">806543dbe57cf46f5678d1fe373d5580</checksum>
+      </file>
+   </resource>
+   <resource id="image_251" sequence="251" type="image">
+      <label>Previous binding outer boards</label>
+      <file id="W12_000251_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="2857799">
+         <imageData height="2319" width="3183"/>
+         <checksum type="sha1">cf8b8badcf38b8801916524f2c32b51f91e28f29</checksum>
+         <checksum type="md5">b05876c1ca40f92c05639182e4b70bfa</checksum>
+      </file>
+   </resource>
+   <resource id="image_252" sequence="252" type="image">
+      <label>Previous binding inner boards</label>
+      <file id="W12_000252_300.jp2" mimetype="image/jp2" shelve="yes" publish="yes" format="JPEG2000" preserve="no" size="1363425">
+         <imageData height="2309" width="3171"/>
+         <checksum type="sha1">071602a330e0300bf658988be811aaaac815a7d5</checksum>
+         <checksum type="md5">ca1ce175a1b619d72997db2185cc8e7f</checksum>
+      </file>
+   </resource>
+   <resource type="object" sequence="253" id="archive-1">
+      <label>archive</label>
+      <file mimetype="application/tar" shelve="no" format="TAR" publish="no" size="19087738880" preserve="yes" id="W12.tar">
+         <checksum type="sha1">0024724a57a4cbe8986b08b8f00dd1f21f448267</checksum>
+         <checksum type="md5">fa053a931b9054cde1b4c22cabdc0f47</checksum>
+      </file>
+   </resource> 
+</contentMetadata>

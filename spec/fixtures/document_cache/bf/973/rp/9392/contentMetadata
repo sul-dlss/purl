@@ -1,0 +1,28 @@
+<contentMetadata type="image" objectId="bf973rp9392">
+  <resource type="image" sequence="1" id="bf973rp9392_1">
+    <label>Item 1</label>
+    <file id="bf973rp9392_00_0001.tif" mimetype="image/tiff" size="8768776" preserve="yes" publish="no" shelve="no">
+      <checksum type="md5">bcd302fb3c63db305e9086b0b3544df6</checksum>
+      <checksum type="sha1">a33754e743ad63af5dd5bc4de8c5436fdcbf08b5</checksum>
+      <imageData width="1740" height="1675"/>
+    </file>
+    <file id="bf973rp9392_00_0001.jp2" mimetype="image/jp2" size="564431" preserve="no" publish="yes" shelve="yes">
+      <checksum type="md5">6a635d500b12d2d30fdb35967c097c32</checksum>
+      <checksum type="sha1">93f0fdf96eae34882f92e24803c99f425b46896d</checksum>
+      <imageData width="1740" height="1675"/>
+    </file>
+  </resource>
+  <resource type="image" sequence="2" id="bf973rp9392_2">
+    <label>Item 2</label>
+    <file id="bf973rp9392_00_0002.tif" mimetype="image/tiff" size="8891496" preserve="yes" publish="no" shelve="no">
+      <checksum type="md5">38c3efc91bc1c10899fd326bb2b97f5f</checksum>
+      <checksum type="sha1">b4e6a6a90d1548ffc5dfd63530d8bcd80c5c7f04</checksum>
+      <imageData width="1752" height="1687"/>
+    </file>
+    <file id="bf973rp9392_00_0002.jp2" mimetype="image/jp2" size="572109" preserve="no" publish="yes" shelve="yes">
+      <checksum type="md5">e77593003dd09ac8d5187e4bc7b7f903</checksum>
+      <checksum type="sha1">ff202785627214e510fa1307278714403ac00986</checksum>
+      <imageData width="1752" height="1687"/>
+    </file>
+  </resource>
+</contentMetadata>
