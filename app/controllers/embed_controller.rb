@@ -53,7 +53,7 @@ class EmbedController < ApplicationController
   end
 
   def render_404
-    render :status => 404, :file => "#{RAILS_ROOT}/public/404.html"
+    render :status => 404, :file => "#{Rails.root}/public/404.html"
   end
 
 end

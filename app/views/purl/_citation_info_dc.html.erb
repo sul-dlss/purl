@@ -1,4 +1,5 @@
 <div id="title-metadata">
+	<h4>old dublin core based display</h4>
   <h2><%= print_title_value() %></h2>
 
   <dl>
@@ -19,6 +20,7 @@
     <%= print_relation_url("Related Link", "<br/>") %>
   </dl>
   <dl>
+	  <h4>MODS based display</h4>
   <h2><%=render_mods_display(@purl.mods_display_object).title.first.html_safe%></h2>
   <%=render_mods_display(@purl.mods_display_object).body.html_safe%>
 </dl>
