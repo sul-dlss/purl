@@ -60,9 +60,25 @@ describe 'purl' do
       response.body.include?('var peImgInfo = [ { "id": "bf973rp9392_00_0001","label": "Item 1","width": 1740,"height": 1675,"sequence": 1,"rightsWorld": "true","rightsWorldRule": "","rightsStanford": "false","rightsStanfordRule": "",}').should == true
       response.body.include?('var peStacksURL = "http://stacks-test.stanford.edu";').should == true
     end
+    it 'should 404 if the item isnt an image object' do
+      visit "/#{@file_object}/embed-js"
+      page.status_code.should == 404
+    end
+    it 'should get the html-json data' do
+      get "/#{@embed_object}/embed-html-json"
+      response.body.include?('{ "id": "bf973rp9392_00_0002","label": "Item 2","width": 1752,"height": 1687,"sequence": 2,"rightsWorld": "true","rightsWorldRule": "","rightsStanford": "false","rightsStanfordRule": "",}').should == true
+    end
     it 'should render the embed view' do
-      visit "/#{embed_object}/embed"
-      
+      get "/#{@embed_object}/embed"
+      response.body.include?('var peImgInfo = [ { "id": "bf973rp9392_00_0001","label": "Item 1","width": 1740,"height": 1675,"sequence": 1,"rightsWorld": "true","rightsWorldRule": "","rightsStanford": "false","rightsStanfordRule": "",}').should == true
+      response.body.include?('var peStacksURL = "http://stacks-test.stanford.edu";').should == true
+    end
+    it 'should 404 for an unpublished object' do
+      visit "/#{@unpublished_object}/embed"
+      page.status_code.should == 404
+      puts page.text
+      #this is from 404.html....not sure why but thats how the app works
+      page.has_content?('The page you were looking for doesn\'t exist.').should == true
     end
   end
   describe 'incomplete object' do
@@ -101,9 +117,16 @@ describe 'purl' do
     end
   end
   describe 'license' do
-  
+    it 'should have a license statement' do
+    visit "/#{@file_object}"
+    page.has_content?('This work is licensed under a Open Data Commons Public Domain Dedication and License (PDDL)').should == true
   end
-  describe 'use and reproduction' do
+  end
+  describe 'terms of use' do
+    it 'should have terms of use' do
+      visit "/#{@file_object}"
+      page.has_content?('User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or').should == true
+    end
   
   end
   describe 'in production mode' do
