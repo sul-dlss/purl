@@ -80,6 +80,11 @@ class PurlController < ApplicationController
   def render_404(type)
     render "purl/_" + type, :layout => "application", :status => 404
   end
-
+  configure_mods_display do
+      abstract do
+        label_class "abstract"
+        value_class "desc-content"
+      end
+    end
 end
 
