@@ -65,3 +65,17 @@ PurlRails3::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 end
+module Dor
+  WF_URI = 'http://lyberservices-prod.stanford.edu/workflow'
+end
+
+FEDORA_URL = 'https://fedoraAdmin:1y83r73am@dor-prod.stanford.edu/fedora'
+CERT_FILE = File.join(RAILS_ROOT, "config", "certs", "etd-prod.crt")
+KEY_FILE = File.join(RAILS_ROOT, "config", "certs", "etd-prod.key")
+KEY_PASS = 'etdprod'
+
+STACKS_URL = 'https://stacks.stanford.edu'
+FLIPBOOK_URL = 'http://sul-reader.stanford.edu/flipbook2'
+
+# document cache location
+DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'
