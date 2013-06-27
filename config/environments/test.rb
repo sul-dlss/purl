@@ -1,4 +1,4 @@
-PurlRails3::Application.configure do
+Purl::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # The test environment is used exclusively to run your application's
@@ -35,3 +35,18 @@ PurlRails3::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 end
+module Dor
+  WF_URI = 'http://lyberservices-dev.stanford.edu/workflow'
+end
+
+FEDORA_URL = 'https://fedoraAdmin:1y83r73am@dor-prod.stanford.edu/fedora'
+CERT_FILE = File.join( "config", "certs", "etd-prod.crt")
+KEY_FILE = File.join( "config", "certs", "etd-prod.key")
+KEY_PASS = 'etdprod'
+
+STACKS_URL = 'http://stacks-test.stanford.edu'
+FLIPBOOK_URL = 'http://sul-reader.stanford.edu/flipbook2-test'
+
+# document cache location
+## DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'
+DOCUMENT_CACHE_ROOT = 'spec/fixtures/document_cache'

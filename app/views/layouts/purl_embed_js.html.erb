@@ -6,5 +6,5 @@
   </script>
   <%= yield %>
 
-  <%= render :partial => 'purl/ga' if RAILS_ENV == 'production' %>
+  <%= render :partial => 'purl/ga' if Rails.env == 'production' %>
 </div>

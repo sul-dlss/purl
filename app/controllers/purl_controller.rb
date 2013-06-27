@@ -44,7 +44,7 @@ class PurlController < ApplicationController
         }
       end
     else
-      render :partial => "purl/unavailable", :layout => "purl_image"
+      render "purl/_unavailable", :layout => "purl_image"
       return false
     end
   end
@@ -67,7 +67,6 @@ class PurlController < ApplicationController
   end
 
   def load_purl
-    puts 'id:'+params[:id]
     @purl = PurlObject.find(params[:id])
 
     # Catch well formed druids that don't exist in the document cache
@@ -79,7 +78,7 @@ class PurlController < ApplicationController
   end
 
   def render_404(type)
-    render :status => 404, :partial => "purl/" + type, :layout => "application"
+    render "purl/_" + type, :layout => "application", :status => 404
   end
 
 end
