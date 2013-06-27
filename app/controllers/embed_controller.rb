@@ -9,7 +9,7 @@ class EmbedController < ApplicationController
 
   def index
     if @purl.is_image?
-      render :partial => "purl/embed/img_viewer", :layout => "purl_embed"
+      render "purl/embed/_img_viewer", :layout => "purl_embed"
     else
       render_404
     end
@@ -26,7 +26,7 @@ class EmbedController < ApplicationController
 
   def embed_js
     if @purl.is_image?
-      render :partial => "purl/embed/img_viewer", :layout => "purl_embed_js"
+      render "purl/embed/_img_viewer", :layout => "purl_embed_js"
     else
       render_404
     end
@@ -42,7 +42,7 @@ class EmbedController < ApplicationController
   end
 
   def load_purl
-    @purl = Purl.find(params[:id])
+    @purl = PurlObject.find(params[:id])
 
     # Catch well formed druids that don't exist in the document cache
     if @purl.nil?

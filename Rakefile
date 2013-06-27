@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-PurlRails3::Application.load_tasks
+Purl::Application.load_tasks
