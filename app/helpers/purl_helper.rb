@@ -263,8 +263,6 @@ module PurlHelper
   # get first deliverable image file
   def get_first_deliverable_image_file
     @purl.deliverable_files.each do |deliverable_file|
-      Rails.logger.info(deliverable_file.filename.to_s)
-
       if deliverable_file.mimetype == "image/jp2"
         return deliverable_file
       end
