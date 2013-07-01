@@ -8,6 +8,7 @@ describe 'purl' do
     @embed_object = 'bf973rp9392'
     @incomplete_object = 'bb157hs6069'
     @unpublished_object = 'ab123cd4567'
+    @legacy_object='ir:rs276tc2764'
   end
   describe 'gallery view' do
     it 'should render a gallery view' do
@@ -68,6 +69,12 @@ describe 'purl' do
       get "/#{@embed_object}/embed-html-json"
       response.body.include?('{ "id": "bf973rp9392_00_0002","label": "Item 2","width": 1752,"height": 1687,"sequence": 2,"rightsWorld": "true","rightsWorldRule": "","rightsStanford": "false","rightsStanfordRule": "",}').should == true
     end
+    it 'should 404 for an unpublished object' do
+      visit "/#{@unpublished_object}/embed-html-json"
+      page.status_code.should == 404
+      #this is from 404.html....not sure why but thats how the app works
+      page.has_content?('The page you were looking for doesn\'t exist.').should == true
+    end
     it 'should render the embed view' do
       get "/#{@embed_object}/embed"
       response.body.include?('var peImgInfo = [ { "id": "bf973rp9392_00_0001","label": "Item 1","width": 1740,"height": 1675,"sequence": 1,"rightsWorld": "true","rightsWorldRule": "","rightsStanford": "false","rightsStanfordRule": "",}').should == true
@@ -76,7 +83,6 @@ describe 'purl' do
     it 'should 404 for an unpublished object' do
       visit "/#{@unpublished_object}/embed"
       page.status_code.should == 404
-      puts page.text
       #this is from 404.html....not sure why but thats how the app works
       page.has_content?('The page you were looking for doesn\'t exist.').should == true
     end
@@ -93,21 +99,28 @@ describe 'purl' do
       page.status_code.should == 404
       page.has_content?('The item you requested is not available.').should == true
     end
-  
   end
   describe 'public xml' do
     it 'should fetch the public xml' do
-    get "/#{@image_object}.xml"
-    xml=Nokogiri::XML(response.body)
-    xml.search('//objectId').first.text.should == "druid:#{@image_object}"
+      get "/#{@image_object}.xml"
+      xml=Nokogiri::XML(response.body)
+      xml.search('//objectId').first.text.should == "druid:#{@image_object}"
+    end
+    it 'should fetch the public xml' do
+      visit "/#{@unpublished_object}.xml"
+      page.status_code.should == 404
     end
   end
   describe 'mods' do
     it 'should get the public mods' do
-    get "/#{@image_object}.mods"
-    xml=Nokogiri::XML(response.body)
-    xml.search('//mods:title', 'mods' => 'http://www.loc.gov/mods/v3').length.should == 1
-  end
+      get "/#{@image_object}.mods"
+      xml=Nokogiri::XML(response.body)
+      xml.search('//mods:title', 'mods' => 'http://www.loc.gov/mods/v3').length.should == 1
+    end
+    it 'should fetch the public xml' do
+      visit "/#{@unpublished_object}.mods"
+      page.status_code.should == 404
+    end
   end
   describe 'invalid druid' do
     it 'should error on invalid druids' do
@@ -116,20 +129,22 @@ describe 'purl' do
       page.status_code.should == 404
     end
   end
+  describe 'legacy object' do
+    it 'should handle a legacy object in a bizarre way' do
+      visit "/#{@legacy_object}"
+      puts page.text
+    end
+  end
   describe 'license' do
     it 'should have a license statement' do
-    visit "/#{@file_object}"
-    page.has_content?('This work is licensed under a Open Data Commons Public Domain Dedication and License (PDDL)').should == true
-  end
+      visit "/#{@file_object}"
+      page.has_content?('This work is licensed under a Open Data Commons Public Domain Dedication and License (PDDL)').should == true
+    end
   end
   describe 'terms of use' do
     it 'should have terms of use' do
       visit "/#{@file_object}"
       page.has_content?('User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or').should == true
     end
-  
-  end
-  describe 'in production mode' do
-
   end
 end

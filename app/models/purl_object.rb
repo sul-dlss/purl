@@ -330,10 +330,8 @@ class PurlObject
   def get_metadata(doc_name)
     pair_tree = PurlObject.create_pair_tree(@pid)
     contents = "<#{doc_name}/>"
-Rails.logger.error('hi')
     unless pair_tree.nil?
       file_path = File.join(DOCUMENT_CACHE_ROOT,pair_tree,doc_name)
-Rails.logger.error(file_path)
       if File.exists?(file_path)
         contents = File.read(file_path)
       end
