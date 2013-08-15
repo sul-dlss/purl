@@ -6,6 +6,7 @@
     <objectLabel>Walters MS 12</objectLabel>
     <objectType>item</objectType>
     <adminPolicy>druid:qc167qm9800</adminPolicy>
+    <otherId name="catkey">1122334455</otherId>
     <otherId name="uuid">01ab163a-d5e5-11e1-ad48-0016034322e2</otherId>
     <tag>Project : Walters Art Museum Manuscripts</tag>
     <tag>Registered By : blalbrit</tag>

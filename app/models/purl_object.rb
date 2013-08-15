@@ -318,9 +318,9 @@ class PurlObject
 
     return false
   end
-  
+
   def mods_display_object
-    @mods_display_object ||=ModsDisplayObject.new(get_metadata('mods'))
+    @mods_display_object ||= ModsDisplayObject.new(get_metadata('mods'))
     @mods_display_object
   end
 
@@ -400,6 +400,6 @@ class PurlObject
     end
     @ng_xml
   end
-  
+
 
 end
