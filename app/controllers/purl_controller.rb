@@ -17,21 +17,21 @@ class PurlController < ApplicationController
         format.html {
           # if the object is an image, render image specific layout
           if @purl.is_image?
-            render "/purl/image/_contents", layout: "layouts/purl_image"
+            render :template => "/purl/image/_contents", :layout => "layouts/purl_image"
           elsif @purl.is_book?
-            render "/purl/flipbook/_contents", :layout => "purl_flipbook"
+            render :template => "/purl/flipbook/_contents", :layout => "purl_flipbook"
           end
         }
 
         format.xml {
-          render :xml => @purl.public_xml
+          render :xml =>@purl.public_xml
         }
 
         format.mods {
           if @purl.has_mods
             render :xml => @purl.mods_xml
           else
-            render_404
+            render_404('invalid')
           end
         }
 
@@ -78,13 +78,15 @@ class PurlController < ApplicationController
   end
 
   def render_404(type)
-    render "purl/_" + type, :layout => "application", :status => 404
+    render "/purl/_" + type, :layout => "application", :status => 404
   end
+
   configure_mods_display do
-      abstract do
-        label_class "abstract"
-        value_class "desc-content"
-      end
+    abstract do
+      label_class "abstract"
+      value_class "desc-content"
     end
+  end
+
 end
 

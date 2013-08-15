@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rightsMetadata objectId="druid:bj071ff4194">
+  <copyright>
+    <human>(c) Copyright 2010 by Eric Maurice Mabery</human>
+  </copyright>
+  <access type="discover">
+    <machine>
+      <world/>
+    </machine>
+  </access>
+  <access type="read">
+    <machine>
+      <group>stanford</group>
+      <embargoReleaseDate>2011-03-09</embargoReleaseDate>
+    </machine>
+  </access>
+  <use>
+    <machine type="creativeCommons">by</machine>
+    <human type="creativeCommons">CC Attribution license</human>
+  </use>
+</rightsMetadata>

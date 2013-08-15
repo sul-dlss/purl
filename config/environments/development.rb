@@ -49,4 +49,5 @@ FLIPBOOK_URL = 'http://sul-reader.stanford.edu/flipbook2-test'
 
 # document cache location
 ## DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'
-DOCUMENT_CACHE_ROOT = 'spec/fixtures/document_cache'
+DOCUMENT_CACHE_ROOT = '/Users/jchris/work/document_cache'
+##DOCUMENT_CACHE_ROOT = 'spec/fixtures/document_cache'

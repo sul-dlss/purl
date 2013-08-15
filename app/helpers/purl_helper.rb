@@ -3,12 +3,6 @@ require 'purl/util.rb'
 
 module PurlHelper
 
-  # Method to round the given number to the given number of decimal points
-  def round_to(num, decimals=0)
-    factor = 10.0**decimals
-    (num*factor).round / factor
-  end
-
   # get id from JP2 filename
   def get_jp2_id(filename)
     PurlUtils.get_jp2_id(filename)
@@ -62,7 +56,7 @@ module PurlHelper
       html += output + "</dd>".html_safe
     end
 
-    html=html.html_safe
+    html = html.html_safe
   end
 
 
@@ -186,7 +180,7 @@ module PurlHelper
       end
     end
 
-    links.each do |link| 
+    links.each do |link|
       link.html_safe
     end
     links
@@ -216,7 +210,7 @@ module PurlHelper
 
   # convert date string to YYYY-MM-DD
   def format_date_string(str)
-    Date.strptime(str, '%Y-%m-%d')
+    DateTime.parse(str).strftime('%Y-%m-%d')
   end
 
   # get embargo text
@@ -249,7 +243,7 @@ module PurlHelper
   end
 
   # get number of gallery items per page
-  def get_gallery_items_per_page_count()
+  def get_gallery_items_per_page_count
     return 15
   end
 

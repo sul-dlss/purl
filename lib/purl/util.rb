@@ -62,7 +62,7 @@ module PurlUtils
                    "\"label\": \"" + get_file_label(img_file) + "\"," +
         	         "\"width\": " + width.to_s + "," +
         	       #   "\"height\": " + height.to_s + "," +
-        	       #   "\"sequence\": \"" + sequence + '.' + img_file.sequence.to_s +  "\"," +
+        	         "\"sequence\": \"" + sequence + '.' + img_file.sequence.to_s +  "\"," +
                 #    "\"rightsWorld\": \"" + rights_world.to_s + "\"," +
                 #    "\"rightsWorldRule\": \"" + rights_world_rule.to_s + "\"," +
                 #    "\"rightsStanford\": \"" + rights_stanford.to_s + "\"," +

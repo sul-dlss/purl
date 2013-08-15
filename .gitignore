@@ -3,6 +3,7 @@
 .powenv
 .sass-cache
 config/certs
+coverage
 db/*.sqlite3
 log/*
 public/.htaccess

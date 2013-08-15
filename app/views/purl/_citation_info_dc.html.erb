@@ -19,9 +19,12 @@
     <%= print_field_value("identifiers", "Identifier", "<br/>", true) %>
     <%= print_relation_url("Related Link", "<br/>") %>
   </dl>
-  <dl>
-	  <h4>MODS based display</h4>
-  <h2><%=render_mods_display(@purl.mods_display_object).title.first.html_safe%></h2>
-  <%=render_mods_display(@purl.mods_display_object).body.html_safe%>
-</dl>
+
+  <% if @purl.has_mods %>
+    <dl>
+    	<h4>MODS based display</h4>
+      <h2><%=render_mods_display(@purl.mods_display_object).title.first.html_safe%></h2>
+      <%=render_mods_display(@purl.mods_display_object).body.html_safe%>
+    </dl>
+  <% end %>
 </div>

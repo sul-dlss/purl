@@ -7,7 +7,7 @@
   su_only = ""
 
   if !deliverable_file.nil? && deliverable_file.rights_stanford
-    su_only = "<span class=\"icon-stanford-only\"></span>";
+    su_only = "<span class=\"icon-stanford-only\"></span>".html_safe
     href = "https://" + request.host_with_port + "/auth/" + @purl.pid + "#flipbook"
     label = " (Requires Stanford Authentication)"
   end
