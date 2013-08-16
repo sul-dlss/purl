@@ -425,6 +425,11 @@ a.item-header:hover {
 	top: 10px;
 }
 
+#img-viewer-pagination {
+  clear: both;
+  float: left;
+}
+
 #img-viewer-metadata {
 	float: left;
 	line-height: 1.6;
