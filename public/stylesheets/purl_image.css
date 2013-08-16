@@ -474,6 +474,10 @@ a.item-header:hover {
 	width: 350px;
 }
 
+#img-viewer-pagination {
+  float: left;
+}
+
 #img-viewer-prev, #img-viewer-next {
 	float: left;
 	padding: 0 8px;

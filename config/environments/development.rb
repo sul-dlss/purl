@@ -35,6 +35,7 @@ Purl::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 end
+
 module Dor
   WF_URI = 'http://lyberservices-dev.stanford.edu/workflow'
 end
