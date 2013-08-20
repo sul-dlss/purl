@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><%= yield(:title) %>Stanford Digital Repository</title>
     <link rel="shortcut icon" href="favicon.ico" />
-    <%= stylesheet_link_tag 'site', 'footer' %>
+    <%= stylesheet_link_tag 'site' %>
   </head>
   <body>
     <div id="container">
@@ -14,8 +14,8 @@
       </div>
     </div>
 
-    <%= render :partial => 'purl/footer' %>
-    <%= javascript_include_tag 'jquery', 'jquery.truncator', 'application', 'footer' %>
+    <%= render :partial => 'purl/static_footer' %>
+    <%= javascript_include_tag 'jquery', 'jquery.truncator', 'application' %>
 
     <%= render :partial => 'purl/ga' if Rails.env == 'production' %>
   </body>

@@ -239,3 +239,64 @@ highlight colour for browse by callnum:  #e5f1f4
 	margin-left: 2px;
 }
 
+/* footer
+---------------------------------------------------------------------------- */
+
+#footer {
+  width: 100%;
+  z-index: 1000;
+}
+
+.footer-contents {
+  clear: both;
+  color: #ccc;
+  line-height: 1.8em;
+  margin: 5px 0;
+  overflow: auto;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.footer-su, .footer-sul {
+  clear: both;
+  margin-left: 65px;
+  overflow: auto;
+  text-align: left;
+}
+
+.footer-sul {
+  background: transparent url('/images/footer-sul-divider.png') left bottom no-repeat;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.footer-logo {
+  float: left;
+  margin-left: 15px;
+  width: 120px;
+}
+
+.footer-su .footer-logo img {
+  padding-top: 2px;
+}
+
+.footer-links {
+  float: left;
+}
+
+.footer-sul .footer-links {
+  padding-top: 2px;
+}
+
+.footer-links a {
+  margin-right: 10px;
+}
+
+.footer-contents a, .footer-contents a:visited, .footer-contents a:hover {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-contents a:hover {
+  /*border-bottom: 1px dotted #ccc;*/
+}
