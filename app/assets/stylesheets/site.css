@@ -102,7 +102,7 @@ a:active {color: #4f4f4f;}
 }
 
 #metadata {float: right; width: 30%;}
-.swlink {padding: 0 0 15px 0; margin: 0 0 15px 0; font-size: 1.1em; border-bottom: 1px dotted #cccccc;s}
+.swlink {padding: 0 0 15px 0; margin: 0 0 15px 0; font-size: 1.1em; border-bottom: 1px dotted #cccccc;}
 
 dl {margin: 0 0 1em 0;}
 dt {clear: both; float: left; color: #555555; width: 7.5em; padding: 2px .5em 2px 0;}
@@ -148,7 +148,7 @@ table#assets {border: 1px solid #787676; background-color: #FFFFFF; margin: 12px
 /*#footer {color: #ffffff; text-align: center; margin: 0 0 35px 0;}*/
 /*#footer p {margin: 10px 0; font-size: .9em;}*/
 /*#footer a {color: #ffffff;}*/
-/*#footer a:hover {color: #ffffff /*#52c1e1*/; border-bottom: 1px dotted;}*/
+/*#footer a:hover {color: #ffffff /*#52c1e1; border-bottom: 1px dotted;}*/
 
 /*
 
