@@ -207,6 +207,8 @@ function showImg(sequence, size, animate) {
       $('#img-viewer-next > img').attr('src', '/images/img-view-group-next-active.png');
     }
   }
+
+  $('.img-rights-and-usage').show();
 }
 
 function loadImage(id, size) {
@@ -247,7 +249,7 @@ function loadImage(id, size) {
 
   $('#pane-img-viewer').height(viewfinderHeight + 'px');
 
-  $('#img-viewfinder').height((viewfinderHeight - 100) + 'px');
+  $('#img-viewfinder').height((viewfinderHeight - 200) + 'px');
   $('#img-viewfinder').width(($('#pane-img-viewer').width() - 220) + 'px');
 
   $('#img-canvas')
@@ -273,14 +275,14 @@ function loadZpr(id) {
 
   $('#pane-img-viewer').height(viewfinderHeight + 'px');
 
-  $('#img-viewfinder').height((viewfinderHeight - 100) + 'px');
+  $('#img-viewfinder').height((viewfinderHeight - 200) + 'px');
   $('#img-viewfinder').width(($('#pane-img-viewer').width() - 220) + 'px');
 
   $('#img-canvas').hide();
   $('#zpr-frame').show();
 
   $('#zpr-frame').width(($('#pane-img-viewer').width() - 232) + 'px');
-  $('#zpr-frame').height((viewfinderHeight - 128) + 'px');
+  $('#zpr-frame').height((viewfinderHeight - 228) + 'px');
 
   $('#zpr-frame').html('');
 
@@ -360,6 +362,8 @@ function updateViewerSizesLinks(id, index) {
 
 function viewTOC() {
   var slideWidth = parseInt($('#pane-toc-metadata').width(), 10);
+
+  $('.img-rights-and-usage').hide();
 
   if (gallery.view) {
     $(location).attr('href', '#gallery/' + gallery.pageNo);

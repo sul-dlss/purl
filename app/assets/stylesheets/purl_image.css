@@ -415,6 +415,23 @@ a.item-header:hover {
   top: 102px;
 }
 
+.img-rights-and-usage {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  height: 125px;
+  padding: 0 20px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+.img-rights-and-usage #rights-metadata {
+}
+
+.img-rights-and-usage #rights-metadata dl {
+  margin-bottom: 0px;
+}
+
 #img-canvas {
   margin: 10px;
 }

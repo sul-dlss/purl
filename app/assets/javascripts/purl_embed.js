@@ -108,7 +108,7 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
       currentSequence = validateSequence(inputSequence);
     }
 
-    if (typeof inputSequence !== 'undefined' && isValidSize(inputSize)) {
+    if (isValidSize(inputSize)) {
       currentSize = inputSize;
     }
 
