@@ -244,6 +244,8 @@ function loadImage(id, size) {
   var imgWidth = dimensions[1];
   var imgHeight = dimensions[2];
 
+  $('#img-viewer-metadata').width($('#img-viewer-metadata').width() - 150);
+
   $('#zpr-frame').hide();
   $('#img-canvas').show();
 
