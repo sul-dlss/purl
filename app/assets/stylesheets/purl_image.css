@@ -450,7 +450,7 @@ a.item-header:hover {
 #img-viewer-metadata {
 	float: left;
 	line-height: 1.6;
-	padding: 27px 10px 0 10px;
+	padding: 17px 10px 0 10px;
 }
 
 #img-viewer-links {
@@ -460,7 +460,7 @@ a.item-header:hover {
   height: 81px;
   margin: 0 10px;
   overflow: auto;
-  padding: 20px 0px 0px 0px;
+  padding: 0px 0px 10px 0px;
 }
 
 .viewer-nav-links {
