@@ -5,6 +5,11 @@ class PurlController < ApplicationController
   before_filter :validate_id
   before_filter :load_purl
 
+
+  #this empty config block is recommended by jkeck due to potential misconfiguration without it. That should be fixed in >= 0.1.4
+  configure_mods_display do
+  end
+
   # entry point into the application
   def index
     # validate that the metadata is ready for delivery
