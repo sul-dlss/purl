@@ -178,14 +178,15 @@ highlight colour for browse by callnum:  #e5f1f4
 #title-metadata dt, #rights-metadata dt {
     float: left;
     color: #555;
+    line-height: 1.5;
     min-width: 9.5em;
-    padding: 0 5px 0 0;
+    padding: 4px 5px 4px 0;
     text-align: left;
     width: 11em;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  
+
 }
 
 #title-metadata dd, #rights-metadata dd {

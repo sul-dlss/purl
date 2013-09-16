@@ -169,13 +169,18 @@ module PurlHelper
           link_label = downloadable_file.description_label
         end
 
-        link = "<a href=\"" + STACKS_URL + "/file/druid:" + @purl.pid + "/" + downloadable_file.filename + "\">" + link_label + "</a>"
+        if downloadable_file.rights_stanford || downloadable_file.rights_world
+          link = "<a href=\"" + STACKS_URL + "/file/druid:" + @purl.pid + "/" + downloadable_file.filename + "\">" + link_label + "</a>"
+        else
+          link = link_label
+        end
 
         if not(downloadable_file.size.nil? or downloadable_file.size.empty?)
           link += " (" + number_to_human_size(downloadable_file.size,:precision => 1) + ")"
         end
 
         link += "&nbsp; <img src=\"/images/icon-download.png\">"
+
         links.push(link)
       end
     end

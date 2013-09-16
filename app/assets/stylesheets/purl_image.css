@@ -149,7 +149,7 @@ h3 {
 }
 
 #rights-metadata {
-	width: 100%;
+	/*width: 100%;*/
 }
 
 #title-metadata dl, #rights-metadata dl {
@@ -159,20 +159,21 @@ h3 {
 #title-metadata dt, #rights-metadata dt {
     float: left;
     color: #555;
+    line-height: 1.5;
     min-width: 9.5em;
-    padding: 0 5px 0 0;
+    padding: 3px 5px 3px 0;
     text-align: left;
     width: 11em;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  
+
 }
 
 #title-metadata dd, #rights-metadata dd {
   line-height: 1.5;
   margin-left: 12em;
-  padding: 2px 0px;
+  padding: 3px 0px;
 }
 
 #title-metadata dd hr {
@@ -426,7 +427,7 @@ a.item-header:hover {
   bottom: 0;
   height: 140px;
   padding: 0 20px;
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
   margin-right: 10px;
 }
 
