@@ -121,11 +121,16 @@ h3 {
 }
 
 #title-metadata dt, #rights-metadata dt {
-  clear: both;
-  color: #555555;
-  float: left;
-  padding: 2px 0;
-  width: 12em;
+    float: left;
+    color: #555;
+    min-width: 9.5em;
+    padding: 0 5px 0 0;
+    text-align: left;
+    width: 11em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  
 }
 
 #title-metadata dd, #rights-metadata dd {
