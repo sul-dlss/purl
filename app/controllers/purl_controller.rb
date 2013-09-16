@@ -49,7 +49,7 @@ class PurlController < ApplicationController
         }
       end
     else
-      render "purl/_unavailable", :layout => "purl_image"
+      render "purl/_unavailable"
       return false
     end
   end
@@ -60,7 +60,7 @@ class PurlController < ApplicationController
   def validate_id
     # handle a single static grandfathered exception
     if params[:id] == 'ir:rs276tc2764'
-      redirect_to "/ir:rs276tc2764/index.html"
+      redirect_to "/rs276tc2764", action: "index"
       return
     end
 
