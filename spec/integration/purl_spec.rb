@@ -177,8 +177,10 @@ describe 'purl' do
 
   describe 'legacy object' do
     it 'should handle a legacy object in a bizarre way' do
+      new_path = '/' + @legacy_object.gsub(/^ir:/, '')
       visit "/#{@legacy_object}"
-      page.has_content?('Reassessing authorship of the Book of Mormon using delta and nearest shrunken centroid classification').should == true
+      # page.status_code.should == "302"
+      current_path.should == new_path
     end
   end
 
