@@ -33,12 +33,12 @@ if(!jQuery.support.cors&&window.XDomainRequest){var httpRegEx=/^https?:\/\//i;va
         peContainerHeight = $this.height();
 
         $.each(['purl_embed', 'zpr'], function(index, value) {
-          $('head').append('<link rel="stylesheet" href="' + serverURL + '/stylesheets/' + value + '.css" type="text/css" />')
+          $('head').append('<link rel="stylesheet" href="' + serverURL + '/assets/' + value + '.css" type="text/css" />')
         });
 
-        $.getScript(serverURL + '/javascripts/zpr.js', function() {
-          $.getScript(serverURL + '/javascripts/cselect.js', function() {
-            $.getScript(serverURL + '/javascripts/purl_embed.js', function() {
+        $.getScript(serverURL + '/assets/zpr.js', function() {
+          $.getScript(serverURL + '/assets/cselect.js', function() {
+            $.getScript(serverURL + '/assets/purl_embed.js', function() {
               $this.html(obj.page);
               var pe = new purlEmbed(obj.peImgInfo, obj.pePid, obj.peStacksURL, config, $this.selector);
             });
