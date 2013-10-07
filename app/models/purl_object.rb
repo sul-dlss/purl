@@ -328,6 +328,7 @@ class PurlObject
 
   # retrieve the given document from the document cache for the given object identifier
   def get_metadata(doc_name)
+    start_time=Time.now
     pair_tree = PurlObject.create_pair_tree(@pid)
     contents = "<#{doc_name}/>"
     unless pair_tree.nil?
@@ -340,7 +341,8 @@ class PurlObject
         contents.gsub!('stacks.stanford.edu','stacks-test.stanford.edu')
       end
     end
-
+    total_time=Time.now-start_time
+    Rails.logger.warn "Completed get_metadata for #{@pid} fetching #{doc_name} in #{total_time}"
     return contents
   end
 
