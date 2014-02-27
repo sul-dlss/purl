@@ -1,20 +1,24 @@
 source 'https://rubygems.org'
 source 'http://sul-gems.stanford.edu'
 
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.17'
 gem 'mods_display', '0.3.1'
 gem 'htmlentities'
 gem 'dor-rights-auth'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'json'
 gem 'rspec-rails'
 gem 'capybara'
 gem 'simplecov'
 gem 'execjs'
 gem 'therubyracer', :platforms => :ruby
+
+group :testing do
+  gem 'sqlite3'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
