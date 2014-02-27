@@ -43,7 +43,7 @@ describe PurlHelper do
     end
 
     it 'should get embargo text if embargo exists' do
-      helper.get_embargo_text.should == 'Access: Stanford only until 2014-01-18'
+      helper.get_embargo_text.should == 'Access: Stanford only until 2020-01-18'
     end
 
     it 'should get sidebar links' do
