@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 source 'http://sul-gems.stanford.edu'
 
 gem 'rails', '3.2.13'
-gem 'mods_display'
+gem 'mods_display', '0.3.1'
 gem 'htmlentities'
 gem 'dor-rights-auth'
 # Bundle edge Rails instead:
