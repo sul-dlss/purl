@@ -1,6 +1,6 @@
 set :rails_env, "test"
 set :deployment_host, "sul-purl-test.stanford.edu"
-set :bundle_without, [:deployment,:development,:test]
+set :bundle_without, [:deployment,:development,:production]
 set :scm, :none
 set :repository, "../"
 set :deploy_via, :copy
