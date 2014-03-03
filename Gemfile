@@ -16,11 +16,9 @@ gem 'simplecov'
 gem 'execjs'
 gem 'therubyracer', :platforms => :ruby
 
-group :test do
-  gem 'sqlite3'  
-end
+#gem 'sqlite3'  
 
-group :production do
+group :testing, :production do
   gem 'mysql'  
 end
 
