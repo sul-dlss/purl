@@ -295,7 +295,7 @@ class PurlObject
 
   # check if this object is of type image
   def is_image?
-    if !type.nil? && type =~ /Image|Map|Media/i
+    if !type.nil? && type =~ /Image|Map/i
       return true
     end
 
