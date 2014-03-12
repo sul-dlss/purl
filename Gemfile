@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 source 'http://sul-gems.stanford.edu'
 
 gem 'rails', '3.2.17'
-gem 'mods_display', '0.3.1'
+gem 'mods_display', '0.3.2'
 gem 'htmlentities'
 gem 'dor-rights-auth'
 
