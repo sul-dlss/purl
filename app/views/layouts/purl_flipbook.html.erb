@@ -20,7 +20,11 @@
     <%= javascript_include_tag 'jquery', 'jquery.truncator', 'application', 'purl_flipbook', 'footer' %>
     <script type="text/javascript">
       var pid = "<%= @purl.pid %>";
-      var flipbookUrl = "<%= FLIPBOOK_URL %>";
+      <% if @purl.read_group.casecmp('Stanford') == 0 %>
+        var flipbookUrl = "<%= FLIPBOOK_AUTH_URL %>";
+      <% else %>
+        var flipbookUrl = "<%= FLIPBOOK_URL %>";
+      <% end %>
     </script>
 
     <%= render :partial => 'purl/ga' if Rails.env == 'production' %>
