@@ -19,7 +19,6 @@ config.action_mailer.raise_delivery_errors = false
 # FEDORA_URL = 'https://dor-test.stanford.edu/fedora'
 # FEDORA_URL = 'http://localhost:8983/fedora'
 module Dor
-  WF_URI = 'http://lyberservices-test.stanford.edu/workflow'
 end
 
 FEDORA_URL = 'https://fedoraAdmin:fedoraAdmin@dor-test.stanford.edu/fedora'
@@ -29,6 +28,7 @@ KEY_PASS = 'lstest'
 
 STACKS_URL = 'http://stacks-test.stanford.edu'
 FLIPBOOK_URL = 'http://sul-reader.stanford.edu/flipbook2-test'
+FLIPBOOK_AUTH_URL = 'https://sul-reader.stanford.edu/flipbook2-test/auth'
 
 # document cache location
 DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'

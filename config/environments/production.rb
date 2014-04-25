@@ -76,6 +76,7 @@ KEY_PASS = 'etdprod'
 
 STACKS_URL = 'https://stacks.stanford.edu'
 FLIPBOOK_URL = 'http://sul-reader.stanford.edu/flipbook2'
+FLIPBOOK_AUTH_URL = 'https://sul-reader.stanford.edu/flipbook2/auth'
 
 # document cache location
 DOCUMENT_CACHE_ROOT = '/home/lyberadmin/document_cache'
