@@ -18,6 +18,11 @@ function showFullScreen(animate) {
   var slideWidth = parseInt($('#pane-toc-metadata').width(), 10);
   var iframeUrl =  flipbookUrl + '/embed.jsp?id=' + pid;
 
+  if (/Stanford/i.test(purlReadGroup)) {
+    iframeUrl = iframeUrl.replace(/http:/, 'https:');
+    iframeUrl = iframeUrl.replace(/\/embed.jsp/, '\/auth\/embed.jsp');
+  }
+
   if (typeof animate !== 'undefined' && !animate) {
     duration = 0;
   } else {
