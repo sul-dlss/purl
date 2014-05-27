@@ -47,6 +47,7 @@ function zpr(viewFinderId, inputValues) {
     setImgFrameSize(currentLevel);
     setupImgFrameDragging();
     storeRelativeLocation();
+    addOverlayStatement();
     addControlElements();
 
     if (hasZoomIncrement) centerImgFrame();
@@ -87,6 +88,8 @@ function zpr(viewFinderId, inputValues) {
     if (util.isValidLength(inputValues.marqueeImgSize)) {
       settings.marqueeImgSize = parseInt(inputValues.marqueeImgSize, 10);
     }
+
+    console.log(inputValues.overlayStatement);
   }
 
   /* render input errors to page */
@@ -103,9 +106,20 @@ function zpr(viewFinderId, inputValues) {
     }
   }
 
+  /* add overlay statement (if available) */
+  function addOverlayStatement() {
+    var overlayStatement = inputValues.overlayStatement;
+
+    if (typeof overlayStatement !== 'undefined' && overlayStatement !== '') {
+      viewFinder.append($('<div>').addClass('zpr-overlay-statement').html(overlayStatement));
+    }
+  }
+
 
   /* add zoom and other controls */
   function addControlElements() {
+    var top = 0;
+
     // add zoom/rotate controls
     viewFinder
     .append($('<div>').attr({ 'class': 'zpr-controls' })
@@ -122,6 +136,10 @@ function zpr(viewFinderId, inputValues) {
         .attr({ 'id': viewFinderId + '-rotate-ccw', 'src': purlServerURL + '/images/zpr-rotate-ccw.png' })
         .click(function() { rotate('ccw'); }))
     );
+
+    if ($('.zpr-overlay-statement').length > 0) {
+      $('.zpr-controls').css('top', $('.zpr-controls').position().top + $('.zpr-overlay-statement').outerHeight());
+    }
 
     setupMarquee();
   }
