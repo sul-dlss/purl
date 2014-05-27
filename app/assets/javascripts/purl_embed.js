@@ -256,7 +256,8 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
       'width': imgData[index].width,
       'height': imgData[index].height,
       'marqueeImgSize': 40,
-      'zoomIncrement': inputZoomIncrement
+      'zoomIncrement': inputZoomIncrement,
+      'overlayStatement': config.overlayStatement || '',
     });
 
     loadImgsInVerticalNavigation(index);
