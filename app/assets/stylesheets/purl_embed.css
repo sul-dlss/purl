@@ -249,6 +249,14 @@ a.active .pe-download-icon, a:visited .pe-download-icon {
   z-index: 1000;
 }
 
+.pe-overlay-statement {
+  background-color: #fff;
+  padding: 10px 10%;
+  position: absolute;
+  text-align: center;
+  top: 0;
+}
+
 .pe-purl-url {
   background-color: transparent;
   bottom: 0;
