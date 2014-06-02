@@ -47,7 +47,6 @@ function zpr(viewFinderId, inputValues) {
     setImgFrameSize(currentLevel);
     setupImgFrameDragging();
     storeRelativeLocation();
-    addOverlayStatement();
     addControlElements();
 
     if (hasZoomIncrement) centerImgFrame();
@@ -89,7 +88,6 @@ function zpr(viewFinderId, inputValues) {
       settings.marqueeImgSize = parseInt(inputValues.marqueeImgSize, 10);
     }
 
-    console.log(inputValues.overlayStatement);
   }
 
   /* render input errors to page */
@@ -103,15 +101,6 @@ function zpr(viewFinderId, inputValues) {
 
     if (errors.length > 0) {
       viewFinder.append(errorBlock);
-    }
-  }
-
-  /* add overlay statement (if available) */
-  function addOverlayStatement() {
-    var overlayStatement = inputValues.overlayStatement;
-
-    if (typeof overlayStatement !== 'undefined' && overlayStatement !== '') {
-      viewFinder.append($('<div>').addClass('zpr-overlay-statement').html(overlayStatement));
     }
   }
 
@@ -136,10 +125,6 @@ function zpr(viewFinderId, inputValues) {
         .attr({ 'id': viewFinderId + '-rotate-ccw', 'src': purlServerURL + '/images/zpr-rotate-ccw.png' })
         .click(function() { rotate('ccw'); }))
     );
-
-    if ($('.zpr-overlay-statement').length > 0) {
-      $('.zpr-controls').css('top', $('.zpr-controls').position().top + $('.zpr-overlay-statement').outerHeight());
-    }
 
     setupMarquee();
   }
