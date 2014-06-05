@@ -19,7 +19,7 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
   var origContainerWidth, origContainerHeight;
   var inputSequence, inputSize, inputLayout, inputZoomIncrement;
   var isFullScreenOn = false;
-  var showDisplayNoteOnlyOnFullScreen = false;
+  var showDisplayNoteOnlyOnFullScreen = true;
   var displayNote = '';
   var layouts = [ 'thumbs-nav-top', 'thumbs-nav-bottom', 'thin-nav-top', 'thin-nav-bottom' ];
   var cselectJson = [];
@@ -194,12 +194,27 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     var id = imgData[index].id;
     var url, dimensions;
     var imgWidth, imgHeight;
+    var heightdisplayNote = 0;
 
     if (typeof size === "undefined") {
       size = currentSize;
     } else {
       currentSize = size;
     }
+
+    $('.pe-display-note').remove();
+
+    if (displayNote !== '') {
+      $('<div>').addClass('pe-display-note').html(displayNote).appendTo('.pe-img-viewfinder').show();
+    }
+
+    if (!showDisplayNoteOnlyOnFullScreen || (showDisplayNoteOnlyOnFullScreen && isFullScreenOn)) {
+      heightdisplayNote = $('.pe-display-note').outerHeight();
+      $('.pe-display-note').show();
+    } else {
+      $('.pe-display-note').hide();
+    }
+
 
     $('#pe-zpr-frame').remove();
     $('.pe-img-canvas').remove();
@@ -227,6 +242,7 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
 
       $('<img class="pe-img-canvas">')
         .removeAttr('src').attr({ 'src': url })
+        // .css('margin-top', heightdisplayNote)
         .width(imgWidth).height(imgHeight)
         .click(function() {
           if (config.zoomOnClick) {
@@ -246,26 +262,18 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
     var z;
     var heightdisplayNote = 0;
 
-    currentSize = 'zoom';
-
-    $('.pe-overlay-statement').remove();
-
-    if (displayNote !== '') {
-      $('<div>').addClass('pe-overlay-statement').html(displayNote).appendTo('.pe-img-viewfinder');
-    }
-
     if (!showDisplayNoteOnlyOnFullScreen || (showDisplayNoteOnlyOnFullScreen && isFullScreenOn)) {
-      heightdisplayNote = $('.pe-overlay-statement').outerHeight();
+      heightdisplayNote = $('.pe-display-note').outerHeight();
+      console.log(heightdisplayNote);
     }
 
     $('<div id="pe-zpr-frame">')
       .html('')
       .width(parseInt($('.pe-container').width(), 10) - 20)
       .appendTo('.pe-img-viewfinder')
-      .css('margin-top', heightdisplayNote + 'px')
       .show();
 
-    if ($('.pe-h-nav').length)  {
+    if ($('.pe-h-nav').length > 0)  {
       $('#pe-zpr-frame').height(parseInt($('.pe-container').height(), 10) - 125 - 20 - heightdisplayNote);
     } else {
       $('#pe-zpr-frame').height(parseInt($('.pe-img-viewfinder').height(), 10) - 5 - heightdisplayNote);
