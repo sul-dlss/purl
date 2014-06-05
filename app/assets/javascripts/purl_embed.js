@@ -19,8 +19,8 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
   var origContainerWidth, origContainerHeight;
   var inputSequence, inputSize, inputLayout, inputZoomIncrement;
   var isFullScreenOn = false;
-  var showOverlayStatementOnlyOnFullScreen = false;
-  var overlayStatement = '';
+  var showDisplayNoteOnlyOnFullScreen = false;
+  var displayNote = '';
   var layouts = [ 'thumbs-nav-top', 'thumbs-nav-bottom', 'thin-nav-top', 'thin-nav-bottom' ];
   var cselectJson = [];
   var availableSizes = [];
@@ -114,12 +114,12 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
       currentSize = inputSize;
     }
 
-    if (typeof config.overlayStatement !== 'undefined' && config.overlayStatement !== '') {
-      overlayStatement = config.overlayStatement;
+    if (typeof config.displayNote !== 'undefined' && config.displayNote !== '') {
+      displayNote = config.displayNote;
     }
 
-    if (typeof config.showOverlayStatementOnlyOnFullScreen !== 'undefined' && typeof config.showOverlayStatementOnlyOnFullScreen === 'boolean' ) {
-      showOverlayStatementOnlyOnFullScreen = config.showOverlayStatementOnlyOnFullScreen;
+    if (typeof config.showDisplayNoteOnlyOnFullScreen !== 'undefined' && typeof config.showDisplayNoteOnlyOnFullScreen === 'boolean' ) {
+      showDisplayNoteOnlyOnFullScreen = config.showDisplayNoteOnlyOnFullScreen;
     }
 
     loadImgsInVerticalNavigation(getArrayIndexUsingSequence(currentSequence));
@@ -244,31 +244,31 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
   function loadZpr(index) {
     var id = imgData[index].id;
     var z;
-    var heightOverlayStatement = 0;
+    var heightdisplayNote = 0;
 
     currentSize = 'zoom';
 
     $('.pe-overlay-statement').remove();
 
-    if (overlayStatement !== '') {
-      $('<div>').addClass('pe-overlay-statement').html(overlayStatement).appendTo('.pe-img-viewfinder');
+    if (displayNote !== '') {
+      $('<div>').addClass('pe-overlay-statement').html(displayNote).appendTo('.pe-img-viewfinder');
     }
 
-    if (!showOverlayStatementOnlyOnFullScreen || (showOverlayStatementOnlyOnFullScreen && isFullScreenOn)) {
-      heightOverlayStatement = $('.pe-overlay-statement').outerHeight();
+    if (!showDisplayNoteOnlyOnFullScreen || (showDisplayNoteOnlyOnFullScreen && isFullScreenOn)) {
+      heightdisplayNote = $('.pe-overlay-statement').outerHeight();
     }
 
     $('<div id="pe-zpr-frame">')
       .html('')
       .width(parseInt($('.pe-container').width(), 10) - 20)
       .appendTo('.pe-img-viewfinder')
-      .css('margin-top', heightOverlayStatement + 'px')
+      .css('margin-top', heightdisplayNote + 'px')
       .show();
 
     if ($('.pe-h-nav').length)  {
-      $('#pe-zpr-frame').height(parseInt($('.pe-container').height(), 10) - 125 - 20 - heightOverlayStatement);
+      $('#pe-zpr-frame').height(parseInt($('.pe-container').height(), 10) - 125 - 20 - heightdisplayNote);
     } else {
-      $('#pe-zpr-frame').height(parseInt($('.pe-img-viewfinder').height(), 10) - 5 - heightOverlayStatement);
+      $('#pe-zpr-frame').height(parseInt($('.pe-img-viewfinder').height(), 10) - 5 - heightdisplayNote);
     }
 
     $('.pe-img-viewfinder').addClass('pe-overflow-hidden');
