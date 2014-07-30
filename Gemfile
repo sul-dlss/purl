@@ -36,6 +36,12 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :deployment do
+  gem 'capistrano', '~> 3.0'
+  gem 'lyberteam-capistrano-devel' 
+  gem 'capistrano-rails' 
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
