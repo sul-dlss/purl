@@ -2,7 +2,7 @@ require 'spec_helper'
 
 #=begin
 
-describe 'purl' do
+describe 'purl', type: :feature do
   before do
     @image_object='xm166kd3734'
     @file_object='wp335yr5649'
@@ -79,10 +79,10 @@ describe 'purl' do
   describe 'embeded viewer' do
     it 'should have the needed json embedded in a javascript variable' do
       #capybara wants a real html document, not a weird fragment. picky picky. use rspec.
-      get "/bf973rp9392/embed-js"
+      visit "/bf973rp9392/embed-js"
       #this is a crummy way to test for the presence of the data, but it is embedded as a javascript variable. Once it is a separate json path, this can be done in a better way
-      response.body.include?('var peImgInfo = [ { "id": "bf973rp9392_00_0001","label": "Item 1","width": 1740,"height": 1675,"sequence": 1,"rightsWorld": "true","rightsWorldRule": "","rightsStanford": "false","rightsStanfordRule": "",}').should == true
-      response.body.include?('var peStacksURL = "http://stacks-test.stanford.edu";').should == true
+      page.body.include?('var peImgInfo = [ { "id": "bf973rp9392_00_0001","label": "Item 1","width": 1740,"height": 1675,"sequence": 1,"rightsWorld": "true","rightsWorldRule": "","rightsStanford": "false","rightsStanfordRule": "",}').should == true
+      page.body.include?('var peStacksURL = "http://stacks-test.stanford.edu";').should == true
     end
     it 'should 404 if the item isnt an image object for /druid/embed-js' do
       visit "/#{@file_object}/embed-js"
@@ -97,8 +97,8 @@ describe 'purl' do
       page.status_code.should == 404
     end
     it 'should get the html-json data' do
-      get "/#{@embed_object}/embed-html-json"
-      response.body.include?('{ "id": "bf973rp9392_00_0002","label": "Item 2","width": 1752,"height": 1687,"sequence": 2,"rightsWorld": "true","rightsWorldRule": "","rightsStanford": "false","rightsStanfordRule": "",}').should == true
+      visit "/#{@embed_object}/embed-html-json"
+      page.body.include?('{ "id": "bf973rp9392_00_0002","label": "Item 2","width": 1752,"height": 1687,"sequence": 2,"rightsWorld": "true","rightsWorldRule": "","rightsStanford": "false","rightsStanfordRule": "",}').should == true
     end
     it 'should 404 for an unpublished object' do
       visit "/#{@unpublished_object}/embed-html-json"
@@ -107,9 +107,9 @@ describe 'purl' do
       page.has_content?('The page you were looking for doesn\'t exist.').should == true
     end
     it 'should render the embed view' do
-      get "/#{@embed_object}/embed"
-      response.body.include?('var peImgInfo = [ { "id": "bf973rp9392_00_0001","label": "Item 1","width": 1740,"height": 1675,"sequence": 1,"rightsWorld": "true","rightsWorldRule": "","rightsStanford": "false","rightsStanfordRule": "",}').should == true
-      response.body.include?('var peStacksURL = "http://stacks-test.stanford.edu";').should == true
+      visit "/#{@embed_object}/embed"
+      page.body.include?('var peImgInfo = [ { "id": "bf973rp9392_00_0001","label": "Item 1","width": 1740,"height": 1675,"sequence": 1,"rightsWorld": "true","rightsWorldRule": "","rightsStanford": "false","rightsStanfordRule": "",}').should == true
+      page.body.include?('var peStacksURL = "http://stacks-test.stanford.edu";').should == true
     end
     it 'should 404 for an unpublished object' do
       visit "/#{@unpublished_object}/embed"
@@ -141,8 +141,8 @@ describe 'purl' do
 
   describe 'public xml' do
     it 'should fetch the public xml' do
-      get "/#{@image_object}.xml"
-      xml=Nokogiri::XML(response.body)
+      visit "/#{@image_object}.xml"
+      xml=Nokogiri::XML(page.body)
       xml.search('//objectId').first.text.should == "druid:#{@image_object}"
     end
     it 'should fetch the public xml' do
@@ -153,8 +153,8 @@ describe 'purl' do
 
   describe 'mods' do
     it 'should get the public mods' do
-      get "/#{@image_object}.mods"
-      xml=Nokogiri::XML(response.body)
+      visit "/#{@image_object}.mods"
+      xml=Nokogiri::XML(page.body)
       xml.search('//mods:title', 'mods' => 'http://www.loc.gov/mods/v3').length.should == 1
     end
     it 'should fetch the public xml' do
