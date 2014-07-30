@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe PurlHelper do
+describe PurlHelper, type: :helper do
   class TestClass
   end
 
