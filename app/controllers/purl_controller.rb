@@ -14,16 +14,16 @@ class PurlController < ApplicationController
   def index
     # validate that the metadata is ready for delivery
 
-    if @purl.is_ready?
+    if @purl.ready?
 
       # render the landing page based on the format
       respond_to do |format|
 
         format.html {
           # if the object is an image, render image specific layout
-          if @purl.is_image?
+          if @purl.image?
             render :template => "/purl/image/_contents", :layout => "layouts/purl_image"
-          elsif @purl.is_book?
+          elsif @purl.book?
             render :template => "/purl/flipbook/_contents", :layout => "purl_flipbook"
           end
         }
@@ -94,4 +94,3 @@ class PurlController < ApplicationController
   end
 
 end
-

@@ -8,7 +8,7 @@ class EmbedController < ApplicationController
   before_filter :load_purl
 
   def index
-    if @purl.is_image?
+    if @purl.image?
       render "purl/embed/_img_viewer", :layout => "purl_embed"
     else
       render_404
@@ -16,7 +16,7 @@ class EmbedController < ApplicationController
   end
 
   def embed_html_json
-    if @purl.is_image?
+    if @purl.image?
       render :json => imgEmbedHtml(params[:callback])
     else
       render_404
@@ -25,7 +25,7 @@ class EmbedController < ApplicationController
 
 
   def embed_js
-    if @purl.is_image?
+    if @purl.image?
       render "purl/embed/_img_viewer", :layout => "purl_embed_js"
     else
       render_404

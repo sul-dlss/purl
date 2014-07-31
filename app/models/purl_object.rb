@@ -286,38 +286,43 @@ class PurlObject
     @extracted = true
   end
 
-  def is_ready?
+  def ready?
     if !@public_xml.nil? and !@public_xml.empty? and @public_xml != "<public/>"
       return true
     end
     return false
   end
+  alias_method :is_ready?, :ready?
 
   # check if this object is of type image
-  def is_image?
+  def image?
     if !type.nil? && type =~ /Image|Map/i
       return true
     end
 
     return false
   end
+  alias_method :is_image?, :image?
 
-  def is_book?
+  def book?
     if !type.nil? && type =~ /Book|Manuscript/i
       return true
     end
 
     return false
   end
+  alias_method :is_book?, :book?
 
   # check if this object has mods content
-  def has_mods
+  def has_mods?
     if !@mods_xml.nil? and !@mods_xml.empty? and @mods_xml != "<mods/>"
       return true
     end
 
     return false
   end
+  
+  alias_method :has_mods, :has_mods?
 
   def mods_display_object
     @mods_display_object ||= ModsDisplayObject.new(get_metadata('mods'))
