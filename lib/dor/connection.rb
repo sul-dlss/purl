@@ -28,8 +28,8 @@ module Dor
       https = get_http_connection(url)
       if(url.scheme == 'https')
         https.use_ssl = true
-        https.cert = OpenSSL::X509::Certificate.new( File.read(CERT_FILE) )
-        https.key = OpenSSL::PKey::RSA.new( File.read(KEY_FILE), KEY_PASS )
+        https.cert = OpenSSL::X509::Certificate.new( File.read(Settings.fedora.cert) )
+        https.key = OpenSSL::PKey::RSA.new( File.read(Settings.fedora.key), Settings.fedora.pass )
         https.verify_mode = OpenSSL::SSL::VERIFY_NONE
       end
       https

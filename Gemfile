@@ -49,6 +49,7 @@ group :deployment do
   gem 'capistrano-rails' 
 end
 
+gem 'rails_config'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

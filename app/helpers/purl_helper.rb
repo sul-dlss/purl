@@ -15,7 +15,7 @@ module PurlHelper
 
   # construct base URL using stacks URL
   def get_img_base_url(deliverable_file)
-    PurlUtils.get_img_base_url(@purl.pid, STACKS_URL, deliverable_file)
+    PurlUtils.get_img_base_url(@purl.pid, Settings.stacks.url, deliverable_file)
   end
 
   # get file label (if available) or jp2 id
@@ -170,7 +170,7 @@ module PurlHelper
         end
 
         if downloadable_file.rights_stanford || downloadable_file.rights_world
-          link = "<a href=\"" + STACKS_URL + "/file/druid:" + @purl.pid + "/" + downloadable_file.filename + "\">" + link_label + "</a>"
+          link = "<a href=\"" + Settings.stacks.url + "/file/druid:" + @purl.pid + "/" + downloadable_file.filename + "\">" + link_label + "</a>"
         else
           link = link_label
         end

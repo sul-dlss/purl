@@ -21,7 +21,7 @@ module ImgEmbedHtmlHelper
 
     json = [
       '"page" :"' + page.join('') + '"',
-      '"peStacksURL" :"' + STACKS_URL + '"',
+      '"peStacksURL" :"' + Settings.stacks.url + '"',
       '"purlServerURL" : "' + purl_server + '"',
       '"pePid" :"' + @purl.pid + '"',
       '"peImgInfo" : [' + get_image_json_array + ']'

@@ -1,5 +1,5 @@
 <script type="text/javascript">
-  var stacksURL = "<%= STACKS_URL %>";
+  var stacksURL = "<%= Settings.stacks.url %>";
   var pid = "<%= @purl.pid %>";
   var purlServerURL = "<%= request.scheme %>" + "://" + "<%= request.host_with_port %>";
   var galleryItemsPerPage = parseInt(<%= get_gallery_items_per_page_count() %>);

@@ -43,7 +43,7 @@ class PurlObject
     pair_tree = PurlObject.create_pair_tree(id)
 
     unless pair_tree.nil?
-      file_path = File.join(DOCUMENT_CACHE_ROOT, pair_tree)
+      file_path = File.join(Settings.document_cache_root, pair_tree)
       purl = PurlObject.new(id) if File.exists?(file_path)
     end
 
@@ -337,7 +337,7 @@ class PurlObject
     pair_tree = PurlObject.create_pair_tree(@pid)
     contents = "<#{doc_name}/>"
     unless pair_tree.nil?
-      file_path = File.join(DOCUMENT_CACHE_ROOT,pair_tree,doc_name)
+      file_path = File.join(Settings.document_cache_root,pair_tree,doc_name)
       if File.exists?(file_path)
         contents = File.read(file_path)
       end
@@ -364,7 +364,7 @@ class PurlObject
           :levels => file.levels,
           :resourceType => file.type,
           :label => file.description_label,
-          :stacksURL => get_img_base_url(@pid, STACKS_URL,file)
+          :stacksURL => get_img_base_url(@pid, Settings.stacks.url,file)
         }
 
         pages.push(page)

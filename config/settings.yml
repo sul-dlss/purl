@@ -1,0 +1,15 @@
+workflow:
+  url: "http://localhost:8080/workflow"
+fedora:
+  url: "http://localhost:8080/fedora"
+  cert: "<%= File.join(Rails.root, "config", "certs", "purl-prod.crt") %>"
+  key: "<%= File.join(Rails.root, "config", "certs", "purl-prod.crt") %>"
+  pass: ""
+stacks:
+  url: 'https://stacks.stanford.edu'
+  
+flipbook:
+  url: 'http://sul-reader.stanford.edu/flipbook2'
+  auth_url: 'https://sul-reader.stanford.edu/flipbook2/auth'
+
+document_cache_root: "<%= File.join(Rails.root, "document_cache") %>"

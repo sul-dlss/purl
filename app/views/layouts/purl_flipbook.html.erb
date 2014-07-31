@@ -21,7 +21,7 @@
     <script type="text/javascript">
       var pid = "<%= @purl.pid %>";
       var purlReadGroup = "<%= @purl.read_group %>";
-      var flipbookUrl = "<%= FLIPBOOK_URL %>";
+      var flipbookUrl = "<%= Settings.flipbook.url %>";
     </script>
 
     <%= render :partial => 'purl/ga' if Rails.env == 'production' %>

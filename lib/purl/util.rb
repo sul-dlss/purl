@@ -109,7 +109,7 @@ module PurlUtils
     url = deliverable_file.url || ""
 
     if !url.nil? and url.empty?
-      url = STACKS_URL + "/file/druid:" + pid + "/" + deliverable_file.filename
+      url = Settings.stacks.url + "/file/druid:" + pid + "/" + deliverable_file.filename
     end
 
     return URI::encode(url)

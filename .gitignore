@@ -11,3 +11,7 @@ public/*-embed.html
 public/*-plugin.html
 public/javascripts/purl_embed_new.js
 tmp/
+
+config/settings.local.yml
+config/settings/*
+config/environments/*.local.yml
