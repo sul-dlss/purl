@@ -34,6 +34,8 @@ set :linked_dirs, %w{config/settings config/certs log tmp/pids tmp/cache tmp/soc
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+before 'deploy:publishing', 'squash:write_revision'
+
 namespace :deploy do
 
   desc 'Restart application'
