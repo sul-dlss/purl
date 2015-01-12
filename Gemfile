@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.5'
+gem 'rails', '4.1.9'
 gem 'mods_display', '0.3.2'
 gem 'htmlentities'
 gem 'dor-rights-auth'
@@ -16,11 +16,11 @@ gem 'execjs'
 gem 'therubyracer', :platforms => :ruby
 
 group :development do
-  gem 'sqlite3'  
+  gem 'sqlite3'
 end
 
 group :testing, :production do
-  gem 'mysql'  
+  gem 'mysql'
 end
 
 # Gems used only for assets and not required
@@ -45,8 +45,8 @@ gem 'jbuilder', '~> 1.2'
 
 group :deployment do
   gem 'capistrano', '~> 3.0'
-  gem 'lyberteam-capistrano-devel' 
-  gem 'capistrano-rails' 
+  gem 'lyberteam-capistrano-devel'
+  gem 'capistrano-rails'
 end
 
 gem 'rails_config'
