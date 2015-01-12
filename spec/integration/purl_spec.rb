@@ -60,7 +60,7 @@ describe 'purl', type: :feature do
     end
     it 'should render nil for a non-flipbook' do
       visit "/#{@file_object}.flipbook"
-      expect(page.text).to eq 'null'
+      expect(page.status_code).to eq(404)
     end
   end
 
