@@ -44,7 +44,15 @@ class PurlController < ApplicationController
           if @purl.is_book?
             render :json => @purl.flipbook_json
           else
-            render :json => nil
+            render nothing: true, status: 404
+          end
+        }
+
+        format.manifest {
+          if @purl.has_manifest
+            render :json => @purl.manifest_json
+          else
+            render nothing: true, status: 404
           end
         }
       end

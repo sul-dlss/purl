@@ -17,6 +17,7 @@ class PurlObject
   attr_accessor :pid
   attr_accessor :public_xml
   attr_accessor :mods_xml
+  attr_accessor :manifest_json
   attr_accessor :flipbook_json
 
   # properties
@@ -69,6 +70,7 @@ class PurlObject
 
     @public_xml    = get_metadata('public')
     @mods_xml      = get_metadata('mods')
+    @manifest_json = get_metadata('manifest')
     @flipbook_json = get_flipbook_json
     @extracted     = false
   end
@@ -321,13 +323,24 @@ class PurlObject
 
     return false
   end
-  
+
   alias_method :has_mods, :has_mods?
 
   def mods_display_object
     @mods_display_object ||= ModsDisplayObject.new(get_metadata('mods'))
     @mods_display_object
   end
+
+  # check if this object has manifest content
+  def has_manifest?
+    if !@manifest_json.nil? and !@manifest_json.empty? and @manifest_json != "<manifest/>"
+      return true
+    end
+
+    return false
+  end
+
+  alias_method :has_manifest, :has_manifest?
 
   private
 
