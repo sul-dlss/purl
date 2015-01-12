@@ -7,6 +7,7 @@ describe 'purl', type: :feature do
     @image_object='xm166kd3734'
     @file_object='wp335yr5649'
     @flipbook_object = 'yr183sf1341'
+    @manifest_object = 'bb157hs6068'
     @embed_object = 'bf973rp9392'
     @incomplete_object = 'bb157hs6069'
     @unpublished_object = 'ab123cd4567'
@@ -60,7 +61,19 @@ describe 'purl', type: :feature do
     end
     it 'should render nil for a non-flipbook' do
       visit "/#{@file_object}.flipbook"
-      expect(page.text).to eq 'null'
+      expect(page.status_code).to eq(404)
+    end
+  end
+
+  describe 'manifest' do
+    it 'should render the json for manifest' do
+      visit "/#{@manifest_object}.manifest"
+      json_body=JSON.parse(page.text)
+      expect(json_body['label']).to eq('NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES DIVERS MOUVEMENS DES PLANETES ET LEURS DIVERSES REVOLUTIONS, AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE')
+    end
+    it 'should render nil for a non-manifest' do
+      visit "/#{@file_object}.manifest"
+      expect(page.status_code).to eq(404)
     end
   end
 
