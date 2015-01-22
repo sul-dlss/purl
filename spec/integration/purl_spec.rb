@@ -67,7 +67,7 @@ describe 'purl', type: :feature do
 
   describe 'manifest' do
     it 'should render the json for manifest' do
-      visit "/#{@manifest_object}.manifest"
+      visit "/#{@manifest_object}/iiif/manifest.json"
       json_body=JSON.parse(page.text)
       expect(json_body['label']).to eq('NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES DIVERS MOUVEMENS DES PLANETES ET LEURS DIVERSES REVOLUTIONS, AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE')
     end
