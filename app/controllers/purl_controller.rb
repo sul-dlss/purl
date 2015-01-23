@@ -47,18 +47,23 @@ class PurlController < ApplicationController
             render nothing: true, status: 404
           end
         }
-
-        format.manifest {
-          if @purl.has_manifest
-            render :json => @purl.manifest_json
-          else
-            render nothing: true, status: 404
-          end
-        }
       end
     else
       render "purl/_unavailable"
       return false
+    end
+  end
+
+  rescue_from(ActionController::UnknownFormat) do |e|
+    request.format = :html
+    render_404('unknown_format')
+  end
+
+  def manifest
+    if @purl.has_manifest
+      render :json => @purl.manifest_json
+    else
+      render nothing: true, status: 404
     end
   end
 
