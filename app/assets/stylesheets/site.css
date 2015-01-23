@@ -227,16 +227,17 @@ highlight colour for browse by callnum:  #e5f1f4
 .file_icon { float: left; }
 .file_link { margin: 0px 0px 0px 40px;}
 
-.cc_by, .cc_by_nc, .cc_by_nd, .cc_by_sa, .cc_by_nc_sa, .cc_by_nc_nd {
+.cc-by, .cc-by-nc, .cc-by_nd, .cc-by-sa, .cc-by-nc-sa, .cc-by-nc-nd, .cc-pdm {
   background: transparent url('/images/cc_by.png') no-repeat 0px 0px;
   padding: 0 0 0 90px;
   min-height: 30px;
 }
-.cc_by_nc { background-image: url('/images/cc_by_nc.png'); }
-.cc_by_nd { background-image: url('/images/cc_by_nd.png'); }
-.cc_by_sa { background-image: url('/images/cc_by_sa.png'); }
-.cc_by_nc_sa { background-image: url('/images/cc_by_nc_sa.png'); }
-.cc_by_nc_nd { background-image: url('/images/cc_by_nc_nd.png'); }
+.cc-by-nc { background-image: url('/images/cc_by_nc.png'); }
+.cc-by-nd { background-image: url('/images/cc_by_nd.png'); }
+.cc-by-sa { background-image: url('/images/cc_by_sa.png'); }
+.cc-by-nc-sa { background-image: url('/images/cc_by_nc_sa.png'); }
+.cc-by-nc-nd { background-image: url('/images/cc_by_nc_nd.png'); }
+.cc-pdm { background-image: url('/images/cc_pdm.png'); }
 
 .truncator-link { font-weight: bold; }
 
