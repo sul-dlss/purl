@@ -270,4 +270,17 @@ module PurlHelper
     return nil
   end
 
+  def get_license_html(group, symbol, type)
+    license = License::LICENSES[group.to_sym][symbol.to_sym]
+    html = type.to_s
+
+    if !license.blank?
+      html = "<div class=\"#{group}-#{symbol}\">"
+      html += "<a href=\"#{license[:link]}\" target=\"blank\">#{license[:desc]}</a>"
+      html += "</div>"
+    end
+
+    html.html_safe
+  end
+
 end

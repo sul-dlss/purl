@@ -6,54 +6,15 @@
 	  <% if not(@purl.cclicense_symbol.nil? or @purl.cclicense_symbol.empty?) %>
       <dt>License:</dt>
       <dd>
-			  <% if @purl.cclicense_symbol.to_s.eql? 'by' %>
-			    <div class="cc_by">
-				  <a href="http://creativecommons.org/licenses/by/3.0/" _target="blank">This work is licensed under a Creative Commons Attribution 3.0 Unported License</a>
-				</div>
-			  <% elsif @purl.cclicense_symbol.to_s.eql? 'by-sa' %>
-			    <div class="cc_by_sa">
-				    <a href="http://creativecommons.org/licenses/by-sa/3.0/" _target="blank">This work is licensed under a Creative Commons Attribution-Share Alike 3.0 Unported License</a>
-			    </div>
-			  <% elsif @purl.cclicense_symbol.to_s.eql? 'by-nd' %>
-			    <div class="cc_by_nd">
-				    <a href="http://creativecommons.org/licenses/by-nd/3.0/" _target="blank">This work is licensed under a Creative Commons Attribution-No Derivative Works 3.0 Unported License</a>
-			    </div>
-			  <% elsif @purl.cclicense_symbol.to_s.eql? 'by-nc' %>
-			    <div class="cc_by_nc">
-				    <a href="http://creativecommons.org/licenses/by-nc/3.0/" _target="blank">This work is licensed under a Creative Commons Attribution-Noncommercial 3.0 Unported License</a>
-			    </div>
-			  <% elsif @purl.cclicense_symbol.to_s.eql? 'by-nc-sa' %>
-			    <div class="cc_by_nc_sa">
-				    <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" _target="blank">This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License</a>
-			    </div>
-			  <% elsif @purl.cclicense_symbol.to_s.eql? 'by-nc-nd' %>
-			    <div class="cc_by_nc_nd">
-				    <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" _target="blank">This work is licensed under a Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported License</a>
-			    </div>
-			  <% else %>
-				   <%= @purl.cclicensetype.to_s %>
-			  <% end %>
+      	<%= get_license_html('cc', @purl.cclicense_symbol, @purl.cclicensetype) %>
 	    </dd>
 		<% end %>
+
 
 	  <% if not(@purl.odc_license.nil? or @purl.odc_license.empty?) %>
       <dt>License:</dt>
       <dd>
-			  <% if @purl.odc_license.to_s.eql? 'odc-pddl' or @purl.odc_license.to_s.eql? 'pddl' %>
-			    <div>
-				  <a href="http://opendatacommons.org/licenses/pddl/" _target="blank">This work is licensed under a Open Data Commons Public Domain Dedication and License (PDDL)</a>
-				  </div>
-			  <% elsif @purl.odc_license.to_s.eql? 'odc-by' %>
-			    <div>
-				  <a href="http://opendatacommons.org/licenses/by/" _target="blank">This work is licensed under a Open Data Commons Attribution License</a>
-				  </div>
-			  <% elsif @purl.odc_license.to_s.eql? 'odc-odbl' %>
-			    <div>
-				  <a href="http://opendatacommons.org/licenses/odbl/" _target="blank">This work is licensed under a Open Data Commons Open Database License (ODbL)</a>
-				  </div>
-				<% else %>
-					<%= @purl.odc_type.to_s %>
-			  <% end %>
+      	<%= get_license_html('odc', @purl.odc_license, @purl.odc_type) %>
 	    </dd>
 		<% end %>
 
