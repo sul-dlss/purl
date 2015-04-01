@@ -27,7 +27,7 @@ class License
       },
       :'pdm' => {
         :link => 'http://creativecommons.org/publicdomain/mark/1.0/',
-        :desc => 'This work is in the pubic domain per Creative Commons Public Domain Mark 1.0'
+        :desc => 'This work is in the public domain per Creative Commons Public Domain Mark 1.0'
       }
     },
 
