@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.9'
+gem 'rails', '4.1.11'
 gem 'mods_display', '0.3.2'
 gem 'htmlentities'
 gem 'dor-rights-auth'
