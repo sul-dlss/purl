@@ -9,7 +9,7 @@ describe PurlObject do
   describe ".image?" do
     it "should return true for the content type webarchive-seed" do
       item = PurlObject.new('ab123cd4567')
-      item.instance_variable_set(:@type,"Image")
+      item.instance_variable_set(:@type,"webarchive-seed")
       item.instance_variable_set(:@extracted,true)
       expect(item.image?).to be_truthy
     end
