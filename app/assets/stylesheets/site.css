@@ -88,7 +88,7 @@ a:active {color: #4f4f4f;}
 #headerlinks ul li a:hover {border-bottom: 1px dotted;}
 
 #banner {
-  background: url('../images/sulair_rosette_30x30.png') top left no-repeat;
+  background: image-url('sulair_rosette_30x30.png') top left no-repeat;
 	height: 35px;
 	margin: 8px 0 4px 0;
 	padding-left: 40px;
@@ -114,7 +114,7 @@ dd img {vertical-align: middle;}
   float: left; width: 65%;
 }
 .embargo-block {
-  background: url('/images/icon-info.png') left bottom no-repeat;
+  background: image-url('icon-info.png') left bottom no-repeat;
   border-top: 1px dotted #999;
   margin-top: 20px;
   padding: 8px 0 0 0;
@@ -127,7 +127,7 @@ table#assets {border: 1px solid #787676; background-color: #FFFFFF; margin: 12px
   font-size: 11px;
   padding: 5px;
   background-color: #222;
-  background-image: url(/images/availability-header.png);
+  background-image: image-url(availability-header.png);
   background-repeat: repeat-x;
   color: #ffffff;
   text-shadow: -1px -1px 0px #666;
@@ -228,16 +228,16 @@ highlight colour for browse by callnum:  #e5f1f4
 .file_link { margin: 0px 0px 0px 40px;}
 
 .cc-by, .cc-by-nc, .cc-by_nd, .cc-by-sa, .cc-by-nc-sa, .cc-by-nc-nd, .cc-pdm {
-  background: transparent url('/images/cc_by.png') no-repeat 0px 0px;
+  background: transparent image-url('cc_by.png') no-repeat 0px 0px;
   padding: 0 0 0 90px;
   min-height: 30px;
 }
-.cc-by-nc { background-image: url('/images/cc_by_nc.png'); }
-.cc-by-nd { background-image: url('/images/cc_by_nd.png'); }
-.cc-by-sa { background-image: url('/images/cc_by_sa.png'); }
-.cc-by-nc-sa { background-image: url('/images/cc_by_nc_sa.png'); }
-.cc-by-nc-nd { background-image: url('/images/cc_by_nc_nd.png'); }
-.cc-pdm { background-image: url('/images/cc_pdm.png'); }
+.cc-by-nc { background-image: image-url('cc_by_nc.png'); }
+.cc-by-nd { background-image: image-url('cc_by_nd.png'); }
+.cc-by-sa { background-image: image-url('cc_by_sa.png'); }
+.cc-by-nc-sa { background-image: image-url('cc_by_nc_sa.png'); }
+.cc-by-nc-nd { background-image: image-url('cc_by_nc_nd.png'); }
+.cc-pdm { background-image: image-url('cc_pdm.png'); }
 
 .truncator-link { font-weight: bold; }
 
@@ -272,7 +272,7 @@ highlight colour for browse by callnum:  #e5f1f4
 }
 
 .footer-sul {
-  background: transparent url('/images/footer-sul-divider.png') left bottom no-repeat;
+  background: transparent image-url('footer-sul-divider.png') left bottom no-repeat;
   margin-bottom: 10px;
   padding-bottom: 10px;
 }

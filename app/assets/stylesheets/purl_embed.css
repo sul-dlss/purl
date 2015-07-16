@@ -45,7 +45,7 @@ body { margin: 0; padding: 0; }
 }
 
 .pe-h-nav {
-  background: transparent url('/images/embed/pe-h-nav-bg.png') left top repeat-x;
+  background: transparent image-url('embed/pe-h-nav-bg.png') left top repeat-x;
   float: left;
   height: 72px;
   overflow: auto;
@@ -76,22 +76,22 @@ body { margin: 0; padding: 0; }
 }
 
 .pe-h-nav-prev {
-  background: transparent url('/images/img-view-group-prev-inactive.png') 8px 20px no-repeat;
+  background: transparent image-url('img-view-group-prev-inactive.png') 8px 20px no-repeat;
   cursor: default;
 }
 
 .pe-h-nav-prev-active {
-  background-image: url('/images/img-view-group-prev-active.png');
+  background-image: image-url('img-view-group-prev-active.png');
   cursor: pointer;
 }
 
 .pe-h-nav-next {
-  background: transparent url('/images/img-view-group-next-inactive.png') 8px 20px no-repeat;
+  background: transparent image-url('img-view-group-next-inactive.png') 8px 20px no-repeat;
   cursor: default;
 }
 
 .pe-h-nav-next-active {
-  background-image: url('/images/img-view-group-next-active.png');
+  background-image: image-url('img-view-group-next-active.png');
   cursor: pointer;
 }
 
@@ -229,7 +229,7 @@ img.pe-img-canvas {
 }
 
 .pe-download-icon {
-  background: transparent url('/images/icon-download.png') left top no-repeat;
+  background: transparent image-url('icon-download.png') left top no-repeat;
   margin-left: 20px;
   padding-left: 15px;
 }
@@ -299,7 +299,7 @@ a.active .pe-download-icon, a:visited .pe-download-icon {
 }
 
 .pe-full-screen-close {
-  background: transparent url('/images/icon-full-screen-close.png') center center no-repeat;
+  background: transparent image-url('icon-full-screen-close.png') center center no-repeat;
   cursor: pointer;
   display: none;
   height: 30px;
@@ -328,7 +328,7 @@ a.active .pe-download-icon, a:visited .pe-download-icon {
 }
 
 .pe-img-hover-nav-prev {
-  background: #000 url('/images/icon-hover-prev.png') center center no-repeat;
+  background: #000 image-url('icon-hover-prev.png') center center no-repeat;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   left: 0;
@@ -336,7 +336,7 @@ a.active .pe-download-icon, a:visited .pe-download-icon {
 }
 
 .pe-img-hover-nav-next {
-  background: #000 url('/images/icon-hover-next.png') center center no-repeat;
+  background: #000 image-url('icon-hover-next.png') center center no-repeat;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   right: 0;
@@ -346,7 +346,7 @@ a.active .pe-download-icon, a:visited .pe-download-icon {
 /* Style for layout: thumbs-nav-bottom */
 
 .pe-img-viewer-thumbs-nav-bottom .pe-h-nav {
-  background-image: url('/images/embed/pe-h-nav-bg-thumbs-nav-bottom.png');
+  background-image: image-url('embed/pe-h-nav-bg-thumbs-nav-bottom.png');
   margin-top: 3px;
 }
 
