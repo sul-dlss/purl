@@ -4,8 +4,8 @@ class EmbedController < ApplicationController
   include ImgEmbedHtmlHelper
   include PurlHelper
 
-  before_filter :validate_id
-  before_filter :load_purl
+  before_filter :validate_id, except: [:purl_embed_jquery_plugin]
+  before_filter :load_purl, except: [:purl_embed_jquery_plugin]
 
   def index
     if @purl.image?
@@ -13,6 +13,10 @@ class EmbedController < ApplicationController
     else
       render_404
     end
+  end
+
+  def purl_embed_jquery_plugin
+    redirect_to view_context.javascript_path('purl_embed_jquery_plugin')
   end
 
   def embed_html_json

@@ -1,0 +1,45 @@
+//= require jQuery.XDomainRequest
+
+(function($) {
+  var serverUrls = {
+    'test': '//purl-test.stanford.edu',
+    'prod': '//purl.stanford.edu',
+    'local': '//localhost:3000'
+  };
+
+  $.fn.embedPurl = function(config) {
+    var height = parseInt(config.height, 10),
+        width = parseInt(config.width, 10),
+        $this = $(this),
+        serverURL = serverUrls[config.server];
+
+    if (!isNaN(width)) $this.width(width);
+    if (!isNaN(height)) $this.height(height);
+
+    $.ajax({
+      url: serverURL + '/' + config.druid + '/embed-html-json?callback=callback',
+      dataType: 'jsonp',
+      type: "GET",
+
+      success: function(obj) {
+        purlServerURL = obj.purlServerURL;
+        peServerURL = obj.purlServerURL;
+        peContainerWidth  = $this.width();
+        peContainerHeight = $this.height();
+
+        $('head').append('<link rel="stylesheet" href="' + serverURL + '<%= asset_path 'purl_embed.css' %>' + '" type="text/css" />')
+
+        $.getScript(serverURL + '<%= asset_path 'purl_embed.js' %>', function() {
+          $this.html(obj.page);
+          var pe = new purlEmbed(obj.peImgInfo, obj.pePid, obj.peStacksURL, config, $this.selector);
+        });
+      },
+
+      error: function(xhr, status, errorThrown) {
+        $this.html("Error loading images for " + config.druid);
+      }
+    });
+  };
+
+
+})(jQuery);
