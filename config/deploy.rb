@@ -32,17 +32,3 @@ set :linked_dirs, %w{config/settings config/certs log tmp/pids tmp/cache tmp/soc
 # set :keep_releases, 5
 
 before 'deploy:publishing', 'squash:write_revision'
-
-namespace :deploy do
-
-  desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      execute :touch, release_path.join('tmp/restart.txt')
-    end
-  end
-
-  after :publishing, :restart
-
-end

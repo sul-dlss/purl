@@ -54,6 +54,8 @@ GEM
       sshkit (~> 1.2)
     capistrano-one_time_key (0.0.1)
       capistrano (~> 3.0)
+    capistrano-passenger (0.1.1)
+      capistrano (~> 3.0)
     capistrano-rails (1.1.2)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
@@ -224,6 +226,7 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano (~> 3.0)
+  capistrano-passenger
   capistrano-rails
   capybara
   coffee-rails (~> 4.0.0)

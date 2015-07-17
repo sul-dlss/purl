@@ -48,6 +48,7 @@ group :deployment do
   gem 'capistrano', '~> 3.0'
   gem 'lyberteam-capistrano-devel'
   gem 'capistrano-rails'
+  gem 'capistrano-passenger'
 end
 
 gem 'rails_config'
