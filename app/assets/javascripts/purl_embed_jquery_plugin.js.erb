@@ -11,12 +11,8 @@
     if (!isNaN(width)) $this.width(width);
     if (!isNaN(height)) $this.height(height);
 
-    $.ajax({
-      url: serverURL + '/' + config.druid + '/embed-html-json?callback=callback',
-      dataType: 'jsonp',
-      type: "GET",
-
-      success: function(obj) {
+    $.getJSON(serverURL + '/' + config.druid + '/embed-html-json?callback=?')
+      .done(function(obj) {
         purlServerURL = obj.purlServerURL;
         peServerURL = obj.purlServerURL;
         peContainerWidth  = $this.width();
@@ -28,12 +24,10 @@
           $this.html(obj.page);
           var pe = new purlEmbed(obj.peImgInfo, obj.pePid, obj.peStacksURL, config, $this.selector);
         });
-      },
-
-      error: function(xhr, status, errorThrown) {
+      })
+      .fail(function(xhr, status, errorThrown) {
         $this.html("Error loading images for " + config.druid);
-      }
-    });
+      });
   };
 
 
