@@ -77,7 +77,7 @@ h3 {
 }
 
 #banner {
-  background: url('../images/sulair_rosette_30x30.png') top left no-repeat;
+  background: image-url('sulair_rosette_30x30.png') top left no-repeat;
 	height: 35px;
 	margin: 8px 0 4px 0;
 	padding-left: 40px;
@@ -208,7 +208,7 @@ ol#toc {
 }
 
 ol#toc > li {
-  background: #fff url('../images/item-header-bg.png') left 2px repeat-x;
+  background: #fff image-url('item-header-bg.png') left 2px repeat-x;
   border: 1px solid #ccc;
   margin: 5px 5px 0 0;
   overflow: auto;
@@ -228,7 +228,7 @@ ol.gallery {
 }
 
 ol.gallery  li {
-  background: #fff url('../images/gallery-item-bg.png') left bottom repeat-x;
+  background: #fff image-url('gallery-item-bg.png') left bottom repeat-x;
   border: 1px solid #ccc;
   float: left;
   margin: 5px 5px 0 0;
@@ -247,7 +247,7 @@ ol.gallery .img-block {
 }
 
 .img-block {
-	background: #fff url('../images/loader_16x16.gif') center center no-repeat;
+	background: #fff image-url('loader_16x16.gif') center center no-repeat;
 }
 
 .img-block a {
@@ -284,7 +284,7 @@ ol.gallery .img-block {
 }
 
 a.item-header {
-  background: transparent url('../images/icon-show.png') 378px 16px no-repeat;
+  background: transparent image-url('icon-show.png') 378px 16px no-repeat;
   color: #000;
   display: block;
   outline: none;
@@ -294,7 +294,7 @@ a.item-header {
 
 
 ol#toc > li > a.item-header-hide {
-  background-image: url('../images/icon-hide.png');
+  background-image: image-url('icon-hide.png');
 }
 
 #icon-gallery-view, #icon-list-view {
@@ -413,7 +413,7 @@ a.item-header:hover {
 */
 
 #img-viewfinder {
-  /*background: url('../images/loader.gif') 30px 30px no-repeat;*/
+  /*background: image-url('loader.gif') 30px 30px no-repeat;*/
   display: block;
   left: 206px;
   overflow: auto;
@@ -524,7 +524,7 @@ a#img-viewer-prev:hover, a#img-viewer-next:hover {
 }
 
 #viewer-nav-selected-tab {
-	background: #fff url('/images/bg-viewer-selected-tab.png') repeat-x 0px 0px;
+	background: #fff image-url('bg-viewer-selected-tab.png') repeat-x 0px 0px;
 	border-top: 1px solid #878787;
 	border-right: 1px solid #878787;
 	border-left: 1px solid #878787;
@@ -610,16 +610,16 @@ a#img-viewer-prev:hover, a#img-viewer-next:hover {
 }
 
 .cc-by, .cc-by-nc, .cc-by-nd, .cc-by-sa, .cc-by-nc-sa, .cc-by-nc-nd, .cc-pdm {
-  background: transparent url('/images/cc_by.png') no-repeat 0px 0px;
+  background: transparent image-url('cc_by.png') no-repeat 0px 0px;
   padding: 0 0 0 100px;
   min-height: 30px;
 }
 
-.cc-by-nc { background-image: url('/images/cc_by_nc.png'); }
-.cc-by-nd { background-image: url('/images/cc_by_nd.png'); }
-.cc-by-sa { background-image: url('/images/cc_by_sa.png'); }
-.cc-by-nc-sa { background-image: url('/images/cc_by_nc_sa.png'); }
-.cc-by-nc-nd { background-image: url('/images/cc_by_nc_nd.png'); }
-.cc-pdm { background-image: url('/images/cc_pdm.png'); }
+.cc-by-nc { background-image: image-url('cc_by_nc.png'); }
+.cc-by-nd { background-image: image-url('cc_by_nd.png'); }
+.cc-by-sa { background-image: image-url('cc_by_sa.png'); }
+.cc-by-nc-sa { background-image: image-url('cc_by_nc_sa.png'); }
+.cc-by-nc-nd { background-image: image-url('cc_by_nc_nd.png'); }
+.cc-pdm { background-image: image-url('cc_pdm.png'); }
 
 .truncator-link { font-weight: bold; }

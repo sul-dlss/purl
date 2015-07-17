@@ -94,7 +94,7 @@ describe 'purl', type: :feature do
       #capybara wants a real html document, not a weird fragment. picky picky. use rspec.
       visit "/bf973rp9392/embed-js"
       #this is a crummy way to test for the presence of the data, but it is embedded as a javascript variable. Once it is a separate json path, this can be done in a better way
-      expect(page.body.include?('var peImgInfo = [ { "id": "bf973rp9392_00_0001","label": "Item 1","width": 1740,"height": 1675,"sequence": 1,"rightsWorld": "true","rightsWorldRule": "","rightsStanford": "false","rightsStanfordRule": "",}')).to eq(true)
+      expect(page.body).to include('var peImgInfo = [{"id":"bf973rp9392_00_0001","label":"Item 1","width":1740,"height":1675,"sequence":1,"rightsWorld":"true","rightsWorldRule":"","rightsStanford":"false","rightsStanfordRule":""}')
       expect(page.body.include?('var peStacksURL = "http://stacks-test.stanford.edu";')).to eq(true)
     end
     it 'should 404 if the item isnt an image object for /druid/embed-js' do
@@ -111,7 +111,7 @@ describe 'purl', type: :feature do
     end
     it 'should get the html-json data' do
       visit "/#{@embed_object}/embed-html-json"
-      expect(page.body.include?('{ "id": "bf973rp9392_00_0002","label": "Item 2","width": 1752,"height": 1687,"sequence": 2,"rightsWorld": "true","rightsWorldRule": "","rightsStanford": "false","rightsStanfordRule": "",}')).to eq(true)
+      expect(page.body).to include '{"id":"bf973rp9392_00_0002","label":"Item 2","width":1752,"height":1687,"sequence":2,"rightsWorld":"true","rightsWorldRule":"","rightsStanford":"false","rightsStanfordRule":""}'
     end
     it 'should 404 for an unpublished object' do
       visit "/#{@unpublished_object}/embed-html-json"
@@ -121,7 +121,7 @@ describe 'purl', type: :feature do
     end
     it 'should render the embed view' do
       visit "/#{@embed_object}/embed"
-      expect(page.body.include?('var peImgInfo = [ { "id": "bf973rp9392_00_0001","label": "Item 1","width": 1740,"height": 1675,"sequence": 1,"rightsWorld": "true","rightsWorldRule": "","rightsStanford": "false","rightsStanfordRule": "",}')).to eq(true)
+      expect(page.body).to include 'var peImgInfo = [{"id":"bf973rp9392_00_0001","label":"Item 1","width":1740,"height":1675,"sequence":1,"rightsWorld":"true","rightsWorldRule":"","rightsStanford":"false","rightsStanfordRule":""}'
       expect(page.body.include?('var peStacksURL = "http://stacks-test.stanford.edu";')).to eq(true)
     end
     it 'should 404 for an unpublished object' do

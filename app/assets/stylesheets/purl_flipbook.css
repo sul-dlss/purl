@@ -78,7 +78,7 @@ h3 {
 }
 
 #banner {
-  background: url('../images/sulair_rosette_30x30.png') top left no-repeat;
+  background: image-url('sulair_rosette_30x30.png') top left no-repeat;
 	height: 35px;
 	margin: 8px 0 4px 0;
 	padding-left: 40px;
@@ -172,7 +172,7 @@ ol#toc {
 }
 
 ol#toc > li {
-  background: #fff url('../images/item-header-bg.png') left 2px repeat-x;
+  background: #fff image-url('item-header-bg.png') left 2px repeat-x;
   border: 1px solid #ccc;
   margin: 5px 5px 0 0;
   overflow: auto;
@@ -214,17 +214,17 @@ ol#toc > li {
 }
 
 .cc-by, .cc-by-nc, .cc-by-nd, .cc-by-sa, .cc-by-nc-sa, .cc-by-nc-nd, .cc-pdm {
-  background: transparent url('/images/cc_by.png') no-repeat 0px 0px;
+  background: transparent image-url('cc_by.png') no-repeat 0px 0px;
   padding: 0 0 0 100px;
   min-height: 30px;
 }
 
-.cc-by-nc { background-image: url('/images/cc_by_nc.png'); }
-.cc-by-nd { background-image: url('/images/cc_by_nd.png'); }
-.cc-by-sa { background-image: url('/images/cc_by_sa.png'); }
-.cc-by-nc-sa { background-image: url('/images/cc_by_nc_sa.png'); }
-.cc-by-nc-nd { background-image: url('/images/cc_by_nc_nd.png'); }
-.cc-pdm { background-image: url('/images/cc_pdm.png'); }
+.cc-by-nc { background-image: image-url('cc_by_nc.png'); }
+.cc-by-nd { background-image: image-url('cc_by_nd.png'); }
+.cc-by-sa { background-image: image-url('cc_by_sa.png'); }
+.cc-by-nc-sa { background-image: image-url('cc_by_nc_sa.png'); }
+.cc-by-nc-nd { background-image: image-url('cc_by_nc_nd.png'); }
+.cc-pdm { background-image: image-url('cc_pdm.png'); }
 
 .truncator-link { font-weight: bold; }
 
@@ -251,7 +251,7 @@ ol#toc > li {
 	cursor: pointer;
 	height: 30px;
 	width: 30px;
-  background: url('/images/icon-full-screen-close.png') no-repeat 0 0;
+  background: image-url('icon-full-screen-close.png') no-repeat 0 0;
 	position: absolute;
 	top: 5px;
 	right: 24px;

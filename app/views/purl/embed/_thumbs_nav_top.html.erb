@@ -1,17 +1,4 @@
-<%# Layout for thumbs-nav-bottom %>
-
-<div class="pe-img-viewer-thumbs-nav-bottom" style="display: none;">
-  <div class="pe-nav-contents">
-    <div class="pe-img-viewfinder">
-      <img class="pe-img-canvas" src="" title="" alt="" />
-      <div id="pe-zpr-frame"></div>
-    </div>
-    <div class="pe-dd-cselect"></div>
-    <div class="pe-full-screen-nav">
-      <%= image_tag "icon-full-screen-expand.png", class: "pe-full-screen-ctrl" %>
-    </div>
-  </div>
-
+<div class="pe-img-viewer-default pe-img-viewer-thumbs-nav-top" style="display: none;">
   <% if @purl.deliverable_files.length > 1 %>
     <div class="pe-h-nav">
       <a class="pe-h-nav-prev"></a>
@@ -24,6 +11,17 @@
       <div class="pe-h-nav-pagination"></div>
     </div>
   <% end %>
+
+  <div class="pe-nav-contents">
+    <div class="pe-dd-cselect"></div>
+    <div class="pe-full-screen-nav">
+      <%= image_tag "icon-full-screen-expand.png", class: "pe-full-screen-ctrl" %>
+    </div>
+    <div class="pe-img-viewfinder">
+      <img class="pe-img-canvas" src="" title="" alt="" />
+      <div id="pe-zpr-frame"></div>
+    </div>
+  </div>
 
   <div class="pe-purl-url">
     <a href="<%= purl_url %>" target="_blank"><%= purl_url %></a>

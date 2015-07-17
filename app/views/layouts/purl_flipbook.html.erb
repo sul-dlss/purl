@@ -17,7 +17,7 @@
     </div>
 
     <%= render :partial => 'purl/footer' %>
-    <%= javascript_include_tag 'jquery', 'jquery.truncator', 'application', 'purl_flipbook', 'footer' %>
+    <%= javascript_include_tag 'application', 'purl_flipbook', 'footer' %>
     <script type="text/javascript">
       var pid = "<%= @purl.pid %>";
       var purlReadGroup = "<%= @purl.read_group %>";

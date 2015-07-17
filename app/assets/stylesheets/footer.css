@@ -6,7 +6,7 @@
 }
 
 .footer-show-hide {
-  background: transparent url('/images/icon-img-footer-show.png') no-repeat 0px 0px;
+  background: transparent image-url('icon-img-footer-show.png') no-repeat 0px 0px;
   cursor: pointer;
   float: right;
   height: 32px;
@@ -37,7 +37,7 @@
 }
 
 .footer-sul {
-  background: transparent url('/images/footer-sul-divider.png') left bottom no-repeat;
+  background: transparent image-url('footer-sul-divider.png') left bottom no-repeat;
   margin-bottom: 10px;
   padding-bottom: 10px;
 }

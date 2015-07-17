@@ -10,12 +10,12 @@
       <%= yield %>
     </div>
 
-    <%= javascript_include_tag 'jquery', 'purl_embed', 'cselect', 'zpr' %>
+    <%= javascript_include_tag 'jquery', 'purl_embed'%>
     <%= render :partial => 'purl/image/json_embed' %>
     <script type="text/javascript">
       $(function() { var pe = new purlEmbed(peImgInfo, pePid, peStacksURL); });
     </script>
 
-    <%= render :partial => 'purl/ga' if Rails.env == 'production' %>
+    <%= render :partial => 'purl/ga' if Rails.env.production? %>
   </body>
 </html>

@@ -1,3 +1,6 @@
+//= require zpr
+//= require cselect
+
 $.support.cors = true;
 
 /* Function to make an array unique */
