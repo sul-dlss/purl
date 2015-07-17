@@ -179,7 +179,7 @@ module PurlHelper
           link += " (" + number_to_human_size(downloadable_file.size,:precision => 1) + ")"
         end
 
-        link += "&nbsp; <img src=\"/images/icon-download.png\">"
+        link += "&nbsp;" + image_tag('icon-download.png')
 
         links.push(link)
       end

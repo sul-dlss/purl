@@ -64,9 +64,9 @@
 				      </a>
 				    </div>
 				    <div class="img-group-nav">
-					    <a href="javascript:showGalleryImg('<%= sno %>', '<%= img_files.length %>', '<%= @purl.pid %>', '<%= sequence %>', -1);"><img class="gallery-img-nav-icon" src="/images/gallery-img-prev.png"></a>
+					    <a href="javascript:showGalleryImg('<%= sno %>', '<%= img_files.length %>', '<%= @purl.pid %>', '<%= sequence %>', -1);"><%= image_tag "gallery-img-prev.png", class: "gallery-img-nav-icon" %></a>
 					    <%= sno %> of <%= img_files.length %>
-				      <a href="javascript:showGalleryImg('<%= sno %>', '<%= img_files.length %>', '<%= @purl.pid %>', '<%= sequence %>', 1);"><img class="gallery-img-nav-icon" src="/images/gallery-img-next.png"></a>
+				      <a href="javascript:showGalleryImg('<%= sno %>', '<%= img_files.length %>', '<%= @purl.pid %>', '<%= sequence %>', 1);"><%= image_tag "gallery-img-next.png", class: "gallery-img-nav-icon" %></a>
 					  </div>
 				    <div class="img-group-label-container"><%= get_file_label(img_file) %></div>
 			    </div>
