@@ -8,6 +8,7 @@ gem 'dor-rights-auth'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'jquery-rails'
 gem 'json'
 gem 'rspec-rails'
 gem 'capybara'
