@@ -1,12 +1,11 @@
-require "dor/util"
+require 'dor/util'
 
 class PurlController < ApplicationController
   include ModsDisplay::ControllerExtension
-  before_filter :validate_id
-  before_filter :load_purl
+  before_action :validate_id
+  before_action :load_purl
 
-
-  #this empty config block is recommended by jkeck due to potential misconfiguration without it. That should be fixed in >= 0.1.4
+  # this empty config block is recommended by jkeck due to potential misconfiguration without it. That should be fixed in >= 0.1.4
   configure_mods_display do
   end
 
@@ -18,50 +17,49 @@ class PurlController < ApplicationController
 
       # render the landing page based on the format
       respond_to do |format|
-
-        format.html {
+        format.html do
           # if the object is an image, render image specific layout
           if @purl.image?
-            render :template => "/purl/image/_contents", :layout => "layouts/purl_image"
+            render template: '/purl/image/_contents', layout: 'layouts/purl_image'
           elsif @purl.book?
-            render :template => "/purl/flipbook/_contents", :layout => "purl_flipbook"
+            render template: '/purl/flipbook/_contents', layout: 'purl_flipbook'
           end
-        }
+        end
 
-        format.xml {
-          render :xml =>@purl.public_xml
-        }
+        format.xml do
+          render xml: @purl.public_xml
+        end
 
-        format.mods {
+        format.mods do
           if @purl.has_mods
-            render :xml => @purl.mods_xml
+            render xml: @purl.mods_xml
           else
             render_404('invalid')
           end
-        }
+        end
 
-        format.flipbook {
+        format.flipbook do
           if @purl.is_book?
-            render :json => @purl.flipbook_json
+            render json: @purl.flipbook_json
           else
             render nothing: true, status: 404
           end
-        }
+        end
       end
     else
-      render "purl/_unavailable"
+      render 'purl/_unavailable'
       return false
     end
   end
 
-  rescue_from(ActionController::UnknownFormat) do |e|
+  rescue_from(ActionController::UnknownFormat) do |_e|
     request.format = :html
     render_404('unknown_format')
   end
 
   def manifest
     if @purl.has_manifest
-      render :json => @purl.manifest_json
+      render json: @purl.manifest_json
     else
       render nothing: true, status: 404
     end
@@ -73,11 +71,11 @@ class PurlController < ApplicationController
   def validate_id
     # handle a single static grandfathered exception
     if params[:id] == 'ir:rs276tc2764'
-      redirect_to "/rs276tc2764", action: "index"
+      redirect_to '/rs276tc2764', action: 'index'
       return
     end
 
-    if !Dor::Util.validate_druid(params[:id])
+    unless Dor::Util.validate_druid(params[:id])
       render_404('invalid')
       return false
     end
@@ -96,14 +94,13 @@ class PurlController < ApplicationController
   end
 
   def render_404(type)
-    render "/purl/_" + type, :layout => "application", :status => 404
+    render '/purl/_' + type, layout: 'application', status: 404
   end
 
   configure_mods_display do
     abstract do
-      label_class "abstract"
-      value_class "desc-content"
+      label_class 'abstract'
+      value_class 'desc-content'
     end
   end
-
 end

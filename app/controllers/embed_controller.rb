@@ -1,19 +1,19 @@
-require "dor/util"
+require 'dor/util'
 
 class EmbedController < ApplicationController
   include ImgEmbedHtmlHelper
   include PurlHelper
 
   self.asset_host = Settings.embed_host
-  
+
   protect_from_forgery except: :embed_html_json
 
-  before_filter :validate_id, except: [:purl_embed_jquery_plugin]
-  before_filter :load_purl, except: [:purl_embed_jquery_plugin]
+  before_action :validate_id, except: [:purl_embed_jquery_plugin]
+  before_action :load_purl, except: [:purl_embed_jquery_plugin]
 
   def index
     if @purl.image?
-      render "purl/embed/_img_viewer", :layout => "purl_embed"
+      render 'purl/embed/_img_viewer', layout: 'purl_embed'
     else
       render_404
     end
@@ -25,17 +25,16 @@ class EmbedController < ApplicationController
 
   def embed_html_json
     if @purl.image?
-      response.headers["Content-Type"] = "application/javascript"
+      response.headers['Content-Type'] = 'application/javascript'
       render json: imgEmbedHtml, callback: params.fetch(:callback, 'callback')
     else
       render_404
     end
   end
 
-
   def embed_js
     if @purl.image?
-      render "purl/embed/_img_viewer", :layout => "purl_embed_js"
+      render 'purl/embed/_img_viewer', layout: 'purl_embed_js'
     else
       render_404
     end
@@ -43,7 +42,7 @@ class EmbedController < ApplicationController
 
   # validate that the id is of the proper format
   def validate_id
-    if !Dor::Util.validate_druid(params[:id])
+    unless Dor::Util.validate_druid(params[:id])
       render_404
       return false
     end
@@ -62,7 +61,6 @@ class EmbedController < ApplicationController
   end
 
   def render_404
-    render :status => 404, :file => "#{Rails.root}/public/404", :formats => [:html], :layout => false
+    render status: 404, file: "#{Rails.root}/public/404", formats: [:html], layout: false
   end
-
 end

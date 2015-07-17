@@ -3,7 +3,7 @@
     <%= print_field_value("use_and_reproduction_stmt", "Use and Reproduction", '', true).html_safe %>
     <%= add_copyright_symbol(print_field_value("copyright_stmt", "Copyright")) %>
 
-	  <% if not(@purl.cclicense_symbol.nil? or @purl.cclicense_symbol.empty?) %>
+	  <% unless @purl.cclicense_symbol.blank? %>
       <dt>License:</dt>
       <dd>
       	<%= get_license_html('cc', @purl.cclicense_symbol, @purl.cclicensetype) %>
@@ -11,7 +11,7 @@
 		<% end %>
 
 
-	  <% if not(@purl.odc_license.nil? or @purl.odc_license.empty?) %>
+	  <% unless @purl.odc_license.blank? %>
       <dt>License:</dt>
       <dd>
       	<%= get_license_html('odc', @purl.odc_license, @purl.odc_type) %>

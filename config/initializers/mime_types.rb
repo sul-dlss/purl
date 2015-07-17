@@ -4,5 +4,5 @@
 # Mime::Type.register "text/richtext", :rtf
 # Mime::Type.register_alias "text/html", :iphone
 
-Mime::Type.register "application/xml", :mods
-Mime::Type.register "application/json", :flipbook
+Mime::Type.register 'application/xml', :mods
+Mime::Type.register 'application/json', :flipbook

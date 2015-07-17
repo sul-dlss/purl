@@ -17,7 +17,7 @@ describe PurlHelper, type: :helper do
     end
 
     it 'should trim text of multiple spaces and newlines' do
-      expect(helper.trim_text("  abc\rdef  ")).to eq(" abc def ")
+      expect(helper.trim_text("  abc\rdef  ")).to eq(' abc def ')
     end
 
     it 'should add links to URIs' do
@@ -49,7 +49,5 @@ describe PurlHelper, type: :helper do
     it 'should get sidebar links' do
       expect(helper.get_sidebar_links).to eq('<p><a href="http://searchworks.stanford.edu/view/9447984">View in SearchWorks</a></p><br/><p><strong>Available download formats:</strong> </p> <ul><li><a href="http://stacks-test.stanford.edu/file/druid:zk091xr3370/bw662rg0319_31_0000.pdf">bw662rg0319_31_0000.pdf</a> (70 MB)&nbsp; <img src="/images/icon-download.png" /></li></ul>')
     end
-
   end
-
 end

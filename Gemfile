@@ -14,7 +14,7 @@ gem 'rspec-rails'
 gem 'capybara'
 gem 'simplecov'
 gem 'execjs'
-gem 'therubyracer', :platforms => :ruby
+gem 'therubyracer', platforms: :ruby
 
 group :development do
   gem 'sqlite3'

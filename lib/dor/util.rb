@@ -1,13 +1,11 @@
-require "nokogiri"
+require 'nokogiri'
 require 'dor/workflow_service'
 
 module Dor
-
   # constants
   DRUID_REGEX = /^[a-z]{2}\d{3}[a-z]{2}\d{4}$/i
 
   class Util
-
     #
     # This method validates the given id to be of the following format:
     #
@@ -17,37 +15,31 @@ module Dor
     #      where 'y' is a numeric character
     #
     def self.validate_druid(id)
-      if(id =~ DRUID_REGEX)
-        return true
-      end
-      return false
+      return true if id =~ DRUID_REGEX
+      false
     end
 
     #
     # This method reverses the first and last name of the given comma-delimited string
     #
     def self.reverse_name(name_str)
-      if(name_str =~ /,/)
+      if name_str =~ /,/
         name_str =~ /([^,\r\n]*),\s*(.*)/
-        last = $1
-        first = $2
+        last = Regexp.last_match(1)
+        first = Regexp.last_match(2)
         name_str = "#{first} #{last}"
       end
       name_str
     end
-  
+
     #
     # This method determines whether the resource for the given id is ready for delivery
     # based on the 'shelve' workflow status
     #
     def self.is_shelved?(id)
-      shelve_status = Dor::WorkflowService.get_workflow_status('dor', 'druid:' + id,'etdAccessionWF','shelve')
-      if( "#{shelve_status}".eql? "completed" )
-        return true
-      end
-      return false
+      shelve_status = Dor::WorkflowService.get_workflow_status('dor', 'druid:' + id, 'etdAccessionWF', 'shelve')
+      return true if  "#{shelve_status}".eql? 'completed'
+      false
     end
-
   end
-
 end

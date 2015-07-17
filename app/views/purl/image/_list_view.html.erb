@@ -4,19 +4,17 @@
       img_files = Array.new
       img_id = get_jp2_id(deliverable_file.filename.to_s)
 
-      if !img_id.nil? and !img_id.empty?
+      if !img_id.blank?
         img_files = img_files.push(deliverable_file)
-      else
-        if deliverable_file.sub_resources.length > 0
-          img_files.concat(deliverable_file.sub_resources)
-        end
+      elsif deliverable_file.sub_resources.length > 0
+        img_files.concat(deliverable_file.sub_resources)
       end
     %>
 
 		<% img_files.each do |deliverable_file| %>
 		  <% img_id = get_jp2_id(deliverable_file.filename.to_s) %>
 
-	    <% if !img_id.nil? and !img_id.empty? %>
+	    <% unless img_id.blank? %>
 		    <% base_url = get_img_base_url(deliverable_file) %>
 
 	      <li>
