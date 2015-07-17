@@ -26,7 +26,7 @@ class EmbedController < ApplicationController
   def embed_html_json
     if @purl.image?
       response.headers["Content-Type"] = "application/javascript"
-      render :text => imgEmbedHtml(params[:callback])
+      render json: imgEmbedHtml, callback: params.fetch(:callback, 'callback')
     else
       render_404
     end

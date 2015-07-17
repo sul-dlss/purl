@@ -3,5 +3,5 @@
   var purlServerURL = "//" + "<%= request.host_with_port %>";
   var peServerURL = purlServerURL;  
   var pePid = "<%= @purl.pid %>";
-  var peImgInfo = [ <%= get_image_json_array.html_safe %> ];  
+  var peImgInfo = <%= get_image_json_array.to_json.html_safe %>;  
 </script>
