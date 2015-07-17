@@ -13,3 +13,5 @@ flipbook:
   auth_url: 'https://sul-reader.stanford.edu/flipbook2/auth'
 
 document_cache_root: "<%= File.join(Rails.root, "document_cache") %>"
+
+embed_host: '//127.0.0.1:3000'

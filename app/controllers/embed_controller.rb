@@ -4,6 +4,10 @@ class EmbedController < ApplicationController
   include ImgEmbedHtmlHelper
   include PurlHelper
 
+  self.asset_host = Settings.embed_host
+  
+  protect_from_forgery except: :embed_html_json
+
   before_filter :validate_id, except: [:purl_embed_jquery_plugin]
   before_filter :load_purl, except: [:purl_embed_jquery_plugin]
 

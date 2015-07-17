@@ -1,17 +1,12 @@
 //= require jQuery.XDomainRequest
 
 (function($) {
-  var serverUrls = {
-    'test': '//purl-test.stanford.edu',
-    'prod': '//purl.stanford.edu',
-    'local': '//localhost:3000'
-  };
 
   $.fn.embedPurl = function(config) {
     var height = parseInt(config.height, 10),
         width = parseInt(config.width, 10),
         $this = $(this),
-        serverURL = serverUrls[config.server];
+        serverURL = "<%= Settings.embed_host %>";
 
     if (!isNaN(width)) $this.width(width);
     if (!isNaN(height)) $this.height(height);
@@ -27,9 +22,9 @@
         peContainerWidth  = $this.width();
         peContainerHeight = $this.height();
 
-        $('head').append('<link rel="stylesheet" href="' + serverURL + '<%= asset_path 'purl_embed.css' %>' + '" type="text/css" />')
+        $('head').append('<link rel="stylesheet" href="<%= (Rails.application.config.asset_host || Settings.embed_host) + asset_path('purl_embed.css') %>" type="text/css" />')
 
-        $.getScript(serverURL + '<%= asset_path 'purl_embed.js' %>', function() {
+        $.getScript('<%= (Rails.application.config.asset_host || Settings.embed_host) + asset_path('purl_embed.js') %>', function() {
           $this.html(obj.page);
           var pe = new purlEmbed(obj.peImgInfo, obj.pePid, obj.peStacksURL, config, $this.selector);
         });
