@@ -42,7 +42,7 @@ a:hover { border-bottom: 1px dotted; }
 a:active { color: #4f4f4f; }
 
 body {
-  background: #474747 url(../images/purl-image-background.png) top left repeat-x;
+  background: #474747 image-url('purl-image-background.png') top left repeat-x;
   color: #000000;
 	font: 11px/1.3em "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
 	text-align: center;
@@ -182,7 +182,7 @@ ol#toc > li {
 }
 
 .thumb-img-box {
-  background: transparent url(../images/loader_16x16_gray.gif) no-repeat 0 0;
+  background: transparent image-url('loader_16x16_gray.gif') no-repeat 0 0;
   clear: both;
   min-height: 100px;
   min-width: 100px;
@@ -259,7 +259,7 @@ ol#toc > li {
 }
 
 #pane-toc-metadata {
-  background: #fff url(../images/contents_bg.png) top left repeat-x;
+  background: #fff image-url('contents_bg.png') top left repeat-x;
   float: left;
   height: auto;
   overflow: auto;
@@ -267,7 +267,7 @@ ol#toc > li {
 }
 
 #pane-flipbook {
-  background: #fff url(../images/contents_bg.png) top left repeat-x;
+  background: #fff image-url('contents_bg.png') top left repeat-x;
   overflow: hidden;
   position: absolute;
   width: 100%;
@@ -308,7 +308,7 @@ ol#toc > li {
 
 
 .fs-flipbook-viewer {
-  background: transparent url(../images/loader_16x16_gray.gif) no-repeat 20px 20px;
+  background: transparent image-url('loader_16x16_gray.gif') no-repeat 20px 20px;
   clear: both;
   padding: 10px;
 }
@@ -318,12 +318,12 @@ ol#toc > li {
 }
 
 .view-in-bookreader a {
-  background: transparent url(../images/icon-book.png) no-repeat 0 center;
+  background: transparent image-url('icon-book.png') no-repeat 0 center;
   padding-left: 20px;
 }
 
 .icon-stanford-only {
-  background: transparent url(../images/icon-stanford-only.png) no-repeat 0 center;
+  background: transparent image-url('icon-stanford-only.png') no-repeat 0 center;
   padding-left: 20px;
 }
 

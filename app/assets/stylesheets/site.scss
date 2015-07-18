@@ -53,7 +53,7 @@ table {
 
 /*  SearchWorks  */
 
-body {background: #474747 url(../images/purl-image-background.png) top left repeat-x; text-align: center; font-size: 11px; font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif; line-height: 1.3em;   color: #000000;}
+body {background: #474747 image-url('purl-image-background.png') top left repeat-x; text-align: center; font-size: 11px; font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif; line-height: 1.3em;   color: #000000;}
 h1 {
 	color: #f6f6f6;
 	filter: dropshadow(color=#333333, offx=-1, offy=-1);
@@ -95,7 +95,7 @@ a:active {color: #4f4f4f;}
 }
 
 #contents {
-  background: #fff url(../images/contents_bg.png) top left repeat-x;
+  background: #fff image-url('contents_bg.png') top left repeat-x;
   padding: 20px 30px;
   position: relative;
   overflow: auto;
