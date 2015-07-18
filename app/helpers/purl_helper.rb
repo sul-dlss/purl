@@ -4,32 +4,32 @@ require 'purl/util.rb'
 module PurlHelper
   # get id from JP2 filename
   def get_jp2_id(filename)
-    PurlUtils.get_jp2_id(filename)
+    Purl::Util.get_jp2_id(filename)
   end
 
   # construct JSON array for delivering image objects
   def get_image_json_array
-    PurlUtils.get_image_json_array(@purl.deliverable_files)
+    Purl::Util.get_image_json_array(@purl.deliverable_files)
   end
 
   # construct base URL using stacks URL
   def get_img_base_url(deliverable_file)
-    PurlUtils.get_img_base_url(@purl.pid, Settings.stacks.url, deliverable_file)
+    Purl::Util.get_img_base_url(@purl.pid, Settings.stacks.url, deliverable_file)
   end
 
   # get file label (if available) or jp2 id
   def get_file_label(deliverable_file)
-    PurlUtils.get_file_label(deliverable_file)
+    Purl::Util.get_file_label(deliverable_file)
   end
 
   # get file URL (for type != image)
   def get_file_url(pid, deliverable_file)
-    PurlUtils.get_file_url(pid, deliverable_file)
+    Purl::Util.get_file_url(pid, deliverable_file)
   end
 
   # check if file is ready (deliver = yes or publish = yes)
   def is_file_ready(file)
-    PurlUtils.is_file_ready(file)
+    Purl::Util.is_file_ready(file)
   end
 
   # get field value

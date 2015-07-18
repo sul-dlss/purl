@@ -5,7 +5,8 @@ require 'htmlentities'
 require 'dor/rights_auth'
 
 class PurlObject
-  include PurlUtils
+  include Purl::Util
+
   def self.coder
     @coder ||= HTMLEntities.new
   end
