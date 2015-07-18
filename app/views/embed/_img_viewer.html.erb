@@ -1,0 +1,10 @@
+<%
+  purl_server = request.scheme + "://" + request.host_with_port
+  purl_server = purl_server.gsub(/image-viewer.stanford.edu/, 'purl.stanford.edu')
+  purl_url = purl_server + "/" + @purl.pid
+%>
+<%= render :partial => 'embed/thumbs_nav_top', :locals => { :purl_url => purl_url, :purl_server => purl_server } %>
+<%= render :partial => 'embed/thumbs_nav_bottom', :locals => { :purl_url => purl_url, :purl_server => purl_server } %>
+<%= render :partial => 'embed/thin_nav_top', :locals => { :purl_url => purl_url, :purl_server => purl_server } %>
+<%= render :partial => 'embed/thin_nav_bottom', :locals => { :purl_url => purl_url, :purl_server => purl_server } %>
+

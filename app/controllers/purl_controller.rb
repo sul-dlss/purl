@@ -10,7 +10,7 @@ class PurlController < ApplicationController
   end
 
   # entry point into the application
-  def index
+  def show
     # validate that the metadata is ready for delivery
 
     if @purl.ready?
@@ -69,12 +69,6 @@ class PurlController < ApplicationController
 
   # validate that the id is of the proper format
   def validate_id
-    # handle a single static grandfathered exception
-    if params[:id] == 'ir:rs276tc2764'
-      redirect_to '/rs276tc2764', action: 'index'
-      return
-    end
-
     unless Dor::Util.validate_druid(params[:id])
       render_404('invalid')
       return false
