@@ -1,12 +1,16 @@
 $(document).ready(function() {
   $('.footer-show-hide').toggle(
     function() {
+      $this = $(this);
+
       $('.footer-contents').show();
-      $('.footer-show-hide').css('background-image', 'url("/images/icon-img-footer-hide.png")');
+      $this.css('background-image', 'url("' + $this.data('icon-visible') + '")');
     },
     function () {
+      $this = $(this);
+
       $('.footer-contents').hide();
-      $('.footer-show-hide').css('background-image', 'url("/images/icon-img-footer-show.png")');
+      $this.css('background-image', 'url("' + $this.data('icon-hidden') + '")');
     }
   );
 });
