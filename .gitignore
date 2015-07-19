@@ -15,3 +15,5 @@ tmp/
 config/settings.local.yml
 config/settings/*
 config/environments/*.local.yml
+
+document_cache/*
