@@ -1,17 +1,27 @@
 require 'nokogiri'
 
-require "purl/util"
-require "htmlentities"
+require 'purl/util'
+require 'htmlentities'
 require 'dor/rights_auth'
 
 class PurlObject
+  include Purl::Util
 
-  include PurlUtils
-  @@coder = HTMLEntities.new
+  def self.coder
+    @coder ||= HTMLEntities.new
+  end
 
-  DEFERRED_TEMPLATE = %{def %1$s; extract_metadata unless @extracted; instance_variable_get("@%1$s"); end}
+  def coder
+    self.class.coder
+  end
+
   def self.attr_deferred(*args)
-    args.each { |a| eval(DEFERRED_TEMPLATE % a) }
+    args.each do |a|
+      define_method a do
+        extract_metadata unless @extracted
+        instance_variable_get("@#{a}")
+      end
+    end
   end
 
   attr_accessor :pid
@@ -32,7 +42,7 @@ class PurlObject
   attr_deferred :reading_order, :page_start                                                      # flipbook specific
 
   NAMESPACES = {
-    'oai_dc' => "http://www.openarchives.org/OAI/2.0/oai_dc/",
+    'oai_dc' => 'http://www.openarchives.org/OAI/2.0/oai_dc/',
     'dc' => 'http://purl.org/dc/elements/1.1/',
     'dcterms' => 'http://purl.org/dc/terms/'
   }
@@ -45,22 +55,22 @@ class PurlObject
 
     unless pair_tree.nil?
       file_path = File.join(Settings.document_cache_root, pair_tree)
-      purl = PurlObject.new(id) if File.exists?(file_path)
+      purl = PurlObject.new(id) if File.exist?(file_path)
     end
 
-    return purl
+    purl
   end
 
   # Returns the pair tree directory for a given, valid druid
   #
-  def PurlObject.create_pair_tree(pid)
+  def self.create_pair_tree(pid)
     pair_tree = nil
 
     if pid =~ /^([a-z]{2})(\d{3})([a-z]{2})(\d{4})$/
-      pair_tree = File.join($1, $2, $3, $4)
+      pair_tree = File.join(Regexp.last_match(1), Regexp.last_match(2), Regexp.last_match(3), Regexp.last_match(4))
     end
 
-    return pair_tree
+    pair_tree
   end
 
   # initializes the object with metadata and service streams
@@ -76,7 +86,7 @@ class PurlObject
   end
 
   def extract_metadata
-    doc = ng_xml('dc','identityMetadata','contentMetadata','rightsMetadata','properties')
+    doc = ng_xml('dc', 'identityMetadata', 'contentMetadata', 'rightsMetadata', 'properties')
     doc.encoding = 'UTF-8'
 
     # Rights metadata
@@ -86,17 +96,17 @@ class PurlObject
     # DC Metadata
     dc = doc.root.at_xpath('*[local-name() = "dc"]', NAMESPACES)
     unless dc.nil?
-      @titles      = Array.new
-      @description = Array.new
-      @creators    = Array.new
-      @relations   = Array.new
-      @identifiers = Array.new
-      @publisher   = Array.new
-      @downloadable_files = Array.new
-      @description_preferred_citation = Array.new
-      @description_contact = Array.new
-      @description_rel_publication = Array.new
-      @relation_url = Array.new
+      @titles      = []
+      @description = []
+      @creators    = []
+      @relations   = []
+      @identifiers = []
+      @publisher   = []
+      @downloadable_files = []
+      @description_preferred_citation = []
+      @description_contact = []
+      @description_rel_publication = []
+      @relation_url = []
 
       dc.xpath('dc:title/text()|dcterms:title/text()', NAMESPACES).collect { |t| @titles.push(t) } # title
       dc.xpath('dc:creator/text()|dcterms:creator/text()', NAMESPACES).collect { |c| @creators.push(c.to_s) } # creators
@@ -110,11 +120,11 @@ class PurlObject
       dc.xpath('dc:description[@type="contact"]/text()', NAMESPACES).collect { |d| @description_contact.push(d.to_s) } # description: contact
 
       # relation: url
-      dc.xpath('dc:relation[@type="url"]/@href', NAMESPACES).collect { |url|
+      dc.xpath('dc:relation[@type="url"]/@href', NAMESPACES).collect do |url|
         label = dc.xpath('dc:relation[@type="url" and @href="' + url + '"]/text()', NAMESPACES) || ''
-        if label.empty? then label = url end
-        @relation_url.push({ 'label' => label.to_s, 'url' => url.to_s })
-      }
+        label = url if label.empty?
+        @relation_url.push('label' => label.to_s, 'url' => url.to_s)
+      end
 
       @contributors = dc.xpath('dc:contributor/text()|dcterms:contributor/text()', NAMESPACES).collect { |t| t.to_s + '<br/>' }
       @source       = dc.at_xpath('dc:source/text()', NAMESPACES).to_s
@@ -135,12 +145,11 @@ class PurlObject
     @page_start = doc.root.xpath('contentMetadata/bookData/@pageStart').to_s
 
     # File data
-    @deliverable_files = Array.new
+    @deliverable_files = []
 
     # collect all files inside a resource
     doc.root.xpath('contentMetadata/resource').collect do |resource_xml|
       resource_xml.xpath('file').collect do |file|
-
         resource = Resource.new
 
         if is_file_ready(file)
@@ -158,8 +167,8 @@ class PurlObject
           resource.rights_world, resource.rights_world_rule = parsed_rights.world_rights_for_file(resource.filename)
           resource.rights_stanford, resource.rights_stanford_rule = parsed_rights.stanford_only_rights_for_file(resource.filename)
 
-          if (resource.width > 0 and resource.height > 0)
-            resource.levels = (( Math.log([resource.width, resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1
+          if resource.width > 0 && resource.height > 0
+            resource.levels = ((Math.log([resource.width, resource.height].max) / Math.log(2)) - (Math.log(96) / Math.log(2))).ceil + 1
           end
 
           resource.imagesvc = file.at_xpath('location[@type="imagesvc"]/text()').to_s
@@ -175,18 +184,15 @@ class PurlObject
         resource.sequence = resource_xml['sequence'].to_s || 0
 
         # if the resource has a deliverable file or at least one sub_resource, add it to the array
-        if !resource.nil?
+        unless resource.nil?
           if resource.type != 'object'
             @deliverable_files.push(resource)
           else
             @downloadable_files.push(resource)
           end
         end
-
       end
-
     end
-
 
     # collect all resources and files inside a resource
     doc.root.xpath('contentMetadata/resource').collect do |resource_xml|
@@ -212,8 +218,8 @@ class PurlObject
           sub_resource.rights_world, sub_resource.rights_world_rule = parsed_rights.world_rights_for_file(sub_resource.filename)
           sub_resource.rights_stanford, sub_resource.rights_stanford_rule = parsed_rights.stanford_only_rights_for_file(sub_resource.filename)
 
-          if (sub_resource.width > 0 and sub_resource.height > 0)
-            sub_resource.levels   = (( Math.log([sub_resource.width, sub_resource.height].max) / Math.log(2) ) - ( Math.log(96) / Math.log(2) )).ceil + 1
+          if sub_resource.width > 0 && sub_resource.height > 0
+            sub_resource.levels   = ((Math.log([sub_resource.width, sub_resource.height].max) / Math.log(2)) - (Math.log(96) / Math.log(2))).ceil + 1
           end
 
           sub_resource.imagesvc = sub_file.at_xpath('location[@type="imagesvc"]/text()').to_s
@@ -239,7 +245,6 @@ class PurlObject
           @downloadable_files.push(resource)
         end
       end
-
     end
 
     # Rights Metadata
@@ -251,9 +256,9 @@ class PurlObject
         @read_group = read.name == 'group' ? read.text : read.name
       end
 
-      @embargo_release_date = rights.at_xpath(".//embargoReleaseDate/text()").to_s
+      @embargo_release_date = rights.at_xpath('.//embargoReleaseDate/text()').to_s
 
-      if( !@embargo_release_date.nil? and @embargo_release_date != '' )
+      if  !@embargo_release_date.nil? && @embargo_release_date != ''
         embargo_date_time = Time.parse(@embargo_release_date)
         @embargo_release_date = '' unless embargo_date_time.future?
       end
@@ -262,17 +267,17 @@ class PurlObject
       @use_and_reproduction_stmt = rights.at_xpath('use/human[@type="useAndReproduction"]/text()').to_s
       @cclicense_symbol = rights.at_xpath('use/machine[@type="creativeCommons"]/text()').to_s
 
-      if (@cclicense_symbol.nil? || @cclicense_symbol.empty?)
+      if @cclicense_symbol.blank?
         @cclicense_symbol = rights.at_xpath('use/machine[@type="creativecommons"]/text()').to_s
       end
 
       @odc_license = rights.at_xpath('use/machine[@type="opendatacommons"]/text()').to_s
 
-      if (@odc_license.nil? || @odc_license.empty?)
+      if @odc_license.blank?
         @odc_license = rights.at_xpath('use/machine[@type="openDataCommons"]/text()').to_s
       end
 
-      if (@odc_type.nil? || @odc_type.empty?)
+      if @odc_type.blank?
         @odc_type = rights.at_xpath('use/human[@type="openDataCommons"]/text()').to_s
       end
 
@@ -281,47 +286,39 @@ class PurlObject
     # Properties
     fields = doc.root.at_xpath('fields|properties/fields')
     unless fields.nil?
-      @degreeconfyr  = fields.at_xpath("degreeconfyr/text()").to_s
-      @cclicense     = fields.at_xpath("cclicense/text()").to_s
-      @cclicensetype = fields.at_xpath("cclicensetype/text()").to_s
+      @degreeconfyr  = fields.at_xpath('degreeconfyr/text()').to_s
+      @cclicense     = fields.at_xpath('cclicense/text()').to_s
+      @cclicensetype = fields.at_xpath('cclicensetype/text()').to_s
     end
     @extracted = true
   end
 
   def ready?
-    if !@public_xml.nil? and !@public_xml.empty? and @public_xml != "<public/>"
-      return true
-    end
-    return false
+    return true unless @public_xml.blank? || @public_xml == '<public/>'
+    false
   end
   alias_method :is_ready?, :ready?
 
   # check if this object is of type image
   def image?
-    if !type.nil? && type =~ /Image|Map|webarchive-seed/i
-      return true
-    end
+    return true if !type.nil? && type =~ /Image|Map|webarchive-seed/i
 
-    return false
+    false
   end
   alias_method :is_image?, :image?
 
   def book?
-    if !type.nil? && type =~ /Book|Manuscript/i
-      return true
-    end
+    return true if !type.nil? && type =~ /Book|Manuscript/i
 
-    return false
+    false
   end
   alias_method :is_book?, :book?
 
   # check if this object has mods content
   def has_mods?
-    if !@mods_xml.nil? and !@mods_xml.empty? and @mods_xml != "<mods/>"
-      return true
-    end
+    return true unless @mods_xml.blank? || @mods_xml == '<mods/>'
 
-    return false
+    false
   end
 
   alias_method :has_mods, :has_mods?
@@ -333,11 +330,9 @@ class PurlObject
 
   # check if this object has manifest content
   def has_manifest?
-    if !@manifest_json.nil? and !@manifest_json.empty? and @manifest_json != "<manifest/>"
-      return true
-    end
+    return true unless @manifest_json.blank? || @manifest_json == '<manifest/>'
 
-    return false
+    false
   end
 
   alias_method :has_manifest, :has_manifest?
@@ -346,64 +341,60 @@ class PurlObject
 
   # retrieve the given document from the document cache for the given object identifier
   def get_metadata(doc_name)
-    start_time=Time.now
+    start_time = Time.now
     pair_tree = PurlObject.create_pair_tree(@pid)
     contents = "<#{doc_name}/>"
     unless pair_tree.nil?
-      file_path = File.join(Settings.document_cache_root,pair_tree,doc_name)
-      if File.exists?(file_path)
-        contents = File.read(file_path)
-      end
+      file_path = File.join(Settings.document_cache_root, pair_tree, doc_name)
+      contents = File.read(file_path) if File.exist?(file_path)
 
       if !Rails.env == 'production'
-        contents.gsub!('stacks.stanford.edu','stacks-test.stanford.edu')
+        contents.gsub!('stacks.stanford.edu', 'stacks-test.stanford.edu')
       end
     end
-    total_time=Time.now-start_time
+    total_time = Time.now - start_time
     Rails.logger.warn "Completed get_metadata for #{@pid} fetching #{doc_name} in #{total_time}"
-    return contents
+    contents
   end
 
   # map the given document public xml to json
   def get_flipbook_json
-    pages = Array.new
-    self.extract_metadata
+    pages = []
+    extract_metadata
 
     @deliverable_files.collect do |file|
       if file.mimetype == 'image/jp2' && (file.type == 'image' || file.type == 'page') && file.height > 0 && file.width > 0 && (file.rights_stanford || file.rights_world)
         page = {
-          :height => file.height,
-          :width => file.width,
-          :levels => file.levels,
-          :resourceType => file.type,
-          :label => file.description_label,
-          :stacksURL => get_img_base_url(@pid, Settings.stacks.url,file)
+          height: file.height,
+          width: file.width,
+          levels: file.levels,
+          resourceType: file.type,
+          label: file.description_label,
+          stacksURL: get_img_base_url(@pid, Settings.stacks.url, file)
         }
 
         pages.push(page)
       end
     end
 
-    return {
-      :id => "#{@catalog_key}",
-      :readGroup => @read_group,
-      :objectId => "#{@pid}",
-      :defaultViewMode => 2,
-      :bookTitle => @@coder.decode(@titles.join(" -- ")),
-      :readingOrder => @reading_order,  # "rtl"
-      :pageStart =>  page_start,  # "left"
-      :bookURL => !(@catalog_key.nil? or @catalog_key.empty?) ? "http://searchworks.stanford.edu/view/#{@catalog_key}" : "",
-      :pages => pages
+    {
+      id: "#{@catalog_key}",
+      readGroup: @read_group,
+      objectId: "#{@pid}",
+      defaultViewMode: 2,
+      bookTitle: coder.decode(@titles.join(' -- ')),
+      readingOrder: @reading_order,  # "rtl"
+      pageStart: page_start,  # "left"
+      bookURL: !(@catalog_key.nil? || @catalog_key.empty?) ? "http://searchworks.stanford.edu/view/#{@catalog_key}" : '',
+      pages: pages
     }
-
   end
-
 
   def ng_xml(*streams)
     if @ng_xml.nil?
       content = @public_xml
 
-      if content.nil? or content.strip.empty?
+      if content.nil? || content.strip.empty?
         content = "<publicObject objectId='#{@pid}'/>"
       end
 
@@ -420,6 +411,4 @@ class PurlObject
     end
     @ng_xml
   end
-
-
 end

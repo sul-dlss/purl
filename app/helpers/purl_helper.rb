@@ -2,37 +2,35 @@ require 'uri'
 require 'purl/util.rb'
 
 module PurlHelper
-
   # get id from JP2 filename
   def get_jp2_id(filename)
-    PurlUtils.get_jp2_id(filename)
+    Purl::Util.get_jp2_id(filename)
   end
 
   # construct JSON array for delivering image objects
   def get_image_json_array
-    PurlUtils.get_image_json_array(@purl.deliverable_files)
+    Purl::Util.get_image_json_array(@purl.deliverable_files)
   end
 
   # construct base URL using stacks URL
   def get_img_base_url(deliverable_file)
-    PurlUtils.get_img_base_url(@purl.pid, Settings.stacks.url, deliverable_file)
+    Purl::Util.get_img_base_url(@purl.pid, Settings.stacks.url, deliverable_file)
   end
 
   # get file label (if available) or jp2 id
   def get_file_label(deliverable_file)
-    PurlUtils.get_file_label(deliverable_file)
+    Purl::Util.get_file_label(deliverable_file)
   end
 
   # get file URL (for type != image)
   def get_file_url(pid, deliverable_file)
-    PurlUtils.get_file_url(pid, deliverable_file)
+    Purl::Util.get_file_url(pid, deliverable_file)
   end
 
   # check if file is ready (deliver = yes or publish = yes)
   def is_file_ready(file)
-    PurlUtils.is_file_ready(file)
+    Purl::Util.is_file_ready(file)
   end
-
 
   # get field value
   #
@@ -41,24 +39,19 @@ module PurlHelper
     value = eval("@purl.#{field_name}")
     output = value
 
-    if not(@purl.nil? or value.nil? or value.empty?)
-      html = "<dt>" + label + ":</dt><dd>"
+    unless @purl.nil? || value.nil? || value.empty?
+      html = '<dt>' + label + ':</dt><dd>'
 
       # if array, join using given separator
-      if value.is_a?(Array)
-        output = value.join(separator)
-      end
+      output = value.join(separator) if value.is_a?(Array)
 
-      if add_links_to_URIs
-        output = add_links_to_URIs(output)
-      end
+      output = add_links_to_URIs(output) if add_links_to_URIs
 
-      html += output + "</dd>".html_safe
+      html += output + '</dd>'.html_safe
     end
 
     html = html.html_safe
   end
-
 
   # get field value with extracted URIs in HTML tags
   def add_links_to_URIs(str)
@@ -81,35 +74,32 @@ module PurlHelper
     output.html_safe
   end
 
-
   # get field value
   def print_description_value(label = '', add_links_to_URIs = false)
     html = ''
 
-    if not(@purl.nil? or @purl.description.nil? or @purl.description.empty?)
-      html = "<dt>" + label + ":</dt><dd>"
+    unless @purl.nil? || @purl.description.nil? || @purl.description.empty?
+      html = '<dt>' + label + ':</dt><dd>'
 
       @purl.description.each do |desc|
-        if add_links_to_URIs
-          desc = add_links_to_URIs(desc)
-        end
+        desc = add_links_to_URIs(desc) if add_links_to_URIs
 
         desc = desc.gsub(/(\n|\\n|&amp;#10;|&#10;|&#xA;)/, '<br/>')
-        html += "<p><span class=\"desc-content\">" + desc + "</span></p>"
+        html += "<p><span class=\"desc-content\">" + desc + '</span></p>'
       end
 
-      html += "</dd>"
+      html += '</dd>'
     end
 
     html.html_safe
   end
 
   # get title value
-  def print_title_value()
+  def print_title_value
     title = ''
 
-    if not(@purl.nil? or @purl.titles.nil? or @purl.titles.empty?)
-      title = @purl.titles.join(" -- ")
+    unless @purl.nil? || @purl.titles.nil? || @purl.titles.empty?
+      title = @purl.titles.join(' -- ')
     end
 
     title.html_safe
@@ -119,8 +109,8 @@ module PurlHelper
   def print_creator_value(label = '')
     html = ''
 
-    if not(@purl.nil? or @purl.creators.nil? or @purl.creators.empty?)
-      html = "<dt>" + label + ":</dt><dd>" + @purl.creators.join("<br/>") + "</dd>"
+    unless @purl.nil? || @purl.creators.nil? || @purl.creators.empty?
+      html = '<dt>' + label + ':</dt><dd>' + @purl.creators.join('<br/>') + '</dd>'
     end
 
     html.html_safe
@@ -131,83 +121,76 @@ module PurlHelper
     link = ''
     catkey = @purl.catalog_key
 
-    if not(catkey.nil? or catkey.empty?)
+    unless catkey.blank?
       link = "<a href=\"http://searchworks.stanford.edu/view/" + catkey + "\">View in SearchWorks</a>"
     end
 
     link.html_safe
   end
 
-
   # print 'dc:relation type="url"' value
   def print_relation_url(label = '', separator = ' ')
     html = ''
 
-    if not(@purl.nil? or @purl.relation_url.nil? or @purl.relation_url.empty?)
-      html = "<dt>" + label + ":</dt><dd>"
+    unless @purl.nil? || @purl.relation_url.nil? || @purl.relation_url.empty?
+      html = '<dt>' + label + ':</dt><dd>'
 
       @purl.relation_url.each do |item|
-        html += "<a href=\"" + item['url'] + "\">" + item['label'] + "</a>" + separator
+        html += "<a href=\"" + item['url'] + "\">" + item['label'] + '</a>' + separator
       end
 
-      html += "</dd>"
+      html += '</dd>'
     end
 
     html.html_safe
   end
-
 
   # get download links
   def get_download_links
     links = []
 
     @purl.downloadable_files.each do |downloadable_file|
-      if !downloadable_file.filename.nil?
+      unless downloadable_file.filename.nil?
         link_label = downloadable_file.filename
 
-        if not(downloadable_file.description_label.nil? or downloadable_file.description_label.empty?)
+        unless downloadable_file.description_label.blank?
           link_label = downloadable_file.description_label
         end
 
         if downloadable_file.rights_stanford || downloadable_file.rights_world
-          link = "<a href=\"" + Settings.stacks.url + "/file/druid:" + @purl.pid + "/" + downloadable_file.filename + "\">" + link_label + "</a>"
+          link = "<a href=\"" + Settings.stacks.url + '/file/druid:' + @purl.pid + '/' + downloadable_file.filename + "\">" + link_label + '</a>'
         else
           link = link_label
         end
 
-        if not(downloadable_file.size.nil? or downloadable_file.size.empty?)
-          link += " (" + number_to_human_size(downloadable_file.size,:precision => 1) + ")"
+        unless downloadable_file.size.blank?
+          link += ' (' + number_to_human_size(downloadable_file.size, precision: 1) + ')'
         end
 
-        link += "&nbsp; " + image_tag('icon-download.png', alt: nil)
+        link += '&nbsp; ' + image_tag('icon-download.png', alt: nil)
 
         links.push(link)
       end
     end
 
-    links.each do |link|
-      link.html_safe
-    end
+    links.each(&:html_safe)
     links
   end
-
 
   # get links for side bar
   def get_sidebar_links
     html = ''
 
-    if !get_searchworks_link.nil?
-      html += "<p>" + get_searchworks_link + "</p>"
-    end
+    html += '<p>' + get_searchworks_link + '</p>' unless get_searchworks_link.nil?
 
     if get_download_links.size > 0
-      html += "<br/><p><strong>Available download formats:</strong> </p> <ul>"
+      html += '<br/><p><strong>Available download formats:</strong> </p> <ul>'
 
       get_download_links.each do |link|
-        html += "<li>" + link + "</li>"
+        html += '<li>' + link + '</li>'
       end
 
-      html += "</ul>"
+      html += '</ul>'
     end
 
     html.html_safe
@@ -220,11 +203,11 @@ module PurlHelper
 
   # get embargo text
   def get_embargo_text
-    text = ""
+    text = ''
 
-    if !embargoExpired
-      text = @purl.read_group == "none" ? "Restricted" : "Stanford only"
-      text = "Access: " + text + " until " + format_date_string(@purl.embargo_release_date).to_s
+    unless embargoExpired
+      text = @purl.read_group == 'none' ? 'Restricted' : 'Stanford only'
+      text = 'Access: ' + text + ' until ' + format_date_string(@purl.embargo_release_date).to_s
     end
 
     text
@@ -233,13 +216,12 @@ module PurlHelper
   def embargoExpired
     expired = true
 
-    if !@purl.embargo_release_date.nil? and !@purl.embargo_release_date.empty?
+    unless @purl.embargo_release_date.blank?
       expired = Date.parse(@purl.embargo_release_date.to_s) < Date.today
     end
 
     expired
   end
-
 
   # remove trailing period from name
   def add_copyright_symbol(copyright_stmt)
@@ -249,7 +231,7 @@ module PurlHelper
 
   # get number of gallery items per page
   def get_gallery_items_per_page_count
-    return 15
+    15
   end
 
   # prune text
@@ -262,25 +244,22 @@ module PurlHelper
   # get first deliverable image file
   def get_first_deliverable_image_file
     @purl.deliverable_files.each do |deliverable_file|
-      if deliverable_file.mimetype == "image/jp2"
-        return deliverable_file
-      end
+      return deliverable_file if deliverable_file.mimetype == 'image/jp2'
     end
 
-    return nil
+    nil
   end
 
   def get_license_html(group, symbol, type)
     license = License::LICENSES[group.to_sym][symbol.to_sym]
     html = type.to_s
 
-    if !license.blank?
+    unless license.blank?
       html = "<div class=\"#{group}-#{symbol}\">"
       html += "<a href=\"#{license[:link]}\" target=\"blank\">#{license[:desc]}</a>"
-      html += "</div>"
+      html += '</div>'
     end
 
     html.html_safe
   end
-
 end

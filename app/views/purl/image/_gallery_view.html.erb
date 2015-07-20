@@ -25,7 +25,7 @@
 
   <% img_id = get_jp2_id(deliverable_file.filename.to_s) %>
 
-  <% if !img_id.nil? and !img_id.empty? %>
+  <% if !img_id.blank? %>
     <% base_url = get_img_base_url(deliverable_file) %>
 
     <li>
@@ -53,7 +53,7 @@
 			  <% img_id = get_jp2_id(img_file.filename.to_s) %>
 			  <% img_sequence = img_file.sequence.to_s %>
 
-			  <% if !img_id.nil? and !img_id.empty? %>
+			  <% unless img_id.blank? %>
 			    <% base_url = get_img_base_url(img_file) %>
 			    <% display = sno == 1 ? "inline" : "none" %>
 

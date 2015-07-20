@@ -1,22 +1,23 @@
-require "dor/util"
+require 'dor/util'
 
 class EmbedController < ApplicationController
   include ImgEmbedHtmlHelper
   include PurlHelper
 
   self.asset_host = Settings.embed_host
-  
+
   protect_from_forgery except: :embed_html_json
 
-  before_filter :validate_id, except: [:purl_embed_jquery_plugin]
-  before_filter :load_purl, except: [:purl_embed_jquery_plugin]
+  before_action :validate_id, except: [:purl_embed_jquery_plugin]
+  before_action :load_purl, except: [:purl_embed_jquery_plugin]
+  before_action :validate_image, except: [:purl_embed_jquery_plugin]
 
-  def index
-    if @purl.image?
-      render "purl/embed/_img_viewer", :layout => "purl_embed"
-    else
-      render_404
-    end
+  def show
+    render layout: 'purl_embed'
+  end
+
+  def embed_js
+    render layout: 'purl_embed_js'
   end
 
   def purl_embed_jquery_plugin
@@ -24,26 +25,15 @@ class EmbedController < ApplicationController
   end
 
   def embed_html_json
-    if @purl.image?
-      response.headers["Content-Type"] = "application/javascript"
-      render json: imgEmbedHtml, callback: params.fetch(:callback, 'callback')
-    else
-      render_404
-    end
+    response.headers['Content-Type'] = 'application/javascript'
+    render json: imgEmbedHtml, callback: params.fetch(:callback, 'callback')
   end
 
-
-  def embed_js
-    if @purl.image?
-      render "purl/embed/_img_viewer", :layout => "purl_embed_js"
-    else
-      render_404
-    end
-  end
+  private
 
   # validate that the id is of the proper format
   def validate_id
-    if !Dor::Util.validate_druid(params[:id])
+    unless Dor::Util.validate_druid(params[:id])
       render_404
       return false
     end
@@ -61,8 +51,11 @@ class EmbedController < ApplicationController
     true
   end
 
-  def render_404
-    render :status => 404, :file => "#{Rails.root}/public/404", :formats => [:html], :layout => false
+  def validate_image
+    render_404 unless @purl.image?
   end
 
+  def render_404
+    render status: 404, file: "#{Rails.root}/public/404", formats: [:html], layout: false
+  end
 end

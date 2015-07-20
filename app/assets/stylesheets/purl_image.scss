@@ -42,7 +42,7 @@ a:hover { border-bottom: 1px dotted; }
 a:active { color: #4f4f4f; }
 
 body {
-  background: #474747 url(../images/purl-image-background.png) top left repeat-x;
+  background: #474747 image-url('purl-image-background.png') top left repeat-x;
   color: #000000;
 	font: 11px/1.3em "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
 	text-align: center;
@@ -99,7 +99,7 @@ h3 {
 }
 
 #pane-toc-metadata {
-  background: #fff url(../images/contents_bg.png) top left repeat-x;
+  background: #fff image-url('contents_bg.png') top left repeat-x;
   height: auto;
   overflow: auto;
   position: absolute;
@@ -108,7 +108,7 @@ h3 {
 }
 
 #pane-img-viewer {
-  background: #fff url(../images/contents_bg.png) top left repeat-x;
+  background: #fff image-url('contents_bg.png') top left repeat-x;
   overflow: hidden;
   position: absolute;
   width: 100%;
