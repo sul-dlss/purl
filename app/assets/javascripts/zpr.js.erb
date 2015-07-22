@@ -122,7 +122,7 @@ function zpr(viewFinderId, inputValues) {
         .attr({ 'id': viewFinderId + '-rotate-cw', 'src': purlServerURL + '<%= asset_path('zpr-rotate-cw.png') %>' })
         .click(function() { rotate('cw'); }))
       .append($('<img>')
-        .attr({ 'id': viewFinderId + '-rotate-ccw', 'src': purlServerURL + '<%= asset_path('zpr-zoom-ccw.png') %>' })
+        .attr({ 'id': viewFinderId + '-rotate-ccw', 'src': purlServerURL + '<%= asset_path('zpr-rotate-ccw.png') %>' })
         .click(function() { rotate('ccw'); }))
     );
 
