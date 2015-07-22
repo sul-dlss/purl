@@ -1,3 +1,5 @@
+//= require zpr
+
 var imgInfo;
 
 var sizes = ['small', 'medium', 'large', 'xlarge', 'full'];
@@ -69,15 +71,15 @@ $(document).ready(function() {
   });
 
   $('#icon-list-view').click(function() {
-    $('#icon-list-view').attr('src', '/images/icon-list-view-active.png');
-    $('#icon-gallery-view').attr('src', '/images/icon-gallery-view-inactive.png');
+    $('#icon-list-view').attr('src', '<%= asset_path('icon-list-view-active.png') %>');
+    $('#icon-gallery-view').attr('src', '<%= asset_path('icon-gallery-view-inactive.png') %>');
     $('ol#toc').show();
     $('div#gallery-content').hide();
   });
 
   $('#icon-gallery-view').click(function() {
-    $('#icon-list-view').attr('src', '/images/icon-list-view-inactive.png');
-    $('#icon-gallery-view').attr('src', '/images/icon-gallery-view-active.png');
+    $('#icon-list-view').attr('src', '<%= asset_path('icon-list-view-inactive.png') %>');
+    $('#icon-gallery-view').attr('src', '<%= asset_path('icon-gallery-view-active.png') %>');
     $('div#gallery-content').show();
     $('ol#toc').hide();
   });
@@ -194,17 +196,17 @@ function showImg(sequence, size, animate) {
   $('#img-viewer-pagination').html((getSequenceIndex(index) + 1) + ' of ' + groups.length);
 
   if ($('#img-viewer-prev').length != 0 && $('#img-viewer-next').length != 0) {
-    $('#img-viewer-prev > img').attr('src', '/images/img-view-group-prev-inactive.png');
+    $('#img-viewer-prev > img').attr('src', '<%= asset_path('img-view-group-prev-inactive.png') %>');
     $('#img-viewer-next').unbind().css('cursor', 'default');
 
     if ((seqIndex - 1) >= 0) {
       $('#img-viewer-prev').click(function() { prev(seqIndex); }).css('cursor', 'pointer');
-      $('#img-viewer-prev > img').attr('src', '/images/img-view-group-prev-active.png');
+      $('#img-viewer-prev > img').attr('src', '<%= asset_path('img-view-group-prev-active.png') %>');
     }
 
     if ((seqIndex + 1) < groups.length) {
       $('#img-viewer-next').click(function() { next(seqIndex); }).css('cursor', 'pointer');
-      $('#img-viewer-next > img').attr('src', '/images/img-view-group-next-active.png');
+      $('#img-viewer-next > img').attr('src', '<%= asset_path('img-view-group-next-active.png') %>');
     }
   }
 
@@ -538,7 +540,7 @@ function loadImgsInHorizontalNavigation(id, index) {
 
   if (seqIndex <= 0) {
     $('#viewer-h-nav-img-01')
-      .attr('src', '/images/img-view-first-ptr.png')
+      .attr('src', '<%= asset_path('img-view-first-ptr.png') %>')
       .css({'cursor': 'auto', 'width': 65, 'height': 40})
       .click(function() {});
   } else {
@@ -559,7 +561,7 @@ function loadImgsInHorizontalNavigation(id, index) {
 
   if ((seqIndex + 1) == groups.length) {
     $('#viewer-h-nav-img-03')
-      .attr('src', '/images/img-view-last-ptr.png')
+      .attr('src', '<%= asset_path('img-view-last-ptr.png') %>')
       .css({'cursor': 'auto', 'width': 65, 'height': 40})
       .click(function() {});
   } else {
@@ -603,13 +605,6 @@ function loadImgsInVerticalNavigation(id, index) {
       "<a id=\"thumb-img-viewer\" href=\"javascript:;\"><span class=\"obscure\">View the</span> thumb <span class=\"obscure\"> size of image </span><span class=\"obscure\" id=\"thumb-img-viewer-id\"></span></a>" +
       "<span id=\"thumb-size-img-viewer\" class=\"img-size\"></span>" +
     "</div>" +
-    // "<div class=\"viewer-sizes-download\"> " +
-    //   "<a id=\"thumb-img-viewer-download\">" +
-    //     "<span class=\"obscure\">Download the thumb size of image </span>" +
-    //     "<span class=\"obscure\" id=\"thumb-img-viewer-download-id\"></span>" +
-    //     "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" +
-    //   "</a>" +
-    // "</div>" +
   "</li>";
   $("#viewer-sizes-nav").append(html);
 
@@ -626,7 +621,7 @@ function loadImgsInVerticalNavigation(id, index) {
             "<a id=\"" + size + "-img-viewer-download\">" +
               "<span class=\"obscure\">Download the " + size + " size of image </span>" +
               "<span class=\"obscure\" id=\"" + size +  "-img-viewer-download-id\"></span>" +
-              "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" +
+              "<img src=\"<%= asset_path('icon-download.png') %>\" alt=\"\" title=\"\"/>" +
             "</a>" +
           "</div>" +
         "</li>";
@@ -653,9 +648,9 @@ function loadImgsInVerticalNavigation(id, index) {
             "<a id=\"" + size + "-img-viewer-download\">" +
               "<span class=\"obscure\">Download the " + size + " size of image </span>" +
               "<span class=\"obscure\" id=\"" + size +  "-img-viewer-download-id\"></span>" +
-              "<img src=\"/images/icon-download.png\" alt=\"\" title=\"\"/>" +
+              "<img src=\"<%= asset_path('icon-download.png') %>\" alt=\"\" title=\"\"/>" +
             "</a>" +
-            "<img src=\"/images/icon-stanford-only.png\" class=\"icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>" +
+            "<img src=\"<%= asset_path('icon-stanford-only.png') %>\" class=\"icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>" +
           "</div>" +
         "</li>";
         $("#viewer-sizes-nav").append(html);
@@ -667,7 +662,7 @@ function loadImgsInVerticalNavigation(id, index) {
     $("#viewer-sizes-nav").append("<li style=\"float: left;\"><a id=\"zoom-img-viewer\" href=\"javascript:;\" title=\"Zoom View\">zoom<span class=\"obscure\"> of image 1</span></a></li>");
   } else if (imgInfo[index]['rightsStanford'] === "true") {
     var url = "https://" + $(location).attr('host') + '/auth' + $(location).attr('pathname').replace(/^\/auth/, '') + $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, 'zoom');
-    $("#viewer-sizes-nav").append("<li style=\"float: left;\"><a id=\"zoom-img-viewer\" href=\"" + url + "\" class=\"su\" title=\"Zoom View\">zoom<span class=\"obscure\"> of image 1</span></a><img src=\"/images/icon-stanford-only.png\" class=\"icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/></li>");
+    $("#viewer-sizes-nav").append("<li style=\"float: left;\"><a id=\"zoom-img-viewer\" href=\"" + url + "\" class=\"su\" title=\"Zoom View\">zoom<span class=\"obscure\"> of image 1</span></a><img src=\"<%= asset_path('icon-stanford-only.png') %>\" class=\"icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/></li>");
   }
 
   $("#viewer-sizes-nav").append("</ul>");

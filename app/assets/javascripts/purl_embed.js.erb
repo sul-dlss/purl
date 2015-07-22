@@ -303,7 +303,7 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
 
     if (seqIndex <= 0) {
       $('.pe-h-nav-img-01')
-        .attr('src', peServerURL + '/images/img-view-first-ptr.png')
+        .attr('src', peServerURL + '<%= asset_path('img-view-first-ptr.png') %>')
         .width(50).height(40)
         .click(function() {});
     } else {
@@ -326,7 +326,7 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
 
     if ((seqIndex + 1) == groups.length) {
       $('.pe-h-nav-img-03')
-        .attr('src', peServerURL + '/images/img-view-last-ptr.png')
+        .attr('src', peServerURL + '<%= asset_path('img-view-last-ptr.png') %>')
         .width(50).height(40)
         .click(function() {});
     } else {
@@ -437,7 +437,7 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
           html = "<span class=\"pe-" + size + "-img-viewer\" href=\"" + url + "\" class=\"su\">" + size + "</span>" +
               "<span class=\"pe-v-nav-img-size\"> (" + getDimensionsForSizeWxH(index, size)  + ")</span>" +
               "<a href=\"" + getDownloadLink(index, size) + "\" class=\"pe-" + size + "-img-viewer-download pe-download-icon\"></a>" +
-              "<img src=\"" + peServerURL + "/images/icon-stanford-only.png\" class=\"pe-icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>";
+              "<img src=\"" + peServerURL + "<%= asset_path('icon-stanford-only.png') %>\" class=\"pe-icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>";
 
           if (size !== "thumb") {
             $(".pe-v-nav-sizes").append("<li>" + html + "</li>");
@@ -456,7 +456,7 @@ var purlEmbed = (function(data, pid, stacksURL, config, parentSelector) {
           $(location).attr('hash').replace(/thumb|small|medium|large|xlarge|full|zoom/, 'zoom');
 
         li = "<span class=\"pe-zoom-img-viewer su\" href=\"" + url + "\" title=\"Zoom View\">zoom</span>" +
-          "<img src=\"" + peServerURL + "/images/icon-stanford-only.png\" class=\"pe-icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>";
+          "<img src=\"" + peServerURL + "<%= asset_path('icon-stanford-only.png') %>\" class=\"pe-icon-stanford-only\" alt=\"Stanford Only\" title=\"Stanford Only\"/>";
       }
 
       $(".pe-v-nav-sizes").append("<li><div class=\"pe-v-nav-sizes-links\">" + li + "</div></li></ul>");

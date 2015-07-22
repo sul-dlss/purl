@@ -1,0 +1,165 @@
+
+/*
+ *= require 'reset'
+ *= require 'footer'
+ *= require 'licenses'
+ */
+
+/*  Image Stacks  */
+
+a { color: #00388e /*#2E4F81*/; text-decoration:none; }
+a:hover { border-bottom: 1px dotted; }
+a:active { color: #4f4f4f; }
+
+body {
+  background: #474747 image-url('purl-image-background.png') top left repeat-x;
+  color: #000000;
+	font: 11px/1.3em "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+h1 {
+	color: #f6f6f6;
+	filter: dropshadow(color=#333333, offx=-1, offy=-1);
+	font: normal normal normal 1.9em "Myriad Pro", "Droid Sans", "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+	letter-spacing: 1px;
+	text-shadow: -1px -1px 0px #333;
+}
+
+h2 {
+  font-size: 1.4em;
+	font-weight: normal;
+	line-height: 1.2em;
+	margin: 0 0 .5em 0;
+}
+
+h3 {
+  font-size: 1.1em;
+	font-weight: normal;
+}
+
+#container {
+	margin: 0 auto;
+  overflow: auto;
+  position: relative;
+	text-align: left;
+	width: 90%;
+
+}
+
+#banner {
+  background: image-url('sulair_rosette_30x30.png') top left no-repeat;
+	height: 35px;
+	margin: 8px 0 4px 0;
+	padding-left: 40px;
+}
+
+#banner h1 {
+  padding-top: 6px;
+}
+
+#contents {
+  position: relative;
+  width: 100%;
+}
+
+#links-and-metadata {
+	margin: 20px 30px;
+	overflow: auto;
+}
+
+#links-column {
+	border-left: 1px dotted #aaa;
+	margin-top: 30px;
+	padding: 10px 0 10px 15px;
+	float: right;
+	width: 14%;
+}
+
+#rights-metadata {
+	padding-top: 10px;
+}
+
+#title-metadata, #rights-metadata {
+	width: 82%;
+  float: left;
+}
+
+
+#title-metadata dl, #rights-metadata dl {
+  margin: 15px 0;
+}
+
+#title-metadata dt, #rights-metadata dt {
+    float: left;
+    color: #555;
+    line-height: 1.5;
+    min-width: 9.5em;
+    padding: 3px 5px 3px 0;
+    text-align: left;
+    width: 11em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+#title-metadata dd, #rights-metadata dd {
+  line-height: 1.5;
+  margin-left: 12em;
+  padding: 3px 0px;
+}
+
+#title-metadata dd hr {
+  border-width: 0;
+  margin: 7px 0;
+}
+
+#title-metadata dd p, #rights-metadata dd p {
+  margin-bottom: 8px;
+}
+
+#toc-and-metadata {
+  clear: left;
+  overflow: auto;
+  margin: 10px 30px 0 30px;
+  padding-top: 10px;
+}
+
+#list-gallery-toggle-box {
+	padding-right: 10px;
+	text-align: right;
+}
+
+#gallery-pagination {
+	padding: 10px 0;
+	text-align: left;
+}
+
+ol#toc {
+  float: left;
+  width: 100%;
+}
+
+ol#toc > li {
+  background: #fff image-url('item-header-bg.png') left 2px repeat-x;
+  border: 1px solid #ccc;
+  margin: 5px 5px 0 0;
+  overflow: auto;
+  width: 400px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.obscure {
+  height: 1px;
+  margin-left: -9999px;
+  position: absolute;
+  width: 1px;
+}
+
+.sidebar-stmt {
+	padding: 0 0 15px 0;
+}
+
+.truncator-link { font-weight: bold; }
