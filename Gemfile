@@ -36,6 +36,7 @@ group :deployment do
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
+  gem 'capistrano-passenger'
   gem 'lyberteam-capistrano-devel'
 end
 
