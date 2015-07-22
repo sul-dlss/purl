@@ -4,8 +4,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database (during local development)
 gem 'sqlite3'
-# Use mysql as the database when running on the server environment
-gem 'mysql2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
