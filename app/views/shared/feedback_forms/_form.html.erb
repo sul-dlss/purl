@@ -1,9 +1,4 @@
 <div class="container">
-  <% if Settings.FEEDBACK_ALERT %>
-    <p class="feedback-alert">
-      <%= t('blacklight.feedback_form.feedback_alert_html', href: mail_to("infocenter@stanford.edu")) %>
-    </p>
-  <% end %>
   <%= form_tag feedback_form_path, method: :post, class:"form-horizontal feedback-form", role:"form" do %>
     <div class="col-sm-6 col-sm-offset-2">
       <div class="col-sm-offset-3">
@@ -43,8 +38,4 @@
       </div>
     </div>
   <% end %>
-  <div class="col-sm-4">
-    <%= render "shared/feedback_forms/chat_with_librarian" %>
-    <%= render "shared/quick_reports/form", layout: nil %>
-  </div>
 </div>

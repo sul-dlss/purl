@@ -32,3 +32,6 @@ embed:
 
 searchworks:
   url: 'http://searchworks.stanford.edu/view/'
+
+feedback:
+  email_to: ""

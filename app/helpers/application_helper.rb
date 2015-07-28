@@ -14,6 +14,7 @@ module ApplicationHelper
   end
 
   def show_feedback_form?
+    Settings.feedback.email_to.present?
   end
 
   def link_to_purl druid

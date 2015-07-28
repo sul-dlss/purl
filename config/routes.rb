@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get ':id' => 'purl#show', as: :purl
   get '/:id/iiif/manifest.json' => 'purl#manifest', as: :iiif_manifest
 
-  get 'feedback' => 'feedback#new'
+  resource :feedback_form, path: "feedback", only: [:new, :create]
+  get "feedback" => "feedback_forms#new"
 end
