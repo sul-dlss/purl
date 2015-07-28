@@ -1,22 +1,53 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en" class="no-js">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title><%= yield(:title) %>Stanford Digital Repository</title>
-    <link rel="shortcut icon" href="favicon.ico" />
-    <%= stylesheet_link_tag 'site' %>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- Mobile viewport optimization h5bp.com/ad -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="google-site-verification" content="<%= Settings.GOOGLE_SITE_VERIFICATION %>" />
+    <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+    <!--[if IEMobile]>
+      <meta http-equiv="cleartype" content="on">
+    <![endif]-->
+
+    <title><%= render_page_title %></title>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= stylesheet_link_tag 'print', media: 'print' %>
+    <link href="https://www.stanford.edu/su-identity/css/su-identity.css" rel="stylesheet">
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= content_for(:head) %>
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if IE 8]>
+      <link rel="stylesheet" type="text/css" href="https://www.stanford.edu/su-identity/css/ie/ie8.css" />
+    <![endif]-->
+    <!--[if IE 7]>
+      <link rel="stylesheet" type="text/css" href="https://www.stanford.edu/su-identity/css/ie/ie7.css" />
+    <![endif]-->
+
   </head>
   <body>
-    <div id="container">
-      <div id="banner"><h1>Stanford Digital Repository</h1></div>
-      <div id="contents">
-        <%= yield %>
-      </div>
-    </div>
+    <%= render 'shared/skip_to_nav' %>
 
-    <%= render :partial => 'purl/static_footer' %>
-    <%= javascript_include_tag 'application' %>
+    <div id="su-wrap"> <!-- #su-wrap start -->
+      <div id="su-content"> <!-- #su-content start -->
+        <div id="outer-container" class="container-fluid">
+          <%= render 'shared/top_navbar' %>
+          <%= render 'shared/brand_navbar' %>
 
-    <%= render :partial => 'purl/ga' if Rails.env == 'production' %>
+          <%= render 'shared/print_header' %>
+          <section id="main-container" role="main" data-analytics-id="<%= Settings.GOOGLE_ANALYTICS_ID %>">
+            <%= yield %>
+          </section>
+        </div>
+      </div> <!-- #su-content end -->
+    </div> <!-- #su-wrap end -->
+    <%= render 'shared/su_footer' %>
   </body>
 </html>

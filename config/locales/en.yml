@@ -21,3 +21,45 @@
 
 en:
   hello: "Hello world"
+
+  record_side_nav:
+    abstract_contents:
+      id: "abstract-contents"
+      icon: '<i class="fa fa-align-justify"></i>'
+      label: "Contents"
+    contributors:
+      id: "contributors"
+      icon: '<i class="fa fa-user"></i>'
+      label: "Contributors"
+    access_conditions:
+      id: "access-conditions"
+      icon: '<i class="fa fa-key"></i>'
+      label: "Access"
+    contents_summary:
+      id: "contents-summary"
+      icon: '<i class="fa fa-align-justify"></i>'
+      label: "Summary"
+    subjects:
+      id: "subjects"
+      icon: '<i class="fa fa-tags"></i>'
+      label: "Subjects"
+    bibliography_info:
+      id: "bibliography-info"
+      icon: '<i class="fa fa-info"></i>'
+      label: "Info"
+    browse_nearby:
+      id: "browse-nearby"
+      icon: '<span class="sul-icon sul-icon-books-3"></span>'
+      label: "Browse"
+    description:
+      id: "description"
+      icon: '<span class="sul-i sul-i-list-bullets-1"></span>'
+      label: "Description"
+    contact_info:
+      id: "contact"
+      icon: '<i class="fa fa-envelope-o"></i>'
+      label: "Contact"
+    find_it:
+      id: "find_it"
+      icon: '<i class="fa fa-eye"></i>'
+      label: "Find it"

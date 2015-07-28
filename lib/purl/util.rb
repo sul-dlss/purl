@@ -7,7 +7,7 @@ module Purl
     end
 
     # check if file is ready (deliver = yes or publish = yes)
-    def is_file_ready(file)
+    def is_file_ready?(file)
       file && (file['deliver'] != 'no' || file['publish'] != 'no')
     end
 
@@ -98,6 +98,6 @@ module Purl
       URI.encode(url)
     end
 
-    module_function :get_jp2_id, :get_image_json_array, :get_img_base_url, :get_file_label, :get_file_url
+    module_function :get_jp2_id, :get_image_json_array, :get_img_base_url, :get_file_label, :get_file_url, :is_file_ready?
   end
 end

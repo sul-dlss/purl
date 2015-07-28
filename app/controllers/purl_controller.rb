@@ -1,65 +1,40 @@
 require 'dor/util'
 
 class PurlController < ApplicationController
-  include ModsDisplay::ControllerExtension
-  before_action :validate_id
-  before_action :load_purl
+  before_action :load_purl, except: [:index]
 
-  # this empty config block is recommended by jkeck due to potential misconfiguration without it. That should be fixed in >= 0.1.4
-  configure_mods_display do
+  rescue_from PurlResource::DruidNotValid, with: :invalid_druid
+  rescue_from PurlResource::ObjectNotReady, with: :object_not_ready
+  rescue_from ActionController::UnknownFormat, with: :missing_file
+
+  def index
   end
 
   # entry point into the application
   def show
     # validate that the metadata is ready for delivery
 
-    if @purl.ready?
+    # render the landing page based on the format
+    respond_to do |format|
+      format.html
 
-      # render the landing page based on the format
-      respond_to do |format|
-        format.html do
-          # if the object is an image, render image specific layout
-          if @purl.image?
-            render template: '/purl/image/_contents', layout: 'layouts/purl_image'
-          elsif @purl.book?
-            render template: '/purl/flipbook/_contents', layout: 'purl_flipbook'
-          end
-        end
-
-        format.xml do
-          render xml: @purl.public_xml
-        end
-
-        format.mods do
-          if @purl.has_mods
-            render xml: @purl.mods_xml
-          else
-            render_404('invalid')
-          end
-        end
-
-        format.flipbook do
-          if @purl.is_book?
-            render json: @purl.flipbook_json
-          else
-            render nothing: true, status: 404
-          end
-        end
+      format.xml do
+        render xml: @purl.public_xml_body
       end
-    else
-      render 'purl/_unavailable'
-      return false
+
+      format.mods do
+        render xml: @purl.mods_body
+      end if @purl.mods?
+
+      format.flipbook do
+        render json: @purl.flipbook.to_json
+      end if @purl.flipbook?
     end
   end
 
-  rescue_from(ActionController::UnknownFormat) do |_e|
-    request.format = :html
-    render_404('unknown_format')
-  end
-
   def manifest
-    if @purl.has_manifest
-      render json: @purl.manifest_json
+    if @purl.iiif_manifest?
+      render json: @purl.iiif_manifest_body
     else
       render nothing: true, status: 404
     end
@@ -68,33 +43,19 @@ class PurlController < ApplicationController
   private
 
   # validate that the id is of the proper format
-  def validate_id
-    unless Dor::Util.validate_druid(params[:id])
-      render_404('invalid')
-      return false
-    end
-    true
-  end
-
   def load_purl
-    @purl = PurlObject.find(params[:id])
-
-    # Catch well formed druids that don't exist in the document cache
-    if @purl.nil?
-      render_404('unavailable')
-      return false
-    end
-    true
+    @purl = PurlResource.find(params[:id])
   end
 
-  def render_404(type)
-    render '/purl/_' + type, layout: 'application', status: 404
+  def invalid_druid
+    render '/errors/invalid', status: 404
   end
 
-  configure_mods_display do
-    abstract do
-      label_class 'abstract'
-      value_class 'desc-content'
-    end
+  def object_not_ready
+    render '/errors/unavailable', status: 404
+  end
+
+  def missing_file
+    fail ActionController::RoutingError, 'Not Found'
   end
 end

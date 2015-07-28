@@ -16,6 +16,8 @@ gem 'config'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+gem 'turbolinks'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # CanCanCan is an authorization Gem for rails
@@ -84,3 +86,9 @@ end
 gem 'mods_display', '~> 0.3.2'
 gem 'htmlentities'
 gem 'dor-rights-auth'
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
+gem "retina_tag"
+gem 'hurley'
+gem 'ruby-oembed', require: 'oembed'
+gem 'addressable'

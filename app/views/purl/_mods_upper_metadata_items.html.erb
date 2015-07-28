@@ -1,0 +1,10 @@
+<% document ||= @document %>
+<dl>
+  <% document.mods.note.select { |x| x.label =~ /Preferred citation/i }.each do |notes| %>
+    <%= mods_record_field(notes) %>
+  <% end %>
+
+  <% document.mods.collection.each do |collection| %>
+    <%= mods_record_field(collection) %>
+  <% end %>
+</dl>

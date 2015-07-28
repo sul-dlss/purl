@@ -1,0 +1,39 @@
+#topnav-container {
+  padding: 2px 0;
+  position: relative;
+}
+
+#topnav {
+  border: none;
+  background: none;
+  margin-bottom: 0;
+  display: table;
+  padding: 2px 0;
+
+  .header-links {
+    float: right;
+    margin-top: 2px;
+    a {
+      font-weight: normal;
+      margin-left: 15px;
+      padding-bottom: 3px;
+      color: $sul-topnavbar-link-color;
+      border-bottom: none;
+      &.first {
+        margin-left: 0;
+      }
+    }
+    a:hover {
+      border-bottom: 3px solid $sul-topnavbar-link-color;
+    }
+  }
+
+}
+
+@media screen and (max-width: $screen-xs-max) {
+  #topnav {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+  }
+}
