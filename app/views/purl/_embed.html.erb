@@ -1,0 +1,11 @@
+<% if @purl.flipbook? %>
+<iframe class="embed-iframe embed-flipbook" seamless src="//sul-reader.stanford.edu/flipbook2/embed.jsp?id=<%= @purl.druid %>">
+</iframe>
+<% else %>
+<a class="purl-embed-viewer embed" href="<%= embeddable_url(@purl.druid) %>" data-oembed-provider="<%= oembed_provider_url %>">Show Content</a>
+<noscript>
+  <iframe class="embed-iframe" seamless src="<%= iframe_url(@purl.druid) %>">
+    <a href="<%= iframe_url(@purl.druid) %>">Show Content</a>
+  </iframe>
+</noscript>
+<% end %>

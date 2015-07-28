@@ -1,0 +1,18 @@
+.purl-embed-viewer {
+  margin-bottom: 15px;
+}
+
+.purl-embed-viewer, .oembedall-closehide {
+  display: none;
+}
+
+.embed-iframe {
+  border: 0;
+  width: 100%;
+  height: 400px;
+}
+
+.embed-flipbook {
+  height: 784px;
+  border: 1px solid $gray-lighter;
+}

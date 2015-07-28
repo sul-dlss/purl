@@ -90,6 +90,5 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem "retina_tag"
 gem 'hurley'
-gem 'ruby-oembed', require: 'oembed'
 gem 'addressable'
 gem 'rails-file-icons'

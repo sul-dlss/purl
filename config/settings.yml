@@ -13,13 +13,15 @@ resource_cache:
   lifetime: <%= 1.hour %>
 
 purl_resource:
-  mods: 'http://purl.stanford.edu/%{druid}.mods'
-  public_xml: 'http://purl.stanford.edu/%{druid}.xml'
-  iiif_manifest: 'http://purl.stanford.edu/%{druid}/iiif/manifest.json'
+  mods: 'https://purl.stanford.edu/%{druid}.mods'
+  public_xml: 'https://purl.stanford.edu/%{druid}.xml'
+  iiif_manifest: 'https://purl.stanford.edu/%{druid}/iiif/manifest.json'
 
 embed:
-  url: 'http://purl.stanford.edu/%{druid}'
-  url_template: 'http://purl.stanford.edu/embed.{format}{?url*,application_options*}'
+  url: 'https://purl.stanford.edu/%{druid}'
+  url_template: 'https://purl.stanford.edu/embed{.format}{?url*,application_options*}'
+  iframe:
+    url_template: 'https://embed.stanford.edu/iframe/{?url*}'
   application_options:
     hide_title: true
     hide_metadata: true

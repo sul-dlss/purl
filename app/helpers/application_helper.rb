@@ -21,6 +21,30 @@ module ApplicationHelper
     link_to PurlResource.find(druid).title, purl_url(druid)
   end
 
+  def oembed_url_template
+    @oembed_url_template ||= Addressable::Template.new(Settings.embed.url_template)
+  end
+
+  def oembed_provider_url(options = {})
+    oembed_url_template.expand(format: 'json', application_options: Settings.embed.application_options.to_h.merge(options))
+  end
+
+  def iframe_url_template
+    @iframe_url_template ||= Addressable::Template.new(Settings.embed.iframe.url_template)
+  end
+
+  def iframe_url(druid)
+    iframe_url_template.expand(url: embeddable_url(druid))
+  end
+
+  def embeddable_url(druid)
+    if Settings.embed.url
+      Settings.embed.url % { druid: druid }
+    else
+      purl_url(druid)
+    end
+  end
+
   def with_copyright_symbol(str)
     str.gsub /\(c\) Copyright/i, '© Copyright'
   end
