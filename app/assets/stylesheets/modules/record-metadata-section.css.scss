@@ -1,0 +1,20 @@
+.record-sections {
+  .section {
+    padding-bottom: 0;
+
+    .section-heading h2 {
+      i.fa {
+        font-size: 15px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.record-metadata, .upper-record-metadata {
+  margin-right: 25px;
+
+  dt {
+    width: auto;
+  }
+}

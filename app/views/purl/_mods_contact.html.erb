@@ -1,0 +1,9 @@
+<% document ||= @document %>
+<% if document.mods.contact.any? %>
+  <% document.mods.contact.each do |contact| %>
+    <%= mods_record_field(contact) %>
+  <% end %>
+<% else %>
+  <dt>Contact</dt>
+  <dd><%= mail_to "sdr-contact@stanford.edu", "sdr-contact@stanford.edu"%></dd>
+<% end %>

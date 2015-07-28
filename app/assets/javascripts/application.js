@@ -1,9 +1,28 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
-//= require 'jquery'
-//= require 'jquery.truncator'
-//= require 'footer'
+// This is a manifest file that'll be compiled into application.js, which will include all the files
+// listed below.
+//
+// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
+// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
+//
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// compiled file.
+//
+// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
+// about supported directives.
+//
+//= require jquery
+//= require retina_tag
 
-$(document).ready(function() {
-  $('.desc-content').truncate({ max_length: 550 });
-});
+//= require jquery_ujs
+//= require turbolinks
+//= require jquery-scrollspy
+//= require bootstrap/transition
+//= require bootstrap/collapse
+//= require bootstrap/dropdown
+//= require bootstrap/alert
+//= require bootstrap/modal
+//= require jquery.oembed
+//= require jQuery.XDomainRequest
+
+//= require_tree .
+

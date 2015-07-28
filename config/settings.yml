@@ -15,3 +15,20 @@ flipbook:
 document_cache_root: "<%= File.join(Rails.root, "document_cache") %>"
 
 embed_host: '//127.0.0.1:3000'
+resource_cache:
+  lifetime: <%= 1.hour %>
+
+purl_resource:
+  mods: 'http://purl.stanford.edu/%{druid}.mods'
+  public_xml: 'http://purl.stanford.edu/%{druid}.xml'
+  iiif_manifest: 'http://purl.stanford.edu/%{druid}/iiif/manifest.json'
+
+embed:
+  url: 'http://purl.stanford.edu/%{druid}'
+  url_template: 'http://purl.stanford.edu/embed.{format}{?url*,application_options*}'
+  application_options:
+    hide_title: true
+    hide_metadata: true
+
+searchworks:
+  url: 'http://searchworks.stanford.edu/view/'
