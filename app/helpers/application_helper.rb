@@ -1,14 +1,6 @@
 require 'addressable/template'
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
-  def render_page_title
-    if content_for?(:title)
-      content_for(:title) + ' - ' + application_name
-    else
-      application_name
-    end
-  end
-
   def application_name
     'Stanford Digital Repository'
   end

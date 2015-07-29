@@ -7,6 +7,24 @@
   <%= tag :link, rel: "alternate", title: "IIIF Manifest", type: 'application/json', href: iiif_manifest_url(@purl) if @purl.iiif_manifest? %>
 <% end %>
 
+<% keywords(@purl.mods.subject.map(&:values).join(',')) if @purl.mods && @purl.mods.subject %>
+
+<%# description() %>
+<%#
+opengraph do |graph|
+  graph.title @purl.title
+  graph.type 'og:website'
+  graph.image purl_url(@purl, format: :jpg)
+  graph.url purl_url(@purl)
+end
+
+twitter_card('summary') do |card|
+  card.site Settings.twitter.site
+  card.title @purl.title
+  card.image purl_url(@purl, format: :jpg)
+  card.url purl_url(@purl)
+end
+%>
 <h1><%= @purl.title %></h1>
 <div class="upper-record-metadata row">
   <div class="col-md-12">
