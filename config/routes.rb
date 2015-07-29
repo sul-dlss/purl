@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   resource :feedback_form, path: "feedback", only: [:new, :create]
   get "feedback" => "feedback_forms#new"
+
+  get 'webauth/login' => 'webauth#login', as: :new_user_session
 end
