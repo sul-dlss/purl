@@ -107,6 +107,15 @@ class IiifPresentationManifest
       img_res.width = resource.width
 
       img_res.service = iiif_service(stacks_uri)
+
+      img_res.service['service'] = [
+        IIIF::Service.new(
+          '@id' => "#{Settings.stacks.url}/auth/iiif",
+          'profile' => 'http://iiif.io/api/auth/0/login',
+          'label' => 'Login via WebAuth'
+        )
+      ] unless purl_resource.rights.world_rights_for_file(resource.filename).first
+
       anno.resource = img_res
       canv.images << anno
       sequence.canvases << canv
