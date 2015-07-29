@@ -6,6 +6,9 @@ class PurlResource
   attr_accessor :id
   alias_method :druid, :id
 
+  class DruidNotValid < StandardError; end
+  class ObjectNotReady < StandardError; end
+
   # rubocop:disable Metrics/MethodLength, Style/PredicateName
   def self.has_resource(options)
     options.each do |key, value|
@@ -35,7 +38,11 @@ class PurlResource
   has_resource iiif_manifest: Settings.purl_resource.iiif_manifest
 
   def self.find(id)
-    PurlResource.new(id: id)
+    fail DruidNotValid, id unless Dor::Util.validate_druid(id)
+
+    PurlResource.new(id: id).tap do |obj|
+      fail ObjectNotReady, id unless obj.ready?
+    end
   end
 
   def title

@@ -3,6 +3,10 @@ require 'dor/util'
 class PurlController < ApplicationController
   before_action :load_purl, except: [:index]
 
+  rescue_from PurlResource::DruidNotValid, with: :invalid_druid
+  rescue_from PurlResource::ObjectNotReady, with: :object_not_ready
+  rescue_from ActionController::UnknownFormat, with: :missing_file
+
   def index
   end
 
@@ -19,20 +23,12 @@ class PurlController < ApplicationController
       end
 
       format.mods do
-        if @purl.mods?
-          render xml: @purl.mods_body
-        else
-          render_404('invalid')
-        end
-      end
+        render xml: @purl.mods_body
+      end if @purl.mods?
 
       format.flipbook do
-        if @purl.flipbook?
-          render json: @purl.flipbook.to_json
-        else
-          render nothing: true, status: 404
-        end
-      end
+        render json: @purl.flipbook.to_json
+      end if @purl.flipbook?
     end
   end
 
@@ -48,23 +44,18 @@ class PurlController < ApplicationController
 
   # validate that the id is of the proper format
   def load_purl
-    unless Dor::Util.validate_druid(params[:id])
-      render_404('invalid')
-      return false
-    end
-
     @purl = PurlResource.find(params[:id])
-
-    # Catch well formed druids that don't exist in the document cache
-    if @purl.nil? || !@purl.ready?
-      render_404('unavailable')
-      return false
-    end
-
-    true
   end
 
-  def render_404(type)
-    render '/errors/' + type, status: 404
+  def invalid_druid
+    render '/errors/invalid', status: 404
+  end
+
+  def object_not_ready
+    render '/errors/unavailable', status: 404
+  end
+
+  def missing_file
+    fail ActionController::RoutingError, 'Not Found'
   end
 end
