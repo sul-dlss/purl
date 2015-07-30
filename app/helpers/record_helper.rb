@@ -30,7 +30,7 @@ module RecordHelper
       }.compact.join(delimiter).html_safe)
     else
       Array[values].flatten.map do |value|
-        content_tag(:dd, link_urls_and_email(value).html_safe) if value.present?
+        content_tag(:dd, link_urls_and_email(value.to_s).html_safe) if value.present?
       end.join.html_safe
     end
   end
