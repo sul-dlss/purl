@@ -22,7 +22,6 @@ class Flipbook
     }
   end
 
-
   def page_images
     deliverable_files.select do |file|
       file.mimetype == 'image/jp2' && (file.type == 'image' || file.type == 'page') && file.height > 0 && file.width > 0 && (deliverable_file?(file))

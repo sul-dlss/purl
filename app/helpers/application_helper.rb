@@ -9,7 +9,7 @@ module ApplicationHelper
     Settings.feedback.email_to.present?
   end
 
-  def link_to_purl druid
+  def link_to_purl(druid)
     link_to PurlResource.find(druid).title, purl_url(druid)
   end
 
@@ -22,7 +22,7 @@ module ApplicationHelper
   end
 
   def with_copyright_symbol(str)
-    str.gsub /\(c\) Copyright/i, '© Copyright'
+    str.gsub(/\(c\) Copyright/i, '© Copyright')
   end
 
   def needs_download_panel?

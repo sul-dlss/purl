@@ -1,33 +1,32 @@
 # encoding: UTF-8
 module RecordHelper
-
-  def display_content_field field
+  def display_content_field(field)
     if field.respond_to?(:label, :values) &&
-        field.values.any?(&:present?)
+       field.values.any?(&:present?)
       display_content_label(field.label) +
-      display_content_values(field.values)
+        display_content_values(field.values)
     end
   end
 
-  def display_content_label label
+  def display_content_label(label)
     content_tag :dt, label
   end
 
-  def display_content_values values
+  def display_content_values(values)
     values.map do |value|
       content_tag :dd, value
     end.join('').html_safe
   end
 
-  def mods_display_label label
-    content_tag(:dt, label.gsub(":",""))
+  def mods_display_label(label)
+    content_tag(:dt, label.gsub(':', ''))
   end
 
-  def mods_display_content(values, delimiter=nil)
+  def mods_display_content(values, delimiter = nil)
     if delimiter
-      content_tag(:dd, values.map{|value|
+      content_tag(:dd, values.map do|value|
         link_urls_and_email(value) if value.present?
-      }.compact.join(delimiter).html_safe)
+      end.compact.join(delimiter).html_safe)
     else
       Array[values].flatten.map do |value|
         content_tag(:dd, link_urls_and_email(value.to_s).html_safe) if value.present?
@@ -35,11 +34,11 @@ module RecordHelper
     end
   end
 
-  def mods_record_field(field, delimiter=nil)
+  def mods_record_field(field, delimiter = nil)
     if field.respond_to?(:label, :values) &&
        field.values.any?(&:present?)
       mods_display_label(field.label) +
-      mods_display_content(field.values, delimiter)
+        mods_display_content(field.values, delimiter)
     end
   end
 
@@ -47,24 +46,24 @@ module RecordHelper
     if field.respond_to?(:label, :values) &&
        field.values.any?(&:present?)
       mods_display_label(field.label) +
-      mods_display_name(field.values)
+        mods_display_name(field.values)
     end
   end
 
   def mods_primary_names(names)
     names.map do |name|
-      if name.label == "Author/Creator"
+      if name.label == 'Author/Creator'
         name
       elsif names_include_primary?(name)
-        OpenStruct.new(label: name.label, values: name.values.select{|n| roles_include_primary?(n) })
+        OpenStruct.new(label: name.label, values: name.values.select { |n| roles_include_primary?(n) })
       end
     end.compact
   end
 
   def mods_secondary_names(names)
     names.map do |name|
-      if name.label != "Author/Creator" && !names_include_primary?(name)
-        OpenStruct.new(label: name.label, values: name.values.reject{|n| roles_include_primary?(n) })
+      if name.label != 'Author/Creator' && !names_include_primary?(name)
+        OpenStruct.new(label: name.label, values: name.values.reject { |n| roles_include_primary?(n) })
       end
     end.compact
   end
@@ -72,7 +71,7 @@ module RecordHelper
   def mods_display_name(names)
     names.map do |name|
       content_tag(:dd) do
-        name.name + ((" (#{name.roles.join(', ')})" if name.roles) || "")
+        name.name + ((" (#{name.roles.join(', ')})" if name.roles) || '')
       end
     end.join.html_safe
   end
@@ -139,12 +138,15 @@ module RecordHelper
     end
     val
   end
+
   private
+
   def names_include_primary?(names)
     names.values.any? do |name|
       roles_include_primary?(name)
     end
   end
+
   def roles_include_primary?(name)
     if name.roles.present?
       name.roles.include?('Author') || name.roles.include?('Creator')

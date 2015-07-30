@@ -1,6 +1,6 @@
 class ModsDisplayObject
   include ModsDisplay::ModelExtension
-  
+
   include ModsDisplay::ControllerExtension
 
   require 'stanford-mods'

@@ -54,7 +54,7 @@ class PurlResource
       if abstract
         abstract.values.join
       else
-        ""
+        ''
       end
     end
   end
@@ -83,9 +83,7 @@ class PurlResource
     @rights ||= RightsMetadata.new(rights_metadata)
   end
 
-  def rights_metadata
-    public_xml.rights_metadata
-  end
+  delegate :rights_metadata, to: :public_xml
 
   def content_metadata
     @content_metadata ||= ContentMetadata.new(public_xml.content_metadata)
