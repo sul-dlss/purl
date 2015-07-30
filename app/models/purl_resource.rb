@@ -174,4 +174,14 @@ class PurlResource
   def persisted?
     true
   end
+
+  def updated_at
+    if public_xml_resource.respond_to? :updated_at
+      public_xml_resource.updated_at
+    elsif public_xml_resource.respond_to?(:header) && public_xml_resource.header[:last_modified].present?
+      public_xml_resource.header[:last_modified]
+    else
+      Time.zone.now
+    end
+  end
 end
