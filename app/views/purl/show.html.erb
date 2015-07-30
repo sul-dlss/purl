@@ -7,7 +7,7 @@
   <%= tag :link, rel: "alternate", title: "IIIF Manifest", type: 'application/json', href: iiif_manifest_url(@purl) if @purl.iiif_manifest? %>
 <% end %>
 
-<% keywords(@purl.mods.subject.map(&:values).join(',')) if @purl.mods && @purl.mods.subject %>
+<% keywords(@purl.mods.subject.compact.map(&:values).join(',')) if @purl.mods && @purl.mods.subject %>
 
 <% description(@purl.description.truncate(200)) %>
 
