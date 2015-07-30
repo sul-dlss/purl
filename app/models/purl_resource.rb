@@ -48,6 +48,17 @@ class PurlResource
     Array.wrap(mods.title).join(' -- ') if mods?
   end
 
+  def description
+    @description ||= begin
+      abstract = mods.abstract.detect { |a| a.respond_to? :values }
+      if abstract
+        abstract.values.join
+      else
+        ""
+      end
+    end
+  end
+
   def ready?
     public_xml?
   end

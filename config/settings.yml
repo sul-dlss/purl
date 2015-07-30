@@ -48,4 +48,5 @@ feedback:
 
 GOOGLE_ANALYTICS_ID: ""
 
-twitter: {}
+twitter:
+  site: '@DigitalLib'
