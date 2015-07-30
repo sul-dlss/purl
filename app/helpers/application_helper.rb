@@ -24,4 +24,8 @@ module ApplicationHelper
   def with_copyright_symbol(str)
     str.gsub /\(c\) Copyright/i, '© Copyright'
   end
+
+  def needs_download_panel?
+    Settings.embed.needs_downloadable_file_panel_types.include? @purl.type
+  end
 end

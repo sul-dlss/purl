@@ -29,6 +29,11 @@ embed:
   application_options:
     hide_title: true
     hide_metadata: true
+  needs_downloadable_file_panel_types:
+    - image
+    - manuscript
+    - map
+    - book
 
 searchworks:
   url: 'http://searchworks.stanford.edu/view/'
