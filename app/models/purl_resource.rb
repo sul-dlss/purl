@@ -1,4 +1,3 @@
-require 'dor/rights_auth'
 require 'dor/util'
 
 class PurlResource
@@ -70,11 +69,23 @@ class PurlResource
   end
 
   def rights
-    Dor::RightsAuth.parse(public_xml_document.at_xpath('/publicObject/rightsMetadata').to_s)
+    @rights ||= RightsMetadata.new(rights_metadata)
+  end
+
+  def rights_metadata
+    public_xml.rights_metadata
+  end
+
+  def content_metadata
+    @content_metadata ||= ContentMetadata.new(public_xml.content_metadata)
+  end
+
+  def public_xml
+    @public_xml ||= PublicXml.new(public_xml_document)
   end
 
   def type
-    @type ||= public_xml_document.xpath('/publicObject/contentMetadata/@type').to_s
+    @type ||= content_metadata.type
   end
 
   def flipbook?
@@ -121,13 +132,13 @@ class PurlResource
   end
 
   def license_code
-    el = public_xml_document.xpath('/publicObject/rightsMetadata/use/machine[@type="openDataCommons" or @type="creativeCommons"]').first
+    type, code = rights.machine_readable_license
 
-    "#{el.attribute('type')}-#{el.text}" if el && el.text.present?
+    "#{type}-#{code}" if type.present? && code.present?
   end
 
   def license_text
-    public_xml_document.xpath('/publicObject/rightsMetadata/use/human[@type="openDataCommons" or @type="creativeCommons"]/text()').first
+    rights.license_statement
   end
 
   def copyright?
@@ -135,7 +146,7 @@ class PurlResource
   end
 
   def copyright
-    public_xml_document.xpath('/publicObject/rightsMetadata/copyright/human/text()').first.to_s
+    rights.copyright_statement
   end
 
   def use_and_reproduction?
@@ -143,7 +154,7 @@ class PurlResource
   end
 
   def use_and_reproduction
-    public_xml_document.xpath('/publicObject/rightsMetadata/use/human[@type="useAndReproduction"]/text()').first.to_s
+    rights.use_and_reproduction_statement
   end
 
   def catalog_key

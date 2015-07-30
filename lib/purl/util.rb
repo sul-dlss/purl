@@ -67,11 +67,11 @@ module Purl
     end
 
     # construct base URL using stacks URL
-    def get_img_base_url(pid, stacks_url, deliverable_file)
+    def get_img_base_url(pid, deliverable_file)
       img_id = get_jp2_id(deliverable_file.filename.to_s)
       base_url = deliverable_file.imagesvc.to_s
 
-      base_url = stacks_url + '/image/' + pid + '/' + img_id if base_url.empty?
+      base_url =  Settings.stacks.url + '/image/' + pid + '/' + img_id if base_url.empty?
 
       base_url
     end
@@ -80,8 +80,8 @@ module Purl
     def get_file_label(deliverable_file)
       label = get_jp2_id(deliverable_file.filename.to_s)
 
-      unless deliverable_file.description_label.blank?
-        label = deliverable_file.description_label.to_s
+      unless deliverable_file.label.blank?
+        label = deliverable_file.label.to_s
       end
 
       label.truncate(45)
