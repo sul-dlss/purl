@@ -6,7 +6,7 @@ class ContentMetadata
   end
 
   def type
-    document.attribute('type').to_s
+    document.attribute('type').to_s if document
   end
 
   def reading_order
@@ -18,10 +18,12 @@ class ContentMetadata
   end
 
   def book_data
-    document.at_xpath('bookData')
+    document.at_xpath('bookData') if document
   end
 
   def resources
+    return [] unless document
+
     @resources ||= document.xpath('resource').map do |resource|
       extract_resources(resource)
     end.flatten.compact
