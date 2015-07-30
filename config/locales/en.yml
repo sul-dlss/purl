@@ -63,3 +63,7 @@ en:
       id: "find_it"
       icon: '<i class="fa fa-eye"></i>'
       label: "Find it"
+    download:
+      id: "download"
+      icon: '<i class="fa fa-download"></i>'
+      label: "Download"

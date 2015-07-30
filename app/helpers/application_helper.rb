@@ -25,11 +25,7 @@ module ApplicationHelper
     str.gsub /\(c\) Copyright/i, '© Copyright'
   end
 
-  def stacks_url
-    if params[:stacks] == 'b'
-      Settings.stacks.url_b
-    else
-      Settings.stacks.url
-    end
+  def needs_download_panel?
+    Settings.embed.needs_downloadable_file_panel_types.include? @purl.type
   end
 end
