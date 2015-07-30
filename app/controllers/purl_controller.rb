@@ -29,6 +29,14 @@ class PurlController < ApplicationController
       format.flipbook do
         render json: @purl.flipbook.to_json
       end if @purl.flipbook?
+
+      format.jpeg do
+        if @purl.representative_thumbnail?
+          redirect_to @purl.representative_thumbnail
+        else
+          redirect_to view_context.image_path('SUL-logo-stacked@2x.png')
+        end
+      end
     end
   end
 

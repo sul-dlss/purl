@@ -184,4 +184,17 @@ class PurlResource
       Time.zone.now
     end
   end
+
+  def iiif_manifest
+    return {} unless iiif_manifest?
+    @iiif_manifest ||= JSON.parse(iiif_manifest_body)
+  end
+
+  def representative_thumbnail?
+    representative_thumbnail.present?
+  end
+
+  def representative_thumbnail
+    iiif_manifest.fetch('thumbnail', {})['@id']
+  end
 end
