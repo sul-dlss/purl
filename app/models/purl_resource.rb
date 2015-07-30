@@ -165,8 +165,8 @@ class PurlResource
     end
   end
 
-  def searchworks_record?
-    release = public_xml_document.xpath('/publicObject/releaseData/release[@to="Searchworks"]/text()').to_s
+  def released_to?(key)
+    release = public_xml_document.xpath("/publicObject/releaseData/release[@to='#{key}']/text()").to_s
 
     release == 'true'
   end

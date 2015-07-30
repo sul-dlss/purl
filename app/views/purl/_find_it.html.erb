@@ -1,5 +1,9 @@
 <% if @purl.catalog_key %>
   <%= link_to 'View in SearchWorks', Settings.searchworks.url + @purl.catalog_key %>
-<% elsif @purl.searchworks_record? %>
-  <%= link_to 'View in SearchWorks', Settings.searchworks.url + @purl.id %>
+<% end %>
+
+<% Settings.releases.each do |dest| %>
+  <% if @purl.released_to? dest[:key] %>
+    <%= link_to dest[:label], dest[:url] % @purl.attributes %>
+  <% end %>
 <% end %>

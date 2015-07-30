@@ -35,6 +35,11 @@ embed:
     - map
     - book
 
+releases:
+  - label: "View in SearchWorks"
+    key: 'Searchworks'
+    url: 'http://searchworks.stanford.edu/view/%{druid}'
+
 searchworks:
   url: 'http://searchworks.stanford.edu/view/'
 
