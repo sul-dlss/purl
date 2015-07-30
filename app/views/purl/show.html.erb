@@ -32,12 +32,17 @@ end
   </div>
 
   <div class="col-md-12">
+    <% if @purl.flipbook? %>
+    <iframe class="embed-iframe embed-flipbook" seamless src="//sul-reader.stanford.edu/flipbook2/embed.jsp?id=<%= @purl.druid %>">
+    </iframe>
+    <% else %>
     <a class="purl-embed-viewer embed" href="<%= embeddable_url(@purl.druid) %>">Show Content</a>
     <noscript>
       <iframe class="embed-iframe" seamless src="//embed.stanford.edu/iframe?url=<%= embeddable_url(@purl.druid) %>">
         <a href="//embed.stanford.edu/iframe?url=<%= embeddable_url(@purl.druid) %>">Show Content</a>
       </iframe>
     </noscript>
+    <% end %>
   </div>
 </div>
 
