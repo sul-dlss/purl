@@ -5,14 +5,12 @@
   abstract_contents = render(partial: "mods_abstract_contents", locals: {document: document})
   subjects = render(partial: "mods_subjects", locals: {document: document})
   bibliography = render(partial: "mods_bibliographic", locals: {document: document})
-  access_conditions = render(partial: "mods_access", locals: {document: document})
   contact = render(partial: "mods_contact", locals: {document: document})
   find_it = render(partial: "find_it", locals: {document: document})
 
   locals = {
     type: "mods",
     has_data: {
-      access_conditions: access_conditions.present?,
       description: description.present?,
       contributors: contributors.present?,
       abstract_contents: abstract_contents.present?,
@@ -23,19 +21,6 @@
     }
   }
 %>
-
-<% if access_conditions.present? %>
-  <div class="section" id="<%= t('record_side_nav.access_conditions.id') %>" data-side-nav-class="<%= t('record_side_nav.access_conditions.id') %>">
-    <div class="section-heading">
-      <h2><%= t('record_side_nav.access_conditions.icon').html_safe %> Access conditions </h2>
-    </div>
-    <div class="section-body">
-      <dl>
-        <%= access_conditions %>
-      </dl>
-    </div>
-  </div>
-<% end %>
 
 <% if description.present? %>
   <div class="section" id="<%= t('record_side_nav.description.id') %>" data-side-nav-class="<%= t('record_side_nav.description.id') %>">
