@@ -5,6 +5,10 @@ class PublicXml
     @document = document
   end
 
+  def title
+    @title ||= document.root.at_xpath('oai_dc:dc/dc:title/text()', oai_dc: 'http://www.openarchives.org/OAI/2.0/oai_dc/', dc: 'http://purl.org/dc/elements/1.1/')
+  end
+
   def rights_metadata
     document.at_xpath('/publicObject/rightsMetadata')
   end

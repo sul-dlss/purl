@@ -45,7 +45,11 @@ class PurlResource
   end
 
   def title
-    Array.wrap(mods.title).join(' -- ') if mods?
+    if mods?
+      Array.wrap(mods.title).join(' -- ')
+    else
+      public_xml.title
+    end
   end
 
   def description
