@@ -197,7 +197,11 @@ class PurlResource
 
   concerning :Fetching do
     def cache_resource(key, &block)
-      Rails.cache.fetch("#{cache_key}/#{key}", expires_in: Settings.resource_cache.lifetime, &block)
+      if Settings.resource_cache.enabled
+        Rails.cache.fetch("#{cache_key}/#{key}", expires_in: Settings.resource_cache.lifetime, &block)
+      else
+        yield
+      end
     end
 
     def response_cache

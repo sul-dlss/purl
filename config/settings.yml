@@ -16,6 +16,7 @@ document_cache_root: "<%= File.join(Rails.root, "document_cache") %>"
 
 embed_host: '//127.0.0.1:3000'
 resource_cache:
+  enabled: true
   lifetime: <%= 1.hour %>
 
 purl_resource:
