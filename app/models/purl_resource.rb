@@ -60,7 +60,7 @@ class PurlResource
       else
         ''
       end
-    end
+    end if mods?
   end
 
   def ready?
@@ -72,7 +72,10 @@ class PurlResource
   end
 
   def mods
-    @mods ||= mods_display_object.render_mods_display(mods_display_object)
+    @mods ||= begin
+      m = mods_display_object.render_mods_display(mods_display_object)
+      m unless m.blank?
+    end
   end
 
   def public_xml_document
