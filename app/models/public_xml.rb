@@ -10,10 +10,10 @@ class PublicXml
   end
 
   def rights_metadata
-    document.at_xpath('/publicObject/rightsMetadata')
+    document.root.at_xpath('rightsMetadata')
   end
 
   def content_metadata
-    document.at_xpath('/publicObject/contentMetadata')
+    document.root.at_xpath('contentMetadata')
   end
 end
