@@ -1,4 +1,4 @@
-<% content_for(:title) { @purl.title } %>
+<% title @purl.title %>
 <% content_for(:head) do %>
   <%= tag :link, rel: "alternate", title: "oEmbed Profile", type: 'application/json+oembed', href: oembed_url_template.expand(format: 'json', url: embeddable_url(@purl.druid)) %>
   <%= tag :link, rel: "alternate", title: "oEmbed Profile", type: 'application/xml+oembed', href: oembed_url_template.expand(format: 'xml', url: embeddable_url(@purl.druid)) %>
