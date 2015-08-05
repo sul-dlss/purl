@@ -15,7 +15,6 @@
 
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery-scrollspy
 //= require bootstrap/transition
 //= require bootstrap/collapse
 //= require bootstrap/dropdown

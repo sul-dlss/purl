@@ -7,23 +7,10 @@
   bibliography = render(partial: "mods_bibliographic", locals: {document: document})
   contact = render(partial: "mods_contact", locals: {document: document})
   find_it = render(partial: "find_it", locals: {document: document})
-
-  locals = {
-    type: "mods",
-    has_data: {
-      description: description.present?,
-      contributors: contributors.present?,
-      abstract_contents: abstract_contents.present?,
-      subjects: subjects.present?,
-      bibliography_info: bibliography.present?,
-      contact_info: contact.present?,
-      find_it: find_it.present?,
-    }
-  }
 %>
 
 <% if description.present? %>
-  <div class="section" id="<%= t('record_side_nav.description.id') %>" data-side-nav-class="<%= t('record_side_nav.description.id') %>">
+  <div class="section" id="<%= t('record_side_nav.description.id') %>">
     <div class="section-heading">
       <h2><%= t('record_side_nav.description.icon').html_safe %> Description </h2>
     </div>
@@ -32,8 +19,6 @@
     </div>
   </div>
 <% end %>
-
-<%= render partial: "record_side_nav", locals: locals %>
 
 <% if contributors.present? %>
   <div class="section" id="<%= t('record_side_nav.contributors.id') %>" data-side-nav-class="<%= t('record_side_nav.contributors.id') %>">
