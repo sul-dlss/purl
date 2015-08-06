@@ -5,7 +5,7 @@ class FeedbackFormsController < ApplicationController
   def create
     if request.post?
       if validate
-        FeedbackMailer.submit_feedback(params, request.remote_ip).deliver
+        FeedbackMailer.submit_feedback(params, request.remote_ip).deliver_now
         flash[:success] = 'Thank you! Your feedback has been sent.'
       end
       respond_to do |format|
