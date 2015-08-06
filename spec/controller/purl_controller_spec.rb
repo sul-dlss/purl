@@ -1,7 +1,7 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe PurlController, type: :controller do
   it 'should render for a published item' do
-    visit '/bb157hs6068'
+    get :show, id: '/bb157hs6068'
   end
 end
