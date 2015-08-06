@@ -91,7 +91,7 @@ class PurlResource
       @description ||= begin
         abstract = mods.abstract.detect { |a| a.respond_to? :values }
         if abstract
-          abstract.values.join
+          abstract.values.join.strip
         else
           ''
         end
