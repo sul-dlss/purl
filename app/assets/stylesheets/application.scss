@@ -1,4 +1,5 @@
 // SUL Style Variables/Mixins
+@import 'sul-styles';
 @import 'deja-vu-font';
 @import 'sul-variables';
 @import 'searchworks-mixins';
@@ -14,8 +15,6 @@
 @import 'bootstrap-overrides';
 
 @import 'searchworks';
-@import 'font-awesome';
-@import '_sul-icons-rails';
 
 .sdr-brand {
   @extend .h1;
