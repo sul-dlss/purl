@@ -1,4 +1,4 @@
-
+@import 'sul-styles';
 @import 'print/bootstrap-variables';
 @import 'sul-variables';
 @import 'searchworks-mixins';
@@ -13,7 +13,5 @@
 @import 'bootstrap-overrides';
 
 @import 'searchworks';
-@import 'font-awesome';
-@import '_sul-icons-rails';
 @import 'print/layout';
 @import 'print/styles';

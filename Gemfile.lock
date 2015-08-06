@@ -117,8 +117,6 @@ GEM
       railties (>= 3.0.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
-    font-awesome-sass (4.1.0)
-      sass (~> 3.2)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     htmlentities (4.3.4)
@@ -277,6 +275,8 @@ GEM
       net-ssh (>= 2.8.0)
     stanford-mods (1.1.4)
       mods (~> 2.0.2)
+    sul_styles (0.3.0)
+      rails (~> 4.1)
     term-ansicolor (1.3.2)
       tins (~> 1.0)
     therubyracer (0.12.2)
@@ -327,7 +327,6 @@ DEPENDENCIES
   database_cleaner
   dor-rights-auth
   factory_girl_rails
-  font-awesome-sass
   htmlentities
   hurley
   is_it_working
@@ -349,6 +348,7 @@ DEPENDENCIES
   sqlite3
   squash_rails (= 1.3.3)
   squash_ruby
+  sul_styles (~> 0.3.0)
   therubyracer
   tophat
   turbolinks

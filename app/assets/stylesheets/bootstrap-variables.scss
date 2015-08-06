@@ -16,24 +16,24 @@ $panel-default-heading-bg: $sul-panel-heading-default;
 $panel-default-border: $sul-panel-border-bottom;
 
 // Buttons
-$btn-default-color: $gray;
-$btn-default-bg: $beige-10-percent;
-$btn-default-border: $beige-30-percent;
+$btn-default-color: $color-gray;
+$btn-default-bg: $color-beige-10;
+$btn-default-border: $color-beige-30;
 
 $btn-primary-color: $white;
-$btn-primary-bg: $cardinal-red;
+$btn-primary-bg: $color-cardinal-red;
 $btn-primary-border: darken($btn-primary-bg, 9.8%);
 
 $btn-success-color: $white;
-$btn-success-bg: $pantone-334;
+$btn-success-bg: $color-pantone-334;
 $btn-success-border: darken($btn-success-bg, 9.8%);
 
 $btn-info-color: $white;
-$btn-info-bg: $pantone-3145;
+$btn-info-bg: $color-pantone-3145;
 $btn-info-border: darken($btn-info-bg, 9.8%);
 
 $btn-warning-color: $white;
-$btn-warning-bg: $pantone-144;
+$btn-warning-bg: $color-pantone-144;
 $btn-warning-border: darken($btn-warning-bg, 9.8%);
 
 $btn-danger-color: $white;
@@ -54,7 +54,7 @@ $pagination-active-bg: $sul-pagination-active-bg;
 $pagination-active-border: $sul-pagination-active-bg;
 
 // Tables
-$table-bg-accent: $beige-10-percent;
+$table-bg-accent: $color-beige-10;
 
 // Tooltip
 $tooltip-bg: $sul-tooltip-bg;
