@@ -25,45 +25,45 @@ en:
   record_side_nav:
     abstract_contents:
       id: "abstract-contents"
-      icon: '<i class="fa fa-align-justify"></i>'
+      icon: '<span class="sul-i sul-i-navigation-drawer-1"></span>'
       label: "Contents"
     contributors:
       id: "contributors"
-      icon: '<i class="fa fa-user"></i>'
+      icon: '<span class="sul-i sul-i-person-1"></span>'
       label: "Contributors"
     access_conditions:
       id: "access-conditions"
-      icon: '<i class="fa fa-key"></i>'
+      icon: '<span class="sul-i sul-i-key-2"></span>'
       label: "Access"
     contents_summary:
       id: "contents-summary"
-      icon: '<i class="fa fa-align-justify"></i>'
+      icon: '<span class="sul-i sul-i-navigation-drawer-1"></span>'
       label: "Summary"
     subjects:
       id: "subjects"
-      icon: '<i class="fa fa-tags"></i>'
+      icon: '<span class="sul-i sul-i-bookmark-all-1"></span>'
       label: "Subjects"
     bibliography_info:
       id: "bibliography-info"
-      icon: '<i class="fa fa-info"></i>'
+      icon: '<span class="sul-i sul-i-infomation-circle"></span>'
       label: "Info"
     browse_nearby:
       id: "browse-nearby"
-      icon: '<span class="sul-icon sul-icon-books-3"></span>'
+      icon: '<span class="sul-i sul-i-books-library"></span>'
       label: "Browse"
     description:
       id: "description"
-      icon: '<span class="sul-icon sul-icon-books-3"></span>'
+      icon: '<span class="sul-i sul-i-books-library"></span>'
       label: "Description"
     contact_info:
       id: "contact"
-      icon: '<i class="fa fa-envelope-o"></i>'
+      icon: '<span class="sul-i sul-i-email"></span>'
       label: "Contact"
     find_it:
       id: "find_it"
-      icon: '<i class="fa fa-eye"></i>'
+      icon: '<span class="sul-i sul-i-search"></span>'
       label: "Find it"
     download:
       id: "download"
-      icon: '<i class="fa fa-download"></i>'
+      icon: '<span class="sul-i sul-i-download-3"></span>'
       label: "Download"
