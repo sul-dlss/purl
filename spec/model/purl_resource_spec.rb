@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe PurlResource do
   it 'should create itself from the docs in the document cache' do
