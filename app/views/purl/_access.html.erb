@@ -1,30 +1,15 @@
 <% document ||= @purl %>
+<% access = render(partial: "access_metadata", locals: {document: document}) %>
+
+<% if access.present? %>
 <div class="section" id="<%= t('record_side_nav.access_conditions.id') %>" data-side-nav-class="<%= t('record_side_nav.access_conditions.id') %>">
   <div class="section-heading">
     <h2><%= t('record_side_nav.access_conditions.icon').html_safe %> Access conditions </h2>
   </div>
   <div class="section-body">
     <dl>
-      <% if document.mods %>
-        <% document.mods.accessCondition.reject { |x| x.label == "License:" && document.license? }.each do |accessCondition| %>
-          <%= mods_record_field(accessCondition) %>
-        <% end %>
-      <% end %>
-
-      <% if document.copyright? && (document.mods.blank? || document.mods.accessCondition.none? { |x| x.label =~ /Copyright/i }) %>
-        <dt>Copyright</dt>
-        <dd><%= with_copyright_symbol(document.copyright).html_safe %></dd>
-      <% end %>
-
-      <% if document.use_and_reproduction? && (document.mods.blank? || document.mods.accessCondition.none? { |x| x.label =~ /Use and Reproduction/i }) %>
-        <dt>Use and Reproduction</dt>
-        <dd><%= document.use_and_reproduction.html_safe %></dd>
-      <% end %>
-
-      <% if document.license? && document.license.desc.present? %>
-        <dt>License</dt>
-        <dd class="<%= document.license.code %>"><%= link_to_unless document.license.link.blank?, document.license.desc, document.license.link, target: '_blank' %></dd>
-      <% end %>
+      <%= access %>
     </dl>
   </div>
 </div>
+<% end %>
