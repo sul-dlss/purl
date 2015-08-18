@@ -12,7 +12,7 @@
 
 <% if document.use_and_reproduction? && (document.mods.blank? || document.mods.accessCondition.none? { |x| x.label =~ /Use and Reproduction/i }) %>
   <dt>Use and Reproduction</dt>
-  <dd><%= document.use_and_reproduction.html_safe %></dd>
+  <dd><%= link_urls_and_email(document.use_and_reproduction).html_safe %></dd>
 <% end %>
 
 <% if document.license? && document.license.desc.present? %>
