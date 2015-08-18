@@ -27,7 +27,7 @@ end
 %>
 <h1><%= @purl.title %></h1>
 <div class="upper-record-metadata row">
-  <div class="col-md-12">
+  <div class="col-md-8">
     <%= render 'mods_upper_metadata_section' if @purl.mods? %>
   </div>
 
@@ -37,7 +37,7 @@ end
 </div>
 
 <div class="record-metadata row">
-  <div class="record-sections col-md-12">
+  <div class="record-sections col-md-8">
     <% if needs_download_panel? && @purl.content_metadata.downloadable_files.any? %>
       <%= render 'download_section' %>
     <% end %>

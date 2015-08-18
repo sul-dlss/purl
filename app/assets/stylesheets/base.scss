@@ -59,3 +59,9 @@ dd {
 label {
   font-weight: normal;
 }
+
+.section {
+  p, li {
+    max-width: 45em;
+  }
+}
