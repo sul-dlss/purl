@@ -41,8 +41,14 @@ class PurlController < ApplicationController
   end
 
   def manifest
+    return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
+
     if @purl.iiif_manifest?
-      render json: @purl.iiif_manifest_body
+      manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc], expires_in: Settings.resource_cache.lifetime) do
+        @purl.iiif_manifest.body(self).to_ordered_hash
+      end
+
+      render json: manifest
     else
       render nothing: true, status: 404
     end

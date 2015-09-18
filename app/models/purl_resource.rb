@@ -40,7 +40,6 @@ class PurlResource
 
   has_resource mods: Settings.purl_resource.mods
   has_resource public_xml: Settings.purl_resource.public_xml
-  has_resource iiif_manifest: Settings.purl_resource.iiif_manifest
 
   def ready?
     public_xml?
@@ -72,8 +71,11 @@ class PurlResource
   end
 
   def iiif_manifest
-    return {} unless iiif_manifest?
-    @iiif_manifest ||= JSON.parse(iiif_manifest_body)
+    @iiif_manifest ||= IiifPresentationManifest.new(self)
+  end
+
+  def iiif_manifest?
+    iiif_manifest.needed?
   end
 
   def flipbook

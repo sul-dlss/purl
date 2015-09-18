@@ -58,7 +58,7 @@ class ContentMetadata
 
   class Resource
     include ActiveModel::Model
-    attr_accessor :height, :width, :type, :mimetype, :size, :label, :url, :filename, :imagesvc, :sub_resource
+    attr_accessor :height, :width, :type, :mimetype, :size, :label, :url, :filename, :imagesvc, :sub_resource, :thumb
 
     def self.from_content_metadata(file, options = {})
       new(
@@ -72,6 +72,10 @@ class ContentMetadata
           imagesvc: file.at_xpath('location[@type="imagesvc"]/text()')
         )
       )
+    end
+
+    def thumbnail?
+      !!thumb
     end
 
     def levels
