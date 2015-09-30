@@ -205,4 +205,12 @@ module ApplicationHelper
 
     fileIcons[ext]
   end
+
+  def stacks_url
+    if params[:stacks] == 'b'
+      Settings.stacks.url_b
+    else
+      Settings.stacks.url
+    end
+  end
 end

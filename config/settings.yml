@@ -7,6 +7,7 @@ fedora:
   pass: ""
 stacks:
   url: 'https://stacks.stanford.edu'
+  url_b: 'https://sul-stacks-prod-b.stanford.edu'
   
 flipbook:
   url: 'http://sul-reader.stanford.edu/flipbook2'
