@@ -11,7 +11,7 @@ gem 'uglifier', '>= 1.3.0'
 # JS Runtime. See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer'
 # A gem for simple rails invornment specific config
-gem 'rails_config'
+gem 'config'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -36,6 +36,7 @@ group :deployment do
   gem 'capistrano-rails'
   gem 'capistrano-passenger'
   gem 'lyberteam-capistrano-devel'
+  gem 'net-ssh', '~> 2.9'
 end
 
 # Use Squash for exception reporting
@@ -49,7 +50,7 @@ gem 'is_it_working'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'byebug', '~> 5.0', platform: :ruby_20
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
