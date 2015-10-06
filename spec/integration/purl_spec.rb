@@ -209,6 +209,13 @@ describe 'purl', type: :feature do
       expect(page).to have_content 'User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or'
     end
   end
+
+  describe 'is_it_working' do
+    it 'works' do
+      visit '/is_it_working'
+      expect(page.status_code).to eq 200
+    end
+  end
 end
 
 #=end
