@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get '/ir:rs276tc2764', to: redirect('/rs276tc2764')
   get ':id' => 'purl#show', as: :purl
+  get ':id/embed', to: redirect("/iframe/?url=#{Settings.embed.url % { druid: '%{id}' }}")
   get '/:id/iiif/manifest.json' => 'purl#manifest', as: :iiif_manifest
 
   resource :feedback_form, path: 'feedback', only: [:new, :create]
