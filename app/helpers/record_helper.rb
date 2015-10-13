@@ -77,23 +77,19 @@ module RecordHelper
   end
 
   def mods_subject_field(subjects)
-    if subjects.any?(&:values)
-      subjects.map do |subject_field|
-        subject_field.values.map do |subject_line|
-          "<dd>#{link_mods_subjects(subject_line).join(' &gt; ')}</dd>"
-        end.join('')
-      end.join('').html_safe
+    fields = subjects.values.map do |subject_line|
+      content_tag :dd, link_mods_subjects(subject_line).join(' > ')
     end
+
+    mods_display_label(subjects.label) + safe_join(fields, "\n")
   end
 
   def mods_genre_field(genres)
-    if genres.any?(&:values)
-      genres.map do |genre_field|
-        genre_field.values.map do |genre_line|
-          "<dd>#{link_mods_genres(genre_line)}</dd>"
-        end.join('')
-      end.join('').html_safe
+    fields = genres.values.map do |genre_line|
+      content_tag :dd, link_mods_genres(genre_line)
     end
+
+    mods_display_label(genres.label) + safe_join(fields, "\n")
   end
 
   def link_mods_genres(genre)
