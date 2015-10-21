@@ -38,8 +38,7 @@ group :deployment do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-passenger'
-  gem 'lyberteam-capistrano-devel'
-  gem 'net-ssh', '~> 2.9'
+  gem 'dlss-capistrano'
 end
 
 # Use Squash for exception reporting
@@ -53,7 +52,7 @@ gem 'is_it_working'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', '~> 5.0', platform: :ruby_20
+  gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
