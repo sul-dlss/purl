@@ -15,8 +15,8 @@ class Flipbook
       objectId: druid.to_s,
       defaultViewMode: 2,
       bookTitle: title,
-      readingOrder: reading_order,  # "rtl"
-      pageStart: page_start,  # "left"
+      readingOrder: reading_order, # "rtl"
+      pageStart: page_start, # "left"
       bookURL: catalog_key? ? "http://searchworks.stanford.edu/view/#{catalog_key}" : '',
       pages: pages
     }

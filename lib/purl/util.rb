@@ -7,7 +7,7 @@ module Purl
     end
 
     # check if file is ready (deliver = yes or publish = yes)
-    def is_file_ready?(file)
+    def file_ready?(file)
       file && (file['deliver'] != 'no' || file['publish'] != 'no')
     end
 
@@ -16,7 +16,7 @@ module Purl
       img_id = get_jp2_id(deliverable_file.filename.to_s)
       base_url = deliverable_file.imagesvc.to_s
 
-      base_url =  Settings.stacks.url + '/image/' + pid + '/' + img_id if base_url.empty?
+      base_url = Settings.stacks.url + '/image/' + pid + '/' + img_id if base_url.empty?
 
       base_url
     end
@@ -41,6 +41,6 @@ module Purl
       URI.encode(url)
     end
 
-    module_function :get_jp2_id, :get_img_base_url, :get_file_label, :get_file_url, :is_file_ready?
+    module_function :get_jp2_id, :get_img_base_url, :get_file_label, :get_file_url, :file_ready?
   end
 end

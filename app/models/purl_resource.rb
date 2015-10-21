@@ -18,7 +18,7 @@ class PurlResource
     end
   end
 
-  # rubocop:disable Metrics/MethodLength, Style/PredicateName
+  # rubocop:disable Style/PredicateName
   def self.has_resource(options)
     options.each do |key, value|
       define_method "#{key}_resource" do
@@ -36,7 +36,7 @@ class PurlResource
       end
     end
   end
-  # rubocop:enable Metrics/MethodLength, Style/PredicateName
+  # rubocop:enable Style/PredicateName
 
   has_resource mods: Settings.purl_resource.mods
   has_resource public_xml: Settings.purl_resource.public_xml
@@ -140,13 +140,9 @@ class PurlResource
       rights.use_and_reproduction_statement
     end
 
-    def catalog_key
-      public_xml.catalog_key
-    end
+    delegate :catalog_key, to: :public_xml
 
-    def released_to?(key)
-      public_xml.released_to? key
-    end
+    delegate :released_to?, to: :public_xml
 
     def representative_thumbnail?
       representative_thumbnail.present?
@@ -170,21 +166,23 @@ class PurlResource
       if public_xml_resource.respond_to? :updated_at
         public_xml_resource.updated_at
       elsif public_xml_resource.respond_to?(:header) && public_xml_resource.header[:last_modified].present?
-        begin
-          t = public_xml_resource.header[:last_modified]
-
-          if t.is_a? String
-            Time.zone.parse(t)
-          else
-            t
-          end
-        rescue ArgumentError => e
-          Rails.logger.info("Unable to parse last modified time: #{e}")
-          Time.zone.now
-        end
+        last_modified_header_value
       else
         Time.zone.now
       end
+    end
+
+    def last_modified_header_value
+      t = public_xml_resource.header[:last_modified]
+
+      if t.is_a? String
+        Time.zone.parse(t)
+      else
+        t
+      end
+    rescue ArgumentError => e
+      Rails.logger.info("Unable to parse last modified time: #{e}")
+      Time.zone.now
     end
   end
 

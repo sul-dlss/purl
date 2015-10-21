@@ -11,6 +11,7 @@ class PurlController < ApplicationController
   end
 
   # entry point into the application
+  # rubocop:disable Metrics/AbcSize
   def show
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
 
@@ -39,6 +40,7 @@ class PurlController < ApplicationController
       end
     end
   end
+  # rubocop:enable Metrics/AbcSize
 
   def manifest
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")

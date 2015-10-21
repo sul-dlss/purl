@@ -32,10 +32,18 @@ class IiifPresentationManifest
   end
 
   def description_or_note
-    @description_or_note ||= public_xml_document.at_xpath('//oai_dc:dc/dc:description', { "dc" => "http://purl.org/dc/elements/1.1/", "oai_dc" => "http://www.openarchives.org/OAI/2.0/oai_dc/" }).try(:text)
+    @description_or_note ||= begin
+      ns = {
+        'dc' => 'http://purl.org/dc/elements/1.1/',
+        'oai_dc' => 'http://www.openarchives.org/OAI/2.0/oai_dc/'
+      }
+
+      public_xml_document.at_xpath('//oai_dc:dc/dc:description', ns).try(:text)
+    end
   end
 
   # Bypass this method if there are no image resources in contentMetadata
+  # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity
   def body(controller = nil)
     controller ||= Rails.application.routes.url_helpers
     purl_base_uri = controller.purl_url(druid)
@@ -124,6 +132,7 @@ class IiifPresentationManifest
     manifest.sequences << sequence
     manifest
   end
+  # rubocop:enable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity
 
   def iiif_service(id)
     IIIF::Service.new(
@@ -134,7 +143,7 @@ class IiifPresentationManifest
   end
 
   def get_metadata(label, xpath)
-    nodes = public_xml_document.xpath xpath, { "dc" => "http://purl.org/dc/elements/1.1/", "oai_dc" => "http://www.openarchives.org/OAI/2.0/oai_dc/" }
+    nodes = public_xml_document.xpath xpath, 'dc' => 'http://purl.org/dc/elements/1.1/', 'oai_dc' => 'http://www.openarchives.org/OAI/2.0/oai_dc/'
     nodes.map do |node|
       {
         'label' => label,

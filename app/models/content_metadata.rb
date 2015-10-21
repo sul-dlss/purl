@@ -43,7 +43,7 @@ class ContentMetadata
       label: resource.xpath('(label|attr[@name="label"])/text()').first.to_s
     }
 
-    files = resource.xpath('file').select { |file| Purl::Util.is_file_ready? file }.map do |file|
+    files = resource.xpath('file').select { |file| Purl::Util.file_ready? file }.map do |file|
       Resource.from_content_metadata(file, resource_attributes)
     end
 

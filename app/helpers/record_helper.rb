@@ -1,11 +1,9 @@
 # encoding: UTF-8
 module RecordHelper
   def display_content_field(field)
-    if field.respond_to?(:label, :values) &&
-       field.values.any?(&:present?)
-      display_content_label(field.label) +
-        display_content_values(field.values)
-    end
+    return unless field.respond_to?(:label, :values) && field.values.any?(&:present?)
+
+    display_content_label(field.label) + display_content_values(field.values)
   end
 
   def display_content_label(label)
@@ -19,7 +17,7 @@ module RecordHelper
   end
 
   def mods_display_label(label)
-    content_tag(:dt, label.gsub(':', ''))
+    content_tag(:dt, label.delete(':'))
   end
 
   def mods_display_content(values, delimiter = nil)
@@ -35,19 +33,13 @@ module RecordHelper
   end
 
   def mods_record_field(field, delimiter = nil)
-    if field.respond_to?(:label, :values) &&
-       field.values.any?(&:present?)
-      mods_display_label(field.label) +
-        mods_display_content(field.values, delimiter)
-    end
+    return unless field.respond_to?(:label, :values) && field.values.any?(&:present?)
+    mods_display_label(field.label) + mods_display_content(field.values, delimiter)
   end
 
   def mods_name_field(field)
-    if field.respond_to?(:label, :values) &&
-       field.values.any?(&:present?)
-      mods_display_label(field.label) +
-        mods_display_name(field.values)
-    end
+    return unless field.respond_to?(:label, :values) && field.values.any?(&:present?)
+    mods_display_label(field.label) + mods_display_name(field.values)
   end
 
   def mods_primary_names(names)
@@ -116,10 +108,11 @@ module RecordHelper
     link
   end
 
+  # rubocop:disable Metrics/LineLength
   def link_urls_and_email(val)
     val = val.dup
     # http://daringfireball.net/2010/07/improved_regex_for_matching_urls
-    url = /(?i)\b(?:https?:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\([^\s()<>]+|\([^\s()<>]+\)*\))+(?:\([^\s()<>]+|\([^\s()<>]+\)*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’])/i
+    url = %r{(?i)\b(?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\([^\s()<>]+|\([^\s()<>]+\)*\))+(?:\([^\s()<>]+|\([^\s()<>]+\)*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’])}i
     # http://www.regular-expressions.info/email.html
     email = %r{[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)\b}i
     matches = [val.scan(url), val.scan(email)].flatten.uniq
@@ -134,6 +127,7 @@ module RecordHelper
     end
     val
   end
+  # rubocop:enable Metrics/LineLength
 
   private
 
@@ -144,8 +138,8 @@ module RecordHelper
   end
 
   def roles_include_primary?(name)
-    if name.roles.present?
-      name.roles.include?('Author') || name.roles.include?('Creator')
-    end
+    return false unless name.roles.present?
+
+    name.roles.include?('Author') || name.roles.include?('Creator')
   end
 end
