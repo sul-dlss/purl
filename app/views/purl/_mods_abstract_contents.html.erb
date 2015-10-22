@@ -1,0 +1,16 @@
+<% document ||= @document %>
+<% document.mods.abstract.each do |abstracts| %>
+  <% if abstracts.respond_to?(:values) %>
+    <div class="section-abstract">
+      <%= simple_format abstracts.values.join.gsub('&#10;', "\n").html_safe, {}, sanitize: false %>
+    </div>
+  <% end %>
+<% end %>
+
+<% document.mods.contents.each do |contents| %>
+  <% if contents.respond_to?(:values) %>
+    <div class="section-contents">
+      <%= simple_format contents.values.join.gsub('&#10;', "\n").html_safe, {}, sanitize: false %>
+    </div>  
+  <% end %>
+<% end %>

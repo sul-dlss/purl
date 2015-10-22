@@ -1,13 +1,14 @@
-Purl::Application.routes.draw do
-  unless Rails.application.config.assets.compile
-    get '/assets/purl_embed_jquery_plugin' => 'embed#purl_embed_jquery_plugin'
-  end
+Rails.application.routes.draw do
+  root to: 'purl#index'
 
   get '/ir:rs276tc2764', to: redirect('/rs276tc2764')
-  get '/:id' => 'purl#show'
-  get 'auth/:id' => 'purl#show'
-  get ':id/embed' => 'embed#show'
-  get ':id/embed-js' => 'embed#embed_js'
-  get ':id/embed-html-json' => 'embed#embed_html_json'
-  get '/:id/iiif/manifest.json' => 'purl#manifest'
+
+  resource :feedback_form, path: 'feedback', only: [:new, :create]
+  get 'feedback' => 'feedback_forms#new'
+
+  get 'auth' => 'webauth#login', as: :new_user_session
+
+  get ':id' => 'purl#show', as: :purl
+  get ':id/embed', to: redirect("/iframe/?url=#{Settings.embed.url % { druid: '%{id}' }}")
+  get '/:id/iiif/manifest.json' => 'purl#manifest', as: :iiif_manifest
 end

@@ -1,7 +1,0 @@
-<script type="text/javascript">
-  var stacksURL = "<%= stacks_url %>";
-  var pid = "<%= @purl.pid %>";
-  var purlServerURL = "//" + "<%= request.host_with_port %>";
-  var galleryItemsPerPage = parseInt(<%= get_gallery_items_per_page_count() %>);
-  var imgInfo = <%= get_image_json_array.to_json.html_safe %>;  
-</script>

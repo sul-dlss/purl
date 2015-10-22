@@ -1,0 +1,21 @@
+<% document ||= @purl %>
+<% if document.mods %>
+  <% document.mods.accessCondition.reject { |x| x.label == "License:" && document.license? }.each do |accessCondition| %>
+    <%= mods_record_field(accessCondition) %>
+  <% end %>
+<% end %>
+
+<% if document.copyright? && (document.mods.blank? || document.mods.accessCondition.none? { |x| x.label =~ /Copyright/i }) %>
+  <dt>Copyright</dt>
+  <dd><%= with_copyright_symbol(document.copyright).html_safe %></dd>
+<% end %>
+
+<% if document.use_and_reproduction? && (document.mods.blank? || document.mods.accessCondition.none? { |x| x.label =~ /Use and Reproduction/i }) %>
+  <dt>Use and Reproduction</dt>
+  <dd><%= link_urls_and_email(document.use_and_reproduction).html_safe %></dd>
+<% end %>
+
+<% if document.license? && document.license.desc.present? %>
+  <dt>License</dt>
+  <dd class="<%= document.license.code %>"><%= link_to_unless document.license.link.blank?, document.license.desc, document.license.link, target: '_blank' %></dd>
+<% end %>

@@ -16,6 +16,8 @@ gem 'config'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+gem 'turbolinks'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # CanCanCan is an authorization Gem for rails
@@ -36,8 +38,7 @@ group :deployment do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-passenger'
-  gem 'lyberteam-capistrano-devel'
-  gem 'net-ssh', '~> 2.9'
+  gem 'dlss-capistrano'
 end
 
 # Use Squash for exception reporting
@@ -51,7 +52,7 @@ gem 'is_it_working'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', '~> 5.0', platform: :ruby_20
+  gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -84,3 +85,12 @@ end
 gem 'mods_display', '~> 0.3.2'
 gem 'htmlentities'
 gem 'dor-rights-auth'
+gem 'bootstrap-sass'
+gem 'retina_tag'
+gem 'hurley'
+gem 'addressable'
+gem 'tophat'
+gem 'rails-file-icons'
+gem 'sul_styles', '~> 0.3.0'
+gem 'iiif-presentation'
+gem 'dalli'

@@ -1,0 +1,29 @@
+// SUL Style Variables/Mixins
+@import 'sul-styles';
+@import 'deja-vu-font';
+@import 'sul-variables';
+@import 'searchworks-mixins';
+
+@import 'bootstrap-variables';
+
+@import 'bootstrap-sprockets';
+
+@import 'bootstrap';
+
+@import 'bootstrap-mixins';
+
+@import 'bootstrap-overrides';
+
+@import 'searchworks';
+
+.sdr-brand {
+  @extend .h1;
+  font-family: Source Sans Pro;
+  margin-top: 0;
+  padding-bottom: 0.3em;
+  color: #fff;
+}
+
+.record-metadata {
+  margin-bottom: 2em;
+}

@@ -1,13 +1,6 @@
-workflow:
-  url: "http://localhost:8080/workflow"
-fedora:
-  url: "http://localhost:8080/fedora"
-  cert: "<%= File.join(Rails.root, "config", "certs", "purl-prod.crt") %>"
-  key: "<%= File.join(Rails.root, "config", "certs", "purl-prod.crt") %>"
-  pass: ""
 stacks:
   url: 'https://stacks.stanford.edu'
-  url_b: 'https://sul-stacks-prod-b.stanford.edu'
+  iiif_profile: 'http://iiif.io/api/image/2/level1.json'
   
 flipbook:
   url: 'http://sul-reader.stanford.edu/flipbook2'
@@ -15,4 +8,41 @@ flipbook:
 
 document_cache_root: "<%= File.join(Rails.root, "document_cache") %>"
 
-embed_host: '//127.0.0.1:3000'
+resource_cache:
+  enabled: true
+  lifetime: <%= 1.hour %>
+
+purl_resource:
+  mods: 'https://purl.stanford.edu/%{druid}.mods'
+  public_xml: 'https://purl.stanford.edu/%{druid}.xml'
+  iiif_manifest: 'https://purl.stanford.edu/%{druid}/iiif/manifest.json'
+
+embed:
+  url: 'https://purl.stanford.edu/%{druid}'
+  url_template: 'https://purl.stanford.edu/embed{.format}{?url*,application_options*}'
+  iframe:
+    url_template: 'https://embed.stanford.edu/iframe/{?url*}'
+  application_options:
+    hide_title: true
+    hide_metadata: true
+  needs_downloadable_file_panel_types:
+    - image
+    - manuscript
+    - map
+    - book
+
+releases:
+  - label: "View in SearchWorks"
+    key: 'Searchworks'
+    url: 'http://searchworks.stanford.edu/view/%{druid}'
+
+searchworks:
+  url: 'http://searchworks.stanford.edu/view/'
+
+feedback:
+  email_to: ""
+
+GOOGLE_ANALYTICS_ID: ""
+
+twitter:
+  site: '@DigitalLib'

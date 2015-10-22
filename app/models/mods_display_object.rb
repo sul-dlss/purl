@@ -1,5 +1,7 @@
 class ModsDisplayObject
   include ModsDisplay::ModelExtension
+  include ModsDisplay::ControllerExtension
+
   require 'stanford-mods'
 
   def initialize(xml)

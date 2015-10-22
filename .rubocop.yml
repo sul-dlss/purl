@@ -3,14 +3,31 @@ inherit_from: .rubocop_todo.yml
 AllCops:
   RunRailsCops: true
   Exclude:
+    - 'Gemfile'
     - 'bin/**/*'
     - 'db/**/*'
-    - 'spec/internal/**/*'
+    - 'config/**/*'
+    - 'spec/spec_helper.rb'
+    - 'spec/teaspoon_env.rb'
     - 'vendor/**/*'
 
 Metrics/LineLength:
-   Max: 120
+   Max: 160
 
+Metrics/AbcSize:
+  Max: 20
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/ModuleLength:
+  Max: 120
 
 Style/Documentation:
+  Enabled: false
+
+Style/DoubleNegation:
   Enabled: false

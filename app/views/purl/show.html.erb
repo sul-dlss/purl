@@ -1,42 +1,51 @@
-<% content_for :title, print_title_value() + ' - ' %>
+<% title @purl.title %>
+<% content_for(:head) do %>
+  <%= tag :link, rel: "alternate", title: "oEmbed Profile", type: 'application/json+oembed', href: oembed_url_template.expand(format: 'json', url: embeddable_url(@purl.druid)) %>
+  <%= tag :link, rel: "alternate", title: "oEmbed Profile", type: 'application/xml+oembed', href: oembed_url_template.expand(format: 'xml', url: embeddable_url(@purl.druid)) %>
+  <%= tag :link, rel: "alternate", title: "MODS XML", type: 'application/xml', href: purl_url(@purl, format: 'mods') if @purl.mods? %>
+  <%= tag :link, rel: "alternate", title: "Flipbook JSON", type: 'application/json', href: purl_url(@purl, format: 'flipbook') if @purl.flipbook? %>
+  <%= tag :link, rel: "alternate", title: "IIIF Manifest", type: 'application/json', href: iiif_manifest_url(@purl) if @purl.iiif_manifest? %>
+<% end %>
 
-<%= render(:partial => "purl/citation_info_dc" ) %>
-<%= render(:partial => "purl/sidebar_navigation" ) %>
+<% keywords(@purl.mods.subject.compact.map(&:values).join(',')) if @purl.mods? && @purl.mods.subject %>
 
-<div id="filelist">
-  <% if (!@purl.embargo_release_date.nil? and @purl.embargo_release_date != '') %>
-    <div class="embargo-block"><%= get_embargo_text() %></div>
-  <% end %>
-  <% unless( @purl.deliverable_files.nil? or @purl.deliverable_files.empty?) %>
-    <table id="assets">
-      <tr>
-        <th>File (Download)</th>
-        <th>Description</th>
-      </tr>
-        <% @purl.deliverable_files.each do |deliverable_file| %>
-          <tr>
-          <td class="file">
-            <div class="file_icon"><%= render(:partial => "purl/fileIcon", :locals => {:fileName => deliverable_file.filename.to_s}) %></div>
-              <div class="file_link">
-                <% if @purl.read_group == "none" and !embargoExpired %>
-                  <%= deliverable_file.filename.to_s %>
-                <% else %>
-                  <a href="<%= get_file_url(@purl.pid, deliverable_file) %>"><%= deliverable_file.filename.to_s %></a>
-                <% end %>
+<% description(@purl.description.truncate(200)) if @purl.description %>
 
-                <% if( deliverable_file.size != '') %>
-                  (<%=number_to_human_size(deliverable_file.size,:precision => 1)%>)
-                <% end %>
-                <% if deliverable_file.rights_stanford.to_s == "true" %>
-                  <%= image_tag "icon-stanford-only.png", class: "icon-stanford-only", alt: "Stanford Only", title: "Stanford Only" %>
-                <% end %>
-        		  </div>
-  		      </td>
-            <td class="description"><%=deliverable_file.description_label%></td>
-          </tr>
-        <% end %>
-    </table>
-  <% end %>
+<%
+opengraph do |graph|
+  graph.title @purl.title
+  graph.description @purl.description.truncate(200) if @purl.description
+  graph.type 'og:website'
+  graph.image purl_url(@purl, format: :jpg)
+  graph.url purl_url(@purl)
+end
+
+twitter_card('summary_large_image') do |card|
+  card.site Settings.twitter.site
+end
+
+%>
+<h1><%= @purl.title %></h1>
+<div class="upper-record-metadata row">
+  <div class="col-md-8">
+    <%= render 'mods_upper_metadata_section' if @purl.mods? %>
+  </div>
+
+  <div class="col-md-12">
+    <%= render 'embed' %>
+  </div>
 </div>
 
-<%= render(:partial => "purl/rights_and_usage" ) %>
+<div class="record-metadata row">
+  <div class="record-sections col-md-8">
+    <% if needs_download_panel? && @purl.content_metadata.downloadable_files.any? %>
+      <%= render 'download_section' %>
+    <% end %>
+
+    <%= render 'access' %>
+
+    <% if @purl.mods? %>
+      <%= render 'mods_metadata_sections' %>
+    <% end %>
+  </div>
+</div>
