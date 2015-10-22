@@ -1,4 +1,4 @@
-<% content_for(:title) { @purl.title } %>
+<% title @purl.title %>
 <% content_for(:head) do %>
   <%= tag :link, rel: "alternate", title: "oEmbed Profile", type: 'application/json+oembed', href: oembed_url_template.expand(format: 'json', url: embeddable_url(@purl.druid)) %>
   <%= tag :link, rel: "alternate", title: "oEmbed Profile", type: 'application/xml+oembed', href: oembed_url_template.expand(format: 'xml', url: embeddable_url(@purl.druid)) %>
@@ -7,6 +7,24 @@
   <%= tag :link, rel: "alternate", title: "IIIF Manifest", type: 'application/json', href: iiif_manifest_url(@purl) if @purl.iiif_manifest? %>
 <% end %>
 
+<% keywords(@purl.mods.subject.compact.map(&:values).join(',')) if @purl.mods? && @purl.mods.subject %>
+
+<% description(@purl.description.truncate(200)) if @purl.description %>
+
+<%
+opengraph do |graph|
+  graph.title @purl.title
+  graph.description @purl.description.truncate(200) if @purl.description
+  graph.type 'og:website'
+  graph.image purl_url(@purl, format: :jpg)
+  graph.url purl_url(@purl)
+end
+
+twitter_card('summary_large_image') do |card|
+  card.site Settings.twitter.site
+end
+
+%>
 <h1><%= @purl.title %></h1>
 <div class="upper-record-metadata row">
   <div class="col-md-12">

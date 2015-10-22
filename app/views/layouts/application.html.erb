@@ -12,7 +12,8 @@
       <meta http-equiv="cleartype" content="on">
     <![endif]-->
 
-    <title><%= render_page_title %></title>
+    <%= title site: application_name, separator: '|', reverse: true %>
+
     <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag "application", media: "all" %>
     <%= stylesheet_link_tag 'print', media: 'print' %>
@@ -20,7 +21,13 @@
     <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+
+    <%= keywords %>
+    <%= description %>
+    <%= opengraph %>
+    <%= twitter_card %>
     <%= content_for(:head) %>
+
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->

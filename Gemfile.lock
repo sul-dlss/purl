@@ -288,6 +288,8 @@ GEM
     thread_safe (0.3.5)
     tilt (2.0.1)
     tins (1.6.0)
+    tophat (2.2.1)
+      actionpack (>= 3.0.0)
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -351,6 +353,7 @@ DEPENDENCIES
   squash_rails (= 1.3.3)
   squash_ruby
   therubyracer
+  tophat
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)

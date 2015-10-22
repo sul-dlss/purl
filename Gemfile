@@ -91,4 +91,5 @@ gem 'font-awesome-sass'
 gem "retina_tag"
 gem 'hurley'
 gem 'addressable'
+gem 'tophat'
 gem 'rails-file-icons'
