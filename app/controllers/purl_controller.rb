@@ -24,12 +24,20 @@ class PurlController < ApplicationController
       end
 
       format.mods do
-        render xml: @purl.mods_body
-      end if @purl.mods?
+        if @purl.mods?
+          render xml: @purl.mods_body
+        else
+          missing_file
+        end
+      end
 
       format.flipbook do
-        render json: @purl.flipbook.to_json
-      end if @purl.flipbook?
+        if @purl.flipbook?
+          render json: @purl.flipbook.to_json
+        else
+          missing_file
+        end
+      end
 
       format.jpeg do
         if @purl.representative_thumbnail?
