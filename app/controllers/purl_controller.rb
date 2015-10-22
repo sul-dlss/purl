@@ -12,7 +12,7 @@ class PurlController < ApplicationController
 
   # entry point into the application
   def show
-    # validate that the metadata is ready for delivery
+    return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
 
     # render the landing page based on the format
     respond_to do |format|
