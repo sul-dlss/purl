@@ -88,7 +88,7 @@ gem 'htmlentities'
 gem 'dor-rights-auth'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
-gem "retina_tag"
+gem 'retina_tag'
 gem 'hurley'
 gem 'addressable'
 gem 'tophat'

@@ -1,5 +1,4 @@
 class FeedbackFormsController < ApplicationController
-
   def new
   end
 
@@ -24,13 +23,13 @@ class FeedbackFormsController < ApplicationController
 
   def validate
     errors = []
-    if params[:message].nil? or params[:message] == ""
-      errors << "A message is required"
+    if params[:message].nil? || params[:message] == ''
+      errors << 'A message is required'
     end
-    if params[:email_address] and params[:email_address] != ""
-      errors << "You have filled in a field that makes you appear as a spammer.  Please follow the directions for the individual form fields."
+    if params[:email_address] && params[:email_address] != ''
+      errors << 'You have filled in a field that makes you appear as a spammer.  Please follow the directions for the individual form fields.'
     end
-    flash[:error] = errors.join("<br/>") unless errors.empty?
+    flash[:error] = errors.join('<br/>') unless errors.empty?
     flash[:error].nil?
   end
 end

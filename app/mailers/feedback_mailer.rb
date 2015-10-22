@@ -18,9 +18,9 @@ class FeedbackMailer < ActionMailer::Base
     @user_agent = params[:user_agent]
     @viewport = params[:viewport]
 
-    mail(:to => Settings.feedback.email_to,
-         :subject => "Feedback from PURL",
-         :from => "feedback@purl.stanford.edu",
-         :reply_to => Settings.feedback.email_to)
+    mail(to: Settings.feedback.email_to,
+         subject: 'Feedback from PURL',
+         from: 'feedback@purl.stanford.edu',
+         reply_to: Settings.feedback.email_to)
   end
 end
