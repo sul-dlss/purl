@@ -143,4 +143,26 @@ describe PurlResource do
       expect(subject.updated_at).to eq t
     end
   end
+
+  describe '#representative_thumbnail' do
+    before do
+      allow(subject).to receive(:iiif_manifest).and_return(iiif_manifest)
+    end
+
+    let(:iiif_manifest) do
+      @iiif_manifest ||= double
+    end
+
+    it 'is the representative thumbnail for the object' do
+      allow(iiif_manifest).to receive(:thumbnail_base_uri).and_return('http://some/iiif/path')
+
+      expect(subject.representative_thumbnail).to eq 'http://some/iiif/path/full/!400,400/0/default.jpg'
+    end
+
+    it 'is blank if the object has no appropriate images' do
+      allow(iiif_manifest).to receive(:thumbnail_base_uri).and_return(nil)
+
+      expect(subject.representative_thumbnail).to be_blank
+    end
+  end
 end

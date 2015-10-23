@@ -149,7 +149,7 @@ class PurlResource
     end
 
     def representative_thumbnail
-      iiif_manifest.fetch('thumbnail', {})['@id']
+      "#{iiif_manifest.thumbnail_base_uri}/full/!400,400/0/default.jpg" if iiif_manifest.thumbnail_base_uri.present?
     end
 
     def flipbook?
