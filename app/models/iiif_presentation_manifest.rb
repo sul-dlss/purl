@@ -43,7 +43,7 @@ class IiifPresentationManifest
   end
 
   # Bypass this method if there are no image resources in contentMetadata
-  # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity
+  # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def body(controller = nil)
     controller ||= Rails.application.routes.url_helpers
     purl_base_uri = controller.purl_url(druid)
@@ -128,7 +128,7 @@ class IiifPresentationManifest
     manifest.sequences << sequence
     manifest
   end
-  # rubocop:enable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity
+  # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
   def iiif_service(id)
     IIIF::Service.new(
