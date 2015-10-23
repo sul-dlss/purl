@@ -85,12 +85,8 @@ class IiifPresentationManifest
     )
 
     thumb = IIIF::Presentation::Resource.new
-
-    thumb_image = page_images.detect(&:thumbnail?) || page_images.first
-    # Use the first image to create a thumbnail on the manifest
-    thumbail_base_uri = "#{Settings.stacks.url}/image/iiif/#{druid}%2F#{thumb_image.filename.split('.').first}"
-    thumb['@id'] = "#{thumbail_base_uri}/full/400,/0/default.jpg"
-    thumb.service = iiif_service(thumbail_base_uri)
+    thumb['@id'] = "#{thumbnail_base_uri}/full/!400,400/0/default.jpg"
+    thumb.service = iiif_service(thumbnail_base_uri)
     manifest.thumbnail = thumb
 
     # for each resource image, create a canvas
@@ -149,6 +145,14 @@ class IiifPresentationManifest
         'label' => label,
         'value' => node.text
       }
+    end
+  end
+
+  def thumbnail_base_uri
+    @thumbnail_base_uri ||= begin
+      thumb_image = page_images.detect(&:thumbnail?) || page_images.first
+      # Use the first image to create a thumbnail on the manifest
+      "#{Settings.stacks.url}/image/iiif/#{druid}%2F#{thumb_image.filename.split('.').first}" if thumb_image
     end
   end
 end
