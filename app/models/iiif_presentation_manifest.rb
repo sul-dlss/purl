@@ -118,7 +118,7 @@ class IiifPresentationManifest
           'profile' => 'http://iiif.io/api/auth/0/login',
           'label' => 'Login via WebAuth',
           'service' => [{
-            '@id' => "#{Settings.stacks.url}/auth/iiif/token",
+            '@id' => "#{Settings.stacks.url}/image/iiif/token",
             'profile' => 'http://iiif.io/api/auth/0/token'
           }]
         )
