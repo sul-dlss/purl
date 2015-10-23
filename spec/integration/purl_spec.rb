@@ -27,9 +27,8 @@ describe 'purl', type: :feature do
                                                   'stacksURL' => "#{Settings.stacks.url}/image/bb737zp0787/bb737zp0787_00_0002"
     end
     it 'offers an appropriate exception when the object is not a book' do
-      expect do
-        visit "/#{@file_object}.flipbook"
-      end.to raise_error ActionController::RoutingError
+      visit "/#{@file_object}.flipbook"
+      expect(page.status_code).to eq 404
     end
   end
 

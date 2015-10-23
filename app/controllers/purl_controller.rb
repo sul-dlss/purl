@@ -80,6 +80,6 @@ class PurlController < ApplicationController
   end
 
   def missing_file
-    fail ActionController::RoutingError, 'Not Found'
+    render '/errors/missing_file.html', status: 404
   end
 end
