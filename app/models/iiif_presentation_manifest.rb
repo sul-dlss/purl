@@ -116,7 +116,11 @@ class IiifPresentationManifest
         IIIF::Service.new(
           '@id' => "#{Settings.stacks.url}/auth/iiif",
           'profile' => 'http://iiif.io/api/auth/0/login',
-          'label' => 'Login via WebAuth'
+          'label' => 'Login via WebAuth',
+          'service' => [{
+            '@id' => "#{Settings.stacks.url}/auth/iiif/token",
+            'profile' => 'http://iiif.io/api/auth/0/token'
+          }]
         )
       ] unless purl_resource.rights.world_rights_for_file(resource.filename).first
 
