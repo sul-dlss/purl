@@ -116,7 +116,7 @@ class IiifPresentationManifest
         IIIF::Service.new(
           '@id' => "#{Settings.stacks.url}/auth/iiif",
           'profile' => 'http://iiif.io/api/auth/0/login',
-          'label' => 'Login via WebAuth',
+          'label' => 'Stanford-affiliated? Login to view',
           'service' => [{
             '@id' => "#{Settings.stacks.url}/image/iiif/token",
             'profile' => 'http://iiif.io/api/auth/0/token'
