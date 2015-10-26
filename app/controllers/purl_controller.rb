@@ -27,7 +27,7 @@ class PurlController < ApplicationController
         if @purl.mods?
           render xml: @purl.mods_body
         else
-          missing_file
+          render nothing: true, status: :not_found
         end
       end
 
@@ -35,7 +35,7 @@ class PurlController < ApplicationController
         if @purl.flipbook?
           render json: @purl.flipbook.to_json
         else
-          missing_file
+          render nothing: true, status: :not_found
         end
       end
 
