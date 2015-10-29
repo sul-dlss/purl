@@ -91,7 +91,7 @@ class IiifPresentationManifest
 
     # for each resource image, create a canvas
     page_images.each_with_index do |resource, count|
-      stacks_uri = "#{Settings.stacks.url}/image/iiif/#{druid}%2F#{resource.filename.split('.').first}"
+      url = stacks_iiif_base_url(druid, resource.filename)
 
       canv = IIIF::Presentation::Canvas.new
       canv['@id'] = "#{purl_base_uri}#canvas/canvas-#{count}"
@@ -105,12 +105,12 @@ class IiifPresentationManifest
       anno['on'] = canv['@id']
 
       img_res = IIIF::Presentation::ImageResource.new
-      img_res['@id'] = "#{stacks_uri}/full/full/0/default.jpg"
+      img_res['@id'] = "#{url}/full/full/0/default.jpg"
       img_res.format = 'image/jpeg'
       img_res.height = resource.height
       img_res.width = resource.width
 
-      img_res.service = iiif_service(stacks_uri)
+      img_res.service = iiif_service(url)
 
       img_res.service['service'] = [
         IIIF::Service.new(
@@ -156,7 +156,11 @@ class IiifPresentationManifest
     @thumbnail_base_uri ||= begin
       thumb_image = page_images.detect(&:thumbnail?) || page_images.first
       # Use the first image to create a thumbnail on the manifest
-      "#{Settings.stacks.url}/image/iiif/#{druid}%2F#{thumb_image.filename.split('.').first}" if thumb_image
+      stacks_iiif_base_url(druid, thumb_image.filename) if thumb_image
     end
+  end
+
+  def stacks_iiif_base_url(druid, filename)
+    "#{Settings.stacks.url}/image/iiif/#{druid}%2F#{File.basename(filename, '.*')}"
   end
 end
