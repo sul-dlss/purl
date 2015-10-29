@@ -1,3 +1,6 @@
+sitemap:
+  host: 'https://purl.stanford.edu'
+
 stacks:
   url: 'https://stacks.stanford.edu'
   iiif_profile: 'http://iiif.io/api/image/2/level1.json'

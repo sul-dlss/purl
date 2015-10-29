@@ -1,4 +1,5 @@
 require 'dor/util'
+require 'find'
 
 class PurlResource
   include ActiveModel::Model
@@ -9,6 +10,24 @@ class PurlResource
 
   class DruidNotValid < StandardError; end
   class ObjectNotReady < StandardError; end
+
+  def self.all
+    return [] unless Settings.document_cache_root
+    return to_enum(:all) unless block_given?
+
+    Find.find(Settings.document_cache_root) do |path|
+      next unless path.ends_with?('public')
+      # rubocop:disable Style/RegexpLiteral
+      match = path.match(%r{#{Settings.purl_resource.public_xml % { druid: '(.*)', druid_tree: '(.*)' }}})
+      # rubocop:enable Style/RegexpLiteral
+
+      next unless match
+
+      id = match[1].delete('/')
+
+      yield PurlResource.find(id)
+    end
+  end
 
   def self.find(id)
     fail DruidNotValid, id unless Dor::Util.validate_druid(id)

@@ -19,3 +19,4 @@
 coverage
 config/settings/*
 document_cache/*
+public/sitemaps
