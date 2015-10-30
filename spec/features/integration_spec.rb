@@ -20,11 +20,6 @@ describe 'Integration Scenarios' do
       expect(page).to have_metadata_section 'Also listed in'
     end
 
-    it 'has a flipbook viewer' do
-      visit '/bb737zp0787'
-      expect(page).to have_selector 'iframe.embed-flipbook'
-    end
-
     it 'has a link to the searchworks record' do
       visit '/bb737zp0787'
       expect(page).to have_link 'View in SearchWorks', href: 'http://searchworks.stanford.edu/view/9616533'
