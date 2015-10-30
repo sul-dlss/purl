@@ -40,4 +40,12 @@ describe 'IIIF manifests' do
     login_service = service['service'].detect { |x| x['profile'] == 'http://iiif.io/api/auth/0/login' }
     expect(login_service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/0/token'
   end
+
+  it 'suppresses sequences for dark resources' do
+    visit '/bc421tk1152/iiif/manifest.json'
+    json = JSON.parse(page.body)
+
+    expect(json['sequences'].length).to eq 1
+    expect(json['sequences'].first['canvases']).to be_blank
+  end
 end

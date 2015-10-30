@@ -91,46 +91,53 @@ class IiifPresentationManifest
 
     # for each resource image, create a canvas
     page_images.each_with_index do |resource, count|
-      url = stacks_iiif_base_url(druid, resource.filename)
+      next unless purl_resource.rights.world_rights_for_file(resource.filename).first ||
+                  purl_resource.rights.stanford_only_rights_for_file(resource.filename).first
 
-      canv = IIIF::Presentation::Canvas.new
-      canv['@id'] = "#{purl_base_uri}#canvas/canvas-#{count}"
-      canv.label = resource.label
-      canv.label = 'image' unless canv.label.present?
-      canv.height = resource.height
-      canv.width = resource.width
-
-      anno = IIIF::Presentation::Annotation.new
-      anno['@id'] = "#{purl_base_uri}#imageanno/anno-#{count}"
-      anno['on'] = canv['@id']
-
-      img_res = IIIF::Presentation::ImageResource.new
-      img_res['@id'] = "#{url}/full/full/0/default.jpg"
-      img_res.format = 'image/jpeg'
-      img_res.height = resource.height
-      img_res.width = resource.width
-
-      img_res.service = iiif_service(url)
-
-      img_res.service['service'] = [
-        IIIF::Service.new(
-          '@id' => "#{Settings.stacks.url}/auth/iiif",
-          'profile' => 'http://iiif.io/api/auth/0/login',
-          'label' => 'Stanford-affiliated? Login to view',
-          'service' => [{
-            '@id' => "#{Settings.stacks.url}/image/iiif/token",
-            'profile' => 'http://iiif.io/api/auth/0/token'
-          }]
-        )
-      ] unless purl_resource.rights.world_rights_for_file(resource.filename).first
-
-      anno.resource = img_res
-      canv.images << anno
-      sequence.canvases << canv
+      sequence.canvases << canvas_for_resource(purl_base_uri, resource, count)
     end
 
     manifest.sequences << sequence
     manifest
+  end
+
+  def canvas_for_resource(purl_base_uri, resource, count)
+    url = stacks_iiif_base_url(druid, resource.filename)
+
+    canv = IIIF::Presentation::Canvas.new
+    canv['@id'] = "#{purl_base_uri}#canvas/canvas-#{count}"
+    canv.label = resource.label
+    canv.label = 'image' unless canv.label.present?
+    canv.height = resource.height
+    canv.width = resource.width
+
+    anno = IIIF::Presentation::Annotation.new
+    anno['@id'] = "#{purl_base_uri}#imageanno/anno-#{count}"
+    anno['on'] = canv['@id']
+
+    img_res = IIIF::Presentation::ImageResource.new
+    img_res['@id'] = "#{url}/full/full/0/default.jpg"
+    img_res.format = 'image/jpeg'
+    img_res.height = resource.height
+    img_res.width = resource.width
+
+    img_res.service = iiif_service(url)
+
+    img_res.service['service'] = [
+      IIIF::Service.new(
+        '@id' => "#{Settings.stacks.url}/auth/iiif",
+        'profile' => 'http://iiif.io/api/auth/0/login',
+        'label' => 'Stanford-affiliated? Login to view',
+        'service' => [{
+          '@id' => "#{Settings.stacks.url}/image/iiif/token",
+          'profile' => 'http://iiif.io/api/auth/0/token'
+        }]
+      )
+    ] unless purl_resource.rights.world_rights_for_file(resource.filename).first
+
+    anno.resource = img_res
+    canv.images << anno
+    canv
   end
   # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
