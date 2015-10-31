@@ -7,8 +7,8 @@
     <% @purl.content_metadata.downloadable_files.each do |f| %>
       <li class="<%= 'sul-embed-stanford-only' if @purl.rights.stanford_only_unrestricted_file?(f.filename) %>">
         <%= image_tag Icon.for_filename(f.filename) %>
-        <% if @purl.rights.stanford_only_rights_for_file(f.filename) ||
-            @purl.rights.world_rights_for_file(f.filename) %>
+        <% if @purl.rights.stanford_only_rights_for_file(f.filename).first ||
+            @purl.rights.world_rights_for_file(f.filename).first %>
           <%= link_to Purl::Util.get_file_label(f), Purl::Util.get_file_url(@purl.id, f) %>
         <% else %>
           <%= Purl::Util.get_file_label(f) %>
