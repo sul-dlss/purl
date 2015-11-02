@@ -84,10 +84,7 @@ class IiifPresentationManifest
       'label' => 'Current order'
     )
 
-    thumb = IIIF::Presentation::Resource.new
-    thumb['@id'] = "#{thumbnail_base_uri}/full/!400,400/0/default.jpg"
-    thumb.service = iiif_service(thumbnail_base_uri)
-    manifest.thumbnail = thumb
+    manifest.thumbnail = thumbnail_resource
 
     # for each resource image, create a canvas
     page_images.each_with_index do |resource, count|
@@ -159,11 +156,25 @@ class IiifPresentationManifest
     end
   end
 
+  def thumbnail_resource
+    return unless thumbnail_image
+
+    thumb = IIIF::Presentation::ImageResource.new
+    thumb['@id'] = "#{thumbnail_base_uri}/full/!400,400/0/default.jpg"
+    thumb.format = 'image/jpeg'
+    thumb.service = iiif_service(thumbnail_base_uri)
+
+    thumb
+  end
+
+  def thumbnail_image
+    @thumbnail_image ||= page_images.detect(&:thumbnail?) || page_images.first
+  end
+
   def thumbnail_base_uri
     @thumbnail_base_uri ||= begin
-      thumb_image = page_images.detect(&:thumbnail?) || page_images.first
       # Use the first image to create a thumbnail on the manifest
-      stacks_iiif_base_url(druid, thumb_image.filename) if thumb_image
+      stacks_iiif_base_url(druid, thumbnail_image.filename) if thumbnail_image
     end
   end
 
