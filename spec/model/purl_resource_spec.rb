@@ -85,20 +85,6 @@ describe PurlResource do
     end
   end
 
-  describe '#flipbook?' do
-    it 'is a flipbook if it is a book' do
-      allow(subject).to receive(:type).and_return('Book')
-
-      expect(subject).to be_flipbook
-    end
-
-    it 'is a flipbook if it is a manuscript' do
-      allow(subject).to receive(:type).and_return('Manuscript')
-
-      expect(subject).to be_flipbook
-    end
-  end
-
   describe '#attributes' do
     subject { described_class.new(id: 'oo000oo0000') }
     it 'includes the druid' do
