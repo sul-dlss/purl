@@ -26,6 +26,14 @@ describe 'IIIF manifests' do
     expect(image['resource']['@id']).to eq 'http://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/full/0/default.jpg'
   end
 
+  it 'includes a representative thumbnail' do
+    visit '/bb157hs6068/iiif/manifest.json'
+    json = JSON.parse(page.body)
+
+    expect(json['thumbnail']['@id']).to eq 'http://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
+    expect(json['thumbnail']['@type']).to eq 'dcterms:Image'
+  end
+
   it 'includes authorization services for a Stanford-only image' do
     visit '/py305sy7961/iiif/manifest.json'
     json = JSON.parse(page.body)
