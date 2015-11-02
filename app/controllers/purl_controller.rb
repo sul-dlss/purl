@@ -11,7 +11,7 @@ class PurlController < ApplicationController
   end
 
   # entry point into the application
-  # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/PerceivedComplexity
+  # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def show
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
 
@@ -31,14 +31,6 @@ class PurlController < ApplicationController
         end
       end
 
-      format.flipbook do
-        if @purl.flipbook?
-          render json: @purl.flipbook.to_json
-        else
-          render nothing: true, status: :not_found
-        end
-      end
-
       format.jpeg do
         if @purl.representative_thumbnail?
           redirect_to @purl.representative_thumbnail
@@ -48,7 +40,7 @@ class PurlController < ApplicationController
       end
     end
   end
-  # rubocop:enable Metrics/AbcSize, Metrics/MethodLength, Metrics/PerceivedComplexity
+  # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
   def manifest
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")

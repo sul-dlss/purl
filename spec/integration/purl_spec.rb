@@ -6,30 +6,12 @@ describe 'purl', type: :feature do
   before do
     @image_object = 'xm166kd3734'
     @file_object = 'wp335yr5649'
-    @flipbook_object = 'bb737zp0787'
     @manifest_object = 'bc854fy5899'
     @embed_object = 'bf973rp9392'
     @incomplete_object = 'bb157hs6069'
     @unpublished_object = 'ab123cd4567'
     @legacy_object = 'ir:rs276tc2764'
     @nested_resources_object = 'dm907qj6498'
-  end
-
-  describe 'flipbook' do
-    it 'should render the json for flipbook' do
-      visit "/#{@flipbook_object}.flipbook"
-      json_body = JSON.parse(page.body)
-      expect(json_body['objectId']).to eq(@flipbook_object)
-      expect(json_body['pages'].first).to include 'height' => 1901,
-                                                  'width' => 1361,
-                                                  'levels' => 6,
-                                                  'resourceType' => 'page',
-                                                  'stacksURL' => "#{Settings.stacks.url}/image/bb737zp0787/bb737zp0787_00_0002"
-    end
-    it 'offers an appropriate exception when the object is not a book' do
-      visit "/#{@file_object}.flipbook"
-      expect(page.status_code).to eq 404
-    end
   end
 
   describe 'manifest' do

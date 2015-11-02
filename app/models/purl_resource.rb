@@ -97,10 +97,6 @@ class PurlResource
     iiif_manifest.needed?
   end
 
-  def flipbook
-    @flipbook ||= Flipbook.new(self)
-  end
-
   concerning :Metadata do
     def title
       if mods?
@@ -169,10 +165,6 @@ class PurlResource
 
     def representative_thumbnail
       "#{iiif_manifest.thumbnail_base_uri}/full/!400,400/0/default.jpg" if iiif_manifest.thumbnail_base_uri.present?
-    end
-
-    def flipbook?
-      type =~ /Book|Manuscript/i
     end
   end
 

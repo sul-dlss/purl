@@ -29,17 +29,4 @@ class RightsMetadata
   def license_statement
     document.at_xpath('use/human[@type="openDataCommons" or @type="creativeCommons"]/text()').to_s
   end
-
-  def read_group
-    read_group = document.at_xpath('access[@type="read"]/machine/*')
-
-    return unless read_group
-
-    case read_group.name
-    when 'group'
-      read_group.text
-    else
-      read_group.name
-    end
-  end
 end

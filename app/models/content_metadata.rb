@@ -9,18 +9,6 @@ class ContentMetadata
     document.attribute('type').to_s if document
   end
 
-  def reading_order
-    book_data.attribute('readingOrder').to_s if book_data
-  end
-
-  def page_start
-    book_data.attribute('pageStart').to_s if book_data
-  end
-
-  def book_data
-    document.at_xpath('bookData') if document
-  end
-
   def resources
     return [] unless document
 
