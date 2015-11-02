@@ -24,7 +24,7 @@ describe 'purl', type: :feature do
                                                   'width' => 1361,
                                                   'levels' => 6,
                                                   'resourceType' => 'page',
-                                                  'stacksURL' => "#{Settings.stacks.url}/image/bb737zp0787/bb737zp0787_00_0002"
+                                                  'stacksURL' => "#{Settings.stacks.url}/image/iiif/bb737zp0787%2Fbb737zp0787_00_0002/full/full/0/default.jpg"
     end
     it 'offers an appropriate exception when the object is not a book' do
       visit "/#{@file_object}.flipbook"

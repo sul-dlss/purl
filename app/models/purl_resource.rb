@@ -1,4 +1,3 @@
-require 'dor/util'
 require 'find'
 
 class PurlResource
@@ -30,7 +29,7 @@ class PurlResource
   end
 
   def self.find(id)
-    fail DruidNotValid, id unless Dor::Util.validate_druid(id)
+    fail DruidNotValid, id unless DruidTools::Druid.valid?(id)
 
     PurlResource.new(id: id).tap do |obj|
       fail ObjectNotReady, id unless obj.ready?
@@ -75,7 +74,7 @@ class PurlResource
   delegate :rights_metadata, to: :public_xml
 
   def content_metadata
-    @content_metadata ||= ContentMetadata.new(public_xml.content_metadata)
+    @content_metadata ||= ContentMetadata.new(druid, public_xml.content_metadata)
   end
 
   def rights
@@ -217,7 +216,13 @@ class PurlResource
     private
 
     def druid_tree
-      Dor::Util.create_pair_tree(druid) || druid
+      pair_tree || druid
+    end
+
+    def pair_tree
+      match = druid.match(/^([a-z]{2})(\d{3})([a-z]{2})(\d{4})$/i)
+
+      File.join(match[1], match[2], match[3], match[4]) if match
     end
   end
 

@@ -9,9 +9,9 @@
         <%= image_tag Icon.for_filename(f.filename) %>
         <% if @purl.rights.stanford_only_rights_for_file(f.filename).first ||
             @purl.rights.world_rights_for_file(f.filename).first %>
-          <%= link_to Purl::Util.get_file_label(f), Purl::Util.get_file_url(@purl.id, f) %>
+          <%= link_to truncate(f.display_label, length: 45), f.delivery_url %>
         <% else %>
-          <%= Purl::Util.get_file_label(f) %>
+          <%= truncate f.display_label, length: 45 %>
         <% end %>
         <% if f.size.present? %>
         (<%= number_to_human_size(f.size, precision: 1) %>)

@@ -1,5 +1,3 @@
-require 'purl/util'
-
 class Flipbook
   delegate :druid, :title, to: :purl_resource
   attr_reader :purl_resource
@@ -41,13 +39,17 @@ class Flipbook
         levels: file.levels,
         resourceType: file.type,
         label: file.label,
-        stacksURL: Purl::Util.get_img_base_url(druid, file)
+        stacksURL: stacks_iiif_url(druid, file.filename)
       }
     end
   end
 
   def catalog_key?
     catalog_key.present?
+  end
+
+  def stacks_iiif_url(druid, filename)
+    "#{Settings.stacks.url}/image/iiif/#{druid}%2F#{File.basename(filename, '.*')}/full/full/0/default.jpg"
   end
 
   delegate :catalog_key, :content_metadata, :rights, to: :purl_resource
