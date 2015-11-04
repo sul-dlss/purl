@@ -102,14 +102,14 @@ class IiifPresentationManifest
     url = stacks_iiif_base_url(druid, resource.filename)
 
     canv = IIIF::Presentation::Canvas.new
-    canv['@id'] = "#{purl_base_uri}#canvas/canvas-#{count}"
+    canv['@id'] = "#{purl_base_uri}/iiif/canvas-#{count}"
     canv.label = resource.label
     canv.label = 'image' unless canv.label.present?
     canv.height = resource.height
     canv.width = resource.width
 
     anno = IIIF::Presentation::Annotation.new
-    anno['@id'] = "#{purl_base_uri}#imageanno/anno-#{count}"
+    anno['@id'] = "#{purl_base_uri}/iiif/anno-#{count}"
     anno['on'] = canv['@id']
 
     img_res = IIIF::Presentation::ImageResource.new
