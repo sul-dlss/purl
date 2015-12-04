@@ -1,0 +1,34 @@
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+   <dc:title>Carey's American Atlas: Containing Twenty Maps And One Chart ... Philadelphia: Engraved For, And Published By, Mathew Carey, No. 118, Market Street. M.DCC.XCV. [Price, Plain, Five Dollars-Coloured, Six Dollars.]</dc:title>
+   <dc:contributor>Carey, Mathew.</dc:contributor>
+   <dc:contributor>Barker, W.</dc:contributor>
+   <dc:contributor>Doolittle, Amos.</dc:contributor>
+   <dc:contributor>Harris, Caleb &amp; Harding.</dc:contributor>
+   <dc:contributor>Harrison, Junr.</dc:contributor>
+   <dc:contributor>Lewis, Samuel.</dc:contributor>
+   <dc:contributor>Scott, J.T.</dc:contributor>
+   <dc:contributor>Smith, Genl. D.</dc:contributor>
+   <dc:contributor>Smither, T.</dc:contributor>
+   <dc:contributor>Vallance.</dc:contributor>
+   
+   <dc:type>map</dc:type>
+   <dc:type>cartographic image</dc:type>
+   <dc:type>Atlases.</dc:type>
+   <dc:date>1795</dc:date>
+   <dc:date>1795.</dc:date><dc:publisher>Mathew Carey,</dc:publisher>
+   <dc:language>eng</dc:language>
+   <dc:format>1 atlas : 21 maps ; 37 x 24 cm</dc:format><dc:format>cartographic material</dc:format>
+   
+   <dc:description>First atlas of America printed in America. First edition. These maps were also published in Carey's American edition of Guthrie's Geography (1795) and most of the maps say "engraved for Carey's American edition of Guthrie's Geography improved." The maps were again used for the 1796 edition of Carey's General Atlas, unchanged except for the Tennessee map, which is titled "Tennassee State" instead of "Tennassee Government" which is the title in both the American Atlas and the Guthrie Atlas -see Wheat and Brun, and has several counties delineated in the eastern part of the state which do not show in the 1795 edition of the map. NMM 480 (American Atlas) has "Tennassee State" indicating that Carey was not consistent. This atlas was the model for John Reid's American Atlas of 1796. This copy's maps have very strong impressions. Rebound quarter leather, marbled paper covered boards.</dc:description>
+   <dc:description>National Atlas.</dc:description>
+   <dc:description>References: P1172; Walsh p33; NMM 480; Howes C135.</dc:description>
+   <dc:description type="local" displayLabel="Local note">Pub list no.: 2542.000.</dc:description>
+   <dc:subject>Maps</dc:subject><dc:coverage>Western Hemisphere</dc:coverage>
+   <dc:coverage>North America</dc:coverage>
+   <dc:coverage>South America</dc:coverage>
+   <dc:coverage>United States</dc:coverage>
+   <dc:coverage>Canada</dc:coverage>
+   <dc:subject>G1100 1795 .C3 F</dc:subject>
+   <dc:identifier>http://www.davidrumsey.com/luna/servlet/view/search?QuickSearchA=QuickSearchA&amp;q=2542.000&amp;sort=pub_list_no_initialsort%2Cpub_date%2Cpub_list_no%2Cseries_no&amp;search=Search</dc:identifier>
+   
+<dc:relation type="collection">David Rumsey Map Collection at Stanford University Libraries</dc:relation></oai_dc:dc>

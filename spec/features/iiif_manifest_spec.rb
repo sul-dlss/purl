@@ -56,4 +56,94 @@ describe 'IIIF manifests' do
     expect(json['sequences'].length).to eq 1
     expect(json['sequences'].first['canvases']).to be_blank
   end
+
+  # Virtual objects consist of a parent object and children objects who hold the file resources
+  context 'virtual objects' do
+    before :each do
+      # we fetch the body of the public xml and mods from the local fixtures folder rather than the network
+      mods_body = File.read(File.join(Settings.document_cache_root, Dor::Util.create_pair_tree(druid), 'mods'))
+      public_xml_body = File.read(File.join(Settings.document_cache_root, Dor::Util.create_pair_tree(druid), 'public'))
+      allow_any_instance_of(PurlResource).to receive(:mods_resource).and_return(double(success?: true, body: mods_body))
+      allow_any_instance_of(PurlResource).to receive(:public_xml_resource).and_return(double(success?: true, body: public_xml_body))
+    end
+
+    describe 'first child object' do
+      let(:druid) { 'cg767mn6478' }
+
+      it 'generates a correct manifest.json' do
+        visit "/#{druid}/iiif/manifest.json"
+        expect(page).to have_http_status(:ok)
+
+        json = JSON.parse(page.body)
+        expect(json['label']).to start_with '(Covers to) Carey\'s American Atlas'
+        expect(json['sequences'].length).to eq 1
+        expect(json['sequences'].first['canvases'].length).to eq 1
+
+        canvas = json['sequences'].first['canvases'].first
+        expect(canvas['images'].length).to eq 1
+        expect(canvas['label']).to eq 'Image 1'
+
+        image = canvas['images'].first
+        expect(image['resource']['@id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/full/0/default.jpg'
+        expect(image['resource']['height']).to eq 4747
+        expect(image['resource']['width']).to eq 6475
+      end
+    end
+
+    describe 'second child object' do
+      let(:druid) { 'jw923xn5254' }
+
+      it 'generates a correct manifest.json' do
+        visit "/#{druid}/iiif/manifest.json"
+        expect(page).to have_http_status(:ok)
+
+        json = JSON.parse(page.body)
+        expect(json['label']).to start_with '(Title Page to) Carey\'s American Atlas'
+        expect(json['sequences'].length).to eq 1
+        expect(json['sequences'].first['canvases'].length).to eq 1
+
+        canvas = json['sequences'].first['canvases'].first
+        expect(canvas['images'].length).to eq 1
+        expect(canvas['label']).to eq 'Image 1'
+
+        image = canvas['images'].first
+        expect(image['resource']['@id']).to end_with '/image/iiif/jw923xn5254%2F2542B/full/full/0/default.jpg'
+        expect(image['resource']['height']).to eq 4675
+        expect(image['resource']['width']).to eq 3139
+      end
+    end
+
+    describe 'parent object' do
+      let(:druid) { 'hj097bm8879' }
+
+      it 'generates a correct manifest.json' do
+        visit "/#{druid}/iiif/manifest.json"
+        expect(page).to have_http_status(:ok)
+
+        json = JSON.parse(page.body)
+        expect(json['label']).to start_with 'Carey\'s American Atlas'
+        expect(json['thumbnail']['@id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/!400,400/0/default.jpg' # first child
+        expect(json['sequences'].length).to eq 1
+        expect(json['sequences'].first['canvases'].length).to eq 2
+
+        canvas = json['sequences'].first['canvases'][0]
+        expect(canvas['label']).to start_with '(Covers to) Carey\'s American Atlas'
+
+        expect(canvas['images'].length).to eq 1
+        image = canvas['images'].first
+        expect(image['resource']['@id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/full/0/default.jpg' # first child
+        expect(image['resource']['height']).to eq 4747
+        expect(image['resource']['width']).to eq 6475
+
+        canvas = json['sequences'].first['canvases'][1]
+        expect(canvas['label']).to start_with '(Title Page to) Carey\'s American Atlas'
+
+        expect(canvas['images'].length).to eq 1
+        image = canvas['images'].first
+        expect(image['resource']['@id']).to end_with '/image/iiif/jw923xn5254%2F2542B/full/full/0/default.jpg' # second child
+        expect(image['resource']['height']).to eq 4675
+        expect(image['resource']['width']).to eq 3139
+      end
+    end
+  end
 end

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd" version="3.5">
+  <typeOfResource>text</typeOfResource>
+  <titleInfo>
+    <title>(Title Page to) Carey's American Atlas: Containing Twenty Maps And One Chart ... Philadelphia: Engraved For, And Published By, Mathew Carey, No. 118, Market Street. M.DCC.XCV. [Price, Plain, Five Dollars-Coloured, Six Dollars.]</title>
+  </titleInfo>
+  <titleInfo type="alternative" displayLabel="Short title">
+    <title>Title Page: Carey's American atlas.</title>
+  </titleInfo>
+  <name type="personal" usage="primary">
+    <namePart>Carey, Mathew</namePart>
+    <role>
+      <roleTerm type="text" authority="marcrelator">author</roleTerm>
+    </role>
+  </name>
+  <genre>Title Page</genre>
+  <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300055033">title pages</genre>
+  <originInfo eventType="publication">
+    <place>
+      <placeTerm type="text">Philadelphia</placeTerm>
+    </place>
+    <publisher>Mathew Carey</publisher>
+    <dateIssued encoding="w3cdtf" keyDate="yes">1795</dateIssued>
+  </originInfo>
+  <language>
+    <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
+  </language>
+  <physicalDescription>
+    <extent>37 x 23 cm</extent>
+    <digitalOrigin>reformatted digital</digitalOrigin>
+    <internetMediaType>image/jpeg</internetMediaType>
+  </physicalDescription>
+  <note>First atlas of America printed in America. First edition. These maps were also published in Carey's American edition of Guthrie's Geography (1795) and most of the maps say "engraved for Carey's American edition of Guthrie's improved." The maps were again used for the 1796 edition of Carey's General Atlas, unchanged except for the Tennessee map, which is titled "Tennassee State" instead of "Tennassee Government" which is the title in both the American Atlas and the Guthrie Atlas - see Wheat and Brun, and has several counties delineated in the eastern part of the state which do not show in the 1795 edition of the map. NMM 480 (American Atlas) has "Tennassee State" indicating that Carey was not consistent. This atlas was the model for John Reid's American Atlas of 1796. This copy's maps have very strong impressions. Rebound quarter leather, marbled paper covered boards.</note>
+  <subject displayLabel="Country">
+    <geographic>United States</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>E1200000 W0300000 N0760000 S0590000</coordinates>
+    </cartographics>
+  </subject>
+  <relatedItem type="host" displayLabel="Appears in">
+    <titleInfo>
+      <title>Carey's American Atlas: Containing Twenty Maps And One Chart ... Philadelphia: Engraved For, And Published By, Mathew Carey, No. 118, Market Street. M.DCC.XCV. [Price, Plain, Five Dollars-Coloured, Six Dollars.]</title>
+    </titleInfo>
+    <originInfo eventType="publication">
+      <dateIssued>1795</dateIssued>
+    </originInfo>
+    <identifier type="local" displayLabel="Pub list no.">2542</identifier>
+  </relatedItem>
+  <identifier type="local" displayLabel="List number">2542B</identifier>
+  <identifier type="local" displayLabel="Image number">2542B</identifier>
+  <recordInfo>
+    <languageOfCataloging>
+      <languageTerm authority="iso639-2b">eng</languageTerm>
+    </languageOfCataloging>
+    <recordContentSource authority="marcorg">CSt</recordContentSource>
+  </recordInfo>
+  <relatedItem type="host">
+    <titleInfo>
+      <title>David Rumsey Map Collection at Stanford University Libraries</title>
+    </titleInfo>
+    <identifier type="uri">http://purl.stanford.edu/xh235dd9059</identifier>
+    <typeOfResource collection="yes"/>
+  </relatedItem>
+  <accessCondition type="useAndReproduction">To obtain permission to publish or reproduce commercially, please contact the Digital &amp; Rare Map Librarian, David Rumsey Map Center at rumseymapcenter@stanford.edu.</accessCondition>
+  <accessCondition type="copyright">Property rights reside with the repository, Copyright © Stanford University.  Images may be reproduced or transmitted, but not for commercial use. For commercial use or commercial republication, contact rumseymapcenter@stanford.edu This work is licensed under a Creative Commons License. By downloading any images from this site, you agree to the terms of that license.</accessCondition>
+  <accessCondition type="license">CC by-nc-sa: Attribution Non-Commercial Share Alike 3.0 Unported</accessCondition>
+</mods>
