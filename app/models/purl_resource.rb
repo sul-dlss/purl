@@ -64,6 +64,7 @@ class PurlResource
     public_xml?
   end
 
+  # Fetches the body of the public XML from the public_xml resource
   def public_xml_document
     @public_xml_document ||= Nokogiri::XML(public_xml_body)
   end

@@ -1,0 +1,11 @@
+<identityMetadata>
+  <sourceId source="Rumsey"> 2542</sourceId>
+  <objectId>druid:hj097bm8879</objectId>
+  <objectCreator>DOR</objectCreator>
+  <objectLabel>Rumsey Atlas 2542</objectLabel>
+  <objectType>item</objectType>
+  <otherId name="catkey">10449093</otherId>
+  <otherId name="uuid">3526ef90-1f4b-11e5-b0dc-0050569b3c3c</otherId>
+  <tag>Project : Rumsey : AtlasProto</tag>
+  <tag>Remediated By : 4.21.0</tag>
+</identityMetadata>

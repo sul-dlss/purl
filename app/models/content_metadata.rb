@@ -21,6 +21,17 @@ class ContentMetadata
     document.at_xpath('bookData') if document
   end
 
+  ##
+  # The content metadata has a druid for the resources which in practice
+  # is the same for the overall item, but with virtual objects, the druid
+  # for the resources changes to child items. So we include the druid at
+  # the content metadata Resource-level to accommodate it.
+  #
+  # @return [String]
+  def druid
+    document.at_xpath('@objectId').to_s.gsub(/^druid:/, '') # required attribute
+  end
+
   def resources
     return [] unless document
 
@@ -37,14 +48,23 @@ class ContentMetadata
     resources.select { |r| r.type == 'object' }
   end
 
+  # rubocop:disable Metrics/AbcSize
   def extract_resources(resource)
+    # extract resource-level attributes first
     resource_attributes = {
+      id: resource.attribute('id').to_s,
       type: resource.attribute('type').to_s,
-      label: resource.xpath('(label|attr[@name="label"])/text()').first.to_s
+      label: resource.xpath('(label|attr[@name="label"])/text()').first.to_s,
+      druid: druid
     }
 
     files = resource.xpath('file').select { |file| Purl::Util.file_ready? file }.map do |file|
-      Resource.from_content_metadata(file, resource_attributes)
+      Resource.from_file_metadata(file, resource_attributes)
+    end
+
+    # External files point to "remote" objects that themselves hold the resource
+    external_files = resource.xpath('externalFile').map do |external_file|
+      Resource.from_external_file_metadata(external_file, resource_attributes)
     end
 
     resources = resource.xpath('resource').map do |nested_resource|
@@ -53,23 +73,47 @@ class ContentMetadata
       r
     end
 
-    files + resources
+    files + external_files + resources
   end
+  # rubocop:enable Metrics/AbcSize
 
   class Resource
     include ActiveModel::Model
-    attr_accessor :height, :width, :type, :mimetype, :size, :label, :url, :filename, :imagesvc, :sub_resource, :thumb
+    attr_accessor :height, :width, :type, :mimetype, :size, :label, :url, :filename, :imagesvc, :sub_resource, :thumb, :druid, :id
 
-    def self.from_content_metadata(file, options = {})
+    ##
+    # Extract attributes from `<file>...</file>` in content metadata
+    #
+    # @example
+    #   <file id="2542A.jp2" mimetype="image/jp2" size="5789764">
+    #     <imageData width="6475" height="4747"/>
+    #   </file>
+    def self.from_file_metadata(file, options = {})
       new(
-        options.merge(
-          height: file.at_xpath('imageData/@height').to_s.to_i,
-          width: file.at_xpath('imageData/@width').to_s.to_i,
-          mimetype: file['mimetype'],
+        extract_common_metadata(file, options).merge(
           filename: file['id'],
           size: file['size'],
           url: file.at_xpath('location[@type="url"]/text()'),
           imagesvc: file.at_xpath('location[@type="imagesvc"]/text()')
+        )
+      )
+    end
+
+    ##
+    # Extract attributes from `<externalFile>...</externalFile>` in content metadata
+    #
+    # @example
+    #   <externalFile fileId="2542A.jp2" objectId="druid:cg767mn6478"
+    #                 resourceId="cg767mn6478_1" mimetype="image/jp2">
+    #     <imageData width="6475" height="4747"/>
+    #   </externalFile>
+    #
+    def self.from_external_file_metadata(externalFile, options = {})
+      new(
+        extract_common_metadata(externalFile, options).merge(
+          filename:   externalFile['fileId'],
+          druid:      externalFile['objectId'].gsub(/^druid:/, ''),
+          id:         externalFile['resourceId']
         )
       )
     end
@@ -82,5 +126,19 @@ class ContentMetadata
       return unless width > 0 && height > 0
       ((Math.log([width, height].max) / Math.log(2)) - (Math.log(96) / Math.log(2))).ceil + 1
     end
+
+    ##
+    # Extract resource attributes from either `file` or `externalFile` elements in content metadata
+    #
+    # @param [Nokogiri::XML::Node] metadata -- the file or externalFile element
+    # @return [Hash]
+    def self.extract_common_metadata(metadata, options = {})
+      options.merge(
+        height:         metadata.at_xpath('imageData/@height').to_s.to_i,
+        width:          metadata.at_xpath('imageData/@width').to_s.to_i,
+        mimetype:       metadata['mimetype']
+      )
+    end
+    private_class_method :extract_common_metadata
   end
 end

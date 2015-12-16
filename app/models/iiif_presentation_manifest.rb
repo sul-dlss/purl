@@ -98,8 +98,10 @@ class IiifPresentationManifest
     manifest
   end
 
+  ##
+  # @param [Integer] count This is the i_th (image) resource
   def canvas_for_resource(purl_base_uri, resource, count)
-    url = stacks_iiif_base_url(druid, resource.filename)
+    url = stacks_iiif_base_url(resource.druid, resource.filename)
 
     canv = IIIF::Presentation::Canvas.new
     canv['@id'] = "#{purl_base_uri}/iiif/canvas-#{count}"
@@ -167,14 +169,14 @@ class IiifPresentationManifest
     thumb
   end
 
+  # If not available, use the first image to create a thumbnail on the manifest
   def thumbnail_image
     @thumbnail_image ||= page_images.detect(&:thumbnail?) || page_images.first
   end
 
   def thumbnail_base_uri
     @thumbnail_base_uri ||= begin
-      # Use the first image to create a thumbnail on the manifest
-      stacks_iiif_base_url(druid, thumbnail_image.filename) if thumbnail_image
+      stacks_iiif_base_url(thumbnail_image.druid, thumbnail_image.filename) if thumbnail_image
     end
   end
 
