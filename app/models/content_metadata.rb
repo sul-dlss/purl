@@ -108,12 +108,12 @@ class ContentMetadata
     #     <imageData width="6475" height="4747"/>
     #   </externalFile>
     #
-    def self.from_external_file_metadata(externalFile, options = {})
+    def self.from_external_file_metadata(external_file, options = {})
       new(
-        extract_common_metadata(externalFile, options).merge(
-          filename:   externalFile['fileId'],
-          druid:      externalFile['objectId'].gsub(/^druid:/, ''),
-          id:         externalFile['resourceId']
+        extract_common_metadata(external_file, options).merge(
+          filename:   external_file['fileId'],
+          druid:      external_file['objectId'].gsub(/^druid:/, ''),
+          id:         external_file['resourceId']
         )
       )
     end
