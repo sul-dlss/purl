@@ -34,7 +34,6 @@ describe PurlResource do
 
   describe '#title' do
     it 'extracts the title from the MODS' do
-      # rubocop:disable Metrics/LineLength
       allow(subject).to receive(:mods_body).and_return <<-EOF
       <?xml version="1.0" encoding="UTF-8"?>
       <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
@@ -43,7 +42,6 @@ describe PurlResource do
         </titleInfo>
       </mods>
       EOF
-      # rubocop:enable Metrics/LineLength
 
       expect(subject.title).to eq 'The title from the MODS.'
     end
@@ -66,7 +64,6 @@ describe PurlResource do
 
   describe '#description' do
     it 'extracts a description from the MODS abstract' do
-      # rubocop:disable Metrics/LineLength
       allow(subject).to receive(:mods_body).and_return <<-EOF
       <?xml version="1.0" encoding="UTF-8"?>
       <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
@@ -75,7 +72,6 @@ describe PurlResource do
         </abstract>
       </mods>
       EOF
-      # rubocop:enable Metrics/LineLength
 
       expect(subject.description).to eq 'The abstract from the MODS.'
     end

@@ -6,7 +6,7 @@ class PurlResource
   include ActiveSupport::Benchmarkable
 
   attr_accessor :id
-  alias_method :druid, :id
+  alias druid id
 
   class DruidNotValid < StandardError; end
   class ObjectNotReady < StandardError; end

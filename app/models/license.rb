@@ -56,5 +56,5 @@ class License
       link: 'http://opendatacommons.org/licenses/odbl/',
       desc: 'This work is licensed under a Open Data Commons Open Database License (ODbL)'
     }
-  }
+  }.freeze
 end
