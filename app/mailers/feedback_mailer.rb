@@ -1,16 +1,16 @@
 class FeedbackMailer < ActionMailer::Base
   def submit_feedback(params, ip)
-    if params[:name].present?
-      @name = params[:name]
-    else
-      @name = 'No name given'
-    end
+    @name = if params[:name].present?
+              params[:name]
+            else
+              'No name given'
+            end
 
-    if params[:to].present?
-      @email = params[:to]
-    else
-      @email = 'No email given'
-    end
+    @email = if params[:to].present?
+               params[:to]
+             else
+               'No email given'
+             end
 
     @message = params[:message]
     @url = params[:url]

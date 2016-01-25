@@ -12,17 +12,17 @@ class IiifPresentationManifest
 
   def needed?
     if public_xml_document.at_xpath('/publicObject/contentMetadata[contains(@type,"image") or contains(@type,"map")]/resource[@type="image"]')
-      return true
+      true
     elsif public_xml_document.at_xpath('/publicObject/contentMetadata[@type="book"]/resource[@type="page"]')
-      return true
+      true
     else
-      return false
+      false
     end
   end
 
   def page_images
     @page_images ||= deliverable_files.select do |file|
-      file.mimetype == 'image/jp2' && (file.type == 'image' || file.type == 'page') && file.height > 0 && file.width > 0 && (deliverable_file?(file))
+      file.mimetype == 'image/jp2' && (file.type == 'image' || file.type == 'page') && file.height > 0 && file.width > 0 && deliverable_file?(file)
     end
   end
 
