@@ -42,24 +42,6 @@ module RecordHelper
     mods_display_label(field.label) + mods_display_name(field.values)
   end
 
-  def mods_primary_names(names)
-    names.map do |name|
-      if name.label == 'Author/Creator'
-        name
-      elsif names_include_primary?(name)
-        OpenStruct.new(label: name.label, values: name.values.select { |n| roles_include_primary?(n) })
-      end
-    end.compact
-  end
-
-  def mods_secondary_names(names)
-    names.map do |name|
-      if name.label != 'Author/Creator' && !names_include_primary?(name)
-        OpenStruct.new(label: name.label, values: name.values.reject { |n| roles_include_primary?(n) })
-      end
-    end.compact
-  end
-
   def mods_display_name(names)
     names.map do |name|
       content_tag(:dd) do
@@ -128,18 +110,4 @@ module RecordHelper
     val
   end
   # rubocop:enable Metrics/LineLength
-
-  private
-
-  def names_include_primary?(names)
-    names.values.any? do |name|
-      roles_include_primary?(name)
-    end
-  end
-
-  def roles_include_primary?(name)
-    return false unless name.roles.present?
-
-    name.roles.include?('Author') || name.roles.include?('Creator')
-  end
 end
