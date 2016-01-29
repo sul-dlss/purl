@@ -49,12 +49,12 @@ gem 'squash_rails', '1.3.3', require: 'squash/rails'
 # Use is_it_working to monitor the application
 gem 'is_it_working'
 
+# Access an IRB console on exception pages or by using <%= console %> in views
+gem 'web-console', '~> 2.0', group: :development
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
 
   # RSpec for testing
   gem 'rspec-rails', '~> 3.0'
