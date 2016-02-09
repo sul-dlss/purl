@@ -30,10 +30,10 @@ class PurlResource
   end
 
   def self.find(id)
-    fail DruidNotValid, id unless Dor::Util.validate_druid(id)
+    raise DruidNotValid, id unless Dor::Util.validate_druid(id)
 
     PurlResource.new(id: id).tap do |obj|
-      fail ObjectNotReady, id unless obj.ready?
+      raise ObjectNotReady, id unless obj.ready?
     end
   end
 
