@@ -241,10 +241,7 @@ class PurlResource
       benchmark "Fetching #{id} #{key} at #{url_or_path}" do
         case url_or_path
         when /^http/
-          Hurley.get(url_or_path).tap do |response|
-            # strip ssl options to support cache serialization
-            response.request.ssl_options = Hurley::SslOptions.new
-          end
+          Faraday.get(url_or_path)
         else
           DocumentCacheResource.new(url_or_path)
         end

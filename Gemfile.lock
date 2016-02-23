@@ -132,7 +132,6 @@ GEM
     htmlentities (4.3.4)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
-    hurley (0.2)
     i18n (0.7.0)
     iiif-presentation (0.0.5)
       activesupport (>= 3.2.18)
@@ -342,8 +341,8 @@ DEPENDENCIES
   dor-rights-auth
   dynamic_sitemaps
   factory_girl_rails
+  faraday
   htmlentities
-  hurley
   iiif-presentation
   is_it_working
   jbuilder (~> 2.0)
