@@ -33,6 +33,7 @@ embed:
     - manuscript
     - map
     - book
+  healthcheck_url: 'https://embed.stanford.edu/is_it_working'
 
 releases:
   - label: "View in SearchWorks"
