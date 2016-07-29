@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-#=begin
-
 describe 'purl', type: :feature do
   before do
     @image_object = 'xm166kd3734'
@@ -115,11 +113,9 @@ describe 'purl', type: :feature do
   end
 
   describe 'is_it_working' do
-    it 'works' do
+    it 'has responses' do
       visit '/is_it_working'
-      expect(page.status_code).to eq 200
+      expect(page).to have_text('OK')
     end
   end
 end
-
-#=end
