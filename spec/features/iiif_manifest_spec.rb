@@ -124,10 +124,10 @@ describe 'IIIF manifests' do
         expect(json['label']).to start_with 'Carey\'s American Atlas'
         expect(json['thumbnail']['@id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/!400,400/0/default.jpg' # first child
         expect(json['sequences'].length).to eq 1
-        expect(json['sequences'].first['canvases'].length).to eq 2
+        expect(json['sequences'].first['canvases'].length).to eq 23
 
         canvas = json['sequences'].first['canvases'][0]
-        expect(canvas['label']).to start_with '(Covers to) Carey\'s American Atlas'
+        expect(canvas['label']).to start_with "Cover: Carey's American atlas."
 
         expect(canvas['images'].length).to eq 1
         image = canvas['images'].first
@@ -136,7 +136,7 @@ describe 'IIIF manifests' do
         expect(image['resource']['width']).to eq 6475
 
         canvas = json['sequences'].first['canvases'][1]
-        expect(canvas['label']).to start_with '(Title Page to) Carey\'s American Atlas'
+        expect(canvas['label']).to start_with "Title Page: Carey's American atlas."
 
         expect(canvas['images'].length).to eq 1
         image = canvas['images'].first

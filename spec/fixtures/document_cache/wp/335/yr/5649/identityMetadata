@@ -7,10 +7,10 @@
   <adminPolicy>druid:dd984qc3502</adminPolicy>
   <otherId name="label"/>
   <otherId name="uuid">e9e15fd2-454c-11e2-8323-0050569b3c3c</otherId>
-  <tag>Project : Stanford Research Data</tag>
-  <tag>Process : Content Type : File</tag>
+  <displayType>file</displayType>
+  <release displayType="file" release="true" to="Searchworks" what="self" when="2015-10-25T23:26:21Z" who="blalbrit">true</release>
   <tag>Registered By : blalbrit</tag>
-  <tag>Project : Hydrus</tag>
-  <tag>Hydrus : dataset</tag>
-  <tag>Remediated By : 3.25.0</tag>
+  <tag>Project : Hydrus : IR : data</tag>
+  <tag>Remediated By : 5.5.3</tag>
+  <tag>Project : Hydrus : IR : code</tag>
 </identityMetadata>

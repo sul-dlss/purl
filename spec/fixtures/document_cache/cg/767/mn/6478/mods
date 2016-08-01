@@ -59,10 +59,20 @@
     <titleInfo>
       <title>David Rumsey Map Collection at Stanford University Libraries</title>
     </titleInfo>
-    <identifier type="uri">http://purl.stanford.edu/xh235dd9059</identifier>
+    <location>
+      <url>https://purl.stanford.edu/xh235dd9059</url>
+    </location>
     <typeOfResource collection="yes"/>
   </relatedItem>
   <accessCondition type="useAndReproduction">To obtain permission to publish or reproduce commercially, please contact the Digital &amp; Rare Map Librarian, David Rumsey Map Center at rumseymapcenter@stanford.edu.</accessCondition>
   <accessCondition type="copyright">Property rights reside with the repository, Copyright © Stanford University.  Images may be reproduced or transmitted, but not for commercial use. For commercial use or commercial republication, contact rumseymapcenter@stanford.edu This work is licensed under a Creative Commons License. By downloading any images from this site, you agree to the terms of that license.</accessCondition>
   <accessCondition type="license">CC by-nc-sa: Attribution Non-Commercial Share Alike 3.0 Unported</accessCondition>
+  <relatedItem type="host" displayLabel="Appears in">
+    <titleInfo>
+      <title>Rumsey Atlas 2542</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.stanford.edu/hj097bm8879</url>
+    </location>
+  </relatedItem>
 </mods>

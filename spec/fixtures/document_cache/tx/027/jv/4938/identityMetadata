@@ -1,0 +1,11 @@
+<identityMetadata>
+  <sourceId source="Revs">2012-015GHEW-BW-1984-b4_1.4_0003</sourceId>
+  <objectId>druid:tx027jv4938</objectId>
+  <objectCreator>DOR</objectCreator>
+  <objectLabel>IMSA 24 Hours of Daytona</objectLabel>
+  <objectType>item</objectType>
+  <otherId name="uuid">84269dae-0a13-11e5-a5fa-0050569b52d5</otherId>
+  <tag>Project : Revs</tag>
+  <tag>Project : Revs : GHEW-BW-BOX2</tag>
+  <tag>Remediated By : 4.20.1</tag>
+</identityMetadata>

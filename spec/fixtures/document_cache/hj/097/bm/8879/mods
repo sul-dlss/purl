@@ -37,6 +37,8 @@
   <genre authority="marcgt">map</genre>
   <genre authority="rdacontent">cartographic image</genre>
   <genre authority="lcgft">Atlases.</genre>
+  <genre authority="lcgft">Maps</genre>
+  <genre authority="lcgft">Early Maps.</genre>
   <originInfo>
     <place>
       <placeTerm type="code" authority="marccountry">pau</placeTerm>
@@ -68,8 +70,13 @@
   <note>References: P1172; Walsh p33; NMM 480; Howes C135.</note>
   <note type="local" displayLabel="Local note">Pub list no.: 2542.000.</note>
   <subject authority="lcsh">
+    <topic>Atlases</topic>
+    <geographic>United States</geographic>
+    <genre>Early works to 1800</genre>
+  </subject>
+  <subject authority="lcsh">
     <geographic>Western Hemisphere</geographic>
-    <topic>Maps</topic>
+    <genre>Maps</genre>
     <genre>Early works to 1800</genre>
   </subject>
   <subject authority="lcsh">
@@ -92,9 +99,12 @@
     <genre>Maps</genre>
     <genre>Early works to 1800</genre>
   </subject>
-  <classification authority="lcc">G1100 1795 .C3 F</classification>
+  <classification authority="lcc">G1100 .C3 1795 F</classification>
   <location>
-    <url displayLabel="electronic resource" usage="primary display">http://www.davidrumsey.com/luna/servlet/view/search?QuickSearchA=QuickSearchA&amp;q=2542.000&amp;sort=pub_list_no_initialsort%2Cpub_date%2Cpub_list_no%2Cseries_no&amp;search=Search</url>
+    <url displayLabel="electronic resource" usage="primary display">http://www.davidrumsey.com/luna/servlet/view/search?q=pub_list_no=%222542.000%22%20LIMIT:RUMSEY~8~1&amp;sort=Pub_List_No_InitialSort,Pub_Date,Pub_List_No,Series_No</url>
+  </location>
+  <location>
+    <url displayLabel="electronic resource">http://purl.stanford.edu/hj097bm8879</url>
   </location>
   <recordInfo>
     <recordContentSource authority="marcorg">CSt</recordContentSource>
@@ -110,7 +120,9 @@
     <titleInfo>
       <title>David Rumsey Map Collection at Stanford University Libraries</title>
     </titleInfo>
-    <identifier type="uri">http://purl.stanford.edu/xh235dd9059</identifier>
+    <location>
+      <url>https://purl.stanford.edu/xh235dd9059</url>
+    </location>
     <typeOfResource collection="yes"/>
   </relatedItem>
   <accessCondition type="useAndReproduction">To obtain permission to publish or reproduce commercially, please contact the Digital &amp; Rare Map Librarian, David Rumsey Map Center at rumseymapcenter@stanford.edu.</accessCondition>

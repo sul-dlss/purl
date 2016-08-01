@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:wy534zh7137" published="2015-06-13T12:21:52-07:00">
+  <identityMetadata>
+    <sourceId source="sul "> logo_2015</sourceId>
+    <objectId>druid:wy534zh7137</objectId>
+    <objectCreator>DOR</objectCreator>
+    <objectLabel>SUL Logo 2015</objectLabel>
+    <objectType>item</objectType>
+    <otherId name="label"/>
+    <otherId name="uuid">00216996-11eb-11e5-bf95-0050569b3c3c</otherId>
+    <tag>Process : Content Type : Image</tag>
+    <tag>Project : IIIF</tag>
+    <tag>Registered By : blalbrit</tag>
+    <tag>Remediated By : 4.20.1</tag>
+  </identityMetadata>
+  <contentMetadata objectId="wy534zh7137" type="image">
+    <resource id="wy534zh7137_1" sequence="1" type="image">
+      <label>SUL Rosette 2015</label>
+      <file id="SULAIR_rosette.jp2" mimetype="image/jp2" size="110701">
+        <imageData height="750" width="750"/>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">Property rights reside with the repository. Literary rights reside with the creators of the documents or their heirs. To obtain permission to access, publish or reproduce this content, please contact the Stanford Digital Repository (http://sdr.stanford.edu/contact).</human>
+    </use>
+    <use>
+      <human type="creativeCommons"/>
+      <machine type="creativeCommons"/>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:wy534zh7137">
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>SUL Logo 2015</dc:title>
+  </oai_dc:dc>
+  <ReleaseData/>
+</publicObject>

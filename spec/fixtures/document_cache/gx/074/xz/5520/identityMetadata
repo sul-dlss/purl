@@ -1,0 +1,11 @@
+<identityMetadata>
+  <sourceId source="Hydrus">item-amorgan2-2013-04-26T00:01:54.548Z</sourceId>
+  <objectId>druid:gx074xz5520</objectId>
+  <objectCreator>DOR</objectCreator>
+  <objectLabel>Minutes, 2006 May 18</objectLabel>
+  <objectType>item</objectType>
+  <adminPolicy>druid:kb975xm7243</adminPolicy>
+  <otherId name="uuid">81726830-ae04-11e2-9a1d-0050569b3c6e</otherId>
+  <tag>Project : Hydrus</tag>
+  <tag>Remediated By : 4.20.0</tag>
+</identityMetadata>

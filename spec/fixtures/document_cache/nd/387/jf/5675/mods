@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" version="3.4" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
+  <titleInfo>
+    <title>Invariance for perceptual recognition through deep learning</title>
+  </titleInfo>
+  <name type="personal" usage="primary">
+    <namePart>Zou, Youzhi.</namePart>
+  </name>
+  <name type="personal">
+    <namePart>McClelland, James L.</namePart>
+    <role>
+      <roleTerm type="text">primary advisor.</roleTerm>
+    </role>
+    <role>
+      <roleTerm authority="marcrelator" type="code">ths</roleTerm>
+    </role>
+  </name>
+  <name type="personal">
+    <namePart>Guibas, Leonidas J.</namePart>
+    <role>
+      <roleTerm type="text">advisor.</roleTerm>
+    </role>
+    <role>
+      <roleTerm authority="marcrelator" type="code">ths</roleTerm>
+    </role>
+  </name>
+  <name type="personal">
+    <namePart>Widrow, Bernard</namePart>
+    <namePart type="date">1929-</namePart>
+    <role>
+      <roleTerm type="text">advisor.</roleTerm>
+    </role>
+    <role>
+      <roleTerm authority="marcrelator" type="code">ths</roleTerm>
+    </role>
+  </name>
+  <name type="corporate">
+    <namePart>Stanford University</namePart>
+    <namePart>Dept. of Electrical Engineering.</namePart>
+  </name>
+  <typeOfResource>text</typeOfResource>
+  <genre authority="marcgt">theses</genre>
+  <originInfo>
+    <place>
+      <placeTerm type="code" authority="marccountry">xx</placeTerm>
+    </place>
+    <dateIssued>2015</dateIssued>
+    <issuance>monographic</issuance>
+  </originInfo>
+  <language>
+    <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+  </language>
+  <physicalDescription>
+    <form authority="marcform">electronic</form>
+    <form authority="gmd">electronic resource</form>
+    <form authority="marccategory">electronic resource</form>
+    <form authority="marcsmd">remote</form>
+    <extent>1 online resource.</extent>
+  </physicalDescription>
+  <abstract>The brain implements recognition systems with incredible competence. Our perceptual systems recognize an object from various perspectives as it transforms through space and time. A key property of effective recognition is invariance to changes in the input. In fact, invariant representations focus on high-level information and neglect irrelevant changes, facilitating effective recognition. It is desirable for computational simulations to capture invariant properties. However, quantifying and designing invariance is difficult, because the input signals to a perceptual system are high dimensional, and the number of input variations, conceived in terms of separate dimensions of variation, such as position, rotation, scale can be exponentially large. Natural invariance resides in a subspace of this exponential space, one that, I argue, can be more effectively captured through learning than through design. To capture perceptual invariance, I take the approach of modeling through deep neural networks. These models are classic AI algorithms. The deep neural network is characteristic of composing simple features from lower layers into more complex representations in higher layers. Going up in the hierarchy, the network forms high-level representations which capture various forms of invariance found in natural images. Within this framework, I present three applications. First, I investigate position-preserving invariance properties of a classical architecture, the convolutional neural network. Indeed, with convolutional networks, I show results surpassing the previous state-of-the-art performance in detecting the location of objects in images. In such models, however, translational invariance is designed, limiting their ability to capture the full invariance structure of real inputs. To learn invariance without design, I exploit unsupervised learning from videos using the `slowness' principle. Concretely, the unsupervised learning algorithm discovers invariance arising from transformations such as rotation, out-of-plane changes, or warping from motions in video. When quantitatively measured, the learned invariant features are more robust than ones that are hand-crafted. Using such invariant features, recognition in still images is consistently improved. Finally, I explore the development of invariant representations of number through learning from unlabeled examples in a generic neural network. By learning from examples of `visual numbers', this network forms number representations invariant to object size. With these representations, I illustrate novel simulations for cognitive processes of the `Approximate Number Sense'. Concretely, I correlate simulations with deep networks with the sensitivity of discrimination across a range of numbers. These simulations capture properties of human number representation, focusing on approximate invariance to other stimulus factors.</abstract>
+  <note type="statement of responsibility" altRepGroup="00">Youzhi (Will) Zou.</note>
+  <note>Submitted to the Department of Electrical Engineering.</note>
+  <note type="thesis">Thesis (Ph.D.)--Stanford University, 2015.</note>
+  <location>
+    <url displayLabel="electronic resource" usage="primary display">http://purl.stanford.edu/nd387jf5675</url>
+  </location>
+  <recordInfo>
+    <recordContentSource authority="marcorg">CSt</recordContentSource>
+    <recordCreationDate encoding="marc">150122</recordCreationDate>
+    <recordIdentifier>a10734942</recordIdentifier>
+    <recordOrigin>Converted from MARCXML to MODS version 3.4 using MARC21slim2MODS3-4_SDR.xsl (Version 1.2.5 2013/08/11)</recordOrigin>
+  </recordInfo>
+  <accessCondition type="license">CC by-nc: CC Attribution Non-Commercial license</accessCondition>
+</mods>

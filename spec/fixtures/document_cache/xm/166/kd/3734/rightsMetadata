@@ -13,10 +13,10 @@
     </machine>
   </access>
   <use>
-    <human type="useAndReproduction">Licensed for use under Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported Access Rights, http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode. Images are free for any noncommercial use, provided you follow the terms of this license. You do not need to apply to the Walters prior to using the images. We ask only that you cite the source of the images as the Walters Art Museum (see citation style at http://www.thedigitalwalters.org/03_ReadMe.html). Additionally, we request that a copy of any work created using these materials be sent to the Curator of Manuscripts and Rare Books at the Walters Art Museum, 600 N. Charles Street, Baltimore, MD 21201, mss-curator@thewalters.org.</human>
+    <human type="useAndReproduction">Licensed for use under Creative Commons Attribution-ShareAlike 3.0 Unported Access Rights, http://creativecommons.org/licenses/by-sa/3.0/legalcode. Images are free for any use, provided you follow the terms of this license. You do not need to apply to the Walters prior to using the images. We ask only that you cite the source of the images as the Walters Art Museum (see citation style at http://www.thedigitalwalters.org/03_ReadMe.html). Additionally, we request that a copy of any work created using these materials be sent to the Curator of Manuscripts and Rare Books at the Walters Art Museum, 600 N. Charles Street, Baltimore, MD 21201, mss-curator@thewalters.org.</human>
   </use>
   <use>
-    <machine type="creativeCommons">by-nc-sa</machine>
-    <human type="creativeCommons">Attribution-NonCommercial-ShareAlike 3.0 Unported</human>
+    <machine type="creativeCommons">by-sa</machine>
+    <human type="creativeCommons">Attribution-ShareAlike 3.0 Unported</human>
   </use>
 </rightsMetadata>

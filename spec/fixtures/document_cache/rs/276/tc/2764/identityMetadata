@@ -1,0 +1,13 @@
+<identityMetadata>
+  <sourceId source="Hydrus">item-hfrost-2013-08-27T19:18:57.317Z</sourceId>
+  <objectId>druid:rs276tc2764</objectId>
+  <objectCreator>DOR</objectCreator>
+  <objectLabel>Supplementary data for "Reassessing authorship of the Book of Mormon using delta and nearest shrunken centroid classification."</objectLabel>
+  <objectType>item</objectType>
+  <adminPolicy>druid:sk076xv3153</adminPolicy>
+  <otherId name="uuid">856bdc0a-0f4d-11e3-b041-0050569b3c6e</otherId>
+  <tag>Project : Hydrus</tag>
+  <tag>Remediated By : 3.25.3</tag>
+  <displayType>file</displayType>
+  <release displayType="file" release="true" to="Searchworks" what="self" when="2015-10-25T22:46:24Z" who="blalbrit">true</release>
+</identityMetadata>

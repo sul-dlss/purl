@@ -1,0 +1,13 @@
+<rightsMetadata>
+  <access type="discover">
+    <machine>
+      <world/>
+    </machine>
+  </access>
+  <access type="read">
+    <machine>
+      <world/>
+      <agent>dms-access</agent>
+    </machine>
+  </access>
+</rightsMetadata>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" version="3.4" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
+  <titleInfo>
+    <title>Torrance, Los Angeles Co., Cal., Dec. 1929</title>
+  </titleInfo>
+  <name type="corporate">
+    <namePart>Sanborn Map Company</namePart>
+  </name>
+  <typeOfResource>cartographic</typeOfResource>
+  <genre authority="marcgt">map</genre>
+  <originInfo>
+    <place>
+      <placeTerm type="code" authority="marccountry">nyu</placeTerm>
+    </place>
+    <place>
+      <placeTerm type="text">New York</placeTerm>
+    </place>
+    <publisher>Sanborn Map Co.</publisher>
+    <dateIssued>1929</dateIssued>
+    <issuance>monographic</issuance>
+  </originInfo>
+  <language>
+    <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+  </language>
+  <physicalDescription>
+    <extent>32 maps.</extent>
+  </physicalDescription>
+  <note type="statement of responsibility" altRepGroup="00"/>
+  <subject>
+    <cartographics>
+      <scale>Scale varies.</scale>
+    </cartographics>
+  </subject>
+  <recordInfo>
+    <recordContentSource authority="marcorg"/>
+    <recordCreationDate encoding="marc">930720</recordCreationDate>
+    <recordIdentifier>a2926183</recordIdentifier>
+    <recordOrigin>Converted from MARCXML to MODS version 3.4 using MARC21slim2MODS3-4_SDR.xsl (Version 1.2.5 2013/08/11)</recordOrigin>
+  </recordInfo>
+  <accessCondition type="useAndReproduction">To obtain permission to publish or reproduce commercially, please contact the Head Librarian of the Branner Earth Science Library &amp; Map Collections at brannerlibrary@stanford.edu.</accessCondition>
+  <accessCondition type="copyright">Property rights reside with the repository. Copyright © Stanford University. All Rights Reserved.</accessCondition>
+  <accessCondition type="license">CC by-nc: Attribution Non-Commercial 3.0 Unported</accessCondition>
+</mods>

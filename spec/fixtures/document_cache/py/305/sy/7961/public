@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:py305sy7961" published="2015-09-02T10:11:27-07:00">
+  <identityMetadata>
+    <sourceId source="sul">36105121211382</sourceId>
+    <objectId>druid:py305sy7961</objectId>
+    <objectCreator>DOR</objectCreator>
+    <objectLabel>Torrance, Los Angeles Co., Cal., Dec. 1929</objectLabel>
+    <objectType>item</objectType>
+    <adminPolicy>druid:xs835jp8197</adminPolicy>
+    <otherId name="barcode">36105121211382</otherId>
+    <otherId name="uuid">e663b06a-852b-11e3-abfa-0050569b3c3c</otherId>
+    <tag>Process : Content Type : Map</tag>
+    <tag>Project : Maps - Stanford General Collections : Sanborn Fire Maps : Batch 1</tag>
+    <tag>LAB : MAPS</tag>
+    <tag>Registered By : goldsmij</tag>
+    <tag>Remediated By : 4.6.4</tag>
+  </identityMetadata>
+  <contentMetadata objectId="py305sy7961" type="map">
+    <resource id="py305sy7961_1" sequence="1" type="image">
+      <label>Image 1</label>
+      <file id="py305sy7961_00_0001.jp2" mimetype="image/jp2" size="42569985">
+        <imageData width="13861" height="16302"/>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <copyright>
+      <human type="copyright">Property rights reside with the repository. Copyright © Stanford University. All Rights Reserved.</human>
+    </copyright>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <group>Stanford</group>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">To obtain permission to publish or reproduce commercially, please contact the Head Librarian of the Branner Earth Science Library &amp; Map Collections at brannerlibrary@stanford.edu.</human>
+      <machine type="creativeCommons">by-nc</machine>
+      <human type="creativeCommons">Attribution Non-Commercial 3.0 Unported</human>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:py305sy7961">
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Torrance, Los Angeles Co., Cal., Dec. 1929</dc:title>
+    <dc:contributor>Sanborn Map Company</dc:contributor>
+    <dc:type>map</dc:type>
+    <dc:date>1929</dc:date>
+    <dc:publisher>Sanborn Map Co.</dc:publisher>
+    <dc:language>eng</dc:language>
+    <dc:format>32 maps.</dc:format>
+    <dc:coverage>Scale varies.</dc:coverage>
+  </oai_dc:dc>
+</publicObject>
