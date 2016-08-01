@@ -13,11 +13,11 @@ class RightsMetadata
   delegate :stanford_only_rights_for_file, :world_rights_for_file, :stanford_only_unrestricted_file?, to: :rights_auth
 
   def use_and_reproduction_statement
-    document.at_xpath('use/human[@type="useAndReproduction"]/text()').to_s
+    document.at_xpath('use/human[@type="useAndReproduction"]').try(:text)
   end
 
   def copyright_statement
-    document.at_xpath('copyright/human/text()').to_s
+    document.at_xpath('copyright/human').try(:text)
   end
 
   def machine_readable_license
@@ -27,7 +27,7 @@ class RightsMetadata
   end
 
   def license_statement
-    document.at_xpath('use/human[@type="openDataCommons" or @type="creativeCommons"]/text()').to_s
+    document.at_xpath('use/human[@type="openDataCommons" or @type="creativeCommons"]').try(:text)
   end
 
   def read_group

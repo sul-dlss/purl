@@ -54,7 +54,7 @@ class ContentMetadata
     resource_attributes = {
       id: resource.attribute('id').to_s,
       type: resource.attribute('type').to_s,
-      label: resource.xpath('(label|attr[@name="label"])/text()').first.to_s,
+      label: resource.xpath('(label|attr[@name="label"])').first.try(:text),
       druid: druid
     }
 

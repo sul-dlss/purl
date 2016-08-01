@@ -8,7 +8,7 @@ describe 'IIIF manifests' do
     expect(json['@context']).to eq 'http://iiif.io/api/presentation/2/context.json'
     expect(json['label']).to include 'NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES' # ...
     expect(json['description']).to eq 'Tom.1. No.9. (top right).'
-    expect(json['attribution']).to eq 'Property rights reside with the repository. Copyright © Stanford University. All Rights Reserved.'
+    expect(json['attribution']).to start_with 'This work has been identified as being free of known restrictions'
     expect(json['seeAlso']['@id']).to eq 'http://www.example.com/bb157hs6068.mods'
     expect(json['thumbnail']['@id']).to eq 'http://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
 
@@ -47,6 +47,12 @@ describe 'IIIF manifests' do
 
     login_service = service['service'].detect { |x| x['profile'] == 'http://iiif.io/api/auth/0/login' }
     expect(login_service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/0/token'
+  end
+
+  it 'properly decodes XML entities into their UTF-8 characters' do
+    visit '/py305sy7961/iiif/manifest.json'
+    json = JSON.parse(page.body)
+    expect(json['attribution']).to eq 'Property rights reside with the repository. Copyright © Stanford University. All Rights Reserved.'
   end
 
   it 'suppresses sequences for dark resources' do
