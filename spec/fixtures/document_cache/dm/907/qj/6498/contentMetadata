@@ -1,100 +1,184 @@
 <contentMetadata objectId="druid:dm907qj6498" type="image">
   <resource type="image" sequence="1" id="image-1">
-    <resource type="image" sequence="1" id="image-1F">
-      <label>Image 1 (front)</label>
-      <file mimetype="image/jp2" format="JPEG2000" size="166919" id="dm907qj6498_05_0001.jp2">
-        <imageData height="791" width="985"/>
-      </file>
-    </resource>
-    <resource type="image" sequence="2" id="image-1B">
-      <label>Image 1 (back)</label>
-      <file mimetype="image/jp2" format="JPEG2000" size="166848" id="dm907qj6498_05_0002.jp2">
-        <imageData height="790" width="988"/>
-      </file>
-    </resource>
-  </resource>
+  <label>1</label>
+    <file mimetype="image/jp2" shelve="yes" format="JPEG2000" publish="yes" size="166919" preserve="no" id="dm907qj6498_05_0001.jp2">
+      <imageData height="791" width="985"/>
+      <checksum type="sha1">902cd8ce906caec684f7ab7ea06ed16e70df2581</checksum>
+      <checksum type="md5">5bf355e08784c7bf79dae58f9f687339</checksum>
+    </file>
+    <file mimetype="image/tiff" shelve="no" format="TIFF" publish="no" size="2366156" preserve="yes" id="dm907qj6498_00_0001.tif">
+      <imageData height="791" width="985"/>
+      <checksum type="sha1">a10bdda60cbd1be4fb89a1f46bff8ebf7c8e3ea5</checksum>
+      <checksum type="md5">d544538f9e77179cda08bd2012b4c4fc</checksum>
+    </file>
+  </resource>   
   <resource type="image" sequence="2" id="image-2">
-    <resource type="image" sequence="1" id="image-2F">
-      <label>Image 2 (front)</label>
-      <file mimetype="image/jp2" format="JPEG2000" size="160089" id="dm907qj6498_05_0003.jp2">
-        <imageData height="755" width="987"/>
-      </file>
-    </resource>
-    <resource type="image" sequence="2" id="image-2B">
-      <label>Image 2 (back)</label>
-      <file mimetype="image/jp2" format="JPEG2000" size="158309" id="dm907qj6498_05_0004.jp2">
-        <imageData height="745" width="987"/>
-      </file>
-    </resource>
-  </resource>
+  <label>2</label>
+    <file mimetype="image/jp2" shelve="yes" format="JPEG2000" publish="yes" size="166848" preserve="no" id="dm907qj6498_05_0002.jp2">
+      <imageData height="790" width="988"/>
+      <checksum type="sha1">b27328408901be68597a46b484a9cb9521918abc</checksum>
+      <checksum type="md5">35b1b3a5fc5f93f6085cb717d61f0818</checksum>
+    </file>
+    <file mimetype="image/tiff" shelve="no" format="TIFF" publish="no" size="2372012" preserve="yes" id="dm907qj6498_00_0002.tif">
+      <imageData height="790" width="988"/>
+      <checksum type="sha1">9507ef445e5d0e366c08d6afe8c1f35420414f7b</checksum>
+      <checksum type="md5">6205ec4e44357a13bdd31c17e7c55690</checksum>
+    </file>
+  </resource>   
   <resource type="image" sequence="3" id="image-3">
-    <resource type="image" sequence="1" id="image-3F">
-      <label>Image 3 (front)</label>
-      <file mimetype="image/jp2" format="JPEG2000" size="171165" id="dm907qj6498_05_0005.jp2">
-        <imageData height="780" width="1030"/>
-      </file>
-    </resource>
-    <resource type="image" sequence="2" id="image-3B">
-      <label>Image 3 (back)</label>
-      <file mimetype="image/jp2" format="JPEG2000" size="168492" id="dm907qj6498_05_0006.jp2">
-        <imageData height="776" width="1017"/>
-      </file>
-    </resource>
-  </resource>
+  <label>3</label>
+    <file mimetype="image/jp2" shelve="yes" format="JPEG2000" publish="yes" size="160089" preserve="no" id="dm907qj6498_05_0003.jp2">
+      <imageData height="755" width="987"/>
+      <checksum type="sha1">8aaee0e257c38366efc4a1c9806ba2840ddbb230</checksum>
+      <checksum type="md5">c779f8889218d28acf10722d3c03f41d</checksum>
+    </file>
+    <file mimetype="image/tiff" shelve="no" format="TIFF" publish="no" size="2263964" preserve="yes" id="dm907qj6498_00_0003.tif">
+      <imageData height="755" width="987"/>
+      <checksum type="sha1">4450733fa98ebca9ad75f9a9df2058b739368f4a</checksum>
+      <checksum type="md5">9029f4633d7604d309bd88a6d4e2fbc7</checksum>
+    </file>
+  </resource>   
   <resource type="image" sequence="4" id="image-4">
-    <resource type="image" sequence="1" id="image-4A">
-      <label>Image 4 (front)</label>
-      <file mimetype="image/jp2" format="JPEG2000" size="168452" id="dm907qj6498_05_0007.jp2">
-        <imageData height="776" width="1017"/>
-      </file>
-    </resource>
-    <resource type="image" sequence="2" id="image-4B">
-      <label>Image 4 (back)</label>
-      <file mimetype="image/jp2" format="JPEG2000" size="167793" id="dm907qj6498_05_0008.jp2">
-        <imageData height="770" width="1020"/>
-      </file>
-    </resource>
-  </resource>
+  <label>4</label>
+    <file mimetype="image/jp2" shelve="yes" format="JPEG2000" publish="yes" size="158309" preserve="no" id="dm907qj6498_05_0004.jp2">
+      <imageData height="745" width="987"/>
+      <checksum type="sha1">dca8df1bee12eebdc1d8b29c03970f40923ac93e</checksum>
+      <checksum type="md5">e508c5ada299fa2cde6f24bd6925332c</checksum>
+    </file>
+    <file mimetype="image/tiff" shelve="no" format="TIFF" publish="no" size="2235012" preserve="yes" id="dm907qj6498_00_0004.tif">
+      <imageData height="745" width="987"/>
+      <checksum type="sha1">9e008acd37b4ef4c49f28cb486f6b7d902f2b3f1</checksum>
+      <checksum type="md5">bb5c3017ddd6e32f8b971a349078d645</checksum>
+    </file>
+  </resource>   
   <resource type="image" sequence="5" id="image-5">
-    <resource type="image" sequence="1" id="image-5F">
-      <label>Image 5 (front)</label>
-      <file mimetype="image/jp2" format="JPEG2000" size="170382" id="dm907qj6498_05_0009.jp2">
-        <imageData height="789" width="1013"/>
-      </file>
-    </resource>
-    <resource type="image" sequence="2" id="image-5B">
-      <label>Image 5 (back)</label>
-      <file mimetype="image/jp2" format="JPEG2000" size="170027" id="dm907qj6498_05_0010.jp2">
-        <imageData height="783" width="1019"/>
-      </file>
-    </resource>
-  </resource>
+  <label>5</label>
+    <file mimetype="image/jp2" shelve="yes" format="JPEG2000" publish="yes" size="171165" preserve="no" id="dm907qj6498_05_0005.jp2">
+      <imageData height="780" width="1030"/>
+      <checksum type="sha1">fe549bd6aee86dab72d788a32bc0cd4feba75bfc</checksum>
+      <checksum type="md5">e4b0624e75f800deb95b6aa121b06940</checksum>
+    </file>
+    <file mimetype="image/tiff" shelve="no" format="TIFF" publish="no" size="2440324" preserve="yes" id="dm907qj6498_00_0005.tif">
+      <imageData height="780" width="1030"/>
+      <checksum type="sha1">e760fb880d363db4b23cd3187492bf5aa91f27e4</checksum>
+      <checksum type="md5">cb5e55f90699992010ac2fa17fd781be</checksum>
+    </file>
+  </resource>   
   <resource type="image" sequence="6" id="image-6">
-    <resource type="image" sequence="1" id="image-6F">
-      <label>Image 6 (front)</label>
-      <file mimetype="image/jp2" format="JPEG2000" size="160630" id="dm907qj6498_05_0011.jp2">
-        <imageData height="741" width="1011"/>
-      </file>
-    </resource>
-    <resource type="image" sequence="2" id="image-6B">
-      <label>Image 6 (back)</label>
-      <file mimetype="image/jp2" format="JPEG2000" size="161587" id="dm907qj6498_05_0012.jp2">
-        <imageData height="745" width="1010"/>
-      </file>
-    </resource>
-  </resource>
+  <label>6</label>
+    <file mimetype="image/jp2" shelve="yes" format="JPEG2000" publish="yes" size="168492" preserve="no" id="dm907qj6498_05_0006.jp2">
+      <imageData height="776" width="1017"/>
+      <checksum type="sha1">5bfbc0c91a1af479440c7f7f7e3d50c44b3cc2b9</checksum>
+      <checksum type="md5">8e43c2646e060f80064dfbdb4a48f3ce</checksum>
+    </file>
+    <file mimetype="image/tiff" shelve="no" format="TIFF" publish="no" size="2396824" preserve="yes" id="dm907qj6498_00_0006.tif">
+      <imageData height="776" width="1017"/>
+      <checksum type="sha1">c40624ff3bfd1f4e3973f5ab5dda93d3f70f1892</checksum>
+      <checksum type="md5">f9fd036af46306a8154be8eb86e0b3c9</checksum>
+    </file>
+  </resource>   
   <resource type="image" sequence="7" id="image-7">
-    <resource type="image" sequence="1" id="image-7A">
-      <label>Image 7 (front)</label>
-      <file mimetype="image/jp2" format="JPEG2000" size="163940" id="dm907qj6498_05_0013.jp2">
-        <imageData height="760" width="1007"/>
-      </file>
-    </resource>
-    <resource type="image" sequence="2" id="image-7B">
-      <label>Image 7 (back)</label>
-      <file mimetype="image/jp2" format="JPEG2000" size="164300" id="dm907qj6498_05_0014.jp2">
-        <imageData height="773" width="992"/>
-      </file>
-    </resource>
-  </resource>
+  <label>7</label>
+    <file mimetype="image/jp2" shelve="yes" format="JPEG2000" publish="yes" size="168452" preserve="no" id="dm907qj6498_05_0007.jp2">
+      <imageData height="776" width="1017"/>
+      <checksum type="sha1">e5a8feb22e377e1097588e7b845bbdc2fcb3094e</checksum>
+      <checksum type="md5">37d95a3c6f1acd0e0cb594af39bcfb62</checksum>
+    </file>
+    <file mimetype="image/tiff" shelve="no" format="TIFF" publish="no" size="2397048" preserve="yes" id="dm907qj6498_00_0007.tif">
+      <imageData height="776" width="1017"/>
+      <checksum type="sha1">c6cfdb94899e242dc570b6c6204205149f914bbc</checksum>
+      <checksum type="md5">aeec77307356b7495a4b27f5e297c90d</checksum>
+    </file>
+  </resource>   
+  <resource type="image" sequence="8" id="image-8">
+  <label>8</label>
+    <file mimetype="image/jp2" shelve="yes" format="JPEG2000" publish="yes" size="167793" preserve="no" id="dm907qj6498_05_0008.jp2">
+      <imageData height="770" width="1020"/>
+      <checksum type="sha1">88026c5c9ebadd91fd248c4deac3a05b4ae139dc</checksum>
+      <checksum type="md5">08f7e056fcd281be09b52fc11e7cad6a</checksum>
+    </file>
+    <file mimetype="image/tiff" shelve="no" format="TIFF" publish="no" size="2386640" preserve="yes" id="dm907qj6498_00_0008.tif">
+      <imageData height="770" width="1020"/>
+      <checksum type="sha1">44b615a61e6b1b5ce998294c003c2f2422630889</checksum>
+      <checksum type="md5">b51461f1c09eefe850ac711ffe7a1ea0</checksum>
+    </file>
+  </resource>   
+  <resource type="image" sequence="9" id="image-9">
+  <label>9</label>
+    <file mimetype="image/jp2" shelve="yes" format="JPEG2000" publish="yes" size="170382" preserve="no" id="dm907qj6498_05_0009.jp2">
+      <imageData height="789" width="1013"/>
+      <checksum type="sha1">2b4b326f130336005e4dafc4245e795126cad23e</checksum>
+      <checksum type="md5">21fd1d70ca66c6a7aed3cbaa391f1b7f</checksum>
+    </file>
+    <file mimetype="image/tiff" shelve="no" format="TIFF" publish="no" size="2427176" preserve="yes" id="dm907qj6498_00_0009.tif">
+      <imageData height="789" width="1013"/>
+      <checksum type="sha1">57ca147fc466b09041eb7711b7a7f1cff221bd04</checksum>
+      <checksum type="md5">c30eeae18309c30a36b86941b74bc56d</checksum>
+    </file>
+  </resource>   
+  <resource type="image" sequence="10" id="image-10">
+  <label>10</label>
+    <file mimetype="image/jp2" shelve="yes" format="JPEG2000" publish="yes" size="170027" preserve="no" id="dm907qj6498_05_0010.jp2">
+      <imageData height="783" width="1019"/>
+      <checksum type="sha1">d5ae5d0996c83362fcda206ef191c85cfec2ca44</checksum>
+      <checksum type="md5">accf70ad2da9dbbfab453a0eabc638fe</checksum>
+    </file>
+    <file mimetype="image/tiff" shelve="no" format="TIFF" publish="no" size="2421948" preserve="yes" id="dm907qj6498_00_0010.tif">
+      <imageData height="783" width="1019"/>
+      <checksum type="sha1">33ede945fc44a81d45d6f7ba087bc862b3739194</checksum>
+      <checksum type="md5">26c61687ee821063fd417f1f73caede3</checksum>
+    </file>
+  </resource>   
+  <resource type="image" sequence="11" id="image-11">
+  <label>11</label>
+    <file mimetype="image/jp2" shelve="yes" format="JPEG2000" publish="yes" size="160630" preserve="no" id="dm907qj6498_05_0011.jp2">
+      <imageData height="741" width="1011"/>
+      <checksum type="sha1">8216cfaa47b432031e81b14b8c27085bb6f63671</checksum>
+      <checksum type="md5">d933af594b6d11ebd261b75a01593b3e</checksum>
+    </file>
+    <file mimetype="image/tiff" shelve="no" format="TIFF" publish="no" size="2277044" preserve="yes" id="dm907qj6498_00_0011.tif">
+      <imageData height="741" width="1011"/>
+      <checksum type="sha1">ce1b96e101d4ffbf5a672dbf59d66a31bd9b0191</checksum>
+      <checksum type="md5">557349c95e35e826e13c0612959f4b08</checksum>
+    </file>
+  </resource>   
+  <resource type="image" sequence="12" id="image-12">
+  <label>12</label>
+    <file mimetype="image/jp2" shelve="yes" format="JPEG2000" publish="yes" size="161587" preserve="no" id="dm907qj6498_05_0012.jp2">
+      <imageData height="745" width="1010"/>
+      <checksum type="sha1">4892efcc001b55f86c1ebf4cce3257688ef3d2f0</checksum>
+      <checksum type="md5">3ba2d120f613cf3f6746cc8fccfc2ecd</checksum>
+    </file>
+    <file mimetype="image/tiff" shelve="no" format="TIFF" publish="no" size="2287080" preserve="yes" id="dm907qj6498_00_0012.tif">
+      <imageData height="745" width="1010"/>
+      <checksum type="sha1">594a0570415aa190a6168eb59ca3577f3a4de56c</checksum>
+      <checksum type="md5">43591262ca4d32e1a69e11b9892df8b8</checksum>
+    </file>
+  </resource>   
+  <resource type="image" sequence="13" id="image-13">
+  <label>13</label>
+    <file mimetype="image/jp2" shelve="yes" format="JPEG2000" publish="yes" size="163940" preserve="no" id="dm907qj6498_05_0013.jp2">
+      <imageData height="760" width="1007"/>
+      <checksum type="sha1">41b455d202098e747f7142aa8fbf568a19fc5b0d</checksum>
+      <checksum type="md5">8e4186a40d4b71c05d93d6cd00fa138c</checksum>
+    </file>
+    <file mimetype="image/tiff" shelve="no" format="TIFF" publish="no" size="2324124" preserve="yes" id="dm907qj6498_00_0013.tif">
+      <imageData height="760" width="1007"/>
+      <checksum type="sha1">c8dfebc4e03229386a8e2b5c540f7e8eef09c8f1</checksum>
+      <checksum type="md5">97572949d516932fea3f676dd73ccadb</checksum>
+    </file>
+  </resource>   
+  <resource type="image" sequence="14" id="image-14">
+  <label>14</label>
+    <file mimetype="image/jp2" shelve="yes" format="JPEG2000" publish="yes" size="164300" preserve="no" id="dm907qj6498_05_0014.jp2">
+      <imageData height="773" width="992"/>
+      <checksum type="sha1">94949385490a2a397fd7e09b1e233312e6f18abf</checksum>
+      <checksum type="md5">9fc085e7eda6945a6109d579fbe1a61a</checksum>
+    </file>
+    <file mimetype="image/tiff" shelve="no" format="TIFF" publish="no" size="2329732" preserve="yes" id="dm907qj6498_00_0014.tif">
+      <imageData height="773" width="992"/>
+      <checksum type="sha1">141c35b9742850dcda0dceedaab91db31818637f</checksum>
+      <checksum type="md5">96f796b80ac3cb11f6dd48ffa09791a3</checksum>
+    </file>
+  </resource>   
 </contentMetadata>

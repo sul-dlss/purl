@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:bc421tk1152" published="2015-11-12T10:24:18-08:00" publishVersion="dor-services/4.22.3">
+  <identityMetadata>
+    <sourceId source="sul">M0690_B4_F28_Item3</sourceId>
+    <objectId>druid:bc421tk1152</objectId>
+    <objectCreator>DOR</objectCreator>
+    <objectLabel>Ma Pickaninny Babe</objectLabel>
+    <objectType>item</objectType>
+    <adminPolicy>druid:kq265wn4855</adminPolicy>
+    <otherId name="uuid">94cd772c-2f90-11e3-a15f-0050569b3c3c</otherId>
+    <tag>Project : Caricatures</tag>
+    <tag>Process : Content Type : Book (flipbook, ltr)</tag>
+    <tag>Project : Caricatures</tag>
+    <tag>DPG : DPG</tag>
+    <tag>Registered By : cheungd</tag>
+    <tag>Remediated By : 4.21.4</tag>
+  </identityMetadata>
+  <contentMetadata objectId="bc421tk1152" type="book">
+    <resource id="bc421tk1152_1" sequence="1" type="page">
+      <label>Page 1</label>
+      <file id="bc421tk1152_00_0001.jp2" mimetype="image/jp2" size="4664444">
+        <imageData width="4393" height="5629"/>
+      </file>
+    </resource>
+    <resource id="bc421tk1152_2" sequence="2" type="page">
+      <label>Page 2</label>
+      <file id="bc421tk1152_00_0002.jp2" mimetype="image/jp2" size="4570909">
+        <imageData width="4298" height="5631"/>
+      </file>
+    </resource>
+    <resource id="bc421tk1152_3" sequence="3" type="page">
+      <label>Page 3</label>
+      <file id="bc421tk1152_00_0003.jp2" mimetype="image/jp2" size="4571433">
+        <imageData width="4298" height="5631"/>
+      </file>
+    </resource>
+    <resource id="bc421tk1152_4" sequence="4" type="page">
+      <label>Page 4</label>
+      <file id="bc421tk1152_00_0004.jp2" mimetype="image/jp2" size="4570391">
+        <imageData width="4298" height="5630"/>
+      </file>
+    </resource>
+    <resource id="bc421tk1152_5" sequence="5" type="page">
+      <label>Page 5</label>
+      <file id="bc421tk1152_00_0005.jp2" mimetype="image/jp2" size="4570346">
+        <imageData width="4298" height="5630"/>
+      </file>
+    </resource>
+    <resource id="bc421tk1152_6" sequence="6" type="page">
+      <label>Page 6</label>
+      <file id="bc421tk1152_00_0006.jp2" mimetype="image/jp2" size="4666406">
+        <imageData width="4393" height="5629"/>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <none/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">Property rights reside with the repository. Literary rights reside with the creators of the documents or their heirs. To obtain permission to publish or reproduce, please contact the Special Collections Public Services Librarian at speccollref@stanford.edu.</human>
+      <human type="creativeCommons"/>
+      <machine type="creativeCommons"/>
+    </use>
+    <copyright>
+      <human>Copyright © Stanford University. All Rights Reserved.</human>
+    </copyright>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:bc421tk1152">
+      <fedora:isMemberOf rdf:resource="info:fedora/druid:gs451xn1999"/>
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:gs451xn1999"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:identifier>137</dc:identifier>
+    <dc:identifier>M0690</dc:identifier>
+    <dc:title> "Ma pickaninny babe,": </dc:title>
+    <dc:type>StillImage</dc:type>
+    <dc:date>1913</dc:date>
+    <dc:contributor>Johnson, Charles (composer)</dc:contributor>
+    <dc:type>archival photoprints</dc:type>
+    <dc:format>1 photograph</dc:format>
+    <dc:format>image/tiff</dc:format>
+    <dc:rights>Digital images from this collection may be accessed freely by members of the Stanford University community. These files may not be reproduced or used for any purpose without permission. For permission requests, please contact the Archive of Recorded Sound, Stanford University (soundarchive@stanford.edu).</dc:rights>
+    <dc:identifier>druid:bc421tk1152</dc:identifier>
+    <dc:identifier>4</dc:identifier>
+    <dc:identifier>28</dc:identifier>
+    <dc:relation type="collection">Caricatures of Black Americans : sheet music, 1861-1947</dc:relation>
+  </oai_dc:dc>
+</publicObject>

@@ -1,16 +1,11 @@
 <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-  <dc:identifier>druid:bf973rp9392</dc:identifier>
-  <dc:identifier>Classics Papyri</dc:identifier>
-  <dc:identifier>stanford.apis.7501</dc:identifier>
-  <dc:title>List of names, Between 250 and 150 B.C.</dc:title>
-  
-  <dc:date>250 B.C.-150 B.C.</dc:date><dc:publisher>Stanford Special Collections</dc:publisher>
-  <dc:language>grc</dc:language>
-  
-  <dc:rights>Property rights reside with the repository.
-        Literary rights reside with the creators of the documents or their heirs. To obtain
-        permission to publish or reproduce, please contact the Public Services Librarian of the
-        Dept. of Special Collections.</dc:rights>
-  
-  <dc:relation type="collection">Classics Papyri</dc:relation>
-</oai_dc:dc>
+    <dc:title>List of names, Between 250 and 150 B.C.</dc:title>
+    
+    <dc:date>250 B.C.-150 B.C.</dc:date>
+    <dc:language>grc</dc:language>
+    <dc:relation type="repository">Stanford University. Libraries. Dept. of Special Collections &amp; University Archives</dc:relation>
+    
+    <dc:identifier>stanford.apis.7501</dc:identifier>
+    <dc:identifier>M1809</dc:identifier>
+    
+<dc:relation type="collection">Classics Papyri</dc:relation></oai_dc:dc>

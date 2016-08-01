@@ -1,17 +1,10 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <mods:mods xmlns:mods="http://www.loc.gov/mods/v3">
-  <mods:identifier type="local" displayLabel="SU DRUID">druid:bf973rp9392</mods:identifier>
-  <mods:identifier type="local" displayLabel="Stanford University Libraries Collection ID">Classics Papyri</mods:identifier>
-  <mods:identifier type="apis" displayLabel="APIS #">stanford.apis.7501</mods:identifier>
   <mods:titleInfo>
     <mods:title>List of names, Between 250 and 150 B.C.</mods:title>
   </mods:titleInfo>
   <mods:typeOfResource manuscript="yes">mixed material</mods:typeOfResource>
   <mods:originInfo>
-    <mods:place>
-      <mods:placeTerm type="text">Stanford, CA</mods:placeTerm>
-    </mods:place>
-    <mods:publisher>Stanford Special Collections</mods:publisher>
     <mods:dateCreated encoding="w3cdtf" keyDate="yes" point="start" qualifier="approximate">250 B.C.</mods:dateCreated>
     <mods:dateCreated encoding="w3cdtf" keyDate="yes" point="end" qualifier="approximate">150 B.C.</mods:dateCreated>
   </mods:originInfo>
@@ -19,12 +12,13 @@
     <mods:languageTerm type="code" authority="iso-639-2b">grc</mods:languageTerm>
   </mods:language>
   <mods:location>
-    <mods:physicalLocation>:</mods:physicalLocation>
+    <mods:physicalLocation displayLabel="Repository" type="repository">Stanford University. Libraries. Dept. of Special Collections &amp; University Archives</mods:physicalLocation>
   </mods:location>
-  <mods:accessCondition type="useAndReproduction">Property rights reside with the repository.
-        Literary rights reside with the creators of the documents or their heirs. To obtain
-        permission to publish or reproduce, please contact the Public Services Librarian of the
-        Dept. of Special Collections.</mods:accessCondition>
+  <mods:location>
+    <mods:physicalLocation>Found in M1809</mods:physicalLocation>
+  </mods:location>
+  <mods:identifier type="apis" displayLabel="APIS #">stanford.apis.7501</mods:identifier>
+  <mods:identifier type="local" displayLabel="Collection call number">M1809</mods:identifier>
   <mods:recordInfo>
     <mods:recordCreationDate encoding="iso8601">2012-06-14T23:36:23.186Z</mods:recordCreationDate>
   </mods:recordInfo>
@@ -32,6 +26,8 @@
     <mods:titleInfo>
       <mods:title>Classics Papyri</mods:title>
     </mods:titleInfo>
+    <mods:identifier type="uri">http://purl.stanford.edu/jr022nf7673</mods:identifier>
     <mods:typeOfResource collection="yes"/>
   </mods:relatedItem>
+  <mods:accessCondition type="useAndReproduction">Property rights reside with the repository. Literary rights reside with  the creators of the documents or their heirs. To obtain permission to publish or reproduce, please contact the Public Services Librarian of the Dept. of Special Collections (http://www-sul.stanford.edu/depts/spc/pubserv).</mods:accessCondition>
 </mods:mods>

@@ -1,0 +1,15 @@
+<contentMetadata objectId="wy534zh7137" type="image">
+  <resource id="wy534zh7137_1" sequence="1" type="image">
+    <label>SUL Rosette 2015</label>
+    <file id="SULAIR_rosette.tif" mimetype="image/tiff" preserve="yes" publish="no" shelve="no" size="2830696">
+      <checksum type="md5">1ec35f46febb6bc621c60b4d39480bf5</checksum>
+      <checksum type="sha1">e318e002aaa8cda6cd5fb1a17eba932f7db3c756</checksum>
+      <imageData height="750" width="750"/>
+    </file>
+    <file id="SULAIR_rosette.jp2" mimetype="image/jp2" preserve="no" publish="yes" shelve="yes" size="110701">
+      <checksum type="md5">c988caa93323929f40dc54c8182b54d0</checksum>
+      <checksum type="sha1">c548468a487928fdf9def70086e2ad3730193934</checksum>
+      <imageData height="750" width="750"/>
+    </file>
+  </resource>
+</contentMetadata>

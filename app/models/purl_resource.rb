@@ -1,4 +1,3 @@
-require 'dor/util'
 require 'find'
 
 class PurlResource

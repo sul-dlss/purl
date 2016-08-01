@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:nd387jf5675" published="2015-01-26T09:58:59-08:00">
+  <identityMetadata>
+    <objectId>druid:nd387jf5675</objectId>
+    <objectType>item</objectType>
+    <objectLabel/>
+    <objectCreator>DOR</objectCreator>
+    <citationTitle/>
+    <citationCreator/>
+    <otherId name="dissertationid">0000003674</otherId>
+    <otherId name="catkey">10734942</otherId>
+    <otherId name="uuid">5821fd04-a305-11e4-a2d0-0050569b52d5</otherId>
+    <agreementId>druid:ct692vv3660</agreementId>
+    <objectAdminClass>ETDs</objectAdminClass>
+    <tag>ETD : Dissertation</tag>
+    <tag>Remediated By : 4.15.4</tag>
+  </identityMetadata>
+  <contentMetadata type="file" objectId="druid:nd387jf5675">
+    <resource type="main-augmented" objectId="druid:gm134xc5208" id="main">
+      <attr name="label">Body of dissertation</attr>
+      <file size="5321987" id="phd_thesis_stanford_submission_final-augmented.pdf" mimetype="application/pdf">
+      
+      
+    </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata objectId="druid:nd387jf5675">
+    <copyright>
+      <human>(c) Copyright 2015 by Youzhi Zou</human>
+    </copyright>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <machine type="creativeCommons">by-nc</machine>
+      <human type="creativeCommons">CC Attribution Non-Commercial license</human>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:nd387jf5675">
+      <fedora:isMemberOf rdf:resource="info:fedora/druid:sw909tc7852"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Invariance for perceptual recognition through deep learning</dc:title>
+    <dc:contributor>Zou, Youzhi.</dc:contributor>
+    <dc:contributor>McClelland, James L. (primary advisor.)</dc:contributor>
+    <dc:contributor>Guibas, Leonidas J. (advisor.)</dc:contributor>
+    <dc:contributor>Widrow, Bernard, 1929- (advisor.)</dc:contributor>
+    <dc:contributor>Stanford University Dept. of Electrical Engineering.</dc:contributor>
+    <dc:type>Text</dc:type>
+    <dc:type>theses</dc:type>
+    <dc:date>2015</dc:date>
+    <dc:language>eng</dc:language>
+    <dc:format>1 online resource.</dc:format>
+    <dc:format>electronic</dc:format>
+    <dc:description>The brain implements recognition systems with incredible competence. Our perceptual systems recognize an object from various perspectives as it transforms through space and time. A key property of effective recognition is invariance to changes in the input. In fact, invariant representations focus on high-level information and neglect irrelevant changes, facilitating effective recognition. It is desirable for computational simulations to capture invariant properties. However, quantifying and designing invariance is difficult, because the input signals to a perceptual system are high dimensional, and the number of input variations, conceived in terms of separate dimensions of variation, such as position, rotation, scale can be exponentially large. Natural invariance resides in a subspace of this exponential space, one that, I argue, can be more effectively captured through learning than through design. To capture perceptual invariance, I take the approach of modeling through deep neural networks. These models are classic AI algorithms. The deep neural network is characteristic of composing simple features from lower layers into more complex representations in higher layers. Going up in the hierarchy, the network forms high-level representations which capture various forms of invariance found in natural images. Within this framework, I present three applications. First, I investigate position-preserving invariance properties of a classical architecture, the convolutional neural network. Indeed, with convolutional networks, I show results surpassing the previous state-of-the-art performance in detecting the location of objects in images. In such models, however, translational invariance is designed, limiting their ability to capture the full invariance structure of real inputs. To learn invariance without design, I exploit unsupervised learning from videos using the `slowness' principle. Concretely, the unsupervised learning algorithm discovers invariance arising from transformations such as rotation, out-of-plane changes, or warping from motions in video. When quantitatively measured, the learned invariant features are more robust than ones that are hand-crafted. Using such invariant features, recognition in still images is consistently improved. Finally, I explore the development of invariant representations of number through learning from unlabeled examples in a generic neural network. By learning from examples of `visual numbers', this network forms number representations invariant to object size. With these representations, I illustrate novel simulations for cognitive processes of the `Approximate Number Sense'. Concretely, I correlate simulations with deep networks with the sensitivity of discrimination across a range of numbers. These simulations capture properties of human number representation, focusing on approximate invariance to other stimulus factors.</dc:description>
+    <dc:description type="statement of responsibility">Youzhi (Will) Zou.</dc:description>
+    <dc:description>Submitted to the Department of Electrical Engineering.</dc:description>
+    <dc:description type="thesis">Thesis (Ph.D.)--Stanford University, 2015.</dc:description>
+    <dc:identifier>http://purl.stanford.edu/nd387jf5675</dc:identifier>
+  </oai_dc:dc>
+</publicObject>

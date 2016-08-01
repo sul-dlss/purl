@@ -1,0 +1,4751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:bb737zp0787" published="2015-09-16T15:33:21-07:00">
+  <identityMetadata>
+    <sourceId source="sul">36105213335446</sourceId>
+    <objectId>druid:bb737zp0787</objectId>
+    <objectCreator>DOR</objectCreator>
+    <objectLabel>The curate of Cumberworth ; and The vicar of Roost : tales / by the author of "The owlet of Owlstone Edge," "S. Antholin's, " etc</objectLabel>
+    <objectType>item</objectType>
+    <adminPolicy>druid:pq797fq7081</adminPolicy>
+    <otherId name="catkey">9616533</otherId>
+    <otherId name="uuid">b841c1c2-77c1-11e2-b0dc-0050569b3c3c</otherId>
+    <tag>Project : Jarndyce Single-Volume Nineteenth-Century Novel Collection</tag>
+    <tag>Process : Content Type : Book (flipbook, ltr)</tag>
+    <tag>Project : Jarndyce Single-Volume Nineteenth-Century Novel Collection</tag>
+    <tag>Registered By : llam813</tag>
+    <tag>Remediated By : 3.25.3</tag>
+  </identityMetadata>
+  <contentMetadata type="book" objectId="bb737zp0787">
+    <resource type="page" sequence="1" id="bb737zp0787_1">
+      <label>Page 1</label>
+      <file id="bb737zp0787_00_0002.jp2" mimetype="image/jp2" size="493782">
+        <imageData width="1361" height="1901"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="2" id="bb737zp0787_2">
+      <label>Page 2</label>
+      <file id="bb737zp0787_06_0003.pdf" mimetype="application/pdf" size="49618">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0003.jp2" mimetype="image/jp2" size="299302">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="3" id="bb737zp0787_3">
+      <label>Page 3</label>
+      <file id="bb737zp0787_06_0004.pdf" mimetype="application/pdf" size="102842">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0004.jp2" mimetype="image/jp2" size="299265">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="4" id="bb737zp0787_4">
+      <label>Page 4</label>
+      <file id="bb737zp0787_06_0005.pdf" mimetype="application/pdf" size="58617">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0005.jp2" mimetype="image/jp2" size="299324">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="5" id="bb737zp0787_5">
+      <label>Page 5</label>
+      <file id="bb737zp0787_06_0006.pdf" mimetype="application/pdf" size="180953">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0006.jp2" mimetype="image/jp2" size="299489">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="6" id="bb737zp0787_6">
+      <label>Page 6</label>
+      <file id="bb737zp0787_06_0007.pdf" mimetype="application/pdf" size="67919">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0007.jp2" mimetype="image/jp2" size="299415">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="7" id="bb737zp0787_7">
+      <label>Page 7</label>
+      <file id="bb737zp0787_06_0008.pdf" mimetype="application/pdf" size="165098">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0008.jp2" mimetype="image/jp2" size="299497">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="8" id="bb737zp0787_8">
+      <label>Page 8</label>
+      <file id="bb737zp0787_06_0009.pdf" mimetype="application/pdf" size="169601">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0009.jp2" mimetype="image/jp2" size="299447">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="9" id="bb737zp0787_9">
+      <label>Page 9</label>
+      <file id="bb737zp0787_06_0010.pdf" mimetype="application/pdf" size="174096">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0010.jp2" mimetype="image/jp2" size="299398">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="10" id="bb737zp0787_10">
+      <label>Page 10</label>
+      <file id="bb737zp0787_06_0011.pdf" mimetype="application/pdf" size="162533">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0011.jp2" mimetype="image/jp2" size="299489">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="11" id="bb737zp0787_11">
+      <label>Page 11</label>
+      <file id="bb737zp0787_06_0012.pdf" mimetype="application/pdf" size="139990">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0012.jp2" mimetype="image/jp2" size="299502">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="12" id="bb737zp0787_12">
+      <label>Page 12</label>
+      <file id="bb737zp0787_06_0013.pdf" mimetype="application/pdf" size="105706">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0013.jp2" mimetype="image/jp2" size="299466">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="13" id="bb737zp0787_13">
+      <label>Page 13</label>
+      <file id="bb737zp0787_06_0014.pdf" mimetype="application/pdf" size="113156">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0014.jp2" mimetype="image/jp2" size="299449">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="14" id="bb737zp0787_14">
+      <label>Page 14</label>
+      <file id="bb737zp0787_06_0015.pdf" mimetype="application/pdf" size="52731">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0015.jp2" mimetype="image/jp2" size="299264">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="15" id="bb737zp0787_15">
+      <label>Page 15</label>
+      <file id="bb737zp0787_06_0016.pdf" mimetype="application/pdf" size="145529">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0016.jp2" mimetype="image/jp2" size="299494">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="16" id="bb737zp0787_16">
+      <label>Page 16</label>
+      <file id="bb737zp0787_06_0017.pdf" mimetype="application/pdf" size="179279">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0017.jp2" mimetype="image/jp2" size="299380">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="17" id="bb737zp0787_17">
+      <label>Page 17</label>
+      <file id="bb737zp0787_06_0018.pdf" mimetype="application/pdf" size="201827">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0018.jp2" mimetype="image/jp2" size="299487">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="18" id="bb737zp0787_18">
+      <label>Page 18</label>
+      <file id="bb737zp0787_06_0019.pdf" mimetype="application/pdf" size="172422">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0019.jp2" mimetype="image/jp2" size="299216">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="19" id="bb737zp0787_19">
+      <label>Page 19</label>
+      <file id="bb737zp0787_06_0020.pdf" mimetype="application/pdf" size="194532">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0020.jp2" mimetype="image/jp2" size="299429">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="20" id="bb737zp0787_20">
+      <label>Page 20</label>
+      <file id="bb737zp0787_06_0021.pdf" mimetype="application/pdf" size="179533">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0021.jp2" mimetype="image/jp2" size="299492">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="21" id="bb737zp0787_21">
+      <label>Page 21</label>
+      <file id="bb737zp0787_06_0022.pdf" mimetype="application/pdf" size="186630">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0022.jp2" mimetype="image/jp2" size="299438">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="22" id="bb737zp0787_22">
+      <label>Page 22</label>
+      <file id="bb737zp0787_06_0023.pdf" mimetype="application/pdf" size="170564">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0023.jp2" mimetype="image/jp2" size="299467">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="23" id="bb737zp0787_23">
+      <label>Page 23</label>
+      <file id="bb737zp0787_06_0024.pdf" mimetype="application/pdf" size="166144">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0024.jp2" mimetype="image/jp2" size="299462">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="24" id="bb737zp0787_24">
+      <label>Page 24</label>
+      <file id="bb737zp0787_06_0025.pdf" mimetype="application/pdf" size="125560">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0025.jp2" mimetype="image/jp2" size="299422">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="25" id="bb737zp0787_25">
+      <label>Page 25</label>
+      <file id="bb737zp0787_06_0026.pdf" mimetype="application/pdf" size="156355">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0026.jp2" mimetype="image/jp2" size="299394">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="26" id="bb737zp0787_26">
+      <label>Page 26</label>
+      <file id="bb737zp0787_06_0027.pdf" mimetype="application/pdf" size="196685">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0027.jp2" mimetype="image/jp2" size="299372">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="27" id="bb737zp0787_27">
+      <label>Page 27</label>
+      <file id="bb737zp0787_06_0028.pdf" mimetype="application/pdf" size="207676">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0028.jp2" mimetype="image/jp2" size="299371">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="28" id="bb737zp0787_28">
+      <label>Page 28</label>
+      <file id="bb737zp0787_06_0029.pdf" mimetype="application/pdf" size="182789">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0029.jp2" mimetype="image/jp2" size="299447">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="29" id="bb737zp0787_29">
+      <label>Page 29</label>
+      <file id="bb737zp0787_06_0030.pdf" mimetype="application/pdf" size="183633">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0030.jp2" mimetype="image/jp2" size="299377">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="30" id="bb737zp0787_30">
+      <label>Page 30</label>
+      <file id="bb737zp0787_06_0031.pdf" mimetype="application/pdf" size="174603">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0031.jp2" mimetype="image/jp2" size="299505">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="31" id="bb737zp0787_31">
+      <label>Page 31</label>
+      <file id="bb737zp0787_06_0032.pdf" mimetype="application/pdf" size="176857">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0032.jp2" mimetype="image/jp2" size="299470">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="32" id="bb737zp0787_32">
+      <label>Page 32</label>
+      <file id="bb737zp0787_06_0033.pdf" mimetype="application/pdf" size="160678">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0033.jp2" mimetype="image/jp2" size="299490">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="33" id="bb737zp0787_33">
+      <label>Page 33</label>
+      <file id="bb737zp0787_06_0034.pdf" mimetype="application/pdf" size="142023">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0034.jp2" mimetype="image/jp2" size="299336">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="34" id="bb737zp0787_34">
+      <label>Page 34</label>
+      <file id="bb737zp0787_06_0035.pdf" mimetype="application/pdf" size="160792">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0035.jp2" mimetype="image/jp2" size="299458">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="35" id="bb737zp0787_35">
+      <label>Page 35</label>
+      <file id="bb737zp0787_06_0036.pdf" mimetype="application/pdf" size="163957">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0036.jp2" mimetype="image/jp2" size="299468">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="36" id="bb737zp0787_36">
+      <label>Page 36</label>
+      <file id="bb737zp0787_06_0037.pdf" mimetype="application/pdf" size="168212">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0037.jp2" mimetype="image/jp2" size="299472">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="37" id="bb737zp0787_37">
+      <label>Page 37</label>
+      <file id="bb737zp0787_06_0038.pdf" mimetype="application/pdf" size="163431">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0038.jp2" mimetype="image/jp2" size="299432">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="38" id="bb737zp0787_38">
+      <label>Page 38</label>
+      <file id="bb737zp0787_06_0039.pdf" mimetype="application/pdf" size="170600">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0039.jp2" mimetype="image/jp2" size="299347">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="39" id="bb737zp0787_39">
+      <label>Page 39</label>
+      <file id="bb737zp0787_06_0040.pdf" mimetype="application/pdf" size="190386">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0040.jp2" mimetype="image/jp2" size="299398">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="40" id="bb737zp0787_40">
+      <label>Page 40</label>
+      <file id="bb737zp0787_06_0041.pdf" mimetype="application/pdf" size="158725">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0041.jp2" mimetype="image/jp2" size="299344">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="41" id="bb737zp0787_41">
+      <label>Page 41</label>
+      <file id="bb737zp0787_06_0042.pdf" mimetype="application/pdf" size="170113">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0042.jp2" mimetype="image/jp2" size="299269">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="42" id="bb737zp0787_42">
+      <label>Page 42</label>
+      <file id="bb737zp0787_06_0043.pdf" mimetype="application/pdf" size="174819">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0043.jp2" mimetype="image/jp2" size="299324">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="43" id="bb737zp0787_43">
+      <label>Page 43</label>
+      <file id="bb737zp0787_06_0044.pdf" mimetype="application/pdf" size="121708">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0044.jp2" mimetype="image/jp2" size="299394">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="44" id="bb737zp0787_44">
+      <label>Page 44</label>
+      <file id="bb737zp0787_06_0045.pdf" mimetype="application/pdf" size="136693">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0045.jp2" mimetype="image/jp2" size="299272">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="45" id="bb737zp0787_45">
+      <label>Page 45</label>
+      <file id="bb737zp0787_06_0046.pdf" mimetype="application/pdf" size="188687">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0046.jp2" mimetype="image/jp2" size="299353">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="46" id="bb737zp0787_46">
+      <label>Page 46</label>
+      <file id="bb737zp0787_06_0047.pdf" mimetype="application/pdf" size="164463">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0047.jp2" mimetype="image/jp2" size="299461">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="47" id="bb737zp0787_47">
+      <label>Page 47</label>
+      <file id="bb737zp0787_06_0048.pdf" mimetype="application/pdf" size="180865">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0048.jp2" mimetype="image/jp2" size="299464">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="48" id="bb737zp0787_48">
+      <label>Page 48</label>
+      <file id="bb737zp0787_06_0049.pdf" mimetype="application/pdf" size="182395">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0049.jp2" mimetype="image/jp2" size="299432">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="49" id="bb737zp0787_49">
+      <label>Page 49</label>
+      <file id="bb737zp0787_06_0050.pdf" mimetype="application/pdf" size="179963">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0050.jp2" mimetype="image/jp2" size="299361">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="50" id="bb737zp0787_50">
+      <label>Page 50</label>
+      <file id="bb737zp0787_06_0051.pdf" mimetype="application/pdf" size="177969">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0051.jp2" mimetype="image/jp2" size="299469">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="51" id="bb737zp0787_51">
+      <label>Page 51</label>
+      <file id="bb737zp0787_06_0052.pdf" mimetype="application/pdf" size="180684">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0052.jp2" mimetype="image/jp2" size="299325">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="52" id="bb737zp0787_52">
+      <label>Page 52</label>
+      <file id="bb737zp0787_06_0053.pdf" mimetype="application/pdf" size="180138">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0053.jp2" mimetype="image/jp2" size="299488">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="53" id="bb737zp0787_53">
+      <label>Page 53</label>
+      <file id="bb737zp0787_06_0054.pdf" mimetype="application/pdf" size="179156">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0054.jp2" mimetype="image/jp2" size="299360">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="54" id="bb737zp0787_54">
+      <label>Page 54</label>
+      <file id="bb737zp0787_06_0055.pdf" mimetype="application/pdf" size="171499">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0055.jp2" mimetype="image/jp2" size="299434">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="55" id="bb737zp0787_55">
+      <label>Page 55</label>
+      <file id="bb737zp0787_06_0056.pdf" mimetype="application/pdf" size="185948">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0056.jp2" mimetype="image/jp2" size="299476">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="56" id="bb737zp0787_56">
+      <label>Page 56</label>
+      <file id="bb737zp0787_06_0057.pdf" mimetype="application/pdf" size="183299">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0057.jp2" mimetype="image/jp2" size="299409">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="57" id="bb737zp0787_57">
+      <label>Page 57</label>
+      <file id="bb737zp0787_06_0058.pdf" mimetype="application/pdf" size="170198">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0058.jp2" mimetype="image/jp2" size="299479">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="58" id="bb737zp0787_58">
+      <label>Page 58</label>
+      <file id="bb737zp0787_06_0059.pdf" mimetype="application/pdf" size="165456">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0059.jp2" mimetype="image/jp2" size="299299">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="59" id="bb737zp0787_59">
+      <label>Page 59</label>
+      <file id="bb737zp0787_06_0060.pdf" mimetype="application/pdf" size="179705">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0060.jp2" mimetype="image/jp2" size="299494">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="60" id="bb737zp0787_60">
+      <label>Page 60</label>
+      <file id="bb737zp0787_06_0061.pdf" mimetype="application/pdf" size="173181">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0061.jp2" mimetype="image/jp2" size="299312">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="61" id="bb737zp0787_61">
+      <label>Page 61</label>
+      <file id="bb737zp0787_06_0062.pdf" mimetype="application/pdf" size="175889">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0062.jp2" mimetype="image/jp2" size="299493">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="62" id="bb737zp0787_62">
+      <label>Page 62</label>
+      <file id="bb737zp0787_06_0063.pdf" mimetype="application/pdf" size="166437">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0063.jp2" mimetype="image/jp2" size="299501">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="63" id="bb737zp0787_63">
+      <label>Page 63</label>
+      <file id="bb737zp0787_06_0064.pdf" mimetype="application/pdf" size="194902">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0064.jp2" mimetype="image/jp2" size="299390">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="64" id="bb737zp0787_64">
+      <label>Page 64</label>
+      <file id="bb737zp0787_06_0065.pdf" mimetype="application/pdf" size="179879">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0065.jp2" mimetype="image/jp2" size="299472">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="65" id="bb737zp0787_65">
+      <label>Page 65</label>
+      <file id="bb737zp0787_06_0066.pdf" mimetype="application/pdf" size="188525">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0066.jp2" mimetype="image/jp2" size="299473">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="66" id="bb737zp0787_66">
+      <label>Page 66</label>
+      <file id="bb737zp0787_06_0067.pdf" mimetype="application/pdf" size="163015">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0067.jp2" mimetype="image/jp2" size="299505">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="67" id="bb737zp0787_67">
+      <label>Page 67</label>
+      <file id="bb737zp0787_06_0068.pdf" mimetype="application/pdf" size="99343">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0068.jp2" mimetype="image/jp2" size="299308">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="68" id="bb737zp0787_68">
+      <label>Page 68</label>
+      <file id="bb737zp0787_06_0069.pdf" mimetype="application/pdf" size="147563">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0069.jp2" mimetype="image/jp2" size="299472">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="69" id="bb737zp0787_69">
+      <label>Page 69</label>
+      <file id="bb737zp0787_06_0070.pdf" mimetype="application/pdf" size="175321">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0070.jp2" mimetype="image/jp2" size="299338">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="70" id="bb737zp0787_70">
+      <label>Page 70</label>
+      <file id="bb737zp0787_06_0071.pdf" mimetype="application/pdf" size="176103">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0071.jp2" mimetype="image/jp2" size="299262">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="71" id="bb737zp0787_71">
+      <label>Page 71</label>
+      <file id="bb737zp0787_06_0072.pdf" mimetype="application/pdf" size="173289">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0072.jp2" mimetype="image/jp2" size="299482">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="72" id="bb737zp0787_72">
+      <label>Page 72</label>
+      <file id="bb737zp0787_06_0073.pdf" mimetype="application/pdf" size="168518">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0073.jp2" mimetype="image/jp2" size="299430">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="73" id="bb737zp0787_73">
+      <label>Page 73</label>
+      <file id="bb737zp0787_06_0074.pdf" mimetype="application/pdf" size="182329">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0074.jp2" mimetype="image/jp2" size="299312">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="74" id="bb737zp0787_74">
+      <label>Page 74</label>
+      <file id="bb737zp0787_06_0075.pdf" mimetype="application/pdf" size="195371">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0075.jp2" mimetype="image/jp2" size="299185">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="75" id="bb737zp0787_75">
+      <label>Page 75</label>
+      <file id="bb737zp0787_06_0076.pdf" mimetype="application/pdf" size="184568">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0076.jp2" mimetype="image/jp2" size="299440">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="76" id="bb737zp0787_76">
+      <label>Page 76</label>
+      <file id="bb737zp0787_06_0077.pdf" mimetype="application/pdf" size="172155">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0077.jp2" mimetype="image/jp2" size="299495">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="77" id="bb737zp0787_77">
+      <label>Page 77</label>
+      <file id="bb737zp0787_06_0078.pdf" mimetype="application/pdf" size="191066">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0078.jp2" mimetype="image/jp2" size="299409">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="78" id="bb737zp0787_78">
+      <label>Page 78</label>
+      <file id="bb737zp0787_06_0079.pdf" mimetype="application/pdf" size="82581">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0079.jp2" mimetype="image/jp2" size="299427">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="79" id="bb737zp0787_79">
+      <label>Page 79</label>
+      <file id="bb737zp0787_06_0080.pdf" mimetype="application/pdf" size="149839">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0080.jp2" mimetype="image/jp2" size="299504">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="80" id="bb737zp0787_80">
+      <label>Page 80</label>
+      <file id="bb737zp0787_06_0081.pdf" mimetype="application/pdf" size="177009">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0081.jp2" mimetype="image/jp2" size="299488">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="81" id="bb737zp0787_81">
+      <label>Page 81</label>
+      <file id="bb737zp0787_06_0082.pdf" mimetype="application/pdf" size="188261">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0082.jp2" mimetype="image/jp2" size="299411">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="82" id="bb737zp0787_82">
+      <label>Page 82</label>
+      <file id="bb737zp0787_06_0083.pdf" mimetype="application/pdf" size="182831">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0083.jp2" mimetype="image/jp2" size="299438">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="83" id="bb737zp0787_83">
+      <label>Page 83</label>
+      <file id="bb737zp0787_06_0084.pdf" mimetype="application/pdf" size="189427">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0084.jp2" mimetype="image/jp2" size="299241">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="84" id="bb737zp0787_84">
+      <label>Page 84</label>
+      <file id="bb737zp0787_06_0085.pdf" mimetype="application/pdf" size="171087">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0085.jp2" mimetype="image/jp2" size="299312">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="85" id="bb737zp0787_85">
+      <label>Page 85</label>
+      <file id="bb737zp0787_06_0086.pdf" mimetype="application/pdf" size="190260">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0086.jp2" mimetype="image/jp2" size="299139">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="86" id="bb737zp0787_86">
+      <label>Page 86</label>
+      <file id="bb737zp0787_06_0087.pdf" mimetype="application/pdf" size="171055">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0087.jp2" mimetype="image/jp2" size="299498">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="87" id="bb737zp0787_87">
+      <label>Page 87</label>
+      <file id="bb737zp0787_06_0088.pdf" mimetype="application/pdf" size="172828">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0088.jp2" mimetype="image/jp2" size="299326">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="88" id="bb737zp0787_88">
+      <label>Page 88</label>
+      <file id="bb737zp0787_06_0089.pdf" mimetype="application/pdf" size="186435">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0089.jp2" mimetype="image/jp2" size="299471">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="89" id="bb737zp0787_89">
+      <label>Page 89</label>
+      <file id="bb737zp0787_06_0090.pdf" mimetype="application/pdf" size="174631">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0090.jp2" mimetype="image/jp2" size="299331">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="90" id="bb737zp0787_90">
+      <label>Page 90</label>
+      <file id="bb737zp0787_06_0091.pdf" mimetype="application/pdf" size="166290">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0091.jp2" mimetype="image/jp2" size="299208">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="91" id="bb737zp0787_91">
+      <label>Page 91</label>
+      <file id="bb737zp0787_06_0092.pdf" mimetype="application/pdf" size="185372">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0092.jp2" mimetype="image/jp2" size="299217">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="92" id="bb737zp0787_92">
+      <label>Page 92</label>
+      <file id="bb737zp0787_06_0093.pdf" mimetype="application/pdf" size="175355">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0093.jp2" mimetype="image/jp2" size="299406">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="93" id="bb737zp0787_93">
+      <label>Page 93</label>
+      <file id="bb737zp0787_06_0094.pdf" mimetype="application/pdf" size="129071">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0094.jp2" mimetype="image/jp2" size="299428">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="94" id="bb737zp0787_94">
+      <label>Page 94</label>
+      <file id="bb737zp0787_06_0095.pdf" mimetype="application/pdf" size="180809">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0095.jp2" mimetype="image/jp2" size="299470">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="95" id="bb737zp0787_95">
+      <label>Page 95</label>
+      <file id="bb737zp0787_06_0096.pdf" mimetype="application/pdf" size="193215">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0096.jp2" mimetype="image/jp2" size="299444">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="96" id="bb737zp0787_96">
+      <label>Page 96</label>
+      <file id="bb737zp0787_06_0097.pdf" mimetype="application/pdf" size="174452">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0097.jp2" mimetype="image/jp2" size="299457">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="97" id="bb737zp0787_97">
+      <label>Page 97</label>
+      <file id="bb737zp0787_06_0098.pdf" mimetype="application/pdf" size="200378">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0098.jp2" mimetype="image/jp2" size="299426">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="98" id="bb737zp0787_98">
+      <label>Page 98</label>
+      <file id="bb737zp0787_06_0099.pdf" mimetype="application/pdf" size="176475">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0099.jp2" mimetype="image/jp2" size="299469">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="99" id="bb737zp0787_99">
+      <label>Page 99</label>
+      <file id="bb737zp0787_06_0100.pdf" mimetype="application/pdf" size="176161">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0100.jp2" mimetype="image/jp2" size="299483">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="100" id="bb737zp0787_100">
+      <label>Page 100</label>
+      <file id="bb737zp0787_06_0101.pdf" mimetype="application/pdf" size="177611">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0101.jp2" mimetype="image/jp2" size="299464">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="101" id="bb737zp0787_101">
+      <label>Page 101</label>
+      <file id="bb737zp0787_06_0102.pdf" mimetype="application/pdf" size="181935">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0102.jp2" mimetype="image/jp2" size="299280">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="102" id="bb737zp0787_102">
+      <label>Page 102</label>
+      <file id="bb737zp0787_06_0103.pdf" mimetype="application/pdf" size="158113">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0103.jp2" mimetype="image/jp2" size="299305">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="103" id="bb737zp0787_103">
+      <label>Page 103</label>
+      <file id="bb737zp0787_06_0104.pdf" mimetype="application/pdf" size="196140">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0104.jp2" mimetype="image/jp2" size="299306">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="104" id="bb737zp0787_104">
+      <label>Page 104</label>
+      <file id="bb737zp0787_06_0105.pdf" mimetype="application/pdf" size="166499">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0105.jp2" mimetype="image/jp2" size="299285">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="105" id="bb737zp0787_105">
+      <label>Page 105</label>
+      <file id="bb737zp0787_06_0106.pdf" mimetype="application/pdf" size="199065">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0106.jp2" mimetype="image/jp2" size="299480">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="106" id="bb737zp0787_106">
+      <label>Page 106</label>
+      <file id="bb737zp0787_06_0107.pdf" mimetype="application/pdf" size="159068">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0107.jp2" mimetype="image/jp2" size="299414">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="107" id="bb737zp0787_107">
+      <label>Page 107</label>
+      <file id="bb737zp0787_06_0108.pdf" mimetype="application/pdf" size="172864">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0108.jp2" mimetype="image/jp2" size="299324">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="108" id="bb737zp0787_108">
+      <label>Page 108</label>
+      <file id="bb737zp0787_06_0109.pdf" mimetype="application/pdf" size="170471">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0109.jp2" mimetype="image/jp2" size="299447">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="109" id="bb737zp0787_109">
+      <label>Page 109</label>
+      <file id="bb737zp0787_06_0110.pdf" mimetype="application/pdf" size="126437">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0110.jp2" mimetype="image/jp2" size="299459">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="110" id="bb737zp0787_110">
+      <label>Page 110</label>
+      <file id="bb737zp0787_06_0111.pdf" mimetype="application/pdf" size="159441">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0111.jp2" mimetype="image/jp2" size="299445">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="111" id="bb737zp0787_111">
+      <label>Page 111</label>
+      <file id="bb737zp0787_06_0112.pdf" mimetype="application/pdf" size="191794">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0112.jp2" mimetype="image/jp2" size="299391">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="112" id="bb737zp0787_112">
+      <label>Page 112</label>
+      <file id="bb737zp0787_06_0113.pdf" mimetype="application/pdf" size="177526">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0113.jp2" mimetype="image/jp2" size="299472">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="113" id="bb737zp0787_113">
+      <label>Page 113</label>
+      <file id="bb737zp0787_06_0114.pdf" mimetype="application/pdf" size="198250">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0114.jp2" mimetype="image/jp2" size="299395">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="114" id="bb737zp0787_114">
+      <label>Page 114</label>
+      <file id="bb737zp0787_06_0115.pdf" mimetype="application/pdf" size="169720">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0115.jp2" mimetype="image/jp2" size="299385">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="115" id="bb737zp0787_115">
+      <label>Page 115</label>
+      <file id="bb737zp0787_06_0116.pdf" mimetype="application/pdf" size="177213">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0116.jp2" mimetype="image/jp2" size="299236">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="116" id="bb737zp0787_116">
+      <label>Page 116</label>
+      <file id="bb737zp0787_06_0117.pdf" mimetype="application/pdf" size="182804">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0117.jp2" mimetype="image/jp2" size="299424">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="117" id="bb737zp0787_117">
+      <label>Page 117</label>
+      <file id="bb737zp0787_06_0118.pdf" mimetype="application/pdf" size="191596">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0118.jp2" mimetype="image/jp2" size="299316">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="118" id="bb737zp0787_118">
+      <label>Page 118</label>
+      <file id="bb737zp0787_06_0119.pdf" mimetype="application/pdf" size="177734">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0119.jp2" mimetype="image/jp2" size="299492">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="119" id="bb737zp0787_119">
+      <label>Page 119</label>
+      <file id="bb737zp0787_06_0120.pdf" mimetype="application/pdf" size="165985">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0120.jp2" mimetype="image/jp2" size="299281">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="120" id="bb737zp0787_120">
+      <label>Page 120</label>
+      <file id="bb737zp0787_06_0121.pdf" mimetype="application/pdf" size="186358">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0121.jp2" mimetype="image/jp2" size="299461">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="121" id="bb737zp0787_121">
+      <label>Page 121</label>
+      <file id="bb737zp0787_06_0122.pdf" mimetype="application/pdf" size="182282">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0122.jp2" mimetype="image/jp2" size="299309">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="122" id="bb737zp0787_122">
+      <label>Page 122</label>
+      <file id="bb737zp0787_06_0123.pdf" mimetype="application/pdf" size="175769">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0123.jp2" mimetype="image/jp2" size="299436">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="123" id="bb737zp0787_123">
+      <label>Page 123</label>
+      <file id="bb737zp0787_06_0124.pdf" mimetype="application/pdf" size="180415">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0124.jp2" mimetype="image/jp2" size="299446">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="124" id="bb737zp0787_124">
+      <label>Page 124</label>
+      <file id="bb737zp0787_06_0125.pdf" mimetype="application/pdf" size="193326">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0125.jp2" mimetype="image/jp2" size="299419">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="125" id="bb737zp0787_125">
+      <label>Page 125</label>
+      <file id="bb737zp0787_06_0126.pdf" mimetype="application/pdf" size="162498">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0126.jp2" mimetype="image/jp2" size="299415">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="126" id="bb737zp0787_126">
+      <label>Page 126</label>
+      <file id="bb737zp0787_06_0127.pdf" mimetype="application/pdf" size="178761">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0127.jp2" mimetype="image/jp2" size="299472">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="127" id="bb737zp0787_127">
+      <label>Page 127</label>
+      <file id="bb737zp0787_06_0128.pdf" mimetype="application/pdf" size="151548">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0128.jp2" mimetype="image/jp2" size="299470">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="128" id="bb737zp0787_128">
+      <label>Page 128</label>
+      <file id="bb737zp0787_06_0129.pdf" mimetype="application/pdf" size="185756">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0129.jp2" mimetype="image/jp2" size="299468">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="129" id="bb737zp0787_129">
+      <label>Page 129</label>
+      <file id="bb737zp0787_06_0130.pdf" mimetype="application/pdf" size="177917">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0130.jp2" mimetype="image/jp2" size="299497">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="130" id="bb737zp0787_130">
+      <label>Page 130</label>
+      <file id="bb737zp0787_06_0131.pdf" mimetype="application/pdf" size="186345">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0131.jp2" mimetype="image/jp2" size="299415">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="131" id="bb737zp0787_131">
+      <label>Page 131</label>
+      <file id="bb737zp0787_06_0132.pdf" mimetype="application/pdf" size="179587">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0132.jp2" mimetype="image/jp2" size="299255">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="132" id="bb737zp0787_132">
+      <label>Page 132</label>
+      <file id="bb737zp0787_06_0133.pdf" mimetype="application/pdf" size="187123">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0133.jp2" mimetype="image/jp2" size="299490">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="133" id="bb737zp0787_133">
+      <label>Page 133</label>
+      <file id="bb737zp0787_06_0134.pdf" mimetype="application/pdf" size="167473">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0134.jp2" mimetype="image/jp2" size="299142">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="134" id="bb737zp0787_134">
+      <label>Page 134</label>
+      <file id="bb737zp0787_06_0135.pdf" mimetype="application/pdf" size="230374">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0135.jp2" mimetype="image/jp2" size="299281">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="135" id="bb737zp0787_135">
+      <label>Page 135</label>
+      <file id="bb737zp0787_06_0136.pdf" mimetype="application/pdf" size="186545">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0136.jp2" mimetype="image/jp2" size="299496">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="136" id="bb737zp0787_136">
+      <label>Page 136</label>
+      <file id="bb737zp0787_06_0137.pdf" mimetype="application/pdf" size="159083">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0137.jp2" mimetype="image/jp2" size="299491">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="137" id="bb737zp0787_137">
+      <label>Page 137</label>
+      <file id="bb737zp0787_06_0138.pdf" mimetype="application/pdf" size="164406">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0138.jp2" mimetype="image/jp2" size="299486">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="138" id="bb737zp0787_138">
+      <label>Page 138</label>
+      <file id="bb737zp0787_06_0139.pdf" mimetype="application/pdf" size="178571">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0139.jp2" mimetype="image/jp2" size="299322">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="139" id="bb737zp0787_139">
+      <label>Page 139</label>
+      <file id="bb737zp0787_06_0140.pdf" mimetype="application/pdf" size="189617">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0140.jp2" mimetype="image/jp2" size="299156">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="140" id="bb737zp0787_140">
+      <label>Page 140</label>
+      <file id="bb737zp0787_06_0141.pdf" mimetype="application/pdf" size="161982">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0141.jp2" mimetype="image/jp2" size="299460">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="141" id="bb737zp0787_141">
+      <label>Page 141</label>
+      <file id="bb737zp0787_06_0142.pdf" mimetype="application/pdf" size="188435">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0142.jp2" mimetype="image/jp2" size="299472">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="142" id="bb737zp0787_142">
+      <label>Page 142</label>
+      <file id="bb737zp0787_06_0143.pdf" mimetype="application/pdf" size="183046">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0143.jp2" mimetype="image/jp2" size="299442">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="143" id="bb737zp0787_143">
+      <label>Page 143</label>
+      <file id="bb737zp0787_06_0144.pdf" mimetype="application/pdf" size="182465">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0144.jp2" mimetype="image/jp2" size="299236">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="144" id="bb737zp0787_144">
+      <label>Page 144</label>
+      <file id="bb737zp0787_06_0145.pdf" mimetype="application/pdf" size="182104">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0145.jp2" mimetype="image/jp2" size="299483">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="145" id="bb737zp0787_145">
+      <label>Page 145</label>
+      <file id="bb737zp0787_06_0146.pdf" mimetype="application/pdf" size="173238">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0146.jp2" mimetype="image/jp2" size="299507">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="146" id="bb737zp0787_146">
+      <label>Page 146</label>
+      <file id="bb737zp0787_06_0147.pdf" mimetype="application/pdf" size="189822">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0147.jp2" mimetype="image/jp2" size="299451">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="147" id="bb737zp0787_147">
+      <label>Page 147</label>
+      <file id="bb737zp0787_06_0148.pdf" mimetype="application/pdf" size="184504">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0148.jp2" mimetype="image/jp2" size="299410">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="148" id="bb737zp0787_148">
+      <label>Page 148</label>
+      <file id="bb737zp0787_06_0149.pdf" mimetype="application/pdf" size="113877">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0149.jp2" mimetype="image/jp2" size="299313">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="149" id="bb737zp0787_149">
+      <label>Page 149</label>
+      <file id="bb737zp0787_06_0150.pdf" mimetype="application/pdf" size="144029">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0150.jp2" mimetype="image/jp2" size="299317">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="150" id="bb737zp0787_150">
+      <label>Page 150</label>
+      <file id="bb737zp0787_06_0151.pdf" mimetype="application/pdf" size="187171">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0151.jp2" mimetype="image/jp2" size="299277">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="151" id="bb737zp0787_151">
+      <label>Page 151</label>
+      <file id="bb737zp0787_06_0152.pdf" mimetype="application/pdf" size="193557">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0152.jp2" mimetype="image/jp2" size="299284">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="152" id="bb737zp0787_152">
+      <label>Page 152</label>
+      <file id="bb737zp0787_06_0153.pdf" mimetype="application/pdf" size="183219">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0153.jp2" mimetype="image/jp2" size="299215">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="153" id="bb737zp0787_153">
+      <label>Page 153</label>
+      <file id="bb737zp0787_06_0154.pdf" mimetype="application/pdf" size="186659">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0154.jp2" mimetype="image/jp2" size="299457">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="154" id="bb737zp0787_154">
+      <label>Page 154</label>
+      <file id="bb737zp0787_06_0155.pdf" mimetype="application/pdf" size="187116">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0155.jp2" mimetype="image/jp2" size="299373">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="155" id="bb737zp0787_155">
+      <label>Page 155</label>
+      <file id="bb737zp0787_06_0156.pdf" mimetype="application/pdf" size="180616">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0156.jp2" mimetype="image/jp2" size="299451">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="156" id="bb737zp0787_156">
+      <label>Page 156</label>
+      <file id="bb737zp0787_06_0157.pdf" mimetype="application/pdf" size="175086">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0157.jp2" mimetype="image/jp2" size="299451">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="157" id="bb737zp0787_157">
+      <label>Page 157</label>
+      <file id="bb737zp0787_06_0158.pdf" mimetype="application/pdf" size="174636">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0158.jp2" mimetype="image/jp2" size="299307">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="158" id="bb737zp0787_158">
+      <label>Page 158</label>
+      <file id="bb737zp0787_06_0159.pdf" mimetype="application/pdf" size="176503">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0159.jp2" mimetype="image/jp2" size="299348">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="159" id="bb737zp0787_159">
+      <label>Page 159</label>
+      <file id="bb737zp0787_06_0160.pdf" mimetype="application/pdf" size="198525">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0160.jp2" mimetype="image/jp2" size="299495">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="160" id="bb737zp0787_160">
+      <label>Page 160</label>
+      <file id="bb737zp0787_06_0161.pdf" mimetype="application/pdf" size="186568">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0161.jp2" mimetype="image/jp2" size="299465">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="161" id="bb737zp0787_161">
+      <label>Page 161</label>
+      <file id="bb737zp0787_06_0162.pdf" mimetype="application/pdf" size="200691">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0162.jp2" mimetype="image/jp2" size="299382">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="162" id="bb737zp0787_162">
+      <label>Page 162</label>
+      <file id="bb737zp0787_06_0163.pdf" mimetype="application/pdf" size="194664">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0163.jp2" mimetype="image/jp2" size="299427">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="163" id="bb737zp0787_163">
+      <label>Page 163</label>
+      <file id="bb737zp0787_06_0164.pdf" mimetype="application/pdf" size="181146">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0164.jp2" mimetype="image/jp2" size="299457">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="164" id="bb737zp0787_164">
+      <label>Page 164</label>
+      <file id="bb737zp0787_06_0165.pdf" mimetype="application/pdf" size="190935">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0165.jp2" mimetype="image/jp2" size="299471">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="165" id="bb737zp0787_165">
+      <label>Page 165</label>
+      <file id="bb737zp0787_06_0166.pdf" mimetype="application/pdf" size="186371">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0166.jp2" mimetype="image/jp2" size="299458">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="166" id="bb737zp0787_166">
+      <label>Page 166</label>
+      <file id="bb737zp0787_06_0167.pdf" mimetype="application/pdf" size="177858">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0167.jp2" mimetype="image/jp2" size="299433">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="167" id="bb737zp0787_167">
+      <label>Page 167</label>
+      <file id="bb737zp0787_06_0168.pdf" mimetype="application/pdf" size="197047">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0168.jp2" mimetype="image/jp2" size="299421">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="168" id="bb737zp0787_168">
+      <label>Page 168</label>
+      <file id="bb737zp0787_06_0169.pdf" mimetype="application/pdf" size="173546">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0169.jp2" mimetype="image/jp2" size="299425">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="169" id="bb737zp0787_169">
+      <label>Page 169</label>
+      <file id="bb737zp0787_06_0170.pdf" mimetype="application/pdf" size="200108">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0170.jp2" mimetype="image/jp2" size="299394">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="170" id="bb737zp0787_170">
+      <label>Page 170</label>
+      <file id="bb737zp0787_06_0171.pdf" mimetype="application/pdf" size="183604">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0171.jp2" mimetype="image/jp2" size="299461">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="171" id="bb737zp0787_171">
+      <label>Page 171</label>
+      <file id="bb737zp0787_06_0172.pdf" mimetype="application/pdf" size="185974">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0172.jp2" mimetype="image/jp2" size="299469">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="172" id="bb737zp0787_172">
+      <label>Page 172</label>
+      <file id="bb737zp0787_06_0173.pdf" mimetype="application/pdf" size="180099">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0173.jp2" mimetype="image/jp2" size="299449">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="173" id="bb737zp0787_173">
+      <label>Page 173</label>
+      <file id="bb737zp0787_06_0174.pdf" mimetype="application/pdf" size="180991">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0174.jp2" mimetype="image/jp2" size="299430">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="174" id="bb737zp0787_174">
+      <label>Page 174</label>
+      <file id="bb737zp0787_06_0175.pdf" mimetype="application/pdf" size="183269">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0175.jp2" mimetype="image/jp2" size="299488">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="175" id="bb737zp0787_175">
+      <label>Page 175</label>
+      <file id="bb737zp0787_06_0176.pdf" mimetype="application/pdf" size="187263">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0176.jp2" mimetype="image/jp2" size="299258">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="176" id="bb737zp0787_176">
+      <label>Page 176</label>
+      <file id="bb737zp0787_06_0177.pdf" mimetype="application/pdf" size="174229">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0177.jp2" mimetype="image/jp2" size="299466">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="177" id="bb737zp0787_177">
+      <label>Page 177</label>
+      <file id="bb737zp0787_06_0178.pdf" mimetype="application/pdf" size="192261">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0178.jp2" mimetype="image/jp2" size="299384">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="178" id="bb737zp0787_178">
+      <label>Page 178</label>
+      <file id="bb737zp0787_06_0179.pdf" mimetype="application/pdf" size="187532">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0179.jp2" mimetype="image/jp2" size="299448">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="179" id="bb737zp0787_179">
+      <label>Page 179</label>
+      <file id="bb737zp0787_06_0180.pdf" mimetype="application/pdf" size="187758">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0180.jp2" mimetype="image/jp2" size="299302">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="180" id="bb737zp0787_180">
+      <label>Page 180</label>
+      <file id="bb737zp0787_06_0181.pdf" mimetype="application/pdf" size="178287">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0181.jp2" mimetype="image/jp2" size="299460">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="181" id="bb737zp0787_181">
+      <label>Page 181</label>
+      <file id="bb737zp0787_06_0182.pdf" mimetype="application/pdf" size="190700">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0182.jp2" mimetype="image/jp2" size="299474">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="182" id="bb737zp0787_182">
+      <label>Page 182</label>
+      <file id="bb737zp0787_06_0183.pdf" mimetype="application/pdf" size="167209">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0183.jp2" mimetype="image/jp2" size="299380">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="183" id="bb737zp0787_183">
+      <label>Page 183</label>
+      <file id="bb737zp0787_06_0184.pdf" mimetype="application/pdf" size="177230">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0184.jp2" mimetype="image/jp2" size="299327">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="184" id="bb737zp0787_184">
+      <label>Page 184</label>
+      <file id="bb737zp0787_06_0185.pdf" mimetype="application/pdf" size="171666">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0185.jp2" mimetype="image/jp2" size="299175">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="185" id="bb737zp0787_185">
+      <label>Page 185</label>
+      <file id="bb737zp0787_06_0186.pdf" mimetype="application/pdf" size="191110">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0186.jp2" mimetype="image/jp2" size="299491">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="186" id="bb737zp0787_186">
+      <label>Page 186</label>
+      <file id="bb737zp0787_06_0187.pdf" mimetype="application/pdf" size="186216">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0187.jp2" mimetype="image/jp2" size="299463">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="187" id="bb737zp0787_187">
+      <label>Page 187</label>
+      <file id="bb737zp0787_06_0188.pdf" mimetype="application/pdf" size="192962">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0188.jp2" mimetype="image/jp2" size="299462">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="188" id="bb737zp0787_188">
+      <label>Page 188</label>
+      <file id="bb737zp0787_06_0189.pdf" mimetype="application/pdf" size="174559">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0189.jp2" mimetype="image/jp2" size="299488">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="189" id="bb737zp0787_189">
+      <label>Page 189</label>
+      <file id="bb737zp0787_06_0190.pdf" mimetype="application/pdf" size="175097">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0190.jp2" mimetype="image/jp2" size="299285">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="190" id="bb737zp0787_190">
+      <label>Page 190</label>
+      <file id="bb737zp0787_06_0191.pdf" mimetype="application/pdf" size="186340">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0191.jp2" mimetype="image/jp2" size="299444">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="191" id="bb737zp0787_191">
+      <label>Page 191</label>
+      <file id="bb737zp0787_06_0192.pdf" mimetype="application/pdf" size="190224">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0192.jp2" mimetype="image/jp2" size="299480">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="192" id="bb737zp0787_192">
+      <label>Page 192</label>
+      <file id="bb737zp0787_06_0193.pdf" mimetype="application/pdf" size="189926">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0193.jp2" mimetype="image/jp2" size="299212">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="193" id="bb737zp0787_193">
+      <label>Page 193</label>
+      <file id="bb737zp0787_06_0194.pdf" mimetype="application/pdf" size="198163">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0194.jp2" mimetype="image/jp2" size="299485">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="194" id="bb737zp0787_194">
+      <label>Page 194</label>
+      <file id="bb737zp0787_06_0195.pdf" mimetype="application/pdf" size="186950">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0195.jp2" mimetype="image/jp2" size="299275">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="195" id="bb737zp0787_195">
+      <label>Page 195</label>
+      <file id="bb737zp0787_06_0196.pdf" mimetype="application/pdf" size="188213">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0196.jp2" mimetype="image/jp2" size="299295">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="196" id="bb737zp0787_196">
+      <label>Page 196</label>
+      <file id="bb737zp0787_06_0197.pdf" mimetype="application/pdf" size="172764">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0197.jp2" mimetype="image/jp2" size="299453">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="197" id="bb737zp0787_197">
+      <label>Page 197</label>
+      <file id="bb737zp0787_06_0198.pdf" mimetype="application/pdf" size="108293">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0198.jp2" mimetype="image/jp2" size="299342">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="198" id="bb737zp0787_198">
+      <label>Page 198</label>
+      <file id="bb737zp0787_06_0199.pdf" mimetype="application/pdf" size="49834">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0199.jp2" mimetype="image/jp2" size="299435">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="199" id="bb737zp0787_199">
+      <label>Page 199</label>
+      <file id="bb737zp0787_06_0200.pdf" mimetype="application/pdf" size="115072">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0200.jp2" mimetype="image/jp2" size="299357">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="200" id="bb737zp0787_200">
+      <label>Page 200</label>
+      <file id="bb737zp0787_06_0201.pdf" mimetype="application/pdf" size="34148">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0201.jp2" mimetype="image/jp2" size="299451">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="201" id="bb737zp0787_201">
+      <label>Page 201</label>
+      <file id="bb737zp0787_06_0202.pdf" mimetype="application/pdf" size="187176">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0202.jp2" mimetype="image/jp2" size="299410">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="202" id="bb737zp0787_202">
+      <label>Page 202</label>
+      <file id="bb737zp0787_06_0203.pdf" mimetype="application/pdf" size="223832">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0203.jp2" mimetype="image/jp2" size="299477">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="203" id="bb737zp0787_203">
+      <label>Page 203</label>
+      <file id="bb737zp0787_06_0204.pdf" mimetype="application/pdf" size="226967">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0204.jp2" mimetype="image/jp2" size="299464">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="204" id="bb737zp0787_204">
+      <label>Page 204</label>
+      <file id="bb737zp0787_06_0205.pdf" mimetype="application/pdf" size="194580">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0205.jp2" mimetype="image/jp2" size="299427">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="205" id="bb737zp0787_205">
+      <label>Page 205</label>
+      <file id="bb737zp0787_06_0206.pdf" mimetype="application/pdf" size="177329">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0206.jp2" mimetype="image/jp2" size="299319">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="206" id="bb737zp0787_206">
+      <label>Page 206</label>
+      <file id="bb737zp0787_06_0207.pdf" mimetype="application/pdf" size="157898">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0207.jp2" mimetype="image/jp2" size="299432">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="207" id="bb737zp0787_207">
+      <label>Page 207</label>
+      <file id="bb737zp0787_06_0208.pdf" mimetype="application/pdf" size="192134">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0208.jp2" mimetype="image/jp2" size="299260">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="208" id="bb737zp0787_208">
+      <label>Page 208</label>
+      <file id="bb737zp0787_06_0209.pdf" mimetype="application/pdf" size="186897">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0209.jp2" mimetype="image/jp2" size="299405">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="209" id="bb737zp0787_209">
+      <label>Page 209</label>
+      <file id="bb737zp0787_06_0210.pdf" mimetype="application/pdf" size="173020">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0210.jp2" mimetype="image/jp2" size="299459">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="210" id="bb737zp0787_210">
+      <label>Page 210</label>
+      <file id="bb737zp0787_06_0211.pdf" mimetype="application/pdf" size="166134">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0211.jp2" mimetype="image/jp2" size="299253">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="211" id="bb737zp0787_211">
+      <label>Page 211</label>
+      <file id="bb737zp0787_06_0212.pdf" mimetype="application/pdf" size="188860">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0212.jp2" mimetype="image/jp2" size="299476">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="212" id="bb737zp0787_212">
+      <label>Page 212</label>
+      <file id="bb737zp0787_06_0213.pdf" mimetype="application/pdf" size="184442">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0213.jp2" mimetype="image/jp2" size="299203">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="213" id="bb737zp0787_213">
+      <label>Page 213</label>
+      <file id="bb737zp0787_06_0214.pdf" mimetype="application/pdf" size="175540">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0214.jp2" mimetype="image/jp2" size="299108">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="214" id="bb737zp0787_214">
+      <label>Page 214</label>
+      <file id="bb737zp0787_06_0215.pdf" mimetype="application/pdf" size="159995">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0215.jp2" mimetype="image/jp2" size="299451">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="215" id="bb737zp0787_215">
+      <label>Page 215</label>
+      <file id="bb737zp0787_06_0216.pdf" mimetype="application/pdf" size="178864">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0216.jp2" mimetype="image/jp2" size="299375">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="216" id="bb737zp0787_216">
+      <label>Page 216</label>
+      <file id="bb737zp0787_06_0217.pdf" mimetype="application/pdf" size="173946">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0217.jp2" mimetype="image/jp2" size="299482">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="217" id="bb737zp0787_217">
+      <label>Page 217</label>
+      <file id="bb737zp0787_06_0218.pdf" mimetype="application/pdf" size="163881">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0218.jp2" mimetype="image/jp2" size="299523">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="218" id="bb737zp0787_218">
+      <label>Page 218</label>
+      <file id="bb737zp0787_06_0219.pdf" mimetype="application/pdf" size="172460">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0219.jp2" mimetype="image/jp2" size="299475">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="219" id="bb737zp0787_219">
+      <label>Page 219</label>
+      <file id="bb737zp0787_06_0220.pdf" mimetype="application/pdf" size="179191">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0220.jp2" mimetype="image/jp2" size="299392">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="220" id="bb737zp0787_220">
+      <label>Page 220</label>
+      <file id="bb737zp0787_06_0221.pdf" mimetype="application/pdf" size="170362">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0221.jp2" mimetype="image/jp2" size="299259">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="221" id="bb737zp0787_221">
+      <label>Page 221</label>
+      <file id="bb737zp0787_06_0222.pdf" mimetype="application/pdf" size="190065">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0222.jp2" mimetype="image/jp2" size="299421">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="222" id="bb737zp0787_222">
+      <label>Page 222</label>
+      <file id="bb737zp0787_06_0223.pdf" mimetype="application/pdf" size="177815">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0223.jp2" mimetype="image/jp2" size="299442">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="223" id="bb737zp0787_223">
+      <label>Page 223</label>
+      <file id="bb737zp0787_06_0224.pdf" mimetype="application/pdf" size="193187">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0224.jp2" mimetype="image/jp2" size="299409">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="224" id="bb737zp0787_224">
+      <label>Page 224</label>
+      <file id="bb737zp0787_06_0225.pdf" mimetype="application/pdf" size="170786">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0225.jp2" mimetype="image/jp2" size="299271">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="225" id="bb737zp0787_225">
+      <label>Page 225</label>
+      <file id="bb737zp0787_06_0226.pdf" mimetype="application/pdf" size="189255">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0226.jp2" mimetype="image/jp2" size="299492">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="226" id="bb737zp0787_226">
+      <label>Page 226</label>
+      <file id="bb737zp0787_06_0227.pdf" mimetype="application/pdf" size="175323">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0227.jp2" mimetype="image/jp2" size="299468">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="227" id="bb737zp0787_227">
+      <label>Page 227</label>
+      <file id="bb737zp0787_06_0228.pdf" mimetype="application/pdf" size="186123">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0228.jp2" mimetype="image/jp2" size="299396">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="228" id="bb737zp0787_228">
+      <label>Page 228</label>
+      <file id="bb737zp0787_06_0229.pdf" mimetype="application/pdf" size="182648">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0229.jp2" mimetype="image/jp2" size="299060">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="229" id="bb737zp0787_229">
+      <label>Page 229</label>
+      <file id="bb737zp0787_06_0230.pdf" mimetype="application/pdf" size="185955">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0230.jp2" mimetype="image/jp2" size="299394">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="230" id="bb737zp0787_230">
+      <label>Page 230</label>
+      <file id="bb737zp0787_06_0231.pdf" mimetype="application/pdf" size="164826">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0231.jp2" mimetype="image/jp2" size="299283">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="231" id="bb737zp0787_231">
+      <label>Page 231</label>
+      <file id="bb737zp0787_06_0232.pdf" mimetype="application/pdf" size="174091">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0232.jp2" mimetype="image/jp2" size="299504">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="232" id="bb737zp0787_232">
+      <label>Page 232</label>
+      <file id="bb737zp0787_06_0233.pdf" mimetype="application/pdf" size="167272">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0233.jp2" mimetype="image/jp2" size="299476">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="233" id="bb737zp0787_233">
+      <label>Page 233</label>
+      <file id="bb737zp0787_06_0234.pdf" mimetype="application/pdf" size="180991">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0234.jp2" mimetype="image/jp2" size="299493">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="234" id="bb737zp0787_234">
+      <label>Page 234</label>
+      <file id="bb737zp0787_06_0235.pdf" mimetype="application/pdf" size="166297">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0235.jp2" mimetype="image/jp2" size="299472">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="235" id="bb737zp0787_235">
+      <label>Page 235</label>
+      <file id="bb737zp0787_06_0236.pdf" mimetype="application/pdf" size="195670">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0236.jp2" mimetype="image/jp2" size="299316">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="236" id="bb737zp0787_236">
+      <label>Page 236</label>
+      <file id="bb737zp0787_06_0237.pdf" mimetype="application/pdf" size="167448">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0237.jp2" mimetype="image/jp2" size="299458">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="237" id="bb737zp0787_237">
+      <label>Page 237</label>
+      <file id="bb737zp0787_06_0238.pdf" mimetype="application/pdf" size="175780">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0238.jp2" mimetype="image/jp2" size="299265">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="238" id="bb737zp0787_238">
+      <label>Page 238</label>
+      <file id="bb737zp0787_06_0239.pdf" mimetype="application/pdf" size="178353">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0239.jp2" mimetype="image/jp2" size="299477">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="239" id="bb737zp0787_239">
+      <label>Page 239</label>
+      <file id="bb737zp0787_06_0240.pdf" mimetype="application/pdf" size="175397">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0240.jp2" mimetype="image/jp2" size="299467">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="240" id="bb737zp0787_240">
+      <label>Page 240</label>
+      <file id="bb737zp0787_06_0241.pdf" mimetype="application/pdf" size="166528">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0241.jp2" mimetype="image/jp2" size="299405">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="241" id="bb737zp0787_241">
+      <label>Page 241</label>
+      <file id="bb737zp0787_06_0242.pdf" mimetype="application/pdf" size="180645">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0242.jp2" mimetype="image/jp2" size="299234">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="242" id="bb737zp0787_242">
+      <label>Page 242</label>
+      <file id="bb737zp0787_06_0243.pdf" mimetype="application/pdf" size="157916">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0243.jp2" mimetype="image/jp2" size="299509">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="243" id="bb737zp0787_243">
+      <label>Page 243</label>
+      <file id="bb737zp0787_06_0244.pdf" mimetype="application/pdf" size="195485">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0244.jp2" mimetype="image/jp2" size="299485">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="244" id="bb737zp0787_244">
+      <label>Page 244</label>
+      <file id="bb737zp0787_06_0245.pdf" mimetype="application/pdf" size="160688">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0245.jp2" mimetype="image/jp2" size="299404">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="245" id="bb737zp0787_245">
+      <label>Page 245</label>
+      <file id="bb737zp0787_06_0246.pdf" mimetype="application/pdf" size="176147">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0246.jp2" mimetype="image/jp2" size="299498">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="246" id="bb737zp0787_246">
+      <label>Page 246</label>
+      <file id="bb737zp0787_06_0247.pdf" mimetype="application/pdf" size="147764">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0247.jp2" mimetype="image/jp2" size="299265">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="247" id="bb737zp0787_247">
+      <label>Page 247</label>
+      <file id="bb737zp0787_06_0248.pdf" mimetype="application/pdf" size="178959">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0248.jp2" mimetype="image/jp2" size="299401">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="248" id="bb737zp0787_248">
+      <label>Page 248</label>
+      <file id="bb737zp0787_06_0249.pdf" mimetype="application/pdf" size="175064">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0249.jp2" mimetype="image/jp2" size="299465">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="249" id="bb737zp0787_249">
+      <label>Page 249</label>
+      <file id="bb737zp0787_06_0250.pdf" mimetype="application/pdf" size="191262">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0250.jp2" mimetype="image/jp2" size="299206">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="250" id="bb737zp0787_250">
+      <label>Page 250</label>
+      <file id="bb737zp0787_06_0251.pdf" mimetype="application/pdf" size="188280">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0251.jp2" mimetype="image/jp2" size="299452">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="251" id="bb737zp0787_251">
+      <label>Page 251</label>
+      <file id="bb737zp0787_06_0252.pdf" mimetype="application/pdf" size="180847">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0252.jp2" mimetype="image/jp2" size="299294">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="252" id="bb737zp0787_252">
+      <label>Page 252</label>
+      <file id="bb737zp0787_06_0253.pdf" mimetype="application/pdf" size="175063">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0253.jp2" mimetype="image/jp2" size="299414">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="253" id="bb737zp0787_253">
+      <label>Page 253</label>
+      <file id="bb737zp0787_06_0254.pdf" mimetype="application/pdf" size="173558">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0254.jp2" mimetype="image/jp2" size="299304">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="254" id="bb737zp0787_254">
+      <label>Page 254</label>
+      <file id="bb737zp0787_06_0255.pdf" mimetype="application/pdf" size="169060">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0255.jp2" mimetype="image/jp2" size="299442">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="255" id="bb737zp0787_255">
+      <label>Page 255</label>
+      <file id="bb737zp0787_06_0256.pdf" mimetype="application/pdf" size="175641">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0256.jp2" mimetype="image/jp2" size="299474">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="256" id="bb737zp0787_256">
+      <label>Page 256</label>
+      <file id="bb737zp0787_06_0257.pdf" mimetype="application/pdf" size="163111">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0257.jp2" mimetype="image/jp2" size="299457">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="257" id="bb737zp0787_257">
+      <label>Page 257</label>
+      <file id="bb737zp0787_06_0258.pdf" mimetype="application/pdf" size="175342">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0258.jp2" mimetype="image/jp2" size="299395">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="258" id="bb737zp0787_258">
+      <label>Page 258</label>
+      <file id="bb737zp0787_06_0259.pdf" mimetype="application/pdf" size="198248">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0259.jp2" mimetype="image/jp2" size="299411">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="259" id="bb737zp0787_259">
+      <label>Page 259</label>
+      <file id="bb737zp0787_06_0260.pdf" mimetype="application/pdf" size="175063">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0260.jp2" mimetype="image/jp2" size="299465">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="260" id="bb737zp0787_260">
+      <label>Page 260</label>
+      <file id="bb737zp0787_06_0261.pdf" mimetype="application/pdf" size="169257">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0261.jp2" mimetype="image/jp2" size="299463">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="261" id="bb737zp0787_261">
+      <label>Page 261</label>
+      <file id="bb737zp0787_06_0262.pdf" mimetype="application/pdf" size="173094">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0262.jp2" mimetype="image/jp2" size="299465">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="262" id="bb737zp0787_262">
+      <label>Page 262</label>
+      <file id="bb737zp0787_06_0263.pdf" mimetype="application/pdf" size="160932">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0263.jp2" mimetype="image/jp2" size="299299">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="263" id="bb737zp0787_263">
+      <label>Page 263</label>
+      <file id="bb737zp0787_06_0264.pdf" mimetype="application/pdf" size="183006">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0264.jp2" mimetype="image/jp2" size="299441">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="264" id="bb737zp0787_264">
+      <label>Page 264</label>
+      <file id="bb737zp0787_06_0265.pdf" mimetype="application/pdf" size="173175">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0265.jp2" mimetype="image/jp2" size="299482">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="265" id="bb737zp0787_265">
+      <label>Page 265</label>
+      <file id="bb737zp0787_06_0266.pdf" mimetype="application/pdf" size="185493">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0266.jp2" mimetype="image/jp2" size="299448">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="266" id="bb737zp0787_266">
+      <label>Page 266</label>
+      <file id="bb737zp0787_06_0267.pdf" mimetype="application/pdf" size="178059">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0267.jp2" mimetype="image/jp2" size="299337">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="267" id="bb737zp0787_267">
+      <label>Page 267</label>
+      <file id="bb737zp0787_06_0268.pdf" mimetype="application/pdf" size="177016">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0268.jp2" mimetype="image/jp2" size="299474">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="268" id="bb737zp0787_268">
+      <label>Page 268</label>
+      <file id="bb737zp0787_06_0269.pdf" mimetype="application/pdf" size="183501">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0269.jp2" mimetype="image/jp2" size="299420">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="269" id="bb737zp0787_269">
+      <label>Page 269</label>
+      <file id="bb737zp0787_06_0270.pdf" mimetype="application/pdf" size="158386">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0270.jp2" mimetype="image/jp2" size="299492">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="270" id="bb737zp0787_270">
+      <label>Page 270</label>
+      <file id="bb737zp0787_06_0271.pdf" mimetype="application/pdf" size="185007">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0271.jp2" mimetype="image/jp2" size="299469">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="271" id="bb737zp0787_271">
+      <label>Page 271</label>
+      <file id="bb737zp0787_06_0272.pdf" mimetype="application/pdf" size="181622">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0272.jp2" mimetype="image/jp2" size="299174">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="272" id="bb737zp0787_272">
+      <label>Page 272</label>
+      <file id="bb737zp0787_06_0273.pdf" mimetype="application/pdf" size="181930">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0273.jp2" mimetype="image/jp2" size="299326">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="273" id="bb737zp0787_273">
+      <label>Page 273</label>
+      <file id="bb737zp0787_06_0274.pdf" mimetype="application/pdf" size="184504">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0274.jp2" mimetype="image/jp2" size="299416">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="274" id="bb737zp0787_274">
+      <label>Page 274</label>
+      <file id="bb737zp0787_06_0275.pdf" mimetype="application/pdf" size="173073">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0275.jp2" mimetype="image/jp2" size="299410">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="275" id="bb737zp0787_275">
+      <label>Page 275</label>
+      <file id="bb737zp0787_06_0276.pdf" mimetype="application/pdf" size="193779">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0276.jp2" mimetype="image/jp2" size="299399">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="276" id="bb737zp0787_276">
+      <label>Page 276</label>
+      <file id="bb737zp0787_06_0277.pdf" mimetype="application/pdf" size="178966">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0277.jp2" mimetype="image/jp2" size="299424">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="277" id="bb737zp0787_277">
+      <label>Page 277</label>
+      <file id="bb737zp0787_06_0278.pdf" mimetype="application/pdf" size="201827">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0278.jp2" mimetype="image/jp2" size="299455">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="278" id="bb737zp0787_278">
+      <label>Page 278</label>
+      <file id="bb737zp0787_06_0279.pdf" mimetype="application/pdf" size="174475">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0279.jp2" mimetype="image/jp2" size="299471">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="279" id="bb737zp0787_279">
+      <label>Page 279</label>
+      <file id="bb737zp0787_06_0280.pdf" mimetype="application/pdf" size="180525">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0280.jp2" mimetype="image/jp2" size="299245">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="280" id="bb737zp0787_280">
+      <label>Page 280</label>
+      <file id="bb737zp0787_06_0281.pdf" mimetype="application/pdf" size="172838">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0281.jp2" mimetype="image/jp2" size="299492">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="281" id="bb737zp0787_281">
+      <label>Page 281</label>
+      <file id="bb737zp0787_06_0282.pdf" mimetype="application/pdf" size="193654">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0282.jp2" mimetype="image/jp2" size="299273">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="282" id="bb737zp0787_282">
+      <label>Page 282</label>
+      <file id="bb737zp0787_06_0283.pdf" mimetype="application/pdf" size="176201">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0283.jp2" mimetype="image/jp2" size="299407">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="283" id="bb737zp0787_283">
+      <label>Page 283</label>
+      <file id="bb737zp0787_06_0284.pdf" mimetype="application/pdf" size="183309">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0284.jp2" mimetype="image/jp2" size="299421">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="284" id="bb737zp0787_284">
+      <label>Page 284</label>
+      <file id="bb737zp0787_06_0285.pdf" mimetype="application/pdf" size="179123">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0285.jp2" mimetype="image/jp2" size="299383">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="285" id="bb737zp0787_285">
+      <label>Page 285</label>
+      <file id="bb737zp0787_06_0286.pdf" mimetype="application/pdf" size="193707">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0286.jp2" mimetype="image/jp2" size="299497">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="286" id="bb737zp0787_286">
+      <label>Page 286</label>
+      <file id="bb737zp0787_06_0287.pdf" mimetype="application/pdf" size="177126">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0287.jp2" mimetype="image/jp2" size="299478">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="287" id="bb737zp0787_287">
+      <label>Page 287</label>
+      <file id="bb737zp0787_06_0288.pdf" mimetype="application/pdf" size="184158">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0288.jp2" mimetype="image/jp2" size="299332">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="288" id="bb737zp0787_288">
+      <label>Page 288</label>
+      <file id="bb737zp0787_06_0289.pdf" mimetype="application/pdf" size="166189">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0289.jp2" mimetype="image/jp2" size="299454">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="289" id="bb737zp0787_289">
+      <label>Page 289</label>
+      <file id="bb737zp0787_06_0290.pdf" mimetype="application/pdf" size="181232">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0290.jp2" mimetype="image/jp2" size="299102">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="290" id="bb737zp0787_290">
+      <label>Page 290</label>
+      <file id="bb737zp0787_06_0291.pdf" mimetype="application/pdf" size="164947">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0291.jp2" mimetype="image/jp2" size="299480">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="291" id="bb737zp0787_291">
+      <label>Page 291</label>
+      <file id="bb737zp0787_06_0292.pdf" mimetype="application/pdf" size="171970">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0292.jp2" mimetype="image/jp2" size="299434">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="292" id="bb737zp0787_292">
+      <label>Page 292</label>
+      <file id="bb737zp0787_06_0293.pdf" mimetype="application/pdf" size="177185">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0293.jp2" mimetype="image/jp2" size="299481">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="293" id="bb737zp0787_293">
+      <label>Page 293</label>
+      <file id="bb737zp0787_06_0294.pdf" mimetype="application/pdf" size="194197">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0294.jp2" mimetype="image/jp2" size="299434">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="294" id="bb737zp0787_294">
+      <label>Page 294</label>
+      <file id="bb737zp0787_06_0295.pdf" mimetype="application/pdf" size="180029">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0295.jp2" mimetype="image/jp2" size="299381">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="295" id="bb737zp0787_295">
+      <label>Page 295</label>
+      <file id="bb737zp0787_06_0296.pdf" mimetype="application/pdf" size="183518">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0296.jp2" mimetype="image/jp2" size="299485">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="296" id="bb737zp0787_296">
+      <label>Page 296</label>
+      <file id="bb737zp0787_06_0297.pdf" mimetype="application/pdf" size="180433">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0297.jp2" mimetype="image/jp2" size="299461">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="297" id="bb737zp0787_297">
+      <label>Page 297</label>
+      <file id="bb737zp0787_06_0298.pdf" mimetype="application/pdf" size="121106">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0298.jp2" mimetype="image/jp2" size="299460">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="298" id="bb737zp0787_298">
+      <label>Page 298</label>
+      <file id="bb737zp0787_06_0299.pdf" mimetype="application/pdf" size="186156">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0299.jp2" mimetype="image/jp2" size="299438">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="299" id="bb737zp0787_299">
+      <label>Page 299</label>
+      <file id="bb737zp0787_06_0300.pdf" mimetype="application/pdf" size="181286">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0300.jp2" mimetype="image/jp2" size="299402">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="300" id="bb737zp0787_300">
+      <label>Page 300</label>
+      <file id="bb737zp0787_06_0301.pdf" mimetype="application/pdf" size="163122">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0301.jp2" mimetype="image/jp2" size="299434">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="301" id="bb737zp0787_301">
+      <label>Page 301</label>
+      <file id="bb737zp0787_06_0302.pdf" mimetype="application/pdf" size="194840">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0302.jp2" mimetype="image/jp2" size="299336">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="302" id="bb737zp0787_302">
+      <label>Page 302</label>
+      <file id="bb737zp0787_06_0303.pdf" mimetype="application/pdf" size="172080">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0303.jp2" mimetype="image/jp2" size="299473">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="303" id="bb737zp0787_303">
+      <label>Page 303</label>
+      <file id="bb737zp0787_06_0304.pdf" mimetype="application/pdf" size="175618">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0304.jp2" mimetype="image/jp2" size="299320">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="304" id="bb737zp0787_304">
+      <label>Page 304</label>
+      <file id="bb737zp0787_06_0305.pdf" mimetype="application/pdf" size="177931">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0305.jp2" mimetype="image/jp2" size="299483">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="305" id="bb737zp0787_305">
+      <label>Page 305</label>
+      <file id="bb737zp0787_06_0306.pdf" mimetype="application/pdf" size="202495">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0306.jp2" mimetype="image/jp2" size="299472">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="306" id="bb737zp0787_306">
+      <label>Page 306</label>
+      <file id="bb737zp0787_06_0307.pdf" mimetype="application/pdf" size="163141">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0307.jp2" mimetype="image/jp2" size="299410">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="307" id="bb737zp0787_307">
+      <label>Page 307</label>
+      <file id="bb737zp0787_06_0308.pdf" mimetype="application/pdf" size="171291">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0308.jp2" mimetype="image/jp2" size="299463">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="308" id="bb737zp0787_308">
+      <label>Page 308</label>
+      <file id="bb737zp0787_06_0309.pdf" mimetype="application/pdf" size="182300">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0309.jp2" mimetype="image/jp2" size="299460">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="309" id="bb737zp0787_309">
+      <label>Page 309</label>
+      <file id="bb737zp0787_06_0310.pdf" mimetype="application/pdf" size="185932">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0310.jp2" mimetype="image/jp2" size="299425">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="310" id="bb737zp0787_310">
+      <label>Page 310</label>
+      <file id="bb737zp0787_06_0311.pdf" mimetype="application/pdf" size="192712">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0311.jp2" mimetype="image/jp2" size="299432">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="311" id="bb737zp0787_311">
+      <label>Page 311</label>
+      <file id="bb737zp0787_06_0312.pdf" mimetype="application/pdf" size="174121">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0312.jp2" mimetype="image/jp2" size="299465">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="312" id="bb737zp0787_312">
+      <label>Page 312</label>
+      <file id="bb737zp0787_06_0313.pdf" mimetype="application/pdf" size="184864">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0313.jp2" mimetype="image/jp2" size="299205">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="313" id="bb737zp0787_313">
+      <label>Page 313</label>
+      <file id="bb737zp0787_06_0314.pdf" mimetype="application/pdf" size="179830">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0314.jp2" mimetype="image/jp2" size="299311">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="314" id="bb737zp0787_314">
+      <label>Page 314</label>
+      <file id="bb737zp0787_06_0315.pdf" mimetype="application/pdf" size="166048">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0315.jp2" mimetype="image/jp2" size="299477">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="315" id="bb737zp0787_315">
+      <label>Page 315</label>
+      <file id="bb737zp0787_06_0316.pdf" mimetype="application/pdf" size="176798">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0316.jp2" mimetype="image/jp2" size="299499">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="316" id="bb737zp0787_316">
+      <label>Page 316</label>
+      <file id="bb737zp0787_06_0317.pdf" mimetype="application/pdf" size="168117">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0317.jp2" mimetype="image/jp2" size="299486">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="317" id="bb737zp0787_317">
+      <label>Page 317</label>
+      <file id="bb737zp0787_06_0318.pdf" mimetype="application/pdf" size="195533">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0318.jp2" mimetype="image/jp2" size="299454">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="318" id="bb737zp0787_318">
+      <label>Page 318</label>
+      <file id="bb737zp0787_06_0319.pdf" mimetype="application/pdf" size="178730">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0319.jp2" mimetype="image/jp2" size="299419">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="319" id="bb737zp0787_319">
+      <label>Page 319</label>
+      <file id="bb737zp0787_06_0320.pdf" mimetype="application/pdf" size="168847">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0320.jp2" mimetype="image/jp2" size="299493">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="320" id="bb737zp0787_320">
+      <label>Page 320</label>
+      <file id="bb737zp0787_06_0321.pdf" mimetype="application/pdf" size="190526">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0321.jp2" mimetype="image/jp2" size="299450">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="321" id="bb737zp0787_321">
+      <label>Page 321</label>
+      <file id="bb737zp0787_06_0322.pdf" mimetype="application/pdf" size="173916">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0322.jp2" mimetype="image/jp2" size="299293">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="322" id="bb737zp0787_322">
+      <label>Page 322</label>
+      <file id="bb737zp0787_06_0323.pdf" mimetype="application/pdf" size="185012">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0323.jp2" mimetype="image/jp2" size="299483">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="323" id="bb737zp0787_323">
+      <label>Page 323</label>
+      <file id="bb737zp0787_06_0324.pdf" mimetype="application/pdf" size="190067">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0324.jp2" mimetype="image/jp2" size="299304">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="324" id="bb737zp0787_324">
+      <label>Page 324</label>
+      <file id="bb737zp0787_06_0325.pdf" mimetype="application/pdf" size="169896">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0325.jp2" mimetype="image/jp2" size="299475">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="325" id="bb737zp0787_325">
+      <label>Page 325</label>
+      <file id="bb737zp0787_06_0326.pdf" mimetype="application/pdf" size="194700">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0326.jp2" mimetype="image/jp2" size="299347">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="326" id="bb737zp0787_326">
+      <label>Page 326</label>
+      <file id="bb737zp0787_06_0327.pdf" mimetype="application/pdf" size="193657">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0327.jp2" mimetype="image/jp2" size="299487">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="327" id="bb737zp0787_327">
+      <label>Page 327</label>
+      <file id="bb737zp0787_06_0328.pdf" mimetype="application/pdf" size="180076">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0328.jp2" mimetype="image/jp2" size="299688">
+        <imageData width="945" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="328" id="bb737zp0787_328">
+      <label>Page 328</label>
+      <file id="bb737zp0787_06_0329.pdf" mimetype="application/pdf" size="100655">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0329.jp2" mimetype="image/jp2" size="299428">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="329" id="bb737zp0787_329">
+      <label>Page 329</label>
+      <file id="bb737zp0787_06_0330.pdf" mimetype="application/pdf" size="149281">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0330.jp2" mimetype="image/jp2" size="299498">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="330" id="bb737zp0787_330">
+      <label>Page 330</label>
+      <file id="bb737zp0787_06_0331.pdf" mimetype="application/pdf" size="172335">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0331.jp2" mimetype="image/jp2" size="299466">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="331" id="bb737zp0787_331">
+      <label>Page 331</label>
+      <file id="bb737zp0787_06_0332.pdf" mimetype="application/pdf" size="184897">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0332.jp2" mimetype="image/jp2" size="299215">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="332" id="bb737zp0787_332">
+      <label>Page 332</label>
+      <file id="bb737zp0787_06_0333.pdf" mimetype="application/pdf" size="166967">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0333.jp2" mimetype="image/jp2" size="299446">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="333" id="bb737zp0787_333">
+      <label>Page 333</label>
+      <file id="bb737zp0787_06_0334.pdf" mimetype="application/pdf" size="183281">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0334.jp2" mimetype="image/jp2" size="299444">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="334" id="bb737zp0787_334">
+      <label>Page 334</label>
+      <file id="bb737zp0787_06_0335.pdf" mimetype="application/pdf" size="165631">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0335.jp2" mimetype="image/jp2" size="299332">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="335" id="bb737zp0787_335">
+      <label>Page 335</label>
+      <file id="bb737zp0787_06_0336.pdf" mimetype="application/pdf" size="194319">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0336.jp2" mimetype="image/jp2" size="299293">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="336" id="bb737zp0787_336">
+      <label>Page 336</label>
+      <file id="bb737zp0787_06_0337.pdf" mimetype="application/pdf" size="183869">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0337.jp2" mimetype="image/jp2" size="299468">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="337" id="bb737zp0787_337">
+      <label>Page 337</label>
+      <file id="bb737zp0787_06_0338.pdf" mimetype="application/pdf" size="186900">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0338.jp2" mimetype="image/jp2" size="299410">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="338" id="bb737zp0787_338">
+      <label>Page 338</label>
+      <file id="bb737zp0787_06_0339.pdf" mimetype="application/pdf" size="190999">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0339.jp2" mimetype="image/jp2" size="299390">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="339" id="bb737zp0787_339">
+      <label>Page 339</label>
+      <file id="bb737zp0787_06_0340.pdf" mimetype="application/pdf" size="197620">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0340.jp2" mimetype="image/jp2" size="299462">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="340" id="bb737zp0787_340">
+      <label>Page 340</label>
+      <file id="bb737zp0787_06_0341.pdf" mimetype="application/pdf" size="168189">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0341.jp2" mimetype="image/jp2" size="299399">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="341" id="bb737zp0787_341">
+      <label>Page 341</label>
+      <file id="bb737zp0787_06_0342.pdf" mimetype="application/pdf" size="188192">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0342.jp2" mimetype="image/jp2" size="299488">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="342" id="bb737zp0787_342">
+      <label>Page 342</label>
+      <file id="bb737zp0787_06_0343.pdf" mimetype="application/pdf" size="166553">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0343.jp2" mimetype="image/jp2" size="299487">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="343" id="bb737zp0787_343">
+      <label>Page 343</label>
+      <file id="bb737zp0787_06_0344.pdf" mimetype="application/pdf" size="188926">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0344.jp2" mimetype="image/jp2" size="299465">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="344" id="bb737zp0787_344">
+      <label>Page 344</label>
+      <file id="bb737zp0787_06_0345.pdf" mimetype="application/pdf" size="173484">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0345.jp2" mimetype="image/jp2" size="299469">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="345" id="bb737zp0787_345">
+      <label>Page 345</label>
+      <file id="bb737zp0787_06_0346.pdf" mimetype="application/pdf" size="187808">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0346.jp2" mimetype="image/jp2" size="299426">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="346" id="bb737zp0787_346">
+      <label>Page 346</label>
+      <file id="bb737zp0787_06_0347.pdf" mimetype="application/pdf" size="186138">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0347.jp2" mimetype="image/jp2" size="299467">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="347" id="bb737zp0787_347">
+      <label>Page 347</label>
+      <file id="bb737zp0787_06_0348.pdf" mimetype="application/pdf" size="186537">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0348.jp2" mimetype="image/jp2" size="299358">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="348" id="bb737zp0787_348">
+      <label>Page 348</label>
+      <file id="bb737zp0787_06_0349.pdf" mimetype="application/pdf" size="183111">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0349.jp2" mimetype="image/jp2" size="299408">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="349" id="bb737zp0787_349">
+      <label>Page 349</label>
+      <file id="bb737zp0787_06_0350.pdf" mimetype="application/pdf" size="202818">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0350.jp2" mimetype="image/jp2" size="299308">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="350" id="bb737zp0787_350">
+      <label>Page 350</label>
+      <file id="bb737zp0787_06_0351.pdf" mimetype="application/pdf" size="177915">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0351.jp2" mimetype="image/jp2" size="299406">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="351" id="bb737zp0787_351">
+      <label>Page 351</label>
+      <file id="bb737zp0787_06_0352.pdf" mimetype="application/pdf" size="180346">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0352.jp2" mimetype="image/jp2" size="299486">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="352" id="bb737zp0787_352">
+      <label>Page 352</label>
+      <file id="bb737zp0787_06_0353.pdf" mimetype="application/pdf" size="179038">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0353.jp2" mimetype="image/jp2" size="299471">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="353" id="bb737zp0787_353">
+      <label>Page 353</label>
+      <file id="bb737zp0787_06_0354.pdf" mimetype="application/pdf" size="188651">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0354.jp2" mimetype="image/jp2" size="299404">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="354" id="bb737zp0787_354">
+      <label>Page 354</label>
+      <file id="bb737zp0787_06_0355.pdf" mimetype="application/pdf" size="182464">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0355.jp2" mimetype="image/jp2" size="299419">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="355" id="bb737zp0787_355">
+      <label>Page 355</label>
+      <file id="bb737zp0787_06_0356.pdf" mimetype="application/pdf" size="180642">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0356.jp2" mimetype="image/jp2" size="299473">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="356" id="bb737zp0787_356">
+      <label>Page 356</label>
+      <file id="bb737zp0787_06_0357.pdf" mimetype="application/pdf" size="165218">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0357.jp2" mimetype="image/jp2" size="299476">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="357" id="bb737zp0787_357">
+      <label>Page 357</label>
+      <file id="bb737zp0787_06_0358.pdf" mimetype="application/pdf" size="194771">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0358.jp2" mimetype="image/jp2" size="299490">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="358" id="bb737zp0787_358">
+      <label>Page 358</label>
+      <file id="bb737zp0787_06_0359.pdf" mimetype="application/pdf" size="165714">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0359.jp2" mimetype="image/jp2" size="299305">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="359" id="bb737zp0787_359">
+      <label>Page 359</label>
+      <file id="bb737zp0787_06_0360.pdf" mimetype="application/pdf" size="191439">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0360.jp2" mimetype="image/jp2" size="299214">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="360" id="bb737zp0787_360">
+      <label>Page 360</label>
+      <file id="bb737zp0787_06_0361.pdf" mimetype="application/pdf" size="185280">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0361.jp2" mimetype="image/jp2" size="299415">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="361" id="bb737zp0787_361">
+      <label>Page 361</label>
+      <file id="bb737zp0787_06_0362.pdf" mimetype="application/pdf" size="186148">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0362.jp2" mimetype="image/jp2" size="299442">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="362" id="bb737zp0787_362">
+      <label>Page 362</label>
+      <file id="bb737zp0787_06_0363.pdf" mimetype="application/pdf" size="182328">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0363.jp2" mimetype="image/jp2" size="299302">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="363" id="bb737zp0787_363">
+      <label>Page 363</label>
+      <file id="bb737zp0787_06_0364.pdf" mimetype="application/pdf" size="176405">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0364.jp2" mimetype="image/jp2" size="299457">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="364" id="bb737zp0787_364">
+      <label>Page 364</label>
+      <file id="bb737zp0787_06_0365.pdf" mimetype="application/pdf" size="166529">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0365.jp2" mimetype="image/jp2" size="299464">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="365" id="bb737zp0787_365">
+      <label>Page 365</label>
+      <file id="bb737zp0787_06_0366.pdf" mimetype="application/pdf" size="172366">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0366.jp2" mimetype="image/jp2" size="299492">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="366" id="bb737zp0787_366">
+      <label>Page 366</label>
+      <file id="bb737zp0787_06_0367.pdf" mimetype="application/pdf" size="165938">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0367.jp2" mimetype="image/jp2" size="299424">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="367" id="bb737zp0787_367">
+      <label>Page 367</label>
+      <file id="bb737zp0787_06_0368.pdf" mimetype="application/pdf" size="174111">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0368.jp2" mimetype="image/jp2" size="299424">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="368" id="bb737zp0787_368">
+      <label>Page 368</label>
+      <file id="bb737zp0787_06_0369.pdf" mimetype="application/pdf" size="178534">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0369.jp2" mimetype="image/jp2" size="299472">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="369" id="bb737zp0787_369">
+      <label>Page 369</label>
+      <file id="bb737zp0787_06_0370.pdf" mimetype="application/pdf" size="156190">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0370.jp2" mimetype="image/jp2" size="299408">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="370" id="bb737zp0787_370">
+      <label>Page 370</label>
+      <file id="bb737zp0787_06_0371.pdf" mimetype="application/pdf" size="179747">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0371.jp2" mimetype="image/jp2" size="299475">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="371" id="bb737zp0787_371">
+      <label>Page 371</label>
+      <file id="bb737zp0787_06_0372.pdf" mimetype="application/pdf" size="166935">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0372.jp2" mimetype="image/jp2" size="299494">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="372" id="bb737zp0787_372">
+      <label>Page 372</label>
+      <file id="bb737zp0787_06_0373.pdf" mimetype="application/pdf" size="147962">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0373.jp2" mimetype="image/jp2" size="299359">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="373" id="bb737zp0787_373">
+      <label>Page 373</label>
+      <file id="bb737zp0787_06_0374.pdf" mimetype="application/pdf" size="169547">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0374.jp2" mimetype="image/jp2" size="299497">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="374" id="bb737zp0787_374">
+      <label>Page 374</label>
+      <file id="bb737zp0787_06_0375.pdf" mimetype="application/pdf" size="165554">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0375.jp2" mimetype="image/jp2" size="299313">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="375" id="bb737zp0787_375">
+      <label>Page 375</label>
+      <file id="bb737zp0787_06_0376.pdf" mimetype="application/pdf" size="173442">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0376.jp2" mimetype="image/jp2" size="299380">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="376" id="bb737zp0787_376">
+      <label>Page 376</label>
+      <file id="bb737zp0787_06_0377.pdf" mimetype="application/pdf" size="176292">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0377.jp2" mimetype="image/jp2" size="299438">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="377" id="bb737zp0787_377">
+      <label>Page 377</label>
+      <file id="bb737zp0787_06_0378.pdf" mimetype="application/pdf" size="181616">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0378.jp2" mimetype="image/jp2" size="299466">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="378" id="bb737zp0787_378">
+      <label>Page 378</label>
+      <file id="bb737zp0787_06_0379.pdf" mimetype="application/pdf" size="175413">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0379.jp2" mimetype="image/jp2" size="299484">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="379" id="bb737zp0787_379">
+      <label>Page 379</label>
+      <file id="bb737zp0787_06_0380.pdf" mimetype="application/pdf" size="179181">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0380.jp2" mimetype="image/jp2" size="299490">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="380" id="bb737zp0787_380">
+      <label>Page 380</label>
+      <file id="bb737zp0787_06_0381.pdf" mimetype="application/pdf" size="168202">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0381.jp2" mimetype="image/jp2" size="299451">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="381" id="bb737zp0787_381">
+      <label>Page 381</label>
+      <file id="bb737zp0787_06_0382.pdf" mimetype="application/pdf" size="171140">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0382.jp2" mimetype="image/jp2" size="299462">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="382" id="bb737zp0787_382">
+      <label>Page 382</label>
+      <file id="bb737zp0787_06_0383.pdf" mimetype="application/pdf" size="161487">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0383.jp2" mimetype="image/jp2" size="299456">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="383" id="bb737zp0787_383">
+      <label>Page 383</label>
+      <file id="bb737zp0787_06_0384.pdf" mimetype="application/pdf" size="173617">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0384.jp2" mimetype="image/jp2" size="299483">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="384" id="bb737zp0787_384">
+      <label>Page 384</label>
+      <file id="bb737zp0787_06_0385.pdf" mimetype="application/pdf" size="170850">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0385.jp2" mimetype="image/jp2" size="299466">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="385" id="bb737zp0787_385">
+      <label>Page 385</label>
+      <file id="bb737zp0787_06_0386.pdf" mimetype="application/pdf" size="189469">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0386.jp2" mimetype="image/jp2" size="299459">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="386" id="bb737zp0787_386">
+      <label>Page 386</label>
+      <file id="bb737zp0787_06_0387.pdf" mimetype="application/pdf" size="173943">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0387.jp2" mimetype="image/jp2" size="299356">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="387" id="bb737zp0787_387">
+      <label>Page 387</label>
+      <file id="bb737zp0787_06_0388.pdf" mimetype="application/pdf" size="185726">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0388.jp2" mimetype="image/jp2" size="299483">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="388" id="bb737zp0787_388">
+      <label>Page 388</label>
+      <file id="bb737zp0787_06_0389.pdf" mimetype="application/pdf" size="182784">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0389.jp2" mimetype="image/jp2" size="299312">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="389" id="bb737zp0787_389">
+      <label>Page 389</label>
+      <file id="bb737zp0787_06_0390.pdf" mimetype="application/pdf" size="191571">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0390.jp2" mimetype="image/jp2" size="299247">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="390" id="bb737zp0787_390">
+      <label>Page 390</label>
+      <file id="bb737zp0787_06_0391.pdf" mimetype="application/pdf" size="190421">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0391.jp2" mimetype="image/jp2" size="299362">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="391" id="bb737zp0787_391">
+      <label>Page 391</label>
+      <file id="bb737zp0787_06_0392.pdf" mimetype="application/pdf" size="186876">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0392.jp2" mimetype="image/jp2" size="299474">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="392" id="bb737zp0787_392">
+      <label>Page 392</label>
+      <file id="bb737zp0787_06_0393.pdf" mimetype="application/pdf" size="166300">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0393.jp2" mimetype="image/jp2" size="299504">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="393" id="bb737zp0787_393">
+      <label>Page 393</label>
+      <file id="bb737zp0787_06_0394.pdf" mimetype="application/pdf" size="186848">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0394.jp2" mimetype="image/jp2" size="299397">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="394" id="bb737zp0787_394">
+      <label>Page 394</label>
+      <file id="bb737zp0787_06_0395.pdf" mimetype="application/pdf" size="194322">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0395.jp2" mimetype="image/jp2" size="299256">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="395" id="bb737zp0787_395">
+      <label>Page 395</label>
+      <file id="bb737zp0787_06_0396.pdf" mimetype="application/pdf" size="199000">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0396.jp2" mimetype="image/jp2" size="299485">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="396" id="bb737zp0787_396">
+      <label>Page 396</label>
+      <file id="bb737zp0787_06_0397.pdf" mimetype="application/pdf" size="175851">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0397.jp2" mimetype="image/jp2" size="299487">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="397" id="bb737zp0787_397">
+      <label>Page 397</label>
+      <file id="bb737zp0787_06_0398.pdf" mimetype="application/pdf" size="185093">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0398.jp2" mimetype="image/jp2" size="299483">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="398" id="bb737zp0787_398">
+      <label>Page 398</label>
+      <file id="bb737zp0787_06_0399.pdf" mimetype="application/pdf" size="184060">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0399.jp2" mimetype="image/jp2" size="299444">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="399" id="bb737zp0787_399">
+      <label>Page 399</label>
+      <file id="bb737zp0787_06_0400.pdf" mimetype="application/pdf" size="155561">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0400.jp2" mimetype="image/jp2" size="299452">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="400" id="bb737zp0787_400">
+      <label>Page 400</label>
+      <file id="bb737zp0787_06_0401.pdf" mimetype="application/pdf" size="142378">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0401.jp2" mimetype="image/jp2" size="299386">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="401" id="bb737zp0787_401">
+      <label>Page 401</label>
+      <file id="bb737zp0787_06_0402.pdf" mimetype="application/pdf" size="189405">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0402.jp2" mimetype="image/jp2" size="299177">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="402" id="bb737zp0787_402">
+      <label>Page 402</label>
+      <file id="bb737zp0787_06_0403.pdf" mimetype="application/pdf" size="152249">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0403.jp2" mimetype="image/jp2" size="299493">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="403" id="bb737zp0787_403">
+      <label>Page 403</label>
+      <file id="bb737zp0787_06_0404.pdf" mimetype="application/pdf" size="186861">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0404.jp2" mimetype="image/jp2" size="299498">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="404" id="bb737zp0787_404">
+      <label>Page 404</label>
+      <file id="bb737zp0787_06_0405.pdf" mimetype="application/pdf" size="167145">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0405.jp2" mimetype="image/jp2" size="299281">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="405" id="bb737zp0787_405">
+      <label>Page 405</label>
+      <file id="bb737zp0787_06_0406.pdf" mimetype="application/pdf" size="174939">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0406.jp2" mimetype="image/jp2" size="299386">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="406" id="bb737zp0787_406">
+      <label>Page 406</label>
+      <file id="bb737zp0787_06_0407.pdf" mimetype="application/pdf" size="173242">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0407.jp2" mimetype="image/jp2" size="299272">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="407" id="bb737zp0787_407">
+      <label>Page 407</label>
+      <file id="bb737zp0787_06_0408.pdf" mimetype="application/pdf" size="163174">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0408.jp2" mimetype="image/jp2" size="299454">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="408" id="bb737zp0787_408">
+      <label>Page 408</label>
+      <file id="bb737zp0787_06_0409.pdf" mimetype="application/pdf" size="181177">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0409.jp2" mimetype="image/jp2" size="299480">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="409" id="bb737zp0787_409">
+      <label>Page 409</label>
+      <file id="bb737zp0787_06_0410.pdf" mimetype="application/pdf" size="182250">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0410.jp2" mimetype="image/jp2" size="299254">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="410" id="bb737zp0787_410">
+      <label>Page 410</label>
+      <file id="bb737zp0787_06_0411.pdf" mimetype="application/pdf" size="194820">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0411.jp2" mimetype="image/jp2" size="299393">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="411" id="bb737zp0787_411">
+      <label>Page 411</label>
+      <file id="bb737zp0787_06_0412.pdf" mimetype="application/pdf" size="171747">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0412.jp2" mimetype="image/jp2" size="299479">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="412" id="bb737zp0787_412">
+      <label>Page 412</label>
+      <file id="bb737zp0787_06_0413.pdf" mimetype="application/pdf" size="163384">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0413.jp2" mimetype="image/jp2" size="299467">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="413" id="bb737zp0787_413">
+      <label>Page 413</label>
+      <file id="bb737zp0787_06_0414.pdf" mimetype="application/pdf" size="172519">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0414.jp2" mimetype="image/jp2" size="299291">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="414" id="bb737zp0787_414">
+      <label>Page 414</label>
+      <file id="bb737zp0787_06_0415.pdf" mimetype="application/pdf" size="169859">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0415.jp2" mimetype="image/jp2" size="299446">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="415" id="bb737zp0787_415">
+      <label>Page 415</label>
+      <file id="bb737zp0787_06_0416.pdf" mimetype="application/pdf" size="182273">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0416.jp2" mimetype="image/jp2" size="299497">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="416" id="bb737zp0787_416">
+      <label>Page 416</label>
+      <file id="bb737zp0787_06_0417.pdf" mimetype="application/pdf" size="175205">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0417.jp2" mimetype="image/jp2" size="299490">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="417" id="bb737zp0787_417">
+      <label>Page 417</label>
+      <file id="bb737zp0787_06_0418.pdf" mimetype="application/pdf" size="180846">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0418.jp2" mimetype="image/jp2" size="299320">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="418" id="bb737zp0787_418">
+      <label>Page 418</label>
+      <file id="bb737zp0787_06_0419.pdf" mimetype="application/pdf" size="160454">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0419.jp2" mimetype="image/jp2" size="299336">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="419" id="bb737zp0787_419">
+      <label>Page 419</label>
+      <file id="bb737zp0787_06_0420.pdf" mimetype="application/pdf" size="169562">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0420.jp2" mimetype="image/jp2" size="299476">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="420" id="bb737zp0787_420">
+      <label>Page 420</label>
+      <file id="bb737zp0787_06_0421.pdf" mimetype="application/pdf" size="169214">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0421.jp2" mimetype="image/jp2" size="299477">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="421" id="bb737zp0787_421">
+      <label>Page 421</label>
+      <file id="bb737zp0787_06_0422.pdf" mimetype="application/pdf" size="186626">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0422.jp2" mimetype="image/jp2" size="299501">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="422" id="bb737zp0787_422">
+      <label>Page 422</label>
+      <file id="bb737zp0787_06_0423.pdf" mimetype="application/pdf" size="165768">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0423.jp2" mimetype="image/jp2" size="299390">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="423" id="bb737zp0787_423">
+      <label>Page 423</label>
+      <file id="bb737zp0787_06_0424.pdf" mimetype="application/pdf" size="171106">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0424.jp2" mimetype="image/jp2" size="299499">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="424" id="bb737zp0787_424">
+      <label>Page 424</label>
+      <file id="bb737zp0787_06_0425.pdf" mimetype="application/pdf" size="135350">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0425.jp2" mimetype="image/jp2" size="299471">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="425" id="bb737zp0787_425">
+      <label>Page 425</label>
+      <file id="bb737zp0787_06_0426.pdf" mimetype="application/pdf" size="118921">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0426.jp2" mimetype="image/jp2" size="299462">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="426" id="bb737zp0787_426">
+      <label>Page 426</label>
+      <file id="bb737zp0787_06_0427.pdf" mimetype="application/pdf" size="190227">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0427.jp2" mimetype="image/jp2" size="299430">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="427" id="bb737zp0787_427">
+      <label>Page 427</label>
+      <file id="bb737zp0787_06_0428.pdf" mimetype="application/pdf" size="211246">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0428.jp2" mimetype="image/jp2" size="299339">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="428" id="bb737zp0787_428">
+      <label>Page 428</label>
+      <file id="bb737zp0787_06_0429.pdf" mimetype="application/pdf" size="215392">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0429.jp2" mimetype="image/jp2" size="299495">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="429" id="bb737zp0787_429">
+      <label>Page 429</label>
+      <file id="bb737zp0787_06_0430.pdf" mimetype="application/pdf" size="207268">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0430.jp2" mimetype="image/jp2" size="299489">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="430" id="bb737zp0787_430">
+      <label>Page 430</label>
+      <file id="bb737zp0787_06_0431.pdf" mimetype="application/pdf" size="231987">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0431.jp2" mimetype="image/jp2" size="299421">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="431" id="bb737zp0787_431">
+      <label>Page 431</label>
+      <file id="bb737zp0787_06_0432.pdf" mimetype="application/pdf" size="205612">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0432.jp2" mimetype="image/jp2" size="299480">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="432" id="bb737zp0787_432">
+      <label>Page 432</label>
+      <file id="bb737zp0787_06_0433.pdf" mimetype="application/pdf" size="231135">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0433.jp2" mimetype="image/jp2" size="299301">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="433" id="bb737zp0787_433">
+      <label>Page 433</label>
+      <file id="bb737zp0787_06_0434.pdf" mimetype="application/pdf" size="211357">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0434.jp2" mimetype="image/jp2" size="299262">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="434" id="bb737zp0787_434">
+      <label>Page 434</label>
+      <file id="bb737zp0787_06_0435.pdf" mimetype="application/pdf" size="221249">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0435.jp2" mimetype="image/jp2" size="299246">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="435" id="bb737zp0787_435">
+      <label>Page 435</label>
+      <file id="bb737zp0787_06_0436.pdf" mimetype="application/pdf" size="238163">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0436.jp2" mimetype="image/jp2" size="299302">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="436" id="bb737zp0787_436">
+      <label>Page 436</label>
+      <file id="bb737zp0787_06_0437.pdf" mimetype="application/pdf" size="247395">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0437.jp2" mimetype="image/jp2" size="299449">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="437" id="bb737zp0787_437">
+      <label>Page 437</label>
+      <file id="bb737zp0787_06_0438.pdf" mimetype="application/pdf" size="219676">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0438.jp2" mimetype="image/jp2" size="299333">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="438" id="bb737zp0787_438">
+      <label>Page 438</label>
+      <file id="bb737zp0787_06_0439.pdf" mimetype="application/pdf" size="237015">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0439.jp2" mimetype="image/jp2" size="299423">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="439" id="bb737zp0787_439">
+      <label>Page 439</label>
+      <file id="bb737zp0787_06_0440.pdf" mimetype="application/pdf" size="214699">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0440.jp2" mimetype="image/jp2" size="299295">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="440" id="bb737zp0787_440">
+      <label>Page 440</label>
+      <file id="bb737zp0787_06_0441.pdf" mimetype="application/pdf" size="224196">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0441.jp2" mimetype="image/jp2" size="299468">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="441" id="bb737zp0787_441">
+      <label>Page 441</label>
+      <file id="bb737zp0787_06_0442.pdf" mimetype="application/pdf" size="223558">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0442.jp2" mimetype="image/jp2" size="299320">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="442" id="bb737zp0787_442">
+      <label>Page 442</label>
+      <file id="bb737zp0787_06_0443.pdf" mimetype="application/pdf" size="257843">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0443.jp2" mimetype="image/jp2" size="299283">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="443" id="bb737zp0787_443">
+      <label>Page 443</label>
+      <file id="bb737zp0787_06_0444.pdf" mimetype="application/pdf" size="230121">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0444.jp2" mimetype="image/jp2" size="299300">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="444" id="bb737zp0787_444">
+      <label>Page 444</label>
+      <file id="bb737zp0787_06_0445.pdf" mimetype="application/pdf" size="251270">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0445.jp2" mimetype="image/jp2" size="299404">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="445" id="bb737zp0787_445">
+      <label>Page 445</label>
+      <file id="bb737zp0787_06_0446.pdf" mimetype="application/pdf" size="253726">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0446.jp2" mimetype="image/jp2" size="299228">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="446" id="bb737zp0787_446">
+      <label>Page 446</label>
+      <file id="bb737zp0787_06_0447.pdf" mimetype="application/pdf" size="255809">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0447.jp2" mimetype="image/jp2" size="299463">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="447" id="bb737zp0787_447">
+      <label>Page 447</label>
+      <file id="bb737zp0787_06_0448.pdf" mimetype="application/pdf" size="218517">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0448.jp2" mimetype="image/jp2" size="299316">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="448" id="bb737zp0787_448">
+      <label>Page 448</label>
+      <file id="bb737zp0787_06_0449.pdf" mimetype="application/pdf" size="243764">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0449.jp2" mimetype="image/jp2" size="299277">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="449" id="bb737zp0787_449">
+      <label>Page 449</label>
+      <file id="bb737zp0787_06_0450.pdf" mimetype="application/pdf" size="227774">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0450.jp2" mimetype="image/jp2" size="299335">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="450" id="bb737zp0787_450">
+      <label>Page 450</label>
+      <file id="bb737zp0787_06_0451.pdf" mimetype="application/pdf" size="220547">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0451.jp2" mimetype="image/jp2" size="299482">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="451" id="bb737zp0787_451">
+      <label>Page 451</label>
+      <file id="bb737zp0787_06_0452.pdf" mimetype="application/pdf" size="225804">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0452.jp2" mimetype="image/jp2" size="299290">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="452" id="bb737zp0787_452">
+      <label>Page 452</label>
+      <file id="bb737zp0787_06_0453.pdf" mimetype="application/pdf" size="246243">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0453.jp2" mimetype="image/jp2" size="299464">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="453" id="bb737zp0787_453">
+      <label>Page 453</label>
+      <file id="bb737zp0787_06_0454.pdf" mimetype="application/pdf" size="213415">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0454.jp2" mimetype="image/jp2" size="299284">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="454" id="bb737zp0787_454">
+      <label>Page 454</label>
+      <file id="bb737zp0787_06_0455.pdf" mimetype="application/pdf" size="198339">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0455.jp2" mimetype="image/jp2" size="299338">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="455" id="bb737zp0787_455">
+      <label>Page 455</label>
+      <file id="bb737zp0787_06_0456.pdf" mimetype="application/pdf" size="199539">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0456.jp2" mimetype="image/jp2" size="299320">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="456" id="bb737zp0787_456">
+      <label>Page 456</label>
+      <file id="bb737zp0787_06_0457.pdf" mimetype="application/pdf" size="214099">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0457.jp2" mimetype="image/jp2" size="299448">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="457" id="bb737zp0787_457">
+      <label>Page 457</label>
+      <file id="bb737zp0787_06_0458.pdf" mimetype="application/pdf" size="194129">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0458.jp2" mimetype="image/jp2" size="299331">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="458" id="bb737zp0787_458">
+      <label>Page 458</label>
+      <file id="bb737zp0787_06_0459.pdf" mimetype="application/pdf" size="222655">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0459.jp2" mimetype="image/jp2" size="299467">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="459" id="bb737zp0787_459">
+      <label>Page 459</label>
+      <file id="bb737zp0787_06_0460.pdf" mimetype="application/pdf" size="198809">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0460.jp2" mimetype="image/jp2" size="299317">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="460" id="bb737zp0787_460">
+      <label>Page 460</label>
+      <file id="bb737zp0787_06_0461.pdf" mimetype="application/pdf" size="220356">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0461.jp2" mimetype="image/jp2" size="299473">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="461" id="bb737zp0787_461">
+      <label>Page 461</label>
+      <file id="bb737zp0787_06_0462.pdf" mimetype="application/pdf" size="211859">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0462.jp2" mimetype="image/jp2" size="299303">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="462" id="bb737zp0787_462">
+      <label>Page 462</label>
+      <file id="bb737zp0787_06_0463.pdf" mimetype="application/pdf" size="210082">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0463.jp2" mimetype="image/jp2" size="299484">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="463" id="bb737zp0787_463">
+      <label>Page 463</label>
+      <file id="bb737zp0787_06_0464.pdf" mimetype="application/pdf" size="189952">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0464.jp2" mimetype="image/jp2" size="299512">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="464" id="bb737zp0787_464">
+      <label>Page 464</label>
+      <file id="bb737zp0787_06_0465.pdf" mimetype="application/pdf" size="198464">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0465.jp2" mimetype="image/jp2" size="299463">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="465" id="bb737zp0787_465">
+      <label>Page 465</label>
+      <file id="bb737zp0787_06_0466.pdf" mimetype="application/pdf" size="41349">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0466.jp2" mimetype="image/jp2" size="299172">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="466" id="bb737zp0787_466">
+      <label>Page 466</label>
+      <file id="bb737zp0787_06_0467.pdf" mimetype="application/pdf" size="46347">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0467.jp2" mimetype="image/jp2" size="299282">
+        <imageData width="944" height="1646"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="467" id="bb737zp0787_467">
+      <label>Page 467</label>
+      <file id="bb737zp0787_06_0468.pdf" mimetype="application/pdf" size="53182">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0468.jp2" mimetype="image/jp2" size="299249">
+        <imageData width="944" height="1645"/>
+      </file>
+    </resource>
+    <resource type="page" sequence="468" id="bb737zp0787_468">
+      <label>Page 468</label>
+      <file id="bb737zp0787_06_0469.pdf" mimetype="application/pdf" size="260232">
+      
+      
+    </file>
+      <file id="bb737zp0787_00_0469.jp2" mimetype="image/jp2" size="493841">
+        <imageData width="1361" height="1901"/>
+      </file>
+    </resource>
+    <resource type="object" sequence="469" id="bb737zp0787_469">
+      <label>Object 1</label>
+      <file id="bb737zp0787_31_0000.pdf" mimetype="application/pdf" size="83886461">
+      
+      
+    </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata objectId="druid:pq797fq7081">
+    <copyright>
+      <human type="copyright">Property rights reside with the repository. Copyright © Stanford University. All Rights Reserved.</human>
+    </copyright>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">Property rights reside with the repository. Literary rights reside with the creators of the documents or their heirs. To obtain permission to publish or reproduce, please contact the Special Collections Public Services Librarian at speccollref@stanford.edu</human>
+    </use>
+    <use>
+      <human type="creativeCommons"/>
+      <machine type="creativeCommons"/>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:bb737zp0787">
+      <fedora:isMemberOf rdf:resource="info:fedora/druid:jt466yc7169"/>
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:jt466yc7169"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>The curate of Cumberworth ; and The vicar of Roost: tales</dc:title>
+    <dc:title>Curate of Cumberworth</dc:title>
+    <dc:title>Vicar of Roost</dc:title>
+    <dc:creator>Paget, Francis Edward, 1806-1882</dc:creator>
+    <dc:type>Text</dc:type>
+    <dc:date>1859</dc:date>
+    <dc:date>1859</dc:date>
+    <dc:publisher>J. Masters</dc:publisher>
+    <dc:language>eng</dc:language>
+    <dc:format>viii, 412, 40 p. ; 18 cm.</dc:format>
+    <dc:format>print</dc:format>
+    <dc:description displayLabel="statement of responsibility">by the author of "The owlet of Owlstone Edge," "S. Antholin's, " etc.</dc:description>
+    <dc:description>Includes publisher's advertisements (40 p.) at end.</dc:description>
+    <dc:description displayLabel="citation/reference">Wolff, R.L. 19th cent. fiction,</dc:description>
+    <dc:subject>PR5115.P17 C87 1859</dc:subject>
+    <dc:relation>Vicar of Roost</dc:relation>
+    <dc:relation>Curate of Cumberworth ; and The vicar of Roost--(OCoLC)663671548</dc:relation>
+    <dc:relation type="collection">Jarndyce Single-Volume Nineteenth-Century Novel Collection, 1823-1914</dc:relation>
+  </oai_dc:dc>
+</publicObject>

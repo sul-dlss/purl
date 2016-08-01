@@ -1,6 +1,6 @@
 <rightsMetadata>
   <copyright>
-    <human type="copyright">Property rights reside with the repository. Copyright &#xA9; Stanford University. All Rights Reserved.</human>
+    <human type="copyright">This work has been identified as being free of known restrictions under copyright law, including all related and neighboring rights. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.</human>
   </copyright>
   <access type="discover">
     <machine>
@@ -13,6 +13,8 @@
     </machine>
   </access>
   <use>
-    <human type="useAndReproduction">To obtain permission to publish or reproduce, please contact the Head Librarian of the Branner Earth Science Library &amp; Map Collections at brannerlibrary@stanford.edu.</human>
+    <human type="useAndReproduction">Image from the Glen McLaughlin Map Collection of California as an Island courtesy Stanford University Libraries. This item is in the public domain. There are no restrictions on use. If you have questions, please contact the David Rumsey Map Center at rumseymapcenter@stanford.edu.</human>
+    <machine type="creativeCommons" uri="https://creativecommons.org/licenses/by-nc/3.0/">by-nc</machine>
+    <human type="creativeCommons">Attribution Non-Commercial 3.0 Unported</human>
   </use>
 </rightsMetadata>

@@ -1,0 +1,15 @@
+<contentMetadata objectId="py305sy7961" type="map">
+  <resource id="py305sy7961_1" sequence="1" type="image">
+    <label>Image 1</label>
+    <file id="py305sy7961_00_0001.tif" mimetype="image/tiff" size="309447230" preserve="yes" publish="no" shelve="no">
+      <checksum type="md5">43e056f69a23610fcf2eee22686746b8</checksum>
+      <checksum type="sha1">d60f44abce5fbf08090fcd37b2871f10875458d6</checksum>
+      <imageData width="13861" height="16302"/>
+    </file>
+    <file id="py305sy7961_00_0001.jp2" mimetype="image/jp2" size="42569985" preserve="no" publish="yes" shelve="yes">
+      <checksum type="md5">5d414c99638f2e7f41fcb35ab5c24556</checksum>
+      <checksum type="sha1">59ba2380452c2a0d1a04faa28f2e6dd50bda0884</checksum>
+      <imageData width="13861" height="16302"/>
+    </file>
+  </resource>
+</contentMetadata>

@@ -14,6 +14,8 @@
    <dc:type>map</dc:type>
    <dc:type>cartographic image</dc:type>
    <dc:type>Atlases.</dc:type>
+   <dc:type>Maps</dc:type>
+   <dc:type>Early Maps.</dc:type>
    <dc:date>1795</dc:date>
    <dc:date>1795.</dc:date><dc:publisher>Mathew Carey,</dc:publisher>
    <dc:language>eng</dc:language>
@@ -23,12 +25,14 @@
    <dc:description>National Atlas.</dc:description>
    <dc:description>References: P1172; Walsh p33; NMM 480; Howes C135.</dc:description>
    <dc:description type="local" displayLabel="Local note">Pub list no.: 2542.000.</dc:description>
-   <dc:subject>Maps</dc:subject><dc:coverage>Western Hemisphere</dc:coverage>
+   <dc:subject>Atlases</dc:subject><dc:coverage>United States</dc:coverage><dc:subject>Atlases--United States--Early works to 1800</dc:subject>
+   <dc:coverage>Western Hemisphere</dc:coverage>
    <dc:coverage>North America</dc:coverage>
    <dc:coverage>South America</dc:coverage>
    <dc:coverage>United States</dc:coverage>
    <dc:coverage>Canada</dc:coverage>
-   <dc:subject>G1100 1795 .C3 F</dc:subject>
-   <dc:identifier>http://www.davidrumsey.com/luna/servlet/view/search?QuickSearchA=QuickSearchA&amp;q=2542.000&amp;sort=pub_list_no_initialsort%2Cpub_date%2Cpub_list_no%2Cseries_no&amp;search=Search</dc:identifier>
+   <dc:subject>G1100 .C3 1795 F</dc:subject>
+   <dc:identifier>http://www.davidrumsey.com/luna/servlet/view/search?q=pub_list_no=%222542.000%22%20LIMIT:RUMSEY~8~1&amp;sort=Pub_List_No_InitialSort,Pub_Date,Pub_List_No,Series_No</dc:identifier>
+   <dc:identifier>http://purl.stanford.edu/hj097bm8879</dc:identifier>
    
 <dc:relation type="collection">David Rumsey Map Collection at Stanford University Libraries</dc:relation></oai_dc:dc>

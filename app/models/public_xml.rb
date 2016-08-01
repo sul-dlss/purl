@@ -6,7 +6,7 @@ class PublicXml
   end
 
   def title
-    @title ||= document.root.at_xpath('oai_dc:dc/dc:title/text()', oai_dc: 'http://www.openarchives.org/OAI/2.0/oai_dc/', dc: 'http://purl.org/dc/elements/1.1/').to_s
+    @title ||= document.root.at_xpath('oai_dc:dc/dc:title', oai_dc: 'http://www.openarchives.org/OAI/2.0/oai_dc/', dc: 'http://purl.org/dc/elements/1.1/').try(:text)
   end
 
   def rights_metadata
@@ -19,14 +19,14 @@ class PublicXml
 
   def catalog_key
     @catalog_key ||= begin
-      key = document.root.at_xpath('identityMetadata/otherId[@name="catkey"]/text()').to_s
+      key = document.root.at_xpath('identityMetadata/otherId[@name="catkey"]').try(:text)
 
       key if key.present?
     end
   end
 
   def released_to?(key)
-    release = document.root.at_xpath("releaseData/release[@to='#{key}']/text()").to_s
+    release = document.root.at_xpath("releaseData/release[@to='#{key}']").try(:text)
 
     release == 'true'
   end

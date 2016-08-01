@@ -1,3 +1,6 @@
 stacks:
   url: 'http://stacks-test.stanford.edu'
 document_cache_root: "<%= File.join(Rails.root, "spec", "fixtures", "document_cache") %>"
+purl_resource:
+  mods: "<%= File.join(Rails.root, "spec", "fixtures", "document_cache") %>/%{druid_tree}/mods"
+  public_xml: "<%= File.join(Rails.root, "spec", "fixtures", "document_cache") %>/%{druid_tree}/public"

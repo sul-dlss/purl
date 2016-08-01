@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objectType>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Statewide water action plan for California</dc:title>
+    <dc:subject>HD1694.C2</dc:subject>
+    <dc:format>text</dc:format>
+    <dc:identifier>uri:http://www.acwa.com/sites/default/files/post/statewide-water-action-plan/2013/10/statewide-water-action-plan-web-version.pdf</dc:identifier>
+    <dc:identifier>uri:http://purl.stanford.edu/mr497sx5638</dc:identifier>
+    <dc:identifier>druid:mr497sx5638</dc:identifier>
+    <dc:language>eng</dc:language>
+  </oai_dc:dc>
+  <identityMetadata>
+    <objectId>druid:mr497sx5638</objectId>
+    <objectType>item</objectType>
+    <objectLabel>EEMs: Statewide Water Action Plan</objectLabel>
+    <objectAdminClass>EEMs</objectAdminClass>
+    <agreementId>druid:fn200hb6598</agreementId>
+    <tag>EEM : 1.0</tag>
+    <otherId name="catkey">10572650</otherId>
+  </identityMetadata>
+  <contentMetadata type="file" objectId="druid:mr497sx5638">
+    <resource objectId="druid:mr497sx5638" data="content" id="content">
+      <attr name="label">Statewide Water Action Plan</attr>
+      <file shelve="yes" preserve="yes" deliver="yes" size="706331" mimetype="application/pdf" id="statewide-water-action-plan-web-version.pdf">
+        <location type="url">https://stacks.stanford.edu/file/druid:mr497sx5638/statewide-water-action-plan-web-version.pdf</location>
+      </file>
+    </resource>
+    <resource objectId="druid:wb030cw7801" data="content" id="permissions">
+      <attr name="label">Permission document</attr>
+      <file shelve="no" preserve="yes" deliver="no" size="" mimetype="application/pdf" id="ACWA_WaterPublications.pdf">
+        <location type="url">https://stacks.stanford.edu/file/druid:wb030cw7801/ACWA_WaterPublications.pdf</location>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata objectId="druid:mr497sx5638">
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+  </rightsMetadata>
+</objectType>

@@ -1,0 +1,15 @@
+<contentMetadata objectId="tx027jv4938" type="image">
+  <resource id="tx027jv4938_1" sequence="1" type="image">
+    <label>Image 1</label>
+    <file id="2012-015GHEW-BW-1984-b4_1.4_0003.tif" preserve="yes" publish="no" shelve="no" mimetype="image/tiff" size="11153834">
+      <checksum type="md5">1308b0705590d59c95bc0a81745783b9</checksum>
+      <checksum type="sha1">f981315ca3f8085bf6e950af596d87bc8d0cc241</checksum>
+      <imageData width="4072" height="2725"/>
+    </file>
+    <file id="2012-015GHEW-BW-1984-b4_1.4_0003.jp2" mimetype="image/jp2" size="2088950" preserve="no" publish="yes" shelve="yes">
+      <checksum type="md5">d3143cddd8b17ff35a0dce1d8e89449e</checksum>
+      <checksum type="sha1">4f512b0867061a538d0b8d5fb1fc721b7ac17418</checksum>
+      <imageData width="4072" height="2725"/>
+    </file>
+  </resource>
+</contentMetadata>

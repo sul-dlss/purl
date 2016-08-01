@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<publicObject id="druid:cg767mn6478" published="2015-10-23T19:41:06-07:00" publishVersion="dor-services/4.22.3">
+<publicObject id="druid:cg767mn6478" published="2016-03-16T23:55:07Z" publishVersion="dor-services/5.5.1">
   <identityMetadata>
     <sourceId source="Rumsey">2542A</sourceId>
     <objectId>druid:cg767mn6478</objectId>
@@ -10,6 +10,8 @@
     <otherId name="uuid">804cfb1a-1f4e-11e5-b0dc-0050569b3c3c</otherId>
     <tag>Project : Rumsey : AtlasProto</tag>
     <tag>Remediated By : 4.21.4</tag>
+    <displayType>image</displayType>
+    <release to="Searchworks">true</release>
   </identityMetadata>
   <contentMetadata objectId="cg767mn6478" type="image">
     <resource id="cg767mn6478_1" sequence="1" type="image">
@@ -45,6 +47,7 @@
     <rdf:Description rdf:about="info:fedora/druid:cg767mn6478">
       <fedora:isMemberOf rdf:resource="info:fedora/druid:xh235dd9059"/>
       <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:xh235dd9059"/>
+      <fedora:isConstituentOf rdf:resource="info:fedora/druid:hj097bm8879"/>
     </rdf:Description>
   </rdf:RDF>
   <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
@@ -65,6 +68,6 @@
     <dc:relation type="collection">David Rumsey Map Collection at Stanford University Libraries</dc:relation>
   </oai_dc:dc>
   <releaseData>
-    <release to="Searchworks">false</release>
+    <release to="Searchworks">true</release>
   </releaseData>
 </publicObject>

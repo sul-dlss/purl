@@ -8,4 +8,7 @@
   <otherId name="uuid">80698a64-1f4e-11e5-9f88-0050569b3c3c</otherId>
   <tag>Project : Rumsey : AtlasProto</tag>
   <tag>Remediated By : 4.21.4</tag>
+  <release displayType="image" release="true" to="Searchworks" what="self" when="2016-03-10T02:14:16Z" who="lauraw15">true</release>
+  <displayType>image</displayType>
+  <release displayType="image" release="true" to="Searchworks" what="self" when="2016-03-11T05:56:46Z" who="lauraw15">true</release>
 </identityMetadata>

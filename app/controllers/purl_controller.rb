@@ -1,5 +1,3 @@
-require 'dor/util'
-
 class PurlController < ApplicationController
   before_action :load_purl, except: [:index]
 

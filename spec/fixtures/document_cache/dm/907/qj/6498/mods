@@ -1,6 +1,7 @@
+<?xml version="1.0"?>
 <mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
    <titleInfo>
-      <title>Stanford University student life: photographs, 1896-1897</title>
+      <title>Stanford University student life : photographs, 1896-1897</title>
    </titleInfo>
    <typeOfResource collection="yes"/>
    <genre authority="ftamc.">Photoprints.</genre>
@@ -37,15 +38,10 @@
       </name>
       <topic>Students</topic>
    </subject>
-   <identifier type="uri">http://purl.stanford.edu/dm907qj6498</identifier>
    <location>
-      <url usage="primary display" displayLabel="Digital images available online">http://purl.stanford.edu/dm907qj6498</url>
-   </location>
-   <location>
-      <physicalLocation>Dept. of Special Collections &amp; University Archives, Stanford Univ. Libraries, Stanford, CA 94305</physicalLocation>
+      <physicalLocation>Dept. of Special Collections, Stanford Univ. Libraries, Stanford, CA 94305</physicalLocation>
    </location>
    <recordInfo>
-      <descriptionStandard>aacr2</descriptionStandard>
       <descriptionStandard>appm</descriptionStandard>
       <recordContentSource authority="marcorg">CSt</recordContentSource>
       <recordCreationDate encoding="marc">920220</recordCreationDate>

@@ -1,30 +1,27 @@
 <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-  <dc:title>Code and Data supplement to "Deterministic Matrices Matching the Compressed Sensing Phase Transitions of Gaussian Random Matrices."</dc:title>
+	<dc:title>Code and Data supplement to "Deterministic Matrices Matching the Compressed Sensing Phase Transitions of Gaussian Random Matrices."</dc:title>
   
   <dc:type>dataset</dc:type>
-  <dc:date>2012</dc:date>
-  <dc:description>The data and code provided here are supplementary information for the paper &#x201C;Deterministic Matrices Matching the Compressed Sensing Phase Transitions for Gaussian Random Matrices&#x201D; by H. Monajemi, S. Jafarpour,&#xD;
+  <dc:date>2012</dc:date>	
+   <dc:description>The data and code provided here are supplementary information for the paper &#x201C;Deterministic Matrices Matching the Compressed Sensing Phase Transitions for Gaussian Random Matrices&#x201D; by H. Monajemi, S. Jafarpour,&#xD;
 	Stat330/CME362 Collaboration, and D. L. Donoho. The description of the data is provided in the companion README.TXT file. The data is the outcome of research that started as a course project at Stanford University by participants of Stat330/CME362 class taught by Donoho in Fall 2011 (Course TA: Matan Gavish). Data collection was a joint effort of 40 researchers listed in the original paper.\n\n&#xD;
 In compressed sensing, one takes $n &lt; N$ samples of an $N$-dimensional vector $x_0$ using an $n\times N$ matrix $A$, obtaining undersampled measurements $y = Ax_0$. For random matrices with Gaussian i.i.d entries, it is known that, when $x_0$ is $k$-sparse, there is a precisely determined {\it phase transition}: for a certain region in the ($k/n$,$\ n/N$)-phase diagram,  convex optimization $\text{min }  ||x||_1 \text{ subject to } y=Ax, \ x \in X^N$ typically finds the sparsest solution, while outside that region, it typically fails. It has been shown empirically that the same property -- with the same phase transition location -- holds for a wide range of non-Gaussian \textit{random} matrix ensembles.\n\n&#xD;
 We consider specific deterministic matrices including Spikes and Sines,  Spikes and Noiselets,  Paley Frames, Delsarte-Goethals Frames, Chirp Sensing Matrices, and Grassmannian Frames. Extensive experiments show that for a typical $k$-sparse object, convex optimization is successful over a region of the phase diagram that coincides with the region known for Gaussian matrices. In our experiments, we considered coefficients constrained to $X^N$ for four different sets $X \in \{[0,1], R_+, R, C\}$. We  establish this finding for each of the associated four phase transitions.</dc:description>
-  <dc:relation type="url" href="http://runmycode.org/CompanionSite/site.do?siteId=190">Executable supplement to the paper at RunMyCode.org</dc:relation>
-  <dc:description type="preferred citation" displayLabel="Preferred Citation">Monajemi H, Jafarpour S, Gavish M, {Stat 330/CME 362} Collaboration, Donoho DL (2012) Data for the article Deterministic Matrices Matching the Compressed Sensing&#xD;
+	<dc:relation type="url" href="http://runmycode.org/CompanionSite/site.do?siteId=190">Executable supplement to the paper at RunMyCode.org</dc:relation>
+  	<dc:description type="preferred citation" displayLabel="Preferred Citation">Monajemi H, Jafarpour S, Gavish M, {Stat 330/CME 362} Collaboration, Donoho DL (2012) Data for the article Deterministic Matrices Matching the Compressed Sensing&#xD;
 Phase Transitions of Gaussian Random Matrices. Available at http://purl.stanford.edu/wp335yr5649.</dc:description>
-  <dc:description type="citation/reference" displayLabel="Related Publication">Hatef Monajemi, Sina Jafarpour, Matan Gavish, Stat 330/CME 362 Collaboration, and David L. Donoho. Deterministic matrices matching the compressed sensing phase transitions of Gaussian random matrices. PNAS 2012 ; published ahead of print December 31, 2012, doi:10.1073/pnas.1219540110. Available at http://www.pnas.org/content/early/2012/12/28/1219540110.</dc:description>
-  <dc:description type="contact" displayLabel="Contact">donoho@stanford.edu</dc:description>
-  <dc:identifier>uri: http://purl.stanford.edu/wp335yr5649</dc:identifier>
-  <dc:identifier>http://purl.stanford.edu/wp335yr5649</dc:identifier>
-  <dc:subject>Compressed Sensing</dc:subject>
-  <dc:subject>Sparse Recovery</dc:subject>
-  <dc:subject>Grassmannian Frames</dc:subject>
-  <dc:subject>Paley Frames</dc:subject>
-  <dc:subject>Delsarte-Goethals Frames</dc:subject>
-  <dc:subject>Noiselets</dc:subject>
-  <dc:subject>Phase Transition</dc:subject>
-  <dc:contributor>Donoho, David (Author)</dc:contributor>
-  <dc:contributor>Monajemi, Hatef (Author)</dc:contributor>
-  <dc:contributor>Jafarpour, Sina (Author)</dc:contributor>
-  <dc:contributor>Gavish, Matan (Author)</dc:contributor>
-  <dc:contributor>Stat330/CME362 Collaboration (Author)</dc:contributor>
-  <dc:relation type="collection">Stanford Research Data</dc:relation>
-</oai_dc:dc>
+	<dc:description type="citation/reference" displayLabel="Related Publication">Hatef Monajemi, Sina Jafarpour, Matan Gavish, Stat 330/CME 362 Collaboration, and David L. Donoho. Deterministic matrices matching the compressed sensing phase transitions of Gaussian random matrices. PNAS 2012 ; published ahead of print December 31, 2012, doi:10.1073/pnas.1219540110. Available at http://www.pnas.org/content/early/2012/12/28/1219540110.</dc:description>
+	<dc:description type="contact" displayLabel="Contact">donoho@stanford.edu</dc:description>
+	<dc:subject>Compressed Sensing</dc:subject>
+	<dc:subject>Sparse Recovery</dc:subject>
+	<dc:subject>Grassmannian Frames</dc:subject>
+	<dc:subject>Paley Frames</dc:subject>
+	<dc:subject>Delsarte-Goethals Frames</dc:subject>
+	<dc:subject>Noiselets</dc:subject>
+	<dc:subject>Phase Transition</dc:subject>
+   <dc:contributor>Donoho, David (Author)</dc:contributor>
+   <dc:contributor>Monajemi, Hatef (Author)</dc:contributor>
+   <dc:contributor>Jafarpour, Sina (Author)</dc:contributor>
+   <dc:contributor>Gavish, Matan (Author)</dc:contributor>
+   <dc:contributor>Stat330/CME362 Collaboration (Author)</dc:contributor>
+<dc:relation type="collection">Stanford Research Data</dc:relation></oai_dc:dc>

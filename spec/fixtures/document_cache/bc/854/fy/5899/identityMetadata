@@ -1,0 +1,12 @@
+<identityMetadata>
+  <adminPolicy>druid:bm077td6448</adminPolicy>
+  <objectCreator>DOR</objectCreator>
+  <objectId>druid:bc854fy5899</objectId>
+  <objectLabel>CCCC MS 296</objectLabel>
+  <sourceId source="CCCC">296</sourceId>
+  <objectType>item</objectType>
+  <otherId name="uuid">22e62dbe-04b5-11e1-b7a3-0016034322e2</otherId>
+  <tag>MDForm : ms</tag>
+  <tag>Project : Parker Manuscripts</tag>
+  <tag>Remediated By : 4.20.1</tag>
+</identityMetadata>

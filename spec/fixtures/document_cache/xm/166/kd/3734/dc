@@ -1,10 +1,52 @@
 <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
   <dc:title>Walters Ms. W.12, On Christian rulers</dc:title>
-  <dc:creator>Sedulius, Scotus, fl. 848-860</dc:creator>
+  <dc:title>Prologue</dc:title>
+  <dc:title>Chapter list</dc:title>
+  <dc:title>De rectoribus Christianis</dc:title>
+  <dc:title>Hymn</dc:title>
+  <dc:title>Liber de rectoribus Christianis</dc:title>
+  <dc:contributor>Sedulius, Scotus, fl. 848-860 (author)</dc:contributor>
+  <dc:contributor>Sedulius Scottus (author)</dc:contributor>
   
-  <dc:date>Mid 12th century CE</dc:date>
-  <dc:language>lat</dc:language>
-  <dc:format>Foliation: ii+117+ii</dc:format>
-  <dc:description>Created in the mid twelfth century in Germany, this manuscript contains the much earlier writings of the Irish scholar Sedulius Scotus. Writing in the mid ninth century at St. Lambert in Li&#xE8;ge, Scotus famously penned this treatise on the duties and ideals of the Christian king or prince. It is the earliest version of a genre that would become popular in the later medieval and Renaissance periods, often known as "mirrors for princes." This manuscript is the second oldest copy of Scotus' treatise known, the earliest being from the ninth century (Bremen, Stadtbibliothek Ms. C. 36). The text is virtually complete, missing only its first and last folios, and is written in a clear Romanesque Caroline minuscule script. The nine inhabited initials, which include dragons and cranes, as well as the seven decorated initials, have been left unfinished. In its script and decoration the manuscript is similar to a benedictional made in Constance (Folter, et al. Cimelia, p. 144, no. 33). For full description, see http://www.thedigitalwalters.org/Data/WaltersManuscripts/html/W12/description.html</dc:description>
+  <dc:description>Created in the mid twelfth century in Germany, this manuscript contains the much earlier writings of the Irish scholar Sedulius Scotus. Writing in the mid ninth century at St. Lambert in Li&#xE8;ge, Scotus famously penned this treatise on the duties and ideals of the Christian king or prince. It is the earliest version of a genre that would become popular in the later medieval and Renaissance periods, often known as "mirrors for princes." This manuscript is the second oldest copy of Scotus' treatise known, the earliest being from the ninth century (Bremen, Stadtbibliothek Ms. C. 36). The text is virtually complete, missing only its first and last folios, and is written in a clear Romanesque Caroline minuscule script. The nine inhabited initials, which include dragons and cranes, as well as the seven decorated initials, have been left unfinished. In its script and decoration the manuscript is similar to a benedictional made in Constance (Folter, et al. Cimelia, p. 144, no. 33). 
+        For full description, see http://www.thedigitalwalters.org/Data/WaltersManuscripts/html/W12/description.html</dc:description>
+  <dc:description displayLabel="Language">The primary language in this manuscript is Latin.</dc:description>
+  <dc:language>Latin</dc:language>
+  <dc:relation>Liber de rectoribus Christianis</dc:relation>
+  <dc:relation>Prologue</dc:relation>
+  <dc:relation>Chapter list</dc:relation>
+  <dc:relation>De rectoribus Christianis</dc:relation>
+  <dc:relation>Hymn</dc:relation>
+  <dc:format>parchment</dc:format><dc:format>image/jpeg</dc:format>
+  <dc:description displayLabel="Decoration Note">Red initials beginning each sentence</dc:description>
+  <dc:description displayLabel="Decoration Note">Red initials beginning each sentence</dc:description>
+  <dc:description displayLabel="Decoration Note">Inhabited and decorated initials throughout in various states of finish, from fully colored at the beginning, to underdrawing, to only blank space by the end; some crude, later pen decoration around the initials in an attempt to finish them; large initials ranging in size (3-8 lines high); first line of each chapter in red rustic capitals; occasional small initials in red (1-2 lines high); crudely etched faces and eagle in margins by a later owner; text in black ink</dc:description>
+  <dc:description displayLabel="Decoration Note">fol. 2r  Decorated initial "D"  Decorated initial "D," 3 lines</dc:description>
+  <dc:description displayLabel="Decoration Note">fol. 4v  Inhabited initial "P" with dragon  Inhabited initial "P," 9 lines</dc:description>
+  <dc:description displayLabel="Decoration Note">fol. 9v  Inhabited initial "Q" with dragon  Inhabited initial "Q," 3 lines</dc:description>
+  <dc:description displayLabel="Decoration Note">fol. 13v  Inhabited initial "R" with dragon  Inhabited initial "R," 4 lines</dc:description>
+  <dc:description displayLabel="Decoration Note">fol. 18r  Unfinished decorated initial "O"  Decorated initial "O," 4 lines</dc:description>
+  <dc:description displayLabel="Decoration Note">fol. 23r  Unfinished inhabited initial "R" with dragon  Inhabited initial "R," 5 lines</dc:description>
+  <dc:description displayLabel="Decoration Note">fol. 30r  Unfinished inhabited initial "I" with dragon  Inhabited initial "I," 6 lines</dc:description>
+  <dc:description displayLabel="Decoration Note">fol. 35r  Unfinished decorated initial "N"  Decorated initial "N," 4 lines</dc:description>
+  <dc:description displayLabel="Decoration Note">fol. 36v  Unfinished inhabited initial "M" formed from two dragons  Inhabited initial "M," 3 lines</dc:description>
+  <dc:description displayLabel="Decoration Note">fol. 42v  Unfinished inhabited initial "S" with beast head  Inhabited initial "S," 5 lines</dc:description>
+  <dc:description displayLabel="Decoration Note">fol. 47v  Unfinished decorated initial "C"  Decorated initial "C," 4 lines</dc:description>
+  <dc:description displayLabel="Decoration Note">fol. 54r  Unfinished inhabited initial "O" with birds and fish  Inhabited initial "O," 4 lines</dc:description>
+  <dc:description displayLabel="Decoration Note">fol. 62r  Unfinished inhabited initial "N" with dragon  Inhabited initial "N," 4 lines</dc:description>
+  <dc:description displayLabel="Decoration Note">fol. 67v  Unfinished decorated initial "S"  Decorated initial "S," 8 lines</dc:description>
+  <dc:date>1125-1175</dc:date>
+  <dc:description displayLabel="Date Note">Mid 12th century CE</dc:description>
+  <dc:description displayLabel="Provenance">Created in Germany, possibly Westphalia, in the mid twelfth century</dc:description>
+  <dc:description displayLabel="Provenance">Gustav Ritter von Emmich sale, Vienna, March 15, 1906, no. I, pl. VIII</dc:description>
+  <dc:description displayLabel="Provenance">Gruel and Engelmann collection no. 609, Paris</dc:description>
+  <dc:description displayLabel="Provenance">Henry Walters, Baltimore, purchased from Gruel before 1931</dc:description>
+  <dc:description displayLabel="Acquisition">Walters Art Museum, 1931, by Henry Walters bequest</dc:description>
   
-</oai_dc:dc>
+  
+  
+  
+  
+  
+  
+<dc:relation type="collection">Walters Manuscripts</dc:relation></oai_dc:dc>
