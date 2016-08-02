@@ -10,7 +10,7 @@ describe 'IIIF manifests' do
     expect(json['description']).to eq 'Tom.1. No.9. (top right).'
     expect(json['attribution']).to start_with 'This work has been identified as being free of known restrictions'
     expect(json['seeAlso']['@id']).to eq 'http://www.example.com/bb157hs6068.mods'
-    expect(json['thumbnail']['@id']).to eq 'http://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
+    expect(json['thumbnail']['@id']).to eq 'https://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
 
     expect(json['sequences'].length).to eq 1
     canvas = json['sequences'].first['canvases'].first
@@ -23,14 +23,14 @@ describe 'IIIF manifests' do
 
     expect(image['resource']['height']).to eq 9040
     expect(image['resource']['width']).to eq 10_481
-    expect(image['resource']['@id']).to eq 'http://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/full/0/default.jpg'
+    expect(image['resource']['@id']).to eq 'https://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/full/0/default.jpg'
   end
 
   it 'includes a representative thumbnail' do
     visit '/bb157hs6068/iiif/manifest.json'
     json = JSON.parse(page.body)
 
-    expect(json['thumbnail']['@id']).to eq 'http://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
+    expect(json['thumbnail']['@id']).to eq 'https://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
     expect(json['thumbnail']['@type']).to eq 'dcterms:Image'
   end
 
