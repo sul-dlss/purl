@@ -88,6 +88,8 @@ GEM
       xpath (~> 2.0)
     chronic (0.10.2)
     cliver (0.3.2)
+    codeclimate-test-reporter (0.6.0)
+      simplecov (>= 0.7.1, < 1.0.0)
     concurrent-ruby (1.0.2)
     config (1.2.1)
       activesupport (>= 3.0)
@@ -319,6 +321,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rvm
   capybara
+  codeclimate-test-reporter
   config
   coveralls
   dalli
