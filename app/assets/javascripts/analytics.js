@@ -43,7 +43,7 @@ GoogleAnalytics = (function() {
 
 })();
 
-$(document).on("ready page:load", function(){
+$(document).on("turbolinks:load", function(){
   GoogleAnalytics.load();
   if (GoogleAnalytics.analyticsId){
     GoogleAnalytics.trackPageview();

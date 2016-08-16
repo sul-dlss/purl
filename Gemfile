@@ -15,7 +15,7 @@ gem 'config'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-gem 'turbolinks'
+gem 'turbolinks', '~> 5.0'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
