@@ -21,24 +21,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # CanCanCan is an authorization Gem for rails
 gem 'cancancan', '~> 1.10'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-group :deployment do
-  gem 'capistrano', '~> 3.0'
-  gem 'capistrano-rvm'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano-passenger'
-  gem 'dlss-capistrano'
-end
 
 # Use Squash for exception reporting
 gem 'squash_ruby', require: 'squash/ruby'
@@ -48,6 +30,21 @@ gem 'squash_rails', '1.3.3', require: 'squash/rails'
 
 # Use is_it_working to monitor the application
 gem 'is_it_working'
+
+gem 'mods_display', '~> 0.3.2'
+gem 'htmlentities'
+gem 'dor-rights-auth'
+gem 'bootstrap-sass'
+gem 'retina_tag'
+gem 'faraday'
+gem 'addressable'
+gem 'tophat'
+gem 'rails-file-icons'
+gem 'sul_styles', '~> 0.3'
+gem 'iiif-presentation'
+gem 'dalli'
+gem 'dynamic_sitemaps'
+gem 'whenever'
 
 # Access an IRB console on exception pages or by using <%= console %> in views
 gem 'web-console', '~> 2.0', group: :development
@@ -81,17 +78,17 @@ group :development, :test do
   gem 'coveralls', require: false
 end
 
-gem 'mods_display', '~> 0.3.2'
-gem 'htmlentities'
-gem 'dor-rights-auth'
-gem 'bootstrap-sass'
-gem 'retina_tag'
-gem 'faraday'
-gem 'addressable'
-gem 'tophat'
-gem 'rails-file-icons'
-gem 'sul_styles', '~> 0.3'
-gem 'iiif-presentation'
-gem 'dalli'
-gem 'dynamic_sitemaps'
-gem 'whenever'
+gem 'codeclimate-test-reporter', group: :test, require: false
+
+# bundle exec rake doc:rails generates the API under doc/api.
+gem 'sdoc', '~> 0.4.0', group: :doc
+
+# Use Capistrano for deployment
+group :deployment do
+  gem 'capistrano', '~> 3.0'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
+  gem 'dlss-capistrano'
+end
