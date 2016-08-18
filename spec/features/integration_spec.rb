@@ -22,7 +22,7 @@ describe 'Integration Scenarios' do
 
     it 'has a link to the searchworks record' do
       visit '/bb737zp0787'
-      expect(page).to have_link 'View in SearchWorks', href: 'http://searchworks.stanford.edu/view/9616533'
+      expect(page).to have_link 'View in SearchWorks', href: 'https://searchworks.stanford.edu/view/9616533'
     end
   end
 
@@ -71,7 +71,7 @@ describe 'Integration Scenarios' do
 
     it 'has a link to the searchworks record' do
       visit '/nd387jf5675'
-      expect(page).to have_link 'View in SearchWorks', href: 'http://searchworks.stanford.edu/view/10734942'
+      expect(page).to have_link 'View in SearchWorks', href: 'https://searchworks.stanford.edu/view/10734942'
     end
   end
 
@@ -94,7 +94,7 @@ describe 'Integration Scenarios' do
 
     it 'has a link to the searchworks record' do
       visit '/cp088pb1682'
-      expect(page).to have_link 'View in SearchWorks', href: 'http://searchworks.stanford.edu/view/cp088pb1682'
+      expect(page).to have_link 'View in SearchWorks', href: 'https://searchworks.stanford.edu/view/cp088pb1682'
     end
   end
 
