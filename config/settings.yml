@@ -4,7 +4,7 @@ sitemap:
 stacks:
   url: 'https://stacks.stanford.edu'
   iiif_profile: 'http://iiif.io/api/image/2/level1.json'
-  
+
 flipbook:
   url: 'http://sul-reader.stanford.edu/flipbook2'
   auth_url: 'https://sul-reader.stanford.edu/flipbook2/auth'
@@ -37,10 +37,10 @@ embed:
 releases:
   - label: "View in SearchWorks"
     key: 'Searchworks'
-    url: 'http://searchworks.stanford.edu/view/%{druid}'
+    url: 'https://searchworks.stanford.edu/view/%{druid}'
 
 searchworks:
-  url: 'http://searchworks.stanford.edu/view/'
+  url: 'https://searchworks.stanford.edu/view/'
 
 feedback:
   email_to: ""
