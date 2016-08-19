@@ -34,9 +34,12 @@ Rails.configuration.middleware.use(IsItWorking::Handler) do |h|
     non_crucial_url_check(Settings.embed.iframe.url_template.sub('{?url*}', "?url=#{resource_url}"), status, 'OEmbed service')
   end
 
-  h.check :non_crucial do |status|
-    non_crucial_url_check("#{Settings.searchworks.url}#{TEST_DRUID}", status, 'For "View in SearchWorks" link')
-  end
+  # FIXME: commenting this out for now.  Concerned about hammering SearchWorks with pings,
+  #   as these will all hit the Solr index.  This is minor functionality for purl.
+  #   When SW has a more benign endpoint for up-ness checks, we should use that.
+  # h.check :non_crucial do |status|
+  #   non_crucial_url_check("#{Settings.searchworks.url}#{TEST_DRUID}", status, 'For "View in SearchWorks" link')
+  # end
 
   h.check :non_crucial do |status|
     non_crucial_action_mailer_check(FeedbackMailer, status, 'For Feedback link')
