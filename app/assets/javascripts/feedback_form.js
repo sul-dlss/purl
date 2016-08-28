@@ -106,8 +106,10 @@ $(document).on("turbolinks:load", function(){
           //Add listener for form submit
           submitListener($el,$form);
 
-          //Update href in nav link to '#'
-          $('*[data-target="#' + this.element.id +'"]').attr('href', '#');
+          // Preventing link from triggering navigation
+          $('*[data-target="#' + this.element.id +'"]').on('click', function(e){
+            e.preventDefault();
+          });
 
           //Updates reporting from fields for current location
           $('span.reporting-from-field').html(location.href);
