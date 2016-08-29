@@ -6,22 +6,11 @@ Rails.configuration.middleware.use(IsItWorking::Handler) do |h|
   # Check the memcache servers used by Rails.cache if using the DalliStore implementation
   h.check :dalli, cache: Rails.cache if defined?(ActiveSupport::Cache::DalliStore) && Rails.cache.is_a?(ActiveSupport::Cache::DalliStore)
 
-  # seems self-referential, but tells us if public_xml is working
-  public_xml_url = Settings.purl_resource.public_xml.sub('%{druid}', TEST_DRUID)
-  public_xml_url = Settings.purl_resource.public_xml.sub('%{druid_tree}', TEST_DRUID) if public_xml_url.match(/druid/)
-  h.check :url, get: public_xml_url
+  # NOTE:
+  # Settings.purl_resource.public_xml, Settings.purl_resource.mods, and Settings.purl_resource.iiif_manifest exist in the document cache root on deployed enviornments
+  # The document cache root check should be sufficient for these.
 
-  h.check :non_crucial do |status|
-    # seems self-referential, but tells us if mods is working
-    mods_url = Settings.purl_resource.mods.sub('%{druid}', TEST_DRUID)
-    mods_url = Settings.purl_resource.mods.sub('%{druid_tree}', TEST_DRUID) if mods_url.match(/druid/)
-    non_crucial_url_check(mods_url, status, 'MODS available')
-  end
 
-  h.check :non_crucial do |status|
-    iiif_manifest_url = Settings.purl_resource.iiif_manifest.sub('%{druid}', TEST_DRUID)
-    non_crucial_url_check(iiif_manifest_url, status, 'IIIF manifests available')
-  end
   # NOTE: Settings.stacks.iiif_profile is a static service to tell services what renderer to use for IIIF
   #  and therefore doesn't need to be considered a dependency here
 
