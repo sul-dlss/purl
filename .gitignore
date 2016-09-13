@@ -18,5 +18,6 @@
 
 coverage
 config/settings/*
+config/honeybadger.yml
 document_cache/*
 public/sitemaps

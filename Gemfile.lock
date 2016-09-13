@@ -125,6 +125,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    honeybadger (2.6.0)
     htmlentities (4.3.4)
     i18n (0.7.0)
     iiif-presentation (0.1.0)
@@ -263,10 +264,6 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.11)
-    squash_rails (1.3.3)
-      squash_ruby
-    squash_ruby (2.0.1)
-      json
     sshkit (1.11.2)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
@@ -331,6 +328,7 @@ DEPENDENCIES
   dynamic_sitemaps
   factory_girl_rails
   faraday
+  honeybadger
   htmlentities
   iiif-presentation
   is_it_working
@@ -347,8 +345,6 @@ DEPENDENCIES
   scss-lint
   sdoc (~> 0.4.0)
   sqlite3
-  squash_rails (= 1.3.3)
-  squash_ruby
   sul_styles (~> 0.3)
   therubyracer
   tophat
