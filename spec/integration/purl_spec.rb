@@ -118,4 +118,22 @@ describe 'purl', type: :feature do
       expect(page).to have_text('OK')
     end
   end
+
+  describe '/status' do
+    it 'has response code 200' do
+      visit '/status'
+      expect(page.status_code).to eq 200
+      expect(page).to have_text('Application is running')
+    end
+    it '/status/all has response code 200' do
+      visit '/status/all'
+      expect(page.status_code).to eq 200
+      expect(page).to have_text('HTTP check successful')
+    end
+    it '/status/feedback_mailer responds' do
+      visit '/status/feedback_mailer'
+      expect(page.status_code).to eq 200
+      expect(page).to have_text('FeedbackMailer')
+    end
+  end
 end

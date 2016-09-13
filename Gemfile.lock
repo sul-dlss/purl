@@ -171,6 +171,7 @@ GEM
       activesupport (>= 3.2.18)
       i18n
       nokogiri
+    okcomputer (1.11.1)
     parser (2.3.1.2)
       ast (~> 2.2)
     pkg-config (1.1.7)
@@ -335,6 +336,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mods_display (~> 0.3.2)
+  okcomputer
   poltergeist
   rails (= 4.2.7.1)
   rails-file-icons
