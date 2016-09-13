@@ -22,11 +22,8 @@ gem 'jbuilder', '~> 2.0'
 # CanCanCan is an authorization Gem for rails
 gem 'cancancan', '~> 1.10'
 
-# Use Squash for exception reporting
-gem 'squash_ruby', require: 'squash/ruby'
-
-# Pinned to 1.3.3 until https://github.com/SquareSquash/rails/pull/15
-gem 'squash_rails', '1.3.3', require: 'squash/rails'
+# Use Honeybadger for exception reporting
+gem 'honeybadger'
 
 # Use is_it_working to monitor the application
 gem 'is_it_working'
