@@ -25,7 +25,10 @@ gem 'cancancan', '~> 1.10'
 # Use Honeybadger for exception reporting
 gem 'honeybadger'
 
-# Use is_it_working to monitor the application
+# Use okcomputer to monitor the application
+gem 'okcomputer'
+# TODO: remove is_it_working after load balancer and nagios are switched to okcomputer mount point
+# Use is_it_working to monitor the application -
 gem 'is_it_working'
 
 gem 'mods_display', '~> 0.3.2'
