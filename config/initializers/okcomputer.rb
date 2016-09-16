@@ -60,14 +60,14 @@ class ActionMailerCheck < OkComputer::Check
   end
 end
 
-# REQUIRED checks, part of /status/all
+# REQUIRED checks, required to pass for /status/all
+#  individual checks also avail at /status/<name-of-check>
 OkComputer::Registry.register 'ruby_version', OkComputer::RubyVersionCheck.new
 
 OkComputer::Registry.register 'document_cache_root',
   DirectoryCheck.new(Settings.document_cache_root, read: true, write: true)
 
 # Check the memcache servers used by Rails.cache
-# FIXME:  bug in CacheCheck makes this check meaningless unless cache responds to stats (DalliStore does)
 if Rails.cache.respond_to? :stats
   OkComputer::Registry.register 'rails_cache', OkComputer::CacheCheck.new
 else
@@ -76,7 +76,7 @@ end
 
 # NOTE:
 # Settings.purl_resource.public_xml, Settings.purl_resource.mods, and Settings.purl_resource.iiif_manifest
-# exist in the document cache root on deployed environments.
+#   exist in the document cache root on deployed environments.
 # The document cache root check should be sufficient for these.
 
 # NOTE: Settings.stacks.iiif_profile is a static service to tell services what renderer to use for IIIF
@@ -84,9 +84,9 @@ end
 
 # ------------------------------------------------------------------------------
 
-# NON-CRUCIAL checks, avail at /status/<name-of-check>
-#   in /status/all, Optional checks will always return status success;
-#   at individual endpoint they show true results
+# NON-CRUCIAL (Optional) checks, avail at /status/<name-of-check>
+#   - at individual endpoint, HTTP response code reflects the actual result
+#   - in /status/all, these checks will display their result text, but will not affect HTTP response code
 OkComputer::Registry.register 'stacks_service', OkComputer::HttpCheck.new(Settings.stacks.url)
 
 # OEmbed service
