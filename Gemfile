@@ -82,6 +82,7 @@ gem 'codeclimate-test-reporter', group: :test, require: false
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'lograge'
 
 # Use Capistrano for deployment
 group :deployment do
