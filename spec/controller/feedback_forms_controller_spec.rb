@@ -6,21 +6,21 @@ describe FeedbackFormsController, type: :controller do
   end
   describe 'format json' do
     it 'should return json success' do
-      post :create, url: 'http://test.host/', message: 'Hello Kittenz', format: 'json'
+      post :create, params: { url: 'http://test.host/', message: 'Hello Kittenz', format: 'json' }
       expect(flash[:success]).to eq 'Thank you! Your feedback has been sent.'
     end
     it 'should return html success' do
-      post :create, url: 'http://test.host/', message: 'Hello Kittenz'
+      post :create, params: { url: 'http://test.host/', message: 'Hello Kittenz' }
       expect(flash[:success]).to eq 'Thank you! Your feedback has been sent.'
     end
   end
   describe 'validate' do
     it 'should return an error if no message is sent' do
-      post :create, url: 'http://test.host/', message: '', email_address: ''
+      post :create, params: { url: 'http://test.host/', message: '', email_address: '' }
       expect(flash[:error]).to eq 'A message is required'
     end
     it 'should return an error if a bot fills in the email_address field (email is correct field)' do
-      post :create, message: 'I am spamming you!', url: 'http://test.host/', email_address: 'spam!'
+      post :create, params: { message: 'I am spamming you!', url: 'http://test.host/', email_address: 'spam!' }
       expect(flash[:error]).to eq 'You have filled in a field that makes you appear as a spammer.  Please follow the directions for the individual form fields.'
     end
   end

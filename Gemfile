@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.7.1'
+gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use sqlite3 as the database (during local development)
 gem 'sqlite3'
+# Use Puma as the app server
+gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -15,10 +17,10 @@ gem 'config'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-gem 'turbolinks', '~> 5.0'
+gem 'turbolinks', '~> 5'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder', '~> 2.5'
 # CanCanCan is an authorization Gem for rails
 gem 'cancancan', '~> 1.10'
 
@@ -46,8 +48,11 @@ gem 'dalli'
 gem 'dynamic_sitemaps'
 gem 'whenever'
 
-# Access an IRB console on exception pages or by using <%= console %> in views
-gem 'web-console', '~> 2.0', group: :development
+group :development do
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'web-console'
+  gem 'listen', '~> 3.0.5'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

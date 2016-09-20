@@ -33,7 +33,7 @@ class PurlController < ApplicationController
         if @purl.flipbook?
           render json: @purl.flipbook.to_json
         else
-          render nothing: true, status: :not_found
+          head :not_found
         end
       end
 
@@ -58,7 +58,7 @@ class PurlController < ApplicationController
 
       render json: manifest
     else
-      render nothing: true, status: 404
+      head :not_found
     end
   end
 
