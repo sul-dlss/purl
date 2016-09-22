@@ -46,7 +46,7 @@ gem 'sul_styles', '~> 0.3'
 gem 'iiif-presentation'
 gem 'dalli'
 gem 'dynamic_sitemaps'
-gem 'whenever'
+gem 'whenever'  # for scheduling sitemap generation
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -92,9 +92,9 @@ gem 'lograge'
 # Use Capistrano for deployment
 group :deployment do
   gem 'capistrano', '~> 3.0'
-  gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-passenger'
+  gem 'capistrano-shared_configs'
   gem 'dlss-capistrano'
 end
