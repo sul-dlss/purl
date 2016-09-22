@@ -131,7 +131,6 @@ GEM
       activesupport (>= 3.2.18)
       faraday (~> 0.9.0)
       json
-    is_it_working (1.1.0)
     iso-639 (0.2.8)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -343,7 +342,6 @@ DEPENDENCIES
   honeybadger
   htmlentities
   iiif-presentation
-  is_it_working
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

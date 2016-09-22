@@ -112,13 +112,6 @@ describe 'purl', type: :feature do
     end
   end
 
-  describe 'is_it_working' do
-    it 'has responses' do
-      visit '/is_it_working'
-      expect(page).to have_text('OK')
-    end
-  end
-
   describe '/status' do
     it 'has response code 200' do
       visit '/status'
