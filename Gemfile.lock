@@ -76,9 +76,7 @@ GEM
       capistrano-bundler (~> 1.1)
     capistrano-releaseboard (0.0.1)
       faraday
-    capistrano-rvm (0.1.2)
-      capistrano (~> 3.0)
-      sshkit (~> 1.2)
+    capistrano-shared_configs (0.1.1)
     capybara (2.9.0)
       addressable
       mime-types (>= 1.16)
@@ -330,7 +328,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-passenger
   capistrano-rails
-  capistrano-rvm
+  capistrano-shared_configs
   capybara
   codeclimate-test-reporter
   config

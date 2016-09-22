@@ -33,3 +33,6 @@ set :linked_dirs, %w(config/settings log tmp/pids tmp/cache tmp/sockets vendor/b
 
 # honeybadger_env otherwise defaults to rails_env
 set :honeybadger_env, fetch(:stage)
+
+# update shared_configs before restarting app
+before 'deploy:restart', 'shared_configs:update'
