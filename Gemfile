@@ -29,9 +29,6 @@ gem 'honeybadger'
 
 # Use okcomputer to monitor the application
 gem 'okcomputer'
-# TODO: remove is_it_working after load balancer and nagios are switched to okcomputer mount point
-# Use is_it_working to monitor the application -
-gem 'is_it_working'
 
 gem 'mods_display', '~> 0.3.2'
 gem 'htmlentities'
