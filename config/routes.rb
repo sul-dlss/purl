@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'purl#index'
 
+  # handle the singe static grandfathered exception (the first druid/PURL we ever issued for publication)
   get '/ir:rs276tc2764', to: redirect('/rs276tc2764')
 
   resource :feedback_form, path: 'feedback', only: [:new, :create]
