@@ -13,7 +13,7 @@ describe 'purl', type: :feature do
   end
 
   describe 'flipbook' do
-    it 'should render the json for flipbook' do
+    it 'renders the json for flipbook' do
       visit "/#{@flipbook_object}.flipbook"
       json_body = JSON.parse(page.body)
       expect(json_body['objectId']).to eq(@flipbook_object)
@@ -30,12 +30,12 @@ describe 'purl', type: :feature do
   end
 
   describe 'manifest' do
-    it 'should render the json for manifest' do
+    it 'renders the json for manifest' do
       visit "/#{@manifest_object}/iiif/manifest.json"
       json_body = JSON.parse(page.body)
       expect(json_body['label']).to eq('John Wyclif and his followers, Tracts in Middle English')
     end
-    it 'should render nil for a non-manifest' do
+    it 'renders nil for a non-manifest' do
       visit "/#{@file_object}/iiif/manifest.json"
       expect(page.status_code).to eq(404)
     end
@@ -63,61 +63,62 @@ describe 'purl', type: :feature do
   end
 
   describe 'public xml' do
-    it 'should fetch the public xml' do
+    it 'returns public xml' do
       visit "/#{@image_object}.xml"
       xml = Nokogiri::XML(page.body)
       expect(xml.search('//objectId').first.text).to eq("druid:#{@image_object}")
     end
-    it 'should fetch the public xml' do
+    it '404 with unavailable message when no public_xml' do
       visit "/#{@unpublished_object}.xml"
       expect(page.status_code).to eq(404)
+      expect(page).to have_content 'The item you requested is not available.'
     end
   end
 
   describe 'mods' do
-    it 'should get the public mods' do
+    it 'returns public mods' do
       visit "/#{@image_object}.mods"
       xml = Nokogiri::XML(page.body)
       expect(xml.search('//mods:title', 'mods' => 'http://www.loc.gov/mods/v3').length).to be_present
     end
-    it 'should fetch the public xml' do
+    it '404 with unavailable message when no mods' do
       visit "/#{@unpublished_object}.mods"
       expect(page.status_code).to eq(404)
+      expect(page).to have_content 'The item you requested is not available.'
     end
   end
 
   describe 'invalid druid' do
-    it 'should error on invalid druids' do
+    it '404 with invalid error message' do
       visit '/abcdefg'
-      expect(page).to have_content 'The item you requested does not exist'
       expect(page.status_code).to eq(404)
+      expect(page).to have_content 'The item you requested does not exist.'
     end
   end
 
-  describe 'legacy object' do
-    it 'should handle a legacy object in a bizarre way' do
+  describe 'legacy object id "ir:rs276tc2764"' do
+    it 'routed to rs276tc2764' do
       new_path = '/' + @legacy_object.gsub(/^ir:/, '')
       visit "/#{@legacy_object}"
-      # page.status_code.should == "302"
       expect(current_path).to eq(new_path)
     end
   end
 
   describe 'license' do
-    it 'should have a license statement' do
+    it 'included in purl page' do
       visit "/#{@file_object}"
       expect(page).to have_content 'This work is licensed under a Open Data Commons Public Domain Dedication and License (PDDL)'
     end
   end
 
   describe 'terms of use' do
-    it 'should have terms of use' do
+    it 'included in purl page' do
       visit "/#{@file_object}"
       expect(page).to have_content 'User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or'
     end
   end
 
-  describe '/status' do
+  describe '/status  (app monitoring)' do
     it 'has response code 200' do
       visit '/status'
       expect(page.status_code).to eq 200
