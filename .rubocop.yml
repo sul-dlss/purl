@@ -14,7 +14,9 @@ Rails:
   Enabled: true
 
 Metrics/LineLength:
-   Max: 160
+  Max: 160
+  Exclude:
+    - spec/integration/purl_spec.rb
 
 Metrics/AbcSize:
   Max: 20

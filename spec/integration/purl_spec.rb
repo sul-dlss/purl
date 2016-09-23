@@ -7,7 +7,6 @@ describe 'purl', type: :feature do
     @flipbook_object = 'bb737zp0787'
     @manifest_object = 'bc854fy5899'
     @embed_object = 'bf973rp9392'
-    @incomplete_object = 'bb157hs6069'
     @unpublished_object = 'ab123cd4567'
     @legacy_object = 'ir:rs276tc2764'
     @nested_resources_object = 'dm907qj6498'
@@ -42,18 +41,24 @@ describe 'purl', type: :feature do
     end
   end
 
-  describe 'incomplete object' do
-    it 'should render an error for an incompletely published item, but not 404' do
-      visit "/#{@incomplete_object}"
-      expect(page).to have_content 'The item you requested is not yet available. It will be available at this URL when Library processing is completed.'
-    end
-  end
-
-  describe 'unpublished object' do
-    it 'should 404 for an unpublished object' do
+  context 'incomplete/unpublished object (not in stacks)' do
+    it 'gives 404 with unavailable message' do
       visit "/#{@unpublished_object}"
       expect(page.status_code).to eq(404)
-      expect(page.has_content?('The item you requested is not available.')).to eq(true)
+      expect(page).to have_content 'The item you requested is not available.'
+      expect(page).to have_content 'This item is in processing or does not exist. If you believe you have reached this page in error, please send Feedback.'
+    end
+
+    it 'includes a feedback link that toggled the feedback form', js: true do
+      visit "/#{@unpublished_object}"
+
+      expect(page).not_to have_css('form.feedback-form', visible: true)
+
+      within '#main-container' do
+        click_link 'Feedback'
+      end
+
+      expect(page).to have_css('form.feedback-form', visible: true)
     end
   end
 
