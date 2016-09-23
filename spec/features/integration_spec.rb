@@ -12,7 +12,6 @@ describe 'Integration Scenarios' do
     it 'works' do
       visit '/bb737zp0787'
       expect(page).to have_content 'The curate of Cumberworth ; and The vicar of Roost : tales'
-      expect(page).to have_metadata_section 'Available download formats'
       expect(page).to have_metadata_section 'Access conditions'
       expect(page).to have_metadata_section 'Description'
       expect(page).to have_metadata_section 'Contributors'

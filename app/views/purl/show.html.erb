@@ -37,10 +37,6 @@ end
 
 <div class="record-metadata row">
   <div class="record-sections col-md-8">
-    <% if needs_download_panel? && @purl.content_metadata.downloadable_files.any? %>
-      <%= render 'download_section' %>
-    <% end %>
-
     <%= render 'access' %>
 
     <% if @purl.mods? %>
