@@ -45,6 +45,10 @@ gem 'dalli'
 gem 'dynamic_sitemaps'
 gem 'whenever'  # for scheduling sitemap generation
 
+group :production do
+  gem 'newrelic_rpm'
+end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
