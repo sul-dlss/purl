@@ -22,3 +22,8 @@ Lint/UselessAccessModifier:
 Rails/OutputSafety:
   Exclude:
     - 'app/helpers/record_helper.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'app/models/purl_resource.rb'
+    - 'spec/**/*'

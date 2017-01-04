@@ -111,6 +111,8 @@ class PurlResource
     end
 
     def description
+      return unless mods?
+
       @description ||= begin
         abstract = mods.abstract.detect { |a| a.respond_to? :values }
         if abstract
@@ -118,7 +120,7 @@ class PurlResource
         else
           ''
         end
-      end if mods?
+      end
     end
 
     def type
