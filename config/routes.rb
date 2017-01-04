@@ -11,5 +11,7 @@ Rails.application.routes.draw do
 
   get ':id' => 'purl#show', as: :purl
   get ':id/embed', to: redirect("/iframe/?url=#{Settings.embed.url % { druid: '%{id}' }}")
-  get '/:id/iiif/manifest.json' => 'purl#manifest', as: :iiif_manifest
+  get '/:id/iiif/manifest' => 'purl#manifest', as: :iiif_manifest
+  get '/:id/iiif/canvas/:resource_id' => 'purl#canvas', as: :iiif_canvas
+  get '/:id/iiif/annotation/:annotation_id' => 'purl#annotation', as: :iiif_annotation
 end

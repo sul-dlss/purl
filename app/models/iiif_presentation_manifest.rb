@@ -89,32 +89,54 @@ class IiifPresentationManifest
     manifest.thumbnail = thumbnail_resource
 
     # for each resource image, create a canvas
-    page_images.each_with_index do |resource, count|
+    page_images.each do |resource|
       next unless purl_resource.rights.world_rights_for_file(resource.filename).first ||
                   purl_resource.rights.stanford_only_rights_for_file(resource.filename).first
 
-      sequence.canvases << canvas_for_resource(purl_base_uri, resource, count)
+      sequence.canvases << canvas_for_resource(purl_base_uri, resource)
     end
 
     manifest.sequences << sequence
     manifest
   end
 
-  ##
-  # @param [Integer] count This is the i_th (image) resource
-  def canvas_for_resource(purl_base_uri, resource, count)
-    url = stacks_iiif_base_url(resource.druid, resource.filename)
+  def canvas(controller: nil, resource_id:)
+    controller ||= Rails.application.routes.url_helpers
+    purl_base_uri = controller.purl_url(druid)
 
+    resource = page_images.find { |image| image.id == resource_id }
+
+    canvas_for_resource(purl_base_uri, resource)
+  end
+
+  def annotation(controller: nil, annotation_id:)
+    controller ||= Rails.application.routes.url_helpers
+    purl_base_uri = controller.purl_url(druid)
+
+    resource = page_images.find { |image| image.id == annotation_id }
+
+    annotation_for_resource(purl_base_uri, resource)
+  end
+
+  def canvas_for_resource(purl_base_uri, resource)
     canv = IIIF::Presentation::Canvas.new
-    canv['@id'] = "#{purl_base_uri}/iiif/canvas-#{count}"
+    canv['@id'] = "#{purl_base_uri}/iiif/canvas/#{resource.id}"
     canv.label = resource.label
     canv.label = 'image' unless canv.label.present?
     canv.height = resource.height
     canv.width = resource.width
 
-    anno = IIIF::Presentation::Annotation.new
-    anno['@id'] = "#{purl_base_uri}/iiif/anno-#{count}"
+    anno = annotation_for_resource(purl_base_uri, resource)
     anno['on'] = canv['@id']
+    canv.images << anno
+    canv
+  end
+
+  def annotation_for_resource(purl_base_uri, resource)
+    url = stacks_iiif_base_url(resource.druid, resource.filename)
+
+    anno = IIIF::Presentation::Annotation.new
+    anno['@id'] = "#{purl_base_uri}/iiif/annotation/#{resource.id}"
 
     img_res = IIIF::Presentation::ImageResource.new
     img_res['@id'] = "#{url}/full/full/0/default.jpg"
@@ -139,8 +161,7 @@ class IiifPresentationManifest
     end
 
     anno.resource = img_res
-    canv.images << anno
-    canv
+    anno
   end
   # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 

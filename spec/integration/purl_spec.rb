@@ -41,6 +41,30 @@ describe 'purl', type: :feature do
     end
   end
 
+  describe 'canvas' do
+    it 'renders the json for manifest' do
+      visit "/#{@manifest_object}/iiif/canvas/bc854fy5899_1.json"
+      json_body = JSON.parse(page.body)
+      expect(json_body['label']).to eq('John Wyclif and his followers, Tracts in Middle English')
+    end
+    it 'renders nil for a non-manifest' do
+      visit "/#{@file_object}/iiif/canvas/bc854fy5899_fdsa.json"
+      expect(page.status_code).to eq(404)
+    end
+  end
+
+  describe 'annotation' do
+    it 'renders the json for manifest' do
+      visit "/#{@manifest_object}/iiif/annotation/bc854fy5899_1.json"
+      json_body = JSON.parse(page.body)
+      expect(json_body['label']).to eq('John Wyclif and his followers, Tracts in Middle English')
+    end
+    it 'renders nil for a non-manifest' do
+      visit "/#{@file_object}/iiif/annotation/bc854fy5899_fdsa.json"
+      expect(page.status_code).to eq(404)
+    end
+  end
+
   context 'incomplete/unpublished object (not in stacks)' do
     it 'gives 404 with unavailable message' do
       visit "/#{@unpublished_object}"
