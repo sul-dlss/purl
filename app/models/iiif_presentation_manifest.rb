@@ -122,17 +122,19 @@ class IiifPresentationManifest
 
     img_res.service = iiif_service(url)
 
-    img_res.service['service'] = [
-      IIIF::Service.new(
-        '@id' => "#{Settings.stacks.url}/auth/iiif",
-        'profile' => 'http://iiif.io/api/auth/0/login',
-        'label' => 'Stanford-affiliated? Login to view',
-        'service' => [{
-          '@id' => "#{Settings.stacks.url}/image/iiif/token",
-          'profile' => 'http://iiif.io/api/auth/0/token'
-        }]
-      )
-    ] unless purl_resource.rights.world_rights_for_file(resource.filename).first
+    unless purl_resource.rights.world_rights_for_file(resource.filename).first
+      img_res.service['service'] = [
+        IIIF::Service.new(
+          '@id' => "#{Settings.stacks.url}/auth/iiif",
+          'profile' => 'http://iiif.io/api/auth/0/login',
+          'label' => 'Stanford-affiliated? Login to view',
+          'service' => [{
+            '@id' => "#{Settings.stacks.url}/image/iiif/token",
+            'profile' => 'http://iiif.io/api/auth/0/token'
+          }]
+        )
+      ]
+    end
 
     anno.resource = img_res
     canv.images << anno

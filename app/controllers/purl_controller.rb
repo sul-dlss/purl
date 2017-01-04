@@ -5,8 +5,7 @@ class PurlController < ApplicationController
   rescue_from PurlResource::ObjectNotReady, with: :object_not_ready
   rescue_from ActionController::UnknownFormat, with: :missing_file
 
-  def index
-  end
+  def index; end
 
   # entry point into the application
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/PerceivedComplexity

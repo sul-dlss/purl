@@ -1,6 +1,5 @@
 class FeedbackFormsController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
     if validate
