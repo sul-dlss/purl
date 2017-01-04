@@ -80,9 +80,10 @@ group :development, :test do
 
   # Coveralls for code coverage metrics
   gem 'coveralls', require: false
-end
 
-gem 'codeclimate-test-reporter', group: :test, require: false
+  gem 'simplecov', require: false
+  gem 'codeclimate-test-reporter', group: :test, require: false
+end
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
