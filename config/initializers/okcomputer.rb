@@ -1,4 +1,5 @@
 require 'okcomputer'
+require 'timeout'
 
 # /status for 'upness', e.g. for load balancer
 # /status/all to show all dependencies
@@ -52,7 +53,7 @@ class ActionMailerCheck < OkComputer::Check
   end
 
   def ping(host, port, timeout_secs)
-    timeout(timeout_secs) do
+    Timeout.timeout(timeout_secs) do
       s = TCPSocket.new(host, port)
       s.close
     end
