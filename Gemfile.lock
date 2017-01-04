@@ -360,6 +360,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   scss-lint
   sdoc (~> 0.4.0)
+  simplecov
   sqlite3
   sul_styles (~> 0.3)
   therubyracer
