@@ -31,7 +31,7 @@ describe 'IIIF manifests' do
     json = JSON.parse(page.body)
 
     expect(json['thumbnail']['@id']).to eq 'http://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
-    expect(json['thumbnail']['@type']).to eq 'dcterms:Image'
+    expect(json['thumbnail']['@type']).to eq 'dctypes:Image'
   end
 
   it 'includes authorization services for a Stanford-only image' do
