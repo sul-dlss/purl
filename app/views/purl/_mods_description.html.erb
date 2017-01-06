@@ -8,8 +8,12 @@
   <%= mods_record_field(resource_type) %>
 <% end %>
 
-<% document.mods.format.each do |format| %>
-  <%= mods_record_field(format) %>
+<% document.mods.form.each do |form| %>
+  <%= mods_record_field(form) %>
+<% end %>
+
+<% document.mods.extent.each do |extent| %>
+  <%= mods_record_field(extent) %>
 <% end %>
 
 <% document.mods.imprint.each do |imprint| %>
