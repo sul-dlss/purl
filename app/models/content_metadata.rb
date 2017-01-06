@@ -37,7 +37,7 @@ class ContentMetadata
 
     @resources ||= document.xpath('resource').map do |resource|
       extract_resources(resource)
-    end.flatten.compact
+    end.flatten.compact.sort_by(&:sequence)
   end
 
   def deliverable_files
@@ -51,31 +51,28 @@ class ContentMetadata
       id: resource.attribute('id').to_s,
       type: resource.attribute('type').to_s,
       label: resource.xpath('(label|attr[@name="label"])').first.try(:text),
-      druid: druid
+      druid: druid,
+      sequence: resource.attribute('sequence').value.to_i
     }
 
-    files = resource.xpath('file').select { |file| Purl::Util.file_ready? file }.map do |file|
-      Resource.from_file_metadata(file, resource_attributes)
+    resource.xpath('file|externalFile|resource').select { |node| Purl::Util.file_ready? node }.map do |node|
+      case node.name
+      when 'file'
+        Resource.from_file_metadata(node, resource_attributes)
+      when 'externalFile'
+        Resource.from_external_file_metadata(node, resource_attributes)
+      when 'resource'
+        r = Resource.new(resource_attributes)
+        r.sub_resources = extract_resources(node)
+        r
+      end
     end
-
-    # External files point to "remote" objects that themselves hold the resource
-    external_files = resource.xpath('externalFile').map do |external_file|
-      Resource.from_external_file_metadata(external_file, resource_attributes)
-    end
-
-    resources = resource.xpath('resource').map do |nested_resource|
-      r = Resource.new(resource_attributes)
-      r.sub_resources = extract_resources(nested_resource)
-      r
-    end
-
-    files + external_files + resources
   end
   # rubocop:enable Metrics/AbcSize
 
   class Resource
     include ActiveModel::Model
-    attr_accessor :height, :width, :type, :mimetype, :size, :label, :url, :filename, :imagesvc, :sub_resource, :thumb, :druid, :id
+    attr_accessor :height, :width, :type, :mimetype, :size, :label, :url, :filename, :imagesvc, :sub_resource, :thumb, :druid, :id, :sequence
 
     ##
     # Extract attributes from `<file>...</file>` in content metadata
