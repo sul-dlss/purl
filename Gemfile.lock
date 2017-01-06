@@ -342,7 +342,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   lograge
-  mods_display (~> 0.3, >= 0.3.2)
+  mods_display (~> 0.4)
   newrelic_rpm
   okcomputer
   poltergeist
