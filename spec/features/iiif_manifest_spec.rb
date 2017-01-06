@@ -63,6 +63,13 @@ describe 'IIIF manifests' do
     expect(json['sequences'].first['canvases']).to be_blank
   end
 
+  it 'publishes IIIF manifests for books with image constituents' do
+    visit '/zf119tw4418/iiif/manifest.json'
+    json = JSON.parse(page.body)
+
+    expect(json['sequences'].length).to eq 1
+  end
+
   # Virtual objects consist of a parent object and children objects who hold the file resources
   context 'virtual objects' do
     before :each do

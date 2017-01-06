@@ -11,7 +11,9 @@ class IiifPresentationManifest
   end
 
   def needed?
-    if public_xml_document.at_xpath('/publicObject/contentMetadata[contains(@type,"image") or contains(@type,"map")]/resource[@type="image"]')
+    if public_xml_document.at_xpath('/publicObject/contentMetadata[contains(@type,"image")
+                                                                    or contains(@type,"map")
+                                                                    or contains(@type,"book")]/resource[@type="image"]')
       true
     elsif public_xml_document.at_xpath('/publicObject/contentMetadata[@type="book"]/resource[@type="page"]')
       true
