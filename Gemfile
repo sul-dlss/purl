@@ -12,7 +12,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # JS Runtime. See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer'
-# A gem for simple rails invornment specific config
+# A gem for simple rails environment specific config
 gem 'config'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -30,7 +30,7 @@ gem 'honeybadger'
 # Use okcomputer to monitor the application
 gem 'okcomputer'
 
-gem 'mods_display', '~> 0.3.2'
+gem 'mods_display', '~> 0.3', '>= 0.3.2'
 gem 'htmlentities'
 gem 'dor-rights-auth'
 gem 'bootstrap-sass'
