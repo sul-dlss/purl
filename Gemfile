@@ -42,8 +42,6 @@ gem 'rails-file-icons'
 gem 'sul_styles', '~> 0.3'
 gem 'iiif-presentation'
 gem 'dalli'
-gem 'dynamic_sitemaps'
-gem 'whenever'  # for scheduling sitemap generation
 
 group :production do
   gem 'newrelic_rpm'
