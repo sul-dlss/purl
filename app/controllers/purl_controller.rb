@@ -30,7 +30,7 @@ class PurlController < ApplicationController
 
       format.flipbook do
         if @purl.flipbook?
-          render json: @purl.flipbook.to_json
+          render json: @purl.flipbook
         else
           head :not_found
         end
