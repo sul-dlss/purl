@@ -24,7 +24,7 @@ class PurlController < ApplicationController
         if @purl.mods?
           render xml: @purl.mods_body
         else
-          render nothing: true, status: :not_found
+          head :not_found
         end
       end
 
