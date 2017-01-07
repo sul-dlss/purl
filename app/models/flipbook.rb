@@ -8,7 +8,7 @@ class Flipbook
     @purl_resource = purl_resource
   end
 
-  def to_json
+  def as_json(*_args)
     @json ||= {
       id: catalog_key.to_s,
       readGroup: read_group,
