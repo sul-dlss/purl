@@ -24,6 +24,35 @@ describe 'IIIF manifests' do
     expect(image['resource']['height']).to eq 9040
     expect(image['resource']['width']).to eq 10_481
     expect(image['resource']['@id']).to eq 'http://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/full/0/default.jpg'
+
+    expect(json['metadata'].class).to eq Array
+    expect(json['metadata'].size).to eq(21) # 20 DC elements are there plus the publish date
+    # rubocop:disable Metrics/LineLength
+    expected_dc_metadata = [
+      { 'label' => 'Type', 'value' => 'map' },
+      { 'label' => 'Type', 'value' => 'Digital Maps' },
+      { 'label' => 'Rights', 'value' => "Stanford University Libraries and Academic Information Resources - Terms of Use SULAIR Web sites are subject to Stanford University's standard Terms of Use (See http://www.stanford.edu/home/atoz/terms.html) These terms include a limited personal, non-exclusive, non-transferable license to access and use the sites, and to download - where permitted - material for personal, non-commercial, non-display use only. Please contact the University Librarian to request permission to use SULAIR Web sites and contents beyond the scope of the above license, including but not limited to republication to a group or republishing the Web site or parts of the Web site. SULAIR provides access to a variety of external databases and resources, which sites are governed by their own Terms of Use, as well as contractual access restrictions. The Terms of Use on these external sites always govern the data available there. Please consult with library staff if you have questions about data access and availability." },
+      { 'label' => 'Identifier', 'value' => '1040' },
+      { 'label' => 'Title', 'value' => 'NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES DIVERS MOUVEMENS DES PLANETES ET LEURS DIVERSES REVOLUTIONS, AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE' },
+      { 'label' => 'Date', 'value' => '1721' },
+      { 'label' => 'Format', 'value' => '51.5 x 59.8 cm., including title along top and border, with 10 diagrams/maps and 6 columns of titled text.' },
+      { 'label' => 'Contributor', 'value' => 'Chatelain, Henri Abraham' },
+      { 'label' => 'Type', 'value' => 'Early Maps' },
+      { 'label' => 'Description', 'value' => 'Tom.1. No.9. (top right).' },
+      { 'label' => 'Description', 'value' => 'LC 548, 579; Koeman II, Cha 1,2; UCB; Ashley Baynton-Williams.' },
+      { 'label' => 'Description', 'value' => 'California, with open northern edge, suggesting it may be an island and that northwest passage may exist, on 2 small hemisphere maps, each with 5 cm. diameter. First with title: Hemisphere terrestre pour faire | observer les 6 grands cercles de la sphere. Second with title: Hemisphere terrestre pour dis= tinguer les 4 petits cercles, et les 5 zo.' },
+      { 'label' => 'Description', 'value' => "The larger diagrams are entitled: Le monde selon l'hypothese de copernic et la disposition des planetes ala naissance de Louis XIV, Sphere artificielle, Sisteme de Copernic sur les divers mouvemens des planetes, Sisteme de Ticho Brahe,Sisteme de Ptolomée, Idee generale pour faire comprendre les divers signes que la terre parcourt autour du soleil qui servent a regler les saisons (celestial chart)." },
+      { 'label' => 'Description', 'value' => "The text is entitled: Remarque sur les divers mouvemens de la terre, Remarque sur le mouvemens et l'arrangement des planetes, Remarque sur la sphere, Remarque sur la maniere dont se font les saisons, Suite de la remarque sur la sphere, Conclusion et reflection morale, Comment l'hypothese de Copernic est conforme aux loix du mouvemens et de la nature, Inconveniens et difficultez qui resultent des sistemes de Ptolemeé et Ticho Brahe." },
+      { 'label' => 'Description', 'value' => "First issued in his: Atlas historique, ou nouvelle introduction a l'histoire , à la chronologie & à la géographie ancienne & moderne ... -- Amsterdam. 1705. Reissued in 1721 (with imprint as above)." },
+      { 'label' => 'Description', 'value' => '[Henry Abraham Châtelain].' },
+      { 'label' => 'Subject', 'value' => 'Astronomy--Charts, diagrams, etc' },
+      { 'label' => 'Subject', 'value' => 'California as an island--Maps' },
+      { 'label' => 'Coverage', 'value' => '(W 180° --E 180°/N 85° --S 85°)' },
+      { 'label' => 'Relation', 'value' => 'The Glen McLaughlin Map Collection of California as an Island' },
+      { 'label' => 'PublishDate', 'value' => '2016-06-16T21:46:16Z' } # publish date was added
+    ]
+    # rubocop:enable Metrics/LineLength
+    expect(json['metadata']).to eq(expected_dc_metadata)
   end
 
   it 'includes a representative thumbnail' do
@@ -68,6 +97,7 @@ describe 'IIIF manifests' do
     json = JSON.parse(page.body)
 
     expect(json['sequences'].length).to eq 1
+    expect(json['metadata'].length).to eq 28
   end
 
   # Virtual objects consist of a parent object and children objects who hold the file resources
