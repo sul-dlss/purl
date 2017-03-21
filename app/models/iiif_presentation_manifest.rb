@@ -169,10 +169,12 @@ class IiifPresentationManifest
 
   # transform all DC metadata in the public XML into an array of hashes for inclusion in the IIIF manifest
   def dc_to_iiif_metadata
-    all_dc_nodes = public_xml_document.xpath '//oai_dc:dc/*', 'oai_dc' => OAI_DC_SCHEMA
-    metadata = all_dc_nodes.map { |dc_node| iiif_key_value(dc_node.name.upcase_first, dc_node.text) }
-    metadata += public_xml_document.xpath('/publicObject/@published').map { |node| iiif_key_value('PublishDate', node.text) } # add published date
-    metadata
+    @dc_to_iiif_metadata ||= begin
+      all_dc_nodes = public_xml_document.xpath '//oai_dc:dc/*', 'oai_dc' => OAI_DC_SCHEMA
+      metadata = all_dc_nodes.map { |dc_node| iiif_key_value(dc_node.name.upcase_first, dc_node.text) }
+      metadata += public_xml_document.xpath('/publicObject/@published').map { |node| iiif_key_value('PublishDate', node.text) } # add published date
+      metadata
+    end
   end
 
   def iiif_key_value(label, value)
