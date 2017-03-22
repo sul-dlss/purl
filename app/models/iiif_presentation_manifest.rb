@@ -6,6 +6,8 @@ class IiifPresentationManifest
 
   attr_reader :purl_resource
 
+  OAI_DC_SCHEMA = 'http://www.openarchives.org/OAI/2.0/oai_dc/'.freeze
+
   def initialize(purl_resource)
     @purl_resource = purl_resource
   end
@@ -69,15 +71,7 @@ class IiifPresentationManifest
     # Set viewingHint to paged if this is a book
     manifest.viewingHint = 'paged' if type == 'book'
 
-    metadata = []
-    # make into method, pass in xpath and label
-    metadata += get_metadata 'Creator', '//oai_dc:dc/dc:creator'
-    metadata += get_metadata 'Contributor', '//oai_dc:dc/dc:contributor'
-    metadata += get_metadata 'Publisher', '//oai_dc:dc/dc:publisher'
-    metadata += get_metadata 'Date', '//oai_dc:dc/dc:date'
-    metadata += get_metadata 'PublishVersion', '/publicObject/@publishVersion'
-
-    manifest.metadata = metadata if metadata.present?
+    manifest.metadata = dc_to_iiif_metadata if dc_to_iiif_metadata.present?
 
     manifest.description = description_or_note
 
@@ -173,14 +167,18 @@ class IiifPresentationManifest
     )
   end
 
-  def get_metadata(label, xpath)
-    nodes = public_xml_document.xpath xpath, 'dc' => 'http://purl.org/dc/elements/1.1/', 'oai_dc' => 'http://www.openarchives.org/OAI/2.0/oai_dc/'
-    nodes.map do |node|
-      {
-        'label' => label,
-        'value' => node.text
-      }
+  # transform all DC metadata in the public XML into an array of hashes for inclusion in the IIIF manifest
+  def dc_to_iiif_metadata
+    @dc_to_iiif_metadata ||= begin
+      all_dc_nodes = public_xml_document.xpath '//oai_dc:dc/*', 'oai_dc' => OAI_DC_SCHEMA
+      metadata = all_dc_nodes.map { |dc_node| iiif_key_value(dc_node.name.upcase_first, dc_node.text) }
+      metadata += public_xml_document.xpath('/publicObject/@published').map { |node| iiif_key_value('PublishDate', node.text) } # add published date
+      metadata
     end
+  end
+
+  def iiif_key_value(label, value)
+    { 'label' => label, 'value' => value }
   end
 
   def thumbnail_resource
