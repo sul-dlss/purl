@@ -73,7 +73,7 @@ group :development, :test do
   gem 'database_cleaner'
 
   # Rubocop is a static code analyzer to enforce style.
-  gem 'rubocop', require: false
+  gem 'rubocop', '= 0.46.0', require: false
 
   # scss-lint will test the scss files to enfoce styles
   gem 'scss-lint', require: false
