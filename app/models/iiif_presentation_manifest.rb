@@ -53,7 +53,7 @@ class IiifPresentationManifest
     purl_base_uri = controller.purl_url(druid)
 
     manifest_data = {
-      '@id'   => controller.iiif_manifest_url(druid),
+      '@id'   => controller.request.original_url,
       'label' => title,
       'attribution' => copyright || 'Provided by the Stanford University Libraries',
       'logo' => {

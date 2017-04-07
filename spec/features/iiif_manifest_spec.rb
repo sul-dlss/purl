@@ -55,6 +55,18 @@ describe 'IIIF manifests' do
     expect(json['metadata']).to eq(expected_dc_metadata)
   end
 
+  it 'has the correct @id value given the url the manifest is being requested under' do
+    visit '/bb157hs6068/iiif/manifest.json'
+    json = JSON.parse(page.body)
+
+    expect(json['@id']).to match %r{/bb157hs6068/iiif/manifest.json$}
+
+    visit '/bb157hs6068/iiif/manifest'
+    json = JSON.parse(page.body)
+
+    expect(json['@id']).to match %r{/bb157hs6068/iiif/manifest$}
+  end
+
   it 'includes a representative thumbnail' do
     visit '/bb157hs6068/iiif/manifest.json'
     json = JSON.parse(page.body)
