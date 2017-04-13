@@ -74,8 +74,6 @@ GEM
     capistrano-rails (1.2.3)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
-    capistrano-releaseboard (0.0.1)
-      faraday
     capistrano-shared_configs (0.1.2)
     capybara (2.13.0)
       addressable
@@ -101,11 +99,10 @@ GEM
     database_cleaner (1.5.3)
     deep_merge (1.1.1)
     diff-lcs (1.3)
-    dlss-capistrano (3.4.0)
+    dlss-capistrano (3.4.1)
       capistrano (~> 3.0)
       capistrano-bundle_audit (>= 0.1.0)
       capistrano-one_time_key
-      capistrano-releaseboard
       capistrano-shared_configs
     docile (1.1.5)
     dor-rights-auth (1.3.0)
