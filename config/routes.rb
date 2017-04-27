@@ -11,11 +11,23 @@ Rails.application.routes.draw do
 
   get ':id' => 'purl#show', as: :purl
   get ':id/embed', to: redirect("/iframe/?url=#{Settings.embed.url % { druid: '%{id}' }}")
-  get '/:id/iiif/manifest' => 'iiif_v2#manifest', as: :iiif_manifest
-  get '/:id/iiif/canvas/:resource_id' => 'iiif_v2#canvas', as: :iiif_canvas
-  get '/:id/iiif/annotation/:annotation_id' => 'iiif_v2#annotation', as: :iiif_annotation
 
-  get '/:id/iiif3/manifest' => 'iiif_v3#manifest', as: :iiif3_manifest
-  get '/:id/iiif3/canvas/:resource_id' => 'iiif_v3#canvas', as: :iiif3_canvas
-  get '/:id/iiif3/annotation/:annotation_id' => 'iiif_v3#annotation', as: :iiif3_annotation
+  get '/:id/iiif3/manifest' => 'iiif_v3#manifest', as: :iiif3_manifest, format: false
+  get '/:id/iiif3/manifest.json', to: redirect('/%{id}/iiif3/manifest')
+
+  get '/:id/iiif3/canvas/:resource_id' => 'iiif_v3#canvas', as: :iiif3_canvas, format: false
+  get '/:id/iiif3/canvas/:resource_id.json', to: redirect('/%{id}/iiif3/canvas/%{resource_id}')
+
+  get '/:id/iiif3/annotation/:annotation_id' => 'iiif_v3#annotation', as: :iiif3_annotation, format: false
+  get '/:id/iiif3/annotation/:annotation_id.json', to: redirect('/%{id}/iiif3/annotation/%{annotation_id}')
+
+  get '/:id/iiif/manifest' => 'iiif_v2#manifest', as: :iiif_manifest, format: false
+  get '/:id/iiif/manifest.json', to: redirect('/%{id}/iiif/manifest')
+
+  get '/:id/iiif/canvas/:resource_id' => 'iiif_v2#canvas', as: :iiif_canvas, format: false
+  get '/:id/iiif/canvas/:resource_id.json', to: redirect('/%{id}/iiif/canvas/%{resource_id}')
+
+  get '/:id/iiif/annotation/:annotation_id' => 'iiif_v2#annotation', as: :iiif_annotation, format: false
+  get '/:id/iiif/annotation/:annotation_id.json', to: redirect('/%{id}/iiif/annotation/%{annotation_id}')
+
 end
