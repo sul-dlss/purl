@@ -50,7 +50,7 @@ class PurlController < ApplicationController
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
 
     if @purl.iiif_manifest?
-      manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc], expires_in: Settings.resource_cache.lifetime) do
+      manifest = Rails.cache.fetch([@purl, params[:format], @purl.updated_at.utc], expires_in: Settings.resource_cache.lifetime) do
         @purl.iiif_manifest.body(self).to_ordered_hash
       end
 
