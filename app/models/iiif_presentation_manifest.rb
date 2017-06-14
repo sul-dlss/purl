@@ -144,11 +144,11 @@ class IiifPresentationManifest
       img_res.service['service'] = [
         IIIF::Service.new(
           '@id' => "#{Settings.stacks.url}/auth/iiif",
-          'profile' => 'http://iiif.io/api/auth/0/login',
+          'profile' => 'http://iiif.io/api/auth/1/login',
           'label' => 'Stanford-affiliated? Login to view',
           'service' => [{
             '@id' => "#{Settings.stacks.url}/image/iiif/token",
-            'profile' => 'http://iiif.io/api/auth/0/token'
+            'profile' => 'http://iiif.io/api/auth/1/token'
           }]
         )
       ]

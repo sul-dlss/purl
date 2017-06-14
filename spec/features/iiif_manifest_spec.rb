@@ -72,10 +72,10 @@ describe 'IIIF manifests' do
     image = canvas['images'].first
 
     service = image['resource']['service']
-    expect(service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/0/login'
+    expect(service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/login'
 
-    login_service = service['service'].detect { |x| x['profile'] == 'http://iiif.io/api/auth/0/login' }
-    expect(login_service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/0/token'
+    login_service = service['service'].detect { |x| x['profile'] == 'http://iiif.io/api/auth/1/login' }
+    expect(login_service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/token'
   end
 
   it 'properly decodes XML entities into their UTF-8 characters' do
