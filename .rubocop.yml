@@ -30,6 +30,11 @@ Metrics/MethodLength:
 Metrics/ModuleLength:
   Max: 120
 
+Metrics/BlockLength:
+  Exclude:
+    - app/models/purl_resource.rb
+    - spec/**/*
+
 Style/Documentation:
   Enabled: false
 
