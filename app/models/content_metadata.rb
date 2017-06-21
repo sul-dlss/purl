@@ -44,7 +44,6 @@ class ContentMetadata
     resources.reject { |r| r.type == 'object' }
   end
 
-  # rubocop:disable Metrics/AbcSize
   def extract_resources(resource)
     # extract resource-level attributes first
     resource_attributes = {
@@ -68,7 +67,6 @@ class ContentMetadata
       end
     end
   end
-  # rubocop:enable Metrics/AbcSize
 
   class Resource
     include ActiveModel::Model

@@ -19,7 +19,7 @@ Metrics/LineLength:
     - spec/integration/purl_spec.rb
 
 Metrics/AbcSize:
-  Max: 20
+  Max: 22
 
 Metrics/ClassLength:
   Max: 200
@@ -29,6 +29,11 @@ Metrics/MethodLength:
 
 Metrics/ModuleLength:
   Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - app/models/purl_resource.rb
+    - spec/**/*
 
 Style/Documentation:
   Enabled: false
