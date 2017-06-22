@@ -1,0 +1,122 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://purl.stanford.edu/bx658jh7339/iiif3/manifest",
+  "type": "Manifest",
+  "label": "M. de Courville : [estampe]",
+  "attribution": "Provided by the Stanford University Libraries",
+  "logo": {
+    "id": "https://stacks.stanford.edu/image/iiif/wy534zh7137%2FSULAIR_rosette/full/400,/0/default.jpg",
+    "service": {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "id": "https://stacks.stanford.edu/image/iiif/wy534zh7137%2FSULAIR_rosette",
+      "profile": "http://iiif.io/api/image/2/level1.json"
+    }
+  },
+  "seeAlso": {
+    "id": "https://purl.stanford.edu/bx658jh7339.mods",
+    "format": "application/mods+xml"
+  },
+  "metadata": [{
+    "label": "Title",
+    "value": "M. de Courville: [estampe]"
+  }, {
+    "label": "Contributor",
+    "value": "Girard, Romain, 1751?-18"
+  }, {
+    "label": "Contributor",
+    "value": "Vinck, Carl de, 1859-19"
+  }, {
+    "label": "Contributor",
+    "value": "Girard, Romain, 1751?-18"
+  }, {
+    "label": "Type",
+    "value": "StillImage"
+  }, {
+    "label": "Type",
+    "value": "picture"
+  }, {
+    "label": "Type",
+    "value": "Portraits-18e siècle."
+  }, {
+    "label": "Date",
+    "value": "[ca 1786]"
+  }, {
+    "label": "Date",
+    "value": "1786"
+  }, {
+    "label": "Date",
+    "value": "1786"
+  }, {
+    "label": "Publisher",
+    "value": "[R. Girard ?]"
+  }, {
+    "label": "Language",
+    "value": "und"
+  }, {
+    "label": "Format",
+    "value": "1 est. : pointillé, eau-forte ; 18,5 x 12 cm (f.)"
+  }, {
+    "label": "Format",
+    "value": "estampe"
+  }, {
+    "label": "Subject",
+    "value": "Courville Sulbark, Mella de, 17..-1"
+  }, {
+    "label": "Subject",
+    "value": "Les événements de la Révolution--Le Roi et la famille royale--Marie-Antoinette et l'opinion publique--L'affaire du Collier de la Reine (1785-1786)"
+  }, {
+    "label": "Subject",
+    "value": "The events of the Revolution--The King and the Royal Family--Marie-Antoinette and public opinion--The Queen's Necklace affair (1785-1786)"
+  }, {
+    "label": "Relation",
+    "value": "De Vinck, 1123"
+  }, {
+    "label": "Identifier",
+    "value": "693231462"
+  }, {
+    "label": "PublishDate",
+    "value": "2013-12-14T16:51:21-08:00"
+  }],
+  "thumbnail": {
+    "id": "https://stacks.stanford.edu/image/iiif/bx658jh7339%2FT0000001/full/!400,400/0/default.jpg",
+    "type": "dctypes:Image",
+    "format": "image/jpeg",
+    "service": {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "id": "https://stacks.stanford.edu/image/iiif/bx658jh7339%2FT0000001",
+      "profile": "http://iiif.io/api/image/2/level1.json"
+    }
+  },
+  "sequences": [{
+    "id": "https://purl.stanford.edu/bx658jh7339#sequence-1",
+    "type": "Sequence",
+    "label": "Current order",
+    "canvases": [{
+      "id": "https://purl.stanford.edu/bx658jh7339/iiif3/canvas/bx658jh7339_1",
+      "type": "Canvas",
+      "label": "Image 1",
+      "height": 2608,
+      "width": 1680,
+      "content": [{
+        "id": "https://purl.stanford.edu/bx658jh7339/iiif3/annotationPage/bx658jh7339_1",
+        "type": "AnnotationPage",
+        "items": {
+          "id": "https://stacks.stanford.edu/bx658jh7339/iiif3/annotation/bx658jh7339_1",
+          "type": "dctypes:Image",
+          "motivation": "painting",
+          "body": {
+            "id": "https://stacks.stanford.edu/image/iiif/bx658jh7339%2FT0000001/full/full/0/default.jpg",
+            "format": "image/jpeg",
+            "height": 2608,
+            "width": 1680,
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "id": "https://stacks.stanford.edu/image/iiif/bx658jh7339%2FT0000001",
+              "profile": "http://iiif.io/api/image/2/level1.json"
+          },
+          "target": "https://purl.stanford.edu/bx658jh7339/iiif3/canvas/bx658jh7339_1"
+        }
+      }]
+    }]
+  }]
+}
