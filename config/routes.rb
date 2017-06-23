@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   get '/:id/iiif/manifest' => 'iiif_v2#manifest', as: :iiif_manifest
   get '/:id/iiif/canvas/:resource_id' => 'iiif_v2#canvas', as: :iiif_canvas
   get '/:id/iiif/annotation/:annotation_id' => 'iiif_v2#annotation', as: :iiif_annotation
+
+  get '/:id/iiif3/manifest' => 'iiif_v3#manifest', as: :iiif3_manifest
+  get '/:id/iiif3/canvas/:resource_id' => 'iiif_v3#canvas', as: :iiif3_canvas
+  get '/:id/iiif3/annotation/:annotation_id' => 'iiif_v3#annotation', as: :iiif3_annotation
 end

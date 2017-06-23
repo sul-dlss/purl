@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe 'IIIF v2 manifests' do
+describe 'IIIF v3 manifests' do
   it 'works' do
-    visit '/bb157hs6068/iiif/manifest.json'
+    visit '/bb157hs6068/iiif3/manifest'
     json = JSON.parse(page.body)
 
     expect(json['@context']).to eq 'http://iiif.io/api/presentation/2/context.json'
@@ -56,7 +56,7 @@ describe 'IIIF v2 manifests' do
   end
 
   it 'includes a representative thumbnail' do
-    visit '/bb157hs6068/iiif/manifest.json'
+    visit '/bb157hs6068/iiif3/manifest'
     json = JSON.parse(page.body)
 
     expect(json['thumbnail']['@id']).to eq 'http://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
@@ -64,7 +64,7 @@ describe 'IIIF v2 manifests' do
   end
 
   it 'includes authorization services for a Stanford-only image' do
-    visit '/py305sy7961/iiif/manifest.json'
+    visit '/py305sy7961/iiif3/manifest'
     json = JSON.parse(page.body)
     expect(json['sequences'].length).to eq 1
     canvas = json['sequences'].first['canvases'].first
@@ -79,13 +79,13 @@ describe 'IIIF v2 manifests' do
   end
 
   it 'properly decodes XML entities into their UTF-8 characters' do
-    visit '/py305sy7961/iiif/manifest.json'
+    visit '/py305sy7961/iiif3/manifest'
     json = JSON.parse(page.body)
     expect(json['attribution']).to eq 'Property rights reside with the repository. Copyright © Stanford University. All Rights Reserved.'
   end
 
   it 'suppresses sequences for dark resources' do
-    visit '/bc421tk1152/iiif/manifest.json'
+    visit '/bc421tk1152/iiif3/manifest'
     json = JSON.parse(page.body)
 
     expect(json['sequences'].length).to eq 1
@@ -93,7 +93,7 @@ describe 'IIIF v2 manifests' do
   end
 
   it 'publishes IIIF manifests for books with image constituents' do
-    visit '/zf119tw4418/iiif/manifest.json'
+    visit '/zf119tw4418/iiif3/manifest'
     json = JSON.parse(page.body)
 
     expect(json['sequences'].length).to eq 1
@@ -113,8 +113,8 @@ describe 'IIIF v2 manifests' do
     describe 'first child object' do
       let(:druid) { 'cg767mn6478' }
 
-      it 'generates a correct manifest.json' do
-        visit "/#{druid}/iiif/manifest.json"
+      it 'generates a correct manifest' do
+        visit "/#{druid}/iiif3/manifest"
         expect(page).to have_http_status(:ok)
 
         json = JSON.parse(page.body)
@@ -136,8 +136,8 @@ describe 'IIIF v2 manifests' do
     describe 'second child object' do
       let(:druid) { 'jw923xn5254' }
 
-      it 'generates a correct manifest.json' do
-        visit "/#{druid}/iiif/manifest.json"
+      it 'generates a correct manifest' do
+        visit "/#{druid}/iiif3/manifest"
         expect(page).to have_http_status(:ok)
 
         json = JSON.parse(page.body)
@@ -159,8 +159,8 @@ describe 'IIIF v2 manifests' do
     describe 'parent object' do
       let(:druid) { 'hj097bm8879' }
 
-      it 'generates a correct manifest.json' do
-        visit "/#{druid}/iiif/manifest.json"
+      it 'generates a correct manifest' do
+        visit "/#{druid}/iiif3/manifest"
         expect(page).to have_http_status(:ok)
 
         json = JSON.parse(page.body)
