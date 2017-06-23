@@ -46,7 +46,7 @@ describe 'purl', type: :feature do
     it 'renders the json for manifest' do
       visit "/#{@manifest_object}/iiif/canvas/bc854fy5899_1.json"
       json_body = JSON.parse(page.body)
-      expect(json_body['label']).to eq('John Wyclif and his followers, Tracts in Middle English')
+      expect(json_body['label']).to eq('Page 1')
     end
     it 'renders nil for a non-manifest' do
       visit "/#{@file_object}/iiif/canvas/bc854fy5899_fdsa.json"
@@ -58,7 +58,7 @@ describe 'purl', type: :feature do
     it 'renders the json for manifest' do
       visit "/#{@manifest_object}/iiif/annotation/bc854fy5899_1.json"
       json_body = JSON.parse(page.body)
-      expect(json_body['label']).to eq('John Wyclif and his followers, Tracts in Middle English')
+      expect(json_body['motivation']).to eq('sc:painting')
     end
     it 'renders nil for a non-manifest' do
       visit "/#{@file_object}/iiif/annotation/bc854fy5899_fdsa.json"

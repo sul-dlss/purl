@@ -8,7 +8,7 @@ class IiifV2Controller < ApplicationController
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
 
     if @purl.iiif_manifest?
-      manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc], expires_in: Settings.resource_cache.lifetime) do
+      manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc, 'iiif_v2', 'manifest'], expires_in: Settings.resource_cache.lifetime) do
         @purl.iiif_manifest.body(self).to_ordered_hash
       end
 
@@ -22,7 +22,7 @@ class IiifV2Controller < ApplicationController
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
 
     if @purl.iiif_manifest?
-      manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc], expires_in: Settings.resource_cache.lifetime) do
+      manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc, 'iiif_v2', 'canvas'], expires_in: Settings.resource_cache.lifetime) do
         @purl.iiif_manifest.canvas(controller: self, resource_id: params[:resource_id]).to_ordered_hash
       end
 
@@ -36,7 +36,7 @@ class IiifV2Controller < ApplicationController
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
 
     if @purl.iiif_manifest?
-      manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc], expires_in: Settings.resource_cache.lifetime) do
+      manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc, 'iiif_v2', 'annotation'], expires_in: Settings.resource_cache.lifetime) do
         @purl.iiif_manifest.annotation(controller: self, annotation_id: params[:annotation_id]).to_ordered_hash
       end
 
