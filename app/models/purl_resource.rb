@@ -97,6 +97,14 @@ class PurlResource
     iiif_manifest.needed?
   end
 
+  def iiif3_manifest
+    @iiif3_manifest ||= Iiif3PresentationManifest.new(self)
+  end
+
+  def iiif3_manifest?
+    iiif3_manifest.needed?
+  end
+
   def flipbook
     @flipbook ||= Flipbook.new(self)
   end
