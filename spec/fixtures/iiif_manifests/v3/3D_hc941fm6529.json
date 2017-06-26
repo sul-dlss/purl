@@ -1,0 +1,62 @@
+{  
+   "id":"http://dms-data.stanford.edu/data/manifests/v3test/hc941fm6529/manifest.json",
+   "type":"Manifest",
+   "label":"Sheep (Ovis aries), male, cervical vertabra",
+   "attribution":"Provided by the Stanford University Libraries",
+   "logo":{  
+      "@id":"https://stacks.stanford.edu/image/iiif/wy534zh7137%2FSULAIR_rosette/full/400,/0/default.jpg",
+      "service":{  
+         "@context":"http://iiif.io/api/image/2/context.json",
+         "@id":"https://stacks.stanford.edu/image/iiif/wy534zh7137%2FSULAIR_rosette",
+         "profile":"http://iiif.io/api/image/2/level1.json"
+      }
+   },
+   "seeAlso":{  
+      "@id":"https://purl.stanford.edu/hc941fm6529.mods",
+      "format":"application/mods+xml"
+   },
+   "metadata":[  
+      {  
+         "label":"Title",
+         "value":"Sheep (Ovis aries), male, cervical vertabra"
+      },
+      {  
+         "label":"Everything Else",
+         "value":"Our usual array of dc-derived metadata"
+      }
+   ],
+   "sequences":[  
+      {  
+         "id":"https://purl.stanford.edu/hc941fm6529#sequence-1",
+         "type":"Sequence",
+         "label":"Current order",
+         "canvases":[  
+            {  
+               "id":"https://purl.stanford.edu/hc941fm6529/iiif/canvas/hc941fm6529_1",
+               "type":"Canvas",
+               "label":"3D Test",
+               "content":[  
+                  {  
+                     "id":"https://purl.stanford.edu/hc941fm6529/iiif/annotationpage/hc941fm6529_1",
+                     "type":"AnnotationPage",
+                     "items":[  
+                        {  
+                           "id":"https://purl.stanford.edu/hc941fm6529/iiif/annotation/hc941fm6529_1",
+                           "type":"Annotation",
+                           "motivation":"painting",
+                           "body":{  
+                              "id":"https://stacks.stanford.edu/file/druid:hc941fm6529/hc941fm6529.json",
+                              "type":"PhysicalObject",
+                              "format":"application/vnd.threejs+json",
+							  "label":"Sheep (Ovis aries), male, cervical vertabra"
+                           },
+                           "target":"https://purl.stanford.edu/hc941fm6529/iiif/canvas/hc941fm6529_1"
+                        }
+                     ]
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
