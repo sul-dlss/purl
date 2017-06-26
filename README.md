@@ -11,3 +11,53 @@ PURL service is a URL resolver that translates a reference to a digital object (
 
 
 Please create a github release before deploying.
+
+## Requirements
+
+1. Ruby (2.2.5 or greater)
+2. [bundler](http://bundler.io/) gem
+
+## Installation
+
+Clone the repository
+
+    $ git clone git@github.com:sul-dlss/stacks.git
+
+Move into the app and install dependencies
+
+    $ cd stacks
+    $ bundle install
+
+Start the development server
+
+    $ rails s
+
+## Configuring
+
+Configuration is handled through the [RailsConfig](/railsconfig/config) settings.yml files.
+
+#### Local Configuration
+
+The defaults in `config/settings.yml` should work on a locally run installation.
+
+## Testing
+
+The test suite (with RuboCop style enforcement) will be run with the default rake task (also run on travis)
+
+    $ rake
+
+The specs can be run without RuboCop style enforcement
+
+    $ rake spec
+
+The RuboCop style enforcement can be run without running the tests
+
+    $ rake rubocop
+
+## Deploying
+
+Please create a github release before deploying to production.
+
+Capistrano is used for deployment
+
+    $ cap dev deploy
