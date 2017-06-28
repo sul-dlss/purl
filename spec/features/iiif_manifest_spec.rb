@@ -10,7 +10,7 @@ describe 'IIIF v2 manifests' do
     expect(json['description']).to eq 'Tom.1. No.9. (top right).'
     expect(json['attribution']).to start_with 'This work has been identified as being free of known restrictions'
     expect(json['seeAlso']['@id']).to eq 'http://www.example.com/bb157hs6068.mods'
-    expect(json['thumbnail']['@id']).to eq 'http://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
+    expect(json['thumbnail']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
 
     expect(json['sequences'].length).to eq 1
     canvas = json['sequences'].first['canvases'].first
@@ -23,7 +23,7 @@ describe 'IIIF v2 manifests' do
 
     expect(image['resource']['height']).to eq 9040
     expect(image['resource']['width']).to eq 10_481
-    expect(image['resource']['@id']).to eq 'http://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/full/0/default.jpg'
+    expect(image['resource']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/full/0/default.jpg'
 
     expect(json['metadata'].class).to eq Array
     expect(json['metadata'].size).to eq(21) # 20 DC elements are there plus the publish date
@@ -59,7 +59,7 @@ describe 'IIIF v2 manifests' do
     visit '/bb157hs6068/iiif/manifest.json'
     json = JSON.parse(page.body)
 
-    expect(json['thumbnail']['@id']).to eq 'http://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
+    expect(json['thumbnail']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
     expect(json['thumbnail']['@type']).to eq 'dctypes:Image'
   end
 
