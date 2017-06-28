@@ -2,7 +2,7 @@ require 'iiif/presentation'
 
 class IiifPresentationManifest
   delegate :druid, :title, :type, :copyright, :description, :content_metadata, :public_xml_document, to: :purl_resource
-  delegate :deliverable_files, to: :content_metadata
+  delegate :resources, to: :content_metadata
 
   attr_reader :purl_resource
 
@@ -25,7 +25,7 @@ class IiifPresentationManifest
   end
 
   def page_images
-    @page_images ||= deliverable_files.select do |file|
+    @page_images ||= resources.select do |file|
       image?(file) && deliverable_file?(file)
     end
   end
@@ -36,8 +36,8 @@ class IiifPresentationManifest
 
   # also is this right?  should it handle location rights too?
   def deliverable_file?(file)
-    purl_resource.rights.stanford_only_rights_for_file(file.filename) ||
-      purl_resource.rights.world_rights_for_file(file.filename)
+    purl_resource.rights.stanford_only_rights_for_file(file.filename).first ||
+      purl_resource.rights.world_rights_for_file(file.filename).first
   end
 
   def description_or_note
@@ -89,9 +89,6 @@ class IiifPresentationManifest
 
     # for each resource image, create a canvas
     page_images.each do |resource|
-      next unless purl_resource.rights.world_rights_for_file(resource.filename).first ||
-                  purl_resource.rights.stanford_only_rights_for_file(resource.filename).first
-
       sequence.canvases << canvas_for_resource(purl_base_uri, resource)
     end
 

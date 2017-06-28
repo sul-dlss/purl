@@ -40,10 +40,6 @@ class ContentMetadata
     end.flatten.compact.sort_by(&:sequence)
   end
 
-  def deliverable_files
-    resources.reject { |r| r.type == 'object' }
-  end
-
   def extract_resources(resource)
     # extract resource-level attributes first
     resource_attributes = {
