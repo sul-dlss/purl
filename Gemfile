@@ -45,7 +45,7 @@ gem 'addressable'
 gem 'tophat'
 gem 'rails-file-icons'
 gem 'sul_styles', '~> 0.3'
-gem 'iiif-presentation'
+gem 'iiif-presentation', github: 'sul-dlss/osullivan', branch: 'uv-v3'
 gem 'dalli'
 
 group :production do

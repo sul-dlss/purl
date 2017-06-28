@@ -5,12 +5,12 @@ describe 'IIIF v3 manifests' do
     visit '/bb157hs6068/iiif3/manifest'
     json = JSON.parse(page.body)
 
-    expect(json['@context']).to eq 'http://iiif.io/api/presentation/2/context.json'
+    expect(json['@context']).to include 'http://www.w3.org/ns/anno.jsonld', 'http://iiif.io/api/presentation/3/context.json'
     expect(json['label']).to include 'NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES' # ...
     expect(json['description']).to eq 'Tom.1. No.9. (top right).'
     expect(json['attribution']).to start_with 'This work has been identified as being free of known restrictions'
-    expect(json['seeAlso']['@id']).to eq 'http://www.example.com/bb157hs6068.mods'
-    expect(json['thumbnail']['@id']).to eq 'http://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
+    expect(json['seeAlso']['id']).to eq 'http://www.example.com/bb157hs6068.mods'
+    expect(json['thumbnail']['id']).to eq 'http://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
 
     expect(json['sequences'].length).to eq 1
     canvas = json['sequences'].first['canvases'].first
@@ -18,12 +18,12 @@ describe 'IIIF v3 manifests' do
     expect(canvas['height']).to eq 9040
     expect(canvas['width']).to eq 10_481
 
-    expect(canvas['images'].length).to eq 1
-    image = canvas['images'].first
-
-    expect(image['resource']['height']).to eq 9040
-    expect(image['resource']['width']).to eq 10_481
-    expect(image['resource']['@id']).to eq 'http://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/full/0/default.jpg'
+    expect(canvas['content'].length).to eq 1
+    expect(canvas['content'].first['items'].length).to eq 1
+    image = canvas['content'].first['items'].first
+    expect(image['body']['height']).to eq 9040
+    expect(image['body']['width']).to eq 10_481
+    expect(image['body']['id']).to eq 'http://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/full/0/default.jpg'
 
     expect(json['metadata'].class).to eq Array
     expect(json['metadata'].size).to eq(21) # 20 DC elements are there plus the publish date
@@ -59,8 +59,8 @@ describe 'IIIF v3 manifests' do
     visit '/bb157hs6068/iiif3/manifest'
     json = JSON.parse(page.body)
 
-    expect(json['thumbnail']['@id']).to eq 'http://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
-    expect(json['thumbnail']['@type']).to eq 'dctypes:Image'
+    expect(json['thumbnail']['id']).to eq 'http://stacks-test.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
+    expect(json['thumbnail']['type']).to eq 'Image'
   end
 
   it 'includes authorization services for a Stanford-only image' do
@@ -68,10 +68,10 @@ describe 'IIIF v3 manifests' do
     json = JSON.parse(page.body)
     expect(json['sequences'].length).to eq 1
     canvas = json['sequences'].first['canvases'].first
-    expect(canvas['images'].length).to eq 1
-    image = canvas['images'].first
+    expect(canvas['content'].first['items'].length).to eq 1
+    image = canvas['content'].first['items'].first
 
-    service = image['resource']['service']
+    service = image['body']['service']
     expect(service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/login'
 
     login_service = service['service'].detect { |x| x['profile'] == 'http://iiif.io/api/auth/1/login' }
@@ -123,13 +123,14 @@ describe 'IIIF v3 manifests' do
         expect(json['sequences'].first['canvases'].length).to eq 1
 
         canvas = json['sequences'].first['canvases'].first
-        expect(canvas['images'].length).to eq 1
+        expect(canvas['content'].length).to eq 1
+        expect(canvas['content'].first['items'].length).to eq 1
         expect(canvas['label']).to eq 'Image 1'
 
-        image = canvas['images'].first
-        expect(image['resource']['@id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/full/0/default.jpg'
-        expect(image['resource']['height']).to eq 4747
-        expect(image['resource']['width']).to eq 6475
+        image = canvas['content'].first['items'].first
+        expect(image['body']['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/full/0/default.jpg'
+        expect(image['body']['height']).to eq 4747
+        expect(image['body']['width']).to eq 6475
       end
     end
 
@@ -146,13 +147,14 @@ describe 'IIIF v3 manifests' do
         expect(json['sequences'].first['canvases'].length).to eq 1
 
         canvas = json['sequences'].first['canvases'].first
-        expect(canvas['images'].length).to eq 1
+        expect(canvas['content'].length).to eq 1
+        expect(canvas['content'].first['items'].length).to eq 1
         expect(canvas['label']).to eq 'Image 1'
 
-        image = canvas['images'].first
-        expect(image['resource']['@id']).to end_with '/image/iiif/jw923xn5254%2F2542B/full/full/0/default.jpg'
-        expect(image['resource']['height']).to eq 4675
-        expect(image['resource']['width']).to eq 3139
+        image = canvas['content'].first['items'].first
+        expect(image['body']['id']).to end_with '/image/iiif/jw923xn5254%2F2542B/full/full/0/default.jpg'
+        expect(image['body']['height']).to eq 4675
+        expect(image['body']['width']).to eq 3139
       end
     end
 
@@ -165,27 +167,29 @@ describe 'IIIF v3 manifests' do
 
         json = JSON.parse(page.body)
         expect(json['label']).to start_with 'Carey\'s American Atlas'
-        expect(json['thumbnail']['@id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/!400,400/0/default.jpg' # first child
+        expect(json['thumbnail']['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/!400,400/0/default.jpg' # first child
         expect(json['sequences'].length).to eq 1
         expect(json['sequences'].first['canvases'].length).to eq 23
 
         canvas = json['sequences'].first['canvases'][0]
         expect(canvas['label']).to start_with "Cover: Carey's American atlas."
 
-        expect(canvas['images'].length).to eq 1
-        image = canvas['images'].first
-        expect(image['resource']['@id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/full/0/default.jpg' # first child
-        expect(image['resource']['height']).to eq 4747
-        expect(image['resource']['width']).to eq 6475
+        expect(canvas['content'].length).to eq 1
+        expect(canvas['content'].first['items'].length).to eq 1
+        image = canvas['content'].first['items'].first
+        expect(image['body']['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/full/0/default.jpg' # first child
+        expect(image['body']['height']).to eq 4747
+        expect(image['body']['width']).to eq 6475
 
         canvas = json['sequences'].first['canvases'][1]
         expect(canvas['label']).to start_with "Title Page: Carey's American atlas."
 
-        expect(canvas['images'].length).to eq 1
-        image = canvas['images'].first
-        expect(image['resource']['@id']).to end_with '/image/iiif/jw923xn5254%2F2542B/full/full/0/default.jpg' # second child
-        expect(image['resource']['height']).to eq 4675
-        expect(image['resource']['width']).to eq 3139
+        expect(canvas['content'].length).to eq 1
+        expect(canvas['content'].first['items'].length).to eq 1
+        image = canvas['content'].first['items'].first
+        expect(image['body']['id']).to end_with '/image/iiif/jw923xn5254%2F2542B/full/full/0/default.jpg' # second child
+        expect(image['body']['height']).to eq 4675
+        expect(image['body']['width']).to eq 3139
       end
     end
   end

@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/sul-dlss/osullivan.git
+  revision: b8e11030300d34f8ad45f000124c6988f8c998a7
+  branch: uv-v3
+  specs:
+    iiif-presentation (0.2.0)
+      activesupport (>= 3.2.18)
+      faraday (>= 0.9)
+      json
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -122,10 +132,6 @@ GEM
     honeybadger (3.1.2)
     htmlentities (4.3.4)
     i18n (0.8.4)
-    iiif-presentation (0.2.0)
-      activesupport (>= 3.2.18)
-      faraday (>= 0.9)
-      json
     iso-639 (0.2.8)
     jbuilder (2.6.4)
       activesupport (>= 3.0.0)
@@ -336,7 +342,7 @@ DEPENDENCIES
   faraday
   honeybadger
   htmlentities
-  iiif-presentation
+  iiif-presentation!
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
