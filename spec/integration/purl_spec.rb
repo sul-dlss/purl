@@ -49,10 +49,6 @@ describe 'purl', type: :feature do
         expect(json_body['label']).to eq('John Wyclif and his followers, Tracts in Middle English')
         expect(json_body['metadata'].length).to eq 16
       end
-      it 'renders nil for a non-manifest' do
-        visit "/#{@file_object}/iiif3/manifest"
-        expect(page.status_code).to eq(404)
-      end
     end
   end
 

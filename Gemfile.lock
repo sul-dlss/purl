@@ -1,7 +1,7 @@
 GIT
-  remote: git://github.com/sul-dlss/osullivan.git
-  revision: b8e11030300d34f8ad45f000124c6988f8c998a7
-  branch: uv-v3
+  remote: https://github.com/sul-dlss/osullivan.git
+  revision: bf8aa0e09eb41d8867c7bd761f8828d22f06df31
+  branch: development
   specs:
     iiif-presentation (0.2.0)
       activesupport (>= 3.2.18)

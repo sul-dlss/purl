@@ -45,7 +45,9 @@ gem 'addressable'
 gem 'tophat'
 gem 'rails-file-icons'
 gem 'sul_styles', '~> 0.3'
-gem 'iiif-presentation', github: 'sul-dlss/osullivan', branch: 'uv-v3'
+
+# sul-dlss/osullivan#development has early support for generating IIIF v3 manifests
+gem 'iiif-presentation', github: 'sul-dlss/osullivan', branch: 'development'
 gem 'dalli'
 
 group :production do

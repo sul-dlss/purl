@@ -26,10 +26,15 @@ class IiifPresentationManifest
 
   def page_images
     @page_images ||= deliverable_files.select do |file|
-      file.mimetype == 'image/jp2' && (file.type == 'image' || file.type == 'page') && file.height > 0 && file.width > 0 && deliverable_file?(file)
+      image?(file) && deliverable_file?(file)
     end
   end
 
+  def image?(file)
+    file.mimetype == 'image/jp2' && (file.type == 'image' || file.type == 'page') && file.height > 0 && file.width > 0
+  end
+
+  # also is this right?  should it handle location rights too?
   def deliverable_file?(file)
     purl_resource.rights.stanford_only_rights_for_file(file.filename) ||
       purl_resource.rights.world_rights_for_file(file.filename)
@@ -100,7 +105,7 @@ class IiifPresentationManifest
 
     resource = page_images.find { |image| image.id == resource_id }
 
-    canvas_for_resource(purl_base_uri, resource)
+    canvas_for_resource(purl_base_uri, resource) if resource
   end
 
   def annotation(controller: nil, annotation_id:)
@@ -109,7 +114,7 @@ class IiifPresentationManifest
 
     resource = page_images.find { |image| image.id == annotation_id }
 
-    annotation_for_resource(purl_base_uri, resource)
+    annotation_for_resource(purl_base_uri, resource) if resource
   end
 
   def canvas_for_resource(purl_base_uri, resource)

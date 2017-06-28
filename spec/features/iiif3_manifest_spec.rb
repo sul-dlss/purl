@@ -84,14 +84,6 @@ describe 'IIIF v3 manifests' do
     expect(json['attribution']).to eq 'Property rights reside with the repository. Copyright © Stanford University. All Rights Reserved.'
   end
 
-  it 'suppresses sequences for dark resources' do
-    visit '/bc421tk1152/iiif3/manifest'
-    json = JSON.parse(page.body)
-
-    expect(json['sequences'].length).to eq 1
-    expect(json['sequences'].first['canvases']).to be_blank
-  end
-
   it 'publishes IIIF manifests for books with image constituents' do
     visit '/zf119tw4418/iiif3/manifest'
     json = JSON.parse(page.body)
@@ -191,6 +183,62 @@ describe 'IIIF v3 manifests' do
         expect(image['body']['height']).to eq 4675
         expect(image['body']['width']).to eq 3139
       end
+    end
+  end
+
+  describe 'a PDF object' do
+    let(:druid) { 'bb132pr2055' }
+
+    it 'generates a correct manifest' do
+      visit "/#{druid}/iiif3/manifest"
+      expect(page).to have_http_status(:ok)
+
+      json = JSON.parse(page.body)
+      expect(json['label']).to eq 'How does politics affect central banking?: evidence from the Federal Reserve'
+      expect(json['sequences'].length).to eq 1
+      expect(json['sequences'].first['canvases'].length).to eq 1
+
+      canvas = json['sequences'].first['canvases'][0]
+      expect(canvas['content'].length).to eq 1
+      expect(canvas['content'].first['items'].length).to eq 1
+      expect(canvas['height']).not_to be_present
+      expect(canvas['width']).not_to be_present
+
+      pdf = canvas['content'].first['items'].first
+      expect(pdf['body']['id']).to eq 'https://stacks.stanford.edu/file/bb132pr2055/Puente-Thesis-Submission-augmented.pdf'
+      expect(pdf['body']['format']).to eq 'application/pdf'
+      expect(pdf['body']['type']).to eq 'Document'
+    end
+  end
+
+  describe 'a Stanford-only PDF object' do
+    let(:druid) { 'bb253gh8060' }
+
+    it 'generates a manifest that includes the login service for the restricted file' do
+      visit "/#{druid}/iiif3/manifest"
+      expect(page).to have_http_status(:ok)
+
+      json = JSON.parse(page.body)
+      expect(json['label']).to eq 'Agenda'
+      expect(json['sequences'].length).to eq 1
+      expect(json['sequences'].first['canvases'].length).to eq 1
+
+      canvas = json['sequences'].first['canvases'][0]
+      expect(canvas['content'].length).to eq 1
+      expect(canvas['content'].first['items'].length).to eq 1
+      expect(canvas['height']).not_to be_present
+      expect(canvas['width']).not_to be_present
+
+      pdf = canvas['content'].first['items'].first
+      expect(pdf['body']['id']).to eq 'https://stacks.stanford.edu/file/bb253gh8060/SC0193_Agenda_6381_2010-10-07_001.pdf'
+      expect(pdf['body']['format']).to eq 'application/pdf'
+      expect(pdf['body']['type']).to eq 'Document'
+
+      expect(pdf['body']).to have_key 'service'
+
+      login_service = pdf['body']['service']
+      expect(login_service['profile']).to eq 'http://iiif.io/api/auth/1/login'
+      expect(login_service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/token'
     end
   end
 end

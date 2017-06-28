@@ -2,14 +2,15 @@ require 'iiif/presentation'
 require 'iiif/v3/presentation'
 
 class Iiif3PresentationManifest < IiifPresentationManifest
-  # Bypass this method if there are no image resources in contentMetadata
+  delegate :resources, to: :content_metadata
+
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def body(controller = nil)
     controller ||= Rails.application.routes.url_helpers
     purl_base_uri = controller.purl_url(druid)
 
     manifest_data = {
-      'id' => controller.iiif3_manifest_url(druid), # DIFF from v2
+      'id' => controller.iiif3_manifest_url(druid),
       'label' => title,
       'attribution' => copyright || 'Provided by the Stanford University Libraries',
       'logo' => {
@@ -19,11 +20,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       'seeAlso' => {
         'id' => controller.purl_url(druid, format: 'mods'),
         'format' => 'application/mods+xml'
-      },
-      '@context' => [
-        'http://www.w3.org/ns/anno.jsonld',
-        'http://iiif.io/api/presentation/3/context.json'
-      ]
+      }
     }
 
     manifest = IIIF::V3::Presentation::Manifest.new manifest_data
@@ -43,10 +40,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     manifest.thumbnail = thumbnail_resource
 
     # for each resource image, create a canvas
-    page_images.each do |resource|
-      next unless purl_resource.rights.world_rights_for_file(resource.filename).first ||
-                  purl_resource.rights.stanford_only_rights_for_file(resource.filename).first
-
+    resources.each do |resource|
       sequence.canvases << canvas_for_resource(purl_base_uri, resource)
     end
 
@@ -56,11 +50,13 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def canvas_for_resource(purl_base_uri, resource)
     canv = IIIF::V3::Presentation::Canvas.new
-    canv['id'] = "#{purl_base_uri}/iiif3/canvas/#{resource.id}" # DIFF from v2
+    canv['id'] = "#{purl_base_uri}/iiif3/canvas/#{resource.id}"
     canv.label = resource.label
     canv.label = 'image' unless canv.label.present?
-    canv.height = resource.height
-    canv.width = resource.width
+    if image?(resource)
+      canv.height = resource.height
+      canv.width = resource.width
+    end
 
     anno_page = IIIF::V3::Presentation::AnnotationPage.new
     anno_page['id'] = "#{purl_base_uri}/iiif3/annotation_page/#{resource.id}"
@@ -74,13 +70,22 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   end
 
   def annotation_for_resource(purl_base_uri, resource)
+    anno = IIIF::V3::Presentation::Annotation.new
+    anno['id'] = "#{purl_base_uri}/iiif3/annotation/#{resource.id}"
+
+    anno.body = if image?(resource)
+                  image_resource(resource)
+                else
+                  binary_resource(resource)
+                end
+
+    anno
+  end
+
+  def image_resource(resource)
     url = stacks_iiif_base_url(resource.druid, resource.filename)
 
-    anno = IIIF::V3::Presentation::Annotation.new
-    anno['id'] = "#{purl_base_uri}/iiif3/annotation/#{resource.id}" # DIFF from v2
-
     img_res = IIIF::V3::Presentation::ImageResource.new
-    img_res['type'] = 'Image'
     img_res['id'] = "#{url}/full/full/0/default.jpg"
     img_res.format = 'image/jpeg'
     img_res.height = resource.height
@@ -102,8 +107,27 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       ]
     end
 
-    anno['body'] = img_res
-    anno
+    img_res
+  end
+
+  def binary_resource(resource)
+    bin_res = IIIF::V3::Presentation::Resource.new
+    bin_res['id'] = "#{Settings.stacks.url}/file/#{resource.druid}/#{resource.filename}"
+    bin_res['type'] = 'Document'
+    bin_res.format = resource.mimetype
+
+    unless purl_resource.rights.world_rights_for_file(resource.filename).first
+      bin_res.service = IIIF::V3::Service.new(
+        'id' => "#{Settings.stacks.url}/auth/iiif",
+        'profile' => 'http://iiif.io/api/auth/1/login',
+        'label' => 'Stanford-affiliated? Login to view',
+        'service' => [{
+          'id' => "#{Settings.stacks.url}/image/iiif/token",
+          'profile' => 'http://iiif.io/api/auth/1/token'
+        }]
+      )
+    end
+    bin_res
   end
 
   def thumbnail_resource
