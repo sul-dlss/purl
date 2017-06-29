@@ -12,7 +12,7 @@ class IiifV2Controller < ApplicationController
         @purl.iiif_manifest.body(self).to_ordered_hash
       end
 
-      render json: manifest
+      render json: JSON.pretty_generate(manifest.as_json)
     else
       head :not_found
     end
@@ -26,7 +26,7 @@ class IiifV2Controller < ApplicationController
         @purl.iiif_manifest.canvas(controller: self, resource_id: params[:resource_id]).to_ordered_hash
       end
 
-      render json: manifest
+      render json: JSON.pretty_generate(manifest.as_json)
     else
       head :not_found
     end
@@ -40,7 +40,7 @@ class IiifV2Controller < ApplicationController
         @purl.iiif_manifest.annotation(controller: self, annotation_id: params[:annotation_id]).to_ordered_hash
       end
 
-      render json: manifest
+      render json: JSON.pretty_generate(manifest.as_json)
     else
       head :not_found
     end
