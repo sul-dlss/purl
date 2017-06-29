@@ -11,7 +11,7 @@ class IiifV3Controller < ApplicationController
       @purl.iiif3_manifest.body(self).to_ordered_hash
     end
 
-    render json: manifest
+    render json: JSON.pretty_generate(manifest.as_json)
   end
 
   def canvas
@@ -22,7 +22,7 @@ class IiifV3Controller < ApplicationController
     end
 
     if manifest
-      render json: manifest
+      render json: JSON.pretty_generate(manifest.as_json)
     else
       head :not_found
     end
@@ -36,7 +36,7 @@ class IiifV3Controller < ApplicationController
     end
 
     if manifest
-      render json: manifest
+      render json: JSON.pretty_generate(manifest.as_json)
     else
       head :not_found
     end

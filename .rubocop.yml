@@ -20,6 +20,9 @@ Metrics/LineLength:
 
 Metrics/AbcSize:
   Max: 22
+  Exclude:
+    - app/controllers/iiif_v2_controller.rb
+    - app/controllers/iiif_v3_controller.rb
 
 Metrics/ClassLength:
   Exclude:
