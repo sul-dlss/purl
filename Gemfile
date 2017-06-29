@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 # Use sqlite3 as the database (during local development)
@@ -40,7 +45,9 @@ gem 'addressable'
 gem 'tophat'
 gem 'rails-file-icons'
 gem 'sul_styles', '~> 0.3'
-gem 'iiif-presentation'
+
+# sul-dlss/osullivan#development has early support for generating IIIF v3 manifests
+gem 'iiif-presentation', github: 'sul-dlss/osullivan', branch: 'development'
 gem 'dalli'
 
 group :production do

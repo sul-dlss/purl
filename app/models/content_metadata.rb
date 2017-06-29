@@ -40,19 +40,16 @@ class ContentMetadata
     end.flatten.compact.sort_by(&:sequence)
   end
 
-  def deliverable_files
-    resources.reject { |r| r.type == 'object' }
-  end
-
   def extract_resources(resource)
     # extract resource-level attributes first
     resource_attributes = {
       id: resource.attribute('id').to_s,
       type: resource.attribute('type').to_s,
       label: resource.xpath('(label|attr[@name="label"])').first.try(:text),
-      druid: druid,
-      sequence: resource.attribute('sequence').value.to_i
+      druid: druid
     }
+
+    resource_attributes[:sequence] = resource.attribute('sequence').value.to_i if resource.attribute('sequence')
 
     resource.xpath('file|externalFile|resource').select { |node| Purl::Util.file_ready? node }.map do |node|
       case node.name

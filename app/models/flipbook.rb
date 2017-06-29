@@ -2,6 +2,10 @@ require 'purl/util'
 
 class Flipbook
   delegate :druid, :title, to: :purl_resource
+  delegate :catalog_key, :content_metadata, :rights, to: :purl_resource
+  delegate :reading_order, :page_start, :resources, to: :content_metadata
+  delegate :read_group, to: :rights
+
   attr_reader :purl_resource
 
   def initialize(purl_resource)
@@ -23,7 +27,7 @@ class Flipbook
   end
 
   def page_images
-    deliverable_files.select do |file|
+    resources.select do |file|
       file.mimetype == 'image/jp2' && (file.type == 'image' || file.type == 'page') && file.height > 0 && file.width > 0 && deliverable_file?(file)
     end
   end
@@ -49,8 +53,4 @@ class Flipbook
   def catalog_key?
     catalog_key.present?
   end
-
-  delegate :catalog_key, :content_metadata, :rights, to: :purl_resource
-  delegate :reading_order, :page_start, :deliverable_files, to: :content_metadata
-  delegate :read_group, to: :rights
 end

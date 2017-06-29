@@ -49,10 +49,6 @@ describe 'purl', type: :feature do
         expect(json_body['label']).to eq('John Wyclif and his followers, Tracts in Middle English')
         expect(json_body['metadata'].length).to eq 16
       end
-      it 'renders nil for a non-manifest' do
-        visit "/#{@file_object}/iiif3/manifest"
-        expect(page.status_code).to eq(404)
-      end
     end
   end
 
@@ -97,7 +93,7 @@ describe 'purl', type: :feature do
       it 'renders the json for manifest' do
         visit "/#{@manifest_object}/iiif3/annotation/bc854fy5899_1"
         json_body = JSON.parse(page.body)
-        expect(json_body['motivation']).to eq('sc:painting')
+        expect(json_body['motivation']).to eq('painting')
       end
       it 'renders nil for a non-manifest' do
         visit "/#{@file_object}/iiif3/annotation/bc854fy5899_fdsa"
@@ -188,16 +184,6 @@ describe 'purl', type: :feature do
       visit '/status'
       expect(page.status_code).to eq 200
       expect(page).to have_text('Application is running')
-    end
-    it '/status/all has response code 200' do
-      visit '/status/all'
-      expect(page.status_code).to eq 200
-      expect(page).to have_text('HTTP check successful')
-    end
-    it '/status/feedback_mailer responds' do
-      visit '/status/feedback_mailer'
-      expect(page.status_code).to eq 200
-      expect(page).to have_text('FeedbackMailer')
     end
   end
 end

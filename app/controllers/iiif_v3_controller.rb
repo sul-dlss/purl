@@ -7,25 +7,21 @@ class IiifV3Controller < ApplicationController
   def manifest
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
 
-    if @purl.iiif3_manifest?
-      manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc, 'iiif_v3', 'manifest'], expires_in: Settings.resource_cache.lifetime) do
-        @purl.iiif3_manifest.body(self).to_ordered_hash
-      end
-
-      render json: manifest
-    else
-      head :not_found
+    manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc, 'iiif_v3', 'manifest'], expires_in: Settings.resource_cache.lifetime) do
+      @purl.iiif3_manifest.body(self).to_ordered_hash
     end
+
+    render json: manifest
   end
 
   def canvas
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
 
-    if @purl.iiif3_manifest?
-      manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc, 'iiif_v3', 'canvas'], expires_in: Settings.resource_cache.lifetime) do
-        @purl.iiif3_manifest.canvas(controller: self, resource_id: params[:resource_id]).to_ordered_hash
-      end
+    manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc, 'iiif_v3', 'canvas'], expires_in: Settings.resource_cache.lifetime) do
+      @purl.iiif3_manifest.canvas(controller: self, resource_id: params[:resource_id]).try(:to_ordered_hash)
+    end
 
+    if manifest
       render json: manifest
     else
       head :not_found
@@ -35,11 +31,11 @@ class IiifV3Controller < ApplicationController
   def annotation
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
 
-    if @purl.iiif3_manifest?
-      manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc, 'iiif_v3', 'annotation'], expires_in: Settings.resource_cache.lifetime) do
-        @purl.iiif3_manifest.annotation(controller: self, annotation_id: params[:annotation_id]).to_ordered_hash
-      end
+    manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc, 'iiif_v3', 'annotation'], expires_in: Settings.resource_cache.lifetime) do
+      @purl.iiif3_manifest.annotation(controller: self, annotation_id: params[:annotation_id]).try(:to_ordered_hash)
+    end
 
+    if manifest
       render json: manifest
     else
       head :not_found

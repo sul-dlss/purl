@@ -2,7 +2,7 @@ require 'iiif/presentation'
 
 class IiifPresentationManifest
   delegate :druid, :title, :type, :copyright, :description, :content_metadata, :public_xml_document, to: :purl_resource
-  delegate :deliverable_files, to: :content_metadata
+  delegate :resources, to: :content_metadata
 
   attr_reader :purl_resource
 
@@ -25,14 +25,19 @@ class IiifPresentationManifest
   end
 
   def page_images
-    @page_images ||= deliverable_files.select do |file|
-      file.mimetype == 'image/jp2' && (file.type == 'image' || file.type == 'page') && file.height > 0 && file.width > 0 && deliverable_file?(file)
+    @page_images ||= resources.select do |file|
+      image?(file) && deliverable_file?(file)
     end
   end
 
+  def image?(file)
+    file.mimetype == 'image/jp2' && (file.type == 'image' || file.type == 'page') && file.height > 0 && file.width > 0
+  end
+
+  # also is this right?  should it handle location rights too?
   def deliverable_file?(file)
-    purl_resource.rights.stanford_only_rights_for_file(file.filename) ||
-      purl_resource.rights.world_rights_for_file(file.filename)
+    purl_resource.rights.stanford_only_rights_for_file(file.filename).first ||
+      purl_resource.rights.world_rights_for_file(file.filename).first
   end
 
   def description_or_note
@@ -84,9 +89,6 @@ class IiifPresentationManifest
 
     # for each resource image, create a canvas
     page_images.each do |resource|
-      next unless purl_resource.rights.world_rights_for_file(resource.filename).first ||
-                  purl_resource.rights.stanford_only_rights_for_file(resource.filename).first
-
       sequence.canvases << canvas_for_resource(purl_base_uri, resource)
     end
 
@@ -100,7 +102,7 @@ class IiifPresentationManifest
 
     resource = page_images.find { |image| image.id == resource_id }
 
-    canvas_for_resource(purl_base_uri, resource)
+    canvas_for_resource(purl_base_uri, resource) if resource
   end
 
   def annotation(controller: nil, annotation_id:)
@@ -109,7 +111,7 @@ class IiifPresentationManifest
 
     resource = page_images.find { |image| image.id == annotation_id }
 
-    annotation_for_resource(purl_base_uri, resource)
+    annotation_for_resource(purl_base_uri, resource) if resource
   end
 
   def canvas_for_resource(purl_base_uri, resource)
