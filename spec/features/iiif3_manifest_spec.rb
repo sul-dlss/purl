@@ -241,4 +241,29 @@ describe 'IIIF v3 manifests' do
       expect(login_service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/token'
     end
   end
+
+  describe 'a 3D object' do
+    let(:druid) { 'hc941fm6529' }
+
+    it 'generates a correct IIIF v3 manifest' do
+      visit "/#{druid}/iiif3/manifest"
+      expect(page).to have_http_status(:ok)
+
+      json = JSON.parse(page.body)
+      expect(json['label']).to start_with 'Sheep'
+      expect(json['sequences'].length).to eq 1
+      expect(json['sequences'].first['canvases'].length).to eq 1
+
+      canvas = json['sequences'].first['canvases'][0]
+      expect(canvas['content'].length).to eq 1
+      expect(canvas['content'].first['items'].length).to eq 1
+      expect(canvas['height']).not_to be_present
+      expect(canvas['width']).not_to be_present
+
+      obj = canvas['content'].first['items'].first
+      expect(obj['body']['id']).to eq 'https://stacks.stanford.edu/file/hc941fm6529/hc941fm6529.json'
+      expect(obj['body']['format']).to eq 'application/vnd.threejs+json'
+      expect(obj['body']['type']).to eq 'Document'
+    end
+  end
 end
