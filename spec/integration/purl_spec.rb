@@ -77,6 +77,20 @@ describe 'purl', type: :feature do
     end
   end
 
+  describe 'annotation_page' do
+    context 'v3' do
+      it 'renders the json for manifest' do
+        visit "/#{@manifest_object}/iiif3/annotation_page/bc854fy5899_1"
+        json_body = JSON.parse(page.body)
+        expect(json_body['items'].first['motivation']).to eq('painting')
+      end
+      it 'renders nil for a non-manifest' do
+        visit "/#{@file_object}/iiif3/annotation_page/bc854fy5899_fdsa"
+        expect(page.status_code).to eq(404)
+      end
+    end
+  end
+
   describe 'annotation' do
     context 'v2' do
       it 'renders the json for manifest' do
