@@ -48,6 +48,15 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     manifest
   end
 
+  def annotation_page(controller: nil, annotation_page_id:)
+    controller ||= Rails.application.routes.url_helpers
+    purl_base_uri = controller.purl_url(druid)
+
+    selected_resource = resources.find { |resource| resource.id == annotation_page_id }
+
+    annotation_page_for_resource(purl_base_uri, selected_resource) if selected_resource
+  end
+
   def canvas_for_resource(purl_base_uri, resource)
     canv = IIIF::V3::Presentation::Canvas.new
     canv['id'] = "#{purl_base_uri}/iiif3/canvas/#{resource.id}"
@@ -57,21 +66,21 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       canv.height = resource.height
       canv.width = resource.width
     end
+    canv.content << annotation_page_for_resource(purl_base_uri, resource)
+    canv
+  end
 
+  def annotation_page_for_resource(purl_base_uri, resource)
     anno_page = IIIF::V3::Presentation::AnnotationPage.new
     anno_page['id'] = "#{purl_base_uri}/iiif3/annotation_page/#{resource.id}"
-
-    anno = annotation_for_resource(purl_base_uri, resource)
-    anno['target'] = canv['id']
-
-    anno_page.items << anno
-    canv.content << anno_page
-    canv
+    anno_page.items << annotation_for_resource(purl_base_uri, resource)
+    anno_page
   end
 
   def annotation_for_resource(purl_base_uri, resource)
     anno = IIIF::V3::Presentation::Annotation.new
     anno['id'] = "#{purl_base_uri}/iiif3/annotation/#{resource.id}"
+    anno['target'] = "#{purl_base_uri}/iiif3/canvas/#{resource.id}"
 
     anno.body = if image?(resource)
                   image_resource(resource)

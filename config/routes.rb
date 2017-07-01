@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   get '/:id/iiif3/canvas/:resource_id' => 'iiif_v3#canvas', as: :iiif3_canvas, format: false
   get '/:id/iiif3/canvas/:resource_id.json', to: redirect('/%{id}/iiif3/canvas/%{resource_id}')
 
+  get '/:id/iiif3/annotation_page/:annotation_page_id' => 'iiif_v3#annotation_page', as: :iiif3_annotation_page, format: false
+  get '/:id/iiif3/annotation_page/:annotation_page_id.json', to: redirect('/%{id}/iiif3/annotation_page/%{annotation_page_id}')
+
   get '/:id/iiif3/annotation/:annotation_id' => 'iiif_v3#annotation', as: :iiif3_annotation, format: false
   get '/:id/iiif3/annotation/:annotation_id.json', to: redirect('/%{id}/iiif3/annotation/%{annotation_id}')
 
