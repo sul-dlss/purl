@@ -104,7 +104,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
     unless purl_resource.rights.world_rights_for_file(resource.filename).first
       img_res.service['service'] = [
-        IIIF::V3::Service.new(
+        IIIF::V3::Presentation::Service.new(
           'id' => "#{Settings.stacks.url}/auth/iiif",
           'profile' => 'http://iiif.io/api/auth/1/login',
           'label' => 'Stanford-affiliated? Login to view',
@@ -126,7 +126,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     bin_res.format = resource.mimetype
 
     unless purl_resource.rights.world_rights_for_file(resource.filename).first
-      bin_res.service = IIIF::V3::Service.new(
+      bin_res.service = IIIF::V3::Presentation::Service.new(
         'id' => "#{Settings.stacks.url}/auth/iiif",
         'profile' => 'http://iiif.io/api/auth/1/login',
         'label' => 'Stanford-affiliated? Login to view',
@@ -152,7 +152,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   end
 
   def iiif_service(id)
-    IIIF::V3::Service.new(
+    IIIF::V3::Presentation::Service.new(
       '@context' => 'http://iiif.io/api/image/2/context.json',
       '@id' => id,
       'id' => id,
