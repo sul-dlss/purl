@@ -15,7 +15,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       'attribution' => copyright || 'Provided by the Stanford University Libraries',
       'logo' => {
         'id' => 'https://stacks.stanford.edu/image/iiif/wy534zh7137%2FSULAIR_rosette/full/400,/0/default.jpg',
-        'service' => iiif_service('https://stacks.stanford.edu/image/iiif/wy534zh7137%2FSULAIR_rosette')
+        'service' => iiif_image_v2_service('https://stacks.stanford.edu/image/iiif/wy534zh7137%2FSULAIR_rosette')
       },
       'seeAlso' => {
         'id' => controller.purl_url(druid, format: 'mods'),
@@ -100,20 +100,10 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     img_res.height = resource.height
     img_res.width = resource.width
 
-    img_res.service = iiif_service(url)
+    img_res.service = iiif_image_v2_service(url)
 
     unless purl_resource.rights.world_rights_for_file(resource.filename).first
-      img_res.service['service'] = [
-        IIIF::V3::Presentation::Service.new(
-          'id' => "#{Settings.stacks.url}/auth/iiif",
-          'profile' => 'http://iiif.io/api/auth/1/login',
-          'label' => 'Stanford-affiliated? Login to view',
-          'service' => [{
-            'id' => "#{Settings.stacks.url}/image/iiif/token",
-            'profile' => 'http://iiif.io/api/auth/1/token'
-          }]
-        )
-      ]
+      img_res.service['service'] = [iiif_stacks_login_service]
     end
 
     img_res
@@ -126,15 +116,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     bin_res.format = resource.mimetype
 
     unless purl_resource.rights.world_rights_for_file(resource.filename).first
-      bin_res.service = IIIF::V3::Presentation::Service.new(
-        'id' => "#{Settings.stacks.url}/auth/iiif",
-        'profile' => 'http://iiif.io/api/auth/1/login',
-        'label' => 'Stanford-affiliated? Login to view',
-        'service' => [{
-          'id' => "#{Settings.stacks.url}/image/iiif/token",
-          'profile' => 'http://iiif.io/api/auth/1/token'
-        }]
-      )
+      bin_res.service = iiif_stacks_login_service
     end
     bin_res
   end
@@ -146,17 +128,29 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     thumb['type'] = 'Image'
     thumb['id'] = "#{thumbnail_base_uri}/full/!400,400/0/default.jpg"
     thumb.format = 'image/jpeg'
-    thumb.service = iiif_service(thumbnail_base_uri)
+    thumb.service = iiif_image_v2_service(thumbnail_base_uri)
 
     thumb
   end
 
-  def iiif_service(id)
+  def iiif_image_v2_service(id)
     IIIF::V3::Presentation::Service.new(
       '@context' => 'http://iiif.io/api/image/2/context.json',
-      '@id' => id,
+      '@id' => id, # need @id here due to v2 @context URI
       'id' => id,
       'profile' => Settings.stacks.iiif_profile
+    )
+  end
+
+  def iiif_stacks_login_service
+    IIIF::V3::Presentation::Service.new(
+      'id' => "#{Settings.stacks.url}/auth/iiif",
+      'profile' => 'http://iiif.io/api/auth/1/login',
+      'label' => 'Stanford-affiliated? Login to view',
+      'service' => [{
+        'id' => "#{Settings.stacks.url}/image/iiif/token",
+        'profile' => 'http://iiif.io/api/auth/1/token'
+      }]
     )
   end
   # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
