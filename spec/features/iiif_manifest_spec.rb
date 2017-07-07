@@ -102,14 +102,6 @@ describe 'IIIF v2 manifests' do
 
   # Virtual objects consist of a parent object and children objects who hold the file resources
   context 'virtual objects' do
-    before :each do
-      # we fetch the body of the public xml and mods from the local fixtures folder rather than the network
-      mods_body = File.read(File.join(Settings.document_cache_root, Dor::Util.create_pair_tree(druid), 'mods'))
-      public_xml_body = File.read(File.join(Settings.document_cache_root, Dor::Util.create_pair_tree(druid), 'public'))
-      allow_any_instance_of(PurlResource).to receive(:mods_resource).and_return(double(success?: true, body: mods_body))
-      allow_any_instance_of(PurlResource).to receive(:public_xml_resource).and_return(double(success?: true, body: public_xml_body))
-    end
-
     describe 'first child object' do
       let(:druid) { 'cg767mn6478' }
 
