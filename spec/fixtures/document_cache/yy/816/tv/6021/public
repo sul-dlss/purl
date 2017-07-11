@@ -1,0 +1,186 @@
+<publicObject id="druid:yy816tv6021" published="2016-11-15T19:37:50Z" publishVersion="dor-services/5.11.0">
+  <identityMetadata>
+    <sourceId source="sul">bca_14_01_0000</sourceId>
+    <objectId>druid:yy816tv6021</objectId>
+    <objectCreator>DOR</objectCreator>
+    <objectLabel>
+      Buddhist Churches of America, disc 14 : bca_14_01_0000_a_00 : bca_14_01_0000_b_00
+    </objectLabel>
+    <objectType>item</objectType>
+    <adminPolicy>druid:bz845pv2292</adminPolicy>
+    <otherId name="label"/>
+    <otherId name="uuid">4c48c0e6-0236-11e4-9850-0050569b3c3c</otherId>
+    <tag>Process : Content Type : File</tag>
+    <tag>Project : ARS 78s : broken</tag>
+    <tag>SMPL : audio : ars</tag>
+    <tag>JIRA : DIGREQ-727</tag>
+    <tag>Registered By : gwillard</tag>
+    <tag>Remediated By : 5.11.0</tag>
+  </identityMetadata>
+  <contentMetadata objectId="yy816tv6021" type="media">
+    <resource sequence="3" id="yy816tv6021_3" type="image">
+      <label>Image of media (1 of 2)</label>
+      <file id="yy816tv6021_img_1.jp2" mimetype="image/jp2" size="3381200">
+        <imageData width="5184" height="3456"/>
+      </file>
+    </resource>
+    <resource sequence="4" id="yy816tv6021_4" type="image">
+      <label>Image of media (2 of 2)</label>
+      <file id="yy816tv6021_img_2.jp2" mimetype="image/jp2" size="3381264">
+        <imageData width="5184" height="3456"/>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <location rule="no-download">music</location>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">
+        Property rights reside with the repository. Literary rights reside with the creators of the documents or their heirs. To obtain permission to publish or reproduce, please contact the Stanford Archive of Recorded Sound at soundarchive@stanford.edu.
+      </human>
+    </use>
+    <use>
+      <human type="creativeCommons"/>
+      <machine type="creativeCommons"/>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:yy816tv6021">
+      <fedora:isMemberOf rdf:resource="info:fedora/druid:hx598hd5557"/>
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:hx598hd5557"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:srw_dc="info:srw/schema/1/dc-schema"
+    xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:identifier>bca_14_01_0000</dc:identifier>
+    <dc:title>
+      Buddhist Gatha: Mihotoke ni idakarete ; Buddhist Gatha: Lord Buddha speaks to me
+    </dc:title>
+    <dc:date>1940</dc:date>
+    <dc:publisher>Buddhist Churches of America</dc:publisher>
+    <dc:format>1 shellac disc</dc:format>
+    <dc:format>audio disc</dc:format>
+    <dc:format>audio/mpeg</dc:format>
+    <dc:type>Sound</dc:type>
+    <dc:type>sound recordings</dc:type>
+    <dc:description>
+      Buddhist Gatha: Mihotoke ni idakarete / (Fukiko Horiye, Chizu Iwanaga) ; Buddhist Gatha: Lord Buddha speaks to me / (Misa Asakawa, Chizu Iwanaga)
+    </dc:description>
+    <dc:description>Original disc is broken</dc:description>
+    <dc:contributor>Iwanaga, Chizu (prf performer)</dc:contributor>
+    <dc:contributor>Asakawa, Misa (sng singer)</dc:contributor>
+    <dc:contributor>Horiye, Fukiko (sng singer)</dc:contributor>
+    <dc:subject>Buddhist chants</dc:subject>
+    <dc:subject>Buddhism</dc:subject>
+    <dc:relation type="repository">
+      Stanford Archive of Recorded Sound http://purl.stanford.edu/yy816tv6021
+    </dc:relation>
+    <dc:language>jpn</dc:language>
+    <dc:language>eng</dc:language>
+    <dc:relation type="collection">ARS Disc Collection - 78</dc:relation>
+  </oai_dc:dc>
+  <mods:mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mods="http://www.loc.gov/mods/v3" version="3.5" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
+    <mods:identifier type="local" displayLabel="Source ID">bca_14_01_0000</mods:identifier>
+    <mods:titleInfo>
+      <mods:title>
+        Buddhist Gatha: Mihotoke ni idakarete ; Buddhist Gatha: Lord Buddha speaks to me
+      </mods:title>
+    </mods:titleInfo>
+    <mods:originInfo>
+      <mods:dateCreated encoding="w3cdtf" keyDate="yes" qualifier="questionable">1940</mods:dateCreated>
+      <mods:place supplied="yes">
+        <mods:placeTerm type="text" authorityURI="http://id.loc.gov/authorities/names" valueURI="http://id.loc.gov/authorities/names/n78095330">United States</mods:placeTerm>
+      </mods:place>
+      <mods:publisher>Buddhist Churches of America</mods:publisher>
+    </mods:originInfo>
+    <mods:physicalDescription>
+      <mods:form authority="rdacarrier" valueURI="http://rdvocab.info/termList/RDACarrierType/1004">audio disc</mods:form>
+      <mods:extent>1 shellac disc</mods:extent>
+      <mods:note displayLabel="Type of recording">analog</mods:note>
+      <mods:note displayLabel="Playback speed">78.26 rpm</mods:note>
+      <mods:note displayLabel="Groove characteristic">coarse groove</mods:note>
+      <mods:note displayLabel="Playback configuration">mono</mods:note>
+      <mods:note displayLabel="Special playback characteristic (equalization)">RIAA</mods:note>
+      <mods:reformattingQuality>access</mods:reformattingQuality>
+      <mods:internetMediaType>audio/mpeg</mods:internetMediaType>
+      <mods:digitalOrigin>reformatted digital</mods:digitalOrigin>
+    </mods:physicalDescription>
+    <mods:typeOfResource>sound recording</mods:typeOfResource>
+    <mods:genre authority="lcgft" valueURI="lcgft">sound recordings</mods:genre>
+    <mods:tableOfContents>
+      Buddhist Gatha: Mihotoke ni idakarete / (Fukiko Horiye, Chizu Iwanaga) ; Buddhist Gatha: Lord Buddha speaks to me / (Misa Asakawa, Chizu Iwanaga)
+    </mods:tableOfContents>
+    <mods:note>Original disc is broken</mods:note>
+    <mods:name type="personal" usage="primary">
+      <mods:namePart>Iwanaga, Chizu</mods:namePart>
+      <mods:role>
+        <mods:roleTerm authority="marcrelator" type="code" valueURI="http://id.loc.gov/vocabulary/relators/prf">prf</mods:roleTerm>
+        <mods:roleTerm authority="marcrelator" type="text" valueURI="http://id.loc.gov/vocabulary/relators/prf">performer</mods:roleTerm>
+      </mods:role>
+    </mods:name>
+    <mods:name type="personal">
+      <mods:namePart>Asakawa, Misa</mods:namePart>
+      <mods:role>
+        <mods:roleTerm authority="marcrelator" type="code" valueURI="http://id.loc.gov/vocabulary/relators/sng">sng</mods:roleTerm>
+        <mods:roleTerm authority="marcrelator" type="text" valueURI="http://id.loc.gov/vocabulary/relators/sng">singer</mods:roleTerm>
+      </mods:role>
+    </mods:name>
+    <mods:name type="personal">
+      <mods:namePart>Horiye, Fukiko</mods:namePart>
+      <mods:role>
+        <mods:roleTerm authority="marcrelator" type="code" valueURI="[[roleTermAuthorityURI_3]]">sng</mods:roleTerm>
+        <mods:roleTerm authority="marcrelator" type="text" valueURI="[[roleTermAuthorityURI_3]]">singer</mods:roleTerm>
+      </mods:role>
+    </mods:name>
+    <mods:subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85022547">
+      <mods:topic>Buddhist chants</mods:topic>
+    </mods:subject>
+    <mods:subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85017454">
+      <mods:topic>Buddhism</mods:topic>
+    </mods:subject>
+    <mods:location>
+      <mods:physicalLocation authority="naf" valueURI="http://id.loc.gov/authorities/names/nr00021832" displayLabel="Repository" type="repository">Stanford Archive of Recorded Sound</mods:physicalLocation>
+      <mods:url>http://purl.stanford.edu/yy816tv6021</mods:url>
+    </mods:location>
+    <mods:language>
+      <mods:languageTerm type="code" authority="iso639-2b" valueURI="http://id.loc.gov/vocabulary/languages/jpn">jpn</mods:languageTerm>
+    </mods:language>
+    <mods:language>
+      <mods:languageTerm type="code" authority="iso639-2b" valueURI="http://id.loc.gov/vocabulary/languages/eng">eng</mods:languageTerm>
+    </mods:language>
+    <mods:recordInfo>
+      <mods:recordContentSource authority="marcorg" valueURI="http://id.loc.gov/vocabulary/organizations/cst">CSt</mods:recordContentSource>
+      <mods:languageOfCataloging>
+        <mods:languageTerm authority="iso639-2b" valueURI="http://id.loc.gov/vocabulary/languages/eng">eng</mods:languageTerm>
+      </mods:languageOfCataloging>
+    </mods:recordInfo>
+    <mods:relatedItem type="host">
+      <mods:titleInfo>
+        <mods:title>ARS Disc Collection - 78</mods:title>
+      </mods:titleInfo>
+      <mods:location>
+        <mods:url>https://purl.stanford.edu/hx598hd5557</mods:url>
+      </mods:location>
+      <mods:typeOfResource collection="yes"/>
+    </mods:relatedItem>
+    <mods:accessCondition type="useAndReproduction">
+      Property rights reside with the repository. Literary rights reside with the creators of the documents or their heirs. To obtain permission to publish or reproduce, please contact the Stanford Archive of Recorded Sound at soundarchive@stanford.edu.
+    </mods:accessCondition>
+  </mods:mods>
+  <releaseData>
+    <release to="Searchworks">true</release>
+  </releaseData>
+  <thumb>yy816tv6021/yy816tv6021_img_1.jp2</thumb>
+</publicObject>

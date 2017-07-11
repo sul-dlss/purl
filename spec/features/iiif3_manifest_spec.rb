@@ -260,6 +260,7 @@ describe 'IIIF v3 manifests' do
       expect(page).to have_http_status(:ok)
 
       json = JSON.parse(page.body)
+
       expect(json['label']).to start_with 'Sheep'
       expect(json['sequences'].length).to eq 1
       expect(json['sequences'].first['canvases'].length).to eq 1
@@ -274,6 +275,24 @@ describe 'IIIF v3 manifests' do
       expect(obj['body']['id']).to eq 'https://stacks.stanford.edu/file/hc941fm6529/hc941fm6529.json'
       expect(obj['body']['format']).to eq 'application/vnd.threejs+json'
       expect(obj['body']['type']).to eq 'Document'
+    end
+  end
+
+  describe 'a location restricted image' do
+    let(:druid) { 'yy816tv6021' }
+
+    it 'generates a IIIF v3 manifest that includes location authentication information' do
+      visit "/#{druid}/iiif3/manifest"
+      expect(page).to have_http_status(:ok)
+
+      json = JSON.parse(page.body)
+      external_interaction_service = json['sequences'].first['canvases'].first['content'].first['items'].first['body']['service']['service'].first
+      expect(external_interaction_service['profile']).to eq 'http://iiif.io/api/auth/1/external'
+      expect(external_interaction_service['label']).to eq 'External Authentication Required'
+      expect(external_interaction_service['failureHeader']).to eq 'Restricted Material'
+      expect(external_interaction_service['failureDescription']).to eq 'Restricted content cannot be accessed from your location'
+      expect(external_interaction_service['service'].first['@id']).to eq "#{Settings.stacks.url}/image/iiif/token"
+      expect(external_interaction_service['service'].first['profile']).to eq 'http://iiif.io/api/auth/1/token'
     end
   end
 end
