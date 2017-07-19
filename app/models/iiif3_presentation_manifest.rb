@@ -37,7 +37,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       'label' => 'Current order'
     )
 
-    manifest.thumbnail = thumbnail_resource
+    manifest.thumbnail = [thumbnail_resource]
 
     # for each resource image, create a canvas
     resources.each do |resource|
