@@ -10,7 +10,9 @@ describe 'IIIF v3 manifests' do
     expect(json['description']).to eq 'Tom.1. No.9. (top right).'
     expect(json['attribution']).to start_with 'This work has been identified as being free of known restrictions'
     expect(json['seeAlso']['id']).to eq 'http://www.example.com/bb157hs6068.mods'
-    expect(json['thumbnail']['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
+    expect(json['thumbnail']).to be_an Array
+    expect(json['thumbnail'].size).to eq 1
+    expect(json['thumbnail'].first['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
 
     expect(json['sequences'].length).to eq 1
     canvas = json['sequences'].first['canvases'].first
@@ -59,8 +61,10 @@ describe 'IIIF v3 manifests' do
     visit '/bb157hs6068/iiif3/manifest'
     json = JSON.parse(page.body)
 
-    expect(json['thumbnail']['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
-    expect(json['thumbnail']['type']).to eq 'Image'
+    expect(json['thumbnail']).to be_an Array
+    expect(json['thumbnail'].size).to eq 1
+    expect(json['thumbnail'].first['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
+    expect(json['thumbnail'].first['type']).to eq 'Image'
   end
 
   it 'includes authorization services for a Stanford-only image' do
@@ -151,7 +155,9 @@ describe 'IIIF v3 manifests' do
 
         json = JSON.parse(page.body)
         expect(json['label']).to start_with 'Carey\'s American Atlas'
-        expect(json['thumbnail']['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/!400,400/0/default.jpg' # first child
+        expect(json['thumbnail']).to be_an Array
+        expect(json['thumbnail'].size).to eq 1
+        expect(json['thumbnail'].first['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/!400,400/0/default.jpg' # first child
         expect(json['sequences'].length).to eq 1
         expect(json['sequences'].first['canvases'].length).to eq 23
 

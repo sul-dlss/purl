@@ -77,7 +77,7 @@
     "label": "PublishDate",
     "value": "2013-12-14T16:51:21-08:00"
   }],
-  "thumbnail": {
+  "thumbnail": [{
     "id": "https://stacks.stanford.edu/image/iiif/bx658jh7339%2FT0000001/full/!400,400/0/default.jpg",
     "type": "dctypes:Image",
     "format": "image/jpeg",
@@ -86,7 +86,7 @@
       "id": "https://stacks.stanford.edu/image/iiif/bx658jh7339%2FT0000001",
       "profile": "http://iiif.io/api/image/2/level1.json"
     }
-  },
+  }],
   "sequences": [{
     "id": "https://purl.stanford.edu/bx658jh7339#sequence-1",
     "type": "Sequence",
