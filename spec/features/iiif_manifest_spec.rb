@@ -63,6 +63,18 @@ describe 'IIIF v2 manifests' do
     expect(json['thumbnail']['@type']).to eq 'dctypes:Image'
   end
 
+  it 'includes viewing direction when viewing direction is defined' do
+    visit '/yr183sf1341/iiif3/manifest'
+    json = JSON.parse(page.body)
+    expect(json['sequences'].first['viewingDirection']).to eq 'right-to-left'
+  end
+
+  it 'does not include viewing direction if viewing direction is not defined' do
+    visit '/py305sy7961/iiif3/manifest'
+    json = JSON.parse(page.body)
+    expect(json['sequences'].first['viewingDirection']).not_to be_present
+  end
+
   it 'includes authorization services for a Stanford-only image' do
     visit '/py305sy7961/iiif/manifest.json'
     json = JSON.parse(page.body)
