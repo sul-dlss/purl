@@ -2,7 +2,12 @@ require 'iiif/presentation'
 require 'iiif/v3/presentation'
 
 class Iiif3PresentationManifest < IiifPresentationManifest
-  delegate :resources, to: :content_metadata
+  delegate :reading_order, :resources, to: :content_metadata
+
+  VIEWING_DIRECTION = {
+    'ltr' => 'left-to-right',
+    'rtl' => 'right-to-left'
+  }.freeze
 
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def body(controller = nil)
@@ -31,11 +36,14 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     manifest.metadata = dc_to_iiif_metadata if dc_to_iiif_metadata.present?
 
     manifest.description = description_or_note
+    order = reading_order
 
     sequence = IIIF::V3::Presentation::Sequence.new(
       'id' => "#{purl_base_uri}#sequence-1",
       'label' => 'Current order'
     )
+
+    sequence['viewingDirection'] = VIEWING_DIRECTION[order] if order
 
     manifest.thumbnail = [thumbnail_resource]
 
