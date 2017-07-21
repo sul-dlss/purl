@@ -2,11 +2,16 @@ require 'iiif/presentation'
 
 class IiifPresentationManifest
   delegate :druid, :title, :type, :copyright, :description, :content_metadata, :public_xml_document, to: :purl_resource
-  delegate :resources, to: :content_metadata
+  delegate :reading_order, :resources, to: :content_metadata
 
   attr_reader :purl_resource
 
   OAI_DC_SCHEMA = 'http://www.openarchives.org/OAI/2.0/oai_dc/'.freeze
+
+  VIEWING_DIRECTION = {
+    'ltr' => 'left-to-right',
+    'rtl' => 'right-to-left'
+  }.freeze
 
   def initialize(purl_resource)
     @purl_resource = purl_resource
@@ -79,11 +84,14 @@ class IiifPresentationManifest
     manifest.metadata = dc_to_iiif_metadata if dc_to_iiif_metadata.present?
 
     manifest.description = description_or_note
+    order = reading_order
 
     sequence = IIIF::Presentation::Sequence.new(
       '@id' => "#{purl_base_uri}#sequence-1",
       'label' => 'Current order'
     )
+
+    sequence['viewingDirection'] = VIEWING_DIRECTION[order] if order
 
     manifest.thumbnail = thumbnail_resource
 
