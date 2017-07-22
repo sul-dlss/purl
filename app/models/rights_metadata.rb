@@ -10,7 +10,7 @@ class RightsMetadata
     @rights_auth ||= Dor::RightsAuth.parse(document.to_s)
   end
 
-  delegate :stanford_only_rights_for_file, :world_rights_for_file, :stanford_only_unrestricted_file?, to: :rights_auth
+  delegate :stanford_only_rights_for_file, :world_rights_for_file, :stanford_only_unrestricted_file?, :restricted_by_location?, to: :rights_auth
 
   def use_and_reproduction_statement
     document.at_xpath('use/human[@type="useAndReproduction"]').try(:text)

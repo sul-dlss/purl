@@ -19,6 +19,9 @@
 coverage
 config/honeybadger.yml
 document_cache/*
+.byebug_history
+.ruby-gemset
+.ruby-version
 
 # Ignore standard Rails Config Settings
 config/settings.local.yml

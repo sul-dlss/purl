@@ -109,9 +109,13 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     img_res.width = resource.width
 
     img_res.service = iiif_image_v2_service(url)
+    img_res.service['service'] = []
+    if purl_resource.rights.stanford_only_rights_for_file(resource.filename).first
+      img_res.service['service'].append(iiif_stacks_login_service)
+    end
 
-    unless purl_resource.rights.world_rights_for_file(resource.filename).first
-      img_res.service['service'] = [iiif_stacks_login_service]
+    if purl_resource.rights.restricted_by_location?(resource.filename)
+      img_res.service['service'].append(iiif_location_auth_service)
     end
 
     img_res
@@ -152,13 +156,36 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def iiif_stacks_login_service
     IIIF::V3::Presentation::Service.new(
+      '@context' => 'http://iiif.io/api/auth/1/context.json',
       'id' => "#{Settings.stacks.url}/auth/iiif",
       'profile' => 'http://iiif.io/api/auth/1/login',
       'label' => 'Stanford-affiliated? Login to view',
-      'service' => [{
-        'id' => "#{Settings.stacks.url}/image/iiif/token",
-        'profile' => 'http://iiif.io/api/auth/1/token'
-      }]
+      'service' => [
+        {
+          '@id' => "#{Settings.stacks.url}/image/iiif/token",
+          'profile' => 'http://iiif.io/api/auth/1/token'
+        },
+        {
+          '@id' => "#{Settings.stacks.url}/auth/logout",
+          'profile' => 'http://iiif.io/api/auth/1/logout',
+          'label' => 'Logout'
+        }
+      ]
+    )
+  end
+
+  def iiif_location_auth_service
+    IIIF::V3::Presentation::Service.new(
+      'profile' => 'http://iiif.io/api/auth/1/external',
+      'label' => 'External Authentication Required',
+      'failureHeader' => 'Restricted Material',
+      'failureDescription' => 'Restricted content cannot be accessed from your location',
+      'service' => [
+        {
+          '@id' => "#{Settings.stacks.url}/image/iiif/token",
+          'profile' => 'http://iiif.io/api/auth/1/token'
+        }
+      ]
     )
   end
   # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
