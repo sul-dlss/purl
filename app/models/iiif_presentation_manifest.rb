@@ -91,7 +91,7 @@ class IiifPresentationManifest
       'label' => 'Current order'
     )
 
-    sequence['viewingDirection'] = VIEWING_DIRECTION[order] if order
+    sequence.viewingDirection = VIEWING_DIRECTION[order] if order
 
     manifest.thumbnail = thumbnail_resource
 
