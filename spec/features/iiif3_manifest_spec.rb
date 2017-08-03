@@ -92,6 +92,13 @@ describe 'IIIF v3 manifests' do
 
     login_service = service['service'].detect { |x| x['profile'] == 'http://iiif.io/api/auth/1/login' }
     expect(login_service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/token'
+    expect(login_service['label']).to eq 'Log in to access all available features.'
+    expect(login_service['confirmLabel']).to eq 'Login'
+    expect(login_service['failureHeader']).to eq 'Unable to authenticate'
+    expect(login_service['failureDescription']).to eq 'The authentication serv'\
+      'ice cannot be reached. If your browser is configured to block pop-up wi'\
+      'ndows, try allowing pop-up windows for this site before attempting to l'\
+      'og in again.'
   end
 
   it 'properly decodes XML entities into their UTF-8 characters' do
