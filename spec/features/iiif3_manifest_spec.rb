@@ -73,10 +73,10 @@ describe 'IIIF v3 manifests' do
     expect(json['sequences'].first['viewingDirection']).to eq 'right-to-left'
   end
 
-  it 'does not include viewing direction if viewing direction is not defined' do
+  it 'uses left-to-right as default viewing direction if viewing direction is not defined' do
     visit '/py305sy7961/iiif3/manifest'
     json = JSON.parse(page.body)
-    expect(json['sequences'].first['viewingDirection']).not_to be_present
+    expect(json['sequences'].first['viewingDirection']).to eq('left-to-right')
   end
 
   it 'includes authorization services for a Stanford-only image' do
