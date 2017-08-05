@@ -4,11 +4,6 @@ require 'iiif/v3/presentation'
 class Iiif3PresentationManifest < IiifPresentationManifest
   delegate :reading_order, :resources, to: :content_metadata
 
-  VIEWING_DIRECTION = {
-    'ltr' => 'left-to-right',
-    'rtl' => 'right-to-left'
-  }.freeze
-
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def body(controller = nil)
     controller ||= Rails.application.routes.url_helpers
@@ -43,7 +38,12 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       'label' => 'Current order'
     )
 
-    sequence.viewingDirection = VIEWING_DIRECTION[order] if order
+    sequence.viewingDirection = case order
+                                when nil
+                                  VIEWING_DIRECTION['ltr']
+                                else
+                                  VIEWING_DIRECTION[order]
+                                end
 
     manifest.thumbnail = [thumbnail_resource]
 
