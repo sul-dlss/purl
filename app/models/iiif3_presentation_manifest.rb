@@ -4,11 +4,6 @@ require 'iiif/v3/presentation'
 class Iiif3PresentationManifest < IiifPresentationManifest
   delegate :reading_order, :resources, to: :content_metadata
 
-  VIEWING_DIRECTION = {
-    'ltr' => 'left-to-right',
-    'rtl' => 'right-to-left'
-  }.freeze
-
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def body(controller = nil)
     controller ||= Rails.application.routes.url_helpers
