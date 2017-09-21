@@ -42,7 +42,8 @@ class IiifPresentationManifest
   # also is this right?  should it handle location rights too?
   def deliverable_file?(file)
     purl_resource.rights.stanford_only_rights_for_file(file.filename).first ||
-      purl_resource.rights.world_rights_for_file(file.filename).first
+      purl_resource.rights.world_rights_for_file(file.filename).first ||
+      thumbnail?(file)
   end
 
   def description_or_note
@@ -214,13 +215,17 @@ class IiifPresentationManifest
 
   # If not available, use the first image to create a thumbnail on the manifest
   def thumbnail_image
-    @thumbnail_image ||= page_images.detect(&:thumbnail?) || page_images.first
+    @thumbnail_image ||= page_images.detect { |file| thumbnail?(file) } || page_images.first
   end
 
   def thumbnail_base_uri
     @thumbnail_base_uri ||= begin
       stacks_iiif_base_url(thumbnail_image.druid, thumbnail_image.filename) if thumbnail_image
     end
+  end
+
+  def thumbnail?(file)
+    purl_resource.public_xml.thumb == "#{file.druid}/#{file.filename}"
   end
 
   def stacks_iiif_base_url(druid, filename)
