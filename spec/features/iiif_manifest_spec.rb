@@ -63,6 +63,18 @@ describe 'IIIF v2 manifests' do
     expect(json['thumbnail']['@type']).to eq 'dctypes:Image'
   end
 
+  it 'includes the representative thumbnail as part of the image sequence' do
+    visit '/rf433wv2584/iiif/manifest.json'
+    json = JSON.parse(page.body)
+    expect(json['thumbnail']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/rf433wv2584%2F9082000/full/!400,400/0/default.jpg'
+
+    expect(json['sequences'].length).to eq 1
+    canvas = json['sequences'].first['canvases'].first
+    expect(canvas['images'].length).to eq 1
+    image = canvas['images'].first
+    expect(image['resource']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/rf433wv2584%2F9082000/full/full/0/default.jpg'
+  end
+
   it 'includes viewing direction when viewing direction is defined' do
     visit '/yr183sf1341/iiif3/manifest'
     json = JSON.parse(page.body)

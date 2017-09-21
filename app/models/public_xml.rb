@@ -30,4 +30,8 @@ class PublicXml
 
     release == 'true'
   end
+
+  def thumb
+    document.root.at_xpath('thumb').try(:text)
+  end
 end
