@@ -35,7 +35,7 @@ describe 'purl', type: :feature do
         visit "/#{@manifest_object}/iiif/manifest"
         json_body = JSON.parse(page.body)
         expect(json_body['label']).to eq('John Wyclif and his followers, Tracts in Middle English')
-        expect(json_body['metadata'].length).to eq 16
+        expect(json_body['metadata'].length).to eq 17
       end
       it 'renders nil for a non-manifest' do
         visit "/#{@file_object}/iiif/manifest"
@@ -47,7 +47,7 @@ describe 'purl', type: :feature do
         visit "/#{@manifest_object}/iiif3/manifest"
         json_body = JSON.parse(page.body)
         expect(json_body['label']).to eq('John Wyclif and his followers, Tracts in Middle English')
-        expect(json_body['metadata'].length).to eq 16
+        expect(json_body['metadata'].length).to eq 17
       end
     end
   end
