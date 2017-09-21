@@ -28,9 +28,10 @@ describe 'IIIF v3 manifests' do
     expect(image['body']['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/full/0/default.jpg'
 
     expect(json['metadata'].class).to eq Array
-    expect(json['metadata'].size).to eq(21) # 20 DC elements are there plus the publish date
+    expect(json['metadata'].size).to eq(22) # 20 DC elements are there + the publish date + Available Online
     # rubocop:disable Metrics/LineLength
     expected_dc_metadata = [
+      { 'label' => 'Available Online', 'value' => "<a href='http://www.example.com/bb157hs6068'>http://www.example.com/bb157hs6068</a>" },
       { 'label' => 'Type', 'value' => 'map' },
       { 'label' => 'Type', 'value' => 'Digital Maps' },
       { 'label' => 'Rights', 'value' => "Stanford University Libraries and Academic Information Resources - Terms of Use SULAIR Web sites are subject to Stanford University's standard Terms of Use (See http://www.stanford.edu/home/atoz/terms.html) These terms include a limited personal, non-exclusive, non-transferable license to access and use the sites, and to download - where permitted - material for personal, non-commercial, non-display use only. Please contact the University Librarian to request permission to use SULAIR Web sites and contents beyond the scope of the above license, including but not limited to republication to a group or republishing the Web site or parts of the Web site. SULAIR provides access to a variety of external databases and resources, which sites are governed by their own Terms of Use, as well as contractual access restrictions. The Terms of Use on these external sites always govern the data available there. Please consult with library staff if you have questions about data access and availability." },
@@ -112,7 +113,7 @@ describe 'IIIF v3 manifests' do
     json = JSON.parse(page.body)
 
     expect(json['sequences'].length).to eq 1
-    expect(json['metadata'].length).to eq 28
+    expect(json['metadata'].length).to eq 29
   end
 
   # Virtual objects consist of a parent object and children objects who hold the file resources

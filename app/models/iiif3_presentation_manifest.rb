@@ -29,6 +29,10 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     manifest.viewingHint = 'paged' if type == 'book'
 
     manifest.metadata = dc_to_iiif_metadata if dc_to_iiif_metadata.present?
+    manifest.metadata.unshift(
+      'label' => 'Available Online',
+      'value' => "<a href='#{controller.purl_url(druid)}'>#{controller.purl_url(druid)}</a>"
+    )
 
     manifest.description = description_or_note
     order = reading_order
