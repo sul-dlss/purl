@@ -1,6 +1,6 @@
 stacks:
   url: 'https://stacks.stanford.edu'
-  iiif_profile: 'http://iiif.io/api/image/2/level1.json'
+  iiif_profile: 'http://iiif.io/api/image/2/level2.json'
 
 flipbook:
   url: 'http://sul-reader.stanford.edu/flipbook2'
