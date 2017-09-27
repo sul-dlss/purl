@@ -49,7 +49,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
                                   VIEWING_DIRECTION[order]
                                 end
 
-    manifest.thumbnail = [thumbnail_resource]
+    manifest.thumbnail = [thumbnail_resource] if thumbnail_resource?
 
     # for each resource image, create a canvas
     resources.each do |resource|
@@ -147,6 +147,10 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     thumb.service = iiif_image_v2_service(thumbnail_base_uri)
 
     thumb
+  end
+
+  def thumbnail_resource?
+    thumbnail_image.present?
   end
 
   def iiif_image_v2_service(id)
