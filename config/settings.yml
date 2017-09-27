@@ -17,7 +17,6 @@ resource_cache:
 purl_resource:
   mods: 'https://purl.stanford.edu/%{druid}.mods'
   public_xml: 'https://purl.stanford.edu/%{druid}.xml'
-  iiif_manifest: 'https://purl.stanford.edu/%{druid}/iiif/manifest.json'
 
 embed:
   url: 'https://purl.stanford.edu/%{druid}'
