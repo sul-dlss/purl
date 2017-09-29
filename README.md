@@ -21,11 +21,11 @@ Please create a github release before deploying.
 
 Clone the repository
 
-    $ git clone git@github.com:sul-dlss/stacks.git
+    $ git clone git@github.com:sul-dlss/purl.git
 
 Move into the app and install dependencies
 
-    $ cd stacks
+    $ cd purl
     $ bundle install
 
 Start the development server
