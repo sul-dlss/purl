@@ -35,6 +35,16 @@ class IiifPresentationManifest
     end
   end
 
+  def object_files
+    @non_page_files ||= resources.select do |file|
+      object?(file) && deliverable_file?(file)
+    end
+  end
+
+  def object?(file)
+    file.type == 'object'
+  end
+
   def image?(file)
     file.mimetype == 'image/jp2' && (file.type == 'image' || file.type == 'page') && file.height > 0 && file.width > 0
   end
@@ -104,6 +114,17 @@ class IiifPresentationManifest
                                 end
 
     manifest.thumbnail = thumbnail_resource
+
+    renderings = []
+    object_files.each do |resource|
+      renderings.push(
+        '@id' => stacks_file_url(resource.druid, resource.filename),
+        'label' => "Download #{resource.label}",
+        'format' => resource.mimetype
+      )
+    end
+
+    sequence['rendering'] = renderings if renderings.present?
 
     # for each resource image, create a canvas
     page_images.each do |resource|
@@ -234,5 +255,9 @@ class IiifPresentationManifest
 
   def stacks_iiif_base_url(druid, filename)
     "#{Settings.stacks.url}/image/iiif/#{druid}%2F#{File.basename(filename, '.*')}"
+  end
+
+  def stacks_file_url(druid, filename)
+    "#{Settings.stacks.url}/file/#{druid}/#{filename}"
   end
 end

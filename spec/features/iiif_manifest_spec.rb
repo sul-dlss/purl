@@ -132,6 +132,18 @@ describe 'IIIF v2 manifests' do
     expect(json['metadata'].length).to eq 29
   end
 
+  it 'publishes a rendering section for objects with additional resources' do
+    visit '/zf119tw4418/iiif/manifest.json'
+    json = JSON.parse(page.body)
+
+    rendering = json['sequences'].first['rendering']
+    expect(rendering).to include(
+      '@id' => 'https://stacks.stanford.edu/file/zf119tw4418/zf119tw4418_31_0000.pdf',
+      'label' => 'Download Object 1',
+      'format' => 'application/pdf'
+    )
+  end
+
   # Virtual objects consist of a parent object and children objects who hold the file resources
   context 'virtual objects' do
     describe 'first child object' do
