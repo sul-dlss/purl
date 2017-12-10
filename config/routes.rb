@@ -33,4 +33,7 @@ Rails.application.routes.draw do
   get '/:id/iiif/annotation/:annotation_id' => 'iiif_v2#annotation', as: :iiif_annotation, format: false
   get '/:id/iiif/annotation/:annotation_id.json', to: redirect('/%{id}/iiif/annotation/%{annotation_id}')
 
+  namespace 'v1' do
+    get '/authorize/:level/:druid/:file_name' => 'access#show'
+  end
 end
