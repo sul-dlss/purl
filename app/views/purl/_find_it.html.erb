@@ -2,9 +2,16 @@
   <%= link_to 'View in SearchWorks', Settings.searchworks.url + @purl.catalog_key %>
 <% end %>
 
+<% releases = [] %>
+
 <% Settings.releases.each do |dest| %>
   <% next if dest[:key] == "Searchworks" && @purl.catalog_key %>
+  
   <% if @purl.released_to? dest[:key] %>
-    <%= link_to dest[:label], dest[:url] % @purl.attributes %>
+    <% releases << link_to(dest[:label], dest[:url] % @purl.attributes) %>
+  <% end %>
+  <% if dest[:key] == 'EarthWorks' && @purl.type == 'geo' %>
+    <% releases << link_to(dest[:label], dest[:url] % @purl.attributes) %>
   <% end %>
 <% end %>
+<%= releases.to_sentence.html_safe %>

@@ -31,6 +31,9 @@ releases:
   - label: "View in SearchWorks"
     key: 'Searchworks'
     url: 'https://searchworks.stanford.edu/view/%{druid}'
+  - label: 'View in EarthWorks'
+    key: 'EarthWorks'
+    url: 'https://earthworks.stanford.edu/catalog/stanford-%{druid}'
 
 searchworks:
   url: 'https://searchworks.stanford.edu/view/'
