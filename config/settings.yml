@@ -6,6 +6,14 @@ flipbook:
   url: 'http://sul-reader.stanford.edu/flipbook2'
   auth_url: 'https://sul-reader.stanford.edu/flipbook2/auth'
 
+content_search:
+  url:
+  searchable_resource_types:
+    - page
+  searchable_mimetypes:
+    - application/xml
+    - text/plain
+
 document_cache_root: "<%= File.join(Rails.root, "document_cache") %>"
 
 resource_cache:

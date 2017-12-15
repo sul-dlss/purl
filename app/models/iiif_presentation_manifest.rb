@@ -56,6 +56,13 @@ class IiifPresentationManifest
       thumbnail?(file)
   end
 
+  def ocr_text?
+    resources.any? do |file|
+      Settings.content_search.searchable_resource_types.include?(file.type) &&
+        Settings.content_search.searchable_mimetypes.include?(file.mimetype)
+    end
+  end
+
   def description_or_note
     @description_or_note ||= begin
       ns = {
@@ -88,6 +95,7 @@ class IiifPresentationManifest
     }
 
     manifest = IIIF::Presentation::Manifest.new manifest_data
+    manifest.service << content_search_service
 
     # Set viewingHint to paged if this is a book
     manifest.viewingHint = 'paged' if type == 'book'
@@ -211,6 +219,17 @@ class IiifPresentationManifest
       '@id' => id,
       'profile' => Settings.stacks.iiif_profile
     )
+  end
+
+  def content_search_service
+    return nil unless Settings.content_search.url && ocr_text?
+
+    {
+      '@context' => 'http://iiif.io/api/search/0/context.json',
+      '@id' => format(Settings.content_search.url, druid: druid),
+      'profile' => 'http://iiif.io/api/search/0/search',
+      'label' => 'Search within this manifest'
+    }
   end
 
   # transform all DC metadata in the public XML into an array of hashes for inclusion in the IIIF manifest

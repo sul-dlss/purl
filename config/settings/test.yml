@@ -2,3 +2,6 @@ document_cache_root: "<%= File.join(Rails.root, "spec", "fixtures", "document_ca
 purl_resource:
   mods: "<%= File.join(Rails.root, "spec", "fixtures", "document_cache") %>/%{druid_tree}/mods"
   public_xml: "<%= File.join(Rails.root, "spec", "fixtures", "document_cache") %>/%{druid_tree}/public"
+
+content_search:
+  url: "http://example.com/content_search/%{druid}/search"

@@ -132,6 +132,16 @@ describe 'IIIF v2 manifests' do
     expect(json['metadata'].length).to eq 29
   end
 
+  it 'publishes IIIF Content Search API for pages with OCR content' do
+    visit '/jg072yr3056/iiif/manifest.json'
+    json = JSON.parse(page.body)
+
+    expect(json['service'].first).to match '@context' => 'http://iiif.io/api/search/0/context.json',
+                                           '@id' => 'http://example.com/content_search/jg072yr3056/search',
+                                           'profile' => 'http://iiif.io/api/search/0/search',
+                                           'label' => 'Search within this manifest'
+  end
+
   it 'publishes a rendering section for objects with additional resources' do
     visit '/zf119tw4418/iiif/manifest.json'
     json = JSON.parse(page.body)
