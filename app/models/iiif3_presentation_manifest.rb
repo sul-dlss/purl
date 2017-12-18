@@ -20,7 +20,8 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       'seeAlso' => {
         'id' => controller.purl_url(druid, format: 'mods'),
         'format' => 'application/mods+xml'
-      }
+      },
+      'service' => [content_search_service]
     }
 
     manifest = IIIF::V3::Presentation::Manifest.new manifest_data

@@ -116,6 +116,16 @@ describe 'IIIF v3 manifests' do
     expect(json['metadata'].length).to eq 29
   end
 
+  it 'publishes IIIF Content Search API for pages with OCR content' do
+    visit '/jg072yr3056/iiif/manifest.json'
+    json = JSON.parse(page.body)
+
+    expect(json['service'].first).to match '@context' => 'http://iiif.io/api/search/0/context.json',
+                                           '@id' => 'http://example.com/content_search/jg072yr3056/search',
+                                           'profile' => 'http://iiif.io/api/search/0/search',
+                                           'label' => 'Search within this manifest'
+  end
+
   # Virtual objects consist of a parent object and children objects who hold the file resources
   context 'virtual objects' do
     describe 'first child object' do
