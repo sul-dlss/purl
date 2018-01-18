@@ -224,12 +224,21 @@ class IiifPresentationManifest
   def content_search_service
     return nil unless Settings.content_search.url && ocr_text?
 
-    {
+    h = {
       '@context' => 'http://iiif.io/api/search/0/context.json',
       '@id' => format(Settings.content_search.url, druid: druid),
       'profile' => 'http://iiif.io/api/search/0/search',
       'label' => 'Search within this manifest'
     }
+
+    if Settings.content_search.autocomplete_url
+      h['service'] = {
+        '@id' => format(Settings.content_search.autocomplete_url, druid: druid),
+        'profile' => 'http://iiif.io/api/search/0/autocomplete'
+      }
+    end
+
+    h
   end
 
   # transform all DC metadata in the public XML into an array of hashes for inclusion in the IIIF manifest
