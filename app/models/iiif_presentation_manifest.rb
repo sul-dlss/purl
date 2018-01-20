@@ -49,10 +49,10 @@ class IiifPresentationManifest
     file.mimetype == 'image/jp2' && (file.type == 'image' || file.type == 'page') && file.height > 0 && file.width > 0
   end
 
-  # also is this right?  should it handle location rights too?
   def deliverable_file?(file)
     purl_resource.rights.stanford_only_rights_for_file(file.filename).first ||
       purl_resource.rights.world_rights_for_file(file.filename).first ||
+      purl_resource.rights.restricted_by_location?(file.filename) ||
       thumbnail?(file)
   end
 
@@ -188,24 +188,14 @@ class IiifPresentationManifest
     img_res.width = resource.width
 
     img_res.service = iiif_service(url)
+    img_res.service['service'] = []
 
-    unless purl_resource.rights.world_rights_for_file(resource.filename).first
-      img_res.service['service'] = [
-        IIIF::Service.new(
-          '@id' => "#{Settings.stacks.url}/auth/iiif",
-          'profile' => 'http://iiif.io/api/auth/1/login',
-          'label' => 'Log in to access all available features.',
-          'confirmLabel' => 'Login',
-          'failureHeader' => 'Unable to authenticate',
-          'failureDescription' => 'The authentication service cannot be reached'\
-            '. If your browser is configured to block pop-up windows, try allow'\
-            'ing pop-up windows for this site before attempting to log in again.',
-          'service' => [{
-            '@id' => "#{Settings.stacks.url}/image/iiif/token",
-            'profile' => 'http://iiif.io/api/auth/1/token'
-          }]
-        )
-      ]
+    if purl_resource.rights.stanford_only_rights_for_file(resource.filename).first
+      img_res.service['service'] = [iiif_stacks_login_service]
+    end
+
+    if purl_resource.rights.restricted_by_location?(resource.filename)
+      img_res.service['service'].append(iiif_location_auth_service)
     end
 
     anno.resource = img_res
@@ -287,5 +277,46 @@ class IiifPresentationManifest
 
   def stacks_file_url(druid, filename)
     "#{Settings.stacks.url}/file/#{druid}/#{filename}"
+  end
+
+  def iiif_stacks_login_service
+    IIIF::Service.new(
+      '@context' => 'http://iiif.io/api/auth/1/context.json',
+      'id' => "#{Settings.stacks.url}/auth/iiif",
+      'profile' => 'http://iiif.io/api/auth/1/login',
+      'label' => 'Log in to access all available features.',
+      'confirmLabel' => 'Login',
+      'failureHeader' => 'Unable to authenticate',
+      'failureDescription' => 'The authentication service cannot be reached'\
+        '. If your browser is configured to block pop-up windows, try allow'\
+        'ing pop-up windows for this site before attempting to log in again.',
+      'service' => [
+        {
+          '@id' => "#{Settings.stacks.url}/image/iiif/token",
+          'profile' => 'http://iiif.io/api/auth/1/token'
+        },
+        {
+          '@id' => "#{Settings.stacks.url}/auth/logout",
+          'profile' => 'http://iiif.io/api/auth/1/logout',
+          'label' => 'Logout'
+        }
+      ]
+    )
+  end
+
+  def iiif_location_auth_service
+    IIIF::Service.new(
+      '@context' => 'http://iiif.io/api/auth/1/context.json',
+      'profile' => 'http://iiif.io/api/auth/1/external',
+      'label' => 'External Authentication Required',
+      'failureHeader' => 'Restricted Material',
+      'failureDescription' => 'Restricted content cannot be accessed from your location',
+      'service' => [
+        {
+          '@id' => "#{Settings.stacks.url}/image/iiif/token",
+          'profile' => 'http://iiif.io/api/auth/1/token'
+        }
+      ]
+    )
   end
 end
