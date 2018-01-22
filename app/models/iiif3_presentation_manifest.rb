@@ -4,6 +4,10 @@ require 'iiif/v3/presentation'
 class Iiif3PresentationManifest < IiifPresentationManifest
   delegate :reading_order, :resources, to: :content_metadata
 
+  def needed?
+    true
+  end
+
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def body(controller = nil)
     controller ||= Rails.application.routes.url_helpers

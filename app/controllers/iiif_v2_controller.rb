@@ -4,14 +4,21 @@ class IiifV2Controller < ApplicationController
   rescue_from PurlResource::DruidNotValid, with: :invalid_druid
   rescue_from PurlResource::ObjectNotReady, with: :object_not_ready
 
+  before_action :check_if_purl_manifest_needed
+
+  def check_if_purl_manifest_needed
+    head :not_found unless iiif_manifest.needed?
+  end
+
   def manifest
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
 
-    if @purl.iiif_manifest?
-      manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc, 'iiif_v2', 'manifest'], expires_in: Settings.resource_cache.lifetime) do
-        @purl.iiif_manifest.body(self).to_ordered_hash
-      end
+    cache_key = [@purl, @purl.updated_at.utc, 'iiif', iiif_version, 'manifest']
+    manifest = Rails.cache.fetch(cache_key, expires_in: Settings.resource_cache.lifetime) do
+      @purl.iiif_manifest(iiif_version).body(self).try(:to_ordered_hash)
+    end
 
+    if manifest
       render json: JSON.pretty_generate(manifest.as_json)
     else
       head :not_found
@@ -21,11 +28,12 @@ class IiifV2Controller < ApplicationController
   def canvas
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
 
-    if @purl.iiif_manifest?
-      manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc, 'iiif_v2', 'canvas'], expires_in: Settings.resource_cache.lifetime) do
-        @purl.iiif_manifest.canvas(controller: self, resource_id: params[:resource_id]).to_ordered_hash
-      end
+    cache_key = [@purl, @purl.updated_at.utc, 'iiif', iiif_version, 'canvas', params[:resource_id]]
+    manifest = Rails.cache.fetch(cache_key, expires_in: Settings.resource_cache.lifetime) do
+      @purl.iiif_manifest(iiif_version).canvas(controller: self, resource_id: params[:resource_id]).try(:to_ordered_hash)
+    end
 
+    if manifest
       render json: JSON.pretty_generate(manifest.as_json)
     else
       head :not_found
@@ -35,11 +43,12 @@ class IiifV2Controller < ApplicationController
   def annotation
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
 
-    if @purl.iiif_manifest?
-      manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc, 'iiif_v2', 'annotation'], expires_in: Settings.resource_cache.lifetime) do
-        @purl.iiif_manifest.annotation(controller: self, annotation_id: params[:annotation_id]).to_ordered_hash
-      end
+    cache_key = [@purl, @purl.updated_at.utc, 'iiif', iiif_version, 'annotation', params[:annotation_id]]
+    manifest = Rails.cache.fetch(cache_key, expires_in: Settings.resource_cache.lifetime) do
+      iiif_manifest.annotation(controller: self, annotation_id: params[:annotation_id]).try(:to_ordered_hash)
+    end
 
+    if manifest
       render json: JSON.pretty_generate(manifest.as_json)
     else
       head :not_found
@@ -51,5 +60,13 @@ class IiifV2Controller < ApplicationController
   # validate that the id is of the proper format
   def load_purl
     @purl = PurlResource.find(params[:id])
+  end
+
+  def iiif_manifest
+    @purl.iiif_manifest(iiif_version)
+  end
+
+  def iiif_version
+    :v2
   end
 end

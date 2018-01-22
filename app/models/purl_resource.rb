@@ -89,16 +89,18 @@ class PurlResource
     end
   end
 
-  def iiif_manifest
-    @iiif_manifest ||= IiifPresentationManifest.new(self)
+  def iiif_manifest(version)
+    @iiif_manifest ||= {}
+    @iiif_manifest[version] ||= case version
+                                when :v2
+                                  IiifPresentationManifest.new(self)
+                                when :v3
+                                  Iiif3PresentationManifest.new(self)
+                                end
   end
 
-  def iiif_manifest?
-    iiif_manifest.needed?
-  end
-
-  def iiif3_manifest
-    @iiif3_manifest ||= Iiif3PresentationManifest.new(self)
+  def iiif_manifest?(version)
+    iiif_manifest(version).needed?
   end
 
   def flipbook
@@ -174,7 +176,7 @@ class PurlResource
     end
 
     def representative_thumbnail
-      "#{iiif_manifest.thumbnail_base_uri}/full/!400,400/0/default.jpg" if iiif_manifest.thumbnail_base_uri.present?
+      "#{iiif_manifest(:v2).thumbnail_base_uri}/full/!400,400/0/default.jpg" if iiif_manifest(:v2).thumbnail_base_uri.present?
     end
 
     def flipbook?
