@@ -36,7 +36,7 @@ class PurlResource
     end
   end
 
-  # rubocop:disable Style/PredicateName
+  # rubocop:disable Naming/PredicateName
   def self.has_resource(options)
     options.each do |key, value|
       define_method "#{key}_resource" do
@@ -54,7 +54,7 @@ class PurlResource
       end
     end
   end
-  # rubocop:enable Style/PredicateName
+  # rubocop:enable Naming/PredicateName
 
   has_resource mods: Settings.purl_resource.mods
   has_resource public_xml: Settings.purl_resource.public_xml
