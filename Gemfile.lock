@@ -198,7 +198,7 @@ GEM
       iso-639
       nokogiri
       nom-xml (~> 0.6.0)
-    mods_display (0.4.1)
+    mods_display (0.5.1)
       i18n
       stanford-mods (~> 2.1)
     multi_json (1.13.1)
@@ -387,7 +387,7 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   lograge
-  mods_display (~> 0.4.0)
+  mods_display (~> 0.4)
   newrelic_rpm
   okcomputer
   poltergeist

@@ -35,7 +35,7 @@ gem 'honeybadger'
 # Use okcomputer to monitor the application
 gem 'okcomputer'
 
-gem 'mods_display', '~> 0.4.0'
+gem 'mods_display', '~> 0.4'
 gem 'htmlentities'
 gem 'dor-rights-auth'
 gem 'bootstrap-sass'

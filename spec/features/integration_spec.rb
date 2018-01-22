@@ -15,6 +15,7 @@ describe 'Integration Scenarios' do
       expect(page).to have_metadata_section 'Access conditions'
       expect(page).to have_metadata_section 'Description'
       expect(page).to have_metadata_section 'Contributors'
+      expect(page).to have_content 'Creator Paget, Francis Edward, 1806-1882'
       expect(page).to have_metadata_section 'Bibliographic information'
       expect(page).to have_metadata_section 'Also listed in'
     end
@@ -148,9 +149,9 @@ describe 'Integration Scenarios' do
 
     it 'provides revs-specific subjects' do
       visit '/tx027jv4938'
-      expect(page).to have_content 'VenueDaytona International Speedway'
-      expect(page).to have_content 'Event24 Hours of Daytona'
-      expect(page).to have_content 'Revs ID2012-015GHEW-BW-1984-b4_1.4_0003'
+      expect(page).to have_content 'Venue Daytona International Speedway'
+      expect(page).to have_content 'Event 24 Hours of Daytona'
+      expect(page).to have_content 'Revs ID 2012-015GHEW-BW-1984-b4_1.4_0003'
     end
   end
   # rubocop:disable Style/PredicateName
