@@ -45,7 +45,7 @@ module RecordHelper
   def mods_display_name(names)
     names.map do |name|
       content_tag(:dd) do
-        name.name + ((" (#{name.roles.join(', ')})" if name.roles) || '')
+        name.name
       end
     end.join.html_safe
   end

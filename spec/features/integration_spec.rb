@@ -15,6 +15,7 @@ describe 'Integration Scenarios' do
       expect(page).to have_metadata_section 'Access conditions'
       expect(page).to have_metadata_section 'Description'
       expect(page).to have_metadata_section 'Contributors'
+      expect(page).to have_content 'Creator Paget, Francis Edward, 1806-1882'
       expect(page).to have_metadata_section 'Bibliographic information'
       expect(page).to have_metadata_section 'Also listed in'
     end
