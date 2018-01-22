@@ -17,7 +17,7 @@ module RecordHelper
   end
 
   def mods_display_label(label)
-    content_tag(:dt, label.delete(':'))
+    content_tag(:dt, label.delete(':')) + "\n".html_safe
   end
 
   def mods_display_content(values, delimiter = nil)
