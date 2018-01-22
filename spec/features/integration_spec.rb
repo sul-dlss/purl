@@ -154,9 +154,9 @@ describe 'Integration Scenarios' do
       expect(page).to have_content 'Revs ID 2012-015GHEW-BW-1984-b4_1.4_0003'
     end
   end
-  # rubocop:disable Style/PredicateName
+  # rubocop:disable Naming/PredicateName
   def have_metadata_section(text)
     have_selector '.section-heading', text: text
   end
-  # rubocop:enable Style/PredicateName
+  # rubocop:enable Naming/PredicateName
 end
