@@ -239,4 +239,22 @@ describe 'IIIF v2 manifests' do
       end
     end
   end
+
+  describe 'a location restricted image' do
+    let(:druid) { 'bb361mj1737' }
+
+    it 'generates a IIIF v2 manifest that includes location authentication information' do
+      visit "/#{druid}/iiif/manifest.json"
+      expect(page).to have_http_status(:ok)
+
+      json = JSON.parse(page.body)
+      external_interaction_service = json['sequences'].first['canvases'].first['images'].first['resource']['service']['service'].first
+      expect(external_interaction_service['profile']).to eq 'http://iiif.io/api/auth/1/external'
+      expect(external_interaction_service['label']).to eq 'External Authentication Required'
+      expect(external_interaction_service['failureHeader']).to eq 'Restricted Material'
+      expect(external_interaction_service['failureDescription']).to eq 'Restricted content cannot be accessed from your location'
+      expect(external_interaction_service['service'].first['@id']).to eq "#{Settings.stacks.url}/image/iiif/token"
+      expect(external_interaction_service['service'].first['profile']).to eq 'http://iiif.io/api/auth/1/token'
+    end
+  end
 end
