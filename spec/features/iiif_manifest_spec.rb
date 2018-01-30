@@ -132,6 +132,13 @@ describe 'IIIF v2 manifests' do
     expect(json['metadata'].length).to eq 29
   end
 
+  it 'does not publish services for pages without OCR content' do
+    visit '/py305sy7961/iiif3/manifest'
+    json = JSON.parse(page.body)
+
+    expect(json).not_to have_key 'service'
+  end
+
   it 'publishes IIIF Content Search API for pages with OCR content' do
     visit '/jg072yr3056/iiif/manifest.json'
     json = JSON.parse(page.body)

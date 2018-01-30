@@ -95,7 +95,7 @@ class IiifPresentationManifest
     }
 
     manifest = IIIF::Presentation::Manifest.new manifest_data
-    manifest.service << content_search_service
+    manifest.service << content_search_service if content_search_service
 
     # Set viewingHint to paged if this is a book
     manifest.viewingHint = 'paged' if type == 'book'
