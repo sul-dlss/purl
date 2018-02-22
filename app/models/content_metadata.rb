@@ -67,7 +67,7 @@ class ContentMetadata
 
   class Resource
     include ActiveModel::Model
-    attr_accessor :height, :width, :type, :mimetype, :size, :label, :url, :filename, :imagesvc, :sub_resource, :thumb, :druid, :id, :sequence
+    attr_accessor :height, :width, :type, :mimetype, :size, :role, :label, :url, :filename, :imagesvc, :sub_resource, :thumb, :druid, :id, :sequence
 
     ##
     # Extract attributes from `<file>...</file>` in content metadata
@@ -81,6 +81,7 @@ class ContentMetadata
         extract_common_metadata(file, options).merge(
           filename: file['id'],
           size: file['size'],
+          role: file['role'],
           url: file.at_xpath('location[@type="url"]/text()'),
           imagesvc: file.at_xpath('location[@type="imagesvc"]/text()')
         )

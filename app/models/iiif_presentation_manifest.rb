@@ -58,8 +58,7 @@ class IiifPresentationManifest
 
   def ocr_text?
     resources.any? do |file|
-      Settings.content_search.searchable_resource_types.include?(file.type) &&
-        Settings.content_search.searchable_mimetypes.include?(file.mimetype)
+      file.role == 'transcription'
     end
   end
 
