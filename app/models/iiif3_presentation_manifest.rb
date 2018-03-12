@@ -129,7 +129,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def binary_resource(resource)
     bin_res = IIIF::V3::Presentation::Resource.new
-    bin_res['id'] = "#{Settings.stacks.url}/file/#{resource.druid}/#{resource.filename}"
+    bin_res['id'] = "#{Settings.stacks.url}/file/#{resource.druid}/#{ERB::Util.url_encode(resource.filename)}"
     bin_res['type'] = 'Document'
     bin_res.format = resource.mimetype
 

@@ -264,4 +264,25 @@ describe 'IIIF v2 manifests' do
       expect(external_interaction_service['service'].first['profile']).to eq 'http://iiif.io/api/auth/1/token'
     end
   end
+
+  context 'a resource with special characters' do
+    let(:druid) { 'fg019pm1396' }
+
+    it 'generates a IIIF v2 manifest that escapes resources in urls' do
+      visit "/#{druid}/iiif/manifest.json"
+      expect(page).to have_http_status(:ok)
+
+      json = JSON.parse(page.body)
+      image_ids = json['sequences'].flat_map { |x| x['canvases'] }.flat_map { |x| x['images'] }.map { |x| x['resource']['@id'] }
+
+      # handle spaces
+      expect(image_ids).to include 'https://stacks.stanford.edu/image/iiif/fg019pm1396%2FJungleCat%20x/full/full/0/default.jpg'
+
+      # handle percent signs
+      expect(image_ids).to include 'https://stacks.stanford.edu/image/iiif/fg019pm1396%2FJungleCat%2520x/full/full/0/default.jpg'
+
+      # xml escaped stuff
+      expect(image_ids).to include 'https://stacks.stanford.edu/image/iiif/fg019pm1396%2FJungleCat%26x/full/full/0/default.jpg'
+    end
+  end
 end
