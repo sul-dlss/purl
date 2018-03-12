@@ -21,7 +21,7 @@ require 'capistrano/deploy'
 # require 'capistrano/rails/assets'
 # require 'capistrano/rails/migrations'
 
-require 'capistrano/rails'
+require 'capistrano/rails/assets'
 require 'capistrano/passenger'
 require 'capistrano/honeybadger'
 require 'capistrano/shared_configs'
