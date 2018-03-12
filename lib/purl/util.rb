@@ -35,7 +35,7 @@ module Purl
       url = deliverable_file.url || ''
 
       if url.blank?
-        url = Settings.stacks.url + '/file/druid:' + pid + '/' + deliverable_file.filename
+        url = Settings.stacks.url + '/file/druid:' + pid + '/' + ERB::Util.url_encode(deliverable_file.filename)
       end
 
       URI.encode(url)
