@@ -36,7 +36,7 @@ class IiifPresentationManifest
   end
 
   def object_files
-    @non_page_files ||= resources.select do |file|
+    @object_files ||= resources.select do |file|
       object?(file) && deliverable_file?(file)
     end
   end

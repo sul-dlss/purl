@@ -1,5 +1,5 @@
 class FeedbackMailer < ActionMailer::Base
-  def submit_feedback(params, ip)
+  def submit_feedback(params, request_ip)
     @name = if params[:name].present?
               params[:name]
             else
@@ -14,7 +14,7 @@ class FeedbackMailer < ActionMailer::Base
 
     @message = params[:message]
     @url = params[:url]
-    @ip = ip
+    @ip = request_ip
     @user_agent = params[:user_agent]
     @viewport = params[:viewport]
 
