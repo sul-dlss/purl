@@ -13,7 +13,7 @@ class Flipbook
   end
 
   def as_json(*_args)
-    @json ||= {
+    @as_json ||= {
       id: catalog_key.to_s,
       readGroup: read_group,
       objectId: druid.to_s,
