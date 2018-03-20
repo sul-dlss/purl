@@ -150,11 +150,6 @@ GEM
       activesupport (>= 3.0, < 6.0)
     erubi (1.7.1)
     execjs (2.7.0)
-    factory_girl (4.9.0)
-      activesupport (>= 3.0.0)
-    factory_girl_rails (4.9.0)
-      factory_girl (~> 4.9.0)
-      railties (>= 3.0.0)
     faraday (0.14.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.23)
@@ -379,7 +374,6 @@ DEPENDENCIES
   database_cleaner
   dlss-capistrano
   dor-rights-auth
-  factory_girl_rails
   faraday
   honeybadger
   htmlentities

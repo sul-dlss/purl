@@ -76,9 +76,6 @@ group :development, :test do
   # Capybara for feature/integration tests
   gem 'capybara'
 
-  # factory_girl_rails for creating fixtures in tests
-  gem 'factory_girl_rails'
-
   # Poltergeist is a capybara driver to run integration tests using PhantomJS
   gem 'poltergeist'
 
