@@ -14,14 +14,14 @@ class ApplicationController < ActionController::Base
   private
 
   def invalid_druid
-    render '/errors/invalid', status: 404
+    render '/errors/invalid', status: :not_found
   end
 
   def object_not_ready
-    render '/errors/unavailable', status: 404
+    render '/errors/unavailable', status: :not_found
   end
 
   def missing_file
-    render '/errors/missing_file.html', status: 404
+    render '/errors/missing_file.html', status: :not_found
   end
 end
