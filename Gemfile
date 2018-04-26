@@ -89,7 +89,7 @@ group :development, :test do
   gem 'scss_lint', require: false
 
   # Coveralls for code coverage metrics
-  gem 'coveralls', require: false
+  gem 'coveralls', '~> 0.8', require: false
 
   gem 'simplecov', require: false
   gem 'codeclimate-test-reporter', group: :test, require: false
