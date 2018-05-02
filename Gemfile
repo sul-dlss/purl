@@ -6,17 +6,15 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.0'
+gem 'rails', '~> 5.2.0'
 # Use sqlite3 as the database (during local development)
 gem 'sqlite3'
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 2.7.2'
-# JS Runtime. See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'therubyracer'
 # A gem for simple rails environment specific config
 gem 'config'
 # Use jquery as the JavaScript library
@@ -28,6 +26,9 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # CanCanCan is an authorization Gem for rails
 gem 'cancancan', '~> 2.0'
+
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.1.0', require: false
 
 # Use Honeybadger for exception reporting
 gem 'honeybadger'
@@ -76,8 +77,9 @@ group :development, :test do
   # Capybara for feature/integration tests
   gem 'capybara'
 
-  # Poltergeist is a capybara driver to run integration tests using PhantomJS
-  gem 'poltergeist'
+  gem 'selenium-webdriver'
+  # Easy installation and use of chromedriver to run system tests with Chrome
+  gem 'chromedriver-helper'
 
   # Database cleaner allows us to clean the entire database after certain tests
   gem 'database_cleaner'
@@ -88,11 +90,7 @@ group :development, :test do
   # scss_lint will test the scss files to enfoce styles
   gem 'scss_lint', require: false
 
-  # Coveralls for code coverage metrics
-  gem 'coveralls', '~> 0.8', require: false
-
   gem 'simplecov', require: false
-  gem 'codeclimate-test-reporter', group: :test, require: false
 end
 
 gem 'lograge'
