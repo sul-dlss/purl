@@ -49,7 +49,11 @@ class ContentMetadata
       druid: druid
     }
 
-    resource_attributes[:sequence] = resource.attribute('sequence').value.to_i if resource.attribute('sequence')
+    resource_attributes[:sequence] = if resource.attribute('sequence')
+                                       resource.attribute('sequence').value.to_i
+                                     else
+                                       Float::INFINITY
+                                     end
 
     resource.xpath('file|externalFile|resource').select { |node| Purl::Util.file_ready? node }.map do |node|
       case node.name
