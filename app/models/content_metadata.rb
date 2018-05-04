@@ -61,17 +61,13 @@ class ContentMetadata
         Resource.from_file_metadata(node, resource_attributes)
       when 'externalFile'
         Resource.from_external_file_metadata(node, resource_attributes)
-      when 'resource'
-        r = Resource.new(resource_attributes)
-        r.sub_resources = extract_resources(node)
-        r
       end
     end
   end
 
   class Resource
     include ActiveModel::Model
-    attr_accessor :height, :width, :type, :mimetype, :size, :role, :label, :url, :filename, :imagesvc, :sub_resource, :thumb, :druid, :id, :sequence
+    attr_accessor :height, :width, :type, :mimetype, :size, :role, :label, :url, :filename, :imagesvc, :thumb, :druid, :id, :sequence
 
     ##
     # Extract attributes from `<file>...</file>` in content metadata
