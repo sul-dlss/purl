@@ -49,7 +49,11 @@ class ContentMetadata
       druid: druid
     }
 
-    resource_attributes[:sequence] = resource.attribute('sequence').value.to_i if resource.attribute('sequence')
+    resource_attributes[:sequence] = if resource.attribute('sequence')
+                                       resource.attribute('sequence').value.to_i
+                                     else
+                                       Float::INFINITY
+                                     end
 
     resource.xpath('file|externalFile|resource').select { |node| Purl::Util.file_ready? node }.map do |node|
       case node.name
@@ -57,17 +61,13 @@ class ContentMetadata
         Resource.from_file_metadata(node, resource_attributes)
       when 'externalFile'
         Resource.from_external_file_metadata(node, resource_attributes)
-      when 'resource'
-        r = Resource.new(resource_attributes)
-        r.sub_resources = extract_resources(node)
-        r
       end
     end
   end
 
   class Resource
     include ActiveModel::Model
-    attr_accessor :height, :width, :type, :mimetype, :size, :role, :label, :url, :filename, :imagesvc, :sub_resource, :thumb, :druid, :id, :sequence
+    attr_accessor :height, :width, :type, :mimetype, :size, :role, :label, :url, :filename, :imagesvc, :thumb, :druid, :id, :sequence
 
     ##
     # Extract attributes from `<file>...</file>` in content metadata
