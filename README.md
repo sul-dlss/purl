@@ -2,7 +2,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/sul-dlss/purl/badge.svg?branch=master)](https://coveralls.io/github/sul-dlss/purl?branch=master)
 [![Code Climate](https://codeclimate.com/github/sul-dlss/purl/badges/gpa.svg)](https://codeclimate.com/github/sul-dlss/purl)
 [![Code Climate Test Coverage](https://codeclimate.com/github/sul-dlss/purl/badges/coverage.svg)](https://codeclimate.com/github/sul-dlss/purl/coverage)
-[![Dependency Status](https://gemnasium.com/sul-dlss/purl.svg)](https://gemnasium.com/sul-dlss/purl)
+
 [![GitHub version](https://badge.fury.io/gh/sul-dlss%2Fpurl.svg)](https://badge.fury.io/gh/sul-dlss%2Fpurl)
 
 # PURL
