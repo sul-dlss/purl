@@ -77,7 +77,7 @@ group :development, :test do
   # Capybara for feature/integration tests
   gem 'capybara'
 
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '!= 3.13.0'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 
