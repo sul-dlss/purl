@@ -4,9 +4,4 @@ class WebauthController < ApplicationController
 
     redirect_back fallback_location: root_url
   end
-
-  def logout
-    flash[:notice] = 'You have been successfully logged out.'
-    redirect_back fallback_location: root_url
-  end
 end
