@@ -295,7 +295,7 @@ class IiifPresentationManifest
           'profile' => 'http://iiif.io/api/auth/1/token'
         },
         {
-          '@id' => "#{Settings.stacks.url}/auth/logout",
+          '@id' => "#{Settings.stacks.url}/Shibboleth.sso/Logout",
           'profile' => 'http://iiif.io/api/auth/1/logout',
           'label' => 'Logout'
         }
