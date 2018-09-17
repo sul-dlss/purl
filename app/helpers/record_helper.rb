@@ -34,11 +34,13 @@ module RecordHelper
 
   def mods_record_field(field, delimiter = nil)
     return unless field.respond_to?(:label, :values) && field.values.any?(&:present?)
+
     mods_display_label(field.label) + mods_display_content(field.values, delimiter)
   end
 
   def mods_name_field(field)
     return unless field.respond_to?(:label, :values) && field.values.any?(&:present?)
+
     mods_display_label(field.label) + mods_display_name(field.values)
   end
 
