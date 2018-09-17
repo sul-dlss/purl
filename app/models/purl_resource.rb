@@ -16,6 +16,7 @@ class PurlResource
 
     Find.find(Settings.document_cache_root) do |path|
       next unless path.ends_with?('public')
+
       # rubocop:disable Style/RegexpLiteral
       match = path.match(%r{#{Settings.purl_resource.public_xml % { druid: '(.*)', druid_tree: '(.*)' }}})
       # rubocop:enable Style/RegexpLiteral

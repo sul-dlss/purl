@@ -113,6 +113,7 @@ class ContentMetadata
 
     def levels
       return unless width > 0 && height > 0
+
       ((Math.log([width, height].max) / Math.log(2)) - (Math.log(96) / Math.log(2))).ceil + 1
     end
 
