@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'iiif/presentation'
 
 class IiifPresentationManifest
@@ -6,7 +8,7 @@ class IiifPresentationManifest
 
   attr_reader :purl_resource
 
-  OAI_DC_SCHEMA = 'http://www.openarchives.org/OAI/2.0/oai_dc/'.freeze
+  OAI_DC_SCHEMA = 'http://www.openarchives.org/OAI/2.0/oai_dc/'
 
   VIEWING_DIRECTION = {
     'ltr' => 'left-to-right',
@@ -46,7 +48,7 @@ class IiifPresentationManifest
   end
 
   def image?(file)
-    file.mimetype == 'image/jp2' && (file.type == 'image' || file.type == 'page') && file.height > 0 && file.width > 0
+    file.mimetype == 'image/jp2' && (file.type == 'image' || file.type == 'page') && file.height.positive? && file.width.positive?
   end
 
   def deliverable_file?(file)
@@ -80,7 +82,7 @@ class IiifPresentationManifest
     purl_base_uri = controller.purl_url(druid)
 
     manifest_data = {
-      '@id'   => controller.iiif_manifest_url(druid),
+      '@id' => controller.iiif_manifest_url(druid),
       'label' => title,
       'attribution' => copyright || 'Provided by the Stanford University Libraries',
       'logo' => {
