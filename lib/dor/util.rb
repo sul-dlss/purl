@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 module Dor
   # constants
-  DRUID_REGEX = /^([a-z]{2})(\d{3})([a-z]{2})(\d{4})$/i
+  DRUID_REGEX = /^([a-z]{2})(\d{3})([a-z]{2})(\d{4})$/i.freeze
 
   class Util
     #

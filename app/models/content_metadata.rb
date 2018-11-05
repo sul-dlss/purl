@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ContentMetadata
   attr_reader :document
 
@@ -18,7 +20,7 @@ class ContentMetadata
   end
 
   def book_data
-    document.at_xpath('bookData') if document
+    document&.at_xpath('bookData')
   end
 
   ##
@@ -100,9 +102,9 @@ class ContentMetadata
     def self.from_external_file_metadata(external_file, options = {})
       new(
         extract_common_metadata(external_file, options).merge(
-          filename:   external_file['fileId'],
-          druid:      external_file['objectId'].gsub(/^druid:/, ''),
-          id:         external_file['resourceId']
+          filename: external_file['fileId'],
+          druid: external_file['objectId'].gsub(/^druid:/, ''),
+          id: external_file['resourceId']
         )
       )
     end
@@ -112,7 +114,7 @@ class ContentMetadata
     end
 
     def levels
-      return unless width > 0 && height > 0
+      return unless width.positive? && height.positive?
 
       ((Math.log([width, height].max) / Math.log(2)) - (Math.log(96) / Math.log(2))).ceil + 1
     end
@@ -124,9 +126,9 @@ class ContentMetadata
     # @return [Hash]
     def self.extract_common_metadata(metadata, options = {})
       options.merge(
-        height:         metadata.at_xpath('imageData/@height').to_s.to_i,
-        width:          metadata.at_xpath('imageData/@width').to_s.to_i,
-        mimetype:       metadata['mimetype']
+        height: metadata.at_xpath('imageData/@height').to_s.to_i,
+        width: metadata.at_xpath('imageData/@width').to_s.to_i,
+        mimetype: metadata['mimetype']
       )
     end
     private_class_method :extract_common_metadata
