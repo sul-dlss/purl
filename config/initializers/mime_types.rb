@@ -4,4 +4,3 @@
 # Mime::Type.register "text/richtext", :rtf
 
 Mime::Type.register 'application/xml', :mods
-Mime::Type.register 'application/json', :flipbook
