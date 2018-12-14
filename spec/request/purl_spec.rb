@@ -19,6 +19,15 @@ RSpec.describe 'PURL API', type: :request do
   end
 
   context 'IIIF v3 requests' do
+    it 'using accept header provides v3 manifest' do
+      get(
+        '/bb157hs6068/iiif/manifest',
+        params: {},
+        headers: { 'Accept' => 'application/ld+json;profile="http://iiif.io/api/presentation/3/context.json"' }
+      )
+      expect(response.body).to include 'http://iiif.io/api/presentation/3/context.json'
+    end
+
     it 'redirects manifest.json requests' do
       get '/1/iiif3/manifest.json'
       expect(response).to redirect_to('/1/iiif3/manifest')
