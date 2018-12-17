@@ -39,7 +39,7 @@ gem 'okcomputer'
 gem 'mods_display', '~> 0.4'
 gem 'htmlentities'
 gem 'dor-rights-auth'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '3.3.7' # pinned to 3.3, because our centos6 environment isn't compatible with sassc 2.x
 gem 'retina_tag'
 gem 'faraday'
 gem 'addressable'
