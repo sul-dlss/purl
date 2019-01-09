@@ -2,7 +2,7 @@ require 'iiif/presentation'
 require 'iiif/v3/presentation'
 
 class Iiif3PresentationManifest < IiifPresentationManifest
-  delegate :reading_order, :resources, to: :content_metadata
+  delegate :reading_order, to: :content_metadata
 
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def body(controller = nil)
@@ -60,6 +60,14 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
     manifest.sequences << sequence
     manifest
+  end
+
+  def resources
+    resources = content_metadata.resources
+
+    resources.select! { |x| x.type == '3d' } if three_d?
+
+    resources
   end
 
   def annotation_page(controller: nil, annotation_page_id:)
@@ -130,13 +138,21 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   def binary_resource(resource)
     bin_res = IIIF::V3::Presentation::Resource.new
     bin_res['id'] = "#{Settings.stacks.url}/file/#{resource.druid}/#{ERB::Util.url_encode(resource.filename)}"
-    bin_res['type'] = 'Document'
+    bin_res['type'] = iiif_resource_type(resource)
     bin_res.format = resource.mimetype
 
     unless purl_resource.rights.world_rights_for_file(resource.filename).first
       bin_res.service = iiif_stacks_login_service
     end
     bin_res
+  end
+
+  def iiif_resource_type(resource)
+    if resource.type == '3d'
+      'PhysicalObject'
+    else
+      'Document'
+    end
   end
 
   def thumbnail_resource
@@ -204,4 +220,8 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     )
   end
   # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
+
+  def three_d?
+    type == '3d'
+  end
 end

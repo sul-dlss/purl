@@ -307,6 +307,32 @@ describe 'IIIF v3 manifests' do
     end
   end
 
+  describe 'a 3D object as obj' do
+    let(:druid) { 'bg387kw8222' }
+
+    it 'only generates a single 3d resource on the canvas' do
+      visit "/#{druid}/iiif3/manifest"
+      expect(page).to have_http_status(:ok)
+
+      json = JSON.parse(page.body)
+
+      expect(json['label']).to start_with 'Department of Anthropology Bone Collection'
+      expect(json['sequences'].length).to eq 1
+      expect(json['sequences'].first['canvases'].length).to eq 1
+
+      canvas = json['sequences'].first['canvases'][0]
+      expect(canvas['content'].length).to eq 1
+      expect(canvas['content'].first['items'].length).to eq 1
+      expect(canvas['height']).not_to be_present
+      expect(canvas['width']).not_to be_present
+
+      obj = canvas['content'].first['items'].first
+      expect(obj['body']['id']).to eq 'https://stacks.stanford.edu/file/bg387kw8222/bg387kw8222_low.obj'
+      expect(obj['body']['format']).to eq 'text/plain'
+      expect(obj['body']['type']).to eq 'PhysicalObject'
+    end
+  end
+
   describe 'a location restricted image' do
     let(:druid) { 'yy816tv6021' }
 
