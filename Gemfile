@@ -78,8 +78,7 @@ group :development, :test do
   gem 'capybara'
 
   gem 'selenium-webdriver', '!= 3.13.0'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
 
   # Database cleaner allows us to clean the entire database after certain tests
   gem 'database_cleaner'
