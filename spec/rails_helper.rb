@@ -7,15 +7,7 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'selenium-webdriver'
 
-Capybara.javascript_driver = :headless_chrome
-
-Capybara.register_driver :headless_chrome do |app|
-  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-    chromeOptions: { args: %w[headless disable-gpu no-sandbox] }
-  )
-
-  Capybara::Selenium::Driver.new(app, browser: :chrome, desired_capabilities: capabilities)
-end
+Capybara.javascript_driver = :selenium_chrome_headless
 
 # Auto require all files in spec/support.
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
