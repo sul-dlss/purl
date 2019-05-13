@@ -85,6 +85,7 @@ group :development, :test do
 
   # Rubocop is a static code analyzer to enforce style.
   gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false
 
   # scss_lint will test the scss files to enfoce styles
   gem 'scss_lint', require: false
