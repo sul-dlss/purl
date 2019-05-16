@@ -2,8 +2,7 @@ addons:
   chrome: stable
 language: ruby
 rvm:
-  - 2.5.1
-  - 2.6.0
+  - 2.6.3
 sudo: false
 
 env:
