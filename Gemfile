@@ -50,6 +50,8 @@ gem 'sul_styles', '~> 0.3'
 gem 'iiif-presentation', github: 'sul-dlss/osullivan', branch: 'development'
 gem 'dalli'
 
+gem 'webpacker', '~> 4.x'
+
 group :production do
   gem 'newrelic_rpm'
 end
