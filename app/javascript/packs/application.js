@@ -15,4 +15,15 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log('Hello World from Webpacker')
+import Rails from 'rails-ujs';
+import Turbolinks from 'turbolinks';
+import 'bootstrap/dist/js/bootstrap';
+import 'jquery.oembed.js';
+import 'jQuery.XDomainRequest.js';
+
+Rails.start();
+Turbolinks.start();
+
+import '../../assets/javascripts/analytics.js';
+import '../../assets/javascripts/feedback_form.js';
+import '../../assets/javascripts/purl_embed.js';
