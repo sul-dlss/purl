@@ -10,6 +10,7 @@ AllCops:
     - 'spec/spec_helper.rb'
     - 'spec/teaspoon_env.rb'
     - 'vendor/**/*'
+    - 'node_modules/**/*'
   TargetRubyVersion: 2.5
 
 Rails:
