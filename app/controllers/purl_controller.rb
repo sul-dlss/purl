@@ -32,7 +32,7 @@ class PurlController < ApplicationController
         if @purl.representative_thumbnail?
           redirect_to @purl.representative_thumbnail
         else
-          redirect_to view_context.image_path('SUL-logo-stacked@2x.png')
+          redirect_to view_context.image_path('sul-logo-stacked.svg')
         end
       end
     end
