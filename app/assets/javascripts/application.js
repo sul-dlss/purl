@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require retina_tag
 
 //= require jquery_ujs
 //= require turbolinks
@@ -24,4 +23,3 @@
 //= require jQuery.XDomainRequest
 
 //= require_tree .
-
