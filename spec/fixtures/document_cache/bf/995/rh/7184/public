@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:bf995rh7184" published="2019-06-26T19:37:45Z" publishVersion="dor-services/7.2.0">
+  <identityMetadata>
+    <sourceId source="sul">SC0634_2001-262_b07_f49_Chowning_on_Composition_1983</sourceId>
+    <objectId>druid:bf995rh7184</objectId>
+    <objectCreator>DOR</objectCreator>
+    <objectLabel>John Chowning On Composition</objectLabel>
+    <objectType>item</objectType>
+    <otherId name="label"/>
+    <otherId name="uuid">fb1c7bfc-b29c-11e7-8f8c-005056a7ed61</otherId>
+    <tag>Process : Content Type : Book (ltr)</tag>
+    <tag>Project : University Archives Scanning</tag>
+    <tag>DPG : Workflow : UARCH_Accession_Content_Expedited</tag>
+    <tag>sul : SC0634</tag>
+    <tag>catkey : 4783674</tag>
+    <tag>Registered By : dhartwig</tag>
+  </identityMetadata>
+  <contentMetadata objectId="druid:bf995rh7184" type="book">
+    <resource id="bf995rh7184_1" sequence="1" type="page">
+      <label>Page 1</label>
+      <file id="bf995rh7184_Page_01.pdf" mimetype="application/pdf" size="67276">
+
+
+    </file>
+      <file id="bf995rh7184_Page_01.xml" role="transcription" mimetype="application/xml" size="28138">
+
+
+    </file>
+      <file id="bf995rh7184_Page_01.jp2" mimetype="image/jp2" size="1274652">
+        <imageData width="2545" height="3325"/>
+      </file>
+    </resource>
+    <resource id="bf995rh7184_2" sequence="2" type="page">
+      <label>Page 2</label>
+      <file id="bf995rh7184_Page_02.pdf" mimetype="application/pdf" size="87110">
+
+
+    </file>
+      <file id="bf995rh7184_Page_02.xml" role="transcription" mimetype="application/xml" size="45231">
+
+
+    </file>
+      <file id="bf995rh7184_Page_02.jp2" mimetype="image/jp2" size="1593557">
+        <imageData width="2549" height="3321"/>
+      </file>
+    </resource>
+    <resource id="bf995rh7184_3" sequence="3" type="page">
+      <label>Page 3</label>
+      <file id="bf995rh7184_Page_03.pdf" mimetype="application/pdf" size="97612">
+
+
+    </file>
+      <file id="bf995rh7184_Page_03.xml" role="transcription" mimetype="application/xml" size="47728">
+
+
+    </file>
+      <file id="bf995rh7184_Page_03.jp2" mimetype="image/jp2" size="1596720">
+        <imageData width="2551" height="3325"/>
+      </file>
+    </resource>
+    <resource id="bf995rh7184_4" sequence="4" type="page">
+      <label>Page 4</label>
+      <file id="bf995rh7184_Page_04.pdf" mimetype="application/pdf" size="84829">
+
+
+    </file>
+      <file id="bf995rh7184_Page_04.xml" role="transcription" mimetype="application/xml" size="43806">
+
+
+    </file>
+      <file id="bf995rh7184_Page_04.jp2" mimetype="image/jp2" size="1592421">
+        <imageData width="2548" height="3320"/>
+      </file>
+    </resource>
+    <resource id="bf995rh7184_5" sequence="5" type="page">
+      <label>Page 5</label>
+      <file id="bf995rh7184_Page_05.pdf" mimetype="application/pdf" size="84818">
+
+
+    </file>
+      <file id="bf995rh7184_Page_05.xml" role="transcription" mimetype="application/xml" size="52138">
+
+
+    </file>
+      <file id="bf995rh7184_Page_05.jp2" mimetype="image/jp2" size="1591074">
+        <imageData width="2549" height="3316"/>
+      </file>
+    </resource>
+    <resource id="bf995rh7184_6" sequence="6" type="page">
+      <label>Page 6</label>
+      <file id="bf995rh7184_Page_06.pdf" mimetype="application/pdf" size="86257">
+
+
+    </file>
+      <file id="bf995rh7184_Page_06.xml" role="transcription" mimetype="application/xml" size="45970">
+
+
+    </file>
+      <file id="bf995rh7184_Page_06.jp2" mimetype="image/jp2" size="1591428">
+        <imageData width="2548" height="3318"/>
+      </file>
+    </resource>
+    <resource id="bf995rh7184_7" sequence="7" type="page">
+      <label>Page 7</label>
+      <file id="bf995rh7184_Page_07.pdf" mimetype="application/pdf" size="85706">
+
+
+    </file>
+      <file id="bf995rh7184_Page_07.xml" role="transcription" mimetype="application/xml" size="43532">
+
+
+    </file>
+      <file id="bf995rh7184_Page_07.jp2" mimetype="image/jp2" size="1587751">
+        <imageData width="2544" height="3324"/>
+      </file>
+    </resource>
+    <resource id="bf995rh7184_8" sequence="8" type="page">
+      <label>Page 8</label>
+      <file id="bf995rh7184_Page_08.pdf" mimetype="application/pdf" size="87123">
+
+
+    </file>
+      <file id="bf995rh7184_Page_08.xml" role="transcription" mimetype="application/xml" size="53595">
+
+
+    </file>
+      <file id="bf995rh7184_Page_08.jp2" mimetype="image/jp2" size="1584705">
+        <imageData width="2538" height="3317"/>
+      </file>
+    </resource>
+    <resource id="bf995rh7184_9" sequence="9" type="page">
+      <label>Page 9</label>
+      <file id="bf995rh7184_Page_09.pdf" mimetype="application/pdf" size="40825">
+
+
+    </file>
+      <file id="bf995rh7184_Page_09.xml" role="transcription" mimetype="application/xml" size="15820">
+
+
+    </file>
+      <file id="bf995rh7184_Page_09.jp2" mimetype="image/jp2" size="680761">
+        <imageData width="2545" height="3318"/>
+      </file>
+    </resource>
+    <resource id="bf995rh7184_10" sequence="10" type="page">
+      <label>Page 10</label>
+      <file id="bf995rh7184_Page_10.pdf" mimetype="application/pdf" size="83859">
+
+
+    </file>
+      <file id="bf995rh7184_Page_10.xml" role="transcription" mimetype="application/xml" size="13917">
+
+
+    </file>
+      <file id="bf995rh7184_Page_10.jp2" mimetype="image/jp2" size="765376">
+        <imageData width="2535" height="3315"/>
+      </file>
+    </resource>
+    <resource id="bf995rh7184_11" sequence="11" type="object">
+      <label>Object 1</label>
+      <file id="bf995rh7184.pdf" mimetype="application/pdf" size="829006">
+
+
+    </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <group rule="no-download">stanford</group>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">The materials are open for research use and may be used freely for non-commercial purposes with an attribution. For commercial permission requests, please contact the Stanford University Archives (universityarchives@stanford.edu).</human>
+    </use>
+    <copyright>
+      <human>Copyright (c) The Board of Trustees of the Leland Stanford Junior University. All rights reserved.</human>
+    </copyright>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:bf995rh7184">
+      <fedora:isMemberOf rdf:resource="info:fedora/druid:yz214dy4441"/>
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:yz214dy4441"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>John Chowning On Composition</dc:title>
+    <dc:contributor>Chowning, John M. (iveInterviewee)</dc:contributor>
+    <dc:type>Text</dc:type>
+    <dc:type>interviews</dc:type>
+    <dc:date>1982-04-29</dc:date>
+    <dc:language>engEnglish</dc:language>
+    <dc:format>1 text file</dc:format>
+    <dc:format>application/pdf</dc:format>
+    <dc:subject>Chowning, John M.</dc:subject>
+    <dc:subject>Computer music</dc:subject>
+    <dc:subject>Acoustics and physics</dc:subject>
+    <dc:relation type="repository">Stanford University. Libraries. Department of Special Collections and University ArchivesSC0634https://purl.stanford.edu/bf995rh7184</dc:relation>
+    <dc:relation type="collection">Stanford University, Center for Computer Research in Music and Acoustics, records, 1967-2001</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.loc.gov/mods/v3" version="3.5" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
+    <titleInfo>
+      <title>John Chowning On Composition</title>
+    </titleInfo>
+    <name type="personal" usage="primary" authority="naf" authorityURI="http://id.loc.gov/authorities/names" valueURI="http://id.loc.gov/authorities/names/n87828501">
+      <namePart>Chowning, John M.</namePart>
+      <role>
+        <roleTerm type="code" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators" valueURI="http://id.loc.gov/vocabulary/relators/ive">ive</roleTerm>
+        <roleTerm type="text" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators" valueURI="http://id.loc.gov/vocabulary/relators/ive">Interviewee</roleTerm>
+      </role>
+    </name>
+    <typeOfResource>text</typeOfResource>
+    <genre authority="aat" authorityURI="http://vocab.getty.edu/aat" valueURI="http://vocab.getty.edu/aat/300026392">interviews</genre>
+    <originInfo displayLabel="Place of creation" eventType="production">
+      <place>
+        <placeTerm type="code" authority="marccountry" authorityURI="http://id.loc.gov/authorities/names" valueURI="http://id.loc.gov/authorities/names/n50046557">cau</placeTerm>
+        <placeTerm type="text" authority="marccountry" authorityURI="http://id.loc.gov/authorities/names" valueURI="http://id.loc.gov/authorities/names/n50046557">Stanford (Calif.)</placeTerm>
+      </place>
+      <dateCreated keyDate="yes" encoding="w3cdtf">1982-04-29</dateCreated>
+    </originInfo>
+    <language>
+      <languageTerm authority="iso639-2b" authorityURI="http://id.loc.gov/vocabulary/iso639-2" valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" type="code">eng</languageTerm>
+      <languageTerm authority="iso639-2b" authorityURI="http://id.loc.gov/vocabulary/iso639-2" valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" type="text">English</languageTerm>
+    </language>
+    <physicalDescription>
+      <extent>1 text file</extent>
+      <reformattingQuality>access</reformattingQuality>
+      <digitalOrigin>reformatted digital</digitalOrigin>
+      <internetMediaType>application/pdf</internetMediaType>
+    </physicalDescription>
+    <subject authority="naf" authorityURI="http://id.loc.gov/authorities/names" valueURI="http://id.loc.gov/authorities/names/n87828501">
+      <name type="personal">
+        <namePart>Chowning, John M.</namePart>
+      </name>
+    </subject>
+    <subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects" valueURI="http://id.loc.gov/authorities/subjects/sh85029511">
+      <topic>Computer music</topic>
+    </subject>
+    <subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects" valueURI="http://id.loc.gov/authorities/subjects/sh85088771">
+      <topic>Acoustics and physics</topic>
+    </subject>
+    <location>
+      <physicalLocation type="repository" authority="naf" valueURI="http://id.loc.gov/authorities/names/no2014019980">Stanford University. Libraries. Department of Special Collections and University Archives</physicalLocation>
+      <shelfLocator>SC0634</shelfLocator>
+      <url usage="primary display">https://purl.stanford.edu/bf995rh7184</url>
+    </location>
+    <relatedItem type="host" displayLabel="Finding Aid">
+      <titleInfo>
+        <title>Stanford University, Center for Computer Research in Music and Acoustics, Records (SC0634)</title>
+      </titleInfo>
+      <location>
+        <url>http://www.oac.cdlib.org/findaid/ark:/13030/c8rx9dj6</url>
+      </location>
+    </relatedItem>
+    <relatedItem type="series" displayLabel="Series">
+      <titleInfo>
+        <title>2001-262</title>
+      </titleInfo>
+    </relatedItem>
+    <recordInfo>
+      <languageOfCataloging usage="primary">
+        <languageTerm type="text" authority="iso639-2b" authorityURI="http://id.loc.gov/vocabulary/iso639-2" valueURI="http://id.loc.gov/vocabulary/iso639-2/eng">English</languageTerm>
+        <languageTerm type="code" authority="iso639-2b" authorityURI="http://id.loc.gov/vocabulary/iso639-2" valueURI="http://id.loc.gov/vocabulary/iso639-2/eng">eng</languageTerm>
+      </languageOfCataloging>
+      <recordContentSource authority="marcorg" authorityURI="http://id.loc.gov/vocabulary/organizations" valueURI="http://id.loc.gov/vocabulary/organizations/cst">CSt</recordContentSource>
+      <recordOrigin>human prepared</recordOrigin>
+    </recordInfo>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Stanford University, Center for Computer Research in Music and Acoustics, records, 1967-2001</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/yz214dy4441</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">The materials are open for research use and may be used freely for non-commercial purposes with an attribution. For commercial permission requests, please contact the Stanford University Archives (universityarchives@stanford.edu).</accessCondition>
+  </mods>
+  <releaseData>
+    <release to="Searchworks">true</release>
+  </releaseData>
+  <thumb>bf995rh7184/bf995rh7184_Page_01.jp2</thumb>
+</publicObject>

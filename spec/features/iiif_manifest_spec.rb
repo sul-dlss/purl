@@ -153,6 +153,13 @@ describe 'IIIF v2 manifests' do
                                            }
   end
 
+  it 'does not advertise an IIIF Content Search API for pages with stanford-only OCR content' do
+    visit '/bf995rh7184/iiif/manifest'
+    json = JSON.parse(page.body)
+
+    expect(json).not_to include('service')
+  end
+
   it 'publishes a rendering section for objects with additional resources' do
     visit '/zf119tw4418/iiif/manifest.json'
     json = JSON.parse(page.body)

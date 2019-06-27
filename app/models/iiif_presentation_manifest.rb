@@ -60,7 +60,7 @@ class IiifPresentationManifest
 
   def ocr_text?
     resources.any? do |file|
-      file.role == 'transcription'
+      file.role == 'transcription' && purl_resource.rights.world_rights_for_file(file.filename).first
     end
   end
 
