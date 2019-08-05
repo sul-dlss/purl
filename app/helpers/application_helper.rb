@@ -11,6 +11,8 @@ module ApplicationHelper
 
   def link_to_purl(druid)
     link_to PurlResource.find(druid).title, purl_url(druid)
+  rescue StandardError
+    link_to druid, purl_url(druid)
   end
 
   def oembed_url_template
