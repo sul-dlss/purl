@@ -65,6 +65,11 @@ $sul-footer-height: 80px;
     }
   }
   #sul-footer-img {
+    a,
+    a:hover,
+    a:focus { 
+      border-bottom: 0;
+    }
     display: table-cell;
     vertical-align: middle;
     width: 162px;
