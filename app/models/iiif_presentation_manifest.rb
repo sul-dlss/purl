@@ -216,16 +216,16 @@ class IiifPresentationManifest
     return nil unless Settings.content_search.url && ocr_text?
 
     h = {
-      '@context' => 'http://iiif.io/api/search/0/context.json',
+      '@context' => 'http://iiif.io/api/search/1/context.json',
       '@id' => format(Settings.content_search.url, druid: druid),
-      'profile' => 'http://iiif.io/api/search/0/search',
+      'profile' => 'http://iiif.io/api/search/1/search',
       'label' => 'Search within this manifest'
     }
 
     if Settings.content_search.autocomplete_url
       h['service'] = {
         '@id' => format(Settings.content_search.autocomplete_url, druid: druid),
-        'profile' => 'http://iiif.io/api/search/0/autocomplete'
+        'profile' => 'http://iiif.io/api/search/1/autocomplete'
       }
     end
 
