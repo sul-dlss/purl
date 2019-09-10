@@ -18,6 +18,7 @@ describe 'Integration Scenarios' do
       expect(page).to have_content 'Creator Paget, Francis Edward, 1806-1882'
       expect(page).to have_metadata_section 'Bibliographic information'
       expect(page).to have_metadata_section 'Also listed in'
+      expect(page).to have_content 'Vicar of Roost'
     end
 
     it 'has a link to the searchworks record' do
