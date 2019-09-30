@@ -19,6 +19,7 @@ describe 'purl', type: :feature do
         expect(json_body['label']).to eq('John Wyclif and his followers, Tracts in Middle English')
         expect(json_body['metadata'].length).to eq 17
       end
+
       it 'renders nil for a non-manifest' do
         visit "/#{@file_object}/iiif/manifest"
         expect(page.status_code).to eq(404)
@@ -41,6 +42,7 @@ describe 'purl', type: :feature do
         json_body = JSON.parse(page.body)
         expect(json_body['label']).to eq('Page 1')
       end
+
       it 'renders nil for a non-manifest' do
         visit "/#{@file_object}/iiif/canvas/bc854fy5899_fdsa"
         expect(page.status_code).to eq(404)
@@ -52,6 +54,7 @@ describe 'purl', type: :feature do
         json_body = JSON.parse(page.body)
         expect(json_body['label']).to eq('Page 1')
       end
+
       it 'renders nil for a non-manifest' do
         visit "/#{@file_object}/iiif3/canvas/bc854fy5899_fdsa"
         expect(page.status_code).to eq(404)
@@ -66,6 +69,7 @@ describe 'purl', type: :feature do
         json_body = JSON.parse(page.body)
         expect(json_body['items'].first['motivation']).to eq('painting')
       end
+
       it 'renders nil for a non-manifest' do
         visit "/#{@file_object}/iiif3/annotation_page/bc854fy5899_fdsa"
         expect(page.status_code).to eq(404)
@@ -80,6 +84,7 @@ describe 'purl', type: :feature do
         json_body = JSON.parse(page.body)
         expect(json_body['motivation']).to eq('sc:painting')
       end
+
       it 'renders nil for a non-manifest' do
         visit "/#{@file_object}/iiif/annotation/bc854fy5899_fdsa"
         expect(page.status_code).to eq(404)
@@ -91,6 +96,7 @@ describe 'purl', type: :feature do
         json_body = JSON.parse(page.body)
         expect(json_body['motivation']).to eq('painting')
       end
+
       it 'renders nil for a non-manifest' do
         visit "/#{@file_object}/iiif3/annotation/bc854fy5899_fdsa"
         expect(page.status_code).to eq(404)
@@ -125,6 +131,7 @@ describe 'purl', type: :feature do
       xml = Nokogiri::XML(page.body)
       expect(xml.search('//objectId').first.text).to eq("druid:#{@image_object}")
     end
+
     it '404 with unavailable message when no public_xml' do
       visit "/#{@unpublished_object}.xml"
       expect(page.status_code).to eq(404)
@@ -138,6 +145,7 @@ describe 'purl', type: :feature do
       xml = Nokogiri::XML(page.body)
       expect(xml.search('//mods:title', 'mods' => 'http://www.loc.gov/mods/v3').length).to be_present
     end
+
     it '404 with unavailable message when no mods' do
       visit "/#{@unpublished_object}.mods"
       expect(page.status_code).to eq(404)
