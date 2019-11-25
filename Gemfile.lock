@@ -58,7 +58,7 @@ GEM
       sshkit (>= 1.6.1, != 1.7.0)
     arel (9.0.0)
     ast (2.4.0)
-    autoprefixer-rails (9.7.1)
+    autoprefixer-rails (9.7.2)
       execjs
     bindex (0.8.1)
     bootsnap (1.4.5)
@@ -213,7 +213,7 @@ GEM
       i18n
       nokogiri
     okcomputer (1.18.0)
-    parallel (1.19.0)
+    parallel (1.19.1)
     parser (2.6.5.0)
       ast (~> 2.4.0)
     public_suffix (4.0.1)
@@ -283,7 +283,7 @@ GEM
     rubocop-rails (2.3.2)
       rack (>= 1.1)
       rubocop (>= 0.72.0)
-    rubocop-rspec (1.36.0)
+    rubocop-rspec (1.37.0)
       rubocop (>= 0.68.1)
     ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
