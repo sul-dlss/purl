@@ -160,6 +160,13 @@ describe 'IIIF v2 manifests' do
     expect(json).not_to include('service')
   end
 
+  it 'does not advertise an IIIF Content Search API for pages with no-download OCR content' do
+    visit '/bf385jz2076/iiif/manifest'
+    json = JSON.parse(page.body)
+
+    expect(json).not_to include('service')
+  end
+
   it 'publishes a rendering section for objects with additional resources' do
     visit '/zf119tw4418/iiif/manifest.json'
     json = JSON.parse(page.body)
