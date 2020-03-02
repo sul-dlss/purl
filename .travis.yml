@@ -4,6 +4,8 @@ addons:
 language: ruby
 rvm:
   - 2.6.3
+  - 2.7.0
+
 sudo: false
 
 env:
