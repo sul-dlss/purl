@@ -19,7 +19,7 @@ AllCops:
 Rails:
   Enabled: true
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 160
   Exclude:
     - spec/integration/purl_spec.rb
