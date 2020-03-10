@@ -76,6 +76,20 @@ describe 'IIIF v2 manifests' do
     expect(image['resource']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/rf433wv2584%2F9082000/full/full/0/default.jpg'
   end
 
+  it 'includes canvas rendering of jp2 if downloadable' do
+    visit '/bb157hs6068/iiif/manifest.json'
+    json = JSON.parse(page.body)
+    canvas = json['sequences'].first['canvases'].first
+    expect(canvas['rendering'].first['label']).to eq 'Original source file (17 MB)'
+  end
+
+  it 'does not include canvas rendering if jp2 is not downloadable' do
+    visit '/rf433wv2584/iiif/manifest.json'
+    json = JSON.parse(page.body)
+    canvas = json['sequences'].first['canvases'].first
+    expect(canvas['rendering']).to be_nil
+  end
+
   it 'includes viewing direction when viewing direction is defined' do
     visit '/yr183sf1341/iiif3/manifest'
     json = JSON.parse(page.body)

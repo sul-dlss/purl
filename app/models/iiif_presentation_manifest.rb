@@ -8,6 +8,8 @@ class IiifPresentationManifest
 
   attr_reader :purl_resource
 
+  include ActionView::Helpers::NumberHelper
+
   OAI_DC_SCHEMA = 'http://www.openarchives.org/OAI/2.0/oai_dc/'
 
   VIEWING_DIRECTION = {
@@ -56,6 +58,11 @@ class IiifPresentationManifest
       purl_resource.rights.world_rights_for_file(file.filename).first ||
       purl_resource.rights.restricted_by_location?(file.filename) ||
       thumbnail?(file)
+  end
+
+  def downloadable_file?(file)
+    purl_resource.rights.world_downloadable_file?(file) ||
+      purl_resource.rights.stanford_only_downloadable_file?(file)
   end
 
   def ocr_text?
@@ -130,9 +137,7 @@ class IiifPresentationManifest
     renderings = []
     object_files.each do |resource|
       renderings.push(
-        '@id' => stacks_file_url(resource.druid, resource.filename),
-        'label' => "Download #{resource.label}",
-        'format' => resource.mimetype
+        rendering_resource(resource)
       )
     end
 
@@ -172,6 +177,14 @@ class IiifPresentationManifest
     canv.label = 'image' unless canv.label.present?
     canv.height = resource.height
     canv.width = resource.width
+    if downloadable_file?(resource)
+      canv['rendering'] = [
+        rendering_resource(
+          resource,
+          label: "Original source file (#{number_to_human_size(resource.size)})"
+        )
+      ]
+    end
 
     anno = annotation_for_resource(purl_base_uri, resource)
     anno['on'] = canv['@id']
@@ -258,6 +271,14 @@ class IiifPresentationManifest
     thumb.service = iiif_service(thumbnail_base_uri)
 
     thumb
+  end
+
+  def rendering_resource(resource, label: "Download #{resource.label}")
+    {
+      '@id' => stacks_file_url(resource.druid, resource.filename),
+      'label' => label,
+      'format' => resource.mimetype
+    }
   end
 
   # If not available, use the first image to create a thumbnail on the manifest
