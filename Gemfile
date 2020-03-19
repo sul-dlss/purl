@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.0'
+gem 'rails', '~> 6.0'
 # Use sqlite3 as the database (during local development)
 gem 'sqlite3'
 # Use Puma as the app server
@@ -44,7 +44,7 @@ gem 'faraday'
 gem 'addressable'
 gem 'tophat'
 gem 'rails-file-icons'
-gem 'sul_styles', '~> 0.3'
+gem 'sul_styles', '~> 0.6'
 
 # sul-dlss/osullivan#development has early support for generating IIIF v3 manifests
 gem 'iiif-presentation', github: 'sul-dlss/osullivan', branch: 'development'
@@ -71,7 +71,7 @@ group :development, :test do
   gem 'byebug'
 
   # RSpec for testing
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails', '~> 4.0.0.rc1'
 
   # Capybara for feature/integration tests
   gem 'capybara'
