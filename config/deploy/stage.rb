@@ -1,4 +1,4 @@
-server 'sul-purl-test.stanford.edu', user: 'purl', roles: %w(web db app)
+server 'sul-purl-stage.stanford.edu', user: 'purl', roles: %w(web db app)
 
 Capistrano::OneTimeKey.generate_one_time_key!
 set :rails_env, 'development'
