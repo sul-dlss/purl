@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/sul-dlss/osullivan.git
-  revision: 3547c2c5532cf179c7671e1b946795ac30be9da0
+  revision: 01c8044526f59bc8c9e138fbe935d10c43282803
   branch: development
   specs:
     iiif-presentation (0.2.0)
@@ -58,7 +58,7 @@ GEM
       sshkit (>= 1.6.1, != 1.7.0)
     arel (9.0.0)
     ast (2.4.0)
-    autoprefixer-rails (9.7.4)
+    autoprefixer-rails (9.7.5)
       execjs
     bindex (0.8.1)
     bootsnap (1.4.6)
@@ -91,7 +91,7 @@ GEM
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
     capistrano-shared_configs (0.2.2)
-    capybara (3.31.0)
+    capybara (3.32.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -117,7 +117,7 @@ GEM
     docile (1.3.2)
     dor-rights-auth (1.4.0)
       nokogiri
-    dry-configurable (0.11.4)
+    dry-configurable (0.11.5)
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.4, >= 0.4.7)
       dry-equalizer (~> 0.2)
@@ -159,7 +159,7 @@ GEM
       activesupport (>= 3.0, < 7.0)
     erubi (1.9.0)
     execjs (2.7.0)
-    faraday (1.0.0)
+    faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.12.2)
     globalid (0.4.2)
@@ -289,7 +289,8 @@ GEM
       unicode-display_width (>= 1.4.0, < 1.7)
     rubocop-performance (1.5.2)
       rubocop (>= 0.71.0)
-    rubocop-rails (2.4.2)
+    rubocop-rails (2.5.0)
+      activesupport
       rack (>= 1.1)
       rubocop (>= 0.72.0)
     rubocop-rspec (1.38.1)
