@@ -79,9 +79,6 @@ group :development, :test do
   gem 'selenium-webdriver', '!= 3.13.0'
   gem 'webdrivers'
 
-  # Database cleaner allows us to clean the entire database after certain tests
-  gem 'database_cleaner'
-
   # Rubocop is a static code analyzer to enforce style.
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
