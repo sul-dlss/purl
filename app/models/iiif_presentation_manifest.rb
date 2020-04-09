@@ -212,7 +212,11 @@ class IiifPresentationManifest
     end
 
     if purl_resource.rights.restricted_by_location?(resource.filename)
-      img_res.service['service'].append(iiif_location_auth_service)
+      img_res.service['service'].append(iiif_location_auth_service(resource))
+    end
+
+    if purl_resource.rights.controlled_digital_lending_file?(resource.filename)
+      img_res.service['service'] = [iiif_stacks_controlled_digital_lending_service]
     end
 
     anno.resource = img_res
@@ -324,6 +328,31 @@ class IiifPresentationManifest
           '@id' => "#{Settings.stacks.url}/Shibboleth.sso/Logout",
           'profile' => 'http://iiif.io/api/auth/1/logout',
           'label' => 'Logout'
+        }
+      ]
+    )
+  end
+
+  def iiif_stacks_controlled_digital_lending_service(resource)
+    IIIF::Service.new(
+      '@context' => 'http://iiif.io/api/auth/1/context.json',
+      'id' => "#{Settings.stacks.url}/auth/checkout/#{resource.druid}",
+      'profile' => 'http://iiif.io/api/auth/1/login',
+      'label' => 'Log in to access all available features.',
+      'confirmLabel' => 'Borrow this book',
+      'failureHeader' => 'Unable to borrow',
+      'failureDescription' => 'The authentication service cannot be reached'\
+        '. If your browser is configured to block pop-up windows, try allow'\
+        'ing pop-up windows for this site before attempting to log in again.',
+      'service' => [
+        {
+          '@id' => "#{Settings.stacks.url}/image/iiif/token",
+          'profile' => 'http://iiif.io/api/auth/1/token'
+        },
+        {
+          '@id' => "#{Settings.stacks.url}/auth/checkin/#{resource.druid}",
+          'profile' => 'http://iiif.io/api/auth/1/logout',
+          'label' => 'Check in'
         }
       ]
     )

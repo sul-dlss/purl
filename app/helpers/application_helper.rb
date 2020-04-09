@@ -32,6 +32,8 @@ module ApplicationHelper
   end
 
   def embeddable_url(druid)
+    return "https://embed.stanford.edu/iiif/?url=#{iiif_manifest_url(druid)}"
+
     if Settings.embed.url
       Settings.embed.url % { druid: druid }
     else
