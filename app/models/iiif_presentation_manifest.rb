@@ -57,6 +57,7 @@ class IiifPresentationManifest
     purl_resource.rights.stanford_only_rights_for_file(file.filename).first ||
       purl_resource.rights.world_rights_for_file(file.filename).first ||
       purl_resource.rights.restricted_by_location?(file.filename) ||
+      purl_resource.rights.controlled_digital_lending? ||
       thumbnail?(file)
   end
 
