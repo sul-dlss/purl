@@ -17,7 +17,7 @@ class RightsMetadata
     true
   end
 
-  def controlled_digital_lending_file?
+  def controlled_digital_lending_file?(resource)
     true
   end
 

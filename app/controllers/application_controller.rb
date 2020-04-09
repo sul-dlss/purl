@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     current_user.present?
   end
 
+  before_action do
+    response.headers['Access-Control-Allow-Origin'] = '*'
+  end
+
   private
 
   def invalid_druid

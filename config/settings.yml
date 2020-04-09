@@ -1,5 +1,5 @@
 stacks:
-  url: 'https://stacks.stanford.edu'
+  url: 'http://127.0.0.1:3001/'
   iiif_profile: 'http://iiif.io/api/image/2/level2.json'
 
 content_search:
@@ -14,8 +14,8 @@ resource_cache:
 # These are URLs when running locally, but configured
 # to the local file system on deployed environments
 purl_resource:
-  mods: 'https://purl.stanford.edu/%{druid}.mods'
-  public_xml: 'https://purl.stanford.edu/%{druid}.xml'
+  mods: '/Users/cabeer/tmp/purls/%{druid}/mods'
+  public_xml: '/Users/cabeer/tmp/purls/%{druid}/public'
 
 embed:
   url: 'https://purl.stanford.edu/%{druid}'

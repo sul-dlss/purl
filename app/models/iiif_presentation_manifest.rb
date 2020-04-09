@@ -212,11 +212,11 @@ class IiifPresentationManifest
     end
 
     if purl_resource.rights.restricted_by_location?(resource.filename)
-      img_res.service['service'].append(iiif_location_auth_service(resource))
+      img_res.service['service'].append(iiif_location_auth_service)
     end
 
     if purl_resource.rights.controlled_digital_lending_file?(resource.filename)
-      img_res.service['service'] = [iiif_stacks_controlled_digital_lending_service]
+      img_res.service['service'] = [iiif_stacks_controlled_digital_lending_service(resource)]
     end
 
     anno.resource = img_res
@@ -346,7 +346,7 @@ class IiifPresentationManifest
         'ing pop-up windows for this site before attempting to log in again.',
       'service' => [
         {
-          '@id' => "#{Settings.stacks.url}/image/iiif/token",
+          '@id' => "#{Settings.stacks.url}/image/iiif/token/#{resource.druid}",
           'profile' => 'http://iiif.io/api/auth/1/token'
         },
         {
