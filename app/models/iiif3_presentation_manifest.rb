@@ -11,16 +11,18 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
     manifest_data = {
       'id' => controller.iiif3_manifest_url(druid),
-      'label' => title,
-      'attribution' => copyright || 'Provided by the Stanford University Libraries',
-      'logo' => {
+      'label' => { en: [title] },
+      'requiredStatement' => iiif_key_value('Attribution', attribution),
+      'logo' => [{
         'id' => 'https://stacks.stanford.edu/image/iiif/wy534zh7137%2FSULAIR_rosette/full/400,/0/default.jpg',
-        'service' => iiif_image_v2_service('https://stacks.stanford.edu/image/iiif/wy534zh7137%2FSULAIR_rosette')
-      },
-      'seeAlso' => {
+        'type' => 'Image',
+        'service' => [iiif_image_v2_service('https://stacks.stanford.edu/image/iiif/wy534zh7137%2FSULAIR_rosette')]
+      }],
+      'seeAlso' => [{
         'id' => controller.purl_url(druid, format: 'mods'),
+        'type' => 'Metadata',
         'format' => 'application/mods+xml'
-      }
+      }]
     }
 
     manifest_data['service'] = [content_search_service] if content_search_service
@@ -32,19 +34,14 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
     manifest.metadata = dc_to_iiif_metadata if dc_to_iiif_metadata.present?
     manifest.metadata.unshift(
-      'label' => 'Available Online',
-      'value' => "<a href='#{controller.purl_url(druid)}'>#{controller.purl_url(druid)}</a>"
+      'label' => { en: ['Available Online'] },
+      'value' => { en: ["<a href='#{controller.purl_url(druid)}'>#{controller.purl_url(druid)}</a>"] }
     )
 
-    manifest.description = description_or_note
+    manifest.summary = { en: [description_or_note] } if description_or_note.present?
     order = reading_order
 
-    sequence = IIIF::V3::Presentation::Sequence.new(
-      'id' => "#{purl_base_uri}#sequence-1",
-      'label' => 'Current order'
-    )
-
-    sequence.viewingDirection = case order
+    manifest.viewingDirection = case order
                                 when nil
                                   VIEWING_DIRECTION['ltr']
                                 else
@@ -55,11 +52,14 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
     # for each resource image, create a canvas
     resources.each do |resource|
-      sequence.canvases << canvas_for_resource(purl_base_uri, resource)
+      manifest.items << canvas_for_resource(purl_base_uri, resource)
     end
 
-    manifest.sequences << sequence
     manifest
+  end
+
+  def attribution
+    [copyright || 'Provided by the Stanford University Libraries']
   end
 
   def resources
@@ -82,14 +82,28 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   def canvas_for_resource(purl_base_uri, resource)
     canv = IIIF::V3::Presentation::Canvas.new
     canv['id'] = "#{purl_base_uri}/iiif3/canvas/#{resource.id}"
-    canv.label = resource.label
-    canv.label = 'image' unless canv.label.present?
+    canv.label = {
+      en: [resource.label.presence || 'image']
+    }
     if image?(resource)
       canv.height = resource.height
       canv.width = resource.width
     end
     canv.content << annotation_page_for_resource(purl_base_uri, resource)
     canv
+  end
+
+  def dc_to_iiif_metadata
+    @dc_to_iiif_metadata ||= begin
+      all_dc_nodes = public_xml_document.xpath '//oai_dc:dc/*', 'oai_dc' => OAI_DC_SCHEMA
+      metadata = all_dc_nodes.group_by(&:name).map { |key, values| iiif_key_value(key.upcase_first, values.map(&:text)) }
+      metadata += public_xml_document.xpath('/publicObject/@published').map { |node| iiif_key_value('PublishDate', [node.text]) } # add published date
+      metadata
+    end
+  end
+
+  def iiif_key_value(label, values)
+    { 'label' => { en: [label] }, 'value' => { en: values } }
   end
 
   def annotation_page_for_resource(purl_base_uri, resource)
@@ -122,14 +136,14 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     img_res.height = resource.height
     img_res.width = resource.width
 
-    img_res.service = iiif_image_v2_service(url)
-    img_res.service['service'] = []
+    img_res.service = [iiif_image_v2_service(url)]
+    img_res.service[0]['service'] = []
     if purl_resource.rights.stanford_only_rights_for_file(resource.filename).first
-      img_res.service['service'].append(iiif_stacks_login_service)
+      img_res.service[0]['service'].append(iiif_stacks_login_service)
     end
 
     if purl_resource.rights.restricted_by_location?(resource.filename)
-      img_res.service['service'].append(iiif_location_auth_service)
+      img_res.service[0]['service'].append(iiif_location_auth_service)
     end
 
     img_res
@@ -142,7 +156,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     bin_res.format = resource.mimetype
 
     unless purl_resource.rights.world_rights_for_file(resource.filename).first
-      bin_res.service = iiif_stacks_login_service
+      bin_res.service = [iiif_stacks_login_service]
     end
     bin_res
   end
@@ -162,7 +176,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     thumb['type'] = 'Image'
     thumb['id'] = "#{thumbnail_base_uri}/full/!400,400/0/default.jpg"
     thumb.format = 'image/jpeg'
-    thumb.service = iiif_image_v2_service(thumbnail_base_uri)
+    thumb.service = [iiif_image_v2_service(thumbnail_base_uri)]
 
     thumb
   end
@@ -173,9 +187,8 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def iiif_image_v2_service(id)
     IIIF::V3::Presentation::Service.new(
-      '@context' => 'http://iiif.io/api/image/2/context.json',
-      '@id' => id, # need @id here due to v2 @context URI
       'id' => id,
+      'type' => 'ImageService2',
       'profile' => Settings.stacks.iiif_profile
     )
   end

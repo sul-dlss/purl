@@ -91,13 +91,13 @@ describe 'IIIF v2 manifests' do
   end
 
   it 'includes viewing direction when viewing direction is defined' do
-    visit '/yr183sf1341/iiif3/manifest'
+    visit '/yr183sf1341/iiif/manifest'
     json = JSON.parse(page.body)
     expect(json['sequences'].first['viewingDirection']).to eq 'right-to-left'
   end
 
   it 'uses left-to-right as default viewing direction if viewing direction is not defined' do
-    visit '/py305sy7961/iiif3/manifest'
+    visit '/py305sy7961/iiif/manifest'
     json = JSON.parse(page.body)
     expect(json['sequences'].first['viewingDirection']).to eq('left-to-right')
   end
