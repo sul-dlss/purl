@@ -29,8 +29,8 @@ describe 'purl', type: :feature do
       it 'renders the json for manifest' do
         visit "/#{@manifest_object}/iiif3/manifest"
         json_body = JSON.parse(page.body)
-        expect(json_body['label']).to eq('John Wyclif and his followers, Tracts in Middle English')
-        expect(json_body['metadata'].length).to eq 17
+        expect(json_body['label']['en'].first).to eq('John Wyclif and his followers, Tracts in Middle English')
+        expect(json_body['metadata'].length).to eq 11
       end
     end
   end
@@ -52,7 +52,7 @@ describe 'purl', type: :feature do
       it 'renders the json for manifest' do
         visit "/#{@manifest_object}/iiif3/canvas/bc854fy5899_1"
         json_body = JSON.parse(page.body)
-        expect(json_body['label']).to eq('Page 1')
+        expect(json_body['label']['en'].first).to eq('Page 1')
       end
 
       it 'renders nil for a non-manifest' do

@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/sul-dlss/osullivan.git
-  revision: 01c8044526f59bc8c9e138fbe935d10c43282803
+  revision: 1f3c9fd96d34fc67405bd412f6470bef8ca3a455
   branch: development
   specs:
     iiif-presentation (0.2.0)
