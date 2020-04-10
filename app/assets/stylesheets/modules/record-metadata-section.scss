@@ -18,3 +18,17 @@
     width: auto;
   }
 }
+
+
+.upper-record-metadata {
+  dl {
+    @extend .row;
+  }
+  dt {
+    @extend .col;
+  }
+  dd {
+    @extend .w-75;
+    margin-left: auto;
+  }
+}

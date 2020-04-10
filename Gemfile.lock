@@ -76,9 +76,10 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
-    bootstrap-sass (3.4.1)
-      autoprefixer-rails (>= 5.2.1)
-      sassc (>= 2.0.0)
+    bootstrap (4.4.1)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 1.14.3, < 2)
+      sassc-rails (>= 2.0.0)
     builder (3.2.4)
     bundler-audit (0.6.1)
       bundler (>= 1.2.0, < 3)
@@ -235,6 +236,7 @@ GEM
     parallel (1.19.1)
     parser (2.7.1.0)
       ast (~> 2.4.0)
+    popper_js (1.16.0)
     public_suffix (4.0.4)
     puma (3.12.4)
     rack (2.2.2)
@@ -391,7 +393,7 @@ PLATFORMS
 DEPENDENCIES
   addressable
   bootsnap (>= 1.1.0)
-  bootstrap-sass
+  bootstrap
   byebug
   cancancan
   capistrano (~> 3.0)

@@ -1,44 +1,4 @@
-$btn-preview-color: $white;
-$btn-preview-bg: $sul-btn-preview-bg;
-$btn-preview-border: darken($sul-btn-preview-bg, 9.8%);
-
-.btn-preview {
-  @include button-variant($btn-preview-color, $btn-preview-bg, $btn-preview-border);
-}
-
 .btn-link, .btn-link:hover, .btn-link:focus {
   color: $sul-link-color;
   text-decoration: none;
-}
-
-.btn-topbar-menu {
-  color: $color-cardinal-red;
-  background: none;
-  border: none;
-}
-
-.btn-sul-toolbar {
-  background-color: transparent;
-  color: $btn-sul-toolbar-bar-color !important;
-  margin: 0 5px;
-  padding: 3px 5px;
-
-  & a {
-    color: $btn-sul-toolbar-bar-color;
-    border-bottom: none;
-  }
-
-  &.disabled {
-    border: none;
-    color: rgba($sul-btn-disabled-color, $sul-btn-disabled-opacity);
-  }
-
-  &:hover, &:focus, &:active {
-    color: $btn-sul-toolbar-bar-color;
-    background-color: $btn-sul-toolbar-bar-hover-bg
-  }
-}
-
-a.btn-sul-toolbar {
-  border-bottom: none;
 }
