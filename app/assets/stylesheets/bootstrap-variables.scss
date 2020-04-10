@@ -15,33 +15,10 @@ $panel-footer-bg: $sul-panel-bg;
 $panel-default-heading-bg: $sul-panel-heading-default;
 $panel-default-border: $sul-panel-border-bottom;
 
-// Buttons
-$btn-default-color: $color-gray;
-$btn-default-bg: $color-beige-10;
-$btn-default-border: $color-beige-30;
-
-$btn-primary-color: $white;
-$btn-primary-bg: $color-cardinal-red;
-$btn-primary-border: darken($btn-primary-bg, 9.8%);
-
-$btn-success-color: $white;
-$btn-success-bg: $color-pantone-334;
-$btn-success-border: darken($btn-success-bg, 9.8%);
-
-$btn-info-color: $white;
-$btn-info-bg: $color-pantone-3145;
-$btn-info-border: darken($btn-info-bg, 9.8%);
-
-$btn-warning-color: $white;
-$btn-warning-bg: $color-pantone-144;
-$btn-warning-border: darken($btn-warning-bg, 9.8%);
-
-$btn-danger-color: $white;
-$btn-danger-bg: $boston-university-red;
-$btn-danger-border: darken($btn-danger-bg, 9.8%);
-
 // Colors
 $gray-light: #737373;
+$primary: $color-cardinal-red;
+$component-active-bg: #80bdff;
 
 // Navbar
 $navbar-default-link-color: $white;

@@ -4,14 +4,15 @@
 }
 
 #topnav {
+  @extend .row;
   border: none;
   background: none;
   margin-bottom: 0;
-  display: table;
   padding: 2px 0;
 
   .header-links {
-    float: right;
+    @extend .col-1;
+    margin-left: auto;
     margin-top: 2px;
     a {
       font-weight: normal;
@@ -30,7 +31,7 @@
 
 }
 
-@media screen and (max-width: $screen-xs-max) {
+@include media-breakpoint-down(xs) {
   #topnav {
     padding-left: 10px;
     padding-right: 10px;
