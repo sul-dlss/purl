@@ -177,6 +177,13 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     thumb['id'] = "#{thumbnail_base_uri}/full/!400,400/0/default.jpg"
     thumb.format = 'image/jpeg'
     thumb.service = [iiif_image_v2_service(thumbnail_base_uri)]
+    if thumbnail_image.height >= thumbnail_image.width
+      thumb.height = 400
+      thumb.width = ((400.0 * thumbnail_image.width) / thumbnail_image.height).round
+    else
+      thumb.width = 400
+      thumb.height = ((400.0 * thumbnail_image.height) / thumbnail_image.width).round
+    end
 
     thumb
   end

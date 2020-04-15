@@ -62,6 +62,8 @@ describe 'IIIF v2 manifests' do
 
     expect(json['thumbnail']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
     expect(json['thumbnail']['@type']).to eq 'dctypes:Image'
+    expect(json['thumbnail']['width']).to eq 400
+    expect(json['thumbnail']['height']).to eq 345
   end
 
   it 'includes the representative thumbnail as part of the image sequence' do
