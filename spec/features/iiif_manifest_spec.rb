@@ -193,6 +193,13 @@ describe 'IIIF v2 manifests' do
     )
   end
 
+  it 'does not advertise downloadable files for stanford-only no-download content' do
+    visit '/bf995rh7184/iiif/manifest'
+    json = JSON.parse(page.body)
+
+    expect(json['sequences'].first).not_to include 'rendering'
+  end
+
   # Virtual objects consist of a parent object and children objects who hold the file resources
   context 'virtual objects' do
     describe 'first child object' do

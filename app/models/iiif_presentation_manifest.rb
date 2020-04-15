@@ -41,7 +41,7 @@ class IiifPresentationManifest
 
   def object_files
     @object_files ||= resources.select do |file|
-      object?(file) && deliverable_file?(file)
+      object?(file) && downloadable_file?(file)
     end
   end
 
