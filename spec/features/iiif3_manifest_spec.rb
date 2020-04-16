@@ -126,13 +126,13 @@ describe 'IIIF v3 manifests' do
     visit '/jg072yr3056/iiif/manifest.json'
     json = JSON.parse(page.body)
 
-    expect(json['service'].first).to match '@context' => 'http://iiif.io/api/search/0/context.json',
+    expect(json['service'].first).to match '@context' => 'http://iiif.io/api/search/1/context.json',
                                            '@id' => 'http://example.com/content_search/jg072yr3056/search',
-                                           'profile' => 'http://iiif.io/api/search/0/search',
+                                           'profile' => 'http://iiif.io/api/search/1/search',
                                            'label' => 'Search within this manifest',
                                            'service' => {
                                              '@id' => 'http://example.com/content_search/jg072yr3056/autocomplete',
-                                             'profile' => 'http://iiif.io/api/search/0/autocomplete'
+                                             'profile' => 'http://iiif.io/api/search/1/autocomplete'
                                            }
   end
 
