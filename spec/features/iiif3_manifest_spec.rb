@@ -65,6 +65,8 @@ describe 'IIIF v3 manifests' do
     expect(json['thumbnail'].size).to eq 1
     expect(json['thumbnail'].first['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
     expect(json['thumbnail'].first['type']).to eq 'Image'
+    expect(json['thumbnail'].first['width']).to eq 400
+    expect(json['thumbnail'].first['height']).to eq 345
   end
 
   it 'includes viewing direction when viewing direction is defined' do

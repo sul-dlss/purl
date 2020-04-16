@@ -262,6 +262,7 @@ class IiifPresentationManifest
     { 'label' => label, 'value' => value }
   end
 
+  # rubocop:disable Metrics/AbcSize
   def thumbnail_resource
     return unless thumbnail_image
 
@@ -269,9 +270,17 @@ class IiifPresentationManifest
     thumb['@id'] = "#{thumbnail_base_uri}/full/!400,400/0/default.jpg"
     thumb.format = 'image/jpeg'
     thumb.service = iiif_service(thumbnail_base_uri)
+    if thumbnail_image.height >= thumbnail_image.width
+      thumb.height = 400
+      thumb.width = ((400.0 * thumbnail_image.width) / thumbnail_image.height).round
+    else
+      thumb.width = 400
+      thumb.height = ((400.0 * thumbnail_image.height) / thumbnail_image.width).round
+    end
 
     thumb
   end
+  # rubocop:enable Metrics/AbcSize
 
   def rendering_resource(resource, label: "Download #{resource.label}")
     {
