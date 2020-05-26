@@ -164,7 +164,7 @@ describe 'purl', type: :feature do
 
   describe 'legacy object id "ir:rs276tc2764"' do
     it 'routed to rs276tc2764' do
-      new_path = '/' + @legacy_object.gsub(/^ir:/, '')
+      new_path = '/' + @legacy_object.delete_prefix('ir:')
       visit "/#{@legacy_object}"
       expect(current_path).to eq(new_path)
     end
