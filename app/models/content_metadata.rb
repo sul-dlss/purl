@@ -27,7 +27,7 @@ class ContentMetadata
   #
   # @return [String]
   def druid
-    document.at_xpath('@objectId').to_s.gsub(/^druid:/, '') # required attribute
+    document.at_xpath('@objectId').to_s.delete_prefix('druid:') # required attribute
   end
 
   def resources
@@ -99,7 +99,7 @@ class ContentMetadata
       new(
         extract_common_metadata(external_file, options).merge(
           filename: external_file['fileId'],
-          druid: external_file['objectId'].gsub(/^druid:/, ''),
+          druid: external_file['objectId'].delete_prefix('druid:'),
           id: external_file['resourceId']
         )
       )
