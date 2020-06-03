@@ -45,6 +45,15 @@ class IiifPresentationManifest
     end
   end
 
+  def ocr_files
+    @ocr_files ||= resources.select do |file|
+      world_visible, world_rule = purl_resource.rights.world_rights_for_file(file.filename)
+      file.role == 'transcription' &&
+        world_visible &&
+        world_rule != 'no-download'
+    end
+  end
+
   def object?(file)
     file.type == 'object'
   end
@@ -66,12 +75,7 @@ class IiifPresentationManifest
   end
 
   def ocr_text?
-    resources.any? do |file|
-      world_visible, world_rule = purl_resource.rights.world_rights_for_file(file.filename)
-      file.role == 'transcription' &&
-        world_visible &&
-        world_rule != 'no-download'
-    end
+    ocr_files.any?
   end
 
   def description_or_note
@@ -185,7 +189,10 @@ class IiifPresentationManifest
         )
       ]
     end
-
+    ocr_file = ocr_files.select { |f| f.id == resource.id }
+    canv['seeAlso'] = ocr_file.map do |f|
+      rendering_resource(f, label: 'OCR text')
+    end
     anno = annotation_for_resource(purl_base_uri, resource)
     anno['on'] = canv['@id']
     canv.images << anno

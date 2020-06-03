@@ -169,6 +169,19 @@ describe 'IIIF v2 manifests' do
                                            }
   end
 
+  it 'publishes seeAlso for canvases with OCR content' do
+    visit '/jg072yr3056/iiif/manifest.json'
+    json = JSON.parse(page.body)
+
+    expect(json['sequences'].first['canvases'].first['seeAlso']).to eq [
+      {
+        '@id' => 'https://stacks.stanford.edu/file/jg072yr3056/jg072yr3056_04_0001.xml',
+        'format' => 'application/xml',
+        'label' => 'OCR text'
+      }
+    ]
+  end
+
   it 'does not advertise an IIIF Content Search API for pages with stanford-only OCR content' do
     visit '/bf995rh7184/iiif/manifest'
     json = JSON.parse(page.body)
