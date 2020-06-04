@@ -191,7 +191,8 @@ class IiifPresentationManifest
     end
     ocr_file = ocr_files.select { |f| f.id == resource.id }
     canv['seeAlso'] = ocr_file.map do |f|
-      rendering_resource(f, label: 'OCR text')
+      # Profile for Alto resources. We don't yet really have HOCR transcriptions published as role="transcription"
+      rendering_resource(f, label: 'OCR text', profile: 'http://www.loc.gov/standards/alto/ns-v2#')
     end
     anno = annotation_for_resource(purl_base_uri, resource)
     anno['on'] = canv['@id']
@@ -289,12 +290,13 @@ class IiifPresentationManifest
   end
   # rubocop:enable Metrics/AbcSize
 
-  def rendering_resource(resource, label: "Download #{resource.label}")
+  def rendering_resource(resource, label: "Download #{resource.label}", profile: nil)
     {
       '@id' => stacks_file_url(resource.druid, resource.filename),
       'label' => label,
-      'format' => resource.mimetype
-    }
+      'format' => resource.mimetype,
+      'profile' => profile
+    }.compact
   end
 
   # If not available, use the first image to create a thumbnail on the manifest

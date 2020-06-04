@@ -177,7 +177,8 @@ describe 'IIIF v2 manifests' do
       {
         '@id' => 'https://stacks.stanford.edu/file/jg072yr3056/jg072yr3056_04_0001.xml',
         'format' => 'application/xml',
-        'label' => 'OCR text'
+        'label' => 'OCR text',
+        'profile' => 'http://www.loc.gov/standards/alto/ns-v2#'
       }
     ]
   end
