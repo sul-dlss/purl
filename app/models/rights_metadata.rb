@@ -2,6 +2,7 @@ require 'dor/rights_auth'
 
 class RightsMetadata
   attr_reader :document
+
   def initialize(document)
     @document = document
   end
