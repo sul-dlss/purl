@@ -116,13 +116,13 @@ describe 'purl', type: :feature do
       allow(Settings.feedback).to receive(:email_to).and_return('feedback@example.com')
       visit "/#{@unpublished_object}"
 
-      expect(page).not_to have_css('form.feedback-form', visible: true)
+      expect(page).not_to have_css('form.feedback-form', visible: :visible)
 
       within '#main-container' do
         click_link 'Feedback'
       end
 
-      expect(page).to have_css('form.feedback-form', visible: true)
+      expect(page).to have_css('form.feedback-form', visible: :visible)
     end
   end
 
