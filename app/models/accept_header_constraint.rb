@@ -1,5 +1,5 @@
 class AcceptHeaderConstraint
-  PRESENTATION_V3_ACCEPT_HEADER = %r{application\/ld\+json;profile=\"http:\/\/iiif.io\/api\/presentation\/3\/context\.json\"}.freeze
+  PRESENTATION_V3_ACCEPT_HEADER = %r{application/ld\+json;profile="http://iiif.io/api/presentation/3/context\.json"}.freeze
 
   def initialize; end
 
