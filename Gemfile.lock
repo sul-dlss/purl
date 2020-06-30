@@ -121,7 +121,7 @@ GEM
     crass (1.0.6)
     dalli (2.7.10)
     deep_merge (1.2.1)
-    diff-lcs (1.4.2)
+    diff-lcs (1.4.3)
     dlss-capistrano (3.9.0)
       capistrano (~> 3.0)
       capistrano-bundle_audit (>= 0.3.0)
