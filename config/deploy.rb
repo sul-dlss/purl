@@ -2,7 +2,7 @@ set :application, 'purl'
 set :repo_url, 'https://github.com/sul-dlss/purl.git'
 
 # Default branch is :master
-ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call unless ENV['DEPLOY']
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/opt/app/purl/purl'
