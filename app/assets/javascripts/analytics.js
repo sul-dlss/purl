@@ -21,5 +21,9 @@ GoogleAnalytics = (function() {
 
 $(document).on("turbolinks:load", function(){
   GoogleAnalytics.load();
-  window.ga && window.ga('send', 'pageview');
+
+  if (!window.ga) return;
+
+  window.ga('set', 'dimension1', $('link[rel="up"]').attr('href'));
+  window.ga('send', 'pageview');
 });
