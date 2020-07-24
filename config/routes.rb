@@ -1,6 +1,6 @@
 ##
 # Routing for PURL
-# 
+#
 # IIIF Routing
 # v3 if a client specifically requests v3 via URL or Accept headers
 # v2 by default
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   get ':id' => 'purl#show', as: :purl
   get ':id/embed', to: redirect("/iframe/?url=#{Settings.embed.url % { druid: '%{id}' }}")
+  get ':id/file/:file' => 'purl#file', as: :purl_file
 
   ##
   # These routes should only be used until our viewers support v3 manifests.

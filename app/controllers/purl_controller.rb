@@ -39,6 +39,10 @@ class PurlController < ApplicationController
   end
   # rubocop:enable Metrics/AbcSize
 
+  def file
+    redirect_to Settings.stacks.url + '/file/druid:' + ERB::Util.url_encode(params[:id]) + '/' + ERB::Util.url_encode(params[:file])
+  end
+
   private
 
   # validate that the id is of the proper format
