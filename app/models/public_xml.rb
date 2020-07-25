@@ -34,4 +34,14 @@ class PublicXml
   def thumb
     document.root.at_xpath('thumb').try(:text)
   end
+
+  def relations(predicate)
+    document.root.xpath(
+      "rdf:RDF/rdf:Description/fedora:#{predicate}",
+      rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+      fedora: 'info:fedora/fedora-system:def/relations-external#'
+    ).map do |node|
+      node.attribute('resource').text.split('/', 2).last.split(':', 2).last
+    end
+  end
 end

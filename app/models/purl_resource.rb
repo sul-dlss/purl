@@ -73,6 +73,10 @@ class PurlResource
     @public_xml ||= PublicXml.new(public_xml_document)
   end
 
+  def collection
+    @collection ||= public_xml.relations('isMemberOfCollection').first
+  end
+
   delegate :rights_metadata, to: :public_xml
 
   def content_metadata

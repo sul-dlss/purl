@@ -25,6 +25,11 @@ describe 'Integration Scenarios' do
       visit '/bb737zp0787'
       expect(page).to have_link 'View in SearchWorks', href: 'https://searchworks.stanford.edu/view/9616533'
     end
+
+    it 'has a <link> to the collection' do
+      visit '/bb737zp0787'
+      expect(page).to have_selector 'link[rel=up][href="http://www.example.com/jt466yc7169"]', visible: :hidden
+    end
   end
 
   context 'map' do
