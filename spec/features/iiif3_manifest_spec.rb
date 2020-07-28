@@ -29,7 +29,7 @@ describe 'IIIF v3 manifests' do
 
     expect(json['metadata'].class).to eq Array
     expect(json['metadata'].size).to eq(13) # 11 DC elements grouped by name are there + the publish date + Available Online
-    # rubocop:disable Metrics/LineLength
+    # rubocop:disable Layout/LineLength
     expected_dc_metadata = [
       { 'label' => { 'en' => ['Available Online'] }, 'value' => { 'en' => ["<a href='http://www.example.com/bb157hs6068'>http://www.example.com/bb157hs6068</a>"] } },
       { 'label' => { 'en' => ['Type'] }, 'value' => { 'en' => ['map', 'Digital Maps', 'Early Maps'] } },
@@ -53,7 +53,7 @@ describe 'IIIF v3 manifests' do
       { 'label' => { 'en' => ['Relation'] }, 'value' => { 'en' => ['The Glen McLaughlin Map Collection of California as an Island'] } },
       { 'label' => { 'en' => ['PublishDate'] }, 'value' => { 'en' => ['2016-06-16T21:46:16Z'] } } # publish date was added
     ]
-    # rubocop:enable Metrics/LineLength
+    # rubocop:enable Layout/LineLength
     expect(json['metadata']).to eq(expected_dc_metadata)
   end
 

@@ -37,7 +37,7 @@ Metrics/ClassLength:
     - app/models/iiif3_presentation_manifest.rb
 
 Metrics/MethodLength:
-  Max: 23
+  Max: 24
 
 Metrics/ModuleLength:
   Max: 120

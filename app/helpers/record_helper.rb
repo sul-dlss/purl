@@ -92,7 +92,7 @@ module RecordHelper
     link
   end
 
-  # rubocop:disable Metrics/LineLength
+  # rubocop:disable Layout/LineLength
   def link_urls_and_email(val)
     val = val.dup
     # http://daringfireball.net/2010/07/improved_regex_for_matching_urls
@@ -111,5 +111,5 @@ module RecordHelper
     end
     val
   end
-  # rubocop:enable Metrics/LineLength
+  # rubocop:enable Layout/LineLength
 end
