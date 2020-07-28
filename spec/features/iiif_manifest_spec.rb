@@ -27,7 +27,7 @@ describe 'IIIF v2 manifests' do
 
     expect(json['metadata'].class).to eq Array
     expect(json['metadata'].size).to eq(22) # 20 DC elements are there + the publish date + Available Online
-    # rubocop:disable Metrics/LineLength
+    # rubocop:disable Layout/LineLength
     expected_metadata = [
       { 'label' => 'Available Online', 'value' => "<a href='http://www.example.com/bb157hs6068'>http://www.example.com/bb157hs6068</a>" },
       { 'label' => 'Type', 'value' => 'map' },
@@ -52,7 +52,7 @@ describe 'IIIF v2 manifests' do
       { 'label' => 'Relation', 'value' => 'The Glen McLaughlin Map Collection of California as an Island' },
       { 'label' => 'PublishDate', 'value' => '2016-06-16T21:46:16Z' } # publish date was added
     ]
-    # rubocop:enable Metrics/LineLength
+    # rubocop:enable Layout/LineLength
     expect(json['metadata']).to eq(expected_metadata)
   end
 
