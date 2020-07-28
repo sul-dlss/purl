@@ -35,6 +35,10 @@ class PurlController < ApplicationController
           redirect_to view_context.image_path('sul-logo-stacked.svg')
         end
       end
+
+      format.zip do
+        redirect_to Settings.stacks.url + '/object/' + ERB::Util.url_encode(params[:id]) + '.zip'
+      end
     end
   end
   # rubocop:enable Metrics/AbcSize
