@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/sul-dlss/dor-rights-auth.git
+  revision: 8fc776642bb22ac773c718b67e03412f69195c85
+  branch: add-file-support
+  specs:
+    dor-rights-auth (1.4.0)
+      nokogiri
+
+GIT
   remote: https://github.com/sul-dlss/osullivan.git
   revision: 1f3c9fd96d34fc67405bd412f6470bef8ca3a455
   branch: development
@@ -407,7 +415,7 @@ DEPENDENCIES
   config
   dalli
   dlss-capistrano
-  dor-rights-auth
+  dor-rights-auth!
   faraday
   honeybadger
   htmlentities

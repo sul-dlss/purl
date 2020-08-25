@@ -40,7 +40,7 @@ gem 'okcomputer'
 
 gem 'mods_display', '~> 0.4'
 gem 'htmlentities'
-gem 'dor-rights-auth'
+gem 'dor-rights-auth', github: 'sul-dlss/dor-rights-auth', branch: 'add-file-support'
 gem 'bootstrap'
 gem 'faraday'
 gem 'addressable'
