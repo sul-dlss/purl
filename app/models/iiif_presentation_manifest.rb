@@ -66,7 +66,7 @@ class IiifPresentationManifest
     purl_resource.rights.stanford_only_rights_for_file(file.filename).first ||
       purl_resource.rights.world_rights_for_file(file.filename).first ||
       purl_resource.rights.restricted_by_location?(file.filename) ||
-      purl_resource.rights.cdl_rights_for_file?(file.filename) ||
+      purl_resource.rights.cdl_rights_for_file(file.filename) ||
       thumbnail?(file)
   end
 
@@ -220,7 +220,7 @@ class IiifPresentationManifest
       img_res.service['service'] = [iiif_stacks_login_service]
     end
 
-    if purl_resource.rights.cdl_rights_for_file?(resource.filename)
+    if purl_resource.rights.cdl_rights_for_file(resource.filename)
       img_res.service['service'] = [iiif_cdl_login_service]
     end
 

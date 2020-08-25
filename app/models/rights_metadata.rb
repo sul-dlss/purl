@@ -13,7 +13,7 @@ class RightsMetadata
 
   delegate :stanford_only_rights_for_file, :world_rights_for_file, :stanford_only_unrestricted_file?,
            :restricted_by_location?, :world_downloadable_file?, :stanford_only_downloadable_file?,
-           :cdl_rights_for_file?, to: :rights_auth
+           :cdl_rights_for_file, to: :rights_auth
 
   def use_and_reproduction_statement
     document.at_xpath('use/human[@type="useAndReproduction"]').try(:text)

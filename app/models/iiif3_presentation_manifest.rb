@@ -142,7 +142,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       img_res.service[0]['service'].append(iiif_stacks_login_service)
     end
 
-    if purl_resource.rights.cdl_rights_for_file?(resource.filename)
+    if purl_resource.rights.cdl_rights_for_file(resource.filename)
       img_res.service[0]['service'].append(iiif_cdl_login_service)
     end
 
