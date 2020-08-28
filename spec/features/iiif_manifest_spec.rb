@@ -147,6 +147,14 @@ describe 'IIIF v2 manifests' do
       'ice cannot be reached.'
   end
 
+  it 'includes some copyright language for cdl resources' do
+    visit '/pg500wr6297/iiif/manifest.json'
+    json = JSON.parse(page.body)
+
+    expect(json['attribution'].length).to eq 1
+    expect(json['attribution'].first).to match(/The copyright law of the United States/)
+  end
+
   it 'properly decodes XML entities into their UTF-8 characters' do
     visit '/py305sy7961/iiif/manifest.json'
     json = JSON.parse(page.body)

@@ -392,16 +392,19 @@ class IiifPresentationManifest
   end
 
   def copyright
-    return [
-      cdl_copyright_statement,
-      (purl_resource.copyright if purl_resource.copyright.present?)
-    ].compact if purl_resource.rights.controlled_digital_lending?
+    if purl_resource.rights.controlled_digital_lending?
+      return [
+        cdl_copyright_statement,
+        purl_resource.copyright.presence
+      ].compact
+    end
 
     purl_resource.copyright
   end
 
+  # rubocop:disable Rails/OutputSafety
   def cdl_copyright_statement
-    <<-EOS.html_safe
+    <<-EOSTATEMENT.html_safe
       <p>
         The copyright law of the United States (title 17, United States Code) governs
         the making of photocopies or other reproductions of copyrighted material.
@@ -419,6 +422,7 @@ class IiifPresentationManifest
         if, in its judgment, fulfillment of the order would involve violation
         of copyright law.
       </p>
-    EOS
+    EOSTATEMENT
   end
+  # rubocop:enable Rails/OutputSafety
 end

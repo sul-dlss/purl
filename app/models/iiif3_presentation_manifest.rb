@@ -59,7 +59,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   end
 
   def attribution
-    [copyright || 'Provided by the Stanford University Libraries']
+    [copyright || 'Provided by the Stanford University Libraries'].flatten
   end
 
   def resources
