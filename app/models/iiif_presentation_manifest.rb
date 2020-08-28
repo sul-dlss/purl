@@ -3,7 +3,7 @@
 require 'iiif/presentation'
 
 class IiifPresentationManifest
-  delegate :druid, :title, :type, :copyright, :description, :content_metadata, :public_xml_document, to: :purl_resource
+  delegate :druid, :title, :type, :description, :content_metadata, :public_xml_document, to: :purl_resource
   delegate :reading_order, :resources, to: :content_metadata
 
   attr_reader :purl_resource
@@ -389,5 +389,36 @@ class IiifPresentationManifest
         }
       ]
     )
+  end
+
+  def copyright
+    return [
+      cdl_copyright_statement,
+      (purl_resource.copyright if purl_resource.copyright.present?)
+    ].compact if purl_resource.rights.controlled_digital_lending?
+
+    purl_resource.copyright
+  end
+
+  def cdl_copyright_statement
+    <<-EOS.html_safe
+      <p>
+        The copyright law of the United States (title 17, United States Code) governs
+        the making of photocopies or other reproductions of copyrighted material.
+      </p>
+      <p>
+        Under certain conditions specified in the law, libraries and archives are
+        authorized to furnish a photocopy or other reproduction. One of these
+        specific conditions is that the photocopy or reproduction is not to be
+        “used for any purpose other than private study, scholarship, or research.”
+        If a user makes a request for, or later uses, a photocopy or reproduction
+        for purposes in excess of “fair use,” that user may be liable for copyright infringement.
+      </p>
+      <p>
+        This institution reserves the right to refuse to accept a copying order
+        if, in its judgment, fulfillment of the order would involve violation
+        of copyright law.
+      </p>
+    EOS
   end
 end
