@@ -3,7 +3,7 @@
 require 'iiif/presentation'
 
 class IiifPresentationManifest
-  delegate :druid, :title, :type, :copyright, :description, :content_metadata, :public_xml_document, to: :purl_resource
+  delegate :druid, :title, :type, :description, :content_metadata, :public_xml_document, to: :purl_resource
   delegate :reading_order, :resources, to: :content_metadata
 
   attr_reader :purl_resource
@@ -66,6 +66,7 @@ class IiifPresentationManifest
     purl_resource.rights.stanford_only_rights_for_file(file.filename).first ||
       purl_resource.rights.world_rights_for_file(file.filename).first ||
       purl_resource.rights.restricted_by_location?(file.filename) ||
+      purl_resource.rights.cdl_rights_for_file(file.filename) ||
       thumbnail?(file)
   end
 
@@ -219,6 +220,10 @@ class IiifPresentationManifest
       img_res.service['service'] = [iiif_stacks_login_service]
     end
 
+    if purl_resource.rights.cdl_rights_for_file(resource.filename)
+      img_res.service['service'] = [iiif_cdl_login_service]
+    end
+
     if purl_resource.rights.restricted_by_location?(resource.filename)
       img_res.service['service'].append(iiif_location_auth_service)
     end
@@ -347,6 +352,29 @@ class IiifPresentationManifest
     )
   end
 
+  def iiif_cdl_login_service
+    IIIF::Service.new(
+      '@context' => 'http://iiif.io/api/auth/1/context.json',
+      'id' => "#{Settings.stacks.url}/auth/iiif/cdl/#{druid}/checkout",
+      'profile' => 'http://iiif.io/api/auth/1/login',
+      'label' => 'Available for checkout.',
+      'confirmLabel' => 'Checkout',
+      'failureHeader' => 'Unable to authenticate',
+      'failureDescription' => 'The authentication service cannot be reached.',
+      'service' => [
+        {
+          '@id' => "#{Settings.stacks.url}/image/iiif/token/#{druid}",
+          'profile' => 'http://iiif.io/api/auth/1/token'
+        },
+        {
+          '@id' => "#{Settings.stacks.url}/auth/iiif/cdl/#{druid}/checkin",
+          'profile' => 'http://iiif.io/api/auth/1/logout',
+          'label' => 'Check in early'
+        }
+      ]
+    )
+  end
+
   def iiif_location_auth_service
     IIIF::Service.new(
       '@context' => 'http://iiif.io/api/auth/1/context.json',
@@ -362,4 +390,39 @@ class IiifPresentationManifest
       ]
     )
   end
+
+  def copyright
+    if purl_resource.rights.controlled_digital_lending?
+      return [
+        cdl_copyright_statement,
+        purl_resource.copyright.presence
+      ].compact
+    end
+
+    purl_resource.copyright
+  end
+
+  # rubocop:disable Rails/OutputSafety
+  def cdl_copyright_statement
+    <<-EOSTATEMENT.html_safe
+      <p>
+        The copyright law of the United States (title 17, United States Code) governs
+        the making of photocopies or other reproductions of copyrighted material.
+      </p>
+      <p>
+        Under certain conditions specified in the law, libraries and archives are
+        authorized to furnish a photocopy or other reproduction. One of these
+        specific conditions is that the photocopy or reproduction is not to be
+        “used for any purpose other than private study, scholarship, or research.”
+        If a user makes a request for, or later uses, a photocopy or reproduction
+        for purposes in excess of “fair use,” that user may be liable for copyright infringement.
+      </p>
+      <p>
+        This institution reserves the right to refuse to accept a copying order
+        if, in its judgment, fulfillment of the order would involve violation
+        of copyright law.
+      </p>
+    EOSTATEMENT
+  end
+  # rubocop:enable Rails/OutputSafety
 end

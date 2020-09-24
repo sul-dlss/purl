@@ -126,6 +126,35 @@ describe 'IIIF v2 manifests' do
       'og in again.'
   end
 
+  it 'includes authorization services for cdl images' do
+    visit '/pg500wr6297/iiif/manifest.json'
+    json = JSON.parse(page.body)
+    expect(json['sequences'].length).to eq 1
+    canvas = json['sequences'].first['canvases'].first
+    expect(canvas['images'].length).to eq 1
+    image = canvas['images'].first
+
+    service = image['resource']['service']
+    expect(service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/login'
+
+    login_service = service['service'].detect { |x| x['profile'] == 'http://iiif.io/api/auth/1/login' }
+    expect(login_service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/token'
+    expect(login_service['label']).to eq 'Available for checkout.'
+    expect(login_service['confirmLabel']).to eq 'Checkout'
+    expect(login_service['id']).to eq 'https://stacks.stanford.edu/auth/iiif/cdl/pg500wr6297/checkout'
+    expect(login_service['failureHeader']).to eq 'Unable to authenticate'
+    expect(login_service['failureDescription']).to eq 'The authentication serv'\
+      'ice cannot be reached.'
+  end
+
+  it 'includes some copyright language for cdl resources' do
+    visit '/pg500wr6297/iiif/manifest.json'
+    json = JSON.parse(page.body)
+
+    expect(json['attribution'].length).to eq 1
+    expect(json['attribution'].first).to match(/The copyright law of the United States/)
+  end
+
   it 'properly decodes XML entities into their UTF-8 characters' do
     visit '/py305sy7961/iiif/manifest.json'
     json = JSON.parse(page.body)

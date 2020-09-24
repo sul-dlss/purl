@@ -408,7 +408,7 @@ DEPENDENCIES
   config
   dalli
   dlss-capistrano
-  dor-rights-auth
+  dor-rights-auth (~> 1.6)
   faraday
   honeybadger
   htmlentities

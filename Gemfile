@@ -40,7 +40,7 @@ gem 'okcomputer'
 
 gem 'mods_display', '~> 0.4'
 gem 'htmlentities'
-gem 'dor-rights-auth'
+gem 'dor-rights-auth', '~> 1.6'
 gem 'bootstrap'
 gem 'faraday'
 gem 'addressable'
