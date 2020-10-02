@@ -38,6 +38,10 @@ class ContentMetadata
     end.flatten.compact.sort_by(&:sequence)
   end
 
+  def grouped_resources
+    @grouped_resources ||= resources.group_by(&:sequence).sort.map { |grouped_resource| GroupedResource.from_grouping(*grouped_resource) }
+  end
+
   def extract_resources(resource)
     # extract resource-level attributes first
     resource_attributes = {
@@ -60,6 +64,38 @@ class ContentMetadata
       when 'externalFile'
         Resource.from_external_file_metadata(node, resource_attributes)
       end
+    end
+  end
+
+  ##
+  # A collection of SDR ContentMetadata Resource Files grouped by resource sequence
+  class GroupedResource
+    attr_reader :index, :files
+
+    def initialize(index:, files:)
+      @index = index
+      @files = files
+    end
+
+    def self.from_grouping(index, files)
+      new(index: index, files: files)
+    end
+
+    def primary
+      return if files.blank?
+      return files.first if files.length == 1
+
+      return media_file if media_file.present?
+
+      image_file
+    end
+
+    def media_file
+      @media_file ||= files.find { |file| file.type == 'video' || file.type == 'audio' }
+    end
+
+    def image_file
+      @image_file ||= files.find { |file| file.type == 'image' || file.mimetype == 'image/jp2' }
     end
   end
 

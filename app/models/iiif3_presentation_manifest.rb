@@ -50,9 +50,9 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
     manifest.thumbnail = [thumbnail_resource] if thumbnail_resource?
 
-    # for each resource image, create a canvas
-    resources.each do |resource|
-      manifest.items << canvas_for_resource(purl_base_uri, resource)
+    # for each resource sequence(SDR term), create a canvas
+    content_metadata.grouped_resources.each do |resource_group|
+      manifest.items << canvas_for_resource(purl_base_uri, resource_group)
     end
 
     manifest
@@ -79,7 +79,13 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     annotation_page_for_resource(purl_base_uri, selected_resource) if selected_resource
   end
 
-  def canvas_for_resource(purl_base_uri, resource)
+  def canvas_for_resource(purl_base_uri, resource_group)
+    resource =
+      if resource_group.is_a? ContentMetadata::GroupedResource
+        resource_group.primary
+      else
+        resource_group
+      end
     canv = IIIF::V3::Presentation::Canvas.new
     canv['id'] = "#{purl_base_uri}/iiif3/canvas/#{resource.id}"
     canv.label = {
@@ -89,7 +95,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       canv.height = resource.height
       canv.width = resource.width
     end
-    canv.content << annotation_page_for_resource(purl_base_uri, resource)
+    canv.items << annotation_page_for_resource(purl_base_uri, resource)
     canv
   end
 
@@ -166,7 +172,12 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   end
 
   def iiif_resource_type(resource)
-    if resource.type == '3d'
+    case resource.type
+    when 'video'
+      'Video'
+    when 'audio'
+      'Audio'
+    when '3d'
       'PhysicalObject'
     else
       'Document'
