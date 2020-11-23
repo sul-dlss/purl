@@ -8,6 +8,7 @@ class PurlResource
   alias druid id
 
   class DruidNotValid < StandardError; end
+
   class ObjectNotReady < StandardError; end
 
   def self.all
