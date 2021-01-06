@@ -20,9 +20,9 @@ describe 'IIIF v3 manifests' do
     expect(canvas['height']).to eq 9040
     expect(canvas['width']).to eq 10_481
 
-    expect(canvas['content'].length).to eq 1
-    expect(canvas['content'].first['items'].length).to eq 1
-    image = canvas['content'].first['items'].first
+    expect(canvas['items'].length).to eq 1
+    expect(canvas['items'].first['items'].length).to eq 1
+    image = canvas['items'].first['items'].first
     expect(image['body']['height']).to eq 9040
     expect(image['body']['width']).to eq 10_481
     expect(image['body']['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/full/0/default.jpg'
@@ -86,8 +86,8 @@ describe 'IIIF v3 manifests' do
     json = JSON.parse(page.body)
     expect(json['items'].length).to eq 1
     canvas = json['items'].first
-    expect(canvas['content'].first['items'].length).to eq 1
-    image = canvas['content'].first['items'].first
+    expect(canvas['items'].first['items'].length).to eq 1
+    image = canvas['items'].first['items'].first
     service = image['body']['service'].first
     expect(service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/login'
 
@@ -105,7 +105,7 @@ describe 'IIIF v3 manifests' do
   it 'includes authorization services for cdl images' do
     visit '/pg500wr6297/iiif3/manifest.json'
     json = JSON.parse(page.body)
-    service = json['items'][2]['content'].first['items'].first['body']['service'].first
+    service = json['items'][2]['items'].first['items'].first['body']['service'].first
     expect(service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/login'
 
     login_service = service['service'].detect { |x| x['profile'] == 'http://iiif.io/api/auth/1/login' }
@@ -129,7 +129,7 @@ describe 'IIIF v3 manifests' do
     visit '/zf119tw4418/iiif3/manifest'
     json = JSON.parse(page.body)
 
-    expect(json['items'].length).to eq 115
+    expect(json['items'].length).to eq 58
     expect(json['metadata'].length).to eq 13
   end
 
@@ -168,11 +168,11 @@ describe 'IIIF v3 manifests' do
         expect(json['items'].length).to eq 1
 
         canvas = json['items'].first
-        expect(canvas['content'].length).to eq 1
-        expect(canvas['content'].first['items'].length).to eq 1
+        expect(canvas['items'].length).to eq 1
+        expect(canvas['items'].first['items'].length).to eq 1
         expect(canvas['label']['en'].first).to eq 'Image 1'
 
-        image = canvas['content'].first['items'].first
+        image = canvas['items'].first['items'].first
         expect(image['body']['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/full/0/default.jpg'
         expect(image['body']['height']).to eq 4747
         expect(image['body']['width']).to eq 6475
@@ -191,11 +191,11 @@ describe 'IIIF v3 manifests' do
         expect(json['items'].length).to eq 1
 
         canvas = json['items'].first
-        expect(canvas['content'].length).to eq 1
-        expect(canvas['content'].first['items'].length).to eq 1
+        expect(canvas['items'].length).to eq 1
+        expect(canvas['items'].first['items'].length).to eq 1
         expect(canvas['label']['en'].first).to eq 'Image 1'
 
-        image = canvas['content'].first['items'].first
+        image = canvas['items'].first['items'].first
         expect(image['body']['id']).to end_with '/image/iiif/jw923xn5254%2F2542B/full/full/0/default.jpg'
         expect(image['body']['height']).to eq 4675
         expect(image['body']['width']).to eq 3139
@@ -219,9 +219,9 @@ describe 'IIIF v3 manifests' do
         canvas = json['items'].first
         expect(canvas['label']['en']).to start_with "Cover: Carey's American atlas."
 
-        expect(canvas['content'].length).to eq 1
-        expect(canvas['content'].first['items'].length).to eq 1
-        image = canvas['content'].first['items'].first
+        expect(canvas['items'].length).to eq 1
+        expect(canvas['items'].first['items'].length).to eq 1
+        image = canvas['items'].first['items'].first
         expect(image['body']['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/full/0/default.jpg' # first child
         expect(image['body']['height']).to eq 4747
         expect(image['body']['width']).to eq 6475
@@ -229,9 +229,9 @@ describe 'IIIF v3 manifests' do
         canvas = json['items'].second
         expect(canvas['label']['en'].first).to start_with "Title Page: Carey's American atlas."
 
-        expect(canvas['content'].length).to eq 1
-        expect(canvas['content'].first['items'].length).to eq 1
-        image = canvas['content'].first['items'].first
+        expect(canvas['items'].length).to eq 1
+        expect(canvas['items'].first['items'].length).to eq 1
+        image = canvas['items'].first['items'].first
         expect(image['body']['id']).to end_with '/image/iiif/jw923xn5254%2F2542B/full/full/0/default.jpg' # second child
         expect(image['body']['height']).to eq 4675
         expect(image['body']['width']).to eq 3139
@@ -251,12 +251,12 @@ describe 'IIIF v3 manifests' do
       expect(json['items'].length).to eq 1
 
       canvas = json['items'].first
-      expect(canvas['content'].length).to eq 1
-      expect(canvas['content'].first['items'].length).to eq 1
+      expect(canvas['items'].length).to eq 1
+      expect(canvas['items'].first['items'].length).to eq 1
       expect(canvas['height']).not_to be_present
       expect(canvas['width']).not_to be_present
 
-      pdf = canvas['content'].first['items'].first
+      pdf = canvas['items'].first['items'].first
       expect(pdf['body']['id']).to eq 'https://stacks.stanford.edu/file/bb132pr2055/Puente-Thesis-Submission-augmented.pdf'
       expect(pdf['body']['format']).to eq 'application/pdf'
       expect(pdf['body']['type']).to eq 'Document'
@@ -275,12 +275,12 @@ describe 'IIIF v3 manifests' do
       expect(json['items'].length).to eq 1
 
       canvas = json['items'].first
-      expect(canvas['content'].length).to eq 1
-      expect(canvas['content'].first['items'].length).to eq 1
+      expect(canvas['items'].length).to eq 1
+      expect(canvas['items'].first['items'].length).to eq 1
       expect(canvas['height']).not_to be_present
       expect(canvas['width']).not_to be_present
 
-      pdf = canvas['content'].first['items'].first
+      pdf = canvas['items'].first['items'].first
       expect(pdf['body']['id']).to eq 'https://stacks.stanford.edu/file/bb253gh8060/SC0193_Agenda_6381_2010-10-07_001.pdf'
       expect(pdf['body']['format']).to eq 'application/pdf'
       expect(pdf['body']['type']).to eq 'Document'
@@ -306,12 +306,12 @@ describe 'IIIF v3 manifests' do
       expect(json['items'].length).to eq 1
 
       canvas = json['items'].first
-      expect(canvas['content'].length).to eq 1
-      expect(canvas['content'].first['items'].length).to eq 1
+      expect(canvas['items'].length).to eq 1
+      expect(canvas['items'].first['items'].length).to eq 1
       expect(canvas['height']).not_to be_present
       expect(canvas['width']).not_to be_present
 
-      obj = canvas['content'].first['items'].first
+      obj = canvas['items'].first['items'].first
       expect(obj['body']['id']).to eq 'https://stacks.stanford.edu/file/hc941fm6529/hc941fm6529.json'
       expect(obj['body']['format']).to eq 'application/vnd.threejs+json'
       expect(obj['body']['type']).to eq 'Document'
@@ -331,12 +331,12 @@ describe 'IIIF v3 manifests' do
       expect(json['items'].length).to eq 1
 
       canvas = json['items'].first
-      expect(canvas['content'].length).to eq 1
-      expect(canvas['content'].first['items'].length).to eq 1
+      expect(canvas['items'].length).to eq 1
+      expect(canvas['items'].first['items'].length).to eq 1
       expect(canvas['height']).not_to be_present
       expect(canvas['width']).not_to be_present
 
-      obj = canvas['content'].first['items'].first
+      obj = canvas['items'].first['items'].first
       expect(obj['body']['id']).to eq 'https://stacks.stanford.edu/file/bg387kw8222/bg387kw8222_low.obj'
       expect(obj['body']['format']).to eq 'text/plain'
       expect(obj['body']['type']).to eq 'PhysicalObject'
@@ -351,7 +351,7 @@ describe 'IIIF v3 manifests' do
       expect(page).to have_http_status(:ok)
 
       json = JSON.parse(page.body)
-      external_interaction_service = json['items'].first['content'].first['items'].first['body']['service'].first['service'].first
+      external_interaction_service = json['items'].first['items'].first['items'].first['body']['service'].first['service'].first
       expect(external_interaction_service['profile']).to eq 'http://iiif.io/api/auth/1/external'
       expect(external_interaction_service['label']).to eq 'External Authentication Required'
       expect(external_interaction_service['failureHeader']).to eq 'Restricted Material'
