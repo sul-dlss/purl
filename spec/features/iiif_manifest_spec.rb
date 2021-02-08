@@ -191,11 +191,7 @@ describe 'IIIF v2 manifests' do
     expect(json['service'].first).to match '@context' => 'http://iiif.io/api/search/1/context.json',
                                            '@id' => 'http://example.com/content_search/jg072yr3056/search',
                                            'profile' => 'http://iiif.io/api/search/1/search',
-                                           'label' => 'Search within this manifest',
-                                           'service' => {
-                                             '@id' => 'http://example.com/content_search/jg072yr3056/autocomplete',
-                                             'profile' => 'http://iiif.io/api/search/1/autocomplete'
-                                           }
+                                           'label' => 'Search within this manifest'
   end
 
   it 'publishes seeAlso for canvases with OCR content' do
