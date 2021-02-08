@@ -5,4 +5,3 @@ purl_resource:
 
 content_search:
   url: "http://example.com/content_search/%{druid}/search"
-  autocomplete_url: "http://example.com/content_search/%{druid}/autocomplete"
