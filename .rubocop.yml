@@ -12,7 +12,6 @@ AllCops:
     - 'db/**/*'
     - 'config/**/*'
     - 'spec/spec_helper.rb'
-    - 'spec/teaspoon_env.rb'
     - 'vendor/**/*'
   TargetRubyVersion: 2.5
 
