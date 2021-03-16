@@ -11,6 +11,7 @@ AllCops:
     - 'bin/**/*'
     - 'db/**/*'
     - 'config/**/*'
+    - 'node_modules/**/*'
     - 'spec/spec_helper.rb'
     - 'vendor/**/*'
   TargetRubyVersion: 2.5
