@@ -1,3 +1,23 @@
+<h2>MODS Display</h2>
 <div class="view-mods">
-  <%= @mods.render_mods_display(@mods).to_html.gsub('<dl', '<dl class="dl-horizontal"').html_safe %>
+  <%= @mods.to_html.gsub('<dl', '<dl class="dl-horizontal"').html_safe %>
+</div>
+
+<hr />
+
+<h2>PURL Page</h2>
+<div class="upper-record-metadata row">
+  <div class="col-md-8">
+    <%= render 'mods_upper_metadata_section' %>
+  </div>
+</div>
+
+<div class="record-metadata row">
+  <div class="record-sections col-md-8">
+    <%= render 'access' %>
+
+    <% if @document.mods? %>
+      <%= render 'mods_metadata_sections' %>
+    <% end %>
+  </div>
 </div>
