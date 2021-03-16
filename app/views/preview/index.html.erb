@@ -1,0 +1,58 @@
+<% content_for(:head) do %>
+  <%= javascript_pack_tag 'preview' %>
+  <style>
+  #examples, .mods {
+    width: 80%;
+    min-height: 200px;
+    display: inline-block;
+    text-align: left;
+    padding: 5px;
+    border: 1px solid #cccccc;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+  }
+  textarea {
+    vertical-align: top;
+    width: 90%;
+  }
+
+  .view-mods {
+    display: inline-block;
+    text-align: left;
+    width: 80%;
+  }
+</style>
+<% end %>
+<h3>Enter MODS XML</h3>
+<%= form_with url: '/preview', method: 'POST', data: { behavior: 'mods-form' } do %>
+  <textarea name='mods'></textarea>
+  <div id="mods" class="mods" contenteditable="true"></div>
+  <br/><br/>
+  <button class='btn btn-primary btn-lg'>Show me the MODS!</button>
+<% end %>
+<a href="#examples">Examples</a><br/>
+<div id="examples" style="display:none">
+  <ol>
+    <li>
+      <textarea rows="6">
+        <mods>
+          <titleInfo>
+            <title>Main Title of an Entry</title>
+            <subTitle>the sub title of the entry</subTitle>
+          </titleInfo>
+        </mods></textarea>
+            </li>
+            <li>
+              <textarea rows="8">
+        <mods>
+          <name>
+            <namePart>Doe, John A., 1884-1938.</namePart>
+            <role>
+              <roleTerm>photographer</roleTerm>
+            </role>
+          </name>
+        </mods>
+      </textarea>
+  </li>
+</ol>

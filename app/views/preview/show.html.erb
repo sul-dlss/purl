@@ -1,0 +1,3 @@
+<div class="view-mods">
+  <%= @mods.render_mods_display(@mods).to_html.gsub('<dl', '<dl class="dl-horizontal"').html_safe %>
+</div>
