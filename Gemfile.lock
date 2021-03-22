@@ -78,7 +78,7 @@ GEM
     autoprefixer-rails (10.2.4.0)
       execjs
     bindex (0.8.1)
-    bootsnap (1.7.2)
+    bootsnap (1.7.3)
       msgpack (~> 1.0)
     bootstrap (4.6.0)
       autoprefixer-rails (>= 9.1.0)
@@ -180,7 +180,7 @@ GEM
     ffi (1.15.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    honeybadger (4.7.3)
+    honeybadger (4.8.0)
     htmlentities (4.3.4)
     i18n (1.8.9)
       concurrent-ruby (~> 1.0)
@@ -463,4 +463,4 @@ DEPENDENCIES
   webpacker (~> 5.x)
 
 BUNDLED WITH
-   2.2.14
+   2.2.15
