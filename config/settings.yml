@@ -68,9 +68,9 @@ landing_page_druids:
   - gb089bd2251
 
 feedback:
-  email_to: ""
+  email_to: "cabeer@stanford.edu"
 
-GOOGLE_ANALYTICS_ID: ""
+GOOGLE_ANALYTICS_ID: "X-123"
 
 twitter:
   site: '@DigitalLib'

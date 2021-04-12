@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'feedback' => 'feedback_forms#new'
 
   get 'auth' => 'webauth#login', as: :new_user_session
+  get '/preview' => 'preview#index'
+  post '/preview' => 'preview#show'
 
   get ':id' => 'purl#show', as: :purl
   get ':id/embed', to: redirect("/iframe/?url=#{Settings.embed.url % { druid: '%{id}' }}")
