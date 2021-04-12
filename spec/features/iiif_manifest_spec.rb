@@ -208,6 +208,18 @@ describe 'IIIF v2 manifests' do
     ]
   end
 
+  it 'provides otherContent for annotations that exist in an image resource' do
+    visit '/hx163dc5225/iiif/manifest'
+    json = JSON.parse(page.body)
+
+    expect(json.dig('sequences', 0, 'canvases', 7, 'otherContent')).to eq [
+      {
+        '@id' => 'http://www.example.com/hx163dc5225/iiif/annotationList/hx163dc5225_9',
+        '@type' => 'sc:AnnotationList'
+      }
+    ]
+  end
+
   it 'does not advertise an IIIF Content Search API for pages with stanford-only OCR content' do
     visit '/bf995rh7184/iiif/manifest'
     json = JSON.parse(page.body)

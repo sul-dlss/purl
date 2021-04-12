@@ -54,6 +54,10 @@ class IiifPresentationManifest
     end
   end
 
+  def grouped_resource_by_id(id)
+    content_metadata.grouped_resources.find { |grouped_resource| grouped_resource.id == id }
+  end
+
   def object?(file)
     file.type == 'object'
   end
@@ -166,6 +170,25 @@ class IiifPresentationManifest
     canvas_for_resource(purl_base_uri, resource) if resource
   end
 
+  ##
+  # Creates an annotationList
+  def annotation_list(controller: nil, resource_id:)
+    controller ||= Rails.application.routes.url_helpers
+    purl_base_uri = controller.purl_url(druid)
+
+    anno_list = IIIF::Presentation::AnnotationList.new
+    anno_list['@id'] = "#{purl_base_uri}/iiif/annotationList/#{resource_id}"
+    anno_list.resources = []
+    grouped_resource_by_id(resource_id).files.select { |file| file.role == 'annotations' && file.mimetype == 'application/json' }.each do |file|
+      anno_list.resources << JSON.parse(
+        Faraday.get(
+          stacks_file_url(druid, file.filename)
+        ).body
+      )
+    end
+    anno_list
+  end
+
   def annotation(controller: nil, annotation_id:)
     controller ||= Rails.application.routes.url_helpers
     purl_base_uri = controller.purl_url(druid)
@@ -194,6 +217,13 @@ class IiifPresentationManifest
     canv['seeAlso'] = ocr_file.map do |f|
       # Profile for Alto resources. We don't yet really have HOCR transcriptions published as role="transcription"
       rendering_resource(f, label: 'OCR text', profile: 'http://www.loc.gov/standards/alto/ns-v2#')
+    end
+    # Setup annotationLists for files with role="annotations"
+    if grouped_resource_by_id(resource.id).files.select { |file| file.role == 'annotations' && file.mimetype == 'application/json' }.any?
+      canv.otherContent = []
+      anno_list = IIIF::Presentation::AnnotationList.new
+      anno_list['@id'] = "#{purl_base_uri}/iiif/annotationList/#{resource.id}"
+      canv.otherContent << anno_list
     end
     anno = annotation_for_resource(purl_base_uri, resource)
     anno['on'] = canv['@id']

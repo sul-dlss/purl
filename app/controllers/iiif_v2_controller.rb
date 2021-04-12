@@ -32,6 +32,20 @@ class IiifV2Controller < ApplicationController
     end
   end
 
+  def annotation_list
+    return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
+
+    if @purl.iiif_manifest?
+      manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc, 'iiif_v2', 'annotation_list'], expires_in: Settings.resource_cache.lifetime) do
+        @purl.iiif_manifest.annotation_list(controller: self, resource_id: params[:resource_id]).to_ordered_hash
+      end
+
+      render json: JSON.pretty_generate(manifest.as_json)
+    else
+      head :not_found
+    end
+  end
+
   def annotation
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
 

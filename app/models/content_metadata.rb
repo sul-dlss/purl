@@ -70,15 +70,16 @@ class ContentMetadata
   ##
   # A collection of SDR ContentMetadata Resource Files grouped by resource sequence
   class GroupedResource
-    attr_reader :index, :files
+    attr_reader :index, :files, :id
 
-    def initialize(index:, files:)
+    def initialize(index:, files:, id:)
       @index = index
       @files = files
+      @id = id
     end
 
     def self.from_grouping(index, files)
-      new(index: index, files: files)
+      new(index: index, files: files, id: files[0].id)
     end
 
     def primary
