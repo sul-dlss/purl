@@ -14,8 +14,7 @@
   <dt>Use and Reproduction</dt>
   <dd><%= link_urls_and_email(document.use_and_reproduction).html_safe %></dd>
 <% end %>
-
 <% if document.license? && document.license.desc.present? %>
   <dt>License</dt>
-  <dd class="<%= document.license.code %>"><%= link_to_unless document.license.link.blank?, document.license.desc, document.license.link, target: '_blank' %></dd>
+  <dd class="<%= document.license.css_class %>"><%= link_to_unless document.license.link.blank?, document.license.desc, document.license.link, target: '_blank' %></dd>
 <% end %>

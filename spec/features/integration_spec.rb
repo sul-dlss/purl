@@ -45,7 +45,7 @@ describe 'Integration Scenarios' do
     it 'links to the creative commons license' do
       visit '/py305sy7961'
       expect(page).to have_selector '.creativeCommons-by-nc'
-      expect(page).to have_link 'This work is licensed under a Creative Commons Attribution-Noncommercial 3.0 Unported License', href: 'http://creativecommons.org/licenses/by-nc/3.0/'
+      expect(page).to have_link 'This work is licensed under a Creative Commons Attribution-Noncommercial 3.0 Unported License', href: 'https://creativecommons.org/licenses/by-nc/3.0/'
     end
 
     it 'adds mailto links in the use and reproduction statement' do
@@ -72,7 +72,7 @@ describe 'Integration Scenarios' do
     it 'links to the creative commons license' do
       visit '/nd387jf5675'
       expect(page).to have_selector '.creativeCommons-by-nc'
-      expect(page).to have_link 'This work is licensed under a Creative Commons Attribution-Noncommercial 3.0 Unported License', href: 'http://creativecommons.org/licenses/by-nc/3.0/'
+      expect(page).to have_link 'This work is licensed under a Creative Commons Attribution-Noncommercial 3.0 Unported License', href: 'https://creativecommons.org/licenses/by-nc/3.0/'
     end
 
     it 'has a link to the searchworks record' do

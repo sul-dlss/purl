@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe PurlResource do
+RSpec.describe PurlResource do
   describe 'resource methods' do
     let(:fake_response) { OpenStruct.new(success?: true, body: 'Content') }
 
@@ -29,6 +29,63 @@ describe PurlResource do
     it 'validates that the object is "ready"' do
       allow_any_instance_of(described_class).to receive(:public_xml?).and_return(false)
       expect { described_class.find('oo000oo0000') }.to raise_error PurlResource::ObjectNotReady
+    end
+  end
+
+  describe '#license' do
+    let(:license) { subject.license }
+
+    before do
+      allow(subject).to receive(:public_xml_body).and_return <<-EOF
+        <?xml version="1.0" encoding="UTF-8"?>
+        <publicObject>
+          <rightsMetadata>
+            #{rights}
+          </rightsMetadata>
+        </publicObject>
+      EOF
+    end
+
+    context 'with a license node' do
+      let(:rights) do
+        <<~EOF
+          <use>
+            <license>https://opensource.org/licenses/BSD-3-Clause</license>
+          </use>
+        EOF
+      end
+
+      it 'decodes the value' do
+        expect(license.desc).to eq 'This work is licensed under a BSD-3-Clause "New" or "Revised" License'
+      end
+    end
+
+    context 'with a uri attribute' do
+      let(:rights) do
+        <<~EOF
+          <use>
+            <machine type="creativeCommons" uri="https://creativecommons.org/licenses/by-nc/4.0/legalcode">junk</machine>
+          </use>
+        EOF
+      end
+
+      it 'decodes the value' do
+        expect(license.desc).to eq 'This work is licensed under a CC-BY-NC-4.0 Attribution-NonCommercial International'
+      end
+    end
+
+    context 'with a code' do
+      let(:rights) do
+        <<~EOF
+          <use>
+            <machine type="creativeCommons">by-nc</machine>
+          </use>
+        EOF
+      end
+
+      it 'decodes the value' do
+        expect(license.desc).to eq 'This work is licensed under a Creative Commons Attribution-Noncommercial 3.0 Unported License'
+      end
     end
   end
 
