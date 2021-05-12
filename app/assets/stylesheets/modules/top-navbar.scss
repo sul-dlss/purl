@@ -4,15 +4,12 @@
 }
 
 #topnav {
-  @extend .row;
   border: none;
   background: none;
   margin-bottom: 0;
   padding: 2px 0;
 
   .header-links {
-    @extend .col-1;
-    margin-left: auto;
     margin-top: 2px;
     a {
       font-weight: normal;
@@ -31,7 +28,7 @@
 
 }
 
-@include media-breakpoint-down(xs) {
+@include media-breakpoint-down(sm) {
   #topnav {
     padding-left: 10px;
     padding-right: 10px;
