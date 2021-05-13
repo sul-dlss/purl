@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post '/preview' => 'preview#show'
 
   get ':id' => 'purl#show', as: :purl
+  options ':id', to: 'purl#options'
   get ':id/embed', to: redirect("/iframe/?url=#{Settings.embed.url % { druid: '%{id}' }}")
   get ':id/file/:file' => 'purl#file', as: :purl_file
 
@@ -51,6 +52,7 @@ Rails.application.routes.draw do
 
     get '/:id/iiif/annotation/:annotation_id' => 'iiif_v3#annotation', format: false
     get '/:id/iiif/annotation/:annotation_id.json', to: redirect('/%{id}/iiif3/annotation/%{annotation_id}')
+    options '/:id/*whatever', to: 'iiif_v3#options'
   end
 
   ##
@@ -68,4 +70,5 @@ Rails.application.routes.draw do
   # Deferenceable annotationLists for additional annotationList "other content"
   get '/:id/iiif/annotationList/:resource_id' => 'iiif_v2#annotation_list', as: :iiif_annotation_list, format: false
   get '/:id/iiif/annotationList/:resource_id.json', to: redirect('/%{id}/iiif/annotationList/%{resource_id}')
+  options '/:id/*whatever', to: 'iiif_v2#options'
 end

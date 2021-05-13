@@ -1,6 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe 'PURL API', type: :request do
+  context 'PURL page' do
+    it 'responds to OPTIONS requests' do
+      options '/bb157hs6068'
+      expect(response).to be_successful
+      expect(response.headers['Access-Control-Allow-Headers']).to include 'Accept'
+    end
+  end
+
   context 'IIIF v2 requests' do
     it 'redirects manifest.json requests' do
       get '/1/iiif/manifest.json'
@@ -16,6 +24,12 @@ RSpec.describe 'PURL API', type: :request do
       get '/1/iiif/annotation/whatever.json'
       expect(response).to redirect_to('/1/iiif/annotation/whatever')
     end
+
+    it 'responds to OPTIONS requests' do
+      options '/bb157hs6068/iiif/manifest'
+      expect(response).to be_successful
+      expect(response.headers['Access-Control-Allow-Headers']).to include 'Accept'
+    end
   end
 
   context 'IIIF v3 requests' do
@@ -26,6 +40,17 @@ RSpec.describe 'PURL API', type: :request do
         headers: { 'Accept' => 'application/ld+json;profile="http://iiif.io/api/presentation/3/context.json"' }
       )
       expect(response.body).to include 'http://iiif.io/api/presentation/3/context.json'
+    end
+
+    it 'responds to OPTIONS requests' do
+      options(
+        '/bb157hs6068/iiif/manifest',
+        params: {},
+        headers: { 'Accept' => 'application/ld+json;profile="http://iiif.io/api/presentation/3/context.json"' }
+      )
+
+      expect(response).to be_successful
+      expect(response.headers['Access-Control-Allow-Headers']).to include 'Accept'
     end
 
     it 'redirects manifest.json requests' do
