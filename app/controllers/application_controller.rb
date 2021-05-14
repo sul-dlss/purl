@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :exception, except: [:options]
 
   helper_method :current_user
 
@@ -9,6 +9,15 @@ class ApplicationController < ActionController::Base
 
   def current_user?
     current_user.present?
+  end
+
+  def options
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Methods'] = 'GET, OPTIONS'
+    response.headers['Access-Control-Allow-Headers'] = 'Accept'
+    response.headers['Access-Control-Max-Age'] = 1.day.to_i
+
+    head :ok
   end
 
   private
