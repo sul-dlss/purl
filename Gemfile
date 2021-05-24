@@ -10,12 +10,12 @@ gem 'rails', '~> 6.0'
 # Use sqlite3 as the database (during local development)
 gem 'sqlite3'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 5.0'
 
 gem 'webpacker', '~> 5.x'
 gem 'sprockets', '~> 4.0'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 6.0'
+gem 'sass-rails', '>= 6.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 2.7.2'
 # A gem for simple rails environment specific config
@@ -74,7 +74,7 @@ group :development, :test do
   gem 'byebug'
 
   # RSpec for testing
-  gem 'rspec-rails', '~> 4.0.0.rc1'
+  gem 'rspec-rails', '~> 5.0'
 
   # Capybara for feature/integration tests
   gem 'capybara'
