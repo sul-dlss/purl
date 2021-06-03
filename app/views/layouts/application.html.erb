@@ -40,6 +40,7 @@
           <%= render 'shared/brand_navbar' %>
 
           <section id="main-container" role="main" data-analytics-id="<%= Settings.GOOGLE_ANALYTICS_ID %>">
+            <%= render partial: '/flash_msg', layout: 'shared/flash_messages' %>
             <%= yield %>
           </section>
         </div>

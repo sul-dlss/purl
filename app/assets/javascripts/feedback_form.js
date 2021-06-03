@@ -43,7 +43,7 @@ $(document).on("turbolinks:load", function(){
               url: form.action,
               data: valuesToSubmit,
               type: 'post'
-            }).success(function(response){
+            }).done(function(response){
               if (isSuccess(response)){
                 $($el).collapse('hide');
                 $($form)[0].reset();
@@ -68,7 +68,7 @@ $(document).on("turbolinks:load", function(){
 
     function renderFlashMessages(response){
       $.each(response, function(i,val){
-        var flashHtml = "<div class='alert alert-" + val[0] + "'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>" + val[1] + "</div>";
+        var flashHtml = "<div class='alert alert-" + val[0] + "'>" + val[1] + "<a class='close' data-dismiss='alert' href='#'>&times;</a></div>";
 
         // Show the flash message
         $('div.flash_messages').html(flashHtml);
