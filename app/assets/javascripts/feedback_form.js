@@ -45,7 +45,11 @@ $(document).on("turbolinks:load", function(){
               type: 'post'
             }).done(function(response){
               if (isSuccess(response)){
-                $($el).collapse('hide');
+                // This is the BS5 way to collapse a div
+                var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
+                var collapseList = collapseElementList.map(function (collapseEl) {
+                  return new bootstrap.Collapse(collapseEl)
+                })
                 $($form)[0].reset();
               }
               renderFlashMessages(response);
@@ -68,7 +72,7 @@ $(document).on("turbolinks:load", function(){
 
     function renderFlashMessages(response){
       $.each(response, function(i,val){
-        var flashHtml = "<div class='alert alert-" + val[0] + "'>" + val[1] + "<a class='close' data-dismiss='alert' href='#'>&times;</a></div>";
+        var flashHtml = "<div class='alert alert-" + val[0] + "'>" + val[1] + "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
 
         // Show the flash message
         $('div.flash_messages').html(flashHtml);
@@ -107,7 +111,7 @@ $(document).on("turbolinks:load", function(){
           submitListener($el,$form);
 
           // Preventing link from triggering navigation
-          $('*[data-target="#' + this.element.id +'"]').on('click', function(e){
+          $('*[data-bs-target="#' + this.element.id +'"]').on('click', function(e){
             e.preventDefault();
           });
 
