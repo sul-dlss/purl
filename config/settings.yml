@@ -5,7 +5,7 @@ stacks:
 content_search:
   url:
 
-document_cache_root: "<%= File.join(Rails.root, "document_cache") %>"
+document_cache_root: "<%= File.join(Rails.root, 'document_cache') %>"
 
 resource_cache:
   enabled: true
@@ -74,3 +74,7 @@ GOOGLE_ANALYTICS_ID: "X-123"
 
 twitter:
   site: '@DigitalLib'
+
+recaptcha:
+  site_key: 6Lc6BAAAAAAAAChqRbQZcn_yyyyyyyyyyyyyyyyy
+  secret_key: 6Lc6BAAAAAAAAKN3DRm6VA_xxxxxxxxxxxxxxxxx

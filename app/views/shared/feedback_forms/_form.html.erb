@@ -1,7 +1,7 @@
 <div class="col-sm-6 my-3">
   <%= form_tag feedback_form_path, method: :post, class:"form-horizontal feedback-form", role:"form" do %>
     <div class="row">
-      <div class="offset-sm-3 col-sm-9 px-4 mb-2">
+      <div class="col-sm-12 px-4 mb-2">
         <%= render "shared/feedback_forms/reporting_from" %>
       </div>
     </div>
@@ -13,27 +13,36 @@
     </span>
     <div class="mx-3">
       <div class="form-group row mb-3">
-        <%= label_tag(:message, 'Message', class:"col-sm-3 col-form-label") %>
+        <%= label_tag(:message, 'Message', class: "col-sm-3 col-form-label text-end") %>
         <div class="col-sm-9">
           <%= text_area_tag :message, "", rows:"5", class:"form-control" %>
         </div>
       </div>
       <div class="form-group row mb-3">
-        <%= label_tag(:name, 'Your name', class:"col-sm-3 col-form-label") %>
+        <%= label_tag(:name, 'Your name', class: "col-sm-3 col-form-label text-end") %>
         <div class="col-sm-9">
           <%= text_field_tag :name, "", class:"form-control" %>
         </div>
       </div>
       <div class="form-group row mb-3">
-        <%= label_tag(:to, 'Your email', class:"col-sm-3 col-form-label") %>
+        <%= label_tag(:to, 'Your email', class: "col-sm-3 col-form-label text-end") %>
         <div class="col-sm-9">
           <%= email_field_tag :to, "", class:"form-control" %>
         </div>
       </div>
+      <% if current_user.blank? %>
+        <div class="form-group row mb-3">
+          <div class="offset-sm-3 col-sm-9">
+            <%= recaptcha_tags %>
+
+            <p>(Stanford users can avoid this Captcha by logging in.)</p>
+          </div>
+        </div>
+      <% end %>
       <div class="form-group row">
         <div class="offset-sm-3 col-sm-9">
           <button type="submit" class="btn btn-primary">Send</button>
-          <%= link_to "Cancel", :back, class: 'cancel-link', data: { bs_toggle: 'collapse', bs_target: '#feedback-form' } %>
+          <%= button_tag "Cancel", type: 'button', class: 'btn btn-link', data: { bs_toggle: 'collapse', bs_target: '#feedback-form' }, aria: { expanded: false, controls: 'feedback-form' }  %>
         </div>
       </div>
     </div>

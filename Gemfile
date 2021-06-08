@@ -20,8 +20,6 @@ gem 'sass-rails', '>= 6.0'
 gem 'uglifier', '>= 2.7.2'
 # A gem for simple rails environment specific config
 gem 'config'
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
 
 gem 'turbolinks', '~> 5'
 
@@ -48,6 +46,9 @@ gem 'addressable'
 gem 'tophat'
 gem 'rails-file-icons'
 gem 'sul_styles', '~> 0.6'
+
+# Use recaptcha gem to prevent robots spamming the feedback form
+gem 'recaptcha'
 
 # sul-dlss/osullivan#development has early support for generating IIIF v3 manifests
 gem 'iiif-presentation', github: 'sul-dlss/osullivan', branch: 'development'
