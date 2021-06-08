@@ -1,4 +1,8 @@
 class FeedbackFormsController < ApplicationController
+  # The client handles rendering flash in this case, so clear it on the server
+  # side to prevent it from rendering on the next request.
+  after_action :discard_flash, only: :create, if: -> { request.xhr? }
+
   def new; end
 
   def create
@@ -28,5 +32,9 @@ class FeedbackFormsController < ApplicationController
     end
     flash[:error] = errors.join('<br/>') unless errors.empty?
     flash[:error].nil?
+  end
+
+  def discard_flash
+    flash.discard
   end
 end

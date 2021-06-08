@@ -6,7 +6,7 @@
       <%= image_tag "sul-logo-stacked.svg", class: "d-block d-sm-none", alt: "", height: 25 %>
     <% end %>
     <div class="header-links">
-      <%= link_to feedback_path, class: 'first', data: {toggle:"collapse", target:"#feedback-form"} do %>
+      <%= link_to feedback_path, class: 'first', data: { bs_toggle: 'collapse', bs_target: '#feedback-form' } do %>
         Feedback
       <% end if show_feedback_form? %>
     </div>
