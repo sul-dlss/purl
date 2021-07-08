@@ -134,21 +134,11 @@ class PurlResource
     end
 
     def license
-      @license ||= License.new(code: license_code, text: license_text)
+      @license ||= License.new(url: rights.license_url)
     end
 
     def license?
-      license_code.present? || license_text.present?
-    end
-
-    def license_code
-      type, code = rights.machine_readable_license
-
-      "#{type}-#{code}" if type.present? && code.present?
-    end
-
-    def license_text
-      rights.license_statement
+      rights.license_url.present?
     end
 
     def copyright?
