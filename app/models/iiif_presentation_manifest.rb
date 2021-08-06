@@ -173,13 +173,16 @@ class IiifPresentationManifest
   ##
   # Creates an annotationList
   def annotation_list(controller: nil, resource_id:)
+    grouped_resource = grouped_resource_by_id(resource_id)
+    return unless grouped_resource
+
     controller ||= Rails.application.routes.url_helpers
     purl_base_uri = controller.purl_url(druid)
 
     anno_list = IIIF::Presentation::AnnotationList.new
     anno_list['@id'] = "#{purl_base_uri}/iiif/annotationList/#{resource_id}"
     anno_list.resources = []
-    grouped_resource_by_id(resource_id).files.select { |file| file.role == 'annotations' && file.mimetype == 'application/json' }.each do |file|
+    grouped_resource.files.select { |file| file.role == 'annotations' && file.mimetype == 'application/json' }.each do |file|
       anno_list.resources << JSON.parse(
         Faraday.get(
           stacks_file_url(druid, file.filename)
@@ -218,17 +221,30 @@ class IiifPresentationManifest
       # Profile for Alto resources. We don't yet really have HOCR transcriptions published as role="transcription"
       rendering_resource(f, label: 'OCR text', profile: 'http://www.loc.gov/standards/alto/ns-v2#')
     end
-    # Setup annotationLists for files with role="annotations"
-    if grouped_resource_by_id(resource.id).files.select { |file| file.role == 'annotations' && file.mimetype == 'application/json' }.any?
-      canv.otherContent = []
-      anno_list = IIIF::Presentation::AnnotationList.new
-      anno_list['@id'] = "#{purl_base_uri}/iiif/annotationList/#{resource.id}"
-      canv.otherContent << anno_list
-    end
+
+    other_content = other_content_for_resource(purl_base_uri, resource)
+    canv.otherContent = other_content if other_content.any?
+
     anno = annotation_for_resource(purl_base_uri, resource)
     anno['on'] = canv['@id']
     canv.images << anno
     canv
+  end
+
+  # Setup annotationLists for files with role="annotations"
+  def other_content_for_resource(purl_base_uri, resource)
+    grouped_resource = grouped_resource_by_id(resource.id)
+    return unless grouped_resource
+
+    other_content = []
+
+    if grouped_resource.files.select { |file| file.role == 'annotations' && file.mimetype == 'application/json' }&.any?
+      anno_list = IIIF::Presentation::AnnotationList.new
+      anno_list['@id'] = "#{purl_base_uri}/iiif/annotationList/#{resource.id}"
+      other_content << anno_list
+    end
+
+    other_content
   end
 
   def annotation_for_resource(purl_base_uri, resource)
