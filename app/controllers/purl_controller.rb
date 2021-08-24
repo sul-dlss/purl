@@ -9,11 +9,12 @@ class PurlController < ApplicationController
 
   # entry point into the application
   # rubocop:disable Metrics/AbcSize
+  # rubocop:disable Metrics/MethodLength
   def show
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
 
     # render the landing page based on the format
-    respond_to do |format|
+    respond_to do |format| # rubocop:disable Metrics/BlockLength
       format.html
 
       format.xml do
@@ -23,6 +24,14 @@ class PurlController < ApplicationController
       format.mods do
         if @purl.mods?
           render xml: @purl.mods_body
+        else
+          head :not_found
+        end
+      end
+
+      format.json do
+        if @purl.cocina?
+          render json: @purl.cocina_body
         else
           head :not_found
         end
@@ -41,6 +50,7 @@ class PurlController < ApplicationController
       end
     end
   end
+  # rubocop:enable Metrics/MethodLength
   # rubocop:enable Metrics/AbcSize
 
   def file

@@ -60,6 +60,7 @@ class PurlResource
 
   has_resource mods: Settings.purl_resource.mods
   has_resource public_xml: Settings.purl_resource.public_xml
+  has_resource cocina: Settings.purl_resource.cocina
 
   def ready?
     public_xml?
