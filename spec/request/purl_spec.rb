@@ -68,4 +68,12 @@ RSpec.describe 'PURL API', type: :request do
       expect(response).to redirect_to('/1/iiif3/annotation/whatever')
     end
   end
+
+  context 'Cocina page' do
+    it 'returns the json' do
+      get '/bb157hs6068.json'
+      expect(response).to be_successful
+      expect(response.body).to start_with('{"type":"http://cocina.sul.stanford.edu/models/collection.jsonld"')
+    end
+  end
 end
