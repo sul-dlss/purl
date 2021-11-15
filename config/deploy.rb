@@ -36,3 +36,9 @@ set :honeybadger_env, fetch(:stage)
 
 # update shared_configs before restarting app
 before 'deploy:restart', 'shared_configs:update'
+  
+if ENV['CI']
+  # Some version mismatch(?) is causing ruby's net-ssh to error with:
+  # > Net::SSH::Exception (could not verify server signature)
+  set :ssh_options, verify_host_key: :never
+end
