@@ -3,7 +3,7 @@
   <% if abstracts.respond_to?(:values) %>
     <%= mods_display_label(abstracts.label) %>
     <dd class="section-abstract">
-      <%= simple_format abstracts.values.join.gsub('&#10;', "\n").html_safe, {}, sanitize: false %>
+      <%= simple_format abstracts.values.join("\n\n").gsub('&#10;', "\n").html_safe, {}, sanitize: false %>
     </dd>
   <% end %>
 <% end %>
