@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'purl/_find_it.html.erb' do
+describe 'purl/_find_it' do
   before do
     assign(:purl, purl)
   end

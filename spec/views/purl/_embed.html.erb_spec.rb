@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'purl/_embed.html.erb' do
+describe 'purl/_embed' do
   before do
     assign(:purl, purl)
   end

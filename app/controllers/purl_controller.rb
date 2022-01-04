@@ -46,7 +46,7 @@ class PurlController < ApplicationController
       end
 
       format.zip do
-        redirect_to Settings.stacks.url + '/object/' + ERB::Util.url_encode(params[:id]) + '.zip'
+        redirect_to Settings.stacks.url + '/object/' + ERB::Util.url_encode(params[:id]) + '.zip', allow_other_host: true
       end
     end
   end
@@ -54,7 +54,7 @@ class PurlController < ApplicationController
   # rubocop:enable Metrics/AbcSize
 
   def file
-    redirect_to Settings.stacks.url + '/file/druid:' + ERB::Util.url_encode(params[:id]) + '/' + ERB::Util.url_encode(params[:file])
+    redirect_to Settings.stacks.url + '/file/druid:' + ERB::Util.url_encode(params[:id]) + '/' + ERB::Util.url_encode(params[:file]), allow_other_host: true
   end
 
   private

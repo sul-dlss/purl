@@ -14,14 +14,12 @@
 // const imagePath = (name) => images(name, true)
 
 import Rails from 'rails-ujs';
-import Turbolinks from 'turbolinks';
 import 'jquery';
 import 'jquery.oembed.js';
 import 'jQuery.XDomainRequest.js';
 import 'bootstrap';
 
 Rails.start();
-Turbolinks.start();
 
 import '../../assets/javascripts/analytics.js';
 import '../../assets/javascripts/feedback_form.js';

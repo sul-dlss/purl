@@ -39,11 +39,15 @@ resource_url = Settings.embed.url.sub('%{druid}', TEST_DRUID)
 OkComputer::Registry.register 'embed_service',
   OkComputer::HttpCheck.new(Settings.embed.iframe.url_template.sub('{?url*}', "?url=#{resource_url}"))
 
-OkComputer::Registry.register 'feedback_mailer', OkComputer::ActionMailerCheck.new(FeedbackMailer)
+OkComputer.make_optional %w(stacks_service embed_service)
 
-# TODO: When SW has a more benign endpoint for up-ness checks, we should use that.
-#  For now, concerned about hammering SearchWorks with pings, as these will all hit the Solr index.
-#  This is minor functionality for purl -- "View in SearchWorks" link
-#OkComputer::Registry.register 'searchworks', OkComputer::HttpCheck.new("#{Settings.searchworks.url}#{TEST_DRUID}")
+ActiveSupport.on_load(:action_controller) do
+  OkComputer::Registry.register 'feedback_mailer', OkComputer::ActionMailerCheck.new(FeedbackMailer)
 
-OkComputer.make_optional %w(stacks_service embed_service feedback_mailer)
+  # TODO: When SW has a more benign endpoint for up-ness checks, we should use that.
+  #  For now, concerned about hammering SearchWorks with pings, as these will all hit the Solr index.
+  #  This is minor functionality for purl -- "View in SearchWorks" link
+  #OkComputer::Registry.register 'searchworks', OkComputer::HttpCheck.new("#{Settings.searchworks.url}#{TEST_DRUID}")
+
+  OkComputer.make_optional %w(feedback_mailer)
+end
