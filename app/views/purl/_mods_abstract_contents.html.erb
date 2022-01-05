@@ -12,7 +12,7 @@
   <% if contents.respond_to?(:values) %>
     <%= mods_display_label(contents.label) %>
     <dd class="section-contents">
-      <%= simple_format contents.values.join.gsub('&#10;', "\n").html_safe, {}, sanitize: false %>
+      <%= simple_format contents.values.join("\n\n").gsub('&#10;', "\n").html_safe, {}, sanitize: false %>
     </dd>
   <% end %>
 <% end %>
