@@ -43,8 +43,18 @@ module ApplicationHelper
     str.gsub(/\(c\) Copyright/i, '© Copyright')
   end
 
-  def format_mods_content(values)
-    text = h values.join("\n\n").gsub('&#10;', "\n")
-    simple_format text, {}, sanitize: false
+  def format_mods_content(values, tags: %w[em i strong b])
+    # do a little cleanup of the text before passing it through the sanitizer + formatter
+    text = values.join("\n\n").gsub('&#10;', "\n").gsub(%r{<[^/> ]+}) do |possible_tag|
+      # Allow potentially valid HTML tags through to the sanitizer step, and HTML escape the rest
+      if tags.include? possible_tag[1..]
+        possible_tag
+      else
+        "&lt;#{possible_tag[1..]}"
+      end
+    end
+
+    safe_html = sanitize(text, tags: allowed_tags)
+    simple_format safe_html, {}, sanitize: false
   end
 end

@@ -19,5 +19,10 @@ describe ApplicationHelper do
       expected = '1. sér. (1787 à 1799) t. 1-&lt;t. 82&gt;; --2. sér. (1880-1860) t. 1-127, 1862-1913.'
       expect(helper.format_mods_content([value])).to eq "<p>#{expected}</p>"
     end
+
+    it 'leaves permitted HTML pages alone' do
+      value = 'This is a <i>Title</i> for display.'
+      expect(helper.format_mods_content([value])).to eq "<p>#{value}</p>"
+    end
   end
 end
