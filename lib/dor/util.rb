@@ -2,7 +2,7 @@
 
 module Dor
   # constants
-  DRUID_REGEX = /^([a-z]{2})(\d{3})([a-z]{2})(\d{4})$/i.freeze
+  DRUID_REGEX = /^([a-z]{2})(\d{3})([a-z]{2})(\d{4})$/i
 
   class Util
     #
