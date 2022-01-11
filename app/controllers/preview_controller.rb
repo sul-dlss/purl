@@ -2,8 +2,8 @@ class PreviewController < ApplicationController
   def index; end
 
   def show
-    @mods = ModsDisplayObject.new(params[:mods])
-    @mods = @mods.render_mods_display(@mods)
+    @mods = ModsDisplay::Record.new(params[:mods])
+    @mods = @mods.mods_display_html
     @purl = @document = OpenStruct.new(
       mods?: true,
       mods: @mods,
