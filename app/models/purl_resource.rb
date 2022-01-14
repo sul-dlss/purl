@@ -90,10 +90,7 @@ class PurlResource
   end
 
   def mods
-    @mods ||= begin
-      m = mods_display_object.render_mods_display(mods_display_object)
-      m unless m.blank?
-    end
+    @mods ||= mods_display_object.mods_display_html&.presence
   end
 
   def iiif_manifest
@@ -256,7 +253,7 @@ class PurlResource
   private
 
   def mods_display_object
-    @mods_display_object ||= ModsDisplayObject.new(mods_body)
+    @mods_display_object ||= ModsDisplay::Record.new(mods_body)
   end
 
   def mods_document
