@@ -145,7 +145,7 @@ GEM
     dry-core (0.7.1)
       concurrent-ruby (~> 1.0)
     dry-inflector (0.2.1)
-    dry-initializer (3.1.0)
+    dry-initializer (3.1.1)
     dry-logic (1.2.0)
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.5, >= 0.5)
@@ -179,7 +179,7 @@ GEM
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
-    honeybadger (4.9.0)
+    honeybadger (4.10.0)
     htmlentities (4.3.4)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
@@ -212,7 +212,7 @@ GEM
       iso-639
       nokogiri (>= 1.6.6)
       nom-xml (~> 1.0)
-    mods_display (1.0.0.alpha3)
+    mods_display (1.0.0.alpha4)
       i18n
       stanford-mods (~> 2.1)
       view_component
@@ -279,7 +279,7 @@ GEM
     recaptcha (5.8.1)
       json
     regexp_parser (2.2.0)
-    request_store (1.5.0)
+    request_store (1.5.1)
       rack (>= 1.4)
     rexml (3.2.5)
     rspec-core (3.10.1)
