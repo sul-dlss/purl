@@ -5,7 +5,7 @@ describe 'Previewing MODS' do
     it 'works' do
       visit '/preview'
       fill_in :mods, visible: false, with: <<-EOXML
-      <mods>
+      <mods xmlns="http://www.loc.gov/mods/v3">
         <titleInfo>
           <title>Main Title of an Entry</title>
           <subTitle>the sub title of the entry</subTitle>
