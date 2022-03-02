@@ -105,8 +105,8 @@ class IiifPresentationManifest
       'label' => title,
       'attribution' => copyright || 'Provided by the Stanford University Libraries',
       'logo' => {
-        '@id' => 'https://stacks.stanford.edu/image/iiif/wy534zh7137%2FSULAIR_rosette/full/400,/0/default.jpg',
-        'service' => iiif_service('https://stacks.stanford.edu/image/iiif/wy534zh7137%2FSULAIR_rosette')
+        '@id' => 'https://stacks.stanford.edu/image/iiif/wy534zh7137/SULAIR_rosette/full/400,/0/default.jpg',
+        'service' => iiif_service('https://stacks.stanford.edu/image/iiif/wy534zh7137/SULAIR_rosette')
       },
       'seeAlso' => {
         '@id' => controller.purl_url(druid, format: 'mods'),
@@ -357,7 +357,7 @@ class IiifPresentationManifest
   end
 
   def stacks_iiif_base_url(druid, filename)
-    "#{Settings.stacks.url}/image/iiif/#{druid}%2F#{ERB::Util.url_encode(File.basename(filename, '.*'))}"
+    "#{Settings.stacks.url}/image/iiif/#{druid}/#{ERB::Util.url_encode(File.basename(filename, '.*'))}"
   end
 
   def stacks_file_url(druid, filename)

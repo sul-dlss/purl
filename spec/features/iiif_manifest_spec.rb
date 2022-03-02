@@ -10,7 +10,7 @@ describe 'IIIF v2 manifests' do
     expect(json['description']).to eq 'Tom.1. No.9. (top right).'
     expect(json['attribution']).to start_with 'This work has been identified as being free of known restrictions'
     expect(json['seeAlso']['@id']).to eq 'http://www.example.com/bb157hs6068.mods'
-    expect(json['thumbnail']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
+    expect(json['thumbnail']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068/bb157hs6068_05_0001/full/!400,400/0/default.jpg'
 
     expect(json['sequences'].length).to eq 1
     canvas = json['sequences'].first['canvases'].first
@@ -23,7 +23,7 @@ describe 'IIIF v2 manifests' do
 
     expect(image['resource']['height']).to eq 9040
     expect(image['resource']['width']).to eq 10_481
-    expect(image['resource']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/full/0/default.jpg'
+    expect(image['resource']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068/bb157hs6068_05_0001/full/full/0/default.jpg'
 
     expect(json['metadata'].class).to eq Array
     expect(json['metadata'].size).to eq(22) # 20 DC elements are there + the publish date + Available Online
@@ -60,7 +60,7 @@ describe 'IIIF v2 manifests' do
     visit '/bb157hs6068/iiif/manifest.json'
     json = JSON.parse(page.body)
 
-    expect(json['thumbnail']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
+    expect(json['thumbnail']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068/bb157hs6068_05_0001/full/!400,400/0/default.jpg'
     expect(json['thumbnail']['@type']).to eq 'dctypes:Image'
     expect(json['thumbnail']['width']).to eq 400
     expect(json['thumbnail']['height']).to eq 345
@@ -69,13 +69,13 @@ describe 'IIIF v2 manifests' do
   it 'includes the representative thumbnail as part of the image sequence' do
     visit '/rf433wv2584/iiif/manifest.json'
     json = JSON.parse(page.body)
-    expect(json['thumbnail']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/rf433wv2584%2F9082000/full/!400,400/0/default.jpg'
+    expect(json['thumbnail']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/rf433wv2584/9082000/full/!400,400/0/default.jpg'
 
     expect(json['sequences'].length).to eq 1
     canvas = json['sequences'].first['canvases'].first
     expect(canvas['images'].length).to eq 1
     image = canvas['images'].first
-    expect(image['resource']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/rf433wv2584%2F9082000/full/full/0/default.jpg'
+    expect(image['resource']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/rf433wv2584/9082000/full/full/0/default.jpg'
   end
 
   it 'includes canvas rendering of jp2 if downloadable' do
@@ -272,7 +272,7 @@ describe 'IIIF v2 manifests' do
         expect(canvas['label']).to eq 'Image 1'
 
         image = canvas['images'].first
-        expect(image['resource']['@id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/full/0/default.jpg'
+        expect(image['resource']['@id']).to end_with '/image/iiif/cg767mn6478/2542A/full/full/0/default.jpg'
         expect(image['resource']['height']).to eq 4747
         expect(image['resource']['width']).to eq 6475
       end
@@ -295,7 +295,7 @@ describe 'IIIF v2 manifests' do
         expect(canvas['label']).to eq 'Image 1'
 
         image = canvas['images'].first
-        expect(image['resource']['@id']).to end_with '/image/iiif/jw923xn5254%2F2542B/full/full/0/default.jpg'
+        expect(image['resource']['@id']).to end_with '/image/iiif/jw923xn5254/2542B/full/full/0/default.jpg'
         expect(image['resource']['height']).to eq 4675
         expect(image['resource']['width']).to eq 3139
       end
@@ -310,7 +310,7 @@ describe 'IIIF v2 manifests' do
 
         json = JSON.parse(page.body)
         expect(json['label']).to start_with 'Carey\'s American Atlas'
-        expect(json['thumbnail']['@id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/!400,400/0/default.jpg' # first child
+        expect(json['thumbnail']['@id']).to end_with '/image/iiif/cg767mn6478/2542A/full/!400,400/0/default.jpg' # first child
         expect(json['sequences'].length).to eq 1
         expect(json['sequences'].first['canvases'].length).to eq 23
 
@@ -319,7 +319,7 @@ describe 'IIIF v2 manifests' do
 
         expect(canvas['images'].length).to eq 1
         image = canvas['images'].first
-        expect(image['resource']['@id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/full/0/default.jpg' # first child
+        expect(image['resource']['@id']).to end_with '/image/iiif/cg767mn6478/2542A/full/full/0/default.jpg' # first child
         expect(image['resource']['height']).to eq 4747
         expect(image['resource']['width']).to eq 6475
 
@@ -328,7 +328,7 @@ describe 'IIIF v2 manifests' do
 
         expect(canvas['images'].length).to eq 1
         image = canvas['images'].first
-        expect(image['resource']['@id']).to end_with '/image/iiif/jw923xn5254%2F2542B/full/full/0/default.jpg' # second child
+        expect(image['resource']['@id']).to end_with '/image/iiif/jw923xn5254/2542B/full/full/0/default.jpg' # second child
         expect(image['resource']['height']).to eq 4675
         expect(image['resource']['width']).to eq 3139
       end
@@ -364,13 +364,13 @@ describe 'IIIF v2 manifests' do
       image_ids = json['sequences'].flat_map { |x| x['canvases'] }.flat_map { |x| x['images'] }.map { |x| x['resource']['@id'] }
 
       # handle spaces
-      expect(image_ids).to include 'https://stacks.stanford.edu/image/iiif/fg019pm1396%2FJungleCat%20x/full/full/0/default.jpg'
+      expect(image_ids).to include 'https://stacks.stanford.edu/image/iiif/fg019pm1396/JungleCat%20x/full/full/0/default.jpg'
 
       # handle percent signs
-      expect(image_ids).to include 'https://stacks.stanford.edu/image/iiif/fg019pm1396%2FJungleCat%2520x/full/full/0/default.jpg'
+      expect(image_ids).to include 'https://stacks.stanford.edu/image/iiif/fg019pm1396/JungleCat%2520x/full/full/0/default.jpg'
 
       # xml escaped stuff
-      expect(image_ids).to include 'https://stacks.stanford.edu/image/iiif/fg019pm1396%2FJungleCat%26x/full/full/0/default.jpg'
+      expect(image_ids).to include 'https://stacks.stanford.edu/image/iiif/fg019pm1396/JungleCat%26x/full/full/0/default.jpg'
     end
   end
 end
