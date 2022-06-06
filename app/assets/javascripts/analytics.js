@@ -19,7 +19,7 @@ GoogleAnalytics = (function() {
   return GoogleAnalytics;
 })();
 
-$(document).on("turbolinks:load", function(){
+$(function(){
   GoogleAnalytics.load();
 
   if (!window.ga) return;

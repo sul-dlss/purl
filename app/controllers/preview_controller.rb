@@ -15,6 +15,6 @@ class PreviewController < ApplicationController
   end
 
   def self.local_prefixes
-    [controller_path, '/purl']
+    [controller_path, 'purl']
   end
 end
