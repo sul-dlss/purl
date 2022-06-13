@@ -1,11 +1,19 @@
-(function($) {
-  $("a.embed").each(function() {
+function setupOembed($) {
+  $("a.embed").each(function (embed) {
     $.fn.oembed.providers = [
-      new $.fn.oembed.OEmbedProvider("purl", "rich", [$(this).attr('href')], $(this).data('oembed-provider'), {
-        dataType: 'json'
-      }),
+      new $.fn.oembed.OEmbedProvider(
+        "purl",
+        "rich",
+        [$(embed).attr('href')],
+        $(embed).data('oembed-provider'),
+        { dataType: 'json' }
+      ),
     ];
 
-    $(this).oembed();
+    $(embed).oembed();
   });
-})(jQuery);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  setupOembed(jQuery)
+})
