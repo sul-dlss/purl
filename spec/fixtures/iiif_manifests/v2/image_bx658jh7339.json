@@ -5,10 +5,10 @@
   "label": "M. de Courville : [estampe]",
   "attribution": "Provided by the Stanford University Libraries",
   "logo": {
-    "@id": "https://stacks.stanford.edu/image/iiif/wy534zh7137%2FSULAIR_rosette/full/400,/0/default.jpg",
+    "@id": "https://stacks.stanford.edu/image/iiif/wy534zh7137/SULAIR_rosette/full/400,/0/default.jpg",
     "service": {
       "@context": "http://iiif.io/api/image/2/context.json",
-      "@id": "https://stacks.stanford.edu/image/iiif/wy534zh7137%2FSULAIR_rosette",
+      "@id": "https://stacks.stanford.edu/image/iiif/wy534zh7137/SULAIR_rosette",
       "profile": "http://iiif.io/api/image/2/level1.json"
     }
   },
@@ -78,12 +78,12 @@
     "value": "2013-12-14T16:51:21-08:00"
   }],
   "thumbnail": {
-    "@id": "https://stacks.stanford.edu/image/iiif/bx658jh7339%2FT0000001/full/!400,400/0/default.jpg",
+    "@id": "https://stacks.stanford.edu/image/iiif/bx658jh7339/T0000001/full/!400,400/0/default.jpg",
     "@type": "dctypes:Image",
     "format": "image/jpeg",
     "service": {
       "@context": "http://iiif.io/api/image/2/context.json",
-      "@id": "https://stacks.stanford.edu/image/iiif/bx658jh7339%2FT0000001",
+      "@id": "https://stacks.stanford.edu/image/iiif/bx658jh7339/T0000001",
       "profile": "http://iiif.io/api/image/2/level1.json"
     }
   },
@@ -102,14 +102,14 @@
         "@type": "oa:Annotation",
         "motivation": "sc:painting",
         "resource": {
-          "@id": "https://stacks.stanford.edu/image/iiif/bx658jh7339%2FT0000001/full/full/0/default.jpg",
+          "@id": "https://stacks.stanford.edu/image/iiif/bx658jh7339/T0000001/full/full/0/default.jpg",
           "@type": "dctypes:Image",
           "format": "image/jpeg",
           "height": 2608,
           "width": 1680,
           "service": {
             "@context": "http://iiif.io/api/image/2/context.json",
-            "@id": "https://stacks.stanford.edu/image/iiif/bx658jh7339%2FT0000001",
+            "@id": "https://stacks.stanford.edu/image/iiif/bx658jh7339/T0000001",
             "profile": "http://iiif.io/api/image/2/level1.json"
           }
         },

@@ -14,9 +14,9 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       'label' => { en: [title] },
       'requiredStatement' => iiif_key_value('Attribution', attribution),
       'logo' => [{
-        'id' => 'https://stacks.stanford.edu/image/iiif/wy534zh7137%2FSULAIR_rosette/full/400,/0/default.jpg',
+        'id' => 'https://stacks.stanford.edu/image/iiif/wy534zh7137/SULAIR_rosette/full/400,/0/default.jpg',
         'type' => 'Image',
-        'service' => [iiif_image_v2_service('https://stacks.stanford.edu/image/iiif/wy534zh7137%2FSULAIR_rosette')]
+        'service' => [iiif_image_v2_service('https://stacks.stanford.edu/image/iiif/wy534zh7137/SULAIR_rosette')]
       }],
       'seeAlso' => [{
         'id' => controller.purl_url(druid, format: 'mods'),
