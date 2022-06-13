@@ -1,19 +1,17 @@
-function setupOembed($) {
-  $("a.embed").each(function (embed) {
-    $.fn.oembed.providers = [
-      new $.fn.oembed.OEmbedProvider(
-        "purl",
-        "rich",
-        [$(embed).attr('href')],
-        $(embed).data('oembed-provider'),
-        { dataType: 'json' }
-      ),
-    ];
+(function ($) {
+  document.addEventListener("DOMContentLoaded", function () {
+    $("a.embed").each(function () {
+      $.fn.oembed.providers = [
+        new $.fn.oembed.OEmbedProvider(
+          "purl",
+          "rich",
+          [$(this).attr('href')],
+          $(this).data('oembed-provider'),
+          { dataType: 'json' }
+        ),
+      ];
 
-    $(embed).oembed();
-  });
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  setupOembed(jQuery)
-})
+      $(this).oembed();
+    });
+  })
+})(jQuery);
