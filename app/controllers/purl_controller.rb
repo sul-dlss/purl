@@ -39,7 +39,7 @@ class PurlController < ApplicationController
 
       format.jpeg do
         if @purl.representative_thumbnail?
-          redirect_to @purl.representative_thumbnail
+          redirect_to @purl.representative_thumbnail, allow_other_host: true
         else
           redirect_to view_context.image_path('sul-logo-stacked.svg')
         end
