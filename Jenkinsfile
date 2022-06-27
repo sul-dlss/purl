@@ -23,10 +23,12 @@ pipeline {
           export DEPLOY=1
 
           # Load RVM
-          rvm use 2.7.1@purl --create
+          rvm use 3.0.3@purl --create
           gem install bundler
 
+          echo "gem 'net-scp', github: 'cbeer/net-scp', branch: 'net-ssh-updates'" >> Gemfile
           bundle install --without production
+          bundle update net-ssh
 
           # Deploy it
           bundle exec cap $DEPLOY_ENVIRONMENT deploy
@@ -67,10 +69,12 @@ pipeline {
           export DEPLOY=1
 
           # Load RVM
-          rvm use 2.7.1@purl --create
+          rvm use 3.0.3@purl --create
           gem install bundler
 
+          echo "gem 'net-scp', github: 'cbeer/net-scp', branch: 'net-ssh-updates'" >> Gemfile
           bundle install --without production
+          bundle update net-ssh
 
           # Deploy it
           bundle exec cap $DEPLOY_ENVIRONMENT deploy
@@ -112,10 +116,12 @@ pipeline {
           export REVISION=$TAG_NAME
 
           # Load RVM
-          rvm use 2.7.1@purl --create
+          rvm use 3.0.3@purl --create
           gem install bundler
 
+          echo "gem 'net-scp', github: 'cbeer/net-scp', branch: 'net-ssh-updates'" >> Gemfile
           bundle install --without production
+          bundle update net-ssh
 
           # Deploy it
           bundle exec cap $DEPLOY_ENVIRONMENT deploy
