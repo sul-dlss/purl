@@ -12,7 +12,7 @@ describe 'IIIF v3 manifests' do
     expect(json['seeAlso'].first['id']).to eq 'http://www.example.com/bb157hs6068.mods'
     expect(json['thumbnail']).to be_an Array
     expect(json['thumbnail'].size).to eq 1
-    expect(json['thumbnail'].first['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
+    expect(json['thumbnail'].first['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068/bb157hs6068_05_0001/full/!400,400/0/default.jpg'
 
     expect(json['items'].length).to eq 1
     canvas = json['items'].first
@@ -25,7 +25,7 @@ describe 'IIIF v3 manifests' do
     image = canvas['items'].first['items'].first
     expect(image['body']['height']).to eq 9040
     expect(image['body']['width']).to eq 10_481
-    expect(image['body']['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/full/0/default.jpg'
+    expect(image['body']['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068/bb157hs6068_05_0001/full/full/0/default.jpg'
 
     expect(json['metadata'].class).to eq Array
     expect(json['metadata'].size).to eq(13) # 11 DC elements grouped by name are there + the publish date + Available Online
@@ -63,7 +63,7 @@ describe 'IIIF v3 manifests' do
 
     expect(json['thumbnail']).to be_an Array
     expect(json['thumbnail'].size).to eq 1
-    expect(json['thumbnail'].first['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
+    expect(json['thumbnail'].first['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068/bb157hs6068_05_0001/full/!400,400/0/default.jpg'
     expect(json['thumbnail'].first['type']).to eq 'Image'
     expect(json['thumbnail'].first['width']).to eq 400
     expect(json['thumbnail'].first['height']).to eq 345
@@ -169,7 +169,7 @@ describe 'IIIF v3 manifests' do
         expect(canvas['label']['en'].first).to eq 'Image 1'
 
         image = canvas['items'].first['items'].first
-        expect(image['body']['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/full/0/default.jpg'
+        expect(image['body']['id']).to end_with '/image/iiif/cg767mn6478/2542A/full/full/0/default.jpg'
         expect(image['body']['height']).to eq 4747
         expect(image['body']['width']).to eq 6475
       end
@@ -192,7 +192,7 @@ describe 'IIIF v3 manifests' do
         expect(canvas['label']['en'].first).to eq 'Image 1'
 
         image = canvas['items'].first['items'].first
-        expect(image['body']['id']).to end_with '/image/iiif/jw923xn5254%2F2542B/full/full/0/default.jpg'
+        expect(image['body']['id']).to end_with '/image/iiif/jw923xn5254/2542B/full/full/0/default.jpg'
         expect(image['body']['height']).to eq 4675
         expect(image['body']['width']).to eq 3139
       end
@@ -209,7 +209,7 @@ describe 'IIIF v3 manifests' do
         expect(json['label']['en'].first).to start_with 'Carey\'s American Atlas'
         expect(json['thumbnail']).to be_an Array
         expect(json['thumbnail'].size).to eq 1
-        expect(json['thumbnail'].first['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/!400,400/0/default.jpg' # first child
+        expect(json['thumbnail'].first['id']).to end_with '/image/iiif/cg767mn6478/2542A/full/!400,400/0/default.jpg' # first child
         expect(json['items'].length).to eq 23
 
         canvas = json['items'].first
@@ -218,7 +218,7 @@ describe 'IIIF v3 manifests' do
         expect(canvas['items'].length).to eq 1
         expect(canvas['items'].first['items'].length).to eq 1
         image = canvas['items'].first['items'].first
-        expect(image['body']['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/full/0/default.jpg' # first child
+        expect(image['body']['id']).to end_with '/image/iiif/cg767mn6478/2542A/full/full/0/default.jpg' # first child
         expect(image['body']['height']).to eq 4747
         expect(image['body']['width']).to eq 6475
 
@@ -228,7 +228,7 @@ describe 'IIIF v3 manifests' do
         expect(canvas['items'].length).to eq 1
         expect(canvas['items'].first['items'].length).to eq 1
         image = canvas['items'].first['items'].first
-        expect(image['body']['id']).to end_with '/image/iiif/jw923xn5254%2F2542B/full/full/0/default.jpg' # second child
+        expect(image['body']['id']).to end_with '/image/iiif/jw923xn5254/2542B/full/full/0/default.jpg' # second child
         expect(image['body']['height']).to eq 4675
         expect(image['body']['width']).to eq 3139
       end

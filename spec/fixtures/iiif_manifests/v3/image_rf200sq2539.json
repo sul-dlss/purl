@@ -4,10 +4,10 @@
    "label":"PC0002_353_poetry_and_prose_scene_at_monument_point_north_end_of_salt_lake",
    "attribution":"Provided by the Stanford University Libraries",
    "logo":{  
-      "@id":"https://stacks.stanford.edu/image/iiif/wy534zh7137%2FSULAIR_rosette/full/400,/0/default.jpg",
+      "@id":"https://stacks.stanford.edu/image/iiif/wy534zh7137/SULAIR_rosette/full/400,/0/default.jpg",
       "service":{  
          "@context":"http://iiif.io/api/image/2/context.json",
-         "@id":"https://stacks.stanford.edu/image/iiif/wy534zh7137%2FSULAIR_rosette",
+         "@id":"https://stacks.stanford.edu/image/iiif/wy534zh7137/SULAIR_rosette",
          "profile":"http://iiif.io/api/image/2/level1.json"
       }
    },
@@ -49,12 +49,12 @@
 		                   "width":5860,
 		                   "height":5027,
                            "body":{  
-                              "id":"https://stacks.stanford.edu/image/iiif/rf200sq2539%2FPC0002_356_the_last_rail_is_laid_scene_at_promontory_point_may_10_1869/full/full/0/default.jpg",
+                              "id":"https://stacks.stanford.edu/image/iiif/rf200sq2539/PC0002_356_the_last_rail_is_laid_scene_at_promontory_point_may_10_1869/full/full/0/default.jpg",
                               "type":"Image",
                               "format":"image/jpeg",
 							  "service": {
 							  	"@context": "http://iiif.io/api/image/2/context.json",
-							  	"@id": "https://stacks.stanford.edu/image/iiif/rf200sq2539%2FPC0002_356_the_last_rail_is_laid_scene_at_promontory_point_may_10_1869",
+							  	"@id": "https://stacks.stanford.edu/image/iiif/rf200sq2539/PC0002_356_the_last_rail_is_laid_scene_at_promontory_point_may_10_1869",
 							  	"profile": "http://iiif.io/api/image/2/level1.json"
 							  }
                            },
