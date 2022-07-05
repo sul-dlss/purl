@@ -218,7 +218,7 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     mini_portile2 (2.8.0)
-    minitest (5.16.1)
+    minitest (5.16.2)
     mods (3.0.2)
       edtf (~> 3.0)
       iso-639
@@ -228,7 +228,7 @@ GEM
       i18n
       stanford-mods (>= 3.0.0.alpha1, < 4)
       view_component
-    msgpack (1.5.2)
+    msgpack (1.5.3)
     net-imap (0.2.3)
       digest
       net-protocol
@@ -265,7 +265,7 @@ GEM
     puma (5.6.4)
       nio4r (~> 2.0)
     racc (1.6.0)
-    rack (2.2.3.1)
+    rack (2.2.4)
     rack-proxy (0.7.2)
       rack
     rack-test (2.0.2)
@@ -346,8 +346,8 @@ GEM
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.7.0, < 2.0)
-    rubocop-rspec (2.11.1)
-      rubocop (~> 1.19)
+    rubocop-rspec (2.12.1)
+      rubocop (~> 1.31)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
@@ -495,4 +495,4 @@ DEPENDENCIES
   webpacker (~> 5.x)
 
 BUNDLED WITH
-   2.2.32
+   2.3.17
