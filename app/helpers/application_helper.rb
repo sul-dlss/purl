@@ -44,7 +44,8 @@ module ApplicationHelper
   end
 
   def format_mods_content(values)
-    text = h values.join("\n\n").gsub('&#10;', "\n")
+    text = link_urls_and_email(values.join("\n\n").gsub('&#10;', "\n"))
+
     simple_format text, {}, sanitize: false
   end
 end
