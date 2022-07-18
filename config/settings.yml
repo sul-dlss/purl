@@ -20,7 +20,7 @@ purl_resource:
 
 embed:
   url: 'https://purl.stanford.edu/%{druid}'
-  url_template: 'https://purl.stanford.edu/embed{.format}{?url*,application_options*}'
+  url_template: 'https://embed.stanford.edu/embed{.format}{?url*,application_options*}'
   iframe:
     url_template: 'https://embed.stanford.edu/iframe/{?url*}'
   application_options:
