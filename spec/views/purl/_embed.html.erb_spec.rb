@@ -11,7 +11,7 @@ describe 'purl/_embed' do
     render
     expect(rendered).to have_selector '.purl-embed-viewer'
     embed = Nokogiri::HTML(rendered).css('.purl-embed-viewer')
-    expect(embed.attr('data-oembed-provider').to_s).to eq 'https://purl.stanford.edu/embed.json?hide_title=true&hide_metadata=true'
+    expect(embed.attr('data-oembed-provider').to_s).to eq 'https://embed.stanford.edu/embed.json?hide_title=true&hide_metadata=true'
   end
 
   it 'display a non-javascript fallback' do
