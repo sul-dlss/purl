@@ -95,7 +95,7 @@ GEM
       bundler (>= 1.2.0, < 3)
       thor (~> 1.0)
     cancancan (3.4.0)
-    capistrano (3.17.0)
+    capistrano (3.17.1)
       airbrussh (>= 1.0.0)
       i18n
       rake (>= 10.0.0)
@@ -178,7 +178,7 @@ GEM
       dry-schema (~> 1.8, >= 1.8.0)
     edtf (3.1.0)
       activesupport (>= 3.0, < 8.0)
-    erubi (1.10.0)
+    erubi (1.11.0)
     execjs (2.8.1)
     faraday (2.4.0)
       faraday-net_http (~> 2.0)
@@ -326,7 +326,7 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.11.0)
-    rubocop (1.32.0)
+    rubocop (1.33.0)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.1.0.0)
@@ -336,7 +336,7 @@ GEM
       rubocop-ast (>= 1.19.1, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.19.1)
+    rubocop-ast (1.20.1)
       parser (>= 3.1.1.0)
     rubocop-performance (1.14.3)
       rubocop (>= 1.7.0, < 2.0)
@@ -390,7 +390,7 @@ GEM
     sshkit (1.21.2)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
-    stanford-mods (3.2.0)
+    stanford-mods (3.3.1)
       activesupport
       mods (~> 3.0, >= 3.0.3)
     stimulus-rails (1.1.0)
@@ -412,8 +412,9 @@ GEM
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (2.2.0)
-    view_component (2.62.0)
+    view_component (2.64.0)
       activesupport (>= 5.0.0, < 8.0)
+      concurrent-ruby (~> 1.0)
       method_source (~> 1.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
@@ -494,4 +495,4 @@ DEPENDENCIES
   webpacker (~> 5.x)
 
 BUNDLED WITH
-   2.3.17
+   2.3.19
