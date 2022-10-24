@@ -29,7 +29,6 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-gem 'webpacker', '~> 5.x'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6.0'
 # Use Uglifier as compressor for JavaScript assets
