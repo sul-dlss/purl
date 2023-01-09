@@ -1,3 +1,5 @@
+import jQuery from 'jquery'
+
 /*!
  * jquery oembed plugin
  *

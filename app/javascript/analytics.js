@@ -1,4 +1,6 @@
-GoogleAnalytics = (function() {
+import $ from 'jquery'
+
+const GoogleAnalytics = (function() {
   function GoogleAnalytics() {}
 
   GoogleAnalytics.load = function() {

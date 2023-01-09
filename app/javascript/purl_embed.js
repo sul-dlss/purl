@@ -1,3 +1,5 @@
+import jQuery from 'jquery'
+
 (function ($) {
   document.addEventListener("DOMContentLoaded", function () {
     $("a.embed").each(function () {

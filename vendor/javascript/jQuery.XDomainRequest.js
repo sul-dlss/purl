@@ -1,3 +1,5 @@
+import jQuery from 'jquery'
+
 /*!
  * jQuery-ajaxTransport-XDomainRequest - v1.0.4 - 2015-03-05
  * https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest

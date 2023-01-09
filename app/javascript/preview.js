@@ -1,4 +1,5 @@
 import ace from 'ace-builds';
+import $ from 'jquery';
 
 $(document).ready(function(){
 

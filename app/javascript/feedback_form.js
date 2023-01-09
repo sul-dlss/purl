@@ -1,3 +1,6 @@
+import jQuery from 'jquery'
+const $ = jQuery
+
 $(function(){
   // Instantiates plugin for feedback form
 
@@ -21,38 +24,9 @@ $(function(){
 
     function Plugin(element, options) {
         this.element = element;
-        var $el, $form;
-
         this.options = $.extend({}, options);
         this._name = pluginName;
         this.init();
-    }
-
-    function submitListener() {
-      // Serialize and submit form if not on action url
-      $form.each(function(i, form){
-        if (location !== form.action){
-          $('#user_agent').val(navigator.userAgent);
-          $('#viewport').val('width:' + window.innerWidth + ' height:' + innerHeight);
-          $(form).on('submit', function(){
-            var valuesToSubmit = $(this).serialize();
-            $.ajax({
-              url: form.action,
-              data: valuesToSubmit,
-              type: 'post'
-            }).done(function(response){
-              if (isSuccess(response)){
-                // This is the BS5 way to toggle a collapsible
-                new bootstrap.Collapse($el);
-                $($form)[0].reset();
-              }
-              renderFlashMessages(response);
-            });
-            return false;
-          });
-
-        }
-      });
     }
 
     function isSuccess(response){
@@ -88,11 +62,11 @@ $(function(){
 
     Plugin.prototype = {
         init: function() {
-          $el = $(this.element);
-          $form = $($el).find('form');
+          this.$el = $(this.element);
+          this.$form = $(this.$el).find('form');
 
           // Add listener for form submit
-          submitListener();
+          this.submitListener();
 
           // Updates reporting from fields for current location
           $('span.reporting-from-field').html(location.href);
@@ -101,6 +75,33 @@ $(function(){
           // Focus message textarea when showing collapsible form
           $('#feedback-form').on('shown.bs.collapse', function () {
             $("textarea#message").focus();
+          });
+        },
+
+        submitListener: function () {
+          // Serialize and submit form if not on action url
+          this.$form.each(function(i, form){
+            if (location !== form.action){
+              $('#user_agent').val(navigator.userAgent);
+              $('#viewport').val('width:' + window.innerWidth + ' height:' + innerHeight);
+              $(form).on('submit', function(){
+                var valuesToSubmit = $(this).serialize();
+                $.ajax({
+                  url: form.action,
+                  data: valuesToSubmit,
+                  type: 'post'
+                }).done(function(response){
+                  if (isSuccess(response)){
+                    // This is the BS5 way to toggle a collapsible
+                    new bootstrap.Collapse(this.$el);
+                    this.$form[0].reset();
+                  }
+                  renderFlashMessages(response);
+                });
+                return false;
+              });
+    
+            }
           });
         }
     };
