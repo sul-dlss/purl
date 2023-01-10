@@ -15,5 +15,5 @@ import jQuery from 'jquery'
 
       $(this).oembed();
     });
-  })
+  }, { once: true })
 })(jQuery);
