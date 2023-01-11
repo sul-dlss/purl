@@ -3,6 +3,6 @@ import 'jquery.oembed';
 import 'jQuery.XDomainRequest';
 import 'bootstrap';
 
-import 'analytics';
 import 'feedback_form';
 import 'purl_embed';
+import('analytics'); // Dynamically import, so that a content-blocker doesn't break the scripts
