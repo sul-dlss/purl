@@ -1,7 +1,5 @@
-import jQuery from 'jquery'
-
-(function ($) {
-  document.addEventListener("DOMContentLoaded", function () {
+const Embed = {
+  init: function($) {
     $("a.embed").each(function () {
       $.fn.oembed.providers = [
         new $.fn.oembed.OEmbedProvider(
@@ -15,5 +13,7 @@ import jQuery from 'jquery'
 
       $(this).oembed();
     });
-  }, { once: true })
-})(jQuery);
+  }
+}
+
+export default Embed;

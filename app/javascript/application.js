@@ -4,5 +4,11 @@ import 'jQuery.XDomainRequest';
 import 'bootstrap';
 
 import 'feedback_form';
-import 'purl_embed';
+import Embed from 'purl_embed';
+import jQuery from 'jquery'
+
+window.addEventListener("load", () => {
+  Embed.init(jQuery)
+})
+
 import('analytics'); // Dynamically import, so that a content-blocker doesn't break the scripts
