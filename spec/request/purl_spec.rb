@@ -7,6 +7,14 @@ RSpec.describe 'PURL API', type: :request do
       expect(response).to be_successful
       expect(response.headers['Access-Control-Allow-Headers']).to include 'Accept'
     end
+
+    context 'for an unknown format' do
+      it 'returns 404 page' do
+        get '/bb157hs6068.X55'
+        expect(response).to have_http_status(:not_found)
+        expect(response.body).to include "The page you were looking for doesn't exist."
+      end
+    end
   end
 
   context 'IIIF v2 requests' do

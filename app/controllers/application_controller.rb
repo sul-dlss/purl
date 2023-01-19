@@ -29,8 +29,4 @@ class ApplicationController < ActionController::Base
   def object_not_ready
     render '/errors/unavailable', status: :not_found
   end
-
-  def missing_file
-    render '/errors/missing_file.html', status: :not_found
-  end
 end

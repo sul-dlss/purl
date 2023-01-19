@@ -63,4 +63,8 @@ class PurlController < ApplicationController
   def load_purl
     @purl = PurlResource.find(params[:id])
   end
+
+  def missing_file
+    render '/errors/missing_file', status: :not_found
+  end
 end
