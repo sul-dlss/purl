@@ -29,10 +29,6 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '>= 6.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 2.7.2'
 # A gem for simple rails environment specific config
 gem 'config'
 
@@ -51,11 +47,9 @@ gem 'okcomputer'
 gem 'mods_display', '~> 1.1'
 gem 'htmlentities'
 gem 'dor-rights-auth', '~> 1.6'
-gem 'bootstrap'
 gem 'faraday'
 gem 'addressable'
 gem 'tophat'
-gem 'sul_styles', '~> 0.6'
 
 # Use recaptcha gem to prevent robots spamming the feedback form
 gem 'recaptcha'
@@ -94,9 +88,6 @@ group :development, :test do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
 
-  # scss_lint will test the scss files to enfoce styles
-  gem 'scss_lint', require: false
-
   gem 'simplecov', require: false
 end
 
@@ -109,3 +100,5 @@ group :deployment do
   gem 'capistrano-shared_configs'
   gem 'dlss-capistrano'
 end
+
+gem "cssbundling-rails", "~> 1.1"
