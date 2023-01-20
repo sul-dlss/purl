@@ -12,7 +12,7 @@ Please create a github release before deploying.
 
 ## Requirements
 
-1. Ruby (2.2.5 or greater)
+1. Ruby (3.1 or greater)
 2. [bundler](http://bundler.io/) gem
 
 ## Installation
@@ -28,7 +28,7 @@ Move into the app and install dependencies
 
 Start the development server
 
-    $ rails s
+    $ bin/dev
 
 ## Configuring
 
