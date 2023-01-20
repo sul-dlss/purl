@@ -55,7 +55,6 @@ gem 'bootstrap'
 gem 'faraday'
 gem 'addressable'
 gem 'tophat'
-gem 'rails-file-icons'
 gem 'sul_styles', '~> 0.6'
 
 # Use recaptcha gem to prevent robots spamming the feedback form
