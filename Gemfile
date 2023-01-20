@@ -106,8 +106,6 @@ group :development, :test do
   gem 'simplecov', require: false
 end
 
-gem 'lograge'
-
 # Use Capistrano for deployment
 group :deployment do
   gem 'capistrano', '~> 3.0'
