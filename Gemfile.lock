@@ -127,9 +127,7 @@ GEM
     config (4.1.0)
       deep_merge (~> 1.2, >= 1.2.1)
       dry-validation (~> 1.0, >= 1.0.0)
-    connection_pool (2.3.0)
     crass (1.0.6)
-    dalli (3.2.3)
     date (3.3.3)
     debug (1.7.1)
       irb (>= 1.5.0)
@@ -447,8 +445,6 @@ DEPENDENCIES
   capistrano-shared_configs
   capybara
   config
-  connection_pool
-  dalli
   debug
   dlss-capistrano
   dor-rights-auth (~> 1.6)

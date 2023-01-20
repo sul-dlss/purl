@@ -15,9 +15,6 @@ OkComputer::Registry.register 'ruby_version', OkComputer::RubyVersionCheck.new
 OkComputer::Registry.register 'document_cache_root',
   OkComputer::DirectoryCheck.new(Settings.document_cache_root)
 
-# Check the memcache servers used by Rails.cache
-OkComputer::Registry.register 'rails_cache', OkComputer::GenericCacheCheck.new
-
 # NOTE:
 # Settings.purl_resource.public_xml, Settings.purl_resource.mods, and Settings.purl_resource.iiif_manifest
 #   exist in the document cache root on deployed environments.

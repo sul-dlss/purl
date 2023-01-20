@@ -63,11 +63,6 @@ gem 'recaptcha'
 
 # sul-dlss/osullivan#development has early support for generating IIIF v3 manifests
 gem 'iiif-presentation', github: 'sul-dlss/osullivan', branch: 'development'
-gem 'dalli'
-
-# connection_pool required for thread-safe operations in dalli >= 3.0
-# see https://github.com/petergoldstein/dalli/blob/v3.0.0/3.0-Upgrade.md
-gem 'connection_pool'
 
 group :production do
   gem 'newrelic_rpm'
