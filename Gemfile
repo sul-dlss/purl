@@ -86,7 +86,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 
   # RSpec for testing
-  gem 'rspec-rails', '~> 5.0'
+  gem 'rspec-rails', '~> 6.0'
 
   # Capybara for feature/integration tests
   gem 'capybara'
