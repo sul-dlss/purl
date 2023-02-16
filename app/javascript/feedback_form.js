@@ -1,3 +1,4 @@
+import { Collapse } from 'bootstrap'
 import jQuery from 'jquery'
 const $ = jQuery
 
@@ -79,6 +80,8 @@ $(function(){
         },
 
         submitListener: function () {
+          const el = this.$el;
+
           // Serialize and submit form if not on action url
           this.$form.each(function(i, form){
             if (location !== form.action){
@@ -93,8 +96,8 @@ $(function(){
                 }).done(function(response){
                   if (isSuccess(response)){
                     // This is the BS5 way to toggle a collapsible
-                    new bootstrap.Collapse(this.$el);
-                    this.$form[0].reset();
+                    new Collapse(el);
+                    form.reset();
                   }
                   renderFlashMessages(response);
                 });
