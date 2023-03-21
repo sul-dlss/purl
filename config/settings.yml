@@ -69,10 +69,10 @@ landing_page_druids:
 feedback:
   email_to: "cabeer@stanford.edu"
 
-GOOGLE_ANALYTICS_ID: "X-123"
-
 twitter:
   site: '@DigitalLib'
+
+analytics_debug: true
 
 recaptcha:
   site_key: 6Lc6BAAAAAAAAChqRbQZcn_yyyyyyyyyyyyyyyyy

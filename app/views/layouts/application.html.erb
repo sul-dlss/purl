@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="google-site-verification" content="<%= Settings.GOOGLE_SITE_VERIFICATION %>" />
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B11RSRZLRJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      <%# collection is a custom event parameter for getting an item's parent collection.
+            It is sent with every event if populated with a value %>
+      const config = {
+        collection: document.querySelector('link[rel="up"]')?.getAttribute('href')
+      }
+      
+      <% if Settings.analytics_debug %>
+        config.debug_mode = true
+      <% end %>
+          
+      gtag('config', 'G-B11RSRZLRJ', config)
+    </script>
+
     <%= title site: application_name, separator: '|', reverse: true %>
 
     <%= favicon_link_tag 'favicon.ico' %>
@@ -30,7 +50,7 @@
           <%= render 'shared/top_navbar' %>
           <%= render 'shared/brand_navbar' %>
 
-          <section id="main-container" role="main" data-analytics-id="<%= Settings.GOOGLE_ANALYTICS_ID %>">
+          <section id="main-container" role="main">
             <%= render partial: '/flash_msg', layout: 'shared/flash_messages' %>
             <%= yield %>
           </section>
