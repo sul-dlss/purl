@@ -6,6 +6,8 @@ export default class extends Controller {
   static targets = [ "input", "output" ]
 
   connect() {
+    ace.config.set('basePath', 'https://cdn.jsdelivr.net/npm/ace-builds@1.16.0/src-noconflict/')
+
     var editor = ace.edit("mods")
     editor.setTheme("ace/theme/monokai")
     editor.getSession().setMode("ace/mode/xml")

@@ -10,4 +10,4 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 pin 'analytics'
 pin 'feedback_form'
 pin "preview"
-pin "ace-builds", to: "https://ga.jspm.io/npm:ace-builds@1.12.3/src-noconflict/ace.js"
+pin "ace-builds", to: "https://ga.jspm.io/npm:ace-builds@1.16.0/src-noconflict/ace.js"
