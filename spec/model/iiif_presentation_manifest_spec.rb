@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe IiifPresentationManifest do
+RSpec.describe IiifPresentationManifest do
   let(:resource) { double }
   subject { described_class.new(resource) }
 

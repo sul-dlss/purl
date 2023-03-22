@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe ContentMetadata do
+RSpec.describe ContentMetadata do
   let(:document) { double(at_xpath: 'rs276tc2764') }
   subject(:content_metadata) { described_class.new(document) }
 

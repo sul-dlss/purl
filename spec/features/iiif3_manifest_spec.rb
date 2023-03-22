@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'IIIF v3 manifests' do
+RSpec.describe 'IIIF v3 manifests' do
   it 'works' do
     visit '/bb157hs6068/iiif3/manifest'
     json = JSON.parse(page.body)
