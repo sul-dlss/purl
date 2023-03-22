@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe FeedbackFormsController, type: :controller do
+RSpec.describe FeedbackFormsController, type: :controller do
   before do
     allow(Settings.feedback).to receive(:email_to).and_return('feedback@example.com')
   end

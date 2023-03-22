@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'purl', type: :feature do
+RSpec.describe 'purl', type: :feature do
   before do
     @image_object = 'xm166kd3734'
     @file_object = 'wp335yr5649'

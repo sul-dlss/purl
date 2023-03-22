@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Integration Scenarios' do
+RSpec.describe 'Integration Scenarios' do
   context 'with an EEMs object' do
     it 'works' do
       visit '/mr497sx5638'

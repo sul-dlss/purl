@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Previewing MODS' do
+RSpec.describe 'Previewing MODS' do
   context 'with an EEMs object' do
     it 'works' do
       visit '/preview'

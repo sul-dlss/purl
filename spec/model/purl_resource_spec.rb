@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe PurlResource do
+RSpec.describe PurlResource do
   describe 'resource methods' do
     let(:fake_response) { OpenStruct.new(success?: true, body: 'Content') }
 
