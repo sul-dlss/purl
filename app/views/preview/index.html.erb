@@ -1,5 +1,4 @@
 <% content_for(:head) do %>
-  <script type="module">import "preview"</script>
   <style>
   #examples, .mods {
     width: 80%;
@@ -25,34 +24,37 @@
 </style>
 <% end %>
 <h3>Enter MODS XML</h3>
-<%= form_with url: '/preview', method: 'POST', data: { behavior: 'mods-form' } do %>
-  <textarea name='mods'></textarea>
-  <div id="mods" class="mods" contenteditable="true"></div>
-  <br/><br/>
+<%= form_with url: '/preview', method: 'POST', data: { controller: "preview" } do %>
+  <textarea name='mods' data-preview-target="input"></textarea>
+  <div id="mods" class="mods" contenteditable="true" data-preview-target="output"></div>
+  <br><br>
   <button class='btn btn-primary btn-lg'>Show me the MODS!</button>
 <% end %>
-<a href="#examples">Examples</a><br/>
-<div id="examples" style="display:none">
-  <ol>
-    <li>
-      <textarea rows="6">
-        <mods>
-          <titleInfo>
-            <title>Main Title of an Entry</title>
-            <subTitle>the sub title of the entry</subTitle>
-          </titleInfo>
-        </mods></textarea>
-            </li>
-            <li>
-              <textarea rows="8">
-        <mods>
-          <name>
-            <namePart>Doe, John A., 1884-1938.</namePart>
-            <role>
-              <roleTerm>photographer</roleTerm>
-            </role>
-          </name>
-        </mods>
-      </textarea>
-  </li>
-</ol>
+<div data-controller='reveal'>
+  <a href="#examples" data-action="reveal#toggle">Examples</a><br>
+  <div id="examples" style="display:none" data-reveal-target="area">
+    <ol>
+      <li>
+        <textarea rows="6">
+          <mods xmlns="http://www.loc.gov/mods/v3">
+            <titleInfo>
+              <title>Main Title of an Entry</title>
+              <subTitle>the sub title of the entry</subTitle>
+            </titleInfo>
+          </mods></textarea>
+              </li>
+              <li>
+                <textarea rows="8">
+          <mods xmlns="http://www.loc.gov/mods/v3">
+            <name>
+              <namePart>Doe, John A., 1884-1938.</namePart>
+              <role>
+                <roleTerm>photographer</roleTerm>
+              </role>
+            </name>
+          </mods>
+        </textarea>
+      </li>
+    </ol>
+  </div>
+</div>
