@@ -48,7 +48,7 @@ gem 'mods_display', '~> 1.1'
 gem 'htmlentities'
 gem 'dor-rights-auth', '~> 1.6'
 gem 'faraday'
-gem 'addressable', '2.8.1' # Pinned until 2.8.3 is released https://github.com/sporkmonger/addressable/pull/499
+gem 'addressable'
 gem 'tophat'
 
 # Use recaptcha gem to prevent robots spamming the feedback form
