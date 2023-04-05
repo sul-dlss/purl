@@ -33,32 +33,67 @@ RSpec.describe PurlResource do
   end
 
   describe '#title' do
-    it 'extracts the title from the MODS' do
-      allow(subject).to receive(:mods_body).and_return <<-EOF
-      <?xml version="1.0" encoding="UTF-8"?>
-      <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
-        <titleInfo>
-          <title>The title from the MODS.</title>
-        </titleInfo>
-      </mods>
-      EOF
+    subject { instance.title }
+    let(:instance) { described_class.new }
 
-      expect(subject.title).to eq 'The title from the MODS.'
+    context 'with mods' do
+      before do
+        allow(instance).to receive(:mods_body).and_return mods_body
+      end
+
+      context 'with a single title' do
+        let(:mods_body) do
+          <<~EOF
+            <?xml version="1.0" encoding="UTF-8"?>
+            <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
+              <titleInfo>
+                <title>The title from the MODS.</title>
+              </titleInfo>
+            </mods>
+          EOF
+        end
+
+        it { is_expected.to eq 'The title from the MODS.' }
+      end
+
+      context 'with a primary title' do
+        let(:mods_body) do
+          <<~EOF
+            <?xml version="1.0" encoding="UTF-8"?>
+            <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
+              <titleInfo type="alternative" altRepGroup="1">
+                <title>[Pukhan p'osŭt'ŏ k'ŏlleksyŏn]</title>
+              </titleInfo>
+              <titleInfo type="alternative" altRepGroup="1">
+                <title>[북한 포스터 컬렉션]</title>
+              </titleInfo>
+              <titleInfo usage="primary">
+                <nonSort>[ </nonSort>
+                <title>North Korean poster collection]</title>
+              </titleInfo>
+            </mods>
+          EOF
+        end
+
+        it { is_expected.to eq '[ North Korean poster collection]' }
+      end
     end
 
-    it 'falls back on the public xml title' do
-      allow(subject).to receive(:mods_body).and_return(nil)
-      allow(subject).to receive(:public_xml_body).and_return <<-EOF
+    context 'without mods' do
+      before do
+        allow(instance).to receive(:mods_body).and_return(nil)
+        allow(instance).to receive(:public_xml_body).and_return <<-EOF
 
-      <?xml version="1.0" encoding="UTF-8"?>
-      <publicObject>
-        <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/">
-          <dc:title>The title from the public XML</dc:title>
-        </oai_dc:dc>
-      </publicObject>
-      EOF
+        <?xml version="1.0" encoding="UTF-8"?>
+        <publicObject>
+          <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/">
+            <dc:title>The title from the public XML</dc:title>
+          </oai_dc:dc>
+        </publicObject>
+        EOF
+      end
 
-      expect(subject.title).to eq 'The title from the public XML'
+      it { is_expected.to eq 'The title from the public XML' }
     end
   end
 
