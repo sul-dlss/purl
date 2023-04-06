@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe PurlResource do
+  let(:instance) { described_class.new }
+
   describe 'resource methods' do
     let(:fake_response) { OpenStruct.new(success?: true, body: 'Content') }
 
@@ -34,7 +36,6 @@ RSpec.describe PurlResource do
 
   describe '#title' do
     subject { instance.title }
-    let(:instance) { described_class.new }
 
     context 'with mods' do
       before do
@@ -94,6 +95,27 @@ RSpec.describe PurlResource do
       end
 
       it { is_expected.to eq 'The title from the public XML' }
+    end
+  end
+
+  describe '#embeddable?' do
+    subject { instance.embeddable? }
+    let(:content_metadata) { instance_double(ContentMetadata, resources: resources) }
+
+    before do
+      allow(instance).to receive(:content_metadata).and_return(content_metadata)
+    end
+
+    context 'with resources' do
+      let(:resources) { [instance_double(ContentMetadata::Resource)] }
+
+      it { is_expected.to be true }
+    end
+
+    context 'without resources' do
+      let(:resources) { [] }
+
+      it { is_expected.to be false }
     end
   end
 
