@@ -85,6 +85,12 @@ class PurlResource
     @content_metadata ||= ContentMetadata.new(public_xml.content_metadata)
   end
 
+  # @returns [Bool] are there resources that can be shown?
+  # This prevents adding links to the embed service, when that service can't generate a valid response.
+  def embeddable?
+    content_metadata.resources.any?
+  end
+
   def rights
     @rights ||= RightsMetadata.new(rights_metadata)
   end
