@@ -1,11 +1,11 @@
 GIT
-  remote: https://github.com/sul-dlss/osullivan.git
-  revision: 1f3c9fd96d34fc67405bd412f6470bef8ca3a455
-  branch: development
+  remote: https://github.com/iiif-prezi/osullivan.git
+  revision: 0548b1685bd75821a6c3064dcff0afd501e87153
+  branch: development2
   specs:
-    iiif-presentation (0.2.0)
+    iiif-presentation (1.1.0)
       activesupport (>= 3.2.18)
-      faraday (>= 0.9)
+      faraday (~> 2.7)
       json
 
 GEM
