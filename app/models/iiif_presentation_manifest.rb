@@ -439,7 +439,7 @@ class IiifPresentationManifest
     purl_resource.copyright
   end
 
-  # rubocop:disable Rails/OutputSafety
+  # rubocop:disable Rails/OutputSafety, Metrics/MethodLength
   def cdl_copyright_statement
     <<-EOSTATEMENT.html_safe
       <p>
@@ -467,5 +467,5 @@ class IiifPresentationManifest
       </p>
     EOSTATEMENT
   end
-  # rubocop:enable Rails/OutputSafety
+  # rubocop:enable Rails/OutputSafety, Metrics/MethodLength
 end
