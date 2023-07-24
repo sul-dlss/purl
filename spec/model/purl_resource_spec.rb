@@ -222,4 +222,73 @@ RSpec.describe PurlResource do
       expect(subject.collection).to eq 'jw357py5564'
     end
   end
+
+  describe '#catalog_key' do
+    context 'with a native FOLIO hrid' do
+      before do
+        allow(subject).to receive(:public_xml_body).and_return <<-EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <publicObject>
+            <identityMetadata>
+              <otherId name="folio_instance_hrid">in0001</otherId>
+            </identityMetadata>
+          </publicObject>
+        EOF
+      end
+
+      it 'strips the leading a from the catkey value' do
+        expect(subject.catalog_key).to eq 'in0001'
+      end
+    end
+
+    context 'with a migrated FOLIO hrid' do
+      before do
+        allow(subject).to receive(:public_xml_body).and_return <<-EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <publicObject>
+            <identityMetadata>
+              <otherId name="folio_instance_hrid">a12345</otherId>
+            </identityMetadata>
+          </publicObject>
+        EOF
+      end
+
+      it 'strips the leading a from the catkey value' do
+        expect(subject.catalog_key).to eq '12345'
+      end
+    end
+
+    context 'with a catkey' do
+      before do
+        allow(subject).to receive(:public_xml_body).and_return <<-EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <publicObject>
+            <identityMetadata>
+              <otherId name="catkey">12345</otherId>
+            </identityMetadata>
+          </publicObject>
+        EOF
+      end
+
+      it 'uses the catkey value' do
+        expect(subject.catalog_key).to eq '12345'
+      end
+    end
+
+    context 'without any id data' do
+      before do
+        allow(subject).to receive(:public_xml_body).and_return <<-EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <publicObject>
+            <identityMetadata>
+            </identityMetadata>
+          </publicObject>
+        EOF
+      end
+
+      it 'uses the catkey value' do
+        expect(subject.catalog_key).to be_nil
+      end
+    end
+  end
 end

@@ -18,10 +18,11 @@ class PublicXml
   end
 
   def catalog_key
+    @catalog_key ||= document.root.at_xpath('identityMetadata/otherId[@name="catkey"]').try(:text).presence
     @catalog_key ||= begin
-      key = document.root.at_xpath('identityMetadata/otherId[@name="catkey"]').try(:text)
-
-      key if key.present?
+      key = document.root.at_xpath('identityMetadata/otherId[@name="folio_instance_hrid"]').try(:text).presence
+      key = key.delete_prefix('a') if key&.match?(/^a\d+$/)
+      key
     end
   end
 
