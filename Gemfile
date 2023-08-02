@@ -80,7 +80,6 @@ group :development, :test do
   gem 'capybara'
 
   gem 'selenium-webdriver', '!= 3.13.0'
-  gem 'webdrivers'
 
   # Rubocop is a static code analyzer to enforce style.
   gem 'rubocop', require: false
