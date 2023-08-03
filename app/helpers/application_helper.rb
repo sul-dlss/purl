@@ -6,7 +6,7 @@ module ApplicationHelper
   end
 
   def show_feedback_form?
-    Settings.feedback.email_to.present?
+    Settings.feedback.email_to.present? && !current_page?(feedback_path)
   end
 
   def link_to_purl(druid)
