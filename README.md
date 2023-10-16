@@ -25,6 +25,7 @@ Move into the app and install dependencies
 
     $ cd purl
     $ bundle install
+    $ yarn
 
 Start the development server
 
