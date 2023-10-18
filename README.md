@@ -1,18 +1,12 @@
-[![Build Status](https://travis-ci.org/sul-dlss/purl.svg?branch=master)](https://travis-ci.org/sul-dlss/purl)
-[![Code Climate](https://codeclimate.com/github/sul-dlss/purl/badges/gpa.svg)](https://codeclimate.com/github/sul-dlss/purl)
-[![Code Climate Test Coverage](https://codeclimate.com/github/sul-dlss/purl/badges/coverage.svg)](https://codeclimate.com/github/sul-dlss/purl/coverage)
-[![GitHub version](https://badge.fury.io/gh/sul-dlss%2Fpurl.svg)](https://badge.fury.io/gh/sul-dlss%2Fpurl)
+[![Build Status](https://github.com/sul-dlss/purl/actions/workflows/ruby.yml/badge.svg)](https://github.com/sul-dlss/purl/actions/workflows/ruby.yml)
 
 # PURL
 
 PURL service is a URL resolver that translates a reference to a digital object (in the form of a `druid`), into a full content representation of that object as available in public access environment
 
-
-Please create a github release before deploying.
-
 ## Requirements
 
-1. Ruby (3.1 or greater)
+1. Ruby (3.2 or greater)
 2. [bundler](http://bundler.io/) gem
 
 ## Installation
@@ -55,8 +49,4 @@ The RuboCop style enforcement can be run without running the tests
 
 ## Deploying
 
-Please create a github release before deploying to production.
-
-Capistrano is used for deployment
-
-    $ cap dev deploy
+Deployment is handled automatically via Jenkins when a release is published to GitHub.
