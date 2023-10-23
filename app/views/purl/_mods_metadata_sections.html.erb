@@ -7,6 +7,7 @@
   bibliography = render(partial: "mods_bibliographic", locals: {document: document})
   contact = render(partial: "mods_contact", locals: {document: document})
   find_it = render(partial: "find_it", locals: {document: document})
+  collection_items = render(partial: "collection_items", locals: {document: document})
 %>
 
 <% if description.present? %>
@@ -84,6 +85,18 @@
     </div>
   </div>
 <% end %>
+
+<% if collection_items.present? %>
+  <div class="section" id="<%= t('record_side_nav.find_it.id') %>" data-side-nav-class="<%= t('record_side_nav.find_it.id') %>">
+    <div class="section-heading">
+      <h2><%= t('record_side_nav.find_it.icon').html_safe %> Items in collection</h2>
+    </div>
+    <div class="section-body">
+      <%= collection_items %>
+    </div>
+  </div>
+<% end %>
+
 
 <% if find_it.present? %>
   <div class="section" id="<%= t('record_side_nav.find_it.id') %>" data-side-nav-class="<%= t('record_side_nav.find_it.id') %>">

@@ -80,6 +80,7 @@ class PurlResource
   end
 
   delegate :rights_metadata, to: :public_xml
+  delegate :object_type, to: :public_xml
 
   def content_metadata
     @content_metadata ||= ContentMetadata.new(public_xml.content_metadata)

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:gk894yk3598" published="2023-06-30T23:36:01Z" publishVersion="cocina-models/0.90.0">
+  <identityMetadata>
+    <objectType>collection</objectType>
+    <objectLabel>Acquisitions Serials</objectLabel>
+    <sourceId source="sul">Hydrus:collection-amanheim-2017-05-12T20:11:22.791Z</sourceId>
+  </identityMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or confidentiality rights of individuals. Content distributed via the Stanford Digital Repository may be subject to additional license and use restrictions applied by the depositor.</human>
+      <license/>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:gk894yk3598">
+    
+    
+  </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Acquisitions Serials</dc:title>
+    <dc:type>Collection</dc:type>
+    <dc:description>Collection to load serial titles in digital format into the SDR.</dc:description>
+    <dc:identifier>https://purl.stanford.edu/gk894yk3598</dc:identifier>
+    <dc:description type="contact" displayLabel="Contact">amanheim@stanford.edu</dc:description>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>Acquisitions Serials</title>
+    </titleInfo>
+    <typeOfResource collection="yes">mixed material</typeOfResource>
+    <abstract>Collection to load serial titles in digital format into the SDR.</abstract>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/gk894yk3598</url>
+    </location>
+    <note type="contact" displayLabel="Contact">amanheim@stanford.edu</note>
+    <accessCondition type="useAndReproduction">User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or confidentiality rights of individuals. Content distributed via the Stanford Digital Repository may be subject to additional license and use restrictions applied by the depositor.</accessCondition>
+  </mods>
+  <releaseData>
+    <release to="Searchworks">false</release>
+  </releaseData>
+</publicObject>

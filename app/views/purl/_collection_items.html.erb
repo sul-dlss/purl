@@ -1,0 +1,3 @@
+<% if @purl.object_type == 'collection' && @purl.catalog_key %>
+  <%= link_to 'View items in this collection in SearchWorks', "#{Settings.searchworks.url}/catalog?f[collection][]=#{@purl.catalog_key}" %>
+<% end %>

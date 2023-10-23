@@ -10,6 +10,7 @@ RSpec.describe 'purl', type: :feature do
     @unpublished_object = 'ab123cd4567'
     @legacy_object = 'ir:rs276tc2764'
     @nested_resources_object = 'dm907qj6498'
+    @collection = 'bb631ry3167'
   end
 
   describe 'manifest' do
@@ -203,6 +204,14 @@ RSpec.describe 'purl', type: :feature do
     it 'included in purl page' do
       visit "/#{@file_object}"
       expect(page).to have_content 'User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or'
+    end
+  end
+
+  describe 'items in collection' do
+    it 'included in purl page' do
+      visit "/#{@collection}"
+      expect(page).to have_content 'Items in collection'
+      expect(page).to have_content 'View items in this collection in SearchWorks'
     end
   end
 

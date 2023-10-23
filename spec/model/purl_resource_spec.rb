@@ -291,4 +291,20 @@ RSpec.describe PurlResource do
       end
     end
   end
+
+  describe '#object_type' do
+    it 'pulls the value from the identity metadata' do
+      allow(subject).to receive(:public_xml_body).and_return <<-EOF
+      <?xml version="1.0" encoding="UTF-8"?>
+      <publicObject>
+        <identityMetadata>
+          <objectType>collection</objectType>
+          <objectLabel>Acquisitions Serials</objectLabel>
+        </identityMetadata>
+      </publicObject>
+      EOF
+
+      expect(subject.object_type).to eq 'collection'
+    end
+  end
 end

@@ -36,7 +36,7 @@ releases:
     url: 'https://earthworks.stanford.edu/catalog/stanford-%{druid}'
 
 searchworks:
-  url: 'https://searchworks.stanford.edu/view/'
+  url: 'https://searchworks.stanford.edu'
 
 landing_page_druids:
   - bb112zx3193
