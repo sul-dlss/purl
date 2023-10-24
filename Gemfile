@@ -55,7 +55,7 @@ gem 'tophat'
 gem 'recaptcha'
 
 # sul-dlss/osullivan#development has early support for generating IIIF v3 manifests
-gem 'iiif-presentation', github: 'sul-dlss/osullivan', branch: 'development'
+gem 'iiif-presentation', github: 'iiif-prezi/osullivan', branch: 'development2'
 
 group :production do
   gem 'newrelic_rpm'
