@@ -7,7 +7,8 @@ class PreviewController < ApplicationController
     @purl = @document = OpenStruct.new(
       mods?: true,
       mods: @mods,
-      title: Array.wrap(@mods.title).join(' -- ')
+      title: Array.wrap(@mods.title).join(' -- '),
+      containing_purl_collections: []
     )
 
     @purl.define_singleton_method(:released_to?) do |*args|
