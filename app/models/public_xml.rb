@@ -6,7 +6,7 @@ class PublicXml
   end
 
   def title
-    @title ||= document.root.at_xpath('oai_dc:dc/dc:title', oai_dc: 'http://www.openarchives.org/OAI/2.0/oai_dc/', dc: 'http://purl.org/dc/elements/1.1/').try(:text)
+    @title ||= document.root.at_xpath('oai_dc:dc/dc:title', oai_dc: 'http://www.openarchives.org/OAI/2.0/oai_dc/', dc: 'http://purl.org/dc/elements/1.1/')&.text
   end
 
   def rights_metadata
@@ -18,22 +18,22 @@ class PublicXml
   end
 
   def catalog_key
-    @catalog_key ||= document.root.at_xpath('identityMetadata/otherId[@name="catkey"]').try(:text).presence
+    @catalog_key ||= document.root.at_xpath('identityMetadata/otherId[@name="catkey"]')&.text.presence
     @catalog_key ||= begin
-      key = document.root.at_xpath('identityMetadata/otherId[@name="folio_instance_hrid"]').try(:text).presence
+      key = document.root.at_xpath('identityMetadata/otherId[@name="folio_instance_hrid"]')&.text.presence
       key = key.delete_prefix('a') if key&.match?(/^a\d+$/)
       key
     end
   end
 
   def released_to?(key)
-    release = document.root.at_xpath("releaseData/release[@to='#{key}']").try(:text)
+    release = document.root.at_xpath("releaseData/release[@to='#{key}']")&.text
 
     release == 'true'
   end
 
   def thumb
-    document.root.at_xpath('thumb').try(:text)
+    document.root.at_xpath('thumb')&.text
   end
 
   def relations(predicate)
