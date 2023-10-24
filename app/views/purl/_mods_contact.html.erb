@@ -1,6 +1,14 @@
-<% document ||= @document %>
-<% if document.mods.contact.any? %>
-  <% document.mods.contact.each do |contact| %>
-    <%= mods_record_field(contact) %>
-  <% end %>
+<% if document.mods.contact.present? %>
+  <div class="section" id="<%= t('record_side_nav.contact_info.id') %>" data-side-nav-class="<%= t('record_side_nav.contact_info.id') %>">
+    <div class="section-heading">
+      <h2><%= t('record_side_nav.contact_info.icon').html_safe %> Contact information</h2>
+    </div>
+    <div class="section-body">
+      <dl>
+        <% document.mods.contact.each do |contact| %>
+          <%= mods_record_field(contact) %>
+        <% end %>
+      </dl>
+    </div>
+  </div>
 <% end %>

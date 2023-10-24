@@ -43,7 +43,7 @@ end
     <%= render 'access' %>
 
     <% if @purl.mods? %>
-      <%= render 'mods_metadata_sections' %>
+      <%= render 'mods_metadata_sections', document: @purl %>
     <% end %>
   </div>
 </div>

@@ -1,24 +1,23 @@
 <% document ||= @document %>
-<% document.mods.audience.each do |audience| %>
-  <%= mods_record_field(audience) %>
-<% end %>
+<% fields = document.mods.audience +
+            document.mods.note.reject { |x| x.label =~ /Preferred citation/i } +
+            document.mods.relatedItem + 
+            document.mods.nestedRelatedItem +
+            document.mods.identifier +
+            document.mods.location
+%>
 
-<% document.mods.note.reject { |x| x.label =~ /Preferred citation/i }.each do |notes| %>
-  <%= mods_record_field(notes) %>
-<% end %>
-
-<% document.mods.relatedItem.each do |related_item| %>
-  <%= mods_record_field(related_item) %>
-<% end %>
-
-<% document.mods.nestedRelatedItem.each do |related_item| %>
-  <%= mods_record_field(related_item) %>
-<% end %>
-
-<% document.mods.identifier.each do |identifier| %>
-  <%= mods_record_field(identifier) %>
-<% end %>
-
-<% document.mods.location.each do |location| %>
-  <%= mods_record_field(location) %>
+<% if fields.present? %>
+  <div class="section" id="<%= t('record_side_nav.bibliography_info.id') %>" data-side-nav-class="<%= t('record_side_nav.bibliography_info.id') %>">
+    <div class="section-heading">
+      <h2><%= t('record_side_nav.bibliography_info.icon').html_safe %> Bibliographic information</h2>
+    </div>
+    <div class="section-body">
+      <dl>
+        <% fields.each do |field| %>
+          <%= mods_record_field(field) %>
+        <% end %>
+      </dl>
+    </div>
+  </div>
 <% end %>
