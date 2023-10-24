@@ -1,8 +1,15 @@
-<% document ||= @document %>
-<% document.mods.abstract.each do |abstract| %>
-  <%= mods_record_field(abstract) %>
-<% end %>
-
-<% document.mods.contents.each do |contents| %>
-  <%= mods_record_field(contents) %>
+<% fields = document.mods.abstract + document.mods.contents %>
+<% if fields.present? %>
+  <div class="section" id="<%= t('record_side_nav.abstract_contents.id') %>" data-side-nav-class="<%= t('record_side_nav.abstract_contents.id') %>">
+    <div class="section-heading">
+      <h2><%= t('record_side_nav.abstract_contents.icon').html_safe %> Abstract/Contents</h2>
+    </div>
+    <div class="section-body">
+      <dl>
+        <% fields.each do |abstract| %>
+          <%= mods_record_field(abstract) %>
+        <% end %>
+        </dl>
+    </div>
+  </div>
 <% end %>

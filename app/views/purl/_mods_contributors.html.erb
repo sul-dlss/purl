@@ -1,7 +1,14 @@
-<% document ||= @document %>
-
 <% if document.mods.name.present? %>
-  <% document.mods.name.each do |name| %>
-    <%= mods_name_field(name) %>
-  <% end %>
+  <div class="section" id="<%= t('record_side_nav.contributors.id') %>" data-side-nav-class="<%= t('record_side_nav.contributors.id') %>">
+    <div class="section-heading">
+      <h2><%= t('record_side_nav.contributors.icon').html_safe %> Creators/Contributors</h2>
+    </div>
+    <div class="section-body">
+      <dl>
+        <% document.mods.name.each do |name| %>
+          <%= mods_name_field(name) %>
+        <% end %>
+      </dl>
+    </div>
+  </div>
 <% end %>

@@ -1,9 +1,18 @@
-<% document ||= @document %>
+<% if document.mods.subject.present? || document.mods.genre.present? %>
+  <div class="section" id="<%= t('record_side_nav.subjects.id') %>" data-side-nav-class="<%= t('record_side_nav.subjects.id') %>">
+    <div class="section-heading">
+      <h2><%= t('record_side_nav.subjects.icon').html_safe %> Subjects</h2>
+    </div>
+    <div class="section-body">
+      <dl>
+        <% document.mods.subject.each do |subject| %>
+          <%= mods_subject_field(subject)%>
+        <% end %>
 
-<% document.mods.subject.each do |subject| %>
-  <%= mods_subject_field(subject)%>
-<% end %>
-
-<% document.mods.genre.each do |genre| %>
-  <%= mods_genre_field(genre)%>
+        <% document.mods.genre.each do |genre| %>
+          <%= mods_genre_field(genre)%>
+        <% end %>
+        </dl>
+    </div>
+  </div>
 <% end %>
