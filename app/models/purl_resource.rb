@@ -75,8 +75,9 @@ class PurlResource
     @public_xml ||= PublicXml.new(public_xml_document)
   end
 
-  def collection
-    @collection ||= public_xml.relations('isMemberOfCollection').first
+  # @return [String] the identifier of the collection this item is a member of
+  def containing_collection
+    @containing_collection ||= public_xml.relations('isMemberOfCollection').first
   end
 
   delegate :rights_metadata, to: :public_xml

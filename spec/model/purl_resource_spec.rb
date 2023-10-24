@@ -205,9 +205,10 @@ RSpec.describe PurlResource do
     end
   end
 
-  describe '#collection' do
-    it 'pulls the collection value from the RELS-EXT data' do
-      allow(subject).to receive(:public_xml_body).and_return <<-EOF
+  describe '#containing_collection' do
+    subject { instance.containing_collection }
+    before do
+      allow(instance).to receive(:public_xml_body).and_return <<-EOF
       <?xml version="1.0" encoding="UTF-8"?>
       <publicObject>
         <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -218,9 +219,9 @@ RSpec.describe PurlResource do
         </rdf:RDF>
       </publicObject>
       EOF
-
-      expect(subject.collection).to eq 'jw357py5564'
     end
+
+    it { is_expected.to eq 'jw357py5564' }
   end
 
   describe '#catalog_key' do
