@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+  <titleInfo>
+    <title>The Distinct Impacts of Content Moderation</title>
+  </titleInfo>
+  <name usage="primary" type="personal">
+    <namePart type="given">Sandi</namePart>
+    <namePart type="family">Khine</namePart>
+    <role>
+      <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">author</roleTerm>
+      <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">aut</roleTerm>
+    </role>
+  </name>
+  <name type="personal">
+    <namePart type="given">A. Collier</namePart>
+    <namePart type="family">Navaroli</namePart>
+    <role>
+      <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">author</roleTerm>
+      <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">aut</roleTerm>
+    </role>
+  </name>
+  <genre type="H2 type">Text</genre>
+  <genre type="H2 subtype">Report</genre>
+  <genre type="H2 subtype">Working paper</genre>
+  <genre valueURI="http://vocab.getty.edu/page/aat/300256200" authority="aat">grey literature</genre>
+  <typeOfResource>text</typeOfResource>
+  <extension displayLabel="datacite">
+    <resourceType resourceTypeGeneral="Text">Report; Working paper</resourceType>
+  </extension>
+  <abstract>This project seeks to begin studying the intersections of race and content moderation that have yet to be investigated. While the literature about the field has revealed instances of hate speech to be some of the most impactful upon commercial content moderators, the specificity of the harm created upon those most impacted has yet to be interrogated. Thus, this research seeks to better understand the distinct impacts of regulating hate speech on Black people who are tasked with the jobs of content moderation and platform policy enforcement. &#13;
+&#13;
+The research highlights the daily experiences of individuals whose work in the shadows has helped ensure the protection and safety of those who interact with the Internet. Through in-depth interviews, the project aims to collect new qualitative data about the field of content moderation and trust and safety and its intersections with race. By centering the experiences of Black people with the free expression policies of social media platforms, this research will also illuminate vital gaps in the enforcement of hate speech policy at social media companies and offer a different path forward at a crucial time where the industry faces intense scrutiny and increased calls for an end to self-regulation. &#13;
+</abstract>
+  <note type="preferred citation">Khine, S. and Navaroli, A. (2022). The Distinct Impacts of Content Moderation. Stanford Digital Repository. Available at https://purl.stanford.edu/bb051dp0564. https://doi.org/10.25740/bb051dp0564.</note>
+  <subject>
+    <topic>Content Moderation</topic>
+  </subject>
+  <subject authority="fast">
+    <topic authority="fast" authorityURI="http://id.worldcat.org/fast/" valueURI="http://id.worldcat.org/fast/1741098/">Social media</topic>
+  </subject>
+  <subject>
+    <topic>Platforms</topic>
+  </subject>
+  <originInfo eventType="deposit">
+    <dateIssued encoding="edtf">2022-09-22</dateIssued>
+  </originInfo>
+  <location>
+    <url usage="primary display">https://purl.stanford.edu/bb051dp0564</url>
+  </location>
+  <note type="contact" displayLabel="Contact">skhine@stanford.edu</note>
+  <note type="contact" displayLabel="Contact">anavaroli@gmail.com</note>
+  <recordInfo>
+    <recordOrigin>Metadata created by user via Stanford self-deposit application</recordOrigin>
+    <recordCreationDate encoding="edtf">2022-09-22</recordCreationDate>
+  </recordInfo>
+  <relatedItem type="host">
+    <titleInfo>
+      <title>Stanford University, Center for Comparative Studies in Race and Ethnicity, Community-Engaged Summer Fellowship</title>
+    </titleInfo>
+    <location>
+      <url>https://purl.stanford.edu/rh525wj3800</url>
+    </location>
+    <typeOfResource collection="yes"/>
+  </relatedItem>
+  <accessCondition type="useAndReproduction">User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or confidentiality rights of individuals. Content distributed via the Stanford Digital Repository may be subject to additional license and use restrictions applied by the depositor.</accessCondition>
+  <accessCondition type="license" xlink:href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode">This work is licensed under a Creative Commons Attribution Non Commercial Share Alike 4.0 International license (CC BY-NC-SA).</accessCondition>
+  <identifier type="doi" displayLabel="DOI">https://doi.org/10.25740/bb051dp0564</identifier>
+</mods>

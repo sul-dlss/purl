@@ -182,6 +182,16 @@ class PurlResource
     def representative_thumbnail
       "#{iiif_manifest.thumbnail_base_uri}/full/!400,400/0/default.jpg" if iiif_manifest.thumbnail_base_uri.present?
     end
+
+    # @return [String,nil] DOI (with https://doi.org/ prefix) if present
+    def doi
+      @doi ||= mods_document.root&.at_xpath('mods:identifier[@type="doi"]', mods: 'http://www.loc.gov/mods/v3')&.text
+    end
+
+    # @return [String,nil] DOI (without https://doi.org/ prefix) if present
+    def doi_id
+      doi&.delete_prefix('https://doi.org/')
+    end
   end
 
   concerning :Caching do

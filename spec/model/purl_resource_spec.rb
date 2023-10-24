@@ -291,4 +291,37 @@ RSpec.describe PurlResource do
       end
     end
   end
+
+  describe '#doi and #doi_id' do
+    context 'with a DOI' do
+      before do
+        allow(subject).to receive(:mods_body).and_return <<-EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+            <identifier type="doi" displayLabel="DOI">https://doi.org/10.25740/bb051dp0564</identifier>
+          </mods>
+        EOF
+      end
+
+      it 'returns the DOI' do
+        expect(subject.doi).to eq 'https://doi.org/10.25740/bb051dp0564'
+        expect(subject.doi_id).to eq '10.25740/bb051dp0564'
+      end
+    end
+
+    context 'without a DOI' do
+      before do
+        allow(subject).to receive(:mods_body).and_return <<-EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+          </mods>
+        EOF
+      end
+
+      it 'returns nil' do
+        expect(subject.doi).to be_nil
+        expect(subject.doi_id).to be_nil
+      end
+    end
+  end
 end
