@@ -160,6 +160,14 @@ RSpec.describe 'Integration Scenarios' do
       expect(page).to have_content 'Revs ID 2012-015GHEW-BW-1984-b4_1.4_0003'
     end
   end
+
+  context 'item with a DOI' do
+    it 'includes citation_doi meta tag' do
+      visit '/bb051dp0564'
+      expect(page).to have_selector 'meta[name="citation_doi"][content="10.25740/bb051dp0564"]', visible: :hidden
+    end
+  end
+
   def have_metadata_section(text)
     have_selector '.section-heading', text: text
   end
