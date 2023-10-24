@@ -1,0 +1,11 @@
+<% if document.doi.present? %>
+  <div class="section">
+    <div class="section-heading">
+      <h2>Usage metrics</h2>
+    </div>
+    <div class="section-body mt-3">
+      <p><a href="https://help.altmetric.com/support/solutions/articles/6000232837-what-is-altmetric-and-what-does-it-provide-" target='_blank' rel='noopener'>Altmetric</a> tracks online attention to this work. A badge is shown only when online mentions are found.</p>
+      <div class='altmetric-embed' data-badge-type='donut' data-doi="<%= document.doi_id %>" data-badge-popover='right' data-hide-no-mentions='true'></div>
+    </div>
+  </div>
+<% end %>

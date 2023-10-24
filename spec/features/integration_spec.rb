@@ -172,10 +172,13 @@ RSpec.describe 'Integration Scenarios' do
   end
 
   context 'item with a DOI' do
-    it 'includes citation_doi meta tag' do
+    it 'includes altmetrics' do
       visit '/bb051dp0564'
+
       expect(page).to have_selector 'meta[name="citation_doi"][content="10.25740/bb051dp0564"]', visible: :hidden
       expect(page).to have_selector 'meta[name="citation_title"][content="The Distinct Impacts of Content Moderation"]', visible: :hidden
+      expect(page).to have_selector 'script[src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"]', visible: :hidden
+      expect(page).to have_css '.altmetric-embed'
     end
   end
 
