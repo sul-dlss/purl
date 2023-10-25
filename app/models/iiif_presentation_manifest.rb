@@ -238,7 +238,7 @@ class IiifPresentationManifest
 
     other_content = []
 
-    if grouped_resource.files.select { |file| file.role == 'annotations' && file.mimetype == 'application/json' }&.any?
+    if grouped_resource.files.any? { |file| file.role == 'annotations' && file.mimetype == 'application/json' }
       anno_list = IIIF::Presentation::AnnotationList.new
       anno_list['@id'] = "#{purl_base_uri}/iiif/annotationList/#{resource.id}"
       other_content << anno_list
