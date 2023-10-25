@@ -89,7 +89,7 @@ class PurlResource
     end.compact
   end
 
-  delegate :rights_metadata, to: :public_xml
+  delegate :rights_metadata, :object_type, to: :public_xml
 
   def content_metadata
     @content_metadata ||= ContentMetadata.new(public_xml.content_metadata)
@@ -119,6 +119,10 @@ class PurlResource
 
   def iiif3_manifest
     @iiif3_manifest ||= Iiif3PresentationManifest.new(self)
+  end
+
+  def collection?
+    object_type == 'collection'
   end
 
   concerning :Metadata do
