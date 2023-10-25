@@ -80,7 +80,7 @@ class IiifPresentationManifest
   end
 
   def ocr_text?
-    ocr_files.any?
+    ocr_files.present?
   end
 
   def description_or_note
@@ -223,7 +223,7 @@ class IiifPresentationManifest
     end
 
     other_content = other_content_for_resource(purl_base_uri, resource)
-    canv.otherContent = other_content if other_content.any?
+    canv.otherContent = other_content if other_content.present?
 
     anno = annotation_for_resource(purl_base_uri, resource)
     anno['on'] = canv['@id']

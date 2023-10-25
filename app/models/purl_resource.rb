@@ -89,7 +89,7 @@ class PurlResource
   # @returns [Bool] are there resources that can be shown?
   # This prevents adding links to the embed service, when that service can't generate a valid response.
   def embeddable?
-    content_metadata.resources.any?
+    content_metadata.resources.present?
   end
 
   def rights
