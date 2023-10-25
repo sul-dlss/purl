@@ -42,4 +42,10 @@ module ApplicationHelper
   def with_copyright_symbol(str)
     str.gsub(/\(c\) Copyright/i, '© Copyright')
   end
+
+  def with_stanford_only(value)
+    return unless value.downcase.include?('https://stanford.idm.oclc.org/login?url=')
+
+    '<span class="stanford-only-text"><span class="visually-hidden">Stanford only </span></span>'.html_safe
+  end
 end

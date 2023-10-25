@@ -15,7 +15,7 @@
     <div class="section-body">
       <dl>
         <% fields.each do |field| %>
-          <%= mods_record_field(field) %>
+          <%= mods_record_field(field) {|value| format_mods_html(value, field: field) + with_stanford_only(value) } %>
         <% end %>
       </dl>
     </div>
