@@ -168,6 +168,15 @@ RSpec.describe 'Integration Scenarios' do
     end
   end
 
+  context 'item with Stanford-only location in MODS' do
+    it 'adds a Stanford-only indicator' do
+      visit '/yk677wc8843'
+
+      expect(page).to have_selector '.stanford-only-text', text: 'Stanford only'
+      expect(page.find('.stanford-only-text')).to have_sibling('a', text: 'Cambridge Core')
+    end
+  end
+
   def have_metadata_section(text)
     have_selector '.section-heading', text:
   end

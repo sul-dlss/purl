@@ -31,3 +31,11 @@
     margin-left: auto;
   }
 }
+
+// Based on sul-embed
+.stanford-only-text {
+  background: url('stanford_s.png') no-repeat left;
+  background: url('stanford_s.svg') no-repeat left, none;
+  padding-left: 15px;
+  margin-left: 5px;
+}
