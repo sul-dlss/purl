@@ -33,7 +33,7 @@ class PurlResource
   def self.find(id)
     raise DruidNotValid, id unless Dor::Util.validate_druid(id)
 
-    PurlResource.new(id: id).tap do |obj|
+    PurlResource.new(id:).tap do |obj|
       raise ObjectNotReady, id unless obj.ready?
     end
   end
@@ -226,7 +226,7 @@ class PurlResource
 
   concerning :ActiveModelness do
     def attributes
-      { druid: id, druid_tree: druid_tree }
+      { druid: id, druid_tree: }
     end
 
     def persisted?

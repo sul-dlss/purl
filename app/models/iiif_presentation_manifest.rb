@@ -292,7 +292,7 @@ class IiifPresentationManifest
 
     {
       '@context' => 'http://iiif.io/api/search/1/context.json',
-      '@id' => format(Settings.content_search.url, druid: druid),
+      '@id' => format(Settings.content_search.url, druid:),
       'profile' => 'http://iiif.io/api/search/1/search',
       'label' => 'Search within this manifest'
     }
