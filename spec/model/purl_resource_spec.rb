@@ -100,7 +100,7 @@ RSpec.describe PurlResource do
 
   describe '#embeddable?' do
     subject { instance.embeddable? }
-    let(:content_metadata) { instance_double(ContentMetadata, resources: resources) }
+    let(:content_metadata) { instance_double(ContentMetadata, resources:) }
 
     before do
       allow(instance).to receive(:content_metadata).and_return(content_metadata)

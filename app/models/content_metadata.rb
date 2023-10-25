@@ -48,7 +48,7 @@ class ContentMetadata
       id: resource.attribute('id').to_s,
       type: resource.attribute('type').to_s,
       label: resource.xpath('(label|attr[@name="label"])').first.try(:text),
-      druid: druid
+      druid:
     }
 
     resource_attributes[:sequence] = if resource.attribute('sequence')
@@ -79,7 +79,7 @@ class ContentMetadata
     end
 
     def self.from_grouping(index, files)
-      new(index: index, files: files, id: files[0].id)
+      new(index:, files:, id: files[0].id)
     end
 
     def primary

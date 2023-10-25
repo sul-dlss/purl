@@ -33,7 +33,7 @@ module ApplicationHelper
 
   def embeddable_url(druid)
     if Settings.embed.url
-      Settings.embed.url % { druid: druid }
+      Settings.embed.url % { druid: }
     else
       purl_url(druid)
     end
