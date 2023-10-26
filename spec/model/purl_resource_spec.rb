@@ -367,4 +367,38 @@ RSpec.describe PurlResource do
       end
     end
   end
+
+  describe 'analytics' do
+    let(:visit) { Ahoy::Visit.create(started_at: Time.zone.now - 1.day) }
+
+    before do
+      5.times { Ahoy::Event.create(visit:, name: '$view', properties: { druid: 'bb051dp0564' }) }
+      2.times { Ahoy::Event.create(visit:, name: 'download', properties: { druid: 'bb051dp0564' }) }
+      allow(subject).to receive(:druid).and_return('bb051dp0564')
+    end
+
+    describe '#view_count' do
+      it 'is the total number of view events for the druid' do
+        expect(subject.view_count).to eq 5
+      end
+    end
+
+    describe '#unique_view_count' do
+      it 'is the number of visits with at least one view for the druid' do
+        expect(subject.unique_view_count).to eq 1
+      end
+    end
+
+    describe '#download_count' do
+      it 'is the total number of download events for a purl' do
+        expect(subject.download_count).to eq 2
+      end
+    end
+
+    describe '#unique_download_count' do
+      it 'is the number of visits with at least one download for the druid' do
+        expect(subject.unique_download_count).to eq 1
+      end
+    end
+  end
 end

@@ -125,6 +125,22 @@ class PurlResource
     object_type == 'collection'
   end
 
+  def view_count
+    views.count
+  end
+
+  def unique_view_count
+    views.distinct.count('visit_id')
+  end
+
+  def download_count
+    downloads.count
+  end
+
+  def unique_download_count
+    downloads.distinct.count('visit_id')
+  end
+
   concerning :Metadata do
     def title
       if mods?
@@ -292,5 +308,13 @@ class PurlResource
 
   def logger
     Rails.logger
+  end
+
+  def views
+    Ahoy::Event.where_event('$view', druid:)
+  end
+
+  def downloads
+    Ahoy::Event.where_event('download', druid:)
   end
 end
