@@ -1,5 +1,6 @@
 class PurlController < ApplicationController
   before_action :load_purl, except: [:index]
+  before_action :fix_etag_header
 
   rescue_from PurlResource::DruidNotValid, with: :invalid_druid
   rescue_from PurlResource::ObjectNotReady, with: :object_not_ready
@@ -66,5 +67,10 @@ class PurlController < ApplicationController
 
   def missing_file
     render '/errors/missing_file', status: :not_found
+  end
+
+  def fix_etag_header
+    # Apache adds -gzip to the etag header, which causes the request appear stale.
+    request.headers['HTTP_IF_NONE_MATCH'].sub!('-gzip', '') if request.if_none_match
   end
 end
