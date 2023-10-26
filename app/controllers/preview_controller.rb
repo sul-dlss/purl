@@ -2,17 +2,8 @@ class PreviewController < ApplicationController
   def index; end
 
   def show
-    @mods = ModsDisplay::Record.new(params[:mods])
-    @mods = @mods.mods_display_html
-    @purl = @document = OpenStruct.new(
-      mods?: true,
-      mods: @mods,
-      title: Array.wrap(@mods.title).join(' -- '),
-      containing_purl_collections: []
-    )
-
-    @purl.define_singleton_method(:released_to?) do |*args|
-    end
+    @mods = ModsDisplay::Record.new(params[:mods]).mods_display_html
+    @purl = @document = PreviewResource.new(@mods)
   end
 
   def self.local_prefixes
