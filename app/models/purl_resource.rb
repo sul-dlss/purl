@@ -75,9 +75,18 @@ class PurlResource
     @public_xml ||= PublicXml.new(public_xml_document)
   end
 
-  # @return [String] the identifier of the collection this item is a member of
-  def containing_collection
-    @containing_collection ||= public_xml.relations('isMemberOfCollection').first
+  # @return [Array<String>] the identifiers of the collections this item is a member of
+  def containing_collections
+    @containing_collections ||= public_xml.relations('isMemberOfCollection')
+  end
+
+  # @return [Array<PurlResource>] the PURL resources of the collections this item is a member of
+  def containing_purl_collections
+    @containing_purl_collections ||= containing_collections.map do |id|
+      PurlResource.find(id)
+    rescue ObjectNotReady, DruidNotValid
+      nil
+    end.compact
   end
 
   delegate :rights_metadata, to: :public_xml
@@ -172,7 +181,7 @@ class PurlResource
       rights.use_and_reproduction_statement
     end
 
-    delegate :catalog_key, to: :public_xml
+    delegate :catalog_key, :folio_instance_hrid, to: :public_xml
 
     delegate :released_to?, to: :public_xml
 

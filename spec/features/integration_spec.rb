@@ -90,12 +90,14 @@ RSpec.describe 'Integration Scenarios' do
       expect(page).to have_metadata_section 'Contributors'
       expect(page).to have_metadata_section 'Subjects'
       expect(page).to have_metadata_section 'Bibliographic information'
+      expect(page).to have_metadata_section 'Collection'
       expect(page).to have_metadata_section 'Also listed in'
     end
 
-    it 'lists the collection name' do
+    it 'lists the collection name and links to items in collection' do
       visit '/cp088pb1682'
       expect(page).to have_content 'Bay Area video arcades : photographs by Ira Nowinski, 1981-1982'
+      expect(page).to have_link 'View other items in this collection in SearchWorks', href: 'https://searchworks.stanford.edu/catalog?f[collection][]=a9685083'
     end
 
     it 'has a link to the searchworks record' do

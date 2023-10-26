@@ -205,8 +205,8 @@ RSpec.describe PurlResource do
     end
   end
 
-  describe '#containing_collection' do
-    subject { instance.containing_collection }
+  describe '#containing_collections' do
+    subject { instance.containing_collections }
     before do
       allow(instance).to receive(:public_xml_body).and_return <<-EOF
       <?xml version="1.0" encoding="UTF-8"?>
@@ -221,7 +221,7 @@ RSpec.describe PurlResource do
       EOF
     end
 
-    it { is_expected.to eq 'jw357py5564' }
+    it { is_expected.to eq ['jw357py5564'] }
   end
 
   describe '#catalog_key' do
