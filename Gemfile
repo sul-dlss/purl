@@ -30,7 +30,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # DLSS and its community
 gem 'dor-rights-auth', '~> 1.6'
 gem 'iiif-presentation', '~> 1.2'
-gem 'mods_display', '~> 1.1'
+gem 'mods_display', '~> 1.1', '>= 1.3.2' # orcid support
 
 group :production do
   gem 'newrelic_rpm'
