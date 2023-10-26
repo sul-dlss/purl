@@ -50,3 +50,21 @@ The RuboCop style enforcement can be run without running the tests
 ## Deploying
 
 Deployment is handled automatically via Jenkins when a release is published to GitHub.
+
+## Analytics
+
+Analytics are collected via both Google Analytics and [ahoy](https://github.com/ankane/ahoy).
+
+When in local development, you may find it useful to fake analytics events as though they had been triggered by sul-embed. If `analytics_debug` is set to `true` in your Rails config, the [ahoy.js](https://github.com/ankane/ahoy.js) library will be loaded onto each page.
+
+You can then trigger analytics events by calling `ahoy.track` in the browser console. For example:
+```js
+ahoy.trackView({ druid: "abc123" });
+```
+
+To trigger a download event:
+```js
+ahoy.track("download", { druid: "abc123" });
+```
+
+The `druid` parameter is required to associate the events with a particular `PurlResource` object.

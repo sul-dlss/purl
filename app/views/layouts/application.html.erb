@@ -25,6 +25,11 @@
       gtag('config', 'G-B11RSRZLRJ', config)
     </script>
 
+    <!-- ahoy.js analytics (debug use only) -->
+    <% if Settings.analytics_debug %>
+      <script src="https://unpkg.com/ahoy.js"></script>
+    <% end %>
+
     <%= title site: application_name, separator: '|', reverse: true %>
 
     <%= favicon_link_tag 'favicon.ico' %>
