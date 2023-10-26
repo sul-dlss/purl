@@ -67,3 +67,6 @@ group :deployment do
   gem 'dlss-capistrano'
 end
 
+gem "cssbundling-rails", "~> 1.1"
+
+gem "ahoy_matey", "~> 5.0"
