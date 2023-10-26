@@ -199,7 +199,7 @@ class PurlResource
 
     # @return [String,nil] DOI (with https://doi.org/ prefix) if present
     def doi
-      @doi ||= mods_document.root&.at_xpath('mods:identifier[@type="doi"]', mods: 'http://www.loc.gov/mods/v3')&.text
+      @doi ||= mods_ng_document.root&.at_xpath('mods:identifier[@type="doi"]', mods: 'http://www.loc.gov/mods/v3')&.text
     end
 
     # @return [String,nil] DOI (without https://doi.org/ prefix) if present
@@ -286,8 +286,8 @@ class PurlResource
     @mods_display_object ||= ModsDisplay::Record.new(mods_body)
   end
 
-  def mods_document
-    @mods_document ||= Nokogiri::XML(mods_body)
+  def mods_ng_document
+    @mods_ng_document ||= Nokogiri::XML(mods_body)
   end
 
   def logger
