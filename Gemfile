@@ -56,6 +56,9 @@ group :development, :test do
 
   gem 'selenium-webdriver', '!= 3.13.0'
   gem 'simplecov', require: false
+
+  # Database cleaner allows us to clean the entire database after certain tests
+  gem 'database_cleaner'
 end
 
 group :deployment do
