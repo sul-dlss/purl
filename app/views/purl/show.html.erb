@@ -32,7 +32,7 @@ end
 <h1><%= @purl.title %></h1>
 <div class="upper-record-metadata row">
   <div class="col-md-8">
-    <%= render 'mods_upper_metadata_section' if @purl.mods? %>
+    <%= render 'mods_upper_metadata_section', document: @purl if @purl.mods? %>
   </div>
 
   <div class="col-md-12">

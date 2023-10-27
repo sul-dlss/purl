@@ -1,8 +1,12 @@
-<% document ||= @purl %>
-<% if (items = render(partial: "mods_upper_metadata_items", locals: {document: document})).present? %>
+<% document_notes = document.mods.note.select { |x| x.label =~ /Preferred citation/i } %>
+<% if document_notes.present? %>
   <div class="section">
     <div class="section-body">
-      <%= items %>
+      <dl>
+        <% document_notes.each do |notes| %>
+          <%= mods_record_field(notes) %>
+        <% end %>
+      </dl>
     </div>
   </div>
 <% end %>

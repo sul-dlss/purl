@@ -1,4 +1,3 @@
-<% document ||= @document %>
 <% fields = document.mods.audience +
             document.mods.note.reject { |x| x.label =~ /Preferred citation/i } +
             document.mods.relatedItem + 
