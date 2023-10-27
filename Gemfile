@@ -5,56 +5,32 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.0"
-
-# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
-
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
-
-# Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 5.0"
-
-# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "importmap-rails"
-
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
-
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem "stimulus-rails"
-
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder"
-
-# A gem for simple rails environment specific config
-gem 'config'
-
-# CanCanCan is an authorization Gem for rails
-gem 'cancancan'
-
-# Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
-
-# Use Honeybadger for exception reporting
-gem 'honeybadger'
-
-# Use okcomputer to monitor the application
-gem 'okcomputer'
-
-gem 'mods_display', '~> 1.1'
-gem 'htmlentities'
-gem 'dor-rights-auth', '~> 1.6'
-gem 'faraday'
 gem 'addressable'
+gem 'bootsnap', '>= 1.1.0', require: false # Reduces boot times through caching; required in config/boot.rb
+gem 'cancancan' # authorization
+gem 'config' # simple rails environment specific config
+gem "cssbundling-rails", "~> 1.1"
+gem 'faraday' # HTTP client
+gem 'honeybadger' # exception reporting
+gem 'htmlentities'
+gem "importmap-rails" # Use JavaScript with ESM import maps
+gem "jbuilder" # Build JSON APIs with ease
+gem 'okcomputer' # application monitoring
+gem "puma", "~> 5.0" # web server for development
+gem "rails", "~> 7.0.0"
+gem 'recaptcha' # prevent robots spamming the feedback form
+gem "sprockets-rails" # The original asset pipeline for Rails
+gem "sqlite3", "~> 1.4"
+gem "stimulus-rails" # Hotwire's modest JavaScript framework
 gem 'tophat'
+gem "turbo-rails" # Hotwire's SPA-like page accelerator
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Use recaptcha gem to prevent robots spamming the feedback form
-gem 'recaptcha'
-
+# DLSS and its community
+gem 'dor-rights-auth', '~> 1.6'
 gem 'iiif-presentation', '~> 1.2'
+gem 'mods_display', '~> 1.1'
 
 group :production do
   gem 'newrelic_rpm'
@@ -65,38 +41,29 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 group :development, :test do
+  gem 'capybara' # for feature/integration tests
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 
-  # RSpec for testing
   gem 'rspec-rails', '~> 6.0'
 
-  # Capybara for feature/integration tests
-  gem 'capybara'
-
-  gem 'selenium-webdriver', '!= 3.13.0'
-
-  # Rubocop is a static code analyzer to enforce style.
+  # Rubocop is a static code analyzer (linter) to enforce style.
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
 
+  gem 'selenium-webdriver', '!= 3.13.0'
   gem 'simplecov', require: false
 end
 
-# Use Capistrano for deployment
 group :deployment do
   gem 'capistrano', '~> 3.0'
   gem 'capistrano-bundler'
-  gem 'capistrano-rails'
   gem 'capistrano-passenger'
+  gem 'capistrano-rails'
   gem 'capistrano-shared_configs'
   gem 'dlss-capistrano'
 end
 
-gem "cssbundling-rails", "~> 1.1"
