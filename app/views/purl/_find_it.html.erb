@@ -1,24 +1,24 @@
 <% releases = [] %>
 
 <% Settings.releases.each do |dest| %>
-  <% next if dest[:key] == "Searchworks" && @purl.catalog_key %>
+  <% next if dest[:key] == "Searchworks" && document.catalog_key %>
   
-  <% if @purl.released_to? dest[:key] %>
-    <% releases << link_to(dest[:label], dest[:url] % @purl.attributes) %>
+  <% if document.released_to? dest[:key] %>
+    <% releases << link_to(dest[:label], dest[:url] % document.attributes) %>
   <% end %>
-  <% if dest[:key] == 'EarthWorks' && @purl.type == 'geo' %>
-    <% releases << link_to(dest[:label], dest[:url] % @purl.attributes) %>
+  <% if dest[:key] == 'EarthWorks' && document.type == 'geo' %>
+    <% releases << link_to(dest[:label], dest[:url] % document.attributes) %>
   <% end %>
 <% end %>
 
-<% if @purl.catalog_key || releases.present? %>
+<% if document.catalog_key || releases.present? %>
   <div class="section" id="<%= t('record_side_nav.find_it.id') %>" data-side-nav-class="<%= t('record_side_nav.find_it.id') %>">
     <div class="section-heading">
       <h2><%= t('record_side_nav.find_it.icon').html_safe %> Also listed in</h2>
     </div>
     <div class="section-body">
-      <% if @purl.catalog_key %>
-        <%= link_to 'View in SearchWorks', "#{Settings.searchworks.url}/view/#{@purl.catalog_key}" %>
+      <% if document.catalog_key %>
+        <%= link_to 'View in SearchWorks', "#{Settings.searchworks.url}/view/#{document.catalog_key}" %>
       <% end %>
 
       <%= releases.to_sentence.html_safe %>
