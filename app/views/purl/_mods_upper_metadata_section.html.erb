@@ -1,10 +1,11 @@
 <% document_notes = document.mods.note.select { |x| x.label =~ /Preferred citation/i } %>
-<% if document_notes.present? %>
+<% fields = document_notes + document.mods.collection %>
+<% if fields.any? %>
   <div class="section">
     <div class="section-body">
       <dl>
-        <% document_notes.each do |notes| %>
-          <%= mods_record_field(notes) %>
+        <% fields.each do |field| %>
+          <%= mods_record_field(field) %>
         <% end %>
       </dl>
     </div>
