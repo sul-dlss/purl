@@ -49,4 +49,8 @@ class PublicXml
       node.attribute('resource').text.split('/', 2).last.split(':', 2).last
     end
   end
+
+  def object_type
+    document.root.at_xpath('identityMetadata/objectType')&.text
+  end
 end

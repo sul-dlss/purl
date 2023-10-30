@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+  <titleInfo usage="primary">
+    <title>Native American Alumni Oral Histories</title>
+  </titleInfo>
+  <typeOfResource manuscript="yes" collection="yes">mixed material</typeOfResource>
+  <language>
+    <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+  </language>
+  <originInfo>
+    <place>
+      <placeTerm authority="marccountry" type="code">cau</placeTerm>
+    </place>
+    <issuance>monographic</issuance>
+  </originInfo>
+  <location>
+    <url usage="primary display">https://purl.stanford.edu/bb631ry3167</url>
+  </location>
+  <location>
+    <physicalLocation>Dept. of Special Collections and University Archives Stanford University Libraries Stanford, CA 94305</physicalLocation>
+  </location>
+  <recordInfo>
+    <recordContentSource authority="marcorg">CSt</recordContentSource>
+    <descriptionStandard>aacr</descriptionStandard>
+    <descriptionStandard>dacs</descriptionStandard>
+    <recordOrigin>Converted from MARCXML to MODS version 3.7 using MARC21slim2MODS3-7_SDR_v2-5.xsl (SUL 3.7 version 2.5 20210421; LC Revision 1.140 20200717)</recordOrigin>
+    <recordCreationDate encoding="marc">210811</recordCreationDate>
+    <recordIdentifier source="SIRSI">a13965062</recordIdentifier>
+  </recordInfo>
+  <accessCondition type="useAndReproduction">The materials are open for research use and may be used freely for non-commercial purposes with an attribution. For commercial permission requests, please contact the Stanford University Archives (universityarchives@stanford.edu).</accessCondition>
+  <accessCondition type="copyright">Copyright (c) The Board of Trustees of the Leland Stanford Junior University. All rights reserved.</accessCondition>
+</mods>

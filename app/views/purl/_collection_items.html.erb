@@ -1,0 +1,10 @@
+<% if document.collection? && document.folio_instance_hrid %>
+  <div class="section">
+    <div class="section-heading">
+      <h2>Items in collection</h2>
+    </div>
+    <div class="section-body">
+      <%= link_to 'View items in this collection in SearchWorks', "#{Settings.searchworks.url}/catalog?f[collection][]=#{document.folio_instance_hrid}" %>
+    </div>
+  </div>
+<% end %>

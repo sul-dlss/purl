@@ -325,4 +325,46 @@ RSpec.describe PurlResource do
       end
     end
   end
+
+  describe '#object_type and #collection?' do
+    context 'when a collection' do
+      before do
+        allow(subject).to receive(:public_xml_body).and_return(<<-EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <publicObject>
+            <identityMetadata>
+              <objectType>collection</objectType>
+              <objectLabel>Acquisitions Serials</objectLabel>
+            </identityMetadata>
+          </publicObject>
+        EOF
+                                                              )
+      end
+
+      it 'pulls the value from the identity metadata' do
+        expect(subject.object_type).to eq 'collection'
+        expect(subject.collection?).to be true
+      end
+    end
+
+    context 'when an item' do
+      before do
+        allow(subject).to receive(:public_xml_body).and_return(<<-EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <publicObject>
+            <identityMetadata>
+              <objectLabel>SUL Logo 2015</objectLabel>
+              <objectType>item</objectType>
+            </identityMetadata>
+          </publicObject>
+        EOF
+                                                              )
+      end
+
+      it 'pulls the value from the identity metadata' do
+        expect(subject.object_type).to eq 'item'
+        expect(subject.collection?).to be false
+      end
+    end
+  end
 end
