@@ -26,6 +26,7 @@ gem 'tophat'
 gem "turbo-rails" # Hotwire's SPA-like page accelerator
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'view_component', '~> 3.6' # reusable, testable & encapsulated view components
 
 # DLSS and its community
 gem 'dor-rights-auth', '~> 1.6'
