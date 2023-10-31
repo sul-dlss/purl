@@ -9,3 +9,4 @@ pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin 'feedback_form'
 pin "ace-builds", to: "https://ga.jspm.io/npm:ace-builds@1.16.0/src-noconflict/ace.js"
+pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true

@@ -9,7 +9,11 @@ class FeedbackFormsController < ApplicationController
   # side to prevent it from rendering on the next request.
   after_action :discard_flash!, only: :create, if: -> { request.xhr? }
 
-  def new; end
+  def new
+    return render :new_frame if params[:frame] == 'true'
+
+    render :new
+  end
 
   def create
     if validate
