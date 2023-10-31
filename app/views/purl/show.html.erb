@@ -1,6 +1,8 @@
 <% title @purl.title %>
 <% content_for(:head) do %>
   <% if @purl.embeddable? %>
+    <%= tag :link, rel: "preconnect", href: Settings.stacks.url %>
+    <%= tag :link, rel: "preconnect", href: Settings.embed.url % { druid: '' } %>
     <%= tag :link, rel: "alternate", title: "oEmbed Profile", type: 'application/json+oembed', href: oembed_url_template.expand(format: 'json', url: embeddable_url(@purl.druid)) %>
     <%= tag :link, rel: "alternate", title: "oEmbed Profile", type: 'application/xml+oembed', href: oembed_url_template.expand(format: 'xml', url: embeddable_url(@purl.druid)) %>
   <% end %>
