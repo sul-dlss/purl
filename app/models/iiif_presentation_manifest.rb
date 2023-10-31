@@ -15,6 +15,7 @@ class IiifPresentationManifest
   include ActionView::Helpers::NumberHelper
 
   OAI_DC_SCHEMA = 'http://www.openarchives.org/OAI/2.0/oai_dc/'
+  MODS_SCHEMA = 'http://www.loc.gov/mods/v3'
 
   VIEWING_DIRECTION = {
     'ltr' => 'left-to-right',

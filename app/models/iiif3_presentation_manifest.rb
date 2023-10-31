@@ -1,8 +1,10 @@
 require 'iiif/presentation'
 require 'iiif/v3/presentation'
+require 'geo/coord'
 
 class Iiif3PresentationManifest < IiifPresentationManifest
   delegate :reading_order, to: :content_metadata
+  attr_reader :purl_base_uri
 
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def body
@@ -23,6 +25,10 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     }
 
     manifest_data['service'] = [content_search_service] if content_search_service
+    if nav_place
+      manifest_data['navPlace'] = nav_place
+      manifest_data['@context'] = IIIF::V3::Presentation::CONTEXT + ['http://iiif.io/api/extension/navplace/context.json']
+    end
 
     manifest = IIIF::V3::Presentation::Manifest.new manifest_data
 
@@ -332,5 +338,106 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def annotation_page_url(**kwargs)
     controller.url_for([:annotation_page, :iiif3, :purl, { id: @purl_resource.druid, **kwargs }])
+  end
+
+  def nav_place
+    @nav_place ||= NavPlace.new(public_xml_document:, purl_base_uri:).build
+  end
+
+  class NavPlace
+    Rect = Struct.new(:coord1, :coord2)
+
+    def initialize(public_xml_document:, purl_base_uri:)
+      @public_xml_document = public_xml_document
+      @purl_base_uri = purl_base_uri
+    end
+
+    def build
+      return if coordinates.blank?
+
+      {
+        id: "#{purl_base_uri}/feature-collection/1",
+        type: 'FeatureCollection',
+        features:
+      }
+    end
+
+    private
+
+    attr_reader :public_xml_document, :purl_base_uri
+
+    def coordinates
+      @coordinates ||= coordinate_texts.map do |coordinate_text|
+        coordinate_parts = coordinate_text.split(%r{ ?--|/})
+        case coordinate_parts.length
+        when 2
+          coord_for(coordinate_parts[0], coordinate_parts[1])
+        when 4
+          rect_for(coordinate_parts)
+        end
+      end.compact
+    end
+
+    def coordinate_texts
+      public_xml_document.xpath('//mods:subject/mods:cartographics/mods:coordinates', 'mods' => IiifPresentationManifest::MODS_SCHEMA).map(&:text)
+    end
+
+    COORD_REGEX = /(?<hemisphere>[NSEW]) (?<degrees>\d+)[°⁰*] ?(?<minutes>\d+)?[ʹ']? ?(?<seconds>\d+)?[ʺ"]?/
+
+    def coord_for(long_str, lat_str)
+      long_matcher = long_str.match(COORD_REGEX)
+      lat_matcher = lat_str.match(COORD_REGEX)
+      return unless long_matcher && lat_matcher
+
+      Geo::Coord.new(latd: lat_matcher[:degrees], latm: lat_matcher[:minutes], lats: lat_matcher[:seconds], lath: lat_matcher[:hemisphere],
+                     lngd: long_matcher[:degrees], lngm: long_matcher[:minutes], lngs: long_matcher[:seconds], lngh: long_matcher[:hemisphere])
+    end
+
+    def rect_for(coordinate_parts)
+      coord1 = coord_for(coordinate_parts[0], coordinate_parts[2])
+      coord2 = coord_for(coordinate_parts[1], coordinate_parts[3])
+      return if coord1.nil? || coord2.nil?
+
+      Rect.new(coord1, coord2)
+    end
+
+    def features
+      coordinates.map.with_index do |coordinate, index|
+        {
+          id: "#{purl_base_uri}/iiif/feature/#{index + 1}",
+          type: 'Feature',
+          properties: {},
+          geometry: coordinate.is_a?(Rect) ? polygon_geometry(coordinate) : point_geometry(coordinate)
+        }
+      end
+    end
+
+    def point_geometry(coord)
+      {
+        type: 'Point',
+        coordinates: [format(coord.lng), format(coord.lat)]
+      }
+    end
+
+    # rubocop:disable Metrics/AbcSize
+    def polygon_geometry(rect)
+      {
+        type: 'Polygon',
+        coordinates: [
+          [
+            [format(rect.coord1.lng), format(rect.coord1.lat)],
+            [format(rect.coord2.lng), format(rect.coord1.lat)],
+            [format(rect.coord2.lng), format(rect.coord2.lat)],
+            [format(rect.coord1.lng), format(rect.coord2.lat)],
+            [format(rect.coord1.lng), format(rect.coord1.lat)]
+          ]
+        ]
+      }
+    end
+    # rubocop:enable Metrics/AbcSize
+
+    def format(decimal)
+      decimal.truncate(6).to_s
+    end
   end
 end

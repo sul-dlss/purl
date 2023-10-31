@@ -108,10 +108,10 @@ class PurlResource
 
   def iiif_manifest(**kwargs)
     @iiif_manifest ||= if iiif2_manifest?
-      iiif2_manifest(**kwargs)
-    else
-      iiif3_manifest(**kwargs)
-    end
+                         iiif2_manifest(**kwargs)
+                       else
+                         iiif3_manifest(**kwargs)
+                       end
   end
 
   def iiif2_manifest(**kwargs)
