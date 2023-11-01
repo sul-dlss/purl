@@ -31,4 +31,14 @@ RSpec.describe 'purl/_collection_items' do
       expect(rendered).not_to have_css 'a'
     end
   end
+
+  context 'when not released to SearchWorks' do
+    let(:purl) { PurlResource.new(id: 'ss099gb5528') }
+
+    it 'does not display View items in this collection link' do
+      # render
+      render 'purl/collection_items', document: purl
+      expect(rendered).not_to have_css 'a'
+    end
+  end
 end
