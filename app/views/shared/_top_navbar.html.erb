@@ -13,7 +13,8 @@
   </header>
 </div>
 <% if show_feedback_form? %>
-<div id="feedback-form" class="feedback-form-container collapse row justify-content-md-center">
-  <%= render "shared/feedback_forms/form" %>
+<div id="feedback-form" class="feedback-form-container collapse">
+  <turbo-frame id="feedback-form-frame" src="<%= new_feedback_form_path(frame: true) %>" loading="lazy">
+  </turbo-frame>
 </div>
 <% end %>

@@ -2,3 +2,4 @@
 import "controllers"
 import 'bootstrap';
 import 'feedback_form';
+import "@hotwired/turbo-rails"
