@@ -1,1 +1,53 @@
-<%= render 'shared/feedback_forms/form' %>
+<turbo-frame id="feedback-form-frame">
+  <div class="row justify-content-md-center">
+    <div class="col-sm-6 my-3">
+      <%= form_tag feedback_form_path, method: :post, class:"form-horizontal feedback-form", role:"form", data: { turbo: false, controller: 'feedback', feedback_target: 'form' } do %>
+        <div class="row">
+          <div class="col-sm-12 px-4 mb-2">
+            <div class="alert alert-info" role="alert">
+              Reporting from: <span class="reporting-from-field"><%= request.referer %></span>
+              <%= hidden_field_tag :url, request.referer, class:"reporting-from-field" %>
+            </div>
+          </div>
+        </div>
+        <%= hidden_field_tag :user_agent %>
+        <%= hidden_field_tag :viewport %>
+        <div class="mx-3">
+          <div class="form-group row mb-3">
+            <%= label_tag(:message, 'Message', class: "col-sm-3 col-form-label text-end") %>
+            <div class="col-sm-9">
+              <%= text_area_tag :message, "", rows:"5", class:"form-control", required: true %>
+            </div>
+          </div>
+          <div class="form-group row mb-3">
+            <%= label_tag(:name, 'Your name', class: "col-sm-3 col-form-label text-end") %>
+            <div class="col-sm-9">
+              <%= text_field_tag :name, "", class:"form-control", required: true %>
+            </div>
+          </div>
+          <div class="form-group row mb-3">
+            <%= label_tag(:to, 'Your email', class: "col-sm-3 col-form-label text-end") %>
+            <div class="col-sm-9">
+              <%= email_field_tag :to, "", class:"form-control", required: true %>
+            </div>
+          </div>
+          <% if current_user.blank? %>
+            <div class="form-group row mb-3">
+              <div class="offset-sm-3 col-sm-9">
+                <%= recaptcha_tags %>
+
+                <p>(Stanford users can avoid this Captcha by logging in.)</p>
+              </div>
+            </div>
+          <% end %>
+          <div class="form-group row">
+            <div class="offset-sm-3 col-sm-9">
+              <button type="submit" class="btn btn-primary">Send</button>
+              <%= button_tag "Cancel", type: 'button', class: 'btn btn-link', data: { bs_toggle: 'collapse', bs_target: '#feedback-form' }, aria: { expanded: false, controls: 'feedback-form' }  %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</turbo-frame>
