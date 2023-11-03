@@ -10,7 +10,7 @@
   <%= tag :link, rel: "alternate", title: "IIIF Manifest", type: 'application/json', href: iiif_manifest_url(@purl) if @purl.iiif_manifest? %>
   <%= tag :link, rel: "up", href: purl_url(@purl.containing_collections.first) if @purl.containing_collections.present? %>
   <%= tag :meta, name: 'citation_doi', content: @purl.doi_id if @purl.doi.present? %>
-
+  <%= tag :meta, name: 'citation_title', content: @purl.title %>
 <% end %>
 
 <% keywords(@purl.mods.subject.compact.map(&:values).join(',')) if @purl.mods? && @purl.mods.subject %>

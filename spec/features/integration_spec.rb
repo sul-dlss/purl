@@ -167,6 +167,7 @@ RSpec.describe 'Integration Scenarios' do
     it 'includes citation_doi meta tag' do
       visit '/bb051dp0564'
       expect(page).to have_selector 'meta[name="citation_doi"][content="10.25740/bb051dp0564"]', visible: :hidden
+      expect(page).to have_selector 'meta[name="citation_title"][content="The Distinct Impacts of Content Moderation"]', visible: :hidden
     end
   end
 
