@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+  <titleInfo usage="primary">
+    <title>Drug enforcement</title>
+  </titleInfo>
+  <titleInfo type="abbreviated">
+    <title>Drug enforc</title>
+  </titleInfo>
+  <name type="corporate">
+    <namePart>United States</namePart>
+    <namePart>Drug Enforcement Administration</namePart>
+  </name>
+  <genre authority="marcgt">periodical</genre>
+  <typeOfResource>text</typeOfResource>
+  <physicalDescription>
+    <form authority="marcform">print</form>
+    <extent>12 v. : ill. (some col.) ; 28 cm.</extent>
+  </physicalDescription>
+  <language>
+    <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+  </language>
+  <note type="date/sequential designation">Vol. 1, no. 1 (fall 1973)-</note>
+  <note type="date/sequential designation">Ceased with v. 12, no. 1, summer 1985.</note>
+  <note>Title from cover.</note>
+  <note type="additional physical form">Also issued online.</note>
+  <subject authority="marcgac">
+    <geographicCode>n-us</geographicCode>
+  </subject>
+  <subject authority="lcsh">
+    <topic>Drug control</topic>
+    <geographic>United States</geographic>
+    <genre>Periodicals</genre>
+  </subject>
+  <subject authority="lcsh">
+    <topic>Drug control</topic>
+    <topic>International cooperation</topic>
+    <genre>Periodicals</genre>
+  </subject>
+  <subject authority="lcsh">
+    <topic>Drugs</topic>
+    <genre>Periodicals</genre>
+  </subject>
+  <subject authority="mesh">
+    <topic>Drug and Narcotic Control</topic>
+    <geographic>United States</geographic>
+    <genre>Periodicals</genre>
+  </subject>
+  <subject authority="embne">
+    <topic>Drogas</topic>
+    <topic>Control</topic>
+  </subject>
+  <classification authority="lcc">HV5825 .D7763</classification>
+  <classification authority="nlm">W1 DR521D</classification>
+  <classification authority="ddc">363.4/5/0973</classification>
+  <originInfo>
+    <dateIssued encoding="marc" point="start">1973</dateIssued>
+    <dateIssued encoding="marc" point="end">1985</dateIssued>
+    <place>
+      <placeTerm authority="marccountry" type="code">dcu</placeTerm>
+    </place>
+    <issuance>serial</issuance>
+    <frequency authority="marcfrequency">Completely
+                irregular</frequency>
+  </originInfo>
+  <originInfo>
+    <dateIssued>[1973-</dateIssued>
+    <place>
+      <placeTerm type="text">[Washington, D.C.]</placeTerm>
+    </place>
+    <publisher>Drug Enforcement Administration, U.S. Dept. of Justice</publisher>
+    <frequency>Irregular</frequency>
+  </originInfo>
+  <identifier type="issn">0098-3470</identifier>
+  <identifier type="issn-l">0098-3470</identifier>
+  <identifier type="lccn">75647777</identifier>
+  <identifier type="stock-number">Supt. of Docs., U.S. Govt. Print. Off., Washington, D.C. 20402</identifier>
+  <location>
+    <url usage="primary display">https://purl.stanford.edu/bb000br0025</url>
+  </location>
+  <location>
+    <url displayLabel="Full text via HathiTrust">https://catalog.hathitrust.org/Record/000637716</url>
+  </location>
+  <recordInfo>
+    <languageOfCataloging>
+      <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+    </languageOfCataloging>
+    <recordContentSource authority="marcorg">DLC</recordContentSource>
+    <descriptionStandard>aacr</descriptionStandard>
+    <recordOrigin>Converted from MARCXML to MODS version 3.7 using
+      MARC21slim2MODS3-7_SDR_v2-6.xsl (SUL 3.7 version 2.6 20220603; LC Revision 1.140
+      20200717)</recordOrigin>
+    <recordCreationDate encoding="marc">760127</recordCreationDate>
+    <recordChangeDate encoding="iso8601">20131024111120.0</recordChangeDate>
+    <recordIdentifier source="SIRSI">a3234065</recordIdentifier>
+  </recordInfo>
+  <relatedItem type="otherFormat" displayLabel="Online version:">
+    <titleInfo>
+      <title>Drug enforcement</title>
+    </titleInfo>
+    <identifier>(OCoLC)564636876</identifier>
+  </relatedItem>
+  <relatedItem type="preceding">
+    <titleInfo>
+      <title>BNDD bulletin</title>
+    </titleInfo>
+    <identifier type="issn">0049-5468</identifier>
+    <identifier>(DLC)   75647641</identifier>
+  </relatedItem>
+  <relatedItem type="host">
+    <titleInfo>
+      <title>Google Books</title>
+    </titleInfo>
+    <location>
+      <url>https://purl.stanford.edu/yh583fk3400</url>
+    </location>
+    <typeOfResource collection="yes"/>
+  </relatedItem>
+</mods>

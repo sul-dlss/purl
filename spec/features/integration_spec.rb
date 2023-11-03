@@ -203,6 +203,20 @@ RSpec.describe 'Integration Scenarios' do
     end
   end
 
+  context 'citation only item' do
+    it 'includes noindex meta tag' do
+      visit '/bb000br0025'
+      expect(page).to have_selector 'meta[name="robots"][content="noindex"]', visible: :hidden
+    end
+  end
+
+  context 'world-downloadable item' do
+    it 'excludes noindex meta tag' do
+      visit '/nd387jf5675'
+      expect(page).not_to have_selector 'meta[name="robots"][content="noindex"]', visible: :hidden
+    end
+  end
+
   def have_metadata_section(text)
     have_selector '.section-heading', text:
   end

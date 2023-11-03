@@ -11,6 +11,7 @@
   <%= tag :link, rel: "up", href: purl_url(@purl.containing_collections.first) if @purl.containing_collections.present? %>
   <%= tag :meta, name: 'citation_doi', content: @purl.doi_id if @purl.doi.present? %>
   <%= tag :meta, name: 'citation_title', content: @purl.title %>
+  <%= tag :meta, name: 'robots', content: 'noindex' unless @purl.rights.world_downloadable? %>
 <% end %>
 
 <% keywords(@purl.mods.subject.compact.map(&:values).join(',')) if @purl.mods? && @purl.mods.subject %>

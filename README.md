@@ -50,3 +50,9 @@ The RuboCop style enforcement can be run without running the tests
 ## Deploying
 
 Deployment is handled automatically via Jenkins when a release is published to GitHub.
+
+## Search engine indexing
+
+The current policy is to only index items that have world view and download rights.
+
+To this end, only world view and download right items are included in the sitemap and all other items have a "noindex" meta tag.
