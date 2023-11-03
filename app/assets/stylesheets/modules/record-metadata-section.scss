@@ -32,6 +32,11 @@
   }
 }
 
+#contributors dd {
+  display: flex;
+  justify-content: space-between;
+}
+
 // Based on sul-embed
 .stanford-only-text {
   background: url('stanford_s.png') no-repeat left;
