@@ -20,6 +20,7 @@ gem "propshaft"
 gem "puma", "~> 6.0" # web server for development
 gem "rails", "~> 7.1.0"
 gem 'recaptcha' # prevent robots spamming the feedback form
+gem "sitemap_generator"
 gem "stimulus-rails" # Hotwire's modest JavaScript framework
 gem 'tophat'
 gem "turbo-rails" # Hotwire's SPA-like page accelerator

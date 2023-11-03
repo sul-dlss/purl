@@ -18,15 +18,12 @@ class PurlResource
     Find.find(Settings.document_cache_root) do |path|
       next unless path.ends_with?('public')
 
-      # rubocop:disable Style/RegexpLiteral
-      match = path.match(%r{#{Settings.purl_resource.public_xml % { druid: '(.*)', druid_tree: '(.*)' }}})
-      # rubocop:enable Style/RegexpLiteral
+      druid = Dor::Util.druid_from_pair_tree(path)
+      next unless druid
 
-      next unless match
-
-      id = match[1].delete('/')
-
-      yield PurlResource.find(id)
+      yield PurlResource.find(druid)
+    rescue ObjectNotReady
+      next
     end
   end
 

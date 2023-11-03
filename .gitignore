@@ -40,3 +40,5 @@ yarn-debug.log*
 
 db/test*
 db/development*
+
+public/sitemap*
