@@ -106,6 +106,14 @@ RSpec.describe 'Integration Scenarios' do
     end
   end
 
+  context 'item that is part of collection not released to searchworks' do
+    it 'lists the collection name and does not link to items in collection' do
+      visit '/cd027gx5097'
+      expect(page).to have_content 'Edward Flanders Ricketts papers, 1936-1979 (inclusive), 1936-1947 (bulk)'
+      expect(page).not_to have_link 'View other items in this collection in SearchWorks'
+    end
+  end
+
   context 'cabinet minutes' do
     it 'works' do
       visit '/gx074xz5520'

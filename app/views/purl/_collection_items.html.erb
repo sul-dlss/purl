@@ -1,4 +1,4 @@
-<% if document.collection? && document.folio_instance_hrid %>
+<% if document.collection? && document.folio_instance_hrid && document.released_to?('Searchworks') %>
   <div class="section">
     <div class="section-heading">
       <h2>Items in collection</h2>
