@@ -246,6 +246,11 @@ GEM
     parser (3.2.2.4)
       ast (~> 2.4.1)
       racc
+    propshaft (0.8.0)
+      actionpack (>= 7.0.0)
+      activesupport (>= 7.0.0)
+      rack
+      railties (>= 7.0.0)
     psych (5.1.1.1)
       stringio
     public_suffix (5.0.3)
@@ -354,13 +359,6 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
-    sprockets (4.2.1)
-      concurrent-ruby (~> 1.0)
-      rack (>= 2.2.4, < 4)
-    sprockets-rails (3.4.2)
-      actionpack (>= 5.2)
-      activesupport (>= 5.2)
-      sprockets (>= 3.0.0)
     sshkit (1.21.5)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
@@ -426,6 +424,7 @@ DEPENDENCIES
   mods_display (~> 1.1, >= 1.3.2)
   newrelic_rpm
   okcomputer
+  propshaft
   puma (~> 5.0)
   rails (~> 7.0.0)
   recaptcha
@@ -436,7 +435,6 @@ DEPENDENCIES
   rubocop-rspec
   selenium-webdriver (!= 3.13.0)
   simplecov
-  sprockets-rails
   stimulus-rails
   tophat
   turbo-rails
