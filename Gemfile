@@ -20,7 +20,6 @@ gem "puma", "~> 5.0" # web server for development
 gem "rails", "~> 7.0.0"
 gem 'recaptcha' # prevent robots spamming the feedback form
 gem "sprockets-rails" # The original asset pipeline for Rails
-gem "sqlite3", "~> 1.4"
 gem "stimulus-rails" # Hotwire's modest JavaScript framework
 gem 'tophat'
 gem "turbo-rails" # Hotwire's SPA-like page accelerator

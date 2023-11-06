@@ -1,6 +1,12 @@
 require_relative "boot"
 
-require "rails/all"
+require "rails"
+# Jut the frameworks we're using:
+require "active_model/railtie"
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "action_view/railtie"
+require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.

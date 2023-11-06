@@ -29,4 +29,4 @@ jobs:
     - name: Install dependencies
       run: bin/setup
     - name: Run tests
-      run: bundle exec rake
+      run: bin/rake test:prepare spec
