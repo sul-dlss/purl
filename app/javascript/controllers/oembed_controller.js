@@ -12,36 +12,12 @@ export default class OembedController extends Controller {
       return
     }
 
-    fetch(this.urlValue)
-      .then((response) => {
-        if (response.ok) return response.text()
-        throw new Error(`HTTP error, status = ${response.status}`)
-      })
-      .then((body) => {
-        const oEmbedEndPoint = OembedController.findOEmbedEndPoint(body)
-        if (!oEmbedEndPoint || oEmbedEndPoint.length === 0) {
-          console.warn(`No oEmbed endpoint found in <head> at ${this.urlValue}`)
-          return
-        }
-        this.loadEndPoint(oEmbedEndPoint)
-      }).catch(error => {
-        console.error(error)
-      })
-  }
-
-  static findOEmbedEndPoint(body, extraParams = {}) {
-    // Parse out link elements so image assets are not loaded
-    const template = document.createElement('template')
-    template.innerHTML = body.match(/<link .*>/g).join('')
-
-    // Look for a link element containing the oEmbed endpoint; bail out if none
-    const endpoint = template.content.querySelector('link[rel="alternate"][type="application/json+oembed"]')
-      ?.getAttribute('href')
-    if (!endpoint) return ''
-
-    // Serialize any extra params and append them to the endpoint
-    const qs = new URLSearchParams(extraParams).toString()
-    return `${endpoint}&${qs}`
+    const oEmbedEndPoint = document.head.querySelector('link[rel="alternate"][type="application/json+oembed"]')?.getAttribute('href')
+    if (!oEmbedEndPoint) {
+      console.warn(`No oEmbed endpoint found in <head> at ${this.urlValue}`)
+      return
+    }
+    this.loadEndPoint(oEmbedEndPoint)
   }
 
   loadEndPoint(oEmbedEndPoint) {
