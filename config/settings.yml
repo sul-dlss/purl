@@ -81,3 +81,5 @@ recaptcha:
 sitemap:
   default_host: 'https://purl.stanford.edu'
 
+honeybadger_checkins:
+  sitemap: ~

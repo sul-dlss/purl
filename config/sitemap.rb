@@ -1,5 +1,6 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = Settings.sitemap.default_host
+SitemapGenerator::Sitemap.sitemaps_path = 'public/system/sitemap/'
 
 SitemapGenerator::Sitemap.create(include_root: false) do
   # Put links creation logic here.
