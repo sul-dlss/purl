@@ -27,7 +27,7 @@ Layout/LineLength:
 Metrics/AbcSize:
   Max: 22
   Exclude:
-    - app/controllers/iiif_v2_controller.rb
+    - app/controllers/iiif_controller.rb
     - app/controllers/iiif_v3_controller.rb
 
 Metrics/ClassLength:
@@ -48,7 +48,7 @@ Metrics/BlockLength:
     - spec/**/*
 RSpec/NestedGroups:
   Max: 4
-  
+
 Style/Documentation:
   Enabled: false
 

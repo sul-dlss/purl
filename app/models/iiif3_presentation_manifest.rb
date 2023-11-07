@@ -7,10 +7,9 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def body(controller = nil)
     controller ||= Rails.application.routes.url_helpers
-    purl_base_uri = controller.purl_url(druid)
 
     manifest_data = {
-      'id' => controller.iiif3_manifest_url(druid),
+      'id' => "#{iiif_base_uri}/manifest",
       'label' => { en: [title] },
       'requiredStatement' => iiif_key_value('Attribution', attribution),
       'logo' => [{
@@ -52,7 +51,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
     # for each resource sequence(SDR term), create a canvas
     content_metadata.grouped_resources.each do |resource_group|
-      manifest.items << canvas_for_resource(purl_base_uri, resource_group)
+      manifest.items << canvas_for_resource(resource_group)
     end
 
     manifest
@@ -70,16 +69,13 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     resources
   end
 
-  def annotation_page(controller: nil, annotation_page_id:)
-    controller ||= Rails.application.routes.url_helpers
-    purl_base_uri = controller.purl_url(druid)
-
+  def annotation_page(annotation_page_id:)
     selected_resource = resources.find { |resource| resource.id == annotation_page_id }
 
-    annotation_page_for_resource(purl_base_uri, selected_resource) if selected_resource
+    annotation_page_for_resource(selected_resource) if selected_resource
   end
 
-  def canvas_for_resource(purl_base_uri, resource_group)
+  def canvas_for_resource(resource_group)
     resource =
       if resource_group.is_a? ContentMetadata::GroupedResource
         resource_group.primary
@@ -87,7 +83,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
         resource_group
       end
     canv = IIIF::V3::Presentation::Canvas.new
-    canv['id'] = "#{purl_base_uri}/iiif3/canvas/#{resource.id}"
+    canv['id'] = "#{iiif_base_uri}/canvas/#{resource.id}"
     canv.label = {
       en: [resource.label.presence || 'image']
     }
@@ -95,7 +91,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       canv.height = resource.height
       canv.width = resource.width
     end
-    canv.items << annotation_page_for_resource(purl_base_uri, resource)
+    canv.items << annotation_page_for_resource(resource)
     canv
   end
 
@@ -112,17 +108,17 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     { 'label' => { en: [label] }, 'value' => { en: values } }
   end
 
-  def annotation_page_for_resource(purl_base_uri, resource)
+  def annotation_page_for_resource(resource)
     anno_page = IIIF::V3::Presentation::AnnotationPage.new
-    anno_page['id'] = "#{purl_base_uri}/iiif3/annotation_page/#{resource.id}"
-    anno_page.items << annotation_for_resource(purl_base_uri, resource)
+    anno_page['id'] = "#{iiif_base_uri}/annotation_page/#{resource.id}"
+    anno_page.items << annotation_for_resource(resource)
     anno_page
   end
 
-  def annotation_for_resource(purl_base_uri, resource)
+  def annotation_for_resource(resource)
     anno = IIIF::V3::Presentation::Annotation.new
-    anno['id'] = "#{purl_base_uri}/iiif3/annotation/#{resource.id}"
-    anno['target'] = "#{purl_base_uri}/iiif3/canvas/#{resource.id}"
+    anno['id'] = "#{iiif_base_uri}/annotation/#{resource.id}"
+    anno['target'] = "#{iiif_base_uri}/canvas/#{resource.id}"
 
     anno.body = if image?(resource)
                   image_resource(resource)
