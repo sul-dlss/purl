@@ -9,9 +9,13 @@
   <%= tag :link, rel: "alternate", title: "MODS XML", type: 'application/xml', href: purl_url(@purl, format: 'mods') if @purl.mods? %>
   <%= tag :link, rel: "alternate", title: "IIIF Manifest", type: 'application/json', href: iiif_manifest_url(@purl) if @purl.iiif_manifest? %>
   <%= tag :link, rel: "up", href: purl_url(@purl.containing_collections.first) if @purl.containing_collections.present? %>
-  <%= tag :meta, name: 'citation_doi', content: @purl.doi_id if @purl.doi.present? %>
   <%= tag :meta, name: 'citation_title', content: @purl.title %>
   <%= tag :meta, name: 'robots', content: 'noindex' unless @purl.rights.world_downloadable? %>
+  
+  <% if @purl.doi %>
+    <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>  
+    <%= tag :meta, name: 'citation_doi', content: @purl.doi_id %>
+  <% end %>
 <% end %>
 
 <% keywords(@purl.mods.subject.compact.map(&:values).join(',')) if @purl.mods? && @purl.mods.subject %>
@@ -50,5 +54,7 @@ end
     <% if @purl.mods? %>
       <%= render 'mods_metadata_sections', document: @purl %>
     <% end %>
+
+    <%= render 'stats', document: @purl %>
   </div>
 </div>
