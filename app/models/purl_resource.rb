@@ -109,16 +109,32 @@ class PurlResource
     @mods ||= mods_display_object.mods_display_html&.presence
   end
 
-  def iiif_manifest
-    @iiif_manifest ||= IiifPresentationManifest.new(self)
+  def iiif_manifest(**kwargs)
+    @iiif_manifest ||= if iiif2_manifest?
+      iiif2_manifest(**kwargs)
+    else
+      iiif3_manifest(**kwargs)
+    end
   end
 
-  def iiif_manifest?
-    iiif_manifest.needed?
+  def iiif2_manifest(**kwargs)
+    @iiif2_manifest ||= IiifPresentationManifest.new(self, **kwargs)
   end
 
-  def iiif3_manifest
-    @iiif3_manifest ||= Iiif3PresentationManifest.new(self)
+  def iiif2_manifest?
+    if public_xml_document.at_xpath('/publicObject/contentMetadata[contains(@type,"image")
+                                                                    or contains(@type,"map")
+                                                                    or contains(@type,"book")]/resource[@type="image"]')
+      true
+    elsif public_xml_document.at_xpath('/publicObject/contentMetadata[@type="book"]/resource[@type="page"]')
+      true
+    else
+      false
+    end
+  end
+
+  def iiif3_manifest(**kwargs)
+    @iiif3_manifest ||= Iiif3PresentationManifest.new(self, **kwargs)
   end
 
   def collection?

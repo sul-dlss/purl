@@ -1,4 +1,4 @@
-class IiifV2Controller < ApplicationController
+class IiifController < ApplicationController
   before_action :load_purl
 
   rescue_from PurlResource::DruidNotValid, with: :invalid_druid
@@ -20,7 +20,7 @@ class IiifV2Controller < ApplicationController
     return head :not_found unless iiif_manifest
 
     manifest = Rails.cache.fetch(cache_key('canvas'), expires_in: Settings.resource_cache.lifetime) do
-      iiif_manifest.canvas(controller: self, resource_id: params[:resource_id])&.to_ordered_hash
+      iiif_manifest.canvas(resource_id: params[:resource_id])&.to_ordered_hash
     end
     return head :not_found unless manifest
 
@@ -33,7 +33,7 @@ class IiifV2Controller < ApplicationController
     return head :not_found unless iiif_manifest.is_a?(Iiif3PresentationManifest)
 
     manifest = Rails.cache.fetch(cache_key('annotation_page'), expires_in: Settings.resource_cache.lifetime) do
-      iiif_manifest.annotation_page(controller: self, annotation_page_id: params[:resource_id])&.to_ordered_hash
+      iiif_manifest.annotation_page(annotation_page_id: params[:resource_id])&.to_ordered_hash
     end
     return head :not_found unless manifest
 
@@ -45,7 +45,7 @@ class IiifV2Controller < ApplicationController
     return head :not_found unless iiif_manifest
 
     manifest = Rails.cache.fetch(cache_key('annotation_list'), expires_in: Settings.resource_cache.lifetime) do
-      iiif_manifest.annotation_list(controller: self, resource_id: params[:resource_id])&.to_ordered_hash
+      iiif_manifest.annotation_list(resource_id: params[:resource_id])&.to_ordered_hash
     end
     return head :not_found unless manifest
 
@@ -57,7 +57,7 @@ class IiifV2Controller < ApplicationController
     return head :not_found unless iiif_manifest
 
     manifest = Rails.cache.fetch(cache_key('annotation'), expires_in: Settings.resource_cache.lifetime) do
-      iiif_manifest.annotation(controller: self, annotation_id: params[:resource_id])&.to_ordered_hash
+      iiif_manifest.annotation(annotation_id: params[:resource_id])&.to_ordered_hash
     end
     return head :not_found unless manifest
 
@@ -71,9 +71,11 @@ class IiifV2Controller < ApplicationController
   end
 
   def iiif_manifest
-    return unless @purl.iiif_manifest?
+    @iiif_manifest ||= @purl.iiif_manifest(iiif_base_uri:)
+  end
 
-    @purl.iiif_manifest
+  def iiif_base_uri
+    "#{purl_url(@purl.druid)}/iiif"
   end
 
   # validate that the id is of the proper format

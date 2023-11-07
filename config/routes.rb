@@ -57,18 +57,18 @@ Rails.application.routes.draw do
 
   ##
   # Default to IIIF Presentatation API v2 until our clients support v3.
-  get '/:id/iiif/manifest' => 'iiif_v2#manifest', as: :iiif_manifest, format: false
+  get '/:id/iiif/manifest' => 'iiif#manifest', as: :iiif_manifest, format: false
   get '/:id/iiif/manifest.json', to: redirect('/%{id}/iiif/manifest')
 
-  get '/:id/iiif/canvas/:resource_id' => 'iiif_v2#canvas', as: :iiif_canvas, format: false
+  get '/:id/iiif/canvas/:resource_id' => 'iiif#canvas', as: :iiif_canvas, format: false
   get '/:id/iiif/canvas/:resource_id.json', to: redirect('/%{id}/iiif/canvas/%{resource_id}')
 
-  get '/:id/iiif/annotation/:resource_id' => 'iiif_v2#annotation', as: :iiif_annotation, format: false
+  get '/:id/iiif/annotation/:resource_id' => 'iiif#annotation', as: :iiif_annotation, format: false
   get '/:id/iiif/annotation/:resource_id.json', to: redirect('/%{id}/iiif/annotation/%{resource_id}')
 
   ##
   # Deferenceable annotationLists for additional annotationList "other content"
-  get '/:id/iiif/annotationList/:resource_id' => 'iiif_v2#annotation_list', as: :iiif_annotation_list, format: false
+  get '/:id/iiif/annotationList/:resource_id' => 'iiif#annotation_list', as: :iiif_annotation_list, format: false
   get '/:id/iiif/annotationList/:resource_id.json', to: redirect('/%{id}/iiif/annotationList/%{resource_id}')
-  options '/:id/*whatever', to: 'iiif_v2#options'
+  options '/:id/*whatever', to: 'iiif#options'
 end
