@@ -6,61 +6,75 @@ class IiifV2Controller < ApplicationController
 
   def manifest
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
+    return head :not_found unless iiif_manifest
 
-    if @purl.iiif_manifest?
-      manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc, 'iiif_v2', 'manifest'], expires_in: Settings.resource_cache.lifetime) do
-        @purl.iiif_manifest.body(self).to_ordered_hash
-      end
-
-      render json: JSON.pretty_generate(manifest.as_json)
-    else
-      head :not_found
+    manifest = Rails.cache.fetch(cache_key('manifest'), expires_in: Settings.resource_cache.lifetime) do
+      iiif_manifest.body(self).to_ordered_hash
     end
+
+    render json: JSON.pretty_generate(manifest.as_json)
   end
 
   def canvas
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
+    return head :not_found unless iiif_manifest
 
-    if @purl.iiif_manifest?
-      manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc, 'iiif_v2', 'canvas'], expires_in: Settings.resource_cache.lifetime) do
-        @purl.iiif_manifest.canvas(controller: self, resource_id: params[:resource_id]).to_ordered_hash
-      end
-
-      render json: JSON.pretty_generate(manifest.as_json)
-    else
-      head :not_found
+    manifest = Rails.cache.fetch(cache_key('canvas'), expires_in: Settings.resource_cache.lifetime) do
+      iiif_manifest.canvas(controller: self, resource_id: params[:resource_id])&.to_ordered_hash
     end
+    return head :not_found unless manifest
+
+    render json: JSON.pretty_generate(manifest.as_json)
+  end
+
+  # Only available for IIIF v3 manifests
+  def annotation_page
+    return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
+    return head :not_found unless iiif_manifest.is_a?(Iiif3PresentationManifest)
+
+    manifest = Rails.cache.fetch(cache_key('annotation_page'), expires_in: Settings.resource_cache.lifetime) do
+      iiif_manifest.annotation_page(controller: self, annotation_page_id: params[:resource_id])&.to_ordered_hash
+    end
+    return head :not_found unless manifest
+
+    render json: JSON.pretty_generate(manifest.as_json)
   end
 
   def annotation_list
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
+    return head :not_found unless iiif_manifest
 
-    if @purl.iiif_manifest?
-      manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc, 'iiif_v2', 'annotation_list'], expires_in: Settings.resource_cache.lifetime) do
-        @purl.iiif_manifest.annotation_list(controller: self, resource_id: params[:resource_id]).to_ordered_hash
-      end
-
-      render json: JSON.pretty_generate(manifest.as_json)
-    else
-      head :not_found
+    manifest = Rails.cache.fetch(cache_key('annotation_list'), expires_in: Settings.resource_cache.lifetime) do
+      iiif_manifest.annotation_list(controller: self, resource_id: params[:resource_id])&.to_ordered_hash
     end
+    return head :not_found unless manifest
+
+    render json: JSON.pretty_generate(manifest.as_json)
   end
 
   def annotation
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
+    return head :not_found unless iiif_manifest
 
-    if @purl.iiif_manifest?
-      manifest = Rails.cache.fetch([@purl, @purl.updated_at.utc, 'iiif_v2', 'annotation'], expires_in: Settings.resource_cache.lifetime) do
-        @purl.iiif_manifest.annotation(controller: self, annotation_id: params[:annotation_id]).to_ordered_hash
-      end
-
-      render json: JSON.pretty_generate(manifest.as_json)
-    else
-      head :not_found
+    manifest = Rails.cache.fetch(cache_key('annotation'), expires_in: Settings.resource_cache.lifetime) do
+      iiif_manifest.annotation(controller: self, annotation_id: params[:resource_id])&.to_ordered_hash
     end
+    return head :not_found unless manifest
+
+    render json: JSON.pretty_generate(manifest.as_json)
   end
 
   private
+
+  def cache_key(*args)
+    [@purl, @purl.updated_at.utc, controller_name, *args, params[:resource_id]].compact
+  end
+
+  def iiif_manifest
+    return unless @purl.iiif_manifest?
+
+    @purl.iiif_manifest
+  end
 
   # validate that the id is of the proper format
   def load_purl
