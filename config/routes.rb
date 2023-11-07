@@ -31,11 +31,11 @@ Rails.application.routes.draw do
   get '/:id/iiif3/canvas/:resource_id' => 'iiif_v3#canvas', as: :iiif3_canvas, format: false
   get '/:id/iiif3/canvas/:resource_id.json', to: redirect('/%{id}/iiif3/canvas/%{resource_id}')
 
-  get '/:id/iiif3/annotation_page/:annotation_page_id' => 'iiif_v3#annotation_page', as: :iiif3_annotation_page, format: false
-  get '/:id/iiif3/annotation_page/:annotation_page_id.json', to: redirect('/%{id}/iiif3/annotation_page/%{annotation_page_id}')
+  get '/:id/iiif3/annotation_page/:resource_id' => 'iiif_v3#annotation_page', as: :iiif3_annotation_page, format: false
+  get '/:id/iiif3/annotation_page/:resource_id.json', to: redirect('/%{id}/iiif3/annotation_page/%{resource_id}')
 
-  get '/:id/iiif3/annotation/:annotation_id' => 'iiif_v3#annotation', as: :iiif3_annotation, format: false
-  get '/:id/iiif3/annotation/:annotation_id.json', to: redirect('/%{id}/iiif3/annotation/%{annotation_id}')
+  get '/:id/iiif3/annotation/:resource_id' => 'iiif_v3#annotation', as: :iiif3_annotation, format: false
+  get '/:id/iiif3/annotation/:resource_id.json', to: redirect('/%{id}/iiif3/annotation/%{resource_id}')
 
   ##
   # Sets up the ability to specify an Accept header which should provide a v3
@@ -47,11 +47,11 @@ Rails.application.routes.draw do
     get '/:id/iiif/canvas/:resource_id' => 'iiif_v3#canvas', format: false
     get '/:id/iiif/canvas/:resource_id.json', to: redirect('/%{id}/iiif3/canvas/%{resource_id}')
 
-    get '/:id/iiif/annotation_page/:annotation_page_id' => 'iiif_v3#annotation_page', format: false
-    get '/:id/iiif/annotation_page/:annotation_page_id.json', to: redirect('/%{id}/iiif3/annotation_page/%{annotation_page_id}')
+    get '/:id/iiif/annotation_page/:resource_id' => 'iiif_v3#annotation_page', format: false
+    get '/:id/iiif/annotation_page/:resource_id.json', to: redirect('/%{id}/iiif3/annotation_page/%{resource_id}')
 
-    get '/:id/iiif/annotation/:annotation_id' => 'iiif_v3#annotation', format: false
-    get '/:id/iiif/annotation/:annotation_id.json', to: redirect('/%{id}/iiif3/annotation/%{annotation_id}')
+    get '/:id/iiif/annotation/:resource_id' => 'iiif_v3#annotation', format: false
+    get '/:id/iiif/annotation/:resource_id.json', to: redirect('/%{id}/iiif3/annotation/%{resource_id}')
     options '/:id/*whatever', to: 'iiif_v3#options'
   end
 
@@ -63,8 +63,8 @@ Rails.application.routes.draw do
   get '/:id/iiif/canvas/:resource_id' => 'iiif_v2#canvas', as: :iiif_canvas, format: false
   get '/:id/iiif/canvas/:resource_id.json', to: redirect('/%{id}/iiif/canvas/%{resource_id}')
 
-  get '/:id/iiif/annotation/:annotation_id' => 'iiif_v2#annotation', as: :iiif_annotation, format: false
-  get '/:id/iiif/annotation/:annotation_id.json', to: redirect('/%{id}/iiif/annotation/%{annotation_id}')
+  get '/:id/iiif/annotation/:resource_id' => 'iiif_v2#annotation', as: :iiif_annotation, format: false
+  get '/:id/iiif/annotation/:resource_id.json', to: redirect('/%{id}/iiif/annotation/%{resource_id}')
 
   ##
   # Deferenceable annotationLists for additional annotationList "other content"
