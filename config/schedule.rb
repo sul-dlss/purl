@@ -18,7 +18,7 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-require 'config'
+require_relative 'environment'
 
 Config.load_and_set_settings(Config.setting_files('config', 'production'))
 
