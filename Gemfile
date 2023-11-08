@@ -26,6 +26,7 @@ gem 'tophat'
 gem "turbo-rails" # Hotwire's SPA-like page accelerator
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'whenever', require: false # cron jobs
 
 # DLSS and its community
 gem 'dor-rights-auth', '~> 1.6'
@@ -34,7 +35,6 @@ gem 'mods_display', '~> 1.1', '>= 1.3.2' # orcid support
 
 group :production do
   gem 'newrelic_rpm'
-  gem 'whenever', require: false # cron jobs
 end
 
 group :development do
