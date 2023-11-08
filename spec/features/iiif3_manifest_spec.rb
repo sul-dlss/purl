@@ -255,7 +255,7 @@ RSpec.describe 'IIIF v3 manifests' do
       pdf = canvas['items'].first['items'].first
       expect(pdf['body']['id']).to eq 'https://stacks.stanford.edu/file/bb132pr2055/Puente-Thesis-Submission-augmented.pdf'
       expect(pdf['body']['format']).to eq 'application/pdf'
-      expect(pdf['body']['type']).to eq 'Document'
+      expect(pdf['body']['type']).to eq 'Text'
     end
   end
 
@@ -279,7 +279,7 @@ RSpec.describe 'IIIF v3 manifests' do
       pdf = canvas['items'].first['items'].first
       expect(pdf['body']['id']).to eq 'https://stacks.stanford.edu/file/bb253gh8060/SC0193_Agenda_6381_2010-10-07_001.pdf'
       expect(pdf['body']['format']).to eq 'application/pdf'
-      expect(pdf['body']['type']).to eq 'Document'
+      expect(pdf['body']['type']).to eq 'Text'
 
       expect(pdf['body']).to have_key 'service'
 
@@ -310,7 +310,7 @@ RSpec.describe 'IIIF v3 manifests' do
       obj = canvas['items'].first['items'].first
       expect(obj['body']['id']).to eq 'https://stacks.stanford.edu/file/hc941fm6529/hc941fm6529.json'
       expect(obj['body']['format']).to eq 'application/vnd.threejs+json'
-      expect(obj['body']['type']).to eq 'Document'
+      expect(obj['body']['type']).to eq 'Model'
     end
   end
 
@@ -335,7 +335,7 @@ RSpec.describe 'IIIF v3 manifests' do
       obj = canvas['items'].first['items'].first
       expect(obj['body']['id']).to eq 'https://stacks.stanford.edu/file/bg387kw8222/bg387kw8222_low.obj'
       expect(obj['body']['format']).to eq 'text/plain'
-      expect(obj['body']['type']).to eq 'PhysicalObject'
+      expect(obj['body']['type']).to eq 'Dataset'
     end
   end
 

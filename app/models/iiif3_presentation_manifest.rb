@@ -219,15 +219,21 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   end
 
   def iiif_resource_type(resource)
-    case resource.type
-    when 'video'
+    case resource.mimetype
+    when /^video/
       'Video'
-    when 'audio'
+    when /^audio/
       'Sound'
-    when '3d'
-      'PhysicalObject'
+    when /^text/, %r{^application/pdf}
+      if three_d?
+        'Dataset'
+      else
+        'Text'
+      end
+    when %r{^application/vnd.threejs\+json}
+      'Model'
     else
-      'Document'
+      'Dataset'
     end
   end
 
