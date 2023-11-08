@@ -77,3 +77,9 @@ analytics_debug: true
 recaptcha:
   site_key: 6Lc6BAAAAAAAAChqRbQZcn_yyyyyyyyyyyyyyyyy
   secret_key: 6Lc6BAAAAAAAAKN3DRm6VA_xxxxxxxxxxxxxxxxx
+
+sitemap:
+  default_host: 'https://purl.stanford.edu'
+
+honeybadger_checkins:
+  sitemap: ~

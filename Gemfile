@@ -20,6 +20,7 @@ gem "propshaft"
 gem "puma", "~> 6.0" # web server for development
 gem "rails", "~> 7.1.0"
 gem 'recaptcha' # prevent robots spamming the feedback form
+gem "sitemap_generator"
 gem "stimulus-rails" # Hotwire's modest JavaScript framework
 gem 'tophat'
 gem "turbo-rails" # Hotwire's SPA-like page accelerator
@@ -33,6 +34,7 @@ gem 'mods_display', '~> 1.1', '>= 1.3.2' # orcid support
 
 group :production do
   gem 'newrelic_rpm'
+  gem 'whenever', require: false # cron jobs
 end
 
 group :development do
