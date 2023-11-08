@@ -10,6 +10,10 @@
   <%= tag :link, rel: "alternate", title: "IIIF Manifest", type: 'application/json', href: manifest_iiif_purl_url(@purl) %>
   <%= tag :link, rel: "up", href: purl_url(@purl.containing_collections.first) if @purl.containing_collections.present? %>
   <%= tag :meta, name: 'citation_title', content: @purl.title %>
+  <%= tag :meta, name: 'citation_publication_date', content: @purl.publication_date if @purl.publication_date %>
+  <% @purl.authors.each do |author| %>
+    <%= tag :meta, name: 'citation_author', content: author %>
+  <% end %>
   <%= tag :meta, name: 'robots', content: 'noindex' unless @purl.rights.world_downloadable? %>
 
   <% if @purl.doi %>

@@ -11,6 +11,8 @@ class PurlResource
 
   class ObjectNotReady < StandardError; end
 
+  MODS_NS = 'http://www.loc.gov/mods/v3'.freeze
+
   def self.all
     return [] unless Settings.document_cache_root
     return to_enum(:all) unless block_given?
@@ -212,12 +214,20 @@ class PurlResource
 
     # @return [String,nil] DOI (with https://doi.org/ prefix) if present
     def doi
-      @doi ||= mods_ng_document.root&.at_xpath('mods:identifier[@type="doi"]', mods: 'http://www.loc.gov/mods/v3')&.text
+      @doi ||= mods_ng_document.root&.at_xpath('mods:identifier[@type="doi"]', mods: MODS_NS)&.text
     end
 
     # @return [String,nil] DOI (without https://doi.org/ prefix) if present
     def doi_id
       doi&.delete_prefix('https://doi.org/')
+    end
+
+    def publication_date
+      @publication_date ||= ::Metadata::PublicationDate.call(mods_ng_document)
+    end
+
+    def authors
+      @authors ||= ::Metadata::Authors.call(mods_ng_document)
     end
   end
 
