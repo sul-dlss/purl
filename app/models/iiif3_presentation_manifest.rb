@@ -5,11 +5,9 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   delegate :reading_order, to: :content_metadata
 
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-  def body(controller = nil)
-    controller ||= Rails.application.routes.url_helpers
-
+  def body
     manifest_data = {
-      'id' => "#{iiif_base_uri}/manifest",
+      'id' => manifest_url,
       'label' => { en: [title] },
       'requiredStatement' => iiif_key_value('Attribution', attribution),
       'logo' => [{
@@ -83,7 +81,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
         resource_group
       end
     canv = IIIF::V3::Presentation::Canvas.new
-    canv['id'] = "#{iiif_base_uri}/canvas/#{resource.id}"
+    canv['id'] = canvas_url(resource_id: resource.id)
     canv.label = {
       en: [resource.label.presence || 'image']
     }
@@ -110,15 +108,15 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def annotation_page_for_resource(resource)
     anno_page = IIIF::V3::Presentation::AnnotationPage.new
-    anno_page['id'] = "#{iiif_base_uri}/annotation_page/#{resource.id}"
+    anno_page['id'] = annotation_page_url(resource_id: resource.id)
     anno_page.items << annotation_for_resource(resource)
     anno_page
   end
 
   def annotation_for_resource(resource)
     anno = IIIF::V3::Presentation::Annotation.new
-    anno['id'] = "#{iiif_base_uri}/annotation/#{resource.id}"
-    anno['target'] = "#{iiif_base_uri}/canvas/#{resource.id}"
+    anno['id'] = annotation_url(resource_id: resource.id)
+    anno['target'] = canvas_url(resource_id: resource.id)
 
     anno.body = if image?(resource)
                   image_resource(resource)
@@ -157,7 +155,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def binary_resource(resource)
     bin_res = IIIF::V3::Presentation::Resource.new
-    bin_res['id'] = "#{Settings.stacks.url}/file/#{resource.druid}/#{ERB::Util.url_encode(resource.filename)}"
+    bin_res['id'] = stacks_file_url(resource.druid, resource.filename)
     bin_res['type'] = iiif_resource_type(resource)
     bin_res.format = resource.mimetype
 
@@ -277,5 +275,9 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def three_d?
     type == '3d'
+  end
+
+  def annotation_page_url(**kwargs)
+    controller.url_for([:annotation_page, :iiif3, :purl, { id: @purl_resource.druid, **kwargs }])
   end
 end

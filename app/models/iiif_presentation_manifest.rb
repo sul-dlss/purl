@@ -7,9 +7,10 @@ class IiifPresentationManifest
 
   delegate :druid, :title, :type, :description, :content_metadata, :public_xml_document, to: :purl_resource
   delegate :reading_order, :resources, to: :content_metadata
+  delegate :url_for, to: :controller
   alias id druid
 
-  attr_reader :purl_resource, :iiif_base_uri
+  attr_reader :purl_resource, :controller, :iiif_namespace
 
   include ActionView::Helpers::NumberHelper
 
@@ -20,9 +21,10 @@ class IiifPresentationManifest
     'rtl' => 'right-to-left'
   }.freeze
 
-  def initialize(purl_resource, iiif_base_uri: nil)
+  def initialize(purl_resource, iiif_namespace: :iiif, controller: nil)
     @purl_resource = purl_resource
-    @iiif_base_uri = iiif_base_uri
+    @iiif_namespace = iiif_namespace
+    @controller = controller
   end
 
   def page_images
@@ -88,11 +90,9 @@ class IiifPresentationManifest
 
   # Bypass this method if there are no image resources in contentMetadata
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-  def body(controller = nil)
-    controller ||= Rails.application.routes.url_helpers
-
+  def body
     manifest_data = {
-      '@id' => "#{iiif_base_uri}/manifest",
+      '@id' => manifest_url,
       'label' => title,
       'attribution' => copyright || 'Provided by the Stanford University Libraries',
       'logo' => {
@@ -121,7 +121,7 @@ class IiifPresentationManifest
     order = reading_order
 
     sequence = IIIF::Presentation::Sequence.new(
-      '@id' => "#{iiif_base_uri}#sequence-1",
+      '@id' => "#{manifest_url}#sequence-1",
       'label' => 'Current order'
     )
 
@@ -165,7 +165,7 @@ class IiifPresentationManifest
     return unless grouped_resource
 
     anno_list = IIIF::Presentation::AnnotationList.new
-    anno_list['@id'] = "#{iiif_base_uri}/annotationList/#{resource_id}"
+    anno_list['@id'] = annotation_list_url(resource_id:)
     anno_list.resources = []
     grouped_resource.files.select { |file| file.role == 'annotations' && file.mimetype == 'application/json' }.each do |file|
       anno_list.resources << JSON.parse(
@@ -185,7 +185,7 @@ class IiifPresentationManifest
 
   def canvas_for_resource(resource)
     canv = IIIF::Presentation::Canvas.new
-    canv['@id'] = "#{iiif_base_uri}/canvas/#{resource.id}"
+    canv['@id'] = canvas_url(resource_id: resource.id)
     canv.label = resource.label
     canv.label = 'image' unless canv.label.present?
     canv.height = resource.height
@@ -222,7 +222,7 @@ class IiifPresentationManifest
 
     if grouped_resource.files.any? { |file| file.role == 'annotations' && file.mimetype == 'application/json' }
       anno_list = IIIF::Presentation::AnnotationList.new
-      anno_list['@id'] = "#{iiif_base_uri}/annotationList/#{resource.id}"
+      anno_list['@id'] = annotation_list_url(resource_id: resource.id)
       other_content << anno_list
     end
 
@@ -233,7 +233,7 @@ class IiifPresentationManifest
     url = stacks_iiif_base_url(resource.druid, resource.filename)
 
     anno = IIIF::Presentation::Annotation.new
-    anno['@id'] = "#{iiif_base_uri}/annotation/#{resource.id}"
+    anno['@id'] = annotation_url(resource_id: resource.id)
 
     img_res = IIIF::Presentation::ImageResource.new
     img_res['@id'] = "#{url}/full/full/0/default.jpg"
@@ -450,4 +450,20 @@ class IiifPresentationManifest
     EOSTATEMENT
   end
   # rubocop:enable Rails/OutputSafety, Metrics/MethodLength
+
+  def manifest_url(**kwargs)
+    controller.url_for([:manifest, iiif_namespace, :purl, { id: @purl_resource.druid, **kwargs }])
+  end
+
+  def canvas_url(**kwargs)
+    controller.url_for([:canvas, iiif_namespace, :purl, { id: @purl_resource.druid, **kwargs }])
+  end
+
+  def annotation_list_url(**kwargs)
+    controller.url_for([:annotation_list, iiif_namespace, :purl, { id: @purl_resource.druid, **kwargs }])
+  end
+
+  def annotation_url(**kwargs)
+    controller.url_for([:annotation, iiif_namespace, :purl, { id: @purl_resource.druid, **kwargs }])
+  end
 end

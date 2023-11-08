@@ -9,7 +9,7 @@ class IiifController < ApplicationController
     return head :not_found unless iiif_manifest
 
     manifest = Rails.cache.fetch(cache_key('manifest'), expires_in: Settings.resource_cache.lifetime) do
-      iiif_manifest.body(self).to_ordered_hash
+      iiif_manifest.body.to_ordered_hash
     end
 
     render json: JSON.pretty_generate(manifest.as_json)
@@ -71,15 +71,15 @@ class IiifController < ApplicationController
   end
 
   def iiif_manifest
-    @iiif_manifest ||= @purl.iiif_manifest(iiif_base_uri:)
-  end
-
-  def iiif_base_uri
-    "#{purl_url(@purl.druid)}/iiif"
+    @iiif_manifest ||= if params[:iiif_version] == 'v3'
+                         @purl.iiif3_manifest(controller: self, iiif_namespace: params[:iiif_scope] == 'iiif3' ? :iiif3 : :iiif)
+                       else
+                         @purl.iiif_manifest(controller: self)
+                       end
   end
 
   # validate that the id is of the proper format
   def load_purl
-    @purl = PurlResource.find(params[:id])
+    @purl = PurlResource.find(params[:purl_id] || params[:id])
   end
 end
