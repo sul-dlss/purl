@@ -17,8 +17,8 @@ gem "importmap-rails" # Use JavaScript with ESM import maps
 gem "jbuilder" # Build JSON APIs with ease
 gem 'okcomputer' # application monitoring
 gem "propshaft"
-gem "puma", "~> 5.0" # web server for development
-gem "rails", "~> 7.0.0"
+gem "puma", "~> 6.0" # web server for development
+gem "rails", "~> 7.1.0"
 gem 'recaptcha' # prevent robots spamming the feedback form
 gem "stimulus-rails" # Hotwire's modest JavaScript framework
 gem 'tophat'
