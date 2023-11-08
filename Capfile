@@ -28,6 +28,7 @@ require 'capistrano/passenger'
 require 'capistrano/honeybadger'
 require 'capistrano/shared_configs'
 require 'dlss/capistrano'
+require 'whenever/capistrano'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
