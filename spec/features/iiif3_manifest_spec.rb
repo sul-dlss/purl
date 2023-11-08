@@ -356,4 +356,37 @@ RSpec.describe 'IIIF v3 manifests' do
       expect(external_interaction_service['service'].first['profile']).to eq 'http://iiif.io/api/auth/1/token'
     end
   end
+
+  describe 'an object with coordinates' do
+    let(:druid) { 'rp193xx6845' }
+
+    it 'generates a correct manifest with navPlace' do
+      visit "/#{druid}/iiif3/manifest"
+      expect(page).to have_http_status(:ok)
+
+      json = JSON.parse(page.body)
+      expect(json['@context']).to include 'http://iiif.io/api/extension/navplace/context.json'
+      features = json['navPlace']['features']
+      expect(features.length).to eq 2
+      expect(features[0]['geometry'].with_indifferent_access).to match({
+                                                                         "type": 'Polygon',
+                                                                         "coordinates": [
+                                                                           [
+                                                                             ['-23.9', '71.316666'],
+                                                                             ['53.6', '71.316666'],
+                                                                             ['53.6', '33.5'],
+                                                                             ['-23.9', '33.5'],
+                                                                             ['-23.9', '71.316666']
+                                                                           ]
+                                                                         ]
+                                                                       })
+      expect(features[1]['geometry'].with_indifferent_access).to match({
+                                                                         "type": 'Point',
+                                                                         "coordinates": [
+                                                                           '103.8',
+                                                                           '-3.766666'
+                                                                         ]
+                                                                       })
+    end
+  end
 end

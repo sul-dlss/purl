@@ -33,6 +33,8 @@ gem 'dor-rights-auth', '~> 1.6'
 gem 'iiif-presentation', '~> 1.2'
 gem 'mods_display', '~> 1.1', '>= 1.3.2' # orcid support
 
+gem "geo_coord", require: "geo/coord"
+
 group :production do
   gem 'newrelic_rpm'
 end

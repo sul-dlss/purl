@@ -110,7 +110,9 @@ class ContentMetadata
     end
 
     def media_file
-      @media_file ||= files.find { |file| (file.type == 'video' || file.type == 'audio') && ((file.mimetype.start_with? 'video/') || (file.mimetype.start_with? 'audio/')) }
+      @media_file ||= files.find do |file|
+        (file.type == 'video' || file.type == 'audio') && ((file.mimetype.start_with? 'video/') || (file.mimetype.start_with? 'audio/'))
+      end
     end
 
     def image_file
