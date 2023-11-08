@@ -172,7 +172,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     when 'video'
       'Video'
     when 'audio'
-      'Audio'
+      'Sound'
     when '3d'
       'PhysicalObject'
     else
