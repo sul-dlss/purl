@@ -17,58 +17,66 @@ Rails.application.routes.draw do
   get '/preview' => 'preview#index'
   post '/preview' => 'preview#show'
 
-  get ':id' => 'purl#show', as: :purl
-  options ':id', to: 'purl#options'
-  get ':id/embed', to: redirect("/iframe/?url=#{Settings.embed.url % { druid: '%{id}' }}")
   get ':id/file/:file' => 'purl#file', as: :purl_file
 
-  ##
-  # These routes should only be used until our viewers support v3 manifests.
-  # We should aim to only serve a IIIF resource from a single URL.
-  get '/:id/iiif3/manifest' => 'iiif_v3#manifest', as: :iiif3_manifest, format: false
-  get '/:id/iiif3/manifest.json', to: redirect('/%{id}/iiif3/manifest')
+  resources :purl, only: [:show], param: :id, path: '/' do
+    member do
+      get 'embed', to: redirect("/iframe/?url=#{Settings.embed.url % { druid: '%{id}' }}")
+    # These routes should only be used until our viewers support v3 manifests.
+    # We should aim to only serve a IIIF resource from a single URL.
+    scope :iiif3, as: :iiif3, format: false, defaults: { iiif_version: 'v3', iiif_scope: 'iiif3' } do
+      get 'manifest', to: 'iiif#manifest'
+      get 'manifest.json', to: redirect('/%{id}/iiif3/manifest'), format: false
 
-  get '/:id/iiif3/canvas/:resource_id' => 'iiif_v3#canvas', as: :iiif3_canvas, format: false
-  get '/:id/iiif3/canvas/:resource_id.json', to: redirect('/%{id}/iiif3/canvas/%{resource_id}')
+      get 'canvas/:resource_id', to: 'iiif#canvas', as: :canvas, format: false, defaults: { iiif_version: 'v3' }
+      get 'canvas/:resource_id.json', to: redirect('/%{id}/iiif3/canvas/%{resource_id}'), format: false
 
-  get '/:id/iiif3/annotation_page/:resource_id' => 'iiif_v3#annotation_page', as: :iiif3_annotation_page, format: false
-  get '/:id/iiif3/annotation_page/:resource_id.json', to: redirect('/%{id}/iiif3/annotation_page/%{resource_id}')
+      get 'annotation_page/:resource_id' => 'iiif#annotation_page', as: :annotation_page, format: false, defaults: { iiif_version: 'v3' }
+      get 'annotation_page/:resource_id.json', to: redirect('/%{id}/iiif3/annotation_page/%{resource_id}'), format: false
 
-  get '/:id/iiif3/annotation/:resource_id' => 'iiif_v3#annotation', as: :iiif3_annotation, format: false
-  get '/:id/iiif3/annotation/:resource_id.json', to: redirect('/%{id}/iiif3/annotation/%{resource_id}')
+      get 'annotation/:resource_id' => 'iiif#annotation', as: :annotation, format: false, defaults: { iiif_version: 'v3' }
+      get 'annotation/:resource_id.json', to: redirect('/%{id}/iiif3/annotation/%{resource_id}'), format: false
+    end
 
-  ##
-  # Sets up the ability to specify an Accept header which should provide a v3
-  # manifest. Eventually, v3 should be served by default.
-  scope format: true, constraints: AcceptHeaderConstraint.new do
-    get '/:id/iiif/manifest' => 'iiif_v3#manifest', format: false
-    get '/:id/iiif/manifest.json', to: redirect('/%{id}/iiif3/manifest')
+    scope :iiif, as: :iiif do
+      #
+      # Sets up the ability to specify an Accept header which should provide a v3
+      # manifest. Eventually, v3 should be served by default.
+      scope format: true, constraints: AcceptHeaderConstraint.new do
+        get 'manifest', to: 'iiif#manifest', format: false, defaults: { iiif_version: 'v3' }
+        get 'manifest.json', to: redirect('/%{id}/iiif/manifest'), format: false
 
-    get '/:id/iiif/canvas/:resource_id' => 'iiif_v3#canvas', format: false
-    get '/:id/iiif/canvas/:resource_id.json', to: redirect('/%{id}/iiif3/canvas/%{resource_id}')
+        get 'canvas/:resource_id', to: 'iiif#canvas', format: false, defaults: { iiif_version: 'v3' }
+        get 'canvas/:resource_id.json', to: redirect('/%{id}/iiif/canvas/%{resource_id}'), format: false
 
-    get '/:id/iiif/annotation_page/:resource_id' => 'iiif_v3#annotation_page', format: false
-    get '/:id/iiif/annotation_page/:resource_id.json', to: redirect('/%{id}/iiif3/annotation_page/%{resource_id}')
+        get 'annotation_page/:resource_id' => 'iiif#annotation_page', format: false, defaults: { iiif_version: 'v3' }
+        get 'annotation_page/:resource_id.json', to: redirect('/%{id}/iiif/annotation_page/%{resource_id}'), format: false
 
-    get '/:id/iiif/annotation/:resource_id' => 'iiif_v3#annotation', format: false
-    get '/:id/iiif/annotation/:resource_id.json', to: redirect('/%{id}/iiif3/annotation/%{resource_id}')
-    options '/:id/*whatever', to: 'iiif_v3#options'
+        get 'annotation/:resource_id' => 'iiif#annotation', format: false, defaults: { iiif_version: 'v3' }
+        get 'annotation/:resource_id.json', to: redirect('/%{id}/iiif/annotation/%{resource_id}'), format: false
+      end
+
+      get 'manifest', to: 'iiif#manifest', format: false
+      get 'manifest.json', to: redirect('/%{id}/iiif/manifest'), format: false
+
+      get 'canvas/:resource_id', to: 'iiif#canvas', as: :canvas, format: false
+      get 'canvas/:resource_id.json', to: redirect('/%{id}/iiif/canvas/%{resource_id}'), format: false
+
+      get 'annotationList/:resource_id' => 'iiif#annotation_list', as: :annotation_list, format: false
+      get 'annotationList/:resource_id.json', to: redirect('/%{id}/iiif/annotationList/%{resource_id}'), format: false
+
+      get 'annotation/:resource_id' => 'iiif_#annotation', as: :annotation, format: false
+      get 'annotation/:resource_id.json', to: redirect('/%{id}/iiif/annotation/%{resource_id}'), format: false
+    end
+    end
+
   end
 
-  ##
-  # Default to IIIF Presentatation API v2 until our clients support v3.
-  get '/:id/iiif/manifest' => 'iiif#manifest', as: :iiif_manifest, format: false
-  get '/:id/iiif/manifest.json', to: redirect('/%{id}/iiif/manifest')
+  options '/:id', to: 'purl#options'
 
-  get '/:id/iiif/canvas/:resource_id' => 'iiif#canvas', as: :iiif_canvas, format: false
-  get '/:id/iiif/canvas/:resource_id.json', to: redirect('/%{id}/iiif/canvas/%{resource_id}')
+  scope constraints: AcceptHeaderConstraint.new do
+    options '/:id/*whatever', to: 'iiif#options', defaults: { iiif_version: 'v3' }
+  end
 
-  get '/:id/iiif/annotation/:resource_id' => 'iiif#annotation', as: :iiif_annotation, format: false
-  get '/:id/iiif/annotation/:resource_id.json', to: redirect('/%{id}/iiif/annotation/%{resource_id}')
-
-  ##
-  # Deferenceable annotationLists for additional annotationList "other content"
-  get '/:id/iiif/annotationList/:resource_id' => 'iiif#annotation_list', as: :iiif_annotation_list, format: false
-  get '/:id/iiif/annotationList/:resource_id.json', to: redirect('/%{id}/iiif/annotationList/%{resource_id}')
   options '/:id/*whatever', to: 'iiif#options'
 end

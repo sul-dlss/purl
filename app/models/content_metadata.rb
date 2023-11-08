@@ -91,6 +91,24 @@ class ContentMetadata
       image_file
     end
 
+    def supplementing_resources
+      return [] if media_file.blank?
+
+      files.select { |file| file.mimetype == 'text/vtt' }
+    end
+
+    def thumbnail_canvas
+      return unless media_file
+
+      @thumbnail_canvas ||= image_file
+    end
+
+    def other_resources
+      return [] unless files
+
+      files - [primary, thumbnail_canvas].compact - supplementing_resources
+    end
+
     def media_file
       @media_file ||= files.find { |file| file.type == 'video' || file.type == 'audio' }
     end

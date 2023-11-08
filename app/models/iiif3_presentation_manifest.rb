@@ -5,11 +5,9 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   delegate :reading_order, to: :content_metadata
 
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-  def body(controller = nil)
-    controller ||= Rails.application.routes.url_helpers
-
+  def body
     manifest_data = {
-      'id' => "#{iiif_base_uri}/manifest",
+      'id' => manifest_url,
       'label' => { en: [title] },
       'requiredStatement' => iiif_key_value('Attribution', attribution),
       'logo' => [{
@@ -83,7 +81,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
         resource_group
       end
     canv = IIIF::V3::Presentation::Canvas.new
-    canv['id'] = "#{iiif_base_uri}/canvas/#{resource.id}"
+    canv['id'] = canvas_url(resource_id: resource.id)
     canv.label = {
       en: [resource.label.presence || 'image']
     }
@@ -92,7 +90,59 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       canv.width = resource.width
     end
     canv.items << annotation_page_for_resource(resource)
+
+    if resource_group.is_a?(ContentMetadata::GroupedResource)
+      thumbnail_canvas = thumbnail_canvas_for_resource_group(resource_group)
+      canvas_type = resource.type == 'audio' ? 'accompanyingCanvas' : 'placeholdercanvas'
+      canv[canvas_type] = thumbnail_canvas
+
+      supplementing_resources = supplementing_resources_annotation_page(resource_group)
+      canv['annotations'] = supplementing_resources
+
+      canv['renderings'] = renderings_for_resource_group(resource_group)
+    end
+
     canv
+  end
+
+  def thumbnail_canvas_for_resource_group(resource_group)
+    return unless resource_group.thumbnail_canvas
+
+    thumbnail_canvas = IIIF::V3::Presentation::Canvas.new
+    thumbnail_canvas['id'] = canvas_url(resource_id: resource_group.thumbnail_canvas.filename)
+    thumbnail_canvas.label = {
+      en: [resource_group.thumbnail_canvas.label.presence || 'image']
+    }
+    if image?(resource_group.thumbnail_canvas)
+      thumbnail_canvas.height = resource_group.thumbnail_canvas.height
+      thumbnail_canvas.width = resource_group.thumbnail_canvas.width
+    end
+
+    thumbnail_canvas.items << annotation_page_for_resource(resource_group.thumbnail_canvas)
+
+    thumbnail_canvas
+  end
+
+  def supplementing_resources_annotation_page(resource_group)
+    return unless resource_group.supplementing_resources.any?
+
+    annotation_page = IIIF::V3::Presentation::AnnotationPage.new
+    annotation_page['id'] = "#{annotation_page_url(resource_id: resource_group.primary.id)}/supplement"
+
+    resource_group.supplementing_resources.each do |supplementing_resource|
+      anno = annotation_for_resource(supplementing_resource)
+      anno.id = annotation_url(resource_id: supplementing_resource.filename)
+      anno.motivation = 'supplementing'
+      annotation_page.items << anno
+    end
+
+    annotation_page
+  end
+
+  def renderings_for_resource_group(resource_group)
+    resource_group.other_resources.map do |other_resource|
+      binary_resource(other_resource).to_ordered_hash
+    end
   end
 
   def dc_to_iiif_metadata
@@ -110,15 +160,15 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def annotation_page_for_resource(resource)
     anno_page = IIIF::V3::Presentation::AnnotationPage.new
-    anno_page['id'] = "#{iiif_base_uri}/annotation_page/#{resource.id}"
+    anno_page['id'] = annotation_page_url(resource_id: resource.id)
     anno_page.items << annotation_for_resource(resource)
     anno_page
   end
 
   def annotation_for_resource(resource)
     anno = IIIF::V3::Presentation::Annotation.new
-    anno['id'] = "#{iiif_base_uri}/annotation/#{resource.id}"
-    anno['target'] = "#{iiif_base_uri}/canvas/#{resource.id}"
+    anno['id'] = annotation_url(resource_id: resource.id)
+    anno['target'] = canvas_url(resource_id: resource.id)
 
     anno.body = if image?(resource)
                   image_resource(resource)
@@ -157,8 +207,9 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def binary_resource(resource)
     bin_res = IIIF::V3::Presentation::Resource.new
-    bin_res['id'] = "#{Settings.stacks.url}/file/#{resource.druid}/#{ERB::Util.url_encode(resource.filename)}"
+    bin_res['id'] = stacks_file_url(resource.druid, resource.filename)
     bin_res['type'] = iiif_resource_type(resource)
+    bin_res['label'] = resource.filename
     bin_res.format = resource.mimetype
 
     unless purl_resource.rights.world_rights_for_file(resource.filename).first
@@ -277,5 +328,9 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def three_d?
     type == '3d'
+  end
+
+  def annotation_page_url(**kwargs)
+    controller.url_for([:annotation_page, :iiif3, :purl, { id: @purl_resource.druid, **kwargs }])
   end
 end
