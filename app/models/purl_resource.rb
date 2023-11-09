@@ -138,6 +138,10 @@ class PurlResource
     object_type == 'collection'
   end
 
+  def collection_items_link
+    "#{Settings.searchworks.url}/catalog?f[collection][]=#{folio_instance_hrid || druid}"
+  end
+
   concerning :Metadata do
     def title
       if mods?
