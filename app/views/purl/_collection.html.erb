@@ -6,8 +6,8 @@
     <div class="section-body">
       <% document.containing_purl_collections.each do |collection_document| %>
         <p class="mb-2"><%= collection_document.title %></p>
-        <% if collection_document.folio_instance_hrid && collection_document.released_to?('Searchworks') %>
-          <%= link_to('View other items in this collection in SearchWorks', "#{Settings.searchworks.url}/catalog?f[collection][]=#{collection_document.folio_instance_hrid}") %>
+        <% if collection_document.released_to?('Searchworks') %>
+          <%= link_to('View other items in this collection in SearchWorks', collection_document.collection_items_link) %>
         <% end %>
       <% end %>
     </div>
