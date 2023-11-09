@@ -99,12 +99,10 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
     if resource_group.is_a?(ContentMetadata::GroupedResource)
       thumbnail_canvas = thumbnail_canvas_for_resource_group(resource_group)
-      canvas_type = resource.type == 'audio' ? 'accompanyingCanvas' : 'placeholdercanvas'
+      canvas_type = resource.type == 'audio' ? 'accompanyingCanvas' : 'placeholderCanvas'
       canv[canvas_type] = thumbnail_canvas
 
-      supplementing_resources = supplementing_resources_annotation_page(resource_group)
-      canv['annotations'] = supplementing_resources
-
+      canv['annotations'] = supplementing_resources_annotation_page(resource_group)
       canv['renderings'] = renderings_for_resource_group(resource_group)
     end
 
@@ -142,7 +140,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       annotation_page.items << anno
     end
 
-    annotation_page
+    [annotation_page]
   end
 
   def renderings_for_resource_group(resource_group)
@@ -226,6 +224,8 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def iiif_resource_type(resource)
     case resource.mimetype
+    when /^image/
+      'Image'
     when /^video/
       'Video'
     when /^audio/
