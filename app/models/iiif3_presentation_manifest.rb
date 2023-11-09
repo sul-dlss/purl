@@ -102,9 +102,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       canvas_type = resource.type == 'audio' ? 'accompanyingCanvas' : 'placeholdercanvas'
       canv[canvas_type] = thumbnail_canvas
 
-      supplementing_resources = supplementing_resources_annotation_page(resource_group)
-      canv['annotations'] = supplementing_resources
-
+      canv['annotations'] = supplementing_resources_annotation_page(resource_group)
       canv['renderings'] = renderings_for_resource_group(resource_group)
     end
 
@@ -142,7 +140,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       annotation_page.items << anno
     end
 
-    annotation_page
+    [annotation_page]
   end
 
   def renderings_for_resource_group(resource_group)
