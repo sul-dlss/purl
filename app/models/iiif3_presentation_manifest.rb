@@ -99,7 +99,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
     if resource_group.is_a?(ContentMetadata::GroupedResource)
       thumbnail_canvas = thumbnail_canvas_for_resource_group(resource_group)
-      canvas_type = resource.type == 'audio' ? 'accompanyingCanvas' : 'placeholdercanvas'
+      canvas_type = resource.type == 'audio' ? 'accompanyingCanvas' : 'placeholderCanvas'
       canv[canvas_type] = thumbnail_canvas
 
       canv['annotations'] = supplementing_resources_annotation_page(resource_group)

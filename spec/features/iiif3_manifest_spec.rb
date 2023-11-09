@@ -357,6 +357,31 @@ RSpec.describe 'IIIF v3 manifests' do
     end
   end
 
+  context 'a video object with captions' do
+    let(:druid) { 'wr231qr2829' }
+
+    it 'includes a placeholder canvas and caption annotations' do
+      visit "/#{druid}/iiif3/manifest"
+      expect(page).to have_http_status(:ok)
+
+      json = JSON.parse(page.body)
+      canvas = json.dig('items', 0)
+
+      expect(canvas.dig('items', 0, 'items', 0, 'body')).to include('type' => 'Video')
+      expect(canvas.dig('placeholderCanvas', 'items', 0, 'items', 0, 'body')).to include(
+        'type' => 'Image',
+        'service' => include(hash_including('type' => 'ImageService2'))
+      )
+      expect(canvas.dig('annotations', 0, 'items', 0)).to include(
+        'motivation' => 'supplementing',
+        'body' => hash_including(
+          'type' => 'Text',
+          'format' => 'text/vtt'
+        )
+      )
+    end
+  end
+
   describe 'an object with coordinates' do
     let(:druid) { 'rp193xx6845' }
 
