@@ -224,6 +224,8 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def iiif_resource_type(resource)
     case resource.mimetype
+    when /^image/
+      'Image'
     when /^video/
       'Video'
     when /^audio/
