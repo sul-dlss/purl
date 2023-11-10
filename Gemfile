@@ -11,6 +11,7 @@ gem 'cancancan' # authorization
 gem 'config' # simple rails environment specific config
 gem "cssbundling-rails", "~> 1.1"
 gem 'faraday' # HTTP client
+gem "geo_coord", require: "geo/coord"
 gem 'honeybadger' # exception reporting
 gem 'htmlentities'
 gem "importmap-rails" # Use JavaScript with ESM import maps
@@ -31,9 +32,7 @@ gem 'whenever', require: false # cron jobs
 # DLSS and its community
 gem 'dor-rights-auth', '~> 1.6'
 gem 'iiif-presentation', '~> 1.2'
-gem 'mods_display', '~> 1.1', '>= 1.3.2' # orcid support
-
-gem "geo_coord", require: "geo/coord"
+gem 'mods_display', '~> 1.4'
 
 group :production do
   gem 'newrelic_rpm'
