@@ -27,7 +27,6 @@ h2 {
   line-height: 1.2em;
   margin: .5em 0;
   color: $color-cardinal-red;
-  border-bottom: 1px solid $sul-h2-border-color;
 }
 
 h3 {
@@ -38,22 +37,6 @@ h3 {
 
 dl {
   margin-bottom: 15px;
-}
-
-dt {
-  color: $gray-41-percent;
-  font-weight: normal;
-  font-size: .9em;
-  text-transform: uppercase !important;
-  padding-right: 1em;
-  padding-top: .15em;
-  width: 12em;
-}
-
-dd {
-  margin-left: 2em;
-  margin-bottom: .5em;
-  max-width: 45em;
 }
 
 label {

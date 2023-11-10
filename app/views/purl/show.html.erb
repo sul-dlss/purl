@@ -45,29 +45,33 @@ end
 %>
 <h1><%= @purl.title %></h1>
 <div class="upper-record-metadata row">
-  <div class="col-md-8">
-    <%= render 'mods_upper_metadata_section', document: @purl if @purl.mods? %>
-  </div>
-
   <div class="col-md-12">
     <%= render 'embed' %>
   </div>
 </div>
 
-<div class="record-metadata row">
-  <div class="record-sections col-md-8">
-    <%= render 'access' %>
-
+<div class="record-metadata row gx-5">
+  <div class="record-sections col-lg-8">
     <% if @purl.mods? %>
-      <%= render 'mods_metadata_sections', document: @purl %>
+      <%= render "mods_abstract_contents", document: @purl %>
+      <%= render "mods_description", document: @purl %>
+      <%= render "mods_contributors", document: @purl %>
+      <%= render "mods_subjects", document: @purl %>
+      <%= render "mods_bibliographic", document: @purl %>
     <% end %>
+  </div>
+  <div class="record-sections col-lg-4">
+    <%= render 'access', document: @purl %>
+    <%= render 'mods_citation', document: @purl %>
+    <%= render "collection", document: @purl %>
+    <%= render "collection_items", document: @purl %>
+    <%= render "mods_contact", document: @purl %>
+    <%= render "find_it", document: @purl %>
 
-    <%= render 'stats', document: @purl %>
-
-    <% if @purl.embeddable? %>
-    <turbo-frame id="metrics-frame" src="<%= purl_metrics_path @purl %>">
-      <p>Loading usage metrics...</p>
-    </turbo-frame>
+    <% if @purl.embeddable? || @purl.doi.present? %>
+      <turbo-frame id="metrics-frame" src="<%= purl_metrics_path @purl %>">
+        <p>Loading usage metrics...</p>
+      </turbo-frame>
     <% end %>
   </div>
 </div>

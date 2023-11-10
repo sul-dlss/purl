@@ -1,22 +1,36 @@
-<% fields = document.mods.audience +
-            document.mods.note.reject { |x| x.label =~ /Preferred citation/i } +
-            document.mods.relatedItem + 
-            document.mods.nestedRelatedItem +
-            document.mods.identifier +
-            document.mods.location
+<% note_fields = document.mods.note.reject { |x| x.label =~ /Preferred citation/i } %>
+<% middle_fields = document.mods.relatedItem(value_renderer: Purl::RelatedItemValueRenderer) +
+            document.mods.nestedRelatedItem(value_renderer: Purl::RelatedItemValueRenderer)
 %>
-
-<% if fields.present? %>
-  <div class="section">
-    <div class="section-heading">
-      <h2>Bibliographic information</h2>
-    </div>
-    <div class="section-body">
-      <dl>
-        <% fields.each do |field| %>
-          <%= mods_record_field(field) {|value| format_mods_html(value, field: field) + with_stanford_only(value) } %>
-        <% end %>
-      </dl>
-    </div>
-  </div>
+<% if document.mods.audience.present? || note_fields.present? || middle_fields.present? || document.mods.identifier.present? ||  document.mods.location.present? %>
+  <% label_id = "section-bibliographic-information" %>
+  <%= render SectionComponent.new(label: 'Bibliographic information', label_id: label_id) do %>
+    <%= render TableComponent.new(with_body: false, label_id: label_id) do %>
+      <% document.mods.audience.each do |field| %>
+        <tbody>
+          <%= mods_record_row_field(field) {|value| format_mods_html(value, field: field) + with_stanford_only(value) } %>
+        </tbody>
+      <% end %>
+      <% note_fields.each do |field| %>
+        <tbody>
+          <%= mods_record_row_field(field, delimiter: nil) {|value| format_mods_html(value, field: field) + with_stanford_only(value) } %>
+        </tbody>
+      <% end %>
+      <% middle_fields.each do |field| %>
+        <tbody>
+          <%= mods_record_row_field(field, delimiter: '') %>
+        </tbody>
+      <% end %>
+      <% document.mods.identifier.each do |field| %>
+        <tbody>
+          <%= mods_record_row_field(field) {|value| format_mods_html(value, field: field) + with_stanford_only(value) } %>
+        </tbody>
+      <% end %>
+      <% document.mods.location.each do |field| %>
+        <tbody>
+          <%= mods_record_row_field(field, delimiter: nil) {|value| format_mods_html(value, field: field) + with_stanford_only(value) } %>
+        </tbody>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>

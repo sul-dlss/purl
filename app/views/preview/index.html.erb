@@ -25,7 +25,7 @@
 </style>
 <% end %>
 <h3>Enter MODS XML</h3>
-<%= form_with url: '/preview', method: 'POST', data: { controller: "preview" } do %>
+<%= form_with url: '/preview', method: 'POST', data: { controller: "preview", turbo: false } do %>
   <textarea name='mods' data-preview-target="input"></textarea>
   <div id="mods" class="mods" contenteditable="true" data-preview-target="output"></div>
   <br><br>

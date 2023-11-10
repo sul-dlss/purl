@@ -1,21 +1,23 @@
 <turbo-frame id="metrics-frame">
-  <div class="metrics section">
-    <div class="section-heading">
-      <h2>Usage metrics</h2>
-    </div>
-    <div class="section-body">
-      <% if document.metrics.present? %>
-      <dl>
-        <dt>Views</dt>
-        <dd><%= number_with_delimiter document.metrics['unique_views'] %></dd>
-      </dl>
-      <% else %>
-      <p>No usage metrics available.</p>
+  <% label_id = 'section-metrics' %>
+  <%= render SectionComponent.new(label: 'Usage metrics', label_id: label_id) do %>
+    <% if document.metrics.present? %>
+      <%= render TableComponent.new(label_id: label_id) do %>
+        <tr>
+          <th>Views</th>
+          <td><%= number_with_delimiter document.metrics['unique_views'] %></td>
+        </tr>
       <% end %>
-      <p>
-        Data collected since 11/20/23.
-        <a href="https://sdr.library.stanford.edu/sdr-metrics">How are these metrics generated?</a>
-      </p>
-    </div>
-  </div>
+    <% else %>
+      <p>No usage metrics available.</p>
+    <% end %>
+    <p>
+      Data collected since 11/20/23.
+      <a href="https://sdr.library.stanford.edu/sdr-metrics">How are these metrics generated?</a>
+    </p>
+    <% if document.doi.present? %> 
+      <p><a href="https://help.altmetric.com/support/solutions/articles/6000232837-what-is-altmetric-and-what-does-it-provide-" target='_blank' rel='noopener'>Altmetric</a> tracks online attention to this work. A badge is shown only when online mentions are found.</p>
+      <div class='altmetric-embed' data-badge-type='donut' data-doi="<%= document.doi_id %>" data-badge-popover='right' data-hide-no-mentions='true'></div>
+    <% end %>
+  <% end %>
 </turbo-frame>

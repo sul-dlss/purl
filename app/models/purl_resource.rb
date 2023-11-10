@@ -234,6 +234,10 @@ class PurlResource
       doi&.delete_prefix('https://doi.org/')
     end
 
+    def related_item_elements
+      @related_item_elements ||= mods_ng_document.root&.xpath('mods:relatedItem', mods: MODS_NS)
+    end
+
     def publication_date
       @publication_date ||= ::Metadata::PublicationDate.call(mods_ng_document)
     end

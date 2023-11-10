@@ -1,15 +1,6 @@
 <% fields = document.mods.abstract + document.mods.contents %>
 <% if fields.present? %>
-  <div class="section">
-    <div class="section-heading">
-      <h2>Abstract/Contents</h2>
-    </div>
-    <div class="section-body">
-      <dl>
-        <% fields.each do |abstract| %>
-          <%= mods_record_field(abstract) %>
-        <% end %>
-        </dl>
-    </div>
-  </div>
+  <%= render SectionComponent.new(label: 'Abstract/Contents') do %>
+    <%= render ModsDefinitionListComponent.new(fields: fields) %>
+  <% end %>
 <% end %>

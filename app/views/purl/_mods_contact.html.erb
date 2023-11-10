@@ -1,14 +1,6 @@
-<% if document.mods.contact.present? %>
-  <div class="section">
-    <div class="section-heading">
-      <h2>Contact information</h2>
-    </div>
-    <div class="section-body">
-      <dl>
-        <% document.mods.contact.each do |contact| %>
-          <%= mods_record_field(contact) %>
-        <% end %>
-      </dl>
-    </div>
-  </div>
+<% fields = document.mods&.contact %>
+<% if fields.present? %>
+  <%= render SectionComponent.new(label: 'Contact information') do %>
+    <%= render ModsDefinitionListComponent.new(fields: fields, hide_label: true) %>
+  <% end %>
 <% end %>

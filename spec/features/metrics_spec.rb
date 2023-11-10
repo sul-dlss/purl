@@ -13,8 +13,8 @@ RSpec.describe 'Metrics display', js: true do
   end
 
   it 'shows the number of views for a given object' do
-    expect(page).to have_selector 'dt', text: /Views/i
-    expect(page).to have_selector 'dd', text: '1'
+    expect(page).to have_selector 'th', text: /Views/i
+    expect(page).to have_selector 'td', text: '1'
   end
 
   it 'includes a link to the metrics faq page' do

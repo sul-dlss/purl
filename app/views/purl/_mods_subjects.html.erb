@@ -1,18 +1,13 @@
 <% if document.mods.subject.present? || document.mods.genre.present? %>
-  <div class="section">
-    <div class="section-heading">
-      <h2>Subjects</h2>
-    </div>
-    <div class="section-body">
-      <dl>
-        <% document.mods.subject.each do |subject| %>
-          <%= mods_subject_field(subject)%>
-        <% end %>
-
-        <% document.mods.genre.each do |genre| %>
-          <%= mods_genre_field(genre)%>
-        <% end %>
-        </dl>
-    </div>
-  </div>
+  <% label_id = "section-subjects" %>
+  <%= render SectionComponent.new(label: 'Subjects', label_id: label_id) do %>
+    <%= render TableComponent.new(label_id: label_id) do %>
+      <% document.mods.subject.each do |subject| %>
+        <%= mods_subject_row_field(subject)%>
+      <% end %>
+      <% document.mods.genre.each do |genre| %>
+        <%= mods_genre_row_field(genre)%>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>
