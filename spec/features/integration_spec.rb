@@ -227,4 +227,11 @@ RSpec.describe 'Integration Scenarios' do
   def have_metadata_section(text)
     have_selector '.section-heading', text:
   end
+
+  context 'dataset item' do
+    it 'adds schema.org markup for Datasets' do
+      visit '/wp335yr5649'
+      expect(page).to have_css('script[type="application/ld+json"]', text: %r{http://schema.org}, visible: :hidden)
+    end
+  end
 end

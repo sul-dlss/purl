@@ -367,4 +367,51 @@ RSpec.describe PurlResource do
       end
     end
   end
+
+  describe '#schema_dot_org? and #schema_dot_org' do
+    context 'with a dataset' do
+      before do
+        allow(subject).to receive(:cocina_body).and_return <<~JSON
+          {
+            "description": {
+                              "form": [{ "value": "dataset",
+                                        "type":  "genre" }],
+                              "title": [{"value": "AVOIDDS: A dataset for vision-based aircraft detection"}],
+                              "note": [{"type": "abstract", "value": "About this dataset."}]
+                            },
+            "identification": {"doi": "10.25740/hj293cv5980"}
+          }
+        JSON
+      end
+
+      it 'returns schema.org markup' do
+        expect(subject.schema_dot_org).to include(
+          "@context": 'http://schema.org',
+          "@type": 'Dataset',
+          "name": 'AVOIDDS: A dataset for vision-based aircraft detection',
+          "identifier": ['https://doi.org/10.25740/hj293cv5980'],
+          "description": 'About this dataset.'
+        )
+      end
+    end
+
+    context 'with a format not relevant for schema.org' do
+      before do
+        allow(subject).to receive(:cocina_body).and_return <<~JSON
+          {
+            "description": {
+                              "form": [{ "value": "image",
+                                        "type":  "genre" }],
+                              "title": [{"value": "Not a dataset"}],
+                              "note": [{"type": "abstract", "value": "About this item."}]
+                            }
+          }
+        JSON
+      end
+
+      it 'returns false' do
+        expect(subject.schema_dot_org?).to be false
+      end
+    end
+  end
 end
