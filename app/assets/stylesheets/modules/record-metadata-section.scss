@@ -44,3 +44,23 @@
   padding-left: 15px;
   margin-left: 5px;
 }
+
+.metrics dl {
+  max-width: 40ch;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  row-gap: 0.5em;
+
+  dt, dd {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+
+  dt {
+    font-weight: bold;
+    font-size: inherit;
+    color: inherit;
+    text-transform: none !important;
+  }
+}

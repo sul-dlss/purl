@@ -27,6 +27,8 @@ embed:
     hide_title: true
     hide_metadata: true
 
+metrics_api_url: 'https://sdr-metrics-api-prod.stanford.edu'
+
 releases:
   - label: "View in SearchWorks"
     key: 'Searchworks'

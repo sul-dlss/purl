@@ -1,0 +1,23 @@
+<turbo-frame id="metrics-frame">
+  <div class="metrics section">
+    <div class="section-heading">
+      <h2>Views and downloads</h2>
+      <div>
+        <div class="section-body">
+          <% if document.metrics.present? %>
+          <dl>
+            <dt>Views</dt>
+            <dd><%= number_with_delimiter document.metrics['views'] %></dd>
+          </dl>
+          <% else %>
+          <p>No usage metrics available.</p>
+          <% end %>
+          <p>
+            Data collected since 11/20/23.
+            <a href="https://sdr.library.stanford.edu/sdr-metrics">How are these metrics generated?</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</turbo-frame>

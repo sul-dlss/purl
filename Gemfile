@@ -59,6 +59,7 @@ group :development, :test do
 
   gem 'selenium-webdriver', '!= 3.13.0'
   gem 'simplecov', require: false
+  gem 'webmock', '~> 3.19'
 end
 
 group :deployment do
@@ -69,4 +70,3 @@ group :deployment do
   gem 'capistrano-shared_configs'
   gem 'dlss-capistrano'
 end
-

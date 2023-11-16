@@ -58,6 +58,10 @@ class PurlController < ApplicationController
     redirect_to Settings.stacks.url + '/file/druid:' + ERB::Util.url_encode(params[:id]) + '/' + ERB::Util.url_encode(params[:file]), allow_other_host: true
   end
 
+  def metrics
+    render 'purl/_metrics', locals: { document: @purl }
+  end
+
   private
 
   # validate that the id is of the proper format
