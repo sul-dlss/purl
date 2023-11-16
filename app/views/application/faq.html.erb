@@ -1,0 +1,85 @@
+<% title 'Frequently asked questions' %>
+<h1>Frequently asked questions</h1>
+<p>
+  This page was inspired by
+  <a href="https://help.zenodo.org/faq">Zenodo's own FAQ page.</a> For help on
+  questions not covered here, use the feedback form link in the header of this
+  page.
+</p>
+<h2>Usage metrics</h2>
+<h3>What do you track?</h3>
+<p>We track two types of events:</p>
+<ol>
+  <li>
+    Views of <abbr title="Stanford Digital Repository">SDR</abbr> objects,
+    embedded on PURL pages and elsewhere.
+  </li>
+  <li>Downloads of files.</li>
+</ol>
+<p>For both types of events, we track:</p>
+<ol>
+  <li>
+    <strong>Visitor ID</strong>: We use cookies to remember unique visitors
+    across stanford.edu domains. This ID is kept for a maximum of two years.
+  </li>
+  <li>
+    <strong>Visit ID</strong>: We aggregate events from the same visitor into a
+    single visit, or session. A new visit is created after one hour of
+    inactivity.
+  </li>
+  <li>
+    <strong>DRUID</strong>: The identifier of the object being viewed,
+    downloaded, etc.
+  </li>
+  <li>
+    <strong>Referrer</strong>: Where the event originated (e.g. the page
+    embedding an object).
+  </li>
+</ol>
+<h3>What is a <em>view</em>?</h3>
+<p>A user (human or machine) loading an embedded SDR object.</p>
+<p>
+  Our embed viewer generates an HTML frame when an object is embedded in a page;
+  when a browser or machine loads this frame, we track a view event. This
+  happens regardless of where the object is embedded – on a Stanford-owned
+  website or externally.
+</p>
+<h3>How do you deal with versions?</h3>
+<p>
+  Events are aggregated by the object's DRUID. Event tracking is not broken out
+  by individual versions of an object; all versions are tracked together.
+</p>
+<h3>How do you deal with robots?</h3>
+<p>
+  Events originating from robots – for example, Google's web search crawler –
+  are not collected. This functionality is
+  <a href="https://github.com/ankane/ahoy#exclusions">provided by Ahoy</a>, our
+  metrics collection library.
+</p>
+<h3>How often do you update usage metrics?</h3>
+<p>
+  Metrics are collected in real-time. Refreshing a PURL page will display the
+  most up-to-date metrics available.
+</p>
+<h3>What information do you store about visitors?</h3>
+<p>We store the following information about visitors:</p>
+<ul>
+  <li>
+    <strong>IP Address</strong>: We anonymize the IP by discarding the final
+    octet of the address.
+  </li>
+  <li>
+    <strong>User Agent</strong>: We use this to determine the user's browser and
+    operating system.
+  </li>
+</ul>
+<h3>Can I opt-out of usage metrics tracking?</h3>
+<p>
+  No; usage tracking is automatic. However, using a browser or extension that
+  does any of the following will likely prevent metrics from being collected:
+</p>
+<ul>
+  <li>Disables JavaScript</li>
+  <li>Disables cookies</li>
+  <li>Blocks ads (e.g. uBlock origin)</li>
+</ul>

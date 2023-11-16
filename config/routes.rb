@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get '/preview' => 'preview#index'
   post '/preview' => 'preview#show'
 
+  get '/faq' => 'application#faq', as: :faq
+
   get ':id/file/:file' => 'purl#file', as: :purl_file
 
   resources :purl, only: [:show], param: :id, path: '/' do

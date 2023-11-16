@@ -20,6 +20,8 @@ class ApplicationController < ActionController::Base
     head :ok
   end
 
+  def faq; end
+
   private
 
   def invalid_druid
