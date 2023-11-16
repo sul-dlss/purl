@@ -147,6 +147,10 @@ class PurlResource
   def schema_dot_org?
     ::Metadata::SchemaDotOrg.schema_type?(cocina_body)
   end
+  
+  def metrics
+    metrics_service.get_metrics(druid)
+  end
 
   concerning :Metadata do
     def title
@@ -327,5 +331,9 @@ class PurlResource
 
   def logger
     Rails.logger
+  end
+
+  def metrics_service
+    @metrics_service ||= MetricsService.new
   end
 end

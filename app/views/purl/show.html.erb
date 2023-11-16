@@ -63,5 +63,11 @@ end
     <% end %>
 
     <%= render 'stats', document: @purl %>
+
+    <% if @purl.embeddable? %>
+    <turbo-frame id="metrics-frame" src="<%= purl_metrics_path @purl %>">
+      <p>Loading usage metrics...</p>
+    </turbo-frame>
+    <% end %>
   </div>
 </div>

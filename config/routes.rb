@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post '/preview' => 'preview#show'
 
   get ':id/file/:file' => 'purl#file', as: :purl_file
+  get ':id/metrics' => 'purl#metrics', as: :purl_metrics
 
   resources :purl, only: [:show], param: :id, path: '/' do
     member do
