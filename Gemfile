@@ -19,6 +19,9 @@ gem "jbuilder" # Build JSON APIs with ease
 gem 'okcomputer' # application monitoring
 gem "propshaft"
 gem "puma", "~> 6.0" # web server for development
+gem 'rack', "~> 2.2" # Phusion does not support Rack 3 yet. See https://github.com/rails/rails/issues/49422
+gem 'rackup', "~> 1.0" # Phusion does not support Rack 3 yet.
+gem 'rack-session', "~> 1.0", ">= 1.0.1" # Phusion does not support Rack 3 yet.
 gem "rails", "~> 7.1.0"
 gem 'recaptcha' # prevent robots spamming the feedback form
 gem "sitemap_generator"
