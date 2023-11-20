@@ -207,6 +207,8 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.6.3)
+    jsonpath (1.1.5)
+      multi_json
     language_server-protocol (3.17.0.3)
     loofah (2.21.4)
       crass (~> 1.0.2)
@@ -233,6 +235,7 @@ GEM
       stanford-mods (~> 3.3, >= 3.3.7)
       view_component
     msgpack (1.7.2)
+    multi_json (1.15.0)
     mutex_m (0.2.0)
     net-imap (0.4.4)
       date
@@ -449,6 +452,7 @@ DEPENDENCIES
   iiif-presentation (~> 1.2)
   importmap-rails
   jbuilder
+  jsonpath
   mods_display (~> 1.4)
   newrelic_rpm
   okcomputer

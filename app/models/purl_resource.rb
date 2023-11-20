@@ -144,6 +144,10 @@ class PurlResource
     "#{Settings.searchworks.url}/catalog?f[collection][]=#{folio_instance_hrid || druid}"
   end
 
+  def schema_dot_org?
+    ::Metadata::SchemaDotOrg.schema_type?(cocina_body)
+  end
+
   concerning :Metadata do
     def title
       if mods?
@@ -232,6 +236,10 @@ class PurlResource
 
     def authors
       @authors ||= ::Metadata::Authors.call(mods_ng_document)
+    end
+
+    def schema_dot_org
+      ::Metadata::SchemaDotOrg.call(cocina_body)
     end
   end
 

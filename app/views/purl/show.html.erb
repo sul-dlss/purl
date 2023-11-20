@@ -20,6 +20,9 @@
     <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
     <%= tag :meta, name: 'citation_doi', content: @purl.doi_id %>
   <% end %>
+  <% if @purl.schema_dot_org? %>
+    <script type="application/ld+json"><%= @purl.schema_dot_org.to_json.html_safe %></script>
+  <% end %>
 <% end %>
 
 <% keywords(@purl.mods.subject.compact.map(&:values).join(',')) if @purl.mods? && @purl.mods.subject %>
