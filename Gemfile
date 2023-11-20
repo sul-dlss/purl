@@ -36,6 +36,7 @@ gem 'mods_display', '~> 1.4'
 
 group :production do
   gem 'newrelic_rpm'
+  gem 'rack', "~> 2.2" # Phusion does not support Rack 3 yet. Additional pins below. See https://github.com/rails/rails/issues/49422.
 end
 
 group :development do
@@ -47,8 +48,7 @@ group :development, :test do
   gem 'capybara' # for feature/integration tests
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
-
-  gem 'rspec-rails', '~> 6.0'
+  gem 'rspec-rails', '~> 5.1'
 
   # Rubocop is a static code analyzer (linter) to enforce style.
   gem 'rubocop', require: false
