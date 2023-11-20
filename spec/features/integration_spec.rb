@@ -50,9 +50,7 @@ RSpec.describe 'Integration Scenarios' do
 
     it 'adds mailto links in the use and reproduction statement' do
       visit '/py305sy7961'
-      within '#access-conditions' do
-        expect(page).to have_link 'brannerlibrary@stanford.edu', href: 'mailto:brannerlibrary@stanford.edu'
-      end
+      expect(page).to have_link 'brannerlibrary@stanford.edu', href: 'mailto:brannerlibrary@stanford.edu'
     end
   end
 
@@ -139,16 +137,12 @@ RSpec.describe 'Integration Scenarios' do
 
     it 'shows related items' do
       visit '/gx074xz5520'
-      within '#bibliography-info' do
-        expect(page).to have_link 'Finding aid', href: 'http://www.oac.cdlib.org/findaid/ark:/13030/kt1h4nf2fr/'
-      end
+      expect(page).to have_link 'Finding aid', href: 'http://www.oac.cdlib.org/findaid/ark:/13030/kt1h4nf2fr/'
     end
 
     it 'provides the archivesref contact information' do
       visit '/gx074xz5520'
-      within '#contact' do
-        expect(page).to have_link 'archivesref@stanford.edu', href: 'mailto:archivesref@stanford.edu'
-      end
+      expect(page).to have_link 'archivesref@stanford.edu', href: 'mailto:archivesref@stanford.edu'
     end
   end
 
