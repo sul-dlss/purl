@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Metrics display', js: true do
   let(:status) { 200 }
-  let(:body) { '{"views": 1}' }
+  let(:body) { '{"unique_views": 1}' }
 
   before do
     stub_request(:get, 'https://sdr-metrics-api-prod.stanford.edu/bb157hs6068/metrics')

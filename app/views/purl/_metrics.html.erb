@@ -7,7 +7,7 @@
           <% if document.metrics.present? %>
           <dl>
             <dt>Views</dt>
-            <dd><%= number_with_delimiter document.metrics['views'] %></dd>
+            <dd><%= number_with_delimiter document.metrics['unique_views'] %></dd>
           </dl>
           <% else %>
           <p>No usage metrics available.</p>
