@@ -10,6 +10,7 @@ gem 'bootsnap', '>= 1.1.0', require: false # Reduces boot times through caching;
 gem 'cancancan' # authorization
 gem 'config' # simple rails environment specific config
 gem "cssbundling-rails", "~> 1.1"
+gem 'dry-struct' # immutable value objects
 gem 'faraday' # HTTP client
 gem "geo_coord", require: "geo/coord"
 gem 'honeybadger' # exception reporting
