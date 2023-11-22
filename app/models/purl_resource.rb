@@ -151,6 +151,7 @@ class PurlResource
   concerning :Metadata do
     def title
       if mods?
+        # This is from ModsDisplay::HTML
         Array.wrap(mods.title).join(' -- ')
       else
         public_xml.title
@@ -161,6 +162,7 @@ class PurlResource
       return unless mods?
 
       @description ||= begin
+        # This is from ModsDisplay::HTML
         abstract = mods.abstract.detect { |a| a.respond_to? :values }
         if abstract
           abstract.values.join.strip
@@ -212,6 +214,8 @@ class PurlResource
 
     delegate :released_to?, to: :public_xml
 
+    delegate :doi, :doi_id, to: :desc
+
     def representative_thumbnail?
       representative_thumbnail.present?
     end
@@ -220,22 +224,12 @@ class PurlResource
       "#{iiif_manifest.thumbnail_base_uri}/full/!400,400/0/default.jpg" if iiif_manifest.thumbnail_base_uri.present?
     end
 
-    # @return [String,nil] DOI (with https://doi.org/ prefix) if present
-    def doi
-      @doi ||= mods_ng_document.root&.at_xpath('mods:identifier[@type="doi"]', mods: MODS_NS)&.text
-    end
-
-    # @return [String,nil] DOI (without https://doi.org/ prefix) if present
-    def doi_id
-      doi&.delete_prefix('https://doi.org/')
-    end
-
     def publication_date
-      @publication_date ||= ::Metadata::PublicationDate.call(mods_ng_document)
+      desc.publication_year
     end
 
     def authors
-      @authors ||= ::Metadata::Authors.call(mods_ng_document)
+      desc.formatted_contributors
     end
 
     def schema_dot_org
@@ -323,6 +317,14 @@ class PurlResource
 
   def mods_ng_document
     @mods_ng_document ||= Nokogiri::XML(mods_body)
+  end
+
+  def cocina_json
+    @cocina_json ||= cocina_body.present? ? JSON.parse(cocina_body) : nil
+  end
+
+  def desc
+    @desc ||= Description.new(mods_ng: mods_ng_document, cocina_json:)
   end
 
   def logger

@@ -302,11 +302,18 @@ RSpec.describe PurlResource do
             <identifier type="doi" displayLabel="DOI">https://doi.org/10.25740/bb051dp0564</identifier>
           </mods>
         EOF
+        allow(subject).to receive(:cocina_body).and_return <<~JSON
+          {
+            "identification": {"doi": "10.25740/bb051dp0564"}
+          }
+        JSON
       end
 
       it 'returns the DOI' do
         expect(subject.doi).to eq 'https://doi.org/10.25740/bb051dp0564'
         expect(subject.doi_id).to eq '10.25740/bb051dp0564'
+        expect(subject).to have_received(:mods_body)
+        expect(subject).to have_received(:cocina_body).at_least(:once)
       end
     end
 
@@ -317,11 +324,17 @@ RSpec.describe PurlResource do
           <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
           </mods>
         EOF
+        allow(subject).to receive(:cocina_body).and_return <<~JSON
+          {
+          }
+        JSON
       end
 
       it 'returns nil' do
         expect(subject.doi).to be_nil
         expect(subject.doi_id).to be_nil
+        expect(subject).to have_received(:mods_body)
+        expect(subject).to have_received(:cocina_body).at_least(:once)
       end
     end
   end
