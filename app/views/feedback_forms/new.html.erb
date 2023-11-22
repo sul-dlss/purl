@@ -34,7 +34,8 @@
           <% if current_user.blank? %>
             <div class="form-group row mb-3">
               <div class="offset-sm-3 col-sm-9">
-                <%= recaptcha_tags %>
+                <%# no_script causes multiple response parameters to be submitted, which breaks verification. %>
+                <%= recaptcha_tags noscript: false %>
 
                 <p>(Stanford users can avoid this Captcha by logging in.)</p>
               </div>
