@@ -46,9 +46,10 @@
 }
 
 .metrics dl {
-  max-width: 40ch;
+  max-width: fit-content;
   display: grid;
   grid-template-columns: 1fr auto;
+  column-gap: 2em;
   row-gap: 0.5em;
 
   dt, dd {
@@ -62,5 +63,9 @@
     font-size: inherit;
     color: inherit;
     text-transform: none !important;
+  }
+
+  dd {
+    text-align: right;
   }
 }
