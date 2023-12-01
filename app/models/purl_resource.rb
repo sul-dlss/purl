@@ -147,7 +147,7 @@ class PurlResource
   def schema_dot_org?
     ::Metadata::SchemaDotOrg.schema_type?(cocina_body)
   end
-  
+
   def metrics
     metrics_service.get_metrics(druid)
   end
