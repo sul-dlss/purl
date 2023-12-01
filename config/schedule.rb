@@ -28,5 +28,5 @@ job_type :rake_hb, 'cd :path && :environment_variable=:environment bundle exec r
 
 every :month, roles: [:cron] do
   set :check_in, Settings.honeybadger_checkins.sitemap
-  rake_hb "-s sitemap:refresh"
+  rake_hb "sitemap:refresh"
 end
