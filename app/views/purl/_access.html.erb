@@ -1,15 +1,29 @@
-<% document ||= @purl %>
-<% access = render(partial: "access_metadata", locals: {document: document}) %>
+<% access_conditions = document.mods&.accessCondition&.reject { |x| x.label == "License:" && document.license? } %>
+<% copyright = document.copyright? && (document.mods.blank? || document.mods.accessCondition.none? { |x| x.label =~ /Copyright/i }) %>
+<% use_and_reproduction = document.use_and_reproduction? && (document.mods.blank? || document.mods.accessCondition.none? { |x| x.label =~ /Use and Reproduction/i }) %>
+<% license = document.license? && document.license.desc.present? %>
 
-<% if access.present? %>
-<div class="section">
-  <div class="section-heading">
-    <h2>Access conditions</h2>
-  </div>
-  <div class="section-body">
+<% if access_conditions.present? || copyright || use_and_reproduction || license %>
+  <%= render SectionComponent.new(label: 'Access conditions') do %>
     <dl>
-      <%= access %>
+      <% access_conditions.each do |accessCondition| %>
+        <%= mods_record_field(accessCondition) %>
+      <% end %>
+
+      <% if copyright %>
+        <dt>Copyright</dt>
+        <dd><%= with_copyright_symbol(document.copyright).html_safe %></dd>
+      <% end %>
+
+      <% if use_and_reproduction %>
+        <dt>Use and Reproduction</dt>
+        <dd><%= link_urls_and_email(document.use_and_reproduction).html_safe %></dd>
+      <% end %>
+
+      <% if license %>
+        <dt>License</dt>
+        <dd class="<%= document.license.code %>"><%= link_to_unless document.license.link.blank?, document.license.desc, document.license.link, target: '_blank' %></dd>
+      <% end %>
     </dl>
-  </div>
-</div>
+  <% end %>
 <% end %>

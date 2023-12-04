@@ -14,10 +14,12 @@
 
 <div class="record-metadata row">
   <div class="record-sections col-md-8">
-    <%= render 'access' %>
-
-    <% if @document.mods? %>
-      <%= render 'mods_metadata_sections', document: @purl %>
-    <% end %>
+    <%= render 'purl/access', document: @purl %>
+    <%= render "mods_abstract_contents", document: @purl %>
+    <%= render "mods_description", document: @purl %>
+    <%= render "mods_contributors", document: @purl %>
+    <%= render "mods_subjects", document: @purl %>
+    <%= render "mods_bibliographic", document: @purl %>
+    <%= render 'mods_citation', document: @purl %>
   </div>
 </div>

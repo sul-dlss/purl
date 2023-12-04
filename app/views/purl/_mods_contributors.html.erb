@@ -1,15 +1,14 @@
-<% if document.mods.name.present? %>
-  <div class="section">
-    <div class="section-heading">
-      <h2>Creators/Contributors</h2>
-    </div>
-    <div class="section-body">
-      <dl>
-        <% document.mods.name.each do |role_with_names| %>
-          <%= mods_record_field(role_with_names) do |name| %>
-            <% capture do %>
+<% fields = document.mods.name %>
+<% if fields.present? %>
+  <% label_id = "section-creators" %>
+  <%= render SectionComponent.new(label: 'Creators/Contributors', label_id: label_id) do %>
+    <%= render TableComponent.new(label_id: label_id) do %>
+      <% fields.each do |field| %>
+        <%= mods_record_row_field(field, delimiter: nil) do |name| %>
+          <% capture do %>
               <%= name.name %>
-              <% if name.orcid.present? %>
+              </td><td>
+              <% if name.orcid.present? %>                
                 <span class="orcid">
                   <% orcid_url = "https://orcid.org/#{name.orcid}" %>
                   <a href="<%= orcid_url %>" aria-label="view ORCID page for <%= name.name %>">
@@ -19,9 +18,8 @@
                 </span>
               <% end %>
             <% end %>
-          <% end %>
         <% end %>
-      </dl>
-    </div>
-  </div>
+      <% end %>    
+    <% end %>
+  <% end %>
 <% end %>

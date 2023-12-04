@@ -1,0 +1,10 @@
+<%= tag.dl **html_attributes do %>
+  <% if linked_title? %>
+    <%= render record.mods_field(:title, field_args: {link: location}) %>
+  <% elsif reference? %>
+    <%= render record.mods_field(:referenceTitle) %>
+  <% end %>
+  <% fields.each do |field| %>
+    <%= render record.mods_field(field) %>
+  <% end %>
+<% end %>

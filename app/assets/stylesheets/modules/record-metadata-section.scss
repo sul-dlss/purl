@@ -1,6 +1,6 @@
 .record-sections {
   .section {
-    padding-bottom: 0;
+    margin-bottom: 2rem;
 
     .section-heading h2 {
       span.sul-i {
@@ -8,33 +8,63 @@
         margin-right: 5px;
       }
     }
-  }
-}
 
-.record-metadata, .upper-record-metadata {
-  dt {
-    width: auto;
-  }
-}
+    .section-body {
 
+      th {
+        padding-left: 0px;
+        border-bottom-width: 0px;
+        width: 20%;
+      }
 
-.upper-record-metadata {
-  dl {
-    @extend .row;
-  }
-  dt {
-    @extend .col;
-    flex-basis: auto;
-  }
-  dd {
-    @extend .w-75;
-    margin-left: auto;
-  }
-}
+      tbody {
+        tr:not(:first-of-type) th {
+          // Visibility hidden doesn't work here because it also hides the border
+          font-size: 0;
+        }
 
-#contributors dd {
-  display: flex;
-  justify-content: space-between;
+        tr:first-of-type {
+          th, td {
+            border-top-width: 1px;
+          }
+        }
+  
+        td {
+          border-bottom-width: 0px;
+        }
+      
+        tr:last-of-type th, tr:last-of-type td {
+          border-bottom-width: 1px;
+        }
+  
+        > dl > dd:not(:last-child) {
+          margin-bottom: 15px;
+        }
+  
+        > dl > dd:last-child {
+          margin-bottom: 0px;
+        }
+  
+        dl.mods_display_related_item:not(:first-child) {
+          margin-top: 20px;
+        }
+  
+        dl.mods_display_related_item {
+          margin-bottom: 0px;
+  
+          dt {
+            font-weight: normal;
+            font-style: italic;
+            text-transform: capitalize;
+          }
+  
+          dd {
+            margin-bottom: 5px;
+          }
+        }
+      }    
+    }    
+  }
 }
 
 // Based on sul-embed
@@ -43,24 +73,4 @@
   background: url('stanford_s.svg') no-repeat left, none;
   padding-left: 15px;
   margin-left: 5px;
-}
-
-.metrics dl {
-  max-width: 40ch;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  row-gap: 0.5em;
-
-  dt, dd {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-  }
-
-  dt {
-    font-weight: bold;
-    font-size: inherit;
-    color: inherit;
-    text-transform: none !important;
-  }
 }

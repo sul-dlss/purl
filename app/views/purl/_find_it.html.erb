@@ -12,16 +12,11 @@
 <% end %>
 
 <% if document.catalog_key || releases.present? %>
-  <div class="section">
-    <div class="section-heading">
-      <h2>Also listed in</h2>
-    </div>
-    <div class="section-body">
-      <% if document.catalog_key %>
-        <%= link_to 'View in SearchWorks', "#{Settings.searchworks.url}/view/#{document.catalog_key}" %>
-      <% end %>
+  <%= render SectionComponent.new(label: 'Also listed in') do %>
+    <% if document.catalog_key %>
+      <%= link_to 'View in SearchWorks', "#{Settings.searchworks.url}/view/#{document.catalog_key}" %>
+    <% end %>
 
-      <%= releases.to_sentence.html_safe %>
-    </div>
-  </div>
+    <%= releases.to_sentence.html_safe %>
+  <% end %>
 <% end %>

@@ -1,15 +1,12 @@
 <% if document.containing_purl_collections.present? %>
-  <div class="section">
-    <div class="section-heading">
-      <h2>Collection</h2>
-    </div>
-    <div class="section-body">
-      <% document.containing_purl_collections.each do |collection_document| %>
-        <p class="mb-2"><%= collection_document.title %></p>
+  <%= render SectionComponent.new(label: 'Collection') do %>
+    <% document.containing_purl_collections.each do |collection_document| %>
+      <div class="mb-3">
+        <p class="mb-0"><%= collection_document.title %></p>
         <% if collection_document.released_to?('Searchworks') %>
           <%= link_to('View other items in this collection in SearchWorks', collection_document.collection_items_link) %>
         <% end %>
-      <% end %>
-    </div>
-  </div>
+      </div>
+    <% end %>
+  <% end %>
 <% end %>

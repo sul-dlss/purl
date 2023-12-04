@@ -4,14 +4,8 @@
             document.mods.cartographics
 %>
 <% if fields.present? %>
-  <div class="section">
-    <div class="section-heading">
-      <h2>Description</h2>
-    </div>
-    <div class="section-body">
-      <% fields.each do |field| %>
-        <%= mods_record_field(field) %>
-      <% end %>
-    </div>
-  </div>
+  <% label_id = "section-description" %>
+  <%= render SectionComponent.new(label: 'Description', label_id: label_id) do %>
+    <%= render ModsTableComponent.new(fields: fields, label_id: label_id) %>
+  <% end %>
 <% end %>
