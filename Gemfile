@@ -33,7 +33,8 @@ gem 'whenever', require: false # cron jobs
 # DLSS and its community
 gem 'dor-rights-auth', '~> 1.6'
 gem 'iiif-presentation', '~> 1.3'
-gem 'mods_display', '~> 1.5'
+#gem 'mods_display', '~> 1.5'
+gem 'mods_display', git: 'git@github.com:sul-dlss/mods_display', branch: 'date-other'
 
 group :production do
   gem 'newrelic_rpm'

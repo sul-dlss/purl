@@ -1,6 +1,15 @@
 <% fields = document.mods.mods_field(:title).fields.reject { |x| x.label =~ /^Title/i } +
             document.mods.resourceType + document.mods.form + document.mods.extent +
-            document.mods.imprint + document.mods.language + document.mods.description +
+            document.mods.place + document.mods.publisher + document.mods.edition +
+            document.mods.dateCaptured +
+            document.mods.dateCreated +
+            document.mods.dateValid +
+            document.mods.dateModified +
+            document.mods.dateIssued +
+            document.mods.dateOther +
+            document.mods.copyrightDate +
+            document.mods.issuance + document.mods.frequency +
+            document.mods.language + document.mods.description +
             document.mods.cartographics
 %>
 <% if fields.present? %>
