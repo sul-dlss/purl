@@ -218,7 +218,7 @@ RSpec.describe 'Integration Scenarios' do
   end
 
   def have_metadata_section(text)
-    have_selector '.section-heading', text:
+    have_selector 'section h2', text:
   end
 
   context 'dataset item' do
