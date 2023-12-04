@@ -47,8 +47,10 @@
     <div id="su-wrap"> <!-- #su-wrap start -->
       <div id="su-content"> <!-- #su-content start -->
         <div id="outer-container" class="container-fluid">
-          <%= render 'shared/top_navbar' %>
-          <%= render 'shared/brand_navbar' %>
+          <header>
+            <%= render 'shared/top_navbar' %>
+            <%= render 'shared/brand_navbar' %>
+          </header>
 
           <section id="main-container" role="main">
             <%= render partial: '/flash_msg', layout: 'shared/flash_messages' %>
