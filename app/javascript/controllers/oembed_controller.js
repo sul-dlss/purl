@@ -1,10 +1,6 @@
 import { Controller } from '@hotwired/stimulus'
 
 export default class OembedController extends Controller {
-  static values = {
-    url: String
-  }
-
   connect() {
     const loadedAttr = this.element.getAttribute('loaded')
 
@@ -14,7 +10,7 @@ export default class OembedController extends Controller {
 
     const oEmbedEndPoint = document.head.querySelector('link[rel="alternate"][type="application/json+oembed"]')?.getAttribute('href')
     if (!oEmbedEndPoint) {
-      console.warn(`No oEmbed endpoint found in <head> at ${this.urlValue}`)
+      console.warn(`No oEmbed endpoint found in <head>`)
       return
     }
     this.loadEndPoint(oEmbedEndPoint)
