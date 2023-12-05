@@ -5,10 +5,11 @@ class IiifController < ApplicationController
   rescue_from PurlResource::ObjectNotReady, with: :object_not_ready
 
   def manifest
-    return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
+    iiif_version = params[:iiif_version] == 'v3' ? 3 : 2
+    return unless stale?(last_modified: @purl.updated_at.utc, etag: "#{@purl.cache_key}/#{iiif_version}/#{@purl.updated_at.utc}")
     return head :not_found unless iiif_manifest
 
-    manifest = Rails.cache.fetch(cache_key('manifest'), expires_in: Settings.resource_cache.lifetime) do
+    manifest = Rails.cache.fetch(cache_key('manifest', iiif_version), expires_in: Settings.resource_cache.lifetime) do
       iiif_manifest.body.to_ordered_hash
     end
 
