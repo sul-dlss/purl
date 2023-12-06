@@ -1,4 +1,5 @@
-<% top_fields = document.mods.mods_field(:title).fields.reject { |x| x.label =~ /^Title/i } +
+<% alternative_title_field = document.mods.mods_field(:title).fields.select { |x| x.label =~ /^Alternative Title/i } %>
+<% top_fields = document.mods.mods_field(:title).fields.reject { |x| x.label =~ /^(Alternative )?Title/i } +
             document.mods.resourceType
 %>
 <% middle_fields = document.mods.extent + document.mods.imprint
@@ -6,10 +7,17 @@
 
 <% bottom_fields = document.mods.description + document.mods.cartographics
 %>
-<% if top_fields.present? || document.mods.form.present? || middle_fields.present? || document.mods.language.present? || bottom_fields.present? %>
+<% if alternative_title_field.present? || top_fields.present? || document.mods.form.present? || middle_fields.present? || document.mods.language.present? || bottom_fields.present? %>
   <% label_id = "section-description" %>
   <%= render SectionComponent.new(label: 'Description', label_id: label_id) do %>
     <%= render TableComponent.new(label_id: label_id, with_body: false) do %>
+      <% if alternative_title_field.present? %>
+        <% alternative_title_field.each do |field| %>
+          <tbody>
+            <%= mods_record_row_field(field, delimiter: nil) %>
+          </tbody>
+        <% end %>
+      <% end %>
       <% top_fields.each do |field| %>
         <tbody>
           <%= mods_record_row_field(field) %>
