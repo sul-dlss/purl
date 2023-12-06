@@ -1,4 +1,8 @@
-<%= tag.div data: { controller: 'oembed', oembed_url_value: embeddable_url(@purl.druid) } do %>
+<%= tag.div data: { controller: 'oembed' } do %>
+  <svg width="100%" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+    <title>Placeholder</title>
+    <rect width="100%" height="100%" fill="#868e96"></rect>
+  </svg>
   <a class="purl-embed-viewer embed" href="<%= embeddable_url(@purl.druid) %>" data-oembed-provider="<%= oembed_provider_url %>">Show Content</a>
 <% end %>
 <noscript>

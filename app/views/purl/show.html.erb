@@ -44,11 +44,13 @@ end
 
 %>
 <h1><%= @purl.title %></h1>
+<% if @purl.embeddable? %>
 <div class="upper-record-metadata row">
   <div class="col-md-12">
     <%= render 'embed' %>
   </div>
 </div>
+<% end %>
 
 <div class="record-metadata row gx-5">
   <div class="record-sections col-lg-8">
