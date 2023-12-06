@@ -1,11 +1,48 @@
-<% fields = document.mods.mods_field(:title).fields.reject { |x| x.label =~ /^Title/i } +
-            document.mods.resourceType + document.mods.form + document.mods.extent +
-            document.mods.imprint + document.mods.language + document.mods.description +
-            document.mods.cartographics
+<% alternative_title_field = document.mods.mods_field(:title).fields.select { |x| x.label =~ /^Alternative Title/i } %>
+<% top_fields = document.mods.mods_field(:title).fields.reject { |x| x.label =~ /^(Alternative )?Title/i } +
+            document.mods.resourceType
 %>
-<% if fields.present? %>
+<% middle_fields = document.mods.extent + document.mods.imprint
+%>
+
+<% bottom_fields = document.mods.description + document.mods.cartographics
+%>
+<% if alternative_title_field.present? || top_fields.present? || document.mods.form.present? || middle_fields.present? || document.mods.language.present? || bottom_fields.present? %>
   <% label_id = "section-description" %>
   <%= render SectionComponent.new(label: 'Description', label_id: label_id) do %>
-    <%= render ModsTableComponent.new(fields: fields, label_id: label_id) %>
+    <%= render TableComponent.new(label_id: label_id, with_body: false) do %>
+      <% if alternative_title_field.present? %>
+        <% alternative_title_field.each do |field| %>
+          <tbody>
+            <%= mods_record_row_field(field, delimiter: nil) %>
+          </tbody>
+        <% end %>
+      <% end %>
+      <% top_fields.each do |field| %>
+        <tbody>
+          <%= mods_record_row_field(field) %>
+        </tbody>
+      <% end %>
+      <% document.mods.form.each do |field| %>
+        <tbody>
+          <%= mods_record_row_field(field, delimiter: '; ') %>
+        </tbody>
+      <% end %>
+      <% middle_fields.each do |field| %>
+        <tbody>
+          <%= mods_record_row_field(field) %>
+        </tbody>
+      <% end %>
+      <% document.mods.language.each do |field| %>
+        <tbody>
+          <%= mods_record_row_field(field, delimiter: '; ') %>
+        </tbody>
+      <% end %>
+      <% bottom_fields.each do |field| %>
+        <tbody>
+          <%= mods_record_row_field(field) %>
+        </tbody>
+      <% end %>
+    <% end %>
   <% end %>
 <% end %>
