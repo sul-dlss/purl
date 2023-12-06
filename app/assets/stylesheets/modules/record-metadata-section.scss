@@ -17,6 +17,10 @@
         width: 20%;
       }
 
+      th:first-letter {
+        text-transform: uppercase;
+      }
+
       tbody {
         tr:not(:first-of-type) th {
           // Visibility hidden doesn't work here because it also hides the border
