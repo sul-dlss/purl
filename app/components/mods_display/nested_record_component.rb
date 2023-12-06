@@ -17,7 +17,7 @@ module ModsDisplay
       if linked_title?
         ModsDisplay::RecordComponent::DEFAULT_FIELDS - [:subTitle] - [:location]
       elsif reference?
-        ModsDisplay::RecordComponent::DEFAULT_FIELDS - [:subTitle]
+        ModsDisplay::RecordComponent::DEFAULT_FIELDS - [:subTitle] - [:note]
       else
         [:title] + ModsDisplay::RecordComponent::DEFAULT_FIELDS - [:subTitle]
       end
