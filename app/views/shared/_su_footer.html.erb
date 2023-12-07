@@ -1,51 +1,53 @@
-<footer>
-  <div id="sul-footer-container">
-    <div id="sul-footer" class="container">
-      <div id="sul-footer-img" class="span2">
-        <%= link_to 'https://library.stanford.edu' do %>
-          <%= image_tag "sul-logo-stacked.svg", alt: "Stanford Libraries", height: 45 %>
-        <% end %>
-      </div>
-      <div id="sul-footer-links" class="span2">
-        <ul>
-          <li><a href="https://library-hours.stanford.edu/libraries" class="su-underline">Hours &amp; locations</a></li>
-          <li><a href="https://library.stanford.edu/myaccount" class="su-underline">My Account</a></li>
-          <li><a href="https://library.stanford.edu/ask" class="su-underline">Ask us</a></li>
-          <li><a href="https://library-status.stanford.edu/" class="su-underline">System status</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!-- Global footer snippet start -->
-  <div id="global-footer">
-    <div class="container">
-      <div class="row">
-        <div id="bottom-logo" class="col-sm-2">
-          <a href="https://www.stanford.edu">
-            <img src="https://www-media.stanford.edu/su-identity/images/footer-stanford-logo@2x.png" alt="Stanford University" width="105" height="49"/>
-          </a>
+    <footer>
+      <section id="pre-footer" class="py-4">
+        <div class="container">
+          <div class="row">
+          <div id="sul-footer-img" class="col-lg-2 col-md-3">
+            <%= link_to 'https://library.stanford.edu' do %>
+              <%= image_tag "sul-logo-stacked.svg", alt: "Stanford Libraries", height: 45 %>
+            <% end %>
+          </div>
+          <div class="col">
+            <ul class="list-unstyled d-flex mt-3">
+              <li><a href="https://library-hours.stanford.edu/" class="px-2">Hours &amp; locations</a></li>
+              <li><a href="https://mylibrary.stanford.edu/" class="px-2">My Account</a></li>
+              <li><a href="https://library.stanford.edu/contact-us" class="px-2">Ask us</a></li>
+              <li><a href="https://library-status.stanford.edu/" class="px-2">System status</a></li>
+            </ul>
+          </div>
         </div>
-        <!-- #bottom-logo end -->
-        <div id="bottom-text" class="col-sm-8">
-          <ul>
-            <li class="home"><a href="https://www.stanford.edu">Stanford Home</a></li>
-            <li class="maps alt"><a href="https://visit.stanford.edu/plan/">Maps & Directions</a></li>
-            <li class="search-stanford"><a href="https://www.stanford.edu/search/">Search Stanford</a></li>
-            <li class="emergency alt"><a href="https://emergency.stanford.edu">Emergency Info</a></li>
-          </ul>
-          <ul id="policy-links">
-            <li><a href="https://www.stanford.edu/site/terms/" title="Terms of use for sites">Terms of Use</a></li>
-            <li><a href="https://www.stanford.edu/site/privacy/" title="Privacy and cookie policy">Privacy</a></li>
-            <li><a href="https://uit.stanford.edu/security/copyright-infringement" title="Report alleged copyright infringement">Copyright</a></li>
-            <li><a href="https://adminguide.stanford.edu/chapter-1/subchapter-5/policy-1-5-4" title="Ownership and use of Stanford trademarks and images">Trademarks</a></li>
-            <li><a href="http://exploredegrees.stanford.edu/nonacademicregulations/nondiscrimination/" title="Non-discrimination policy">Non-Discrimination</a></li>
-            <li><a href="https://www.stanford.edu/site/accessibility" title="Report web accessibility issues">Accessibility</a></li>
-          </ul>
-        </div> <!-- .bottom-text end -->
-        <div class="clear"></div>
-        <p class="copyright vcard offset-sm-2">&copy; <span class="fn org">Stanford University</span>, <span class="adr"> <span class="locality">Stanford</span>, <span class="region">California</span> <span class="postal-code">94305</span></span>.
-        </p>
-      </div> <!-- .row end -->
-    </div> <!-- .container end -->
-  </div> <!-- global-footer end -->
-</footer>
+      </section>
+
+      <div class="su-global-footer py-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-2">
+              <a href="https://www.stanford.edu">
+                <img src="https://www-media.stanford.edu/su-identity/images/footer-stanford-logo@2x.png" alt="Stanford University" width="105" height="49"/>
+              </a>
+            </div>
+
+            <div class="col-sm-10">
+              <ul class="list-unstyled d-flex mb-1 su-global-footer__menu--global">
+                <li><a href="https://www.stanford.edu" class="px-2">Stanford Home</a></li>
+                <li><a href="https://visit.stanford.edu/plan/" class="px-2">Maps & Directions</a></li>
+                <li><a href="https://www.stanford.edu/search/" class="px-2">Search Stanford</a></li>
+                <li><a href="https://emergency.stanford.edu" class="px-2">Emergency Info</a></li>
+              </ul>
+              <ul class="list-unstyled d-flex mb-1 su-global-footer__menu--policy">
+                <li><a href="https://www.stanford.edu/site/terms/" title="Terms of use for sites" class="px-2">Terms of Use</a></li>
+                <li><a href="https://www.stanford.edu/site/privacy/" title="Privacy and cookie policy" class="px-2">Privacy</a></li>
+                <li><a href="https://uit.stanford.edu/security/copyright-infringement" title="Report alleged copyright infringement" class="px-2">Copyright</a></li>
+                <li><a href="https://adminguide.stanford.edu/chapter-1/subchapter-5/policy-1-5-4" title="Ownership and use of Stanford trademarks and images" class="px-2">Trademarks</a></li>
+                <li><a href="http://exploredegrees.stanford.edu/nonacademicregulations/nondiscrimination/" title="Non-discrimination policy" class="px-2">Non-Discrimination</a></li>
+                <li><a href="https://www.stanford.edu/site/accessibility" title="Report web accessibility issues" class="px-2">Accessibility</a></li>
+              </ul>
+              <div class="su-global-footer__copyright ms-2">
+                <span>© Stanford University.</span>
+                <span>&nbsp; Stanford, California 94305.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>

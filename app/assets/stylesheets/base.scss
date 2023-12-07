@@ -1,5 +1,16 @@
+// This selector/rule can be removed after https://github.com/twbs/bootstrap/pull/39098 is released
+a {
+  text-decoration: var(--bs-link-decoration);
+  &:hover,
+  &:focus-visible {
+    text-decoration: var(--bs-link-hover-decoration);
+  }
+}
+
 .su-underline {
-	text-decoration: none;
+  --bs-link-hover-decoration: none;
+  --bs-link-decoration: none;
+
   border-bottom: 1px dotted var(--bs-gray-500);
 }
 

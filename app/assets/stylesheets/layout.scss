@@ -1,52 +1,9 @@
-#search-navbar {
-  border: none !important;
-  background: none;
-  padding: 0 0;
-}
-
-#outer-container, #topnav-container, #search-navbar-container, #sul-footer-container {
-	width: 100%;
-	margin: 0;
+#outer-container{
 	padding: 0;
-	border: none;
-}
-
-#topnav, #search-navbar, #main-container, #sul-footer {
-	margin: 0 auto;
-	text-align: left;
 }
 
 #main-container {
   #main-flashes {
     min-height: 0;
-  }
-}
-
-#search-navbar {
-	padding: 0;
-}
-
-@media (min-width: 768px) {
-  #topnav, #search-navbar, #main-container, #sul-footer {
-    width: 750px;
-  }
-}
-
-@media (min-width: 980px) {
-  #topnav, #search-navbar, #main-container, #sul-footer {
-    width: 970px;
-  }
-}
-
-@media (min-width: 1200px) {
-  #topnav, #search-navbar, #main-container, #sul-footer {
-    width: 1170px;
-  }
-}
-
-
-@media only screen and (max-width : 768px) {
-  #main-container, #search-navbar {
-    padding: 0 15px;
   }
 }

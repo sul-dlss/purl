@@ -42,7 +42,11 @@ twitter_card('summary_large_image') do |card|
 end
 
 %>
-<h1 class="py-2"><%= @purl.title %></h1>
+<div class="row">
+  <div class="col-12">
+    <h1 class="py-2"><%= @purl.title %></h1>
+  </div>
+</div>
 <% if @purl.embeddable? %>
 <div class="upper-record-metadata row">
   <div class="col-md-12">
