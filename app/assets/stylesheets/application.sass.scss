@@ -1,5 +1,4 @@
 // SUL Style Variables/Mixins
-@import 'sul-styles';
 @import 'deja-vu-font';
 @import 'sul-variables';
 @import 'searchworks-mixins';
@@ -9,7 +8,22 @@
 @import 'bootstrap-mixins';
 @import 'bootstrap-overrides';
 
-@import 'searchworks';
+@import 'base';
+@import 'layout';
+
+@import 'modules/buttons';
+@import 'modules/feedback-form';
+@import 'modules/license-icons';
+@import 'modules/purl-embed-viewer';
+@import 'modules/record-view';
+@import 'modules/record-metadata-section';
+@import 'modules/search-bar';
+@import 'modules/skip-to-nav';
+@import 'modules/sul-footer';
+@import 'modules/sul-icons';
+@import 'modules/sul-toolbar';
+@import 'modules/top-navbar';
+
 @import 'print/styles';
 
 .record-metadata {
