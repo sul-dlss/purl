@@ -14,7 +14,7 @@
   <% @purl.authors.each do |author| %>
     <%= tag :meta, name: 'citation_author', content: author %>
   <% end %>
-  <%= tag :meta, name: 'robots', content: 'noindex' unless @purl.rights.world_downloadable? %>
+  <%= tag :meta, name: 'robots', content: 'noindex' unless @purl.crawlable? %>
 
   <% if @purl.doi %>
     <%= tag :meta, name: 'citation_doi', content: @purl.doi_id %>

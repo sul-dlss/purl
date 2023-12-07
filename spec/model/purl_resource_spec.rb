@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe PurlResource do
-  let(:instance) { described_class.new }
+  let(:instance) { described_class.new(id: druid) }
+  let(:druid) { nil }
 
   describe 'resource methods' do
     let(:fake_response) { OpenStruct.new(success?: true, body: 'Content') }
@@ -222,6 +223,89 @@ RSpec.describe PurlResource do
     end
 
     it { is_expected.to eq ['jw357py5564'] }
+  end
+
+  describe '#crawlable' do
+    context 'when resource is member of collection' do
+      subject { instance.crawlable? }
+      before do
+        allow(instance).to receive(:public_xml_body).and_return <<-EOF
+        <?xml version="1.0" encoding="UTF-8"?>
+        <publicObject>
+          <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="info:fedora/druid:kn112rm5773">
+          <fedora:isMemberOf rdf:resource="info:fedora/druid:nk071jz2236"/>
+          <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:nk071jz2236"/>
+          </rdf:Description>
+          </rdf:RDF>
+        </publicObject>
+        EOF
+      end
+
+      it { is_expected.to be true }
+    end
+
+    context 'when resource is not member of collection or matching source id' do
+      subject { instance.crawlable? }
+      before do
+        allow(instance).to receive(:public_xml_body).and_return <<-EOF
+        <?xml version="1.0" encoding="UTF-8"?>
+        <publicObject>
+          <identityMetadata>
+            <sourceId source="sul">sul:MOA0176</sourceId>
+          </identityMetadata>
+          <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="info:fedora/druid:kn112rm5773">
+          <fedora:isMemberOf rdf:resource="info:fedora/druid:hc089bd2251"/>
+          <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:hc089bd2251"/>
+          </rdf:Description>
+          </rdf:RDF>
+        </publicObject>
+        EOF
+      end
+
+      it { is_expected.to be false }
+    end
+
+    context 'when resource is the collection' do
+      subject { instance.crawlable? }
+      let(:druid) { 'nk071jz2236' }
+
+      before do
+        allow(instance).to receive(:public_xml_body).and_return <<-EOF
+        <?xml version="1.0" encoding="UTF-8"?>
+        <publicObject>
+          <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="info:fedora/druid:nk071jz2236">
+          </rdf:Description>
+          </rdf:RDF>
+        </publicObject>
+        EOF
+      end
+
+      it { is_expected.to be true }
+    end
+
+    context 'when resource has a matching source id prefix' do
+      subject { instance.crawlable? }
+
+      before do
+        allow(instance).to receive(:public_xml_body).and_return <<-EOF
+        <?xml version="1.0" encoding="UTF-8"?>
+        <publicObject>
+          <identityMetadata>
+            <sourceId source="sul">dissertationid:0000005037</sourceId>
+          </identityMetadata>
+          <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="info:fedora/druid:kn112rm5773">
+          </rdf:Description>
+          </rdf:RDF>
+        </publicObject>
+        EOF
+      end
+
+      it { is_expected.to be true }
+    end
   end
 
   describe '#catalog_key' do

@@ -27,7 +27,7 @@ SitemapGenerator::Sitemap.create(include_root: false) do
   #   end
   Settings.resource_cache.enabled = false
   PurlResource.all.each do |purl|
-    add purl_path(purl.id), lastmod: purl.updated_at, changefreq: nil, priority: nil if purl.rights.world_downloadable?
+    add purl_path(purl.id), lastmod: purl.updated_at, changefreq: nil, priority: nil if purl.crawlable?
   rescue StandardError
     # Because data is bad.
   end
