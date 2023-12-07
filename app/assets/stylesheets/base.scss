@@ -10,7 +10,7 @@ body {
   font-family: 'Source Sans Pro', 'Arial Unicode MS', Helvetica, sans-serif;
 }
 
-a, a:hover, a:focus {
+.su-underline {
 	text-decoration: none;
   border-bottom: 1px dotted $sul-link-color-border;
 }

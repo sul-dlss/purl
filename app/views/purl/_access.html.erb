@@ -22,7 +22,7 @@
 
       <% if license %>
         <dt>License</dt>
-        <dd class="<%= document.license.code %>"><%= link_to_unless document.license.link.blank?, document.license.desc, document.license.link, target: '_blank' %></dd>
+        <dd class="<%= document.license.code %>"><%= link_to_unless document.license.link.blank?, document.license.desc, document.license.link, class: 'su-underline', target: '_blank' %></dd>
       <% end %>
     </dl>
   <% end %>

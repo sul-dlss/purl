@@ -10,9 +10,9 @@ module ApplicationHelper
   end
 
   def link_to_purl(druid)
-    link_to PurlResource.find(druid).title, purl_url(druid)
+    link_to PurlResource.find(druid).title, purl_url(druid), class: 'su-underline'
   rescue StandardError
-    link_to druid, purl_url(druid)
+    link_to druid, purl_url(druid), class: 'su-underline'
   end
 
   def oembed_url_template

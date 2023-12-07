@@ -12,7 +12,7 @@
                 <% if name.orcid.present? %>                
                   <span class="orcid">
                     <% orcid_url = "https://orcid.org/#{name.orcid}" %>
-                    <a href="<%= orcid_url %>" aria-label="view ORCID page for <%= name.name %>">
+                    <a href="<%= orcid_url %>" class="su-underline" aria-label="view ORCID page for <%= name.name %>">
                       <img alt="ORCiD icon" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16" />
                       <%= orcid_url %>
                     </a> (unverified)
