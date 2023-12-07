@@ -1,11 +1,11 @@
-<h2>MODS Display</h2>
+<h2 class="text-primary">MODS Display</h2>
 <div class="view-mods">
   <%= @mods.to_html.gsub('<dl', '<dl class="dl-horizontal"').html_safe %>
 </div>
 
 <hr />
 
-<h2>PURL Page</h2>
+<h2 class="text-primary">PURL Page</h2>
 <div class="upper-record-metadata row">
   <div class="col-md-8">
     <%= render 'mods_upper_metadata_section', document: @purl %>
