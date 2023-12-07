@@ -1,25 +1,24 @@
 // Colors
-$boston-university-red: #cc0000;
-$cadet-blue: #539a98;
-$dark-cyan-lime-green: #008E69;
-$dark-grayish-blue: #4d4f53;
-$dark-grayish-orange: #524A42;
-$dark-red: #A62F2F;
-$darker-grayish-blue: #404246;
-$darker-grayish-orange: #797169;
-$darker-red: #7F0808;
-$gray-41-percent: #696969;
-$gray-46-percent: #767676;
-$gray-70-percent: #b3b3b3;
-$gray-80-percent: #ccc;
-$gray-90-percent: #e6e6e6;
-$mostly-pure-orange: #ff8000;
-$off-green: #E1E6DF;
-$public-note-yellow: #faf8d2;
-$strong-cyan: #1AB590;
-$strong-grayish-blue: #67696D;
-$strong-red: #bf0000;
+$color-black: #000;
 $white: #ffffff;
+$color-cardinal-red: #8c1515;
+$color-blackish: #2e2d29;
+$color-gray: #3f3c30;
+$gray-41-percent: #696969;
+$color-gray-60: #8a887d;
+$color-pantone-401: #b6b1a9;
+$color-beige-40: #d5d0c0;
+$color-beige-30: #e3dfd5;
+$color-beige-20: #e9e6df;
+$color-beige-10: #f2f1eb;
+$color-beige-05: #fbfbf9;
+
+
+$sul-footer-bg-color: $color-beige-10;
+$sul-footer-border-top-color: $color-beige-20;
+$footer-height: 200px;
+$sul-footer-shadow-color: rgba(0, 0, 0, 0.2);
+$sul-footer-shadow: 0 4px 8px -8px $sul-footer-shadow-color inset;
 
 $sul-footer-bg-color: $color-beige-10;
 $sul-topnavbar-link-color: $color-cardinal-red;
@@ -28,7 +27,6 @@ $sul-link-color-border: $color-pantone-401;
 $sul-pagination-active-bg: $gray-41-percent;
 $sul-body-bg: $color-beige-05;
 $sul-text-color: $color-black;
-$sul-btn-preview-bg: $cadet-blue;
 $sul-h1-font-color: $color-gray;
 $sul-h2-border-color: $color-beige-30;
 $sul-skip-to-nav-bg: $color-beige-10;
@@ -36,9 +34,6 @@ $sul-toolbar-bg: transparent;
 $sul-toolbar-border: $color-beige-40;
 $btn-sul-toolbar-bar-color: $color-cardinal-red;
 $btn-sul-toolbar-bar-hover-bg: $color-beige-30;
-$sul-btn-disabled-color: $color-gray;
-$sul-btn-disabled-opacity: 0.75;
-$sul-tooltip-bg: $cadet-blue;
 $sul-shadow-color: rgba(0, 0, 0, .2);
 
 // Sizes
