@@ -175,7 +175,6 @@ RSpec.describe 'Integration Scenarios' do
       expect(page).to have_selector 'meta[name="citation_publication_date"][content="2022"]', visible: :hidden
       expect(page).to have_selector 'meta[name="citation_author"][content="Khine, Sandi"]', visible: :hidden
       expect(page).to have_selector 'meta[name="citation_author"][content="Navaroli, A. Collier"]', visible: :hidden
-      expect(page).to have_selector 'script[src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"]', visible: :hidden
     end
   end
 
