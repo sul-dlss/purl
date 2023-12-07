@@ -1,6 +1,5 @@
 @import 'deja-vu-font';
 @import 'sul-variables';
-@import 'searchworks-mixins';
 
 @import 'bootstrap-variables';
 @import 'bootstrap/scss/bootstrap';
@@ -17,13 +16,9 @@
 @import 'modules/record-view';
 @import 'modules/record-metadata-section';
 @import 'modules/search-bar';
-@import 'modules/skip-to-nav';
 @import 'modules/sul-footer';
 @import 'modules/sul-icons';
-@import 'modules/sul-toolbar';
 @import 'modules/top-navbar';
-
-@import 'print/styles';
 
 .record-metadata {
   margin-bottom: 2em;
