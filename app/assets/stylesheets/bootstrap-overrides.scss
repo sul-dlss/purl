@@ -14,3 +14,7 @@ body {
 .modal-dialog {
   z-index: 1040;
 }
+
+:root {
+  --bs-heading-color: var(--bs-gray-dark);
+}
