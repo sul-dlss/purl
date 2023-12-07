@@ -16,7 +16,7 @@
   <div class="record-sections col-md-8">
     <%= render 'purl/access', document: @purl %>
     <%= render "mods_abstract_contents", document: @purl %>
-    <%= render "mods_description", document: @purl %>
+    <%= render ModsDescriptionComponent.new(document: @purl) %>
     <%= render "mods_contributors", document: @purl %>
     <%= render "mods_subjects", document: @purl %>
     <%= render "mods_bibliographic", document: @purl %>
