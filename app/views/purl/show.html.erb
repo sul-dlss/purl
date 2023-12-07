@@ -17,7 +17,6 @@
   <%= tag :meta, name: 'robots', content: 'noindex' unless @purl.rights.world_downloadable? %>
 
   <% if @purl.doi %>
-    <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
     <%= tag :meta, name: 'citation_doi', content: @purl.doi_id %>
   <% end %>
   <% if @purl.schema_dot_org? %>
