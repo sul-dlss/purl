@@ -1,0 +1,11 @@
+<%= render SectionComponent.new(label: 'Description', label_id: label_id) do %>
+  <%= render TableComponent.new(label_id: label_id, with_body: false) do %>
+    <% field_map.each do |values, delimiter| %>
+      <% values.each do |value| %>
+        <tbody>
+          <%= mods_record_row_field(value, delimiter: delimiter) %>
+        </tbody>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
