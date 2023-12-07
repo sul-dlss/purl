@@ -4,17 +4,17 @@
   <% next if dest[:key] == "Searchworks" && document.catalog_key %>
   
   <% if document.released_to? dest[:key] %>
-    <% releases << link_to(dest[:label], dest[:url] % document.attributes) %>
+    <% releases << link_to(dest[:label], dest[:url] % document.attributes, class: 'su-underline') %>
   <% end %>
   <% if dest[:key] == 'EarthWorks' && document.type == 'geo' %>
-    <% releases << link_to(dest[:label], dest[:url] % document.attributes) %>
+    <% releases << link_to(dest[:label], dest[:url] % document.attributes, class: 'su-underline') %>
   <% end %>
 <% end %>
 
 <% if document.catalog_key || releases.present? %>
   <%= render SectionComponent.new(label: 'Also listed in') do %>
     <% if document.catalog_key %>
-      <%= link_to 'View in SearchWorks', "#{Settings.searchworks.url}/view/#{document.catalog_key}" %>
+      <%= link_to 'View in SearchWorks', "#{Settings.searchworks.url}/view/#{document.catalog_key}", class: 'su-underline' %>
     <% end %>
 
     <%= releases.to_sentence.html_safe %>
