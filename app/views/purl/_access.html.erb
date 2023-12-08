@@ -1,9 +1,8 @@
-<% access_conditions = document.mods&.accessCondition&.reject { |x| x.label == "License:" && document.license? } %>
+<% access_conditions = document.mods&.accessCondition %>
 <% copyright = document.copyright? && (document.mods.blank? || document.mods.accessCondition.none? { |x| x.label =~ /Copyright/i }) %>
 <% use_and_reproduction = document.use_and_reproduction? && (document.mods.blank? || document.mods.accessCondition.none? { |x| x.label =~ /Use and Reproduction/i }) %>
-<% license = document.license? && document.license.desc.present? %>
 
-<% if access_conditions.present? || copyright || use_and_reproduction || license %>
+<% if access_conditions.present? || copyright || use_and_reproduction %>
   <%= render SectionComponent.new(label: 'Access conditions') do %>
     <dl>
       <% access_conditions.each do |accessCondition| %>
@@ -18,11 +17,6 @@
       <% if use_and_reproduction %>
         <dt>Use and Reproduction</dt>
         <dd><%= link_urls_and_email(document.use_and_reproduction).html_safe %></dd>
-      <% end %>
-
-      <% if license %>
-        <dt>License</dt>
-        <dd class="<%= document.license.code %>"><%= link_to_unless document.license.link.blank?, document.license.desc, document.license.link, class: 'su-underline', target: '_blank' %></dd>
       <% end %>
     </dl>
   <% end %>

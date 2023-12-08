@@ -22,14 +22,4 @@ class RightsMetadata
   def copyright_statement
     document.at_xpath('copyright/human').try(:text)
   end
-
-  def machine_readable_license
-    el = document.at_xpath('use/machine[@type="openDataCommons" or @type="creativeCommons"]')
-
-    [el.attribute('type'), el.text] if el
-  end
-
-  def license_statement
-    document.at_xpath('use/human[@type="openDataCommons" or @type="creativeCommons"]').try(:text)
-  end
 end
