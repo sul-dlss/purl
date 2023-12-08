@@ -1,15 +1,10 @@
 @import 'deja-vu-font';
 @import 'sul-variables';
-
-@import 'bootstrap-variables';
-@import 'bootstrap/scss/bootstrap';
-@import 'bootstrap-mixins';
 @import 'bootstrap-overrides';
 
 @import 'base';
 @import 'layout';
 
-@import 'modules/buttons';
 @import 'modules/feedback-form';
 @import 'modules/license-icons';
 @import 'modules/purl-embed-viewer';

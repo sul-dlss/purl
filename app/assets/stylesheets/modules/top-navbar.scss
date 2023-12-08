@@ -28,14 +28,6 @@
 
 }
 
-@include media-breakpoint-down(sm) {
-  #topnav {
-    padding-left: 10px;
-    padding-right: 10px;
-    width: 100%;
-  }
-}
-
 .sdr-brand {
   font-family: 'Source Sans 3';
   letter-spacing: normal;

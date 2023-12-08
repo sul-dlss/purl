@@ -1,11 +1,16 @@
 .su-underline {
 	text-decoration: none;
-  border-bottom: 1px dotted $sul-link-color-border;
+  border-bottom: 1px dotted var(--bs-gray-500);
 }
 
 h1 {
   font-family: 'dejavu_sansextralight';
+  font-weight: 300;
   letter-spacing: -0.05em;
+}
+
+h2 {
+  font-weight: 300;
 }
 
 h3 {
