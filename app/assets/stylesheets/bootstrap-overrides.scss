@@ -3,18 +3,6 @@ body {
   line-height: 1.428571429;
 }
 
-.alert {
-  padding: 10px 15px;
-  margin: 10px 0;
-}
-
-// Temporarily added since
-// our modal-dialog is not
-// getting its z-index set
-.modal-dialog {
-  z-index: 1040;
-}
-
 :root {
   --bs-heading-color: var(--bs-gray-dark);
 }
