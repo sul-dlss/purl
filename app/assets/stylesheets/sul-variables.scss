@@ -1,18 +1,13 @@
 // Colors
 $color-black: #000;
 $white: #ffffff;
-$color-cardinal-red: #8c1515;
+$color-cardinal-red: rgb(143, 20, 20);
 $color-blackish: #2e2d29;
-$color-gray-60: #8a887d;
-$color-pantone-401: #b6b1a9;
 $color-beige-40: #d5d0c0;
 $color-beige-10: #f2f1eb;
-$color-beige-05: #fbfbf9;
 
 $sul-footer-bg-color: $color-beige-10;
 $sul-topnavbar-link-color: $color-cardinal-red;
-$sul-link-color: #006CB8;
-$sul-link-color-border: $color-pantone-401;
-$sul-body-bg: $color-beige-05;
+$sul-link-color: rgb(0, 108, 184); // #006CB8;
 $sul-text-color: $color-black;
 $sul-shadow-color: rgba(0, 0, 0, .2);
