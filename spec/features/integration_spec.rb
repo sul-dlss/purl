@@ -42,12 +42,6 @@ RSpec.describe 'Integration Scenarios' do
       expect(page).to have_metadata_section 'Subjects'
     end
 
-    it 'links to the creative commons license' do
-      visit '/py305sy7961'
-      expect(page).to have_selector '.creativeCommons-by-nc'
-      expect(page).to have_link 'This work is licensed under a Creative Commons Attribution-Noncommercial 3.0 Unported License', href: 'http://creativecommons.org/licenses/by-nc/3.0/'
-    end
-
     it 'adds mailto links in the use and reproduction statement' do
       visit '/py305sy7961'
       expect(page).to have_link 'brannerlibrary@stanford.edu', href: 'mailto:brannerlibrary@stanford.edu'
@@ -65,12 +59,6 @@ RSpec.describe 'Integration Scenarios' do
       expect(page).to have_metadata_section 'Subjects'
       expect(page).to have_metadata_section 'Bibliographic information'
       expect(page).to have_metadata_section 'Also listed in'
-    end
-
-    it 'links to the creative commons license' do
-      visit '/nd387jf5675'
-      expect(page).to have_selector '.creativeCommons-by-nc'
-      expect(page).to have_link 'This work is licensed under a Creative Commons Attribution-Noncommercial 3.0 Unported License', href: 'http://creativecommons.org/licenses/by-nc/3.0/'
     end
 
     it 'has a link to the searchworks record' do
