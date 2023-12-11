@@ -389,8 +389,49 @@ RSpec.describe PurlResource do
           "@context": 'http://schema.org',
           "@type": 'Dataset',
           "name": 'AVOIDDS: A dataset for vision-based aircraft detection',
+          "isAccessibleForFree": false,
+          "creator": [],
           "identifier": ['https://doi.org/10.25740/hj293cv5980'],
           "description": 'About this dataset.'
+        )
+      end
+    end
+
+    context 'with a video' do
+      before do
+        allow(subject).to receive(:cocina_body).and_return <<~JSON
+          {
+            "externalIdentifier": "druid:tn153br1253",
+            "description": {  "event": [{ "date": [{ "value": "2000", "type": "publication", "status": "primary"}] }],
+                              "title": [{"value": "A Video Title"}],
+                              "note": [{"type": "summary", "value": "What is in this video?"}]
+                            },
+            "access": {"download": "world"},
+            "structural": {"contains": [{"type": "https://cocina.sul.stanford.edu/models/resources/video",
+                                        "structural": {
+                                                        "contains": [{"filename": "tn153br1253_thumb.jp2",
+                                                                      "hasMimeType": "image/jp2"},
+                                                                    {"filename": "tn153br1253_video_sl.mp4",
+                                                                     "access": { "view": "world",
+                                                                                 "download": "world",
+                                                                                 "controlledDigitalLending": false },
+                                                                     "hasMimeType": "video/mp4"}]
+                                                      }
+                                        }]
+                          }
+          }
+        JSON
+      end
+
+      it 'returns schema.org markup' do
+        expect(subject.schema_dot_org).to include(
+          "@context": 'http://schema.org',
+          "@type": 'VideoObject',
+          "name": 'A Video Title',
+          "description": 'What is in this video?',
+          "uploadDate": '2000',
+          "thumbnailUrl": 'https://stacks.stanford.edu/file/druid:tn153br1253/tn153br1253_thumb.jp2',
+          "embedUrl": 'https://embed.stanford.edu/iframe/?url=https%3A%2F%2Fpurl.stanford.edu%2Ftn153br1253'
         )
       end
     end
