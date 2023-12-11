@@ -190,16 +190,16 @@ RSpec.describe 'Integration Scenarios' do
     end
   end
 
-  context 'citation only item' do
+  context 'an item that is not crawlable' do
     it 'includes noindex meta tag' do
       visit '/bb000br0025'
       expect(page).to have_selector 'meta[name="robots"][content="noindex"]', visible: :hidden
     end
   end
 
-  context 'world-downloadable item' do
+  context 'an item that is crawlable' do
     it 'excludes noindex meta tag' do
-      visit '/nd387jf5675'
+      visit '/gb089bd2251'
       expect(page).not_to have_selector 'meta[name="robots"][content="noindex"]', visible: :hidden
     end
   end

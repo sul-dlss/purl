@@ -85,3 +85,22 @@ sitemap:
 
 honeybadger_checkins:
   sitemap: ~
+
+crawlable:
+  collections:
+    # Stanford University Open Access Articles
+    - nk071jz2236
+    # Faculty, Student, and Staff Publications
+    - bw522zz4583
+    # Stanford Libraries staff presentations, publications, and research
+    - hn730ks3626
+    # Stanford Research Data
+    - md919gh6774
+    # Stanford Historical Society program recordings, 1997-2022
+    - kp887kn2294
+    # BIOHOPK185 Student videos
+    - km092my4610
+  source_id_prefixes:
+    - dissertation
+    - dissertationid
+

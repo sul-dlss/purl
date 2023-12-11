@@ -53,4 +53,8 @@ class PublicXml
   def object_type
     document.root.at_xpath('identityMetadata/objectType')&.text
   end
+
+  def source_id
+    document.root.at_xpath('identityMetadata/sourceId')&.text
+  end
 end
