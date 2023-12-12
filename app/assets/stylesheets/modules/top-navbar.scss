@@ -1,31 +1,3 @@
-#topnav-container {
-  padding: 2px 0;
-  position: relative;
-}
-
-#topnav {
-  .header-links {
-    --bs-link-color-rgb: var(--bs-primary-rgb);
-    --bs-link-hover-color-rgb: var(--bs-primary-rgb);
-    --bs-link-hover-decoration: none;
-
-    margin-top: 2px;
-
-    a {
-      font-weight: normal;
-      margin-left: 15px;
-      padding-bottom: 3px;
-      border-bottom: none;
-      &.first {
-        margin-left: 0;
-      }
-    }
-    a:hover {
-      border-bottom: 3px solid rgb(var(--bs-primary-rgb));
-    }
-  }
-}
-
 .sdr-brand {
   font-family: 'Source Sans 3';
   letter-spacing: normal;
