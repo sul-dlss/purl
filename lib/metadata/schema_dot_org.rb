@@ -190,7 +190,9 @@ module Metadata
       filename = JsonPath.new("$[*].structural.contains[*][?(@['hasMimeType'] == 'image/jp2')].filename").first(video)
       return if filename.blank?
 
-      URI.join(Settings.stacks.url, "file/#{druid}/#{filename}").to_s
+      # filenames need spaces escaped, while stacks expects other special characters such as ()
+      escaped_filename = filename.gsub(' ', '%20')
+      URI.join(Settings.stacks.url, "file/#{druid}/#{escaped_filename}").to_s
     end
 
     def upload_date
@@ -209,8 +211,8 @@ module Metadata
       # first event.date.value or event.date.structuredValue.value with event.type "publication" and event.date.type null
       return unless events.any?
 
-      dates = JsonPath.new("$.[?(@['type']) == 'publication')].date[*].[?(@['value'])]").on(events)
-      structured_dates = JsonPath.new("$.[?(@['type']) == 'publication')].date[*].structuredValue[*]").on(events)
+      dates = JsonPath.new("$.[?(@.type == 'publication')].date[*].[?(@['value'])]").on(events)
+      structured_dates = JsonPath.new("$.[?(@.type == 'publication')].date[*].structuredValue[*]").on(events)
       dates.concat(structured_dates)
       return unless dates.any?
 
@@ -232,7 +234,7 @@ module Metadata
       dates.select! { |date| date.key?('type') == false }
       return unless dates.any?
 
-      dates.first.fetch('value')
+      dates.first.fetch('value', nil)
     end
   end
   # rubocop:enable Metrics/ClassLength
