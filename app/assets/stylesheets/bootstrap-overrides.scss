@@ -29,6 +29,20 @@
 .navbar {
 	--bs-navbar-padding-y: 0;
 }
+
+.nav-link {
+	--bs-nav-link-color: rgb(var(--bs-primary-rgb));
+	--bs-nav-link-hover-color: rgb(var(--bs-primary-rgb));
+	--bs-link-hover-decoration: none;
+	--bs-nav-link-padding-y: 3px;
+
+  border-bottom: 3px solid transparent;
+
+  &:hover {
+    border-bottom: 3px solid rgb(var(--bs-primary-rgb));
+  }
+}
+
 .table {
   --bs-table-border-color: var(--bs-gray-500);
 }
