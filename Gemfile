@@ -9,7 +9,6 @@ gem 'addressable'
 gem 'bootsnap', '>= 1.1.0', require: false # Reduces boot times through caching; required in config/boot.rb
 gem 'cancancan' # authorization
 gem 'config' # simple rails environment specific config
-gem "cssbundling-rails", "~> 1.1"
 gem 'faraday' # HTTP client
 gem 'honeybadger' # exception reporting
 gem "importmap-rails" # Use JavaScript with ESM import maps

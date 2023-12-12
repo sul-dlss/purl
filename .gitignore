@@ -30,10 +30,6 @@ config/environments/*.local.yml
 
 /public/packs
 /public/packs-test
-/node_modules
-/yarn-error.log
-yarn-debug.log*
-.yarn-integrity
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
