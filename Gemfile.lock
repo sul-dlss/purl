@@ -89,7 +89,6 @@ GEM
     bundler-audit (0.9.1)
       bundler (>= 1.2.0, < 3)
       thor (~> 1.0)
-    byebug (11.1.3)
     cancancan (3.5.0)
     capistrano (3.18.1)
       airbrussh (>= 1.0.0)
@@ -419,7 +418,6 @@ PLATFORMS
 DEPENDENCIES
   addressable
   bootsnap (>= 1.1.0)
-  byebug
   cancancan
   capistrano (~> 3.0)
   capistrano-bundler
