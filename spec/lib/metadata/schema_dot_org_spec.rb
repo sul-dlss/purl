@@ -605,6 +605,39 @@ RSpec.describe Metadata::SchemaDotOrg do
       end
     end
 
+    context 'with a thumbnail with spaces in the filename' do
+      let(:cocina_json) do
+        <<~JSON
+          {
+            "externalIdentifier": "druid:tn153br1253",
+            "description": { "event": [{ "date": [{ "value": "2000", "type": "publication" },
+                                                  { "value": "2014", "status": "primary", "type": "publication" }]
+                                        }]
+                            },
+            "access": {"download": "world"},
+            "structural": {"contains": [{"type": "https://cocina.sul.stanford.edu/models/resources/video",
+                                        "structural": {
+                                                        "contains": [{"filename": "tn153br1253_thumb has spaces(andparens).jp2",
+                                                                      "hasMimeType": "image/jp2"},
+                                                                    {"filename": "tn153br1253_video_sl.mp4",
+                                                                      "access": { "view": "world",
+                                                                                    "download": "world",
+                                                                                    "controlledDigitalLending": false },
+                                                                      "hasMimeType": "video/mp4"}]
+                                                      }
+                                        }]
+                          }
+          }
+        JSON
+      end
+
+      it 'includes the thumbnail' do
+        expect(schema_dot_org).to include(
+          "thumbnailUrl": 'https://stacks.stanford.edu/file/druid:tn153br1253/tn153br1253_thumb%20has%20spaces(andparens).jp2'
+        )
+      end
+    end
+
     context 'with no thumbnail' do
       let(:cocina_json) do
         <<~JSON
