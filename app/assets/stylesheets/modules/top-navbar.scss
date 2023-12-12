@@ -4,11 +4,6 @@
 }
 
 #topnav {
-  border: none;
-  background: none;
-  margin-bottom: 0;
-  padding: 2px 0;
-
   .header-links {
     margin-top: 2px;
     a {
@@ -25,13 +20,11 @@
       border-bottom: 3px solid $sul-topnavbar-link-color;
     }
   }
-
 }
 
 .sdr-brand {
   font-family: 'Source Sans 3';
   letter-spacing: normal;
-  margin-top: 0;
-  padding: 0.275em 0;
+  font-weight: 300;
   color: #fff;
 }
