@@ -1,17 +1,13 @@
-$brand-color: $stanford-cardinal !default;
-$footer-color: $white !default;
-$pre-footer-background: $stanford-fog-light !default;
-
 #pre-footer {
-  background-color: $pre-footer-background;
+  background-color: var(--sul-footer-background);
 }
 
 .su-global-footer {
-  background-color: $brand-color;
-  color: $footer-color;
-  a {
-    color: $footer-color;
-  }
+  --bs-link-color-rgb: 255,255,255;
+  --bs-link-hover-color-rgb: 255,255,255;
+
+  color: var(--global-footer-color);
+  background-color: rgb(var(--bs-primary-rgb));
 
   .su-global-footer__menu--policy {
     font-size: 0.9rem;
@@ -24,5 +20,4 @@ $pre-footer-background: $stanford-fog-light !default;
   .su-global-footer__copyright {
     font-size: 0.8rem;
   }
-
 }
