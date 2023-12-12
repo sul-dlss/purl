@@ -1,12 +1,12 @@
-<div id="topnav-container">
-  <div id="topnav" class="header-logo container d-flex" role="banner">
-    <%= link_to 'http://library.stanford.edu', class: 'me-auto' do %>
+<div class="navbar navbar-expand-md navbar-light topbar" role="banner">
+  <div class="container">
+    <%= link_to 'http://library.stanford.edu', class: 'mb-0 navbar-brand navbar-logo' do %>
       <%= content_tag :span, "Stanford University Libraries", class: "visually-hidden" %>
       <%= image_tag "sul-logo.svg", class: "d-none d-sm-block", alt: "", height: 25 %>
       <%= image_tag "sul-logo-stacked.svg", class: "d-block d-sm-none", alt: "", height: 25 %>
     <% end %>
-    <div class="header-links me-3">
-      <%= link_to '#feedback-form', class: 'first', data: { bs_toggle: 'collapse', bs_target: '#feedback-form' } do %>
+    <div class="navbar-nav">
+      <%= link_to '#feedback-form', class: 'nav-link', data: { bs_toggle: 'collapse', bs_target: '#feedback-form' } do %>
         Feedback
       <% end if show_feedback_form? %>
     </div>

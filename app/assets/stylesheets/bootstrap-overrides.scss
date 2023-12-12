@@ -26,7 +26,9 @@
 	--bs-btn-disabled-bg: #8c1515;
 	--bs-btn-disabled-border-color: #8c1515;
 }
-
+.navbar {
+	--bs-navbar-padding-y: 0;
+}
 .table {
   --bs-table-border-color: var(--bs-gray-500);
 }
