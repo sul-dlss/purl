@@ -663,6 +663,37 @@ RSpec.describe Metadata::SchemaDotOrg do
       end
     end
 
+    context 'with a bad thumbnail filename' do
+      let(:cocina_json) do
+        <<~JSON
+          {
+            "externalIdentifier": "druid:tn153br1253",
+            "access": {"download": "world"},
+            "structural": {"contains": [{"type": "https://cocina.sul.stanford.edu/models/resources/video",
+                                        "structural": {
+                                                        "contains": [{"filename": "a_problem_thumb.jp2",
+                                                                      "hasMimeType": "image/jp2"},
+                                                                    {"filename": "tn153br1253_video_sl.mp4",
+                                                                      "access": { "view": "world",
+                                                                                    "download": "world",
+                                                                                    "controlledDigitalLending": false },
+                                                                      "hasMimeType": "video/mp4"}]
+                                                      }
+                                        }]
+                          }
+          }
+        JSON
+      end
+
+      before do
+        allow(URI).to receive(:join).and_raise(URI::InvalidURIError)
+      end
+
+      it 'rescues and returns nil' do
+        expect(schema_dot_org).not_to have_key('thumbnailUrl')
+      end
+    end
+
     context 'with an embeddable video' do
       it 'includes the embed_url' do
         expect(schema_dot_org).to include(

@@ -20,6 +20,9 @@ module Metadata
         "description": description }
         .merge(format_specific_fields)
         .compact
+    rescue StandardError
+      Honeybadger.notify('Error occurred generating schema.org markup', context: { druid: druid })
+      {}
     end
 
     def schema_type?
@@ -193,6 +196,8 @@ module Metadata
       # filenames need spaces escaped, while stacks expects other special characters such as ()
       escaped_filename = filename.gsub(' ', '%20')
       URI.join(Settings.stacks.url, "file/#{druid}/#{escaped_filename}").to_s
+    rescue URI::InvalidURIError
+      nil
     end
 
     def upload_date
