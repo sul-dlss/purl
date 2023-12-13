@@ -2,12 +2,22 @@
   <% label_id = 'section-metrics' %>
   <%= render SectionComponent.new(label: 'Usage metrics', label_id: label_id) do %>
     <% if document.metrics.present? %>
-      <%= render TableComponent.new(label_id: label_id) do %>
+      <%= render TableComponent.new(label_id: label_id, with_body: false) do %>
+      <tbody>
         <tr>
           <th>Views</th>
-          <td><%= number_with_delimiter document.metrics['unique_views'] %></td>
+          <td id="view-count"><%= number_with_delimiter document.metrics['unique_views'] %></td>
         </tr>
+      </tbody>
+      <% if document.downloads_tracked? %>
+      <tbody>
+        <tr>
+          <th>Downloads</th>
+          <td id="download-count"><%= number_with_delimiter document.metrics['unique_downloads'] %></td>
+        </tr>
+      </tbody>
       <% end %>
+    <% end %>
     <% else %>
       <p>No usage metrics available.</p>
     <% end %>

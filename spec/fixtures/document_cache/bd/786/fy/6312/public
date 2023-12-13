@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:bd786fy6312" published="2023-10-26T23:29:02Z" publishVersion="cocina-models/0.91.4">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>Inequalities in interaction</objectLabel>
+    <sourceId source="sul">sul:V0246_270</sourceId>
+  </identityMetadata>
+  <contentMetadata objectId="druid:bd786fy6312" type="media">
+    <resource id="cocina-fileSet-bd786fy6312-bd786fy6312_1" sequence="1" type="video">
+      <label>Tape 1</label>
+      <file id="bd786fy6312_sl.mp4" mimetype="video/quicktime" size="1298362697" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">eb827413c8b426cb4727f47d5983cef978a607b2</checksum>
+        <checksum type="md5">7a20b97060d23e6d352dab94147f7af0</checksum>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-bd786fy6312-bd786fy6312_2" sequence="2" type="image">
+      <label>Image of media (1 of 1)</label>
+      <file id="bd786fy6312_img.jp2" mimetype="image/jp2" size="213147" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">8196644e20751c7b7239a855d444fc4e9cfb8cb3</checksum>
+        <checksum type="md5">757b10921f31a95ef6d64216a5702343</checksum>
+        <imageData height="384" width="2896"/>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">The materials are open for research use and may be used freely for non-commercial purposes with an attribution. For commercial permission requests, please contact the Stanford University Archives (universityarchives@stanford.edu).</human>
+      <license/>
+    </use>
+    <copyright>
+      <human>Copyright © 1989 The Board of Trustees of the Leland Stanford Junior University. All rights reserved.</human>
+    </copyright>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:bd786fy6312">
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:rk187hn0556"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Inequalities in interaction</dc:title>
+    <dc:contributor>Dornbusch, Sanford M. (Speaker)</dc:contributor>
+    <dc:type>speech</dc:type>
+    <dc:type>instruction</dc:type>
+    <dc:type>MovingImage</dc:type>
+    <dc:format>1 tape</dc:format>
+    <dc:format>videocassette</dc:format>
+    <dc:format>video/quicktime</dc:format>
+    <dc:language>eng</dc:language>
+    <dc:description>Lectures from classes in the human biology program at Stanford University, 1987-1989.</dc:description>
+    <dc:subject>Sociology</dc:subject>
+    <dc:date>1989-02-03</dc:date>
+    <dc:identifier>V0246_270</dc:identifier>
+    <dc:identifier>https://purl.stanford.edu/bd786fy6312</dc:identifier>
+    <dc:relation type="repository">Stanford University. Libraries. Department of Special Collections and University Archives</dc:relation>
+    <dc:relation type="collection">Stanford University, Program in Human Biology, videorecordings, 1987-2001 (inclusive), 1987-1989 (bulk)</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>Inequalities in interaction</title>
+    </titleInfo>
+    <name valueURI="http://id.loc.gov/authorities/names/n83126653" authority="naf" usage="primary" type="personal">
+      <namePart>Dornbusch, Sanford M.</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/spk" authority="marcrelator" type="text">Speaker</roleTerm>
+      </role>
+    </name>
+    <genre authority="marcgt">speech</genre>
+    <genre authority="marcgt">instruction</genre>
+    <typeOfResource>moving image</typeOfResource>
+    <physicalDescription>
+      <form authority="rdacarrier">videocassette</form>
+      <reformattingQuality>access</reformattingQuality>
+      <internetMediaType>video/quicktime</internetMediaType>
+      <extent>1 tape</extent>
+      <digitalOrigin>reformatted digital</digitalOrigin>
+    </physicalDescription>
+    <language>
+      <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <note>Lectures from classes in the human biology program at Stanford University, 1987-1989.</note>
+    <subject authority="lcsh">
+      <topic authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85124200">Sociology</topic>
+    </subject>
+    <originInfo>
+      <dateCreated encoding="w3cdtf" keyDate="yes">1989-02-03</dateCreated>
+      <place>
+        <placeTerm authorityURI="http://id.loc.gov/authorities/names/" valueURI="http://id.loc.gov/authorities/names/n50046557" type="text">Stanford (Calif.)</placeTerm>
+      </place>
+    </originInfo>
+    <identifier displayLabel="Source ID" type="local">V0246_270</identifier>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/bd786fy6312</url>
+    </location>
+    <location>
+      <physicalLocation displayLabel="Collection call number">V0246</physicalLocation>
+    </location>
+    <location>
+      <physicalLocation type="repository" valueURI="http://id.loc.gov/authorities/names/no2014019980" authority="naf" displayLabel="Repository">Stanford University. Libraries. Department of Special Collections and University Archives</physicalLocation>
+    </location>
+    <recordInfo>
+      <languageOfCataloging>
+        <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+      </languageOfCataloging>
+      <recordContentSource authority="marcorg">CSt</recordContentSource>
+    </recordInfo>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Stanford University, Program in Human Biology, videorecordings, 1987-2001 (inclusive), 1987-1989 (bulk)</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/rk187hn0556</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">The materials are open for research use and may be used freely for non-commercial purposes with an attribution. For commercial permission requests, please contact the Stanford University Archives (universityarchives@stanford.edu).</accessCondition>
+    <accessCondition type="copyright">Copyright © 1989 The Board of Trustees of the Leland Stanford Junior University. All rights reserved.</accessCondition>
+  </mods>
+  <releaseData>
+    <release to="Searchworks">true</release>
+  </releaseData>
+  <thumb>bd786fy6312/bd786fy6312_img.jp2</thumb>
+</publicObject>

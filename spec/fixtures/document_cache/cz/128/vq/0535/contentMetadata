@@ -1,0 +1,35 @@
+<contentMetadata objectId="cz128vq0535" type="geo">
+  <resource id="cz128vq0535_1" sequence="1" type="object">
+    <label>Data</label>
+    <file preserve="yes" shelve="yes" publish="yes" id="data.zip" mimetype="application/zip" size="7988069" role="master">
+      <geoData>
+        <rdf:Description xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="http://purl.stanford.edu/cz128vq0535">
+        <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">application/x-esri-shapefile; format=Shapefile</dc:format>
+        <dc:type xmlns:dc="http://purl.org/dc/elements/1.1/">Dataset#Polygon</dc:type>
+        <gml:boundedBy xmlns:gml="http://www.opengis.net/gml/3.2/">
+          <gml:Envelope gml:srsName="EPSG:4326">
+            <gml:lowerCorner>29.572742 -1.478794</gml:lowerCorner>
+            <gml:upperCorner>35.000308 4.234077</gml:upperCorner>
+          </gml:Envelope>
+        </gml:boundedBy>
+        <dc:coverage xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:resource="http://sws.geonames.org/226074/about.rdf" dc:language="eng" dc:title="Uganda"/>
+      </rdf:Description>
+      </geoData>
+      <checksum type="sha1">ee2a8ecb05f7ef52030ac0ecba9885e9d8bcbdcf</checksum>
+      <checksum type="md5">fa623f8ace76d47ea30a2477ec4cf09a</checksum>
+    </file>
+    <file preserve="no" shelve="yes" publish="yes" id="data_EPSG_4326.zip" mimetype="application/zip" size="7878575" role="derivative">
+      <geoData srsName="EPSG:4326"/>
+      <checksum type="sha1">e6df3bdf9109aea41e766bbe0b1408775987f57e</checksum>
+      <checksum type="md5">a445ec39c5ab9a18ff3f4f296aba8a55</checksum>
+    </file>
+  </resource>
+  <resource id="cz128vq0535_2" sequence="2" type="preview">
+    <label>Preview</label>
+    <file preserve="yes" shelve="yes" publish="yes" id="preview.jpg" mimetype="image/jpeg" size="91351" role="master">
+      <checksum type="sha1">b927d4c603b74e97890dfc84b16653082f99aaaa</checksum>
+      <checksum type="md5">69468ab8df5c8712cfd1bfbe0832b516</checksum>
+      <imageData width="483" height="477"/>
+    </file>
+  </resource>
+</contentMetadata>

@@ -1,0 +1,23 @@
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title>2005 Rural Poverty GIS Database: Uganda</dc:title>
+  <dc:creator>Uganda Bureau of Statistics</dc:creator>
+  <dc:type>Geospatial data</dc:type>
+  <dc:type>cartographic dataset</dc:type>
+  <dc:date>2005</dc:date>
+  <dc:publisher>Uganda Bureau of Statistics</dc:publisher>
+  <dc:language>eng</dc:language>
+  <dc:format>10.134</dc:format>
+  <dc:format>Shapefile</dc:format>
+  <dc:coverage>Scale not given.</dc:coverage>
+  <dc:coverage>EPSG::4326</dc:coverage>
+  <dc:coverage>(E 29&#xB0;34&#x2B9;22&#x2BA;--E 35&#xB0;1&#x2BA;/N 4&#xB0;14&#x2B9;3&#x2BA;--S 1&#xB0;28&#x2B9;44&#x2BA;)</dc:coverage>
+  <dc:description displayLabel="Abstract">This polygon shapefile contains 2005 poverty data for 855 rural subcounties in Uganda.</dc:description>
+  <dc:description displayLabel="Purpose">These data are intended for researchers, students, policy makers and the general public for reference and mapping purposes, and may be used for basic applications such as viewing, querying, and map output production.</dc:description>
+  <dc:description displayLabel="Preferred citation">Uganda Bureau of Statistics and International Livestock Research Institute (ILRI). (2008). 2005 Poverty GIS Database. Kampala, Uganda: Government of Uganda, UBOS and ILRI. Available at: http://purl.stanford.edu/cz128vq0535</dc:description>
+  <dc:subject>Poverty</dc:subject>
+  <dc:subject>Statistics</dc:subject>
+  <dc:coverage>Uganda</dc:coverage>
+  <dc:coverage>2005</dc:coverage>
+  <dc:identifier>http://purl.stanford.edu/cz128vq0535</dc:identifier>
+  <dc:relation type="collection">Uganda GIS Maps and Data, 2000-2010</dc:relation>
+</oai_dc:dc>

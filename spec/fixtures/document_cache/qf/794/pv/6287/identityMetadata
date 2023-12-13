@@ -1,0 +1,11 @@
+<identityMetadata>
+  <sourceId source="su">SUAC_T2017.7.2</sourceId>
+  <objectId>druid:qf794pv6287</objectId>
+  <objectCreator>DOR</objectCreator>
+  <objectLabel>Sarcophagus</objectLabel>
+  <objectType>item</objectType>
+  <otherId name="label"/>
+  <otherId name="uuid">60e22032-a012-11e8-97d7-005056a7ed61</otherId>
+  <tag>Process : Content Type : 3D</tag>
+  <tag>Registered By : dhandel</tag>
+</identityMetadata>
