@@ -22,6 +22,7 @@ export default class OembedController extends Controller {
       .then((json) => {
         this.element.innerHTML = json.html
         this.element.setAttribute('loaded', 'loaded')
+        this.element.classList.add('mb-4')
       })
   }
 }
