@@ -277,15 +277,16 @@ RSpec.describe 'IIIF v3 manifests' do
       expect(canvas['width']).not_to be_present
 
       pdf = canvas['items'].first['items'].first
-      expect(pdf['body']['id']).to eq 'https://stacks.stanford.edu/file/bb253gh8060/SC0193_Agenda_6381_2010-10-07_001.pdf'
-      expect(pdf['body']['format']).to eq 'application/pdf'
-      expect(pdf['body']['type']).to eq 'Text'
+      body = pdf.fetch('body')
+      expect(body['id']).to eq 'https://stacks.stanford.edu/file/bb253gh8060/SC0193_Agenda_6381_2010-10-07_001.pdf'
+      expect(body['format']).to eq 'application/pdf'
+      expect(body['type']).to eq 'Text'
 
-      expect(pdf['body']).to have_key 'service'
-
-      login_service = pdf['body']['service'].first
-      expect(login_service['profile']).to eq 'http://iiif.io/api/auth/1/login'
-      expect(login_service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/token'
+      probe_service = body.fetch('service').first
+      expect(probe_service['type']).to eq 'AuthProbeService2'
+      expect(probe_service['id']).to eq 'https://stacks.stanford.edu/iiif/auth/v2/probe?id=https%3A%2F%2Fstacks.stanford.edu%2Ffile%2Fbb253gh8060%2FSC0193_Agenda_6381_2010-10-07_001.pdf'
+      expect(probe_service['service']).to include hash_including 'type' => 'AuthAccessService2'
+      expect(probe_service.dig('service', 0, 'service')).to include hash_including 'type' => 'AuthAccessTokenService2'
     end
   end
 
