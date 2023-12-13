@@ -1,0 +1,29 @@
+// This selector/rule can be removed after https://github.com/twbs/bootstrap/pull/39098 is released
+a {
+  text-decoration: var(--bs-link-decoration);
+  &:hover,
+  &:focus-visible {
+    text-decoration: var(--bs-link-hover-decoration);
+  }
+}
+
+.su-underline {
+  --bs-link-hover-decoration: none;
+  --bs-link-decoration: none;
+
+  border-bottom: 1px dotted var(--bs-gray-500);
+}
+
+h1 {
+  font-family: 'dejavu_sansextralight';
+  font-weight: 300;
+  letter-spacing: -0.05em;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+h3 {
+  font-weight: 400;
+}

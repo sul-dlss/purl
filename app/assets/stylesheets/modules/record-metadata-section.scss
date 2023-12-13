@@ -1,0 +1,80 @@
+.record-sections {
+  section {
+    margin-bottom: 2rem;
+
+    h2 {
+      span.sul-i {
+        font-size: 18px;
+        margin-right: 5px;
+      }
+    }
+
+    .section-body {
+
+      th {
+        padding-left: 0px;
+        border-bottom-width: 0px;
+        width: 20%;
+      }
+
+      th:first-letter {
+        text-transform: uppercase;
+      }
+
+      tbody {
+        tr:not(:first-of-type) th {
+          // Visibility hidden doesn't work here because it also hides the border
+          font-size: 0;
+        }
+
+        tr:first-of-type {
+          th, td {
+            border-top-width: 1px;
+          }
+        }
+  
+        td {
+          border-bottom-width: 0px;
+        }
+      
+        tr:last-of-type th, tr:last-of-type td {
+          border-bottom-width: 1px;
+        }
+  
+        > dl > dd:not(:last-child) {
+          margin-bottom: 15px;
+        }
+  
+        > dl > dd:last-child {
+          margin-bottom: 0px;
+        }
+  
+        dl.mods_display_related_item:not(:first-child) {
+          margin-top: 20px;
+        }
+  
+        dl.mods_display_related_item {
+          margin-bottom: 0px;
+  
+          dt {
+            font-weight: normal;
+            font-style: italic;
+            text-transform: capitalize;
+          }
+  
+          dd {
+            margin-bottom: 5px;
+          }
+        }
+      }    
+    }    
+  }
+}
+
+// Based on sul-embed
+.stanford-only-text {
+  background: url('stanford_s.png') no-repeat left;
+  background: url('stanford_s.svg') no-repeat left, none;
+  padding-left: 15px;
+  margin-left: 5px;
+}

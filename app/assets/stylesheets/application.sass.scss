@@ -1,0 +1,17 @@
+@import 'deja-vu-font';
+@import 'sul-variables';
+@import 'bootstrap-overrides';
+
+@import 'base';
+@import 'layout';
+
+@import 'modules/feedback-form';
+@import 'modules/purl-embed-viewer';
+@import 'modules/record-metadata-section';
+@import 'modules/search-bar';
+@import 'modules/sul-footer';
+@import 'modules/top-navbar';
+
+.record-metadata {
+  margin-bottom: 2em;
+}

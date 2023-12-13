@@ -1,0 +1,14 @@
+
+:root {
+  // Colors
+  // https://identity.stanford.edu/design-elements/color/primary-colors/
+  --stanford-cardinal-rgb: 143, 20, 20;
+  --stanford-cardinal: #8f1414;
+  // https://identity.stanford.edu/design-elements/color/accent-colors/
+  --stanford-fog-light: #f4f4f4;
+  --sul-link-color-rgb: 0, 108, 184; // Digital blue #006CB8;
+
+  --sul-footer-background: var(--stanford-fog-light);
+  --global-footer-color: white;
+}
+
