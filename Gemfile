@@ -12,7 +12,6 @@ gem 'config' # simple rails environment specific config
 gem "cssbundling-rails", "~> 1.1"
 gem 'faraday' # HTTP client
 gem 'honeybadger' # exception reporting
-gem 'htmlentities'
 gem "importmap-rails" # Use JavaScript with ESM import maps
 gem "jbuilder" # Build JSON APIs with ease
 gem "jsonpath"
