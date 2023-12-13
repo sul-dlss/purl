@@ -107,6 +107,11 @@ class PurlResource
     content_metadata.resources.present?
   end
 
+  # Object types that we're able to track download metrics for
+  def downloads_tracked?
+    %w[geo document file 3d media].include?(type)
+  end
+
   def rights
     @rights ||= RightsMetadata.new(rights_metadata)
   end

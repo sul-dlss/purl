@@ -1,0 +1,16 @@
+<identityMetadata>
+  <sourceId source="sul">CAS_bh502xm3351</sourceId>
+  <objectId>druid:bh502xm3351</objectId>
+  <objectCreator>DOR</objectCreator>
+  <objectLabel>The CATGUT Acoustical Society Newsletter: Number 20, Nov. 1973</objectLabel>
+  <objectType>item</objectType>
+  <adminPolicy>druid:wg541jt7173</adminPolicy>
+  <otherId name="label"/>
+  <otherId name="uuid">2b8a033e-924c-11e2-8a00-0050569b3c3c</otherId>
+  <tag>Project : Catgut Journals</tag>
+  <tag>Process : Content Type : File</tag>
+  <tag>Project : Catgut Journals</tag>
+  <tag>Registered By : blalbrit</tag>
+  <tag>Remediated By : 3.25.3</tag>
+  <otherId name="catkey">491218</otherId>
+</identityMetadata>

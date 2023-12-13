@@ -1,0 +1,9 @@
+<contentMetadata objectId="druid:bh502xm3351" type="document">
+  <resource id="bh502xm3351_1" sequence="1" type="document">
+    <label>File 1</label>
+    <file id="CAS_bh502xm3351.pdf" mimetype="application/pdf" size="10602682" publish="yes" shelve="yes" preserve="yes">
+      <checksum type="sha1">72e17d9460354b425f5fe3022540834941ae3101</checksum>
+      <checksum type="md5">997a099f38d30ff084d56f48d05ebb43</checksum>
+    </file>
+  </resource>
+</contentMetadata>

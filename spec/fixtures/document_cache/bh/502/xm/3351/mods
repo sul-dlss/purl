@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+  <titleInfo>
+    <title>The Catgut Acoustical Society Newsletter</title>
+    <partNumber>Number 20</partNumber>
+    <partName>1973-11-01</partName>
+  </titleInfo>
+  <typeOfResource>text</typeOfResource>
+  <note type="date/sequential designation">20</note>
+  <location>
+    <url usage="primary display">https://purl.stanford.edu/bh502xm3351</url>
+  </location>
+  <location>
+    <url displayLabel="Title record in SearchWorks">http://searchworks.stanford.edu/view/491218</url>
+  </location>
+  <recordInfo>
+    <languageOfCataloging>
+      <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="text">English</languageTerm>
+      <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="code">eng</languageTerm>
+    </languageOfCataloging>
+    <recordContentSource valueURI="http://id.loc.gov/vocabulary/organizations/cst" authorityURI="http://id.loc.gov/vocabulary/organizations" authority="marcorg">CSt</recordContentSource>
+  </recordInfo>
+  <relatedItem type="host">
+    <titleInfo>
+      <title>CAS Journal</title>
+    </titleInfo>
+    <location>
+      <url>https://purl.stanford.edu/xw274dm7079</url>
+    </location>
+    <typeOfResource collection="yes"/>
+  </relatedItem>
+  <accessCondition type="useAndReproduction">Property rights reside with the repository. Literary rights reside with the creators of the documents or their heirs. To obtain permission to publish or reproduce, please contact the Special Collections Public Services Librarian at speccollref@stanford.edu.</accessCondition>
+</mods>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+  <titleInfo>
+    <title>Inequalities in interaction</title>
+  </titleInfo>
+  <name valueURI="http://id.loc.gov/authorities/names/n83126653" authority="naf" usage="primary" type="personal">
+    <namePart>Dornbusch, Sanford M.</namePart>
+    <role>
+      <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/spk" authority="marcrelator" type="text">Speaker</roleTerm>
+    </role>
+  </name>
+  <genre authority="marcgt">speech</genre>
+  <genre authority="marcgt">instruction</genre>
+  <typeOfResource>moving image</typeOfResource>
+  <physicalDescription>
+    <form authority="rdacarrier">videocassette</form>
+    <reformattingQuality>access</reformattingQuality>
+    <internetMediaType>video/quicktime</internetMediaType>
+    <extent>1 tape</extent>
+    <digitalOrigin>reformatted digital</digitalOrigin>
+  </physicalDescription>
+  <language>
+    <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+  </language>
+  <note>Lectures from classes in the human biology program at Stanford University, 1987-1989.</note>
+  <subject authority="lcsh">
+    <topic authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85124200">Sociology</topic>
+  </subject>
+  <originInfo>
+    <dateCreated encoding="w3cdtf" keyDate="yes">1989-02-03</dateCreated>
+    <place>
+      <placeTerm authorityURI="http://id.loc.gov/authorities/names/" valueURI="http://id.loc.gov/authorities/names/n50046557" type="text">Stanford (Calif.)</placeTerm>
+    </place>
+  </originInfo>
+  <identifier displayLabel="Source ID" type="local">V0246_270</identifier>
+  <location>
+    <url usage="primary display">https://purl.stanford.edu/bd786fy6312</url>
+  </location>
+  <location>
+    <physicalLocation displayLabel="Collection call number">V0246</physicalLocation>
+  </location>
+  <location>
+    <physicalLocation type="repository" valueURI="http://id.loc.gov/authorities/names/no2014019980" authority="naf" displayLabel="Repository">Stanford University. Libraries. Department of Special Collections and University Archives</physicalLocation>
+  </location>
+  <recordInfo>
+    <languageOfCataloging>
+      <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+    </languageOfCataloging>
+    <recordContentSource authority="marcorg">CSt</recordContentSource>
+  </recordInfo>
+  <relatedItem type="host">
+    <titleInfo>
+      <title>Stanford University, Program in Human Biology, videorecordings, 1987-2001 (inclusive), 1987-1989 (bulk)</title>
+    </titleInfo>
+    <location>
+      <url>https://purl.stanford.edu/rk187hn0556</url>
+    </location>
+    <typeOfResource collection="yes"/>
+  </relatedItem>
+  <accessCondition type="useAndReproduction">The materials are open for research use and may be used freely for non-commercial purposes with an attribution. For commercial permission requests, please contact the Stanford University Archives (universityarchives@stanford.edu).</accessCondition>
+  <accessCondition type="copyright">Copyright © 1989 The Board of Trustees of the Leland Stanford Junior University. All rights reserved.</accessCondition>
+</mods>

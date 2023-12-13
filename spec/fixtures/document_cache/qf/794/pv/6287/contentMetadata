@@ -1,0 +1,39 @@
+<contentMetadata objectId="qf794pv6287" type="3d">
+  <resource id="qf794pv6287_1" sequence="1" type="file">
+    <label>File 1</label>
+    <file id="qf794pv6287.tar" mimetype="application/x-tar" size="109056000" preserve="yes" publish="yes" shelve="yes">
+      <checksum type="md5">24d835c0f450affa2fd4db57d40b0d24</checksum>
+      <checksum type="sha1">83a6894a5902aa3c7b301caf0379f84f8a611c22</checksum>
+    </file>
+  </resource>
+  <resource id="qf794pv6287_2" sequence="2" type="file">
+    <label>File 2</label>
+    <file id="qf794pv6287_basecolor_low.jpg" mimetype="image/jpeg" size="674898" preserve="yes" publish="yes" shelve="yes">
+      <checksum type="md5">5795b13bf2dab54092841b2ad0100fc0</checksum>
+      <checksum type="sha1">92d97ea36a94cbdb04c23d2109747a372bf651d2</checksum>
+      <imageData width="2048" height="2048"/>
+    </file>
+  </resource>
+  <resource id="qf794pv6287_3" sequence="3" type="file">
+    <label>File 3</label>
+    <file id="qf794pv6287_low.mtl" mimetype="text/plain" size="123" preserve="yes" publish="yes" shelve="yes">
+      <checksum type="md5">793d3417f7f87d1d3dd9a8ce6e7ffb0b</checksum>
+      <checksum type="sha1">81d649fc390d712644aae146017681b3b53ecd04</checksum>
+    </file>
+  </resource>
+  <resource id="qf794pv6287_4" sequence="4" type="3d">
+    <label>File 4</label>
+    <file id="qf794pv6287_low.obj" mimetype="text/plain" size="13579146" preserve="yes" publish="yes" shelve="yes">
+      <checksum type="md5">a10e9c1846c87cd6198cdd10e0168656</checksum>
+      <checksum type="sha1">a4c2e8d401d32e0779cf093d75c15a9fc18dbb02</checksum>
+    </file>
+  </resource>
+  <resource id="qf794pv6287_5" sequence="5" type="file">
+    <label>File 5</label>
+    <file id="qf794pv6287_normal_low.jpg" mimetype="image/jpeg" size="752515" preserve="yes" publish="yes" shelve="yes">
+      <checksum type="md5">9b0f825db7a286071e14926ce740a8b6</checksum>
+      <checksum type="sha1">27493aa66be78ac6078e4f70e47c48b1a2fd8999</checksum>
+      <imageData width="2048" height="2048"/>
+    </file>
+  </resource>
+</contentMetadata>

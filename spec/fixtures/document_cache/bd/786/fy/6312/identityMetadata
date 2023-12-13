@@ -1,0 +1,15 @@
+<identityMetadata>
+  <sourceId source="sul">V0246_270</sourceId>
+  <objectId>druid:bd786fy6312</objectId>
+  <objectCreator>DOR</objectCreator>
+  <objectLabel>Sanford Dornbusch, Inequalities in Interaction</objectLabel>
+  <objectType>item</objectType>
+  <adminPolicy>druid:yf767bj4831</adminPolicy>
+  <otherId name="uuid">f0bdda92-d74c-11e1-81d0-0016034322e2</otherId>
+  <tag>Project:V0246 humbio:vhs</tag>
+  <tag> SMPL:video:ua</tag>
+  <tag> JIRA:SPECPAT-481</tag>
+  <tag> Registered By:gwillard</tag>
+  <tag> Process:Content Type:Media</tag>
+  <tag>Remediated By : 5.8.2</tag>
+</identityMetadata>
