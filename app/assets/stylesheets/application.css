@@ -107,6 +107,9 @@ h3 {
 }
 
 #main-container {
+  /* keep the not available items with sufficent height. See db586ns4974 */
+  min-height: calc(100vh - 323px);
+
   #main-flashes {
     min-height: 0;
   }
