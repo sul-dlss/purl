@@ -194,7 +194,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     img_res.service = [iiif_image_v2_service(url)]
     img_res.service[0]['service'] = []
     if purl_resource.rights.stanford_only_rights_for_file(resource.filename).first
-      img_res.service[0]['service'].append(iiif_stacks_login_service)
+      img_res.service[0]['service'].append(iiif_stacks_v1_login_service)
     end
 
     if purl_resource.rights.cdl_rights_for_file(resource.filename)
@@ -210,15 +210,30 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def binary_resource(resource)
     bin_res = IIIF::V3::Presentation::Resource.new
-    bin_res['id'] = stacks_file_url(resource.druid, resource.filename)
+    file_url = stacks_file_url(resource.druid, resource.filename)
+    bin_res['id'] = file_url
     bin_res['type'] = iiif_resource_type(resource)
     bin_res['label'] = resource.filename
     bin_res.format = resource.mimetype
 
-    unless purl_resource.rights.world_rights_for_file(resource.filename).first
-      bin_res.service = [iiif_stacks_login_service]
-    end
+    bin_res.service = [probe_service(resource, file_url)]
+
     bin_res
+  end
+
+  def probe_service(resource, file_url)
+    IIIF::V3::Presentation::Service.new(
+      'id' => "#{Settings.stacks.url}/iiif/auth/v2/probe?id=#{URI.encode_uri_component(file_url)}",
+      'type' => 'AuthProbeService2',
+      'errorHeading' => { 'en' => ['No access'] },
+      'errorNote' => { 'en' => ['You do not have permission to access this resource'] }
+    ).tap do |probe_service|
+      probe_service.service = if purl_resource.rights.world_rights_for_file(resource.filename).first
+        [iiif_v2_access_service_kiosk]
+      else
+        [iiif_v2_access_service_active]
+      end
+    end
   end
 
   def iiif_resource_type(resource)
@@ -273,7 +288,38 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     )
   end
 
-  def iiif_stacks_login_service
+  # The user will not be required to interact with an authentication system,
+  # the client is expected to use the access service automatically.
+  def iiif_v2_access_service_kiosk
+    IIIF::V3::Presentation::Service.new(
+      'type' => 'AuthAccessService2',
+      'profile' => 'kiosk'
+    ).tap do |service|
+      service.service = [iiif_v2_access_token_service]
+    end
+  end
+
+  # The user will be required to visit the user interface of an external authentication system.
+  def iiif_v2_access_service_active
+    IIIF::V3::Presentation::Service.new(
+      'id' => "#{Settings.stacks.url}/auth/iiif",
+      'type' => 'AuthAccessService2',
+      'profile' => 'active'
+    ).tap do |service|
+      service.service = [iiif_v2_access_token_service]
+    end
+  end
+
+  def iiif_v2_access_token_service
+    IIIF::V3::Presentation::Service.new(
+      'id' => "#{Settings.stacks.url}/iiif/auth/v2/token",
+      'type' => 'AuthAccessTokenService2',
+      'errorHeading' => { 'en' => ['Something went wrong'] },
+      'errorNote' => { 'en' => ['Could not get a token.'] }
+    )
+  end
+
+  def iiif_stacks_v1_login_service
     IIIF::V3::Presentation::Service.new(
       '@context' => 'http://iiif.io/api/auth/1/context.json',
       'id' => "#{Settings.stacks.url}/auth/iiif",
