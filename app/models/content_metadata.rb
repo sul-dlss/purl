@@ -122,7 +122,7 @@ class ContentMetadata
 
   class Resource
     include ActiveModel::Model
-    attr_accessor :height, :width, :type, :mimetype, :size, :role, :label, :url, :filename, :imagesvc, :thumb, :druid, :id, :sequence
+    attr_accessor :height, :width, :type, :mimetype, :size, :role, :label, :url, :filename, :imagesvc, :druid, :id, :sequence
 
     ##
     # Extract attributes from `<file>...</file>` in content metadata
@@ -160,10 +160,6 @@ class ContentMetadata
           id: external_file['resourceId']
         )
       )
-    end
-
-    def thumbnail?
-      !!thumb
     end
 
     def levels
