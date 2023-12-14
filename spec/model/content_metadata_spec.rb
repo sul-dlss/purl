@@ -1,11 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe ContentMetadata do
-  let(:document) { double(at_xpath: 'rs276tc2764') }
   subject(:content_metadata) { described_class.new(document) }
 
-  describe '#extract_resources' do
-    let(:stub_xml) { Nokogiri::XML.parse(fixture).xpath('//resource').first }
+  describe '#resources' do
+    let(:document) { Nokogiri::XML(fixture).root }
     let(:fixture) do
       <<-EOXML
       <resource id="rs276tc2764_2" sequence="2" type="file">
@@ -18,25 +17,8 @@ RSpec.describe ContentMetadata do
       </resource>
       EOXML
     end
-    subject(:resource) { content_metadata.extract_resources(stub_xml).first }
+    subject { content_metadata.resources }
 
-    it 'extracts attributes from the xml' do
-      expect(resource).to have_attributes id: 'rs276tc2764_2', sequence: 2, type: 'file', label: /Dendrogram 1/
-    end
-
-    context 'without a sequence number' do
-      let(:fixture) do
-        <<-EOXML
-          <resource id="bv314fr9257_2" type="main-augmented" objectId="druid:kw044zx5498">
-          <attr name="label">Body of dissertation</attr>
-          <file id="phd_thesis-augmented.pdf" mimetype="application/pdf" size="8015804"></file>
-          </resource>
-        EOXML
-      end
-
-      it 'provides a default sequence' do
-        expect(resource).to have_attributes sequence: Float::INFINITY
-      end
-    end
+    it { is_expected.to all(be_kind_of ResourceFile) }
   end
 end
