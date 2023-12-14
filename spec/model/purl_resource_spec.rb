@@ -108,7 +108,7 @@ RSpec.describe PurlResource do
     end
 
     context 'with resources' do
-      let(:resources) { [instance_double(ContentMetadata::Resource)] }
+      let(:resources) { [instance_double(ResourceFile)] }
 
       it { is_expected.to be true }
     end
