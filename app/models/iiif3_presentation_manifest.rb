@@ -300,11 +300,14 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   end
 
   # The user will be required to visit the user interface of an external authentication system.
+  # https://iiif.io/api/auth/2.0/#active-interaction-pattern
   def iiif_v2_access_service_active
     IIIF::V3::Presentation::Service.new(
       'id' => "#{Settings.stacks.url}/auth/iiif",
       'type' => 'AuthAccessService2',
-      'profile' => 'active'
+      'profile' => 'active',
+      'label' => { 'en' =>  ['Stanford Login'] },
+      'confirmLabel' => { 'en' => ['Login'] }
     ).tap do |service|
       service.service = [iiif_v2_access_token_service]
     end
