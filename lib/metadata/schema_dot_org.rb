@@ -135,7 +135,7 @@ module Metadata
 
     def creator_name(contributor)
       # contributor.name.value or concatenated contributor.name.structuredValue
-      JsonPath.new('$.name.value').first(contributor) || structured_name(contributor)
+      JsonPath.new('$.name[0].value').first(contributor) || structured_name(contributor)
     end
 
     def structured_name(contributor)
@@ -155,10 +155,10 @@ module Metadata
 
     def orcid(contributor)
       # contributor.identifier.uri or contributor.identifier.value with type "orcid" (case-insensitive), made into URI if identifier only
-      identifier = JsonPath.new('$.identifier.uri').first(contributor)
+      identifier = JsonPath.new('$.identifier[*].uri').first(contributor)
       return identifier if identifier.present?
 
-      orcid = JsonPath.new("$.identifier.[?(@['type'] == 'ORCID' || @['type'] == 'orcid')].value").first(contributor)
+      orcid = JsonPath.new("$.identifier[*].[?(@['type'] == 'ORCID' || @['type'] == 'orcid')].value").first(contributor)
       return if orcid.blank?
 
       return orcid if orcid.start_with?('https://orcid.org')

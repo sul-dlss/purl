@@ -419,8 +419,8 @@ RSpec.describe Metadata::SchemaDotOrg do
           {
             "description": { "form": [{ "value": "dataset",
                                         "type":  "genre" }],
-                            "contributor": [{"name": {"value": "Doe, Jane"}},
-                                            {"name": {"value": "Foo, John"}}]
+                            "contributor": [{"name": [{"value": "Doe, Jane"}]},
+                                            {"name": [{"value": "Foo, John"}]}]
                             }
           }
         JSON
@@ -491,8 +491,8 @@ RSpec.describe Metadata::SchemaDotOrg do
           {
             "description": { "form": [{ "value": "dataset",
                                         "type":  "genre" }],
-                            "contributor": [{"name": {"value": "Doe, Jane"},
-                                              "identifier": {"uri": "https://orcid.org/0000-0000-0000-0000"}}]
+                            "contributor": [{"name": [{"value": "Doe, Jane"}],
+                                             "identifier": [{"uri": "https://orcid.org/0000-0000-0000-0000"}]}]
                             }
           }
         JSON
@@ -515,9 +515,9 @@ RSpec.describe Metadata::SchemaDotOrg do
           {
             "description": { "form": [{ "value": "dataset",
                                         "type":  "genre" }],
-                            "contributor": [{"name": {"value": "Doe, Jane"},
-                                             "identifier": {"value": "0000-0000-0000-0000",
-                                                            "type": "ORCID"}
+                            "contributor": [{"name": [{"value": "Doe, Jane"}],
+                                             "identifier": [{"value": "0000-0000-0000-0000",
+                                                            "type": "ORCID"}]
                                             }]
                             }
           }
@@ -550,7 +550,7 @@ RSpec.describe Metadata::SchemaDotOrg do
                                       ]
                                   }
                                 ],
-                                "identifier": {"uri": "https://orcid.org/0000-0000-0000-0000"}
+                                "identifier": [{"uri": "https://orcid.org/0000-0000-0000-0000"}]
                               }]
                             }
           }
