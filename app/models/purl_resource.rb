@@ -107,9 +107,11 @@ class PurlResource
     content_metadata.resources.present?
   end
 
-  # Object types that we're able to track download metrics for
-  def downloads_tracked?
-    %w[geo document file 3d media image book].include?(type)
+  # Show tracked downloads if the object has download permission and is a type that we track
+  # If we can't track downloads (e.g. for WARC), no point in showing the download count
+  def show_download_metrics?
+    (rights.world_downloadable? || rights.stanford_only_downloadable?) &&
+      %w[webarchive-seed webarchive-binary].exclude?(type)
   end
 
   def rights
