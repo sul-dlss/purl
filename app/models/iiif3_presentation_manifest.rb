@@ -229,7 +229,10 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       'errorNote' => { 'en' => ['You do not have permission to access this resource'] }
     ).tap do |probe_service|
       probe_service.service = if purl_resource.rights.world_rights_for_file(resource.filename).first
-        [iiif_v2_access_service_kiosk]
+        # We only need this because a probe service MUST have one or more access services and
+        # we want to run the probe service so that it can redirect to the streaming server.
+        # See https://iiif.io/api/auth/2.0/#probe-service-description
+        [iiif_v2_access_service_external_public]
       else
         [iiif_v2_access_service_active]
       end
@@ -289,11 +292,12 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   end
 
   # The user will not be required to interact with an authentication system,
-  # the client is expected to use the access service automatically.
-  def iiif_v2_access_service_kiosk
+  # the client is expected to already have the authorizing aspect
+  def iiif_v2_access_service_external_public
     IIIF::V3::Presentation::Service.new(
       'type' => 'AuthAccessService2',
-      'profile' => 'kiosk'
+      'profile' => 'external',
+      'label' => { 'en' => ['Public users'] }
     ).tap do |service|
       service.service = [iiif_v2_access_token_service]
     end
