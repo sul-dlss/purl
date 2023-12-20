@@ -310,8 +310,8 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       'id' => "#{Settings.stacks.url}/auth/iiif",
       'type' => 'AuthAccessService2',
       'profile' => 'active',
-      'label' => { 'en' =>  ['Stanford Login'] },
-      'confirmLabel' => { 'en' => ['Login'] }
+      'label' => { 'en' =>  ['Stanford users: log in to access all available features'] },
+      'confirmLabel' => { 'en' => ['Log in'] }
     ).tap do |service|
       service.service = [iiif_v2_access_token_service]
     end
