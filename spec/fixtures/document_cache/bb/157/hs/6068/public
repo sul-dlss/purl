@@ -67,6 +67,7 @@
     <dc:subject>California as an island--Maps</dc:subject>
     <dc:coverage>(W 180° --E 180°/N 85° --S 85°)</dc:coverage>
     <dc:relation type="collection">The Glen McLaughlin Map Collection of California as an Island</dc:relation>
+    <dc:relation type="url" href="https://purl.stanford.edu/bb157hs6068"/>
   </oai_dc:dc>
   <releaseData>
     <release to="Searchworks">true</release>
