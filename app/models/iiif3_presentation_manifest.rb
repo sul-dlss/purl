@@ -158,7 +158,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   end
 
   def iiif_key_value(label, values)
-    { 'label' => { en: [label] }, 'value' => { en: values } }
+    { 'label' => { en: [label] }, 'value' => { en: values.compact_blank } }
   end
 
   def annotation_page_for_resource(resource)
