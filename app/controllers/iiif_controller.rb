@@ -7,7 +7,6 @@ class IiifController < ApplicationController
   def manifest
     iiif_version = params[:iiif_version] == 'v3' ? 3 : 2
     return unless stale?(last_modified: @purl.updated_at.utc, etag: "#{@purl.cache_key}/#{iiif_version}/#{@purl.updated_at.utc}")
-    return head :not_found unless iiif_manifest
 
     manifest = Rails.cache.fetch(cache_key('manifest', iiif_version), expires_in: Settings.resource_cache.lifetime) do
       iiif_manifest.body.to_ordered_hash
@@ -18,7 +17,6 @@ class IiifController < ApplicationController
 
   def canvas
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
-    return head :not_found unless iiif_manifest
 
     manifest = Rails.cache.fetch(cache_key('canvas'), expires_in: Settings.resource_cache.lifetime) do
       iiif_manifest.canvas(resource_id: params[:resource_id])&.to_ordered_hash
@@ -43,7 +41,6 @@ class IiifController < ApplicationController
 
   def annotation_list
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
-    return head :not_found unless iiif_manifest
 
     manifest = Rails.cache.fetch(cache_key('annotation_list'), expires_in: Settings.resource_cache.lifetime) do
       iiif_manifest.annotation_list(resource_id: params[:resource_id])&.to_ordered_hash
@@ -55,7 +52,6 @@ class IiifController < ApplicationController
 
   def annotation
     return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
-    return head :not_found unless iiif_manifest
 
     manifest = Rails.cache.fetch(cache_key('annotation'), expires_in: Settings.resource_cache.lifetime) do
       iiif_manifest.annotation(annotation_id: params[:resource_id])&.to_ordered_hash
