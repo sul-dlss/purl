@@ -24,7 +24,7 @@ class PurlController < ApplicationController
 
       format.mods do
         if @purl.mods?
-          render xml: @purl.mods_body
+          render xml: @purl.public_xml.mods.to_xml
         else
           head :not_found
         end

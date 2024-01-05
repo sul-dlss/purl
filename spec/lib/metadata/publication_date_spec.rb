@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Metadata::PublicationDate do
-  let(:publication_date) { described_class.call(Nokogiri::XML(mods)) }
+  let(:publication_date) { described_class.call(Nokogiri::XML(mods).root) }
 
   context 'when publication date' do
     let(:mods) do

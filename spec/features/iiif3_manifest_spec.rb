@@ -29,17 +29,14 @@ RSpec.describe 'IIIF v3 manifests' do
     expect(image['body']['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068/bb157hs6068_05_0001/full/full/0/default.jpg'
 
     expect(json['metadata'].class).to eq Array
-    expect(json['metadata'].size).to eq(13) # 11 DC elements grouped by name are there + the publish date + Available Online
+    expect(json['metadata'].size).to eq(12) # 10 DC elements grouped by name are there + the publish date + Available Online
     # rubocop:disable Layout/LineLength
     expected_dc_metadata = [
       { 'label' => { 'en' => ['Available Online'] }, 'value' => { 'en' => ["<a href='http://www.example.com/bb157hs6068'>http://www.example.com/bb157hs6068</a>"] } },
-      { 'label' => { 'en' => ['Type'] }, 'value' => { 'en' => ['map', 'Digital Maps', 'Early Maps'] } },
-      { 'label' => { 'en' => ['Rights'] }, 'value' => { 'en' => ["Stanford University Libraries and Academic Information Resources - Terms of Use SULAIR Web sites are subject to Stanford University's standard Terms of Use (See http://www.stanford.edu/home/atoz/terms.html) These terms include a limited personal, non-exclusive, non-transferable license to access and use the sites, and to download - where permitted - material for personal, non-commercial, non-display use only. Please contact the University Librarian to request permission to use SULAIR Web sites and contents beyond the scope of the above license, including but not limited to republication to a group or republishing the Web site or parts of the Web site. SULAIR provides access to a variety of external databases and resources, which sites are governed by their own Terms of Use, as well as contractual access restrictions. The Terms of Use on these external sites always govern the data available there. Please consult with library staff if you have questions about data access and availability."] } },
-      { 'label' => { 'en' => ['Identifier'] }, 'value' => { 'en' => ['1040'] } },
       { 'label' => { 'en' => ['Title'] }, 'value' => { 'en' => ['NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES DIVERS MOUVEMENS DES PLANETES ET LEURS DIVERSES REVOLUTIONS, AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE'] } },
-      { 'label' => { 'en' => ['Date'] }, 'value' => { 'en' => ['1721'] } },
+      { 'label' => { 'en' => ['Creator'] }, 'value' => { 'en' => ['Chatelain, Henri Abraham'] } },
+      { 'label' => { 'en' => ['Type'] }, 'value' => { 'en' => ['map', 'Digital Maps', 'Early Maps'] } },
       { 'label' => { 'en' => ['Format'] }, 'value' => { 'en' => ['51.5 x 59.8 cm., including title along top and border, with 10 diagrams/maps and 6 columns of titled text.'] } },
-      { 'label' => { 'en' => ['Contributor'] }, 'value' => { 'en' => ['Chatelain, Henri Abraham'] } },
       { 'label' => { 'en' => ['Description'] }, 'value' => { 'en' => [
         'Tom.1. No.9. (top right).',
         'LC 548, 579; Koeman II, Cha 1,2; UCB; Ashley Baynton-Williams.',
@@ -50,9 +47,11 @@ RSpec.describe 'IIIF v3 manifests' do
         '[Henry Abraham Châtelain].'
       ] } },
       { 'label' => { 'en' => ['Subject'] }, 'value' => { 'en' => ['Astronomy--Charts, diagrams, etc', 'California as an island--Maps'] } },
-      { 'label' => { 'en' => ['Coverage'] }, 'value' => { 'en' => ['(W 180° --E 180°/N 85° --S 85°)'] } },
+      { 'label' => { 'en' => ['Coverage'] }, 'value' => { 'en' => ['W 180° --E 180°/N 85° --S 85°'] } },
+      { 'label' => { 'en' => ['Date'] }, 'value' => { 'en' => ['1721'] } },
+      { 'label' => { 'en' => ['Identifier'] }, 'value' => { 'en' => ['1040', 'https://purl.stanford.edu/bb157hs6068'] } },
       { 'label' => { 'en' => ['Relation'] }, 'value' => { 'en' => ['The Glen McLaughlin Map Collection of California as an Island'] } },
-      { 'label' => { 'en' => ['PublishDate'] }, 'value' => { 'en' => ['2016-06-16T21:46:16Z'] } } # publish date was added
+      { 'label' => { 'en' => ['PublishDate'] }, 'value' => { 'en' => ['2023-10-27T10:25:22Z'] } } # publish date was added
     ]
     # rubocop:enable Layout/LineLength
     expect(json['metadata']).to eq(expected_dc_metadata)
@@ -244,7 +243,7 @@ RSpec.describe 'IIIF v3 manifests' do
       expect(page).to have_http_status(:ok)
 
       json = JSON.parse(page.body)
-      expect(json['label']['en'].first).to eq 'How does politics affect central banking?: evidence from the Federal Reserve'
+      expect(json['label']['en'].first).to eq 'How does politics affect central banking? : evidence from the Federal Reserve'
       expect(json['items'].length).to eq 1
 
       canvas = json['items'].first

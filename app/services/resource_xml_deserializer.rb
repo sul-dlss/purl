@@ -15,10 +15,10 @@ class ResourceXmlDeserializer
     }
 
     resource_attributes[:sequence] = if resource_node.attribute('sequence')
-                                        resource_node.attribute('sequence').value.to_i
-                                      else
-                                        Float::INFINITY
-                                      end
+                                       resource_node.attribute('sequence').value.to_i
+                                     else
+                                       Float::INFINITY
+                                     end
 
     resource_node.xpath('file|externalFile|resource').select { |node| Purl::Util.file_ready? node }.map do |node|
       case node.name
@@ -29,7 +29,6 @@ class ResourceXmlDeserializer
       end
     end
   end
-
 
   class Resource
     ##

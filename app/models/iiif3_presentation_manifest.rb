@@ -229,13 +229,13 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       'errorNote' => { 'en' => ['You do not have permission to access this resource'] }
     ).tap do |probe_service|
       probe_service.service = if purl_resource.rights.world_rights_for_file(resource.filename).first
-        # We only need this because a probe service MUST have one or more access services and
-        # we want to run the probe service so that it can redirect to the streaming server.
-        # See https://iiif.io/api/auth/2.0/#probe-service-description
-        [iiif_v2_access_service_external_public]
-      else
-        [iiif_v2_access_service_active]
-      end
+                                # We only need this because a probe service MUST have one or more access services and
+                                # we want to run the probe service so that it can redirect to the streaming server.
+                                # See https://iiif.io/api/auth/2.0/#probe-service-description
+                                [iiif_v2_access_service_external_public]
+                              else
+                                [iiif_v2_access_service_active]
+                              end
     end
   end
 
@@ -310,7 +310,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       'id' => "#{Settings.stacks.url}/auth/iiif",
       'type' => 'AuthAccessService2',
       'profile' => 'active',
-      'label' => { 'en' =>  ['Stanford users: log in to access all available features'] },
+      'label' => { 'en' => ['Stanford users: log in to access all available features'] },
       'confirmLabel' => { 'en' => ['Log in'] }
     ).tap do |service|
       service.service = [iiif_v2_access_token_service]

@@ -41,7 +41,6 @@ By default, local development will use production XML from PURL, so that you can
 ```
 # Comment out for lookup to production PURL
 purl_resource:
-  mods: "<%= File.join(Rails.root, "document_cache") %>/%{druid_tree}/mods"
   public_xml: "<%= File.join(Rails.root, "document_cache") %>/%{druid_tree}/public"
   cocina: "<%= File.join(Rails.root, "document_cache") %>/%{druid_tree}/cocina.json"
 ```

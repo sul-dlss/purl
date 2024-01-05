@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Metadata::Authors do
-  let(:authors) { described_class.call(Nokogiri::XML(mods)) }
+  let(:authors) { described_class.call(Nokogiri::XML(mods).root) }
 
   context 'when no names' do
     let(:mods) do

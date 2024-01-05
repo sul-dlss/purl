@@ -26,19 +26,16 @@ RSpec.describe 'IIIF v2 manifests' do
     expect(image['resource']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068/bb157hs6068_05_0001/full/full/0/default.jpg'
 
     expect(json['metadata'].class).to eq Array
-    expect(json['metadata'].size).to eq(22) # 20 DC elements are there + the publish date + Available Online
+    expect(json['metadata'].size).to eq(22) # 21 DC elements are there + the publish date + Available Online
     # rubocop:disable Layout/LineLength
     expected_metadata = [
       { 'label' => 'Available Online', 'value' => "<a href='http://www.example.com/bb157hs6068'>http://www.example.com/bb157hs6068</a>" },
+      { 'label' => 'Title', 'value' => 'NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES DIVERS MOUVEMENS DES PLANETES ET LEURS DIVERSES REVOLUTIONS, AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE' },
+      { 'label' => 'Creator', 'value' => 'Chatelain, Henri Abraham' },
       { 'label' => 'Type', 'value' => 'map' },
       { 'label' => 'Type', 'value' => 'Digital Maps' },
-      { 'label' => 'Rights', 'value' => "Stanford University Libraries and Academic Information Resources - Terms of Use SULAIR Web sites are subject to Stanford University's standard Terms of Use (See http://www.stanford.edu/home/atoz/terms.html) These terms include a limited personal, non-exclusive, non-transferable license to access and use the sites, and to download - where permitted - material for personal, non-commercial, non-display use only. Please contact the University Librarian to request permission to use SULAIR Web sites and contents beyond the scope of the above license, including but not limited to republication to a group or republishing the Web site or parts of the Web site. SULAIR provides access to a variety of external databases and resources, which sites are governed by their own Terms of Use, as well as contractual access restrictions. The Terms of Use on these external sites always govern the data available there. Please consult with library staff if you have questions about data access and availability." },
-      { 'label' => 'Identifier', 'value' => '1040' },
-      { 'label' => 'Title', 'value' => 'NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES DIVERS MOUVEMENS DES PLANETES ET LEURS DIVERSES REVOLUTIONS, AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE' },
-      { 'label' => 'Date', 'value' => '1721' },
-      { 'label' => 'Format', 'value' => '51.5 x 59.8 cm., including title along top and border, with 10 diagrams/maps and 6 columns of titled text.' },
-      { 'label' => 'Contributor', 'value' => 'Chatelain, Henri Abraham' },
       { 'label' => 'Type', 'value' => 'Early Maps' },
+      { 'label' => 'Format', 'value' => '51.5 x 59.8 cm., including title along top and border, with 10 diagrams/maps and 6 columns of titled text.' },
       { 'label' => 'Description', 'value' => 'Tom.1. No.9. (top right).' },
       { 'label' => 'Description', 'value' => 'LC 548, 579; Koeman II, Cha 1,2; UCB; Ashley Baynton-Williams.' },
       { 'label' => 'Description', 'value' => 'California, with open northern edge, suggesting it may be an island and that northwest passage may exist, on 2 small hemisphere maps, each with 5 cm. diameter. First with title: Hemisphere terrestre pour faire | observer les 6 grands cercles de la sphere. Second with title: Hemisphere terrestre pour dis= tinguer les 4 petits cercles, et les 5 zo.' },
@@ -48,9 +45,12 @@ RSpec.describe 'IIIF v2 manifests' do
       { 'label' => 'Description', 'value' => '[Henry Abraham Châtelain].' },
       { 'label' => 'Subject', 'value' => 'Astronomy--Charts, diagrams, etc' },
       { 'label' => 'Subject', 'value' => 'California as an island--Maps' },
-      { 'label' => 'Coverage', 'value' => '(W 180° --E 180°/N 85° --S 85°)' },
+      { 'label' => 'Coverage', 'value' => 'W 180° --E 180°/N 85° --S 85°' },
+      { 'label' => 'Date', 'value' => '1721' },
+      { 'label' => 'Identifier', 'value' => '1040' },
+      { 'label' => 'Identifier', 'value' => 'https://purl.stanford.edu/bb157hs6068' },
       { 'label' => 'Relation', 'value' => 'The Glen McLaughlin Map Collection of California as an Island' },
-      { 'label' => 'PublishDate', 'value' => '2016-06-16T21:46:16Z' } # publish date was added
+      { 'label' => 'PublishDate', 'value' => '2023-10-27T10:25:22Z' } # publish date was added
     ]
     # rubocop:enable Layout/LineLength
     expect(json['metadata']).to eq(expected_metadata)

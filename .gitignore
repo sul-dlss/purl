@@ -38,3 +38,4 @@ db/test*
 db/development*
 
 public/sitemap*
+spec/examples.txt
