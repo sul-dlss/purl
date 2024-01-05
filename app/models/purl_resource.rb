@@ -109,7 +109,7 @@ class PurlResource
 
   # Object types that we're able to track download metrics for
   def downloads_tracked?
-    %w[geo document file 3d media].include?(type)
+    %w[geo document file 3d media image book].include?(type)
   end
 
   def rights
