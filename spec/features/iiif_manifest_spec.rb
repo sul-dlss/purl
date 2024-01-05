@@ -105,7 +105,7 @@ RSpec.describe 'IIIF v2 manifests' do
   end
 
   it 'includes authorization services for a Stanford-only image' do
-    visit '/py305sy7961/iiif/manifest.json'
+    visit '/bb001dq8600/iiif/manifest.json'
     json = JSON.parse(page.body)
     expect(json['sequences'].length).to eq 1
     canvas = json['sequences'].first['canvases'].first
@@ -156,7 +156,7 @@ RSpec.describe 'IIIF v2 manifests' do
   end
 
   it 'properly decodes XML entities into their UTF-8 characters' do
-    visit '/py305sy7961/iiif/manifest.json'
+    visit '/bb737zp0787/iiif/manifest.json'
     json = JSON.parse(page.body)
     expect(json['attribution']).to eq 'Property rights reside with the repository. Copyright © Stanford University. All Rights Reserved.'
   end

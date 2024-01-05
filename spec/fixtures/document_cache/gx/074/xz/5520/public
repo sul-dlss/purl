@@ -1,29 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<publicObject id="druid:gx074xz5520" published="2015-05-01T20:18:54-07:00">
+<publicObject id="druid:gx074xz5520" published="2023-10-27T08:32:06Z" publishVersion="cocina-models/0.91.4">
   <identityMetadata>
-    <sourceId source="Hydrus">item-amorgan2-2013-04-26T00:01:54.548Z</sourceId>
-    <objectId>druid:gx074xz5520</objectId>
-    <objectCreator>DOR</objectCreator>
-    <objectLabel>Minutes, 2006 May 18</objectLabel>
     <objectType>item</objectType>
-    <adminPolicy>druid:kb975xm7243</adminPolicy>
-    <otherId name="uuid">81726830-ae04-11e2-9a1d-0050569b3c6e</otherId>
-    <tag>Project : Hydrus</tag>
-    <tag>Remediated By : 4.20.0</tag>
+    <objectLabel>Minutes, 2006 May 18</objectLabel>
+    <sourceId source="sul">Hydrus:item-amorgan2-2013-04-26T00:01:54.548Z</sourceId>
   </identityMetadata>
-  <contentMetadata objectId="gx074xz5520" type="file">
-    <resource id="gx074xz5520_1" sequence="1" type="file">
-      <file id="PrintAll051806.pdf" mimetype="application/pdf" size="870629">
-      
-      
-    </file>
+  <contentMetadata objectId="druid:gx074xz5520" type="file">
+    <resource id="cocina-fileSet-gx074xz5520-gx074xz5520_1" sequence="1" type="file">
+      <file id="PrintAll051806.pdf" mimetype="application/pdf" size="870629" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">ba0a0bde5be018069987ba14feda1987716858dd</checksum>
+        <checksum type="md5">1984f8e7248673aab15b8cc906b8d268</checksum>
+      </file>
     </resource>
-    <resource id="gx074xz5520_2" sequence="2" type="file">
+    <resource id="cocina-fileSet-gx074xz5520-gx074xz5520_2" sequence="2" type="file">
       <label>Minutes</label>
-      <file id="cabinetminutes051806.pdf" mimetype="application/pdf" size="245640">
-      
-      
-    </file>
+      <file id="cabinetminutes051806.pdf" mimetype="application/pdf" size="245640" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">e9e7354a4ee81aea8e33fd1b5eae26e41194d0df</checksum>
+        <checksum type="md5">77ee5d9a87a5efc0e7d2675af69c94d1</checksum>
+      </file>
     </resource>
   </contentMetadata>
   <rightsMetadata>
@@ -40,26 +34,76 @@
     </access>
     <use>
       <human type="useAndReproduction">User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or confidentiality rights of individuals. Content distributed via the Stanford Digital Repository may be subject to additional license and use restrictions applied by the depositor.</human>
+      <license/>
     </use>
   </rightsMetadata>
-  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <rdf:Description rdf:about="info:fedora/druid:gx074xz5520">
-      <fedora:isMemberOf rdf:resource="info:fedora/druid:yb533nc1884"/>
       <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:yb533nc1884"/>
     </rdf:Description>
   </rdf:RDF>
   <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
     <dc:title>Minutes, 2006 May 18</dc:title>
+    <dc:contributor>Stanford University. Cabinet. (Author)</dc:contributor>
+    <dc:type>Text</dc:type>
     <dc:description>Meeting minutes of the University Cabinet.</dc:description>
     <dc:description type="preferred citation" displayLabel="Preferred Citation">Stanford University. Cabinet, Stanford University--Administration</dc:description>
     <dc:description type="citation/reference" displayLabel="Related Publication">Stanford University. Cabinet (2006 May 18). Minutes. Stanford Digital Repository. Available at http://purl.stanford.edu/gx074xz5520</dc:description>
-    <dc:description type="contact" displayLabel="Contact">archivesref@stanford.edu</dc:description>
-    <dc:relation type="url" href="http://www.oac.cdlib.org/findaid/ark:/13030/kt1h4nf2fr/">Finding aid</dc:relation>
     <dc:subject>Stanford University. Cabinet</dc:subject>
     <dc:subject>Stanford University--Administration.</dc:subject>
     <dc:date>2006-05-18</dc:date>
-    <dc:contributor>Stanford University. Cabinet. (Author)</dc:contributor>
+    <dc:identifier>https://purl.stanford.edu/gx074xz5520</dc:identifier>
+    <dc:description type="contact" displayLabel="Contact">archivesref@stanford.edu</dc:description>
+    <dc:relation type="url" href="http://www.oac.cdlib.org/findaid/ark:/13030/kt1h4nf2fr/">Finding aid</dc:relation>
     <dc:relation type="collection">Stanford University, Cabinet, Records</dc:relation>
   </oai_dc:dc>
-  <ReleaseData/>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>Minutes, 2006 May 18</title>
+    </titleInfo>
+    <name type="corporate">
+      <namePart>Stanford University. Cabinet.</namePart>
+      <role>
+        <roleTerm authority="marcrelator" type="text">Author</roleTerm>
+      </role>
+    </name>
+    <typeOfResource>text</typeOfResource>
+    <abstract>Meeting minutes of the University Cabinet.</abstract>
+    <note displayLabel="Preferred Citation" type="preferred citation">Stanford University. Cabinet, Stanford University--Administration</note>
+    <note displayLabel="Related Publication" type="citation/reference">Stanford University. Cabinet (2006 May 18). Minutes. Stanford Digital Repository. Available at http://purl.stanford.edu/gx074xz5520</note>
+    <subject>
+      <topic>Stanford University. Cabinet</topic>
+    </subject>
+    <subject>
+      <topic>Stanford University--Administration.</topic>
+    </subject>
+    <originInfo>
+      <dateCreated encoding="w3cdtf" keyDate="yes">2006-05-18</dateCreated>
+    </originInfo>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/gx074xz5520</url>
+    </location>
+    <note type="contact" displayLabel="Contact">archivesref@stanford.edu</note>
+    <relatedItem>
+      <titleInfo>
+        <title>Finding aid</title>
+      </titleInfo>
+      <location>
+        <url>http://www.oac.cdlib.org/findaid/ark:/13030/kt1h4nf2fr/</url>
+      </location>
+    </relatedItem>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Stanford University, Cabinet, Records</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/yb533nc1884</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or confidentiality rights of individuals. Content distributed via the Stanford Digital Repository may be subject to additional license and use restrictions applied by the depositor.</accessCondition>
+  </mods>
+  <releaseData>
+    <release to="Searchworks">true</release>
+  </releaseData>
 </publicObject>

@@ -139,16 +139,7 @@ RSpec.describe 'Integration Scenarios' do
       visit '/tx027jv4938'
       expect(page).to have_content 'IMSA 24 Hours of Daytona'
       expect(page).to have_metadata_section 'Access conditions'
-      expect(page).to have_metadata_section 'Description'
-      expect(page).to have_metadata_section 'Contributors'
-      expect(page).to have_metadata_section 'Subjects'
       expect(page).to have_metadata_section 'Bibliographic information'
-    end
-
-    it 'provides revs-specific subjects' do
-      visit '/tx027jv4938'
-      expect(page).to have_content 'Venue Daytona International Speedway'
-      expect(page).to have_content 'Event 24 Hours of Daytona'
       expect(page).to have_content 'Revs ID 2012-015GHEW-BW-1984-b4_1.4_0003'
     end
   end

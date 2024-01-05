@@ -1,32 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<publicObject id="druid:py305sy7961" published="2015-09-02T10:11:27-07:00">
+<publicObject id="druid:py305sy7961" published="2023-07-03T23:43:55Z" publishVersion="cocina-models/0.90.0">
   <identityMetadata>
-    <sourceId source="sul">36105121211382</sourceId>
-    <objectId>druid:py305sy7961</objectId>
-    <objectCreator>DOR</objectCreator>
-    <objectLabel>Torrance, Los Angeles Co., Cal., Dec. 1929</objectLabel>
     <objectType>item</objectType>
-    <adminPolicy>druid:xs835jp8197</adminPolicy>
+    <objectLabel>Torrance, Los Angeles Co., Cal., Dec. 1929</objectLabel>
+    <otherId name="catkey">2926183</otherId>
+    <otherId name="folio_instance_hrid">a2926183</otherId>
+    <sourceId source="sul">sul:36105121211382</sourceId>
     <otherId name="barcode">36105121211382</otherId>
-    <otherId name="uuid">e663b06a-852b-11e3-abfa-0050569b3c3c</otherId>
-    <tag>Process : Content Type : Map</tag>
-    <tag>Project : Maps - Stanford General Collections : Sanborn Fire Maps : Batch 1</tag>
-    <tag>LAB : MAPS</tag>
-    <tag>Registered By : goldsmij</tag>
-    <tag>Remediated By : 4.6.4</tag>
   </identityMetadata>
-  <contentMetadata objectId="py305sy7961" type="map">
-    <resource id="py305sy7961_1" sequence="1" type="image">
+  <contentMetadata objectId="druid:py305sy7961" type="map">
+    <resource id="cocina-fileSet-py305sy7961-py305sy7961_1" sequence="1" type="image">
       <label>Image 1</label>
-      <file id="py305sy7961_00_0001.jp2" mimetype="image/jp2" size="42569985">
-        <imageData width="13861" height="16302"/>
+      <file id="py305sy7961_00_0001.jp2" mimetype="image/jp2" size="42569985" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">59ba2380452c2a0d1a04faa28f2e6dd50bda0884</checksum>
+        <checksum type="md5">5d414c99638f2e7f41fcb35ab5c24556</checksum>
+        <imageData height="16302" width="13861"/>
       </file>
     </resource>
   </contentMetadata>
   <rightsMetadata>
-    <copyright>
-      <human type="copyright">Property rights reside with the repository. Copyright © Stanford University. All Rights Reserved.</human>
-    </copyright>
     <access type="discover">
       <machine>
         <world/>
@@ -34,27 +26,78 @@
     </access>
     <access type="read">
       <machine>
-        <group>Stanford</group>
+        <world/>
       </machine>
     </access>
     <use>
-      <human type="useAndReproduction">To obtain permission to publish or reproduce commercially, please contact the Head Librarian of the Branner Earth Science Library &amp; Map Collections at brannerlibrary@stanford.edu.</human>
-      <machine type="creativeCommons">by-nc</machine>
-      <human type="creativeCommons">Attribution Non-Commercial 3.0 Unported</human>
+      <human type="useAndReproduction">Image from the Map Collections courtesy Stanford University Libraries. This item is in the public domain. There are no restrictions on use. If you have questions, please contact Branner Earth Sciences Library &amp; Map Collections at brannerlibrary@stanford.edu.</human>
+      <license>https://creativecommons.org/publicdomain/mark/1.0/</license>
     </use>
+    <copyright>
+      <human>This work has been identified as being free of known restrictions under copyright law, including all related and neighboring rights. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.</human>
+    </copyright>
   </rightsMetadata>
-  <rdf:RDF xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <rdf:Description rdf:about="info:fedora/druid:py305sy7961">
-    </rdf:Description>
+    
+    
+  </rdf:Description>
   </rdf:RDF>
   <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
     <dc:title>Torrance, Los Angeles Co., Cal., Dec. 1929</dc:title>
     <dc:contributor>Sanborn Map Company</dc:contributor>
     <dc:type>map</dc:type>
+    <dc:format>32 maps.</dc:format>
+    <dc:language>eng</dc:language>
+    <dc:subject/>
+    <dc:coverage>Scale varies.</dc:coverage>
     <dc:date>1929</dc:date>
     <dc:publisher>Sanborn Map Co.</dc:publisher>
-    <dc:language>eng</dc:language>
-    <dc:format>32 maps.</dc:format>
-    <dc:coverage>Scale varies.</dc:coverage>
+    <dc:identifier>https://purl.stanford.edu/py305sy7961</dc:identifier>
   </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.4" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
+    <titleInfo>
+      <title>Torrance, Los Angeles Co., Cal., Dec. 1929</title>
+    </titleInfo>
+    <name type="corporate">
+      <namePart>Sanborn Map Company</namePart>
+    </name>
+    <genre authority="marcgt">map</genre>
+    <typeOfResource>cartographic</typeOfResource>
+    <physicalDescription>
+      <extent>32 maps.</extent>
+    </physicalDescription>
+    <language>
+      <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <subject>
+      <cartographics>
+        <scale>Scale varies.</scale>
+      </cartographics>
+    </subject>
+    <originInfo>
+      <dateIssued>1929</dateIssued>
+      <place>
+        <placeTerm type="text">New York</placeTerm>
+      </place>
+      <place>
+        <placeTerm authority="marccountry" type="code">nyu</placeTerm>
+      </place>
+      <publisher>Sanborn Map Co.</publisher>
+      <issuance>monographic</issuance>
+    </originInfo>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/py305sy7961</url>
+    </location>
+    <recordInfo>
+      <recordContentSource authority="marcorg"/>
+      <recordOrigin>Converted from MARCXML to MODS version 3.4 using MARC21slim2MODS3-4_SDR.xsl (Version 1.2.5 2013/08/11)</recordOrigin>
+      <recordCreationDate encoding="marc">930720</recordCreationDate>
+      <recordIdentifier>a2926183</recordIdentifier>
+    </recordInfo>
+    <accessCondition type="useAndReproduction">Image from the Map Collections courtesy Stanford University Libraries. This item is in the public domain. There are no restrictions on use. If you have questions, please contact Branner Earth Sciences Library &amp; Map Collections at brannerlibrary@stanford.edu.</accessCondition>
+    <accessCondition type="copyright">This work has been identified as being free of known restrictions under copyright law, including all related and neighboring rights. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.</accessCondition>
+    <accessCondition type="license" xlink:href="https://creativecommons.org/publicdomain/mark/1.0/">This work has been identified as being free of known restrictions under copyright law, including all related and neighboring rights (Public Domain Mark 1.0).</accessCondition>
+  </mods>
+  <thumb>py305sy7961/py305sy7961_00_0001.jp2</thumb>
 </publicObject>
