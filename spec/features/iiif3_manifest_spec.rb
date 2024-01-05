@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'iiif/v3/presentation' # Can we get the iiif-presentation gem to load this?
 
 RSpec.describe 'IIIF v3 manifests' do
   it 'works' do
@@ -312,6 +313,21 @@ RSpec.describe 'IIIF v3 manifests' do
       expect(obj['body']['id']).to eq 'https://stacks.stanford.edu/file/hc941fm6529/hc941fm6529.json'
       expect(obj['body']['format']).to eq 'application/vnd.threejs+json'
       expect(obj['body']['type']).to eq 'Model'
+    end
+  end
+
+  context 'when the object has no published files' do
+    let(:druid) { 'bg387kw8222' }
+    let(:resource) { instance_double(PurlResource, updated_at: 2.days.ago, cache_key: 'resource/xxx') }
+
+    before do
+      allow(PurlResource).to receive(:find).and_return(resource)
+      allow(resource).to receive(:iiif3_manifest).and_raise(IIIF::V3::Presentation::MissingRequiredKeyError)
+    end
+
+    it 'returns 404' do
+      visit "/#{druid}/iiif3/manifest"
+      expect(page).to have_http_status(:not_found)
     end
   end
 

@@ -13,6 +13,9 @@ class IiifController < ApplicationController
     end
 
     render json: JSON.pretty_generate(manifest.as_json)
+  rescue IIIF::V3::Presentation::MissingRequiredKeyError
+    # If the object has no published files, the manifest will not be valid.
+    head :not_found
   end
 
   def canvas
