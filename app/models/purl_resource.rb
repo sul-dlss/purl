@@ -37,29 +37,6 @@ class PurlResource
     end
   end
 
-  # rubocop:disable Naming/PredicateName
-  def self.has_resource(options)
-    options.each do |key, value|
-      define_method "#{key}_resource" do
-        response_cache[key] ||= cache_resource(key) do
-          fetch_resource(key, value)
-        end
-      end
-
-      define_method "#{key}_body" do
-        send("#{key}_resource").body if send("#{key}_resource").success?
-      end
-
-      define_method "#{key}?" do
-        send("#{key}_body").present?
-      end
-    end
-  end
-  # rubocop:enable Naming/PredicateName
-
-  has_resource public_xml: Settings.purl_resource.public_xml
-  has_resource cocina: Settings.purl_resource.cocina
-
   def mods?
     !!public_xml.mods
   end
@@ -304,8 +281,31 @@ class PurlResource
       end
     end
 
-    def response_cache
-      @response_cache ||= {}
+    def public_xml_resource
+      @public_xml_resource ||= cache_resource(:public_xml) do
+        fetch_resource(:public_xml, Settings.purl_resource.public_xml)
+      end
+    end
+
+    def public_xml_body
+      public_xml_resource.body if public_xml_resource.success?
+    end
+
+    def public_xml?
+      public_xml_body.present?
+    end
+
+    def cocina_body
+      @cocina_body ||= begin
+        resource = cache_resource(:cocina) do
+          fetch_resource(:cocina, Settings.purl_resource.cocina)
+        end
+        resource.body if resource.success?
+      end
+    end
+
+    def cocina?
+      cocina_body.present?
     end
 
     def fetch_resource(key, value)
