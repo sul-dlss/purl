@@ -3,13 +3,15 @@
   <%= render SectionComponent.new(label: 'Usage metrics', label_id: label_id) do %>
     <% if document.metrics.present? %>
       <%= render TableComponent.new(label_id: label_id, with_body: false) do %>
+      <% if document.embeddable? %>
       <tbody>
         <tr>
           <th>Views</th>
           <td id="view-count"><%= number_with_delimiter document.metrics['unique_views'] %></td>
         </tr>
       </tbody>
-      <% if document.downloads_tracked? %>
+      <% end %>
+      <% if document.show_download_metrics? %>
       <tbody>
         <tr>
           <th>Downloads</th>

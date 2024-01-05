@@ -73,7 +73,7 @@ end
     <%= render "mods_contact", document: @purl %>
     <%= render "find_it", document: @purl %>
 
-    <% if @purl.embeddable? || @purl.doi.present? %>
+    <% if @purl.embeddable? || @purl.show_download_metrics? || @purl.doi.present? %>
       <turbo-frame id="metrics-frame" src="<%= purl_metrics_path @purl %>">
         <p>Loading usage metrics...</p>
       </turbo-frame>
