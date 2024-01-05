@@ -14,7 +14,6 @@ resource_cache:
 # These are URLs when running locally, but configured
 # to the local file system on deployed environments
 purl_resource:
-  mods: 'https://purl.stanford.edu/%{druid}.mods'
   public_xml: 'https://purl.stanford.edu/%{druid}.xml'
   cocina: 'https://purl.stanford.edu/%{druid}.json'
 

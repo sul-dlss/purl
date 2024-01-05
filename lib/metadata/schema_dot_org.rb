@@ -21,7 +21,7 @@ module Metadata
         .merge(format_specific_fields)
         .compact
     rescue StandardError
-      Honeybadger.notify('Error occurred generating schema.org markup', context: { druid: druid })
+      Honeybadger.notify('Error occurred generating schema.org markup', context: { druid: })
       {}
     end
 

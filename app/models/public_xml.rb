@@ -57,4 +57,8 @@ class PublicXml
   def source_id
     document.root.at_xpath('identityMetadata/sourceId')&.text
   end
+
+  def mods
+    @mods ||= document.xpath('//mods:mods', 'mods' => 'http://www.loc.gov/mods/v3').first
+  end
 end

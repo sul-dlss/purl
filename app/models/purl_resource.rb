@@ -57,9 +57,12 @@ class PurlResource
   end
   # rubocop:enable Naming/PredicateName
 
-  has_resource mods: Settings.purl_resource.mods
   has_resource public_xml: Settings.purl_resource.public_xml
   has_resource cocina: Settings.purl_resource.cocina
+
+  def mods?
+    !!public_xml.mods
+  end
 
   def ready?
     public_xml?
@@ -222,7 +225,7 @@ class PurlResource
 
     # @return [String,nil] DOI (with https://doi.org/ prefix) if present
     def doi
-      @doi ||= mods_ng_document.root&.at_xpath('mods:identifier[@type="doi"]', mods: MODS_NS)&.text
+      @doi ||= mods_ng_document.at_xpath('mods:identifier[@type="doi"]', mods: MODS_NS)&.text
     end
 
     # @return [String,nil] DOI (without https://doi.org/ prefix) if present
@@ -231,7 +234,7 @@ class PurlResource
     end
 
     def related_item_elements
-      @related_item_elements ||= mods_ng_document.root&.xpath('mods:relatedItem', mods: MODS_NS)
+      @related_item_elements ||= mods_ng_document.xpath('mods:relatedItem', mods: MODS_NS)
     end
 
     def publication_date
@@ -322,11 +325,11 @@ class PurlResource
   private
 
   def mods_display_object
-    @mods_display_object ||= ModsDisplay::Record.new(mods_body)
+    @mods_display_object ||= ModsDisplay::Record.new(public_xml.mods.to_xml)
   end
 
   def mods_ng_document
-    @mods_ng_document ||= Nokogiri::XML(mods_body)
+    @mods_ng_document ||= public_xml.mods
   end
 
   def logger

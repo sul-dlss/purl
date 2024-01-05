@@ -16,7 +16,7 @@ class ContentMetadata
   end
 
   def book_data
-    document&.at_xpath('bookData')
+    document.at_xpath('bookData')
   end
 
   ##
@@ -39,7 +39,6 @@ class ContentMetadata
   def grouped_resources
     @grouped_resources ||= resources.group_by(&:sequence).sort.map { |grouped_resource| GroupedResource.from_grouping(*grouped_resource) }
   end
-
 
   ##
   # A collection of SDR ContentMetadata Resource Files grouped by resource sequence

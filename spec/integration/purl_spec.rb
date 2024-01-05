@@ -199,7 +199,7 @@ RSpec.describe 'purl', type: :feature do
   describe 'license' do
     it 'included in purl page' do
       visit "/#{@file_object}"
-      expect(page).to have_content 'This work is licensed under a Open Data Commons Public Domain Dedication and License (PDDL)'
+      expect(page).to have_content 'This work is licensed under an Open Data Commons Public Domain Dedication & License 1.0'
     end
   end
 

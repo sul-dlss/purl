@@ -5,18 +5,25 @@ RSpec.describe PurlResource do
   let(:druid) { nil }
 
   describe 'resource methods' do
-    let(:fake_response) { OpenStruct.new(success?: true, body: 'Content') }
+    let(:body) do
+      <<-EOF
+        <?xml version="1.0" encoding="UTF-8"?>
+        <publicObject>
+          <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/">
+            <dc:title>The title from the DC</dc:title>
+          </oai_dc:dc>
+          <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
+            <titleInfo>
+              <title>The title from the MODS.</title>
+            </titleInfo>
+          </mods>
+        </publicObject>
+      EOF
+    end
+    let(:fake_response) { OpenStruct.new(success?: true, body:) }
 
     before do
       allow(subject).to receive(:fetch_resource).and_return(fake_response)
-    end
-
-    it 'fetches the response' do
-      expect(subject.mods_resource).to eq fake_response
-    end
-
-    it 'returns the response body' do
-      expect(subject.mods_body).to eq 'Content'
     end
 
     it 'checks if the request succeeded' do
@@ -40,40 +47,44 @@ RSpec.describe PurlResource do
 
     context 'with mods' do
       before do
-        allow(instance).to receive(:mods_body).and_return mods_body
+        allow(instance).to receive(:public_xml_body).and_return public_xml_body
       end
 
       context 'with a single title' do
-        let(:mods_body) do
-          <<~EOF
+        let(:public_xml_body) do
+          <<~MODS
             <?xml version="1.0" encoding="UTF-8"?>
-            <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
-              <titleInfo>
-                <title>The title from the MODS.</title>
-              </titleInfo>
-            </mods>
-          EOF
+            <publicObject>
+              <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
+                <titleInfo>
+                  <title>The title from the MODS.</title>
+                </titleInfo>
+              </mods>
+            </publicObject>
+          MODS
         end
 
         it { is_expected.to eq 'The title from the MODS.' }
       end
 
       context 'with a primary title' do
-        let(:mods_body) do
+        let(:public_xml_body) do
           <<~EOF
             <?xml version="1.0" encoding="UTF-8"?>
-            <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
-              <titleInfo type="alternative" altRepGroup="1">
-                <title>[Pukhan p'osŭt'ŏ k'ŏlleksyŏn]</title>
-              </titleInfo>
-              <titleInfo type="alternative" altRepGroup="1">
-                <title>[북한 포스터 컬렉션]</title>
-              </titleInfo>
-              <titleInfo usage="primary">
-                <nonSort>[ </nonSort>
-                <title>North Korean poster collection]</title>
-              </titleInfo>
-            </mods>
+            <publicObject>
+              <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
+                <titleInfo type="alternative" altRepGroup="1">
+                  <title>[Pukhan p'osŭt'ŏ k'ŏlleksyŏn]</title>
+                </titleInfo>
+                <titleInfo type="alternative" altRepGroup="1">
+                  <title>[북한 포스터 컬렉션]</title>
+                </titleInfo>
+                <titleInfo usage="primary">
+                  <nonSort>[ </nonSort>
+                  <title>North Korean poster collection]</title>
+                </titleInfo>
+              </mods>
+            </publicObject>
           EOF
         end
 
@@ -83,19 +94,18 @@ RSpec.describe PurlResource do
 
     context 'without mods' do
       before do
-        allow(instance).to receive(:mods_body).and_return(nil)
         allow(instance).to receive(:public_xml_body).and_return <<-EOF
 
         <?xml version="1.0" encoding="UTF-8"?>
         <publicObject>
           <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/">
-            <dc:title>The title from the public XML</dc:title>
+            <dc:title>The title from the DC</dc:title>
           </oai_dc:dc>
         </publicObject>
         EOF
       end
 
-      it { is_expected.to eq 'The title from the public XML' }
+      it { is_expected.to eq 'The title from the DC' }
     end
   end
 
@@ -121,16 +131,20 @@ RSpec.describe PurlResource do
   end
 
   describe '#description' do
-    it 'extracts a description from the MODS abstract' do
-      allow(subject).to receive(:mods_body).and_return <<-EOF
-      <?xml version="1.0" encoding="UTF-8"?>
-      <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
-        <abstract>
-          The abstract from the MODS.
-        </abstract>
-      </mods>
+    let(:body) do
+      <<-EOF
+        <?xml version="1.0" encoding="UTF-8"?>
+        <publicObject>
+          <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
+            <abstract>The abstract from the MODS.</abstract>
+          </mods>
+        </publicObject>
       EOF
+    end
 
+    before { allow(subject).to receive(:public_xml_body).and_return(body) }
+
+    it 'extracts a description from the MODS abstract' do
       expect(subject.description).to eq 'The abstract from the MODS.'
     end
   end
@@ -378,13 +392,17 @@ RSpec.describe PurlResource do
   end
 
   describe '#doi and #doi_id' do
+    before { allow(subject).to receive(:public_xml_body).and_return(body) }
+
     context 'with a DOI' do
-      before do
-        allow(subject).to receive(:mods_body).and_return <<-EOF
+      let(:body) do
+        <<-EOF
           <?xml version="1.0" encoding="UTF-8"?>
-          <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
-            <identifier type="doi" displayLabel="DOI">https://doi.org/10.25740/bb051dp0564</identifier>
-          </mods>
+          <publicObject>
+            <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
+              <identifier type="doi" displayLabel="DOI">https://doi.org/10.25740/bb051dp0564</identifier>
+            </mods>
+          </publicObject>
         EOF
       end
 
@@ -395,11 +413,13 @@ RSpec.describe PurlResource do
     end
 
     context 'without a DOI' do
-      before do
-        allow(subject).to receive(:mods_body).and_return <<-EOF
+      let(:body) do
+        <<-EOF
           <?xml version="1.0" encoding="UTF-8"?>
-          <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
-          </mods>
+          <publicObject>
+            <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
+            </mods>
+          </publicObject>
         EOF
       end
 
