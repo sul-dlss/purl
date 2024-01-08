@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get ':id/file/:file' => 'purl#file', as: :purl_file
   get ':id/metrics' => 'purl#metrics', as: :purl_metrics
 
-  resources :purl, only: [:show], param: :id, path: '/' do
+  resources :purl, only: [:show], path: '/' do
     member do
       get 'embed', to: redirect("/iframe/?url=#{Settings.embed.url % { druid: '%{id}' }}")
     # These routes should only be used until our viewers support v3 manifests.
