@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dc xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <dcterms:identifier>druid:bj071ff4194</dcterms:identifier>
-  <dcterms:identifier>0000000097</dcterms:identifier>
-  <dcterms:creator>Mabery, Eric Maurice</dcterms:creator>
-  <dcterms:abstract>Eiger is the sole TNF family member found in Drosophila melanogaster. This signaling molecule is induced during infection and is required for an appropriate immune response to many microbes; however, little is known concerning where eiger is produced and what genes are regulated by eiger. Here we show that eiger is made in the fly’s fat body during a Salmonella typhimurium infection. Using tissue specific knockdowns we found that eiger expression in the fat body is required for all of the phenotypes we observed in eiger null mutant flies. This includes reduced melanization, altered antimicrobial peptide expression and reduced feeding rates. The effect of eiger on feeding rates alone may account for the entire phenotype seen in eiger mutants infected with S. typhimurium. We further characterized the eiger response using transcriptional arrays. We found that the eiger regulates a number of genes involved in metabolism and hormonal signaling during an immune response. How these genes are involved in the immune response is not clear. Finally we examined the role of age related decline of the immune system in D. melanogaster during bacterial infection. We found that vigor and tolerance are reduced when old flies are challenged with a variety of bacterial pathogens. </dcterms:abstract>
-  <dcterms:title>Eiger's role in Drosophila melanogaster immunity</dcterms:title>
-</dc>
