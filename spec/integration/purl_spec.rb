@@ -7,11 +7,12 @@ RSpec.describe 'purl', type: :feature do
     @manifest_object = 'bc854fy5899'
     @embed_object = 'bf973rp9392'
     @annotation_list = 'hx163dc5225'
-    @unpublished_object = 'ab123cd4567'
     @legacy_object = 'ir:rs276tc2764'
     @nested_resources_object = 'dm907qj6498'
     @collection = 'bb631ry3167'
   end
+
+  let(:unpublished_object) { 'fb123cd4567' }
 
   describe 'manifest' do
     context 'v2' do
@@ -132,7 +133,7 @@ RSpec.describe 'purl', type: :feature do
 
   context 'incomplete/unpublished object (not in stacks)' do
     it 'gives 404 with unavailable message' do
-      visit "/#{@unpublished_object}"
+      visit "/#{unpublished_object}"
       expect(page.status_code).to eq(404)
       expect(page).to have_content 'The item you requested is not available.'
       expect(page).to have_content 'This item is in processing or does not exist. If you believe you have reached this page in error, please send Feedback.'
@@ -140,7 +141,7 @@ RSpec.describe 'purl', type: :feature do
 
     it 'includes a feedback link that toggled the feedback form', js: true do
       allow(Settings.feedback).to receive(:email_to).and_return('feedback@example.com')
-      visit "/#{@unpublished_object}"
+      visit "/#{unpublished_object}"
 
       expect(page).not_to have_css('form.feedback-form', visible: :visible)
 
@@ -160,7 +161,7 @@ RSpec.describe 'purl', type: :feature do
     end
 
     it '404 with unavailable message when no public_xml' do
-      visit "/#{@unpublished_object}.xml"
+      visit "/#{unpublished_object}.xml"
       expect(page.status_code).to eq(404)
       expect(page).to have_content 'The item you requested is not available.'
     end
@@ -174,7 +175,7 @@ RSpec.describe 'purl', type: :feature do
     end
 
     it '404 with unavailable message when no mods' do
-      visit "/#{@unpublished_object}.mods"
+      visit "/#{unpublished_object}.mods"
       expect(page.status_code).to eq(404)
       expect(page).to have_content 'The item you requested is not available.'
     end

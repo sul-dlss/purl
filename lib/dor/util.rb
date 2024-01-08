@@ -2,7 +2,7 @@
 
 module Dor
   # constants
-  DRUID_REGEX = /^([a-z]{2})(\d{3})([a-z]{2})(\d{4})$/i
+  DRUID_REGEX = /\A([b-df-hjkmnp-tv-z]{2})([0-9]{3})([b-df-hjkmnp-tv-z]{2})([0-9]{4})\z/i
 
   PAIRTREE_REGEX = %r{/([a-z]{2})/(\d{3})/([a-z]{2})/(\d{4})}
 
