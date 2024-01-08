@@ -8,6 +8,10 @@ class IiifController < ApplicationController
     iiif_version = params[:iiif_version] == 'v3' ? 3 : 2
     return unless stale?(last_modified: @purl.updated_at.utc, etag: "#{@purl.cache_key}/#{iiif_version}/#{@purl.updated_at.utc}")
 
+    # Avoid trying to create a manifest for geo objects, because we don't yet have a way of knowing which file is a primary.
+    # See ContentMetadata::GroupedResource#primary
+    return head :not_found if @purl.type == 'geo'
+
     manifest = Rails.cache.fetch(cache_key('manifest', iiif_version), expires_in: Settings.resource_cache.lifetime) do
       iiif_manifest.body.to_ordered_hash
     end

@@ -318,7 +318,7 @@ RSpec.describe 'IIIF v3 manifests' do
 
   context 'when the object has no published files' do
     let(:druid) { 'bg387kw8222' }
-    let(:resource) { instance_double(PurlResource, updated_at: 2.days.ago, cache_key: 'resource/xxx') }
+    let(:resource) { instance_double(PurlResource, type: 'image', updated_at: 2.days.ago, cache_key: 'resource/xxx') }
 
     before do
       allow(PurlResource).to receive(:find).and_return(resource)
