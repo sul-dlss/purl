@@ -19,18 +19,18 @@ RSpec.describe 'PURL API', type: :request do
 
   context 'IIIF v2 requests' do
     it 'redirects manifest.json requests' do
-      get '/1/iiif/manifest.json'
-      expect(response).to redirect_to('/1/iiif/manifest')
+      get '/bc000df0000/iiif/manifest.json'
+      expect(response).to redirect_to('/bc000df0000/iiif/manifest')
     end
 
     it 'redirects canvas json requests' do
-      get '/1/iiif/canvas/whatever.json'
-      expect(response).to redirect_to('/1/iiif/canvas/whatever')
+      get '/bc000df0000/iiif/canvas/whatever.json'
+      expect(response).to redirect_to('/bc000df0000/iiif/canvas/whatever')
     end
 
     it 'redirects annotation json requests' do
-      get '/1/iiif/annotation/whatever.json'
-      expect(response).to redirect_to('/1/iiif/annotation/whatever')
+      get '/bc000df0000/iiif/annotation/whatever.json'
+      expect(response).to redirect_to('/bc000df0000/iiif/annotation/whatever')
     end
 
     it 'responds to OPTIONS requests' do
@@ -62,18 +62,18 @@ RSpec.describe 'PURL API', type: :request do
     end
 
     it 'redirects manifest.json requests' do
-      get '/1/iiif3/manifest.json'
-      expect(response).to redirect_to('/1/iiif3/manifest')
+      get '/bc000df0000/iiif3/manifest.json'
+      expect(response).to redirect_to('/bc000df0000/iiif3/manifest')
     end
 
     it 'redirects canvas json requests' do
-      get '/1/iiif3/canvas/whatever.json'
-      expect(response).to redirect_to('/1/iiif3/canvas/whatever')
+      get '/bc000df0000/iiif3/canvas/whatever.json'
+      expect(response).to redirect_to('/bc000df0000/iiif3/canvas/whatever')
     end
 
     it 'redirects annotation json requests' do
-      get '/1/iiif3/annotation/whatever.json'
-      expect(response).to redirect_to('/1/iiif3/annotation/whatever')
+      get '/bc000df0000/iiif3/annotation/whatever.json'
+      expect(response).to redirect_to('/bc000df0000/iiif3/annotation/whatever')
     end
   end
 

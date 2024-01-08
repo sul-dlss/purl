@@ -31,7 +31,7 @@ RSpec.describe PurlResource do
 
     it 'validates that the object is "ready"' do
       allow_any_instance_of(described_class).to receive(:public_xml?).and_return(false)
-      expect { described_class.find('oo000oo0000') }.to raise_error PurlResource::ObjectNotReady
+      expect { described_class.find('bc000df0000') }.to raise_error PurlResource::ObjectNotReady
     end
   end
 
@@ -144,9 +144,9 @@ RSpec.describe PurlResource do
   end
 
   describe '#attributes' do
-    subject { described_class.new(id: 'oo000oo0000') }
+    subject { described_class.new(id: 'bc000df0000') }
     it 'includes the druid' do
-      expect(subject.attributes).to include druid: 'oo000oo0000', druid_tree: 'oo/000/oo/0000'
+      expect(subject.attributes).to include druid: 'bc000df0000', druid_tree: 'bc/000/df/0000'
     end
   end
 
