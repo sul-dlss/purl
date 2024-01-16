@@ -89,5 +89,14 @@ RSpec.describe 'Metrics display', js: true do
         expect(page).not_to have_selector '#download-count'
       end
     end
+
+    # a collection
+    context 'when the object is a collection' do
+      let(:druid) { 'bb631ry3167' }
+
+      it 'does not show the number of downloads' do
+        expect(page).not_to have_selector '#download-count'
+      end
+    end
   end
 end
