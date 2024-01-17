@@ -111,10 +111,10 @@ class PurlResource
   end
 
   # Show tracked downloads if the object has download permission and is a type that we track
-  # If we can't track downloads (e.g. for WARC), no point in showing the download count
+  # If we can't track downloads (e.g. for WARC),or if it's a collection, no point in showing the download count
   def show_download_metrics?
     (rights.world_downloadable? || rights.stanford_only_downloadable?) &&
-      %w[webarchive-seed webarchive-binary].exclude?(type)
+      %w[webarchive-seed webarchive-binary].exclude?(type) && !collection?
   end
 
   def rights
