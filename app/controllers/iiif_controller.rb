@@ -12,6 +12,9 @@ class IiifController < ApplicationController
     # See ContentMetadata::GroupedResource#primary
     return head :not_found if @purl.type == 'geo'
 
+    # Avoid trying to create a manifest for collections, because they have no files, and thus do not validate.
+    return head :not_found if @purl.collection?
+
     manifest = Rails.cache.fetch(cache_key('manifest', iiif_version), expires_in: Settings.resource_cache.lifetime) do
       iiif_manifest.body.to_ordered_hash
     end

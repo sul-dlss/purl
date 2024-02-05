@@ -317,7 +317,9 @@ RSpec.describe 'IIIF v3 manifests' do
 
   context 'when the object has no published files' do
     let(:druid) { 'bg387kw8222' }
-    let(:resource) { instance_double(PurlResource, type: 'image', updated_at: 2.days.ago, cache_key: 'resource/xxx') }
+    let(:resource) do
+      instance_double(PurlResource, type: 'image', updated_at: 2.days.ago, cache_key: 'resource/xxx', collection?: false)
+    end
 
     before do
       allow(PurlResource).to receive(:find).and_return(resource)
@@ -428,6 +430,13 @@ RSpec.describe 'IIIF v3 manifests' do
                                                                            '-3.766666'
                                                                          ]
                                                                        })
+    end
+  end
+
+  context 'with a collection' do
+    it 'returns a 404' do
+      visit '/bb631ry3167/iiif3/manifest.json'
+      expect(page).to have_http_status(:not_found)
     end
   end
 end
