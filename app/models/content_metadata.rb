@@ -16,7 +16,7 @@ class ContentMetadata
   end
 
   def book_data
-    document.at_xpath('bookData')
+    document&.at_xpath('bookData')
   end
 
   ##
