@@ -29,7 +29,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       manifest_data['@context'] = IIIF::V3::Presentation::CONTEXT + ['http://iiif.io/api/extension/navplace/context.json']
     end
 
-    manifest = IIIF::V3::Presentation::Manifest.new manifest_data
+    manifest = iiif_manifest_class.new(manifest_data)
 
     # Set viewingHint to paged if this is a book
     manifest.viewingHint = 'paged' if type == 'book'
@@ -408,5 +408,13 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   def coordinate_texts
     @coordinate_texts ||= public_xml_document.xpath('//mods:subject/mods:cartographics/mods:coordinates',
                                                     'mods' => IiifPresentationManifest::MODS_SCHEMA).map(&:text)
+  end
+
+  def iiif_manifest_class
+    if purl_resource.collection?
+      IIIF::V3::Presentation::Collection
+    else
+      IIIF::V3::Presentation::Manifest
+    end
   end
 end

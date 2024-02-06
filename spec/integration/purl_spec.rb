@@ -38,6 +38,13 @@ RSpec.describe 'purl', type: :feature do
         expect(json_body['label']['en'].first).to eq('John Wyclif and his followers, Tracts in Middle English')
         expect(json_body['metadata'].length).to eq 11
       end
+
+      it 'renders a iiif v3 collection manifest for a collection' do
+        visit "/#{@collection}/iiif/manifest"
+
+        json_body = JSON.parse(page.body)
+        expect(json_body['type']).to eq 'Collection'
+      end
     end
   end
 
