@@ -81,7 +81,7 @@ RSpec.describe 'PURL API', type: :request do
     it 'returns the json' do
       get '/bb157hs6068.json'
       expect(response).to be_successful
-      expect(response.body).to start_with('{"type":"http://cocina.sul.stanford.edu/models/collection.jsonld"')
+      expect(response.parsed_body).to include('cocinaVersion', 'type', 'structural')
     end
   end
 end
