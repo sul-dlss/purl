@@ -21,4 +21,35 @@ RSpec.describe ContentMetadata do
 
     it { is_expected.to all(be_kind_of ResourceFile) }
   end
+
+  describe '#reading_order' do
+    let(:document) { Nokogiri::XML(fixture).root }
+
+    context 'when the document has a readingOrder attribute' do
+      let(:fixture) do
+        <<-EOXML
+        <resource id="rs276tc2764_2" sequence="2" type="file">
+          <bookData readingOrder="ltr">
+            <bookTitle>Book Title</bookTitle>
+          </bookData>
+        </resource>
+        EOXML
+      end
+
+      it 'returns the value of the readingOrder attribute' do
+        expect(content_metadata.reading_order).to eq 'ltr'
+      end
+    end
+
+    context 'when the document has no content metadata' do
+      let(:fixture) do
+        <<-EOXML
+        EOXML
+      end
+
+      it 'is nil' do
+        expect(content_metadata.reading_order).to be_nil
+      end
+    end
+  end
 end
