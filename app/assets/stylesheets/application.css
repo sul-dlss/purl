@@ -15,6 +15,7 @@
      https://identity.stanford.edu/design-elements/color/primary-colors/ */
   --stanford-cardinal-rgb: 143, 20, 20;
   --stanford-cardinal: #8f1414;
+
   /* https://identity.stanford.edu/design-elements/color/accent-colors/ */
   --stanford-fog-light: #f4f4f4;
   --sul-link-color-rgb: 0, 108, 184; /* Digital blue #006CB8; */
@@ -58,23 +59,19 @@
 .nav-link {
 	--bs-nav-link-color: rgb(var(--bs-primary-rgb));
 	--bs-nav-link-hover-color: rgb(var(--bs-primary-rgb));
-	--bs-link-hover-decoration: none;
+	--bs-link-hover-decoration: underline solid rgb(var(--bs-primary-rgb)) 3px;
 	--bs-nav-link-padding-y: 3px;
-
-  border-bottom: 3px solid transparent;
-
-  &:hover {
-    border-bottom: 3px solid rgb(var(--bs-primary-rgb));
-  }
 }
 
 .table {
   --bs-table-border-color: var(--bs-gray-500);
 }
 
-/* This selector/rule can be removed after https://github.com/twbs/bootstrap/pull/39098 is released */
+/* This selector/rule can be modified after https://github.com/twbs/bootstrap/pull/39098 is released */
 a {
   text-decoration: var(--bs-link-decoration);
+  text-underline-position: under;
+
   &:hover,
   &:focus-visible {
     text-decoration: var(--bs-link-hover-decoration);
@@ -82,10 +79,9 @@ a {
 }
 
 .su-underline {
-  --bs-link-hover-decoration: none;
-  --bs-link-decoration: none;
-
-  border-bottom: 1px dotted var(--bs-gray-500);
+  --underline-color: var(--bs-gray-500);
+  --bs-link-hover-decoration: var(--bs-link-decoration);
+  --bs-link-decoration: underline dotted var(--underline-color) 1px;
 }
 
 h1 {
