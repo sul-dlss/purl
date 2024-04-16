@@ -15,8 +15,8 @@ RSpec.describe 'Previewing MODS' do
 
       click_on 'Show me the MODS!'
 
-      expect(page).to have_selector 'dt', text: 'Title'
-      expect(page).to have_selector 'dd', text: 'Main Title of an Entry : the sub title of the entry'
+      expect(page).to have_css 'dt', text: 'Title'
+      expect(page).to have_css 'dd', text: 'Main Title of an Entry : the sub title of the entry'
     end
   end
 end

@@ -185,7 +185,7 @@ RSpec.describe PurlResource do
       @public_xml_resource ||= double
     end
 
-    let(:t) { Time.zone.now - 1.day }
+    let(:t) { 1.day.ago }
 
     it 'pulls the updated time from the resource' do
       allow(public_xml_resource).to receive(:updated_at).and_return(t)
@@ -490,13 +490,13 @@ RSpec.describe PurlResource do
 
       it 'returns schema.org markup' do
         expect(subject.schema_dot_org).to include(
-          "@context": 'http://schema.org',
-          "@type": 'Dataset',
-          "name": 'AVOIDDS: A dataset for vision-based aircraft detection',
-          "isAccessibleForFree": false,
-          "creator": [],
-          "identifier": ['https://doi.org/10.25740/hj293cv5980'],
-          "description": 'About this dataset.'
+          '@context': 'http://schema.org',
+          '@type': 'Dataset',
+          name: 'AVOIDDS: A dataset for vision-based aircraft detection',
+          isAccessibleForFree: false,
+          creator: [],
+          identifier: ['https://doi.org/10.25740/hj293cv5980'],
+          description: 'About this dataset.'
         )
       end
     end
@@ -529,13 +529,13 @@ RSpec.describe PurlResource do
 
       it 'returns schema.org markup' do
         expect(subject.schema_dot_org).to include(
-          "@context": 'http://schema.org',
-          "@type": 'VideoObject',
-          "name": 'A Video Title',
-          "description": 'What is in this video?',
-          "uploadDate": '2000',
-          "thumbnailUrl": 'https://stacks.stanford.edu/file/druid:tn153br1253/tn153br1253_thumb.jp2',
-          "embedUrl": 'https://embed.stanford.edu/iframe/?url=https%3A%2F%2Fpurl.stanford.edu%2Ftn153br1253'
+          '@context': 'http://schema.org',
+          '@type': 'VideoObject',
+          name: 'A Video Title',
+          description: 'What is in this video?',
+          uploadDate: '2000',
+          thumbnailUrl: 'https://stacks.stanford.edu/file/druid:tn153br1253/tn153br1253_thumb.jp2',
+          embedUrl: 'https://embed.stanford.edu/iframe/?url=https%3A%2F%2Fpurl.stanford.edu%2Ftn153br1253'
         )
       end
     end

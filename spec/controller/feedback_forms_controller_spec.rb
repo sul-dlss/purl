@@ -3,8 +3,7 @@ require 'rails_helper'
 RSpec.describe FeedbackFormsController, type: :controller do
   before do
     allow(Settings.feedback).to receive(:email_to).and_return('feedback@example.com')
-    allow(controller).to receive(:verify_recaptcha).and_return(verify)
-    allow(controller).to receive(:current_user).and_return(current_user)
+    allow(controller).to receive_messages(verify_recaptcha: verify, current_user:)
     allow(FeedbackMailer).to receive(:submit_feedback).and_return(mailer)
   end
 

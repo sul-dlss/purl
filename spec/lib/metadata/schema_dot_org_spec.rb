@@ -20,8 +20,8 @@ RSpec.describe Metadata::SchemaDotOrg do
 
     it 'has a type of Dataset' do
       expect(schema_dot_org).to include(
-        "@context": 'http://schema.org',
-        "@type": 'Dataset'
+        '@context': 'http://schema.org',
+        '@type': 'Dataset'
       )
     end
   end
@@ -69,8 +69,8 @@ RSpec.describe Metadata::SchemaDotOrg do
 
     it 'has type of VideoObject' do
       expect(schema_dot_org).to include(
-        "@context": 'http://schema.org',
-        "@type": 'VideoObject'
+        '@context': 'http://schema.org',
+        '@type': 'VideoObject'
       )
     end
   end
@@ -97,7 +97,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
     it 'does not have type of VideoObject' do
       expect(schema_dot_org).not_to include(
-        "@type": 'VideoObject'
+        '@type': 'VideoObject'
       )
     end
   end
@@ -124,7 +124,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
     it 'does not have type of VideoObject' do
       expect(schema_dot_org).not_to include(
-        "@type": 'VideoObject'
+        '@type': 'VideoObject'
       )
     end
   end
@@ -144,7 +144,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
     it 'uses the first title' do
       expect(schema_dot_org).to include(
-        "name": 'My Dataset'
+        name: 'My Dataset'
       )
     end
   end
@@ -173,7 +173,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
     it 'includes the title' do
       expect(schema_dot_org).to include(
-        "name": 'My Dataset: More title'
+        name: 'My Dataset: More title'
       )
     end
   end
@@ -193,7 +193,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
     it 'includes the description' do
       expect(schema_dot_org).to include(
-        "description": 'About this item'
+        description: 'About this item'
       )
     end
   end
@@ -213,7 +213,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
     it 'includes the description' do
       expect(schema_dot_org).to include(
-        "description": 'About this dataset'
+        description: 'About this dataset'
       )
     end
   end
@@ -231,7 +231,7 @@ RSpec.describe Metadata::SchemaDotOrg do
       JSON
     end
 
-    it 'does not include a description ' do
+    it 'does not include a description' do
       expect(schema_dot_org).not_to have_key('description')
     end
   end
@@ -253,7 +253,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       it 'includes the DOI' do
         expect(schema_dot_org).to include(
-          "identifier": ['https://doi.org/10.25740/hj293cv5980']
+          identifier: ['https://doi.org/10.25740/hj293cv5980']
         )
       end
     end
@@ -274,7 +274,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       it 'includes the DOI' do
         expect(schema_dot_org).to include(
-          "identifier": ['https://doi.org/10.25740/hj293cv5980']
+          identifier: ['https://doi.org/10.25740/hj293cv5980']
         )
       end
     end
@@ -315,7 +315,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       it 'includes the DOI' do
         expect(schema_dot_org).to include(
-          "identifier": ['https://doi.org/10.25740/hj293cv5980']
+          identifier: ['https://doi.org/10.25740/hj293cv5980']
         )
       end
     end
@@ -351,7 +351,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       it 'is accessibleForFree' do
         expect(schema_dot_org).to include(
-          "isAccessibleForFree": true
+          isAccessibleForFree: true
         )
       end
     end
@@ -370,7 +370,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       it 'is not isAccessibleForFree' do
         expect(schema_dot_org).to include(
-          "isAccessibleForFree": false
+          isAccessibleForFree: false
         )
       end
     end
@@ -389,7 +389,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       it 'includes the license' do
         expect(schema_dot_org).to include(
-          "license": 'https://opendatacommons.org/licenses/by/1-0/'
+          license: 'https://opendatacommons.org/licenses/by/1-0/'
         )
       end
     end
@@ -408,7 +408,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       it 'includes a url' do
         expect(schema_dot_org).to include(
-          "url": 'https://purl.stanford.edu/hj293cv5980'
+          url: 'https://purl.stanford.edu/hj293cv5980'
         )
       end
     end
@@ -428,10 +428,10 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       it 'includes creator' do
         expect(schema_dot_org).to include(
-          "creator": [{ "@type": 'Person',
-                        "name": 'Doe, Jane' },
-                      { "@type": 'Person',
-                        "name": 'Foo, John' }]
+          creator: [{ '@type': 'Person',
+                      name: 'Doe, Jane' },
+                    { '@type': 'Person',
+                      name: 'Foo, John' }]
         )
       end
     end
@@ -467,18 +467,18 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       it 'includes creator' do
         expect(schema_dot_org).to include(
-          "creator": [
+          creator: [
             {
-              "@type": 'Person',
-              "name": 'Jane Doe',
-              "givenName": 'Jane',
-              "familyName": 'Doe'
+              '@type': 'Person',
+              name: 'Jane Doe',
+              givenName: 'Jane',
+              familyName: 'Doe'
             },
             {
-              "@type": 'Person',
-              "name": 'John Foo',
-              "givenName": 'John',
-              "familyName": 'Foo'
+              '@type': 'Person',
+              name: 'John Foo',
+              givenName: 'John',
+              familyName: 'Foo'
             }
           ]
         )
@@ -500,10 +500,10 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       it 'includes the ORCID' do
         expect(schema_dot_org).to include(
-          "creator": [{
-            "@type": 'Person',
-            "name": 'Doe, Jane',
-            "sameAs": 'https://orcid.org/0000-0000-0000-0000'
+          creator: [{
+            '@type': 'Person',
+            name: 'Doe, Jane',
+            sameAs: 'https://orcid.org/0000-0000-0000-0000'
           }]
         )
       end
@@ -526,10 +526,10 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       it 'includes the ORCID' do
         expect(schema_dot_org).to include(
-          "creator": [{
-            "@type": 'Person',
-            "name": 'Doe, Jane',
-            "sameAs": 'https://orcid.org/0000-0000-0000-0000'
+          creator: [{
+            '@type': 'Person',
+            name: 'Doe, Jane',
+            sameAs: 'https://orcid.org/0000-0000-0000-0000'
           }]
         )
       end
@@ -559,12 +559,12 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       it 'includes the ORCID' do
         expect(schema_dot_org).to include(
-          'creator': [{
-            "@type": 'Person',
-            "name": 'Jane Doe',
-            "givenName": 'Jane',
-            "familyName": 'Doe',
-            "sameAs": 'https://orcid.org/0000-0000-0000-0000'
+          creator: [{
+            '@type': 'Person',
+            name: 'Jane Doe',
+            givenName: 'Jane',
+            familyName: 'Doe',
+            sameAs: 'https://orcid.org/0000-0000-0000-0000'
           }]
         )
       end
@@ -600,7 +600,7 @@ RSpec.describe Metadata::SchemaDotOrg do
     context 'with a thumbnail' do
       it 'includes the thumbnail' do
         expect(schema_dot_org).to include(
-          "thumbnailUrl": 'https://stacks.stanford.edu/file/druid:tn153br1253/tn153br1253_thumb.jp2'
+          thumbnailUrl: 'https://stacks.stanford.edu/file/druid:tn153br1253/tn153br1253_thumb.jp2'
         )
       end
     end
@@ -633,7 +633,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       it 'includes the thumbnail' do
         expect(schema_dot_org).to include(
-          "thumbnailUrl": 'https://stacks.stanford.edu/file/druid:tn153br1253/tn153br1253_thumb%20has%20spaces(andparens).jp2'
+          thumbnailUrl: 'https://stacks.stanford.edu/file/druid:tn153br1253/tn153br1253_thumb%20has%20spaces(andparens).jp2'
         )
       end
     end
@@ -697,7 +697,7 @@ RSpec.describe Metadata::SchemaDotOrg do
     context 'with an embeddable video' do
       it 'includes the embed_url' do
         expect(schema_dot_org).to include(
-          'embedUrl': 'https://embed.stanford.edu/iframe/?url=https%3A%2F%2Fpurl.stanford.edu%2Ftn153br1253'
+          embedUrl: 'https://embed.stanford.edu/iframe/?url=https%3A%2F%2Fpurl.stanford.edu%2Ftn153br1253'
         )
       end
     end
@@ -706,7 +706,7 @@ RSpec.describe Metadata::SchemaDotOrg do
       context 'with value and status of primary' do
         it 'includes the uploadDate' do
           expect(schema_dot_org).to include(
-            'uploadDate': '2014'
+            uploadDate: '2014'
           )
         end
       end
@@ -739,7 +739,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
         it 'includes the primary uploadDate' do
           expect(schema_dot_org).to include(
-            'uploadDate': '2014'
+            uploadDate: '2014'
           )
         end
       end
@@ -771,7 +771,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
         it 'selects the first one for the uploadDate' do
           expect(schema_dot_org).to include(
-            'uploadDate': '2014'
+            uploadDate: '2014'
           )
         end
       end
@@ -803,7 +803,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
         it 'selects the first one for the uploadDate' do
           expect(schema_dot_org).to include(
-            'uploadDate': '2014'
+            uploadDate: '2014'
           )
         end
       end
@@ -834,7 +834,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
         it 'selects the first one for the uploadDate' do
           expect(schema_dot_org).to include(
-            'uploadDate': '2014'
+            uploadDate: '2014'
           )
         end
       end
@@ -864,7 +864,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
         it 'selects the first one for the uploadDate' do
           expect(schema_dot_org).to include(
-            'uploadDate': '2014'
+            uploadDate: '2014'
           )
         end
       end
@@ -893,7 +893,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
         it 'selects the first date for the uploadDate' do
           expect(schema_dot_org).to include(
-            'uploadDate': '2014'
+            uploadDate: '2014'
           )
         end
       end
