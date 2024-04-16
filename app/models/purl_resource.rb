@@ -54,6 +54,16 @@ class PurlResource
     @public_xml ||= PublicXml.new(public_xml_document)
   end
 
+  def public_json
+    @public_json ||= purl_fetcher_conn.get("/purl/#{id}").body
+  end
+
+  def purl_fetcher_conn
+    Faraday.new(url: Settings.purl_fetcher.url) do |builder|
+      builder.response :json
+    end
+  end
+
   # @return [Array<String>] the identifiers of the collections this item is a member of
   def containing_collections
     @containing_collections ||= public_xml.relations('isMemberOfCollection')
@@ -70,9 +80,9 @@ class PurlResource
 
   # Can be crawled / indexed by a crawler, e.g. Googlebot
   def crawlable?
-    # Determine using collection and source id allowlist strategy
-    Settings.crawlable.collections.intersect?((containing_collections + [druid])) \
-    || Settings.crawlable.source_id_prefixes.any? { |prefix| source_id&.start_with?("#{prefix}:") }
+    public_json.fetch('true_targets').include?('PURL sitemap')
+  rescue StandardError
+    false # ensure that purl-fetcher being down doesn't prevent the page from drawing
   end
 
   delegate :rights_metadata, :object_type, :source_id, to: :public_xml
