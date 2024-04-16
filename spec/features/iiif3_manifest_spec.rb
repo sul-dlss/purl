@@ -96,10 +96,10 @@ RSpec.describe 'IIIF v3 manifests' do
     expect(login_service['label']).to eq 'Log in to access all available features.'
     expect(login_service['confirmLabel']).to eq 'Login'
     expect(login_service['failureHeader']).to eq 'Unable to authenticate'
-    expect(login_service['failureDescription']).to eq 'The authentication serv'\
-      'ice cannot be reached. If your browser is configured to block pop-up wi'\
-      'ndows, try allowing pop-up windows for this site before attempting to l'\
-      'og in again.'
+    expect(login_service['failureDescription']).to eq 'The authentication serv' \
+                                                      'ice cannot be reached. If your browser is configured to block pop-up wi' \
+                                                      'ndows, try allowing pop-up windows for this site before attempting to l' \
+                                                      'og in again.'
   end
 
   it 'includes authorization services for cdl images' do
@@ -114,8 +114,8 @@ RSpec.describe 'IIIF v3 manifests' do
     expect(login_service['confirmLabel']).to eq 'Checkout'
     expect(login_service['id']).to eq 'https://stacks.stanford.edu/auth/iiif/cdl/pg500wr6297/checkout'
     expect(login_service['failureHeader']).to eq 'Unable to authenticate'
-    expect(login_service['failureDescription']).to eq 'The authentication serv'\
-      'ice cannot be reached.'
+    expect(login_service['failureDescription']).to eq 'The authentication serv' \
+                                                      'ice cannot be reached.'
   end
 
   it 'properly decodes XML entities into their UTF-8 characters' do
@@ -410,8 +410,8 @@ RSpec.describe 'IIIF v3 manifests' do
       features = json['navPlace']['features']
       expect(features.length).to eq 2
       expect(features[0]['geometry'].with_indifferent_access).to match({
-                                                                         "type": 'Polygon',
-                                                                         "coordinates": [
+                                                                         type: 'Polygon',
+                                                                         coordinates: [
                                                                            [
                                                                              ['-23.9', '71.316666'],
                                                                              ['53.6', '71.316666'],
@@ -422,8 +422,8 @@ RSpec.describe 'IIIF v3 manifests' do
                                                                          ]
                                                                        })
       expect(features[1]['geometry'].with_indifferent_access).to match({
-                                                                         "type": 'Point',
-                                                                         "coordinates": [
+                                                                         type: 'Point',
+                                                                         coordinates: [
                                                                            '103.8',
                                                                            '-3.766666'
                                                                          ]

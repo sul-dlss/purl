@@ -120,10 +120,10 @@ RSpec.describe 'IIIF v2 manifests' do
     expect(login_service['label']).to eq 'Log in to access all available features.'
     expect(login_service['confirmLabel']).to eq 'Login'
     expect(login_service['failureHeader']).to eq 'Unable to authenticate'
-    expect(login_service['failureDescription']).to eq 'The authentication serv'\
-      'ice cannot be reached. If your browser is configured to block pop-up wi'\
-      'ndows, try allowing pop-up windows for this site before attempting to l'\
-      'og in again.'
+    expect(login_service['failureDescription']).to eq 'The authentication serv' \
+                                                      'ice cannot be reached. If your browser is configured to block pop-up wi' \
+                                                      'ndows, try allowing pop-up windows for this site before attempting to l' \
+                                                      'og in again.'
   end
 
   it 'includes authorization services for cdl images' do
@@ -143,8 +143,8 @@ RSpec.describe 'IIIF v2 manifests' do
     expect(login_service['confirmLabel']).to eq 'Checkout'
     expect(login_service['id']).to eq 'https://stacks.stanford.edu/auth/iiif/cdl/pg500wr6297/checkout'
     expect(login_service['failureHeader']).to eq 'Unable to authenticate'
-    expect(login_service['failureDescription']).to eq 'The authentication serv'\
-      'ice cannot be reached.'
+    expect(login_service['failureDescription']).to eq 'The authentication serv' \
+                                                      'ice cannot be reached.'
   end
 
   it 'includes some copyright language for cdl resources' do

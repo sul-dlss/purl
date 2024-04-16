@@ -25,7 +25,7 @@ module Metadata
 
     def names_with_author_roles
       mods_ng_document.xpath('mods:name[mods:role/mods:roleTerm[contains(text(), "AUT") ' \
-      'or contains(text(), "aut") or contains(text(), "author") or contains(text(), "Author")]]', mods: MODS_NS)
+                             'or contains(text(), "aut") or contains(text(), "author") or contains(text(), "Author")]]', mods: MODS_NS)
     end
 
     def names_without_roles

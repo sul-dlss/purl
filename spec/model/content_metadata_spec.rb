@@ -43,8 +43,7 @@ RSpec.describe ContentMetadata do
 
     context 'when the document has no content metadata' do
       let(:fixture) do
-        <<-EOXML
-        EOXML
+        ''
       end
 
       it 'is nil' do

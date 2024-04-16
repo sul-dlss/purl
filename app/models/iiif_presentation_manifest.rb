@@ -135,11 +135,8 @@ class IiifPresentationManifest
 
     manifest.thumbnail = thumbnail_resource
 
-    renderings = []
-    object_files.each do |resource|
-      renderings.push(
-        rendering_resource(resource)
-      )
+    renderings = object_files.map do |resource|
+      rendering_resource(resource)
     end
 
     sequence['rendering'] = renderings if renderings.present?
@@ -357,9 +354,9 @@ class IiifPresentationManifest
       'label' => 'Log in to access all available features.',
       'confirmLabel' => 'Login',
       'failureHeader' => 'Unable to authenticate',
-      'failureDescription' => 'The authentication service cannot be reached'\
-        '. If your browser is configured to block pop-up windows, try allow'\
-        'ing pop-up windows for this site before attempting to log in again.',
+      'failureDescription' => 'The authentication service cannot be reached' \
+                              '. If your browser is configured to block pop-up windows, try allow' \
+                              'ing pop-up windows for this site before attempting to log in again.',
       'service' => [
         {
           '@id' => "#{Settings.stacks.url}/image/iiif/token",

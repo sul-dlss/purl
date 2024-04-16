@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Metrics display', js: true do
+RSpec.describe 'Metrics display', :js do
   let(:status) { 200 }
   let(:body) { '{"unique_views": 1}' }
   let(:druid) { 'bb157hs6068' }
@@ -14,7 +14,7 @@ RSpec.describe 'Metrics display', js: true do
   end
 
   it 'shows the number of views for a given object' do
-    expect(page).to have_selector '#view-count', text: '1'
+    expect(page).to have_css '#view-count', text: '1'
   end
 
   it 'includes a link to the metrics faq page' do
@@ -37,7 +37,7 @@ RSpec.describe 'Metrics display', js: true do
       let(:druid) { 'nd387jf5675' }
 
       it 'shows the number of downloads' do
-        expect(page).to have_selector '#download-count', text: '1'
+        expect(page).to have_css '#download-count', text: '1'
       end
     end
 
@@ -45,7 +45,7 @@ RSpec.describe 'Metrics display', js: true do
       let(:druid) { 'bh502xm3351' }
 
       it 'shows the number of downloads' do
-        expect(page).to have_selector '#download-count', text: '1'
+        expect(page).to have_css '#download-count', text: '1'
       end
     end
 
@@ -53,7 +53,7 @@ RSpec.describe 'Metrics display', js: true do
       let(:druid) { 'bd786fy6312' }
 
       it 'shows the number of downloads' do
-        expect(page).to have_selector '#download-count', text: '1'
+        expect(page).to have_css '#download-count', text: '1'
       end
     end
 
@@ -61,7 +61,7 @@ RSpec.describe 'Metrics display', js: true do
       let(:druid) { 'cz128vq0535' }
 
       it 'shows the number of downloads' do
-        expect(page).to have_selector '#download-count', text: '1'
+        expect(page).to have_css '#download-count', text: '1'
       end
     end
 
@@ -69,7 +69,7 @@ RSpec.describe 'Metrics display', js: true do
       let(:druid) { 'qf794pv6287' }
 
       it 'shows the number of downloads' do
-        expect(page).to have_selector '#download-count', text: '1'
+        expect(page).to have_css '#download-count', text: '1'
       end
     end
 
@@ -77,7 +77,7 @@ RSpec.describe 'Metrics display', js: true do
       let(:druid) { 'cp088pb1682' }
 
       it 'shows the number of downloads' do
-        expect(page).to have_selector '#download-count', text: '1'
+        expect(page).to have_css '#download-count', text: '1'
       end
     end
 
@@ -86,7 +86,7 @@ RSpec.describe 'Metrics display', js: true do
       let(:druid) { 'bd802vw5233' }
 
       it 'does not show the number of downloads' do
-        expect(page).not_to have_selector '#download-count'
+        expect(page).to have_no_css '#download-count'
       end
     end
 
@@ -95,7 +95,7 @@ RSpec.describe 'Metrics display', js: true do
       let(:druid) { 'bb631ry3167' }
 
       it 'does not show the number of downloads' do
-        expect(page).not_to have_selector '#download-count'
+        expect(page).to have_no_css '#download-count'
       end
     end
   end

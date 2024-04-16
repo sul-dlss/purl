@@ -28,7 +28,7 @@ RSpec.describe 'Integration Scenarios' do
 
     it 'has a <link> to the collection' do
       visit '/bb737zp0787'
-      expect(page).to have_selector 'link[rel=up][href="http://www.example.com/jt466yc7169"]', visible: :hidden
+      expect(page).to have_css 'link[rel=up][href="http://www.example.com/jt466yc7169"]', visible: :hidden
     end
   end
 
@@ -96,7 +96,7 @@ RSpec.describe 'Integration Scenarios' do
     it 'lists the collection name and does not link to items in collection' do
       visit '/cd027gx5097'
       expect(page).to have_content 'Edward Flanders Ricketts papers, 1936-1979 (inclusive), 1936-1947 (bulk)'
-      expect(page).not_to have_link 'View other items in this collection in SearchWorks'
+      expect(page).to have_no_link 'View other items in this collection in SearchWorks'
     end
   end
 
@@ -148,12 +148,12 @@ RSpec.describe 'Integration Scenarios' do
     it 'includes altmetrics' do
       visit '/bb051dp0564'
 
-      expect(page).to have_selector 'meta[name="citation_doi"][content="10.25740/bb051dp0564"]', visible: :hidden
-      expect(page).to have_selector 'meta[name="citation_title"][content="The Distinct Impacts of Content Moderation"]', visible: :hidden
+      expect(page).to have_css 'meta[name="citation_doi"][content="10.25740/bb051dp0564"]', visible: :hidden
+      expect(page).to have_css 'meta[name="citation_title"][content="The Distinct Impacts of Content Moderation"]', visible: :hidden
       # No publication date so falling back to deposit date
-      expect(page).to have_selector 'meta[name="citation_publication_date"][content="2022"]', visible: :hidden
-      expect(page).to have_selector 'meta[name="citation_author"][content="Khine, Sandi"]', visible: :hidden
-      expect(page).to have_selector 'meta[name="citation_author"][content="Navaroli, A. Collier"]', visible: :hidden
+      expect(page).to have_css 'meta[name="citation_publication_date"][content="2022"]', visible: :hidden
+      expect(page).to have_css 'meta[name="citation_author"][content="Khine, Sandi"]', visible: :hidden
+      expect(page).to have_css 'meta[name="citation_author"][content="Navaroli, A. Collier"]', visible: :hidden
     end
   end
 
@@ -161,7 +161,7 @@ RSpec.describe 'Integration Scenarios' do
     it 'adds a Stanford-only indicator' do
       visit '/yk677wc8843'
 
-      expect(page).to have_selector '.stanford-only-text', text: 'Stanford only'
+      expect(page).to have_css '.stanford-only-text', text: 'Stanford only'
       expect(page.find('.stanford-only-text')).to have_sibling('a', text: 'Cambridge Core')
     end
   end
@@ -184,19 +184,19 @@ RSpec.describe 'Integration Scenarios' do
   context 'an item that is not crawlable' do
     it 'includes noindex meta tag' do
       visit '/bb000br0025'
-      expect(page).to have_selector 'meta[name="robots"][content="noindex"]', visible: :hidden
+      expect(page).to have_css 'meta[name="robots"][content="noindex"]', visible: :hidden
     end
   end
 
   context 'an item that is crawlable' do
     it 'excludes noindex meta tag' do
       visit '/gb089bd2251'
-      expect(page).not_to have_selector 'meta[name="robots"][content="noindex"]', visible: :hidden
+      expect(page).to have_no_css 'meta[name="robots"][content="noindex"]', visible: :hidden
     end
   end
 
   def have_metadata_section(text)
-    have_selector 'section h2', text:
+    have_css 'section h2', text:
   end
 
   context 'dataset item' do

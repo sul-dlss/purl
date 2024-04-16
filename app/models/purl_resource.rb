@@ -61,17 +61,17 @@ class PurlResource
 
   # @return [Array<PurlResource>] the PURL resources of the collections this item is a member of
   def containing_purl_collections
-    @containing_purl_collections ||= containing_collections.map do |id|
+    @containing_purl_collections ||= containing_collections.filter_map do |id|
       PurlResource.find(id)
     rescue ObjectNotReady, DruidNotValid
       nil
-    end.compact
+    end
   end
 
   # Can be crawled / indexed by a crawler, e.g. Googlebot
   def crawlable?
     # Determine using collection and source id allowlist strategy
-    (Settings.crawlable.collections & containing_collections + [druid]).present? \
+    Settings.crawlable.collections.intersect?((containing_collections + [druid])) \
     || Settings.crawlable.source_id_prefixes.any? { |prefix| source_id&.start_with?("#{prefix}:") }
   end
 
@@ -102,16 +102,16 @@ class PurlResource
     @mods ||= mods_display_object.mods_display_html&.presence
   end
 
-  def iiif_manifest(**kwargs)
+  def iiif_manifest(**)
     @iiif_manifest ||= if iiif2_manifest?
-                         iiif2_manifest(**kwargs)
+                         iiif2_manifest(**)
                        else
-                         iiif3_manifest(**kwargs)
+                         iiif3_manifest(**)
                        end
   end
 
-  def iiif2_manifest(**kwargs)
-    @iiif2_manifest ||= IiifPresentationManifest.new(self, **kwargs)
+  def iiif2_manifest(**)
+    @iiif2_manifest ||= IiifPresentationManifest.new(self, **)
   end
 
   def iiif2_manifest?
@@ -126,8 +126,8 @@ class PurlResource
     end
   end
 
-  def iiif3_manifest(**kwargs)
-    @iiif3_manifest ||= Iiif3PresentationManifest.new(self, **kwargs)
+  def iiif3_manifest(**)
+    @iiif3_manifest ||= Iiif3PresentationManifest.new(self, **)
   end
 
   def collection?

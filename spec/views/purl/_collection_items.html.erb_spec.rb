@@ -7,8 +7,8 @@ RSpec.describe 'purl/_collection_items' do
     it 'displays a View items in this collection link using the HRID' do
       # render
       render 'purl/collection_items', document: purl
-      expect(rendered).to have_css 'a[href="https://searchworks.stanford.edu/catalog?f[collection][]=a13965062"]',
-                                   text: 'View items in this collection in SearchWorks'
+      expect(rendered).to have_link 'View items in this collection in SearchWorks',
+                                    href: 'https://searchworks.stanford.edu/catalog?f[collection][]=a13965062'
     end
   end
 
@@ -18,8 +18,8 @@ RSpec.describe 'purl/_collection_items' do
     it 'displays a View items in this collection link using the druid' do
       # render
       render 'purl/collection_items', document: purl
-      expect(rendered).to have_css 'a[href="https://searchworks.stanford.edu/catalog?f[collection][]=gk894yk3598"]',
-                                   text: 'View items in this collection in SearchWorks'
+      expect(rendered).to have_link 'View items in this collection in SearchWorks',
+                                    href: 'https://searchworks.stanford.edu/catalog?f[collection][]=gk894yk3598'
     end
   end
 
@@ -29,7 +29,7 @@ RSpec.describe 'purl/_collection_items' do
     it 'does not display View items in this collection link' do
       # render
       render 'purl/collection_items', document: purl
-      expect(rendered).not_to have_css 'a'
+      expect(rendered).to have_no_css 'a'
     end
   end
 
@@ -39,7 +39,7 @@ RSpec.describe 'purl/_collection_items' do
     it 'does not display View items in this collection link' do
       # render
       render 'purl/collection_items', document: purl
-      expect(rendered).not_to have_css 'a'
+      expect(rendered).to have_no_css 'a'
     end
   end
 end

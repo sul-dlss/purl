@@ -14,10 +14,10 @@ module Metadata
     end
 
     def call
-      { "@context": 'http://schema.org',
-        "@type": schema_type,
-        "name": title_name,
-        "description": description }
+      { '@context': 'http://schema.org',
+        '@type': schema_type,
+        name: title_name,
+        description: }
         .merge(format_specific_fields)
         .compact
     rescue StandardError
@@ -60,15 +60,15 @@ module Metadata
 
     def format_specific_fields
       if dataset?
-        return { "identifier": identifier,
-                 "isAccessibleForFree": object_access?,
-                 "license": license,
-                 "url": url,
-                 "creator": creators }
+        return { identifier:,
+                 isAccessibleForFree: object_access?,
+                 license:,
+                 url:,
+                 creator: creators }
       elsif render_video_metadata?
-        return { "thumbnailUrl": thumbnail,
-                 "uploadDate": upload_date,
-                 "embedUrl": embed_url }
+        return { thumbnailUrl: thumbnail,
+                 uploadDate: upload_date,
+                 embedUrl: embed_url }
       end
       {}
     end
@@ -117,20 +117,15 @@ module Metadata
 
     def creators
       # contributor.identifier.uri or contributor.identifier.value with type "orcid" (case-insensitive), made into URI if identifier only
-      creators = []
       contributors = JsonPath.new('$.description.contributor[*]').on(@cocina_json)
 
-      contributors.each do |contributor|
-        creators.push(
-          { "@type": 'Person',
-            "name": creator_name(contributor),
-            "givenName": given_name(contributor),
-            "familyName": family_name(contributor),
-            "sameAs": orcid(contributor) }.compact
-        )
+      contributors.map do |contributor|
+        { '@type': 'Person',
+          name: creator_name(contributor),
+          givenName: given_name(contributor),
+          familyName: family_name(contributor),
+          sameAs: orcid(contributor) }.compact
       end
-
-      creators
     end
 
     def creator_name(contributor)
