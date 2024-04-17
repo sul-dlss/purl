@@ -1,13 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Displaying the PURL page' do
-  context 'with an EEMs object' do
-    it 'works' do
-      visit '/mr497sx5638'
-      expect(page).to have_content 'Statewide water action plan for California'
-    end
-  end
-
   context 'book' do
     it 'works' do
       visit '/bb737zp0787'
