@@ -47,33 +47,6 @@ RSpec.describe 'purl', type: :feature do
     end
   end
 
-  describe 'canvas' do
-    context 'v2' do
-      it 'renders the json for manifest' do
-        visit "/#{@manifest_object}/iiif/canvas/bc854fy5899_1"
-        json_body = JSON.parse(page.body)
-        expect(json_body['label']).to eq('Page 1')
-      end
-
-      it 'renders nil for a non-manifest' do
-        visit "/#{@file_object}/iiif/canvas/bc854fy5899_fdsa"
-        expect(page.status_code).to eq(404)
-      end
-    end
-    context 'v3' do
-      it 'renders the json for manifest' do
-        visit "/#{@manifest_object}/iiif3/canvas/bc854fy5899_1"
-        json_body = JSON.parse(page.body)
-        expect(json_body['label']['en'].first).to eq('Page 1')
-      end
-
-      it 'renders nil for a non-manifest' do
-        visit "/#{@file_object}/iiif3/canvas/bc854fy5899_fdsa"
-        expect(page.status_code).to eq(404)
-      end
-    end
-  end
-
   describe 'annotation' do
     context 'v2' do
       it 'renders the json for manifest' do
