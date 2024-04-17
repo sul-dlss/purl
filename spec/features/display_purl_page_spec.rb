@@ -181,17 +181,91 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'an item that is not crawlable' do
+  context 'with an item that is not crawlable' do
     it 'includes noindex meta tag' do
       visit '/bb000br0025'
       expect(page).to have_css 'meta[name="robots"][content="noindex"]', visible: :hidden
     end
   end
 
-  context 'an item that is crawlable' do
+  context 'with an item that is crawlable' do
     it 'excludes noindex meta tag' do
       visit '/gb089bd2251'
       expect(page).to have_no_css 'meta[name="robots"][content="noindex"]', visible: :hidden
+    end
+  end
+
+  context 'with an invalid druid' do
+    it '404 with invalid error message' do
+      visit '/abcdefg'
+      expect(page.status_code).to eq(404)
+      expect(page).to have_content 'The item you requested does not exist.'
+    end
+  end
+
+  describe 'legacy object id "ir:rs276tc2764"' do
+    let(:druid) { 'rs276tc2764' }
+
+    before do
+      stub_request(:get, "https://purl-fetcher-stage.stanford.edu/purl/#{druid}")
+        .to_return(status: 200, body: '{"true_targets": []}', headers: { 'content-type' => 'application/json' })
+    end
+
+    it 'routed to rs276tc2764' do
+      visit "/ir:#{druid}"
+      expect(page).to have_current_path("/#{druid}", ignore_query: true)
+    end
+  end
+
+  describe 'license' do
+    let(:druid) { 'wp335yr5649' }
+
+    before do
+      stub_request(:get, "https://purl-fetcher-stage.stanford.edu/purl/#{druid}")
+        .to_return(status: 200, body: '{"true_targets": []}', headers: { 'content-type' => 'application/json' })
+    end
+
+    it 'included in purl page' do
+      visit "/#{druid}"
+      expect(page).to have_content 'This work is licensed under an Open Data Commons Public Domain Dedication & License 1.0'
+    end
+  end
+
+  describe 'terms of use' do
+    let(:druid) { 'wp335yr5649' }
+
+    before do
+      stub_request(:get, "https://purl-fetcher-stage.stanford.edu/purl/#{druid}")
+        .to_return(status: 200, body: '{"true_targets": []}', headers: { 'content-type' => 'application/json' })
+    end
+
+    it 'included in purl page' do
+      visit "/#{druid}"
+      expect(page).to have_content 'User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or'
+    end
+  end
+
+  context 'with an incomplete/unpublished object (not in stacks)' do
+    let(:druid) { 'fb123cd4567' }
+
+    it 'gives 404 with unavailable message' do
+      visit "/#{druid}"
+      expect(page.status_code).to eq(404)
+      expect(page).to have_content 'The item you requested is not available.'
+      expect(page).to have_content 'This item is in processing or does not exist. If you believe you have reached this page in error, please send Feedback.'
+    end
+
+    it 'includes a feedback link that toggled the feedback form', :js do
+      allow(Settings.feedback).to receive(:email_to).and_return('feedback@example.com')
+      visit "/#{druid}"
+
+      expect(page).to have_no_css('form.feedback-form', visible: :visible)
+
+      within '#main-container' do
+        click_on 'Feedback'
+      end
+
+      expect(page).to have_css('form.feedback-form', visible: :visible)
     end
   end
 

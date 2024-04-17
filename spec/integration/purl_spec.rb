@@ -74,28 +74,6 @@ RSpec.describe 'purl', type: :feature do
     end
   end
 
-  context 'incomplete/unpublished object (not in stacks)' do
-    it 'gives 404 with unavailable message' do
-      visit "/#{unpublished_object}"
-      expect(page.status_code).to eq(404)
-      expect(page).to have_content 'The item you requested is not available.'
-      expect(page).to have_content 'This item is in processing or does not exist. If you believe you have reached this page in error, please send Feedback.'
-    end
-
-    it 'includes a feedback link that toggled the feedback form', :js do
-      allow(Settings.feedback).to receive(:email_to).and_return('feedback@example.com')
-      visit "/#{unpublished_object}"
-
-      expect(page).to have_no_css('form.feedback-form', visible: :visible)
-
-      within '#main-container' do
-        click_on 'Feedback'
-      end
-
-      expect(page).to have_css('form.feedback-form', visible: :visible)
-    end
-  end
-
   describe 'public xml' do
     it 'returns public xml' do
       visit "/#{@image_object}.xml"
@@ -121,44 +99,6 @@ RSpec.describe 'purl', type: :feature do
       visit "/#{unpublished_object}.mods"
       expect(page.status_code).to eq(404)
       expect(page).to have_content 'The item you requested is not available.'
-    end
-  end
-
-  describe 'invalid druid' do
-    it '404 with invalid error message' do
-      visit '/abcdefg'
-      expect(page.status_code).to eq(404)
-      expect(page).to have_content 'The item you requested does not exist.'
-    end
-  end
-
-  describe 'legacy object id "ir:rs276tc2764"' do
-    it 'routed to rs276tc2764' do
-      new_path = '/' + @legacy_object.delete_prefix('ir:')
-      visit "/#{@legacy_object}"
-      expect(current_path).to eq(new_path)
-    end
-  end
-
-  describe 'license' do
-    it 'included in purl page' do
-      visit "/#{@file_object}"
-      expect(page).to have_content 'This work is licensed under an Open Data Commons Public Domain Dedication & License 1.0'
-    end
-  end
-
-  describe 'terms of use' do
-    it 'included in purl page' do
-      visit "/#{@file_object}"
-      expect(page).to have_content 'User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or'
-    end
-  end
-
-  describe 'items in collection' do
-    it 'included in purl page' do
-      visit "/#{@collection}"
-      expect(page).to have_content 'Items in collection'
-      expect(page).to have_content 'View items in this collection in SearchWorks'
     end
   end
 end
