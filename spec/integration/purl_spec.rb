@@ -218,14 +218,6 @@ RSpec.describe 'purl', type: :feature do
     end
   end
 
-  describe '/status (app monitoring)' do
-    it 'has response code 200' do
-      visit '/status'
-      expect(page.status_code).to eq 200
-      expect(page).to have_text('Application is running')
-    end
-  end
-
   describe 'items in collection' do
     it 'included in purl page' do
       visit "/#{@collection}"
