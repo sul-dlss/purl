@@ -67,40 +67,7 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'item released to searchworks' do
-    it 'works' do
-      visit '/cp088pb1682'
-      expect(page).to have_content 'Atari Competition'
-      expect(page).to have_metadata_section 'Access conditions'
-      expect(page).to have_metadata_section 'Description'
-      expect(page).to have_metadata_section 'Contributors'
-      expect(page).to have_metadata_section 'Subjects'
-      expect(page).to have_metadata_section 'Bibliographic information'
-      expect(page).to have_metadata_section 'Collection'
-      expect(page).to have_metadata_section 'Also listed in'
-    end
-
-    it 'lists the collection name and links to items in collection' do
-      visit '/cp088pb1682'
-      expect(page).to have_content 'Bay Area video arcades : photographs by Ira Nowinski, 1981-1982'
-      expect(page).to have_link 'View other items in this collection in SearchWorks', href: 'https://searchworks.stanford.edu/catalog?f[collection][]=a9685083'
-    end
-
-    it 'has a link to the searchworks record' do
-      visit '/cp088pb1682'
-      expect(page).to have_link 'View in SearchWorks', href: 'https://searchworks.stanford.edu/view/cp088pb1682'
-    end
-  end
-
-  context 'item that is part of collection not released to searchworks' do
-    it 'lists the collection name and does not link to items in collection' do
-      visit '/cd027gx5097'
-      expect(page).to have_content 'Edward Flanders Ricketts papers, 1936-1979 (inclusive), 1936-1947 (bulk)'
-      expect(page).to have_no_link 'View other items in this collection in SearchWorks'
-    end
-  end
-
-  context 'cabinet minutes' do
+  context 'file type' do
     it 'works' do
       visit '/gx074xz5520'
       expect(page).to have_content 'Minutes, 2006 May 18'
@@ -131,6 +98,39 @@ RSpec.describe 'Displaying the PURL page' do
     it 'provides the archivesref contact information' do
       visit '/gx074xz5520'
       expect(page).to have_link 'archivesref@stanford.edu', href: 'mailto:archivesref@stanford.edu'
+    end
+  end
+
+  context 'item released to searchworks' do
+    it 'works' do
+      visit '/cp088pb1682'
+      expect(page).to have_content 'Atari Competition'
+      expect(page).to have_metadata_section 'Access conditions'
+      expect(page).to have_metadata_section 'Description'
+      expect(page).to have_metadata_section 'Contributors'
+      expect(page).to have_metadata_section 'Subjects'
+      expect(page).to have_metadata_section 'Bibliographic information'
+      expect(page).to have_metadata_section 'Collection'
+      expect(page).to have_metadata_section 'Also listed in'
+    end
+
+    it 'lists the collection name and links to items in collection' do
+      visit '/cp088pb1682'
+      expect(page).to have_content 'Bay Area video arcades : photographs by Ira Nowinski, 1981-1982'
+      expect(page).to have_link 'View other items in this collection in SearchWorks', href: 'https://searchworks.stanford.edu/catalog?f[collection][]=a9685083'
+    end
+
+    it 'has a link to the searchworks record' do
+      visit '/cp088pb1682'
+      expect(page).to have_link 'View in SearchWorks', href: 'https://searchworks.stanford.edu/view/cp088pb1682'
+    end
+  end
+
+  context 'item that is part of collection not released to searchworks' do
+    it 'lists the collection name and does not link to items in collection' do
+      visit '/cd027gx5097'
+      expect(page).to have_content 'Edward Flanders Ricketts papers, 1936-1979 (inclusive), 1936-1947 (bulk)'
+      expect(page).to have_no_link 'View other items in this collection in SearchWorks'
     end
   end
 
