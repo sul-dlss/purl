@@ -16,7 +16,6 @@ RSpec.describe 'purl/_collection_items' do
     let(:purl) { PurlResource.new(id: 'gk894yk3598') }
 
     it 'displays a View items in this collection link using the druid' do
-      # render
       render 'purl/collection_items', document: purl
       expect(rendered).to have_link 'View items in this collection in SearchWorks',
                                     href: 'https://searchworks.stanford.edu/catalog?f[collection][]=gk894yk3598'

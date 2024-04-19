@@ -1,6 +1,9 @@
 stacks:
-  url: 'https://stacks.stanford.edu'
-  iiif_profile: 'http://iiif.io/api/image/2/level2.json'
+  url: "https://stacks.stanford.edu"
+  iiif_profile: "http://iiif.io/api/image/2/level2.json"
+
+purl_fetcher:
+  url: https://purl-fetcher-stage.stanford.edu
 
 content_search:
   url:
@@ -14,30 +17,30 @@ resource_cache:
 # These are URLs when running locally, but configured
 # to the local file system on deployed environments
 purl_resource:
-  public_xml: 'https://purl.stanford.edu/%{druid}.xml'
-  cocina: 'https://purl.stanford.edu/%{druid}.json'
+  public_xml: "https://purl.stanford.edu/%{druid}.xml"
+  cocina: "https://purl.stanford.edu/%{druid}.json"
 
 embed:
-  url: 'https://purl.stanford.edu/%{druid}'
-  url_template: 'https://embed.stanford.edu/embed{.format}{?url*,application_options*}'
+  url: "https://purl.stanford.edu/%{druid}"
+  url_template: "https://embed.stanford.edu/embed{.format}{?url*,application_options*}"
   iframe:
-    url_template: 'https://embed.stanford.edu/iframe/{?url*}'
+    url_template: "https://embed.stanford.edu/iframe/{?url*}"
   application_options:
     hide_title: true
     hide_metadata: true
 
-metrics_api_url: 'https://sdr-metrics-api-prod.stanford.edu'
+metrics_api_url: "https://sdr-metrics-api-prod.stanford.edu"
 
 releases:
   - label: "View in SearchWorks"
-    key: 'Searchworks'
-    url: 'https://searchworks.stanford.edu/view/%{druid}'
-  - label: 'View in EarthWorks'
-    key: 'EarthWorks'
-    url: 'https://earthworks.stanford.edu/catalog/stanford-%{druid}'
+    key: "Searchworks"
+    url: "https://searchworks.stanford.edu/view/%{druid}"
+  - label: "View in EarthWorks"
+    key: "EarthWorks"
+    url: "https://earthworks.stanford.edu/catalog/stanford-%{druid}"
 
 searchworks:
-  url: 'https://searchworks.stanford.edu'
+  url: "https://searchworks.stanford.edu"
 
 landing_page_druids:
   - bb112zx3193
@@ -71,7 +74,7 @@ feedback:
   email_to: "cabeer@stanford.edu"
 
 twitter:
-  site: '@DigitalLib'
+  site: "@DigitalLib"
 
 analytics_debug: true
 
@@ -80,177 +83,7 @@ recaptcha:
   secret_key: 6Lc6BAAAAAAAAKN3DRm6VA_xxxxxxxxxxxxxxxxx
 
 sitemap:
-  default_host: 'https://purl.stanford.edu'
+  default_host: "https://purl.stanford.edu"
 
 honeybadger_checkins:
   sitemap: ~
-
-crawlable:
-  collections:
-    # Stanford University Open Access Articles
-    - nk071jz2236
-    # Faculty, Student, and Staff Publications
-    - bw522zz4583
-    # Stanford Libraries staff presentations, publications, and research
-    - hn730ks3626
-    # Stanford Research Data
-    - md919gh6774
-    # Stanford Historical Society program recordings, 1997-2022
-    - kp887kn2294
-    # BIOHOPK185 Student videos
-    - km092my4610
-    # H2 (self deposit) collections in the allowed list for crawling
-    - bc300zz4971
-    - bd442kg4610
-    - bq187rh3787
-    - bs190xh6401
-    - bs335mc1127
-    - cb368sb3215
-    - cd881bx9575
-    - cg493gd3238
-    - cj269gn0736
-    - cm018rf5314
-    - cm344zy0053
-    - cn334wk8214
-    - cp667df5882
-    - cs911pc6181
-    - cw267yk6233
-    - cz636rc5886
-    - db700wz4340
-    - dc052nc3046
-    - dc746gw6209
-    - df918cs3825
-    - dh544bj2035
-    - dm470nm9547
-    - dn308bq6123
-    - dn516pt3383
-    - dn774gf4795
-    - dr680zx7328
-    - ds247vz0452
-    - dz588pg3041
-    - fb707zy6875
-    - fd702hd2985
-    - ff984ns9763
-    - fh113fq5916
-    - fr061dk5038
-    - gb482gq5743
-    - gm265cj0081
-    - gs858pd1071
-    - gs860rq5377
-    - gw182vg0580
-    - gy156rk1135
-    - gy461md7273
-    - hg577nd6300
-    - hn807kb3349
-    - jg722zc0626
-    - jk216wd8778
-    - jm681xz5805
-    - jq136sm3689
-    - jr938vv9537
-    - js114xn4901
-    - kh840qv1626
-    - kk382jq8063
-    - km092my4610
-    - kq629sd5182
-    - kv041ng6595
-    - kx581zg6755
-    - ky703mk0439
-    - ky865kd2888
-    - md001qd8892
-    - md903dt5665
-    - mm346cv9110
-    - mm350kb0923
-    - mn391pr4458
-    - mp757fq0674
-    - mz061vb5322
-    - mz198fp9366
-    - nb034rn2179
-    - nc035fh7626
-    - nj669yc9949
-    - nn739sg1209
-    - np305zs0638
-    - nq477qq4229
-    - nr325kt8685
-    - ns899tx9783
-    - pf670qd3191
-    - ph261dt3685
-    - pj049hp4319
-    - pm409fz5494
-    - pn159pj7895
-    - pn596gn7571
-    - pn808wc6253
-    - pn826mx7934
-    - pp784wp5100
-    - pv178fc4399
-    - pz310tn8238
-    - qb825dn9887
-    - qc836mt3783
-    - qd259nz6640
-    - qd500xn1572
-    - qk912vj7408
-    - qn673cc1235
-    - qr032th6424
-    - qs035dj7859
-    - qx425hy3186
-    - qy070zf4368
-    - qz055ds3870
-    - rc830jb7375
-    - rf106nf0893
-    - rh525wj3800
-    - rj822rp7129
-    - rm471fw5693
-    - rp102sx8543
-    - rr255gf6892
-    - rv822xv5878
-    - sm380jb1849
-    - sn758bh0099
-    - sr718gm7819
-    - sv179hy0727
-    - sw888kf0958
-    - sz556bc6971
-    - th263sh0610
-    - th767br8285
-    - tk177rs9408
-    - tk335cm7933
-    - tn384hm9336
-    - tn741mc5549
-    - tp622mj4093
-    - tx773dg8618
-    - ty986nn2846
-    - tz959sb6952
-    - vj318ph3055
-    - vj354pj0087
-    - vk630sh8038
-    - vr801mm4929
-    - vs366nb6695
-    - vx401mn2884
-    - wc569dd1362
-    - wg475fs4618
-    - wg919by6182
-    - wh620hw5859
-    - wp446bg1851
-    - wt021dc3029
-    - wv557vk7855
-    - xf370bb6498
-    - xf974wp1364
-    - xg006bv4120
-    - xk076fr1089
-    - xn235kn0506
-    - xs573nh8717
-    - xv924ks7647
-    - xx313vx3974
-    - yd955cs5721
-    - yf927nn8171
-    - yk425tq4374
-    - ym197kw4639
-    - yp108tn6462
-    - zh458bn3243
-    - zj027sq8811
-    - zm381kw7359
-    - zp689kv8227
-    - zp761vy5985
-    - zy545wh9928
-  source_id_prefixes:
-    - dissertation
-    - dissertationid
-

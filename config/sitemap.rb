@@ -25,10 +25,11 @@ SitemapGenerator::Sitemap.create(include_root: false) do
   #   Article.find_each do |article|
   #     add article_path(article), :lastmod => article.updated_at
   #   end
-  Settings.resource_cache.enabled = false
-  PurlResource.all.each do |purl|
-    add purl_path(purl.id), lastmod: purl.updated_at, changefreq: nil, priority: nil if purl.crawlable?
-  rescue StandardError
-    # Because data is bad.
+  conn = Faraday.new(url: Settings.purl_fetcher.url) do |builder|
+    builder.response :json
+  end
+  response = conn.get '/released/PURL%20sitemap'
+  response.body.each do |purl|
+    add purl_path(purl['druid']), lastmod: purl['updated_at'], changefreq: nil, priority: nil
   end
 end

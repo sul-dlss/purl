@@ -67,6 +67,6 @@ Deployment is handled automatically via Jenkins when a release is published to G
 
 ## Search engine indexing
 
-The current policy is to only index items that [belong to configured collections or have a specified source id prefix](https://github.com/sul-dlss/purl/blob/c4f38e4dfa40a301603fe73f51dbba8e53c901d2/app/models/purl_resource.rb#L92). Only those items are included in the sitemap and all other items have a "noindex" meta tag.
+Only items with "PURL sitemap" release tag are included in the sitemap and all other items have a "noindex" meta tag.
 
 Structured metadata in the form of schema.org markup is generated to enhance discoverability of datasets and videos. [More info about schema.org markup](https://docs.google.com/document/d/1BO10k_zSTqqT1YmlCg5oE4tOsGXiqmHzQyb6itZypwo). 
