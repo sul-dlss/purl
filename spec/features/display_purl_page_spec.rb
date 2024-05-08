@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Displaying the PURL page' do
   before do
-    stub_request(:get, "https://purl-fetcher-stage.stanford.edu/purl/#{druid}")
+    stub_request(:get, "https://purl-fetcher-stage.stanford.edu/purls/#{druid}")
       .to_return(status: 200, body: "{\"true_targets\": #{true_targets}}", headers: { 'content-type' => 'application/json' })
   end
 
@@ -196,7 +196,7 @@ RSpec.describe 'Displaying the PURL page' do
     let(:druid) { 'rs276tc2764' }
 
     before do
-      stub_request(:get, "https://purl-fetcher-stage.stanford.edu/purl/#{druid}")
+      stub_request(:get, "https://purl-fetcher-stage.stanford.edu/purls/#{druid}")
         .to_return(status: 200, body: '{"true_targets": []}', headers: { 'content-type' => 'application/json' })
     end
 
@@ -210,7 +210,7 @@ RSpec.describe 'Displaying the PURL page' do
     let(:druid) { 'wp335yr5649' }
 
     before do
-      stub_request(:get, "https://purl-fetcher-stage.stanford.edu/purl/#{druid}")
+      stub_request(:get, "https://purl-fetcher-stage.stanford.edu/purls/#{druid}")
         .to_return(status: 200, body: '{"true_targets": []}', headers: { 'content-type' => 'application/json' })
     end
 
@@ -224,7 +224,7 @@ RSpec.describe 'Displaying the PURL page' do
     let(:druid) { 'wp335yr5649' }
 
     before do
-      stub_request(:get, "https://purl-fetcher-stage.stanford.edu/purl/#{druid}")
+      stub_request(:get, "https://purl-fetcher-stage.stanford.edu/purls/#{druid}")
         .to_return(status: 200, body: '{"true_targets": []}', headers: { 'content-type' => 'application/json' })
     end
 

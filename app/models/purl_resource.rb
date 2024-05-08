@@ -55,7 +55,7 @@ class PurlResource
   end
 
   def public_json
-    @public_json ||= purl_fetcher_conn.get("/purl/#{id}").body
+    @public_json ||= purl_fetcher_conn.get("/purls/#{id}").body
   end
 
   def purl_fetcher_conn
