@@ -244,7 +244,7 @@ RSpec.describe PurlResource do
     let(:druid) { 'druid:kn112rm5773' }
 
     before do
-      stub_request(:get, 'https://purl-fetcher-stage.stanford.edu/purl/druid:kn112rm5773')
+      stub_request(:get, 'https://purl-fetcher-stage.stanford.edu/purls/druid:kn112rm5773')
         .to_return(status: 200, body: "{\"true_targets\": #{true_targets}}", headers: { 'content-type' => 'application/json' })
     end
 
