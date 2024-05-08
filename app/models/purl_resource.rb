@@ -81,7 +81,8 @@ class PurlResource
   # Can be crawled / indexed by a crawler, e.g. Googlebot
   def crawlable?
     public_json.fetch('true_targets').include?('PURL sitemap')
-  rescue StandardError
+  rescue StandardError => e
+    Honeybadger.notify(e)
     false # ensure that purl-fetcher being down doesn't prevent the page from drawing
   end
 
