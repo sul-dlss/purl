@@ -30,6 +30,6 @@ SitemapGenerator::Sitemap.create(include_root: false) do
   end
   response = conn.get '/released/PURL%20sitemap'
   response.body.each do |purl|
-    add purl_path(purl['druid']), lastmod: purl['updated_at'], changefreq: nil, priority: nil
+    add purl_path(purl['druid'].delete_prefix('druid:')), lastmod: purl['updated_at'], changefreq: nil, priority: nil
   end
 end
