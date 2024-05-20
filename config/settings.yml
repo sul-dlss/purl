@@ -34,10 +34,10 @@ metrics_api_url: "https://sdr-metrics-api-prod.stanford.edu"
 releases:
   - label: "View in SearchWorks"
     key: "Searchworks"
-    url: "https://searchworks.stanford.edu/view/%{druid}"
+    url: "https://searchworks.stanford.edu/view/%s"
   - label: "View in EarthWorks"
-    key: "EarthWorks"
-    url: "https://earthworks.stanford.edu/catalog/stanford-%{druid}"
+    key: "Earthworks"
+    url: "https://earthworks.stanford.edu/catalog/stanford-%s"
 
 searchworks:
   url: "https://searchworks.stanford.edu"
