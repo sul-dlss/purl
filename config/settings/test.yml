@@ -2,6 +2,10 @@ document_cache_root: "<%= File.join(Rails.root, "spec", "fixtures", "document_ca
 purl_resource:
   public_xml: "<%= File.join(Rails.root, "spec", "fixtures", "document_cache") %>/%{druid_tree}/public"
   cocina: "<%= File.join(Rails.root, "spec", "fixtures", "document_cache") %>/%{druid_tree}/cocina.json"
+  meta: "<%= File.join(Rails.root, "spec", "fixtures", "document_cache") %>/%{druid_tree}/meta.json"
 
 content_search:
   url: "http://example.com/content_search/%{druid}/search"
+
+resource_cache:
+  enabled: false
