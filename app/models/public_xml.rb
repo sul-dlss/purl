@@ -30,12 +30,6 @@ class PublicXml
     @folio_instance_hrid ||= document.root.at_xpath('identityMetadata/otherId[@name="folio_instance_hrid"]')&.text.presence
   end
 
-  def released_to?(key)
-    release = document.root.at_xpath("releaseData/release[@to='#{key}']")&.text
-
-    release == 'true'
-  end
-
   def thumb
     document.root.at_xpath('thumb')&.text
   end

@@ -60,6 +60,12 @@ RSpec.describe 'Displaying the PURL page' do
   context 'file type' do
     let(:druid) { 'gx074xz5520' }
 
+    before do
+      # stub the collection out
+      stub_request(:get, 'https://purl-fetcher-stage.stanford.edu/purls/yb533nc1884')
+        .to_return(status: 200, body: "{\"true_targets\": #{true_targets}}", headers: { 'content-type' => 'application/json' })
+    end
+
     it 'displays the page' do
       visit "/#{druid}"
       expect(page).to have_content 'Minutes, 2006 May 18'
@@ -80,6 +86,12 @@ RSpec.describe 'Displaying the PURL page' do
   context 'item released to searchworks' do
     let(:druid) { 'cp088pb1682' }
 
+    before do
+      # stub the collection out
+      stub_request(:get, 'https://purl-fetcher-stage.stanford.edu/purls/sk882gx0113')
+        .to_return(status: 200, body: "{\"true_targets\": #{true_targets}}", headers: { 'content-type' => 'application/json' })
+    end
+
     it 'displays the page' do
       visit "/#{druid}"
       visit '/cp088pb1682'
@@ -99,6 +111,12 @@ RSpec.describe 'Displaying the PURL page' do
 
   context 'item that is part of collection not released to searchworks' do
     let(:druid) { 'cd027gx5097' }
+
+    before do
+      # stub the collection out
+      stub_request(:get, 'https://purl-fetcher-stage.stanford.edu/purls/ss099gb5528')
+        .to_return(status: 200, body: '{"true_targets": []}', headers: { 'content-type' => 'application/json' })
+    end
 
     it 'lists the collection name and does not link to items in collection' do
       visit "/#{druid}"

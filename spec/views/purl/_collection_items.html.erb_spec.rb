@@ -4,8 +4,11 @@ RSpec.describe 'purl/_collection_items' do
   context 'when collection has a folio HRID' do
     let(:purl) { PurlResource.new(id: 'bb631ry3167') }
 
+    before do
+      allow(purl).to receive_messages(released_to_searchworks?: true)
+    end
+
     it 'displays a View items in this collection link using the HRID' do
-      # render
       render 'purl/collection_items', document: purl
       expect(rendered).to have_link 'View items in this collection in SearchWorks',
                                     href: 'https://searchworks.stanford.edu/catalog?f[collection][]=a13965062'
@@ -14,6 +17,10 @@ RSpec.describe 'purl/_collection_items' do
 
   context 'when collection does not have a folio HRID' do
     let(:purl) { PurlResource.new(id: 'gk894yk3598') }
+
+    before do
+      allow(purl).to receive_messages(released_to_searchworks?: true)
+    end
 
     it 'displays a View items in this collection link using the druid' do
       render 'purl/collection_items', document: purl
@@ -26,7 +33,6 @@ RSpec.describe 'purl/_collection_items' do
     let(:purl) { PurlResource.new(id: 'cg357zz0321') }
 
     it 'does not display View items in this collection link' do
-      # render
       render 'purl/collection_items', document: purl
       expect(rendered).to have_no_css 'a'
     end
@@ -35,8 +41,11 @@ RSpec.describe 'purl/_collection_items' do
   context 'when not released to SearchWorks' do
     let(:purl) { PurlResource.new(id: 'ss099gb5528') }
 
+    before do
+      allow(purl).to receive_messages(released_to_searchworks?: false)
+    end
+
     it 'does not display View items in this collection link' do
-      # render
       render 'purl/collection_items', document: purl
       expect(rendered).to have_no_css 'a'
     end

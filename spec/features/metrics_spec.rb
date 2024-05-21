@@ -12,6 +12,11 @@ RSpec.describe 'Metrics display', :js do
       .to_return(status:, body:, headers: { 'Content-Type' => 'application/json' })
     stub_request(:get, "https://purl-fetcher-stage.stanford.edu/purls/#{druid}")
       .to_return(status: 200, body: '{"true_targets": []}', headers: { 'content-type' => 'application/json' })
+
+    # stub the collection out
+    stub_request(:get, 'https://purl-fetcher-stage.stanford.edu/purls/sk882gx0113')
+      .to_return(status: 200, body: '{"true_targets": []}', headers: { 'content-type' => 'application/json' })
+
     visit "/#{druid}"
   end
 
