@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:bh502xm3351" published="2022-05-06T19:16:37Z" publishVersion="dor-services/9.6.2">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>The Catgut Acoustical Society Newsletter. Number 20, 1973-11-01</objectLabel>
+    <otherId name="catkey">491218</otherId>
+  </identityMetadata>
+  <contentMetadata objectId="druid:bh502xm3351" type="document">
+    <resource id="cocina-fileSet-bh502xm3351-bh502xm3351_1" sequence="1" type="document">
+      <label>File 1</label>
+      <file id="CAS_bh502xm3351.pdf" mimetype="application/pdf" size="10602682" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">72e17d9460354b425f5fe3022540834941ae3101</checksum>
+        <checksum type="md5">997a099f38d30ff084d56f48d05ebb43</checksum>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">Property rights reside with the repository. Literary rights reside with the creators of the documents or their heirs. To obtain permission to publish or reproduce, please contact the Special Collections Public Services Librarian at speccollref@stanford.edu.</human>
+      <license/>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:bh502xm3351">
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:xw274dm7079"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>The Catgut Acoustical Society Newsletter. Number 20. 1973-11-01</dc:title>
+    <dc:type>Text</dc:type>
+    <dc:description type="date/sequential designation">20</dc:description>
+    <dc:identifier>https://purl.stanford.edu/bh502xm3351</dc:identifier>
+    <dc:identifier>http://searchworks.stanford.edu/view/491218</dc:identifier>
+    <dc:relation type="collection">CAS Journal</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>The Catgut Acoustical Society Newsletter</title>
+      <partNumber>Number 20</partNumber>
+      <partName>1973-11-01</partName>
+    </titleInfo>
+    <typeOfResource>text</typeOfResource>
+    <note type="date/sequential designation">20</note>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/bh502xm3351</url>
+    </location>
+    <location>
+      <url displayLabel="Title record in SearchWorks">http://searchworks.stanford.edu/view/491218</url>
+    </location>
+    <recordInfo>
+      <languageOfCataloging>
+        <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="text">English</languageTerm>
+        <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="code">eng</languageTerm>
+      </languageOfCataloging>
+      <recordContentSource valueURI="http://id.loc.gov/vocabulary/organizations/cst" authorityURI="http://id.loc.gov/vocabulary/organizations" authority="marcorg">CSt</recordContentSource>
+    </recordInfo>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>CAS Journal</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/xw274dm7079</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">Property rights reside with the repository. Literary rights reside with the creators of the documents or their heirs. To obtain permission to publish or reproduce, please contact the Special Collections Public Services Librarian at speccollref@stanford.edu.</accessCondition>
+  </mods>
+  <releaseData>
+    <release to="Searchworks">true</release>
+  </releaseData>
+</publicObject>

@@ -1,7 +1,9 @@
-document_cache_root: "<%= File.join(Rails.root, "spec", "fixtures", "document_cache") %>"
+document_cache_root: "<%= File.join(Rails.root, 'spec', 'fixtures', 'document_cache') %>"
+ocfl_root: "<%= File.join(Rails.root, 'spec', 'fixtures', 'ocfl') %>"
+
 purl_resource:
-  public_xml: "<%= File.join(Rails.root, "spec", "fixtures", "document_cache") %>/%{druid_tree}/public"
-  cocina: "<%= File.join(Rails.root, "spec", "fixtures", "document_cache") %>/%{druid_tree}/cocina.json"
+  public_xml: "%{root_path}/%{druid_tree}/%{ocfl_public_path}public"
+  cocina: "%{root_path}/%{druid_tree}/%{ocfl_cocina_path}cocina.json"
 
 content_search:
   url: "http://example.com/content_search/%{druid}/search"

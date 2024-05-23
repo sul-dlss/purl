@@ -1,0 +1,21 @@
+{
+  "id": "py305sy7961",
+  "type": "https://ocfl.io/1.1/spec/#inventory",
+  "digestAlgorithm": "sha512",
+  "head": "v1",
+  "versions": {
+    "v1": {
+      "created": "2024-05-23T17:19:42Z",
+      "state": {
+        "403427d71a22386bed3ce6c797173ddb3625906f9f8b9928ff4bab51e5cee9ede2cc50734f96954057388dcc8afcc2860e911c721c9253aef9bb421aa38712b0": [
+          "public"
+        ]
+      }
+    }
+  },
+  "manifest": {
+    "403427d71a22386bed3ce6c797173ddb3625906f9f8b9928ff4bab51e5cee9ede2cc50734f96954057388dcc8afcc2860e911c721c9253aef9bb421aa38712b0": [
+      "v1/content/public"
+    ]
+  }
+}

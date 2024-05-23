@@ -1,0 +1,21 @@
+{
+  "id": "bb132pr2055",
+  "type": "https://ocfl.io/1.1/spec/#inventory",
+  "digestAlgorithm": "sha512",
+  "head": "v1",
+  "versions": {
+    "v1": {
+      "created": "2024-05-23T17:19:42Z",
+      "state": {
+        "40ef895b731d2c604f4e5203c85aacd06c1f15a6c020baa9baf417a875228987cc0e10e24c107415512dc75e28799c4fccfc4ea319fda3e45eb24926c7d7548e": [
+          "public"
+        ]
+      }
+    }
+  },
+  "manifest": {
+    "40ef895b731d2c604f4e5203c85aacd06c1f15a6c020baa9baf417a875228987cc0e10e24c107415512dc75e28799c4fccfc4ea319fda3e45eb24926c7d7548e": [
+      "v1/content/public"
+    ]
+  }
+}

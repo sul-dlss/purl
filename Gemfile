@@ -14,6 +14,7 @@ gem 'honeybadger' # exception reporting
 gem "importmap-rails" # Use JavaScript with ESM import maps
 gem "jbuilder" # Build JSON APIs with ease
 gem "jsonpath"
+gem "ocfl", "~> 0.5"
 gem 'okcomputer' # application monitoring
 gem "propshaft"
 gem "puma", "~> 6.0" # web server for development

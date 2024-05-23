@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:qf794pv6287" published="2023-12-01T15:28:30Z" publishVersion="cocina-models/0.93.0">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>Sarcophagus</objectLabel>
+    <sourceId source="sul">su:SUAC_T2017.7.2</sourceId>
+  </identityMetadata>
+  <contentMetadata objectId="druid:qf794pv6287" type="3d">
+    <resource id="cocina-fileSet-qf794pv6287-qf794pv6287_1" sequence="1" type="file">
+      <label>File 1</label>
+      <file id="qf794pv6287.tar" mimetype="application/x-tar" size="109056000" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">83a6894a5902aa3c7b301caf0379f84f8a611c22</checksum>
+        <checksum type="md5">24d835c0f450affa2fd4db57d40b0d24</checksum>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-qf794pv6287-qf794pv6287_2" sequence="2" type="file">
+      <label>File 2</label>
+      <file id="qf794pv6287_basecolor_low.jpg" mimetype="image/jpeg" size="674898" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">92d97ea36a94cbdb04c23d2109747a372bf651d2</checksum>
+        <checksum type="md5">5795b13bf2dab54092841b2ad0100fc0</checksum>
+        <imageData height="2048" width="2048"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-qf794pv6287-qf794pv6287_3" sequence="3" type="file">
+      <label>File 3</label>
+      <file id="qf794pv6287_low.mtl" mimetype="text/plain" size="123" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">81d649fc390d712644aae146017681b3b53ecd04</checksum>
+        <checksum type="md5">793d3417f7f87d1d3dd9a8ce6e7ffb0b</checksum>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-qf794pv6287-qf794pv6287_4" sequence="4" type="file">
+      <label>File 4</label>
+      <file id="qf794pv6287_low.obj" mimetype="text/plain" size="13579146" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">a4c2e8d401d32e0779cf093d75c15a9fc18dbb02</checksum>
+        <checksum type="md5">a10e9c1846c87cd6198cdd10e0168656</checksum>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-qf794pv6287-qf794pv6287_5" sequence="5" type="file">
+      <label>File 5</label>
+      <file id="qf794pv6287_normal_low.jpg" mimetype="image/jpeg" size="752515" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">27493aa66be78ac6078e4f70e47c48b1a2fd8999</checksum>
+        <checksum type="md5">9b0f825db7a286071e14926ce740a8b6</checksum>
+        <imageData height="2048" width="2048"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-qf794pv6287-qf794pv6287_6" sequence="6" type="3d">
+      <label>File 6</label>
+      <file id="qf794pv6287_low.glb" mimetype="model/gltf-binary" size="4987288" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">fca2639e1fe89565402240140f57a0b4</checksum>
+        <checksum type="sha1">ef52a0752e1f18a594be41461a2f50b70998af43</checksum>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">Property rights reside with the repository. To obtain permission to publish or reproduce, please contact the Stanford Archaeology Center at suarchcoll@stanford.edu.</human>
+      <license/>
+    </use>
+    <copyright>
+      <human>Copyright © Stanford University. All Rights Reserved.</human>
+    </copyright>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:qf794pv6287">
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:dg570gb2904"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Sarcophagus</dc:title>
+    <dc:type>Three dimensional scan</dc:type>
+    <dc:type>sarcophagi (coffins)</dc:type>
+    <dc:type>fragments (object portions)</dc:type>
+    <dc:format>1 sarcophagus</dc:format>
+    <dc:format>Wood</dc:format>
+    <dc:description displayLabel="3D scan source">3D scan of object performed by Stanford University Libraries Digital Production Group in May 2018 using a structured light scanner.</dc:description>
+    <dc:description displayLabel="3D scan technique">Structured light</dc:description>
+    <dc:description displayLabel="Contact information">Stanford Universtiy Archaeology Collections, suarchcoll@stanford.edu</dc:description>
+    <dc:description displayLabel="Preferred citation">Stanford University Libraries Digital Production Group. 2018. Sarcophagus (object), Stanford University Archaeology Collections, Object ID T2017.7.2. Reformatted digital scan in OBJ format from Stanford University, Stanford, CA. http://purl.stanford.edu/qf794pv6287.</dc:description>
+    <dc:date>-1297--0743</dc:date>
+    <dc:identifier>T2017.7.2</dc:identifier>
+    <dc:identifier>https://purl.stanford.edu/qf794pv6287</dc:identifier>
+    <dc:relation type="repository">Stanford University Archaeology Collections</dc:relation>
+    <dc:relation type="collection">Stanford University Archaeology Collections</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>Sarcophagus</title>
+    </titleInfo>
+    <genre authority="local" type="digital">Three dimensional scan</genre>
+    <genre valueURI="http://vocab.getty.edu/page/aat/300005947" authorityURI="http://www.getty.edu/research/tools/vocabularies/aat/" authority="aat">sarcophagi (coffins)</genre>
+    <genre valueURI="http://vocab.getty.edu/page/aat/300117130" authorityURI="http://www.getty.edu/research/tools/vocabularies/aat/" authority="aat">fragments (object portions)</genre>
+    <typeOfResource>three dimensional object</typeOfResource>
+    <physicalDescription>
+      <form>Wood</form>
+      <form>Paint</form>
+      <form>Plaster</form>
+      <extent>1 sarcophagus</extent>
+      <digitalOrigin>reformatted digital</digitalOrigin>
+      <note>Coffin or sarcophagus fragment with painted decoration and hieroglyphic writing. The blue areas are in Egyptian blue pigment.</note>
+    </physicalDescription>
+    <note displayLabel="3D scan source">3D scan of object performed by Stanford University Libraries Digital Production Group in May 2018 using a structured light scanner.</note>
+    <note displayLabel="3D scan technique">Structured light</note>
+    <note displayLabel="Contact information">Stanford Universtiy Archaeology Collections, suarchcoll@stanford.edu</note>
+    <note displayLabel="Preferred citation">Stanford University Libraries Digital Production Group. 2018. Sarcophagus (object), Stanford University Archaeology Collections, Object ID T2017.7.2. Reformatted digital scan in OBJ format from Stanford University, Stanford, CA. http://purl.stanford.edu/qf794pv6287.</note>
+    <originInfo displayLabel="Origin" eventType="production">
+      <dateCreated encoding="edtf" qualifier="approximate" keyDate="yes" point="start">-1297</dateCreated>
+      <dateCreated encoding="edtf" point="end">-0743</dateCreated>
+      <place>
+        <placeTerm type="text">Africa; Egypt</placeTerm>
+      </place>
+    </originInfo>
+    <identifier displayLabel="Object ID" type="accession number">T2017.7.2</identifier>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/qf794pv6287</url>
+    </location>
+    <location>
+      <physicalLocation type="repository" valueURI="http://id.loc.gov/authorities/names/no2018112973" authority="naf">Stanford University Archaeology Collections</physicalLocation>
+    </location>
+    <recordInfo>
+      <languageOfCataloging>
+        <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="text">English</languageTerm>
+        <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="code">eng</languageTerm>
+      </languageOfCataloging>
+      <recordContentSource valueURI="http://id.loc.gov/vocabulary/organizations/cst" authorityURI="http://id.loc.gov/vocabulary/organizations" authority="marcorg">CSt</recordContentSource>
+    </recordInfo>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Stanford University Archaeology Collections</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/dg570gb2904</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">Property rights reside with the repository. To obtain permission to publish or reproduce, please contact the Stanford Archaeology Center at suarchcoll@stanford.edu.</accessCondition>
+    <accessCondition type="copyright">Copyright © Stanford University. All Rights Reserved.</accessCondition>
+  </mods>
+</publicObject>

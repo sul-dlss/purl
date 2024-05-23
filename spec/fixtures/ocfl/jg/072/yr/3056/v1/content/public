@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:jg072yr3056" published="2017-12-13T05:37:47Z" publishVersion="dor-services/5.23.1">
+  <identityMetadata>
+    <sourceId source="sul">36105213335636</sourceId>
+    <objectId>druid:jg072yr3056</objectId>
+    <objectCreator>DOR</objectCreator>
+    <objectLabel>The legend of the lady's elbow / by T.L.D.P. Jones Parry</objectLabel>
+    <objectType>item</objectType>
+    <adminPolicy>druid:pq797fq7081</adminPolicy>
+    <otherId name="catkey">9618852</otherId>
+    <otherId name="uuid">b2644ef0-77c1-11e2-be6a-0050569b3c3c</otherId>
+    <tag>Project : Jarndyce Single-Volume Nineteenth-Century Novel Collection</tag>
+    <tag>Process : Content Type : Book (flipbook, ltr)</tag>
+    <tag>Project : Jarndyce Single-Volume Nineteenth-Century Novel Collection</tag>
+    <tag>Registered By : llam813</tag>
+    <tag>Remediated By : 3.25.0</tag>
+  </identityMetadata>
+  <contentMetadata objectId="jg072yr3056" type="book">
+    <resource id="jg072yr3056_1" sequence="1" type="page">
+      <label>Page 1</label>
+      <file id="jg072yr3056_00_0001.jpg" mimetype="image/jpeg" size="3574984">
+        <imageData width="2531" height="3040"/>
+      </file>
+      <file id="jg072yr3056_04_0001.xml" mimetype="application/xml" size="91175" role="transcription">
+
+
+    </file>
+      <file id="jg072yr3056_06_0001.pdf" mimetype="application/pdf" size="1097222">
+
+
+    </file>
+      <file id="jg072yr3056_00_0001.jp2" mimetype="image/jp2" size="1458079">
+        <imageData width="2531" height="3040"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_2" sequence="2" type="page">
+      <label>Page 2</label>
+      <file id="jg072yr3056_00_0002.jpg" mimetype="image/jpeg" size="1411522">
+        <imageData width="2159" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0002.xml" mimetype="application/xml" size="1366">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0002.pdf" mimetype="application/pdf" size="821092">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0002.jp2" mimetype="image/jp2" size="1095250">
+        <imageData width="2159" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_3" sequence="3" type="page">
+      <label>Page 3</label>
+      <file id="jg072yr3056_00_0003.jpg" mimetype="image/jpeg" size="1248631">
+        <imageData width="2160" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0003.xml" mimetype="application/xml" size="1707">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0003.pdf" mimetype="application/pdf" size="813616">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0003.jp2" mimetype="image/jp2" size="1095774">
+        <imageData width="2160" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_4" sequence="4" type="page">
+      <label>Page 4</label>
+      <file id="jg072yr3056_00_0004.jpg" mimetype="image/jpeg" size="1197472">
+        <imageData width="2159" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0004.xml" mimetype="application/xml" size="2139">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0004.pdf" mimetype="application/pdf" size="789954">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0004.jp2" mimetype="image/jp2" size="1095307">
+        <imageData width="2159" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_5" sequence="5" type="page">
+      <label>Page 5</label>
+      <file id="jg072yr3056_00_0005.jpg" mimetype="image/jpeg" size="1187893">
+        <imageData width="2160" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0005.xml" mimetype="application/xml" size="1156">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0005.pdf" mimetype="application/pdf" size="813126">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0005.jp2" mimetype="image/jp2" size="1095720">
+        <imageData width="2160" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_6" sequence="6" type="page">
+      <label>Page 6</label>
+      <file id="jg072yr3056_00_0006.jpg" mimetype="image/jpeg" size="1174214">
+        <imageData width="2159" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0006.xml" mimetype="application/xml" size="2168">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0006.pdf" mimetype="application/pdf" size="818443">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0006.jp2" mimetype="image/jp2" size="1095228">
+        <imageData width="2159" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_7" sequence="7" type="page">
+      <label>Page 7</label>
+      <file id="jg072yr3056_00_0007.jpg" mimetype="image/jpeg" size="1312058">
+        <imageData width="2160" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0007.xml" mimetype="application/xml" size="15551">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0007.pdf" mimetype="application/pdf" size="395575">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0007.jp2" mimetype="image/jp2" size="1095793">
+        <imageData width="2160" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_8" sequence="8" type="page">
+      <label>Page 8</label>
+      <file id="jg072yr3056_00_0008.jpg" mimetype="image/jpeg" size="1176939">
+        <imageData width="2159" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0008.xml" mimetype="application/xml" size="4603">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0008.pdf" mimetype="application/pdf" size="809325">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0008.jp2" mimetype="image/jp2" size="1095230">
+        <imageData width="2159" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_9" sequence="9" type="page">
+      <label>Page 9</label>
+      <file id="jg072yr3056_00_0009.jpg" mimetype="image/jpeg" size="1453593">
+        <imageData width="2160" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0009.xml" mimetype="application/xml" size="17085">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0009.pdf" mimetype="application/pdf" size="465802">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0009.jp2" mimetype="image/jp2" size="1095569">
+        <imageData width="2160" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_10" sequence="10" type="page">
+      <label>Page 10</label>
+      <file id="jg072yr3056_00_0010.jpg" mimetype="image/jpeg" size="1572938">
+        <imageData width="2160" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0010.xml" mimetype="application/xml" size="30686">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0010.pdf" mimetype="application/pdf" size="466920">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0010.jp2" mimetype="image/jp2" size="1095740">
+        <imageData width="2160" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_11" sequence="11" type="page">
+      <label>Page 11</label>
+      <file id="jg072yr3056_00_0011.jpg" mimetype="image/jpeg" size="1530114">
+        <imageData width="2160" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0011.xml" mimetype="application/xml" size="28555">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0011.pdf" mimetype="application/pdf" size="467479">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0011.jp2" mimetype="image/jp2" size="1095726">
+        <imageData width="2160" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_12" sequence="12" type="page">
+      <label>Page 12</label>
+      <file id="jg072yr3056_00_0012.jpg" mimetype="image/jpeg" size="1512738">
+        <imageData width="2159" height="2669"/>
+      </file>
+      <file id="jg072yr3056_04_0012.xml" mimetype="application/xml" size="28698">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0012.pdf" mimetype="application/pdf" size="466783">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0012.jp2" mimetype="image/jp2" size="1095569">
+        <imageData width="2159" height="2669"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_13" sequence="13" type="page">
+      <label>Page 13</label>
+      <file id="jg072yr3056_00_0013.jpg" mimetype="image/jpeg" size="1464981">
+        <imageData width="2160" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0013.xml" mimetype="application/xml" size="26340">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0013.pdf" mimetype="application/pdf" size="466786">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0013.jp2" mimetype="image/jp2" size="1095714">
+        <imageData width="2160" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_14" sequence="14" type="page">
+      <label>Page 14</label>
+      <file id="jg072yr3056_00_0014.jpg" mimetype="image/jpeg" size="1512748">
+        <imageData width="2160" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0014.xml" mimetype="application/xml" size="30889">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0014.pdf" mimetype="application/pdf" size="469418">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0014.jp2" mimetype="image/jp2" size="1095752">
+        <imageData width="2160" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_15" sequence="15" type="page">
+      <label>Page 15</label>
+      <file id="jg072yr3056_00_0015.jpg" mimetype="image/jpeg" size="1324640">
+        <imageData width="2160" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0015.xml" mimetype="application/xml" size="17115">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0015.pdf" mimetype="application/pdf" size="442747">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0015.jp2" mimetype="image/jp2" size="1095779">
+        <imageData width="2160" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_16" sequence="16" type="page">
+      <label>Page 16</label>
+      <file id="jg072yr3056_00_0016.jpg" mimetype="image/jpeg" size="1483506">
+        <imageData width="2160" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0016.xml" mimetype="application/xml" size="18278">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0016.pdf" mimetype="application/pdf" size="489923">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0016.jp2" mimetype="image/jp2" size="1095751">
+        <imageData width="2160" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_17" sequence="17" type="page">
+      <label>Page 17</label>
+      <file id="jg072yr3056_00_0017.jpg" mimetype="image/jpeg" size="1493374">
+        <imageData width="2160" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0017.xml" mimetype="application/xml" size="29728">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0017.pdf" mimetype="application/pdf" size="467849">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0017.jp2" mimetype="image/jp2" size="1095669">
+        <imageData width="2160" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_18" sequence="18" type="page">
+      <label>Page 18</label>
+      <file id="jg072yr3056_00_0018.jpg" mimetype="image/jpeg" size="1585696">
+        <imageData width="2160" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0018.xml" mimetype="application/xml" size="29780">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0018.pdf" mimetype="application/pdf" size="444659">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0018.jp2" mimetype="image/jp2" size="1095699">
+        <imageData width="2160" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_19" sequence="19" type="page">
+      <label>Page 19</label>
+      <file id="jg072yr3056_00_0019.jpg" mimetype="image/jpeg" size="1557486">
+        <imageData width="2160" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0019.xml" mimetype="application/xml" size="28354">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0019.pdf" mimetype="application/pdf" size="446201">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0019.jp2" mimetype="image/jp2" size="1095712">
+        <imageData width="2160" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_20" sequence="20" type="page">
+      <label>Page 20</label>
+      <file id="jg072yr3056_00_0020.jpg" mimetype="image/jpeg" size="1563241">
+        <imageData width="2159" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0020.xml" mimetype="application/xml" size="23838">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0020.pdf" mimetype="application/pdf" size="445408">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0020.jp2" mimetype="image/jp2" size="1095186">
+        <imageData width="2159" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_21" sequence="21" type="page">
+      <label>Page 21</label>
+      <file id="jg072yr3056_00_0021.jpg" mimetype="image/jpeg" size="1575133">
+        <imageData width="2160" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0021.xml" mimetype="application/xml" size="19470">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0021.pdf" mimetype="application/pdf" size="466481">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0021.jp2" mimetype="image/jp2" size="1095661">
+        <imageData width="2160" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_22" sequence="22" type="page">
+      <label>Page 22</label>
+      <file id="jg072yr3056_00_0022.jpg" mimetype="image/jpeg" size="1554072">
+        <imageData width="2160" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0022.xml" mimetype="application/xml" size="27680">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0022.pdf" mimetype="application/pdf" size="467137">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0022.jp2" mimetype="image/jp2" size="1095705">
+        <imageData width="2160" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_23" sequence="23" type="page">
+      <label>Page 23</label>
+      <file id="jg072yr3056_00_0023.jpg" mimetype="image/jpeg" size="1560414">
+        <imageData width="2160" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0023.xml" mimetype="application/xml" size="25903">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0023.pdf" mimetype="application/pdf" size="445440">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0023.jp2" mimetype="image/jp2" size="1095731">
+        <imageData width="2160" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_24" sequence="24" type="page">
+      <label>Page 24</label>
+      <file id="jg072yr3056_00_0024.jpg" mimetype="image/jpeg" size="1546760">
+        <imageData width="2159" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0024.xml" mimetype="application/xml" size="27765">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0024.pdf" mimetype="application/pdf" size="468030">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0024.jp2" mimetype="image/jp2" size="1095224">
+        <imageData width="2159" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_25" sequence="25" type="page">
+      <label>Page 25</label>
+      <file id="jg072yr3056_00_0025.jpg" mimetype="image/jpeg" size="1562662">
+        <imageData width="2159" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0025.xml" mimetype="application/xml" size="29254">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0025.pdf" mimetype="application/pdf" size="466623">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0025.jp2" mimetype="image/jp2" size="1095241">
+        <imageData width="2159" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_26" sequence="26" type="page">
+      <label>Page 26</label>
+      <file id="jg072yr3056_00_0026.jpg" mimetype="image/jpeg" size="1418490">
+        <imageData width="2159" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0026.xml" mimetype="application/xml" size="17787">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0026.pdf" mimetype="application/pdf" size="820897">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0026.jp2" mimetype="image/jp2" size="1095320">
+        <imageData width="2159" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_27" sequence="27" type="page">
+      <label>Page 27</label>
+      <file id="jg072yr3056_00_0027.jpg" mimetype="image/jpeg" size="1205796">
+        <imageData width="2160" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0027.xml" mimetype="application/xml" size="2243">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0027.pdf" mimetype="application/pdf" size="793439">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0027.jp2" mimetype="image/jp2" size="1095748">
+        <imageData width="2160" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_28" sequence="28" type="page">
+      <label>Page 28</label>
+      <file id="jg072yr3056_00_0028.jpg" mimetype="image/jpeg" size="1262149">
+        <imageData width="2159" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0028.xml" mimetype="application/xml" size="4038">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0028.pdf" mimetype="application/pdf" size="814392">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0028.jp2" mimetype="image/jp2" size="1095217">
+        <imageData width="2159" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_29" sequence="29" type="page">
+      <label>Page 29</label>
+      <file id="jg072yr3056_00_0029.jpg" mimetype="image/jpeg" size="1262485">
+        <imageData width="2160" height="2668"/>
+      </file>
+      <file id="jg072yr3056_04_0029.xml" mimetype="application/xml" size="1273">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0029.pdf" mimetype="application/pdf" size="812163">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0029.jp2" mimetype="image/jp2" size="1095794">
+        <imageData width="2160" height="2668"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_30" sequence="30" type="page">
+      <label>Page 30</label>
+      <file id="jg072yr3056_00_0030.jpg" mimetype="image/jpeg" size="3317466">
+        <imageData width="2532" height="3040"/>
+      </file>
+      <file id="jg072yr3056_04_0030.xml" mimetype="application/xml" size="129643">
+      
+      
+    </file>
+      <file id="jg072yr3056_06_0030.pdf" mimetype="application/pdf" size="1105447">
+      
+      
+    </file>
+      <file id="jg072yr3056_00_0030.jp2" mimetype="image/jp2" size="1458729">
+        <imageData width="2532" height="3040"/>
+      </file>
+    </resource>
+    <resource id="jg072yr3056_31" sequence="31" type="object">
+      <label>Object 1</label>
+      <file id="jg072yr3056_31_0000.pdf" mimetype="application/pdf" size="18521891">
+      
+      
+    </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata objectId="druid:pq797fq7081">
+    <copyright>
+      <human type="copyright">Property rights reside with the repository. Copyright © Stanford University. All Rights Reserved.</human>
+    </copyright>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">Property rights reside with the repository. Literary rights reside with the creators of the documents or their heirs. To obtain permission to publish or reproduce, please contact the Special Collections Public Services Librarian at speccollref@stanford.edu</human>
+    </use>
+    <use>
+      <human type="creativeCommons"/>
+      <machine type="creativeCommons"/>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:jg072yr3056">
+      <fedora:isMemberOf rdf:resource="info:fedora/druid:jt466yc7169"/>
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:jt466yc7169"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>The legend of the lady's elbow</dc:title>
+    <dc:creator>Parry, T. L. D. P. Jones (author.)</dc:creator>
+    <dc:type>Text</dc:type>
+    <dc:date>1845</dc:date>
+    <dc:date>1845</dc:date>
+    <dc:publisher>William Pritchard</dc:publisher>
+    <dc:language>eng</dc:language>
+    <dc:format>20 pages ; 25 cm</dc:format>
+    <dc:format>print</dc:format>
+    <dc:description displayLabel="statement of responsibility">by T.L.D.P. Jones Parry.</dc:description>
+    <dc:subject>PR5126.P597 L4 1845</dc:subject>
+    <dc:relation type="collection">Jarndyce Single-Volume Nineteenth-Century Novel Collection, 1823-1914</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
+    <titleInfo>
+      <nonSort>The</nonSort>
+      <title>legend of the lady's elbow</title>
+    </titleInfo>
+    <name type="personal">
+      <namePart>Parry, T. L. D. P. Jones</namePart>
+      <role>
+        <roleTerm authority="marcrelator" type="text">creator</roleTerm>
+      </role>
+      <role>
+        <roleTerm type="text">author.</roleTerm>
+      </role>
+    </name>
+    <typeOfResource>text</typeOfResource>
+    <originInfo>
+      <place>
+        <placeTerm type="code" authority="marccountry">wlk</placeTerm>
+      </place>
+      <place>
+        <placeTerm type="text">Carnarvon</placeTerm>
+      </place>
+      <publisher>William Pritchard</publisher>
+      <dateIssued>1845</dateIssued>
+      <dateIssued encoding="marc" keyDate="yes">1845</dateIssued>
+      <issuance>monographic</issuance>
+    </originInfo>
+    <language>
+      <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <physicalDescription>
+      <form authority="marcform">print</form>
+      <extent>20 pages ; 25 cm</extent>
+    </physicalDescription>
+    <note displayLabel="statement of responsibility">by T.L.D.P. Jones Parry.</note>
+    <classification authority="lcc">PR5126.P597 L4 1845</classification>
+    <recordInfo>
+      <descriptionStandard>rda</descriptionStandard>
+      <recordContentSource authority="marcorg">UKMGB</recordContentSource>
+      <recordCreationDate encoding="marc">890920</recordCreationDate>
+      <recordIdentifier source="SIRSI">a9618852</recordIdentifier>
+      <languageOfCataloging>
+        <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+      </languageOfCataloging>
+    </recordInfo>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Jarndyce Single-Volume Nineteenth-Century Novel Collection, 1823-1914</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/jt466yc7169</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">Property rights reside with the repository. Literary rights reside with the creators of the documents or their heirs. To obtain permission to publish or reproduce, please contact the Special Collections Public Services Librarian at speccollref@stanford.edu</accessCondition>
+    <accessCondition type="copyright">Property rights reside with the repository. Copyright © Stanford University. All Rights Reserved.</accessCondition>
+  </mods>
+  <releaseData>
+    <release to="Searchworks">true</release>
+  </releaseData>
+  <thumb>jg072yr3056/jg072yr3056_00_0001.jp2</thumb>
+</publicObject>
