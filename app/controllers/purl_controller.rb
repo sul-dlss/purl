@@ -30,6 +30,10 @@ class PurlController < ApplicationController
         end
       end
 
+      format.meta_json do
+        render json: @purl.meta_json
+      end
+
       format.json do
         if @purl.cocina?
           render json: @purl.cocina_body

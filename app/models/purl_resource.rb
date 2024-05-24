@@ -58,10 +58,16 @@ class PurlResource
     @public_xml ||= PublicXml.new(public_xml_document)
   end
 
-  def public_json
-    @public_json ||= purl_fetcher_conn.get("/purls/#{id}").body
+  def meta_json
+    @meta_json ||= JSON.parse(meta_json_body) if meta_json_body.present?
   end
 
+  # @deprecated
+  def purl_fetcher_json
+    @purl_fetcher_json ||= purl_fetcher_conn.get("/purls/#{id}").body
+  end
+
+  # @deprecated
   def purl_fetcher_conn
     Faraday.new(url: Settings.purl_fetcher.url) do |builder|
       builder.response :json
@@ -84,7 +90,7 @@ class PurlResource
 
   # Can be crawled / indexed by a crawler, e.g. Googlebot
   def crawlable?
-    public_json.fetch('true_targets').include?('PURL sitemap')
+    (meta_json || purl_fetcher_json).fetch('true_targets').include?('PURL sitemap')
   rescue StandardError => e
     Honeybadger.notify(e)
     false # ensure that purl-fetcher being down doesn't prevent the page from drawing
@@ -278,7 +284,8 @@ class PurlResource
         druid_tree:,
         root_path: self.class.storage_root_path,
         ocfl_public_path: OcflPathFinder.path(druid_tree:, filename: 'public'),
-        ocfl_cocina_path: OcflPathFinder.path(druid_tree:, filename: 'cocina.json')
+        ocfl_cocina_path: OcflPathFinder.path(druid_tree:, filename: 'cocina.json'),
+        ocfl_meta_path: OcflPathFinder.path(druid_tree:, filename: 'meta.json')
       }
     end
 
@@ -310,6 +317,16 @@ class PurlResource
 
     def public_xml_body
       public_xml_resource.body if public_xml_resource.success?
+    end
+
+    def meta_json_resource
+      @meta_json_resource ||= cache_resource(:meta) do
+        fetch_resource(:meta, Settings.purl_resource.meta)
+      end
+    end
+
+    def meta_json_body
+      meta_json_resource.body if meta_json_resource.success?
     end
 
     def public_xml?

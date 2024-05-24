@@ -243,21 +243,42 @@ RSpec.describe PurlResource do
     subject { instance.crawlable? }
     let(:druid) { 'druid:kn112rm5773' }
 
-    before do
-      stub_request(:get, 'https://purl-fetcher-stage.stanford.edu/purls/druid:kn112rm5773')
-        .to_return(status: 200, body: "{\"true_targets\": #{true_targets}}", headers: { 'content-type' => 'application/json' })
+    context 'with a meta.json file in the object path' do
+      before do
+        allow(DocumentCacheResource).to receive(:new).and_return(instance_double(DocumentCacheResource, body: "{\"true_targets\": #{true_targets} }",
+                                                                                                        success?: true))
+      end
+
+      context 'when resource has a sitemap target' do
+        let(:true_targets) { ['PURL sitemap'] }
+
+        it { is_expected.to be true }
+      end
+
+      context 'when resource has a no sitemap' do
+        let(:true_targets) { ['Searchworks'] }
+
+        it { is_expected.to be false }
+      end
     end
 
-    context 'when resource has a sitemap target' do
-      let(:true_targets) { ['PURL sitemap'] }
+    context 'without a meta.json file in the object path' do
+      before do
+        stub_request(:get, 'https://purl-fetcher-stage.stanford.edu/purls/druid:kn112rm5773')
+          .to_return(status: 200, body: "{\"true_targets\": #{true_targets}}", headers: { 'content-type' => 'application/json' })
+      end
 
-      it { is_expected.to be true }
-    end
+      context 'when resource has a sitemap target' do
+        let(:true_targets) { ['PURL sitemap'] }
 
-    context 'when resource has a no sitemap' do
-      let(:true_targets) { ['Searchworks'] }
+        it { is_expected.to be true }
+      end
 
-      it { is_expected.to be false }
+      context 'when resource has a no sitemap' do
+        let(:true_targets) { ['Searchworks'] }
+
+        it { is_expected.to be false }
+      end
     end
   end
 

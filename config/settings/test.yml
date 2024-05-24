@@ -4,6 +4,10 @@ ocfl_root: "<%= File.join(Rails.root, 'spec', 'fixtures', 'ocfl') %>"
 purl_resource:
   public_xml: "%{root_path}/%{druid_tree}/%{ocfl_public_path}public"
   cocina: "%{root_path}/%{druid_tree}/%{ocfl_cocina_path}cocina.json"
+  meta: "%{root_path}/%{druid_tree}/%{ocfl_meta_path}meta.json"
 
 content_search:
   url: "http://example.com/content_search/%{druid}/search"
+
+resource_cache:
+  enabled: false

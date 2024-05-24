@@ -23,6 +23,7 @@ resource_cache:
 purl_resource:
   public_xml: "https://purl.stanford.edu/%{druid}.xml"
   cocina: "https://purl.stanford.edu/%{druid}.json"
+  meta: "https://purl.stanford.edu/%{druid}.meta_json"
 
 embed:
   url: "https://purl.stanford.edu/%{druid}"
