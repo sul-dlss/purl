@@ -1,0 +1,3435 @@
+<publicObject id="druid:yr183sf1341" published="2012-05-17T12:52:51-07:00">
+  <identityMetadata>
+    <adminPolicy>druid:ww057vk7675</adminPolicy>
+    <objectCreator>DOR</objectCreator>
+    <objectId>druid:yr183sf1341</objectId>
+    <objectLabel>Islamic prayer book, 1228 H</objectLabel>
+    <objectType>item</objectType>
+    <otherId name="catkey">9232194</otherId>
+    <otherId name="uuid">d496a4b6-3e04-11e1-8d4f-0016034322e2</otherId>
+    <tag>Project : Digireq</tag>
+    <tag>JIRA : DIGREQ-383</tag>
+    <tag>DPG : Curator Request</tag>
+    <tag>DPG : Eilts</tag>
+    <tag>Remediated By : 3.6.2</tag>
+  </identityMetadata>
+  <contentMetadata type="book" objectId="yr183sf1341">
+    <bookData readingOrder="rtl" pageStart="left"/>
+    <resource type="page" sequence="1" id="yr183sf1341_1">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="1266834" id="yr183sf1341_05_0001.jp2">
+        <imageData width="2865" height="2332"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="2" id="yr183sf1341_2">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680035" id="yr183sf1341_05_0002.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="3" id="yr183sf1341_3">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680358" id="yr183sf1341_05_0003.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="4" id="yr183sf1341_4">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="681145" id="yr183sf1341_05_0004.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="5" id="yr183sf1341_5">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680940" id="yr183sf1341_05_0005.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="6" id="yr183sf1341_6">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680205" id="yr183sf1341_05_0006.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="7" id="yr183sf1341_7">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680422" id="yr183sf1341_05_0007.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="8" id="yr183sf1341_8">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680252" id="yr183sf1341_05_0008.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="9" id="yr183sf1341_9">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679916" id="yr183sf1341_05_0009.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="10" id="yr183sf1341_10">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680265" id="yr183sf1341_05_0010.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="11" id="yr183sf1341_11">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679880" id="yr183sf1341_05_0011.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="12" id="yr183sf1341_12">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680233" id="yr183sf1341_05_0012.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="13" id="yr183sf1341_13">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679742" id="yr183sf1341_05_0013.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="14" id="yr183sf1341_14">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680237" id="yr183sf1341_05_0014.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="15" id="yr183sf1341_15">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679767" id="yr183sf1341_05_0015.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="16" id="yr183sf1341_16">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680223" id="yr183sf1341_05_0016.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="17" id="yr183sf1341_17">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679873" id="yr183sf1341_05_0017.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="18" id="yr183sf1341_18">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680265" id="yr183sf1341_05_0018.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="19" id="yr183sf1341_19">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679914" id="yr183sf1341_05_0019.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="20" id="yr183sf1341_20">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680258" id="yr183sf1341_05_0020.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="21" id="yr183sf1341_21">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679915" id="yr183sf1341_05_0021.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="22" id="yr183sf1341_22">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680230" id="yr183sf1341_05_0022.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="23" id="yr183sf1341_23">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679870" id="yr183sf1341_05_0023.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="24" id="yr183sf1341_24">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680129" id="yr183sf1341_05_0024.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="25" id="yr183sf1341_25">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680420" id="yr183sf1341_05_0025.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="26" id="yr183sf1341_26">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680252" id="yr183sf1341_05_0026.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="27" id="yr183sf1341_27">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679919" id="yr183sf1341_05_0027.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="28" id="yr183sf1341_28">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680258" id="yr183sf1341_05_0028.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="29" id="yr183sf1341_29">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679865" id="yr183sf1341_05_0029.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="30" id="yr183sf1341_30">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680258" id="yr183sf1341_05_0030.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="31" id="yr183sf1341_31">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679935" id="yr183sf1341_05_0031.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="32" id="yr183sf1341_32">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679951" id="yr183sf1341_05_0032.jp2">
+        <imageData width="1614" height="2201"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="33" id="yr183sf1341_33">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679930" id="yr183sf1341_05_0033.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="34" id="yr183sf1341_34">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680249" id="yr183sf1341_05_0034.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="35" id="yr183sf1341_35">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679915" id="yr183sf1341_05_0035.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="36" id="yr183sf1341_36">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680219" id="yr183sf1341_05_0036.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="37" id="yr183sf1341_37">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679928" id="yr183sf1341_05_0037.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="38" id="yr183sf1341_38">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680275" id="yr183sf1341_05_0038.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="39" id="yr183sf1341_39">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679927" id="yr183sf1341_05_0039.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="40" id="yr183sf1341_40">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680246" id="yr183sf1341_05_0040.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="41" id="yr183sf1341_41">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679917" id="yr183sf1341_05_0041.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="42" id="yr183sf1341_42">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680251" id="yr183sf1341_05_0042.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="43" id="yr183sf1341_43">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679930" id="yr183sf1341_05_0043.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="44" id="yr183sf1341_44">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680246" id="yr183sf1341_05_0044.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="45" id="yr183sf1341_45">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679928" id="yr183sf1341_05_0045.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="46" id="yr183sf1341_46">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680221" id="yr183sf1341_05_0046.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="47" id="yr183sf1341_47">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679885" id="yr183sf1341_05_0047.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="48" id="yr183sf1341_48">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680252" id="yr183sf1341_05_0048.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="49" id="yr183sf1341_49">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679900" id="yr183sf1341_05_0049.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="50" id="yr183sf1341_50">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680246" id="yr183sf1341_05_0050.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="51" id="yr183sf1341_51">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679926" id="yr183sf1341_05_0051.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="52" id="yr183sf1341_52">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680238" id="yr183sf1341_05_0052.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="53" id="yr183sf1341_53">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679895" id="yr183sf1341_05_0053.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="54" id="yr183sf1341_54">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680254" id="yr183sf1341_05_0054.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="55" id="yr183sf1341_55">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679925" id="yr183sf1341_05_0055.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="56" id="yr183sf1341_56">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680258" id="yr183sf1341_05_0056.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="57" id="yr183sf1341_57">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679903" id="yr183sf1341_05_0057.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="58" id="yr183sf1341_58">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680243" id="yr183sf1341_05_0058.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="59" id="yr183sf1341_59">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679917" id="yr183sf1341_05_0059.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="60" id="yr183sf1341_60">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680255" id="yr183sf1341_05_0060.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="61" id="yr183sf1341_61">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679913" id="yr183sf1341_05_0061.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="62" id="yr183sf1341_62">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680172" id="yr183sf1341_05_0062.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="63" id="yr183sf1341_63">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679911" id="yr183sf1341_05_0063.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="64" id="yr183sf1341_64">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680265" id="yr183sf1341_05_0064.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="65" id="yr183sf1341_65">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679926" id="yr183sf1341_05_0065.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="66" id="yr183sf1341_66">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680082" id="yr183sf1341_05_0066.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="67" id="yr183sf1341_67">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679920" id="yr183sf1341_05_0067.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="68" id="yr183sf1341_68">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680278" id="yr183sf1341_05_0068.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="69" id="yr183sf1341_69">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679846" id="yr183sf1341_05_0069.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="70" id="yr183sf1341_70">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680223" id="yr183sf1341_05_0070.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="71" id="yr183sf1341_71">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679930" id="yr183sf1341_05_0071.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="72" id="yr183sf1341_72">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680255" id="yr183sf1341_05_0072.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="73" id="yr183sf1341_73">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679895" id="yr183sf1341_05_0073.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="74" id="yr183sf1341_74">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680270" id="yr183sf1341_05_0074.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="75" id="yr183sf1341_75">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679922" id="yr183sf1341_05_0075.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="76" id="yr183sf1341_76">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680246" id="yr183sf1341_05_0076.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="77" id="yr183sf1341_77">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679942" id="yr183sf1341_05_0077.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="78" id="yr183sf1341_78">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680258" id="yr183sf1341_05_0078.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="79" id="yr183sf1341_79">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679914" id="yr183sf1341_05_0079.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="80" id="yr183sf1341_80">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680261" id="yr183sf1341_05_0080.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="81" id="yr183sf1341_81">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679887" id="yr183sf1341_05_0081.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="82" id="yr183sf1341_82">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680215" id="yr183sf1341_05_0082.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="83" id="yr183sf1341_83">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679850" id="yr183sf1341_05_0083.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="84" id="yr183sf1341_84">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680260" id="yr183sf1341_05_0084.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="85" id="yr183sf1341_85">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679891" id="yr183sf1341_05_0085.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="86" id="yr183sf1341_86">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680254" id="yr183sf1341_05_0086.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="87" id="yr183sf1341_87">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679713" id="yr183sf1341_05_0087.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="88" id="yr183sf1341_88">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680247" id="yr183sf1341_05_0088.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="89" id="yr183sf1341_89">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679930" id="yr183sf1341_05_0089.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="90" id="yr183sf1341_90">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680250" id="yr183sf1341_05_0090.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="91" id="yr183sf1341_91">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679934" id="yr183sf1341_05_0091.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="92" id="yr183sf1341_92">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680205" id="yr183sf1341_05_0092.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="93" id="yr183sf1341_93">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679822" id="yr183sf1341_05_0093.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="94" id="yr183sf1341_94">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680033" id="yr183sf1341_05_0094.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="95" id="yr183sf1341_95">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679680" id="yr183sf1341_05_0095.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="96" id="yr183sf1341_96">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680241" id="yr183sf1341_05_0096.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="97" id="yr183sf1341_97">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679901" id="yr183sf1341_05_0097.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="98" id="yr183sf1341_98">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680208" id="yr183sf1341_05_0098.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="99" id="yr183sf1341_99">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679907" id="yr183sf1341_05_0099.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="100" id="yr183sf1341_100">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680250" id="yr183sf1341_05_0100.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="101" id="yr183sf1341_101">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679906" id="yr183sf1341_05_0101.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="102" id="yr183sf1341_102">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680241" id="yr183sf1341_05_0102.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="103" id="yr183sf1341_103">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679611" id="yr183sf1341_05_0103.jp2">
+        <imageData width="1614" height="2201"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="104" id="yr183sf1341_104">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680244" id="yr183sf1341_05_0104.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="105" id="yr183sf1341_105">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679861" id="yr183sf1341_05_0105.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="106" id="yr183sf1341_106">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680250" id="yr183sf1341_05_0106.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="107" id="yr183sf1341_107">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679886" id="yr183sf1341_05_0107.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="108" id="yr183sf1341_108">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680270" id="yr183sf1341_05_0108.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="109" id="yr183sf1341_109">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679929" id="yr183sf1341_05_0109.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="110" id="yr183sf1341_110">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680255" id="yr183sf1341_05_0110.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="111" id="yr183sf1341_111">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679907" id="yr183sf1341_05_0111.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="112" id="yr183sf1341_112">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680224" id="yr183sf1341_05_0112.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="113" id="yr183sf1341_113">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679861" id="yr183sf1341_05_0113.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="114" id="yr183sf1341_114">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680262" id="yr183sf1341_05_0114.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="115" id="yr183sf1341_115">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679863" id="yr183sf1341_05_0115.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="116" id="yr183sf1341_116">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680202" id="yr183sf1341_05_0116.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="117" id="yr183sf1341_117">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679897" id="yr183sf1341_05_0117.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="118" id="yr183sf1341_118">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680269" id="yr183sf1341_05_0118.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="119" id="yr183sf1341_119">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679912" id="yr183sf1341_05_0119.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="120" id="yr183sf1341_120">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680252" id="yr183sf1341_05_0120.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="121" id="yr183sf1341_121">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679930" id="yr183sf1341_05_0121.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="122" id="yr183sf1341_122">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680229" id="yr183sf1341_05_0122.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="123" id="yr183sf1341_123">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679907" id="yr183sf1341_05_0123.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="124" id="yr183sf1341_124">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680258" id="yr183sf1341_05_0124.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="125" id="yr183sf1341_125">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679922" id="yr183sf1341_05_0125.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="126" id="yr183sf1341_126">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680257" id="yr183sf1341_05_0126.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="127" id="yr183sf1341_127">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679928" id="yr183sf1341_05_0127.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="128" id="yr183sf1341_128">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680275" id="yr183sf1341_05_0128.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="129" id="yr183sf1341_129">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680226" id="yr183sf1341_05_0129.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="130" id="yr183sf1341_130">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680265" id="yr183sf1341_05_0130.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="131" id="yr183sf1341_131">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679927" id="yr183sf1341_05_0131.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="132" id="yr183sf1341_132">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680265" id="yr183sf1341_05_0132.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="133" id="yr183sf1341_133">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679874" id="yr183sf1341_05_0133.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="134" id="yr183sf1341_134">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680432" id="yr183sf1341_05_0134.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="135" id="yr183sf1341_135">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679886" id="yr183sf1341_05_0135.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="136" id="yr183sf1341_136">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680247" id="yr183sf1341_05_0136.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="137" id="yr183sf1341_137">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679903" id="yr183sf1341_05_0137.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="138" id="yr183sf1341_138">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680450" id="yr183sf1341_05_0138.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="139" id="yr183sf1341_139">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679916" id="yr183sf1341_05_0139.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="140" id="yr183sf1341_140">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680248" id="yr183sf1341_05_0140.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="141" id="yr183sf1341_141">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679894" id="yr183sf1341_05_0141.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="142" id="yr183sf1341_142">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680181" id="yr183sf1341_05_0142.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="143" id="yr183sf1341_143">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679914" id="yr183sf1341_05_0143.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="144" id="yr183sf1341_144">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680243" id="yr183sf1341_05_0144.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="145" id="yr183sf1341_145">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679897" id="yr183sf1341_05_0145.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="146" id="yr183sf1341_146">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680262" id="yr183sf1341_05_0146.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="147" id="yr183sf1341_147">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679938" id="yr183sf1341_05_0147.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="148" id="yr183sf1341_148">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680243" id="yr183sf1341_05_0148.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="149" id="yr183sf1341_149">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679935" id="yr183sf1341_05_0149.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="150" id="yr183sf1341_150">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680240" id="yr183sf1341_05_0150.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="151" id="yr183sf1341_151">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679838" id="yr183sf1341_05_0151.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="152" id="yr183sf1341_152">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680227" id="yr183sf1341_05_0152.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="153" id="yr183sf1341_153">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679866" id="yr183sf1341_05_0153.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="154" id="yr183sf1341_154">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680258" id="yr183sf1341_05_0154.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="155" id="yr183sf1341_155">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679916" id="yr183sf1341_05_0155.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="156" id="yr183sf1341_156">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680250" id="yr183sf1341_05_0156.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="157" id="yr183sf1341_157">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679900" id="yr183sf1341_05_0157.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="158" id="yr183sf1341_158">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680247" id="yr183sf1341_05_0158.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="159" id="yr183sf1341_159">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679897" id="yr183sf1341_05_0159.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="160" id="yr183sf1341_160">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680254" id="yr183sf1341_05_0160.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="161" id="yr183sf1341_161">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679893" id="yr183sf1341_05_0161.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="162" id="yr183sf1341_162">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680201" id="yr183sf1341_05_0162.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="163" id="yr183sf1341_163">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679918" id="yr183sf1341_05_0163.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="164" id="yr183sf1341_164">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680250" id="yr183sf1341_05_0164.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="165" id="yr183sf1341_165">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679908" id="yr183sf1341_05_0165.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="166" id="yr183sf1341_166">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680256" id="yr183sf1341_05_0166.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="167" id="yr183sf1341_167">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679918" id="yr183sf1341_05_0167.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="168" id="yr183sf1341_168">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680262" id="yr183sf1341_05_0168.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="169" id="yr183sf1341_169">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679944" id="yr183sf1341_05_0169.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="170" id="yr183sf1341_170">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680250" id="yr183sf1341_05_0170.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="171" id="yr183sf1341_171">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679933" id="yr183sf1341_05_0171.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="172" id="yr183sf1341_172">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680248" id="yr183sf1341_05_0172.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="173" id="yr183sf1341_173">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679913" id="yr183sf1341_05_0173.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="174" id="yr183sf1341_174">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680267" id="yr183sf1341_05_0174.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="175" id="yr183sf1341_175">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679761" id="yr183sf1341_05_0175.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="176" id="yr183sf1341_176">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680271" id="yr183sf1341_05_0176.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="177" id="yr183sf1341_177">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679868" id="yr183sf1341_05_0177.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="178" id="yr183sf1341_178">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680239" id="yr183sf1341_05_0178.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="179" id="yr183sf1341_179">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679912" id="yr183sf1341_05_0179.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="180" id="yr183sf1341_180">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680271" id="yr183sf1341_05_0180.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="181" id="yr183sf1341_181">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679924" id="yr183sf1341_05_0181.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="182" id="yr183sf1341_182">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680254" id="yr183sf1341_05_0182.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="183" id="yr183sf1341_183">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679919" id="yr183sf1341_05_0183.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="184" id="yr183sf1341_184">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680263" id="yr183sf1341_05_0184.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="185" id="yr183sf1341_185">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679927" id="yr183sf1341_05_0185.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="186" id="yr183sf1341_186">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680255" id="yr183sf1341_05_0186.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="187" id="yr183sf1341_187">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679656" id="yr183sf1341_05_0187.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="188" id="yr183sf1341_188">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680260" id="yr183sf1341_05_0188.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="189" id="yr183sf1341_189">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679920" id="yr183sf1341_05_0189.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="190" id="yr183sf1341_190">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680246" id="yr183sf1341_05_0190.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="191" id="yr183sf1341_191">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679928" id="yr183sf1341_05_0191.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="192" id="yr183sf1341_192">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680046" id="yr183sf1341_05_0192.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="193" id="yr183sf1341_193">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679838" id="yr183sf1341_05_0193.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="194" id="yr183sf1341_194">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680253" id="yr183sf1341_05_0194.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="195" id="yr183sf1341_195">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679910" id="yr183sf1341_05_0195.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="196" id="yr183sf1341_196">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680225" id="yr183sf1341_05_0196.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="197" id="yr183sf1341_197">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679887" id="yr183sf1341_05_0197.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="198" id="yr183sf1341_198">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679941" id="yr183sf1341_05_0198.jp2">
+        <imageData width="1614" height="2201"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="199" id="yr183sf1341_199">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679860" id="yr183sf1341_05_0199.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="200" id="yr183sf1341_200">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680245" id="yr183sf1341_05_0200.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="201" id="yr183sf1341_201">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679877" id="yr183sf1341_05_0201.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="202" id="yr183sf1341_202">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680107" id="yr183sf1341_05_0202.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="203" id="yr183sf1341_203">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679917" id="yr183sf1341_05_0203.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="204" id="yr183sf1341_204">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680254" id="yr183sf1341_05_0204.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="205" id="yr183sf1341_205">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679842" id="yr183sf1341_05_0205.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="206" id="yr183sf1341_206">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680221" id="yr183sf1341_05_0206.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="207" id="yr183sf1341_207">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679927" id="yr183sf1341_05_0207.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="208" id="yr183sf1341_208">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680249" id="yr183sf1341_05_0208.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="209" id="yr183sf1341_209">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679933" id="yr183sf1341_05_0209.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="210" id="yr183sf1341_210">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680246" id="yr183sf1341_05_0210.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="211" id="yr183sf1341_211">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679815" id="yr183sf1341_05_0211.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="212" id="yr183sf1341_212">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680134" id="yr183sf1341_05_0212.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="213" id="yr183sf1341_213">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679909" id="yr183sf1341_05_0213.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="214" id="yr183sf1341_214">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680256" id="yr183sf1341_05_0214.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="215" id="yr183sf1341_215">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679889" id="yr183sf1341_05_0215.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="216" id="yr183sf1341_216">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680230" id="yr183sf1341_05_0216.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="217" id="yr183sf1341_217">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679904" id="yr183sf1341_05_0217.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="218" id="yr183sf1341_218">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680241" id="yr183sf1341_05_0218.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="219" id="yr183sf1341_219">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679867" id="yr183sf1341_05_0219.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="220" id="yr183sf1341_220">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680265" id="yr183sf1341_05_0220.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="221" id="yr183sf1341_221">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679902" id="yr183sf1341_05_0221.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="222" id="yr183sf1341_222">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680252" id="yr183sf1341_05_0222.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="223" id="yr183sf1341_223">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679899" id="yr183sf1341_05_0223.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="224" id="yr183sf1341_224">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680219" id="yr183sf1341_05_0224.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="225" id="yr183sf1341_225">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679925" id="yr183sf1341_05_0225.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="226" id="yr183sf1341_226">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680253" id="yr183sf1341_05_0226.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="227" id="yr183sf1341_227">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679907" id="yr183sf1341_05_0227.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="228" id="yr183sf1341_228">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680191" id="yr183sf1341_05_0228.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="229" id="yr183sf1341_229">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679865" id="yr183sf1341_05_0229.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="230" id="yr183sf1341_230">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680155" id="yr183sf1341_05_0230.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="231" id="yr183sf1341_231">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679895" id="yr183sf1341_05_0231.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="232" id="yr183sf1341_232">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680285" id="yr183sf1341_05_0232.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="233" id="yr183sf1341_233">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679900" id="yr183sf1341_05_0233.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="234" id="yr183sf1341_234">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680257" id="yr183sf1341_05_0234.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="235" id="yr183sf1341_235">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679935" id="yr183sf1341_05_0235.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="236" id="yr183sf1341_236">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680264" id="yr183sf1341_05_0236.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="237" id="yr183sf1341_237">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679907" id="yr183sf1341_05_0237.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="238" id="yr183sf1341_238">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680262" id="yr183sf1341_05_0238.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="239" id="yr183sf1341_239">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679826" id="yr183sf1341_05_0239.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="240" id="yr183sf1341_240">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680191" id="yr183sf1341_05_0240.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="241" id="yr183sf1341_241">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679951" id="yr183sf1341_05_0241.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="242" id="yr183sf1341_242">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680291" id="yr183sf1341_05_0242.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="243" id="yr183sf1341_243">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679909" id="yr183sf1341_05_0243.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="244" id="yr183sf1341_244">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680272" id="yr183sf1341_05_0244.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="245" id="yr183sf1341_245">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679939" id="yr183sf1341_05_0245.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="246" id="yr183sf1341_246">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680269" id="yr183sf1341_05_0246.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="247" id="yr183sf1341_247">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679895" id="yr183sf1341_05_0247.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="248" id="yr183sf1341_248">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680269" id="yr183sf1341_05_0248.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="249" id="yr183sf1341_249">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679925" id="yr183sf1341_05_0249.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="250" id="yr183sf1341_250">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680247" id="yr183sf1341_05_0250.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="251" id="yr183sf1341_251">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679810" id="yr183sf1341_05_0251.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="252" id="yr183sf1341_252">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680276" id="yr183sf1341_05_0252.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="253" id="yr183sf1341_253">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679923" id="yr183sf1341_05_0253.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="254" id="yr183sf1341_254">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680283" id="yr183sf1341_05_0254.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="255" id="yr183sf1341_255">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679876" id="yr183sf1341_05_0255.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="256" id="yr183sf1341_256">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680208" id="yr183sf1341_05_0256.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="257" id="yr183sf1341_257">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679850" id="yr183sf1341_05_0257.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="258" id="yr183sf1341_258">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680231" id="yr183sf1341_05_0258.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="259" id="yr183sf1341_259">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679894" id="yr183sf1341_05_0259.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="260" id="yr183sf1341_260">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680268" id="yr183sf1341_05_0260.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="261" id="yr183sf1341_261">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679922" id="yr183sf1341_05_0261.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="262" id="yr183sf1341_262">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680265" id="yr183sf1341_05_0262.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="263" id="yr183sf1341_263">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679876" id="yr183sf1341_05_0263.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="264" id="yr183sf1341_264">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680252" id="yr183sf1341_05_0264.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="265" id="yr183sf1341_265">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679890" id="yr183sf1341_05_0265.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="266" id="yr183sf1341_266">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680260" id="yr183sf1341_05_0266.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="267" id="yr183sf1341_267">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679926" id="yr183sf1341_05_0267.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="268" id="yr183sf1341_268">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680277" id="yr183sf1341_05_0268.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="269" id="yr183sf1341_269">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679939" id="yr183sf1341_05_0269.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="270" id="yr183sf1341_270">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680219" id="yr183sf1341_05_0270.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="271" id="yr183sf1341_271">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679889" id="yr183sf1341_05_0271.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="272" id="yr183sf1341_272">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680269" id="yr183sf1341_05_0272.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="273" id="yr183sf1341_273">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679919" id="yr183sf1341_05_0273.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="274" id="yr183sf1341_274">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680270" id="yr183sf1341_05_0274.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="275" id="yr183sf1341_275">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679927" id="yr183sf1341_05_0275.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="276" id="yr183sf1341_276">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680244" id="yr183sf1341_05_0276.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="277" id="yr183sf1341_277">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679913" id="yr183sf1341_05_0277.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="278" id="yr183sf1341_278">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680254" id="yr183sf1341_05_0278.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="279" id="yr183sf1341_279">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679886" id="yr183sf1341_05_0279.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="280" id="yr183sf1341_280">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680243" id="yr183sf1341_05_0280.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="281" id="yr183sf1341_281">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679907" id="yr183sf1341_05_0281.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="282" id="yr183sf1341_282">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680265" id="yr183sf1341_05_0282.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="283" id="yr183sf1341_283">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679930" id="yr183sf1341_05_0283.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="284" id="yr183sf1341_284">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680241" id="yr183sf1341_05_0284.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="285" id="yr183sf1341_285">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679886" id="yr183sf1341_05_0285.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="286" id="yr183sf1341_286">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680267" id="yr183sf1341_05_0286.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="287" id="yr183sf1341_287">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679843" id="yr183sf1341_05_0287.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="288" id="yr183sf1341_288">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680252" id="yr183sf1341_05_0288.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="289" id="yr183sf1341_289">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679933" id="yr183sf1341_05_0289.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="290" id="yr183sf1341_290">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680279" id="yr183sf1341_05_0290.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="291" id="yr183sf1341_291">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679861" id="yr183sf1341_05_0291.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="292" id="yr183sf1341_292">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680230" id="yr183sf1341_05_0292.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="293" id="yr183sf1341_293">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679909" id="yr183sf1341_05_0293.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="294" id="yr183sf1341_294">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680268" id="yr183sf1341_05_0294.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="295" id="yr183sf1341_295">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679768" id="yr183sf1341_05_0295.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="296" id="yr183sf1341_296">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680266" id="yr183sf1341_05_0296.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="297" id="yr183sf1341_297">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679872" id="yr183sf1341_05_0297.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="298" id="yr183sf1341_298">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680202" id="yr183sf1341_05_0298.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="299" id="yr183sf1341_299">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679904" id="yr183sf1341_05_0299.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="300" id="yr183sf1341_300">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680278" id="yr183sf1341_05_0300.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="301" id="yr183sf1341_301">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679905" id="yr183sf1341_05_0301.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="302" id="yr183sf1341_302">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680174" id="yr183sf1341_05_0302.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="303" id="yr183sf1341_303">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679808" id="yr183sf1341_05_0303.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="304" id="yr183sf1341_304">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680269" id="yr183sf1341_05_0304.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="305" id="yr183sf1341_305">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679812" id="yr183sf1341_05_0305.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="306" id="yr183sf1341_306">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680262" id="yr183sf1341_05_0306.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="307" id="yr183sf1341_307">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679900" id="yr183sf1341_05_0307.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="308" id="yr183sf1341_308">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680237" id="yr183sf1341_05_0308.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="309" id="yr183sf1341_309">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679938" id="yr183sf1341_05_0309.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="310" id="yr183sf1341_310">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680255" id="yr183sf1341_05_0310.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="311" id="yr183sf1341_311">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679916" id="yr183sf1341_05_0311.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="312" id="yr183sf1341_312">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680274" id="yr183sf1341_05_0312.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="313" id="yr183sf1341_313">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679901" id="yr183sf1341_05_0313.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="314" id="yr183sf1341_314">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680263" id="yr183sf1341_05_0314.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="315" id="yr183sf1341_315">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679907" id="yr183sf1341_05_0315.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="316" id="yr183sf1341_316">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680264" id="yr183sf1341_05_0316.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="317" id="yr183sf1341_317">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679919" id="yr183sf1341_05_0317.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="318" id="yr183sf1341_318">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680268" id="yr183sf1341_05_0318.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="319" id="yr183sf1341_319">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679898" id="yr183sf1341_05_0319.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="320" id="yr183sf1341_320">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680267" id="yr183sf1341_05_0320.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="321" id="yr183sf1341_321">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679919" id="yr183sf1341_05_0321.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="322" id="yr183sf1341_322">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680246" id="yr183sf1341_05_0322.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="323" id="yr183sf1341_323">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679903" id="yr183sf1341_05_0323.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="324" id="yr183sf1341_324">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680183" id="yr183sf1341_05_0324.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="325" id="yr183sf1341_325">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679906" id="yr183sf1341_05_0325.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="326" id="yr183sf1341_326">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680264" id="yr183sf1341_05_0326.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="327" id="yr183sf1341_327">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679832" id="yr183sf1341_05_0327.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="328" id="yr183sf1341_328">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680240" id="yr183sf1341_05_0328.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="329" id="yr183sf1341_329">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679893" id="yr183sf1341_05_0329.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="330" id="yr183sf1341_330">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680257" id="yr183sf1341_05_0330.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="331" id="yr183sf1341_331">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679939" id="yr183sf1341_05_0331.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="332" id="yr183sf1341_332">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680269" id="yr183sf1341_05_0332.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="333" id="yr183sf1341_333">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679684" id="yr183sf1341_05_0333.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="334" id="yr183sf1341_334">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680121" id="yr183sf1341_05_0334.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="335" id="yr183sf1341_335">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679777" id="yr183sf1341_05_0335.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="336" id="yr183sf1341_336">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680240" id="yr183sf1341_05_0336.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="337" id="yr183sf1341_337">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679923" id="yr183sf1341_05_0337.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="338" id="yr183sf1341_338">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680270" id="yr183sf1341_05_0338.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="339" id="yr183sf1341_339">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679918" id="yr183sf1341_05_0339.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="340" id="yr183sf1341_340">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680245" id="yr183sf1341_05_0340.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="341" id="yr183sf1341_341">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679881" id="yr183sf1341_05_0341.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="342" id="yr183sf1341_342">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680246" id="yr183sf1341_05_0342.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="343" id="yr183sf1341_343">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679915" id="yr183sf1341_05_0343.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="344" id="yr183sf1341_344">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680184" id="yr183sf1341_05_0344.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="345" id="yr183sf1341_345">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679945" id="yr183sf1341_05_0345.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="346" id="yr183sf1341_346">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680253" id="yr183sf1341_05_0346.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="347" id="yr183sf1341_347">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679862" id="yr183sf1341_05_0347.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="348" id="yr183sf1341_348">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680236" id="yr183sf1341_05_0348.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="349" id="yr183sf1341_349">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679896" id="yr183sf1341_05_0349.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="350" id="yr183sf1341_350">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680170" id="yr183sf1341_05_0350.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="351" id="yr183sf1341_351">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679911" id="yr183sf1341_05_0351.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="352" id="yr183sf1341_352">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680189" id="yr183sf1341_05_0352.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="353" id="yr183sf1341_353">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679913" id="yr183sf1341_05_0353.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="354" id="yr183sf1341_354">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680247" id="yr183sf1341_05_0354.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="355" id="yr183sf1341_355">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679809" id="yr183sf1341_05_0355.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="356" id="yr183sf1341_356">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680259" id="yr183sf1341_05_0356.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="357" id="yr183sf1341_357">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679924" id="yr183sf1341_05_0357.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="358" id="yr183sf1341_358">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680259" id="yr183sf1341_05_0358.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="359" id="yr183sf1341_359">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679911" id="yr183sf1341_05_0359.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="360" id="yr183sf1341_360">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680256" id="yr183sf1341_05_0360.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="361" id="yr183sf1341_361">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679877" id="yr183sf1341_05_0361.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="362" id="yr183sf1341_362">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680255" id="yr183sf1341_05_0362.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="363" id="yr183sf1341_363">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679884" id="yr183sf1341_05_0363.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="364" id="yr183sf1341_364">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680268" id="yr183sf1341_05_0364.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="365" id="yr183sf1341_365">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679930" id="yr183sf1341_05_0365.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="366" id="yr183sf1341_366">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680275" id="yr183sf1341_05_0366.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="367" id="yr183sf1341_367">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679844" id="yr183sf1341_05_0367.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="368" id="yr183sf1341_368">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680241" id="yr183sf1341_05_0368.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="369" id="yr183sf1341_369">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679935" id="yr183sf1341_05_0369.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="370" id="yr183sf1341_370">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680267" id="yr183sf1341_05_0370.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="371" id="yr183sf1341_371">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679933" id="yr183sf1341_05_0371.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="372" id="yr183sf1341_372">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680229" id="yr183sf1341_05_0372.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="373" id="yr183sf1341_373">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679932" id="yr183sf1341_05_0373.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="374" id="yr183sf1341_374">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680267" id="yr183sf1341_05_0374.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="375" id="yr183sf1341_375">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679917" id="yr183sf1341_05_0375.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="376" id="yr183sf1341_376">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680093" id="yr183sf1341_05_0376.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="377" id="yr183sf1341_377">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679877" id="yr183sf1341_05_0377.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="378" id="yr183sf1341_378">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680219" id="yr183sf1341_05_0378.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="379" id="yr183sf1341_379">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679896" id="yr183sf1341_05_0379.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="380" id="yr183sf1341_380">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680219" id="yr183sf1341_05_0380.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="381" id="yr183sf1341_381">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679875" id="yr183sf1341_05_0381.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="382" id="yr183sf1341_382">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680252" id="yr183sf1341_05_0382.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="383" id="yr183sf1341_383">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679925" id="yr183sf1341_05_0383.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="384" id="yr183sf1341_384">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680253" id="yr183sf1341_05_0384.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="385" id="yr183sf1341_385">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679880" id="yr183sf1341_05_0385.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="386" id="yr183sf1341_386">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680266" id="yr183sf1341_05_0386.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="387" id="yr183sf1341_387">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679799" id="yr183sf1341_05_0387.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="388" id="yr183sf1341_388">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680270" id="yr183sf1341_05_0388.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="389" id="yr183sf1341_389">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679866" id="yr183sf1341_05_0389.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="390" id="yr183sf1341_390">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680183" id="yr183sf1341_05_0390.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="391" id="yr183sf1341_391">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679913" id="yr183sf1341_05_0391.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="392" id="yr183sf1341_392">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680262" id="yr183sf1341_05_0392.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="393" id="yr183sf1341_393">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679930" id="yr183sf1341_05_0393.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="394" id="yr183sf1341_394">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680253" id="yr183sf1341_05_0394.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="395" id="yr183sf1341_395">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679886" id="yr183sf1341_05_0395.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="396" id="yr183sf1341_396">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680228" id="yr183sf1341_05_0396.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="397" id="yr183sf1341_397">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679916" id="yr183sf1341_05_0397.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="398" id="yr183sf1341_398">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680137" id="yr183sf1341_05_0398.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="399" id="yr183sf1341_399">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679869" id="yr183sf1341_05_0399.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="400" id="yr183sf1341_400">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680254" id="yr183sf1341_05_0400.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="401" id="yr183sf1341_401">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679898" id="yr183sf1341_05_0401.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="402" id="yr183sf1341_402">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680216" id="yr183sf1341_05_0402.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="403" id="yr183sf1341_403">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680259" id="yr183sf1341_05_0403.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="404" id="yr183sf1341_404">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680277" id="yr183sf1341_05_0404.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="405" id="yr183sf1341_405">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680225" id="yr183sf1341_05_0405.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="406" id="yr183sf1341_406">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680262" id="yr183sf1341_05_0406.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="407" id="yr183sf1341_407">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680284" id="yr183sf1341_05_0407.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="408" id="yr183sf1341_408">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680283" id="yr183sf1341_05_0408.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="409" id="yr183sf1341_409">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680241" id="yr183sf1341_05_0409.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="410" id="yr183sf1341_410">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679919" id="yr183sf1341_05_0410.jp2">
+        <imageData width="1614" height="2201"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="411" id="yr183sf1341_411">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680293" id="yr183sf1341_05_0411.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="412" id="yr183sf1341_412">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680258" id="yr183sf1341_05_0412.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="413" id="yr183sf1341_413">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680276" id="yr183sf1341_05_0413.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="414" id="yr183sf1341_414">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680258" id="yr183sf1341_05_0414.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="415" id="yr183sf1341_415">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680265" id="yr183sf1341_05_0415.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="416" id="yr183sf1341_416">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680223" id="yr183sf1341_05_0416.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="417" id="yr183sf1341_417">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680018" id="yr183sf1341_05_0417.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="418" id="yr183sf1341_418">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680249" id="yr183sf1341_05_0418.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="419" id="yr183sf1341_419">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680266" id="yr183sf1341_05_0419.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="420" id="yr183sf1341_420">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680270" id="yr183sf1341_05_0420.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="421" id="yr183sf1341_421">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680241" id="yr183sf1341_05_0421.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="422" id="yr183sf1341_422">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680262" id="yr183sf1341_05_0422.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="423" id="yr183sf1341_423">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680275" id="yr183sf1341_05_0423.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="424" id="yr183sf1341_424">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680228" id="yr183sf1341_05_0424.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="425" id="yr183sf1341_425">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680274" id="yr183sf1341_05_0425.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="426" id="yr183sf1341_426">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680235" id="yr183sf1341_05_0426.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="427" id="yr183sf1341_427">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680195" id="yr183sf1341_05_0427.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="428" id="yr183sf1341_428">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680206" id="yr183sf1341_05_0428.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="429" id="yr183sf1341_429">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680250" id="yr183sf1341_05_0429.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="430" id="yr183sf1341_430">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679973" id="yr183sf1341_05_0430.jp2">
+        <imageData width="1614" height="2201"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="431" id="yr183sf1341_431">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680291" id="yr183sf1341_05_0431.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="432" id="yr183sf1341_432">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680113" id="yr183sf1341_05_0432.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="433" id="yr183sf1341_433">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680265" id="yr183sf1341_05_0433.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="434" id="yr183sf1341_434">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680263" id="yr183sf1341_05_0434.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="435" id="yr183sf1341_435">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680259" id="yr183sf1341_05_0435.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="436" id="yr183sf1341_436">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680263" id="yr183sf1341_05_0436.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="437" id="yr183sf1341_437">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680242" id="yr183sf1341_05_0437.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="438" id="yr183sf1341_438">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680275" id="yr183sf1341_05_0438.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="439" id="yr183sf1341_439">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680253" id="yr183sf1341_05_0439.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="440" id="yr183sf1341_440">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680238" id="yr183sf1341_05_0440.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="441" id="yr183sf1341_441">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680271" id="yr183sf1341_05_0441.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="442" id="yr183sf1341_442">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680208" id="yr183sf1341_05_0442.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="443" id="yr183sf1341_443">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680228" id="yr183sf1341_05_0443.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="444" id="yr183sf1341_444">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680249" id="yr183sf1341_05_0444.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="445" id="yr183sf1341_445">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680260" id="yr183sf1341_05_0445.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="446" id="yr183sf1341_446">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680235" id="yr183sf1341_05_0446.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="447" id="yr183sf1341_447">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680065" id="yr183sf1341_05_0447.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="448" id="yr183sf1341_448">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680269" id="yr183sf1341_05_0448.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="449" id="yr183sf1341_449">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680278" id="yr183sf1341_05_0449.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="450" id="yr183sf1341_450">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680227" id="yr183sf1341_05_0450.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="451" id="yr183sf1341_451">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680240" id="yr183sf1341_05_0451.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="452" id="yr183sf1341_452">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680255" id="yr183sf1341_05_0452.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="453" id="yr183sf1341_453">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680269" id="yr183sf1341_05_0453.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="454" id="yr183sf1341_454">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680256" id="yr183sf1341_05_0454.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="455" id="yr183sf1341_455">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679970" id="yr183sf1341_05_0455.jp2">
+        <imageData width="1614" height="2201"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="456" id="yr183sf1341_456">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680176" id="yr183sf1341_05_0456.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="457" id="yr183sf1341_457">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680267" id="yr183sf1341_05_0457.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="458" id="yr183sf1341_458">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680270" id="yr183sf1341_05_0458.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="459" id="yr183sf1341_459">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680160" id="yr183sf1341_05_0459.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="460" id="yr183sf1341_460">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680266" id="yr183sf1341_05_0460.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="461" id="yr183sf1341_461">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680241" id="yr183sf1341_05_0461.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="462" id="yr183sf1341_462">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680250" id="yr183sf1341_05_0462.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="463" id="yr183sf1341_463">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680270" id="yr183sf1341_05_0463.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="464" id="yr183sf1341_464">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680262" id="yr183sf1341_05_0464.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="465" id="yr183sf1341_465">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680094" id="yr183sf1341_05_0465.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="466" id="yr183sf1341_466">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680262" id="yr183sf1341_05_0466.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="467" id="yr183sf1341_467">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680266" id="yr183sf1341_05_0467.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="468" id="yr183sf1341_468">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680244" id="yr183sf1341_05_0468.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="469" id="yr183sf1341_469">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="679959" id="yr183sf1341_05_0469.jp2">
+        <imageData width="1614" height="2201"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="470" id="yr183sf1341_470">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680266" id="yr183sf1341_05_0470.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="471" id="yr183sf1341_471">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680195" id="yr183sf1341_05_0471.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="472" id="yr183sf1341_472">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680250" id="yr183sf1341_05_0472.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="473" id="yr183sf1341_473">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680236" id="yr183sf1341_05_0473.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="474" id="yr183sf1341_474">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680131" id="yr183sf1341_05_0474.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="475" id="yr183sf1341_475">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680156" id="yr183sf1341_05_0475.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="476" id="yr183sf1341_476">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680852" id="yr183sf1341_05_0476.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="477" id="yr183sf1341_477">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680076" id="yr183sf1341_05_0477.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="478" id="yr183sf1341_478">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="680075" id="yr183sf1341_05_0478.jp2">
+        <imageData width="1614" height="2202"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="479" id="yr183sf1341_479">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="1119450" id="yr183sf1341_05_0479.jp2">
+        <imageData width="2691" height="2190"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="480" id="yr183sf1341_480">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="1114944" id="yr183sf1341_05_0480.jp2">
+        <imageData width="2684" height="2185"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="481" id="yr183sf1341_481">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="809471" id="yr183sf1341_05_0481.jp2">
+        <imageData width="1837" height="2311"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+    <resource type="page" sequence="482" id="yr183sf1341_482">
+      <label/>
+      <file mimetype="image/jp2" format="JPEG2000" size="809486" id="yr183sf1341_05_0482.jp2">
+        <imageData width="1837" height="2311"/>
+        <attr name="representation">uncropped</attr>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">Property rights reside with the repository. Literary rights reside with  the creators of the documents or their heirs. To obtain permission to publish or reproduce, please contact the Public Services Librarian of the Dept. of Special Collections (http://www-sul.stanford.edu/depts/spc/pubserv). </human>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:yr183sf1341">
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Islamic prayer book, 1228 H</dc:title>
+    <dc:creator>Mu&#x1E25;ammad Am&#x12B;n al-Wa&#x1E63;f&#x12B;</dc:creator>
+    <dc:type>Text</dc:type>
+    <dc:date>1813</dc:date>
+    <dc:date>1813</dc:date>
+    <dc:language>ara</dc:language>
+    <dc:format>1 volume ([230] leaves), 13 cm.</dc:format>
+    <dc:format>print</dc:format>
+    <dc:description>Nine lines of text (black and occasional red ink) per page, enclosed in gold border, with second gold border enclosing facing pages; catchwords and other text between borders. Two miniatures depicting the most holy mosques on facing leaves. Additional gold leaf decoration within text.</dc:description>
+    <dc:rights>Open for research; material must be requested at least 24 hours in advance of intended use.</dc:rights>
+    <dc:description>Purchased, 2011. Accession 2011-092.</dc:description>
+    <dc:description>In Arabic.</dc:description>
+    <dc:subject>Calligraphy, Arabic</dc:subject>
+    <dc:subject>Islamic illumination of books and manuscripts</dc:subject>
+    <dc:coverage>19th century</dc:coverage>
+    <dc:subject>Islamic illumination of books and manuscripts--19th century</dc:subject>
+    <dc:subject>Islamic miniature painting</dc:subject>
+    <dc:subject>Islamic miniature painting--Sources</dc:subject>
+    <dc:subject>Manuscripts, Arabic</dc:subject>
+    <dc:subject>Manuscripts, Arabic--Sources</dc:subject>
+    <dc:rights>Open for research; material must be requested at least 24 hours in advance of intended use.</dc:rights>
+  </oai_dc:dc>
+</publicObject>

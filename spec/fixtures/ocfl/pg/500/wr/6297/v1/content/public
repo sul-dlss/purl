@@ -1,0 +1,4486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:pg500wr6297" published="2020-08-21T21:57:29Z" publishVersion="dor-services/9.5.0">
+  <identityMetadata>
+    <sourceId source="sul">36105110268922</sourceId>
+    <otherId name="catkey">5054284</otherId>
+    <objectLabel>The blood of our sons</objectLabel>
+    <objectId>druid:pg500wr6297</objectId>
+    <objectCreator>DOR</objectCreator>
+    <objectType>item</objectType>
+  </identityMetadata>
+  <contentMetadata objectId="druid:pg500wr6297" type="book">
+    <resource id="pg500wr6297_1" sequence="1" type="page">
+      <label>Page 1</label>
+      <file id="pg500wr6297_0002.pdf" size="19308" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0002.xml" role="transcription" size="2492" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0002.jp2" size="317411" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_2" sequence="2" type="page">
+      <label>Page 2</label>
+      <file id="pg500wr6297_0003.pdf" size="10977" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0003.xml" role="transcription" size="4228" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0003.jp2" size="325792" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_3" sequence="3" type="page">
+      <label>Page 3</label>
+      <file id="pg500wr6297_0004.pdf" size="43545" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0004.xml" role="transcription" size="5394" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0004.jp2" size="499283" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_4" sequence="4" type="page">
+      <label>Page 4</label>
+      <file id="pg500wr6297_0005.pdf" size="98861" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0005.xml" role="transcription" size="28827" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0005.jp2" size="637426" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_5" sequence="5" type="page">
+      <label>Page 5</label>
+      <file id="pg500wr6297_0006.pdf" size="13745" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0006.xml" role="transcription" size="2662" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0006.jp2" size="280329" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_6" sequence="6" type="page">
+      <label>Page 6</label>
+      <file id="pg500wr6297_0007.pdf" size="11315" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0007.xml" role="transcription" size="2654" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0007.jp2" size="365550" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_7" sequence="7" type="page">
+      <label>Page 7</label>
+      <file id="pg500wr6297_0008.pdf" size="67822" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0008.xml" role="transcription" size="14302" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0008.jp2" size="618754" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_8" sequence="8" type="page">
+      <label>Page 8</label>
+      <file id="pg500wr6297_0009.pdf" size="40815" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0009.xml" role="transcription" size="8084" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0009.jp2" size="478411" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_9" sequence="9" type="page">
+      <label>Page 9</label>
+      <file id="pg500wr6297_0010.pdf" size="169763" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0010.xml" role="transcription" size="47563" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0010.jp2" size="637808" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_10" sequence="10" type="page">
+      <label>Page 10</label>
+      <file id="pg500wr6297_0011.pdf" size="232936" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0011.xml" role="transcription" size="64154" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0011.jp2" size="639232" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_11" sequence="11" type="page">
+      <label>Page 11</label>
+      <file id="pg500wr6297_0012.pdf" size="206778" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0012.xml" role="transcription" size="62286" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0012.jp2" size="639232" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_12" sequence="12" type="page">
+      <label>Page 12</label>
+      <file id="pg500wr6297_0013.pdf" size="194101" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0013.xml" role="transcription" size="57780" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0013.jp2" size="639011" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_13" sequence="13" type="page">
+      <label>Page 13</label>
+      <file id="pg500wr6297_0014.pdf" size="217423" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0014.xml" role="transcription" size="63776" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0014.jp2" size="638152" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_14" sequence="14" type="page">
+      <label>Page 14</label>
+      <file id="pg500wr6297_0015.pdf" size="234787" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0015.xml" role="transcription" size="62058" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0015.jp2" size="638245" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_15" sequence="15" type="page">
+      <label>Page 15</label>
+      <file id="pg500wr6297_0016.pdf" size="202789" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0016.xml" role="transcription" size="58247" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0016.jp2" size="639159" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_16" sequence="16" type="page">
+      <label>Page 16</label>
+      <file id="pg500wr6297_0017.pdf" size="210627" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0017.xml" role="transcription" size="60632" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0017.jp2" size="639149" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_17" sequence="17" type="page">
+      <label>Page 17</label>
+      <file id="pg500wr6297_0018.pdf" size="211094" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0018.xml" role="transcription" size="63907" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0018.jp2" size="639388" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_18" sequence="18" type="page">
+      <label>Page 18</label>
+      <file id="pg500wr6297_0019.pdf" size="185062" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0019.xml" role="transcription" size="51041" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0019.jp2" size="637178" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_19" sequence="19" type="page">
+      <label>Page 19</label>
+      <file id="pg500wr6297_0020.pdf" size="211759" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0020.xml" role="transcription" size="62439" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0020.jp2" size="637909" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_20" sequence="20" type="page">
+      <label>Page 20</label>
+      <file id="pg500wr6297_0021.pdf" size="212634" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0021.xml" role="transcription" size="65657" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0021.jp2" size="638430" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_21" sequence="21" type="page">
+      <label>Page 21</label>
+      <file id="pg500wr6297_0022.pdf" size="93130" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0022.xml" role="transcription" size="26906" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0022.jp2" size="638889" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_22" sequence="22" type="page">
+      <label>Page 22</label>
+      <file id="pg500wr6297_0023.pdf" size="36535" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0023.xml" role="transcription" size="8447" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0023.jp2" size="435195" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_23" sequence="23" type="page">
+      <label>Page 23</label>
+      <file id="pg500wr6297_0024.pdf" size="23813" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0024.xml" role="transcription" size="2968" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0024.jp2" size="424406" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_24" sequence="24" type="page">
+      <label>Page 24</label>
+      <file id="pg500wr6297_0025.pdf" size="13126" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0025.xml" role="transcription" size="4628" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0025.jp2" size="329961" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_25" sequence="25" type="page">
+      <label>Page 25</label>
+      <file id="pg500wr6297_0026.pdf" size="143007" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0026.xml" role="transcription" size="37367" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0026.jp2" size="638370" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_26" sequence="26" type="page">
+      <label>Page 26</label>
+      <file id="pg500wr6297_0027.pdf" size="196335" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0027.xml" role="transcription" size="58382" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0027.jp2" size="638454" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_27" sequence="27" type="page">
+      <label>Page 27</label>
+      <file id="pg500wr6297_0028.pdf" size="218028" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0028.xml" role="transcription" size="65233" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0028.jp2" size="637478" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_28" sequence="28" type="page">
+      <label>Page 28</label>
+      <file id="pg500wr6297_0029.pdf" size="217058" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0029.xml" role="transcription" size="66310" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0029.jp2" size="639123" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_29" sequence="29" type="page">
+      <label>Page 29</label>
+      <file id="pg500wr6297_0030.pdf" size="221847" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0030.xml" role="transcription" size="66401" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0030.jp2" size="638225" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_30" sequence="30" type="page">
+      <label>Page 30</label>
+      <file id="pg500wr6297_0031.pdf" size="212732" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0031.xml" role="transcription" size="67997" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0031.jp2" size="639390" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_31" sequence="31" type="page">
+      <label>Page 31</label>
+      <file id="pg500wr6297_0032.pdf" size="217772" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0032.xml" role="transcription" size="66001" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0032.jp2" size="638444" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_32" sequence="32" type="page">
+      <label>Page 32</label>
+      <file id="pg500wr6297_0033.pdf" size="213574" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0033.xml" role="transcription" size="63051" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0033.jp2" size="639335" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_33" sequence="33" type="page">
+      <label>Page 33</label>
+      <file id="pg500wr6297_0034.pdf" size="219683" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0034.xml" role="transcription" size="69666" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0034.jp2" size="637859" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_34" sequence="34" type="page">
+      <label>Page 34</label>
+      <file id="pg500wr6297_0035.pdf" size="204717" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0035.xml" role="transcription" size="59868" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0035.jp2" size="639385" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_35" sequence="35" type="page">
+      <label>Page 35</label>
+      <file id="pg500wr6297_0036.pdf" size="221746" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0036.xml" role="transcription" size="69234" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0036.jp2" size="639217" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_36" sequence="36" type="page">
+      <label>Page 36</label>
+      <file id="pg500wr6297_0037.pdf" size="212096" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0037.xml" role="transcription" size="65809" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0037.jp2" size="639358" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_37" sequence="37" type="page">
+      <label>Page 37</label>
+      <file id="pg500wr6297_0038.pdf" size="221839" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0038.xml" role="transcription" size="63904" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0038.jp2" size="639379" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_38" sequence="38" type="page">
+      <label>Page 38</label>
+      <file id="pg500wr6297_0039.pdf" size="218628" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0039.xml" role="transcription" size="65721" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0039.jp2" size="638569" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_39" sequence="39" type="page">
+      <label>Page 39</label>
+      <file id="pg500wr6297_0040.pdf" size="222833" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0040.xml" role="transcription" size="64263" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0040.jp2" size="637867" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_40" sequence="40" type="page">
+      <label>Page 40</label>
+      <file id="pg500wr6297_0041.pdf" size="216887" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0041.xml" role="transcription" size="63131" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0041.jp2" size="639169" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_41" sequence="41" type="page">
+      <label>Page 41</label>
+      <file id="pg500wr6297_0042.pdf" size="194062" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0042.xml" role="transcription" size="57017" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0042.jp2" size="639321" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_42" sequence="42" type="page">
+      <label>Page 42</label>
+      <file id="pg500wr6297_0043.pdf" size="25637" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0043.xml" role="transcription" size="7762" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0043.jp2" size="461492" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_43" sequence="43" type="page">
+      <label>Page 43</label>
+      <file id="pg500wr6297_0044.pdf" size="143066" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0044.xml" role="transcription" size="37727" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0044.jp2" size="639050" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_44" sequence="44" type="page">
+      <label>Page 44</label>
+      <file id="pg500wr6297_0045.pdf" size="213934" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0045.xml" role="transcription" size="66105" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0045.jp2" size="639010" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_45" sequence="45" type="page">
+      <label>Page 45</label>
+      <file id="pg500wr6297_0046.pdf" size="198830" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0046.xml" role="transcription" size="62814" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0046.jp2" size="638492" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_46" sequence="46" type="page">
+      <label>Page 46</label>
+      <file id="pg500wr6297_0047.pdf" size="209146" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0047.xml" role="transcription" size="67319" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0047.jp2" size="639303" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_47" sequence="47" type="page">
+      <label>Page 47</label>
+      <file id="pg500wr6297_0048.pdf" size="225012" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0048.xml" role="transcription" size="70566" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0048.jp2" size="637184" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_48" sequence="48" type="page">
+      <label>Page 48</label>
+      <file id="pg500wr6297_0049.pdf" size="212651" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0049.xml" role="transcription" size="65061" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0049.jp2" size="639384" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_49" sequence="49" type="page">
+      <label>Page 49</label>
+      <file id="pg500wr6297_0050.pdf" size="217271" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0050.xml" role="transcription" size="63572" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0050.jp2" size="638704" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_50" sequence="50" type="page">
+      <label>Page 50</label>
+      <file id="pg500wr6297_0051.pdf" size="218400" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0051.xml" role="transcription" size="63875" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0051.jp2" size="639224" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_51" sequence="51" type="page">
+      <label>Page 51</label>
+      <file id="pg500wr6297_0052.pdf" size="234173" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0052.xml" role="transcription" size="67438" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0052.jp2" size="638116" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_52" sequence="52" type="page">
+      <label>Page 52</label>
+      <file id="pg500wr6297_0053.pdf" size="209825" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0053.xml" role="transcription" size="69196" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0053.jp2" size="639339" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_53" sequence="53" type="page">
+      <label>Page 53</label>
+      <file id="pg500wr6297_0054.pdf" size="230349" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0054.xml" role="transcription" size="66921" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0054.jp2" size="639304" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_54" sequence="54" type="page">
+      <label>Page 54</label>
+      <file id="pg500wr6297_0055.pdf" size="209017" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0055.xml" role="transcription" size="62098" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0055.jp2" size="638714" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_55" sequence="55" type="page">
+      <label>Page 55</label>
+      <file id="pg500wr6297_0056.pdf" size="236122" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0056.xml" role="transcription" size="67234" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0056.jp2" size="638621" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_56" sequence="56" type="page">
+      <label>Page 56</label>
+      <file id="pg500wr6297_0057.pdf" size="208797" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0057.xml" role="transcription" size="65414" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0057.jp2" size="638146" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_57" sequence="57" type="page">
+      <label>Page 57</label>
+      <file id="pg500wr6297_0058.pdf" size="217461" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0058.xml" role="transcription" size="67028" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0058.jp2" size="639375" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_58" sequence="58" type="page">
+      <label>Page 58</label>
+      <file id="pg500wr6297_0059.pdf" size="213689" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0059.xml" role="transcription" size="64655" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0059.jp2" size="638180" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_59" sequence="59" type="page">
+      <label>Page 59</label>
+      <file id="pg500wr6297_0060.pdf" size="155529" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0060.xml" role="transcription" size="43788" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0060.jp2" size="639106" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_60" sequence="60" type="page">
+      <label>Page 60</label>
+      <file id="pg500wr6297_0061.pdf" size="20024" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0061.xml" role="transcription" size="4528" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0061.jp2" size="441982" mimetype="image/jp2">
+        <imageData width="1464" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_61" sequence="61" type="page">
+      <label>Page 61</label>
+      <file id="pg500wr6297_0062.pdf" size="141293" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0062.xml" role="transcription" size="37175" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0062.jp2" size="638795" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_62" sequence="62" type="page">
+      <label>Page 62</label>
+      <file id="pg500wr6297_0063.pdf" size="209298" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0063.xml" role="transcription" size="61322" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0063.jp2" size="638847" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_63" sequence="63" type="page">
+      <label>Page 63</label>
+      <file id="pg500wr6297_0064.pdf" size="173527" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0064.xml" role="transcription" size="52071" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0064.jp2" size="638415" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_64" sequence="64" type="page">
+      <label>Page 64</label>
+      <file id="pg500wr6297_0065.pdf" size="205163" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0065.xml" role="transcription" size="63591" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0065.jp2" size="638600" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_65" sequence="65" type="page">
+      <label>Page 65</label>
+      <file id="pg500wr6297_0066.pdf" size="211652" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0066.xml" role="transcription" size="66310" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0066.jp2" size="637831" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_66" sequence="66" type="page">
+      <label>Page 66</label>
+      <file id="pg500wr6297_0067.pdf" size="156105" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0067.xml" role="transcription" size="47547" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0067.jp2" size="638046" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_67" sequence="67" type="page">
+      <label>Page 67</label>
+      <file id="pg500wr6297_0068.pdf" size="188926" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0068.xml" role="transcription" size="54468" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0068.jp2" size="637939" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_68" sequence="68" type="page">
+      <label>Page 68</label>
+      <file id="pg500wr6297_0069.pdf" size="222210" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0069.xml" role="transcription" size="68381" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0069.jp2" size="638602" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_69" sequence="69" type="page">
+      <label>Page 69</label>
+      <file id="pg500wr6297_0070.pdf" size="223640" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0070.xml" role="transcription" size="68565" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0070.jp2" size="638237" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_70" sequence="70" type="page">
+      <label>Page 70</label>
+      <file id="pg500wr6297_0071.pdf" size="214732" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0071.xml" role="transcription" size="71396" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0071.jp2" size="639304" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_71" sequence="71" type="page">
+      <label>Page 71</label>
+      <file id="pg500wr6297_0072.pdf" size="206533" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0072.xml" role="transcription" size="61333" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0072.jp2" size="638374" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_72" sequence="72" type="page">
+      <label>Page 72</label>
+      <file id="pg500wr6297_0073.pdf" size="235847" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0073.xml" role="transcription" size="70348" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0073.jp2" size="637872" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_73" sequence="73" type="page">
+      <label>Page 73</label>
+      <file id="pg500wr6297_0074.pdf" size="212094" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0074.xml" role="transcription" size="66333" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0074.jp2" size="637242" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_74" sequence="74" type="page">
+      <label>Page 74</label>
+      <file id="pg500wr6297_0075.pdf" size="215029" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0075.xml" role="transcription" size="67382" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0075.jp2" size="637092" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_75" sequence="75" type="page">
+      <label>Page 75</label>
+      <file id="pg500wr6297_0076.pdf" size="240629" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0076.xml" role="transcription" size="68589" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0076.jp2" size="637780" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_76" sequence="76" type="page">
+      <label>Page 76</label>
+      <file id="pg500wr6297_0077.pdf" size="215018" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0077.xml" role="transcription" size="71902" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0077.jp2" size="639375" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_77" sequence="77" type="page">
+      <label>Page 77</label>
+      <file id="pg500wr6297_0078.pdf" size="222738" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0078.xml" role="transcription" size="65377" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0078.jp2" size="639313" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_78" sequence="78" type="page">
+      <label>Page 78</label>
+      <file id="pg500wr6297_0079.pdf" size="23516" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0079.xml" role="transcription" size="4983" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0079.jp2" size="464759" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_79" sequence="79" type="page">
+      <label>Page 79</label>
+      <file id="pg500wr6297_0080.pdf" size="29683" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0080.xml" role="transcription" size="4627" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0080.jp2" size="424363" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_80" sequence="80" type="page">
+      <label>Page 80</label>
+      <file id="pg500wr6297_0081.pdf" size="14380" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0081.xml" role="transcription" size="7218" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0081.jp2" size="357604" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_81" sequence="81" type="page">
+      <label>Page 81</label>
+      <file id="pg500wr6297_0082.pdf" size="141071" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0082.xml" role="transcription" size="39535" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0082.jp2" size="637750" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_82" sequence="82" type="page">
+      <label>Page 82</label>
+      <file id="pg500wr6297_0083.pdf" size="217732" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0083.xml" role="transcription" size="65172" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0083.jp2" size="639049" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_83" sequence="83" type="page">
+      <label>Page 83</label>
+      <file id="pg500wr6297_0084.pdf" size="212478" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0084.xml" role="transcription" size="61512" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0084.jp2" size="639265" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_84" sequence="84" type="page">
+      <label>Page 84</label>
+      <file id="pg500wr6297_0085.pdf" size="218518" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0085.xml" role="transcription" size="66790" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0085.jp2" size="639309" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_85" sequence="85" type="page">
+      <label>Page 85</label>
+      <file id="pg500wr6297_0086.pdf" size="235334" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0086.xml" role="transcription" size="67588" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0086.jp2" size="638084" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_86" sequence="86" type="page">
+      <label>Page 86</label>
+      <file id="pg500wr6297_0087.pdf" size="219007" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0087.xml" role="transcription" size="71659" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0087.jp2" size="639331" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_87" sequence="87" type="page">
+      <label>Page 87</label>
+      <file id="pg500wr6297_0088.pdf" size="220491" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0088.xml" role="transcription" size="73515" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0088.jp2" size="639349" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_88" sequence="88" type="page">
+      <label>Page 88</label>
+      <file id="pg500wr6297_0089.pdf" size="208124" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0089.xml" role="transcription" size="67928" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0089.jp2" size="637498" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_89" sequence="89" type="page">
+      <label>Page 89</label>
+      <file id="pg500wr6297_0090.pdf" size="209233" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0090.xml" role="transcription" size="63758" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0090.jp2" size="639354" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_90" sequence="90" type="page">
+      <label>Page 90</label>
+      <file id="pg500wr6297_0091.pdf" size="215263" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0091.xml" role="transcription" size="63930" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0091.jp2" size="638077" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_91" sequence="91" type="page">
+      <label>Page 91</label>
+      <file id="pg500wr6297_0092.pdf" size="214883" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0092.xml" role="transcription" size="66150" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0092.jp2" size="639138" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_92" sequence="92" type="page">
+      <label>Page 92</label>
+      <file id="pg500wr6297_0093.pdf" size="210057" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0093.xml" role="transcription" size="68957" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0093.jp2" size="639367" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_93" sequence="93" type="page">
+      <label>Page 93</label>
+      <file id="pg500wr6297_0094.pdf" size="208334" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0094.xml" role="transcription" size="60239" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0094.jp2" size="639344" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_94" sequence="94" type="page">
+      <label>Page 94</label>
+      <file id="pg500wr6297_0095.pdf" size="232855" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0095.xml" role="transcription" size="69291" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0095.jp2" size="639245" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_95" sequence="95" type="page">
+      <label>Page 95</label>
+      <file id="pg500wr6297_0096.pdf" size="223837" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0096.xml" role="transcription" size="70141" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0096.jp2" size="637468" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_96" sequence="96" type="page">
+      <label>Page 96</label>
+      <file id="pg500wr6297_0097.pdf" size="184776" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0097.xml" role="transcription" size="62175" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0097.jp2" size="638561" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_97" sequence="97" type="page">
+      <label>Page 97</label>
+      <file id="pg500wr6297_0098.pdf" size="209370" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0098.xml" role="transcription" size="69092" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0098.jp2" size="639389" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_98" sequence="98" type="page">
+      <label>Page 98</label>
+      <file id="pg500wr6297_0099.pdf" size="219215" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0099.xml" role="transcription" size="69120" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0099.jp2" size="638306" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_99" sequence="99" type="page">
+      <label>Page 99</label>
+      <file id="pg500wr6297_0100.pdf" size="220004" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0100.xml" role="transcription" size="69407" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0100.jp2" size="639188" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_100" sequence="100" type="page">
+      <label>Page 100</label>
+      <file id="pg500wr6297_0101.pdf" size="174894" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0101.xml" role="transcription" size="56488" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0101.jp2" size="638696" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_101" sequence="101" type="page">
+      <label>Page 101</label>
+      <file id="pg500wr6297_0102.pdf" size="212814" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0102.xml" role="transcription" size="67308" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0102.jp2" size="639371" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_102" sequence="102" type="page">
+      <label>Page 102</label>
+      <file id="pg500wr6297_0103.pdf" size="212843" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0103.xml" role="transcription" size="67799" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0103.jp2" size="637986" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_103" sequence="103" type="page">
+      <label>Page 103</label>
+      <file id="pg500wr6297_0104.pdf" size="218448" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0104.xml" role="transcription" size="65364" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0104.jp2" size="639363" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_104" sequence="104" type="page">
+      <label>Page 104</label>
+      <file id="pg500wr6297_0105.pdf" size="207249" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0105.xml" role="transcription" size="63835" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0105.jp2" size="639092" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_105" sequence="105" type="page">
+      <label>Page 105</label>
+      <file id="pg500wr6297_0106.pdf" size="58783" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0106.xml" role="transcription" size="16614" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0106.jp2" size="599917" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_106" sequence="106" type="page">
+      <label>Page 106</label>
+      <file id="pg500wr6297_0107.pdf" size="15970" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0107.xml" role="transcription" size="1126" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0107.jp2" size="422398" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_107" sequence="107" type="page">
+      <label>Page 107</label>
+      <file id="pg500wr6297_0108.pdf" size="132575" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0108.xml" role="transcription" size="32270" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0108.jp2" size="637669" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_108" sequence="108" type="page">
+      <label>Page 108</label>
+      <file id="pg500wr6297_0109.pdf" size="204707" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0109.xml" role="transcription" size="64865" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0109.jp2" size="639388" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_109" sequence="109" type="page">
+      <label>Page 109</label>
+      <file id="pg500wr6297_0110.pdf" size="200949" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0110.xml" role="transcription" size="58094" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0110.jp2" size="639352" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_110" sequence="110" type="page">
+      <label>Page 110</label>
+      <file id="pg500wr6297_0111.pdf" size="217064" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0111.xml" role="transcription" size="67777" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0111.jp2" size="639231" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_111" sequence="111" type="page">
+      <label>Page 111</label>
+      <file id="pg500wr6297_0112.pdf" size="225557" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0112.xml" role="transcription" size="68816" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0112.jp2" size="639231" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_112" sequence="112" type="page">
+      <label>Page 112</label>
+      <file id="pg500wr6297_0113.pdf" size="208527" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0113.xml" role="transcription" size="66698" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0113.jp2" size="639371" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_113" sequence="113" type="page">
+      <label>Page 113</label>
+      <file id="pg500wr6297_0114.pdf" size="221543" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0114.xml" role="transcription" size="72904" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0114.jp2" size="637395" mimetype="image/jp2">
+        <imageData width="1462" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_114" sequence="114" type="page">
+      <label>Page 114</label>
+      <file id="pg500wr6297_0115.pdf" size="251755" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0115.xml" role="transcription" size="61418" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0115.jp2" size="638612" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_115" sequence="115" type="page">
+      <label>Page 115</label>
+      <file id="pg500wr6297_0116.pdf" size="222815" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0116.xml" role="transcription" size="70976" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0116.jp2" size="639050" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_116" sequence="116" type="page">
+      <label>Page 116</label>
+      <file id="pg500wr6297_0117.pdf" size="195603" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0117.xml" role="transcription" size="62928" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0117.jp2" size="639380" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_117" sequence="117" type="page">
+      <label>Page 117</label>
+      <file id="pg500wr6297_0118.pdf" size="197898" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0118.xml" role="transcription" size="60822" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0118.jp2" size="639370" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_118" sequence="118" type="page">
+      <label>Page 118</label>
+      <file id="pg500wr6297_0119.pdf" size="213712" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0119.xml" role="transcription" size="66292" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0119.jp2" size="637519" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_119" sequence="119" type="page">
+      <label>Page 119</label>
+      <file id="pg500wr6297_0120.pdf" size="222296" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0120.xml" role="transcription" size="68710" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0120.jp2" size="639239" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_120" sequence="120" type="page">
+      <label>Page 120</label>
+      <file id="pg500wr6297_0121.pdf" size="202740" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0121.xml" role="transcription" size="62793" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0121.jp2" size="638604" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_121" sequence="121" type="page">
+      <label>Page 121</label>
+      <file id="pg500wr6297_0122.pdf" size="227200" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0122.xml" role="transcription" size="67081" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0122.jp2" size="639275" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_122" sequence="122" type="page">
+      <label>Page 122</label>
+      <file id="pg500wr6297_0123.pdf" size="194898" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0123.xml" role="transcription" size="64123" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0123.jp2" size="639363" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_123" sequence="123" type="page">
+      <label>Page 123</label>
+      <file id="pg500wr6297_0124.pdf" size="72591" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0124.xml" role="transcription" size="20004" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0124.jp2" size="635735" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_124" sequence="124" type="page">
+      <label>Page 124</label>
+      <file id="pg500wr6297_0125.pdf" size="17304" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0125.xml" role="transcription" size="2730" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0125.jp2" size="457090" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_125" sequence="125" type="page">
+      <label>Page 125</label>
+      <file id="pg500wr6297_0126.pdf" size="174156" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0126.xml" role="transcription" size="17490" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0126.jp2" size="638831" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_126" sequence="126" type="page">
+      <label>Page 126</label>
+      <file id="pg500wr6297_0127.pdf" size="135423" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0127.xml" role="transcription" size="10382" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0127.jp2" size="636965" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_127" sequence="127" type="page">
+      <label>Page 127</label>
+      <file id="pg500wr6297_0128.pdf" size="199879" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0128.xml" role="transcription" size="6942" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0128.jp2" size="639231" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_128" sequence="128" type="page">
+      <label>Page 128</label>
+      <file id="pg500wr6297_0129.pdf" size="127308" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0129.xml" role="transcription" size="2393" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0129.jp2" size="636390" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_129" sequence="129" type="page">
+      <label>Page 129</label>
+      <file id="pg500wr6297_0130.pdf" size="163775" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0130.xml" role="transcription" size="15920" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0130.jp2" size="637790" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_130" sequence="130" type="page">
+      <label>Page 130</label>
+      <file id="pg500wr6297_0131.pdf" size="92314" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0131.xml" role="transcription" size="3206" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0131.jp2" size="639000" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_131" sequence="131" type="page">
+      <label>Page 131</label>
+      <file id="pg500wr6297_0132.pdf" size="73168" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0132.xml" role="transcription" size="6619" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0132.jp2" size="636505" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_132" sequence="132" type="page">
+      <label>Page 132</label>
+      <file id="pg500wr6297_0133.pdf" size="134441" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0133.xml" role="transcription" size="6169" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0133.jp2" size="637335" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_133" sequence="133" type="page">
+      <label>Page 133</label>
+      <file id="pg500wr6297_0134.pdf" size="114350" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0134.xml" role="transcription" size="5261" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0134.jp2" size="637557" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_134" sequence="134" type="page">
+      <label>Page 134</label>
+      <file id="pg500wr6297_0135.pdf" size="120182" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0135.xml" role="transcription" size="7152" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0135.jp2" size="638996" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_135" sequence="135" type="page">
+      <label>Page 135</label>
+      <file id="pg500wr6297_0136.pdf" size="158261" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0136.xml" role="transcription" size="7970" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0136.jp2" size="639213" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_136" sequence="136" type="page">
+      <label>Page 136</label>
+      <file id="pg500wr6297_0137.pdf" size="148981" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0137.xml" role="transcription" size="21543" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0137.jp2" size="635732" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_137" sequence="137" type="page">
+      <label>Page 137</label>
+      <file id="pg500wr6297_0138.pdf" size="175914" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0138.xml" role="transcription" size="11589" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0138.jp2" size="636919" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_138" sequence="138" type="page">
+      <label>Page 138</label>
+      <file id="pg500wr6297_0139.pdf" size="114108" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0139.xml" role="transcription" size="13242" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0139.jp2" size="638337" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_139" sequence="139" type="page">
+      <label>Page 139</label>
+      <file id="pg500wr6297_0140.pdf" size="130006" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0140.xml" role="transcription" size="7189" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0140.jp2" size="636253" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_140" sequence="140" type="page">
+      <label>Page 140</label>
+      <file id="pg500wr6297_0141.pdf" size="171956" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0141.xml" role="transcription" size="10012" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0141.jp2" size="637920" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_141" sequence="141" type="page">
+      <label>Page 141</label>
+      <file id="pg500wr6297_0142.pdf" size="119372" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0142.xml" role="transcription" size="7782" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0142.jp2" size="638752" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_142" sequence="142" type="page">
+      <label>Page 142</label>
+      <file id="pg500wr6297_0143.pdf" size="135844" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0143.xml" role="transcription" size="7632" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0143.jp2" size="639316" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_143" sequence="143" type="page">
+      <label>Page 143</label>
+      <file id="pg500wr6297_0144.pdf" size="126365" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0144.xml" role="transcription" size="33087" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0144.jp2" size="638737" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_144" sequence="144" type="page">
+      <label>Page 144</label>
+      <file id="pg500wr6297_0145.pdf" size="209894" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0145.xml" role="transcription" size="60769" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0145.jp2" size="637606" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_145" sequence="145" type="page">
+      <label>Page 145</label>
+      <file id="pg500wr6297_0146.pdf" size="194076" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0146.xml" role="transcription" size="58939" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0146.jp2" size="638347" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_146" sequence="146" type="page">
+      <label>Page 146</label>
+      <file id="pg500wr6297_0147.pdf" size="211437" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0147.xml" role="transcription" size="62861" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0147.jp2" size="639396" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_147" sequence="147" type="page">
+      <label>Page 147</label>
+      <file id="pg500wr6297_0148.pdf" size="214690" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0148.xml" role="transcription" size="63444" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0148.jp2" size="639122" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_148" sequence="148" type="page">
+      <label>Page 148</label>
+      <file id="pg500wr6297_0149.pdf" size="217656" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0149.xml" role="transcription" size="69356" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0149.jp2" size="639389" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_149" sequence="149" type="page">
+      <label>Page 149</label>
+      <file id="pg500wr6297_0150.pdf" size="212259" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0150.xml" role="transcription" size="66531" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0150.jp2" size="638412" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_150" sequence="150" type="page">
+      <label>Page 150</label>
+      <file id="pg500wr6297_0151.pdf" size="211813" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0151.xml" role="transcription" size="67130" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0151.jp2" size="639332" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_151" sequence="151" type="page">
+      <label>Page 151</label>
+      <file id="pg500wr6297_0152.pdf" size="214197" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0152.xml" role="transcription" size="62671" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0152.jp2" size="639327" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_152" sequence="152" type="page">
+      <label>Page 152</label>
+      <file id="pg500wr6297_0153.pdf" size="217321" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0153.xml" role="transcription" size="64702" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0153.jp2" size="638302" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_153" sequence="153" type="page">
+      <label>Page 153</label>
+      <file id="pg500wr6297_0154.pdf" size="207325" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0154.xml" role="transcription" size="64604" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0154.jp2" size="637464" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_154" sequence="154" type="page">
+      <label>Page 154</label>
+      <file id="pg500wr6297_0155.pdf" size="209737" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0155.xml" role="transcription" size="63906" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0155.jp2" size="638505" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_155" sequence="155" type="page">
+      <label>Page 155</label>
+      <file id="pg500wr6297_0156.pdf" size="194909" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0156.xml" role="transcription" size="58367" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0156.jp2" size="639365" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_156" sequence="156" type="page">
+      <label>Page 156</label>
+      <file id="pg500wr6297_0157.pdf" size="223523" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0157.xml" role="transcription" size="63382" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0157.jp2" size="639254" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_157" sequence="157" type="page">
+      <label>Page 157</label>
+      <file id="pg500wr6297_0158.pdf" size="208799" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0158.xml" role="transcription" size="61829" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0158.jp2" size="639250" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_158" sequence="158" type="page">
+      <label>Page 158</label>
+      <file id="pg500wr6297_0159.pdf" size="215269" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0159.xml" role="transcription" size="65009" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0159.jp2" size="638989" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_159" sequence="159" type="page">
+      <label>Page 159</label>
+      <file id="pg500wr6297_0160.pdf" size="211128" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0160.xml" role="transcription" size="63158" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0160.jp2" size="639227" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_160" sequence="160" type="page">
+      <label>Page 160</label>
+      <file id="pg500wr6297_0161.pdf" size="221599" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0161.xml" role="transcription" size="65347" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0161.jp2" size="637790" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_161" sequence="161" type="page">
+      <label>Page 161</label>
+      <file id="pg500wr6297_0162.pdf" size="209219" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0162.xml" role="transcription" size="65952" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0162.jp2" size="638187" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_162" sequence="162" type="page">
+      <label>Page 162</label>
+      <file id="pg500wr6297_0163.pdf" size="213157" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0163.xml" role="transcription" size="65425" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0163.jp2" size="639345" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_163" sequence="163" type="page">
+      <label>Page 163</label>
+      <file id="pg500wr6297_0164.pdf" size="207716" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0164.xml" role="transcription" size="63686" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0164.jp2" size="639331" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_164" sequence="164" type="page">
+      <label>Page 164</label>
+      <file id="pg500wr6297_0165.pdf" size="203410" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0165.xml" role="transcription" size="61657" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0165.jp2" size="639370" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_165" sequence="165" type="page">
+      <label>Page 165</label>
+      <file id="pg500wr6297_0166.pdf" size="204528" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0166.xml" role="transcription" size="62089" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0166.jp2" size="637966" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_166" sequence="166" type="page">
+      <label>Page 166</label>
+      <file id="pg500wr6297_0167.pdf" size="205475" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0167.xml" role="transcription" size="59172" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0167.jp2" size="636717" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_167" sequence="167" type="page">
+      <label>Page 167</label>
+      <file id="pg500wr6297_0168.pdf" size="95599" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0168.xml" role="transcription" size="24997" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0168.jp2" size="639320" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_168" sequence="168" type="page">
+      <label>Page 168</label>
+      <file id="pg500wr6297_0169.pdf" size="19404" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0169.xml" role="transcription" size="1126" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0169.jp2" size="430267" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_169" sequence="169" type="page">
+      <label>Page 169</label>
+      <file id="pg500wr6297_0170.pdf" size="26328" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0170.xml" role="transcription" size="3438" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0170.jp2" size="396526" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_170" sequence="170" type="page">
+      <label>Page 170</label>
+      <file id="pg500wr6297_0171.pdf" size="15645" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0171.xml" role="transcription" size="1126" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0171.jp2" size="395810" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_171" sequence="171" type="page">
+      <label>Page 171</label>
+      <file id="pg500wr6297_0172.pdf" size="137259" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0172.xml" role="transcription" size="40761" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0172.jp2" size="636816" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_172" sequence="172" type="page">
+      <label>Page 172</label>
+      <file id="pg500wr6297_0173.pdf" size="205635" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0173.xml" role="transcription" size="60271" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0173.jp2" size="638109" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_173" sequence="173" type="page">
+      <label>Page 173</label>
+      <file id="pg500wr6297_0174.pdf" size="210072" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0174.xml" role="transcription" size="62356" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0174.jp2" size="639284" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_174" sequence="174" type="page">
+      <label>Page 174</label>
+      <file id="pg500wr6297_0175.pdf" size="203036" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0175.xml" role="transcription" size="62504" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0175.jp2" size="638173" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_175" sequence="175" type="page">
+      <label>Page 175</label>
+      <file id="pg500wr6297_0176.pdf" size="210781" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0176.xml" role="transcription" size="67117" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0176.jp2" size="639277" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_176" sequence="176" type="page">
+      <label>Page 176</label>
+      <file id="pg500wr6297_0177.pdf" size="205165" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0177.xml" role="transcription" size="59053" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0177.jp2" size="638913" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_177" sequence="177" type="page">
+      <label>Page 177</label>
+      <file id="pg500wr6297_0178.pdf" size="211015" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0178.xml" role="transcription" size="62683" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0178.jp2" size="639356" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_178" sequence="178" type="page">
+      <label>Page 178</label>
+      <file id="pg500wr6297_0179.pdf" size="212257" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0179.xml" role="transcription" size="65675" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0179.jp2" size="638424" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_179" sequence="179" type="page">
+      <label>Page 179</label>
+      <file id="pg500wr6297_0180.pdf" size="226815" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0180.xml" role="transcription" size="62941" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0180.jp2" size="638779" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_180" sequence="180" type="page">
+      <label>Page 180</label>
+      <file id="pg500wr6297_0181.pdf" size="216357" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0181.xml" role="transcription" size="66687" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0181.jp2" size="639354" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_181" sequence="181" type="page">
+      <label>Page 181</label>
+      <file id="pg500wr6297_0182.pdf" size="211311" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0182.xml" role="transcription" size="63832" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0182.jp2" size="639110" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_182" sequence="182" type="page">
+      <label>Page 182</label>
+      <file id="pg500wr6297_0183.pdf" size="218563" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0183.xml" role="transcription" size="64513" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0183.jp2" size="637767" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_183" sequence="183" type="page">
+      <label>Page 183</label>
+      <file id="pg500wr6297_0184.pdf" size="211612" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0184.xml" role="transcription" size="65636" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0184.jp2" size="638849" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_184" sequence="184" type="page">
+      <label>Page 184</label>
+      <file id="pg500wr6297_0185.pdf" size="191811" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0185.xml" role="transcription" size="60673" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0185.jp2" size="639039" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_185" sequence="185" type="page">
+      <label>Page 185</label>
+      <file id="pg500wr6297_0186.pdf" size="216452" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0186.xml" role="transcription" size="64299" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0186.jp2" size="639072" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_186" sequence="186" type="page">
+      <label>Page 186</label>
+      <file id="pg500wr6297_0187.pdf" size="233992" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0187.xml" role="transcription" size="60095" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0187.jp2" size="638779" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_187" sequence="187" type="page">
+      <label>Page 187</label>
+      <file id="pg500wr6297_0188.pdf" size="236654" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0188.xml" role="transcription" size="67040" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0188.jp2" size="639049" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_188" sequence="188" type="page">
+      <label>Page 188</label>
+      <file id="pg500wr6297_0189.pdf" size="224513" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0189.xml" role="transcription" size="66423" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0189.jp2" size="639383" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_189" sequence="189" type="page">
+      <label>Page 189</label>
+      <file id="pg500wr6297_0190.pdf" size="229674" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0190.xml" role="transcription" size="65816" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0190.jp2" size="638714" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_190" sequence="190" type="page">
+      <label>Page 190</label>
+      <file id="pg500wr6297_0191.pdf" size="216527" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0191.xml" role="transcription" size="64991" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0191.jp2" size="639089" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_191" sequence="191" type="page">
+      <label>Page 191</label>
+      <file id="pg500wr6297_0192.pdf" size="229912" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0192.xml" role="transcription" size="64246" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0192.jp2" size="637760" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_192" sequence="192" type="page">
+      <label>Page 192</label>
+      <file id="pg500wr6297_0193.pdf" size="195405" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0193.xml" role="transcription" size="56741" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0193.jp2" size="637252" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_193" sequence="193" type="page">
+      <label>Page 193</label>
+      <file id="pg500wr6297_0194.pdf" size="137243" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0194.xml" role="transcription" size="34779" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0194.jp2" size="638841" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_194" sequence="194" type="page">
+      <label>Page 194</label>
+      <file id="pg500wr6297_0195.pdf" size="243523" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0195.xml" role="transcription" size="68116" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0195.jp2" size="637487" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_195" sequence="195" type="page">
+      <label>Page 195</label>
+      <file id="pg500wr6297_0196.pdf" size="210143" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0196.xml" role="transcription" size="60599" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0196.jp2" size="639347" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_196" sequence="196" type="page">
+      <label>Page 196</label>
+      <file id="pg500wr6297_0197.pdf" size="210430" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0197.xml" role="transcription" size="62394" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0197.jp2" size="639142" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_197" sequence="197" type="page">
+      <label>Page 197</label>
+      <file id="pg500wr6297_0198.pdf" size="216160" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0198.xml" role="transcription" size="60785" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0198.jp2" size="638141" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_198" sequence="198" type="page">
+      <label>Page 198</label>
+      <file id="pg500wr6297_0199.pdf" size="224417" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0199.xml" role="transcription" size="65375" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0199.jp2" size="639364" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_199" sequence="199" type="page">
+      <label>Page 199</label>
+      <file id="pg500wr6297_0200.pdf" size="223636" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0200.xml" role="transcription" size="63732" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0200.jp2" size="639312" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_200" sequence="200" type="page">
+      <label>Page 200</label>
+      <file id="pg500wr6297_0201.pdf" size="227253" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0201.xml" role="transcription" size="67437" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0201.jp2" size="638313" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_201" sequence="201" type="page">
+      <label>Page 201</label>
+      <file id="pg500wr6297_0202.pdf" size="210890" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0202.xml" role="transcription" size="65882" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0202.jp2" size="639342" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_202" sequence="202" type="page">
+      <label>Page 202</label>
+      <file id="pg500wr6297_0203.pdf" size="238000" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0203.xml" role="transcription" size="67624" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0203.jp2" size="638007" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_203" sequence="203" type="page">
+      <label>Page 203</label>
+      <file id="pg500wr6297_0204.pdf" size="227101" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0204.xml" role="transcription" size="64091" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0204.jp2" size="638477" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_204" sequence="204" type="page">
+      <label>Page 204</label>
+      <file id="pg500wr6297_0205.pdf" size="207057" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0205.xml" role="transcription" size="57836" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0205.jp2" size="638836" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_205" sequence="205" type="page">
+      <label>Page 205</label>
+      <file id="pg500wr6297_0206.pdf" size="212782" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0206.xml" role="transcription" size="66506" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0206.jp2" size="639309" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_206" sequence="206" type="page">
+      <label>Page 206</label>
+      <file id="pg500wr6297_0207.pdf" size="241373" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0207.xml" role="transcription" size="66197" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0207.jp2" size="638496" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_207" sequence="207" type="page">
+      <label>Page 207</label>
+      <file id="pg500wr6297_0208.pdf" size="219874" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0208.xml" role="transcription" size="66322" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0208.jp2" size="639350" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_208" sequence="208" type="page">
+      <label>Page 208</label>
+      <file id="pg500wr6297_0209.pdf" size="219180" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0209.xml" role="transcription" size="63013" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0209.jp2" size="638528" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_209" sequence="209" type="page">
+      <label>Page 209</label>
+      <file id="pg500wr6297_0210.pdf" size="206554" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0210.xml" role="transcription" size="64277" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0210.jp2" size="638506" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_210" sequence="210" type="page">
+      <label>Page 210</label>
+      <file id="pg500wr6297_0211.pdf" size="204703" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0211.xml" role="transcription" size="60084" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0211.jp2" size="638601" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_211" sequence="211" type="page">
+      <label>Page 211</label>
+      <file id="pg500wr6297_0212.pdf" size="213146" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0212.xml" role="transcription" size="65291" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0212.jp2" size="639373" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_212" sequence="212" type="page">
+      <label>Page 212</label>
+      <file id="pg500wr6297_0213.pdf" size="214942" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0213.xml" role="transcription" size="64793" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0213.jp2" size="639377" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_213" sequence="213" type="page">
+      <label>Page 213</label>
+      <file id="pg500wr6297_0214.pdf" size="231047" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0214.xml" role="transcription" size="65544" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0214.jp2" size="638842" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_214" sequence="214" type="page">
+      <label>Page 214</label>
+      <file id="pg500wr6297_0215.pdf" size="220470" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0215.xml" role="transcription" size="67629" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0215.jp2" size="638443" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_215" sequence="215" type="page">
+      <label>Page 215</label>
+      <file id="pg500wr6297_0216.pdf" size="238541" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0216.xml" role="transcription" size="62749" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0216.jp2" size="637965" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_216" sequence="216" type="page">
+      <label>Page 216</label>
+      <file id="pg500wr6297_0217.pdf" size="213405" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0217.xml" role="transcription" size="62774" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0217.jp2" size="636761" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_217" sequence="217" type="page">
+      <label>Page 217</label>
+      <file id="pg500wr6297_0218.pdf" size="233299" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0218.xml" role="transcription" size="64480" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0218.jp2" size="639364" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_218" sequence="218" type="page">
+      <label>Page 218</label>
+      <file id="pg500wr6297_0219.pdf" size="211667" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0219.xml" role="transcription" size="67918" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0219.jp2" size="639390" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_219" sequence="219" type="page">
+      <label>Page 219</label>
+      <file id="pg500wr6297_0220.pdf" size="232492" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0220.xml" role="transcription" size="65413" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0220.jp2" size="639368" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_220" sequence="220" type="page">
+      <label>Page 220</label>
+      <file id="pg500wr6297_0221.pdf" size="104759" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0221.xml" role="transcription" size="27521" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0221.jp2" size="639260" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_221" sequence="221" type="page">
+      <label>Page 221</label>
+      <file id="pg500wr6297_0222.pdf" size="174443" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0222.xml" role="transcription" size="48454" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0222.jp2" size="639361" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_222" sequence="222" type="page">
+      <label>Page 222</label>
+      <file id="pg500wr6297_0223.pdf" size="216423" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0223.xml" role="transcription" size="61352" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0223.jp2" size="639303" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_223" sequence="223" type="page">
+      <label>Page 223</label>
+      <file id="pg500wr6297_0224.pdf" size="236161" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0224.xml" role="transcription" size="63819" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0224.jp2" size="639269" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_224" sequence="224" type="page">
+      <label>Page 224</label>
+      <file id="pg500wr6297_0225.pdf" size="73209" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0225.xml" role="transcription" size="16716" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0225.jp2" size="637332" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_225" sequence="225" type="page">
+      <label>Page 225</label>
+      <file id="pg500wr6297_0226.pdf" size="151674" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0226.xml" role="transcription" size="45586" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0226.jp2" size="638720" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_226" sequence="226" type="page">
+      <label>Page 226</label>
+      <file id="pg500wr6297_0227.pdf" size="209228" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0227.xml" role="transcription" size="61432" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0227.jp2" size="639336" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_227" sequence="227" type="page">
+      <label>Page 227</label>
+      <file id="pg500wr6297_0228.pdf" size="226088" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0228.xml" role="transcription" size="64744" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0228.jp2" size="638800" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_228" sequence="228" type="page">
+      <label>Page 228</label>
+      <file id="pg500wr6297_0229.pdf" size="184249" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0229.xml" role="transcription" size="58005" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0229.jp2" size="636497" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_229" sequence="229" type="page">
+      <label>Page 229</label>
+      <file id="pg500wr6297_0230.pdf" size="193754" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0230.xml" role="transcription" size="60571" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0230.jp2" size="637449" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_230" sequence="230" type="page">
+      <label>Page 230</label>
+      <file id="pg500wr6297_0231.pdf" size="192513" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0231.xml" role="transcription" size="61924" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0231.jp2" size="636926" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_231" sequence="231" type="page">
+      <label>Page 231</label>
+      <file id="pg500wr6297_0232.pdf" size="192089" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0232.xml" role="transcription" size="60864" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0232.jp2" size="639279" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_232" sequence="232" type="page">
+      <label>Page 232</label>
+      <file id="pg500wr6297_0233.pdf" size="189410" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0233.xml" role="transcription" size="58561" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0233.jp2" size="636888" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_233" sequence="233" type="page">
+      <label>Page 233</label>
+      <file id="pg500wr6297_0234.pdf" size="188603" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0234.xml" role="transcription" size="56675" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0234.jp2" size="637859" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_234" sequence="234" type="page">
+      <label>Page 234</label>
+      <file id="pg500wr6297_0235.pdf" size="188965" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0235.xml" role="transcription" size="54404" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0235.jp2" size="639186" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_235" sequence="235" type="page">
+      <label>Page 235</label>
+      <file id="pg500wr6297_0236.pdf" size="206588" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0236.xml" role="transcription" size="59471" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0236.jp2" size="636062" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_236" sequence="236" type="page">
+      <label>Page 236</label>
+      <file id="pg500wr6297_0237.pdf" size="193028" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0237.xml" role="transcription" size="58014" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0237.jp2" size="637137" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_237" sequence="237" type="page">
+      <label>Page 237</label>
+      <file id="pg500wr6297_0238.pdf" size="197862" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0238.xml" role="transcription" size="59538" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0238.jp2" size="638060" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_238" sequence="238" type="page">
+      <label>Page 238</label>
+      <file id="pg500wr6297_0239.pdf" size="216108" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0239.xml" role="transcription" size="62711" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0239.jp2" size="638964" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_239" sequence="239" type="page">
+      <label>Page 239</label>
+      <file id="pg500wr6297_0240.pdf" size="191060" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0240.xml" role="transcription" size="56168" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0240.jp2" size="639046" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_240" sequence="240" type="page">
+      <label>Page 240</label>
+      <file id="pg500wr6297_0241.pdf" size="186260" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0241.xml" role="transcription" size="62045" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0241.jp2" size="636851" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_241" sequence="241" type="page">
+      <label>Page 241</label>
+      <file id="pg500wr6297_0242.pdf" size="189333" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0242.xml" role="transcription" size="57746" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0242.jp2" size="637168" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_242" sequence="242" type="page">
+      <label>Page 242</label>
+      <file id="pg500wr6297_0243.pdf" size="195542" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0243.xml" role="transcription" size="58631" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0243.jp2" size="637371" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_243" sequence="243" type="page">
+      <label>Page 243</label>
+      <file id="pg500wr6297_0244.pdf" size="168561" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0244.xml" role="transcription" size="52497" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0244.jp2" size="639069" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_244" sequence="244" type="page">
+      <label>Page 244</label>
+      <file id="pg500wr6297_0245.pdf" size="168852" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0245.xml" role="transcription" size="53707" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0245.jp2" size="639395" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_245" sequence="245" type="page">
+      <label>Page 245</label>
+      <file id="pg500wr6297_0246.pdf" size="181942" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0246.xml" role="transcription" size="56851" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0246.jp2" size="638012" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_246" sequence="246" type="page">
+      <label>Page 246</label>
+      <file id="pg500wr6297_0247.pdf" size="194029" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0247.xml" role="transcription" size="55305" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0247.jp2" size="638171" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_247" sequence="247" type="page">
+      <label>Page 247</label>
+      <file id="pg500wr6297_0248.pdf" size="205577" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0248.xml" role="transcription" size="62929" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0248.jp2" size="639131" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_248" sequence="248" type="page">
+      <label>Page 248</label>
+      <file id="pg500wr6297_0249.pdf" size="181125" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0249.xml" role="transcription" size="54373" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0249.jp2" size="637705" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_249" sequence="249" type="page">
+      <label>Page 249</label>
+      <file id="pg500wr6297_0250.pdf" size="180986" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0250.xml" role="transcription" size="50654" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0250.jp2" size="639368" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_250" sequence="250" type="page">
+      <label>Page 250</label>
+      <file id="pg500wr6297_0251.pdf" size="200995" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0251.xml" role="transcription" size="56980" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0251.jp2" size="639139" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_251" sequence="251" type="page">
+      <label>Page 251</label>
+      <file id="pg500wr6297_0252.pdf" size="196389" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0252.xml" role="transcription" size="55063" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0252.jp2" size="637527" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_252" sequence="252" type="page">
+      <label>Page 252</label>
+      <file id="pg500wr6297_0253.pdf" size="202925" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0253.xml" role="transcription" size="56177" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0253.jp2" size="637124" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_253" sequence="253" type="page">
+      <label>Page 253</label>
+      <file id="pg500wr6297_0254.pdf" size="228163" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0254.xml" role="transcription" size="57193" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0254.jp2" size="638618" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_254" sequence="254" type="page">
+      <label>Page 254</label>
+      <file id="pg500wr6297_0255.pdf" size="221559" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0255.xml" role="transcription" size="65506" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0255.jp2" size="638530" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_255" sequence="255" type="page">
+      <label>Page 255</label>
+      <file id="pg500wr6297_0256.pdf" size="223547" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0256.xml" role="transcription" size="52823" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0256.jp2" size="639347" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_256" sequence="256" type="page">
+      <label>Page 256</label>
+      <file id="pg500wr6297_0257.pdf" size="217361" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0257.xml" role="transcription" size="61485" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0257.jp2" size="639237" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_257" sequence="257" type="page">
+      <label>Page 257</label>
+      <file id="pg500wr6297_0258.pdf" size="207833" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0258.xml" role="transcription" size="60777" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0258.jp2" size="637122" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_258" sequence="258" type="page">
+      <label>Page 258</label>
+      <file id="pg500wr6297_0259.pdf" size="211538" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0259.xml" role="transcription" size="59811" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0259.jp2" size="639122" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_259" sequence="259" type="page">
+      <label>Page 259</label>
+      <file id="pg500wr6297_0260.pdf" size="195398" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0260.xml" role="transcription" size="61180" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0260.jp2" size="637272" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_260" sequence="260" type="page">
+      <label>Page 260</label>
+      <file id="pg500wr6297_0261.pdf" size="211023" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0261.xml" role="transcription" size="62267" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0261.jp2" size="639186" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_261" sequence="261" type="page">
+      <label>Page 261</label>
+      <file id="pg500wr6297_0262.pdf" size="205270" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0262.xml" role="transcription" size="64763" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0262.jp2" size="639263" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_262" sequence="262" type="page">
+      <label>Page 262</label>
+      <file id="pg500wr6297_0263.pdf" size="213785" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0263.xml" role="transcription" size="63388" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0263.jp2" size="639350" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_263" sequence="263" type="page">
+      <label>Page 263</label>
+      <file id="pg500wr6297_0264.pdf" size="217244" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0264.xml" role="transcription" size="56392" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0264.jp2" size="638925" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_264" sequence="264" type="page">
+      <label>Page 264</label>
+      <file id="pg500wr6297_0265.pdf" size="211087" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0265.xml" role="transcription" size="53193" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0265.jp2" size="637474" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_265" sequence="265" type="page">
+      <label>Page 265</label>
+      <file id="pg500wr6297_0266.pdf" size="212354" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0266.xml" role="transcription" size="61401" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0266.jp2" size="639343" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_266" sequence="266" type="page">
+      <label>Page 266</label>
+      <file id="pg500wr6297_0267.pdf" size="184284" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0267.xml" role="transcription" size="51601" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0267.jp2" size="639360" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_267" sequence="267" type="page">
+      <label>Page 267</label>
+      <file id="pg500wr6297_0268.pdf" size="187838" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0268.xml" role="transcription" size="60178" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0268.jp2" size="637208" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_268" sequence="268" type="page">
+      <label>Page 268</label>
+      <file id="pg500wr6297_0269.pdf" size="157424" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0269.xml" role="transcription" size="50371" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0269.jp2" size="638695" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_269" sequence="269" type="page">
+      <label>Page 269</label>
+      <file id="pg500wr6297_0270.pdf" size="193087" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0270.xml" role="transcription" size="59563" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0270.jp2" size="636933" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_270" sequence="270" type="page">
+      <label>Page 270</label>
+      <file id="pg500wr6297_0271.pdf" size="222893" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0271.xml" role="transcription" size="66814" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0271.jp2" size="637857" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_271" sequence="271" type="page">
+      <label>Page 271</label>
+      <file id="pg500wr6297_0272.pdf" size="183481" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0272.xml" role="transcription" size="55445" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0272.jp2" size="637483" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_272" sequence="272" type="page">
+      <label>Page 272</label>
+      <file id="pg500wr6297_0273.pdf" size="186612" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0273.xml" role="transcription" size="58815" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0273.jp2" size="638458" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_273" sequence="273" type="page">
+      <label>Page 273</label>
+      <file id="pg500wr6297_0274.pdf" size="176878" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0274.xml" role="transcription" size="50277" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0274.jp2" size="639048" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_274" sequence="274" type="page">
+      <label>Page 274</label>
+      <file id="pg500wr6297_0275.pdf" size="218308" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0275.xml" role="transcription" size="65585" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0275.jp2" size="638147" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_275" sequence="275" type="page">
+      <label>Page 275</label>
+      <file id="pg500wr6297_0276.pdf" size="188194" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0276.xml" role="transcription" size="59954" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0276.jp2" size="637151" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_276" sequence="276" type="page">
+      <label>Page 276</label>
+      <file id="pg500wr6297_0277.pdf" size="204864" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0277.xml" role="transcription" size="60986" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0277.jp2" size="637684" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_277" sequence="277" type="page">
+      <label>Page 277</label>
+      <file id="pg500wr6297_0278.pdf" size="195535" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0278.xml" role="transcription" size="55545" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0278.jp2" size="637517" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_278" sequence="278" type="page">
+      <label>Page 278</label>
+      <file id="pg500wr6297_0279.pdf" size="177662" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0279.xml" role="transcription" size="48914" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0279.jp2" size="639288" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_279" sequence="279" type="page">
+      <label>Page 279</label>
+      <file id="pg500wr6297_0280.pdf" size="100170" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0280.xml" role="transcription" size="21073" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0280.jp2" size="636447" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_280" sequence="280" type="page">
+      <label>Page 280</label>
+      <file id="pg500wr6297_0281.pdf" size="101528" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0281.xml" role="transcription" size="23889" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0281.jp2" size="637177" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_281" sequence="281" type="page">
+      <label>Page 281</label>
+      <file id="pg500wr6297_0282.pdf" size="79249" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0282.xml" role="transcription" size="15878" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0282.jp2" size="636744" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_282" sequence="282" type="page">
+      <label>Page 282</label>
+      <file id="pg500wr6297_0283.pdf" size="71134" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0283.xml" role="transcription" size="16354" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0283.jp2" size="635338" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_283" sequence="283" type="page">
+      <label>Page 283</label>
+      <file id="pg500wr6297_0284.pdf" size="198895" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0284.xml" role="transcription" size="57611" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0284.jp2" size="638563" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_284" sequence="284" type="page">
+      <label>Page 284</label>
+      <file id="pg500wr6297_0285.pdf" size="183375" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0285.xml" role="transcription" size="54894" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0285.jp2" size="639377" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_285" sequence="285" type="page">
+      <label>Page 285</label>
+      <file id="pg500wr6297_0286.pdf" size="190298" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0286.xml" role="transcription" size="53351" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0286.jp2" size="637924" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_286" sequence="286" type="page">
+      <label>Page 286</label>
+      <file id="pg500wr6297_0287.pdf" size="187907" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0287.xml" role="transcription" size="51701" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0287.jp2" size="638288" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_287" sequence="287" type="page">
+      <label>Page 287</label>
+      <file id="pg500wr6297_0288.pdf" size="208319" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0288.xml" role="transcription" size="51310" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0288.jp2" size="636808" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_288" sequence="288" type="page">
+      <label>Page 288</label>
+      <file id="pg500wr6297_0289.pdf" size="187408" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0289.xml" role="transcription" size="58509" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0289.jp2" size="637500" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_289" sequence="289" type="page">
+      <label>Page 289</label>
+      <file id="pg500wr6297_0290.pdf" size="180914" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0290.xml" role="transcription" size="51997" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0290.jp2" size="637286" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_290" sequence="290" type="page">
+      <label>Page 290</label>
+      <file id="pg500wr6297_0291.pdf" size="204326" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0291.xml" role="transcription" size="54178" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0291.jp2" size="636722" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_291" sequence="291" type="page">
+      <label>Page 291</label>
+      <file id="pg500wr6297_0292.pdf" size="238890" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0292.xml" role="transcription" size="57068" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0292.jp2" size="639329" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_292" sequence="292" type="page">
+      <label>Page 292</label>
+      <file id="pg500wr6297_0293.pdf" size="180079" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0293.xml" role="transcription" size="54376" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0293.jp2" size="637137" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_293" sequence="293" type="page">
+      <label>Page 293</label>
+      <file id="pg500wr6297_0294.pdf" size="188173" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0294.xml" role="transcription" size="55401" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0294.jp2" size="638328" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_294" sequence="294" type="page">
+      <label>Page 294</label>
+      <file id="pg500wr6297_0295.pdf" size="185807" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0295.xml" role="transcription" size="54128" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0295.jp2" size="639353" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_295" sequence="295" type="page">
+      <label>Page 295</label>
+      <file id="pg500wr6297_0296.pdf" size="212796" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0296.xml" role="transcription" size="52131" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0296.jp2" size="639327" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_296" sequence="296" type="page">
+      <label>Page 296</label>
+      <file id="pg500wr6297_0297.pdf" size="228205" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0297.xml" role="transcription" size="53693" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0297.jp2" size="639361" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_297" sequence="297" type="page">
+      <label>Page 297</label>
+      <file id="pg500wr6297_0298.pdf" size="150983" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0298.xml" role="transcription" size="45994" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0298.jp2" size="638071" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_298" sequence="298" type="page">
+      <label>Page 298</label>
+      <file id="pg500wr6297_0299.pdf" size="27636" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0299.xml" role="transcription" size="11178" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0299.jp2" size="438708" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_299" sequence="299" type="page">
+      <label>Page 299</label>
+      <file id="pg500wr6297_0300.pdf" size="154193" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0300.xml" role="transcription" size="49275" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0300.jp2" size="638897" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_300" sequence="300" type="page">
+      <label>Page 300</label>
+      <file id="pg500wr6297_0301.pdf" size="156353" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0301.xml" role="transcription" size="55000" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0301.jp2" size="637497" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_301" sequence="301" type="page">
+      <label>Page 301</label>
+      <file id="pg500wr6297_0302.pdf" size="186790" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0302.xml" role="transcription" size="57780" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0302.jp2" size="639381" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_302" sequence="302" type="page">
+      <label>Page 302</label>
+      <file id="pg500wr6297_0303.pdf" size="169855" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0303.xml" role="transcription" size="61586" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0303.jp2" size="638665" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_303" sequence="303" type="page">
+      <label>Page 303</label>
+      <file id="pg500wr6297_0304.pdf" size="196679" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0304.xml" role="transcription" size="59404" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0304.jp2" size="638251" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_304" sequence="304" type="page">
+      <label>Page 304</label>
+      <file id="pg500wr6297_0305.pdf" size="167119" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0305.xml" role="transcription" size="59869" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0305.jp2" size="639397" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_305" sequence="305" type="page">
+      <label>Page 305</label>
+      <file id="pg500wr6297_0306.pdf" size="194954" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0306.xml" role="transcription" size="56926" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0306.jp2" size="639368" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_306" sequence="306" type="page">
+      <label>Page 306</label>
+      <file id="pg500wr6297_0307.pdf" size="176084" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0307.xml" role="transcription" size="62298" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0307.jp2" size="639347" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_307" sequence="307" type="page">
+      <label>Page 307</label>
+      <file id="pg500wr6297_0308.pdf" size="205218" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0308.xml" role="transcription" size="62184" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0308.jp2" size="637110" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_308" sequence="308" type="page">
+      <label>Page 308</label>
+      <file id="pg500wr6297_0309.pdf" size="166903" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0309.xml" role="transcription" size="61084" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0309.jp2" size="636714" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_309" sequence="309" type="page">
+      <label>Page 309</label>
+      <file id="pg500wr6297_0310.pdf" size="199300" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0310.xml" role="transcription" size="66146" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0310.jp2" size="637704" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_310" sequence="310" type="page">
+      <label>Page 310</label>
+      <file id="pg500wr6297_0311.pdf" size="63080" mimetype="application/pdf">
+      
+      
+    </file>
+      <file id="pg500wr6297_0311.xml" role="transcription" size="18370" mimetype="application/xml">
+      
+      
+    </file>
+      <file id="pg500wr6297_0311.jp2" size="595893" mimetype="image/jp2">
+        <imageData width="1465" height="2305"/>
+      </file>
+    </resource>
+    <resource id="pg500wr6297_311" sequence="311" type="object">
+      <label>Object 1</label>
+      <file id="pg500wr6297.pdf" size="58554512" mimetype="application/pdf">
+      
+      
+    </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <cdl>
+          <group rule="no-download">stanford</group>
+        </cdl>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction"/>
+      <human type="creativeCommons"/>
+      <machine type="creativeCommons" uri=""/>
+      <human type="openDataCommons"/>
+      <machine type="openDataCommons" uri=""/>
+    </use>
+    <copyright>
+      <human/>
+    </copyright>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:pg500wr6297">
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>The blood of our sons: men, women, and the renegotiation of British citizenship during the Great War</dc:title>
+    <dc:contributor>Gullace, Nicoletta</dc:contributor>
+    <dc:type>Text</dc:type>
+    <dc:type>bibliography</dc:type>
+    <dc:date>2002</dc:date>
+    <dc:publisher>Palgrave Macmillan</dc:publisher>
+    <dc:language>eng</dc:language>
+    <dc:format>284 p., [18] p. of plates : ill. ; 22 cm.</dc:format>
+    <dc:format>print</dc:format>
+    <dc:description type="statement of responsibility">Nicoletta Gullace.</dc:description>
+    <dc:description type="bibliography">Includes bibliographical references (p. [253]-271) and index.</dc:description>
+    <dc:subject>Citizenship</dc:subject>
+    <dc:coverage>Great Britain</dc:coverage>
+    <dc:subject>Citizenship--Great Britain</dc:subject>
+    <dc:subject>Suffrage--History</dc:subject>
+    <dc:coverage>Great Britain</dc:coverage>
+    <dc:coverage>20th century</dc:coverage>
+    <dc:subject>Suffrage--Great Britain--History--20th century</dc:subject>
+    <dc:subject>World War, 1914-1918</dc:subject>
+    <dc:coverage>Great Britain</dc:coverage>
+    <dc:subject>World War, 1914-1918--Great Britain</dc:subject>
+    <dc:subject>Politics and government</dc:subject>
+    <dc:coverage>Great Britain</dc:coverage>
+    <dc:coverage>1910-1936</dc:coverage>
+    <dc:subject>JN906 .G85 2002</dc:subject>
+    <dc:subject>940.3/1/0941</dc:subject>
+    <dc:identifier>isbn: 0312294468</dc:identifier>
+    <dc:identifier>isbn: 9780312294465</dc:identifier>
+    <dc:identifier>lccn: 2002016917</dc:identifier>
+  </oai_dc:dc>
+  <mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" xmlns:mods="http://www.loc.gov/mods/v3" version="3.6" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+    <titleInfo>
+      <nonSort xml:space="preserve">The</nonSort>
+      <title>blood of our sons</title>
+      <subTitle>men, women, and the renegotiation of British citizenship during the Great War</subTitle>
+    </titleInfo>
+    <name type="personal" usage="primary">
+      <namePart>Gullace, Nicoletta</namePart>
+    </name>
+    <typeOfResource>text</typeOfResource>
+    <genre authority="marcgt">bibliography</genre>
+    <originInfo>
+      <place>
+        <placeTerm type="code" authority="marccountry">nyu</placeTerm>
+      </place>
+      <place>
+        <placeTerm type="text">New York</placeTerm>
+      </place>
+      <publisher>Palgrave Macmillan</publisher>
+      <dateIssued>2002</dateIssued>
+      <issuance>monographic</issuance>
+    </originInfo>
+    <language>
+      <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <physicalDescription>
+      <form authority="marcform">print</form>
+      <extent>284 p., [18] p. of plates : ill. ; 22 cm.</extent>
+    </physicalDescription>
+    <note type="statement of responsibility">Nicoletta Gullace.</note>
+    <note type="bibliography">Includes bibliographical references (p. [253]-271) and index.</note>
+    <subject>
+      <geographicCode authority="marcgac">e-uk---</geographicCode>
+    </subject>
+    <subject authority="lcsh">
+      <topic>Citizenship</topic>
+      <geographic>Great Britain</geographic>
+    </subject>
+    <subject authority="lcsh">
+      <topic>Suffrage</topic>
+      <geographic>Great Britain</geographic>
+      <topic>History</topic>
+      <temporal>20th century</temporal>
+    </subject>
+    <subject authority="lcsh">
+      <topic>World War, 1914-1918</topic>
+      <geographic>Great Britain</geographic>
+    </subject>
+    <subject authority="lcsh">
+      <geographic>Great Britain</geographic>
+      <topic>Politics and government</topic>
+      <temporal>1910-1936</temporal>
+    </subject>
+    <classification authority="lcc">JN906 .G85 2002</classification>
+    <classification authority="ddc" edition="21">940.3/1/0941</classification>
+    <identifier type="isbn">0312294468</identifier>
+    <identifier type="isbn">9780312294465</identifier>
+    <identifier type="lccn">2002016917</identifier>
+    <recordInfo>
+      <descriptionStandard>aacr</descriptionStandard>
+      <recordContentSource authority="marcorg">DLC</recordContentSource>
+      <recordCreationDate encoding="marc">020109</recordCreationDate>
+      <recordIdentifier source="SIRSI">a5054284</recordIdentifier>
+      <recordOrigin>Converted from MARCXML to MODS version 3.6 using MARC21slim2MODS3-6_SDR.xsl (SUL version 1 2018/06/13; LC Revision 1.118 2018/01/31)</recordOrigin>
+    </recordInfo>
+  </mods>
+  <thumb>pg500wr6297/pg500wr6297_0002.jp2</thumb>
+</publicObject>

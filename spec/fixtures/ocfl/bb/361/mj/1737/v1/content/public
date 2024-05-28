@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:bb361mj1737" published="2017-12-14T00:35:08Z" publishVersion="dor-services/5.23.1">
+  <identityMetadata>
+    <sourceId source="sul">M1186_b29_f04</sourceId>
+    <objectId>druid:bb361mj1737</objectId>
+    <objectCreator>DOR</objectCreator>
+    <objectLabel>Project AWARE, Volume I, Executive Overview (Monsanto version)</objectLabel>
+    <objectType>item</objectType>
+    <otherId name="label"/>
+    <otherId name="uuid">e7bb1bac-9d77-11e7-8673-005056a7ed61</otherId>
+    <tag>Process : Content Type : Book (ltr)</tag>
+    <tag>Project : IFTF</tag>
+    <tag>DPG : IFTF : Special Reports : Box 29</tag>
+    <tag>Project : IFTF : Special Reports : Box 29</tag>
+    <tag>Registered By : cheungd</tag>
+  </identityMetadata>
+  <contentMetadata objectId="druid:bb361mj1737" type="book">
+    <resource id="bb361mj1737_1" sequence="1" type="page">
+      <label>Page 1</label>
+      <file id="bb361mj1737_06_0001.pdf" mimetype="application/pdf" size="589924">
+      
+      
+    </file>
+      <file id="bb361mj1737_00_0001.jp2" mimetype="image/jp2" size="1584043">
+        <imageData width="2550" height="3300"/>
+      </file>
+    </resource>
+    <resource id="bb361mj1737_2" sequence="2" type="page">
+      <label>Page 2</label>
+      <file id="bb361mj1737_06_0002.pdf" mimetype="application/pdf" size="99839">
+      
+      
+    </file>
+      <file id="bb361mj1737_00_0002.jp2" mimetype="image/jp2" size="1348339">
+        <imageData width="2550" height="3300"/>
+      </file>
+    </resource>
+    <resource id="bb361mj1737_3" sequence="3" type="page">
+      <label>Page 3</label>
+      <file id="bb361mj1737_06_0003.pdf" mimetype="application/pdf" size="463391">
+      
+      
+    </file>
+      <file id="bb361mj1737_00_0003.jp2" mimetype="image/jp2" size="1594692">
+        <imageData width="2550" height="3300"/>
+      </file>
+    </resource>
+    <resource id="bb361mj1737_4" sequence="4" type="page">
+      <label>Page 4</label>
+      <file id="bb361mj1737_06_0004.pdf" mimetype="application/pdf" size="497232">
+      
+      
+    </file>
+      <file id="bb361mj1737_00_0004.jp2" mimetype="image/jp2" size="1594606">
+        <imageData width="2550" height="3300"/>
+      </file>
+    </resource>
+    <resource id="bb361mj1737_5" sequence="5" type="page">
+      <label>Page 5</label>
+      <file id="bb361mj1737_06_0005.pdf" mimetype="application/pdf" size="479427">
+      
+      
+    </file>
+      <file id="bb361mj1737_00_0005.jp2" mimetype="image/jp2" size="1594729">
+        <imageData width="2550" height="3300"/>
+      </file>
+    </resource>
+    <resource id="bb361mj1737_6" sequence="6" type="page">
+      <label>Page 6</label>
+      <file id="bb361mj1737_06_0006.pdf" mimetype="application/pdf" size="490517">
+      
+      
+    </file>
+      <file id="bb361mj1737_00_0006.jp2" mimetype="image/jp2" size="1594673">
+        <imageData width="2550" height="3300"/>
+      </file>
+    </resource>
+    <resource id="bb361mj1737_7" sequence="7" type="page">
+      <label>Page 7</label>
+      <file id="bb361mj1737_06_0007.pdf" mimetype="application/pdf" size="502240">
+      
+      
+    </file>
+      <file id="bb361mj1737_00_0007.jp2" mimetype="image/jp2" size="1594664">
+        <imageData width="2550" height="3300"/>
+      </file>
+    </resource>
+    <resource id="bb361mj1737_8" sequence="8" type="page">
+      <label>Page 8</label>
+      <file id="bb361mj1737_06_0008.pdf" mimetype="application/pdf" size="479589">
+      
+      
+    </file>
+      <file id="bb361mj1737_00_0008.jp2" mimetype="image/jp2" size="1594540">
+        <imageData width="2550" height="3300"/>
+      </file>
+    </resource>
+    <resource id="bb361mj1737_9" sequence="9" type="page">
+      <label>Page 9</label>
+      <file id="bb361mj1737_06_0009.pdf" mimetype="application/pdf" size="274699">
+      
+      
+    </file>
+      <file id="bb361mj1737_00_0009.jp2" mimetype="image/jp2" size="1594680">
+        <imageData width="2550" height="3300"/>
+      </file>
+    </resource>
+    <resource id="bb361mj1737_10" sequence="10" type="page">
+      <label>Page 10</label>
+      <file id="bb361mj1737_06_0010.pdf" mimetype="application/pdf" size="401750">
+      
+      
+    </file>
+      <file id="bb361mj1737_00_0010.jp2" mimetype="image/jp2" size="1594626">
+        <imageData width="2550" height="3300"/>
+      </file>
+    </resource>
+    <resource id="bb361mj1737_11" sequence="11" type="page">
+      <label>Page 11</label>
+      <file id="bb361mj1737_06_0011.pdf" mimetype="application/pdf" size="349554">
+      
+      
+    </file>
+      <file id="bb361mj1737_00_0011.jp2" mimetype="image/jp2" size="1594642">
+        <imageData width="2550" height="3300"/>
+      </file>
+    </resource>
+    <resource id="bb361mj1737_12" sequence="12" type="page">
+      <label>Page 12</label>
+      <file id="bb361mj1737_06_0012.pdf" mimetype="application/pdf" size="377758">
+      
+      
+    </file>
+      <file id="bb361mj1737_00_0012.jp2" mimetype="image/jp2" size="1594647">
+        <imageData width="2550" height="3300"/>
+      </file>
+    </resource>
+    <resource id="bb361mj1737_13" sequence="13" type="page">
+      <label>Page 13</label>
+      <file id="bb361mj1737_06_0013.pdf" mimetype="application/pdf" size="303961">
+      
+      
+    </file>
+      <file id="bb361mj1737_00_0013.jp2" mimetype="image/jp2" size="1594751">
+        <imageData width="2550" height="3300"/>
+      </file>
+    </resource>
+    <resource id="bb361mj1737_14" sequence="14" type="page">
+      <label>Page 14</label>
+      <file id="bb361mj1737_06_0014.pdf" mimetype="application/pdf" size="320816">
+      
+      
+    </file>
+      <file id="bb361mj1737_00_0014.jp2" mimetype="image/jp2" size="1585371">
+        <imageData width="2550" height="3300"/>
+      </file>
+    </resource>
+    <resource id="bb361mj1737_15" sequence="15" type="page">
+      <label>Page 15</label>
+      <file id="bb361mj1737_06_0015.pdf" mimetype="application/pdf" size="308932">
+      
+      
+    </file>
+      <file id="bb361mj1737_00_0015.jp2" mimetype="image/jp2" size="1469205">
+        <imageData width="2550" height="3300"/>
+      </file>
+    </resource>
+    <resource id="bb361mj1737_16" sequence="16" type="page">
+      <label>Page 16</label>
+      <file id="bb361mj1737_06_0016.pdf" mimetype="application/pdf" size="312668">
+      
+      
+    </file>
+      <file id="bb361mj1737_00_0016.jp2" mimetype="image/jp2" size="1594780">
+        <imageData width="2550" height="3300"/>
+      </file>
+    </resource>
+    <resource id="bb361mj1737_17" sequence="17" type="page">
+      <label>Page 17</label>
+      <file id="bb361mj1737_06_0017.pdf" mimetype="application/pdf" size="305499">
+      
+      
+    </file>
+      <file id="bb361mj1737_00_0017.jp2" mimetype="image/jp2" size="1541652">
+        <imageData width="2550" height="3300"/>
+      </file>
+    </resource>
+    <resource id="bb361mj1737_18" sequence="18" type="page">
+      <label>Page 18</label>
+      <file id="bb361mj1737_06_0018.pdf" mimetype="application/pdf" size="432524">
+      
+      
+    </file>
+      <file id="bb361mj1737_00_0018.jp2" mimetype="image/jp2" size="1583928">
+        <imageData width="2550" height="3300"/>
+      </file>
+    </resource>
+    <resource id="bb361mj1737_19" sequence="19" type="object">
+      <label>Object 1</label>
+      <file id="bb361mj1737_31_0000.pdf" mimetype="application/pdf" size="7003178">
+      
+      
+    </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <location>spec</location>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">While Special Collections is the owner of the physical and digital items, permission to examine collection materials is not an authorization to publish. These materials are made available for use in research, teaching, and private study. Any transmission or reproduction beyond that allowed by fair use requires permission from the owners of rights, heir(s) or assigns. See: http://library.stanford.edu/spc/using-collections/permission-publish. Access Condition: Content is available for access via the Special Collections Reading Room.</human>
+    </use>
+    <copyright>
+      <human>Materials may be subject to copyright.</human>
+    </copyright>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:bb361mj1737">
+      <fedora:isMemberOf rdf:resource="info:fedora/druid:yf563kp2275"/>
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:yf563kp2275"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Project AWARE, Volume I, Executive Overview (Monsanto version)</dc:title>
+    <dc:creator>Institute for the Future (cre Creator)</dc:creator>
+    <dc:contributor>Amara, Roy (aut Author)</dc:contributor>
+    <dc:contributor>Enzer, Selwyn (aut Author)</dc:contributor>
+    <dc:contributor>Lipinski, Andrew J. (aut Author)</dc:contributor>
+    <dc:type>Text</dc:type>
+    <dc:type>Reports</dc:type>
+    <dc:date>1973-08-01</dc:date>
+    <dc:language>eng English</dc:language>
+    <dc:format>1 item</dc:format>
+    <dc:format>volume</dc:format>
+    <dc:format>image/tiff</dc:format>
+    <dc:description displayLabel="Attribution">This work by the Institute for the Future (IFTF) was digitized by Stanford Libraries in 2017. Attribution should be given to IFTF if shared or reused in any way.</dc:description>
+    <dc:subject>Institute for the Future</dc:subject>
+    <dc:subject>Computer engineering</dc:subject>
+    <dc:subject>Microelectronics industry</dc:subject>
+    <dc:coverage>California</dc:coverage>
+    <dc:coverage>Santa Clara County</dc:coverage>
+    <dc:subject>Microelectronics industry--California--Santa Clara County</dc:subject>
+    <dc:subject>Science and industry</dc:subject>
+    <dc:coverage>California</dc:coverage>
+    <dc:coverage>Santa Clara County</dc:coverage>
+    <dc:subject>Science and industry--California--Santa Clara County</dc:subject>
+    <dc:identifier>M1186_b29_f04</dc:identifier>
+    <dc:identifier>SR-0028</dc:identifier>
+    <dc:relation type="repository">Stanford University. Libraries. Department of Special Collections and University Archives M1186 https://purl.stanford.edu/bb361mj1737</dc:relation>
+    <dc:relation type="collection">Institute for the Future : reports, 1969-1986</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.loc.gov/mods/v3" version="3.5" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
+    <titleInfo>
+      <title>Project AWARE, Volume I, Executive Overview (Monsanto version)</title>
+    </titleInfo>
+    <name type="corporate" usage="primary" authority="naf" authorityURI="http://id.loc.gov/authorities/names" valueURI="http://id.loc.gov/authorities/names/n80034013">
+      <namePart>Institute for the Future</namePart>
+      <role>
+        <roleTerm type="code" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators" valueURI="http://id.loc.gov/vocabulary/relators/cre">cre</roleTerm>
+        <roleTerm type="text" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators" valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+      </role>
+    </name>
+    <name type="personal" authority="naf" authorityURI="http://id.loc.gov/authorities/names" valueURI="http://id.loc.gov/authorities/names/n77010151">
+      <namePart>Amara, Roy</namePart>
+      <role>
+        <roleTerm type="code" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators" valueURI="http://id.loc.gov/vocabulary/relators/aut">aut</roleTerm>
+        <roleTerm type="text" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators" valueURI="http://id.loc.gov/vocabulary/relators/aut">Author</roleTerm>
+      </role>
+    </name>
+    <name type="personal" authority="naf" authorityURI="http://id.loc.gov/authorities/names" valueURI="http://id.loc.gov/authorities/names/n50008848">
+      <namePart>Enzer, Selwyn</namePart>
+      <role>
+        <roleTerm type="code" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators" valueURI="http://id.loc.gov/vocabulary/relators/aut">aut</roleTerm>
+        <roleTerm type="text" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators" valueURI="http://id.loc.gov/vocabulary/relators/aut">Author</roleTerm>
+      </role>
+    </name>
+    <name type="personal" authority="naf" authorityURI="http://id.loc.gov/authorities/names" valueURI="http://id.loc.gov/authorities/names/n82129837">
+      <namePart>Lipinski, Andrew J.</namePart>
+      <role>
+        <roleTerm type="code" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators" valueURI="http://id.loc.gov/vocabulary/relators/aut">aut</roleTerm>
+        <roleTerm type="text" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators" valueURI="http://id.loc.gov/vocabulary/relators/aut">Author</roleTerm>
+      </role>
+    </name>
+    <typeOfResource>text</typeOfResource>
+    <genre authority="aat" authorityURI="http://vocab.getty.edu/aat/" valueURI="http://vocab.getty.edu/aat/300027267">Reports</genre>
+    <originInfo>
+      <dateIssued keyDate="yes" encoding="w3cdtf">1973-08-01</dateIssued>
+    </originInfo>
+    <language>
+      <languageTerm authority="iso639-2b" authorityURI="http://id.loc.gov/vocabulary/iso639-2" valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" type="code">eng</languageTerm>
+      <languageTerm authority="iso639-2b" authorityURI="http://id.loc.gov/vocabulary/iso639-2" valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" type="text">English</languageTerm>
+    </language>
+    <physicalDescription>
+      <form authority="rdacarrier" authorityURI="http://id.loc.gov/vocabulary/carriers" valueURI="http://id.loc.gov/vocabulary/carriers/nc">volume</form>
+      <extent>1 item</extent>
+      <reformattingQuality>access</reformattingQuality>
+      <digitalOrigin>reformatted digital</digitalOrigin>
+      <internetMediaType>image/tiff</internetMediaType>
+    </physicalDescription>
+    <note displayLabel="Attribution">This work by the Institute for the Future (IFTF) was digitized by Stanford Libraries in 2017. Attribution should be given to IFTF if shared or reused in any way.</note>
+    <subject>
+      <name type="corporate" authority="naf" authorityURI="http://id.loc.gov/authorities/names" valueURI="http://id.loc.gov/authorities/names/n80034013">
+        <namePart>Institute for the Future</namePart>
+      </name>
+    </subject>
+    <subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects" valueURI="http://id.loc.gov/authorities/subjects/sh85029495">
+      <topic>Computer engineering</topic>
+    </subject>
+    <subject authority="lcsh">
+      <topic authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects" valueURI="http://id.loc.gov/authorities/subjects/sh85084825">Microelectronics industry</topic>
+      <geographic authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects" valueURI="http://id.loc.gov/authorities/names/n79041717">California</geographic>
+      <geographic>Santa Clara County</geographic>
+    </subject>
+    <subject authority="lcsh">
+      <topic authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects" valueURI="http://id.loc.gov/authorities/subjects/sh85118617">Science and industry</topic>
+      <geographic authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects" valueURI="http://id.loc.gov/authorities/names/n79041717">California</geographic>
+      <geographic>Santa Clara County</geographic>
+    </subject>
+    <identifier type="local" displayLabel="Source ID">M1186_b29_f04</identifier>
+    <identifier type="local" displayLabel="IFTF Number">SR-0028</identifier>
+    <location>
+      <physicalLocation type="repository" authority="naf" valueURI="http://id.loc.gov/authorities/names/no2014019980">Stanford University. Libraries. Department of Special Collections and University Archives</physicalLocation>
+      <shelfLocator>M1186</shelfLocator>
+      <url usage="primary display">https://purl.stanford.edu/bb361mj1737</url>
+    </location>
+    <recordInfo>
+      <languageOfCataloging>
+        <languageTerm type="code" authority="iso639-2b" authorityURI="http://id.loc.gov/vocabulary/iso639-2" valueURI="http://id.loc.gov/vocabulary/iso639-2/eng">eng</languageTerm>
+      </languageOfCataloging>
+      <recordContentSource authority="marcorg" authorityURI="http://id.loc.gov/vocabulary/organizations" valueURI="http://id.loc.gov/vocabulary/organizations/cst">CSt</recordContentSource>
+      <recordOrigin>human prepared</recordOrigin>
+    </recordInfo>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Institute for the Future : reports, 1969-1986</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/yf563kp2275</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">While Special Collections is the owner of the physical and digital items, permission to examine collection materials is not an authorization to publish. These materials are made available for use in research, teaching, and private study. Any transmission or reproduction beyond that allowed by fair use requires permission from the owners of rights, heir(s) or assigns. See: http://library.stanford.edu/spc/using-collections/permission-publish. Access Condition: Content is available for access via the Special Collections Reading Room.</accessCondition>
+  </mods>
+  <releaseData>
+    <release to="Searchworks">true</release>
+  </releaseData>
+  <thumb>bb361mj1737/bb361mj1737_00_0001.jp2</thumb>
+</publicObject>

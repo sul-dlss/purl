@@ -1,0 +1,21 @@
+{
+  "id": "pg500wr6297",
+  "type": "https://ocfl.io/1.1/spec/#inventory",
+  "digestAlgorithm": "sha512",
+  "head": "v1",
+  "versions": {
+    "v1": {
+      "created": "2024-05-23T17:19:42Z",
+      "state": {
+        "5568709d8d1a9b8cd90c49cc4cf7ed32abfb47790a94fedefeecb4f132af21a6cd767ee28b3a9302b5bc7e01fa47d289971172082546bcb054e500c3f3edd001": [
+          "public"
+        ]
+      }
+    }
+  },
+  "manifest": {
+    "5568709d8d1a9b8cd90c49cc4cf7ed32abfb47790a94fedefeecb4f132af21a6cd767ee28b3a9302b5bc7e01fa47d289971172082546bcb054e500c3f3edd001": [
+      "v1/content/public"
+    ]
+  }
+}

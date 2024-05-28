@@ -1,0 +1,27 @@
+{
+  "id": "bh502xm3351",
+  "type": "https://ocfl.io/1.1/spec/#inventory",
+  "digestAlgorithm": "sha512",
+  "head": "v1",
+  "versions": {
+    "v1": {
+      "created": "2024-05-23T17:19:42Z",
+      "state": {
+        "f95a15658230f731f1a589b6eaff189a4720651927324fa03826e631756557d923f9c041221816105ca47015d50ef748109e4754168d4540c5308273e1d27b42": [
+          "cocina.json"
+        ],
+        "ad6919be2827541198814020a96ae51d1672041887d95c8715fa09fc041dbf8bc43e8dc1c186db70196da549c626e6fcc66e0d5ea3776d041d1fde97be2803ed": [
+          "public"
+        ]
+      }
+    }
+  },
+  "manifest": {
+    "f95a15658230f731f1a589b6eaff189a4720651927324fa03826e631756557d923f9c041221816105ca47015d50ef748109e4754168d4540c5308273e1d27b42": [
+      "v1/content/cocina.json"
+    ],
+    "ad6919be2827541198814020a96ae51d1672041887d95c8715fa09fc041dbf8bc43e8dc1c186db70196da549c626e6fcc66e0d5ea3776d041d1fde97be2803ed": [
+      "v1/content/public"
+    ]
+  }
+}
