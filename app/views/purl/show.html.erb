@@ -6,6 +6,7 @@
     <%= tag :link, rel: "alternate", title: "oEmbed Profile", type: 'application/json+oembed', href: oembed_url_template.expand(format: 'json', url: embeddable_url(@purl.druid)) %>
     <%= tag :link, rel: "alternate", title: "oEmbed Profile", type: 'application/xml+oembed', href: oembed_url_template.expand(format: 'xml', url: embeddable_url(@purl.druid)) %>
   <% end %>
+  <%= tag :link, rel: "canonical", href: purl_url(@purl) %>
   <%= tag :link, rel: "alternate", title: "MODS XML", type: 'application/xml', href: purl_url(@purl, format: 'mods') if @purl.mods? %>
   <%= tag :link, rel: "alternate", title: "IIIF Manifest", type: 'application/json', href: manifest_iiif_purl_url(@purl) %>
   <%= tag :link, rel: "up", href: purl_url(@purl.containing_collections.first) if @purl.containing_collections.present? %>
