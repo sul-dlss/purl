@@ -62,6 +62,10 @@ class PurlResource
     @meta_json ||= JSON.parse(meta_json_body) if meta_json_body.present?
   end
 
+  def release_metadata
+    @release_metadata ||= ReleaseMetadata.new(meta_json)
+  end
+
   # @deprecated
   def purl_fetcher_json
     @purl_fetcher_json ||= purl_fetcher_conn.get("/purls/#{id}").body
@@ -210,8 +214,7 @@ class PurlResource
     end
 
     delegate :catalog_key, :folio_instance_hrid, to: :public_xml
-
-    delegate :released_to?, to: :public_xml
+    delegate :released_to?, to: :release_metadata
 
     def representative_thumbnail?
       representative_thumbnail.present?

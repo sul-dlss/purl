@@ -1,0 +1,17 @@
+{
+    "releaseTags": [
+        {
+            "who":"caster",
+            "what":"self",
+            "date":"2024-05-23T16:50:09.000+00:00",
+            "to":"Searchworks",
+            "release":true
+        },{
+            "who":"caster",
+            "what":"self",
+            "date":"2024-05-23T16:50:09.000+00:00",
+            "to":"PURL sitemap",
+            "release":true
+        }
+    ]
+}
