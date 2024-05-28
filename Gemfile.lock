@@ -91,7 +91,7 @@ GEM
     bundler-audit (0.9.1)
       bundler (>= 1.2.0, < 3)
       thor (~> 1.0)
-    cancancan (3.5.0)
+    cancancan (3.6.0)
     capistrano (3.18.1)
       airbrussh (>= 1.0.0)
       i18n
@@ -158,7 +158,7 @@ GEM
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashdiff (1.1.0)
-    honeybadger (5.10.0)
+    honeybadger (5.10.2)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     iiif-presentation (1.3.0)
@@ -195,7 +195,7 @@ GEM
     method_source (1.1.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.6)
-    minitest (5.23.0)
+    minitest (5.23.1)
     mods (3.0.4)
       edtf (~> 3.0)
       iso-639
@@ -242,7 +242,7 @@ GEM
     parser (3.3.1.0)
       ast (~> 2.4.1)
       racc
-    propshaft (0.8.0)
+    propshaft (0.9.0)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
       rack
@@ -296,7 +296,7 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.2.1)
-    rdoc (6.6.3.1)
+    rdoc (6.7.0)
       psych (>= 4.0.0)
     recaptcha (5.16.0)
     regexp_parser (2.9.2)
@@ -321,7 +321,7 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.1)
-    rubocop (1.63.5)
+    rubocop (1.64.0)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
@@ -402,7 +402,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webmock (3.23.0)
+    webmock (3.23.1)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
@@ -415,7 +415,7 @@ GEM
       chronic (>= 0.6.3)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.14)
+    zeitwerk (2.6.15)
 
 PLATFORMS
   ruby
