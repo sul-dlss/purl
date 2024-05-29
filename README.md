@@ -65,8 +65,11 @@ The RuboCop style enforcement can be run without running the tests
 
 Deployment is handled automatically via Jenkins when a release is published to GitHub.
 
+## Data
+Purl data is stored in a pair-tree structure starting at `Settings.document_cache_root`.  In each pair-tree is a file called `cocina.json` which is the public representation of the current version of the object.  There is also a `meta.json` file that holds information about where this object is released to.  The `meta.json` is not versionable data.  Additionally there is an XML file called `public` which has a representation of the object that was derived from `cocina.json`.
+
 ## Search engine indexing
 
-Only items with "PURL sitemap" release tag are included in the sitemap and all other items have a "noindex" meta tag.
+Only items with "PURL sitemap" release tag (in `meta.json`) are included in the sitemap and all other items have a "noindex" meta tag.
 
-Structured metadata in the form of schema.org markup is generated to enhance discoverability of datasets and videos. [More info about schema.org markup](https://docs.google.com/document/d/1BO10k_zSTqqT1YmlCg5oE4tOsGXiqmHzQyb6itZypwo). 
+Structured metadata in the form of schema.org markup is generated to enhance discoverability of datasets and videos. [More info about schema.org markup](https://docs.google.com/document/d/1BO10k_zSTqqT1YmlCg5oE4tOsGXiqmHzQyb6itZypwo).
