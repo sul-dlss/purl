@@ -12,6 +12,11 @@ RSpec.describe 'purl/_find_it' do
 
   context 'Released to SearchWorks' do
     let(:purl) { PurlResource.new(id: 'bf973rp9392') }
+    let(:release_metadata) { instance_double(ReleaseMetadata, released_to?: true) }
+
+    before do
+      allow(ReleaseMetadata).to receive(:new).and_return(release_metadata)
+    end
 
     it 'displays a View in SearchWorks link' do
       render 'purl/find_it', document: purl

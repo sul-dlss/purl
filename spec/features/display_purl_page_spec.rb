@@ -79,6 +79,11 @@ RSpec.describe 'Displaying the PURL page' do
 
   context 'item released to searchworks' do
     let(:druid) { 'cp088pb1682' }
+    let(:release_metadata) { instance_double(ReleaseMetadata, released_to?: true) }
+
+    before do
+      allow(ReleaseMetadata).to receive(:new).and_return(release_metadata)
+    end
 
     it 'displays the page' do
       visit "/#{druid}"

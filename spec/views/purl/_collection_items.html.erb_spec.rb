@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'purl/_collection_items' do
+  let(:release_metadata) { instance_double(ReleaseMetadata, released_to?: true) }
+
+  before do
+    allow(ReleaseMetadata).to receive(:new).and_return(release_metadata)
+  end
+
   context 'when collection has a folio HRID' do
     let(:purl) { PurlResource.new(id: 'bb631ry3167') }
 
@@ -34,6 +40,7 @@ RSpec.describe 'purl/_collection_items' do
 
   context 'when not released to SearchWorks' do
     let(:purl) { PurlResource.new(id: 'ss099gb5528') }
+    let(:release_metadata) { instance_double(ReleaseMetadata, released_to?: false) }
 
     it 'does not display View items in this collection link' do
       # render

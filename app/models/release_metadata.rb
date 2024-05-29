@@ -9,7 +9,9 @@ class ReleaseMetadata
   end
 
   def released_to?(key)
-    release = metadata["releaseTags"]&.find { |tag| tag["to"] == key }&.fetch("release", nil)
+    return false unless metadata
+
+    release = metadata['releaseTags']&.find { |tag| tag['to'] == key }&.fetch('release', nil)
 
     release == true
   end

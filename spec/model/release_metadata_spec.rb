@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ReleaseMetadata do
   subject(:metadata) { described_class.new(meta_json) }
+
   let(:meta_json) { JSON.parse(fixture) }
   let(:fixture) { File.read('spec/fixtures/meta_json/sw_released.json') }
 

@@ -214,7 +214,12 @@ class PurlResource
     end
 
     delegate :catalog_key, :folio_instance_hrid, to: :public_xml
-    delegate :released_to?, to: :release_metadata
+
+    if Settings.features.read_from_ocfl_root
+      delegate :released_to?, to: :release_metadata
+    else
+      delegate :released_to?, to: :public_xml
+    end
 
     def representative_thumbnail?
       representative_thumbnail.present?
