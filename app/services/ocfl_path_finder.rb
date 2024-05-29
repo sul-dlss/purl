@@ -13,6 +13,7 @@ class OcflPathFinder
 
   def path
     return unless Settings.features.read_from_ocfl_root
+    return 'extensions/sidecar-metadata/' if filename == 'meta.json'
 
     relative_path = directory.path(filepath: filename).relative_path_from(object_root)
 
