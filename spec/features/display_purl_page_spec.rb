@@ -1,13 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Displaying the PURL page' do
-  before do
-    stub_request(:get, "https://purl-fetcher-stage.stanford.edu/purls/#{druid}")
-      .to_return(status: 200, body: "{\"true_targets\": #{true_targets}}", headers: { 'content-type' => 'application/json' })
-  end
-
-  let(:true_targets) { ['Searchworks'] }
-
   context 'book' do
     let(:druid) { 'bb737zp0787' }
 
@@ -173,7 +166,6 @@ RSpec.describe 'Displaying the PURL page' do
 
   context 'with an item that is crawlable' do
     let(:druid) { 'gb089bd2251' }
-    let(:true_targets) { ['PURL sitemap'] }
 
     it 'excludes noindex meta tag' do
       visit "/#{druid}"
@@ -195,11 +187,6 @@ RSpec.describe 'Displaying the PURL page' do
   describe 'legacy object id "ir:rs276tc2764"' do
     let(:druid) { 'rs276tc2764' }
 
-    before do
-      stub_request(:get, "https://purl-fetcher-stage.stanford.edu/purls/#{druid}")
-        .to_return(status: 200, body: '{"true_targets": []}', headers: { 'content-type' => 'application/json' })
-    end
-
     it 'routed to rs276tc2764' do
       visit "/ir:#{druid}"
       expect(page).to have_current_path("/#{druid}", ignore_query: true)
@@ -209,11 +196,6 @@ RSpec.describe 'Displaying the PURL page' do
   describe 'license' do
     let(:druid) { 'wp335yr5649' }
 
-    before do
-      stub_request(:get, "https://purl-fetcher-stage.stanford.edu/purls/#{druid}")
-        .to_return(status: 200, body: '{"true_targets": []}', headers: { 'content-type' => 'application/json' })
-    end
-
     it 'included in purl page' do
       visit "/#{druid}"
       expect(page).to have_content 'This work is licensed under an Open Data Commons Public Domain Dedication & License 1.0'
@@ -222,11 +204,6 @@ RSpec.describe 'Displaying the PURL page' do
 
   describe 'terms of use' do
     let(:druid) { 'wp335yr5649' }
-
-    before do
-      stub_request(:get, "https://purl-fetcher-stage.stanford.edu/purls/#{druid}")
-        .to_return(status: 200, body: '{"true_targets": []}', headers: { 'content-type' => 'application/json' })
-    end
 
     it 'included in purl page' do
       visit "/#{druid}"
