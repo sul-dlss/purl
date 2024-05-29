@@ -90,10 +90,15 @@ class PurlResource
 
   # Can be crawled / indexed by a crawler, e.g. Googlebot
   def crawlable?
-    (meta_json || purl_fetcher_json).fetch('true_targets').include?('PURL sitemap')
-  rescue StandardError => e
-    Honeybadger.notify(e)
-    false # ensure that purl-fetcher being down doesn't prevent the page from drawing
+    true_targets.include?('PURL sitemap')
+  end
+
+  def released_to_searchworks?
+    true_targets.include?('Searchworks')
+  end
+
+  def released_to_earthworks?
+    true_targets.include?('Earthworks')
   end
 
   delegate :rights_metadata, :object_type, :source_id, to: :public_xml
@@ -211,8 +216,6 @@ class PurlResource
 
     delegate :catalog_key, :folio_instance_hrid, to: :public_xml
 
-    delegate :released_to?, to: :public_xml
-
     def representative_thumbnail?
       representative_thumbnail.present?
     end
@@ -294,6 +297,13 @@ class PurlResource
     end
 
     private
+
+    def true_targets
+      (meta_json || purl_fetcher_json).fetch('true_targets')
+    rescue StandardError => e
+      Honeybadger.notify(e)
+      [] # ensure that purl-fetcher being down doesn't prevent the page from drawing
+    end
 
     def druid_tree
       Dor::Util.create_pair_tree(druid) || druid

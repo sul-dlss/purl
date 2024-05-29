@@ -3,7 +3,7 @@
     <% document.containing_purl_collections.each do |collection_document| %>
       <div class="mb-3">
         <p class="mb-0"><%= collection_document.title %></p>
-        <% if collection_document.released_to?('Searchworks') %>
+        <% if collection_document.released_to_searchworks? %>
           <%= link_to('View other items in this collection in SearchWorks', collection_document.collection_items_link, class: 'su-underline') %>
         <% end %>
       </div>
