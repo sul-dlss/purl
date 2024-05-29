@@ -1,14 +1,10 @@
 <% releases = [] %>
 
-<% Settings.releases.each do |dest| %>
-  <% next if dest[:key] == "Searchworks" && document.catalog_key %>
-  
-  <% if document.released_to? dest[:key] %>
-    <% releases << link_to(dest[:label], dest[:url] % document.attributes, class: 'su-underline') %>
-  <% end %>
-  <% if dest[:key] == 'EarthWorks' && document.type == 'geo' %>
-    <% releases << link_to(dest[:label], dest[:url] % document.attributes, class: 'su-underline') %>
-  <% end %>
+<% if document.released_to_searchworks? && !document.catalog_key %>
+  <% releases << link_to("View in SearchWorks", "https://searchworks.stanford.edu/view/%{druid}" % document.attributes, class: 'su-underline') %>
+<% end %>
+<% if document.released_to_earthworks? %>
+  <% releases << link_to("View in EarthWorks", "https://earthworks.stanford.edu/catalog/stanford-%{druid}" % document.attributes, class: 'su-underline') %>
 <% end %>
 
 <% if document.catalog_key || releases.present? %>

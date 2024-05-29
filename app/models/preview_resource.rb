@@ -18,7 +18,6 @@ class PreviewResource
     []
   end
 
-  def released_to?(_key); end
   def copyright?; end
   def use_and_reproduction?; end
   def catalog_key; end
