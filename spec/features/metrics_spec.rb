@@ -10,9 +10,6 @@ RSpec.describe 'Metrics display', :js do
   before do
     stub_request(:get, "https://sdr-metrics-api-prod.stanford.edu/#{druid}/metrics")
       .to_return(status:, body:, headers: { 'Content-Type' => 'application/json' })
-    stub_request(:get, "https://purl-fetcher-stage.stanford.edu/purls/#{druid}")
-      .to_return(status: 200, body: '{"true_targets": []}', headers: { 'content-type' => 'application/json' })
-
     visit "/#{druid}"
   end
 

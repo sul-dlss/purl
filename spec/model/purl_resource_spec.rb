@@ -261,25 +261,6 @@ RSpec.describe PurlResource do
         it { is_expected.to be false }
       end
     end
-
-    context 'without a meta.json file in the object path' do
-      before do
-        stub_request(:get, 'https://purl-fetcher-stage.stanford.edu/purls/druid:kn112rm5773')
-          .to_return(status: 200, body: "{\"true_targets\": #{true_targets}}", headers: { 'content-type' => 'application/json' })
-      end
-
-      context 'when resource has a sitemap target' do
-        let(:true_targets) { ['PURL sitemap'] }
-
-        it { is_expected.to be true }
-      end
-
-      context 'when resource has a no sitemap' do
-        let(:true_targets) { ['Searchworks'] }
-
-        it { is_expected.to be false }
-      end
-    end
   end
 
   describe '#catalog_key' do

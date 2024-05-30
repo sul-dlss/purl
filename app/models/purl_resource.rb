@@ -62,18 +62,6 @@ class PurlResource
     @meta_json ||= JSON.parse(meta_json_body) if meta_json_body.present?
   end
 
-  # @deprecated
-  def purl_fetcher_json
-    @purl_fetcher_json ||= purl_fetcher_conn.get("/purls/#{id}").body
-  end
-
-  # @deprecated
-  def purl_fetcher_conn
-    Faraday.new(url: Settings.purl_fetcher.url) do |builder|
-      builder.response :json
-    end
-  end
-
   # @return [Array<String>] the identifiers of the collections this item is a member of
   def containing_collections
     @containing_collections ||= public_xml.relations('isMemberOfCollection')
@@ -299,10 +287,7 @@ class PurlResource
     private
 
     def true_targets
-      (meta_json || purl_fetcher_json).fetch('true_targets')
-    rescue StandardError => e
-      Honeybadger.notify(e)
-      [] # ensure that purl-fetcher being down doesn't prevent the page from drawing
+      meta_json.fetch('true_targets')
     end
 
     def druid_tree
