@@ -36,16 +36,12 @@ embed:
 
 metrics_api_url: "https://sdr-metrics-api-prod.stanford.edu"
 
-releases:
-  - label: "View in SearchWorks"
-    key: "Searchworks"
-    url: "https://searchworks.stanford.edu/view/%{druid}"
-  - label: "View in EarthWorks"
-    key: "EarthWorks"
-    url: "https://earthworks.stanford.edu/catalog/stanford-%{druid}"
-
 searchworks:
   url: "https://searchworks.stanford.edu"
+  view_template_url: "https://searchworks.stanford.edu/view/%{druid}"
+
+earthworks:
+  view_template_url: "https://earthworks.stanford.edu/catalog/stanford-%{druid}"
 
 landing_page_druids:
   - bb112zx3193
