@@ -1,18 +1,16 @@
 <% releases = [] %>
 
 <% if document.released_to_searchworks? && !document.catalog_key %>
-  <% url_template = Settings.releases.find { |val| val.key == 'Searchworks' }.url %>
-  <% releases << link_to("View in SearchWorks", url_template % document.attributes, class: 'su-underline') %>
+  <% releases << link_to("View in SearchWorks", Settings.searchworks.view_template_url % document.attributes, class: 'su-underline') %>
 <% end %>
 <% if document.released_to_earthworks? %>
-  <% url_template = Settings.releases.find { |val| val.key == 'EarthWorks' }.url %>
-  <% releases << link_to("View in EarthWorks", url_template % document.attributes, class: 'su-underline') %>
+  <% releases << link_to("View in EarthWorks", Settings.earthworks.view_template_url % document.attributes, class: 'su-underline') %>
 <% end %>
 
 <% if document.catalog_key || releases.present? %>
   <%= render SectionComponent.new(label: 'Also listed in') do %>
     <% if document.catalog_key %>
-      <%= link_to 'View in SearchWorks', "#{Settings.searchworks.url}/view/#{document.catalog_key}", class: 'su-underline' %>
+      <%= link_to 'View in SearchWorks', Settings.searchworks.view_template_url % { druid: document.catalog_key }, class: 'su-underline' %>
     <% end %>
 
     <%= releases.to_sentence.html_safe %>
