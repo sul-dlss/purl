@@ -6,8 +6,8 @@ class OcflPathFinder
     new(...).path
   end
 
-  def initialize(druid_tree:, filename:)
-    @druid_tree = druid_tree
+  def initialize(druid:, filename:)
+    @druid = druid
     @filename = filename
   end
 
@@ -15,7 +15,7 @@ class OcflPathFinder
     return unless Settings.features.read_from_ocfl_root
     return 'extensions/sidecar-metadata/' if filename == 'meta.json'
 
-    relative_path = directory.path(filepath: filename).relative_path_from(object_root)
+    relative_path = ocfl_object.path(filepath: filename).relative_path_from(ocfl_object.root)
 
     File.join(
       File.dirname(relative_path),
@@ -27,13 +27,10 @@ class OcflPathFinder
 
   private
 
-  attr_reader :druid_tree, :filename
+  attr_reader :druid, :filename
 
-  def object_root
-    File.join(Settings.ocfl_root, druid_tree)
-  end
-
-  def directory
-    OCFL::Object::Directory.new(object_root:)
+  def ocfl_object
+    storage_root = OCFL::StorageRoot.new(base_directory: Settings.ocfl_root)
+    storage_root.object(druid)
   end
 end

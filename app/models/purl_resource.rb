@@ -283,9 +283,9 @@ class PurlResource
         druid: id,
         druid_tree:,
         root_path: self.class.storage_root_path,
-        ocfl_public_path: OcflPathFinder.path(druid_tree:, filename: 'public'),
-        ocfl_cocina_path: OcflPathFinder.path(druid_tree:, filename: 'cocina.json'),
-        ocfl_meta_path: OcflPathFinder.path(druid_tree:, filename: 'meta.json')
+        ocfl_public_path: OcflPathFinder.path(druid: id, filename: 'public'),
+        ocfl_cocina_path: OcflPathFinder.path(druid: id, filename: 'cocina.json'),
+        ocfl_meta_path: OcflPathFinder.path(druid: id, filename: 'meta.json')
       }
     end
 
