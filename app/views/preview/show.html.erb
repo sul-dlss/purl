@@ -14,7 +14,7 @@
 
 <div class="record-metadata row">
   <div class="record-sections col-md-8">
-    <%= render 'purl/access', document: @purl %>
+    <%= render AccessComponent.new(document: @purl) %>
     <%= render "mods_abstract_contents", document: @purl %>
     <%= render ModsDescriptionComponent.new(document: @purl) %>
     <%= render ModsContributorsComponent.new(document: @purl) %>

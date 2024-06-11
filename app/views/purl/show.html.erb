@@ -67,7 +67,7 @@ end
     <% end %>
   </div>
   <div class="record-sections col-lg-4">
-    <%= render 'access', document: @purl %>
+    <%= render AccessComponent.new(document: @purl) %>
     <%= render 'mods_citation', document: @purl %>
     <%= render "collection", document: @purl %>
     <%= render "collection_items", document: @purl %>

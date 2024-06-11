@@ -1,0 +1,15 @@
+<%= render SectionComponent.new(label: 'Access conditions') do %>
+  <dl>
+    <%= render_access_conditions %>
+
+    <% if copyright? %>
+      <dt>Copyright</dt>
+      <dd><%= copyright %></dd>
+    <% end %>
+
+    <% if use_and_reproduction? %>
+      <dt>Use and Reproduction</dt>
+      <dd><%= use_and_reproduction %></dd>
+    <% end %>
+  </dl>
+<% end %>
