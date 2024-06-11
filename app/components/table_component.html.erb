@@ -1,9 +1,3 @@
 <%= tag.table(class: "table", aria_labelledby: label_id) do %>
-  <% if with_body? %>
-    <tbody>
-      <%= content %>
-    </tbody>
-  <% else %>
-    <%= content %>
-  <% end %>
+  <%= content %>
 <% end %>

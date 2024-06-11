@@ -1,7 +1,7 @@
 <% if document.mods.subject.present? || document.mods.genre.present? %>
   <% label_id = "section-subjects" %>
   <%= render SectionComponent.new(label: 'Subjects', label_id: label_id) do %>
-    <%= render TableComponent.new(label_id: label_id, with_body: false) do %>
+    <%= render TableComponent.new(label_id: label_id) do %>
       <tbody>
         <% document.mods.subject.each do |subject| %>
           <%= mods_subject_row_field(subject)%>
