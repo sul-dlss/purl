@@ -5,7 +5,7 @@
 <% if document.mods.audience.present? || note_fields.present? || middle_fields.present? || document.mods.identifier.present? ||  document.mods.location.present? %>
   <% label_id = "section-bibliographic-information" %>
   <%= render SectionComponent.new(label: 'Bibliographic information', label_id: label_id) do %>
-    <%= render TableComponent.new(with_body: false, label_id: label_id) do %>
+    <%= render TableComponent.new(label_id: label_id) do %>
       <% document.mods.audience.each do |field| %>
         <tbody>
           <%= mods_record_row_field(field) {|value| format_mods_html(value, field: field) + with_stanford_only(value) } %>

@@ -2,7 +2,7 @@
   <% label_id = 'section-metrics' %>
   <%= render SectionComponent.new(label: 'Usage metrics', label_id: label_id) do %>
     <% if document.metrics.present? %>
-      <%= render TableComponent.new(label_id: label_id, with_body: false) do %>
+      <%= render TableComponent.new(label_id: label_id) do %>
       <% if document.embeddable? %>
       <tbody>
         <tr>
@@ -27,8 +27,8 @@
       Data collected since December 2023.
       <a href="https://sdr.library.stanford.edu/sdr-metrics" class="su-underline">How are these metrics generated?</a>
     </p>
-    <% if document.doi.present? %> 
-      <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>    
+    <% if document.doi.present? %>
+      <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
       <p><a href="https://help.altmetric.com/support/solutions/articles/6000232837-what-is-altmetric-and-what-does-it-provide-" class="su-underline" target='_blank' rel='noopener'>Altmetric</a> tracks online attention to this work. A badge is shown only when online mentions are found.</p>
       <div class='altmetric-embed' data-badge-type='donut' data-doi="<%= document.doi_id %>" data-badge-popover='right' data-hide-no-mentions='true'></div>
     <% end %>
