@@ -4,12 +4,12 @@
   <%= render SectionComponent.new(label: 'Creators/Contributors', label_id: label_id) do %>
     <%= render TableComponent.new(label_id: label_id) do %>
       <% fields.each do |field| %>
-        <tbody>
-          <%= mods_record_row_field(field, delimiter: nil) do |name| %>
-            <% capture do %>
-                <%= name.name %>
-                </td><td>
-                <% if name.orcid.present? %>                
+        <%= render TableBodyComponent.new(field:) do |component| %>
+          <% field.values.select(&:present?).each do |name| %>
+            <%= component.with_value do %>
+              <%= tag.td name.name %>
+              <% if name.orcid.present? %>
+                <td>
                   <span class="orcid">
                     <% orcid_url = "https://orcid.org/#{name.orcid}" %>
                     <a href="<%= orcid_url %>" class="su-underline" aria-label="view ORCID page for <%= name.name %>">
@@ -17,11 +17,12 @@
                       <%= orcid_url %>
                     </a> (unverified)
                   </span>
-                <% end %>
+                </td>
               <% end %>
             <% end %>
-          </tbody>
-      <% end %>    
+          <% end %>
+        <% end %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
