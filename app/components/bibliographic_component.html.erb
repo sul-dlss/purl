@@ -1,0 +1,30 @@
+<% label_id = "section-bibliographic-information" %>
+<%= render SectionComponent.new(label: 'Bibliographic information', label_id:) do %>
+  <%= render TableComponent.new(label_id:) do %>
+    <% mods.audience.each do |field| %>
+      <tbody>
+        <%= render ModsDisplay::RowFieldComponent.new(field:, delimiter: ', ', value_transformer: build_transformer(field)) %>
+      </tbody>
+    <% end %>
+    <% note_fields.each do |field| %>
+      <tbody>
+        <%= render ModsDisplay::RowFieldComponent.new(field:, value_transformer: build_transformer(field)) %>
+      </tbody>
+    <% end %>
+    <% middle_fields.each do |field| %>
+      <tbody>
+        <%= render ModsDisplay::RowFieldComponent.new(field:, delimiter: '') %>
+      </tbody>
+    <% end %>
+    <% identifier.each do |field| %>
+      <tbody>
+        <%= render ModsDisplay::RowFieldComponent.new(field:, delimiter: ', ', value_transformer: build_transformer(field)) %>
+      </tbody>
+    <% end %>
+    <% location.each do |field| %>
+      <tbody>
+        <%= render ModsDisplay::RowFieldComponent.new(field:, value_transformer: build_transformer(field)) %>
+      </tbody>
+    <% end %>
+  <% end %>
+<% end %>
