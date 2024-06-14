@@ -63,7 +63,7 @@ end
       <%= render ModsDescriptionComponent.new(document: @purl) %>
       <%= render ModsContributorsComponent.new(document: @purl) %>
       <%= render "mods_subjects", document: @purl %>
-      <%= render "mods_bibliographic", document: @purl %>
+      <%= render BibliographicComponent.new(document: @purl) %>
     <% end %>
   </div>
   <div class="record-sections col-lg-4">
