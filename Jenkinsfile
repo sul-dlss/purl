@@ -21,6 +21,7 @@ pipeline {
         sshagent (['sul-devops-team', 'sul-continuous-deployment']){
           sh '''#!/bin/bash -l
           export DEPLOY=1
+          export CONTROLMASTER_HOST=dlss-ci-prod
 
           # Load RVM
           rvm use 3.3.1@purl --create
@@ -65,6 +66,7 @@ pipeline {
         sshagent (['sul-devops-team', 'sul-continuous-deployment']){
           sh '''#!/bin/bash -l
           export DEPLOY=1
+          export CONTROLMASTER_HOST=dlss-ci-prod
 
           # Load RVM
           rvm use 3.3.1@purl --create
@@ -109,6 +111,7 @@ pipeline {
         sshagent (['sul-devops-team', 'sul-continuous-deployment']){
           sh '''#!/bin/bash -l
           export DEPLOY=1
+          export CONTROLMASTER_HOST=dlss-ci-prod
           export REVISION=$TAG_NAME
 
           # Load RVM
