@@ -3,7 +3,7 @@
     <% field_map.each do |values, delimiter| %>
       <% values.each do |value| %>
         <tbody>
-          <%= render ModsDisplay::RowFieldComponent.new(field: value, delimiter: delimiter) %>
+          <%= render RowFieldComponent.new(field: value, delimiter: delimiter) %>
         </tbody>
       <% end %>
     <% end %>
