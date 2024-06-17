@@ -19,7 +19,7 @@ RSpec.describe ContentMetadata do
     end
     subject { content_metadata.resources }
 
-    it { is_expected.to all(be_kind_of ResourceFile) }
+    it { is_expected.to all(be_a ResourceFile) }
   end
 
   describe '#reading_order' do

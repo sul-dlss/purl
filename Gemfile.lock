@@ -189,6 +189,8 @@ GEM
     faraday-net_http (3.1.0)
       net-http
     ffi (1.17.0)
+    ffi (1.17.0-x86_64-darwin)
+    ffi (1.17.0-x86_64-linux-gnu)
     geo_coord (0.2.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -381,6 +383,10 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.31.3)
       parser (>= 3.3.1.0)
+    rubocop-capybara (2.21.0)
+      rubocop (~> 1.41)
+    rubocop-factory_bot (2.26.1)
+      rubocop (~> 1.61)
     rubocop-performance (1.21.1)
       rubocop (>= 1.48.1, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
@@ -391,6 +397,9 @@ GEM
       rubocop-ast (>= 1.31.1, < 2.0)
     rubocop-rspec (3.0.1)
       rubocop (~> 1.61)
+    rubocop-rspec_rails (2.30.0)
+      rubocop (~> 1.61)
+      rubocop-rspec (~> 3, >= 3.0.1)
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
     selenium-webdriver (4.21.1)
@@ -490,9 +499,12 @@ DEPENDENCIES
   recaptcha
   rspec-rails (~> 6.0)
   rubocop
+  rubocop-capybara
+  rubocop-factory_bot
   rubocop-performance
   rubocop-rails
   rubocop-rspec
+  rubocop-rspec_rails
   selenium-webdriver (!= 3.13.0)
   simplecov
   sitemap_generator
