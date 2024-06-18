@@ -3,12 +3,12 @@
   <%= render TableComponent.new(label_id:) do %>
     <tbody>
       <% document.mods.subject.each do |field| %>
-        <%= render ModsDisplay::RowFieldComponent.new(field:, value_transformer: ->(subject_line) { safe_join(link_mods_subjects(subject_line), ' > ') }) %>
+        <%= render RowFieldComponent.new(field:, value_transformer: ->(subject_line) { safe_join(link_mods_subjects(subject_line), ' > ') }) %>
       <% end %>
     </tbody>
     <tbody>
       <% document.mods.genre.each do |field| %>
-        <%= render ModsDisplay::RowFieldComponent.new(field:, value_transformer: ->(genre_line) { link_to_mods_subject(genre_line) }) %>
+        <%= render RowFieldComponent.new(field:, value_transformer: ->(genre_line) { link_to_mods_subject(genre_line) }) %>
       <% end %>
     </tbody>
   <% end %>
