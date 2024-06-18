@@ -1,0 +1,11 @@
+<% values.each do |value| %>
+  <tr>
+    <% if label %>
+      <%= tag.th label, **label_html_attributes %>
+    <% end %>
+
+    <%= tag.td **value_html_attributes do %>
+      <%= value %>
+    <% end %>
+  </tr>
+<% end %>
