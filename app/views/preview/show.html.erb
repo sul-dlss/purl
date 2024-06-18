@@ -18,7 +18,7 @@
     <%= render "mods_abstract_contents", document: @purl %>
     <%= render ModsDescriptionComponent.new(document: @purl) %>
     <%= render ModsContributorsComponent.new(document: @purl) %>
-    <%= render "mods_subjects", document: @purl %>
+    <%= render SubjectComponent.new(document: @purl) %>
     <%= render BibliographicComponent.new(document: @purl) %>
     <%= render 'mods_citation', document: @purl %>
   </div>
