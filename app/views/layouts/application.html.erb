@@ -17,11 +17,11 @@
       const config = {
         collection: document.querySelector('link[rel="up"]')?.getAttribute('href')
       }
-      
+
       <% if Settings.analytics_debug %>
         config.debug_mode = true
       <% end %>
-          
+
       gtag('config', 'G-B11RSRZLRJ', config)
     </script>
 
@@ -45,6 +45,16 @@
     <%= content_for(:head) %>
   </head>
   <body>
+    <nav id="skip-link" role="navigation" aria-label="Skip links">
+      <div class="container-xl">
+        <a
+          class="visually-hidden-focusable element-invisible element-focusable d-inline-flex m-1 py-2 px-3"
+          data-turbolinks="false"
+          href="#main-container"
+          >Skip to main content</a
+        >
+      </div>
+    </nav>
     <div id="su-wrap"> <!-- #su-wrap start -->
       <div id="su-content"> <!-- #su-content start -->
         <div id="outer-container" class="container-fluid">
