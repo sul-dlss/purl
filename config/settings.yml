@@ -1,6 +1,3 @@
-features:
-  read_from_ocfl_root: false
-
 stacks:
   url: "https://stacks.stanford.edu"
   iiif_profile: "http://iiif.io/api/image/2/level2.json"
@@ -12,7 +9,6 @@ content_search:
   url:
 
 document_cache_root: "<%= File.join(Rails.root, 'document_cache') %>"
-ocfl_root: "/stacks/ocfl"
 
 resource_cache:
   enabled: true

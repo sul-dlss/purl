@@ -14,10 +14,10 @@ class PurlResource
   MODS_NS = 'http://www.loc.gov/mods/v3'.freeze
 
   def self.all
-    return [] unless storage_root_path
+    return [] unless Settings.document_cache_root
     return to_enum(:all) unless block_given?
 
-    Find.find(storage_root_path) do |path|
+    Find.find(Settings.document_cache_root) do |path|
       next unless path.ends_with?('public')
 
       druid = Dor::Util.druid_from_pair_tree(path)
@@ -38,7 +38,7 @@ class PurlResource
   end
 
   def self.storage_root_path
-    Settings.features.read_from_ocfl_root ? Settings.ocfl_root : Settings.document_cache_root
+    Settings.document_cache_root
   end
 
   def mods?
@@ -282,10 +282,7 @@ class PurlResource
       {
         druid: id,
         druid_tree:,
-        root_path: self.class.storage_root_path,
-        ocfl_public_path: OcflPathFinder.path(druid: id, filename: 'public'),
-        ocfl_cocina_path: OcflPathFinder.path(druid: id, filename: 'cocina.json'),
-        ocfl_meta_path: OcflPathFinder.path(druid: id, filename: 'meta.json')
+        root_path: self.class.storage_root_path
       }
     end
 

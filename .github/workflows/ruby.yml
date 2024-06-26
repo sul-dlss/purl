@@ -21,8 +21,6 @@ jobs:
           bundler-cache: true
       - name: Run tests
         run: bin/rake test:prepare spec
-      - name: Run tests (with OCFL feature flag enabled)
-        run: SETTINGS__FEATURES__READ_FROM_OCFL_ROOT=true bin/rake spec
   lint:
     runs-on: ubuntu-latest
     steps:
