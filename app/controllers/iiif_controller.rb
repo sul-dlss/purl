@@ -1,16 +1,14 @@
 class IiifController < ApplicationController
   before_action :load_purl
 
-  rescue_from PurlResource::DruidNotValid, with: :invalid_druid
-  rescue_from PurlResource::ObjectNotReady, with: :object_not_ready
-
   def manifest
     iiif_version = params[:iiif_version] == 'v3' ? 3 : 2
-    return unless stale?(last_modified: @purl.updated_at.utc, etag: "#{@purl.cache_key}/#{iiif_version}/#{@purl.updated_at.utc}")
+    @version = @purl.version(:head)
+    return unless stale?(last_modified: @version.updated_at.utc, etag: "#{@version.cache_key}/#{iiif_version}/#{@version.updated_at.utc}")
 
     # Avoid trying to create a manifest for geo objects, because we don't yet have a way of knowing which file is a primary.
     # See ContentMetadata::GroupedResource#primary
-    return head :not_found if @purl.type == 'geo'
+    return head :not_found if @version.type == 'geo'
 
     manifest = Rails.cache.fetch(cache_key('manifest', iiif_version), expires_in: Settings.resource_cache.lifetime) do
       iiif_manifest.body.to_ordered_hash
@@ -23,7 +21,8 @@ class IiifController < ApplicationController
   end
 
   def canvas
-    return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
+    @version = @purl.version(:head)
+    return unless stale?(last_modified: @version.updated_at.utc, etag: @version.cache_key + "/#{@version.updated_at.utc}")
 
     manifest = Rails.cache.fetch(cache_key('canvas'), expires_in: Settings.resource_cache.lifetime) do
       iiif_manifest.canvas(resource_id: params[:resource_id])&.to_ordered_hash
@@ -35,7 +34,8 @@ class IiifController < ApplicationController
 
   # Only available for IIIF v3 manifests
   def annotation_page
-    return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
+    @version = @purl.version(:head)
+    return unless stale?(last_modified: @version.updated_at.utc, etag: @version.cache_key + "/#{@version.updated_at.utc}")
     return head :not_found unless iiif_manifest.is_a?(Iiif3PresentationManifest)
 
     manifest = Rails.cache.fetch(cache_key('annotation_page'), expires_in: Settings.resource_cache.lifetime) do
@@ -47,7 +47,8 @@ class IiifController < ApplicationController
   end
 
   def annotation_list
-    return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
+    @version = @purl.version(:head)
+    return unless stale?(last_modified: @version.updated_at.utc, etag: @version.cache_key + "/#{@version.updated_at.utc}")
 
     manifest = Rails.cache.fetch(cache_key('annotation_list'), expires_in: Settings.resource_cache.lifetime) do
       iiif_manifest.annotation_list(resource_id: params[:resource_id])&.to_ordered_hash
@@ -58,7 +59,8 @@ class IiifController < ApplicationController
   end
 
   def annotation
-    return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
+    @version = @purl.version(:head)
+    return unless stale?(last_modified: @version.updated_at.utc, etag: @version.cache_key + "/#{@version.updated_at.utc}")
 
     manifest = Rails.cache.fetch(cache_key('annotation'), expires_in: Settings.resource_cache.lifetime) do
       iiif_manifest.annotation(annotation_id: params[:resource_id])&.to_ordered_hash
@@ -71,14 +73,14 @@ class IiifController < ApplicationController
   private
 
   def cache_key(*args)
-    [@purl, @purl.updated_at.utc, controller_name, *args, params[:resource_id]].compact
+    [@version, @version.updated_at.utc, controller_name, *args, params[:resource_id]].compact
   end
 
   def iiif_manifest
     @iiif_manifest ||= if params[:iiif_version] == 'v3'
-                         @purl.iiif3_manifest(controller: self, iiif_namespace: params[:iiif_scope] == 'iiif3' ? :iiif3 : :iiif)
+                         @version.iiif3_manifest(controller: self, iiif_namespace: params[:iiif_scope] == 'iiif3' ? :iiif3 : :iiif)
                        else
-                         @purl.iiif_manifest(controller: self)
+                         @version.iiif_manifest(controller: self)
                        end
   end
 

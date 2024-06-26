@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception, except: [:options]
 
   helper_method :current_user
+  rescue_from PurlResource::DruidNotValid, with: :invalid_druid
+  rescue_from PurlVersion::ObjectNotReady, with: :object_not_ready
 
   def current_user
     request.env['REMOTE_USER']
@@ -27,6 +29,6 @@ class ApplicationController < ActionController::Base
   end
 
   def object_not_ready
-    render '/errors/unavailable', status: :not_found
+    render '/errors/unavailable', formats: [:html], status: :not_found
   end
 end

@@ -1,10 +1,10 @@
 <% if document.containing_purl_collections.present? %>
   <%= render SectionComponent.new(label: 'Collection') do %>
-    <% document.containing_purl_collections.each do |collection_document| %>
+    <% document.containing_purl_collections.each do |collection_document, version| %>
       <div class="mb-3">
-        <p class="mb-0"><%= collection_document.title %></p>
+        <p class="mb-0"><%= version.title %></p>
         <% if collection_document.released_to_searchworks? %>
-          <%= link_to('View other items in this collection in SearchWorks', collection_document.collection_items_link, class: 'su-underline') %>
+          <%= link_to('View other items in this collection in SearchWorks', version.collection_items_link, class: 'su-underline') %>
         <% end %>
       </div>
     <% end %>
