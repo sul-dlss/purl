@@ -14,8 +14,6 @@ OkComputer::Registry.register 'ruby_version', OkComputer::RubyVersionCheck.new
 
 OkComputer::Registry.register 'document_cache_root',
   OkComputer::DirectoryCheck.new(Settings.document_cache_root)
-OkComputer::Registry.register 'ocfl_root',
-  OkComputer::DirectoryCheck.new(Settings.ocfl_root) if Settings.features.read_from_ocfl_root
 
 # NOTE:
 # Settings.purl_resource.public_xml, Settings.purl_resource.mods, and Settings.purl_resource.iiif_manifest
