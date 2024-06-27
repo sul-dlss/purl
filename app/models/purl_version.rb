@@ -228,58 +228,18 @@ class PurlVersion
     end
   end
 
-  concerning :ActiveModelness do
-    def attributes
-      {
-        druid:,
-        version_id:,
-        druid_tree:,
-        root_path: self.class.storage_root_path
-      }
-    end
+  delegate :public_xml_body, :cocina_body, :updated_at, to: :resource_retriever
 
-    private
-
-    def druid_tree
-      Dor::Util.create_pair_tree(druid) || druid
-    end
+  def resource_retriever
+    @resource_retriever ||= ResourceRetriever.new(druid:, version_id:)
   end
 
-  concerning :Fetching do
-    def cache_resource(key, &block)
-      if Settings.resource_cache.enabled
-        Rails.cache.fetch("#{cache_key}/#{key}", expires_in: Settings.resource_cache.lifetime, &block)
-      else
-        yield
-      end
-    end
+  def public_xml?
+    public_xml_body.present?
+  end
 
-    def public_xml_resource
-      @public_xml_resource ||= cache_resource(:public_xml) do
-        fetch_resource(:public_xml, Settings.purl_resource.public_xml)
-      end
-    end
-
-    def public_xml_body
-      public_xml_resource.body if public_xml_resource.success?
-    end
-
-    def public_xml?
-      public_xml_body.present?
-    end
-
-    def cocina_body
-      @cocina_body ||= begin
-        resource = cache_resource(:cocina) do
-          fetch_resource(:cocina, Settings.purl_resource.cocina)
-        end
-        resource.body if resource.success?
-      end
-    end
-
-    def cocina?
-      cocina_body.present?
-    end
+  def cocina?
+    cocina_body.present?
   end
 
   def mods_display_object
@@ -288,23 +248,6 @@ class PurlVersion
 
   def mods_ng_document
     @mods_ng_document ||= public_xml.mods
-  end
-
-  def fetch_resource(key, value)
-    url_or_path = value % attributes
-
-    benchmark "Fetching #{id} #{key} at #{url_or_path}" do
-      case url_or_path
-      when /^http/
-        Faraday.get(url_or_path)
-      else
-        DocumentCacheResource.new(url_or_path)
-      end
-    end
-  end
-
-  def logger
-    Rails.logger
   end
 
   def metrics_service

@@ -2,7 +2,6 @@ require 'find'
 
 class PurlResource
   include ActiveModel::Model
-  include ActiveSupport::Benchmarkable
 
   attr_accessor :id
   alias druid id
@@ -66,13 +65,11 @@ class PurlResource
     metrics_service.get_metrics(druid)
   end
 
-  # For building links in _find_it.html.erb
-  def attributes
-    {
-      druid:,
-      druid_tree:,
-      root_path: self.class.storage_root_path
-    }
+  # The meta.json contains the properties this purl is released to.
+  delegate :meta_json_body, to: :resource_retriever
+
+  def resource_retriever
+    @resource_retriever ||= ResourceRetriever.new(druid:)
   end
 
   private
@@ -81,43 +78,8 @@ class PurlResource
     @meta_json ||= JSON.parse(meta_json_body) if meta_json_body.present?
   end
 
-  def meta_json_resource
-    @meta_json_resource ||= Rails.cache.fetch("#{druid}/meta", expires_in: Settings.resource_cache.lifetime) do
-      fetch_resource(:meta, Settings.purl_resource.meta)
-    end
-  end
-
-  def self.storage_root_path
-    Settings.document_cache_root
-  end
-
-  def fetch_resource(key, value)
-    url_or_path = value % attributes
-
-    benchmark "Fetching #{id} #{key} at #{url_or_path}" do
-      case url_or_path
-      when /^http/
-        Faraday.get(url_or_path)
-      else
-        DocumentCacheResource.new(url_or_path)
-      end
-    end
-  end
-
-  def logger
-    Rails.logger
-  end
-
-  def meta_json_body
-    meta_json_resource.body if meta_json_resource.success?
-  end
-
   def true_targets
     meta_json.fetch('true_targets')
-  end
-
-  def druid_tree
-    Dor::Util.create_pair_tree(druid) || druid
   end
 
   def metrics_service

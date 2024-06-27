@@ -1,10 +1,10 @@
 <% releases = [] %>
 
 <% if document.released_to_searchworks? && !catalog_key %>
-  <% releases << link_to("View in SearchWorks", Settings.searchworks.view_template_url % document.attributes, class: 'su-underline') %>
+  <% releases << link_to("View in SearchWorks", Settings.searchworks.view_template_url % { druid: document.druid }, class: 'su-underline') %>
 <% end %>
 <% if document.released_to_earthworks? %>
-  <% releases << link_to("View in EarthWorks", Settings.earthworks.view_template_url % document.attributes, class: 'su-underline') %>
+  <% releases << link_to("View in EarthWorks", Settings.earthworks.view_template_url % { druid: document.druid }, class: 'su-underline') %>
 <% end %>
 
 <% if catalog_key || releases.present? %>
