@@ -31,9 +31,10 @@
   <br><br>
   <button class='btn btn-primary btn-lg'>Show me the MODS!</button>
 <% end %>
-<div data-controller='reveal'>
-  <a href="#examples" data-action="reveal#toggle" class="su-underline">Examples</a><br>
-  <div id="examples" style="display:none" data-reveal-target="area">
+
+<details>
+  <summary class="btn btn-link su-underline">Examples</summary>
+  <div>
     <ol>
       <li>
         <textarea rows="6">
@@ -58,4 +59,4 @@
       </li>
     </ol>
   </div>
-</div>
+</details>
