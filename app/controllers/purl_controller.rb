@@ -2,8 +2,6 @@ class PurlController < ApplicationController
   before_action :load_purl, except: [:index]
   before_action :fix_etag_header
 
-  rescue_from PurlResource::DruidNotValid, with: :invalid_druid
-  rescue_from PurlResource::ObjectNotReady, with: :object_not_ready
   rescue_from ActionController::UnknownFormat, with: :missing_file
 
   def index; end
@@ -12,19 +10,20 @@ class PurlController < ApplicationController
   # rubocop:disable Metrics/AbcSize
   # rubocop:disable Metrics/MethodLength
   def show
-    return unless stale?(last_modified: @purl.updated_at.utc, etag: @purl.cache_key + "/#{@purl.updated_at.utc}")
+    @version = @purl.version(:head)
+    return unless stale?(last_modified: @version.updated_at.utc, etag: @version.cache_key + "/#{@version.updated_at.utc}")
 
     # render the landing page based on the format
-    respond_to do |format| # rubocop:disable Metrics/BlockLength
+    respond_to do |format|
       format.html
 
       format.xml do
-        render xml: @purl.public_xml_body
+        render xml: @version.public_xml_body
       end
 
       format.mods do
-        if @purl.mods?
-          render xml: @purl.public_xml.mods.to_xml
+        if @version.mods?
+          render xml: @version.public_xml.mods.to_xml
         else
           head :not_found
         end
@@ -35,16 +34,16 @@ class PurlController < ApplicationController
       end
 
       format.json do
-        if @purl.cocina?
-          render json: @purl.cocina_body
+        if @version.cocina?
+          render json: @version.cocina_body
         else
           head :not_found
         end
       end
 
       format.jpeg do
-        if @purl.representative_thumbnail?
-          redirect_to @purl.representative_thumbnail, allow_other_host: true
+        if @version.representative_thumbnail?
+          redirect_to @version.representative_thumbnail, allow_other_host: true
         else
           redirect_to view_context.image_path('sul-logo-stacked.svg')
         end
@@ -63,7 +62,7 @@ class PurlController < ApplicationController
   end
 
   def metrics
-    render 'purl/_metrics', locals: { document: @purl }
+    render 'purl/_metrics', locals: { document: @purl.version(:head) }
   end
 
   private

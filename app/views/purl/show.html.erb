@@ -1,38 +1,38 @@
-<% title @purl.title %>
+<% title @version.title %>
 <% content_for(:head) do %>
-  <% if @purl.embeddable? %>
+  <% if @version.embeddable? %>
     <%= tag :link, rel: "preconnect", href: Settings.stacks.url %>
     <%= tag :link, rel: "preconnect", href: Settings.embed.url % { druid: '' } %>
     <%= tag :link, rel: "alternate", title: "oEmbed Profile", type: 'application/json+oembed', href: oembed_url_template.expand(format: 'json', url: embeddable_url(@purl.druid)) %>
     <%= tag :link, rel: "alternate", title: "oEmbed Profile", type: 'application/xml+oembed', href: oembed_url_template.expand(format: 'xml', url: embeddable_url(@purl.druid)) %>
   <% end %>
   <%= tag :link, rel: "canonical", href: purl_url(@purl) %>
-  <%= tag :link, rel: "alternate", title: "MODS XML", type: 'application/xml', href: purl_url(@purl, format: 'mods') if @purl.mods? %>
+  <%= tag :link, rel: "alternate", title: "MODS XML", type: 'application/xml', href: purl_url(@purl, format: 'mods') if @version.mods? %>
   <%= tag :link, rel: "alternate", title: "IIIF Manifest", type: 'application/json', href: manifest_iiif_purl_url(@purl) %>
-  <%= tag :link, rel: "up", href: purl_url(@purl.containing_collections.first) if @purl.containing_collections.present? %>
-  <%= tag :meta, name: 'citation_title', content: @purl.title %>
-  <%= tag :meta, name: 'citation_publication_date', content: @purl.publication_date if @purl.publication_date %>
-  <% @purl.authors.each do |author| %>
+  <%= tag :link, rel: "up", href: purl_url(@version.containing_collections.first) if @version.containing_collections.present? %>
+  <%= tag :meta, name: 'citation_title', content: @version.title %>
+  <%= tag :meta, name: 'citation_publication_date', content: @version.publication_date if @version.publication_date %>
+  <% @version.authors.each do |author| %>
     <%= tag :meta, name: 'citation_author', content: author %>
   <% end %>
   <%= tag :meta, name: 'robots', content: 'noindex' unless @purl.crawlable? %>
 
-  <% if @purl.doi %>
-    <%= tag :meta, name: 'citation_doi', content: @purl.doi_id %>
+  <% if @version.doi %>
+    <%= tag :meta, name: 'citation_doi', content: @version.doi_id %>
   <% end %>
-  <% if @purl.schema_dot_org? %>
-    <script type="application/ld+json"><%= @purl.schema_dot_org.to_json.html_safe %></script>
+  <% if @version.schema_dot_org? %>
+    <script type="application/ld+json"><%= @version.schema_dot_org.to_json.html_safe %></script>
   <% end %>
 <% end %>
 
-<% keywords(@purl.mods.subject.compact.map(&:values).join(',')) if @purl.mods? && @purl.mods.subject %>
+<% keywords(@version.mods.subject.compact.map(&:values).join(',')) if @version.mods? && @version.mods.subject %>
 
-<% description(@purl.description.truncate(200)) if @purl.description %>
+<% description(@version.description.truncate(200)) if @version.description %>
 
 <%
 opengraph do |graph|
-  graph.title @purl.title
-  graph.description @purl.description.truncate(200) if @purl.description
+  graph.title @version.title
+  graph.description @version.description.truncate(200) if @version.description
   graph.type 'og:website'
   graph.image purl_url(@purl, format: :jpg)
   graph.url purl_url(@purl)
@@ -45,10 +45,10 @@ end
 %>
 <div class="row">
   <div class="col-12">
-    <h1 class="py-2"><%= @purl.title %></h1>
+    <h1 class="py-2"><%= @version.title %></h1>
   </div>
 </div>
-<% if @purl.embeddable? %>
+<% if @version.embeddable? %>
 <div class="upper-record-metadata row">
   <div class="col-md-12">
     <%= render 'embed' %>
@@ -58,23 +58,23 @@ end
 
 <div class="record-metadata row gx-5">
   <div class="record-sections col-lg-8">
-    <% if @purl.mods? %>
-      <%= render "mods_abstract_contents", document: @purl %>
-      <%= render ModsDescriptionComponent.new(document: @purl) %>
-      <%= render ModsContributorsComponent.new(document: @purl) %>
-      <%= render SubjectComponent.new(document: @purl) %>
-      <%= render BibliographicComponent.new(document: @purl) %>
+    <% if @version.mods? %>
+      <%= render "mods_abstract_contents", document: @version %>
+      <%= render ModsDescriptionComponent.new(document: @version) %>
+      <%= render ModsContributorsComponent.new(document: @version) %>
+      <%= render SubjectComponent.new(document: @version) %>
+      <%= render BibliographicComponent.new(document: @version) %>
     <% end %>
   </div>
   <div class="record-sections col-lg-4">
-    <%= render AccessComponent.new(document: @purl) %>
-    <%= render 'mods_citation', document: @purl %>
-    <%= render "collection", document: @purl %>
-    <%= render "collection_items", document: @purl %>
-    <%= render "mods_contact", document: @purl %>
-    <%= render "find_it", document: @purl %>
+    <%= render AccessComponent.new(document: @version) %>
+    <%= render 'mods_citation', document: @version %>
+    <%= render "collection", document: @version %>
+    <%= render "collection_items", document: @version if @purl.released_to_searchworks? %>
+    <%= render "mods_contact", document: @version %>
+    <%= render "find_it", document: @purl, catalog_key: @version.catalog_key %>
 
-    <% if @purl.embeddable? || @purl.show_download_metrics? || @purl.doi.present? %>
+    <% if @version.embeddable? || @version.show_download_metrics? || @version.doi.present? %>
       <turbo-frame id="metrics-frame" src="<%= purl_metrics_path @purl %>">
         <p>Loading usage metrics...</p>
       </turbo-frame>

@@ -28,7 +28,7 @@ module ModsDisplay
     end
 
     def location
-      @location ||= record.xml.root.xpath('mods:location/mods:url', mods: PurlResource::MODS_NS).first&.content
+      @location ||= record.xml.root.xpath('mods:location/mods:url', mods: PurlVersion::MODS_NS).first&.content
     end
 
     def reference?
@@ -36,13 +36,13 @@ module ModsDisplay
     end
 
     def collection?
-      @collection ||= record.xml.root.xpath('mods:typeOfResource', mods: PurlResource::MODS_NS).first&.get_attribute('collection') == 'yes'
+      @collection ||= record.xml.root.xpath('mods:typeOfResource', mods: PurlVersion::MODS_NS).first&.get_attribute('collection') == 'yes'
     end
 
     private
 
     def title?
-      record.xml.root.xpath('mods:titleInfo', mods: PurlResource::MODS_NS).present?
+      record.xml.root.xpath('mods:titleInfo', mods: PurlVersion::MODS_NS).present?
     end
   end
 end

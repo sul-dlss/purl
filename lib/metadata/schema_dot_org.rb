@@ -1,5 +1,4 @@
 module Metadata
-  # rubocop:disable Metrics/ClassLength
   class SchemaDotOrg
     def self.call(cocina_json)
       new(cocina_json).call
@@ -237,5 +236,4 @@ module Metadata
       dates.first.fetch('value', nil)
     end
   end
-  # rubocop:enable Metrics/ClassLength
 end
