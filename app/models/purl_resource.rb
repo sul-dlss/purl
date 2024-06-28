@@ -41,24 +41,15 @@ class PurlResource
 
   # Can be crawled / indexed by a crawler, e.g. Googlebot
   def crawlable?
-    return meta_json['sitemap'] if meta_json.key?('sitemap')
-
-    # This is for handling the older format of meta.json
-    true_targets.include?('PURL sitemap')
+    meta_json.fetch('sitemap')
   end
 
   def released_to_searchworks?
-    return meta_json['searchworks'] if meta_json.key?('searchworks')
-
-    # This is for handling the older format of meta.json
-    true_targets.include?('Searchworks')
+    meta_json.fetch('searchworks')
   end
 
   def released_to_earthworks?
-    return meta_json['earthworks'] if meta_json.key?('earthworks')
-
-    # This is for handling the older format of meta.json
-    true_targets.include?('Earthworks')
+    meta_json.fetch('earthworks')
   end
 
   def metrics
@@ -76,10 +67,6 @@ class PurlResource
 
   def meta_json
     @meta_json ||= JSON.parse(meta_json_body) if meta_json_body.present?
-  end
-
-  def true_targets
-    meta_json.fetch('true_targets')
   end
 
   def metrics_service

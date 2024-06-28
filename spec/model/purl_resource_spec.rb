@@ -28,18 +28,18 @@ RSpec.describe PurlResource do
     context 'with a meta.json file in the object path' do
       before do
         allow(Rails.cache).to receive(:fetch).and_yield
-        allow(DocumentCacheResource).to receive(:new).and_return(instance_double(DocumentCacheResource, body: "{\"true_targets\": #{true_targets} }",
+        allow(DocumentCacheResource).to receive(:new).and_return(instance_double(DocumentCacheResource, body:,
                                                                                                         success?: true))
       end
 
       context 'when resource has a sitemap target' do
-        let(:true_targets) { ['PURL sitemap'] }
+        let(:body) { '{"sitemap":true}' }
 
         it { is_expected.to be true }
       end
 
       context 'when resource has a no sitemap' do
-        let(:true_targets) { ['Searchworks'] }
+        let(:body) { '{"sitemap":false}' }
 
         it { is_expected.to be false }
       end

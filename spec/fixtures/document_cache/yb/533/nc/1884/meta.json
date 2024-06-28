@@ -1,1 +1,1 @@
-{ "true_targets": ["Searchworks"] }
+{ "sitemap": false, "searchworks": true, "earthworks": false }
