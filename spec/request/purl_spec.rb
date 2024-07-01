@@ -1,7 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe 'PURL API', type: :request do
-  context 'PURL page' do
+  describe 'root page' do
+    context 'for an unknown format' do
+      it 'returns 404 page' do
+        get '/?format=xml'
+        expect(response).to have_http_status(:not_found)
+        expect(response.body).to include "The page you were looking for doesn't exist."
+      end
+    end
+  end
+
+  describe 'PURL page' do
     it 'responds to OPTIONS requests' do
       options '/bb157hs6068'
       expect(response).to be_successful
