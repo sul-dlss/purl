@@ -73,7 +73,7 @@ class PurlController < ApplicationController
   end
 
   def missing_file
-    render '/errors/missing_file', status: :not_found
+    render '/errors/missing_file', status: :not_found, formats: [:html]
   end
 
   def fix_etag_header
