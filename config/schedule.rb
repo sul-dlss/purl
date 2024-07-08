@@ -28,5 +28,5 @@ job_type :rake_hb, 'cd :path && :environment_variable=:environment bundle exec r
 
 every :month, roles: [:cron] do
   set :check_in, Settings.honeybadger_checkins.sitemap
-  rake_hb "sitemap:refresh"
+  rake_hb "sitemap:refresh:no_ping" # pinging Google is deprecated
 end
