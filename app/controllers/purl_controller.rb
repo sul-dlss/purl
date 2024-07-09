@@ -30,7 +30,7 @@ class PurlController < ApplicationController
       end
 
       format.meta_json do
-        render json: @purl.meta_json
+        render json: @purl.meta_json, content_type: 'application/json'
       end
 
       format.json do

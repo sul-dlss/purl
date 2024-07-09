@@ -25,6 +25,22 @@ RSpec.describe 'PURL API', type: :request do
         expect(response.body).to include "The page you were looking for doesn't exist."
       end
     end
+
+    context 'for json' do
+      it 'returns the Cocina json' do
+        get '/bb157hs6068.json'
+        expect(response).to be_successful
+        expect(response.parsed_body).to include('cocinaVersion', 'type', 'structural')
+      end
+    end
+
+    context 'for meta_json' do
+      it 'returns the meta.json' do
+        get '/bb157hs6068.meta_json'
+        expect(response).to be_successful
+        expect(response.parsed_body).to eq({ 'searchworks' => false, 'earthworks' => false, 'sitemap' => false })
+      end
+    end
   end
 
   context 'IIIF v2 requests' do
@@ -84,14 +100,6 @@ RSpec.describe 'PURL API', type: :request do
     it 'redirects annotation json requests' do
       get '/bc000df0000/iiif3/annotation/whatever.json'
       expect(response).to redirect_to('/bc000df0000/iiif3/annotation/whatever')
-    end
-  end
-
-  context 'Cocina page' do
-    it 'returns the json' do
-      get '/bb157hs6068.json'
-      expect(response).to be_successful
-      expect(response.parsed_body).to include('cocinaVersion', 'type', 'structural')
     end
   end
 end
