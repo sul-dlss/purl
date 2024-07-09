@@ -63,11 +63,11 @@ class PurlResource
     @resource_retriever ||= ResourceRetriever.new(druid:)
   end
 
-  private
-
   def meta_json
     @meta_json ||= JSON.parse(meta_json_body) if meta_json_body.present?
   end
+
+  private
 
   def metrics_service
     @metrics_service ||= MetricsService.new
