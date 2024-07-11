@@ -1,0 +1,17 @@
+<%= render SectionComponent.new(label: 'Versions', label_id:) do %>
+  <%= render TableComponent.new(label_id:) do %>
+    <% versions.each do |version| %>
+      <tbody>
+        <tr>
+          <th>Version 1</th>
+          <td class="version-updated-at"><%= updated_at(version) %></td>
+          <td>You are viewing the latest version</td>
+        </tr>
+      </tbody>
+    <% end %>
+  <% end %>
+  <p>Each version has a distinct URL, but you can use this PURL to access the latest version.<br>
+    <%= link_to embeddable_url, embeddable_url %>
+  </p>
+
+<% end %>
