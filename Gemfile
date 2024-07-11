@@ -71,3 +71,5 @@ group :deployment do
   gem 'capistrano-shared_configs'
   gem 'dlss-capistrano'
 end
+
+gem "csv", "~> 3.3" # until is addressed https://github.com/xwmx/iso-639/issues/16
