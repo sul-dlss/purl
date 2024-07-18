@@ -4,6 +4,8 @@ class PurlController < ApplicationController
 
   rescue_from ActionController::UnknownFormat, with: :missing_file
 
+  # Landing page for purl.
+  # Shows a list of selected druids.
   def index; end
 
   # entry point into the application
