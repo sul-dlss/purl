@@ -1,8 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe 'PURL API', type: :request do
+RSpec.describe 'PURL API' do
   describe 'root page' do
-    context 'for an unknown format' do
+    context 'when html is requested' do
+      it 'links to selected druids' do
+        get '/'
+        expect(response).to have_http_status(:ok)
+        expect(response.body).to have_link 'John Wyclif and his followers, Tracts in Middle English'
+      end
+    end
+
+    context 'when an unknown format is requested' do
       it 'returns 404 page' do
         get '/?format=xml'
         expect(response).to have_http_status(:not_found)
@@ -18,7 +26,7 @@ RSpec.describe 'PURL API', type: :request do
       expect(response.headers['Access-Control-Allow-Headers']).to include 'Accept'
     end
 
-    context 'for an unknown format' do
+    context 'with an unknown format' do
       it 'returns 404 page' do
         get '/bb157hs6068.X55'
         expect(response).to have_http_status(:not_found)
@@ -26,7 +34,7 @@ RSpec.describe 'PURL API', type: :request do
       end
     end
 
-    context 'for json' do
+    context 'with json' do
       it 'returns the Cocina json' do
         get '/bb157hs6068.json'
         expect(response).to be_successful
@@ -34,7 +42,7 @@ RSpec.describe 'PURL API', type: :request do
       end
     end
 
-    context 'for meta_json' do
+    context 'when meta_json is requested' do
       it 'returns the meta.json' do
         get '/bb157hs6068.meta_json'
         expect(response).to be_successful
@@ -43,7 +51,7 @@ RSpec.describe 'PURL API', type: :request do
     end
   end
 
-  context 'IIIF v2 requests' do
+  context 'when requesting a IIIF v2 manifest' do
     it 'redirects manifest.json requests' do
       get '/bc000df0000/iiif/manifest.json'
       expect(response).to redirect_to('/bc000df0000/iiif/manifest')
@@ -66,7 +74,7 @@ RSpec.describe 'PURL API', type: :request do
     end
   end
 
-  context 'IIIF v3 requests' do
+  context 'when requesting a IIIF v3 manifest' do
     it 'using accept header provides v3 manifest' do
       get(
         '/bb157hs6068/iiif/manifest',
