@@ -1,8 +1,40 @@
-<div id="search-navbar-container">
-  <div id="search-navbar" class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="sdr-brand h1 pt-2">Stanford Digital Repository</div>
+<nav class="navbar navbar-expand-md bg-dark bg-cardinal" role="navigation">
+  <div class="container">
+    <a class="mb-0 navbar-brand navbar-logo" href="https://library.stanford.edu">Stanford Libraries</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#user-util-collapse" data-bs-target="#user-util-collapse" aria-controls="user-util-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-md-end" id="user-util-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to '#feedback-form', class: 'nav-link', data: { bs_toggle: 'collapse', bs_target: '#feedback-form' } do %>
+            Feedback
+          <% end if show_feedback_form? %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<% if show_feedback_form? %>
+  <div id="feedback-form" class="feedback-form-container collapse">
+    <turbo-frame id="feedback-form-frame" src="<%= new_feedback_form_path %>" loading="lazy">
+    </turbo-frame>
+  </div>
+<% end %>
+
+<div class="masthead bg-dark bg-cardinal">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-8 d-flex justify-content-center justify-content-md-start">
+        <div class="h1 my-4"><a href="/">Stanford Digital Repository</a></div>
+      </div>
+      <div class="col-md-4 d-none d-md-block">
+        <nav class="navbar navbar-expand d-flex justify-content-end" aria-label="browse">
+          <ul class="navbar-nav">
+          </ul>
+        </nav>
       </div>
     </div>
   </div>
