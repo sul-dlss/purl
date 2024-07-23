@@ -4,7 +4,8 @@ class PurlVersion
   include ActiveModel::Model
   include ActiveSupport::Benchmarkable
 
-  attr_accessor :id, :version_id
+  attr_accessor :id, :head
+  attr_reader :version_id
   alias druid id
 
   class DruidNotValid < StandardError; end
@@ -15,6 +16,11 @@ class PurlVersion
 
   def self.storage_root_path
     Settings.document_cache_root
+  end
+
+  # Coerce version IDs to integers
+  def version_id=(value)
+    @version_id = value.to_i
   end
 
   def mods?
@@ -118,6 +124,10 @@ class PurlVersion
 
   def metrics
     metrics_service.get_metrics(druid)
+  end
+
+  def head?
+    head
   end
 
   concerning :Metadata do

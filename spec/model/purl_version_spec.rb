@@ -1,33 +1,75 @@
 require 'rails_helper'
 
 RSpec.describe PurlVersion do
-  let(:instance) { described_class.new(id: druid, version_id: 1) }
+  let(:head_version) { nil }
+  let(:instance) { described_class.new(id: druid, version_id:, head: head_version) }
   let(:druid) { nil }
+  let(:version_id) { '1' }
+
+  describe '#version_id=' do
+    it 'is normalized to an integer' do
+      expect(instance.version_id).to eq(1)
+    end
+  end
+
+  describe '#head?' do
+    context 'with the head version' do
+      let(:head_version) { true }
+
+      it 'returns true' do
+        expect(instance).to be_head
+      end
+    end
+
+    context 'with a non-head version' do
+      let(:head_version) { false }
+
+      it 'returns false' do
+        expect(instance).not_to be_head
+      end
+    end
+  end
 
   describe 'resource methods' do
-    let(:body) do
-      <<-EOF
-        <?xml version="1.0" encoding="UTF-8"?>
-        <publicObject>
-          <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/">
-            <dc:title>The title from the DC</dc:title>
-          </oai_dc:dc>
-          <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
-            <titleInfo>
-              <title>The title from the MODS.</title>
-            </titleInfo>
-          </mods>
-        </publicObject>
-      EOF
-    end
-    let(:fake_response) { OpenStruct.new(success?: true, body:) }
+    describe '#mods' do
+      let(:body) do
+        <<-EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <publicObject>
+            <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/">
+              <dc:title>The title from the DC</dc:title>
+            </oai_dc:dc>
+            <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
+              <titleInfo>
+                <title>The title from the MODS.</title>
+              </titleInfo>
+            </mods>
+          </publicObject>
+        EOF
+      end
+      let(:fake_response) { OpenStruct.new(success?: true, body:) }
 
-    before do
-      allow_any_instance_of(ResourceRetriever).to receive(:fetch_resource).and_return(fake_response)
+      before do
+        allow_any_instance_of(ResourceRetriever).to receive(:fetch_resource).and_return(fake_response)
+      end
+
+      it 'checks if the request succeeded' do
+        expect(subject).to be_mods
+      end
     end
 
-    it 'checks if the request succeeded' do
-      expect(subject).to be_mods
+    context 'when layout is versioned' do
+      let(:druid) { 'wp335yr5649' }
+      let(:head_version) { true }
+      let(:version_id) { '2' }
+
+      describe '#public_xml' do
+        it 'retrieves public XML from versioned layout' do
+          expect(instance.public_xml.title).to eq(
+            'Code and Data supplement to "Deterministic Matrices Matching the Compressed Sensing Phase Transitions of Gaussian Random Matrices." -- VERSION 2'
+          )
+        end
+      end
     end
   end
 

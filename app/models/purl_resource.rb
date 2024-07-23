@@ -33,10 +33,9 @@ class PurlResource
   end
 
   def version(version_id)
-    version_id = 1 if version_id == :head # Until we have versions written to the disk, always use version 1
-    PurlVersion.new(id:, version_id:).tap do |version|
-      raise PurlVersion::ObjectNotReady, id unless version.ready?
-    end
+    version_id = head_version if version_id == :head
+
+    versions.find { |purl_version| purl_version.version_id == version_id.to_i }
   end
 
   # Can be crawled / indexed by a crawler, e.g. Googlebot
@@ -57,7 +56,7 @@ class PurlResource
   end
 
   # The meta.json contains the properties this purl is released to.
-  delegate :meta_json_body, to: :resource_retriever
+  delegate :meta_json_body, :version_manifest_body, to: :resource_retriever
 
   def resource_retriever
     @resource_retriever ||= ResourceRetriever.new(druid:)
@@ -68,6 +67,31 @@ class PurlResource
   end
 
   private
+
+  def versions
+    @versions = version_manifest&.fetch('versions', {})&.map do |version_id, _version_attrs|
+      PurlVersion.new(id:, version_id:, head: head_version == version_id).tap do |version|
+        raise PurlVersion::ObjectNotReady, id unless version.ready?
+      end
+    end
+  end
+
+  def head_version
+    @head_version = version_manifest&.fetch('head', 1)
+  end
+
+  def version_manifest
+    @version_manifest ||= version_manifest_body.present? ? JSON.parse(version_manifest_body) : null_version_manifest
+  end
+
+  def null_version_manifest
+    {
+      'versions' => {
+        '1' => {}
+      },
+      'head' => '1'
+    }
+  end
 
   def metrics_service
     @metrics_service ||= MetricsService.new

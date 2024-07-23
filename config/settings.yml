@@ -1,6 +1,7 @@
 stacks:
   url: "https://stacks.stanford.edu"
   iiif_profile: "http://iiif.io/api/image/2/level2.json"
+  version_manifest_path: "/stacks/%{druid_tree}/%{druid}/versions/versions.json"
 
 purl_fetcher:
   url: https://purl-fetcher-stage.stanford.edu
@@ -20,6 +21,9 @@ purl_resource:
   public_xml: "https://purl.stanford.edu/%{druid}.xml"
   cocina: "https://purl.stanford.edu/%{druid}.json"
   meta: "https://purl.stanford.edu/%{druid}.meta_json"
+  versioned:
+    public_xml: "https://purl.stanford.edu/%{druid}/version/%{version_id}.xml"
+    cocina: "https://purl.stanford.edu/%{druid}/version/%{version_id}.json"
 
 embed:
   url: "https://purl.stanford.edu/%{druid}"

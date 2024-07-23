@@ -3,6 +3,12 @@ purl_resource:
   public_xml: "%{root_path}/%{druid_tree}/public"
   cocina: "%{root_path}/%{druid_tree}/cocina.json"
   meta: "%{root_path}/%{druid_tree}/meta.json"
+  versioned:
+    public_xml: "%{root_path}/%{druid_tree}/%{druid}/versions/public.%{version_id}.xml"
+    cocina: "%{root_path}/%{druid_tree}/%{druid}/versions/cocina.%{version_id}.json"
+
+stacks:
+  version_manifest_path: "%{root_path}/%{druid_tree}/%{druid}/versions/versions.json"
 
 content_search:
   url: "http://example.com/content_search/%{druid}/search"

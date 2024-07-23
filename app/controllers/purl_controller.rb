@@ -12,8 +12,10 @@ class PurlController < ApplicationController
   # rubocop:disable Metrics/AbcSize
   # rubocop:disable Metrics/MethodLength
   def show
-    @version = @purl.version(:head)
+    @version = @purl.version(version_param) || default_version
     return unless stale?(last_modified: @version.updated_at.utc, etag: @version.cache_key + "/#{@version.updated_at.utc}")
+
+    flash.now[:alert] = 'A newer version of this item is available' unless @version.head?
 
     # render the landing page based on the format
     respond_to do |format|
@@ -81,5 +83,20 @@ class PurlController < ApplicationController
   def fix_etag_header
     # Apache adds -gzip to the etag header, which causes the request appear stale.
     request.headers['HTTP_IF_NONE_MATCH'].sub!('-gzip', '') if request.if_none_match
+  end
+
+  def version_param
+    return :head if params[:version].blank?
+
+    # Remove the 'v' part of the version param, e.g., 'v22'
+    params[:version][/\d+/]
+  end
+
+  def default_version
+    flash.now[:error] = "Requested version '#{version_param}' not found. Showing latest version instead."
+
+    PurlVersion.new(id: params[:id], version_id: 1, head: true).tap do |version|
+      raise PurlVersion::ObjectNotReady, id unless version.ready?
+    end
   end
 end

@@ -49,6 +49,38 @@ RSpec.describe 'PURL API' do
         expect(response.parsed_body).to eq({ 'searchworks' => false, 'earthworks' => false, 'sitemap' => false })
       end
     end
+
+    context 'when html is requested' do
+      it 'returns the PURL page of the head version' do
+        get '/wp335yr5649'
+        expect(response).to have_http_status(:ok)
+        expect(response.body).to include(
+          'Code and Data supplement to &quot;Deterministic Matrices Matching the ' \
+          'Compressed Sensing Phase Transitions of Gaussian Random Matrices.&quot; -- VERSION 2'
+        )
+        expect(response.body).not_to include('A newer version of this item is available')
+      end
+
+      context 'with legit version specified' do
+        it 'returns the PURL page of the requested version' do
+          get '/wp335yr5649/v1'
+          expect(response).to have_http_status(:ok)
+          expect(response.body).to include(
+            'Code and Data supplement to &quot;Deterministic Matrices Matching the ' \
+            'Compressed Sensing Phase Transitions of Gaussian Random Matrices.&quot; -- VERSION 1'
+          )
+          expect(response.body).to include('A newer version of this item is available')
+        end
+      end
+
+      context 'with missing version specified' do
+        it 'renders the head version page including a warning to the user' do
+          get '/wp335yr5649/v45'
+          expect(response).to have_http_status(:ok)
+          expect(response.body).to include('Requested version \'45\' not found. Showing latest version instead.')
+        end
+      end
+    end
   end
 
   context 'when requesting a IIIF v2 manifest' do
