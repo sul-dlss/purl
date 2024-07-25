@@ -38,22 +38,18 @@ By default, local development will use production XML from PURL, so that you can
 2. Create druid tree folders (e.g. `document_cache/xk/755/gc/8675`, just like they would be on stacks) and put `mods` and `public` XML files there.  You can get examples from the `spec/fixtures/document_cache` or production PURL.  Note that the `document_cache` folder is already in `.gitignore` so any content copied there will not be added to git.
 3. Create a `config/settings.local.yml` file (if you don't have one already) and add the following:
 
-Unversioned object:
 ```
-# Comment out for lookup to production PURL
 purl_resource:
-  public_xml: "<%= File.join(Rails.root, "document_cache") %>/%{druid_tree}/public"
-  cocina: "<%= File.join(Rails.root, "document_cache") %>/%{druid_tree}/cocina.json"
-  meta: "<%= File.join(Rails.root, "document_cache") %>/%{druid_tree}/meta.json"
-```
+  public_xml: "%{root_path}/%{druid_tree}/public"
+  cocina: "%{root_path}/%{druid_tree}/cocina.json"
+  meta: "%{root_path}/%{druid_tree}/meta.json"
+  versioned:
+    public_xml: "%{root_path}/%{druid_tree}/%{druid}/versions/public.%{version_id}.xml"
+    cocina: "%{root_path}/%{druid_tree}/%{druid}/versions/cocina.%{version_id}.json"
+    meta: "%{root_path}/%{druid_tree}/%{druid}/versions/meta.json"
 
-Versioned object:
-```
-# Comment out for lookup to production PURL
-purl_resource:
-  public_xml: "<%= File.join(Rails.root, "document_cache") %>/%{druid_tree}/%{druid}/versions/public.%{version_id}.xml"
-  cocina: "<%= File.join(Rails.root, "document_cache") %>/%{druid_tree}/%{druid}/versions/cocina.%{version_id}.json"
-  meta: "<%= File.join(Rails.root, "document_cache") %>/%{druid_tree}/%{druid}/versions/meta.json"
+stacks:
+  version_manifest_path: "%{root_path}/%{druid_tree}/%{druid}/versions/versions.json"
 ```
 
 If you leave this config uncommented, the local app will find content in the local document_cache.  If you comment it out, it will revert to the default behavior (look up content on PURL).
