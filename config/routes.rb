@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   resources :purl, only: [:show], path: '/' do
     member do
+      get ':version', to: 'purl#show', as: :versioned, constraints: { version: /v\d+/ }
       get 'embed', to: redirect("/iframe/?url=#{Settings.embed.url % { druid: '%{id}' }}")
       # These routes should only be used until our viewers support v3 manifests.
       # We should aim to only serve a IIIF resource from a single URL.

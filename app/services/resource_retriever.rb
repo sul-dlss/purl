@@ -18,6 +18,10 @@ class ResourceRetriever
     cocina_resource.body if cocina_resource.success?
   end
 
+  def version_manifest_body
+    version_manifest_resource.body if version_manifest_resource.success?
+  end
+
   def updated_at
     if public_xml_resource.respond_to? :updated_at
       public_xml_resource.updated_at
@@ -62,9 +66,25 @@ class ResourceRetriever
     version_id ? "#{prefix}/#{version_id}/#{key}" : "#{prefix}/#{key}"
   end
 
+  def versioned_layout?
+    version_manifest_resource.success?
+  end
+
+  def public_xml_path
+    return Settings.purl_resource.versioned.public_xml if versioned_layout?
+
+    Settings.purl_resource.public_xml
+  end
+
+  def cocina_path
+    return Settings.purl_resource.versioned.cocina if versioned_layout?
+
+    Settings.purl_resource.cocina
+  end
+
   def public_xml_resource
     @public_xml_resource ||= cache_resource(:public_xml) do
-      fetch_resource(:public_xml, Settings.purl_resource.public_xml)
+      fetch_resource(:public_xml, public_xml_path)
     end
   end
 
@@ -76,7 +96,13 @@ class ResourceRetriever
 
   def cocina_resource
     @cocina_resource ||= cache_resource(:cocina) do
-      fetch_resource(:cocina, Settings.purl_resource.cocina)
+      fetch_resource(:cocina, cocina_path)
+    end
+  end
+
+  def version_manifest_resource
+    @version_manifest_resource ||= cache_resource(:version_manifest) do
+      fetch_resource(:version_manifest, Settings.stacks.version_manifest_path)
     end
   end
 

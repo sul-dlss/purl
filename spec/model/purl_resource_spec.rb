@@ -15,9 +15,25 @@ RSpec.describe PurlResource do
   end
 
   describe '#version' do
+    let(:druid) { 'kn112rm5773' }
+
     it 'validates that the object is "ready"' do
-      allow_any_instance_of(PurlVersion).to receive(:public_xml?).and_return(false)
-      expect { instance.version(1) }.to raise_error PurlVersion::ObjectNotReady
+      expect { instance.version(3) }.to raise_error PurlVersion::ObjectNotReady
+    end
+
+    context 'when head version requested' do
+      before do
+        allow_any_instance_of(PurlVersion).to receive(:public_xml?).and_return(true)
+        allow(instance).to receive(:version_manifest).and_return({ 'versions' => { '1' => {}, '2' => {}, '3' => {} }, 'head' => '3' })
+      end
+
+      let(:head_version) { instance.version(:head) }
+
+      it 'returns the head version' do
+        expect(head_version).to be_a(PurlVersion)
+        expect(head_version.version_id).to eq(3)
+        expect(head_version).to be_head
+      end
     end
   end
 
