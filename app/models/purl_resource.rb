@@ -70,14 +70,14 @@ class PurlResource
 
   def versions
     @versions = version_manifest&.fetch('versions', {})&.map do |version_id, _version_attrs|
-      PurlVersion.new(id:, version_id:, head: head_version == version_id).tap do |version|
+      PurlVersion.new(id:, version_id:, head: head_version == version_id.to_i).tap do |version|
         raise PurlVersion::ObjectNotReady, id unless version.ready?
       end
     end
   end
 
   def head_version
-    @head_version = version_manifest&.fetch('head', 1)
+    @head_version = version_manifest&.fetch('head', 1).to_i
   end
 
   def version_manifest
