@@ -28,7 +28,7 @@ Start the development server
 
 Configuration is handled through the [RailsConfig](/railsconfig/config) settings.yml files.
 
-#### Local Configuration
+## Development
 
 The defaults in `config/settings.yml` should work on a locally run installation.
 
@@ -53,6 +53,16 @@ stacks:
 ```
 
 If you leave this config uncommented, the local app will find content in the local document_cache.  If you comment it out, it will revert to the default behavior (look up content on PURL).
+
+### Debugging
+
+When the Rails server is run using `bin/dev`, you can start up a debugger session in a separate terminal via:
+
+```shell
+rdbg -A
+```
+
+To drop into the debugger, add `debugger` statements where needed in the code and have fun navigating the stack in your debugger session terminal.
 
 ## Testing
 
