@@ -24,6 +24,7 @@ purl_resource:
   versioned:
     public_xml: "https://purl.stanford.edu/%{druid}/version/%{version_id}.xml"
     cocina: "https://purl.stanford.edu/%{druid}/version/%{version_id}.json"
+    meta: "https://purl.stanford.edu/%{druid}.meta_json" # versioned meta is not supported
 
 embed:
   url: "https://purl.stanford.edu/%{druid}"

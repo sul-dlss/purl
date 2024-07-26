@@ -76,6 +76,12 @@ class ResourceRetriever
     Settings.purl_resource.public_xml
   end
 
+  def meta_json_path
+    return Settings.purl_resource.versioned.meta if versioned_layout?
+
+    Settings.purl_resource.meta
+  end
+
   def cocina_path
     return Settings.purl_resource.versioned.cocina if versioned_layout?
 
@@ -90,7 +96,7 @@ class ResourceRetriever
 
   def meta_json_resource
     @meta_json_resource ||= cache_resource(:meta) do
-      fetch_resource(:meta, Settings.purl_resource.meta)
+      fetch_resource(:meta, meta_json_path)
     end
   end
 
