@@ -18,7 +18,11 @@ class VersionsComponent < ViewComponent::Base
     l(version.updated_at.to_date, format: :short)
   end
 
+  def url(version)
+    versioned_purl_url(id: purl.druid, version: "v#{version.version_id}")
+  end
+
   def versions
-    [@version]
+    @purl.versions.sort_by(&:version_id).reverse
   end
 end

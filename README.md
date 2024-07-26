@@ -39,6 +39,7 @@ By default, local development will use production XML from PURL, so that you can
 3. Create a `config/settings.local.yml` file (if you don't have one already) and add the following:
 
 ```
+# Comment out for lookup to production PURL
 purl_resource:
   public_xml: "%{root_path}/%{druid_tree}/public"
   cocina: "%{root_path}/%{druid_tree}/cocina.json"
