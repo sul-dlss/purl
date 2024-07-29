@@ -48,37 +48,40 @@ end
     <h1 class="py-2"><%= @version.title %></h1>
   </div>
 </div>
-<% if @version.embeddable? %>
-<div class="upper-record-metadata row">
-  <div class="col-md-12">
-    <%= render 'embed' %>
+
+<% unless @version.withdrawn? %>
+  <% if @version.embeddable? %>
+    <div class="upper-record-metadata row">
+      <div class="col-md-12">
+        <%= render 'embed' %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="record-metadata row gx-5">
+    <div class="record-sections col-lg-8">
+      <% if @version.mods? %>
+        <%= render "mods_abstract_contents", document: @version %>
+        <%= render ModsDescriptionComponent.new(document: @version) %>
+        <%= render ModsContributorsComponent.new(document: @version) %>
+        <%= render SubjectComponent.new(document: @version) %>
+        <%= render BibliographicComponent.new(document: @version) %>
+      <% end %>
+    </div>
+    <div class="record-sections col-lg-4">
+      <%= render AccessComponent.new(document: @version) %>
+      <%= render 'mods_citation', document: @version %>
+      <%= render "collection", document: @version %>
+      <%= render "collection_items", document: @version if @purl.released_to_searchworks? %>
+      <%= render VersionsComponent.new(purl: @purl, version: @version) if params[:version_feature] %>
+      <%= render "mods_contact", document: @version %>
+      <%= render "find_it", document: @purl, catalog_key: @version.catalog_key %>
+
+      <% if @version.embeddable? || @version.show_download_metrics? || @version.doi.present? %>
+        <turbo-frame id="metrics-frame" src="<%= purl_metrics_path @purl %>">
+          <p>Loading usage metrics...</p>
+        </turbo-frame>
+      <% end %>
+    </div>
   </div>
-</div>
 <% end %>
-
-<div class="record-metadata row gx-5">
-  <div class="record-sections col-lg-8">
-    <% if @version.mods? %>
-      <%= render "mods_abstract_contents", document: @version %>
-      <%= render ModsDescriptionComponent.new(document: @version) %>
-      <%= render ModsContributorsComponent.new(document: @version) %>
-      <%= render SubjectComponent.new(document: @version) %>
-      <%= render BibliographicComponent.new(document: @version) %>
-    <% end %>
-  </div>
-  <div class="record-sections col-lg-4">
-    <%= render AccessComponent.new(document: @version) %>
-    <%= render 'mods_citation', document: @version %>
-    <%= render "collection", document: @version %>
-    <%= render "collection_items", document: @version if @purl.released_to_searchworks? %>
-    <%= render VersionsComponent.new(purl: @purl, version: @version) if params[:version_feature] %>
-    <%= render "mods_contact", document: @version %>
-    <%= render "find_it", document: @purl, catalog_key: @version.catalog_key %>
-
-    <% if @version.embeddable? || @version.show_download_metrics? || @version.doi.present? %>
-      <turbo-frame id="metrics-frame" src="<%= purl_metrics_path @purl %>">
-        <p>Loading usage metrics...</p>
-      </turbo-frame>
-    <% end %>
-  </div>
-</div>
