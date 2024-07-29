@@ -56,7 +56,7 @@ RSpec.describe 'PURL API' do
         expect(response).to have_http_status(:ok)
         expect(response.body).to include(
           'Code and Data supplement to &quot;Deterministic Matrices Matching the ' \
-          'Compressed Sensing Phase Transitions of Gaussian Random Matrices.&quot; -- VERSION 2'
+          'Compressed Sensing Phase Transitions of Gaussian Random Matrices.&quot; -- VERSION 3'
         )
         expect(response.body).not_to include('A newer version of this item is available')
       end

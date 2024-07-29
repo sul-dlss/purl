@@ -32,6 +32,18 @@ class PurlResource
     true
   end
 
+  def versions
+    @versions = version_manifest&.fetch('versions', {})&.map do |version_id, version_attrs|
+      PurlVersion
+        .new(id:,
+             version_id:,
+             head: head_version == version_id.to_i,
+             updated_at: version_attrs.fetch('date', nil),
+             withdrawn: version_attrs.fetch('withdrawn', false))
+        .tap { |version| raise PurlVersion::ObjectNotReady, id unless version.ready? }
+    end
+  end
+
   def version(version_id)
     version_id = head_version if version_id == :head
 
@@ -67,14 +79,6 @@ class PurlResource
   end
 
   private
-
-  def versions
-    @versions = version_manifest&.fetch('versions', {})&.map do |version_id, _version_attrs|
-      PurlVersion.new(id:, version_id:, head: head_version == version_id.to_i).tap do |version|
-        raise PurlVersion::ObjectNotReady, id unless version.ready?
-      end
-    end
-  end
 
   def head_version
     @head_version = version_manifest&.fetch('head', 1).to_i

@@ -24,7 +24,7 @@ RSpec.describe PurlResource do
     context 'when head version requested' do
       before do
         allow_any_instance_of(PurlVersion).to receive(:public_xml?).and_return(true)
-        allow(instance).to receive(:version_manifest).and_return({ 'versions' => { '1' => {}, '2' => {}, '3' => {} }, 'head' => '3' })
+        allow(instance).to receive(:version_manifest).and_return({ 'versions' => { '1' => {}, '2' => {}, '3' => {} }, 'head' => 3 })
       end
 
       let(:head_version) { instance.version(:head) }
@@ -34,6 +34,26 @@ RSpec.describe PurlResource do
         expect(head_version.version_id).to eq(3)
         expect(head_version).to be_head
       end
+    end
+  end
+
+  describe '#versions' do
+    let(:druid) { 'wp335yr5649' }
+
+    it 'returns the expected number of versions' do
+      expect(instance.versions.count).to eq(3)
+    end
+
+    it 'sets the head property on versions' do
+      expect(instance.versions.map(&:head)).to eq([false, false, true])
+    end
+
+    it 'sets the updated_at property on versions' do
+      expect(instance.versions.map(&:updated_at)).to all(be_a(DateTime))
+    end
+
+    it 'sets the withdrawn property on versions' do
+      expect(instance.versions.map(&:withdrawn)).to eq([false, true, false])
     end
   end
 

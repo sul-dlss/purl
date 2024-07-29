@@ -2,13 +2,37 @@ require 'rails_helper'
 
 RSpec.describe PurlVersion do
   let(:head_version) { nil }
-  let(:instance) { described_class.new(id: druid, version_id:, head: head_version) }
+  let(:instance) { described_class.new(id: druid, version_id:, head: head_version, withdrawn:, updated_at:) }
   let(:druid) { nil }
   let(:version_id) { '1' }
+  let(:updated_at) { '2024-07-29T11:28:33-07:00' }
+  let(:withdrawn) { false }
 
   describe '#version_id=' do
     it 'is normalized to an integer' do
       expect(instance.version_id).to eq(1)
+    end
+  end
+
+  describe '#updated_at=' do
+    it 'is normalized to a datetime' do
+      expect(instance.updated_at).to be_a(DateTime)
+    end
+  end
+
+  describe '#updated_at' do
+    context 'when attr is nil' do
+      let(:now) { DateTime.now }
+      let(:updated_at) { nil }
+
+      before do
+        allow(instance.resource_retriever).to receive(:updated_at).and_return(now)
+      end
+
+      it 'falls back to the resource retriever' do
+        expect(instance.updated_at).to eq(now)
+        expect(instance.resource_retriever).to have_received(:updated_at).once
+      end
     end
   end
 
@@ -26,6 +50,22 @@ RSpec.describe PurlVersion do
 
       it 'returns false' do
         expect(instance).not_to be_head
+      end
+    end
+  end
+
+  describe '#withdrawn?' do
+    context 'with a withdrawn version' do
+      let(:withdrawn) { true }
+
+      it 'returns true' do
+        expect(instance).to be_withdrawn
+      end
+    end
+
+    context 'with a non-withdrawn version' do
+      it 'returns false' do
+        expect(instance).not_to be_withdrawn
       end
     end
   end
@@ -198,28 +238,6 @@ RSpec.describe PurlVersion do
 
     it 'namespaces the purl resource' do
       expect(subject.cache_key).to eq 'purl_resource/druid:oo000oo0000/1'
-    end
-  end
-
-  describe '#updated_at' do
-    before do
-      allow_any_instance_of(ResourceRetriever).to receive(:public_xml_resource).and_return(public_xml_resource)
-    end
-
-    let(:public_xml_resource) do
-      @public_xml_resource ||= double
-    end
-
-    let(:t) { 1.day.ago }
-
-    it 'pulls the updated time from the resource' do
-      allow(public_xml_resource).to receive(:updated_at).and_return(t)
-      expect(subject.updated_at).to eq t
-    end
-
-    it 'pulls the updated time from the HTTP request' do
-      allow(public_xml_resource).to receive(:header).and_return(last_modified: t)
-      expect(subject.updated_at).to eq t
     end
   end
 

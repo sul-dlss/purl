@@ -4,7 +4,7 @@ class PurlVersion
   include ActiveModel::Model
   include ActiveSupport::Benchmarkable
 
-  attr_accessor :id, :head
+  attr_accessor :id, :head, :withdrawn
   attr_reader :version_id
   alias druid id
 
@@ -18,9 +18,25 @@ class PurlVersion
     Settings.document_cache_root
   end
 
+  def head?
+    head
+  end
+
+  def withdrawn?
+    withdrawn
+  end
+
   # Coerce version IDs to integers
   def version_id=(value)
     @version_id = value.to_i
+  end
+
+  def updated_at
+    @updated_at.presence || resource_retriever.updated_at
+  end
+
+  def updated_at=(value)
+    @updated_at = value&.to_datetime
   end
 
   def mods?
@@ -126,10 +142,6 @@ class PurlVersion
     metrics_service.get_metrics(druid)
   end
 
-  def head?
-    head
-  end
-
   concerning :Metadata do
     def title
       if mods?
@@ -214,16 +226,6 @@ class PurlVersion
       "purl_resource/druid:#{druid}/#{version_id}"
     end
 
-    def updated_at
-      if public_xml_resource.respond_to? :updated_at
-        public_xml_resource.updated_at
-      elsif public_xml_resource.respond_to?(:header) && public_xml_resource.header[:last_modified].present?
-        last_modified_header_value
-      else
-        Time.zone.now
-      end
-    end
-
     def last_modified_header_value
       t = public_xml_resource.header[:last_modified]
 
@@ -238,7 +240,7 @@ class PurlVersion
     end
   end
 
-  delegate :public_xml_body, :cocina_body, :updated_at, to: :resource_retriever
+  delegate :public_xml_body, :cocina_body, to: :resource_retriever
 
   def resource_retriever
     @resource_retriever ||= ResourceRetriever.new(druid:, version_id:)
