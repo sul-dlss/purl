@@ -18,7 +18,7 @@
 
 coverage
 config/honeybadger.yml
-document_cache/*
+/document_cache
 .byebug_history
 .ruby-gemset
 .ruby-version
