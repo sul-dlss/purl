@@ -59,6 +59,8 @@ RSpec.describe 'PURL API' do
           'Compressed Sensing Phase Transitions of Gaussian Random Matrices.&quot; -- VERSION 3'
         )
         expect(response.body).not_to include('A newer version of this item is available')
+        expect(response.body).to have_css('div.upper-record-metadata')
+        expect(response.body).to have_css('div.record-metadata')
       end
 
       context 'with legit version specified' do
@@ -70,6 +72,27 @@ RSpec.describe 'PURL API' do
             'Compressed Sensing Phase Transitions of Gaussian Random Matrices.&quot; -- VERSION 1'
           )
           expect(response.body).to include('A newer version of this item is available')
+          expect(response.body).to have_css('div.upper-record-metadata')
+          expect(response.body).to have_css('div.record-metadata')
+        end
+      end
+
+      context 'with withdrawn version specified' do
+        it 'returns the PURL page of the requested version with only tombstone information' do
+          get '/wp335yr5649/v2'
+          expect(response).to have_http_status(:ok)
+          expect(response.body).to include(
+            'Code and Data supplement to &quot;Deterministic Matrices Matching the ' \
+            'Compressed Sensing Phase Transitions of Gaussian Random Matrices.&quot; -- VERSION 2'
+          )
+          expect(response.body).not_to include('A newer version of this item is available')
+          expect(response.body).to include('This version has been withdrawn')
+          expect(response.body).to include('Please visit <a href="http://www.example.com/wp335yr5649">http://www.example.com/wp335yr5649</a> ' \
+                                           'to view the other versions of this item.')
+          expect(response.body).not_to include('Description')
+          expect(response.body).not_to include('Preferred citation')
+          expect(response.body).to have_no_css('div.upper-record-metadata')
+          expect(response.body).to have_no_css('div.record-metadata')
         end
       end
 

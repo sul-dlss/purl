@@ -15,7 +15,7 @@ class PurlController < ApplicationController
     @version = @purl.version(version_param) || default_version
     return unless stale?(last_modified: @version.updated_at.utc, etag: @version.cache_key + "/#{@version.updated_at.utc}")
 
-    flash.now[:alert] = 'A newer version of this item is available' unless @version.head?
+    maybe_add_flash_message!
 
     # render the landing page based on the format
     respond_to do |format|
@@ -97,6 +97,15 @@ class PurlController < ApplicationController
 
     PurlVersion.new(id: params[:id], version_id: 1, head: true).tap do |version|
       raise PurlVersion::ObjectNotReady, id unless version.ready?
+    end
+  end
+
+  def maybe_add_flash_message!
+    if @version.withdrawn?
+      flash.now[:alert] = '<b>This version has been withdrawn</b><br>' \
+                          "Please visit #{view_context.link_to purl_url(@purl), purl_url(@purl)} to view the other versions of this item."
+    elsif !@version.head?
+      flash.now[:alert] = 'A newer version of this item is available'
     end
   end
 end
