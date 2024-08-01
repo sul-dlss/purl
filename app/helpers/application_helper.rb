@@ -27,15 +27,17 @@ module ApplicationHelper
     @iframe_url_template ||= Addressable::Template.new(Settings.embed.iframe.url_template)
   end
 
-  def iframe_url(druid)
-    iframe_url_template.expand(url: embeddable_url(druid))
+  def iframe_url(druid, version_id = nil)
+    iframe_url_template.expand(url: embeddable_url(druid, version_id))
   end
 
-  def embeddable_url(druid)
+  def embeddable_url(druid, version_id = nil)
     if Settings.embed.url
-      Settings.embed.url % { druid: }
+      (Settings.embed.url % { druid: }).tap do |embed_url|
+        return "#{embed_url}/v#{version_id}" if version_id.present?
+      end
     else
-      purl_url(druid)
+      version_id.present? ? versioned_purl_url(druid, version_id) : purl_url(druid)
     end
   end
 

@@ -3,8 +3,8 @@
   <% if @version.embeddable? %>
     <%= tag :link, rel: "preconnect", href: Settings.stacks.url %>
     <%= tag :link, rel: "preconnect", href: Settings.embed.url % { druid: '' } %>
-    <%= tag :link, rel: "alternate", title: "oEmbed Profile", type: 'application/json+oembed', href: oembed_url_template.expand(format: 'json', url: embeddable_url(@purl.druid)) %>
-    <%= tag :link, rel: "alternate", title: "oEmbed Profile", type: 'application/xml+oembed', href: oembed_url_template.expand(format: 'xml', url: embeddable_url(@purl.druid)) %>
+    <%= tag :link, rel: "alternate", title: "oEmbed Profile", type: 'application/json+oembed', href: oembed_url_template.expand(format: 'json', url: embeddable_url(@purl.druid, @version&.version_id)) %>
+    <%= tag :link, rel: "alternate", title: "oEmbed Profile", type: 'application/xml+oembed', href: oembed_url_template.expand(format: 'xml', url: embeddable_url(@purl.druid, @version&.version_id)) %>
   <% end %>
   <%= tag :link, rel: "canonical", href: purl_url(@purl) %>
   <%= tag :link, rel: "alternate", title: "MODS XML", type: 'application/xml', href: purl_url(@purl, format: 'mods') if @version.mods? %>
