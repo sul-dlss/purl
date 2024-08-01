@@ -2,9 +2,6 @@
   /* Colors
      https://identity.stanford.edu/design-elements/color/primary-colors/ */
   --stanford-cardinal-rgb: 143, 20, 20;
-
-  /* Needed for text-primary */
-  --bs-primary-rgb: var(--stanford-cardinal-rgb);
 }
 
 .bg-cardinal {
@@ -133,4 +130,8 @@
 
 .version-updated-at {
   white-space: nowrap;
+}
+
+.section-header {
+  color: var(--stanford-cardinal);
 }

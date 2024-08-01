@@ -9,7 +9,7 @@ RSpec.describe VersionsComponent, type: :component do
   before { render_inline(instance) }
 
   it 'renders the version table' do
-    expect(page).to have_css '.text-primary', text: 'Versions'
+    expect(page).to have_css '.section-header', text: 'Versions'
     expect(page).to have_css 'p', text: 'Each version has a distinct URL, but you can use this PURL to access the latest version.'
     expect(page).to have_link 'https://purl.stanford.edu/wp335yr5649'
   end
