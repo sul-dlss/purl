@@ -35,10 +35,32 @@ RSpec.describe 'PURL API' do
     end
 
     context 'with json' do
-      it 'returns the Cocina json' do
-        get '/bb157hs6068.json'
-        expect(response).to be_successful
-        expect(response.parsed_body).to include('cocinaVersion', 'type', 'structural')
+      context 'when a version is not provided' do
+        it 'returns the Cocina json' do
+          get '/bb157hs6068.json'
+          expect(response).to be_successful
+          expect(response.parsed_body).to include('cocinaVersion', 'type', 'structural')
+          expect(response.parsed_body['version']).to eq(9)
+        end
+      end
+
+      context 'when a valid version is provided' do
+        it 'returns the Cocina json for the requested version' do
+          get '/wp335yr5649/v3.json'
+          expect(response).to be_successful
+          expect(response.parsed_body).to include('cocinaVersion', 'type', 'structural')
+          expect(response.parsed_body['version']).to eq(5)
+        end
+      end
+
+      context 'when a withdrawn version is provided' do
+        it 'returns the Cocina json for the requested version' do
+          get '/wp335yr5649/v2.json'
+          expect(response).to be_successful
+          expect(response.parsed_body).to include('type', 'structural', 'status')
+          expect(response.parsed_body['status']).to eq('withdrawn')
+          expect(response.parsed_body['structural']['contains']).to eq([])
+        end
       end
     end
 
