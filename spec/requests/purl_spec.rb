@@ -46,7 +46,7 @@ RSpec.describe 'PURL API' do
 
       context 'when a valid version is provided' do
         it 'returns the Cocina json for the requested version' do
-          get '/wp335yr5649/v3.json'
+          get '/wp335yr5649/version/3.json'
           expect(response).to be_successful
           expect(response.parsed_body).to include('cocinaVersion', 'type', 'structural')
           expect(response.parsed_body['version']).to eq(5)
@@ -55,7 +55,7 @@ RSpec.describe 'PURL API' do
 
       context 'when a withdrawn version is provided' do
         it 'returns the Cocina json for the requested version' do
-          get '/wp335yr5649/v2.json'
+          get '/wp335yr5649/version/2.json'
           expect(response).to be_successful
           expect(response.parsed_body).to include('type', 'structural', 'status')
           expect(response.parsed_body['status']).to eq('withdrawn')
@@ -87,7 +87,7 @@ RSpec.describe 'PURL API' do
 
       context 'with legit version specified' do
         it 'returns the PURL page of the requested version' do
-          get '/wp335yr5649/v1'
+          get '/wp335yr5649/version/1'
           expect(response).to have_http_status(:ok)
           expect(response.body).to include(
             'Code and Data supplement to &quot;Deterministic Matrices Matching the ' \
@@ -101,7 +101,7 @@ RSpec.describe 'PURL API' do
 
       context 'with withdrawn version specified' do
         it 'returns the PURL page of the requested version with only tombstone information' do
-          get '/wp335yr5649/v2'
+          get '/wp335yr5649/version/2'
           expect(response).to have_http_status(:ok)
           expect(response.body).to include(
             'Code and Data supplement to &quot;Deterministic Matrices Matching the ' \
@@ -120,7 +120,7 @@ RSpec.describe 'PURL API' do
 
       context 'with missing version specified' do
         it 'renders the head version page including a warning to the user' do
-          get '/wp335yr5649/v45'
+          get '/wp335yr5649/version/45'
           expect(response).to have_http_status(:ok)
           expect(response.body).to include('Requested version \'45\' not found. Showing latest version instead.')
         end
