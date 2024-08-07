@@ -88,10 +88,7 @@ class PurlController < ApplicationController
   end
 
   def version_param
-    return :head if params[:version].blank?
-
-    # Remove the 'v' part of the version param, e.g., 'v22'
-    params[:version][/\d+/]
+    params[:version].presence || :head
   end
 
   def default_version
