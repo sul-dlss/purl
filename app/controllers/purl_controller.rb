@@ -97,7 +97,7 @@ class PurlController < ApplicationController
   def default_version
     flash.now[:error] = "Requested version '#{version_param}' not found. Showing latest version instead."
 
-    PurlVersion.new(id: params[:id], version_id: 1, head: true).tap do |version|
+    @purl.version(:head).tap do |version|
       raise PurlVersion::ObjectNotReady, id unless version.ready?
     end
   end
