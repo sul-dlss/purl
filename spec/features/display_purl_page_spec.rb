@@ -235,6 +235,14 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
+  context 'with a version' do
+    it 'draws the page' do
+      visit '/wp335yr5649/version/3'
+      link = page.find('link[rel="alternate"][title="oEmbed Profile"][type="application/json+oembed"]', visible: false)
+      expect(link['href']).to eq 'https://embed.stanford.edu/embed.json?url=https%3A%2F%2Fpurl.stanford.edu%2Fwp335yr5649%2Fversion%2F3'
+    end
+  end
+
   def have_metadata_section(text)
     have_css 'section h2', text:
   end
