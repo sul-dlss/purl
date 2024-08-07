@@ -12,7 +12,10 @@ class PurlController < ApplicationController
   # rubocop:disable Metrics/AbcSize
   # rubocop:disable Metrics/MethodLength
   def show
-    @version = @purl.version(version_param) || default_version
+    @version = @purl.version(version_param)
+
+    return handle_missing_version! if @version.blank?
+
     return unless stale?(last_modified: @version.updated_at.utc, etag: @version.cache_key + "/#{@version.updated_at.utc}")
 
     maybe_add_flash_message!
@@ -91,11 +94,11 @@ class PurlController < ApplicationController
     params[:version].presence || :head
   end
 
-  def default_version
-    flash.now[:error] = "Requested version '#{version_param}' not found. Showing latest version instead."
-
-    PurlVersion.new(id: params[:id], version_id: 1, head: true).tap do |version|
-      raise PurlVersion::ObjectNotReady, id unless version.ready?
+  def handle_missing_version!
+    if formats.include?(:html)
+      redirect_to purl_url(@purl), flash: { error: "Requested version '#{version_param}' not found. Showing latest version instead." }
+    else
+      head :not_found
     end
   end
 
