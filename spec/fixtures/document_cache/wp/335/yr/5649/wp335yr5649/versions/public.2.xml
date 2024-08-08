@@ -2,7 +2,7 @@
 <publicObject id="druid:wp335yr5649" published="2023-10-26T11:21:31Z" publishVersion="cocina-models/0.91.4">
   <identityMetadata>
     <objectType>item</objectType>
-    <objectLabel>Code and Data supplement to "Deterministic Matrices Matching the Compressed Sensing Phase Transitions of Gaussian Random Matrices." -- VERSION 2</objectLabel>
+    <objectLabel>Code and Data supplement to "Deterministic Matrices Matching the Compressed Sensing Phase Transitions of Gaussian Random Matrices." -- VERSION 1</objectLabel>
     <sourceId source="sul">Hydrus:item-hfrost-2013-02-21T21:28:31.010Z</sourceId>
   </identityMetadata>
   <contentMetadata objectId="druid:wp335yr5649" type="file">
@@ -57,7 +57,7 @@
     </rdf:Description>
   </rdf:RDF>
   <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-    <dc:title>Code and Data supplement to "Deterministic Matrices Matching the Compressed Sensing Phase Transitions of Gaussian Random Matrices." -- VERSION 2</dc:title>
+    <dc:title>Code and Data supplement to "Deterministic Matrices Matching the Compressed Sensing Phase Transitions of Gaussian Random Matrices." -- VERSION 1</dc:title>
     <dc:contributor>Donoho, David (Author)</dc:contributor>
     <dc:contributor>Monajemi, Hatef (Author)</dc:contributor>
     <dc:contributor>Jafarpour, Sina (Author)</dc:contributor>
@@ -86,7 +86,7 @@ Phase Transitions of Gaussian Random Matrices. Available at http://purl.stanford
   </oai_dc:dc>
   <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
     <titleInfo>
-      <title>Code and Data supplement to "Deterministic Matrices Matching the Compressed Sensing Phase Transitions of Gaussian Random Matrices." -- VERSION 2</title>
+      <title>Code and Data supplement to "Deterministic Matrices Matching the Compressed Sensing Phase Transitions of Gaussian Random Matrices." -- VERSION 1</title>
     </titleInfo>
     <name type="personal">
       <namePart>Donoho, David</namePart>

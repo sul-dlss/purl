@@ -10,7 +10,11 @@ class VersionActionsComponent < ViewComponent::Base
 
   attr_reader :version, :url
 
-  delegate :withdrawn?, to: :version
+  delegate :state, to: :version
+
+  def available?
+    state == 'available'
+  end
 
   def requested_version?
     @requested_version.version_id == version.version_id

@@ -15,7 +15,7 @@ class VersionsComponent < ViewComponent::Base
   end
 
   def updated_at(version)
-    l(version.updated_at.to_date, format: :short)
+    l(version.updated_at.to_date, format: :short) if version.updated_at
   end
 
   def url(version)

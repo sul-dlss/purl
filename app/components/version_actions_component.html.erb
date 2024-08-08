@@ -1,10 +1,10 @@
-<% if withdrawn? %>
-  Withdrawn
-<% else %>
+<% if available? %>
   <% if requested_version? %>
     You are viewing this version
   <% else %>
     <a href="<%= url %>">View</a>
   <% end %>
   | <a href="#" data-action="click->clipboard#copy">Copy URL</a>
+<% else %>
+  <%= state.capitalize %>
 <% end %>

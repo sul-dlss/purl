@@ -23,7 +23,7 @@ RSpec.describe 'purl/_embed' do
   context 'when a version is specified' do
     before { assign(:version, version) }
 
-    let(:version) { PurlVersion.new(id: 'xyz', head: true, withdrawn: false, version_id: 2) }
+    let(:version) { PurlVersion.new(id: 'xyz', head: true, state: 'available', version_id: 2) }
 
     it 'displays a purl embed viewer' do
       render

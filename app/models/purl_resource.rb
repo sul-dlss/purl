@@ -39,8 +39,7 @@ class PurlResource
              version_id:,
              head: head_version == version_id.to_i,
              updated_at: version_attrs.fetch('date', nil),
-             withdrawn: version_attrs.fetch('withdrawn', false))
-        .tap { |version| raise PurlVersion::ObjectNotReady, id unless version.ready? }
+             state: version_attrs.fetch('state'))
     end
   end
 
@@ -85,9 +84,17 @@ class PurlResource
   end
 
   def null_version_manifest
+    date = begin
+      resource_retriever.updated_at.iso8601
+    rescue Errno::ENOENT
+      nil
+    end
     {
       'versions' => {
-        '1' => {}
+        '1' => {
+          'state' => 'available',
+          'date' => date
+        }
       },
       'head' => '1'
     }
