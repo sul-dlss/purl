@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe IiifPresentationManifest do
   let(:resource) { double }
+
   subject { described_class.new(resource) }
 
   describe '#stacks_iiif_base_url' do

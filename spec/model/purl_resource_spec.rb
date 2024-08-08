@@ -59,6 +59,7 @@ RSpec.describe PurlResource do
 
   describe '#crawlable?' do
     subject { instance.crawlable? }
+
     let(:druid) { 'kn112rm5773' }
 
     context 'with a meta.json file in the object path' do
