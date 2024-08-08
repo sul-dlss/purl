@@ -63,10 +63,6 @@ class PurlResource
     meta_json.fetch('earthworks')
   end
 
-  def metrics
-    metrics_service.get_metrics(druid)
-  end
-
   # The meta.json contains the properties this purl is released to.
   delegate :meta_json_body, :version_manifest_body, to: :resource_retriever
 
@@ -95,9 +91,5 @@ class PurlResource
       },
       'head' => '1'
     }
-  end
-
-  def metrics_service
-    @metrics_service ||= MetricsService.new
   end
 end
