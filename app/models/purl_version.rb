@@ -14,10 +14,6 @@ class PurlVersion
 
   MODS_NS = 'http://www.loc.gov/mods/v3'.freeze
 
-  def self.storage_root_path
-    Settings.document_cache_root
-  end
-
   def head?
     head
   end
