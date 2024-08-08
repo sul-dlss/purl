@@ -17,14 +17,13 @@ RSpec.describe PurlResource do
   describe '#version' do
     let(:druid) { 'kn112rm5773' }
 
-    it 'validates that the object is "ready"' do
-      expect { instance.version(3) }.to raise_error PurlVersion::ObjectNotReady
-    end
-
     context 'when head version requested' do
       before do
         allow_any_instance_of(PurlVersion).to receive(:public_xml?).and_return(true)
-        allow(instance).to receive(:version_manifest).and_return({ 'versions' => { '1' => {}, '2' => {}, '3' => {} }, 'head' => 3 })
+        allow(instance).to receive(:version_manifest).and_return(
+          { 'versions' => { '1' => { 'state' => 'available' }, '2' => { 'state' => 'available' }, '3' => { 'state' => 'available
+            ' } }, 'head' => 3 }
+        )
       end
 
       let(:head_version) { instance.version(:head) }
@@ -40,20 +39,16 @@ RSpec.describe PurlResource do
   describe '#versions' do
     let(:druid) { 'wp335yr5649' }
 
-    it 'returns the expected number of versions' do
-      expect(instance.versions.count).to eq(3)
-    end
-
     it 'sets the head property on versions' do
-      expect(instance.versions.map(&:head)).to eq([false, false, true])
+      expect(instance.versions.map(&:head)).to eq([false, false, false, true])
     end
 
     it 'sets the updated_at property on versions' do
-      expect(instance.versions.map(&:updated_at)).to all(be_a(DateTime))
+      expect(instance.versions.filter(&:ready?).map(&:updated_at)).to all(be_a(DateTime))
     end
 
-    it 'sets the withdrawn property on versions' do
-      expect(instance.versions.map(&:withdrawn)).to eq([false, true, false])
+    it 'sets the state property on versions' do
+      expect(instance.versions.map(&:state)).to eq(['permanently withdrawn', 'available', 'withdrawn', 'available'])
     end
   end
 

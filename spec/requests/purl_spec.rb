@@ -46,7 +46,7 @@ RSpec.describe 'PURL API' do
 
       context 'when a valid version is provided' do
         it 'returns the Cocina json for the requested version' do
-          get '/wp335yr5649/version/3.json'
+          get '/wp335yr5649/version/4.json'
           expect(response).to be_successful
           expect(response.parsed_body).to include('cocinaVersion', 'type', 'structural')
           expect(response.parsed_body['version']).to eq(5)
@@ -62,7 +62,7 @@ RSpec.describe 'PURL API' do
 
       context 'when a withdrawn version is provided' do
         it 'returns the Cocina json for the requested version' do
-          get '/wp335yr5649/version/2.json'
+          get '/wp335yr5649/version/3.json'
           expect(response).to be_successful
           expect(response.parsed_body).to include('type', 'structural', 'status')
           expect(response.parsed_body['status']).to eq('withdrawn')
@@ -81,7 +81,7 @@ RSpec.describe 'PURL API' do
 
       context 'when a valid version is provided' do
         it 'returns the public XML for the requested version' do
-          get '/wp335yr5649/version/3.xml'
+          get '/wp335yr5649/version/4.xml'
           expect(response).to be_successful
         end
       end
@@ -95,7 +95,7 @@ RSpec.describe 'PURL API' do
 
       context 'when a withdrawn version is provided' do
         it 'returns the public XML for the requested version' do
-          get '/wp335yr5649/version/2.xml'
+          get '/wp335yr5649/version/3.xml'
           expect(response).to be_successful
         end
       end
@@ -124,7 +124,7 @@ RSpec.describe 'PURL API' do
 
       context 'with legit version specified' do
         it 'returns the PURL page of the requested version' do
-          get '/wp335yr5649/version/1'
+          get '/wp335yr5649/version/2'
           expect(response).to have_http_status(:ok)
           expect(response.body).to include(
             'Code and Data supplement to &quot;Deterministic Matrices Matching the ' \
@@ -138,11 +138,11 @@ RSpec.describe 'PURL API' do
 
       context 'with withdrawn version specified' do
         it 'returns the PURL page of the requested version with only tombstone information' do
-          get '/wp335yr5649/version/2'
+          get '/wp335yr5649/version/3'
           expect(response).to have_http_status(:ok)
           expect(response.body).to include(
             'Code and Data supplement to &quot;Deterministic Matrices Matching the ' \
-            'Compressed Sensing Phase Transitions of Gaussian Random Matrices.&quot; -- VERSION 2'
+            'Compressed Sensing Phase Transitions of Gaussian Random Matrices.&quot; -- VERSION 3'
           )
           expect(response.body).not_to include('A newer version of this item is available')
           expect(response.body).to include('This version has been withdrawn')

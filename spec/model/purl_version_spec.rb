@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe PurlVersion do
   let(:head_version) { nil }
-  let(:instance) { described_class.new(id: druid, version_id:, head: head_version, withdrawn:, updated_at:) }
+  let(:instance) { described_class.new(id: druid, version_id:, head: head_version, state:, updated_at:) }
   let(:druid) { nil }
   let(:version_id) { '1' }
   let(:updated_at) { '2024-07-29T11:28:33-07:00' }
-  let(:withdrawn) { false }
+  let(:state) { 'available' }
 
   describe '#version_id=' do
     it 'is normalized to an integer' do
@@ -17,22 +17,6 @@ RSpec.describe PurlVersion do
   describe '#updated_at=' do
     it 'is normalized to a datetime' do
       expect(instance.updated_at).to be_a(DateTime)
-    end
-  end
-
-  describe '#updated_at' do
-    context 'when attr is nil' do
-      let(:now) { DateTime.now }
-      let(:updated_at) { nil }
-
-      before do
-        allow(instance.resource_retriever).to receive(:updated_at).and_return(now)
-      end
-
-      it 'falls back to the resource retriever' do
-        expect(instance.updated_at).to eq(now)
-        expect(instance.resource_retriever).to have_received(:updated_at).once
-      end
     end
   end
 
@@ -56,7 +40,7 @@ RSpec.describe PurlVersion do
 
   describe '#withdrawn?' do
     context 'with a withdrawn version' do
-      let(:withdrawn) { true }
+      let(:state) { 'withdrawn' }
 
       it 'returns true' do
         expect(instance).to be_withdrawn
@@ -101,12 +85,12 @@ RSpec.describe PurlVersion do
     context 'when layout is versioned' do
       let(:druid) { 'wp335yr5649' }
       let(:head_version) { true }
-      let(:version_id) { '2' }
+      let(:version_id) { '3' }
 
       describe '#public_xml' do
         it 'retrieves public XML from versioned layout' do
           expect(instance.public_xml.title).to eq(
-            'Code and Data supplement to "Deterministic Matrices Matching the Compressed Sensing Phase Transitions of Gaussian Random Matrices." -- VERSION 2'
+            'Code and Data supplement to "Deterministic Matrices Matching the Compressed Sensing Phase Transitions of Gaussian Random Matrices." -- VERSION 3'
           )
         end
       end

@@ -1,5 +1,6 @@
 class PurlController < ApplicationController
   before_action :load_purl, except: [:index]
+  before_action :load_version, only: :show
   before_action :fix_etag_header
 
   rescue_from ActionController::UnknownFormat, with: :missing_file
@@ -12,10 +13,6 @@ class PurlController < ApplicationController
   # rubocop:disable Metrics/AbcSize
   # rubocop:disable Metrics/MethodLength
   def show
-    @version = @purl.version(version_param)
-
-    return handle_missing_version! if @version.blank?
-
     return unless stale?(last_modified: @version.updated_at.utc, etag: @version.cache_key + "/#{@version.updated_at.utc}")
 
     maybe_add_flash_message!
@@ -81,6 +78,17 @@ class PurlController < ApplicationController
     @purl = PurlResource.find(params[:id])
   end
 
+  def load_version
+    @version = @purl.version(version_param)
+
+    if @version.blank?
+      handle_missing_version!
+      return false
+    end
+
+    raise PurlVersion::ObjectNotReady, params[:id] unless @version.ready?
+  end
+
   def missing_file
     render '/errors/missing_file', status: :not_found, formats: [:html]
   end
@@ -95,10 +103,13 @@ class PurlController < ApplicationController
   end
 
   def handle_missing_version!
-    if formats.include?(:html)
-      redirect_to purl_url(@purl), flash: { error: "Requested version '#{version_param}' not found. Showing latest version instead." }
-    else
-      head :not_found
+    respond_to do |format|
+      format.html do
+        redirect_to purl_url(@purl), flash: { error: "Requested version '#{version_param}' not found. Showing latest version instead." }
+      end
+      format.all do
+        head :not_found
+      end
     end
   end
 

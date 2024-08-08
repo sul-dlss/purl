@@ -4,8 +4,8 @@ class PurlVersion
   include ActiveModel::Model
   include ActiveSupport::Benchmarkable
 
-  attr_accessor :id, :head, :withdrawn
-  attr_reader :version_id
+  attr_accessor :id, :head, :state
+  attr_reader :version_id, :updated_at
   alias druid id
 
   class DruidNotValid < StandardError; end
@@ -19,16 +19,12 @@ class PurlVersion
   end
 
   def withdrawn?
-    withdrawn
+    state == 'withdrawn'
   end
 
   # Coerce version IDs to integers
   def version_id=(value)
     @version_id = value.to_i
-  end
-
-  def updated_at
-    @updated_at.presence || resource_retriever.updated_at
   end
 
   def updated_at=(value)
@@ -61,8 +57,10 @@ class PurlVersion
   def containing_purl_collections
     @containing_purl_collections ||= containing_collections.filter_map do |id|
       resource = PurlResource.find(id)
+      return nil unless resource.version(:head).ready?
+
       [resource, resource.version(:head)]
-    rescue ObjectNotReady, DruidNotValid
+    rescue DruidNotValid
       nil
     end
   end
