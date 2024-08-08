@@ -53,6 +53,13 @@ RSpec.describe 'PURL API' do
         end
       end
 
+      context 'when a missing version is provided' do
+        it 'returns an HTTP 404 response' do
+          get '/wp335yr5649/version/45.json'
+          expect(response).to have_http_status(:not_found)
+        end
+      end
+
       context 'when a withdrawn version is provided' do
         it 'returns the Cocina json for the requested version' do
           get '/wp335yr5649/version/2.json'
@@ -60,6 +67,36 @@ RSpec.describe 'PURL API' do
           expect(response.parsed_body).to include('type', 'structural', 'status')
           expect(response.parsed_body['status']).to eq('withdrawn')
           expect(response.parsed_body['structural']['contains']).to eq([])
+        end
+      end
+    end
+
+    context 'with XML' do
+      context 'when a version is not provided' do
+        it 'returns the public XML' do
+          get '/bb157hs6068.xml'
+          expect(response).to be_successful
+        end
+      end
+
+      context 'when a valid version is provided' do
+        it 'returns the public XML for the requested version' do
+          get '/wp335yr5649/version/3.xml'
+          expect(response).to be_successful
+        end
+      end
+
+      context 'when a missing version is provided' do
+        it 'returns an HTTP 404 response' do
+          get '/wp335yr5649/version/45.xml'
+          expect(response).to have_http_status(:not_found)
+        end
+      end
+
+      context 'when a withdrawn version is provided' do
+        it 'returns the public XML for the requested version' do
+          get '/wp335yr5649/version/2.xml'
+          expect(response).to be_successful
         end
       end
     end
@@ -121,6 +158,9 @@ RSpec.describe 'PURL API' do
       context 'with missing version specified' do
         it 'renders the head version page including a warning to the user' do
           get '/wp335yr5649/version/45'
+          expect(response).to have_http_status(:found)
+          expect(response).to redirect_to('/wp335yr5649')
+          follow_redirect!
           expect(response).to have_http_status(:ok)
           expect(response.body).to include('Requested version \'45\' not found. Showing latest version instead.')
         end
