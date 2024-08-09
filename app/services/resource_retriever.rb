@@ -1,9 +1,8 @@
 class ResourceRetriever
   include ActiveSupport::Benchmarkable
 
-  def initialize(druid:, version_id: nil)
+  def initialize(druid:)
     @druid = druid
-    @version_id = version_id
   end
 
   def public_xml_body
@@ -32,16 +31,21 @@ class ResourceRetriever
     end
   end
 
+  def version_manifest_resource
+    @version_manifest_resource ||= cache_resource(:version_manifest) do
+      fetch_resource(:version_manifest, Settings.stacks.version_manifest_path)
+    end
+  end
+
   private
 
-  attr_reader :druid, :version_id
+  attr_reader :druid
 
   def attributes
     {
       druid:,
       druid_tree:,
-      root_path:,
-      version_id:
+      root_path:
     }
   end
 
@@ -61,30 +65,23 @@ class ResourceRetriever
     end
   end
 
-  def cache_key(key)
-    prefix = "purl_resource/druid:#{druid}"
-    version_id ? "#{prefix}/#{version_id}/#{key}" : "#{prefix}/#{key}"
+  def cache_prefix
+    "purl_resource/druid:#{druid}"
   end
 
-  def versioned_layout?
-    version_manifest_resource.success?
+  def cache_key(key)
+    [cache_prefix, key].join('/')
   end
 
   def public_xml_path
-    return Settings.purl_resource.versioned.public_xml if versioned_layout?
-
     Settings.purl_resource.public_xml
   end
 
   def meta_json_path
-    return Settings.purl_resource.versioned.meta if versioned_layout?
-
     Settings.purl_resource.meta
   end
 
   def cocina_path
-    return Settings.purl_resource.versioned.cocina if versioned_layout?
-
     Settings.purl_resource.cocina
   end
 
@@ -103,12 +100,6 @@ class ResourceRetriever
   def cocina_resource
     @cocina_resource ||= cache_resource(:cocina) do
       fetch_resource(:cocina, cocina_path)
-    end
-  end
-
-  def version_manifest_resource
-    @version_manifest_resource ||= cache_resource(:version_manifest) do
-      fetch_resource(:version_manifest, Settings.stacks.version_manifest_path)
     end
   end
 

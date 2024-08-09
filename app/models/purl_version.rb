@@ -4,7 +4,7 @@ class PurlVersion
   include ActiveModel::Model
   include ActiveSupport::Benchmarkable
 
-  attr_accessor :id, :head, :state
+  attr_accessor :id, :head, :state, :resource_retriever
   attr_reader :version_id, :updated_at
   alias druid id
 
@@ -235,10 +235,6 @@ class PurlVersion
   end
 
   delegate :public_xml_body, :cocina_body, to: :resource_retriever
-
-  def resource_retriever
-    @resource_retriever ||= ResourceRetriever.new(druid:, version_id:)
-  end
 
   def public_xml?
     public_xml_body.present?

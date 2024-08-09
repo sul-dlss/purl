@@ -1,12 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe PurlVersion do
+  subject(:instance) { described_class.new(id: druid, version_id:, head: head_version, state:, updated_at:, resource_retriever:) }
+
   let(:head_version) { nil }
-  let(:instance) { described_class.new(id: druid, version_id:, head: head_version, state:, updated_at:) }
   let(:druid) { nil }
   let(:version_id) { '1' }
   let(:updated_at) { '2024-07-29T11:28:33-07:00' }
   let(:state) { 'available' }
+  let(:resource_retriever) { ResourceRetriever.new(druid:) }
 
   describe '#version_id=' do
     it 'is normalized to an integer' do
@@ -74,7 +76,7 @@ RSpec.describe PurlVersion do
       let(:fake_response) { OpenStruct.new(success?: true, body:) }
 
       before do
-        allow_any_instance_of(ResourceRetriever).to receive(:fetch_resource).and_return(fake_response)
+        allow(resource_retriever).to receive(:fetch_resource).and_return(fake_response)
       end
 
       it 'checks if the request succeeded' do
@@ -86,6 +88,7 @@ RSpec.describe PurlVersion do
       let(:druid) { 'wp335yr5649' }
       let(:head_version) { true }
       let(:version_id) { '3' }
+      let(:resource_retriever) { VersionedResourceRetriever.new(druid:, version_id:) }
 
       describe '#public_xml' do
         it 'retrieves public XML from versioned layout' do
@@ -199,7 +202,7 @@ RSpec.describe PurlVersion do
     end
 
     before do
-      allow_any_instance_of(ResourceRetriever).to receive(:public_xml_body).and_return(body)
+      allow(resource_retriever).to receive(:public_xml_body).and_return(body)
     end
 
     it 'extracts a description from the MODS abstract' do
@@ -209,7 +212,7 @@ RSpec.describe PurlVersion do
 
   describe '#ready?' do
     before do
-      allow_any_instance_of(ResourceRetriever).to receive(:public_xml_body).and_return('ok')
+      allow(resource_retriever).to receive(:public_xml_body).and_return('ok')
     end
 
     it 'is ready if the public xml is present' do
@@ -270,7 +273,7 @@ RSpec.describe PurlVersion do
   describe '#catalog_key' do
     context 'with a native FOLIO hrid' do
       before do
-        allow_any_instance_of(ResourceRetriever).to receive(:public_xml_body).and_return <<-EOF
+        allow(resource_retriever).to receive(:public_xml_body).and_return <<-EOF
           <?xml version="1.0" encoding="UTF-8"?>
           <publicObject>
             <identityMetadata>
@@ -287,7 +290,7 @@ RSpec.describe PurlVersion do
 
     context 'with a migrated FOLIO hrid' do
       before do
-        allow_any_instance_of(ResourceRetriever).to receive(:public_xml_body).and_return <<-EOF
+        allow(resource_retriever).to receive(:public_xml_body).and_return <<-EOF
           <?xml version="1.0" encoding="UTF-8"?>
           <publicObject>
             <identityMetadata>
@@ -304,7 +307,7 @@ RSpec.describe PurlVersion do
 
     context 'with a catkey' do
       before do
-        allow_any_instance_of(ResourceRetriever).to receive(:public_xml_body).and_return <<-EOF
+        allow(resource_retriever).to receive(:public_xml_body).and_return <<-EOF
           <?xml version="1.0" encoding="UTF-8"?>
           <publicObject>
             <identityMetadata>
@@ -321,7 +324,7 @@ RSpec.describe PurlVersion do
 
     context 'without any id data' do
       before do
-        allow_any_instance_of(ResourceRetriever).to receive(:public_xml_body).and_return <<-EOF
+        allow(resource_retriever).to receive(:public_xml_body).and_return <<-EOF
           <?xml version="1.0" encoding="UTF-8"?>
           <publicObject>
             <identityMetadata>
@@ -337,7 +340,7 @@ RSpec.describe PurlVersion do
   end
 
   describe '#doi and #doi_id' do
-    before { allow_any_instance_of(ResourceRetriever).to receive(:public_xml_body).and_return(body) }
+    before { allow(resource_retriever).to receive(:public_xml_body).and_return(body) }
 
     context 'with a DOI' do
       let(:body) do
@@ -420,7 +423,7 @@ RSpec.describe PurlVersion do
   describe '#schema_dot_org? and #schema_dot_org' do
     context 'with a dataset' do
       before do
-        allow_any_instance_of(ResourceRetriever).to receive(:cocina_body).and_return <<~JSON
+        allow(resource_retriever).to receive(:cocina_body).and_return <<~JSON
           {
             "description": {
                               "form": [{ "value": "dataset",
@@ -448,7 +451,7 @@ RSpec.describe PurlVersion do
 
     context 'with a video' do
       before do
-        allow_any_instance_of(ResourceRetriever).to receive(:cocina_body).and_return <<~JSON
+        allow(resource_retriever).to receive(:cocina_body).and_return <<~JSON
           {
             "externalIdentifier": "druid:tn153br1253",
             "description": {  "event": [{ "date": [{ "value": "2000", "type": "publication", "status": "primary"}] }],
@@ -487,7 +490,7 @@ RSpec.describe PurlVersion do
 
     context 'with a format not relevant for schema.org' do
       before do
-        allow_any_instance_of(ResourceRetriever).to receive(:cocina_body).and_return <<~JSON
+        allow(resource_retriever).to receive(:cocina_body).and_return <<~JSON
           {
             "description": {
                               "form": [{ "value": "image",
