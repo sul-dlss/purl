@@ -62,28 +62,6 @@ RSpec/ContextWording:
     - 'spec/integration/purl_spec.rb'
     - 'spec/views/purl/_find_it.html.erb_spec.rb'
 
-# Offense count: 3
-# This cop supports safe autocorrection (--autocorrect).
-RSpec/EmptyLineAfterExampleGroup:
-  Exclude:
-    - 'spec/integration/purl_spec.rb'
-    - 'spec/model/accept_header_constraint_spec.rb'
-
-# Offense count: 3
-# This cop supports safe autocorrection (--autocorrect).
-RSpec/EmptyLineAfterFinalLet:
-  Exclude:
-    - 'spec/model/accept_header_constraint_spec.rb'
-    - 'spec/model/content_metadata_spec.rb'
-    - 'spec/model/iiif_presentation_manifest_spec.rb'
-
-# Offense count: 2
-# This cop supports safe autocorrection (--autocorrect).
-RSpec/EmptyLineAfterSubject:
-  Exclude:
-    - 'spec/model/accept_header_constraint_spec.rb'
-    - 'spec/model/purl_resource_spec.rb'
-
 # Offense count: 50
 # Configuration parameters: CountAsOne.
 RSpec/ExampleLength:

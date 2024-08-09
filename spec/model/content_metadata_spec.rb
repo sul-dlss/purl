@@ -17,6 +17,7 @@ RSpec.describe ContentMetadata do
       </resource>
       EOXML
     end
+
     subject { content_metadata.resources }
 
     it { is_expected.to all(be_a ResourceFile) }

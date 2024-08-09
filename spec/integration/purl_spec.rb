@@ -30,6 +30,7 @@ RSpec.describe 'purl', type: :feature do
         expect(json_body['label']['en']).to include(start_with('Code and Data supplement to'))
       end
     end
+
     context 'v3' do
       it 'renders the json for manifest' do
         visit "/#{@manifest_object}/iiif3/manifest"
@@ -60,6 +61,7 @@ RSpec.describe 'purl', type: :feature do
         expect(page.status_code).to eq(404)
       end
     end
+
     context 'v3' do
       it 'renders the json for manifest' do
         visit "/#{@manifest_object}/iiif3/annotation/bc854fy5899_1"
