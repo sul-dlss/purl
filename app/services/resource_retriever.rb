@@ -1,12 +1,12 @@
 class ResourceRetriever
   include ActiveSupport::Benchmarkable
 
-  def initialize(druid:, version_id: nil)
+  def initialize(druid:)
     @druid = druid
-    @version_id = version_id
   end
 
-  def public_xml_body
+  def public_xml_body(version_id: nil)
+    @version_id = version_id
     public_xml_resource.body if public_xml_resource.success?
   end
 
@@ -14,7 +14,8 @@ class ResourceRetriever
     meta_json_resource.body if meta_json_resource.success?
   end
 
-  def cocina_body
+  def cocina_body(version_id: nil)
+    @version_id = version_id
     cocina_resource.body if cocina_resource.success?
   end
 

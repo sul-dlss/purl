@@ -1,8 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'purl/_collection_items' do
+  let(:document) { PurlVersion.new(id: druid, resource_retriever:) }
+  let(:resource_retriever) { ResourceRetriever.new(druid:) }
+
   context 'when collection has a folio HRID' do
-    let(:document) { PurlVersion.new(id: 'bb631ry3167') }
+    let(:druid) { 'bb631ry3167' }
 
     it 'displays a View items in this collection link using the HRID' do
       render('purl/collection_items', document:)
@@ -12,7 +15,7 @@ RSpec.describe 'purl/_collection_items' do
   end
 
   context 'when collection does not have a folio HRID' do
-    let(:document) { PurlVersion.new(id: 'gk894yk3598') }
+    let(:druid) { 'gk894yk3598' }
 
     it 'displays a View items in this collection link using the druid' do
       render('purl/collection_items', document:)
@@ -22,7 +25,7 @@ RSpec.describe 'purl/_collection_items' do
   end
 
   context 'when not a collection' do
-    let(:document) { PurlVersion.new(id: 'cg357zz0321') }
+    let(:druid) { 'cg357zz0321' }
 
     it 'does not display View items in this collection link' do
       render('purl/collection_items', document:)

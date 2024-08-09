@@ -39,7 +39,8 @@ class PurlResource
              version_id:,
              head: head_version == version_id.to_i,
              updated_at: version_attrs.fetch('date', nil),
-             state: version_attrs.fetch('state'))
+             state: version_attrs.fetch('state'),
+             resource_retriever:)
     end
   end
 
