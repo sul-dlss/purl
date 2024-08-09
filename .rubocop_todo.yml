@@ -40,11 +40,6 @@ Naming/HeredocDelimiterNaming:
   Exclude:
     - 'spec/model/purl_version_spec.rb'
 
-# Offense count: 1
-RSpec/AnyInstance:
-  Exclude:
-    - 'spec/model/purl_resource_spec.rb'
-
 # Offense count: 21
 # Configuration parameters: Prefixes, AllowedPatterns.
 # Prefixes: when, with, without

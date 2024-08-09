@@ -19,7 +19,6 @@ RSpec.describe PurlResource do
 
     context 'when head version requested' do
       before do
-        allow_any_instance_of(PurlVersion).to receive(:public_xml?).and_return(true)
         allow(instance).to receive(:version_manifest).and_return(
           { 'versions' => { '1' => { 'state' => 'available' }, '2' => { 'state' => 'available' }, '3' => { 'state' => 'available
             ' } }, 'head' => 3 }
