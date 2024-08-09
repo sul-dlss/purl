@@ -20,7 +20,7 @@ class ResourceXmlDeserializer
                                        Float::INFINITY
                                      end
 
-    resource_node.xpath('file|externalFile|resource').select { |node| Purl::Util.file_ready? node }.map do |node|
+    resource_node.xpath('file|externalFile|resource').select { |node| file_ready? node }.map do |node|
       case node.name
       when 'file'
         Resource.from_file_metadata(node, resource_attributes)
@@ -28,6 +28,11 @@ class ResourceXmlDeserializer
         Resource.from_external_file_metadata(node, resource_attributes)
       end
     end
+  end
+
+  # check if file is ready (deliver = yes or publish = yes)
+  def self.file_ready?(file)
+    file && (file['deliver'] != 'no' || file['publish'] != 'no')
   end
 
   class Resource
