@@ -8,20 +8,6 @@ class PurlResource
 
   class DruidNotValid < StandardError; end
 
-  def self.all
-    return [] unless Settings.document_cache_root
-    return to_enum(:all) unless block_given?
-
-    Find.find(Settings.document_cache_root) do |path|
-      next unless path.ends_with?('public')
-
-      druid = Dor::Util.druid_from_pair_tree(path)
-      next unless druid
-
-      yield PurlResource.find(druid)
-    end
-  end
-
   def self.find(id)
     raise DruidNotValid, id unless Dor::Util.validate_druid(id)
 
