@@ -122,7 +122,7 @@
   margin-bottom: 2em;
 }
 
-.version-updated-at {
+.version-updated-at, .version-identifier {
   white-space: nowrap;
 }
 

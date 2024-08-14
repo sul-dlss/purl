@@ -3,7 +3,7 @@
     <% versions.each do |version| %>
       <tbody>
         <tr>
-          <th>Version <%= version.version_id %></th>
+          <th class="version-identifier">Version <%= version.version_id %></th>
           <td class="version-updated-at"><%= updated_at(version) %></td>
           <td data-controller="clipboard" data-clipboard-url-value="<%= url(version) %>">
             <%= render VersionActionsComponent.new(version:, requested_version: @version, url: url(version)) %>
