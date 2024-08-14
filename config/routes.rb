@@ -20,9 +20,10 @@ Rails.application.routes.draw do
   get ':id/file/:file' => 'purl#file', as: :purl_file
   get ':id/metrics' => 'purl#metrics', as: :purl_metrics
 
+
   resources :purl, only: [:show], path: '/' do
     member do
-      get 'version/:version', to: 'purl#show', as: :versioned
+      get 'version/:version', to: 'purl#show', as: :version
       get 'embed', to: redirect("/iframe/?url=#{Settings.embed.url % { druid: '%{id}' }}")
       # These routes should only be used until our viewers support v3 manifests.
       # We should aim to only serve a IIIF resource from a single URL.
@@ -80,4 +81,12 @@ Rails.application.routes.draw do
   end
 
   options '/:id/*whatever', to: 'iiif#options'
+end
+
+Rails.application.routes.named_routes.path_helpers_module.module_eval do
+  # @param [PurlVersion] a PurlVersion object
+  # @return path for the show route
+  def purl_version_path(purl_version, options = {})
+    version_purl_path(id: purl_version.druid, version: purl_version.version_id)
+  end
 end

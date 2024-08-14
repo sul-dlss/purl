@@ -2,7 +2,7 @@
   <% if requested_version? %>
     You are viewing this version
   <% else %>
-    <a href="<%= url %>">View</a>
+    <%= link_to 'View', version %>
   <% end %>
   | <a href="#" data-action="click->clipboard#copy">Copy URL</a>
 <% else %>

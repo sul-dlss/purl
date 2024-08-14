@@ -14,6 +14,10 @@ class PurlVersion
 
   MODS_NS = 'http://www.loc.gov/mods/v3'.freeze
 
+  def persisted?
+    true
+  end
+
   def head?
     head
   end

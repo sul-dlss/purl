@@ -14,14 +14,6 @@ class VersionsComponent < ViewComponent::Base
     @embeddable_url ||= helpers.embeddable_url(purl.druid)
   end
 
-  def updated_at(version)
-    l(version.updated_at.to_date, format: :short) if version.updated_at
-  end
-
-  def url(version)
-    versioned_purl_url(id: purl.druid, version: "v#{version.version_id}")
-  end
-
   def versions
     @purl.versions.sort_by(&:version_id).reverse
   end
