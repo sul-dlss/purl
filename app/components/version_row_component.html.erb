@@ -1,0 +1,7 @@
+<tr>
+  <th class="version-identifier">Version <%= version.version_id %></th>
+  <td class="version-updated-at"><%= updated_at %></td>
+  <td data-controller="clipboard" data-clipboard-url-value="<%= version_purl_url(id: version.druid, version: version.version_id) %>">
+    <%= render VersionActionsComponent.new(version:, requested_version:) %>
+  </td>
+</tr>

@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
 class VersionActionsComponent < ViewComponent::Base
-  def initialize(version:, requested_version:, url:)
+  def initialize(version:, requested_version:)
     @version = version
     @requested_version = requested_version
-    @url = url
     super
   end
 
-  attr_reader :version, :url
+  attr_reader :version
 
   delegate :state, to: :version
 

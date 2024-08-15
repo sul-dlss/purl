@@ -1,16 +1,8 @@
 <%= render SectionComponent.new(label: 'Versions', label_id:) do %>
   <%= render TableComponent.new(label_id:) do %>
-    <% versions.each do |version| %>
-      <tbody>
-        <tr>
-          <th class="version-identifier">Version <%= version.version_id %></th>
-          <td class="version-updated-at"><%= updated_at(version) %></td>
-          <td data-controller="clipboard" data-clipboard-url-value="<%= url(version) %>">
-            <%= render VersionActionsComponent.new(version:, requested_version: @version, url: url(version)) %>
-          </td>
-        </tr>
-      </tbody>
-    <% end %>
+    <tbody>
+      <%= render VersionRowComponent.with_collection(versions, requested_version: @version) %>
+    </tbody>
   <% end %>
   <p>Each version has a distinct URL, but you can use this PURL to access the latest version.<br>
     <%= link_to embeddable_url, embeddable_url %>
