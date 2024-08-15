@@ -58,7 +58,7 @@
       }
 
       tbody {
-        tr:not(:first-of-type) th {
+        tr:not(:first-of-type) th:not(.version-identifier) {
           /* Visibility hidden doesn't work here because it also hides the border */
           font-size: 0;
         }
