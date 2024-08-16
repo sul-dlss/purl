@@ -118,7 +118,8 @@ class PurlController < ApplicationController
       flash.now[:alert] = '<b>This version has been withdrawn</b><br>' \
                           "Please visit #{view_context.link_to purl_url(@purl), purl_url(@purl)} to view the other versions of this item."
     elsif !@version.head?
-      flash.now[:alert] = 'A newer version of this item is available'
+      flash.now[:alert] = 'A newer version of this item is available.<br>' \
+                          "#{view_context.link_to 'View latest version', purl_url(@purl)}"
     end
   end
 

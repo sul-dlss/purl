@@ -131,6 +131,7 @@ RSpec.describe 'PURL API' do
             'Compressed Sensing Phase Transitions of Gaussian Random Matrices.&quot; -- VERSION 1'
           )
           expect(response.body).to include('A newer version of this item is available')
+          expect(response.body).to have_link('View latest version', href: 'http://www.example.com/wp335yr5649')
           expect(response.body).to have_css('div.upper-record-metadata')
           expect(response.body).to have_css('div.record-metadata')
         end
