@@ -61,6 +61,13 @@ RSpec.describe 'IIIF v3 manifests' do
     expect(json['metadata']).to eq(expected_dc_metadata)
   end
 
+  context 'when purl does not exist (dark)' do
+    it 'is not found' do
+      get '/bc123df4567/iiif3/manifest'
+      expect(response).to have_http_status(:not_found)
+    end
+  end
+
   context 'when viewing direction is defined' do
     it 'includes viewing direction' do
       get '/yr183sf1341/iiif3/manifest'
@@ -308,7 +315,7 @@ RSpec.describe 'IIIF v3 manifests' do
   context 'when the object has no published files' do
     let(:druid) { 'bg387kw8222' }
     let(:resource) { instance_double(PurlResource, version:) }
-    let(:version) { instance_double(PurlVersion, type: 'image', updated_at: 2.days.ago, cache_key: 'resource/xxx') }
+    let(:version) { instance_double(PurlVersion, type: 'image', updated_at: 2.days.ago, cache_key: 'resource/xxx', ready?: true) }
 
     before do
       allow(PurlResource).to receive(:find).and_return(resource)
