@@ -2,9 +2,10 @@ require 'rails_helper'
 require 'iiif/v3/presentation' # Can we get the iiif-presentation gem to load this?
 
 RSpec.describe 'IIIF v3 manifests' do
-  it 'works' do
-    visit '/bb157hs6068/iiif3/manifest'
-    json = JSON.parse(page.body)
+  let(:json) { response.parsed_body }
+
+  it 'is successful' do
+    get '/bb157hs6068/iiif3/manifest'
 
     expect(json['@context']).to include 'http://www.w3.org/ns/anno.jsonld', 'http://iiif.io/api/presentation/3/context.json'
     expect(json['label']['en'].first).to include 'NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES' # ...
@@ -14,6 +15,9 @@ RSpec.describe 'IIIF v3 manifests' do
     expect(json['thumbnail']).to be_an Array
     expect(json['thumbnail'].size).to eq 1
     expect(json['thumbnail'].first['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068/bb157hs6068_05_0001/full/!400,400/0/default.jpg'
+    expect(json['thumbnail'].first['type']).to eq 'Image'
+    expect(json['thumbnail'].first['width']).to eq 400
+    expect(json['thumbnail'].first['height']).to eq 345
 
     expect(json['items'].length).to eq 1
     canvas = json['items'].first
@@ -57,109 +61,101 @@ RSpec.describe 'IIIF v3 manifests' do
     expect(json['metadata']).to eq(expected_dc_metadata)
   end
 
-  it 'includes a representative thumbnail' do
-    visit '/bb157hs6068/iiif3/manifest'
-    json = JSON.parse(page.body)
-
-    expect(json['thumbnail']).to be_an Array
-    expect(json['thumbnail'].size).to eq 1
-    expect(json['thumbnail'].first['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068/bb157hs6068_05_0001/full/!400,400/0/default.jpg'
-    expect(json['thumbnail'].first['type']).to eq 'Image'
-    expect(json['thumbnail'].first['width']).to eq 400
-    expect(json['thumbnail'].first['height']).to eq 345
+  context 'when viewing direction is defined' do
+    it 'includes viewing direction' do
+      get '/yr183sf1341/iiif3/manifest'
+      expect(json['viewingDirection']).to eq 'right-to-left'
+    end
   end
 
-  it 'includes viewing direction when viewing direction is defined' do
-    visit '/yr183sf1341/iiif3/manifest'
-    json = JSON.parse(page.body)
-    expect(json['viewingDirection']).to eq 'right-to-left'
+  context 'when viewing direction is not defined' do
+    it 'uses left-to-right as default viewing direction' do
+      get '/py305sy7961/iiif3/manifest'
+      expect(json['viewingDirection']).to eq('left-to-right')
+    end
   end
 
-  it 'uses left-to-right as default viewing direction if viewing direction is not defined' do
-    visit '/py305sy7961/iiif3/manifest'
-    json = JSON.parse(page.body)
-    expect(json['viewingDirection']).to eq('left-to-right')
+  context 'with a Stanford-only image' do
+    it 'includes authorization services' do
+      get '/bb001dq8600/iiif3/manifest'
+      expect(json['items'].length).to eq 1
+      canvas = json['items'].first
+      expect(canvas['items'].first['items'].length).to eq 1
+      image = canvas['items'].first['items'].first
+      service = image['body']['service'].first
+      expect(service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/login'
+
+      login_service = service['service'].detect { |x| x['profile'] == 'http://iiif.io/api/auth/1/login' }
+      expect(login_service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/token'
+      expect(login_service['label']).to eq 'Log in to access all available features.'
+      expect(login_service['confirmLabel']).to eq 'Login'
+      expect(login_service['failureHeader']).to eq 'Unable to authenticate'
+      expect(login_service['failureDescription']).to eq 'The authentication serv' \
+                                                        'ice cannot be reached. If your browser is configured to block pop-up wi' \
+                                                        'ndows, try allowing pop-up windows for this site before attempting to l' \
+                                                        'og in again.'
+    end
   end
 
-  it 'includes authorization services for a Stanford-only image' do
-    visit '/bb001dq8600/iiif3/manifest'
-    json = JSON.parse(page.body)
-    expect(json['items'].length).to eq 1
-    canvas = json['items'].first
-    expect(canvas['items'].first['items'].length).to eq 1
-    image = canvas['items'].first['items'].first
-    service = image['body']['service'].first
-    expect(service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/login'
+  context 'with a cdl access' do
+    it 'includes authorization services' do
+      get '/pg500wr6297/iiif3/manifest'
 
-    login_service = service['service'].detect { |x| x['profile'] == 'http://iiif.io/api/auth/1/login' }
-    expect(login_service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/token'
-    expect(login_service['label']).to eq 'Log in to access all available features.'
-    expect(login_service['confirmLabel']).to eq 'Login'
-    expect(login_service['failureHeader']).to eq 'Unable to authenticate'
-    expect(login_service['failureDescription']).to eq 'The authentication serv' \
-                                                      'ice cannot be reached. If your browser is configured to block pop-up wi' \
-                                                      'ndows, try allowing pop-up windows for this site before attempting to l' \
-                                                      'og in again.'
-  end
+      service = json['items'][2]['items'].first['items'].first['body']['service'].first
+      expect(service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/login'
 
-  it 'includes authorization services for cdl images' do
-    visit '/pg500wr6297/iiif3/manifest.json'
-    json = JSON.parse(page.body)
-    service = json['items'][2]['items'].first['items'].first['body']['service'].first
-    expect(service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/login'
-
-    login_service = service['service'].detect { |x| x['profile'] == 'http://iiif.io/api/auth/1/login' }
-    expect(login_service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/token'
-    expect(login_service['label']).to eq 'Available for checkout.'
-    expect(login_service['confirmLabel']).to eq 'Checkout'
-    expect(login_service['id']).to eq 'https://stacks.stanford.edu/auth/iiif/cdl/pg500wr6297/checkout'
-    expect(login_service['failureHeader']).to eq 'Unable to authenticate'
-    expect(login_service['failureDescription']).to eq 'The authentication serv' \
-                                                      'ice cannot be reached.'
+      login_service = service['service'].detect { |x| x['profile'] == 'http://iiif.io/api/auth/1/login' }
+      expect(login_service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/token'
+      expect(login_service['label']).to eq 'Available for checkout.'
+      expect(login_service['confirmLabel']).to eq 'Checkout'
+      expect(login_service['id']).to eq 'https://stacks.stanford.edu/auth/iiif/cdl/pg500wr6297/checkout'
+      expect(login_service['failureHeader']).to eq 'Unable to authenticate'
+      expect(login_service['failureDescription']).to eq 'The authentication serv' \
+                                                        'ice cannot be reached.'
+    end
   end
 
   it 'properly decodes XML entities into their UTF-8 characters' do
-    visit '/bb737zp0787/iiif3/manifest'
-    json = JSON.parse(page.body)
+    get '/bb737zp0787/iiif3/manifest'
     expect(json['requiredStatement']['value']['en'].first)
       .to eq 'Property rights reside with the repository. Copyright © Stanford University. All Rights Reserved.'
   end
 
   it 'publishes IIIF manifests for books with image constituents' do
-    visit '/zf119tw4418/iiif3/manifest'
-    json = JSON.parse(page.body)
+    get '/zf119tw4418/iiif3/manifest'
 
     expect(json['items'].length).to eq 58
     expect(json['metadata'].length).to eq 13
   end
 
-  it 'does not publish services for pages without OCR content' do
-    visit '/py305sy7961/iiif3/manifest'
-    json = JSON.parse(page.body)
+  context 'when pages do not have OCR content' do
+    it 'does not publish search services' do
+      get '/py305sy7961/iiif3/manifest'
 
-    expect(json).not_to have_key 'service'
+      expect(json).not_to have_key 'service'
+    end
   end
 
-  it 'publishes IIIF Content Search API for pages with OCR content' do
-    visit '/jg072yr3056/iiif/manifest.json'
-    json = JSON.parse(page.body)
+  context 'when pages have OCR content' do
+    it 'publishes IIIF Content Search API' do
+      get '/jg072yr3056/iiif/manifest'
 
-    expect(json['service'].first).to match '@context' => 'http://iiif.io/api/search/1/context.json',
-                                           '@id' => 'http://example.com/content_search/jg072yr3056/search',
-                                           'profile' => 'http://iiif.io/api/search/1/search',
-                                           'label' => 'Search within this manifest'
+      expect(json['service'].first).to match '@context' => 'http://iiif.io/api/search/1/context.json',
+                                             '@id' => 'http://example.com/content_search/jg072yr3056/search',
+                                             'profile' => 'http://iiif.io/api/search/1/search',
+                                             'label' => 'Search within this manifest'
+    end
   end
 
   # Virtual objects consist of a parent object and children objects who hold the file resources
-  context 'virtual objects' do
+  context 'with virtual objects' do
     describe 'first child object' do
       let(:druid) { 'cg767mn6478' }
 
       it 'generates a correct manifest' do
-        visit "/#{druid}/iiif3/manifest"
-        expect(page).to have_http_status(:ok)
+        get "/#{druid}/iiif3/manifest"
+        expect(response).to have_http_status(:ok)
 
-        json = JSON.parse(page.body)
         expect(json['label']['en'].first).to start_with '(Covers to) Carey\'s American Atlas'
         expect(json['items'].length).to eq 1
 
@@ -179,10 +175,9 @@ RSpec.describe 'IIIF v3 manifests' do
       let(:druid) { 'jw923xn5254' }
 
       it 'generates a correct manifest' do
-        visit "/#{druid}/iiif3/manifest"
-        expect(page).to have_http_status(:ok)
+        get "/#{druid}/iiif3/manifest"
+        expect(response).to have_http_status(:ok)
 
-        json = JSON.parse(page.body)
         expect(json['label']['en'].first).to start_with '(Title Page to) Carey\'s American Atlas'
         expect(json['items'].length).to eq 1
 
@@ -202,10 +197,9 @@ RSpec.describe 'IIIF v3 manifests' do
       let(:druid) { 'hj097bm8879' }
 
       it 'generates a correct manifest' do
-        visit "/#{druid}/iiif3/manifest"
-        expect(page).to have_http_status(:ok)
+        get "/#{druid}/iiif3/manifest"
+        expect(response).to have_http_status(:ok)
 
-        json = JSON.parse(page.body)
         expect(json['label']['en'].first).to start_with 'Carey\'s American Atlas'
         expect(json['thumbnail']).to be_an Array
         expect(json['thumbnail'].size).to eq 1
@@ -235,14 +229,13 @@ RSpec.describe 'IIIF v3 manifests' do
     end
   end
 
-  describe 'a PDF object' do
+  context 'with a PDF object' do
     let(:druid) { 'bb132pr2055' }
 
     it 'generates a correct manifest' do
-      visit "/#{druid}/iiif3/manifest"
-      expect(page).to have_http_status(:ok)
+      get "/#{druid}/iiif3/manifest"
+      expect(response).to have_http_status(:ok)
 
-      json = JSON.parse(page.body)
       expect(json['label']['en'].first).to eq 'How does politics affect central banking? : evidence from the Federal Reserve'
       expect(json['items'].length).to eq 1
 
@@ -259,14 +252,13 @@ RSpec.describe 'IIIF v3 manifests' do
     end
   end
 
-  describe 'a Stanford-only PDF object' do
+  context 'with a Stanford-only PDF object' do
     let(:druid) { 'bb253gh8060' }
 
     it 'generates a manifest that includes the login service for the restricted file' do
-      visit "/#{druid}/iiif3/manifest"
-      expect(page).to have_http_status(:ok)
+      get "/#{druid}/iiif3/manifest"
+      expect(response).to have_http_status(:ok)
 
-      json = JSON.parse(page.body)
       expect(json['label']['en'].first).to eq 'Agenda'
       expect(json['items'].length).to eq 1
 
@@ -290,14 +282,12 @@ RSpec.describe 'IIIF v3 manifests' do
     end
   end
 
-  describe 'a 3D object' do
+  context 'with a 3D object' do
     let(:druid) { 'hc941fm6529' }
 
     it 'generates a correct IIIF v3 manifest' do
-      visit "/#{druid}/iiif3/manifest"
-      expect(page).to have_http_status(:ok)
-
-      json = JSON.parse(page.body)
+      get "/#{druid}/iiif3/manifest"
+      expect(response).to have_http_status(:ok)
 
       expect(json['label']['en'].first).to start_with 'Sheep'
       expect(json['items'].length).to eq 1
@@ -326,19 +316,17 @@ RSpec.describe 'IIIF v3 manifests' do
     end
 
     it 'returns 404' do
-      visit "/#{druid}/iiif3/manifest"
-      expect(page).to have_http_status(:not_found)
+      get "/#{druid}/iiif3/manifest"
+      expect(response).to have_http_status(:not_found)
     end
   end
 
-  describe 'a 3D object as obj' do
+  context 'with a 3D object as obj' do
     let(:druid) { 'bg387kw8222' }
 
     it 'only generates a single 3d resource on the canvas' do
-      visit "/#{druid}/iiif3/manifest"
-      expect(page).to have_http_status(:ok)
-
-      json = JSON.parse(page.body)
+      get "/#{druid}/iiif3/manifest"
+      expect(response).to have_http_status(:ok)
 
       expect(json['label']['en'].first).to start_with 'Department of Anthropology Bone Collection'
       expect(json['items'].length).to eq 1
@@ -356,14 +344,13 @@ RSpec.describe 'IIIF v3 manifests' do
     end
   end
 
-  describe 'a location restricted image' do
+  context 'with a location restricted image' do
     let(:druid) { 'yy816tv6021' }
 
     it 'generates a IIIF v3 manifest that includes location authentication information' do
-      visit "/#{druid}/iiif3/manifest"
-      expect(page).to have_http_status(:ok)
+      get "/#{druid}/iiif3/manifest"
+      expect(response).to have_http_status(:ok)
 
-      json = JSON.parse(page.body)
       external_interaction_service = json['items'].first['items'].first['items'].first['body']['service'].first['service'].first
       expect(external_interaction_service['profile']).to eq 'http://iiif.io/api/auth/1/external'
       expect(external_interaction_service['label']).to eq 'External Authentication Required'
@@ -374,14 +361,13 @@ RSpec.describe 'IIIF v3 manifests' do
     end
   end
 
-  context 'a video object with captions' do
+  context 'with a video object with captions' do
     let(:druid) { 'wr231qr2829' }
 
     it 'includes a placeholder canvas and caption annotations' do
-      visit "/#{druid}/iiif3/manifest"
-      expect(page).to have_http_status(:ok)
+      get "/#{druid}/iiif3/manifest"
+      expect(response).to have_http_status(:ok)
 
-      json = JSON.parse(page.body)
       canvas = json.dig('items', 0)
 
       expect(canvas.dig('items', 0, 'items', 0, 'body')).to include('type' => 'Video')
@@ -399,14 +385,13 @@ RSpec.describe 'IIIF v3 manifests' do
     end
   end
 
-  describe 'an object with coordinates' do
+  context 'with an object that has coordinates' do
     let(:druid) { 'rp193xx6845' }
 
     it 'generates a correct manifest with navPlace' do
-      visit "/#{druid}/iiif3/manifest"
-      expect(page).to have_http_status(:ok)
+      get "/#{druid}/iiif3/manifest"
+      expect(response).to have_http_status(:ok)
 
-      json = JSON.parse(page.body)
       expect(json['@context']).to include 'http://iiif.io/api/extension/navplace/context.json'
       features = json['navPlace']['features']
       expect(features.length).to eq 2
