@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe 'IIIF v2 manifests' do
-  it 'works' do
-    visit '/bb157hs6068/iiif/manifest.json'
-    json = JSON.parse(page.body)
+  let(:json) { response.parsed_body }
+
+  it 'is successful' do
+    get '/bb157hs6068/iiif/manifest'
 
     expect(json['@context']).to eq 'http://iiif.io/api/presentation/2/context.json'
     expect(json['label']).to include 'NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES' # ...
@@ -11,6 +12,9 @@ RSpec.describe 'IIIF v2 manifests' do
     expect(json['attribution']).to start_with 'This work has been identified as being free of known restrictions'
     expect(json['seeAlso']['@id']).to eq 'http://www.example.com/bb157hs6068.mods'
     expect(json['thumbnail']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068/bb157hs6068_05_0001/full/!400,400/0/default.jpg'
+    expect(json['thumbnail']['@type']).to eq 'dctypes:Image'
+    expect(json['thumbnail']['width']).to eq 400
+    expect(json['thumbnail']['height']).to eq 345
 
     expect(json['sequences'].length).to eq 1
     canvas = json['sequences'].first['canvases'].first
@@ -56,19 +60,9 @@ RSpec.describe 'IIIF v2 manifests' do
     expect(json['metadata']).to eq(expected_metadata)
   end
 
-  it 'includes a representative thumbnail' do
-    visit '/bb157hs6068/iiif/manifest.json'
-    json = JSON.parse(page.body)
-
-    expect(json['thumbnail']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068/bb157hs6068_05_0001/full/!400,400/0/default.jpg'
-    expect(json['thumbnail']['@type']).to eq 'dctypes:Image'
-    expect(json['thumbnail']['width']).to eq 400
-    expect(json['thumbnail']['height']).to eq 345
-  end
-
   it 'includes the representative thumbnail as part of the image sequence' do
-    visit '/rf433wv2584/iiif/manifest.json'
-    json = JSON.parse(page.body)
+    get '/rf433wv2584/iiif/manifest'
+
     expect(json['thumbnail']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/rf433wv2584/9082000/full/!400,400/0/default.jpg'
 
     expect(json['sequences'].length).to eq 1
@@ -79,34 +73,34 @@ RSpec.describe 'IIIF v2 manifests' do
   end
 
   it 'includes canvas rendering of jp2 if downloadable' do
-    visit '/bb157hs6068/iiif/manifest.json'
-    json = JSON.parse(page.body)
+    get '/bb157hs6068/iiif/manifest'
+
     canvas = json['sequences'].first['canvases'].first
     expect(canvas['rendering'].first['label']).to eq 'Original source file (17 MB)'
   end
 
   it 'does not include canvas rendering if jp2 is not downloadable' do
-    visit '/rf433wv2584/iiif/manifest.json'
-    json = JSON.parse(page.body)
+    get '/rf433wv2584/iiif/manifest'
+
     canvas = json['sequences'].first['canvases'].first
     expect(canvas['rendering']).to be_nil
   end
 
   it 'includes viewing direction when viewing direction is defined' do
-    visit '/yr183sf1341/iiif/manifest'
-    json = JSON.parse(page.body)
+    get '/yr183sf1341/iiif/manifest'
+
     expect(json['sequences'].first['viewingDirection']).to eq 'right-to-left'
   end
 
   it 'uses left-to-right as default viewing direction if viewing direction is not defined' do
-    visit '/py305sy7961/iiif/manifest'
-    json = JSON.parse(page.body)
+    get '/py305sy7961/iiif/manifest'
+
     expect(json['sequences'].first['viewingDirection']).to eq('left-to-right')
   end
 
   it 'includes authorization services for a Stanford-only image' do
-    visit '/bb001dq8600/iiif/manifest.json'
-    json = JSON.parse(page.body)
+    get '/bb001dq8600/iiif/manifest'
+
     expect(json['sequences'].length).to eq 1
     canvas = json['sequences'].first['canvases'].first
     expect(canvas['images'].length).to eq 1
@@ -127,8 +121,8 @@ RSpec.describe 'IIIF v2 manifests' do
   end
 
   it 'includes authorization services for cdl images' do
-    visit '/pg500wr6297/iiif/manifest.json'
-    json = JSON.parse(page.body)
+    get '/pg500wr6297/iiif/manifest'
+
     expect(json['sequences'].length).to eq 1
     canvas = json['sequences'].first['canvases'].first
     expect(canvas['images'].length).to eq 1
@@ -148,45 +142,40 @@ RSpec.describe 'IIIF v2 manifests' do
   end
 
   it 'includes some copyright language for cdl resources' do
-    visit '/pg500wr6297/iiif/manifest.json'
-    json = JSON.parse(page.body)
+    get '/pg500wr6297/iiif/manifest'
 
     expect(json['attribution'].length).to eq 1
     expect(json['attribution'].first).to match(/The copyright law of the United States/)
   end
 
   it 'properly decodes XML entities into their UTF-8 characters' do
-    visit '/bb737zp0787/iiif/manifest.json'
-    json = JSON.parse(page.body)
+    get '/bb737zp0787/iiif/manifest'
+
     expect(json['attribution']).to eq 'Property rights reside with the repository. Copyright © Stanford University. All Rights Reserved.'
   end
 
   it 'suppresses sequences for dark resources' do
-    visit '/bc421tk1152/iiif/manifest.json'
-    json = JSON.parse(page.body)
+    get '/bc421tk1152/iiif/manifest'
 
     expect(json['sequences'].length).to eq 1
     expect(json['sequences'].first['canvases']).to be_blank
   end
 
   it 'publishes IIIF manifests for books with image constituents' do
-    visit '/zf119tw4418/iiif/manifest.json'
-    json = JSON.parse(page.body)
+    get '/zf119tw4418/iiif/manifest'
 
     expect(json['sequences'].length).to eq 1
     expect(json['metadata'].length).to eq 29
   end
 
   it 'does not publish services for pages without OCR content' do
-    visit '/py305sy7961/iiif3/manifest'
-    json = JSON.parse(page.body)
+    get '/py305sy7961/iiif3/manifest'
 
     expect(json).not_to have_key 'service'
   end
 
   it 'publishes IIIF Content Search API for pages with OCR content' do
-    visit '/jg072yr3056/iiif/manifest.json'
-    json = JSON.parse(page.body)
+    get '/jg072yr3056/iiif/manifest'
 
     expect(json['service'].first).to match '@context' => 'http://iiif.io/api/search/1/context.json',
                                            '@id' => 'http://example.com/content_search/jg072yr3056/search',
@@ -195,8 +184,7 @@ RSpec.describe 'IIIF v2 manifests' do
   end
 
   it 'publishes seeAlso for canvases with OCR content' do
-    visit '/jg072yr3056/iiif/manifest.json'
-    json = JSON.parse(page.body)
+    get '/jg072yr3056/iiif/manifest'
 
     expect(json['sequences'].first['canvases'].first['seeAlso']).to eq [
       {
@@ -209,8 +197,7 @@ RSpec.describe 'IIIF v2 manifests' do
   end
 
   it 'provides otherContent for annotations that exist in an image resource' do
-    visit '/hx163dc5225/iiif/manifest'
-    json = JSON.parse(page.body)
+    get '/hx163dc5225/iiif/manifest'
 
     expect(json.dig('sequences', 0, 'canvases', 7, 'otherContent')).to eq [
       {
@@ -221,22 +208,19 @@ RSpec.describe 'IIIF v2 manifests' do
   end
 
   it 'does not advertise an IIIF Content Search API for pages with stanford-only OCR content' do
-    visit '/bf995rh7184/iiif/manifest'
-    json = JSON.parse(page.body)
+    get '/bf995rh7184/iiif/manifest'
 
     expect(json).not_to include('service')
   end
 
   it 'does not advertise an IIIF Content Search API for pages with no-download OCR content' do
-    visit '/bf385jz2076/iiif/manifest'
-    json = JSON.parse(page.body)
+    get '/bf385jz2076/iiif/manifest'
 
     expect(json).not_to include('service')
   end
 
   it 'publishes a rendering section for objects with additional resources' do
-    visit '/zf119tw4418/iiif/manifest.json'
-    json = JSON.parse(page.body)
+    get '/zf119tw4418/iiif/manifest'
 
     rendering = json['sequences'].first['rendering']
     expect(rendering).to include(
@@ -247,22 +231,20 @@ RSpec.describe 'IIIF v2 manifests' do
   end
 
   it 'does not advertise downloadable files for stanford-only no-download content' do
-    visit '/bf995rh7184/iiif/manifest'
-    json = JSON.parse(page.body)
+    get '/bf995rh7184/iiif/manifest'
 
     expect(json['sequences'].first).not_to include 'rendering'
   end
 
   # Virtual objects consist of a parent object and children objects who hold the file resources
-  context 'virtual objects' do
+  context 'with virtual objects' do
     describe 'first child object' do
       let(:druid) { 'cg767mn6478' }
 
-      it 'generates a correct manifest.json' do
-        visit "/#{druid}/iiif/manifest.json"
-        expect(page).to have_http_status(:ok)
+      it 'generates a correct manifest' do
+        get "/#{druid}/iiif/manifest"
+        expect(response).to have_http_status(:ok)
 
-        json = JSON.parse(page.body)
         expect(json['label']).to start_with '(Covers to) Carey\'s American Atlas'
         expect(json['sequences'].length).to eq 1
         expect(json['sequences'].first['canvases'].length).to eq 1
@@ -281,11 +263,10 @@ RSpec.describe 'IIIF v2 manifests' do
     describe 'second child object' do
       let(:druid) { 'jw923xn5254' }
 
-      it 'generates a correct manifest.json' do
-        visit "/#{druid}/iiif/manifest.json"
-        expect(page).to have_http_status(:ok)
+      it 'generates a correct manifest' do
+        get "/#{druid}/iiif/manifest"
+        expect(response).to have_http_status(:ok)
 
-        json = JSON.parse(page.body)
         expect(json['label']).to start_with '(Title Page to) Carey\'s American Atlas'
         expect(json['sequences'].length).to eq 1
         expect(json['sequences'].first['canvases'].length).to eq 1
@@ -304,11 +285,10 @@ RSpec.describe 'IIIF v2 manifests' do
     describe 'parent object' do
       let(:druid) { 'hj097bm8879' }
 
-      it 'generates a correct manifest.json' do
-        visit "/#{druid}/iiif/manifest.json"
-        expect(page).to have_http_status(:ok)
+      it 'generates a correct manifest' do
+        get "/#{druid}/iiif/manifest"
+        expect(response).to have_http_status(:ok)
 
-        json = JSON.parse(page.body)
         expect(json['label']).to start_with 'Carey\'s American Atlas'
         expect(json['thumbnail']['@id']).to end_with '/image/iiif/cg767mn6478/2542A/full/!400,400/0/default.jpg' # first child
         expect(json['sequences'].length).to eq 1
@@ -339,10 +319,9 @@ RSpec.describe 'IIIF v2 manifests' do
     let(:druid) { 'bb361mj1737' }
 
     it 'generates a IIIF v2 manifest that includes location authentication information' do
-      visit "/#{druid}/iiif/manifest.json"
-      expect(page).to have_http_status(:ok)
+      get "/#{druid}/iiif/manifest"
+      expect(response).to have_http_status(:ok)
 
-      json = JSON.parse(page.body)
       external_interaction_service = json['sequences'].first['canvases'].first['images'].first['resource']['service']['service'].first
       expect(external_interaction_service['profile']).to eq 'http://iiif.io/api/auth/1/external'
       expect(external_interaction_service['label']).to eq 'External Authentication Required'
@@ -353,14 +332,13 @@ RSpec.describe 'IIIF v2 manifests' do
     end
   end
 
-  context 'a resource with special characters' do
+  context 'when a resource has special characters in the filename' do
     let(:druid) { 'fg019pm1396' }
 
     it 'generates a IIIF v2 manifest that escapes resources in urls' do
-      visit "/#{druid}/iiif/manifest.json"
-      expect(page).to have_http_status(:ok)
+      get "/#{druid}/iiif/manifest"
+      expect(response).to have_http_status(:ok)
 
-      json = JSON.parse(page.body)
       image_ids = json['sequences'].flat_map { |x| x['canvases'] }.flat_map { |x| x['images'] }.map { |x| x['resource']['@id'] }
 
       # handle spaces
