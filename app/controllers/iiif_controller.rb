@@ -1,9 +1,10 @@
 class IiifController < ApplicationController
   before_action :load_purl
+  before_action :load_version
 
   def manifest
     iiif_version = params[:iiif_version] == 'v3' ? 3 : 2
-    @version = @purl.version(:head)
+
     return unless stale?(last_modified: @version.updated_at.utc, etag: "#{@version.cache_key}/#{iiif_version}/#{@version.updated_at.utc}")
 
     # Avoid trying to create a manifest for geo objects, because we don't yet have a way of knowing which file is a primary.
@@ -87,5 +88,10 @@ class IiifController < ApplicationController
   # validate that the id is of the proper format
   def load_purl
     @purl = PurlResource.find(params[:purl_id] || params[:id])
+  end
+
+  def load_version
+    @version = @purl.version(:head)
+    raise PurlVersion::ObjectNotReady, params[:id] unless @version.ready?
   end
 end
