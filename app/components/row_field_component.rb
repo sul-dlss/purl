@@ -29,9 +29,9 @@ class RowFieldComponent < ViewComponent::Base
 
   def values
     if delimiter
-      [safe_join(field.values.select(&:present?).map { |value| format_value(value) }, delimiter)]
+      [safe_join(field.values.compact_blank.map { |value| format_value(value) }, delimiter)]
     else
-      field.values.select(&:present?).map { |value| format_value(value) }
+      field.values.compact_blank.map { |value| format_value(value) }
     end
   end
 
