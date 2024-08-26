@@ -64,7 +64,7 @@
     </header>
 
     <main id="main-container" class="container">
-      <%= render partial: '/flash_msg', layout: 'shared/flash_messages' %>
+      <%= render FlashMessageComponent.new(flash:) %>
       <%= yield %>
     </main>
     <%= render 'shared/su_footer' %>
