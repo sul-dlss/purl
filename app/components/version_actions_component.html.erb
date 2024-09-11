@@ -4,7 +4,7 @@
   <% else %>
     <%= link_to 'View', version %>
   <% end %>
-  | <a href="#" data-action="click->clipboard#copy">Copy URL</a>
+  | <%= link_to 'Copy URL', version_purl_url(id: version.druid, version: version.version_id), data: { action: "clipboard#copy"} %>
 <% else %>
   <%= state.capitalize %>
 <% end %>
