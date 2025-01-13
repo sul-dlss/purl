@@ -30,7 +30,7 @@ class IiifPresentationManifest
 
   def page_images
     @page_images ||= resources.select do |file|
-      image?(file) && (file.type == 'image' || file.type == 'page') && deliverable_file?(file)
+      image?(file) && %w[image page].include?(file.type) && deliverable_file?(file)
     end
   end
 
