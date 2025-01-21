@@ -5,7 +5,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse justify-content-md-end" id="user-util-collapse">
+    <div class="d-md-block d-none">
       <ul class="navbar-nav">
         <li class="nav-item">
           <%= link_to '#feedback-form', class: 'nav-link', data: { bs_toggle: 'collapse', bs_target: '#feedback-form' } do %>
@@ -30,6 +30,15 @@
       <div class="col-md-8 d-flex justify-content-center justify-content-md-start">
         <div class="h1 my-3"><a href="/">Stanford Digital Repository</a></div>
       </div>
+    </div>
+    <div class="navbar collapse navbar-collapse" aria-label="browse" id="user-util-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item d-md-none">
+          <%= link_to '#feedback-form', class: 'nav-link', data: { bs_toggle: 'collapse', bs_target: '#feedback-form' } do %>
+            Feedback
+          <% end if show_feedback_form? %>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
