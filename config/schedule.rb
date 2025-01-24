@@ -25,8 +25,13 @@ Config.load_and_set_settings(Config.setting_files('config', 'production'))
 # These define jobs that checkin with Honeybadger.
 # If changing the schedule of one of these jobs, also update at https://app.honeybadger.io/projects/54415/check_ins
 job_type :rake_hb, 'cd :path && :environment_variable=:environment bundle exec rake --silent ":task" :output && curl --silent https://api.honeybadger.io/v1/check_in/:check_in'
+job_type :runner, "cd :path && RAILS_LOG_LEVEL=warn bin/rails runner -e :environment ':task' :output"
 
 every :month, roles: [:cron] do
   set :check_in, Settings.honeybadger_checkins.sitemap
   rake_hb "sitemap:refresh:no_ping" # pinging Google is deprecated
+end
+
+every :day, at: '3:00 am' do
+  runner "Rails.cache.cleanup"
 end
