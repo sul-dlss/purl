@@ -52,12 +52,27 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
     manifest.thumbnail = [thumbnail_resource] if thumbnail_resource?
 
-    # for each resource sequence(SDR term), create a canvas
-    content_metadata.grouped_resources.each do |resource_group|
-      manifest.items << canvas_for_resource(resource_group)
-    end
+    build_canvases(manifest)
 
     manifest
+  end
+
+  def build_canvases(manifest)
+    # for each resource sequence (SDR term), create a canvas
+    if type == 'geo'
+      # Geo can't determine "primary", so we just create a "dummy" canvas here.
+      # IIIF v3 requires Manifests to have at least one canvas. https://iiif.io/api/presentation/3.0/#34-structural-properties
+      resource = content_metadata.grouped_resources.first
+      file = resource.files.first
+      manifest.items << IIIF::V3::Presentation::Canvas.new(
+        'id' => canvas_url(resource_id: file.id),
+        'label' => file.label
+      )
+    else
+      content_metadata.grouped_resources.each do |resource_group|
+        manifest.items << canvas_for_resource(resource_group)
+      end
+    end
   end
 
   def attribution
@@ -85,6 +100,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       else
         resource_group
       end
+
     canv = IIIF::V3::Presentation::Canvas.new
     canv['id'] = canvas_url(resource_id: resource.id)
     canv.label = {

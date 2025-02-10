@@ -328,6 +328,17 @@ RSpec.describe 'IIIF v3 manifests' do
     end
   end
 
+  context 'with a geo object' do
+    let(:druid) { 'cg357zz0321' }
+
+    it 'only generates metadata' do
+      get "/#{druid}/iiif3/manifest"
+      expect(response).to have_http_status(:ok)
+      expect(json['label']['en'].first).to eq '10 Meter Contours: Russian River Basin, California'
+      expect(json['metadata'].size).to eq 14
+    end
+  end
+
   context 'with a 3D object as obj' do
     let(:druid) { 'bg387kw8222' }
 
