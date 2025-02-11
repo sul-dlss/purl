@@ -33,6 +33,7 @@ embed:
     url_template: "https://embed.stanford.edu/iframe/{?url*}"
   application_options:
     hide_title: true
+    new_viewer: false
 
 metrics_api_url: "https://sdr-metrics-api-prod.stanford.edu"
 

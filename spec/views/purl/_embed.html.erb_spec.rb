@@ -9,7 +9,7 @@ RSpec.describe 'purl/_embed' do
     render
     expect(rendered).to have_css '.purl-embed-viewer'
     embed = Nokogiri::HTML(rendered).css('.purl-embed-viewer')
-    expect(embed.attr('data-oembed-provider').to_s).to eq 'https://embed.stanford.edu/embed.json?hide_title=true'
+    expect(embed.attr('data-oembed-provider').to_s).to eq 'https://embed.stanford.edu/embed.json?hide_title=true&new_viewer=false'
     expect(embed.attr('href').to_s).to eq('https://purl.stanford.edu/bf973rp9392')
   end
 
@@ -33,7 +33,7 @@ RSpec.describe 'purl/_embed' do
       render
       expect(rendered).to have_css '.purl-embed-viewer'
       embed = Nokogiri::HTML(rendered).css('.purl-embed-viewer')
-      expect(embed.attr('data-oembed-provider').to_s).to eq 'https://embed.stanford.edu/embed.json?hide_title=true'
+      expect(embed.attr('data-oembed-provider').to_s).to eq 'https://embed.stanford.edu/embed.json?hide_title=true&new_viewer=false'
       expect(embed.attr('href').to_s).to eq('https://purl.stanford.edu/bf973rp9392/version/2')
     end
 
@@ -57,7 +57,7 @@ RSpec.describe 'purl/_embed' do
       render
       expect(rendered).to have_css '.purl-embed-viewer'
       embed = Nokogiri::HTML(rendered).css('.purl-embed-viewer')
-      expect(embed.attr('data-oembed-provider').to_s).to eq 'https://embed.stanford.edu/embed.json?hide_title=true'
+      expect(embed.attr('data-oembed-provider').to_s).to eq 'https://embed.stanford.edu/embed.json?hide_title=true&new_viewer=false'
       expect(embed.attr('href').to_s).to eq('https://purl.stanford.edu/bf973rp9392')
     end
 
