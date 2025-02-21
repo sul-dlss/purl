@@ -87,7 +87,11 @@ class IiifController < ApplicationController
   end
 
   def load_version
-    @version = @purl.version(:head)
+    @version = @purl.version(version_param)
     raise PurlVersion::ObjectNotReady, params[:id] unless @version.ready?
+  end
+
+  def version_param
+    params[:version].presence || :head
   end
 end
