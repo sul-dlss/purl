@@ -10,7 +10,10 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     manifest_data = {
       'id' => manifest_url,
       'label' => { en: [title] },
-      'requiredStatement' => iiif_key_value('Attribution', attribution),
+      'requiredStatement' => {
+        'label' => { en: ['Attribution'] },
+        'value' => { en: attribution.compact_blank }
+      },
       'logo' => [{
         'id' => 'https://stacks.stanford.edu/image/iiif/wy534zh7137/SULAIR_rosette/full/400,/0/default.jpg',
         'type' => 'Image',
@@ -34,11 +37,10 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     # Set viewingHint to paged if this is a book
     manifest.viewingHint = 'paged' if type == 'book'
 
-    manifest.metadata = dc_to_iiif_metadata if dc_to_iiif_metadata.present?
-    manifest.metadata.unshift(
-      'label' => { en: ['Available Online'] },
-      'value' => { en: ["<a href='#{controller.purl_url(druid)}'>#{controller.purl_url(druid)}</a>"] }
-    )
+    metadata_writer = Iiif3MetadataWriter.new(dc_nodes: public_xml_document.xpath('//oai_dc:dc/*', 'oai_dc' => OAI_DC_SCHEMA),
+                                              published_dates: public_xml_document.xpath('/publicObject/@published').map(&:text),
+                                              url: controller.purl_url(druid))
+    manifest.metadata = metadata_writer.write
 
     manifest.summary = { en: [description_or_note] } if description_or_note.present?
     order = reading_order
@@ -162,19 +164,6 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     resource_group.other_resources.map do |other_resource|
       binary_resource(other_resource).to_ordered_hash
     end
-  end
-
-  def dc_to_iiif_metadata
-    @dc_to_iiif_metadata ||= begin
-      all_dc_nodes = public_xml_document.xpath '//oai_dc:dc/*', 'oai_dc' => OAI_DC_SCHEMA
-      metadata = all_dc_nodes.group_by(&:name).map { |key, values| iiif_key_value(key.upcase_first, values.map(&:text)) }
-      metadata += public_xml_document.xpath('/publicObject/@published').map { |node| iiif_key_value('PublishDate', [node.text]) } # add published date
-      metadata
-    end
-  end
-
-  def iiif_key_value(label, values)
-    { 'label' => { en: [label] }, 'value' => { en: values.compact_blank } }
   end
 
   def annotation_page_for_resource(resource)
