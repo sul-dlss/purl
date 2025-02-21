@@ -17,7 +17,9 @@ class Iiif3MetadataWriter
   private
 
   def dc_metadata
-    dc_nodes.group_by(&:name).map { |key, values| iiif_key_value(key.upcase_first, values.map(&:text)) }
+    nodes_by_name = dc_nodes.group_by(&:name)
+    nodes_by_name['relation']&.reject! { it['type'] == 'url' }
+    nodes_by_name.map { |key, values| iiif_key_value(key.upcase_first, values.map(&:text)) }
   end
 
   def published
