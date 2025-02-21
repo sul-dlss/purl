@@ -40,7 +40,7 @@
     }
 
     .section-body {
-      // prevent URLs from overflowing the "Abstract" area
+      /* prevent URLs from overflowing the "Abstract" area */
       overflow-wrap: break-word;
 
       th {
