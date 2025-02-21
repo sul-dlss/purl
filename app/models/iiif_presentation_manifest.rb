@@ -5,12 +5,12 @@ require 'iiif/presentation'
 class IiifPresentationManifest
   include ActiveModel::Model
 
-  delegate :druid, :title, :type, :description, :content_metadata, :public_xml_document, to: :purl_resource
+  delegate :druid, :title, :type, :description, :content_metadata, :public_xml_document, :rights, :collection?, to: :purl_version
   delegate :reading_order, :resources, to: :content_metadata
   delegate :url_for, to: :controller
   alias id druid
 
-  attr_reader :purl_resource, :controller, :iiif_namespace
+  attr_reader :purl_version, :controller, :iiif_namespace
 
   include ActionView::Helpers::NumberHelper
 
@@ -22,8 +22,8 @@ class IiifPresentationManifest
     'rtl' => 'right-to-left'
   }.freeze
 
-  def initialize(purl_resource, iiif_namespace: :iiif, controller: nil)
-    @purl_resource = purl_resource
+  def initialize(purl_version, iiif_namespace: :iiif, controller: nil)
+    @purl_version = purl_version
     @iiif_namespace = iiif_namespace
     @controller = controller
   end
@@ -42,7 +42,7 @@ class IiifPresentationManifest
 
   def ocr_files
     @ocr_files ||= resources.select do |file|
-      world_visible, world_rule = purl_resource.rights.world_rights_for_file(file.filename)
+      world_visible, world_rule = rights.world_rights_for_file(file.filename)
       file.role == 'transcription' &&
         world_visible &&
         world_rule != 'no-download'
@@ -62,16 +62,16 @@ class IiifPresentationManifest
   end
 
   def deliverable_file?(file)
-    purl_resource.rights.stanford_only_rights_for_file(file.filename).first ||
-      purl_resource.rights.world_rights_for_file(file.filename).first ||
-      purl_resource.rights.restricted_by_location?(file.filename) ||
-      purl_resource.rights.cdl_rights_for_file(file.filename) ||
+    rights.stanford_only_rights_for_file(file.filename).first ||
+      rights.world_rights_for_file(file.filename).first ||
+      rights.restricted_by_location?(file.filename) ||
+      rights.cdl_rights_for_file(file.filename) ||
       thumbnail?(file)
   end
 
   def downloadable_file?(file)
-    purl_resource.rights.world_downloadable_file?(file) ||
-      purl_resource.rights.stanford_only_downloadable_file?(file)
+    rights.world_downloadable_file?(file) ||
+      rights.stanford_only_downloadable_file?(file)
   end
 
   def ocr_text?
@@ -242,15 +242,15 @@ class IiifPresentationManifest
     img_res.service = iiif_service(url)
     img_res.service['service'] = []
 
-    if purl_resource.rights.stanford_only_rights_for_file(resource.filename).first
+    if rights.stanford_only_rights_for_file(resource.filename).first
       img_res.service['service'] = [iiif_stacks_login_service]
     end
 
-    if purl_resource.rights.cdl_rights_for_file(resource.filename)
+    if rights.cdl_rights_for_file(resource.filename)
       img_res.service['service'] = [iiif_cdl_login_service]
     end
 
-    if purl_resource.rights.restricted_by_location?(resource.filename)
+    if rights.restricted_by_location?(resource.filename)
       img_res.service['service'].append(iiif_location_auth_service)
     end
 
@@ -335,7 +335,7 @@ class IiifPresentationManifest
   end
 
   def thumbnail?(file)
-    purl_resource.public_xml.thumb == "#{file.druid}/#{file.filename}"
+    purl_version.public_xml.thumb == "#{file.druid}/#{file.filename}"
   end
 
   def stacks_iiif_base_url(druid, filename)
@@ -411,14 +411,14 @@ class IiifPresentationManifest
   end
 
   def copyright
-    if purl_resource.rights.controlled_digital_lending?
+    if rights.controlled_digital_lending?
       return [
         cdl_copyright_statement,
-        purl_resource.copyright.presence
+        purl_version.copyright.presence
       ].compact
     end
 
-    purl_resource.copyright
+    purl_version.copyright
   end
 
   # rubocop:disable Rails/OutputSafety, Metrics/MethodLength
@@ -452,18 +452,18 @@ class IiifPresentationManifest
   # rubocop:enable Rails/OutputSafety, Metrics/MethodLength
 
   def manifest_url(**kwargs)
-    controller.url_for([:manifest, iiif_namespace, :purl, { id: @purl_resource.druid, **kwargs }])
+    controller.url_for([:manifest, iiif_namespace, :purl, { id: druid, **kwargs }])
   end
 
   def canvas_url(**kwargs)
-    controller.url_for([:canvas, iiif_namespace, :purl, { id: @purl_resource.druid, **kwargs }])
+    controller.url_for([:canvas, iiif_namespace, :purl, { id: druid, **kwargs }])
   end
 
   def annotation_list_url(**kwargs)
-    controller.url_for([:annotation_list, iiif_namespace, :purl, { id: @purl_resource.druid, **kwargs }])
+    controller.url_for([:annotation_list, iiif_namespace, :purl, { id: druid, **kwargs }])
   end
 
   def annotation_url(**kwargs)
-    controller.url_for([:annotation, iiif_namespace, :purl, { id: @purl_resource.druid, **kwargs }])
+    controller.url_for([:annotation, iiif_namespace, :purl, { id: druid, **kwargs }])
   end
 end

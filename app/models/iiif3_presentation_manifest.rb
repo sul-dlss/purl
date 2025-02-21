@@ -209,15 +209,15 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
     img_res.service = [iiif_image_v2_service(url)]
     img_res.service[0]['service'] = []
-    if purl_resource.rights.stanford_only_rights_for_file(resource.filename).first
+    if rights.stanford_only_rights_for_file(resource.filename).first
       img_res.service[0]['service'].append(iiif_stacks_v1_login_service)
     end
 
-    if purl_resource.rights.cdl_rights_for_file(resource.filename)
+    if rights.cdl_rights_for_file(resource.filename)
       img_res.service[0]['service'].append(iiif_cdl_login_service)
     end
 
-    if purl_resource.rights.restricted_by_location?(resource.filename)
+    if rights.restricted_by_location?(resource.filename)
       img_res.service[0]['service'].append(iiif_location_auth_service)
     end
 
@@ -244,7 +244,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       'errorHeading' => { 'en' => ['No access'] },
       'errorNote' => { 'en' => ['You do not have permission to access this resource'] }
     ).tap do |probe_service|
-      probe_service.service = if purl_resource.rights.world_rights_for_file(resource.filename).first
+      probe_service.service = if rights.world_rights_for_file(resource.filename).first
                                 # We only need this because a probe service MUST have one or more access services and
                                 # we want to run the probe service so that it can redirect to the streaming server.
                                 # See https://iiif.io/api/auth/2.0/#probe-service-description
@@ -411,7 +411,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   end
 
   def annotation_page_url(**kwargs)
-    controller.url_for([:annotation_page, :iiif3, :purl, { id: @purl_resource.druid, **kwargs }])
+    controller.url_for([:annotation_page, :iiif3, :purl, { id: druid, **kwargs }])
   end
 
   def nav_place
@@ -427,7 +427,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   end
 
   def iiif_manifest_class
-    if purl_resource.collection?
+    if collection?
       IIIF::V3::Presentation::Collection
     else
       IIIF::V3::Presentation::Manifest
