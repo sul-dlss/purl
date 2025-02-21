@@ -11,9 +11,7 @@ RSpec.describe Iiif3MetadataWriter do
       <dc:type>Policy brief</dc:type>
       <dc:type>Text</dc:type>
       <dc:description>This is the abstract field</dc:description>
-      <dc:description type="preferred citation">
-      Author, F. (2025). H2 title field. Version 1. Stanford Digital Repository. Available at https://sul-purl-stage.stanford.edu/zw438wf4318/version/1. https://doi.org/10.80343/zw438wf4318.
-      </dc:description>
+      <dc:description type="preferred citation">This is the citation</dc:description>
       <dc:subject>keyword</dc:subject>
       <dc:date>2025-02-20</dc:date>
       <dc:date>2024-04-05</dc:date>
@@ -36,9 +34,23 @@ RSpec.describe Iiif3MetadataWriter do
   describe '#write' do
     subject(:metadata) { metadata_writer.write }
 
-    context 'with relation type="url"' do
+    context 'with relation[@type="url"]' do
       it 'filters out the url value' do
         expect(metadata.find { it['label'][:en] == ['Relation'] }['value'][:en]).to eq ['viewer testing']
+      end
+    end
+
+    context 'with description[@displayLabel]' do
+      it 'filters uses the displayLabel value' do
+        expect(metadata.find { it['label'][:en] == ['Description'] }['value'][:en]).not_to include 'bergeraj@stanford.edu'
+        expect(metadata.find { it['label'][:en] == ['Contact'] }['value'][:en]).to eq ['bergeraj@stanford.edu']
+      end
+    end
+
+    context 'with description[@type]' do
+      it 'filters uses the type value' do
+        expect(metadata.find { it['label'][:en] == ['Description'] }['value'][:en]).not_to include 'This is the citation'
+        expect(metadata.find { it['label'][:en] == ['Preferred citation'] }['value'][:en]).to eq ['This is the citation']
       end
     end
   end
