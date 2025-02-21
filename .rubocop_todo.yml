@@ -10,7 +10,7 @@
 # Configuration parameters: IgnoreLiteralBranches, IgnoreConstantBranches, IgnoreDuplicateElseBranch.
 Lint/DuplicateBranch:
   Exclude:
-    - 'app/models/purl_version.rb'
+    - "app/models/purl_version.rb"
 
 # Offense count: 2
 # Configuration parameters: CountComments, CountAsOne, AllowedMethods, AllowedPatterns, inherit_mode.
@@ -38,23 +38,23 @@ Metrics/PerceivedComplexity:
 # ForbiddenDelimiters: (?i-mx:(^|\s)(EO[A-Z]{1}|END)(\s|$))
 Naming/HeredocDelimiterNaming:
   Exclude:
-    - 'spec/model/purl_version_spec.rb'
+    - "spec/model/purl_version_spec.rb"
 
 # Offense count: 2
 # Configuration parameters: MinSize.
 Performance/CollectionLiteralInLoop:
   Exclude:
-    - 'app/models/content_metadata.rb'
-    - 'app/models/iiif_presentation_manifest.rb'
+    - "app/models/content_metadata.rb"
+    - "app/models/iiif_presentation_manifest.rb"
 
 # Offense count: 17
 # Configuration parameters: Prefixes, AllowedPatterns.
 # Prefixes: when, with, without
 RSpec/ContextWording:
   Exclude:
-    - 'spec/features/display_purl_page_spec.rb'
-    - 'spec/integration/purl_spec.rb'
-    - 'spec/views/purl/_find_it.html.erb_spec.rb'
+    - "spec/features/display_purl_page_spec.rb"
+    - "spec/integration/purl_spec.rb"
+    - "spec/views/purl/_find_it.html.erb_spec.rb"
 
 # Offense count: 48
 # Configuration parameters: CountAsOne.
@@ -67,20 +67,20 @@ RSpec/ExampleLength:
 # DisallowedExamples: works
 RSpec/ExampleWording:
   Exclude:
-    - 'spec/features/preview_spec.rb'
+    - "spec/features/preview_spec.rb"
 
 # Offense count: 12
 # Configuration parameters: AssignmentOnly.
 RSpec/InstanceVariable:
   Exclude:
-    - 'spec/integration/purl_spec.rb'
+    - "spec/integration/purl_spec.rb"
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
 RSpec/LeadingSubject:
   Exclude:
-    - 'spec/model/content_metadata_spec.rb'
-    - 'spec/model/iiif_presentation_manifest_spec.rb'
+    - "spec/model/content_metadata_spec.rb"
+    - "spec/model/iiif_presentation_manifest_spec.rb"
 
 # Offense count: 80
 RSpec/MultipleExpectations:
@@ -96,8 +96,8 @@ RSpec/MultipleMemoizedHelpers:
 # SupportedStyles: always, named_only
 RSpec/NamedSubject:
   Exclude:
-    - 'spec/model/iiif_presentation_manifest_spec.rb'
-    - 'spec/model/purl_version_spec.rb'
+    - "spec/model/iiif_presentation_manifest_spec.rb"
+    - "spec/model/purl_version_spec.rb"
 
 # Offense count: 2
 # This cop supports unsafe autocorrection (--autocorrect-all).
@@ -105,38 +105,38 @@ RSpec/NamedSubject:
 # SupportedStyles: inflected, explicit
 RSpec/PredicateMatcher:
   Exclude:
-    - 'spec/model/accept_header_constraint_spec.rb'
+    - "spec/model/accept_header_constraint_spec.rb"
 
 # Offense count: 7
 RSpec/SubjectStub:
   Exclude:
-    - 'spec/model/purl_version_spec.rb'
+    - "spec/model/purl_version_spec.rb"
 
 # Offense count: 2
 # Configuration parameters: IgnoreNameless, IgnoreSymbolicNames.
 RSpec/VerifiedDoubles:
   Exclude:
-    - 'spec/model/accept_header_constraint_spec.rb'
+    - "spec/model/accept_header_constraint_spec.rb"
 
 # Offense count: 1
 # This cop supports unsafe autocorrection (--autocorrect-all).
 # Configuration parameters: NilOrEmpty, NotPresent, UnlessPresent.
 Rails/Blank:
   Exclude:
-    - 'app/models/iiif_presentation_manifest.rb'
+    - "app/models/iiif_presentation_manifest.rb"
 
 # Offense count: 4
 Rails/I18nLocaleTexts:
   Exclude:
-    - 'app/controllers/feedback_forms_controller.rb'
-    - 'app/controllers/webauth_controller.rb'
-    - 'app/mailers/feedback_mailer.rb'
+    - "app/controllers/feedback_forms_controller.rb"
+    - "app/controllers/webauth_controller.rb"
+    - "app/mailers/feedback_mailer.rb"
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
 Rails/Presence:
   Exclude:
-    - 'app/mailers/feedback_mailer.rb'
+    - "app/mailers/feedback_mailer.rb"
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
@@ -144,7 +144,7 @@ Rails/Presence:
 # SupportedStyles: format, sprintf, percent
 Style/FormatString:
   Exclude:
-    - 'app/helpers/application_helper.rb'
+    - "app/helpers/application_helper.rb"
 
 # Offense count: 52
 # This cop supports unsafe autocorrection (--autocorrect-all).
@@ -157,26 +157,26 @@ Style/FrozenStringLiteralComment:
 # This cop supports safe autocorrection (--autocorrect).
 Style/IfUnlessModifier:
   Exclude:
-    - 'app/models/iiif3_presentation_manifest.rb'
-    - 'app/models/iiif_presentation_manifest.rb'
+    - "app/models/iiif3_presentation_manifest.rb"
+    - "app/models/iiif_presentation_manifest.rb"
 
 # Offense count: 1
 Style/OpenStructUse:
   Exclude:
-    - 'spec/model/purl_version_spec.rb'
+    - "spec/model/purl_version_spec.rb"
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 Style/RedundantBegin:
   Exclude:
-    - 'app/models/iiif_presentation_manifest.rb'
+    - "app/models/iiif_presentation_manifest.rb"
 
 # Offense count: 2
 # This cop supports unsafe autocorrection (--autocorrect-all).
 # Configuration parameters: Mode.
 Style/StringConcatenation:
   Exclude:
-    - 'app/controllers/purl_controller.rb'
+    - "app/controllers/purl_controller.rb"
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
