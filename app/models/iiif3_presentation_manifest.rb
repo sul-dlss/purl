@@ -32,10 +32,12 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
     # Set viewingHint to paged if this is a book
     manifest.viewingHint = 'paged' if type == 'book'
-
-    metadata_writer = Iiif3MetadataWriter.new(dc_nodes: public_xml_document.xpath('//oai_dc:dc/*', 'oai_dc' => OAI_DC_SCHEMA),
-                                              published_dates: public_xml_document.xpath('/publicObject/@published').map(&:text),
-                                              url: controller.purl_url(druid))
+    (_collection, collection_head_version) = containing_purl_collections&.first
+    collection_title = collection_head_version&.title
+    metadata_writer = Iiif3MetadataWriter.new(cocina_descriptive: cocina['description'],
+                                              published_date: updated_at,
+                                              collection_title:,
+                                              doi: cocina.dig('identification', 'doi'))
     manifest.metadata = metadata_writer.write
 
     manifest.summary = { en: [description_or_note] } if description_or_note.present?

@@ -1,6 +1,6 @@
 require 'find'
 
-class PurlVersion
+class PurlVersion # rubocop:disable Metrics/ClassLength
   include ActiveModel::Model
   include ActiveSupport::Benchmarkable
 
@@ -246,6 +246,10 @@ class PurlVersion
 
   def cocina?
     cocina_body.present?
+  end
+
+  def cocina
+    @cocina ||= JSON.parse(cocina_body)
   end
 
   def mods_display_object

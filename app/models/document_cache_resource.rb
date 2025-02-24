@@ -12,6 +12,6 @@ class DocumentCacheResource
   end
 
   def updated_at
-    File.mtime(@path)
+    File.mtime(@path).utc
   end
 end
