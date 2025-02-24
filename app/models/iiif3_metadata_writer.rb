@@ -16,9 +16,14 @@ class Iiif3MetadataWriter
 
   private
 
-  def dc_metadata
+  def dc_metadata # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
     nodes_by_name = dc_nodes.group_by(&:name)
     nodes_by_name['relation']&.reject! { it['type'] == 'url' }
+    if nodes_by_name['description']
+      nodes_with_display_label, description = nodes_by_name['description'].partition { it['displayLabel'] || it['type'] }
+      nodes_by_name['description'] = description
+      nodes_by_name.merge!(nodes_with_display_label.group_by { it['displayLabel'] || it['type'] })
+    end
     nodes_by_name.map { |key, values| iiif_key_value(key.upcase_first, values.map(&:text)) }
   end
 

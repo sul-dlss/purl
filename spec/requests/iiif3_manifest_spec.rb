@@ -5,6 +5,40 @@ RSpec.describe 'IIIF v3 manifests' do
   let(:json) { response.parsed_body }
 
   context 'without a version' do
+    # rubocop:disable Layout/LineLength
+    let(:expected_dc_metadata) do
+      [
+        { 'label' => { 'en' => ['Available Online'] }, 'value' => { 'en' => ["<a href='http://www.example.com/bb157hs6068'>http://www.example.com/bb157hs6068</a>"] } },
+        { 'label' => { 'en' => ['Title'] }, 'value' => { 'en' => ['NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES DIVERS MOUVEMENS DES PLANETES ET LEURS DIVERSES REVOLUTIONS, AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE'] } },
+        { 'label' => { 'en' => ['Creator'] }, 'value' => { 'en' => ['Chatelain, Henri Abraham'] } },
+        { 'label' => { 'en' => ['Type'] }, 'value' => { 'en' => ['map', 'Digital Maps', 'Early Maps'] } },
+        { 'label' => { 'en' => ['Format'] }, 'value' => { 'en' => ['51.5 x 59.8 cm., including title along top and border, with 10 diagrams/maps and 6 columns of titled text.'] } },
+        { 'label' => { 'en' => ['Description'] }, 'value' => { 'en' => [
+          'Tom.1. No.9. (top right).',
+          'California, with open northern edge, suggesting it may be an island and that northwest passage may exist, on 2 small hemisphere maps, each with 5 cm. diameter. First with title: Hemisphere terrestre pour faire | observer les 6 grands cercles de la sphere. Second with title: Hemisphere terrestre pour dis= tinguer les 4 petits cercles, et les 5 zo.',
+          "The larger diagrams are entitled: Le monde selon l'hypothese de copernic et la disposition des planetes ala naissance de Louis XIV, Sphere artificielle, Sisteme de Copernic sur les divers mouvemens des planetes, Sisteme de Ticho Brahe,Sisteme de Ptolomée, Idee generale pour faire comprendre les divers signes que la terre parcourt autour du soleil qui servent a regler les saisons (celestial chart).",
+          "The text is entitled: Remarque sur les divers mouvemens de la terre, Remarque sur le mouvemens et l'arrangement des planetes, Remarque sur la sphere, Remarque sur la maniere dont se font les saisons, Suite de la remarque sur la sphere, Conclusion et reflection morale, Comment l'hypothese de Copernic est conforme aux loix du mouvemens et de la nature, Inconveniens et difficultez qui resultent des sistemes de Ptolemeé et Ticho Brahe."
+        ] } },
+        { 'label' => { 'en' => ['Subject'] }, 'value' => { 'en' => ['Astronomy--Charts, diagrams, etc', 'California as an island--Maps'] } },
+        { 'label' => { 'en' => ['Coverage'] }, 'value' => { 'en' => ['W 180° --E 180°/N 85° --S 85°'] } },
+        { 'label' => { 'en' => ['Date'] }, 'value' => { 'en' => ['1721'] } },
+        { 'label' => { 'en' => ['Identifier'] }, 'value' => { 'en' => ['1040', 'https://purl.stanford.edu/bb157hs6068'] } },
+        { 'label' => { 'en' => ['Relation'] }, 'value' => { 'en' => ['The Glen McLaughlin Map Collection of California as an Island'] } },
+        { 'label' => { 'en' => ['References'] },
+          'value' =>
+                   { 'en' =>
+                     ['LC 548, 579; Koeman II, Cha 1,2; UCB; Ashley Baynton-Williams.'] } },
+        { 'label' => { 'en' => ['Publications'] },
+          'value' =>
+          { 'en' =>
+            ["First issued in his: Atlas historique, ou nouvelle introduction a l'histoire , à la chronologie & à la géographie ancienne & moderne ... -- Amsterdam. 1705. Reissued in 1721 (with imprint as above)."] } },
+        { 'label' => { 'en' => ['Statement of responsibility'] },
+          'value' => { 'en' => ['[Henry Abraham Châtelain].'] } },
+        { 'label' => { 'en' => ['PublishDate'] }, 'value' => { 'en' => ['2023-10-27T10:25:22Z'] } } # publish date was added
+      ]
+      # rubocop:enable Layout/LineLength
+    end
+
     it 'is successful' do
       get '/bb157hs6068/iiif3/manifest'
 
@@ -34,31 +68,8 @@ RSpec.describe 'IIIF v3 manifests' do
       expect(image['body']['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068/bb157hs6068_05_0001/full/full/0/default.jpg'
 
       expect(json['metadata'].class).to eq Array
-      expect(json['metadata'].size).to eq(12) # 10 DC elements grouped by name are there + the publish date + Available Online
-      # rubocop:disable Layout/LineLength
-      expected_dc_metadata = [
-        { 'label' => { 'en' => ['Available Online'] }, 'value' => { 'en' => ["<a href='http://www.example.com/bb157hs6068'>http://www.example.com/bb157hs6068</a>"] } },
-        { 'label' => { 'en' => ['Title'] }, 'value' => { 'en' => ['NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES DIVERS MOUVEMENS DES PLANETES ET LEURS DIVERSES REVOLUTIONS, AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE'] } },
-        { 'label' => { 'en' => ['Creator'] }, 'value' => { 'en' => ['Chatelain, Henri Abraham'] } },
-        { 'label' => { 'en' => ['Type'] }, 'value' => { 'en' => ['map', 'Digital Maps', 'Early Maps'] } },
-        { 'label' => { 'en' => ['Format'] }, 'value' => { 'en' => ['51.5 x 59.8 cm., including title along top and border, with 10 diagrams/maps and 6 columns of titled text.'] } },
-        { 'label' => { 'en' => ['Description'] }, 'value' => { 'en' => [
-          'Tom.1. No.9. (top right).',
-          'LC 548, 579; Koeman II, Cha 1,2; UCB; Ashley Baynton-Williams.',
-          'California, with open northern edge, suggesting it may be an island and that northwest passage may exist, on 2 small hemisphere maps, each with 5 cm. diameter. First with title: Hemisphere terrestre pour faire | observer les 6 grands cercles de la sphere. Second with title: Hemisphere terrestre pour dis= tinguer les 4 petits cercles, et les 5 zo.',
-          "The larger diagrams are entitled: Le monde selon l'hypothese de copernic et la disposition des planetes ala naissance de Louis XIV, Sphere artificielle, Sisteme de Copernic sur les divers mouvemens des planetes, Sisteme de Ticho Brahe,Sisteme de Ptolomée, Idee generale pour faire comprendre les divers signes que la terre parcourt autour du soleil qui servent a regler les saisons (celestial chart).",
-          "The text is entitled: Remarque sur les divers mouvemens de la terre, Remarque sur le mouvemens et l'arrangement des planetes, Remarque sur la sphere, Remarque sur la maniere dont se font les saisons, Suite de la remarque sur la sphere, Conclusion et reflection morale, Comment l'hypothese de Copernic est conforme aux loix du mouvemens et de la nature, Inconveniens et difficultez qui resultent des sistemes de Ptolemeé et Ticho Brahe.",
-          "First issued in his: Atlas historique, ou nouvelle introduction a l'histoire , à la chronologie & à la géographie ancienne & moderne ... -- Amsterdam. 1705. Reissued in 1721 (with imprint as above).",
-          '[Henry Abraham Châtelain].'
-        ] } },
-        { 'label' => { 'en' => ['Subject'] }, 'value' => { 'en' => ['Astronomy--Charts, diagrams, etc', 'California as an island--Maps'] } },
-        { 'label' => { 'en' => ['Coverage'] }, 'value' => { 'en' => ['W 180° --E 180°/N 85° --S 85°'] } },
-        { 'label' => { 'en' => ['Date'] }, 'value' => { 'en' => ['1721'] } },
-        { 'label' => { 'en' => ['Identifier'] }, 'value' => { 'en' => ['1040', 'https://purl.stanford.edu/bb157hs6068'] } },
-        { 'label' => { 'en' => ['Relation'] }, 'value' => { 'en' => ['The Glen McLaughlin Map Collection of California as an Island'] } },
-        { 'label' => { 'en' => ['PublishDate'] }, 'value' => { 'en' => ['2023-10-27T10:25:22Z'] } } # publish date was added
-      ]
-      # rubocop:enable Layout/LineLength
+      expect(json['metadata'].size).to eq(15)
+
       expect(json['metadata']).to eq(expected_dc_metadata)
     end
   end
@@ -144,7 +155,7 @@ RSpec.describe 'IIIF v3 manifests' do
     get '/zf119tw4418/iiif3/manifest'
 
     expect(json['items'].length).to eq 58
-    expect(json['metadata'].length).to eq 13
+    expect(json['metadata'].length).to eq 15
   end
 
   context 'when pages do not have OCR content' do
@@ -347,7 +358,7 @@ RSpec.describe 'IIIF v3 manifests' do
       get "/#{druid}/iiif3/manifest"
       expect(response).to have_http_status(:ok)
       expect(json['label']['en'].first).to eq '10 Meter Contours: Russian River Basin, California'
-      expect(json['metadata'].size).to eq 14
+      expect(json['metadata'].size).to eq 19
     end
   end
 
