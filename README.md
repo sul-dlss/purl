@@ -6,7 +6,7 @@ PURL service is a URL resolver that translates a reference to a digital object (
 
 ## Requirements
 
-1. Ruby (3.2 or greater)
+1. Ruby (3.4 or greater)
 2. [bundler](http://bundler.io/) gem
 
 ## Installation
