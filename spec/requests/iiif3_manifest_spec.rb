@@ -5,10 +5,16 @@ RSpec.describe 'IIIF v3 manifests' do
   let(:json) { response.parsed_body }
 
   context 'without a version' do
+    before do
+      allow(File).to receive(:mtime).and_return(date)
+    end
+
+    let(:date) { Time.now.utc.beginning_of_day }
+
     # rubocop:disable Layout/LineLength
     let(:expected_dc_metadata) do
       [
-        { 'label' => { 'en' => ['Available Online'] }, 'value' => { 'en' => ["<a href='http://www.example.com/bb157hs6068'>http://www.example.com/bb157hs6068</a>"] } },
+        { 'label' => { 'en' => ['Available Online'] }, 'value' => { 'en' => ["<a href='https://purl.stanford.edu/bb157hs6068'>https://purl.stanford.edu/bb157hs6068</a>"] } },
         { 'label' => { 'en' => ['Title'] }, 'value' => { 'en' => ['NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES DIVERS MOUVEMENS DES PLANETES ET LEURS DIVERSES REVOLUTIONS, AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE'] } },
         { 'label' => { 'en' => ['Creator'] }, 'value' => { 'en' => ['Chatelain, Henri Abraham'] } },
         { 'label' => { 'en' => ['Type'] }, 'value' => { 'en' => ['map', 'Digital Maps', 'Early Maps'] } },
@@ -19,22 +25,22 @@ RSpec.describe 'IIIF v3 manifests' do
           "The larger diagrams are entitled: Le monde selon l'hypothese de copernic et la disposition des planetes ala naissance de Louis XIV, Sphere artificielle, Sisteme de Copernic sur les divers mouvemens des planetes, Sisteme de Ticho Brahe,Sisteme de Ptolomée, Idee generale pour faire comprendre les divers signes que la terre parcourt autour du soleil qui servent a regler les saisons (celestial chart).",
           "The text is entitled: Remarque sur les divers mouvemens de la terre, Remarque sur le mouvemens et l'arrangement des planetes, Remarque sur la sphere, Remarque sur la maniere dont se font les saisons, Suite de la remarque sur la sphere, Conclusion et reflection morale, Comment l'hypothese de Copernic est conforme aux loix du mouvemens et de la nature, Inconveniens et difficultez qui resultent des sistemes de Ptolemeé et Ticho Brahe."
         ] } },
+        { 'label' => { 'en' => ['References'] },
+          'value' =>
+                           { 'en' =>
+                             ['LC 548, 579; Koeman II, Cha 1,2; UCB; Ashley Baynton-Williams.'] } },
+        { 'label' => { 'en' => ['Publications'] },
+          'value' =>
+                  { 'en' =>
+                    ["First issued in his: Atlas historique, ou nouvelle introduction a l'histoire , à la chronologie & à la géographie ancienne & moderne ... -- Amsterdam. 1705. Reissued in 1721 (with imprint as above)."] } },
+        { 'label' => { 'en' => ['Statement of responsibility'] },
+          'value' => { 'en' => ['[Henry Abraham Châtelain].'] } },
         { 'label' => { 'en' => ['Subject'] }, 'value' => { 'en' => ['Astronomy--Charts, diagrams, etc', 'California as an island--Maps'] } },
         { 'label' => { 'en' => ['Coverage'] }, 'value' => { 'en' => ['W 180° --E 180°/N 85° --S 85°'] } },
         { 'label' => { 'en' => ['Date'] }, 'value' => { 'en' => ['1721'] } },
         { 'label' => { 'en' => ['Identifier'] }, 'value' => { 'en' => ['1040', 'https://purl.stanford.edu/bb157hs6068'] } },
         { 'label' => { 'en' => ['Relation'] }, 'value' => { 'en' => ['The Glen McLaughlin Map Collection of California as an Island'] } },
-        { 'label' => { 'en' => ['References'] },
-          'value' =>
-                   { 'en' =>
-                     ['LC 548, 579; Koeman II, Cha 1,2; UCB; Ashley Baynton-Williams.'] } },
-        { 'label' => { 'en' => ['Publications'] },
-          'value' =>
-          { 'en' =>
-            ["First issued in his: Atlas historique, ou nouvelle introduction a l'histoire , à la chronologie & à la géographie ancienne & moderne ... -- Amsterdam. 1705. Reissued in 1721 (with imprint as above)."] } },
-        { 'label' => { 'en' => ['Statement of responsibility'] },
-          'value' => { 'en' => ['[Henry Abraham Châtelain].'] } },
-        { 'label' => { 'en' => ['PublishDate'] }, 'value' => { 'en' => ['2023-10-27T10:25:22Z'] } } # publish date was added
+        { 'label' => { 'en' => ['PublishDate'] }, 'value' => { 'en' => [date.to_datetime.iso8601(3)] } } # publish date was added
       ]
       # rubocop:enable Layout/LineLength
     end
@@ -69,7 +75,6 @@ RSpec.describe 'IIIF v3 manifests' do
 
       expect(json['metadata'].class).to eq Array
       expect(json['metadata'].size).to eq(15)
-
       expect(json['metadata']).to eq(expected_dc_metadata)
     end
   end
@@ -155,7 +160,7 @@ RSpec.describe 'IIIF v3 manifests' do
     get '/zf119tw4418/iiif3/manifest'
 
     expect(json['items'].length).to eq 58
-    expect(json['metadata'].length).to eq 15
+    expect(json['metadata'].length).to eq 12
   end
 
   context 'when pages do not have OCR content' do
@@ -358,7 +363,7 @@ RSpec.describe 'IIIF v3 manifests' do
       get "/#{druid}/iiif3/manifest"
       expect(response).to have_http_status(:ok)
       expect(json['label']['en'].first).to eq '10 Meter Contours: Russian River Basin, California'
-      expect(json['metadata'].size).to eq 19
+      expect(json['metadata'].size).to eq 11
     end
   end
 

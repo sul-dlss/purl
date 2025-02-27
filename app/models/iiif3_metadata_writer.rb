@@ -1,38 +1,148 @@
 class Iiif3MetadataWriter
-  # @param [Array] dc_nodes Dublin Core xml nodes
-  # @param [Array<String>] published_dates the dates of publication
-  def initialize(dc_nodes:, published_dates:, url:)
-    @dc_nodes = dc_nodes
-    @published_dates = published_dates
-    @url = url
+  # @param [Hash<Symbol,Object>] cocina_descriptive
+  # @param [String] collection_title
+  # @param [String] published_date the date of publication
+  def initialize(cocina_descriptive:, collection_title:, published_date:, doi:)
+    @cocina_descriptive = cocina_descriptive
+    @collection_title = collection_title
+    @published_date = published_date
+    @doi = doi
   end
 
-  attr_reader :dc_nodes, :published_dates, :url
+  attr_reader :cocina_descriptive, :collection_title, :published_date, :doi
 
   # @return [Array<Hash>] the IIIF v3 metadata structure
-  def write
-    [available_online] + dc_metadata + published
+  def write # rubocop:disable Metrics/AbcSize
+    available_online + titles + contributors + contacts + types + format + notes +
+      subjects + coverage + dates + identifiers + collection + publication
   end
 
   private
 
-  def dc_metadata # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
-    nodes_by_name = dc_nodes.group_by(&:name)
-    nodes_by_name['relation']&.reject! { it['type'] == 'url' }
-    if nodes_by_name['description']
-      nodes_with_display_label, description = nodes_by_name['description'].partition { it['displayLabel'] || it['type'] }
-      nodes_by_name['description'] = description
-      nodes_by_name.merge!(nodes_with_display_label.group_by { it['displayLabel'] || it['type'] })
-    end
-    nodes_by_name.map { |key, values| iiif_key_value(key.upcase_first, values.map(&:text)) }
+  def publication
+    [iiif_key_value('PublishDate', [published_date])]
   end
 
-  def published
-    published_dates.map { |text| iiif_key_value('PublishDate', [text]) }
+  def titles
+    [iiif_key_value('Title', Array(cocina_descriptive['title']).map { it['value'] })]
+  end
+
+  def collection
+    collection_title.present? ? [iiif_key_value('Relation', [collection_title])] : []
+  end
+
+  def contributors
+    creator = nil
+    contributor_list = []
+    Array(cocina_descriptive['contributor']).each do
+      next unless it['type'] == 'person'
+
+      name = contributor_name(it.dig('name', 0))
+      role = it.dig('role', 0, 'value')
+      if role == 'creator'
+        creator = name
+      else
+        contributor_list += [role ? "#{name} (#{role})" : name]
+      end
+    end
+
+    result = contributor_list.present? ? [iiif_key_value('Contributor', contributor_list)] : []
+    result += [iiif_key_value('Creator', [creator])] if creator
+    result
+  end
+
+  def contributor_name(contributor)
+    structured_name = contributor['structuredValue'].presence
+    return contributor['value'] unless structured_name
+
+    single_name = structured_name.find { it['type'] == 'name' }
+    return single_name['value'] if single_name
+
+    forename = structured_name.find { it['type'] == 'forename' }['value']
+    surname = structured_name.find { it['type'] == 'surname' }['value']
+    "#{surname}, #{forename}"
+  end
+
+  def contacts
+    access_contact = cocina_descriptive.dig('access', 'accessContact')
+    return [] unless access_contact
+
+    [iiif_key_value('Contact', access_contact.select { it['type'] == 'email' }.map { it['value'] })]
+  end
+
+  def types
+    [iiif_key_value('Type', genre.presence || resource_types)]
+  end
+
+  def format
+    vals = filtered_form('extent').map { it['value'] }
+    vals.present? ? [iiif_key_value('Format', vals)] : []
+  end
+
+  def genre
+    filtered_form('genre').map do
+      it['value']
+    end
+  end
+
+  def resource_types
+    filtered_form('resource type').flat_map do
+      it['structuredValue'].presence ? it['structuredValue'].map { it['value'] } : it['value']
+    end.uniq(&:downcase)
+  end
+
+  def filtered_form(type)
+    Array(cocina_descriptive['form']).filter { it['type'] == type }
+  end
+
+  def notes
+    values = {}
+    Array(cocina_descriptive['note']).each do
+      key = (it['type'] || 'Description').capitalize
+      values[key] ||= []
+      values[key] += [it['value']]
+    end
+    values.map do |k, v|
+      iiif_key_value(k, v)
+    end
+  end
+
+  def subjects
+    vals = Array(cocina_descriptive['subject']).filter_map do
+      it['value'] if it['type'] == 'topic'
+    end
+    vals.present? ? [iiif_key_value('Subject', vals)] : []
+  end
+
+  def coverage
+    vals = Array(cocina_descriptive['subject']).filter_map do
+      it['value'] if it['type'] == 'map coordinates'
+    end
+    vals.present? ? [iiif_key_value('Coverage', vals)] : []
+  end
+
+  def dates
+    vals = Array(cocina_descriptive['event']).flat_map do
+      it['date'].map { it['value'] }
+    end
+
+    vals.present? ? [iiif_key_value('Date', vals)] : []
+  end
+
+  def identifiers
+    ids = Array(cocina_descriptive['identifier']).map { it['value'] }
+    ids.push url
+    ids.push "doi: https://doi.org/#{doi}" if doi
+
+    ids.present? ? [iiif_key_value('Identifier', ids)] : []
   end
 
   def available_online
-    iiif_key_value('Available Online', ["<a href='#{url}'>#{url}</a>"])
+    [iiif_key_value('Available Online', ["<a href='#{url}'>#{url}</a>"])]
+  end
+
+  def url
+    @url ||= cocina_descriptive['purl']
   end
 
   def iiif_key_value(label, values)

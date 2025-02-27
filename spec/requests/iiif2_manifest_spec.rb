@@ -169,7 +169,7 @@ RSpec.describe 'IIIF v2 manifests' do
   end
 
   it 'does not publish services for pages without OCR content' do
-    get '/py305sy7961/iiif3/manifest'
+    get '/py305sy7961/iiif/manifest'
 
     expect(json).not_to have_key 'service'
   end
