@@ -14,11 +14,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
         'label' => { en: ['Attribution'] },
         'value' => { en: attribution.compact_blank }
       },
-      'logo' => [{
-        'id' => 'https://stacks.stanford.edu/image/iiif/wy534zh7137/SULAIR_rosette/full/400,/0/default.jpg',
-        'type' => 'Image',
-        'service' => [iiif_image_v2_service('https://stacks.stanford.edu/image/iiif/wy534zh7137/SULAIR_rosette')]
-      }],
+      'provider' => provider,
       'seeAlso' => [{
         'id' => controller.purl_url(druid, format: 'mods'),
         'type' => 'Metadata',
@@ -57,6 +53,29 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     build_canvases(manifest)
 
     manifest
+  end
+
+  # https://iiif.io/api/presentation/3.0/#provider
+  def provider
+    {
+      'id' => 'https://library.stanford.edu/about',
+      'type' => 'Agent',
+      'label' => { 'en' => ['Stanford University Libraries'] },
+      'homepage' => [
+        {
+          'id' => 'https://library.stanford.edu/',
+          'type' => 'Text',
+          'label' => { 'en' => ['Stanford University Libraries Homepage'] },
+          'format' => 'text/html'
+        }
+      ],
+      'logo' => [{
+        'id' => 'https://stacks.stanford.edu/image/iiif/wy534zh7137/SULAIR_rosette/full/400,/0/default.jpg',
+        'format' => 'image/jpeg',
+        'type' => 'Image',
+        'service' => [iiif_image_v2_service('https://stacks.stanford.edu/image/iiif/wy534zh7137/SULAIR_rosette').to_ordered_hash]
+      }]
+    }
   end
 
   def build_canvases(manifest)
