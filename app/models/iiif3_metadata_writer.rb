@@ -13,8 +13,8 @@ class Iiif3MetadataWriter
 
   # @return [Array<Hash>] the IIIF v3 metadata structure
   def write # rubocop:disable Metrics/AbcSize
-    available_online + titles + contributors + contacts + types + format + notes +
-      subjects + coverage + dates + identifiers + collection + publication
+    available_online + titles + contributors + contacts + types + format + language +
+      notes + subjects + coverage + dates + identifiers + collection + publication
   end
 
   private
@@ -77,6 +77,11 @@ class Iiif3MetadataWriter
   def format
     vals = filtered_form('extent').map { it['value'] }
     vals.present? ? [iiif_key_value('Format', vals)] : []
+  end
+
+  def language
+    vals = Array(cocina_descriptive['language']).map { it['value'] || it['code'] }
+    vals.present? ? [iiif_key_value('Language', vals)] : []
   end
 
   def genre

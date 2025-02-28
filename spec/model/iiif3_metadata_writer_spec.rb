@@ -303,5 +303,17 @@ RSpec.describe Iiif3MetadataWriter do
         end['value'][:en]).to eq ['51.5 x 59.8 cm., including title along top and border, with 10 diagrams/maps and 6 columns of titled text.']
       end
     end
+
+    context 'with language' do
+      let(:cocina_descriptive) do
+        PurlResource.find('zf119tw4418').version(:head).cocina['description']
+      end
+
+      it 'extracts the metadata' do
+        expect(metadata.find do
+          it['label'][:en] == ['Language']
+        end['value'][:en]).to eq ['eng']
+      end
+    end
   end
 end
