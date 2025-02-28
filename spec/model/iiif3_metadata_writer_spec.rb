@@ -282,12 +282,17 @@ RSpec.describe Iiif3MetadataWriter do
       end
     end
 
-    context 'with structured contributor name, that is not forename, surname' do
+    context 'with structured contributor name, that is not forename, surname and a structured title' do
       let(:cocina_descriptive) do
         PurlResource.find('bb006mf9900').version(:head).cocina['description']
       end
 
       it 'extracts the metadata' do
+        expect(metadata.find do
+          it['label'][:en] == ['Title']
+        end['value'][:en]).to eq ['Erzherzog Johann; ein Charakterbild',
+                                  'mit Beiträgen zur Geschichte der Begründung der zweiten Dynastie Bulgariens nach authentischen ' \
+                                  'Quellen und Briefen des Erzherzogs']
         expect(metadata.find { it['label'][:en] == ['Contributor'] }['value'][:en]).to eq ['Pollak, Heinrich', 'John Salvator']
       end
     end

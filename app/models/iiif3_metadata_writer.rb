@@ -24,7 +24,9 @@ class Iiif3MetadataWriter
   end
 
   def titles
-    [iiif_key_value('Title', Array(cocina_descriptive['title']).map { it['value'] })]
+    [iiif_key_value('Title', Array(cocina_descriptive['title']).flat_map do
+      Array(it['structuredValue']).map { it['value'] }.presence || it['value']
+    end)]
   end
 
   def collection
