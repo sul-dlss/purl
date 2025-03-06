@@ -60,8 +60,9 @@ class ContentMetadata
       return files.first if files.length == 1
 
       return media_file if media_file.present?
+      return image_file if image_file.present?
 
-      image_file
+      pdf_file
     end
 
     def supplementing_resources
@@ -80,6 +81,10 @@ class ContentMetadata
       return [] unless files
 
       files - [primary, thumbnail_canvas].compact - supplementing_resources
+    end
+
+    def pdf_file
+      @pdf_file ||= files.find { |file| file.type == 'document' || file.mimetype == 'application/pdf' }
     end
 
     def media_file
