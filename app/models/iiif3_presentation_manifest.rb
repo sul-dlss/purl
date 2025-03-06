@@ -82,8 +82,9 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def build_canvases(manifest)
     # for each resource sequence (SDR term), create a canvas
-    if type == 'geo'
+    if %w[geo file].include?(type)
       # Geo can't determine "primary", so we just create a "dummy" canvas here.
+      # We don't use the canvases for the file viewer and it slows down the metadata viewer when there are a lot of files
       # IIIF v3 requires Manifests to have at least one canvas. https://iiif.io/api/presentation/3.0/#34-structural-properties
       resource = content_metadata.grouped_resources.first
       file = resource.files.first
