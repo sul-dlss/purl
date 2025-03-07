@@ -16,13 +16,13 @@
     <tag>DPG : Krish Seetah Bone Collection</tag>
     <tag>Registered By : astrids</tag>
   </identityMetadata>
-  <contentMetadata objectId="hc941fm6529" type="file">
-    <resource id="hc941fm6529_1" sequence="1" type="file">
+  <contentMetadata objectId="druid:hc941fm6529" type="3d">
+    <resource id="cocina-fileSet-hc941fm6529-hc941fm6529_1" sequence="1" type="3d">
       <label>File 1</label>
-      <file id="hc941fm6529.json" mimetype="application/vnd.threejs+json" size="1421074">
-      
-      
-    </file>
+      <file id="hc941fm6529.json" mimetype="application/vnd.threejs+json" size="1421074" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">b471c94dcb2b2974305b1111e9709564d6c55ed8</checksum>
+        <checksum type="md5">542e2a688cb605f3977ee53825b71f50</checksum>
+      </file>
     </resource>
   </contentMetadata>
   <rightsMetadata>
