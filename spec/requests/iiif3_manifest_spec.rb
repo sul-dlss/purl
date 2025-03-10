@@ -277,7 +277,7 @@ RSpec.describe 'IIIF v3 manifests' do
       canvas = json['items'].first
 
       expect(canvas['id']).to eq 'http://www.example.com/bb132pr2055/iiif3/canvas/main'
-      expect(canvas['label']).to eq 'Body of dissertation'
+      expect(canvas['label']['en']).to eq ['Body of dissertation']
       expect(canvas['type']).to eq 'Canvas'
     end
   end
@@ -285,7 +285,7 @@ RSpec.describe 'IIIF v3 manifests' do
   context 'with a Stanford-only file object' do
     let(:druid) { 'bb253gh8060' }
 
-    it 'generates a manifest' do
+    it 'generates a manifest with probe service' do
       get "/#{druid}/iiif3/manifest"
       expect(response).to have_http_status(:ok)
 
@@ -295,8 +295,25 @@ RSpec.describe 'IIIF v3 manifests' do
       canvas = json['items'].first
 
       expect(canvas['id']).to eq 'http://www.example.com/bb253gh8060/iiif3/canvas/bb253gh8060_1'
-      expect(canvas['label']).to eq 'File 1'
+      expect(canvas['label']['en']).to eq ['File 1']
       expect(canvas['type']).to eq 'Canvas'
+
+      expect(canvas['items'].length).to eq 1
+      expect(canvas['items'].first['items'].length).to eq 1
+      expect(canvas['height']).not_to be_present
+      expect(canvas['width']).not_to be_present
+
+      pdf = canvas['items'].first['items'].first
+      body = pdf.fetch('body')
+      expect(body['id']).to eq 'https://stacks.stanford.edu/file/bb253gh8060/SC0193_Agenda_6381_2010-10-07_001.pdf'
+      expect(body['format']).to eq 'application/pdf'
+      expect(body['type']).to eq 'Text'
+
+      probe_service = body.fetch('service').first
+      expect(probe_service['type']).to eq 'AuthProbeService2'
+      expect(probe_service['id']).to eq 'https://stacks.stanford.edu/iiif/auth/v2/probe?id=https%3A%2F%2Fstacks.stanford.edu%2Ffile%2Fbb253gh8060%2FSC0193_Agenda_6381_2010-10-07_001.pdf'
+      expect(probe_service['service']).to include hash_including 'type' => 'AuthAccessService2'
+      expect(probe_service.dig('service', 0, 'service')).to include hash_including 'type' => 'AuthAccessTokenService2'
     end
   end
 
