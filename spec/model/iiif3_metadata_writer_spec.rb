@@ -320,5 +320,17 @@ RSpec.describe Iiif3MetadataWriter do
         end['value'][:en]).to eq ['eng']
       end
     end
+
+    context 'with table of contents in notes' do
+      let(:cocina_descriptive) do
+        PurlResource.find('bc854fy5899').version(:head).cocina['description']
+      end
+
+      it 'extracts the metadata' do
+        expect(metadata.find do
+          it['label'][:en] == ['Table of contents']
+        end['value'][:en]).to include('Of the leaven of pharisees')
+      end
+    end
   end
 end

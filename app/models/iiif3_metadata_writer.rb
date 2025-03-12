@@ -93,9 +93,7 @@ class Iiif3MetadataWriter
   end
 
   def resource_types
-    filtered_form('resource type').flat_map do
-      it['structuredValue'].presence ? it['structuredValue'].map { it['value'] } : it['value']
-    end.uniq(&:downcase)
+    filtered_form('resource type').flat_map { structured_values(it) }.uniq(&:downcase)
   end
 
   def filtered_form(type)
@@ -103,15 +101,17 @@ class Iiif3MetadataWriter
   end
 
   def notes
+    extract_notes.map { |k, v| iiif_key_value(k, v) }
+  end
+
+  def extract_notes
     values = {}
     Array(cocina_descriptive['note']).each do
       key = (it['type'] || 'Description').capitalize
       values[key] ||= []
-      values[key] += [it['value']]
+      values[key] += structured_values(it)
     end
-    values.map do |k, v|
-      iiif_key_value(k, v)
-    end
+    values
   end
 
   def subjects
@@ -154,5 +154,9 @@ class Iiif3MetadataWriter
 
   def iiif_key_value(label, values)
     { 'label' => { en: [label] }, 'value' => { en: values.compact_blank } }
+  end
+
+  def structured_values(field)
+    field['structuredValue'].presence ? field['structuredValue'].map { it['value'] } : [field['value']]
   end
 end
