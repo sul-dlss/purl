@@ -88,10 +88,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       # IIIF v3 requires Manifests to have at least one canvas. https://iiif.io/api/presentation/3.0/#34-structural-properties
       resource = content_metadata.grouped_resources.first
       file = resource.files.first
-      manifest.items << IIIF::V3::Presentation::Canvas.new(
-        'id' => canvas_url(resource_id: file.id),
-        'label' => file.label
-      )
+      manifest.items << canvas_for_resource(file)
     else
       content_metadata.grouped_resources.each do |resource_group|
         manifest.items << canvas_for_resource(resource_group)
