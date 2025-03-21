@@ -340,7 +340,7 @@ class IiifPresentationManifest
   end
 
   def stacks_iiif_base_url(druid, filename)
-    "#{Settings.stacks.url}/image/iiif/#{druid}/#{ERB::Util.url_encode(File.basename(filename, '.*'))}"
+    "#{Settings.stacks.url}/image/iiif/#{druid}%2F#{ERB::Util.url_encode(File.basename(filename, '.*'))}"
   end
 
   def stacks_file_url(druid, filename)
