@@ -6,7 +6,7 @@ class IiifPresentationManifest
   include ActiveModel::Model
 
   delegate :druid, :title, :type, :description, :content_metadata, :public_xml_document, :cocina, :updated_at,
-           :containing_purl_collections, :rights, :collection?, to: :purl_version
+           :containing_purl_collections, :rights, :collection?, :collection_members, to: :purl_version
   delegate :reading_order, :resources, to: :content_metadata
   delegate :url_for, to: :controller
   alias id druid
