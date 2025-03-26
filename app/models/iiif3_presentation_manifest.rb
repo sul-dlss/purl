@@ -14,7 +14,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
         'label' => { en: ['Attribution'] },
         'value' => { en: attribution.compact_blank }
       },
-      'provider' => provider,
+      'provider' => [provider],
       'seeAlso' => [{
         'id' => controller.purl_url(druid, format: 'mods'),
         'type' => 'Metadata',
