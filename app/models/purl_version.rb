@@ -4,7 +4,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   include ActiveModel::Model
   include ActiveSupport::Benchmarkable
 
-  attr_accessor :id, :head, :state, :resource_retriever
+  attr_accessor :id, :head, :state, :resource_retriever, :collection_members_retriever
   attr_reader :version_id, :updated_at
   alias druid id
 
@@ -239,6 +239,15 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   end
 
   delegate :public_xml_body, :cocina_body, to: :resource_retriever
+
+  # Nil for non-collections, empty array for collections with no members
+  # Purl-fetcher only knows current membership at time of querying
+  def collection_members
+    return unless collection?
+
+    Rails.logger.warn("Attempting to retrieve collection members for a non-head version #{druid} v#{version_id}") unless head?
+    collection_members_retriever.collection_members
+  end
 
   def public_xml?
     public_xml_body.present?
