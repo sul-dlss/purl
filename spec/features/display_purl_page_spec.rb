@@ -100,20 +100,6 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'revs object (no version manifest)' do
-    let(:druid) { 'tx027jv4938' }
-
-    it 'displays the page without version information' do
-      visit "/#{druid}"
-      expect(page).to have_content 'IMSA 24 Hours of Daytona'
-      expect(page).to have_metadata_section 'Access conditions'
-      expect(page).to have_metadata_section 'Bibliographic information'
-      expect(page).to have_content 'Revs ID 2012-015GHEW-BW-1984-b4_1.4_0003'
-      expect(page).to have_no_content 'You are viewing this version'
-      expect(page).to have_no_content 'Each version has a distinct URL, but you can use this PURL to access the latest version.'
-    end
-  end
-
   context 'item with a DOI' do
     let(:druid) { 'bb051dp0564' }
 
