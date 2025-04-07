@@ -69,7 +69,7 @@ class Iiif3MetadataWriter
     access_contact = cocina_descriptive.dig('access', 'accessContact')
     return [] unless access_contact
 
-    [iiif_key_value('Contact', access_contact.select { it['type'] == 'email' }.map { it['value'] })]
+    [iiif_key_value('Contact', access_contact.select { it['type'] == 'email' }.pluck('value'))]
   end
 
   def types
@@ -77,7 +77,7 @@ class Iiif3MetadataWriter
   end
 
   def format
-    vals = filtered_form('extent').map { it['value'] }
+    vals = filtered_form('extent').pluck('value')
     vals.present? ? [iiif_key_value('Format', vals)] : []
   end
 
@@ -87,9 +87,7 @@ class Iiif3MetadataWriter
   end
 
   def genre
-    filtered_form('genre').map do
-      it['value']
-    end
+    filtered_form('genre').pluck('value')
   end
 
   def resource_types
@@ -137,7 +135,7 @@ class Iiif3MetadataWriter
   end
 
   def identifiers
-    ids = Array(cocina_descriptive['identifier']).map { it['value'] }
+    ids = Array(cocina_descriptive['identifier']).pluck('value')
     ids.push url
     ids.push "doi: https://doi.org/#{doi}" if doi
 
@@ -157,6 +155,6 @@ class Iiif3MetadataWriter
   end
 
   def structured_values(field)
-    field['structuredValue'].presence ? field['structuredValue'].map { it['value'] } : [field['value']]
+    field['structuredValue'].presence ? field['structuredValue'].pluck('value') : [field['value']]
   end
 end
