@@ -5,7 +5,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   delegate :reading_order, to: :content_metadata
   attr_reader :purl_base_uri
 
-  # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+  # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity
   def body
     manifest_data = {
       'id' => manifest_url,
@@ -53,6 +53,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     manifest.thumbnail = [thumbnail_resource] if thumbnail_resource?
 
     build_canvases(manifest)
+    build_collection_items(manifest) if collection?
 
     manifest
   end
@@ -93,6 +94,17 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       content_metadata.grouped_resources.each do |resource_group|
         manifest.items << canvas_for_resource(resource_group)
       end
+    end
+  end
+
+  def build_collection_items(manifest)
+    # for each member of the collection, add its manifest to the collection's items
+    iiif_collection_members.each do |member|
+      manifest.items << {
+        'id' => manifest_url(id: member['druid'].delete_prefix('druid:')),
+        'label' => { en: [member['title']] },
+        'type' => 'Manifest'
+      }
     end
   end
 
@@ -303,6 +315,8 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     thumb
   end
 
+  # rubocop:enable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity
+
   def thumbnail_resource?
     thumbnail_image.present?
   end
@@ -412,7 +426,6 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       ]
     )
   end
-  # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
   def three_d?
     type == '3d'
@@ -440,5 +453,25 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     else
       IIIF::V3::Presentation::Manifest
     end
+  end
+
+  # Subset of collection members that are OK to list in the collection manifest
+  def iiif_collection_members
+    collection_members
+      .select { |member| [iiif_release_targets & member['true_targets']].any? }
+      .select { |member| iiif_content_types.include? member['content_type'] }
+  end
+
+  private
+
+  # Include collection members released to any of these platforms
+  # TODO: create a release tag just for this purpose?
+  def iiif_release_targets
+    %w[Searchworks Earthworks]
+  end
+
+  # Filter out collection members that can't be rendered in a IIIF viewer
+  def iiif_content_types
+    %w[image book map]
   end
 end
