@@ -32,11 +32,97 @@ RSpec.describe 'purl', type: :feature do
       end
 
       context 'on a collection' do
+        let(:purl_fetcher_response) do
+          {
+            'purls' => [
+              {
+                'druid' => 'cz120cp3134',
+                'title' => 'Interview with Sheila McCabe',
+                'object_type' => 'item',
+                'content_type' => 'book',
+                'true_targets' => ['Searchworks']
+              }
+            ],
+            'pages' => { 'current' => 1, 'next' => nil }
+          }
+        end
+
+        before do
+          stub_request(:get, 'https://purl-fetcher-stage.stanford.edu/collections/druid:bb631ry3167/purls?page=1&per_page=1000')
+            .to_return(status: 200, body: purl_fetcher_response.to_json, headers: { 'Content-Type' => 'application/json' })
+        end
+
         it 'renders a iiif v3 collection manifest' do
           visit '/bb631ry3167/iiif/manifest'
 
           json_body = JSON.parse(page.body)
           expect(json_body['type']).to eq 'Collection'
+        end
+
+        it 'adds the member manifests as items' do
+          visit '/bb631ry3167/iiif/manifest'
+
+          json_body = JSON.parse(page.body)
+          expect(json_body['items'].first).to eq(
+            {
+              'id' => 'http://www.example.com/cz120cp3134/iiif/manifest',
+              'type' => 'Manifest',
+              'label' => { 'en' => ['Interview with Sheila McCabe'] }
+            }
+          )
+        end
+
+        context 'when members have non-iiif content types' do
+          let(:purl_fetcher_response) do
+            {
+              'purls' => [
+                {
+                  'druid' => 'cz120cp3134',
+                  'title' => 'Interview with Sheila McCabe',
+                  'object_type' => 'item',
+                  'content_type' => 'audio',
+                  'true_targets' => ['Searchworks']
+                },
+                {
+                  'druid' => 'nx135fr3985',
+                  'title' => 'Interview with Carson Smith',
+                  'object_type' => 'item',
+                  'content_type' => 'book',
+                  'true_targets' => ['Searchworks']
+                }
+              ],
+              'pages' => { 'current' => 1, 'next' => nil }
+            }
+          end
+
+          it 'does not include them in the collection manifest' do
+            visit '/bb631ry3167/iiif/manifest'
+            json_body = JSON.parse(page.body)
+            expect(json_body['items'].length).to eq 1 # only the book
+          end
+        end
+
+        context 'when members are not released to public platforms' do
+          let(:purl_fetcher_response) do
+            {
+              'purls' => [
+                {
+                  'druid' => 'cz120cp3134',
+                  'title' => 'Interview with Sheila McCabe',
+                  'object_type' => 'item',
+                  'content_type' => 'audio',
+                  'true_targets' => []
+                }
+              ],
+              'pages' => { 'current' => 1, 'next' => nil }
+            }
+          end
+
+          it 'does not include them in the collection manifest' do
+            visit '/bb631ry3167/iiif/manifest'
+            json_body = JSON.parse(page.body)
+            expect(json_body['items']).to be_nil
+          end
         end
       end
     end

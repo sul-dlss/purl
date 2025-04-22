@@ -26,7 +26,8 @@ class PurlResource
              head: head_version == version_id.to_i,
              updated_at: version_attrs.fetch('date', nil),
              state: version_attrs.fetch('state'),
-             resource_retriever: versioned_layout? ? VersionedResourceRetriever.new(druid:, version_id:) : resource_retriever)
+             resource_retriever: versioned_layout? ? VersionedResourceRetriever.new(druid:, version_id:) : resource_retriever,
+             collection_members_retriever: CollectionMembersRetriever.new(druid:))
     end
   end
 

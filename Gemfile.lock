@@ -266,6 +266,9 @@ GEM
     public_suffix (6.0.1)
     puma (6.6.0)
       nio4r (~> 2.0)
+    purl_fetcher-client (3.0.1)
+      activesupport
+      faraday (~> 2.1)
     racc (1.8.1)
     rack (3.1.13)
     rack-session (2.1.0)
@@ -469,6 +472,7 @@ DEPENDENCIES
   okcomputer
   propshaft
   puma (~> 6.0)
+  purl_fetcher-client (~> 3)
   rails (~> 8.0.0)
   recaptcha
   rspec-rails (~> 7.1)
