@@ -25,11 +25,8 @@ SitemapGenerator::Sitemap.create(include_root: false) do
   #   Article.find_each do |article|
   #     add article_path(article), :lastmod => article.updated_at
   #   end
-  conn = Faraday.new(url: Settings.purl_fetcher.url) do |builder|
-    builder.response :json
-  end
-  response = conn.get '/released/PURL%20sitemap'
-  response.body.each do |purl|
+  client = PurlFetcher::Client::Reader.new(host: Settings.purl_fetcher.url)
+  client.released_to('PURL sitemap').each do |purl|
     add purl_path(purl['druid'].delete_prefix('druid:')), lastmod: purl['updated_at'], changefreq: nil, priority: nil
   end
 end
