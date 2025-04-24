@@ -32,6 +32,7 @@ gem 'whenever', require: false # cron jobs
 gem 'dor-rights-auth', '~> 1.6'
 gem 'iiif-presentation', '~> 1.3'
 gem 'mods_display', '~> 1.5'
+gem "purl_fetcher-client", "~> 3.1"
 
 group :production do
   gem 'newrelic_rpm'

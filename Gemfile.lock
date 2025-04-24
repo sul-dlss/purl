@@ -202,7 +202,6 @@ GEM
     matrix (0.4.2)
     method_source (1.1.0)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.8)
     minitest (5.25.5)
     mods (3.0.5)
       csv (~> 3.3)
@@ -235,9 +234,6 @@ GEM
     net-ssh (7.3.0)
     newrelic_rpm (9.18.0)
     nio4r (2.7.4)
-    nokogiri (1.18.7)
-      mini_portile2 (~> 2.8.2)
-      racc (~> 1.4)
     nokogiri (1.18.7-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.18.7-x86_64-linux-gnu)
@@ -266,6 +262,9 @@ GEM
     public_suffix (6.0.1)
     puma (6.6.0)
       nio4r (~> 2.0)
+    purl_fetcher-client (3.1.0)
+      activesupport
+      faraday (~> 2.1)
     racc (1.8.1)
     rack (3.1.13)
     rack-session (2.1.0)
@@ -441,7 +440,6 @@ GEM
 
 PLATFORMS
   arm64-darwin-24
-  ruby
   x86_64-linux
 
 DEPENDENCIES
@@ -469,6 +467,7 @@ DEPENDENCIES
   okcomputer
   propshaft
   puma (~> 6.0)
+  purl_fetcher-client (~> 3.1)
   rails (~> 8.0.0)
   recaptcha
   rspec-rails (~> 7.1)
