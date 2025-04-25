@@ -67,7 +67,7 @@ pipeline {
           export DEPLOY=1
 
           # Load RVM
-          rvm use 3.3.1@purl --create
+          rvm use 3.4.1@purl --create
           gem install bundler
 
           bundle install --without production
