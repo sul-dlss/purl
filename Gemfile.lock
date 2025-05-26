@@ -145,10 +145,11 @@ GEM
     docile (1.4.1)
     dor-rights-auth (1.8.0)
       nokogiri
-    drb (2.2.1)
+    drb (2.2.3)
     ed25519 (1.4.0)
     edtf (3.2.0)
       activesupport (>= 3.0, < 9.0)
+    erb (5.0.1)
     erubi (1.13.1)
     faraday (2.13.1)
       faraday-net_http (>= 2.0, < 3.5)
@@ -159,7 +160,7 @@ GEM
     geo_coord (0.2.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    hashdiff (1.1.2)
+    hashdiff (1.2.0)
     honeybadger (5.28.0)
       logger
       ostruct
@@ -184,7 +185,7 @@ GEM
     jbuilder (2.13.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    json (2.12.0)
+    json (2.12.2)
     jsonpath (1.1.5)
       multi_json
     language_server-protocol (3.17.0.5)
@@ -288,7 +289,7 @@ GEM
       activesupport (= 8.0.2)
       bundler (>= 1.15.0)
       railties (= 8.0.2)
-    rails-dom-testing (2.2.0)
+    rails-dom-testing (2.3.0)
       activesupport (>= 5.0.0)
       minitest
       nokogiri (>= 1.6)
@@ -309,7 +310,8 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.2.1)
-    rdoc (6.13.1)
+    rdoc (6.14.0)
+      erb
       psych (>= 4.0.0)
     recaptcha (5.19.0)
     regexp_parser (2.10.0)
@@ -333,7 +335,7 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.3)
-    rubocop (1.75.6)
+    rubocop (1.75.7)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -373,7 +375,7 @@ GEM
     ruby-progressbar (1.13.0)
     rubyzip (2.4.1)
     securerandom (0.4.1)
-    selenium-webdriver (4.32.0)
+    selenium-webdriver (4.33.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
@@ -414,9 +416,9 @@ GEM
     unicode-emoji (4.0.4)
     uri (1.0.3)
     useragent (0.16.11)
-    view_component (3.21.0)
+    view_component (3.23.2)
       activesupport (>= 5.2.0, < 8.1)
-      concurrent-ruby (~> 1.0)
+      concurrent-ruby (~> 1)
       method_source (~> 1.0)
     web-console (4.2.1)
       actionview (>= 6.0.0)
@@ -428,7 +430,7 @@ GEM
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
     websocket (1.2.11)
-    websocket-driver (0.7.7)
+    websocket-driver (0.8.0)
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -436,7 +438,7 @@ GEM
       chronic (>= 0.6.3)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.7.2)
+    zeitwerk (2.7.3)
 
 PLATFORMS
   arm64-darwin-24
