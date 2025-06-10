@@ -75,7 +75,7 @@ end
       <%= render "collection_items", document: @version if @purl.released_to_searchworks? %>
       <%= render VersionsComponent.new(purl: @purl, version: @version) %>
       <%= render "mods_contact", document: @version %>
-      <%= render "find_it", document: @purl, catalog_key: @version.catalog_key %>
+      <%= render FindItComponent.new(document: @purl, version: @version) %>
 
       <% if @version.embeddable? || @version.show_download_metrics? || @version.doi.present? %>
         <turbo-frame id="metrics-frame" src="<%= purl_metrics_path @purl %>">
