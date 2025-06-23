@@ -130,7 +130,7 @@ GEM
     crass (1.0.6)
     csv (3.3.5)
     date (3.4.1)
-    debug (1.10.0)
+    debug (1.11.0)
       irb (~> 1.10)
       reline (>= 0.3.8)
     deep_merge (1.2.2)
@@ -200,7 +200,7 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.4)
-    matrix (0.4.2)
+    matrix (0.4.3)
     method_source (1.1.0)
     mini_mime (1.1.5)
     minitest (5.25.5)
@@ -219,7 +219,7 @@ GEM
     multi_json (1.15.0)
     net-http (0.6.0)
       uri
-    net-imap (0.5.8)
+    net-imap (0.5.9)
       date
       net-protocol
     net-pop (0.1.2)
@@ -243,7 +243,7 @@ GEM
       i18n
       nokogiri
     okcomputer (1.19.0)
-    ostruct (0.6.1)
+    ostruct (0.6.2)
     parallel (1.27.0)
     parser (3.3.8.0)
       ast (~> 2.4.1)
@@ -310,7 +310,7 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.3.0)
-    rdoc (6.14.0)
+    rdoc (6.14.1)
       erb
       psych (>= 4.0.0)
     recaptcha (5.19.0)
@@ -335,7 +335,7 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.4)
-    rubocop (1.76.1)
+    rubocop (1.77.0)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -343,7 +343,7 @@ GEM
       parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 2.9.3, < 3.0)
-      rubocop-ast (>= 1.45.0, < 2.0)
+      rubocop-ast (>= 1.45.1, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
     rubocop-ast (1.45.1)
