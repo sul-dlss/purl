@@ -17,6 +17,6 @@ class FeedbackFormsController < ApplicationController
   protected
 
   def pass_captcha?
-    current_user.present? || verify_recaptcha
+    current_user.present? || verify_recaptcha(action: 'feedback')
   end
 end

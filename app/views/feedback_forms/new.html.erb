@@ -1,7 +1,7 @@
 <turbo-frame id="feedback-form-frame">
   <div class="row justify-content-md-center">
     <div class="col-sm-6 my-3">
-      <%= form_tag feedback_form_path, method: :post, class:"form-horizontal feedback-form", role:"form", data: { turbo: false, controller: 'feedback', feedback_target: 'form' } do %>
+      <%= form_tag feedback_form_path, method: :post, class:"form-horizontal feedback-form", role:"form", data: { turbo: false, controller: 'feedback recaptcha', feedback_target: 'form', action: 'submit->recaptcha#refresh' } do %>
         <div class="row">
           <div class="col-sm-12 px-4 mb-2">
             <div class="alert alert-info" role="alert">
@@ -34,10 +34,7 @@
           <% if current_user.blank? %>
             <div class="form-group row mb-3">
               <div class="offset-sm-3 col-sm-9">
-                <%# no_script causes multiple response parameters to be submitted, which breaks verification. %>
-                <%= recaptcha_tags noscript: false %>
-
-                <p>(Stanford users can avoid this Captcha by logging in.)</p>
+                <%= render RecaptchaComponent.new(action: 'feedback') %>
               </div>
             </div>
           <% end %>
