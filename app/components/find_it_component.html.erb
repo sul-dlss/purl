@@ -1,0 +1,7 @@
+<%= render SectionComponent.new(label: 'Also listed in') do %>
+  <ul class="list-unstyled">
+    <% releases.each do |link| %>
+      <li><%= link_to(link.label, link.href, class: 'su-underline') %></li>
+    <% end %>
+  </ul>
+<% end %>
