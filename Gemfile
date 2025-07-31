@@ -23,8 +23,6 @@ gem "sitemap_generator"
 gem "stimulus-rails" # Hotwire's modest JavaScript framework
 gem 'tophat'
 gem "turbo-rails" # Hotwire's SPA-like page accelerator
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "view_component"
 gem 'whenever', require: false # cron jobs
 
@@ -46,7 +44,7 @@ end
 group :development, :test do
   gem 'capybara' # for feature/integration tests
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "debug"
 
   gem 'rspec-rails', '~> 7.1'
 
