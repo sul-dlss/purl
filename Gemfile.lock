@@ -483,7 +483,6 @@ DEPENDENCIES
   stimulus-rails
   tophat
   turbo-rails
-  tzinfo-data
   view_component
   web-console (>= 3.3.0)
   webmock (~> 3.19)
