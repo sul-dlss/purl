@@ -30,7 +30,7 @@ class BibliographicComponent < ViewComponent::Base
 
   # Adds the "Stanford only" red "S" if this is via the OCLC proxy
   def build_transformer(field)
-    ->(value) { format_mods_html(value, field:) + with_stanford_only(value) }
+    ->(value) { helpers.format_mods_html(value, field:) + with_stanford_only(value) }
   end
 
   def with_stanford_only(value)

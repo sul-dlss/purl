@@ -5,7 +5,7 @@ module ModsDisplay
     with_collection_parameter :record
 
     def initialize(record:, html_attributes: {})
-      super
+      super()
 
       @record = record
       @html_attributes = html_attributes

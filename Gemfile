@@ -31,7 +31,7 @@ gem 'whenever', require: false # cron jobs
 # DLSS and its community
 gem 'dor-rights-auth', '~> 1.6'
 gem 'iiif-presentation', '~> 1.3'
-gem 'mods_display', '~> 1.5'
+gem 'mods_display', '~> 1.7'
 gem "purl_fetcher-client", "~> 3.1"
 
 group :production do

@@ -4,7 +4,7 @@ class VersionActionsComponent < ViewComponent::Base
   def initialize(version:, requested_version:)
     @version = version
     @requested_version = requested_version
-    super
+    super()
   end
 
   attr_reader :version
