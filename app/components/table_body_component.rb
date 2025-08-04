@@ -4,7 +4,7 @@ class TableBodyComponent < ViewComponent::Base
   renders_many :values
 
   def initialize(field:)
-    super
+    super()
 
     @field = field
   end

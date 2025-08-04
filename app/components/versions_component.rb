@@ -5,7 +5,7 @@ class VersionsComponent < ViewComponent::Base
     @purl = purl
     @version = version
     @label_id = 'versions'
-    super
+    super()
   end
 
   attr_reader :purl, :label_id

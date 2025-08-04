@@ -27,7 +27,7 @@ class AccessComponent < ViewComponent::Base
   end
 
   def render_field(access_condition)
-    value_transformer = ->(text) { stylize_links(format_mods_html(text, field: access_condition)) }
+    value_transformer = ->(text) { stylize_links(helpers.format_mods_html(text, field: access_condition)) }
     render ModsDisplay::FieldComponent.new(field: access_condition, value_transformer:)
   end
 
