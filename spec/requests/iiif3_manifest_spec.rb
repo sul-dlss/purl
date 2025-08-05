@@ -305,13 +305,13 @@ RSpec.describe 'IIIF v3 manifests' do
 
       pdf = canvas['items'].first['items'].first
       body = pdf.fetch('body')
-      expect(body['id']).to eq 'https://stacks.stanford.edu/file/bb253gh8060/SC0193_Agenda_6381_2010-10-07_001.pdf'
+      expect(body['id']).to eq 'https://stacks.stanford.edu/v2/file/bb253gh8060/version/1/SC0193_Agenda_6381_2010-10-07_001.pdf'
       expect(body['format']).to eq 'application/pdf'
       expect(body['type']).to eq 'Text'
 
       probe_service = body.fetch('service').first
       expect(probe_service['type']).to eq 'AuthProbeService2'
-      expect(probe_service['id']).to eq 'https://stacks.stanford.edu/iiif/auth/v2/probe?id=https%3A%2F%2Fstacks.stanford.edu%2Ffile%2Fbb253gh8060%2FSC0193_Agenda_6381_2010-10-07_001.pdf'
+      expect(probe_service['id']).to eq 'https://stacks.stanford.edu/iiif/auth/v2/probe?id=https%3A%2F%2Fstacks.stanford.edu%2Fv2%2Ffile%2Fbb253gh8060%2Fversion%2F1%2FSC0193_Agenda_6381_2010-10-07_001.pdf'
       expect(probe_service['service']).to include hash_including 'type' => 'AuthAccessService2'
       expect(probe_service.dig('service', 0, 'service')).to include hash_including 'type' => 'AuthAccessTokenService2'
     end
@@ -335,13 +335,13 @@ RSpec.describe 'IIIF v3 manifests' do
 
       pdf = canvas['items'].first['items'].first
       body = pdf.fetch('body')
-      expect(body['id']).to eq 'https://stacks.stanford.edu/file/bh502xm3351/CAS_bh502xm3351.pdf'
+      expect(body['id']).to eq 'https://stacks.stanford.edu/v2/file/bh502xm3351/version/1/CAS_bh502xm3351.pdf'
       expect(body['format']).to eq 'application/pdf'
       expect(body['type']).to eq 'Text'
 
       probe_service = body.fetch('service').first
       expect(probe_service['type']).to eq 'AuthProbeService2'
-      expect(probe_service['id']).to eq 'https://stacks.stanford.edu/iiif/auth/v2/probe?id=https%3A%2F%2Fstacks.stanford.edu%2Ffile%2Fbh502xm3351%2FCAS_bh502xm3351.pdf'
+      expect(probe_service['id']).to eq 'https://stacks.stanford.edu/iiif/auth/v2/probe?id=https%3A%2F%2Fstacks.stanford.edu%2Fv2%2Ffile%2Fbh502xm3351%2Fversion%2F1%2FCAS_bh502xm3351.pdf'
       expect(probe_service['service']).to include hash_including 'type' => 'AuthAccessService2'
       expect(probe_service.dig('service', 0, 'service')).to include hash_including 'type' => 'AuthAccessTokenService2'
     end
@@ -364,7 +364,7 @@ RSpec.describe 'IIIF v3 manifests' do
       expect(canvas['width']).not_to be_present
 
       obj = canvas['items'].first['items'].first
-      expect(obj['body']['id']).to eq 'https://stacks.stanford.edu/file/hc941fm6529/hc941fm6529.json'
+      expect(obj['body']['id']).to eq 'https://stacks.stanford.edu/v2/file/hc941fm6529/version/1/hc941fm6529.json'
       expect(obj['body']['format']).to eq 'application/vnd.threejs+json'
       expect(obj['body']['type']).to eq 'Model'
     end
@@ -414,7 +414,7 @@ RSpec.describe 'IIIF v3 manifests' do
       expect(canvas['width']).not_to be_present
 
       obj = canvas['items'].first['items'].first
-      expect(obj['body']['id']).to eq 'https://stacks.stanford.edu/file/bg387kw8222/bg387kw8222_low.obj'
+      expect(obj['body']['id']).to eq 'https://stacks.stanford.edu/v2/file/bg387kw8222/version/1/bg387kw8222_low.obj'
       expect(obj['body']['format']).to eq 'text/plain'
       expect(obj['body']['type']).to eq 'Dataset'
     end
