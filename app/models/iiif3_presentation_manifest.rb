@@ -232,9 +232,17 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     img_res
   end
 
+  def stacks_version
+    @purl_version.version_id
+  end
+
+  def stacks_version_file_url(druid, filename)
+    "#{Settings.stacks.url}/v2/file/#{druid}/version/#{stacks_version}/#{ERB::Util.url_encode(filename)}"
+  end
+
   def binary_resource(resource)
     bin_res = IIIF::V3::Presentation::Resource.new
-    file_url = stacks_file_url(resource.druid, resource.filename)
+    file_url = stacks_version_file_url(resource.druid, resource.filename)
     bin_res['id'] = file_url
     bin_res['type'] = iiif_resource_type(resource)
     bin_res['label'] = resource.filename
