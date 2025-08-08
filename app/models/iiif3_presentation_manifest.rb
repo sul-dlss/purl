@@ -237,6 +237,10 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   end
 
   def stacks_version_file_url(druid, filename)
+    # we can only get versions paths in sul-embed if we pass a parameter.
+    # if we are just doing purl/druid we need to return the simple path
+    return stacks_file_url(druid, filename) if @purl_version.head?
+
     "#{Settings.stacks.url}/v2/file/#{druid}/version/#{stacks_version}/#{ERB::Util.url_encode(filename)}"
   end
 
