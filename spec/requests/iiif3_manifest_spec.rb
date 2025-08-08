@@ -132,9 +132,9 @@ RSpec.describe 'IIIF v3 manifests' do
       expect(canvas['items'].first['items'].length).to eq 1
       image = canvas['items'].first['items'].first
       service = image['body']['service'].first
-      expect(service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/login'
+      expect(service['services']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/login'
 
-      login_service = service['service'].detect { |x| x['profile'] == 'http://iiif.io/api/auth/1/login' }
+      login_service = service['services'].detect { |x| x['profile'] == 'http://iiif.io/api/auth/1/login' }
       expect(login_service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/token'
       expect(login_service['label']).to eq 'Log in to access all available features.'
       expect(login_service['confirmLabel']).to eq 'Login'
@@ -151,9 +151,9 @@ RSpec.describe 'IIIF v3 manifests' do
       get '/pg500wr6297/iiif3/manifest'
 
       service = json['items'][2]['items'].first['items'].first['body']['service'].first
-      expect(service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/login'
+      expect(service['services']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/login'
 
-      login_service = service['service'].detect { |x| x['profile'] == 'http://iiif.io/api/auth/1/login' }
+      login_service = service['services'].detect { |x| x['profile'] == 'http://iiif.io/api/auth/1/login' }
       expect(login_service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/token'
       expect(login_service['label']).to eq 'Available for checkout.'
       expect(login_service['confirmLabel']).to eq 'Checkout'
@@ -441,7 +441,7 @@ RSpec.describe 'IIIF v3 manifests' do
       get "/#{druid}/iiif3/manifest"
       expect(response).to have_http_status(:ok)
 
-      external_interaction_service = json['items'].first['items'].first['items'].first['body']['service'].first['service'].first
+      external_interaction_service = json['items'].first['items'].first['items'].first['body']['service'].first['services'].first
       expect(external_interaction_service['profile']).to eq 'http://iiif.io/api/auth/1/external'
       expect(external_interaction_service['label']).to eq 'External Authentication Required'
       expect(external_interaction_service['failureHeader']).to eq 'Restricted Material'
