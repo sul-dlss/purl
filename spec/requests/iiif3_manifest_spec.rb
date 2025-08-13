@@ -170,10 +170,24 @@ RSpec.describe 'IIIF v3 manifests' do
       .to eq 'Property rights reside with the repository. Copyright © Stanford University. All Rights Reserved.'
   end
 
-  it 'publishes IIIF manifests for books with image constituents' do
+  it 'publishes IIIF manifests for books with image constituents and pdf in rendering' do
     get '/zf119tw4418/iiif3/manifest'
 
-    expect(json['items'].length).to eq 58
+    expect(json['rendering'].length).to eq 1
+    expect(json['rendering'].first['id']).to eq 'https://stacks.stanford.edu/file/zf119tw4418/zf119tw4418_31_0000.pdf'
+
+    canvas = json['items'].first
+    expect(canvas['items'].length).to eq 1
+    expect(canvas['items'].first['items'].length).to eq 1
+    expect(canvas['label']['en'].first).to eq 'Image 1'
+    expect(canvas['renderings'].first['id']).to end_with '/file/zf119tw4418/zf119tw4418_06_0001.pdf'
+
+    image = canvas['items'].first['items'].first
+    expect(image['body']['id']).to end_with '/image/iiif/zf119tw4418%2Fzf119tw4418_00_0001/full/full/0/default.jpg'
+    expect(image['body']['height']).to eq 2959
+    expect(image['body']['width']).to eq 2058
+
+    expect(json['items'].length).to eq 57
     expect(json['metadata'].length).to eq 13
   end
 
