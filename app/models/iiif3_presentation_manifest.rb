@@ -137,9 +137,17 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     canv.label = {
       en: [resource.label.presence || 'image']
     }
+    canv.rendering = []
+
     if image?(resource)
       canv.height = resource.height
       canv.width = resource.width
+      if downloadable_file?(resource)
+        canv.rendering += [binary_resource(
+          resource,
+          label: "Original source file (#{number_to_human_size(resource.size)})"
+        ).to_ordered_hash]
+      end
     end
     canv.items << annotation_page_for_resource(resource)
 
@@ -149,7 +157,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       canv[canvas_type] = thumbnail_canvas
 
       canv['annotations'] = supplementing_resources_annotation_page(resource_group)
-      canv['rendering'] = renderings_for_resource_group(resource_group)
+      canv.rendering += renderings_for_resource_group(resource_group)
     end
 
     canv
@@ -256,12 +264,12 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     "#{Settings.stacks.url}/v2/file/#{druid}/version/#{stacks_version}/#{ERB::Util.url_encode(filename)}"
   end
 
-  def binary_resource(resource)
+  def binary_resource(resource, label: resource.filename)
     bin_res = IIIF::V3::Presentation::Resource.new
     file_url = stacks_version_file_url(resource.druid, resource.filename)
     bin_res['id'] = file_url
     bin_res['type'] = iiif_resource_type(resource)
-    bin_res['label'] = { en: [resource.filename] }
+    bin_res['label'] = { en: [label] }
     bin_res.format = resource.mimetype
 
     bin_res.service = [probe_service(resource, file_url)]
