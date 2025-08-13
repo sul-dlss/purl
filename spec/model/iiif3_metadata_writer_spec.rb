@@ -282,6 +282,52 @@ RSpec.describe Iiif3MetadataWriter do
       end
     end
 
+    context 'with no email for contact, structural dates' do
+      # description fields taken from yh887qk5737
+      let(:cocina_descriptive) do
+        {
+
+          'event' => [
+            {
+              'date' => [
+                {
+                  'structuredValue' => [
+                    {
+                      'value' => '1930',
+                      'type' => 'start',
+                      'status' => 'primary'
+                    },
+                    {
+
+                      'value' => '1989',
+                      'type' => 'end'
+                    }
+                  ],
+                  'type' => 'creation',
+                  'qualifier' => 'approximate'
+                }
+              ]
+            }
+          ],
+
+          'access' => {
+            'accessContact' => [
+              {
+                'value' => 'Stanford University. Libraries. Department of Special Collections and University Archives',
+                'type' => 'repository'
+              }
+            ]
+          }
+
+        }
+      end
+
+      it 'extracts the date and contact correctly' do
+        expect(metadata.find { it['label'][:en] == ['Date'] }['value'][:en]).to eq %w[1930 1989]
+        expect(metadata.find { it['label'][:en] == ['Contact'] }).to be_nil
+      end
+    end
+
     context 'with structured contributor name, that is not forename, surname and a structured title' do
       let(:cocina_descriptive) do
         PurlResource.find('bb006mf9900').version(:head).cocina['description']
