@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'IIIF Canvas' do
   context 'when using v2' do
     it 'renders the json for manifest' do
-      get '/bc854fy5899/iiif/canvas/bc854fy5899_1'
+      get '/bc854fy5899/iiif/canvas/cocina-fileSet-bc854fy5899-bc854fy5899_1'
       expect(response.parsed_body['label']).to eq('Page 1')
     end
 
@@ -15,7 +15,7 @@ RSpec.describe 'IIIF Canvas' do
 
   context 'when using v3' do
     it 'renders the json for manifest' do
-      get '/bc854fy5899/iiif3/canvas/bc854fy5899_1'
+      get '/bc854fy5899/iiif3/canvas/cocina-fileSet-bc854fy5899-bc854fy5899_1'
       expect(response.parsed_body['label']['en'].first).to eq('Page 1')
     end
 

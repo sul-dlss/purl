@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'IIIF Annotation Page' do
   context 'when using v3' do
     it 'renders the json for manifest' do
-      get '/bc854fy5899/iiif3/annotation_page/bc854fy5899_1'
+      get '/bc854fy5899/iiif3/annotation_page/cocina-fileSet-bc854fy5899-bc854fy5899_1'
       expect(response.parsed_body['items'].first['motivation']).to eq('painting')
     end
 
