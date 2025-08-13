@@ -221,10 +221,6 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       img_res.service[0]['service'].append(iiif_stacks_v1_login_service)
     end
 
-    if rights.cdl_rights_for_file(resource.filename)
-      img_res.service[0]['service'].append(iiif_cdl_login_service)
-    end
-
     if rights.restricted_by_location?(resource.filename)
       img_res.service[0]['service'].append(iiif_location_auth_service)
     end
@@ -382,29 +378,6 @@ class Iiif3PresentationManifest < IiifPresentationManifest
           '@id' => "#{Settings.stacks.url}/Shibboleth.sso/Logout",
           'profile' => 'http://iiif.io/api/auth/1/logout',
           'label' => 'Logout'
-        }
-      ]
-    )
-  end
-
-  def iiif_cdl_login_service
-    IIIF::V3::Presentation::Service.new(
-      '@context' => 'http://iiif.io/api/auth/1/context.json',
-      'id' => "#{Settings.stacks.url}/auth/iiif/cdl/#{druid}/checkout",
-      'profile' => 'http://iiif.io/api/auth/1/login',
-      'label' => 'Available for checkout.',
-      'confirmLabel' => 'Checkout',
-      'failureHeader' => 'Unable to authenticate',
-      'failureDescription' => 'The authentication service cannot be reached.',
-      'service' => [
-        {
-          '@id' => "#{Settings.stacks.url}/image/iiif/token/#{druid}",
-          'profile' => 'http://iiif.io/api/auth/1/token'
-        },
-        {
-          '@id' => "#{Settings.stacks.url}/auth/iiif/cdl/#{druid}/checkin",
-          'profile' => 'http://iiif.io/api/auth/1/logout',
-          'label' => 'Check in early'
         }
       ]
     )

@@ -146,24 +146,6 @@ RSpec.describe 'IIIF v3 manifests' do
     end
   end
 
-  context 'with a cdl access' do
-    it 'includes authorization services' do
-      get '/pg500wr6297/iiif3/manifest'
-
-      service = json['items'][2]['items'].first['items'].first['body']['service'].first
-      expect(service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/login'
-
-      login_service = service['service'].detect { |x| x['profile'] == 'http://iiif.io/api/auth/1/login' }
-      expect(login_service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/token'
-      expect(login_service['label']).to eq 'Available for checkout.'
-      expect(login_service['confirmLabel']).to eq 'Checkout'
-      expect(login_service['id']).to eq 'https://stacks.stanford.edu/auth/iiif/cdl/pg500wr6297/checkout'
-      expect(login_service['failureHeader']).to eq 'Unable to authenticate'
-      expect(login_service['failureDescription']).to eq 'The authentication serv' \
-                                                        'ice cannot be reached.'
-    end
-  end
-
   it 'properly decodes XML entities into their UTF-8 characters' do
     get '/bb737zp0787/iiif3/manifest'
     expect(json['requiredStatement']['value']['en'].first)

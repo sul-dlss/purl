@@ -66,7 +66,6 @@ class IiifPresentationManifest
     rights.stanford_only_rights_for_file(file.filename).first ||
       rights.world_rights_for_file(file.filename).first ||
       rights.restricted_by_location?(file.filename) ||
-      rights.cdl_rights_for_file(file.filename) ||
       thumbnail?(file)
   end
 
@@ -247,10 +246,6 @@ class IiifPresentationManifest
       img_res.service['service'] = [iiif_stacks_login_service]
     end
 
-    if rights.cdl_rights_for_file(resource.filename)
-      img_res.service['service'] = [iiif_cdl_login_service]
-    end
-
     if rights.restricted_by_location?(resource.filename)
       img_res.service['service'].append(iiif_location_auth_service)
     end
@@ -372,29 +367,6 @@ class IiifPresentationManifest
     )
   end
 
-  def iiif_cdl_login_service
-    IIIF::Service.new(
-      '@context' => 'http://iiif.io/api/auth/1/context.json',
-      'id' => "#{Settings.stacks.url}/auth/iiif/cdl/#{druid}/checkout",
-      'profile' => 'http://iiif.io/api/auth/1/login',
-      'label' => 'Available for checkout.',
-      'confirmLabel' => 'Checkout',
-      'failureHeader' => 'Unable to authenticate',
-      'failureDescription' => 'The authentication service cannot be reached.',
-      'service' => [
-        {
-          '@id' => "#{Settings.stacks.url}/image/iiif/token/#{druid}",
-          'profile' => 'http://iiif.io/api/auth/1/token'
-        },
-        {
-          '@id' => "#{Settings.stacks.url}/auth/iiif/cdl/#{druid}/checkin",
-          'profile' => 'http://iiif.io/api/auth/1/logout',
-          'label' => 'Check in early'
-        }
-      ]
-    )
-  end
-
   def iiif_location_auth_service
     IIIF::Service.new(
       '@context' => 'http://iiif.io/api/auth/1/context.json',
@@ -411,46 +383,7 @@ class IiifPresentationManifest
     )
   end
 
-  def copyright
-    if rights.controlled_digital_lending?
-      return [
-        cdl_copyright_statement,
-        purl_version.copyright.presence
-      ].compact
-    end
-
-    purl_version.copyright
-  end
-
-  # rubocop:disable Rails/OutputSafety, Metrics/MethodLength
-  def cdl_copyright_statement
-    <<-EOSTATEMENT.html_safe
-      <p>
-        This Item may be protected by third-party copyright and/or related intellectual property rights. It is provided by Stanford University Libraries on a non-commercial basis for your personal academic and educational research purposes only. You may not make copies of the Item, display it online (e.g., on the internet), or distribute it to anyone else, including friends, colleagues, or classmates. By continuing to use this digital resource you are acknowledging and agree to comply with these terms of use. For additional details, see the following Copyright Notice.
-      </p>
-      <p>
-        NOTICE WARNING CONCERNING COPYRIGHT RESTRICTIONS
-      </p>
-      <p>
-        The copyright law of the United States (title 17, United States Code) governs
-        the making of photocopies or other reproductions of copyrighted material.
-      </p>
-      <p>
-        Under certain conditions specified in the law, libraries and archives are
-        authorized to furnish a photocopy or other reproduction. One of these
-        specific conditions is that the photocopy or reproduction is not to be
-        “used for any purpose other than private study, scholarship, or research.”
-        If a user makes a request for, or later uses, a photocopy or reproduction
-        for purposes in excess of “fair use,” that user may be liable for copyright infringement.
-      </p>
-      <p>
-        This institution reserves the right to refuse to accept a copying order
-        if, in its judgment, fulfillment of the order would involve violation
-        of copyright law.
-      </p>
-    EOSTATEMENT
-  end
-  # rubocop:enable Rails/OutputSafety, Metrics/MethodLength
+  delegate :copyright, to: :purl_version
 
   def manifest_url(**kwargs)
     controller.url_for([:manifest, iiif_namespace, :purl, { id: druid, **kwargs }])
