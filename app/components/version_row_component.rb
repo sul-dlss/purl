@@ -3,6 +3,8 @@
 class VersionRowComponent < ViewComponent::Base
   with_collection_parameter :version
 
+  # @param [PurlVersion] version
+  # @param [PurlVersion] requested_version
   def initialize(version:, requested_version:)
     @version = version
     @requested_version = requested_version
