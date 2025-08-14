@@ -162,7 +162,11 @@ RSpec.describe 'IIIF v3 manifests' do
     expect(canvas['items'].length).to eq 1
     expect(canvas['items'].first['items'].length).to eq 1
     expect(canvas['label']['en'].first).to eq 'Image 1'
-    expect(canvas['renderings'].first['id']).to end_with '/file/zf119tw4418/zf119tw4418_06_0001.pdf'
+    expect(canvas['rendering'].length).to eq 2
+    expect(canvas['rendering'].first['label']['en']).to eq ['Original source file (1.1 MB)']
+    expect(canvas['rendering'].first['id']).to end_with '/file/zf119tw4418/zf119tw4418_00_0001.jp2'
+    expect(canvas['rendering'].last['label']['en']).to eq ['zf119tw4418_06_0001.pdf']
+    expect(canvas['rendering'].last['id']).to end_with '/file/zf119tw4418/zf119tw4418_06_0001.pdf'
 
     image = canvas['items'].first['items'].first
     expect(image['body']['id']).to end_with '/image/iiif/zf119tw4418%2Fzf119tw4418_00_0001/full/full/0/default.jpg'
