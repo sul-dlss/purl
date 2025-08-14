@@ -30,8 +30,8 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
     manifest = iiif_manifest_class.new(manifest_data)
 
-    # Set viewingHint to paged if this is a book
-    manifest.viewingHint = 'paged' if type == 'book'
+    # Set behavior to paged if this is a book
+    manifest['behavior'] = ['paged'] if type == 'book'
     (_collection, collection_head_version) = containing_purl_collections&.first
     collection_title = collection_head_version&.title
     metadata_writer = Iiif3MetadataWriter.new(cocina_descriptive: cocina['description'],
@@ -139,7 +139,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       canv[canvas_type] = thumbnail_canvas
 
       canv['annotations'] = supplementing_resources_annotation_page(resource_group)
-      canv['renderings'] = renderings_for_resource_group(resource_group)
+      canv['rendering'] = renderings_for_resource_group(resource_group)
     end
 
     canv
@@ -216,13 +216,13 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     img_res.width = resource.width
 
     img_res.service = [iiif_image_v2_service(url)]
-    img_res.service[0]['service'] = []
+    img_res.service[0]['services'] = []
     if rights.stanford_only_rights_for_file(resource.filename).first
-      img_res.service[0]['service'].append(iiif_stacks_v1_login_service)
+      img_res.service[0]['services'].append(iiif_stacks_v1_login_service)
     end
 
     if rights.restricted_by_location?(resource.filename)
-      img_res.service[0]['service'].append(iiif_location_auth_service)
+      img_res.service[0]['services'].append(iiif_location_auth_service)
     end
 
     img_res
@@ -245,7 +245,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     file_url = stacks_version_file_url(resource.druid, resource.filename)
     bin_res['id'] = file_url
     bin_res['type'] = iiif_resource_type(resource)
-    bin_res['label'] = resource.filename
+    bin_res['label'] = { en: [resource.filename] }
     bin_res.format = resource.mimetype
 
     bin_res.service = [probe_service(resource, file_url)]
