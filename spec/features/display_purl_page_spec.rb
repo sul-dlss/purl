@@ -182,7 +182,7 @@ RSpec.describe 'Displaying the PURL page' do
   end
 
   describe 'license' do
-    let(:druid) { 'wp335yr5649' }
+    let(:druid) { 'zb733jx3137' }
 
     it 'included in purl page' do
       visit "/#{druid}"
@@ -191,7 +191,7 @@ RSpec.describe 'Displaying the PURL page' do
   end
 
   describe 'terms of use' do
-    let(:druid) { 'wp335yr5649' }
+    let(:druid) { 'bb051dp0564' }
 
     it 'included in purl page' do
       visit "/#{druid}"
@@ -224,7 +224,7 @@ RSpec.describe 'Displaying the PURL page' do
   end
 
   context 'with a version manifest' do
-    let(:druid) { 'wp335yr5649' }
+    let(:druid) { 'zb733jx3137' }
 
     it 'shows the version information panel' do
       visit "/#{druid}"
@@ -235,7 +235,7 @@ RSpec.describe 'Displaying the PURL page' do
     it 'draws the page' do
       visit "/#{druid}/version/3"
       link = page.find('link[rel="alternate"][title="oEmbed Profile"][type="application/json+oembed"]', visible: false)
-      expect(link['href']).to eq 'https://embed.stanford.edu/embed.json?url=https%3A%2F%2Fpurl.stanford.edu%2Fwp335yr5649%2Fversion%2F3'
+      expect(link['href']).to eq 'https://embed.stanford.edu/embed.json?url=https%3A%2F%2Fpurl.stanford.edu%2Fzb733jx3137%2Fversion%2F3'
     end
   end
 
@@ -244,7 +244,7 @@ RSpec.describe 'Displaying the PURL page' do
   end
 
   context 'dataset item' do
-    let(:druid) { 'wp335yr5649' }
+    let(:druid) { 'rs276tc2764' }
 
     it 'adds schema.org markup for Datasets' do
       visit "/#{druid}"

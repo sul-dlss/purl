@@ -1,9 +1,0 @@
-{
-  "versions": {
-    "1": { "state": "permanently withdrawn", "date": null },
-    "2": { "state": "available", "date": "2024-07-22T13:40:23-07:00" },
-    "3": { "state": "withdrawn", "date": "2024-07-23T23:24:13-07:00" },
-    "4": { "state": "available", "date": "2024-07-24T08:58:48-07:00" }
-  },
-  "head": 4
-}

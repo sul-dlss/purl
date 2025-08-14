@@ -85,7 +85,7 @@ RSpec.describe PurlVersion do
     end
 
     context 'when layout is versioned' do
-      let(:druid) { 'wp335yr5649' }
+      let(:druid) { 'zb733jx3137' }
       let(:head_version) { true }
       let(:version_id) { '3' }
       let(:resource_retriever) { VersionedResourceRetriever.new(druid:, version_id:) }
@@ -93,7 +93,7 @@ RSpec.describe PurlVersion do
       describe '#public_xml' do
         it 'retrieves public XML from versioned layout' do
           expect(instance.public_xml.title).to eq(
-            'Code and Data supplement to "Deterministic Matrices Matching the Compressed Sensing Phase Transitions of Gaussian Random Matrices." -- VERSION 3'
+            'Testing versioning issue with the review workflow in the new application again'
           )
         end
       end
