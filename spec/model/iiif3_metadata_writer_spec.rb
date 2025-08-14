@@ -328,7 +328,7 @@ RSpec.describe Iiif3MetadataWriter do
 
       it 'extracts the metadata' do
         expect(metadata.find do
-          it['label'][:en] == ['Table of contents']
+          it['label'][:en] == ['Contents']
         end['value'][:en]).to include('Of the leaven of pharisees')
       end
     end

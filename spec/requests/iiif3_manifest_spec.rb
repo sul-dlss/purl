@@ -74,7 +74,7 @@ RSpec.describe 'IIIF v3 manifests' do
       expect(image['body']['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/full/0/default.jpg'
 
       expect(json['metadata'].class).to eq Array
-      expect(json['metadata'].size).to eq(15)
+      expect(json['metadata'].size).to eq 15
       expect(json['metadata']).to eq(expected_dc_metadata)
     end
   end
@@ -407,7 +407,11 @@ RSpec.describe 'IIIF v3 manifests' do
       get "/#{druid}/iiif3/manifest"
       expect(response).to have_http_status(:ok)
       expect(json['label']['en'].first).to eq '10 Meter Contours: Russian River Basin, California'
-      expect(json['metadata'].size).to eq 12
+      expect(json['metadata'].size).to eq 15
+      expect(json['metadata'].flat_map do |elem|
+        elem['label']['en']
+      end).to eq ['Available Online', 'Title', 'Type', 'Format', 'Language', 'Abstract', 'Purpose', 'Preferred citation',
+                  'Supplemental information', 'WGS84 Cartographics', 'Subject', 'Coverage', 'Date', 'Identifier', 'PublishDate']
     end
   end
 
