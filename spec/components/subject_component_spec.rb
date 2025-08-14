@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe SubjectComponent, type: :component do
   include ActionView::Helpers::UrlHelper
+
   let(:druid) { 'bb001dq8600' }
 
   let(:purl_version) do
