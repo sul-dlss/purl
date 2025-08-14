@@ -112,7 +112,7 @@ class Iiif3MetadataWriter
   def extract_notes
     values = {}
     Array(cocina_descriptive['note']).each do
-      key = (it['type'] || 'Description').capitalize
+      key = it['displayLabel'] || it['type']&.capitalize || 'Description'
       values[key] ||= []
       values[key] += structured_values(it)
     end
