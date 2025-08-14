@@ -58,11 +58,18 @@ class Iiif3MetadataWriter
     return contributor['value'] unless structured_name
 
     single_name = structured_name.find { it['type'] == 'name' }
-    return single_name['value'] if single_name
+    life_date = structured_name.find { it['type'] == 'life dates' }
+    return name_with_dates(single_name['value'], life_date) if single_name
 
     forename = structured_name.find { it['type'] == 'forename' }['value']
     surname = structured_name.find { it['type'] == 'surname' }['value']
-    "#{surname}, #{forename}"
+    name_with_dates("#{surname}, #{forename}", life_date)
+  end
+
+  def name_with_dates(name, date_struct)
+    return name if date_struct.blank?
+
+    "#{name}, #{date_struct['value']}"
   end
 
   def contacts
