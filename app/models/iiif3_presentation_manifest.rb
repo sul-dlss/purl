@@ -241,13 +241,9 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
     img_res.service = [iiif_image_v2_service(url)]
     img_res.service[0]['services'] = []
-    if rights.stanford_only_rights_for_file(resource.filename).first
-      img_res.service[0]['services'].append(iiif_stacks_v1_login_service)
-    end
+    img_res.service[0]['services'].append(iiif_stacks_v1_login_service) if rights.stanford_only_rights_for_file(resource.filename).first
 
-    if rights.restricted_by_location?(resource.filename)
-      img_res.service[0]['services'].append(iiif_location_auth_service)
-    end
+    img_res.service[0]['services'].append(iiif_location_auth_service) if rights.restricted_by_location?(resource.filename)
 
     img_res
   end

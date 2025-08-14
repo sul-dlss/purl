@@ -242,13 +242,9 @@ class IiifPresentationManifest
     img_res.service = iiif_service(url)
     img_res.service['service'] = []
 
-    if rights.stanford_only_rights_for_file(resource.filename).first
-      img_res.service['service'] = [iiif_stacks_login_service]
-    end
+    img_res.service['service'] = [iiif_stacks_login_service] if rights.stanford_only_rights_for_file(resource.filename).first
 
-    if rights.restricted_by_location?(resource.filename)
-      img_res.service['service'].append(iiif_location_auth_service)
-    end
+    img_res.service['service'].append(iiif_location_auth_service) if rights.restricted_by_location?(resource.filename)
 
     anno.resource = img_res
     anno
@@ -325,9 +321,7 @@ class IiifPresentationManifest
   end
 
   def thumbnail_base_uri
-    @thumbnail_base_uri ||= begin
-      stacks_iiif_base_url(thumbnail_image.druid, thumbnail_image.filename) if thumbnail_image
-    end
+    @thumbnail_base_uri ||= (stacks_iiif_base_url(thumbnail_image.druid, thumbnail_image.filename) if thumbnail_image)
   end
 
   def thumbnail?(file)

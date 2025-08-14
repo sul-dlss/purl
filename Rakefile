@@ -5,4 +5,4 @@ require File.expand_path('config/application', __dir__)
 
 Rails.application.load_tasks
 
-task default: [:spec, :rubocop]
+task default: %i[spec rubocop]
