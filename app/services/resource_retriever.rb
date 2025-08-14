@@ -78,7 +78,7 @@ class ResourceRetriever
   end
 
   def meta_json_path
-    Settings.purl_resource.meta
+    Settings.purl_resource.versioned.meta
   end
 
   def cocina_path
@@ -93,7 +93,13 @@ class ResourceRetriever
 
   def meta_json_resource
     @meta_json_resource ||= cache_resource(:meta) do
-      fetch_resource(:meta, meta_json_path)
+      resource = fetch_resource(:meta, meta_json_path)
+      if resource.success?
+        resource
+      else
+        logger.error("Unable to fetch versioned meta JSON for #{druid}. Falling back to default meta JSON.")
+        fetch_resource(:meta, Settings.purl_resource.meta)
+      end
     end
   end
 
