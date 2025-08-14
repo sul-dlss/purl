@@ -89,6 +89,15 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       resource = content_metadata.grouped_resources.first
       file = resource.files.first
       manifest.items << canvas_for_resource(file)
+    elsif %w[book image map].include?(type)
+      content_metadata.grouped_resources.each do |resource_group|
+        file = resource(resource_group)
+        if image?(file) && %w[image page].include?(file.type)
+          manifest.items << canvas_for_resource(resource_group) if deliverable_file?(file)
+        else
+          manifest.rendering += image_rendering_for_resource_group(resource_group)
+        end
+      end
     else
       content_metadata.grouped_resources.each do |resource_group|
         manifest.items << canvas_for_resource(resource_group)
@@ -114,13 +123,14 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     annotation_page_for_resource(selected_resource) if selected_resource
   end
 
+  def resource(resource_group)
+    return resource_group.primary if resource_group.is_a? ContentMetadata::GroupedResource
+
+    resource_group
+  end
+
   def canvas_for_resource(resource_group)
-    resource =
-      if resource_group.is_a? ContentMetadata::GroupedResource
-        resource_group.primary
-      else
-        resource_group
-      end
+    resource = resource(resource_group)
 
     canv = IIIF::V3::Presentation::Canvas.new
     canv['id'] = canvas_url(resource_id: resource.id)
@@ -182,6 +192,12 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   def renderings_for_resource_group(resource_group)
     resource_group.other_resources.map do |other_resource|
       binary_resource(other_resource).to_ordered_hash
+    end
+  end
+
+  def image_rendering_for_resource_group(resource_group)
+    resource_group.files.map do |resources|
+      binary_resource(resources).to_ordered_hash
     end
   end
 

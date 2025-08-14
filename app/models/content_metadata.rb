@@ -94,7 +94,7 @@ class ContentMetadata
     end
 
     def image_file
-      @image_file ||= files.find { |file| file.type == 'image' || file.mimetype == 'image/jp2' }
+      @image_file ||= files.find { |file| file.mimetype == 'image/jp2' }
     end
   end
 end
