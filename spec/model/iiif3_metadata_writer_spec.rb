@@ -293,7 +293,7 @@ RSpec.describe Iiif3MetadataWriter do
         end['value'][:en]).to eq ['Erzherzog Johann; ein Charakterbild',
                                   'mit Beiträgen zur Geschichte der Begründung der zweiten Dynastie Bulgariens nach authentischen ' \
                                   'Quellen und Briefen des Erzherzogs']
-        expect(metadata.find { it['label'][:en] == ['Contributor'] }['value'][:en]).to eq ['Pollak, Heinrich', 'John Salvator']
+        expect(metadata.find { it['label'][:en] == ['Contributor'] }['value'][:en]).to eq ['Pollak, Heinrich, 1835?-1908', 'John Salvator, 1852-1890']
       end
     end
 
