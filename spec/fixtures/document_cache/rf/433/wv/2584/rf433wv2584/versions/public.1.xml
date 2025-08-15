@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:rf433wv2584" published="2024-05-07T08:49:44Z" publishVersion="cocina-models/0.96.0">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>Midtown Manhattan</objectLabel>
+    <otherId name="catkey">11524148</otherId>
+    <otherId name="folio_instance_hrid">a11524148</otherId>
+    <sourceId source="sul">Rumsey:9082</sourceId>
+  </identityMetadata>
+  <contentMetadata objectId="druid:rf433wv2584" type="image">
+    <resource id="cocina-fileSet-rf433wv2584-rf433wv2584_1" sequence="1" type="image">
+      <label>Image 1</label>
+      <file id="9082000.jp2" mimetype="image/jp2" size="107659456" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">448933c4ebf0d18cd8a03740def9caf089e231c1</checksum>
+        <checksum type="md5">b79cef4d6a9e6f84022ad8bb213d4c26</checksum>
+        <imageData height="28300" width="20190"/>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <none/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">Image from the David Rumsey Map Collection courtesy Stanford University Libraries. To obtain permission to publish or reproduce commercially, please contact the David Rumsey Map Center at rumseymapcenter@stanford.edu.</human>
+      <license>https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode</license>
+    </use>
+    <copyright>
+      <human>Property rights reside with the repository, Copyright (c) Stanford University.  Images may be reproduced or transmitted, but not for commercial use. For commercial use or commercial republication, contact rumseymapcenter@stanford.edu This work is licensed under a Creative Commons License. By downloading any images from this site, you agree to the terms of that license. </human>
+    </copyright>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:rf433wv2584">
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:xh235dd9059"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Midtown Manhattan</dc:title>
+    <dc:contributor>Ishihara, Tadashi.</dc:contributor>
+    <dc:type>map</dc:type>
+    <dc:type>cartographic image</dc:type>
+    <dc:type>Maps.</dc:type>
+    <dc:type>Pictorial maps.</dc:type>
+    <dc:type>Aerial views.</dc:type>
+    <dc:format>1 map ; 1 maps ; 113 x 77 cm.</dc:format>
+    <dc:format>unmediated</dc:format>
+    <dc:language>eng</dc:language>
+    <dc:description>Full color. Bird's eye view.</dc:description>
+    <dc:description>Separate Map.</dc:description>
+    <dc:description type="local" displayLabel="Local note">Pub list no.: 9082.000.</dc:description>
+    <dc:subject>Pictorial maps</dc:subject>
+    <dc:coverage>New York (State)</dc:coverage>
+    <dc:coverage>New York</dc:coverage>
+    <dc:coverage>Manhattan</dc:coverage>
+    <dc:coverage>21st century</dc:coverage>
+    <dc:subject>Pictorial maps--New York (State)--New York--Manhattan--21st century</dc:subject>
+    <dc:subject>Bird's-eye views</dc:subject>
+    <dc:coverage>New York (State)</dc:coverage>
+    <dc:coverage>New York</dc:coverage>
+    <dc:coverage>Manhattan</dc:coverage>
+    <dc:coverage>21st century</dc:coverage>
+    <dc:subject>Bird's-eye views--New York (State)--New York--Manhattan--21st century</dc:subject>
+    <dc:subject/>
+    <dc:coverage>New York (State)</dc:coverage>
+    <dc:coverage>21th century</dc:coverage>
+    <dc:subject/>
+    <dc:coverage>New York (N.Y.)</dc:coverage>
+    <dc:coverage>21th century</dc:coverage>
+    <dc:subject/>
+    <dc:coverage>Manhattan (New York, N.Y.)</dc:coverage>
+    <dc:coverage>21th century</dc:coverage>
+    <dc:subject/>
+    <dc:coverage>Midtown Manhattan (New York, N.Y.)</dc:coverage>
+    <dc:coverage>21th century</dc:coverage>
+    <dc:subject>G3804.N4:2M513 A3 2000 .I8</dc:subject>
+    <dc:date>2000</dc:date>
+    <dc:date>2000</dc:date>
+    <dc:publisher>Tadashi Ishihara,</dc:publisher>
+    <dc:identifier>https://purl.stanford.edu/rf433wv2584</dc:identifier>
+    <dc:identifier>http://www.davidrumsey.com/luna/servlet/view/search?q=pub_list_no=%229082.000%22%20LIMIT:RUMSEY~8~1&amp;sort=Pub_List_No_InitialSort,Pub_Date,Pub_List_No,Series_No</dc:identifier>
+    <dc:relation type="collection">David Rumsey Map Collection at Stanford University Libraries</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.4" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
+    <titleInfo>
+      <title>Midtown Manhattan</title>
+    </titleInfo>
+    <name usage="primary" type="personal">
+      <namePart>Ishihara, Tadashi.</namePart>
+    </name>
+    <genre authority="marcgt">map</genre>
+    <genre authority="rdacontent">cartographic image</genre>
+    <genre authority="lcgft">Maps.</genre>
+    <genre authority="lcgft">Pictorial maps.</genre>
+    <genre authority="lcgft">Aerial views.</genre>
+    <typeOfResource>cartographic</typeOfResource>
+    <physicalDescription>
+      <form type="media" authority="rdamedia">unmediated</form>
+      <form type="carrier" authority="rdacarrier">sheet</form>
+      <extent>1 map ; 1 maps ; 113 x 77 cm.</extent>
+    </physicalDescription>
+    <language>
+      <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <note>Full color. Bird's eye view.</note>
+    <note>Separate Map.</note>
+    <note displayLabel="Local note" type="local">Pub list no.: 9082.000.</note>
+    <subject authority="lcsh">
+      <topic>Pictorial maps</topic>
+      <geographic>New York (State)</geographic>
+      <geographic>New York</geographic>
+      <geographic>Manhattan</geographic>
+      <temporal>21st century</temporal>
+    </subject>
+    <subject authority="lctgm">
+      <topic>Bird's-eye views</topic>
+      <geographic>New York (State)</geographic>
+      <geographic>New York</geographic>
+      <geographic>Manhattan</geographic>
+      <temporal>21st century</temporal>
+    </subject>
+    <subject authority="lcsh">
+      <geographic>New York (State)</geographic>
+      <genre>Maps</genre>
+      <temporal>21th century</temporal>
+    </subject>
+    <subject authority="lcsh">
+      <geographic>New York (N.Y.)</geographic>
+      <genre>Maps</genre>
+      <temporal>21th century</temporal>
+    </subject>
+    <subject authority="lcsh">
+      <geographic>Manhattan (New York, N.Y.)</geographic>
+      <genre>Maps</genre>
+      <temporal>21th century</temporal>
+    </subject>
+    <subject authority="lcsh">
+      <geographic>Midtown Manhattan (New York, N.Y.)</geographic>
+      <genre>Maps</genre>
+      <temporal>21th century</temporal>
+    </subject>
+    <classification authority="lcc">G3804.N4:2M513 A3 2000 .I8</classification>
+    <originInfo>
+      <dateIssued encoding="marc">2000</dateIssued>
+      <place>
+        <placeTerm authority="marccountry" type="code">ja</placeTerm>
+      </place>
+      <issuance>monographic</issuance>
+    </originInfo>
+    <originInfo eventType="publication">
+      <dateIssued>2000</dateIssued>
+      <place>
+        <placeTerm type="text">Osaka-City :</placeTerm>
+      </place>
+      <publisher>Tadashi Ishihara,</publisher>
+    </originInfo>
+    <location>
+      <url>https://purl.stanford.edu/rf433wv2584</url>
+    </location>
+    <location>
+      <url usage="primary display" displayLabel="electronic resource">http://www.davidrumsey.com/luna/servlet/view/search?q=pub_list_no=%229082.000%22%20LIMIT:RUMSEY~8~1&amp;sort=Pub_List_No_InitialSort,Pub_Date,Pub_List_No,Series_No</url>
+    </location>
+    <recordInfo>
+      <languageOfCataloging>
+        <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+      </languageOfCataloging>
+      <recordContentSource authority="marcorg">CSt</recordContentSource>
+      <recordOrigin>Converted from MARCXML to MODS version 3.4 using MARC21slim2MODS3-4_SDR.xsl (Version 1.2.5 2013/08/11)</recordOrigin>
+      <recordCreationDate encoding="marc">151215</recordCreationDate>
+      <recordIdentifier>a11524148</recordIdentifier>
+    </recordInfo>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>David Rumsey Map Collection at Stanford University Libraries</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/xh235dd9059</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">Image from the David Rumsey Map Collection courtesy Stanford University Libraries. To obtain permission to publish or reproduce commercially, please contact the David Rumsey Map Center at rumseymapcenter@stanford.edu.</accessCondition>
+    <accessCondition type="copyright">Property rights reside with the repository, Copyright (c) Stanford University.  Images may be reproduced or transmitted, but not for commercial use. For commercial use or commercial republication, contact rumseymapcenter@stanford.edu This work is licensed under a Creative Commons License. By downloading any images from this site, you agree to the terms of that license. </accessCondition>
+    <accessCondition type="license" xlink:href="https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode">This work is licensed under a Creative Commons Attribution Non Commercial Share Alike 3.0 Unported license (CC BY-NC-SA).</accessCondition>
+  </mods>
+  <releaseData>
+    <release to="Searchworks">true</release>
+  </releaseData>
+  <thumb>rf433wv2584/9082000.jp2</thumb>
+</publicObject>

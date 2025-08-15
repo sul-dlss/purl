@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:hc941fm6529" published="2024-10-18T05:02:12Z" publishVersion="cocina-models/0.98.1">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>Sheep (Ovis aries), male, cervical vertabra</objectLabel>
+    <sourceId source="sul">su:ANTH_sheep_edu_10005_g</sourceId>
+  </identityMetadata>
+  <contentMetadata objectId="druid:hc941fm6529" type="3d">
+    <resource id="cocina-fileSet-hc941fm6529-hc941fm6529_1" sequence="1" type="3d">
+      <label>File 1</label>
+      <file id="hc941fm6529.json" mimetype="application/vnd.threejs+json" size="1421074" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">b471c94dcb2b2974305b1111e9709564d6c55ed8</checksum>
+        <checksum type="md5">542e2a688cb605f3977ee53825b71f50</checksum>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:hc941fm6529">
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:cp682sk3081"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Sheep (Ovis aries), male, cervical vertabra</dc:title>
+    <dc:identifier>https://purl.stanford.edu/hc941fm6529</dc:identifier>
+    <dc:relation type="collection">Krish Seetah Bones Collection</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>Sheep (Ovis aries), male, cervical vertabra</title>
+    </titleInfo>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/hc941fm6529</url>
+    </location>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Krish Seetah Bones Collection</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/cp682sk3081</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+  </mods>
+</publicObject>

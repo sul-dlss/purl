@@ -143,7 +143,7 @@ RSpec.describe 'PURL API' do
       it 'returns the meta.json' do
         get '/bb157hs6068.meta_json'
         expect(response).to be_successful
-        expect(response.parsed_body).to eq({ 'searchworks' => false, 'earthworks' => false, 'sitemap' => false })
+        expect(response.parsed_body).to eq({ '$schemaVersion' => 1, 'searchworks' => true, 'earthworks' => true, 'sitemap' => false })
       end
     end
 

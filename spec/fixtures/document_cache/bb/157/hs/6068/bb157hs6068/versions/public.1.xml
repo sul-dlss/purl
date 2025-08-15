@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<publicObject id="druid:bb157hs6068" published="2023-10-27T10:25:22Z" publishVersion="cocina-models/0.91.4">
+<publicObject id="druid:bb157hs6068" published="2025-03-11T20:56:17Z" publishVersion="cocina-models/0.100.0">
   <identityMetadata>
     <objectType>item</objectType>
     <objectLabel>NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES DIVERS MOUVEMENS DES PLANETES ET LEURS DIVERSES REVOLUTIONS, AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE</objectLabel>
@@ -63,7 +63,6 @@
     <dc:identifier>1040</dc:identifier>
     <dc:identifier>https://purl.stanford.edu/bb157hs6068</dc:identifier>
     <dc:relation type="collection">The Glen McLaughlin Map Collection of California as an Island</dc:relation>
-    <dc:relation type="url" href="https://purl.stanford.edu/bb157hs6068"/>
   </oai_dc:dc>
   <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
     <titleInfo>
@@ -123,9 +122,5 @@
     <accessCondition type="copyright">This work has been identified as being free of known restrictions under copyright law, including all related and neighboring rights. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.</accessCondition>
     <accessCondition type="license" xlink:href="https://creativecommons.org/publicdomain/mark/1.0/">This work has been identified as being free of known restrictions under copyright law, including all related and neighboring rights (Public Domain Mark 1.0).</accessCondition>
   </mods>
-  <releaseData>
-    <release to="Earthworks">true</release>
-    <release to="Searchworks">true</release>
-  </releaseData>
   <thumb>bb157hs6068/bb157hs6068_05_0001.jp2</thumb>
 </publicObject>

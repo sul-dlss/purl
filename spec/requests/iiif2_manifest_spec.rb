@@ -54,7 +54,7 @@ RSpec.describe 'IIIF v2 manifests' do
       { 'label' => 'Identifier', 'value' => '1040' },
       { 'label' => 'Identifier', 'value' => 'https://purl.stanford.edu/bb157hs6068' },
       { 'label' => 'Relation', 'value' => 'The Glen McLaughlin Map Collection of California as an Island' },
-      { 'label' => 'PublishDate', 'value' => '2023-10-27T10:25:22Z' } # publish date was added
+      { 'label' => 'PublishDate', 'value' => '2025-03-11T20:56:17Z' }
     ]
     # rubocop:enable Layout/LineLength
     expect(json['metadata']).to eq(expected_metadata)
@@ -267,7 +267,7 @@ RSpec.describe 'IIIF v2 manifests' do
         expect(json['sequences'].first['canvases'].length).to eq 23
 
         canvas = json['sequences'].first['canvases'][0]
-        expect(canvas['label']).to start_with "Cover: Carey's American atlas."
+        expect(canvas['label']).to start_with "(Covers to) Carey's American Atlas:"
 
         expect(canvas['images'].length).to eq 1
         image = canvas['images'].first
@@ -276,7 +276,7 @@ RSpec.describe 'IIIF v2 manifests' do
         expect(image['resource']['width']).to eq 6475
 
         canvas = json['sequences'].first['canvases'][1]
-        expect(canvas['label']).to start_with "Title Page: Carey's American atlas."
+        expect(canvas['label']).to start_with "(Title Page to) Carey's American Atlas:"
 
         expect(canvas['images'].length).to eq 1
         image = canvas['images'].first

@@ -74,7 +74,7 @@ RSpec.describe 'purl', type: :feature do
     it 'returns public xml' do
       visit '/xm166kd3734.xml'
       xml = Nokogiri::XML(page.body)
-      expect(xml.search('//objectId').first.text).to eq('druid:xm166kd3734')
+      expect(xml.search('//objectLabel').first.text).to eq 'Walters Ms. W.12, On Christian rulers'
     end
 
     it '404 with unavailable message when no public_xml' do

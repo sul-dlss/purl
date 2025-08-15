@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:bf995rh7184" published="2024-05-08T05:34:46Z" publishVersion="cocina-models/0.96.0">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>John Chowning On Composition</objectLabel>
+    <sourceId source="sul">sul:SC0634_2001-262_b07_f49_Chowning_on_Composition_1983</sourceId>
+  </identityMetadata>
+  <contentMetadata objectId="druid:bf995rh7184" type="book">
+    <bookData readingOrder="ltr"/>
+    <resource id="cocina-fileSet-bf995rh7184-bf995rh7184_1" sequence="1" type="page">
+      <label>Page 1</label>
+      <file id="bf995rh7184_Page_01.pdf" mimetype="application/pdf" size="67276" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">b9402e9368dd0c5f6bee7268317dc0d7275be923</checksum>
+        <checksum type="md5">4c3824b71900ce2e2215538c24cee5b4</checksum>
+      </file>
+      <file id="bf995rh7184_Page_01.xml" mimetype="application/xml" size="28138" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">4624faed9c1c7d0f6c8c56163ce616c6979cedef</checksum>
+        <checksum type="md5">6bf1a76ca03ead5c630fa40cd5494333</checksum>
+      </file>
+      <file id="bf995rh7184_Page_01.jp2" mimetype="image/jp2" size="1274652" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">96e07bf12bb8ef936b13a593a4b9e26b0864a4ca</checksum>
+        <checksum type="md5">c8ce3d32385bc32b4e9cc2aad718afb7</checksum>
+        <imageData height="3325" width="2545"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-bf995rh7184-bf995rh7184_2" sequence="2" type="page">
+      <label>Page 2</label>
+      <file id="bf995rh7184_Page_02.pdf" mimetype="application/pdf" size="87110" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">17068b0965915afb605c33ea386b33b57edafe01</checksum>
+        <checksum type="md5">b1d8c088a630177d8b8d142dc99b61fd</checksum>
+      </file>
+      <file id="bf995rh7184_Page_02.xml" mimetype="application/xml" size="45231" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">33dc3d3a6f9ef5a5714e2ab53ce5cc3abb123b76</checksum>
+        <checksum type="md5">f57ae4448d992654379278d6502a4b74</checksum>
+      </file>
+      <file id="bf995rh7184_Page_02.jp2" mimetype="image/jp2" size="1593557" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">73fc46b60c5ee70634681605ddeb0758fe5b8d5f</checksum>
+        <checksum type="md5">feba487b5c6d138f154a8f22f292ad51</checksum>
+        <imageData height="3321" width="2549"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-bf995rh7184-bf995rh7184_3" sequence="3" type="page">
+      <label>Page 3</label>
+      <file id="bf995rh7184_Page_03.pdf" mimetype="application/pdf" size="97612" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">f5f7b7fbc58b2aa18805db01508c6acbfabe0b98</checksum>
+        <checksum type="md5">752632da3672403ed2ce352bde1968d0</checksum>
+      </file>
+      <file id="bf995rh7184_Page_03.xml" mimetype="application/xml" size="47728" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">4f63925d2c6bc08dc9f5c3e742bfdf146add6784</checksum>
+        <checksum type="md5">5e6f731705f56d192172e69ba4a4bd34</checksum>
+      </file>
+      <file id="bf995rh7184_Page_03.jp2" mimetype="image/jp2" size="1596720" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">f5ba26e1cca69f8c247c19100fa1c9c3471c3d2a</checksum>
+        <checksum type="md5">444c20090e411fa8ece5c78deb6f6995</checksum>
+        <imageData height="3325" width="2551"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-bf995rh7184-bf995rh7184_4" sequence="4" type="page">
+      <label>Page 4</label>
+      <file id="bf995rh7184_Page_04.pdf" mimetype="application/pdf" size="84829" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">64d6908cd723fc00ffbd7e3fc7bcae487235f0fd</checksum>
+        <checksum type="md5">eb5f4d5853231b0e789b03a8de09b814</checksum>
+      </file>
+      <file id="bf995rh7184_Page_04.xml" mimetype="application/xml" size="43806" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">2a6f8c1900d52b7f41f81e5e22734b3a1d2818a1</checksum>
+        <checksum type="md5">ef994fc1fbf15beb55246f630d75aceb</checksum>
+      </file>
+      <file id="bf995rh7184_Page_04.jp2" mimetype="image/jp2" size="1592421" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">0a87502ddc1f30ee8824f96d05f79b99f32e6976</checksum>
+        <checksum type="md5">95a4006f63945023343d8230c62c9f78</checksum>
+        <imageData height="3320" width="2548"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-bf995rh7184-bf995rh7184_5" sequence="5" type="page">
+      <label>Page 5</label>
+      <file id="bf995rh7184_Page_05.pdf" mimetype="application/pdf" size="84818" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">8a35459a5bd5b2f74d0e39e7fae855ea3af992a6</checksum>
+        <checksum type="md5">f93f4a45df3a3c1043a9019bc8d0e251</checksum>
+      </file>
+      <file id="bf995rh7184_Page_05.xml" mimetype="application/xml" size="52138" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">2b00de43e7006451a05f104131d4d1d41c7dd79f</checksum>
+        <checksum type="md5">cb4163fbe7080367c2b6803969a83dc6</checksum>
+      </file>
+      <file id="bf995rh7184_Page_05.jp2" mimetype="image/jp2" size="1591074" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">5b90c065dead6c3de1db8ecc36706bd31a3580a9</checksum>
+        <checksum type="md5">258bcfb39f49ec54aa1189d3745a43ed</checksum>
+        <imageData height="3316" width="2549"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-bf995rh7184-bf995rh7184_6" sequence="6" type="page">
+      <label>Page 6</label>
+      <file id="bf995rh7184_Page_06.pdf" mimetype="application/pdf" size="86257" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">17535c7ee6be36739eea22de979dd770720a242c</checksum>
+        <checksum type="md5">cd3ed5dec8dab4b8a6fae5cae8e003ac</checksum>
+      </file>
+      <file id="bf995rh7184_Page_06.xml" mimetype="application/xml" size="45970" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">6147e32108765483e00f9ccc1e9ecba2b0354509</checksum>
+        <checksum type="md5">d2d3970f24a32eabb8d398529b66336b</checksum>
+      </file>
+      <file id="bf995rh7184_Page_06.jp2" mimetype="image/jp2" size="1591428" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">d6754da6e5f4a41ec8a31c50c5b329f21c185e6e</checksum>
+        <checksum type="md5">af45ce004284f76f87ac9d0efa187586</checksum>
+        <imageData height="3318" width="2548"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-bf995rh7184-bf995rh7184_7" sequence="7" type="page">
+      <label>Page 7</label>
+      <file id="bf995rh7184_Page_07.pdf" mimetype="application/pdf" size="85706" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">2f001b4d00b74144cf8bb86fa5a8e6e73a3d74ea</checksum>
+        <checksum type="md5">75f64f933d0d74ea3a64677f6d7f94c6</checksum>
+      </file>
+      <file id="bf995rh7184_Page_07.xml" mimetype="application/xml" size="43532" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">84e99bcbda08b54b812d9e5a6084ae63073fd3ef</checksum>
+        <checksum type="md5">1373f6aecac05fcef5cfe51073bb7f3a</checksum>
+      </file>
+      <file id="bf995rh7184_Page_07.jp2" mimetype="image/jp2" size="1587751" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">d7514bb95a76bd00d8d469c9b964a7cb4754b180</checksum>
+        <checksum type="md5">ea774e7e9fa703e61990a2392f88c1b6</checksum>
+        <imageData height="3324" width="2544"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-bf995rh7184-bf995rh7184_8" sequence="8" type="page">
+      <label>Page 8</label>
+      <file id="bf995rh7184_Page_08.pdf" mimetype="application/pdf" size="87123" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">a3c90abf0cf0c65ba8135f5221ca8f15cb24af05</checksum>
+        <checksum type="md5">f0210acaf86981500551db61b159c59f</checksum>
+      </file>
+      <file id="bf995rh7184_Page_08.xml" mimetype="application/xml" size="53595" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">04ccdd8ea35c8140b4a61eda510179524c456373</checksum>
+        <checksum type="md5">38717fec2cc9f6040d5bc3759036c971</checksum>
+      </file>
+      <file id="bf995rh7184_Page_08.jp2" mimetype="image/jp2" size="1584705" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">c28c21a425eda11d1a237da79557338d7c8f2c43</checksum>
+        <checksum type="md5">e855c89ce20aad03686b9e7480a5c902</checksum>
+        <imageData height="3317" width="2538"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-bf995rh7184-bf995rh7184_9" sequence="9" type="page">
+      <label>Page 9</label>
+      <file id="bf995rh7184_Page_09.pdf" mimetype="application/pdf" size="40825" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">852fb2d81f469f045b2cbe8f6847854553db3c18</checksum>
+        <checksum type="md5">0df00983b92222315ae4eade4d567a91</checksum>
+      </file>
+      <file id="bf995rh7184_Page_09.xml" mimetype="application/xml" size="15820" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">1d1674942bd87d023ad70f3628419d8087cd2ac0</checksum>
+        <checksum type="md5">3625c79959f0e7aac0b8220d431a8860</checksum>
+      </file>
+      <file id="bf995rh7184_Page_09.jp2" mimetype="image/jp2" size="680761" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">8be09e4ab554b60662d5b7413460612c62eea243</checksum>
+        <checksum type="md5">66a3b1a590e7c115cc7dc73fac7d4cf1</checksum>
+        <imageData height="3318" width="2545"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-bf995rh7184-bf995rh7184_10" sequence="10" type="page">
+      <label>Page 10</label>
+      <file id="bf995rh7184_Page_10.pdf" mimetype="application/pdf" size="83859" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">f7b8293218905027730581ef1a2e4df40c003268</checksum>
+        <checksum type="md5">bfdb76bbe8c4642563c7823a697fe52c</checksum>
+      </file>
+      <file id="bf995rh7184_Page_10.xml" mimetype="application/xml" size="13917" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">421479acd722ff537c95e3aa947a80c4870c9351</checksum>
+        <checksum type="md5">8df79d7c3da7a68a4dd9e1c9e5686be7</checksum>
+      </file>
+      <file id="bf995rh7184_Page_10.jp2" mimetype="image/jp2" size="765376" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">e442b7159f033205a3806ac3a1ffdb52c2176c59</checksum>
+        <checksum type="md5">f3f5783014f4153a637d0ccc6c0a3650</checksum>
+        <imageData height="3315" width="2535"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-bf995rh7184-bf995rh7184_11" sequence="11" type="object">
+      <label>Object 1</label>
+      <file id="bf995rh7184.pdf" mimetype="application/pdf" size="829006" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">fb7f1b4cef28f8a27790cc8997de40095cdaf4fe</checksum>
+        <checksum type="md5">a4cc6512abd3d1124189142ef0101b01</checksum>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <group rule="no-download">stanford</group>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">The materials are open for research use and may be used freely for non-commercial purposes with an attribution. For commercial permission requests, please contact the Stanford University Archives (universityarchives@stanford.edu).</human>
+      <license/>
+    </use>
+    <copyright>
+      <human>Copyright (c) The Board of Trustees of the Leland Stanford Junior University. All rights reserved.</human>
+    </copyright>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:bf995rh7184">
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:yz214dy4441"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>John Chowning On Composition</dc:title>
+    <dc:contributor>Chowning, John M. (Intervieweeive)</dc:contributor>
+    <dc:type>interviews</dc:type>
+    <dc:type>Text</dc:type>
+    <dc:format>1 text file</dc:format>
+    <dc:format>application/pdf</dc:format>
+    <dc:language>Englisheng</dc:language>
+    <dc:subject>Chowning, John M.</dc:subject>
+    <dc:subject>Computer music</dc:subject>
+    <dc:subject>Acoustics and physics</dc:subject>
+    <dc:date>1982-04-29</dc:date>
+    <dc:identifier>https://purl.stanford.edu/bf995rh7184</dc:identifier>
+    <dc:relation type="repository">Stanford University. Libraries. Department of Special Collections and University Archives</dc:relation>
+    <dc:relation type="collection">Stanford University, Center for Computer Research in Music and Acoustics, records, 1967-2001</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>John Chowning On Composition</title>
+    </titleInfo>
+    <name valueURI="http://id.loc.gov/authorities/names/n87828501" authority="naf" authorityURI="http://id.loc.gov/authorities/names/" usage="primary" type="personal">
+      <namePart>Chowning, John M.</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/ive" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">Interviewee</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/ive" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">ive</roleTerm>
+      </role>
+    </name>
+    <genre valueURI="http://vocab.getty.edu/aat/300026392" authorityURI="http://vocab.getty.edu/aat" authority="aat">interviews</genre>
+    <typeOfResource>text</typeOfResource>
+    <physicalDescription>
+      <reformattingQuality>access</reformattingQuality>
+      <internetMediaType>application/pdf</internetMediaType>
+      <extent>1 text file</extent>
+      <digitalOrigin>reformatted digital</digitalOrigin>
+    </physicalDescription>
+    <language>
+      <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="text">English</languageTerm>
+      <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <subject authority="lcsh">
+      <name authority="naf" authorityURI="http://id.loc.gov/authorities/names/" valueURI="http://id.loc.gov/authorities/names/n87828501" type="personal">
+        <namePart>Chowning, John M.</namePart>
+      </name>
+    </subject>
+    <subject authority="lcsh">
+      <topic authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects/" valueURI="http://id.loc.gov/authorities/subjects/sh85029511">Computer music</topic>
+    </subject>
+    <subject authority="lcsh">
+      <topic authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects/" valueURI="http://id.loc.gov/authorities/subjects/sh85088771">Acoustics and physics</topic>
+    </subject>
+    <originInfo displayLabel="Place of creation" eventType="production">
+      <dateCreated encoding="w3cdtf" keyDate="yes">1982-04-29</dateCreated>
+      <place>
+        <placeTerm authorityURI="http://id.loc.gov/authorities/names/" valueURI="http://id.loc.gov/authorities/names/n50046557" type="text">Stanford (Calif.)</placeTerm>
+      </place>
+      <place>
+        <placeTerm authority="marccountry" type="code">cau</placeTerm>
+      </place>
+    </originInfo>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/bf995rh7184</url>
+    </location>
+    <location>
+      <shelfLocator>SC0634</shelfLocator>
+    </location>
+    <location>
+      <physicalLocation type="repository" valueURI="http://id.loc.gov/authorities/names/no2014019980" authority="naf">Stanford University. Libraries. Department of Special Collections and University Archives</physicalLocation>
+    </location>
+    <recordInfo>
+      <languageOfCataloging usage="primary">
+        <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="text">English</languageTerm>
+        <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="code">eng</languageTerm>
+      </languageOfCataloging>
+      <recordContentSource valueURI="http://id.loc.gov/vocabulary/organizations/cst" authorityURI="http://id.loc.gov/vocabulary/organizations" authority="marcorg">CSt</recordContentSource>
+      <recordOrigin>human prepared</recordOrigin>
+    </recordInfo>
+    <relatedItem type="host" displayLabel="Finding Aid">
+      <titleInfo>
+        <title>Stanford University, Center for Computer Research in Music and Acoustics, Records (SC0634)</title>
+      </titleInfo>
+      <location>
+        <url>http://www.oac.cdlib.org/findaid/ark:/13030/c8rx9dj6</url>
+      </location>
+    </relatedItem>
+    <relatedItem type="series" displayLabel="Series">
+      <titleInfo>
+        <title>2001-262</title>
+      </titleInfo>
+    </relatedItem>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Stanford University, Center for Computer Research in Music and Acoustics, records, 1967-2001</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/yz214dy4441</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">The materials are open for research use and may be used freely for non-commercial purposes with an attribution. For commercial permission requests, please contact the Stanford University Archives (universityarchives@stanford.edu).</accessCondition>
+    <accessCondition type="copyright">Copyright (c) The Board of Trustees of the Leland Stanford Junior University. All rights reserved.</accessCondition>
+  </mods>
+  <releaseData>
+    <release to="Searchworks">true</release>
+  </releaseData>
+  <thumb>bf995rh7184/bf995rh7184_Page_01.jp2</thumb>
+</publicObject>
