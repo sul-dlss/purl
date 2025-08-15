@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class FlashMessageComponent < ViewComponent::Base
-  TYPES = [:success, :notice, :error, :alert].freeze
+  TYPES = %i[success notice error alert].freeze
 
   def initialize(flash:)
     @flash = flash

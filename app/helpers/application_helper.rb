@@ -37,7 +37,7 @@ module ApplicationHelper
 
   def embeddable_url(druid, version_id = nil)
     if Settings.embed.url
-      (Settings.embed.url % { druid: }).tap do |embed_url|
+      format(Settings.embed.url, druid:).tap do |embed_url|
         return "#{embed_url}/version/#{version_id}" if version_id.present? && request.path == version_purl_path(druid, version_id)
       end
     else
