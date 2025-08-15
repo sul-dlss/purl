@@ -3,6 +3,7 @@ task update_metadata: :environment do
     'bb000br0025', # Not crawlable
     'bb157hs6068', # has extent in the metadata
     'bb737zp0787', # book, world access, with OCR
+    'bc854fy5899', # book, world access
     'bd786fy6312', # media
     'bf385jz2076', # book, no-download, with OCR
     'bf973rp9392', # released to searchworks
