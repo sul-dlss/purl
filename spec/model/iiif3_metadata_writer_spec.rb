@@ -321,6 +321,18 @@ RSpec.describe Iiif3MetadataWriter do
       end
     end
 
+    context 'with nested subject' do
+      let(:cocina_descriptive) do
+        PurlResource.find('zf119tw4418').version(:head).cocina['description']
+      end
+
+      it 'extracts the metadata' do
+        expect(metadata.find do
+          it['label'][:en] == ['Subject']
+        end['value'][:en]).to eq ['United States, Department of Energy, Office of Inspector General -- Auditing -- Statistics -- Periodicals']
+      end
+    end
+
     context 'with table of contents in notes' do
       let(:cocina_descriptive) do
         PurlResource.find('bc854fy5899').version(:head).cocina['description']
