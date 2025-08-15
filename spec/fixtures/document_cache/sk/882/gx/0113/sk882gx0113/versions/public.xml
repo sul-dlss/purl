@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:sk882gx0113" published="2024-05-07T23:31:59Z" publishVersion="cocina-models/0.96.0">
+  <identityMetadata>
+    <objectType>collection</objectType>
+    <objectLabel>Bay Area video arcades : photographs by Ira Nowinski, 1981-1982</objectLabel>
+    <otherId name="catkey">9685083</otherId>
+    <otherId name="folio_instance_hrid">a9685083</otherId>
+  </identityMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">Property rights and literary rights reside with the repository. To obtain permission to publish or reproduce, please contact the Special Collections Public Services Librarian at speccollref@stanford.edu.</human>
+      <license/>
+    </use>
+    <copyright>
+      <human>Copyright (c) Stanford University. All Rights Reserved.</human>
+    </copyright>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:sk882gx0113">
+    
+    
+  </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Bay Area video arcades : photographs by Ira Nowinski, 1981-1982</dc:title>
+    <dc:contributor>Nowinski, Ira</dc:contributor>
+    <dc:type>Collection</dc:type>
+    <dc:format>2 boxes</dc:format>
+    <dc:language>eng</dc:language>
+    <dc:description>The Bay Area video arcade photographs were taken in 1980 and 1981 at several locations in the San Francisco Bay Area. The locations include the Santa Cruz Boardwalk, the Exploratorium (site of the 1981 Atari Asteroids competition), and other arcades in Oakland and San Francisco. Materials include black &amp; white prints and approximately 650 35mm images on contact sheets with their negatives.</dc:description>
+    <dc:description>Each print is identified, signed, and dated by the photographer.</dc:description>
+    <dc:description type="acquisition">Purchased, 2012 and 2016. Accessions 2012-155 and 2016-129.</dc:description>
+    <dc:subject>Nowinski, Ira</dc:subject>
+    <dc:subject>Atari Asteroids Competition (San Francisco, Calif.)</dc:subject>
+    <dc:subject>Photography</dc:subject>
+    <dc:coverage>1980-1990</dc:coverage>
+    <dc:subject>Photography--1980-1990</dc:subject>
+    <dc:subject>Video games--History</dc:subject>
+    <dc:subject>Video games--History--Pictorial works</dc:subject>
+    <dc:subject>Video games--Social aspects</dc:subject>
+    <dc:coverage>California</dc:coverage>
+    <dc:coverage>San Francisco Bay Area</dc:coverage>
+    <dc:subject>Video games--Social aspects--California--San Francisco Bay Area</dc:subject>
+    <dc:subject/>
+    <dc:coverage>Santa Cruz Beach Boardwalk</dc:coverage>
+    <dc:date>1981-1982</dc:date>
+    <dc:identifier>https://purl.stanford.edu/sk882gx0113</dc:identifier>
+    <dc:rights>Open for research. Material must be requested at least 36 hours in advance of intended use.</dc:rights>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo usage="primary">
+      <title>Bay Area video arcades : photographs by Ira Nowinski, 1981-1982</title>
+    </titleInfo>
+    <name usage="primary" type="personal">
+      <namePart>Nowinski, Ira</namePart>
+    </name>
+    <typeOfResource manuscript="yes" collection="yes">mixed material</typeOfResource>
+    <physicalDescription>
+      <extent>2 boxes</extent>
+    </physicalDescription>
+    <language>
+      <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <abstract>The Bay Area video arcade photographs were taken in 1980 and 1981 at several locations in the San Francisco Bay Area. The locations include the Santa Cruz Boardwalk, the Exploratorium (site of the 1981 Atari Asteroids competition), and other arcades in Oakland and San Francisco. Materials include black &amp; white prints and approximately 650 35mm images on contact sheets with their negatives.</abstract>
+    <note>Each print is identified, signed, and dated by the photographer.</note>
+    <note type="acquisition">Purchased, 2012 and 2016. Accessions 2012-155 and 2016-129.</note>
+    <subject authority="lcsh">
+      <name type="personal">
+        <namePart>Nowinski, Ira</namePart>
+      </name>
+    </subject>
+    <subject authority="lcsh">
+      <name type="conference">
+        <namePart>Atari Asteroids Competition (San Francisco, Calif.)</namePart>
+      </name>
+    </subject>
+    <subject authority="lcsh">
+      <topic>Photography</topic>
+      <temporal>1980-1990</temporal>
+    </subject>
+    <subject authority="lcsh">
+      <topic>Video games</topic>
+      <topic>History</topic>
+      <genre>Pictorial works</genre>
+    </subject>
+    <subject authority="lcsh">
+      <topic>Video games</topic>
+      <topic>Social aspects</topic>
+      <geographic>California</geographic>
+      <geographic>San Francisco Bay Area</geographic>
+    </subject>
+    <subject>
+      <geographic>Santa Cruz Beach Boardwalk</geographic>
+    </subject>
+    <originInfo>
+      <dateIssued encoding="marc" point="start">1981</dateIssued>
+      <dateIssued encoding="marc" point="end">1982</dateIssued>
+      <place>
+        <placeTerm authority="marccountry" type="code">cau</placeTerm>
+      </place>
+      <issuance>monographic</issuance>
+    </originInfo>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/sk882gx0113</url>
+    </location>
+    <location>
+      <physicalLocation>Department of Special Collections, Stanford University Libraries, Stanford, CA  94305</physicalLocation>
+    </location>
+    <recordInfo>
+      <recordContentSource authority="marcorg">CSt</recordContentSource>
+      <descriptionStandard>dacs</descriptionStandard>
+      <recordOrigin>Converted from MARCXML to MODS version 3.7 using
+				MARC21slim2MODS3-7_SDR_v2-5.xsl (SUL 3.7 version 2.5 20210421; LC Revision 1.140
+				20200717)</recordOrigin>
+      <recordCreationDate encoding="marc">120808</recordCreationDate>
+      <recordIdentifier source="SIRSI">a9685083</recordIdentifier>
+    </recordInfo>
+    <accessCondition type="useAndReproduction">Property rights and literary rights reside with the repository. To obtain permission to publish or reproduce, please contact the Special Collections Public Services Librarian at speccollref@stanford.edu.</accessCondition>
+    <accessCondition type="copyright">Copyright (c) Stanford University. All Rights Reserved.</accessCondition>
+  </mods>
+  <releaseData>
+    <release to="Searchworks">true</release>
+  </releaseData>
+</publicObject>

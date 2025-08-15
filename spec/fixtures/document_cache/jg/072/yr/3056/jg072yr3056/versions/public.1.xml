@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:jg072yr3056" published="2024-05-08T08:16:31Z" publishVersion="cocina-models/0.96.0">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>The legend of the lady's elbow</objectLabel>
+    <otherId name="catkey">9618852</otherId>
+    <otherId name="folio_instance_hrid">a9618852</otherId>
+    <sourceId source="sul">sul:36105213335636</sourceId>
+  </identityMetadata>
+  <contentMetadata objectId="druid:jg072yr3056" type="book">
+    <bookData readingOrder="ltr"/>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_1" sequence="1" type="page">
+      <label>Page 1</label>
+      <file id="jg072yr3056_00_0001.jpg" mimetype="image/jpeg" size="3574984" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">aea58e557d2299e4dad9095c18556749def4512f</checksum>
+        <checksum type="md5">497efacddf510596021864809e72bff9</checksum>
+        <imageData height="3040" width="2531"/>
+      </file>
+      <file id="jg072yr3056_04_0001.xml" mimetype="application/xml" size="91175" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">835d925a0da02a46c216318b321c994e9dc464d9</checksum>
+        <checksum type="md5">781c6746c95ff59e5250d969b7a4bdc8</checksum>
+      </file>
+      <file id="jg072yr3056_06_0001.pdf" mimetype="application/pdf" size="1097222" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">daa8fd62d0d1730fce043651f437bedb9f778edd</checksum>
+        <checksum type="md5">fd9b600e0bc96b817e3270574c78e602</checksum>
+      </file>
+      <file id="jg072yr3056_00_0001.jp2" mimetype="image/jp2" size="1458079" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">9487af7703f6b10664b4808a69bf15347c1f1c2e</checksum>
+        <checksum type="md5">646a284f1c60d1cc3d3f2ef92d3bff3b</checksum>
+        <imageData height="3040" width="2531"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_2" sequence="2" type="page">
+      <label>Page 2</label>
+      <file id="jg072yr3056_00_0002.jpg" mimetype="image/jpeg" size="1411522" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">230f0c15dfff99ef081a5b0c19393d4332d35802</checksum>
+        <checksum type="md5">3fa35553da68cc24eaf400ee35d76019</checksum>
+        <imageData height="2668" width="2159"/>
+      </file>
+      <file id="jg072yr3056_04_0002.xml" mimetype="application/xml" size="1366" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">4330faec6e99a22842a60d377e389e70ff3f8a69</checksum>
+        <checksum type="md5">9f4ccb46da10a22a74ec81d3f131c145</checksum>
+      </file>
+      <file id="jg072yr3056_06_0002.pdf" mimetype="application/pdf" size="821092" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">6d58dcee65c1500d91234a3e9a99104074d28ae6</checksum>
+        <checksum type="md5">9ed84f176bde94c8c57cc9b3f0530bfd</checksum>
+      </file>
+      <file id="jg072yr3056_00_0002.jp2" mimetype="image/jp2" size="1095250" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">10d3ac8bae475c7e6aa45d8cda969d49ebd934ae</checksum>
+        <checksum type="md5">9a171c9bad577c8eb2103722068c5640</checksum>
+        <imageData height="2668" width="2159"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_3" sequence="3" type="page">
+      <label>Page 3</label>
+      <file id="jg072yr3056_00_0003.jpg" mimetype="image/jpeg" size="1248631" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">62d51f048676f6253ec64526b0a5c2328026d90a</checksum>
+        <checksum type="md5">d07f9b86c13233aa9939f9a1da3c92cd</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+      <file id="jg072yr3056_04_0003.xml" mimetype="application/xml" size="1707" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">ae05da3c881e2ed1ed9156270bedb6c99fffe640</checksum>
+        <checksum type="md5">ede36717bdca65d3eb182942d33f290c</checksum>
+      </file>
+      <file id="jg072yr3056_06_0003.pdf" mimetype="application/pdf" size="813616" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">c5f042cb7c898092b5854048da22b1d040ba5a44</checksum>
+        <checksum type="md5">744c49dbcb30dc4e5e33acb541921c97</checksum>
+      </file>
+      <file id="jg072yr3056_00_0003.jp2" mimetype="image/jp2" size="1095774" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">dbc9d157fc711d5e25a97fcbfb0a442ebb8db256</checksum>
+        <checksum type="md5">2454ca73be79f944c632152550ea2a5b</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_4" sequence="4" type="page">
+      <label>Page 4</label>
+      <file id="jg072yr3056_00_0004.jpg" mimetype="image/jpeg" size="1197472" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">be4aadff996eb814428883545de9202aed234841</checksum>
+        <checksum type="md5">4efd70700cdd9b4544b10cb861409f1a</checksum>
+        <imageData height="2668" width="2159"/>
+      </file>
+      <file id="jg072yr3056_04_0004.xml" mimetype="application/xml" size="2139" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">53d45a45ad145371b424a6ced2099a464d52af5d</checksum>
+        <checksum type="md5">372a88020c9b23f1220b6aa7d85bb276</checksum>
+      </file>
+      <file id="jg072yr3056_06_0004.pdf" mimetype="application/pdf" size="789954" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">d1363d562b5034fa74236c7215f7e0c967feb4f2</checksum>
+        <checksum type="md5">700b233e037c4a9fdeaabcd43d07f824</checksum>
+      </file>
+      <file id="jg072yr3056_00_0004.jp2" mimetype="image/jp2" size="1095307" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">8c2b2d396a734e237c2528b66175d435db85616d</checksum>
+        <checksum type="md5">58c6ab8a54cecaf556ad4c536c05972f</checksum>
+        <imageData height="2668" width="2159"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_5" sequence="5" type="page">
+      <label>Page 5</label>
+      <file id="jg072yr3056_00_0005.jpg" mimetype="image/jpeg" size="1187893" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">86d1719ad969d5f15f327d3474892428f847dd71</checksum>
+        <checksum type="md5">fe4fc7456ba5d9c86136cf231f41270e</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+      <file id="jg072yr3056_04_0005.xml" mimetype="application/xml" size="1156" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">8ea1cb180f919ba6a2a1d45a718570248cc05cac</checksum>
+        <checksum type="md5">b275c31c05b15e7c5cb46fae6e74a490</checksum>
+      </file>
+      <file id="jg072yr3056_06_0005.pdf" mimetype="application/pdf" size="813126" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">c2d0f9f5c526cbbce364c94d4b87d813e7bfffb8</checksum>
+        <checksum type="md5">a83aab79accbb07df4d901a7e6e105bf</checksum>
+      </file>
+      <file id="jg072yr3056_00_0005.jp2" mimetype="image/jp2" size="1095720" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">e871c42168c3323acb90daffeba59a3c13641a09</checksum>
+        <checksum type="md5">0beade47f6353c55d34b7ddf8ef366d2</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_6" sequence="6" type="page">
+      <label>Page 6</label>
+      <file id="jg072yr3056_00_0006.jpg" mimetype="image/jpeg" size="1174214" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">83f7a49523a2930ec2d333ae47e0b9be86acc10e</checksum>
+        <checksum type="md5">b503fc82f1360ac88cf7992e1ee510ae</checksum>
+        <imageData height="2668" width="2159"/>
+      </file>
+      <file id="jg072yr3056_04_0006.xml" mimetype="application/xml" size="2168" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">f9aded6e79f495e77d45d5e78299f61cbaca9554</checksum>
+        <checksum type="md5">7f007458d8aec0a66e2fdd444ed60f22</checksum>
+      </file>
+      <file id="jg072yr3056_06_0006.pdf" mimetype="application/pdf" size="818443" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">a612e9ecc7b16c779218d0d1613d7213f4ba1da1</checksum>
+        <checksum type="md5">2fcca38951388ee92cc70f900e9bd409</checksum>
+      </file>
+      <file id="jg072yr3056_00_0006.jp2" mimetype="image/jp2" size="1095228" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">1b72cc9f8049301bbafc755102991a11261936d3</checksum>
+        <checksum type="md5">162ffa17fed6e409139c4395937a9563</checksum>
+        <imageData height="2668" width="2159"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_7" sequence="7" type="page">
+      <label>Page 7</label>
+      <file id="jg072yr3056_00_0007.jpg" mimetype="image/jpeg" size="1312058" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">ce23f6021e24e499d3cf85725cacd170571d3699</checksum>
+        <checksum type="md5">f582eb110b6118156704da6fdec56eb2</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+      <file id="jg072yr3056_04_0007.xml" mimetype="application/xml" size="15551" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">a22b48a1e341512a691a52e2735a7d51a9b0c815</checksum>
+        <checksum type="md5">1aa2dc07b6e541436f1c6154b4438775</checksum>
+      </file>
+      <file id="jg072yr3056_06_0007.pdf" mimetype="application/pdf" size="395575" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">587646fc214bfd932849643cf957c3dc1a72717d</checksum>
+        <checksum type="md5">376cb9de918ddb3b913f8fca8bde9a0b</checksum>
+      </file>
+      <file id="jg072yr3056_00_0007.jp2" mimetype="image/jp2" size="1095793" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">a35735b7df0f80dcd5c4fc5f76b9a6da1421d9da</checksum>
+        <checksum type="md5">072d5c116b3bf1e106e85a6ae9a67c3d</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_8" sequence="8" type="page">
+      <label>Page 8</label>
+      <file id="jg072yr3056_00_0008.jpg" mimetype="image/jpeg" size="1176939" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">441f4ad688ccd9beb70f59f1438eace3eb0ba14a</checksum>
+        <checksum type="md5">987b74204cdb52ad9ba4107574959212</checksum>
+        <imageData height="2668" width="2159"/>
+      </file>
+      <file id="jg072yr3056_04_0008.xml" mimetype="application/xml" size="4603" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">45167c6f3e61636ba6cdefa1686517a4eafff696</checksum>
+        <checksum type="md5">908186ea931b92c09367957c46fffc4f</checksum>
+      </file>
+      <file id="jg072yr3056_06_0008.pdf" mimetype="application/pdf" size="809325" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">829f6073d6a1b15196dba73ce21081b778e8011a</checksum>
+        <checksum type="md5">3b408e5578340c882e40ca8e10427741</checksum>
+      </file>
+      <file id="jg072yr3056_00_0008.jp2" mimetype="image/jp2" size="1095230" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">cbd7c14f11eb2fd0c92a6ce0173395a44b2d8d3c</checksum>
+        <checksum type="md5">fb666a68b18c3b30cbf59856210bacf1</checksum>
+        <imageData height="2668" width="2159"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_9" sequence="9" type="page">
+      <label>Page 9</label>
+      <file id="jg072yr3056_00_0009.jpg" mimetype="image/jpeg" size="1453593" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">711ab38524537547cd7069a518066d1867c10644</checksum>
+        <checksum type="md5">064a43e0a4cf49ae4cc5d3a12db4e4f9</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+      <file id="jg072yr3056_04_0009.xml" mimetype="application/xml" size="17085" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">24e0bb39f831db51babe586331b0eb3ee8e49b36</checksum>
+        <checksum type="md5">08e28aac0049126e408566832ee89e60</checksum>
+      </file>
+      <file id="jg072yr3056_06_0009.pdf" mimetype="application/pdf" size="465802" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">cad3edda1f609c3890ae52ffb07e962071a6f146</checksum>
+        <checksum type="md5">2cde3ef057769668476f7802398af8fa</checksum>
+      </file>
+      <file id="jg072yr3056_00_0009.jp2" mimetype="image/jp2" size="1095569" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">47537593753197363de74f2be4ea0417182aafed</checksum>
+        <checksum type="md5">0f13465636c68753b6a81c53da13d354</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_10" sequence="10" type="page">
+      <label>Page 10</label>
+      <file id="jg072yr3056_00_0010.jpg" mimetype="image/jpeg" size="1572938" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">51eda46fc81062719d7d1116cd4fe1c5adbfa00d</checksum>
+        <checksum type="md5">1b2229bc23a21f4c715a144f48e0aecf</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+      <file id="jg072yr3056_04_0010.xml" mimetype="application/xml" size="30686" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">ad9234a46138dd5b62515e057f141d5bf72f37e4</checksum>
+        <checksum type="md5">6cfce705a97fd0fb743a7039ed9f5dc5</checksum>
+      </file>
+      <file id="jg072yr3056_06_0010.pdf" mimetype="application/pdf" size="466920" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">0fa27b7ee7c274cd27889a4247692757980d4b05</checksum>
+        <checksum type="md5">3411c55dd42366b017b37466c90c1886</checksum>
+      </file>
+      <file id="jg072yr3056_00_0010.jp2" mimetype="image/jp2" size="1095740" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">d91befb2a2779684eff25254d908731367f5e192</checksum>
+        <checksum type="md5">0631f965417dc360191602e13b154ea1</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_11" sequence="11" type="page">
+      <label>Page 11</label>
+      <file id="jg072yr3056_00_0011.jpg" mimetype="image/jpeg" size="1530114" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">9078076cca4445eca7b9010bb539f38d9bdd7137</checksum>
+        <checksum type="md5">aa0aec28aa9e0ad512abf251b01c23be</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+      <file id="jg072yr3056_04_0011.xml" mimetype="application/xml" size="28555" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">03f826f14cf2c0dccea7852652328d65aaddd4f0</checksum>
+        <checksum type="md5">82ae23bae22b393a85693fc87da968f0</checksum>
+      </file>
+      <file id="jg072yr3056_06_0011.pdf" mimetype="application/pdf" size="467479" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">42fb60ca2bf9d2e7c205f56a4622a9c57d79b961</checksum>
+        <checksum type="md5">326ca4dd4e6f294df5636478e0d65525</checksum>
+      </file>
+      <file id="jg072yr3056_00_0011.jp2" mimetype="image/jp2" size="1095726" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">d4226e15f3690d399cc42a3f3caf1e500b6a0095</checksum>
+        <checksum type="md5">d57705a5c462627d4fd9267f4de4435c</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_12" sequence="12" type="page">
+      <label>Page 12</label>
+      <file id="jg072yr3056_00_0012.jpg" mimetype="image/jpeg" size="1512738" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">e0ff6b8fa4b35dfacb38089b4c7814fc84f31cd8</checksum>
+        <checksum type="md5">042615cd652b189919f5361b94832075</checksum>
+        <imageData height="2669" width="2159"/>
+      </file>
+      <file id="jg072yr3056_04_0012.xml" mimetype="application/xml" size="28698" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">6725c93d2b3720a9e7f6a4abb82408de5cc45515</checksum>
+        <checksum type="md5">36f7fd9e5116f251003cc24d2cc5e50b</checksum>
+      </file>
+      <file id="jg072yr3056_06_0012.pdf" mimetype="application/pdf" size="466783" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">bb24fc5032f79b0a925ddbcf7f0eddafa0e73c90</checksum>
+        <checksum type="md5">77bbc0b0d009de7f421c97a9532b1001</checksum>
+      </file>
+      <file id="jg072yr3056_00_0012.jp2" mimetype="image/jp2" size="1095569" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">c169d892f9cb7215f59186f651cde28359e4b2bf</checksum>
+        <checksum type="md5">30fac32170a517e95a1a66eab40212f9</checksum>
+        <imageData height="2669" width="2159"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_13" sequence="13" type="page">
+      <label>Page 13</label>
+      <file id="jg072yr3056_00_0013.jpg" mimetype="image/jpeg" size="1464981" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">23b2ef737de164d041b7e6cba6810727d30d5853</checksum>
+        <checksum type="md5">4456d3b7c0b61665591981a16c70a9a7</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+      <file id="jg072yr3056_04_0013.xml" mimetype="application/xml" size="26340" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">25828a2ff09046109ea0e2173f03d475fc7fc78d</checksum>
+        <checksum type="md5">c49edd2eeb077456b9d00c03fae835c4</checksum>
+      </file>
+      <file id="jg072yr3056_06_0013.pdf" mimetype="application/pdf" size="466786" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">776386252b851e32fd33ef8c383158d6e926791c</checksum>
+        <checksum type="md5">5d6ec87c1c8630adfabc8182fe02e216</checksum>
+      </file>
+      <file id="jg072yr3056_00_0013.jp2" mimetype="image/jp2" size="1095714" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">adc3a5a7e2dbed4cc520123b9120d5213370be85</checksum>
+        <checksum type="md5">100fbdb89ac0eff408f93a3f138e8c0a</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_14" sequence="14" type="page">
+      <label>Page 14</label>
+      <file id="jg072yr3056_00_0014.jpg" mimetype="image/jpeg" size="1512748" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">85a9720c61524a52c780e51484cffcfc7570212f</checksum>
+        <checksum type="md5">ba9c991958ba2ae9bf71456c6ec3fe9d</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+      <file id="jg072yr3056_04_0014.xml" mimetype="application/xml" size="30889" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">12ba34d15ac886de54a643b3956d48da47e49a63</checksum>
+        <checksum type="md5">0bd663edfc0509f0b736b80e14507745</checksum>
+      </file>
+      <file id="jg072yr3056_06_0014.pdf" mimetype="application/pdf" size="469418" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">fe7f091dcd639634b35afbcb5223464810c53286</checksum>
+        <checksum type="md5">2040040bd030f670095253af4a3841f5</checksum>
+      </file>
+      <file id="jg072yr3056_00_0014.jp2" mimetype="image/jp2" size="1095752" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">31e98620954e202e8550fb47cd05f563da68d741</checksum>
+        <checksum type="md5">013a70f2c9e01518cb4458670d5ea1d3</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_15" sequence="15" type="page">
+      <label>Page 15</label>
+      <file id="jg072yr3056_00_0015.jpg" mimetype="image/jpeg" size="1324640" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">f98c0bd31587462a64b0291d30399c503e733eb8</checksum>
+        <checksum type="md5">f781e947de36e15f089887924785f17e</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+      <file id="jg072yr3056_04_0015.xml" mimetype="application/xml" size="17115" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">4a57e56db19abdee2da48c3a5b0493400efa2b45</checksum>
+        <checksum type="md5">50f279808f278b22b0abf437e98b5bfb</checksum>
+      </file>
+      <file id="jg072yr3056_06_0015.pdf" mimetype="application/pdf" size="442747" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">e433266d25918380093f4c5339b152bc3c69fe5e</checksum>
+        <checksum type="md5">d5fef1f62ac5d4e95ab95be8605db901</checksum>
+      </file>
+      <file id="jg072yr3056_00_0015.jp2" mimetype="image/jp2" size="1095779" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">64f54dc77e82a3d3516a62b6ac92d6e3ce8a5a99</checksum>
+        <checksum type="md5">a512d487505392573366c2036518e2b3</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_16" sequence="16" type="page">
+      <label>Page 16</label>
+      <file id="jg072yr3056_00_0016.jpg" mimetype="image/jpeg" size="1483506" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">cb05aa84d928fed758d49b5e82a2a84023137bd3</checksum>
+        <checksum type="md5">d8b7f8988eeb3e06f5b9d1963c552ade</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+      <file id="jg072yr3056_04_0016.xml" mimetype="application/xml" size="18278" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">a49b3f4be854675a1d0092efa54bd0d31dade178</checksum>
+        <checksum type="md5">649e26d85d35411e0b16b923e6ca318c</checksum>
+      </file>
+      <file id="jg072yr3056_06_0016.pdf" mimetype="application/pdf" size="489923" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">f231f672594bab7d8badee4a0f6c8a7ac59f24a5</checksum>
+        <checksum type="md5">935139d2bc7c7df66250d6125bcd4634</checksum>
+      </file>
+      <file id="jg072yr3056_00_0016.jp2" mimetype="image/jp2" size="1095751" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">4e762efc9e98c2f37b41acc5ce46309b1e8a0778</checksum>
+        <checksum type="md5">8cf6405640c874d23b9545a142ddf587</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_17" sequence="17" type="page">
+      <label>Page 17</label>
+      <file id="jg072yr3056_00_0017.jpg" mimetype="image/jpeg" size="1493374" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">51ecffb9c4cf3bd62742f0664d5473ed1ffc31c2</checksum>
+        <checksum type="md5">bac0a778b10c617192a4abd6bc58e514</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+      <file id="jg072yr3056_04_0017.xml" mimetype="application/xml" size="29728" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">6e344bb3c337eab801159aeeef9ab80b386168a3</checksum>
+        <checksum type="md5">27bad2f920308afe586da7754c026c65</checksum>
+      </file>
+      <file id="jg072yr3056_06_0017.pdf" mimetype="application/pdf" size="467849" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">af9df3dafb2254aff0bfe190884c5eb2a31d7409</checksum>
+        <checksum type="md5">9dbd120ca9814544a7f35de907b7b6aa</checksum>
+      </file>
+      <file id="jg072yr3056_00_0017.jp2" mimetype="image/jp2" size="1095669" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">2fc19bbf999c151455587900b906ccd72887cb61</checksum>
+        <checksum type="md5">d1fd1cd99b29e38a1e5788e985cec360</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_18" sequence="18" type="page">
+      <label>Page 18</label>
+      <file id="jg072yr3056_00_0018.jpg" mimetype="image/jpeg" size="1585696" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">9472478c2b7658d579d6605d54414ca60c0dfaaa</checksum>
+        <checksum type="md5">4adc4b888cf58414b8a002b1d9538127</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+      <file id="jg072yr3056_04_0018.xml" mimetype="application/xml" size="29780" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">870242e1cb72f6c9e7130a1531c7b4c2146f0c4d</checksum>
+        <checksum type="md5">101311e5a337dbd9cddb594e449f24b1</checksum>
+      </file>
+      <file id="jg072yr3056_06_0018.pdf" mimetype="application/pdf" size="444659" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">7b376a6b05ab2829930b4591905fb2484e5367b3</checksum>
+        <checksum type="md5">38b0c6ea334c9a169d99ce7e17945cb2</checksum>
+      </file>
+      <file id="jg072yr3056_00_0018.jp2" mimetype="image/jp2" size="1095699" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">5b11977602c7d70d04683fdef3a883464e0809e3</checksum>
+        <checksum type="md5">95ad906af75e37f8c87c81bea8c95b5d</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_19" sequence="19" type="page">
+      <label>Page 19</label>
+      <file id="jg072yr3056_00_0019.jpg" mimetype="image/jpeg" size="1557486" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">e8a460064403263e9f3f490355987f3e46996b7e</checksum>
+        <checksum type="md5">cda0f39663a09b17da7e43dee4d689e3</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+      <file id="jg072yr3056_04_0019.xml" mimetype="application/xml" size="28354" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">fa61ee0d6838c38c7693c30c7814b10243fd8d50</checksum>
+        <checksum type="md5">4c495c351b275171c9c027d035df3e16</checksum>
+      </file>
+      <file id="jg072yr3056_06_0019.pdf" mimetype="application/pdf" size="446201" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">d0fe5b66701fd1119c2f1138771146c3dee2db46</checksum>
+        <checksum type="md5">530a20882f6f65b3ec0dbe9d1e1ecbec</checksum>
+      </file>
+      <file id="jg072yr3056_00_0019.jp2" mimetype="image/jp2" size="1095712" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">05e92860ced58b91b9dd0f0233f71c95ee5e297c</checksum>
+        <checksum type="md5">c9275d6757e6bcc6089a8df62c3a4b28</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_20" sequence="20" type="page">
+      <label>Page 20</label>
+      <file id="jg072yr3056_00_0020.jpg" mimetype="image/jpeg" size="1563241" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">0aed4f79281744cd61dbdbda26eb79aafdc98672</checksum>
+        <checksum type="md5">2d8563fd9a64a86d67ff253473b23ade</checksum>
+        <imageData height="2668" width="2159"/>
+      </file>
+      <file id="jg072yr3056_04_0020.xml" mimetype="application/xml" size="23838" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">b57ac387b6ed9c5dd37f44571264c68edca97796</checksum>
+        <checksum type="md5">cb00e9df102b43da0c658de3d8f421e4</checksum>
+      </file>
+      <file id="jg072yr3056_06_0020.pdf" mimetype="application/pdf" size="445408" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">993c0a60636dc47f7291f3b0669e60d07918cba0</checksum>
+        <checksum type="md5">011f4e02989fa7ea8ad090392bde77d0</checksum>
+      </file>
+      <file id="jg072yr3056_00_0020.jp2" mimetype="image/jp2" size="1095186" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">c83e672c385769a3eeb537e73db4eb3bb36e4db9</checksum>
+        <checksum type="md5">8bc34b117a9c8652a72d0ac9a42676e2</checksum>
+        <imageData height="2668" width="2159"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_21" sequence="21" type="page">
+      <label>Page 21</label>
+      <file id="jg072yr3056_00_0021.jpg" mimetype="image/jpeg" size="1575133" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">a582d8ef23bc77cf428b394cee8e1a4faf929f4b</checksum>
+        <checksum type="md5">5cee950ce9141d3b3741cb1f3a52c3ce</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+      <file id="jg072yr3056_04_0021.xml" mimetype="application/xml" size="19470" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">26f8a4251737a0256562e50f5215cbb65f994ea7</checksum>
+        <checksum type="md5">5c1a99a48b3d82039f39f5ee3cc32be9</checksum>
+      </file>
+      <file id="jg072yr3056_06_0021.pdf" mimetype="application/pdf" size="466481" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">c48455c5bb22859a829837d3d358d6699168b7eb</checksum>
+        <checksum type="md5">b4ec92df947fba22914d09eb3af26fe2</checksum>
+      </file>
+      <file id="jg072yr3056_00_0021.jp2" mimetype="image/jp2" size="1095661" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">00ea7f0255158a1cb0b692d38164348b1648023c</checksum>
+        <checksum type="md5">4ea84dfee1337ff949aaf3f3479f65c2</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_22" sequence="22" type="page">
+      <label>Page 22</label>
+      <file id="jg072yr3056_00_0022.jpg" mimetype="image/jpeg" size="1554072" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">7ea08b6934d43405df4e3ae81fb9388be121f6e9</checksum>
+        <checksum type="md5">a538431889f5c8533d27ebdbd59beac7</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+      <file id="jg072yr3056_04_0022.xml" mimetype="application/xml" size="27680" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">83246e9ae564032574b47ddf3a32d6014de274b1</checksum>
+        <checksum type="md5">88a22156b1f5e0b5ec12dedfaf24e42c</checksum>
+      </file>
+      <file id="jg072yr3056_06_0022.pdf" mimetype="application/pdf" size="467137" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">af313b974dbfc1920ab3e6494cfbd519c0b31eb1</checksum>
+        <checksum type="md5">bb4d624d833087d7f9e11328846b6ce7</checksum>
+      </file>
+      <file id="jg072yr3056_00_0022.jp2" mimetype="image/jp2" size="1095705" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">5460bd3a2f9a6e5d335ee30850237a4cd4535cac</checksum>
+        <checksum type="md5">251c786e3db8a7406e6c415d0f04dda5</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_23" sequence="23" type="page">
+      <label>Page 23</label>
+      <file id="jg072yr3056_00_0023.jpg" mimetype="image/jpeg" size="1560414" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">0fd2ca9c880b779c811cf2171b34c178597c98fa</checksum>
+        <checksum type="md5">1c1a84e79146d7d06706e62166e461e5</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+      <file id="jg072yr3056_04_0023.xml" mimetype="application/xml" size="25903" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">5205d70571b5ed3f20fb52c4c8e79ba32e10e182</checksum>
+        <checksum type="md5">debc6edba6f579e8576a9ff497dfff90</checksum>
+      </file>
+      <file id="jg072yr3056_06_0023.pdf" mimetype="application/pdf" size="445440" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">5cfc859b25c78692e034777c54babc9cbd8e1996</checksum>
+        <checksum type="md5">2dbfdea672c0b4260549b1558a0a5a3c</checksum>
+      </file>
+      <file id="jg072yr3056_00_0023.jp2" mimetype="image/jp2" size="1095731" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">3fa7e2e11fca7a76988d931266a6491107b98a09</checksum>
+        <checksum type="md5">a774a88e9d0682d00af7c699e2a9382d</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_24" sequence="24" type="page">
+      <label>Page 24</label>
+      <file id="jg072yr3056_00_0024.jpg" mimetype="image/jpeg" size="1546760" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">84aa3fa104d38ee6e836aa4b4c56b69b4cbd775f</checksum>
+        <checksum type="md5">a9aecf1d266b2fc7c82d609776fd6764</checksum>
+        <imageData height="2668" width="2159"/>
+      </file>
+      <file id="jg072yr3056_04_0024.xml" mimetype="application/xml" size="27765" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">9eabc0b9f6ee2003951708bbcefcc547b50d8903</checksum>
+        <checksum type="md5">9ad17ba618594fc107a9ee2f255d2084</checksum>
+      </file>
+      <file id="jg072yr3056_06_0024.pdf" mimetype="application/pdf" size="468030" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">86497bb9a59e9c77aaf03e589ceeb1348add6aa3</checksum>
+        <checksum type="md5">f65500eeb882e5ebde0cc397c625a79d</checksum>
+      </file>
+      <file id="jg072yr3056_00_0024.jp2" mimetype="image/jp2" size="1095224" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">803831fa1fdcd27be484e25d5172e79c7ed74180</checksum>
+        <checksum type="md5">ae60cd7c678c4d2e076a5411d29dd19d</checksum>
+        <imageData height="2668" width="2159"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_25" sequence="25" type="page">
+      <label>Page 25</label>
+      <file id="jg072yr3056_00_0025.jpg" mimetype="image/jpeg" size="1562662" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">a2be3b3e93a02944d28fdc22905be73d7ebe55df</checksum>
+        <checksum type="md5">015b0717db4bc32ee1d93e0afaad5be4</checksum>
+        <imageData height="2668" width="2159"/>
+      </file>
+      <file id="jg072yr3056_04_0025.xml" mimetype="application/xml" size="29254" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">b1582b108694ad77fe906984066a590a853a183d</checksum>
+        <checksum type="md5">273f6d2bf2d5ce7ab77ec49d8c30ab73</checksum>
+      </file>
+      <file id="jg072yr3056_06_0025.pdf" mimetype="application/pdf" size="466623" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">62834284f0a2d19620ad547b3cd7c0f419f6c85c</checksum>
+        <checksum type="md5">e5fe732af27634f093e56a5643f54ae7</checksum>
+      </file>
+      <file id="jg072yr3056_00_0025.jp2" mimetype="image/jp2" size="1095241" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">d8593b89565098ae8bd09998125c2ca29e37c5d2</checksum>
+        <checksum type="md5">a57a41ead6bf6a65d0d69684b12624e9</checksum>
+        <imageData height="2668" width="2159"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_26" sequence="26" type="page">
+      <label>Page 26</label>
+      <file id="jg072yr3056_00_0026.jpg" mimetype="image/jpeg" size="1418490" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">5595edf9e3a453782738498ba6fc6ad6c678c8cc</checksum>
+        <checksum type="md5">0673fc6b62f1d748fb161d7c8da9564e</checksum>
+        <imageData height="2668" width="2159"/>
+      </file>
+      <file id="jg072yr3056_04_0026.xml" mimetype="application/xml" size="17787" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">637d5abede9e6784563ba88ee457e0c922d7a003</checksum>
+        <checksum type="md5">75488b3cab758ba25dda35b7c0dc0ebd</checksum>
+      </file>
+      <file id="jg072yr3056_06_0026.pdf" mimetype="application/pdf" size="820897" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">7dd37eaf5ed1a030c75f6921e9468569f749d184</checksum>
+        <checksum type="md5">ac598eb561104e1a3a240077140ef096</checksum>
+      </file>
+      <file id="jg072yr3056_00_0026.jp2" mimetype="image/jp2" size="1095320" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">8cc8b9958f6dc0a82ee041fed86c2715faeaa258</checksum>
+        <checksum type="md5">5704c76ef1395c6ce8f7af936f9da3af</checksum>
+        <imageData height="2668" width="2159"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_27" sequence="27" type="page">
+      <label>Page 27</label>
+      <file id="jg072yr3056_00_0027.jpg" mimetype="image/jpeg" size="1205796" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">7f8df517a07fbb3aa708254a6cf9c39712e7861a</checksum>
+        <checksum type="md5">d55ed33d0ffd266c1baea48ab92f5364</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+      <file id="jg072yr3056_04_0027.xml" mimetype="application/xml" size="2243" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">7e28b11be986f7814a99153d8b8a4c2d96478de7</checksum>
+        <checksum type="md5">41abc29a13badc941b8271f0cb8c9418</checksum>
+      </file>
+      <file id="jg072yr3056_06_0027.pdf" mimetype="application/pdf" size="793439" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">2fb7df08b108f3a0a2df2a07b4930d21bf11f342</checksum>
+        <checksum type="md5">c441eb2c391f488ebeb86af293a8266b</checksum>
+      </file>
+      <file id="jg072yr3056_00_0027.jp2" mimetype="image/jp2" size="1095748" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">b447c3c6d1066366c49f3daa6d42f6f2c0a618a6</checksum>
+        <checksum type="md5">b71b8774344c775c95de9918bf7f1511</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_28" sequence="28" type="page">
+      <label>Page 28</label>
+      <file id="jg072yr3056_00_0028.jpg" mimetype="image/jpeg" size="1262149" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">5aaf2e9449d413db66ee64b594278e9ab191fec7</checksum>
+        <checksum type="md5">2149cc871173ff3192888582d0872a29</checksum>
+        <imageData height="2668" width="2159"/>
+      </file>
+      <file id="jg072yr3056_04_0028.xml" mimetype="application/xml" size="4038" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">6070906a048f53d9c9773406db8dabed5e937793</checksum>
+        <checksum type="md5">5d4bdbf766a3e8cbcbd9acaa346d4e1d</checksum>
+      </file>
+      <file id="jg072yr3056_06_0028.pdf" mimetype="application/pdf" size="814392" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">4faa9a09ead3aea70ef55fea88cc5ec767a97b6c</checksum>
+        <checksum type="md5">6b9280b46c0f6f08a806f36f8b4d892b</checksum>
+      </file>
+      <file id="jg072yr3056_00_0028.jp2" mimetype="image/jp2" size="1095217" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">15902350128cf7476ff3551f7a7e7cd01774c0f7</checksum>
+        <checksum type="md5">773cdcd7f05bf127e9d5937bb3a8fece</checksum>
+        <imageData height="2668" width="2159"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_29" sequence="29" type="page">
+      <label>Page 29</label>
+      <file id="jg072yr3056_00_0029.jpg" mimetype="image/jpeg" size="1262485" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">2cf3f907d311d93a6f5327a8d071f8d555a1d6e3</checksum>
+        <checksum type="md5">9607dafc94530e57aa0104be94aad1e1</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+      <file id="jg072yr3056_04_0029.xml" mimetype="application/xml" size="1273" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">eae3a7207c87bdb555ddd4c283315a02e6035d81</checksum>
+        <checksum type="md5">04b5003b8ee69a53d14b87c5b5afe02e</checksum>
+      </file>
+      <file id="jg072yr3056_06_0029.pdf" mimetype="application/pdf" size="812163" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">06c72739f4cd041cc18b96803370488532853eb3</checksum>
+        <checksum type="md5">659f99ae8a640a8502e3b291d17de086</checksum>
+      </file>
+      <file id="jg072yr3056_00_0029.jp2" mimetype="image/jp2" size="1095794" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">528e265ddbd7d8fd598b6f8903d6b96643b3c0ca</checksum>
+        <checksum type="md5">9635ce88f9380be70795f852387b314c</checksum>
+        <imageData height="2668" width="2160"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_30" sequence="30" type="page">
+      <label>Page 30</label>
+      <file id="jg072yr3056_00_0030.jpg" mimetype="image/jpeg" size="3317466" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">d11df3e93e479d4cf24b0592ad97877d52532c69</checksum>
+        <checksum type="md5">33e66f380a2e383bc5c9cd38777c1de4</checksum>
+        <imageData height="3040" width="2532"/>
+      </file>
+      <file id="jg072yr3056_04_0030.xml" mimetype="application/xml" size="129643" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">2412bce77e81a848783fedb475c3be2dd1898df8</checksum>
+        <checksum type="md5">334bc102db3d93c9e3c0c7417c354313</checksum>
+      </file>
+      <file id="jg072yr3056_06_0030.pdf" mimetype="application/pdf" size="1105447" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">6017c7e239b4eb60dbd0f9b1396991af1aed5851</checksum>
+        <checksum type="md5">12b1658821bfb378fe188802f3e56440</checksum>
+      </file>
+      <file id="jg072yr3056_00_0030.jp2" mimetype="image/jp2" size="1458729" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">a7a6489560572cb8d1f152733c2bfefbc7043b29</checksum>
+        <checksum type="md5">e350d8e7165533d6be2b013751840e12</checksum>
+        <imageData height="3040" width="2532"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-jg072yr3056-jg072yr3056_31" sequence="31" type="object">
+      <label>Full document (PDF)</label>
+      <file id="jg072yr3056_31_0000.pdf" mimetype="application/pdf" size="18521891" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">d86b84bae2b948092adf994e038b15613332a40b</checksum>
+        <checksum type="md5">950aebb8962d04cb0396588961bee2b9</checksum>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">Property rights reside with the repository. Literary rights reside with the creators of the documents or their heirs. To obtain permission to publish or reproduce, please contact the Special Collections Public Services Librarian at speccollref@stanford.edu</human>
+      <license/>
+    </use>
+    <copyright>
+      <human>Property rights reside with the repository. Copyright © Stanford University. All Rights Reserved.</human>
+    </copyright>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:jg072yr3056">
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:jt466yc7169"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>The  legend of the lady's elbow</dc:title>
+    <dc:contributor>Parry, T. L. D. P. Jones (author)</dc:contributor>
+    <dc:type>text</dc:type>
+    <dc:type>Text</dc:type>
+    <dc:format>20 pages ; 25 cm</dc:format>
+    <dc:format>print</dc:format>
+    <dc:language>eng</dc:language>
+    <dc:description type="statement of responsibility">by T.L.D.P. Jones Parry.</dc:description>
+    <dc:subject>PR5126.P597 L4 1845</dc:subject>
+    <dc:date>1845</dc:date>
+    <dc:publisher>William Pritchard</dc:publisher>
+    <dc:identifier>https://purl.stanford.edu/jg072yr3056</dc:identifier>
+    <dc:relation type="collection">Jarndyce Single-Volume Nineteenth-Century Novel Collection, 1823-1914</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <nonSort>The </nonSort>
+      <title>legend of the lady's elbow</title>
+    </titleInfo>
+    <name usage="primary" type="personal">
+      <namePart>Parry, T. L. D. P. Jones</namePart>
+      <role>
+        <roleTerm type="text">author</roleTerm>
+      </role>
+    </name>
+    <genre authority="rdacontent">text</genre>
+    <typeOfResource>text</typeOfResource>
+    <physicalDescription>
+      <form authority="marcform">print</form>
+      <form type="media" authority="rdamedia">unmediated</form>
+      <form type="carrier" authority="rdacarrier">volume</form>
+      <extent>20 pages ; 25 cm</extent>
+    </physicalDescription>
+    <language>
+      <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <note type="statement of responsibility">by T.L.D.P. Jones Parry.</note>
+    <classification authority="lcc">PR5126.P597 L4 1845</classification>
+    <originInfo>
+      <dateIssued>1845</dateIssued>
+      <place>
+        <placeTerm type="text">Carnarvon</placeTerm>
+      </place>
+      <place>
+        <placeTerm authority="marccountry" type="code">wlk</placeTerm>
+      </place>
+      <publisher>William Pritchard</publisher>
+      <issuance>monographic</issuance>
+    </originInfo>
+    <location>
+      <url usage="primary display" displayLabel="electronic resource">https://purl.stanford.edu/jg072yr3056</url>
+    </location>
+    <recordInfo>
+      <languageOfCataloging>
+        <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+      </languageOfCataloging>
+      <recordContentSource authority="marcorg">UKMGB</recordContentSource>
+      <descriptionStandard>rda</descriptionStandard>
+      <recordOrigin>Converted from MARCXML to MODS version 3.7 using MARC21slim2MODS3-7_SDR_v1.xsl (SUL 3.7 version 1.1 20200917; LC Revision 1.140 20200717)</recordOrigin>
+      <recordCreationDate encoding="marc">890920</recordCreationDate>
+      <recordIdentifier source="SIRSI">a9618852</recordIdentifier>
+    </recordInfo>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Jarndyce Single-Volume Nineteenth-Century Novel Collection, 1823-1914</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/jt466yc7169</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">Property rights reside with the repository. Literary rights reside with the creators of the documents or their heirs. To obtain permission to publish or reproduce, please contact the Special Collections Public Services Librarian at speccollref@stanford.edu</accessCondition>
+    <accessCondition type="copyright">Property rights reside with the repository. Copyright © Stanford University. All Rights Reserved.</accessCondition>
+  </mods>
+  <releaseData>
+    <release to="Searchworks">true</release>
+  </releaseData>
+  <thumb>jg072yr3056/jg072yr3056_00_0001.jp2</thumb>
+</publicObject>

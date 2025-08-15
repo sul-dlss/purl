@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:bf973rp9392" published="2024-05-08T04:14:06Z" publishVersion="cocina-models/0.96.0">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>Unknown : Between 250 and 150 B.C</objectLabel>
+    <sourceId source="sul">sulair:stanford.apis.7509</sourceId>
+  </identityMetadata>
+  <contentMetadata objectId="druid:bf973rp9392" type="image">
+    <resource id="cocina-fileSet-bf973rp9392-bf973rp9392_1" sequence="1" type="image">
+      <label>Item 1</label>
+      <file id="bf973rp9392_00_0001.jp2" mimetype="image/jp2" size="564431" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">93f0fdf96eae34882f92e24803c99f425b46896d</checksum>
+        <checksum type="md5">6a635d500b12d2d30fdb35967c097c32</checksum>
+        <imageData height="1675" width="1740"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-bf973rp9392-bf973rp9392_2" sequence="2" type="image">
+      <label>Item 2</label>
+      <file id="bf973rp9392_00_0002.jp2" mimetype="image/jp2" size="572109" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">ff202785627214e510fa1307278714403ac00986</checksum>
+        <checksum type="md5">e77593003dd09ac8d5187e4bc7b7f903</checksum>
+        <imageData height="1687" width="1752"/>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">Property rights reside with the repository. Literary rights reside with  the creators of the documents or their heirs. To obtain permission to publish or reproduce, please contact the Public Services Librarian of the Dept. of Special Collections (http://www-sul.stanford.edu/depts/spc/pubserv). </human>
+      <license/>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:bf973rp9392">
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:jr022nf7673"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Unknown: Between 250 and 150 B.C.</dc:title>
+    <dc:type>papyri (manuscripts)</dc:type>
+    <dc:language>Greekgrc</dc:language>
+    <dc:subject>Manuscripts, Greek (Papyri)</dc:subject>
+    <dc:subject>Manuscripts (Papyri)</dc:subject>
+    <dc:date>-0249--0149</dc:date>
+    <dc:identifier>M1809</dc:identifier>
+    <dc:identifier>stanford.apis.7509</dc:identifier>
+    <dc:identifier>7509</dc:identifier>
+    <dc:identifier>P.Stan.Class.47</dc:identifier>
+    <dc:identifier>https://purl.stanford.edu/bf973rp9392</dc:identifier>
+    <dc:relation type="repository">Stanford University. Libraries. Department of Special Collections and University Archives</dc:relation>
+    <dc:relation type="collection">Classics Department Papyri Collection</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>Unknown</title>
+      <subTitle>Between 250 and 150 B.C.</subTitle>
+    </titleInfo>
+    <genre authorityURI="http://vocab.getty.edu/page/aat" authority="aat">papyri (manuscripts)</genre>
+    <physicalDescription>
+      <note displayLabel="Material">Papyrus</note>
+    </physicalDescription>
+    <language>
+      <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/grc" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="text">Greek</languageTerm>
+      <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/grc" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="code">grc</languageTerm>
+    </language>
+    <subject altRepGroup="1" authority="lcsh">
+      <topic authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects/" valueURI="http://id.loc.gov/authorities/subjects/sh85080720">Manuscripts, Greek (Papyri)</topic>
+    </subject>
+    <subject altRepGroup="1" authority="lcsh">
+      <topic authority="naf" authorityURI="http://id.loc.gov/authorities/subjects/" valueURI="http://id.loc.gov/authorities/subjects/sh85080781">Manuscripts (Papyri)</topic>
+    </subject>
+    <originInfo>
+      <dateCreated encoding="edtf" qualifier="approximate" keyDate="yes" point="start">-0249</dateCreated>
+      <dateCreated encoding="edtf" qualifier="approximate" point="end">-0149</dateCreated>
+    </originInfo>
+    <identifier displayLabel="Collection Call Number" type="local">M1809</identifier>
+    <identifier displayLabel="SourceID" type="local">stanford.apis.7509</identifier>
+    <identifier displayLabel="Apis ID" type="apis">7509</identifier>
+    <identifier displayLabel="Old Stanford Identifier" type="local">P.Stan.Class.47</identifier>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/bf973rp9392</url>
+    </location>
+    <location>
+      <physicalLocation type="repository" valueURI="http://id.loc.gov/authorities/names/no2014019980" authority="naf">Stanford University. Libraries. Department of Special Collections and University Archives</physicalLocation>
+    </location>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Classics Department Papyri Collection</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/jr022nf7673</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">Property rights reside with the repository. Literary rights reside with  the creators of the documents or their heirs. To obtain permission to publish or reproduce, please contact the Public Services Librarian of the Dept. of Special Collections (http://www-sul.stanford.edu/depts/spc/pubserv). </accessCondition>
+  </mods>
+  <releaseData>
+    <release to="Searchworks">true</release>
+  </releaseData>
+  <thumb>bf973rp9392/bf973rp9392_00_0001.jp2</thumb>
+</publicObject>

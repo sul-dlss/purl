@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:wy534zh7137" published="2025-01-28T17:30:25Z" publishVersion="cocina-models/0.99.3">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>SUL Logo (updated for 2025)</objectLabel>
+    <sourceId source="sul">sul:logo_2015</sourceId>
+  </identityMetadata>
+  <contentMetadata objectId="druid:wy534zh7137" type="image">
+    <resource id="cocina-fileSet-wy534zh7137-wy534zh7137_1" sequence="1" type="image">
+      <label>Image 1</label>
+      <file id="SULAIR_rosette.jp2" mimetype="image/jp2" size="52079" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">3b90553beed26a0b6f04b8c10db8daf7</checksum>
+        <checksum type="sha1">ea4ae7f99fbb4dcbcee1a8bd3cbfbd479dbf9043</checksum>
+        <imageData height="180" width="590"/>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">Property rights reside with the repository. Literary rights reside with the creators of the documents or their heirs. To obtain permission to access, publish or reproduce this content, please contact the Stanford Digital Repository (http://sdr.stanford.edu/contact).</human>
+      <license/>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:wy534zh7137">
+    
+    
+  </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>SUL Logo (updated for 2025)</dc:title>
+    <dc:identifier>https://purl.stanford.edu/wy534zh7137</dc:identifier>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>SUL Logo (updated for 2025)</title>
+    </titleInfo>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/wy534zh7137</url>
+    </location>
+    <accessCondition type="useAndReproduction">Property rights reside with the repository. Literary rights reside with the creators of the documents or their heirs. To obtain permission to access, publish or reproduce this content, please contact the Stanford Digital Repository (http://sdr.stanford.edu/contact).</accessCondition>
+  </mods>
+  <thumb>wy534zh7137/SULAIR_rosette.jp2</thumb>
+</publicObject>

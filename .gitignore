@@ -39,3 +39,4 @@ db/development*
 
 public/sitemap*
 spec/examples.txt
+spec/fixtures/document_cache/**/versions/.lock

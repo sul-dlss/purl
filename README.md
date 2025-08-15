@@ -79,6 +79,15 @@ The RuboCop style enforcement can be run without running the tests
 
     $ rake rubocop
 
+### Update test fixtures
+
+```
+kinit
+bin/rails update_metadata
+```
+
+Then run tests to see if anything needs to be updated.  Commit the changes to the fixtures.
+
 ## Deploying
 
 Deployment is handled automatically via Jenkins when a release is published to GitHub.

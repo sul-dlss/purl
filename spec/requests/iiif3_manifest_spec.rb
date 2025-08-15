@@ -40,7 +40,7 @@ RSpec.describe 'IIIF v3 manifests' do
         { 'label' => { 'en' => ['Date'] }, 'value' => { 'en' => ['1721'] } },
         { 'label' => { 'en' => ['Identifier'] }, 'value' => { 'en' => ['1040', 'https://purl.stanford.edu/bb157hs6068'] } },
         { 'label' => { 'en' => ['Relation'] }, 'value' => { 'en' => ['The Glen McLaughlin Map Collection of California as an Island'] } },
-        { 'label' => { 'en' => ['PublishDate'] }, 'value' => { 'en' => [date.to_datetime.iso8601(3)] } } # publish date was added
+        { 'label' => { 'en' => ['PublishDate'] }, 'value' => { 'en' => ['2025-08-11T00:00:00.000+00:00'] } }
       ]
       # rubocop:enable Layout/LineLength
     end
@@ -256,7 +256,7 @@ RSpec.describe 'IIIF v3 manifests' do
         expect(json['items'].length).to eq 23
 
         canvas = json['items'].first
-        expect(canvas['label']['en']).to start_with "Cover: Carey's American atlas."
+        expect(canvas['label']['en'].first).to start_with "(Covers to) Carey's American Atlas:"
 
         expect(canvas['items'].length).to eq 1
         expect(canvas['items'].first['items'].length).to eq 1
@@ -266,7 +266,7 @@ RSpec.describe 'IIIF v3 manifests' do
         expect(image['body']['width']).to eq 6475
 
         canvas = json['items'].second
-        expect(canvas['label']['en'].first).to start_with "Title Page: Carey's American atlas."
+        expect(canvas['label']['en'].first).to start_with "(Title Page to) Carey's American Atlas:"
 
         expect(canvas['items'].length).to eq 1
         expect(canvas['items'].first['items'].length).to eq 1
@@ -338,7 +338,7 @@ RSpec.describe 'IIIF v3 manifests' do
       get "/#{druid}/iiif3/manifest"
       expect(response).to have_http_status(:ok)
 
-      expect(json['label']['en'].first).to eq 'The Catgut Acoustical Society Newsletter. Number 20, 1973-11-01'
+      expect(json['label']['en'].first).to eq 'Catgut Acoustical Society newsletter. Number 20, 1973-11-01'
       expect(json['items'].length).to eq 1
 
       canvas = json['items'].first
@@ -432,8 +432,8 @@ RSpec.describe 'IIIF v3 manifests' do
       expect(canvas['width']).not_to be_present
 
       obj = canvas['items'].first['items'].first
-      expect(obj['body']['id']).to eq 'https://stacks.stanford.edu/file/bg387kw8222/bg387kw8222_low.obj'
-      expect(obj['body']['format']).to eq 'text/plain'
+      expect(obj['body']['id']).to eq 'https://stacks.stanford.edu/file/bg387kw8222/bg387kw8222_low.glb'
+      expect(obj['body']['format']).to eq 'model/gltf-binary'
       expect(obj['body']['type']).to eq 'Dataset'
     end
   end

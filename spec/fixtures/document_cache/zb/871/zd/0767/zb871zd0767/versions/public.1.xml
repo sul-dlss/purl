@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:zb871zd0767" published="2024-10-18T03:14:12Z" publishVersion="cocina-models/0.98.1">
+  <identityMetadata>
+    <objectType>collection</objectType>
+    <objectLabel>The Glen McLaughlin Map Collection of California as an Island</objectLabel>
+  </identityMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">Images from the Glen McLaughlin Map Collection of California as an Island courtesy Stanford University Libraries. These items are in the public domain. There are no restrictions on use. If you have questions, please contact the David Rumsey Map Center at rumseymapcenter@stanford.edu.</human>
+      <license>https://creativecommons.org/publicdomain/mark/1.0/</license>
+    </use>
+    <copyright>
+      <human>These works have been identified as being free of known restrictions under copyright law, including all related and neighboring rights. You can copy, modify, distribute and perform these works, even for commercial purposes, all without asking permission.</human>
+    </copyright>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:zb871zd0767">
+    
+    
+  </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>The Glen McLaughlin Map Collection of California as an Island</dc:title>
+    <dc:type>Collection</dc:type>
+    <dc:language>eng</dc:language>
+    <dc:description>Images from the Glen McLaughlin Collection of California as an Island maps, a collection of nearly 750 maps obtained by Mr. McLaughlin over nearly 40 years.  Included in the collection are hemisphere and world maps, celestial charts, title pages, globe gores and a medal.  The dates range from 1622 to the mid-1800's.</dc:description>
+    <dc:identifier>https://purl.stanford.edu/zb871zd0767</dc:identifier>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>The Glen McLaughlin Map Collection of California as an Island</title>
+    </titleInfo>
+    <typeOfResource collection="yes">cartographic</typeOfResource>
+    <language>
+      <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <abstract>Images from the Glen McLaughlin Collection of California as an Island maps, a collection of nearly 750 maps obtained by Mr. McLaughlin over nearly 40 years.  Included in the collection are hemisphere and world maps, celestial charts, title pages, globe gores and a medal.  The dates range from 1622 to the mid-1800's.</abstract>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/zb871zd0767</url>
+    </location>
+    <accessCondition type="useAndReproduction">Images from the Glen McLaughlin Map Collection of California as an Island courtesy Stanford University Libraries. These items are in the public domain. There are no restrictions on use. If you have questions, please contact the David Rumsey Map Center at rumseymapcenter@stanford.edu.</accessCondition>
+    <accessCondition type="copyright">These works have been identified as being free of known restrictions under copyright law, including all related and neighboring rights. You can copy, modify, distribute and perform these works, even for commercial purposes, all without asking permission.</accessCondition>
+    <accessCondition type="license" xlink:href="https://creativecommons.org/publicdomain/mark/1.0/">This work has been identified as being free of known restrictions under copyright law, including all related and neighboring rights (Public Domain Mark 1.0).</accessCondition>
+  </mods>
+</publicObject>

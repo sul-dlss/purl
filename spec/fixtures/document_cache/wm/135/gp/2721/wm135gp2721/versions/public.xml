@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:wm135gp2721" published="2025-07-10T14:49:15Z" publishVersion="cocina-models/0.104.1">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>A Newly Digitised Ice-penetrating Radar Dataset Acquired over the Greenland Ice Sheet in 1971-1979</objectLabel>
+    <sourceId source="sul">hydrus:object-7070</sourceId>
+  </identityMetadata>
+  <contentMetadata objectId="druid:wm135gp2721" type="file">
+    <resource id="cocina-fileSet-wm135gp2721-27313eb4-fb71-423d-9a82-05964f68d39f" sequence="1" type="file">
+      <file id="DTU_dropbox/DTU_1978.zip" mimetype="application/zip" size="188819522" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">ccd53c4fb778a45915c53a57aaa19c55</checksum>
+        <checksum type="sha1">a7779fffda4fdb06c294bf95edbf936cc6fcb7ca</checksum>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-wm135gp2721-e6e6f748-dc8f-4294-bc49-123c36075687" sequence="2" type="file">
+      <file id="DTU_dropbox/DTU_1979.zip" mimetype="application/zip" size="241498973" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">1af58c6f1a72e58706a6a224f66a8eba</checksum>
+        <checksum type="sha1">2cbc7d3cdde202737ae95cfa2bf4752763d32cb8</checksum>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-wm135gp2721-990b36e4-75cb-41f0-9209-a120d3e62fb9" sequence="3" type="file">
+      <file id="DTU_dropbox/DTU_dropbox_1971-1972.zip" mimetype="application/zip" size="72594621" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">c080757a2282da1e8698a4d88694ee41</checksum>
+        <checksum type="sha1">d7d6af5935d77f5a05815714fed6abacafd0d02a</checksum>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-wm135gp2721-75ef09ff-706f-4a67-a603-47052400e165" sequence="4" type="file">
+      <file id="DTU_dropbox/DTU_Manuals.zip" mimetype="application/zip" size="15042478" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">5bdf3c7103c93248c9529a3879f03fc2</checksum>
+        <checksum type="sha1">abaf8578f6e336bd45c3b6ddb9754d2d62d58ef7</checksum>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-wm135gp2721-a3ed446c-cbe1-47bc-b5d1-06108dcb14d1" sequence="5" type="file">
+      <file id="DTU_original/DTU.tar.gz" mimetype="application/gzip" size="505526461968" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">60fb78d60e63df59b3f1a46b437559ce</checksum>
+        <checksum type="sha1">ac6c91b3c4ffd385618894da9cc526adc03b7421</checksum>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-wm135gp2721-280f4e3b-b826-4cb8-bf70-2a803bb7a795" sequence="6" type="file">
+      <file id="DTU_original/DTU_December_2019_Scans.tar.gz" mimetype="application/gzip" size="894870831932" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">320d58c2ffe99298c2873600756483ee</checksum>
+        <checksum type="sha1">eeb97fc303d9d6d450d2c5b485a747f0ab0594a2</checksum>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-wm135gp2721-9bc55f78-1dc8-46e4-a7cb-cde4701c579e" sequence="7" type="file">
+      <file id="DTU_original/DTU_DMS.tar.gz" mimetype="application/gzip" size="1196585612576" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">ea8e758983cd7bafdd96806179507be4</checksum>
+        <checksum type="sha1">519888688096598537725f1698ca728eb70601ce</checksum>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-wm135gp2721-f5eb0773-5674-4971-a3d3-018a3f1a74d1" sequence="8" type="file">
+      <file id="DTU_stitched/dtu-part1-20201011-stitched.tar.gz" mimetype="application/gzip" size="254190147806" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">c3297ea9b77350af88acfac0675136e9</checksum>
+        <checksum type="sha1">b4aaee6da94e00509f9190f10b761b0789cc7bcc</checksum>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-wm135gp2721-f0823a5b-27b5-4994-9121-45953cbac235" sequence="9" type="file">
+      <file id="DTU_stitched/dtu-part2-20201115-stitched.tar.gz" mimetype="application/gzip" size="437432722389" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">4a8bd988bce4086d92196f430dd6c28d</checksum>
+        <checksum type="sha1">e0fd28659716723e9b51aa2338f82fb5d4cecb3e</checksum>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-wm135gp2721-f8ce1ce3-6e4b-42dd-9d37-ee3dc182c9df" sequence="10" type="file">
+      <file id="DTU_stitched/DTU_DMS.tar.gz" mimetype="application/gzip" size="520308721286" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">824cd8689a7455175e39b3245382a35a</checksum>
+        <checksum type="sha1">8733e53c45740e8947a898f28ae690c4cff1cbeb</checksum>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or confidentiality rights of individuals. Content distributed via the Stanford Digital Repository may be subject to additional license and use restrictions applied by the depositor.</human>
+      <license>https://creativecommons.org/licenses/by/4.0/legalcode</license>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:wm135gp2721">
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:md919gh6774"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>A Newly Digitised Ice-penetrating Radar Dataset Acquired over the Greenland Ice Sheet in 1971-1979</dc:title>
+    <dc:contributor>Karlsson, Nanna B. (author)</dc:contributor>
+    <dc:contributor>Schroeder, Dustin (author)</dc:contributor>
+    <dc:contributor>Sorensen, Louise Sandberg (author)</dc:contributor>
+    <dc:contributor>Chu, Winnie (author)</dc:contributor>
+    <dc:contributor>Dall, Jorgen (author)</dc:contributor>
+    <dc:contributor>Andersen, Natalia H. (author)</dc:contributor>
+    <dc:contributor>Dobson, Reese (author)</dc:contributor>
+    <dc:contributor>Mackie, Emma J. (author)</dc:contributor>
+    <dc:contributor>Kohn, Simon J. (author)</dc:contributor>
+    <dc:contributor>Steinmetz, Jillian E. (author)</dc:contributor>
+    <dc:contributor>Tarzona, Angelo S. (author)</dc:contributor>
+    <dc:contributor>Teisberg, Thomas (author)</dc:contributor>
+    <dc:contributor>Skou, Niels (author)</dc:contributor>
+    <dc:creator>yoder, mark</dc:creator>
+    <dc:type>Data</dc:type>
+    <dc:type>Documentation</dc:type>
+    <dc:type>Geospatial data</dc:type>
+    <dc:type>Image</dc:type>
+    <dc:type>Data sets</dc:type>
+    <dc:type>dataset</dc:type>
+    <dc:type>cartographic dataset</dc:type>
+    <dc:type>StillImage</dc:type>
+    <dc:description>We present an ice-penetrating radar dataset acquired over the Greenland ice sheet by aircraft during the years 1971, 1972, 1974, 1978, and 1979. The dataset comprises over 177,000 km of flight lines and contains a wealth of information on the state of the Greenland ice sheet including information on ice thickness and englacial properties. During data collection in the 1970s, the data were recorded on optical film rolls and in this manuscript, we document the digitization of these film 5 rolls and their associated geographical information. Our digitization of the data enables interaction with and analysis of the data and facilitates comparison with modern-day radar observations. The complete dataset in full resolution with associated scanned notes is available here.</dc:description>
+    <dc:description type="preferred citation">Karlsson, N., Schroeder, D., Sorensen, L., Chu, W., Dall, J., Andersen, N., Dobson, R., Mackie, E., Kohn, S., Steinmetz, J., Tarzona, A., Teisberg, T., Skou, N., Department of Glaciology and Climate, Geological Survey of Denmark and Greenland, Copenhagen, Denmark, Department of Geophysics, Stanford University, Stanford, CA 94305, USA, Department of Electrical Engineering, Stanford University, Stanford, CA 9430, USA, DTU Space, Technical University of Denmark, Lyngby, Denmark, School of Earth and Atmospheric Sciences, Georgia Institute of Technology, Atlanta, Georgia, USA, and Department of Geological Sciences, University of Florida, Gainesville, USA (2023). A Newly Digitised Ice-penetrating Radar Dataset Acquired over the Greenland Ice Sheet in 1971-1979. Stanford Digital Repository. Available at https://purl.stanford.edu/wm135gp2721. https://doi.org/10.25740/wm135gp2721.</dc:description>
+    <dc:subject>radar film</dc:subject>
+    <dc:subject>Radar in earth sciences</dc:subject>
+    <dc:subject/>
+    <dc:coverage>Greenland</dc:coverage>
+    <dc:subject>Ice sheets</dc:subject>
+    <dc:date>2023-09-14</dc:date>
+    <dc:date>2023-08-28</dc:date>
+    <dc:identifier>https://purl.stanford.edu/wm135gp2721</dc:identifier>
+    <dc:description type="contact" displayLabel="Contact">myoder96@stanford.edu</dc:description>
+    <dc:description type="contact" displayLabel="Contact">teisberg@stanford.edu</dc:description>
+    <dc:description type="contact" displayLabel="Contact">dustin.m.schroeder@stanford.edu</dc:description>
+    <dc:relation type="collection">Stanford Research Data</dc:relation>
+    <dc:identifier>doi: https://doi.org/10.25740/wm135gp2721</dc:identifier>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>A Newly Digitised Ice-penetrating Radar Dataset Acquired over the Greenland Ice Sheet in 1971-1979</title>
+    </titleInfo>
+    <name usage="primary" type="personal">
+      <namePart type="given">Nanna B.</namePart>
+      <namePart type="family">Karlsson</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">author</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">aut</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart type="given">Dustin</namePart>
+      <namePart type="family">Schroeder</namePart>
+      <nameIdentifier typeURI="https://orcid.org" type="orcid">0000-0003-1916-3929</nameIdentifier>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">author</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">aut</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart type="given">Louise Sandberg</namePart>
+      <namePart type="family">Sorensen</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">author</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">aut</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart type="given">Winnie</namePart>
+      <namePart type="family">Chu</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">author</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">aut</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart type="given">Jorgen</namePart>
+      <namePart type="family">Dall</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">author</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">aut</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart type="given">Natalia H.</namePart>
+      <namePart type="family">Andersen</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">author</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">aut</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart type="given">Reese</namePart>
+      <namePart type="family">Dobson</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">author</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">aut</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart type="given">Emma J.</namePart>
+      <namePart type="family">Mackie</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">author</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">aut</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart type="given">Simon J.</namePart>
+      <namePart type="family">Kohn</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">author</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">aut</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart type="given">Jillian E.</namePart>
+      <namePart type="family">Steinmetz</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">author</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">aut</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart type="given">Angelo S.</namePart>
+      <namePart type="family">Tarzona</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">author</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">aut</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart type="given">Thomas</namePart>
+      <namePart type="family">Teisberg</namePart>
+      <nameIdentifier typeURI="https://orcid.org" type="orcid">0009-0000-1446-0348</nameIdentifier>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">author</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">aut</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart type="given">Niels</namePart>
+      <namePart type="family">Skou</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">author</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">aut</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart type="given">mark</namePart>
+      <namePart type="family">yoder</namePart>
+      <nameIdentifier typeURI="https://orcid.org" type="orcid">0000-0002-0083-9143</nameIdentifier>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/cre" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">creator</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/cre" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">cre</roleTerm>
+      </role>
+    </name>
+    <genre type="H2 type">Data</genre>
+    <genre type="H2 subtype">Documentation</genre>
+    <genre type="H2 subtype">Geospatial data</genre>
+    <genre type="H2 subtype">Image</genre>
+    <genre valueURI="http://id.loc.gov/authorities/genreForms/gf2018026119" authority="lcgft">Data sets</genre>
+    <genre authority="local">dataset</genre>
+    <genre valueURI="http://rdvocab.info/termList/RDAContentType/1001" authority="rdacontent">cartographic dataset</genre>
+    <typeOfResource valueURI="http://id.loc.gov/vocabulary/resourceTypes/dat" authorityURI="http://id.loc.gov/vocabulary/resourceTypes/">Dataset</typeOfResource>
+    <typeOfResource>cartographic</typeOfResource>
+    <typeOfResource>still image</typeOfResource>
+    <extension displayLabel="datacite">
+      <resourceType resourceTypeGeneral="Dataset">Documentation; Geospatial data; Image</resourceType>
+    </extension>
+    <abstract>We present an ice-penetrating radar dataset acquired over the Greenland ice sheet by aircraft during the years 1971, 1972, 1974, 1978, and 1979. The dataset comprises over 177,000 km of flight lines and contains a wealth of information on the state of the Greenland ice sheet including information on ice thickness and englacial properties. During data collection in the 1970s, the data were recorded on optical film rolls and in this manuscript, we document the digitization of these film 5 rolls and their associated geographical information. Our digitization of the data enables interaction with and analysis of the data and facilitates comparison with modern-day radar observations. The complete dataset in full resolution with associated scanned notes is available here.</abstract>
+    <note type="preferred citation">Karlsson, N., Schroeder, D., Sorensen, L., Chu, W., Dall, J., Andersen, N., Dobson, R., Mackie, E., Kohn, S., Steinmetz, J., Tarzona, A., Teisberg, T., Skou, N., Department of Glaciology and Climate, Geological Survey of Denmark and Greenland, Copenhagen, Denmark, Department of Geophysics, Stanford University, Stanford, CA 94305, USA, Department of Electrical Engineering, Stanford University, Stanford, CA 9430, USA, DTU Space, Technical University of Denmark, Lyngby, Denmark, School of Earth and Atmospheric Sciences, Georgia Institute of Technology, Atlanta, Georgia, USA, and Department of Geological Sciences, University of Florida, Gainesville, USA (2023). A Newly Digitised Ice-penetrating Radar Dataset Acquired over the Greenland Ice Sheet in 1971-1979. Stanford Digital Repository. Available at https://purl.stanford.edu/wm135gp2721. https://doi.org/10.25740/wm135gp2721.</note>
+    <subject>
+      <topic>radar film</topic>
+    </subject>
+    <subject authority="fast">
+      <topic authority="fast" authorityURI="http://id.worldcat.org/fast/" valueURI="http://id.worldcat.org/fast/1086779/">Radar in earth sciences</topic>
+    </subject>
+    <subject authority="fast">
+      <geographic authority="fast" authorityURI="http://id.worldcat.org/fast/" valueURI="http://id.worldcat.org/fast/1205290/">Greenland</geographic>
+    </subject>
+    <subject authority="fast">
+      <topic authority="fast" authorityURI="http://id.worldcat.org/fast/" valueURI="http://id.worldcat.org/fast/966616/">Ice sheets</topic>
+    </subject>
+    <originInfo eventType="deposit">
+      <dateIssued encoding="edtf">2023-09-14</dateIssued>
+    </originInfo>
+    <originInfo eventType="creation">
+      <dateCreated encoding="edtf">2023-08-28</dateCreated>
+    </originInfo>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/wm135gp2721</url>
+    </location>
+    <note type="contact" displayLabel="Contact">myoder96@stanford.edu</note>
+    <note type="contact" displayLabel="Contact">teisberg@stanford.edu</note>
+    <note type="contact" displayLabel="Contact">dustin.m.schroeder@stanford.edu</note>
+    <recordInfo>
+      <recordOrigin>Metadata created by user via Stanford self-deposit application</recordOrigin>
+      <recordCreationDate encoding="edtf">2023-09-14</recordCreationDate>
+    </recordInfo>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Stanford Research Data</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/md919gh6774</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or confidentiality rights of individuals. Content distributed via the Stanford Digital Repository may be subject to additional license and use restrictions applied by the depositor.</accessCondition>
+    <accessCondition type="license" xlink:href="https://creativecommons.org/licenses/by/4.0/legalcode">This work is licensed under a Creative Commons Attribution 4.0 International license (CC BY).</accessCondition>
+    <identifier type="doi" displayLabel="DOI">https://doi.org/10.25740/wm135gp2721</identifier>
+  </mods>
+</publicObject>
