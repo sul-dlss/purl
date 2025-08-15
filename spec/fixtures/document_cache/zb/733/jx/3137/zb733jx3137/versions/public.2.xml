@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:zb733jx3137" published="2025-07-08T12:22:21Z" publishVersion="cocina-models/0.104.1">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>Testing versioning issue with the review workflow in the new application</objectLabel>
+    <sourceId source="sul">h3:object-6671</sourceId>
+  </identityMetadata>
+  <contentMetadata objectId="druid:zb733jx3137" type="file">
+    <resource id="cocina-fileSet-zb733jx3137-81d7ba17-4150-47ac-963f-22054dfef206" sequence="1" type="file">
+      <label>This is the first version of the file</label>
+      <file id="test_file_v1.pdf" mimetype="application/pdf" size="277195" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">0f0eb1d5fa1a503133e8fca6dab39b93</checksum>
+        <checksum type="sha1">ff23a65b98ce8290edd828a282c0e99209bec935</checksum>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-zb733jx3137-845ae64f-3825-413b-935b-5307354637bb" sequence="2" type="file">
+      <file id="item_report_July 1.csv" mimetype="text/csv" size="12734" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">0391b7c3e51844b3f81173f2eac72e20</checksum>
+        <checksum type="sha1">320c9b02a6899f0d1549b05b0aae95c3ce190ab4</checksum>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">Added special terms&#13;
+&#13;
+User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or confidentiality rights of individuals. Content distributed via the Stanford Digital Repository may be subject to additional license and use restrictions applied by the depositor.</human>
+      <license>https://opendatacommons.org/licenses/pddl/1-0/</license>
+    </use>
+    <copyright>
+      <human/>
+    </copyright>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:zb733jx3137">
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:bz912dc0085"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Testing versioning issue with the review workflow in the new application</dc:title>
+    <dc:contributor>Testerton, Chester (author)</dc:contributor>
+    <dc:contributor>NewAdvisor, Cited (advisor)</dc:contributor>
+    <dc:contributor>Speaker, Interesting (speaker)</dc:contributor>
+    <dc:contributor>Advisor, Primary (advisor)</dc:contributor>
+    <dc:contributor>Hodge, Amy E. (author)</dc:contributor>
+    <dc:type>Text</dc:type>
+    <dc:type>Preprint</dc:type>
+    <dc:type>Thesis</dc:type>
+    <dc:type>grey literature</dc:type>
+    <dc:type>Text</dc:type>
+    <dc:description>This is a test to see where the issue is with versioning with the review workflow on. Something is not quite right here.</dc:description>
+    <dc:description type="preferred citation">Testerton, C., NewAdvisor, C., Speaker, I., and Advisor, P. (2025). Testing versioning issue with the review workflow. Version 1. Stanford Digital Repository. Available at https://purl.stanford.edu/zb733jx3137/version/1.</dc:description>
+    <dc:subject>Web-based Distributed Authoring and Versioning (Standard)</dc:subject>
+    <dc:date>2025-07-08</dc:date>
+    <dc:date>2024-06-11</dc:date>
+    <dc:identifier>https://purl.stanford.edu/zb733jx3137</dc:identifier>
+    <dc:description type="contact" displayLabel="Contact">testing@me.com</dc:description>
+    <dc:relation type="url" href="https://argo.stanford.edu/view/druid:jd999mb2875"/>
+    <dc:relation type="collection">Test collection for custom rights statement</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>Testing versioning issue with the review workflow in the new application</title>
+    </titleInfo>
+    <name usage="primary" type="personal">
+      <namePart type="given">Chester</namePart>
+      <namePart type="family">Testerton</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">author</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">aut</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart type="given">Cited</namePart>
+      <namePart type="family">NewAdvisor</namePart>
+      <role>
+        <roleTerm type="text">advisor</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart type="given">Interesting</namePart>
+      <namePart type="family">Speaker</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/spk" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">speaker</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/spk" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">spk</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart type="given">Primary</namePart>
+      <namePart type="family">Advisor</namePart>
+      <role>
+        <roleTerm type="text">advisor</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart type="given">Amy E.</namePart>
+      <namePart type="family">Hodge</namePart>
+      <nameIdentifier typeURI="https://orcid.org" type="orcid">0000-0002-5902-3077</nameIdentifier>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">author</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">aut</roleTerm>
+      </role>
+    </name>
+    <genre type="H2 type">Text</genre>
+    <genre type="H2 subtype">Preprint</genre>
+    <genre type="H2 subtype">Thesis</genre>
+    <genre valueURI="http://vocab.getty.edu/page/aat/300256200" authority="aat">grey literature</genre>
+    <typeOfResource>text</typeOfResource>
+    <extension displayLabel="datacite">
+      <resourceType resourceTypeGeneral="Text">Preprint; Thesis</resourceType>
+    </extension>
+    <abstract>This is a test to see where the issue is with versioning with the review workflow on. Something is not quite right here.</abstract>
+    <note type="preferred citation">Testerton, C., NewAdvisor, C., Speaker, I., and Advisor, P. (2025). Testing versioning issue with the review workflow. Version 1. Stanford Digital Repository. Available at https://purl.stanford.edu/zb733jx3137/version/1.</note>
+    <subject authority="fast">
+      <genre authority="fast" authorityURI="http://id.worldcat.org/fast/" valueURI="http://id.worldcat.org/fast/1423780/">Tests</genre>
+    </subject>
+    <subject authority="fast">
+      <topic authority="fast" authorityURI="http://id.worldcat.org/fast/" valueURI="http://id.worldcat.org/fast/1173274/">Web-based Distributed Authoring and Versioning (Standard)</topic>
+    </subject>
+    <originInfo eventType="deposit">
+      <dateIssued encoding="edtf">2025-07-08</dateIssued>
+    </originInfo>
+    <originInfo eventType="publication">
+      <dateIssued encoding="edtf" keyDate="yes">2024-06-11</dateIssued>
+    </originInfo>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/zb733jx3137</url>
+    </location>
+    <note type="contact" displayLabel="Contact">testing@me.com</note>
+    <recordInfo>
+      <recordOrigin>Metadata created by user via Stanford self-deposit application</recordOrigin>
+      <recordCreationDate encoding="edtf">2024-09-12</recordCreationDate>
+    </recordInfo>
+    <relatedItem otherType="source of">
+      <location>
+        <url>https://argo.stanford.edu/view/druid:jd999mb2875</url>
+      </location>
+    </relatedItem>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Test collection for custom rights statement</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/bz912dc0085</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">Added special terms&#13;
+&#13;
+User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or confidentiality rights of individuals. Content distributed via the Stanford Digital Repository may be subject to additional license and use restrictions applied by the depositor.</accessCondition>
+    <accessCondition type="license" xlink:href="https://opendatacommons.org/licenses/pddl/1-0/">This work is licensed under an Open Data Commons Public Domain Dedication &amp; License 1.0.</accessCondition>
+  </mods>
+</publicObject>

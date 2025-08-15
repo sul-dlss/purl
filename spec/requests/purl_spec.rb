@@ -46,23 +46,27 @@ RSpec.describe 'PURL API' do
 
       context 'when a valid version is provided' do
         it 'returns the Cocina json for the requested version' do
-          get '/wp335yr5649/version/4.json'
+          get '/zb733jx3137/version/4.json'
           expect(response).to be_successful
           expect(response.parsed_body).to include('cocinaVersion', 'type', 'structural')
-          expect(response.parsed_body['version']).to eq(5)
+          expect(response.parsed_body['version']).to eq(18)
         end
       end
 
       context 'when a missing version is provided' do
         it 'returns an HTTP 404 response' do
-          get '/wp335yr5649/version/45.json'
+          get '/zb733jx3137/version/45.json'
           expect(response).to have_http_status(:not_found)
         end
       end
 
       context 'when a withdrawn version is provided' do
+        before do
+          allow_any_instance_of(PurlVersion).to receive(:withdrawn?).and_return(true) # rubocop:disable RSpec/AnyInstance
+        end
+
         it 'returns the Cocina json for the requested version' do
-          get '/wp335yr5649/version/3.json'
+          get '/zb733jx3137/version/3.json'
           expect(response).to be_successful
           expect(response.parsed_body).to include('type', 'structural', 'status')
           expect(response.parsed_body['status']).to eq('withdrawn')
@@ -81,21 +85,25 @@ RSpec.describe 'PURL API' do
 
       context 'when a valid version is provided' do
         it 'returns the public XML for the requested version' do
-          get '/wp335yr5649/version/4.xml'
+          get '/zb733jx3137/version/4.xml'
           expect(response).to be_successful
         end
       end
 
       context 'when a missing version is provided' do
         it 'returns an HTTP 404 response' do
-          get '/wp335yr5649/version/45.xml'
+          get '/zb733jx3137/version/45.xml'
           expect(response).to have_http_status(:not_found)
         end
       end
 
       context 'when a withdrawn version is provided' do
+        before do
+          allow_any_instance_of(PurlVersion).to receive(:withdrawn?).and_return(true) # rubocop:disable RSpec/AnyInstance
+        end
+
         it 'returns the public XML for the requested version' do
-          get '/wp335yr5649/version/3.xml'
+          get '/zb733jx3137/version/3.xml'
           expect(response).to be_successful
         end
       end
@@ -111,7 +119,7 @@ RSpec.describe 'PURL API' do
 
     context 'when html is requested' do
       it 'returns the PURL page of the head version' do
-        get '/wp335yr5649'
+        get '/zb733jx3137'
         expect(response).to have_http_status(:ok)
         expect(response.body).to include(
           'Code and Data supplement to &quot;Deterministic Matrices Matching the ' \
@@ -124,22 +132,26 @@ RSpec.describe 'PURL API' do
 
       context 'with legit version specified' do
         it 'returns the PURL page of the requested version' do
-          get '/wp335yr5649/version/2'
+          get '/zb733jx3137/version/2'
           expect(response).to have_http_status(:ok)
           expect(response.body).to include(
             'Code and Data supplement to &quot;Deterministic Matrices Matching the ' \
             'Compressed Sensing Phase Transitions of Gaussian Random Matrices.&quot; -- VERSION 1'
           )
           expect(response.body).to include('A newer version of this item is available')
-          expect(response.body).to have_link('View latest version', href: 'http://www.example.com/wp335yr5649')
+          expect(response.body).to have_link('View latest version', href: 'http://www.example.com/zb733jx3137')
           expect(response.body).to have_css('div.upper-record-metadata')
           expect(response.body).to have_css('div.record-metadata')
         end
       end
 
       context 'with withdrawn version specified' do
+        before do
+          allow_any_instance_of(PurlVersion).to receive(:withdrawn?).and_return(true) # rubocop:disable RSpec/AnyInstance
+        end
+
         it 'returns the PURL page of the requested version with only tombstone information' do
-          get '/wp335yr5649/version/3'
+          get '/zb733jx3137/version/3'
           expect(response).to have_http_status(:ok)
           expect(response.body).to include(
             'Code and Data supplement to &quot;Deterministic Matrices Matching the ' \
@@ -147,7 +159,7 @@ RSpec.describe 'PURL API' do
           )
           expect(response.body).not_to include('A newer version of this item is available')
           expect(response.body).to include('This version has been withdrawn')
-          expect(response.body).to include('Please visit <a href="http://www.example.com/wp335yr5649">http://www.example.com/wp335yr5649</a> ' \
+          expect(response.body).to include('Please visit <a href="http://www.example.com/zb733jx3137">http://www.example.com/zb733jx3137</a> ' \
                                            'to view the other versions of this item.')
           expect(response.body).not_to include('Description')
           expect(response.body).not_to include('Preferred citation')
@@ -158,9 +170,9 @@ RSpec.describe 'PURL API' do
 
       context 'with missing version specified' do
         it 'renders the head version page including a warning to the user' do
-          get '/wp335yr5649/version/45'
+          get '/zb733jx3137/version/45'
           expect(response).to have_http_status(:found)
-          expect(response).to redirect_to('/wp335yr5649')
+          expect(response).to redirect_to('/zb733jx3137')
           follow_redirect!
           expect(response).to have_http_status(:ok)
           expect(response.body).to include('Requested version \'45\' not found. Showing latest version instead.')
