@@ -142,11 +142,18 @@ class Iiif3MetadataWriter
   end
 
   def identifiers
-    ids = Array(cocina_descriptive['identifier']).pluck('value')
+    ids = Array(cocina_descriptive['identifier']).map { |id| format_id(id) }
     ids.push url
     ids.push "doi: https://doi.org/#{doi}" if doi
 
     ids.present? ? [iiif_key_value('Identifier', ids)] : []
+  end
+
+  def format_id(id)
+    source = id.dig('source', 'code')
+    return id['value'] unless source && source != 'local'
+
+    "#{source}: #{id['value']}"
   end
 
   def available_online

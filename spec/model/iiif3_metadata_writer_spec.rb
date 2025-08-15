@@ -332,5 +332,23 @@ RSpec.describe Iiif3MetadataWriter do
         end['value'][:en]).to include('Of the leaven of pharisees')
       end
     end
+
+    context 'when different identifier formations' do
+      # dn665vh1697 has lccn
+      # bb157hs6068 has local number
+      let(:cocina_descriptive) do
+        {
+          'identifier' => [
+            { 'value' => '30003962', 'type' => 'LCCN', 'source' => { 'code' => 'lccn', 'note' => [] } },
+            { 'value' => 'localnumber', 'type' => 'local', 'source' => { 'code' => 'local' } },
+            { 'value' => 'nosourceident' }
+          ]
+        }
+      end
+
+      it 'extracts all the identifiers correctly' do
+        expect(metadata.find { it['label'][:en] == ['Identifier'] }['value'][:en]).to eq ['lccn: 30003962', 'localnumber', 'nosourceident']
+      end
+    end
   end
 end
