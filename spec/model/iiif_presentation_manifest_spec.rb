@@ -1,21 +1,40 @@
 require 'rails_helper'
 
 RSpec.describe IiifPresentationManifest do
-  let(:resource) { double }
+  let(:resource) { PurlVersion.new }
 
-  subject { described_class.new(resource) }
+  subject(:manifest) { described_class.new(resource) }
 
   describe '#stacks_iiif_base_url' do
-    it 'generates IIIF URLs for content metadata resources' do
-      expect(subject.stacks_iiif_base_url('druid', 'filename')).to end_with '/image/iiif/druid%2Ffilename'
+    subject { manifest.stacks_iiif_base_url(druid, filename) }
+
+    let(:druid) { 'druid' }
+    let(:filename) { 'filename.jp2' }
+
+    it { is_expected.to end_with '/image/iiif/druid%2Ffilename' }
+
+    context 'with embedded dots' do
+      let(:filename) { '2011-023LUDV-1971-b2_33.0_0008.jp2' }
+
+      it { is_expected.to end_with '/druid%2F2011-023LUDV-1971-b2_33.0_0008' }
     end
 
-    it 'strips file extensions' do
-      expect(subject.stacks_iiif_base_url('druid', 'filename.jp2')).to end_with '/image/iiif/druid%2Ffilename'
+    context 'with spaces' do
+      let(:filename) { 'JungleCat x.jpg' }
+
+      it { is_expected.to end_with '/druid%2FJungleCat%20x' }
     end
 
-    it 'works with filenames with embedded dots' do
-      expect(subject.stacks_iiif_base_url('abc', '2011-023LUDV-1971-b2_33.0_0008.jp2')).to end_with '/abc%2F2011-023LUDV-1971-b2_33.0_0008'
+    context 'with percent signs' do
+      let(:filename) { 'JungleCat%20x.jpg' }
+
+      it { is_expected.to end_with '/druid%2FJungleCat%2520x' }
+    end
+
+    context 'with ampersand' do
+      let(:filename) { 'JungleCat&x.jpg' }
+
+      it { is_expected.to end_with '/druid%2FJungleCat%26x' }
     end
   end
 end
