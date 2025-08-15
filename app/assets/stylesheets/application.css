@@ -60,7 +60,6 @@
         }
 
         tr:first-of-type {
-
           th,
           td {
             border-top-width: 1px;
@@ -76,11 +75,11 @@
           border-bottom-width: 1px;
         }
 
-        >dl>dd:not(:last-child) {
+        > dl > dd:not(:last-child) {
           margin-bottom: 15px;
         }
 
-        >dl>dd:last-child {
+        > dl > dd:last-child {
           margin-bottom: 0px;
         }
 
@@ -106,19 +105,12 @@
   }
 }
 
-/* Based on sul-embed */
-.stanford-only-text {
-  background: url('stanford_s.png') no-repeat left;
-  background: url('stanford_s.svg') no-repeat left, none;
-  padding-left: 15px;
-  margin-left: 5px;
-}
-
 .record-metadata {
   margin-bottom: 2em;
 }
 
-.version-updated-at, .version-identifier {
+.version-updated-at,
+.version-identifier {
   white-space: nowrap;
 }
 
