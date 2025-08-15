@@ -121,7 +121,7 @@ class Iiif3MetadataWriter
 
   def subjects
     vals = Array(cocina_descriptive['subject']).filter_map do
-      it['value'] if it['type'] == 'topic'
+      structured_values(it).join(' -- ') if structured_values(it, 'type').intersect?(%w[topic genre])
     end
     vals.present? ? [iiif_key_value('Subject', vals)] : []
   end
@@ -168,7 +168,14 @@ class Iiif3MetadataWriter
     { 'label' => { en: [label] }, 'value' => { en: values.compact_blank } }
   end
 
-  def structured_values(field)
-    field['structuredValue'].presence ? field['structuredValue'].pluck('value') : [field['value']]
+  def structured_values(field, field_key = 'value')
+    # zf119tw4418 has a structuredValue which has 4 items, the first one is a structuredValue
+    if field['structuredValue'].presence
+      field['structuredValue'].flat_map do |struct_val|
+        struct_val['structuredValue'].present? ? struct_val['structuredValue'].pluck(field_key).join(', ') : struct_val[field_key]
+      end
+    else
+      [field[field_key]]
+    end
   end
 end
