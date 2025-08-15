@@ -127,9 +127,11 @@ class Iiif3MetadataWriter
   end
 
   def coverage
-    vals = Array(cocina_descriptive['subject']).filter_map do
-      it['value'] if it['type'] == 'map coordinates'
+    coverage_fields = Array(cocina_descriptive['form']) + Array(cocina_descriptive['subject'])
+    vals = coverage_fields.filter_map do
+      it['value'] if ['map coordinates', 'map scale'].include?(it['type'])
     end
+
     vals.present? ? [iiif_key_value('Coverage', vals)] : []
   end
 
