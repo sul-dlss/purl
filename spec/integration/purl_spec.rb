@@ -8,8 +8,8 @@ RSpec.describe 'purl', type: :feature do
       it 'renders the json for a book' do
         visit '/bc854fy5899/iiif/manifest'
         json_body = JSON.parse(page.body)
-        expect(json_body['label']).to eq('John Wyclif and his followers, Tracts in Middle English')
-        expect(json_body['metadata'].length).to eq 17
+        expect(json_body['label']).to eq 'Cambridge, Corpus Christi College, MS 296: John Wyclif and his followers, Tracts in Middle English'
+        expect(json_body['metadata'].length).to eq 48
       end
 
       it 'renders the iiif v3 json for a file object' do
@@ -26,7 +26,7 @@ RSpec.describe 'purl', type: :feature do
         it 'renders the json for manifest' do
           visit '/bc854fy5899/iiif3/manifest'
           json_body = JSON.parse(page.body)
-          expect(json_body['label']['en'].first).to eq('John Wyclif and his followers, Tracts in Middle English')
+          expect(json_body['label']['en'].first).to eq 'Cambridge, Corpus Christi College, MS 296: John Wyclif and his followers, Tracts in Middle English'
           expect(json_body['metadata'].length).to eq 12
         end
       end
@@ -45,7 +45,7 @@ RSpec.describe 'purl', type: :feature do
   describe 'annotation' do
     context 'v2' do
       it 'renders the json for a book' do
-        visit '/bc854fy5899/iiif/annotation/bc854fy5899_1'
+        visit '/bc854fy5899/iiif/annotation/cocina-fileSet-bc854fy5899-bc854fy5899_1'
         json_body = JSON.parse(page.body)
         expect(json_body['motivation']).to eq('sc:painting')
       end
@@ -58,7 +58,7 @@ RSpec.describe 'purl', type: :feature do
 
     context 'v3' do
       it 'renders the json for a book' do
-        visit '/bc854fy5899/iiif3/annotation/bc854fy5899_1'
+        visit '/bc854fy5899/iiif3/annotation/cocina-fileSet-bc854fy5899-bc854fy5899_1'
         json_body = JSON.parse(page.body)
         expect(json_body['motivation']).to eq('painting')
       end
