@@ -174,7 +174,7 @@ RSpec.describe 'IIIF v3 manifests' do
     expect(image['body']['width']).to eq 2058
 
     expect(json['items'].length).to eq 57
-    expect(json['metadata'].length).to eq 13
+    expect(json['metadata'].length).to eq 12
   end
 
   context 'when pages do not have OCR content' do
