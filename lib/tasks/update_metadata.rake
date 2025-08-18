@@ -31,13 +31,13 @@ task update_metadata: :environment do
     'sk882gx0113', # a collection released to searchworks with a member (cp088pb1682)
     'ss099gb5528', # a collection not released to searchworks with a member (cd027gx5097)
     'wm135gp2721', # file, world access, has an ORCiD
-    # 'wp335yr5649', # file, world access, has 4 versions - can't be updated yet
     'wy534zh7137', # the rosette jpg
     'xm166kd3734', # TODO: consolidate
     'yb533nc1884', # collection with member (gx074xz5520)
     # 'yk677wc8843', # file, stanford-only OCLC link - can't be updated
     'yr183sf1341', # book, world access, right-to-left
     # 'yy816tv6021', # media, location access - can't be updated yet
+    'zb733jx3137', # an item with 4 versions
     'zb871zd0767', # collection
     'zf119tw4418' # book, world access, with OCR (TODO: consolidate with bb737zp0787?)
   ]

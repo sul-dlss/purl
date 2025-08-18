@@ -36,7 +36,7 @@ RSpec.describe PurlResource do
   end
 
   describe '#versions' do
-    let(:druid) { 'wp335yr5649' }
+    let(:druid) { 'zb733jx3137' }
 
     it 'sets the head property on versions' do
       expect(instance.versions.map(&:head)).to eq([false, false, false, true])
@@ -47,7 +47,7 @@ RSpec.describe PurlResource do
     end
 
     it 'sets the state property on versions' do
-      expect(instance.versions.map(&:state)).to eq(['permanently withdrawn', 'available', 'withdrawn', 'available'])
+      expect(instance.versions.map(&:state)).to eq(%w[available available available available])
     end
   end
 

@@ -81,23 +81,22 @@ RSpec.describe 'IIIF v3 manifests' do
 
   context 'with a version' do
     it 'is successful, has correct filepaths and metadata' do
-      get '/wp335yr5649/version/2/iiif3/manifest'
+      get '/zb733jx3137/version/2/iiif3/manifest'
 
       expect(json['@context']).to include 'http://www.w3.org/ns/anno.jsonld', 'http://iiif.io/api/presentation/3/context.json'
-      expect(json['label']['en'].first).to eq 'Code and Data supplement to "Deterministic Matrices Matching the ' \
-                                              'Compressed Sensing Phase Transitions of Gaussian Random Matrices." -- VERSION 1'
+      expect(json['label']['en'].first).to eq 'Testing versioning issue with the review workflow in the new application'
 
       # canvas urls should point to the versioned file
       canvas = json['items'].first
       expect(canvas['items'].length).to eq 1
       expect(canvas['items'].first['items'].length).to eq 1
       text = canvas['items'].first['items'].first
-      expect(text['body']['id']).to eq 'https://stacks.stanford.edu/v2/file/wp335yr5649/version/2/README.txt'
+      expect(text['body']['id']).to eq 'https://stacks.stanford.edu/v2/file/zb733jx3137/version/2/test_file_v1.pdf'
 
       # probe_service should also point to the versioned file
       probe_service = text['body'].fetch('service').first
       expect(probe_service['type']).to eq 'AuthProbeService2'
-      expect(probe_service['id']).to eq 'https://stacks.stanford.edu/iiif/auth/v2/probe?id=https%3A%2F%2Fstacks.stanford.edu%2Fv2%2Ffile%2Fwp335yr5649%2Fversion%2F2%2FREADME.txt'
+      expect(probe_service['id']).to eq 'https://stacks.stanford.edu/iiif/auth/v2/probe?id=https%3A%2F%2Fstacks.stanford.edu%2Fv2%2Ffile%2Fzb733jx3137%2Fversion%2F2%2Ftest_file_v1.pdf'
       expect(probe_service['service']).to include hash_including 'type' => 'AuthAccessService2'
       expect(probe_service.dig('service', 0, 'service')).to include hash_including 'type' => 'AuthAccessTokenService2'
     end

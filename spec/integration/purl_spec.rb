@@ -13,11 +13,11 @@ RSpec.describe 'purl', type: :feature do
       end
 
       it 'renders the iiif v3 json for a file object' do
-        visit '/wp335yr5649/iiif/manifest'
+        visit '/gx074xz5520/iiif/manifest'
         json_body = JSON.parse(page.body)
         expect(json_body['@context']).to include('http://iiif.io/api/presentation/3/context.json')
-        expect(json_body['id']).to eq 'http://www.example.com/wp335yr5649/iiif/manifest'
-        expect(json_body['label']['en']).to include(start_with('Code and Data supplement to'))
+        expect(json_body['id']).to eq 'http://www.example.com/gx074xz5520/iiif/manifest'
+        expect(json_body['label']['en']).to eq ['Minutes, 2006 May 18']
       end
     end
 
