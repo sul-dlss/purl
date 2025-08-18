@@ -297,7 +297,7 @@ RSpec.describe Iiif3MetadataWriter do
       end
     end
 
-    context 'with extent' do
+    context 'with extent and map coordinates' do
       let(:cocina_descriptive) do
         PurlResource.find('bb157hs6068').version(:head).cocina['description']
       end
@@ -306,6 +306,30 @@ RSpec.describe Iiif3MetadataWriter do
         expect(metadata.find do
           it['label'][:en] == ['Format']
         end['value'][:en]).to eq ['51.5 x 59.8 cm., including title along top and border, with 10 diagrams/maps and 6 columns of titled text.']
+
+        expect(metadata.find do
+          it['label'][:en] == ['Coverage']
+        end['value'][:en]).to eq ['W 180° --E 180°/N 85° --S 85°']
+      end
+    end
+
+    context 'with map scale and coordinates' do
+      let(:cocina_descriptive) do
+        {
+          'subject' => [{ 'value' => 'America--Maps', 'type' => 'topic', 'source' => { 'uri' => 'http => //id.loc.gov/authorities/subjects/sh85004277' } },
+                        { 'value' => 'California as an island--Maps', 'type' => 'topic' },
+                        { 'value' => 'W 160° --E 20°/N 90° --S 90°', 'type' => 'map coordinates' }],
+          'form' => [{ 'type' => 'genre', 'value' => 'map' },
+                     { 'source' => { 'value' => 'MODS resource types' }, 'type' => 'resource type', 'value' => 'cartographic' },
+                     { 'type' => 'extent', 'value' => '22.5 x 31.7 cm., 22.5 x 33.1 cm. including border.' },
+                     { 'type' => 'map scale', 'value' => '[ca.1 => 60,000,000].' }]
+        }
+      end
+
+      it 'extracts the metadata' do
+        expect(metadata.find do
+          it['label'][:en] == ['Coverage']
+        end['value'][:en]).to eq ['[ca.1 => 60,000,000].', 'W 160° --E 20°/N 90° --S 90°']
       end
     end
 
