@@ -20,16 +20,16 @@ RSpec.describe 'Displaying the PURL page' do
   end
 
   context 'map' do
-    let(:druid) { 'py305sy7961' }
+    let(:druid) { 'rp193xx6845' }
 
     it 'displays the page' do
       visit "/#{druid}"
-      expect(page).to have_content 'Torrance, Los Angeles Co., Cal., Dec. 1929'
+      expect(page).to have_content '[Plates to Allgemeine auf Geschichte und Erfahrung gegründete theoretisch-practische Wasserbaukunst.]'
       expect(page).to have_metadata_section 'Access conditions'
       expect(page).to have_metadata_section 'Description'
       expect(page).to have_metadata_section 'Contributors'
       expect(page).to have_metadata_section 'Subjects'
-      expect(page).to have_link 'brannerlibrary@stanford.edu', href: 'mailto:brannerlibrary@stanford.edu'
+      expect(page).to have_link 'rumseymapcenter@stanford.edu', href: 'mailto:rumseymapcenter@stanford.edu'
     end
   end
 

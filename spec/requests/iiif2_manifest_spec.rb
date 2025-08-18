@@ -93,7 +93,7 @@ RSpec.describe 'IIIF v2 manifests' do
   end
 
   it 'uses left-to-right as default viewing direction if viewing direction is not defined' do
-    get '/py305sy7961/iiif/manifest'
+    get '/rp193xx6845/iiif/manifest'
 
     expect(json['sequences'].first['viewingDirection']).to eq('left-to-right')
   end
@@ -141,7 +141,7 @@ RSpec.describe 'IIIF v2 manifests' do
   end
 
   it 'does not publish services for pages without OCR content' do
-    get '/py305sy7961/iiif/manifest'
+    get '/rp193xx6845/iiif/manifest'
 
     expect(json).not_to have_key 'service'
   end
