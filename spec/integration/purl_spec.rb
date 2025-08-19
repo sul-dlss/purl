@@ -72,9 +72,9 @@ RSpec.describe 'purl', type: :feature do
 
   describe 'public xml' do
     it 'returns public xml' do
-      visit '/xm166kd3734.xml'
+      visit '/cg767mn6478.xml'
       xml = Nokogiri::XML(page.body)
-      expect(xml.search('//objectLabel').first.text).to eq 'Walters Ms. W.12, On Christian rulers'
+      expect(xml.search('//objectLabel').first.text).to start_with "(Covers to) Carey's American Atlas"
     end
 
     it '404 with unavailable message when no public_xml' do
@@ -86,7 +86,7 @@ RSpec.describe 'purl', type: :feature do
 
   describe 'mods' do
     it 'returns public mods' do
-      visit '/xm166kd3734.mods'
+      visit '/cg767mn6478.mods'
       xml = Nokogiri::XML(page.body)
       expect(xml.search('//mods:title', 'mods' => 'http://www.loc.gov/mods/v3').length).to be_present
     end
