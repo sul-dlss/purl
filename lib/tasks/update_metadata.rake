@@ -24,7 +24,6 @@ task update_metadata: :environment do
     'jg072yr3056', # book, world access, with OCR (TODO: consolidate with bb737zp0787?)
     'jw923xn5254', # second child object
     'nd387jf5675', # ETD
-    'qf794pv6287', # 3d object (TODO: consolication target?)
     'rf433wv2584', # image where jp2 is not downloadable
     'rp193xx6845', # map, world access, has coordinates in the metadata
     'rs276tc2764', # grandfathered namespace
