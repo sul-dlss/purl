@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:bb001dq8600" published="2024-05-08T11:55:21Z" publishVersion="cocina-models/0.96.0">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>Students-special achievements</objectLabel>
+    <sourceId source="sul">sul:pc0065_b08_f10_i031</sourceId>
+  </identityMetadata>
+  <contentMetadata objectId="druid:bb001dq8600" type="image">
+    <resource id="cocina-fileSet-bb001dq8600-bb001dq8600_1" sequence="1" type="image">
+      <label>Image 1</label>
+      <file id="pc0065_b08_f10_i031.jp2" mimetype="image/jp2" size="17740787" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">6f418040f75245623bcc237e193d1cbd834aef3e</checksum>
+        <checksum type="md5">6d5d20afbe7c6d2cd97f67350de8dfd4</checksum>
+        <imageData height="8183" width="11535"/>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <group>stanford</group>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">The materials are open for research use and may be used freely for non-commercial purposes with an attribution. For commercial permission requests, please contact the Stanford University Archives (universityarchives@stanford.edu).</human>
+      <license/>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:bb001dq8600">
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:fc137hf6943"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Students-special achievements</dc:title>
+    <dc:contributor>Peninsula-Times Tribune. (Creator)</dc:contributor>
+    <dc:type>photographs</dc:type>
+    <dc:type>StillImage</dc:type>
+    <dc:format>1 photograph</dc:format>
+    <dc:format>image/jpeg</dc:format>
+    <dc:date>1970-1992</dc:date>
+    <dc:identifier>sul:pc0065_b08_f10_i031</dc:identifier>
+    <dc:identifier>https://purl.stanford.edu/bb001dq8600</dc:identifier>
+    <dc:relation type="collection">Peninsula-Times Tribune, Stanford University photographs, 1959-1992 (inclusive), 1970-1992 (bulk)</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>Students-special achievements</title>
+    </titleInfo>
+    <name authority="local" type="corporate">
+      <namePart>Peninsula-Times Tribune.</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/cre" authority="marcrelator" type="text">Creator</roleTerm>
+      </role>
+    </name>
+    <genre authority="aat">photographs</genre>
+    <typeOfResource>still image</typeOfResource>
+    <physicalDescription>
+      <internetMediaType>image/jpeg</internetMediaType>
+      <extent>1 photograph</extent>
+      <digitalOrigin>reformatted digital</digitalOrigin>
+    </physicalDescription>
+    <originInfo>
+      <dateCreated encoding="w3cdtf" keyDate="yes" point="start">1970</dateCreated>
+      <dateCreated encoding="w3cdtf" point="end">1992</dateCreated>
+    </originInfo>
+    <identifier displayLabel="SourceID" type="local">sul:pc0065_b08_f10_i031</identifier>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/bb001dq8600</url>
+    </location>
+    <location>
+      <physicalLocation valueURI="http://id.loc.gov/authorities/names/no2011169996" authority="naf" displayLabel="Repository">Stanford University. Libraries. Department of Special Collections and University Archives.
+        </physicalLocation>
+    </location>
+    <location>
+      <physicalLocation displayLabel="Collection call number">PC0065</physicalLocation>
+    </location>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Peninsula-Times Tribune, Stanford University photographs, 1959-1992 (inclusive), 1970-1992 (bulk)</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/fc137hf6943</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">The materials are open for research use and may be used freely for non-commercial purposes with an attribution. For commercial permission requests, please contact the Stanford University Archives (universityarchives@stanford.edu).</accessCondition>
+  </mods>
+  <releaseData>
+    <release to="Searchworks">true</release>
+  </releaseData>
+  <thumb>bb001dq8600/pc0065_b08_f10_i031.jp2</thumb>
+</publicObject>
