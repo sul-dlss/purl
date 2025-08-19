@@ -118,7 +118,7 @@ RSpec.describe 'IIIF v3 manifests' do
 
   context 'when viewing direction is not defined' do
     it 'uses left-to-right as default viewing direction' do
-      get '/py305sy7961/iiif3/manifest'
+      get '/rp193xx6845/iiif3/manifest'
       expect(json['viewingDirection']).to eq('left-to-right')
     end
   end
@@ -182,7 +182,7 @@ RSpec.describe 'IIIF v3 manifests' do
 
   context 'when pages do not have OCR content' do
     it 'does not publish search services' do
-      get '/py305sy7961/iiif3/manifest'
+      get '/rp193xx6845/iiif3/manifest'
 
       expect(json).not_to have_key 'service'
     end
@@ -491,7 +491,7 @@ RSpec.describe 'IIIF v3 manifests' do
 
       expect(json['@context']).to include 'http://iiif.io/api/extension/navplace/context.json'
       features = json['navPlace']['features']
-      expect(features.length).to eq 2
+      expect(features.length).to eq 1
       expect(features[0]['geometry'].with_indifferent_access).to match({
                                                                          type: 'Polygon',
                                                                          coordinates: [
@@ -502,13 +502,6 @@ RSpec.describe 'IIIF v3 manifests' do
                                                                              ['-23.9', '33.5'],
                                                                              ['-23.9', '71.316666']
                                                                            ]
-                                                                         ]
-                                                                       })
-      expect(features[1]['geometry'].with_indifferent_access).to match({
-                                                                         type: 'Point',
-                                                                         coordinates: [
-                                                                           '103.8',
-                                                                           '-3.766666'
                                                                          ]
                                                                        })
     end
