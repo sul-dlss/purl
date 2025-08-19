@@ -4,7 +4,7 @@ class FindItComponent < ViewComponent::Base
   def initialize(document:, version:)
     @document = document
     @version = version
-    super
+    super()
   end
 
   attr_reader :document, :version
