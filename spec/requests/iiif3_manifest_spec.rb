@@ -442,10 +442,8 @@ RSpec.describe 'IIIF v3 manifests' do
   end
 
   context 'with a location restricted image' do
-    let(:druid) { 'yy816tv6021' }
-
     it 'generates a IIIF v3 manifest that includes location authentication information' do
-      get "/#{druid}/iiif3/manifest"
+      get '/tb420df0840/iiif3/manifest'
       expect(response).to have_http_status(:ok)
 
       external_interaction_service = json['items'].first['items'].first['items'].first['body']['service'].first['services'].first
@@ -455,6 +453,19 @@ RSpec.describe 'IIIF v3 manifests' do
       expect(external_interaction_service['failureDescription']).to eq 'Restricted content cannot be accessed from your location'
       expect(external_interaction_service['service'].first['@id']).to eq "#{Settings.stacks.url}/image/iiif/token"
       expect(external_interaction_service['service'].first['profile']).to eq 'http://iiif.io/api/auth/1/token'
+    end
+  end
+
+  context 'with a location restricted media' do
+    it 'generates a IIIF v3 manifest that includes location authentication information' do
+      get '/yy816tv6021/iiif3/manifest'
+      expect(response).to have_http_status(:ok)
+
+      external_interaction_service = json['items'].first['items'].first['items'].first['body']['service'].first['service'].first
+      expect(external_interaction_service['profile']).to eq 'active'
+      expect(external_interaction_service['label']['en'].first).to eq 'Restricted content cannot be accessed from your location'
+      expect(external_interaction_service['service'].first['id']).to eq "#{Settings.stacks.url}/iiif/auth/v2/token"
+      expect(external_interaction_service['service'].first['type']).to eq 'AuthAccessTokenService2'
     end
   end
 

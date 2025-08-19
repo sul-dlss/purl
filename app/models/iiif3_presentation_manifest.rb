@@ -285,6 +285,8 @@ class Iiif3PresentationManifest < IiifPresentationManifest
                                 # we want to run the probe service so that it can redirect to the streaming server.
                                 # See https://iiif.io/api/auth/2.0/#probe-service-description
                                 [iiif_v2_access_service_external_public]
+                              elsif rights.restricted_by_location?(resource.filename)
+                                [iiif_v2_location_restricted]
                               else
                                 [iiif_v2_access_service_active]
                               end
@@ -364,6 +366,18 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       'profile' => 'active',
       'label' => { 'en' => ['Stanford users: log in to access all available features'] },
       'confirmLabel' => { 'en' => ['Log in'] }
+    ).tap do |service|
+      service.service = [iiif_v2_access_token_service]
+    end
+  end
+
+  def iiif_v2_location_restricted
+    IIIF::V3::Presentation::Service.new(
+      'id' => "#{Settings.stacks.url}/auth/iiif",
+      'type' => 'AuthAccessService2',
+      'profile' => 'active',
+      'label' => { 'en' => ['Restricted content cannot be accessed from your location'] },
+      'confirmLabel' => { 'en' => ['Restricted content cannot be accessed from your location'] }
     ).tap do |service|
       service.service = [iiif_v2_access_token_service]
     end
