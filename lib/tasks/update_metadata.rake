@@ -13,6 +13,7 @@ task update_metadata: :environment do
     'cd027gx5097', # item that is part of collection (ss099gb5528) not released to searchworks
     'cg357zz0321', # geo object
     'cg767mn6478', # image, world, covers to atlas
+    'tb420df0840', # image, location restricted
     'cp088pb1682', # image released to searchworks that is a member of a collection (sk882gx0113)
     'cz128vq0535', # geo (TODO: consolication target?)
     'gk894yk3598', # collection without a FOLIO hrid
@@ -35,7 +36,7 @@ task update_metadata: :environment do
     'yb533nc1884', # collection with member (gx074xz5520)
     # 'yk677wc8843', # file, stanford-only OCLC link - can't be updated
     'yr183sf1341', # book, world access, right-to-left
-    # 'yy816tv6021', # media, location access - can't be updated yet
+    'yy816tv6021', # media, location access
     'zb733jx3137', # an item with 4 versions
     'zb871zd0767', # collection
     'zf119tw4418' # book, world access, with OCR (TODO: consolidate with bb737zp0787?)

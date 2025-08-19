@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:tb420df0840" published="2025-07-10T16:54:08Z" publishVersion="cocina-models/0.104.1">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>Reproductions of Maria Callas correspondence 1956-1969</objectLabel>
+    <sourceId source="sul">sul:ars0196_b001_f01</sourceId>
+  </identityMetadata>
+  <contentMetadata objectId="druid:tb420df0840" type="image">
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_1" sequence="1" type="image">
+      <label>Image 1</label>
+      <file id="tb420df0840_0001.jp2" mimetype="image/jp2" size="1588526" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">98544ea36d8c65332e6d7776676f276eb84f2fdd</checksum>
+        <checksum type="md5">9d507c2122086eddd2d0fec6cfcd48cb</checksum>
+        <imageData height="3309" width="2551"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_2" sequence="2" type="image">
+      <label>Image 2</label>
+      <file id="tb420df0840_0002.jp2" mimetype="image/jp2" size="1581430" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">b3f85b5001089528df943e6271af7fa5accd4e1f</checksum>
+        <checksum type="md5">27aa4103f041a1f176567d3da65fce88</checksum>
+        <imageData height="3309" width="2551"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_3" sequence="3" type="image">
+      <label>Image 3</label>
+      <file id="tb420df0840_0003.jp2" mimetype="image/jp2" size="1588639" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">1975c5505ecdfe540cc6a886d240972bed7dcef2</checksum>
+        <checksum type="md5">6f9eaa113ef8369eb1eae1b7a01966de</checksum>
+        <imageData height="3309" width="2551"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_4" sequence="4" type="image">
+      <label>Image 4</label>
+      <file id="tb420df0840_0004.jp2" mimetype="image/jp2" size="1588719" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">2bd19e8926269459d23882a60da704c215acc574</checksum>
+        <checksum type="md5">13df2290151f7b1e319ff39fa9ebb0d1</checksum>
+        <imageData height="3309" width="2551"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_5" sequence="5" type="image">
+      <label>Image 5</label>
+      <file id="tb420df0840_0005.jp2" mimetype="image/jp2" size="1588736" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">c55407b838523c8290b5c2e1b54f58fb94c91c88</checksum>
+        <checksum type="md5">2e065c9ad08020a9cb4b84d2960516ab</checksum>
+        <imageData height="3309" width="2551"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_6" sequence="6" type="image">
+      <label>Image 6</label>
+      <file id="tb420df0840_0006.jp2" mimetype="image/jp2" size="1588495" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">343bcf198622e2bd9595b63f958551dabd55b63f</checksum>
+        <checksum type="md5">b050bccb7f6d0d7fb685333653aa0501</checksum>
+        <imageData height="3309" width="2551"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_7" sequence="7" type="image">
+      <label>Image 7</label>
+      <file id="tb420df0840_0007.jp2" mimetype="image/jp2" size="1588697" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">63714dc8dab831f55cce4ff9445805fc5e34ac7f</checksum>
+        <checksum type="md5">03fd06b6eabe65b660c534ea2047aa69</checksum>
+        <imageData height="3309" width="2551"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_8" sequence="8" type="image">
+      <label>Image 8</label>
+      <file id="tb420df0840_0008.jp2" mimetype="image/jp2" size="1588621" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">2c14b6d644574737529d0db4618ea38f63916a51</checksum>
+        <checksum type="md5">272f1cd14376a18b7a7b9fe603be4a7f</checksum>
+        <imageData height="3309" width="2551"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_9" sequence="9" type="image">
+      <label>Image 9</label>
+      <file id="tb420df0840_0009.jp2" mimetype="image/jp2" size="1588869" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">72b5bbce5a230b1223f44c8871d4e7c5d589d186</checksum>
+        <checksum type="md5">7b7b1a3ff8001e1f8be23a9c70620b75</checksum>
+        <imageData height="3309" width="2551"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_10" sequence="10" type="image">
+      <label>Image 10</label>
+      <file id="tb420df0840_0010.jp2" mimetype="image/jp2" size="1588424" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">5959f59a713e6182f4da0e1d380eed3af04b0f2d</checksum>
+        <checksum type="md5">2b592749a369c313cddb08561a2d07a7</checksum>
+        <imageData height="3309" width="2551"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_11" sequence="11" type="image">
+      <label>Image 11</label>
+      <file id="tb420df0840_0011.jp2" mimetype="image/jp2" size="1588772" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">934bf221cfd92bc5ea824aea2578e58e86552838</checksum>
+        <checksum type="md5">d2b76c739d6e9de37369473ad7f242d8</checksum>
+        <imageData height="3309" width="2551"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_12" sequence="12" type="image">
+      <label>Image 12</label>
+      <file id="tb420df0840_0012.jp2" mimetype="image/jp2" size="1584938" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">04a4d3dd0fee6c4c76ce8bd26da1b7632b8b65e8</checksum>
+        <checksum type="md5">c8997ad819d9463c30a72b58b322398e</checksum>
+        <imageData height="3309" width="2551"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_13" sequence="13" type="image">
+      <label>Image 13</label>
+      <file id="tb420df0840_0013.jp2" mimetype="image/jp2" size="1588502" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">1968fb33c724a9b363c5527aa039640d70271eba</checksum>
+        <checksum type="md5">fe3c31942007d9a647faece8a13cc7cc</checksum>
+        <imageData height="3309" width="2551"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_14" sequence="14" type="image">
+      <label>Image 14</label>
+      <file id="tb420df0840_0014.jp2" mimetype="image/jp2" size="1587964" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">ba7d14e8368ec3c0cd695caaac6801ca4397c467</checksum>
+        <checksum type="md5">5e2347979105fb4e2c6c201d2c92e35b</checksum>
+        <imageData height="3309" width="2551"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_15" sequence="15" type="image">
+      <label>Image 15</label>
+      <file id="tb420df0840_0015.jp2" mimetype="image/jp2" size="1588861" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">dbeb06562da4aca37d9c9409bed1a58e70d0413d</checksum>
+        <checksum type="md5">63b92ee2406f0d78ddbfd1ce91e89958</checksum>
+        <imageData height="3309" width="2551"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_16" sequence="16" type="image">
+      <label>Image 16</label>
+      <file id="tb420df0840_0016.jp2" mimetype="image/jp2" size="1586076" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">36f693ce6109006c1c0370a5f3a6136529615bac</checksum>
+        <checksum type="md5">e538acdf5c79b9a8d4a531f0894de625</checksum>
+        <imageData height="3309" width="2551"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_17" sequence="17" type="image">
+      <label>Image 17</label>
+      <file id="tb420df0840_0017.jp2" mimetype="image/jp2" size="1588889" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">6d37f49cc424bef28a03f73a248206921ca92347</checksum>
+        <checksum type="md5">d863c6dd8d70c538b9f96980f5489013</checksum>
+        <imageData height="3309" width="2551"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_18" sequence="18" type="image">
+      <label>Image 18</label>
+      <file id="tb420df0840_0018.jp2" mimetype="image/jp2" size="1588814" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">09bfc1442e33853615b219f6fc430daa75573fcf</checksum>
+        <checksum type="md5">0ac9f17d07ae154eaeeae80e55140ba2</checksum>
+        <imageData height="3309" width="2551"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_19" sequence="19" type="image">
+      <label>Image 19</label>
+      <file id="tb420df0840_0019.jp2" mimetype="image/jp2" size="1589784" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">0e6def3c260d70c65f3fee23398e974c3836cce3</checksum>
+        <checksum type="md5">1108152ec7a50d1207cd00c069ff1504</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_20" sequence="20" type="image">
+      <label>Image 20</label>
+      <file id="tb420df0840_0020.jp2" mimetype="image/jp2" size="1587076" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">3bb2f8b04f05ede39eafc31343e71963507d3936</checksum>
+        <checksum type="md5">185370e70fda643379dddf7357eab777</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_21" sequence="21" type="image">
+      <label>Image 21</label>
+      <file id="tb420df0840_0021.jp2" mimetype="image/jp2" size="1587456" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">42a1fd2ebd3e4ebdc0b7b3d32e46a199269f2776</checksum>
+        <checksum type="md5">374bdb97495e1be4bfcb9ce9cd428d69</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_22" sequence="22" type="image">
+      <label>Image 22</label>
+      <file id="tb420df0840_0022.jp2" mimetype="image/jp2" size="1589780" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">36e56200be299a55cee86deebf7bde41c1f74e1c</checksum>
+        <checksum type="md5">9b668a7e82a9158f834218e7af8e54e8</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_23" sequence="23" type="image">
+      <label>Image 23</label>
+      <file id="tb420df0840_0023.jp2" mimetype="image/jp2" size="1583356" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">b9eba30e2e17e865dee3ff363664eb376c350aa9</checksum>
+        <checksum type="md5">092e6985c50dff45c3832d3e4c035c2b</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_24" sequence="24" type="image">
+      <label>Image 24</label>
+      <file id="tb420df0840_0024.jp2" mimetype="image/jp2" size="1589751" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">d85a7b08023b0657d060b3e858b7bf2fa5535e3d</checksum>
+        <checksum type="md5">fc91ea0dcfe37fb4f57322c70c0ba08d</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_25" sequence="25" type="image">
+      <label>Image 25</label>
+      <file id="tb420df0840_0025.jp2" mimetype="image/jp2" size="1586053" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">c972b3f3994afee2c56807fa896d716642b77127</checksum>
+        <checksum type="md5">7f0cea81728fed43d0112d514f66248c</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_26" sequence="26" type="image">
+      <label>Image 26</label>
+      <file id="tb420df0840_0026.jp2" mimetype="image/jp2" size="1581135" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">cc1dd7a1d8b05dfd6fd692a13c133f7a2ea344fe</checksum>
+        <checksum type="md5">38aeda3087ff38a7835351e3f83d735b</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_27" sequence="27" type="image">
+      <label>Image 27</label>
+      <file id="tb420df0840_0027.jp2" mimetype="image/jp2" size="1584472" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">ca041a10351881124eb32b433a20e4b1bd36af84</checksum>
+        <checksum type="md5">fd229b6a44b04ea1bd2fee4533e4bdc5</checksum>
+        <imageData height="2551" width="3301"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_28" sequence="28" type="image">
+      <label>Image 28</label>
+      <file id="tb420df0840_0028.jp2" mimetype="image/jp2" size="1589861" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">45b9217fbbca0bfa029bc65fd2b723cbc0313e6c</checksum>
+        <checksum type="md5">65fa42a02ebf4d0062a1e9e9e8faf151</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_29" sequence="29" type="image">
+      <label>Image 29</label>
+      <file id="tb420df0840_0029.jp2" mimetype="image/jp2" size="1586320" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">e5c4a295788bbd8c531cebf40327045a0b5808ef</checksum>
+        <checksum type="md5">d74676df6368feedf5862301c982f452</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_30" sequence="30" type="image">
+      <label>Image 30</label>
+      <file id="tb420df0840_0030.jp2" mimetype="image/jp2" size="1589758" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">f7289dc88664861394fda5f4e58de913097d9d22</checksum>
+        <checksum type="md5">1967ea0c533ecaced41976117dd8cb4d</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_31" sequence="31" type="image">
+      <label>Image 31</label>
+      <file id="tb420df0840_0031.jp2" mimetype="image/jp2" size="1589799" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">a3f4f64f24d38602dbde2b504c093b050f10a2e0</checksum>
+        <checksum type="md5">15021d5e67d721db2e8b1925cf90d7e7</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_32" sequence="32" type="image">
+      <label>Image 32</label>
+      <file id="tb420df0840_0032.jp2" mimetype="image/jp2" size="1587916" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">22f9a5a540c52a7ac57647ce7a4a5e666c3ee2cb</checksum>
+        <checksum type="md5">4b0fc82591aa8a79a08c8a2b37c27f0e</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_33" sequence="33" type="image">
+      <label>Image 33</label>
+      <file id="tb420df0840_0033.jp2" mimetype="image/jp2" size="1589712" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">534d404bc580cc6fdd735b935a9c2073a9b9f172</checksum>
+        <checksum type="md5">f57e9868a1f5f733c2e26113186f39d4</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_34" sequence="34" type="image">
+      <label>Image 34</label>
+      <file id="tb420df0840_0034.jp2" mimetype="image/jp2" size="1589766" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">82d75054483454009a8e4b5b98b0f6fbf6dad859</checksum>
+        <checksum type="md5">a193028efb478e89bc48d3f08d9ced60</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_35" sequence="35" type="image">
+      <label>Image 35</label>
+      <file id="tb420df0840_0035.jp2" mimetype="image/jp2" size="1583330" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">28dad019850c4a802354a9719800283f94d5ac20</checksum>
+        <checksum type="md5">936614456ed47269853d36639640c694</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_36" sequence="36" type="image">
+      <label>Image 36</label>
+      <file id="tb420df0840_0036.jp2" mimetype="image/jp2" size="1589741" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">1d8f8d8f16d85b56c9a144821f8a713e3e981c6f</checksum>
+        <checksum type="md5">c20a72d298cbc71c286be81400f6acd3</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_37" sequence="37" type="image">
+      <label>Image 37</label>
+      <file id="tb420df0840_0037.jp2" mimetype="image/jp2" size="1589747" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">2bd2e9b59a12aec72c094b65dd95cb8ccae8dff9</checksum>
+        <checksum type="md5">8b8fa1a8f437929f9be2553f213b86f5</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_38" sequence="38" type="image">
+      <label>Image 38</label>
+      <file id="tb420df0840_0038.jp2" mimetype="image/jp2" size="1589681" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">6e3df1ce349415c720403c4b5e8660b5e6f39d7c</checksum>
+        <checksum type="md5">b4a442d68cf5840408e9efa6c06efdbc</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_39" sequence="39" type="image">
+      <label>Image 39</label>
+      <file id="tb420df0840_0039.jp2" mimetype="image/jp2" size="1589745" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">2f5f4ec0ed89ef99194d1097128edaa917d62a79</checksum>
+        <checksum type="md5">44ab4ea1f6e58bb6511e7f4ca32dd7c3</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_40" sequence="40" type="image">
+      <label>Image 40</label>
+      <file id="tb420df0840_0040.jp2" mimetype="image/jp2" size="1584490" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">498f1b85caadc2d34f0b6b21012c8cc7f1ee5610</checksum>
+        <checksum type="md5">707771b05c3e643aab2900462c4cdb1f</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_41" sequence="41" type="image">
+      <label>Image 41</label>
+      <file id="tb420df0840_0041.jp2" mimetype="image/jp2" size="1589823" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">272a95262de5df215e02566c17a2a557f31b7d74</checksum>
+        <checksum type="md5">2d8b01780375eddac0126ec36199361e</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_42" sequence="42" type="image">
+      <label>Image 42</label>
+      <file id="tb420df0840_0042.jp2" mimetype="image/jp2" size="1584336" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">13f9030b618afba3bc4a04f2c3c3d5b1236474f4</checksum>
+        <checksum type="md5">f336a11ea877925c120af54158a4da29</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_43" sequence="43" type="image">
+      <label>Image 43</label>
+      <file id="tb420df0840_0043.jp2" mimetype="image/jp2" size="1588755" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">7a95f7edadff80141f6fa904c10e1e2b7a72a9a6</checksum>
+        <checksum type="md5">0ab3c9b65894feed161fb0d9df3ceca4</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_44" sequence="44" type="image">
+      <label>Image 44</label>
+      <file id="tb420df0840_0044.jp2" mimetype="image/jp2" size="1589799" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">9ae98586c6de00951780620f6a028cfbd2c10c2e</checksum>
+        <checksum type="md5">5ff12b5d881a9200a4a62ef630b80359</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_45" sequence="45" type="image">
+      <label>Image 45</label>
+      <file id="tb420df0840_0045.jp2" mimetype="image/jp2" size="1584621" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">f2d9644facfbdc4e9be16c629161eae8657ec5c1</checksum>
+        <checksum type="md5">865f6a68a3aa299ed0630dac2408ca6e</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_46" sequence="46" type="image">
+      <label>Image 46</label>
+      <file id="tb420df0840_0046.jp2" mimetype="image/jp2" size="1582147" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">756449f6dd8c556352aabad4a793bf1f6cbd6232</checksum>
+        <checksum type="md5">cc460adf44d6c0592f0a55dc3736bafb</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_47" sequence="47" type="image">
+      <label>Image 47</label>
+      <file id="tb420df0840_0047.jp2" mimetype="image/jp2" size="1589805" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">c71b3affab32035d98d406288f269e9b43a9b1e3</checksum>
+        <checksum type="md5">05acfcb03e1d46cea6ee10ab555cdc47</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_48" sequence="48" type="image">
+      <label>Image 48</label>
+      <file id="tb420df0840_0048.jp2" mimetype="image/jp2" size="1589061" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">a63798157a47ae7cba49d8dc71053784f12912b3</checksum>
+        <checksum type="md5">a224d2077d9c26ef7e00d1f6b8b86c63</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_49" sequence="49" type="image">
+      <label>Image 49</label>
+      <file id="tb420df0840_0049.jp2" mimetype="image/jp2" size="1588575" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">d95745a2a234afe01e39eb18e76cfaed8ce8695a</checksum>
+        <checksum type="md5">459c8200b810f3b212a7e5995f546349</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_50" sequence="50" type="image">
+      <label>Image 50</label>
+      <file id="tb420df0840_0050.jp2" mimetype="image/jp2" size="1584029" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">1912ee5287089e5bce460f47087c02198153b5b3</checksum>
+        <checksum type="md5">c3ac59951ba081c56b6a52cad5d6a53a</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_51" sequence="51" type="image">
+      <label>Image 51</label>
+      <file id="tb420df0840_0051.jp2" mimetype="image/jp2" size="1582621" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">d177068020d8d1d5958e2a1a69636a58931efb9e</checksum>
+        <checksum type="md5">351725f335d3d486e76ee86574f154f6</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_52" sequence="52" type="image">
+      <label>Image 52</label>
+      <file id="tb420df0840_0052.jp2" mimetype="image/jp2" size="1588830" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">96ec17c1b9777b1d7a9c8ee1f299fd746e4a672d</checksum>
+        <checksum type="md5">68b5ff4b8ff7bc974c4d1caca277f773</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_53" sequence="53" type="image">
+      <label>Image 53</label>
+      <file id="tb420df0840_0053.jp2" mimetype="image/jp2" size="1589733" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">897dacf58804d279e7f04f4737c04d67bd87e7d3</checksum>
+        <checksum type="md5">3b5f238616bc43c74a2a4eba15d21540</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_54" sequence="54" type="image">
+      <label>Image 54</label>
+      <file id="tb420df0840_0054.jp2" mimetype="image/jp2" size="1588274" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">5b2204df8e568cb4a8014072bfc23630c50d5fb3</checksum>
+        <checksum type="md5">438b44aae3e942d9750b6cc8738ad1e8</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_55" sequence="55" type="image">
+      <label>Image 55</label>
+      <file id="tb420df0840_0055.jp2" mimetype="image/jp2" size="1584266" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">f3d760c7da35871404cb3b6e1a7c17e4b922f329</checksum>
+        <checksum type="md5">13ba7a3dad9d9054ac9b5b8b9f88ff3d</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_56" sequence="56" type="image">
+      <label>Image 56</label>
+      <file id="tb420df0840_0056.jp2" mimetype="image/jp2" size="1580889" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">07456706da1a5525cbd70e0f3e5325f4f2188eb7</checksum>
+        <checksum type="md5">912182907e4a1f12025d381d91224f8f</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_57" sequence="57" type="image">
+      <label>Image 57</label>
+      <file id="tb420df0840_0057.jp2" mimetype="image/jp2" size="1587724" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">1aab89ed1c485379c05b02d22ac6273649752f5c</checksum>
+        <checksum type="md5">4b54cbfaef3d97b32da38aea56879f03</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_58" sequence="58" type="image">
+      <label>Image 58</label>
+      <file id="tb420df0840_0058.jp2" mimetype="image/jp2" size="1584978" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">c4a0052690dd20aaf03bc7215acc980dabd2ed95</checksum>
+        <checksum type="md5">ba94828cd0647fc93af525963f62ed1e</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_59" sequence="59" type="image">
+      <label>Image 59</label>
+      <file id="tb420df0840_0059.jp2" mimetype="image/jp2" size="1589741" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">153d30225b3a424a5e010cdd2ed24d5762d22ca0</checksum>
+        <checksum type="md5">3eae85c971047ac3816daaa4bb0d2929</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_60" sequence="60" type="image">
+      <label>Image 60</label>
+      <file id="tb420df0840_0060.jp2" mimetype="image/jp2" size="1589669" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">ef288a4e62e8db6db1230dbb77dedc1f5f07a566</checksum>
+        <checksum type="md5">bbce73b6564cb81913d60c19759bd6ad</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_61" sequence="61" type="image">
+      <label>Image 61</label>
+      <file id="tb420df0840_0061.jp2" mimetype="image/jp2" size="1584166" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">71f751ce61e3dc52574d57bbfa460bff30cf09f9</checksum>
+        <checksum type="md5">10a8928989c34c5c55e808ec7a3c03e7</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_62" sequence="62" type="image">
+      <label>Image 62</label>
+      <file id="tb420df0840_0062.jp2" mimetype="image/jp2" size="1587874" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">7d38eea953f0ef3a1b4bee7c8cd0e7361f0899d9</checksum>
+        <checksum type="md5">a5bea4df3d4da086f9e90cffd9afa9bc</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_63" sequence="63" type="image">
+      <label>Image 63</label>
+      <file id="tb420df0840_0063.jp2" mimetype="image/jp2" size="1583417" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">2297a1f57e5212f17e34d6c879139d340f2a3714</checksum>
+        <checksum type="md5">fb3fcae4819422103dd6f7f9b146ec05</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_64" sequence="64" type="image">
+      <label>Image 64</label>
+      <file id="tb420df0840_0064.jp2" mimetype="image/jp2" size="1588931" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">13987b49aa5101a8581b08a94cf89eb0d1d272b1</checksum>
+        <checksum type="md5">52677b245e29c14c8c5c8ea1b98b541a</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_65" sequence="65" type="image">
+      <label>Image 65</label>
+      <file id="tb420df0840_0065.jp2" mimetype="image/jp2" size="1589798" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">b24ef6d250af5730ad5b93b7f639c43f7f89666a</checksum>
+        <checksum type="md5">2cccd5a1dc77f035570416bd374ce0d5</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_66" sequence="66" type="image">
+      <label>Image 66</label>
+      <file id="tb420df0840_0066.jp2" mimetype="image/jp2" size="1584508" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">6fd10b4d90e5e0df81a92df6b90576ee1a3e7ccd</checksum>
+        <checksum type="md5">56aa5c9e3c74daad7ce441e592a56f68</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_67" sequence="67" type="image">
+      <label>Image 67</label>
+      <file id="tb420df0840_0067.jp2" mimetype="image/jp2" size="1589702" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">ca463b3002665e7cc930f142906ab777bf64c117</checksum>
+        <checksum type="md5">5360e24fa941f645d20b3dfaf45144e0</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_68" sequence="68" type="image">
+      <label>Image 68</label>
+      <file id="tb420df0840_0068.jp2" mimetype="image/jp2" size="1584062" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">6d0a915711ee108f843061f2fe77f8d0d4162afb</checksum>
+        <checksum type="md5">24ba1e49227a3b53800af08ddf9c8076</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_69" sequence="69" type="image">
+      <label>Image 69</label>
+      <file id="tb420df0840_0069.jp2" mimetype="image/jp2" size="1589749" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">592ac808373457234cc7f61d2fbc7b764a697fc7</checksum>
+        <checksum type="md5">533230f902f2c734056123022564ba1e</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_70" sequence="70" type="image">
+      <label>Image 70</label>
+      <file id="tb420df0840_0070.jp2" mimetype="image/jp2" size="1586016" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">2320e34bc7c54c31898792af6ded966508e3923e</checksum>
+        <checksum type="md5">854d86b3a8eb33673d8bb86cf9cf7488</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_71" sequence="71" type="image">
+      <label>Image 71</label>
+      <file id="tb420df0840_0071.jp2" mimetype="image/jp2" size="1588694" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">326a6844859ea39671c6d423ff756da230fbbfe3</checksum>
+        <checksum type="md5">969a21ea1f3c4180e57f62ee5619d3d3</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_72" sequence="72" type="image">
+      <label>Image 72</label>
+      <file id="tb420df0840_0072.jp2" mimetype="image/jp2" size="1582207" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">ae10faf9c4658941fa4f0d6d3ebc2f237229c9c1</checksum>
+        <checksum type="md5">d409aecd2286038b54a8b9af4a483f31</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_73" sequence="73" type="image">
+      <label>Image 73</label>
+      <file id="tb420df0840_0073.jp2" mimetype="image/jp2" size="1580739" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">99ea29c10381f6d955790c615c9f9f5022d26eba</checksum>
+        <checksum type="md5">2326ae20d48aaf5657fe83d76c0ca74a</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_74" sequence="74" type="image">
+      <label>Image 74</label>
+      <file id="tb420df0840_0074.jp2" mimetype="image/jp2" size="1584086" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">2f6fb22141fb6ed159d238c82af1a8828bf459d1</checksum>
+        <checksum type="md5">51f9398c639fa3fa8dea8842cada5f1e</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_75" sequence="75" type="image">
+      <label>Image 75</label>
+      <file id="tb420df0840_0075.jp2" mimetype="image/jp2" size="1588739" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">6ed23701ffc1c3e5b0af9f9838d999a503fda00e</checksum>
+        <checksum type="md5">5a6f771fba5d5ebc8486a3521f51dc11</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_76" sequence="76" type="image">
+      <label>Image 76</label>
+      <file id="tb420df0840_0076.jp2" mimetype="image/jp2" size="1582060" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">ba20900b525e421c2c4aab366891351b5637b99c</checksum>
+        <checksum type="md5">c6b27100c1036df868106a0de937e549</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_77" sequence="77" type="image">
+      <label>Image 77</label>
+      <file id="tb420df0840_0077.jp2" mimetype="image/jp2" size="1585000" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">e88c699b14f576ed77da645f0f9760ceb18b7ebc</checksum>
+        <checksum type="md5">9a29aaebc24f1919080b28c1902f4c06</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_78" sequence="78" type="image">
+      <label>Image 78</label>
+      <file id="tb420df0840_0078.jp2" mimetype="image/jp2" size="1587053" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">9710b12c4dc98e41c389455d3ce3e351ff05df31</checksum>
+        <checksum type="md5">f64fe5f4b74db29b2b3a59830c2fdb3a</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_79" sequence="79" type="image">
+      <label>Image 79</label>
+      <file id="tb420df0840_0079.jp2" mimetype="image/jp2" size="1589182" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">69bfd5d5313921e867c87439d1019100de0e1e38</checksum>
+        <checksum type="md5">24da5de787afa29a1e3e27cf8666421a</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_80" sequence="80" type="image">
+      <label>Image 80</label>
+      <file id="tb420df0840_0080.jp2" mimetype="image/jp2" size="1589666" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">ebd67b3b7c40158d7e3fd94b930ebfe0512763b3</checksum>
+        <checksum type="md5">46b4d3a1dff4d4a9ded6f280be60ffc1</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_81" sequence="81" type="image">
+      <label>Image 81</label>
+      <file id="tb420df0840_0081.jp2" mimetype="image/jp2" size="1583413" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">9dbf3c21633cd8b01b50793d9420b7ec55484491</checksum>
+        <checksum type="md5">c1ee4b4502ea14ac207fdcba77df25da</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_82" sequence="82" type="image">
+      <label>Image 82</label>
+      <file id="tb420df0840_0082.jp2" mimetype="image/jp2" size="1581163" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">ade34af0a2118ef146f50ced20cf89b5e65d83bb</checksum>
+        <checksum type="md5">dc8b7da3566c177969c3fc04631a69a4</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_83" sequence="83" type="image">
+      <label>Image 83</label>
+      <file id="tb420df0840_0083.jp2" mimetype="image/jp2" size="1589206" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">0a3fa33edf2212ed4b08799b2979f88ea4ef21ae</checksum>
+        <checksum type="md5">68832b958865ce9dee6bd594f7a31ded</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-tb420df0840-tb420df0840_84" sequence="84" type="image">
+      <label>Image 84</label>
+      <file id="tb420df0840_0084.jp2" mimetype="image/jp2" size="1585989" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">c89bc0d59eee3aa38b5fa2e8e14d92dd26ac6d24</checksum>
+        <checksum type="md5">313c741a4378cd8731a00eec090f6bae</checksum>
+        <imageData height="3302" width="2558"/>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <location>ars</location>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">Property rights reside with the repository. Literary rights reside with the creators of the documents or their heirs. To obtain permission to publish or reproduce, please contact the Stanford Archive of Recorded Sound at soundarchive@stanford.edu.</human>
+      <license/>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:tb420df0840">
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:qk374km4467"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Reproductions of Maria Callas correspondence 1956-1969</dc:title>
+    <dc:contributor>Callas, Maria, 1923-1977 (author)</dc:contributor>
+    <dc:contributor>Baxter, Robert, 1940-2010 (collector)</dc:contributor>
+    <dc:type>Text</dc:type>
+    <dc:format>image/jpeg</dc:format>
+    <dc:language>english</dc:language>
+    <dc:language>italian</dc:language>
+    <dc:description>Reformatted by Stanford University Libraries in 2020.</dc:description>
+    <dc:description displayLabel="contents">Complete scans of box 1 folder 1 of from the Robert Baxter collection.</dc:description>
+    <dc:subject>Callas, Maria, 1923-1977</dc:subject>
+    <dc:subject>Opera</dc:subject>
+    <dc:date>1956-1969</dc:date>
+    <dc:identifier>ars0196_s01_b01_f01</dc:identifier>
+    <dc:identifier>https://purl.stanford.edu/tb420df0840</dc:identifier>
+    <dc:relation type="repository">Stanford Archive of Recorded Sound</dc:relation>
+    <dc:relation type="collection">Baxter (Robert) Collection on Maria Callas 1948-2010</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>Reproductions of Maria Callas correspondence 1956-1969</title>
+    </titleInfo>
+    <name valueURI="http://id.loc.gov/authorities/names/n50032183" authority="naf" authorityURI="http://id.loc.gov/authorities/names/" type="personal">
+      <namePart>Callas, Maria, 1923-1977</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">author</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">aut</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart>Baxter, Robert, 1940-2010</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/col" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">collector</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/col" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">col</roleTerm>
+      </role>
+    </name>
+    <typeOfResource>text</typeOfResource>
+    <physicalDescription>
+      <internetMediaType>image/jpeg</internetMediaType>
+      <internetMediaType>image/tiff</internetMediaType>
+      <reformattingQuality>access</reformattingQuality>
+      <digitalOrigin>digitized other analog</digitalOrigin>
+    </physicalDescription>
+    <language>
+      <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="text">english</languageTerm>
+      <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <language>
+      <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/ita" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="text">italian</languageTerm>
+      <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/ita" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="code">ita</languageTerm>
+    </language>
+    <note>Reformatted by Stanford University Libraries in 2020.</note>
+    <tableOfContents displayLabel="contents">Complete scans of box 1 folder 1 of from the Robert Baxter collection.</tableOfContents>
+    <subject authority="lcsh">
+      <name authority="naf" authorityURI="http://id.loc.gov/authorities/names/" valueURI="http://id.loc.gov/authorities/names/n50032183" type="personal">
+        <namePart>Callas, Maria, 1923-1977</namePart>
+      </name>
+    </subject>
+    <subject authority="lcsh">
+      <topic authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects/" valueURI="http://id.loc.gov/authorities/subjects/sh85094900">Opera</topic>
+    </subject>
+    <originInfo>
+      <dateCreated encoding="w3cdtf" point="start">1956</dateCreated>
+      <dateCreated point="end">1969</dateCreated>
+    </originInfo>
+    <identifier displayLabel="Source ID" type="local">ars0196_s01_b01_f01</identifier>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/tb420df0840</url>
+    </location>
+    <location>
+      <shelfLocator>ARS0196</shelfLocator>
+    </location>
+    <location>
+      <physicalLocation type="repository" valueURI="http://id.loc.gov/authorities/names/nr00021832" authority="naf">Stanford Archive of Recorded Sound</physicalLocation>
+    </location>
+    <recordInfo>
+      <languageOfCataloging usage="primary">
+        <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="text">English</languageTerm>
+        <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="code">eng</languageTerm>
+      </languageOfCataloging>
+      <recordContentSource valueURI="http://id.loc.gov/vocabulary/organizations/cst" authorityURI="http://id.loc.gov/vocabulary/organizations" authority="marcorg">CSt</recordContentSource>
+      <recordOrigin>human prepared</recordOrigin>
+    </recordInfo>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Baxter (Robert) Collection on Maria Callas 1948-2010</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/qk374km4467</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">Property rights reside with the repository. Literary rights reside with the creators of the documents or their heirs. To obtain permission to publish or reproduce, please contact the Stanford Archive of Recorded Sound at soundarchive@stanford.edu.</accessCondition>
+  </mods>
+  <thumb>tb420df0840/tb420df0840_0001.jp2</thumb>
+</publicObject>
