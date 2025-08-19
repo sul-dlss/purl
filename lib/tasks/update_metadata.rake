@@ -16,7 +16,6 @@ task update_metadata: :environment do
     'cg767mn6478', # image, world, covers to atlas
     'tb420df0840', # image, location restricted
     'cp088pb1682', # image released to searchworks that is a member of a collection (sk882gx0113)
-    'cz128vq0535', # geo (TODO: consolication target?)
     'gk894yk3598', # collection without a FOLIO hrid
     'gx074xz5520', # file type that is part of a collection (yb533nc1884)
     'hj097bm8879', # a parent object

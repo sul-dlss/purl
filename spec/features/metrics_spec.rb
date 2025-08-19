@@ -58,7 +58,7 @@ RSpec.describe 'Metrics display', :js do
     end
 
     context 'when the object is geospatial data' do
-      let(:druid) { 'cz128vq0535' }
+      let(:druid) { 'cg357zz0321' }
 
       it 'shows the number of downloads' do
         expect(page).to have_css '#download-count', text: '1'
