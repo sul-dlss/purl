@@ -470,7 +470,7 @@ RSpec.describe 'IIIF v3 manifests' do
   end
 
   context 'with a video object with captions' do
-    let(:druid) { 'wr231qr2829' }
+    let(:druid) { 'bd699ky6829' }
 
     it 'includes a placeholder canvas and caption annotations' do
       get "/#{druid}/iiif3/manifest"

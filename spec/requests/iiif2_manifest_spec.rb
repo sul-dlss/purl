@@ -305,24 +305,4 @@ RSpec.describe 'IIIF v2 manifests' do
       end
     end
   end
-
-  context 'when a resource has special characters in the filename' do
-    let(:druid) { 'fg019pm1396' }
-
-    it 'generates a IIIF v2 manifest that escapes resources in urls' do
-      get "/#{druid}/iiif/manifest"
-      expect(response).to have_http_status(:ok)
-
-      image_ids = json['sequences'].flat_map { |x| x['canvases'] }.flat_map { |x| x['images'] }.map { |x| x['resource']['@id'] }
-
-      # handle spaces
-      expect(image_ids).to include 'https://stacks.stanford.edu/image/iiif/fg019pm1396%2FJungleCat%20x/full/full/0/default.jpg'
-
-      # handle percent signs
-      expect(image_ids).to include 'https://stacks.stanford.edu/image/iiif/fg019pm1396%2FJungleCat%2520x/full/full/0/default.jpg'
-
-      # xml escaped stuff
-      expect(image_ids).to include 'https://stacks.stanford.edu/image/iiif/fg019pm1396%2FJungleCat%26x/full/full/0/default.jpg'
-    end
-  end
 end

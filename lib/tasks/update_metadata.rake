@@ -5,6 +5,7 @@ task update_metadata: :environment do
     'bb157hs6068', # map, world acccess, has extent in the metadata
     'bb737zp0787', # book, world access, with OCR
     'bc854fy5899', # book, world access
+    'bd699ky6829', # media, world access, with vtt
     'bd786fy6312', # media
     'bf385jz2076', # book, no-download, with OCR
     'bf973rp9392', # image, released to searchworks
