@@ -19,7 +19,6 @@ task update_metadata: :environment do
     'cz128vq0535', # geo (TODO: consolication target?)
     'gk894yk3598', # collection without a FOLIO hrid
     'gx074xz5520', # file type that is part of a collection (yb533nc1884)
-    'hc941fm6529', # 3d object (TODO: consolication target?)
     'hj097bm8879', # a parent object
     # 'hx163dc5225', # has annotations - can't be updated yet
     'jg072yr3056', # book, world access, with OCR (TODO: consolidate with bb737zp0787?)
