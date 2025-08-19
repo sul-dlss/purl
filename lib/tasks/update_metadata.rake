@@ -38,7 +38,8 @@ task update_metadata: :environment do
     'yy816tv6021', # media, location access
     'zb733jx3137', # an item with 4 versions
     'zb871zd0767', # collection
-    'zf119tw4418' # book, world access, with OCR (TODO: consolidate with bb737zp0787?)
+    'zf119tw4418', # book, world access, with OCR (TODO: consolidate with bb737zp0787?)
+    'zm796xp7877' # book, with first page dark
   ]
   druids.each do |druid|
     tree = Dor::Util.create_pair_tree(druid)
