@@ -73,10 +73,10 @@ class Iiif3MetadataWriter
   end
 
   def contacts
-    access_contact = cocina_descriptive.dig('access', 'accessContact')
-    return [] unless access_contact
+    access = cocina_descriptive['access']
+    return [] unless access
 
-    contacts = access_contact.select { it['type'] == 'email' }.pluck('value')
+    contacts = access.fetch('accessContact').select { it['type'] == 'email' }.pluck('value')
     return [] if contacts.empty?
 
     [iiif_key_value('Contact', contacts)]
