@@ -365,13 +365,13 @@ RSpec.describe 'IIIF v3 manifests' do
   end
 
   context 'with a 3D object' do
-    let(:druid) { 'hc941fm6529' }
+    let(:druid) { 'bg387kw8222' }
 
     it 'generates a correct IIIF v3 manifest' do
       get "/#{druid}/iiif3/manifest"
       expect(response).to have_http_status(:ok)
 
-      expect(json['label']['en'].first).to start_with 'Sheep'
+      expect(json['label']['en'].first).to start_with 'Department of Anthropology Bone Collection'
       expect(json['items'].length).to eq 1
 
       canvas = json['items'].first
@@ -381,9 +381,9 @@ RSpec.describe 'IIIF v3 manifests' do
       expect(canvas['width']).not_to be_present
 
       obj = canvas['items'].first['items'].first
-      expect(obj['body']['id']).to eq 'https://stacks.stanford.edu/file/hc941fm6529/hc941fm6529.json'
-      expect(obj['body']['format']).to eq 'application/vnd.threejs+json'
-      expect(obj['body']['type']).to eq 'Model'
+      expect(obj['body']['id']).to eq 'https://stacks.stanford.edu/file/bg387kw8222/bg387kw8222_low.glb'
+      expect(obj['body']['format']).to eq 'model/gltf-binary'
+      expect(obj['body']['type']).to eq 'Dataset'
     end
   end
 
