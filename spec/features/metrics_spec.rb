@@ -66,7 +66,7 @@ RSpec.describe 'Metrics display', :js do
     end
 
     context 'when the object is a 3d model' do
-      let(:druid) { 'qf794pv6287' }
+      let(:druid) { 'bg387kw8222' }
 
       it 'shows the number of downloads' do
         expect(page).to have_css '#download-count', text: '1'
