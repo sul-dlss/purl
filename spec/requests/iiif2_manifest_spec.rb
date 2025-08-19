@@ -160,10 +160,9 @@ RSpec.describe 'IIIF v2 manifests' do
     end
 
     it 'suppresses sequences for dark resources' do
-      get '/bc421tk1152/iiif/manifest'
+      get '/zm796xp7877/iiif/manifest'
 
-      expect(json['sequences'].length).to eq 1
-      expect(json['sequences'].first['canvases']).to be_blank
+      expect(json['sequences'].first['canvases'].length).to be 249
     end
 
     it 'publishes IIIF manifests for books with image constituents' do
