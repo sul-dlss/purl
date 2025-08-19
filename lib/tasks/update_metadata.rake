@@ -1,12 +1,13 @@
 task update_metadata: :environment do
   druids = [
     'bb000br0025', # Not crawlable
-    'bb157hs6068', # has extent in the metadata
+    'bb001dq8600', # image, stanford-only
+    'bb157hs6068', # map, world acccess, has extent in the metadata
     'bb737zp0787', # book, world access, with OCR
     'bc854fy5899', # book, world access
     'bd786fy6312', # media
     'bf385jz2076', # book, no-download, with OCR
-    'bf973rp9392', # released to searchworks
+    'bf973rp9392', # image, released to searchworks
     'bf995rh7184', # book, stanford-only, with OCR
     'bg387kw8222', # 3d object
     'bh502xm3351', # document (pdf)
