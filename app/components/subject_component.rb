@@ -9,9 +9,10 @@ class SubjectComponent < ViewComponent::Base
   attr_reader :document
 
   delegate :mods, to: :document
+  delegate :genre, :subject, to: :mods
 
   def render?
-    mods.subject.present? || mods.genre.present?
+    subject.present? || genre.present?
   end
 
   def link_mods_subjects(subjects)
