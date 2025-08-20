@@ -2,7 +2,7 @@ task update_metadata: :environment do
   druids = [
     'bb000br0025', # Not crawlable
     'bb001dq8600', # image, stanford-only
-    'bb157hs6068', # map, world acccess, has extent in the metadata
+    'bb157hs6068', # map, world acccess, has extent in the metadata, member of collection (zb871zd0767)
     'bb737zp0787', # book, world access, with OCR
     'bc854fy5899', # book, world access
     'bd699ky6829', # media, world access, with vtt
@@ -11,7 +11,7 @@ task update_metadata: :environment do
     'bf973rp9392', # image, released to searchworks
     'bf995rh7184', # book, stanford-only, with OCR
     'bg387kw8222', # 3d object
-    'bh502xm3351', # document (pdf)
+    'bh502xm3351', # document (pdf), with mods.subject.name
     'cd027gx5097', # item that is part of collection (ss099gb5528) not released to searchworks
     'cg357zz0321', # geo object
     'cg767mn6478', # image, world, covers to atlas
@@ -35,8 +35,8 @@ task update_metadata: :environment do
     'yr183sf1341', # book, world access, right-to-left
     'yy816tv6021', # media, location access
     'zb733jx3137', # an item with 4 versions
-    'zb871zd0767', # collection
-    'zf119tw4418', # book, world access, with OCR (TODO: consolidate with bb737zp0787?)
+    'zb871zd0767', # collection (that contains bb157hs6068)
+    'zf119tw4418', # book, world access, without OCR (OCR exists, but it not published/shelved), resources are images (old style?)
     'zm796xp7877' # book, with first page dark
   ]
   druids.each do |druid|
