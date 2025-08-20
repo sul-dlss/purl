@@ -14,20 +14,21 @@ class SubjectComponent < ViewComponent::Base
     mods.subject.present? || mods.genre.present?
   end
 
-  def link_mods_subjects(subjects, &)
-    link_buffer = []
+  def link_mods_subjects(subjects)
     linked_subjects = []
     subjects.each do |subject|
-      linked_subjects << link_to_mods_subject(subject, link_buffer, &) if subject.present?
+      linked_subjects << link_to_mods_subject(subject) if subject.present?
     end
     linked_subjects
   end
 
-  def link_to_mods_subject(subject, buffer = [])
+  # @param [ModsDisplay::Name::Person, String] subject
+  def link_to_mods_subject(subject)
     subject_text = subject.respond_to?(:name) ? subject.name : subject
-    link = block_given? ? capture { yield(subject_text, buffer) } : subject_text
-    buffer << subject_text.strip
-    link << " (#{subject.roles.join(', ')})" if subject.respond_to?(:roles) && subject.roles.present?
-    link
+    if subject.respond_to?(:roles) && subject.roles.present?
+      "#{subject_text} (#{subject.roles.join(', ')})"
+    else
+      subject_text
+    end
   end
 end
