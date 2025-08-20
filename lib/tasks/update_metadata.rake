@@ -30,7 +30,6 @@ task update_metadata: :environment do
     'ss099gb5528', # a collection not released to searchworks with a member (cd027gx5097)
     'wm135gp2721', # file, world access, has an ORCiD
     'wy534zh7137', # the rosette jpg
-    'xm166kd3734', # TODO: consolidate
     'yb533nc1884', # collection with member (gx074xz5520)
     # 'yk677wc8843', # file, stanford-only OCLC link - can't be updated
     'yr183sf1341', # book, world access, right-to-left
