@@ -16,11 +16,9 @@ class SubjectComponent < ViewComponent::Base
 
   def link_mods_subjects(subjects, &)
     link_buffer = []
-    linked_subjects = []
-    subjects.each do |subject|
-      linked_subjects << link_to_mods_subject(subject, link_buffer, &) if subject.present?
+    subjects.filter_map do |subject|
+      link_to_mods_subject(subject, link_buffer, &) if subject.present?
     end
-    linked_subjects
   end
 
   def link_to_mods_subject(subject, buffer = [])
