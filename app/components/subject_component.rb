@@ -16,11 +16,7 @@ class SubjectComponent < ViewComponent::Base
   end
 
   def link_mods_subjects(subjects)
-    linked_subjects = []
-    subjects.each do |subject|
-      linked_subjects << link_to_mods_subject(subject) if subject.present?
-    end
-    linked_subjects
+    subjects.map { link_to_mods_subject(it) }
   end
 
   # @param [ModsDisplay::Name::Person, String] subject
