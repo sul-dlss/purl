@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<publicObject id="druid:zf119tw4418" published="2025-07-23T21:19:55Z" publishVersion="cocina-models/0.105.0">
+<publicObject id="druid:zf119tw4418" published="2025-08-20T20:55:16Z" publishVersion="cocina-models/0.105.2">
   <identityMetadata>
     <objectType>item</objectType>
     <objectLabel>Semiannual report to Congress for the period of</objectLabel>
@@ -694,7 +694,7 @@
       </file>
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_58" sequence="58" type="object">
-      <label>Object 1</label>
+      <label>Full PDF</label>
       <file id="zf119tw4418_31_0000.pdf" mimetype="application/pdf" size="9307619" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">f9aa86ff844310d3da1d0a3ddb4fba0e8227b65b</checksum>
         <checksum type="md5">d318ca600e53f0ce5d42bcf524afa707</checksum>

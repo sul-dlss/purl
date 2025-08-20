@@ -220,7 +220,7 @@ RSpec.describe 'IIIF v2 manifests' do
       rendering = json['sequences'].first['rendering']
       expect(rendering).to include(
         '@id' => 'https://stacks.stanford.edu/file/zf119tw4418/zf119tw4418_31_0000.pdf',
-        'label' => 'Download Object 1',
+        'label' => 'Download Full PDF',
         'format' => 'application/pdf'
       )
     end
