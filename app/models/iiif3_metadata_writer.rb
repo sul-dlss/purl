@@ -73,10 +73,13 @@ class Iiif3MetadataWriter
   end
 
   def contacts
-    access_contact = cocina_descriptive.dig('access', 'accessContact')
-    return [] unless access_contact
+    access = cocina_descriptive['access']
+    return [] unless access
 
-    [iiif_key_value('Contact', access_contact.select { it['type'] == 'email' }.pluck('value'))]
+    contacts = access.fetch('accessContact').select { it['type'] == 'email' }.pluck('value')
+    return [] if contacts.empty?
+
+    [iiif_key_value('Contact', contacts)]
   end
 
   def types
@@ -137,7 +140,7 @@ class Iiif3MetadataWriter
 
   def dates
     vals = Array(cocina_descriptive['event']).flat_map do
-      it['date'].map { it['value'] }
+      it['date'].flat_map { structured_values(it) }
     end
 
     vals.present? ? [iiif_key_value('Date', vals)] : []

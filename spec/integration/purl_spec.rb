@@ -27,7 +27,7 @@ RSpec.describe 'purl', type: :feature do
           visit '/bc854fy5899/iiif3/manifest'
           json_body = JSON.parse(page.body)
           expect(json_body['label']['en'].first).to eq 'Cambridge, Corpus Christi College, MS 296: John Wyclif and his followers, Tracts in Middle English'
-          expect(json_body['metadata'].length).to eq 12
+          expect(json_body['metadata'].length).to eq 11
         end
       end
 
