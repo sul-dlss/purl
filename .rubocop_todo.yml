@@ -150,10 +150,3 @@ Style/ItBlockParameter:
 Style/OpenStructUse:
   Exclude:
     - 'spec/model/purl_version_spec.rb'
-
-# Offense count: 2
-# This cop supports unsafe autocorrection (--autocorrect-all).
-# Configuration parameters: Mode.
-Style/StringConcatenation:
-  Exclude:
-    - 'app/controllers/purl_controller.rb'
