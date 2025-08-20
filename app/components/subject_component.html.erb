@@ -1,16 +1,16 @@
 <% label_id = "section-subjects" %>
 <%= render SectionComponent.new(label: 'Subjects', label_id:) do %>
   <%= render TableComponent.new(label_id:) do %>
-    <% if document.mods.subject.present? %>
+    <% if subject.present? %>
       <tbody>
-        <% document.mods.subject.each do |field| %>
+        <% subject.each do |field| %>
           <%= render RowFieldComponent.new(field:, value_transformer: ->(subject_line) { safe_join(link_mods_subjects(subject_line), ' > ') }) %>
         <% end %>
       </tbody>
     <% end %>
-    <% if document.mods.genre.present? %>
+    <% if genre.present? %>
       <tbody>
-        <% document.mods.genre.each do |field| %>
+        <% genre.each do |field| %>
           <%= render RowFieldComponent.new(field:, value_transformer: ->(genre_line) { link_to_mods_subject(genre_line) }) %>
         <% end %>
       </tbody>
