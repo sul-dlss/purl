@@ -179,16 +179,16 @@ RSpec.describe 'IIIF v2 manifests' do
     end
 
     it 'publishes IIIF Content Search API and seeAlso for pages with OCR content' do
-      get '/jg072yr3056/iiif/manifest'
+      get '/bb737zp0787/iiif/manifest'
 
       expect(json['service'].first).to match '@context' => 'http://iiif.io/api/search/1/context.json',
-                                             '@id' => 'http://example.com/content_search/jg072yr3056/search',
+                                             '@id' => 'http://example.com/content_search/bb737zp0787/search',
                                              'profile' => 'http://iiif.io/api/search/1/search',
                                              'label' => 'Search within this manifest'
 
       expect(json['sequences'].first['canvases'].first['seeAlso']).to eq [
         {
-          '@id' => 'https://stacks.stanford.edu/file/jg072yr3056/jg072yr3056_04_0001.xml',
+          '@id' => 'https://stacks.stanford.edu/file/bb737zp0787/bb737zp0787_04_0002.xml',
           'format' => 'application/xml',
           'label' => 'OCR text',
           'profile' => 'http://www.loc.gov/standards/alto/ns-v2#'

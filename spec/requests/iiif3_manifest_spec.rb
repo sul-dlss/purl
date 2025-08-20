@@ -190,10 +190,10 @@ RSpec.describe 'IIIF v3 manifests' do
 
   context 'when pages have OCR content' do
     it 'publishes IIIF Content Search API' do
-      get '/jg072yr3056/iiif/manifest'
+      get '/bb737zp0787/iiif/manifest'
 
       expect(json['service'].first).to match '@context' => 'http://iiif.io/api/search/1/context.json',
-                                             '@id' => 'http://example.com/content_search/jg072yr3056/search',
+                                             '@id' => 'http://example.com/content_search/bb737zp0787/search',
                                              'profile' => 'http://iiif.io/api/search/1/search',
                                              'label' => 'Search within this manifest'
     end
