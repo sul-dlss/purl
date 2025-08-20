@@ -154,9 +154,9 @@ RSpec.describe 'IIIF v2 manifests' do
     end
 
     it 'properly decodes XML entities into their UTF-8 characters' do
-      get '/bb737zp0787/iiif/manifest'
+      get '/zf119tw4418/iiif/manifest'
 
-      expect(json['attribution']).to eq 'Property rights reside with the repository. Copyright © Stanford University. All Rights Reserved.'
+      expect(json['attribution']).to eq 'US federal govt publications are in the public domain as per section 105 of the Copyright Act (17 USC § 105)'
     end
 
     it 'suppresses sequences for dark resources' do
@@ -179,16 +179,16 @@ RSpec.describe 'IIIF v2 manifests' do
     end
 
     it 'publishes IIIF Content Search API and seeAlso for pages with OCR content' do
-      get '/bb737zp0787/iiif/manifest'
+      get '/zf119tw4418/iiif/manifest'
 
       expect(json['service'].first).to match '@context' => 'http://iiif.io/api/search/1/context.json',
-                                             '@id' => 'http://example.com/content_search/bb737zp0787/search',
+                                             '@id' => 'http://example.com/content_search/zf119tw4418/search',
                                              'profile' => 'http://iiif.io/api/search/1/search',
                                              'label' => 'Search within this manifest'
 
       expect(json['sequences'].first['canvases'].first['seeAlso']).to eq [
         {
-          '@id' => 'https://stacks.stanford.edu/file/bb737zp0787/bb737zp0787_04_0002.xml',
+          '@id' => 'https://stacks.stanford.edu/file/zf119tw4418/zf119tw4418_04_0002.xml',
           'format' => 'application/xml',
           'label' => 'OCR text',
           'profile' => 'http://www.loc.gov/standards/alto/ns-v2#'

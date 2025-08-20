@@ -2,20 +2,19 @@ require 'rails_helper'
 
 RSpec.describe 'Displaying the PURL page' do
   context 'book' do
-    let(:druid) { 'bb737zp0787' }
+    let(:druid) { 'zf119tw4418' }
 
     it 'displays the page' do
       visit "/#{druid}"
-      expect(page).to have_content 'The curate of Cumberworth ; and The vicar of Roost : tales'
+      expect(page).to have_content 'Semiannual report to Congress for the period of'
       expect(page).to have_metadata_section 'Access conditions'
       expect(page).to have_metadata_section 'Description'
       expect(page).to have_metadata_section 'Contributors'
-      expect(page).to have_content 'Associated with Paget, Francis Edward, 1806-1882'
+      expect(page).to have_content 'Associated with United States. Dept. of Energy'
       expect(page).to have_metadata_section 'Bibliographic information'
       expect(page).to have_metadata_section 'Also listed in'
-      expect(page).to have_content 'Vicar of Roost'
-      expect(page).to have_link 'View in SearchWorks', href: 'https://searchworks.stanford.edu/view/9616533'
-      expect(page).to have_css 'link[rel=up][href="http://www.example.com/jt466yc7169"]', visible: :hidden
+      expect(page).to have_link 'View in SearchWorks', href: 'https://searchworks.stanford.edu/view/5459243'
+      expect(page).to have_css 'link[rel=up][href="http://www.example.com/bx237rw7019"]', visible: :hidden
     end
   end
 
