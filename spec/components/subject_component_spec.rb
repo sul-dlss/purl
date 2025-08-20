@@ -15,6 +15,8 @@ RSpec.describe SubjectComponent, type: :component do
   before { render_inline(described_class.new(document: purl_version)) }
 
   describe 'subjects' do
+    let(:component) { described_class.new(document: purl_version) }
+
     # rubocop:disable Style/OpenStructUse
     let(:subjects) do
       [OpenStruct.new(label: 'Subjects', values: [%w[Subject1a Subject1b], %w[Subject2a Subject2b Subject2c]])]
@@ -27,34 +29,18 @@ RSpec.describe SubjectComponent, type: :component do
 
     describe '#link_mods_subjects' do
       let(:linked_subjects) do
-        described_class.new(document: purl_version).link_mods_subjects(subjects.first.values.last) do |subject_text, buffer|
-          link_to(
-            subject_text,
-            "foo/#{[buffer, subject_text.strip].flatten.join(' ')}"
-          )
-        end
+        component.link_mods_subjects(subjects.first.values.last)
       end
 
       it 'returns all subjects' do
-        expect(linked_subjects.length).to eq 3
-      end
-
-      it 'links to the subject hierarchically' do
-        expect(linked_subjects[0]).to match('<a href="foo/Subject2a">Subject2a</a>')
-        expect(linked_subjects[1]).to match('<a href="foo/Subject2a Subject2b">Subject2b</a>')
-        expect(linked_subjects[2]).to match('<a href="foo/Subject2a Subject2b Subject2c">Subject2c</a>')
+        expect(linked_subjects).to eq %w[Subject2a Subject2b Subject2c]
       end
     end
 
     describe '#link_to_mods_subject' do
       it 'handles subjects that behave like names' do
-        name_subject = described_class.new(document: purl_version).link_to_mods_subject(name_subjects.first.values.first, []) do |subject_text, buffer|
-          link_to(
-            subject_text,
-            "foo/#{[buffer, subject_text.strip].flatten.join(' ')}"
-          )
-        end
-        expect(name_subject).to match('<a href="foo/Person Name">Person Name</a> (Role1, Role2)')
+        name_subject = component.link_to_mods_subject(name_subjects.first.values.first)
+        expect(name_subject).to match('Person Name (Role1, Role2)')
       end
     end
   end
