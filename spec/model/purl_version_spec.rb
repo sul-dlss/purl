@@ -73,7 +73,7 @@ RSpec.describe PurlVersion do
           </publicObject>
         EOF
       end
-      let(:fake_response) { OpenStruct.new(success?: true, body:) }
+      let(:fake_response) { instance_double(Faraday::Response, success?: true, body:) }
 
       before do
         allow(resource_retriever).to receive(:fetch_resource).and_return(fake_response)

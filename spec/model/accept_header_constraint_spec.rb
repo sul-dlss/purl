@@ -1,25 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe AcceptHeaderConstraint do
-  subject(:instance) { described_class.new }
-
-  let(:v3_request) do
-    double(
-      'request',
-      headers: { 'Accept' => 'application/ld+json;profile="http://iiif.io/api/presentation/3/context.json"' }
-    )
-  end
-  let(:default_request) do
-    double('request', headers: {})
-  end
+  subject { described_class.new }
 
   describe '#matches?' do
     context 'with proper Accept headers' do
-      it { expect(instance.matches?(v3_request)).to be_truthy }
+      let(:v3_request) do
+        instance_double(
+          ActionDispatch::Request,
+          headers: { 'Accept' => 'application/ld+json;profile="http://iiif.io/api/presentation/3/context.json"' }
+        )
+      end
+
+      it { is_expected.to be_matches(v3_request) }
     end
 
     context 'without proper Accept headers' do
-      it { expect(instance.matches?(default_request)).to be_falsy }
+      let(:default_request) do
+        instance_double(ActionDispatch::Request, headers: {})
+      end
+
+      it { is_expected.not_to be_matches(default_request) }
     end
   end
 end
