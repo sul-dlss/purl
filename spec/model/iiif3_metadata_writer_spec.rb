@@ -422,7 +422,14 @@ RSpec.describe Iiif3MetadataWriter do
 
     context 'with language' do
       let(:cocina_descriptive) do
-        PurlResource.find('zf119tw4418').version(:head).cocina['description']
+        {
+          'language' =>
+          [{
+            'code' => 'eng',
+            'source' => { 'code' => 'iso639-2b' },
+            'structuredValue' => []
+          }]
+        }
       end
 
       it 'extracts the metadata' do
@@ -434,7 +441,33 @@ RSpec.describe Iiif3MetadataWriter do
 
     context 'with nested subject' do
       let(:cocina_descriptive) do
-        PurlResource.find('zf119tw4418').version(:head).cocina['description']
+        {
+          'subject' =>
+          [{
+            'type' => 'place',
+            'code' => 'n-us',
+            'source' => { 'code' => 'marcgac' }
+          },
+           { 'structuredValue' =>
+             [{ 'structuredValue' =>
+                [{ 'value' => 'United States' },
+                 { 'value' => 'Department of Energy' },
+                 { 'value' => 'Office of Inspector General' }],
+                'type' => 'organization' },
+              {
+                'value' => 'Auditing',
+                'type' => 'topic'
+              },
+              {
+                'value' => 'Statistics',
+                'type' => 'genre'
+              },
+              {
+                'value' => 'Periodicals',
+                'type' => 'genre'
+              }],
+             'source' => { 'code' => 'lcsh', 'note' => [] } }]
+        }
       end
 
       it 'extracts the metadata' do
