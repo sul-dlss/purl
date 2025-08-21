@@ -8,35 +8,15 @@ class AccessComponent < ViewComponent::Base
 
   attr_reader :version
 
-  delegate :mods, to: :version
-
-  def access_conditions
-    mods&.accessCondition
-  end
-
-  def copyright?
-    version.copyright? && (mods.blank? || access_conditions.none? { |x| x.label =~ /Copyright/i })
-  end
-
-  def use_and_reproduction?
-    version.use_and_reproduction? && (mods.blank? || access_conditions.none? { |x| x.label =~ /Use and Reproduction/i })
-  end
-
-  def render_access_conditions
-    safe_join(access_conditions.map { |access_condition| render_field(access_condition) })
-  end
-
-  def render_field(access_condition)
-    value_transformer = ->(text) { stylize_links(helpers.format_mods_html(text, field: access_condition)) }
-    render ModsDisplay::FieldComponent.new(field: access_condition, value_transformer:)
-  end
+  delegate :cocina_display, to: :version
+  delegate :license_description, to: :cocina_display
 
   def render?
-    access_conditions.present? || copyright? || use_and_reproduction?
+    license_description.present? || copyright.present? || use_and_reproduction.present?
   end
 
   def use_and_reproduction
-    stylize_links(helpers.link_urls_and_email(document.use_and_reproduction))
+    @use_and_reproduction ||= stylize_links(helpers.link_urls_and_email(cocina_display.use_and_reproduction))
   end
 
   def stylize_links(text)
@@ -44,6 +24,6 @@ class AccessComponent < ViewComponent::Base
   end
 
   def copyright
-    document.copyright.gsub(/\(c\) Copyright/i, '© Copyright')
+    @copyright ||= cocina_display.copyright&.gsub(/\(c\) Copyright/i, '© Copyright')
   end
 end

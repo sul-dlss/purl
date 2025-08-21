@@ -6,7 +6,9 @@ class IiifPresentationManifest
   include ActiveModel::Model
 
   delegate :druid, :display_title, :book?, :structural_metadata, :public_xml_document, :cocina, :updated_at, :containing_purl_collections,
-           :collection?, to: :purl_version
+           :collection?, :cocina_display, to: :purl_version
+  delegate :copyright, to: :cocina_display
+
   delegate :url_for, to: :controller
   delegate :file_sets, :local_files, to: :structural_metadata
   alias id druid
@@ -355,8 +357,6 @@ class IiifPresentationManifest
       ]
     )
   end
-
-  delegate :copyright, to: :purl_version
 
   def manifest_url(**kwargs)
     controller.url_for([:manifest, iiif_namespace, :purl, { id: druid, **kwargs }])
