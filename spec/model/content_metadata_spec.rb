@@ -4,6 +4,8 @@ RSpec.describe ContentMetadata do
   subject(:content_metadata) { described_class.new(document) }
 
   describe '#resources' do
+    subject { content_metadata.resources }
+
     let(:document) { Nokogiri::XML(fixture).root }
     let(:fixture) do
       <<-EOXML
@@ -17,8 +19,6 @@ RSpec.describe ContentMetadata do
       </resource>
       EOXML
     end
-
-    subject { content_metadata.resources }
 
     it { is_expected.to all(be_a ResourceFile) }
   end
