@@ -3,12 +3,12 @@
   <%= render TableComponent.new(label_id:) do %>
     <% mods.audience.each do |field| %>
       <tbody>
-        <%= render RowFieldComponent.new(field:, delimiter: ', ', value_transformer: build_transformer(field)) %>
+        <%= render RowFieldComponent.new(field:, delimiter: ', ') %>
       </tbody>
     <% end %>
     <% note_fields.each do |field| %>
       <tbody>
-        <%= render RowFieldComponent.new(field:, value_transformer: build_transformer(field)) %>
+        <%= render RowFieldComponent.new(field:) %>
       </tbody>
     <% end %>
     <% middle_fields.each do |field| %>
@@ -18,12 +18,12 @@
     <% end %>
     <% identifier.each do |field| %>
       <tbody>
-        <%= render RowFieldComponent.new(field:, delimiter: ', ', value_transformer: build_transformer(field)) %>
+        <%= render RowFieldComponent.new(field:, delimiter: ', ') %>
       </tbody>
     <% end %>
     <% location.each do |field| %>
       <tbody>
-        <%= render RowFieldComponent.new(field:, value_transformer: build_transformer(field)) %>
+        <%= render RowFieldComponent.new(field:) %>
       </tbody>
     <% end %>
   <% end %>

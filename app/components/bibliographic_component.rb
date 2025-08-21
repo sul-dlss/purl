@@ -27,17 +27,4 @@ class BibliographicComponent < ViewComponent::Base
     @middle_fields ||= mods.relatedItem(value_renderer: Purl::RelatedItemValueRenderer) +
                        mods.nestedRelatedItem(value_renderer: Purl::RelatedItemValueRenderer)
   end
-
-  # Adds the "Stanford only" red "S" if this is via the OCLC proxy
-  def build_transformer(field)
-    ->(value) { helpers.format_mods_html(value, field:) + with_stanford_only(value) }
-  end
-
-  def with_stanford_only(value)
-    return unless value.downcase.include?('https://stanford.idm.oclc.org/login?url=')
-
-    tag.span class: 'stanford-only-text' do
-      tag.span 'Stanford only', class: 'visually-hidden'
-    end
-  end
 end

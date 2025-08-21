@@ -114,17 +114,6 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'item with Stanford-only location in MODS' do
-    let(:druid) { 'yk677wc8843' }
-
-    it 'adds a Stanford-only indicator' do
-      visit "/#{druid}"
-
-      expect(page).to have_css '.stanford-only-text', text: 'Stanford only'
-      expect(page.find('.stanford-only-text')).to have_sibling('a', text: 'Cambridge Core')
-    end
-  end
-
   context 'item with ORCID for some contributors' do
     let(:druid) { 'wm135gp2721' }
 
