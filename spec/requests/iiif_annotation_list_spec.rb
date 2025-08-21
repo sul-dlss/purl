@@ -11,7 +11,7 @@ RSpec.describe 'IIIF Annotation List' do
   context 'when using v2' do
     before { allow(Faraday).to receive(:get).and_return(stacks_response) }
 
-    it 'renders the json for manifest' do
+    it 'renders the json for manifest', skip: 'We need a versioned fixture that has annotations' do
       get '/hx163dc5225/iiif/annotationList/hx163dc5225_9'
       json_body = response.parsed_body
       expect(json_body['@type']).to eq 'sc:AnnotationList'
