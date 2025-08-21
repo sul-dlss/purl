@@ -185,7 +185,7 @@ class IiifPresentationManifest
     canv = IIIF::Presentation::Canvas.new
     canv['@id'] = canvas_url(resource_id: resource.id)
     canv.label = resource.label
-    canv.label = 'image' unless canv.label.present?
+    canv.label = 'image' if canv.label.blank?
     canv.height = resource.height
     canv.width = resource.width
     if downloadable_file?(resource)
