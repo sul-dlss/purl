@@ -79,7 +79,7 @@ RSpec.describe 'IIIF v3 manifests' do
     end
   end
 
-  context 'with a version' do
+  context 'when a specific version is requested' do
     it 'is successful, has correct filepaths and metadata' do
       get '/zb733jx3137/version/2/iiif3/manifest'
 
@@ -281,20 +281,20 @@ RSpec.describe 'IIIF v3 manifests' do
     end
   end
 
-  context 'with a file object' do
-    let(:druid) { 'bb132pr2055' }
+  context 'with a file object with world access' do
+    let(:druid) { 'wm135gp2721' }
 
     it 'generates a correct manifest' do
       get "/#{druid}/iiif3/manifest"
       expect(response).to have_http_status(:ok)
 
-      expect(json['label']['en'].first).to eq 'How does politics affect central banking? : evidence from the Federal Reserve'
+      expect(json['label']['en'].first).to eq 'A Newly Digitised Ice-penetrating Radar Dataset Acquired over the Greenland Ice Sheet in 1971-1979'
       expect(json['items'].length).to eq 1
 
       canvas = json['items'].first
 
-      expect(canvas['id']).to eq 'http://www.example.com/bb132pr2055/iiif3/canvas/main'
-      expect(canvas['label']['en']).to eq ['Body of dissertation']
+      expect(canvas['id']).to eq 'http://www.example.com/wm135gp2721/iiif3/canvas/cocina-fileSet-wm135gp2721-27313eb4-fb71-423d-9a82-05964f68d39f'
+      expect(canvas['label']['en']).to eq ['image']
       expect(canvas['type']).to eq 'Canvas'
     end
   end
