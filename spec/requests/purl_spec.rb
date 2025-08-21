@@ -199,7 +199,7 @@ RSpec.describe 'PURL API' do
           XML
         end
         let(:cocina_body) do
-          '{"cocinaVersion": "0.100.text", "version": 5,"type": "https://cocina.sul.stanford.edu/models/image", "structural": {}}'
+          '{"cocinaVersion": "0.100.text", "version": 5,"type": "https://cocina.sul.stanford.edu/models/image", "structural": {}, "description": {}}'
         end
         let(:purl_resource) { PurlResource.new(id: 'bw368gx2874') }
 

@@ -140,7 +140,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     metrics_service.get_metrics(druid)
   end
 
-  concerning :Metadata do
+  concerning :Metadata do # rubocop:disable Metrics/BlockLength
     def title
       if mods?
         Array.wrap(mods.title).join(' -- ')
@@ -203,7 +203,15 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     end
 
     def publication_date
-      @publication_date ||= ::Metadata::PublicationDate.call(mods_ng_document)
+      @publication_date ||= begin
+        admin_metadata = cocina['description']['adminMetadata']
+
+        creation_event = admin_metadata && admin_metadata['event']&.find { |node| node['type'] == 'creation' }
+
+        if creation_event && (matcher = creation_event['date'].first['value'].match(/(\d{4})/))
+          matcher[1]
+        end
+      end
     end
 
     def authors
