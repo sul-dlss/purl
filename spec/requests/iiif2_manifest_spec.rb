@@ -123,7 +123,7 @@ RSpec.describe 'IIIF v2 manifests' do
     end
 
     context 'with a location restricted image' do
-      let(:druid) { 'bb361mj1737' }
+      let(:druid) { 'tb420df0840' }
 
       it 'generates a IIIF v2 manifest that includes location authentication information' do
         get "/#{druid}/iiif/manifest"
