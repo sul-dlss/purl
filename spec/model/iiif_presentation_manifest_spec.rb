@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe IiifPresentationManifest do
-  let(:resource) { PurlVersion.new }
-
   subject(:manifest) { described_class.new(resource) }
+
+  let(:resource) { PurlVersion.new }
 
   describe '#stacks_iiif_base_url' do
     subject { manifest.stacks_iiif_base_url(druid, filename) }

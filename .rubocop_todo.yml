@@ -67,13 +67,6 @@ RSpec/ExampleWording:
   Exclude:
     - 'spec/features/preview_spec.rb'
 
-# Offense count: 2
-# This cop supports safe autocorrection (--autocorrect).
-RSpec/LeadingSubject:
-  Exclude:
-    - 'spec/model/content_metadata_spec.rb'
-    - 'spec/model/iiif_presentation_manifest_spec.rb'
-
 # Offense count: 85
 RSpec/MultipleExpectations:
   Max: 22
