@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'purl/_collection_items' do
   context 'when collection has a folio HRID' do
-    let(:resource_retriever) { ResourceRetriever.new(druid: 'sk882gx0113') }
+    let(:resource_retriever) { VersionedResourceRetriever.new(druid: 'sk882gx0113', version_id: '1') }
 
     let(:document) { PurlVersion.new(id: 'sk882gx0113', resource_retriever:) }
 
@@ -14,7 +14,7 @@ RSpec.describe 'purl/_collection_items' do
   end
 
   context 'when collection does not have a folio HRID' do
-    let(:resource_retriever) { ResourceRetriever.new(druid: 'gk894yk3598') }
+    let(:resource_retriever) { VersionedResourceRetriever.new(druid: 'gk894yk3598', version_id: '1') }
 
     let(:document) { PurlVersion.new(id: 'gk894yk3598', resource_retriever:) }
 
@@ -26,7 +26,7 @@ RSpec.describe 'purl/_collection_items' do
   end
 
   context 'when not a collection' do
-    let(:resource_retriever) { ResourceRetriever.new(druid: 'cg357zz0321') }
+    let(:resource_retriever) { VersionedResourceRetriever.new(druid: 'cg357zz0321', version_id: '1') }
 
     let(:document) { PurlVersion.new(id: 'cg357zz0321', resource_retriever:) }
 

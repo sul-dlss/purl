@@ -8,7 +8,7 @@ RSpec.describe PurlVersion do
   let(:version_id) { '1' }
   let(:updated_at) { '2024-07-29T11:28:33-07:00' }
   let(:state) { 'available' }
-  let(:resource_retriever) { ResourceRetriever.new(druid:) }
+  let(:resource_retriever) { VersionedResourceRetriever.new(druid:, version_id:) }
 
   describe '#version_id=' do
     it 'is normalized to an integer' do
