@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Previewing MODS' do
   context 'with an EEMs object' do
-    it 'works' do
+    it 'displays the formatted doc' do
       visit '/preview'
       fill_in :mods, visible: false, with: <<-EOXML
       <mods xmlns="http://www.loc.gov/mods/v3">
