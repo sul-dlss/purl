@@ -101,17 +101,16 @@ RSpec.describe 'Displaying the PURL page' do
   end
 
   context 'item with a DOI' do
-    let(:druid) { 'bb051dp0564' }
+    let(:druid) { 'wm135gp2721' }
 
     it 'includes altmetrics' do
       visit "/#{druid}"
 
-      expect(page).to have_css 'meta[name="citation_doi"][content="10.25740/bb051dp0564"]', visible: :hidden
-      expect(page).to have_css 'meta[name="citation_title"][content="The Distinct Impacts of Content Moderation"]', visible: :hidden
-      # No publication date so falling back to deposit date
-      expect(page).to have_css 'meta[name="citation_publication_date"][content="2022"]', visible: :hidden
-      expect(page).to have_css 'meta[name="citation_author"][content="Khine, Sandi"]', visible: :hidden
-      expect(page).to have_css 'meta[name="citation_author"][content="Navaroli, A. Collier"]', visible: :hidden
+      expect(page).to have_css 'meta[name="citation_doi"][content="10.25740/wm135gp2721"]', visible: :hidden
+      expect(page).to have_css 'meta[name="citation_title"][content^="A Newly Digitised Ice-penetrating Radar Dataset"]', visible: :hidden
+      expect(page).to have_css 'meta[name="citation_publication_date"][content="2023"]', visible: :hidden
+      expect(page).to have_css 'meta[name="citation_author"][content="Karlsson, Nanna B."]', visible: :hidden
+      expect(page).to have_css 'meta[name="citation_author"][content="Schroeder, Dustin"]', visible: :hidden
     end
   end
 
@@ -191,7 +190,7 @@ RSpec.describe 'Displaying the PURL page' do
   end
 
   describe 'terms of use' do
-    let(:druid) { 'bb051dp0564' }
+    let(:druid) { 'wm135gp2721' }
 
     it 'included in purl page' do
       visit "/#{druid}"
