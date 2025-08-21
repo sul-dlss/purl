@@ -155,12 +155,6 @@ RSpec.describe 'IIIF v2 manifests' do
       expect(json['sequences'].first['viewingDirection']).to eq('left-to-right')
     end
 
-    it 'properly decodes XML entities into their UTF-8 characters' do
-      get '/bb737zp0787/iiif/manifest'
-
-      expect(json['attribution']).to eq 'Property rights reside with the repository. Copyright © Stanford University. All Rights Reserved.'
-    end
-
     it 'suppresses sequences for dark resources' do
       get '/zm796xp7877/iiif/manifest'
 

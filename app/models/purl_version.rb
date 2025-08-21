@@ -72,8 +72,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     end
   end
 
-  delegate :rights_metadata, to: :public_xml
-
   def content_metadata
     @content_metadata ||= ContentMetadata.new(public_xml.content_metadata)
   end
@@ -96,10 +94,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     (download_status == 'world' || download_status == 'stanford') &&
       %w[webarchive-seed webarchive-binary].exclude?(type) && !collection?
     # rubocop:enable Style/MultipleComparison
-  end
-
-  def rights
-    @rights ||= RightsMetadata.new(rights_metadata)
   end
 
   def mods
@@ -205,7 +199,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     end
 
     def copyright
-      rights.copyright_statement
+      cocina['access']['copyright']
     end
 
     def use_and_reproduction?

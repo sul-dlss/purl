@@ -143,8 +143,6 @@ GEM
       capistrano-shared_configs
       ed25519
     docile (1.4.1)
-    dor-rights-auth (1.8.0)
-      nokogiri
     drb (2.2.3)
     ed25519 (1.4.0)
     edtf (3.2.0)
@@ -454,7 +452,6 @@ DEPENDENCIES
   config
   debug
   dlss-capistrano
-  dor-rights-auth (~> 1.6)
   faraday
   honeybadger
   iiif-presentation (~> 1.3)
