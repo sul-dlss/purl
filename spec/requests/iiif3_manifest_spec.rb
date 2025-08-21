@@ -311,7 +311,7 @@ RSpec.describe 'IIIF v3 manifests' do
 
       canvas = json['items'].first
 
-      expect(canvas['id']).to eq 'http://www.example.com/bb253gh8060/iiif3/canvas/bb253gh8060_1'
+      expect(canvas['id']).to eq 'http://www.example.com/bb253gh8060/iiif3/canvas/cocina-fileSet-bb253gh8060-bb253gh8060_1'
       expect(canvas['label']['en']).to eq ['File 1']
       expect(canvas['type']).to eq 'Canvas'
 
