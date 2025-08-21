@@ -330,7 +330,48 @@ RSpec.describe Iiif3MetadataWriter do
 
     context 'with structured contributor name, that is not forename, surname and a structured title' do
       let(:cocina_descriptive) do
-        PurlResource.find('bb006mf9900').version(:head).cocina['description']
+        {
+          'title' => [
+            { 'structuredValue' =>
+             [{
+               'value' => 'Erzherzog Johann; ein Charakterbild',
+               'type' => 'main title'
+             },
+              {
+                'value' => 'mit Beiträgen zur Geschichte der Begründung der zweiten Dynastie Bulgariens nach authentischen Quellen und Briefen des Erzherzogs',
+                'type' => 'subtitle'
+              }],
+              'status' => 'primary' }
+          ],
+          'contributor' =>
+           [{ 'name' =>
+              [{ 'structuredValue' =>
+                 [{
+                   'value' => 'Pollak, Heinrich',
+                   'type' => 'name'
+                 },
+                  {
+                    'value' => '1835?-1908',
+                    'type' => 'life dates'
+                  }] }],
+              'type' => 'person',
+              'status' => 'primary' },
+            { 'name' =>
+              [{ 'structuredValue' =>
+                 [{
+                   'value' => 'John Salvator',
+                   'type' => 'name'
+                 },
+                  {
+                    'value' => 'Archduke of Austria',
+                    'type' => 'term of address'
+                  },
+                  {
+                    'value' => '1852-1890',
+                    'type' => 'life dates'
+                  }] }],
+              'type' => 'person' }]
+        }
       end
 
       it 'extracts the metadata' do
