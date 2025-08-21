@@ -171,7 +171,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     end
 
     def copyright
-      rights.copyright_statement
+      cocina['access']['copyright']
     end
 
     def use_and_reproduction?
