@@ -92,7 +92,7 @@ RSpec.describe 'Metrics display', :js do
 
     # a collection
     context 'when the object is a collection' do
-      let(:druid) { 'bb631ry3167' }
+      let(:druid) { 'sk882gx0113' }
 
       it 'does not show the number of downloads' do
         expect(page).to have_no_css '#download-count'
