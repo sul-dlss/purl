@@ -340,36 +340,17 @@ RSpec.describe PurlVersion do
   end
 
   describe '#doi and #doi_id' do
-    before { allow(resource_retriever).to receive(:public_xml_body).and_return(body) }
-
     context 'with a DOI' do
-      let(:body) do
-        <<-EOF
-          <?xml version="1.0" encoding="UTF-8"?>
-          <publicObject>
-            <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
-              <identifier type="doi" displayLabel="DOI">https://doi.org/10.25740/bb051dp0564</identifier>
-            </mods>
-          </publicObject>
-        EOF
-      end
+      let(:druid) { 'wm135gp2721' }
 
       it 'returns the DOI' do
-        expect(instance.doi).to eq 'https://doi.org/10.25740/bb051dp0564'
-        expect(instance.doi_id).to eq '10.25740/bb051dp0564'
+        expect(instance.doi).to eq 'https://doi.org/10.25740/wm135gp2721'
+        expect(instance.doi_id).to eq '10.25740/wm135gp2721'
       end
     end
 
     context 'without a DOI' do
-      let(:body) do
-        <<-EOF
-          <?xml version="1.0" encoding="UTF-8"?>
-          <publicObject>
-            <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
-            </mods>
-          </publicObject>
-        EOF
-      end
+      let(:druid) { 'rp193xx6845' }
 
       it 'returns nil' do
         expect(instance.doi).to be_nil
