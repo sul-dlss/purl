@@ -179,6 +179,10 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
       type == 'https://cocina.sul.stanford.edu/models/object'
     end
 
+    def license
+      cocina['access']['license']
+    end
+
     def copyright?
       copyright.present?
     end
