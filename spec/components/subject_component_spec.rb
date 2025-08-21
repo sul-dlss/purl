@@ -9,7 +9,7 @@ RSpec.describe SubjectComponent, type: :component do
 
   let(:purl_version) do
     PurlVersion.new(id: druid, version_id: '1', head: true, state: 'available', updated_at: '2024-07-29T11:28:33-07:00',
-                    resource_retriever: ResourceRetriever.new(druid:))
+                    resource_retriever: VersionedResourceRetriever.new(druid:, version_id: '1'))
   end
 
   before { render_inline(described_class.new(document: purl_version)) }
