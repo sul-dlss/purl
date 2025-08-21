@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:bb253gh8060" published="2024-10-18T07:20:22Z" publishVersion="cocina-models/0.98.1">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>Agenda</objectLabel>
+    <sourceId source="sul">sul:SC0193_Agenda_6381_2010-10-07_001</sourceId>
+  </identityMetadata>
+  <contentMetadata objectId="druid:bb253gh8060" type="file">
+    <resource id="cocina-fileSet-bb253gh8060-bb253gh8060_1" sequence="1" type="file">
+      <label>File 1</label>
+      <file id="SC0193_Agenda_6381_2010-10-07_001.pdf" mimetype="application/pdf" size="59411" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">2ad0c4a9093ab483f3cd90c784d482820cbb7d82</checksum>
+        <checksum type="md5">a6d47154332085ad687abbbbce424a02</checksum>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <group>stanford</group>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">The materials are open for research use and may be used freely for non-commercial purposes with an attribution. For commercial permission requests, please contact the Stanford University Archives (universityarchives@stanford.edu).</human>
+      <license/>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:bb253gh8060">
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:gh292ts1354"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Agenda</dc:title>
+    <dc:contributor>Stanford University. Faculty Senate (Publisherpbl)</dc:contributor>
+    <dc:type>agendas (administrative records)</dc:type>
+    <dc:type>Text</dc:type>
+    <dc:format>1 text file</dc:format>
+    <dc:format>agendas (administrative records)</dc:format>
+    <dc:format>application/pdf</dc:format>
+    <dc:language>Englisheng</dc:language>
+    <dc:subject>Stanford University</dc:subject>
+    <dc:subject>Universities and colleges--Administration</dc:subject>
+    <dc:date>2010-10-07</dc:date>
+    <dc:identifier>6381</dc:identifier>
+    <dc:identifier>43</dc:identifier>
+    <dc:identifier>2016-137</dc:identifier>
+    <dc:identifier>https://purl.stanford.edu/bb253gh8060</dc:identifier>
+    <dc:relation type="repository">Stanford University. Libraries. Department of Special Collections and University Archives</dc:relation>
+    <dc:relation type="collection">Stanford University, Faculty Senate, records</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>Agenda</title>
+    </titleInfo>
+    <name usage="primary" type="corporate">
+      <namePart>Stanford University. Faculty Senate</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/pbl" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">Publisher</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/pbl" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">pbl</roleTerm>
+      </role>
+    </name>
+    <genre valueURI="http://vocab.getty.edu/aat/300027426" authorityURI="http://vocab.getty.edu/aat" authority="aat">agendas (administrative records)</genre>
+    <typeOfResource>text</typeOfResource>
+    <physicalDescription>
+      <form valueURI="http://vocab.getty.edu/aat/300027426" authorityURI="http://vocab.getty.edu/aat" authority="aat">agendas (administrative records)</form>
+      <reformattingQuality>access</reformattingQuality>
+      <internetMediaType>application/pdf</internetMediaType>
+      <extent>1 text file</extent>
+      <digitalOrigin>reformatted digital</digitalOrigin>
+    </physicalDescription>
+    <language>
+      <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="text">English</languageTerm>
+      <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <subject authority="lcsh">
+      <name authority="naf" authorityURI="http://id.loc.gov/authorities/names/" valueURI="http://id.loc.gov/authorities/names/n79054636" type="corporate">
+        <namePart>Stanford University</namePart>
+      </name>
+    </subject>
+    <subject valueURI="http://id.loc.gov/authorities/subjects/sh85141090" authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects/">
+      <topic>Universities and colleges</topic>
+      <topic>Administration</topic>
+    </subject>
+    <originInfo displayLabel="Place of creation" eventType="production">
+      <dateCreated encoding="w3cdtf" keyDate="yes">2010-10-07</dateCreated>
+      <place>
+        <placeTerm authority="marccountry" authorityURI="http://id.loc.gov/authorities/names/" valueURI="http://id.loc.gov/authorities/names/n50046557" type="text">Stanford (Calif.)</placeTerm>
+        <placeTerm authority="marccountry" authorityURI="http://id.loc.gov/authorities/names/" valueURI="http://id.loc.gov/authorities/names/n50046557" type="code">xxu</placeTerm>
+      </place>
+    </originInfo>
+    <identifier displayLabel="Senate #" type="local">6381</identifier>
+    <identifier displayLabel="Senate Session" type="local">43</identifier>
+    <identifier displayLabel="Accession" type="local">2016-137</identifier>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/bb253gh8060</url>
+    </location>
+    <location>
+      <shelfLocator>SC0193</shelfLocator>
+    </location>
+    <location>
+      <physicalLocation type="repository" valueURI="http://id.loc.gov/authorities/names/no2014019980" authority="naf">Stanford University. Libraries. Department of Special Collections and University Archives</physicalLocation>
+    </location>
+    <recordInfo>
+      <languageOfCataloging usage="primary">
+        <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="text">English</languageTerm>
+        <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="code">eng</languageTerm>
+      </languageOfCataloging>
+      <recordContentSource valueURI="http://id.loc.gov/vocabulary/organizations/cst" authorityURI="http://id.loc.gov/vocabulary/organizations" authority="marcorg">CSt</recordContentSource>
+      <recordOrigin>human prepared</recordOrigin>
+    </recordInfo>
+    <relatedItem type="host" displayLabel="Finding Aid">
+      <titleInfo>
+        <title>Stanford University, Academic Council, Records (SC0193)</title>
+      </titleInfo>
+      <location>
+        <url>http://www.oac.cdlib.org/findaid/ark:/13030/kt5b69s0t3</url>
+      </location>
+    </relatedItem>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Stanford University, Faculty Senate, records</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/gh292ts1354</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">The materials are open for research use and may be used freely for non-commercial purposes with an attribution. For commercial permission requests, please contact the Stanford University Archives (universityarchives@stanford.edu).</accessCondition>
+  </mods>
+</publicObject>
