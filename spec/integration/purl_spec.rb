@@ -33,7 +33,7 @@ RSpec.describe 'purl', type: :feature do
 
       context 'on a collection' do
         it 'renders a iiif v3 collection manifest' do
-          visit '/bb631ry3167/iiif/manifest'
+          visit '/sk882gx0113/iiif/manifest'
 
           json_body = JSON.parse(page.body)
           expect(json_body['type']).to eq 'Collection'
