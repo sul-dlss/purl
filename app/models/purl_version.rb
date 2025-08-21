@@ -109,15 +109,20 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   end
 
   def iiif2_manifest?
-    if public_xml_document.at_xpath('/publicObject/contentMetadata[contains(@type,"image")
-                                                                    or contains(@type,"map")
-                                                                    or contains(@type,"book")]/resource[@type="image"]')
-      true
-    elsif public_xml_document.at_xpath('/publicObject/contentMetadata[@type="book"]/resource[@type="page"]')
+    purl_type = strip_type(cocina['type'])
+    return false if cocina['structural'].blank?
+
+    virtual_object = cocina['structural']['hasMemberOrders'].present?
+    resource_types = cocina['structural']['contains'].flat_map { strip_type(it['type']) }
+    if %w[image book map].include?(purl_type) && (virtual_object || resource_types.include?('image'))
       true
     else
-      false
+      purl_type == 'book' && resource_types.include?('page')
     end
+  end
+
+  def strip_type(type)
+    type.split('/')[-1]
   end
 
   def iiif3_manifest(**)
