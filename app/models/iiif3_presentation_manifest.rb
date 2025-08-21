@@ -8,6 +8,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def body
     manifest_data = {
+      '@context' => IIIF::V3::Presentation::CONTEXT,
       'id' => manifest_url,
       'label' => { en: [title] },
       'requiredStatement' => {
@@ -23,10 +24,6 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     }
 
     manifest_data['service'] = [content_search_service] if content_search_service
-    if nav_place
-      manifest_data['navPlace'] = nav_place
-      manifest_data['@context'] = IIIF::V3::Presentation::CONTEXT + ['http://iiif.io/api/extension/navplace/context.json']
-    end
 
     manifest = iiif_manifest_class.new(manifest_data)
 
@@ -39,6 +36,13 @@ class Iiif3PresentationManifest < IiifPresentationManifest
                                               collection_title:,
                                               doi: cocina.dig('identification', 'doi'))
     manifest.metadata = metadata_writer.write
+
+    map_fields = metadata_writer.send(:map_coverage_fields)
+
+    if nav_place(map_fields)
+      manifest['navPlace'] = nav_place(map_fields)
+      manifest['@context'] += ['http://iiif.io/api/extension/navplace/context.json']
+    end
 
     manifest.summary = { en: [description_or_note] } if description_or_note.present?
     order = reading_order
@@ -441,16 +445,11 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     controller.url_for([:annotation_page, :iiif3, :purl, { id: druid, **kwargs }])
   end
 
-  def nav_place
+  def nav_place(map_fields)
     @nav_place ||= begin
-      nav_place = IIIF::V3::Presentation::NavPlace.new(coordinate_texts:, base_uri: purl_base_uri)
+      nav_place = IIIF::V3::Presentation::NavPlace.new(coordinate_texts: map_fields['map coordinates'], base_uri: purl_base_uri)
       nav_place.valid? ? nav_place.build : nil # if coordinates are invalid, do nothing, else return navPlace element
     end
-  end
-
-  def coordinate_texts
-    @coordinate_texts ||= public_xml_document.xpath('//mods:subject/mods:cartographics/mods:coordinates',
-                                                    'mods' => IiifPresentationManifest::MODS_SCHEMA).map(&:text)
   end
 
   def iiif_manifest_class
