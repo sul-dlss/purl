@@ -110,13 +110,6 @@ RSpec/VerifiedDoubles:
   Exclude:
     - 'spec/model/accept_header_constraint_spec.rb'
 
-# Offense count: 1
-# This cop supports unsafe autocorrection (--autocorrect-all).
-# Configuration parameters: NilOrEmpty, NotPresent, UnlessPresent.
-Rails/Blank:
-  Exclude:
-    - 'app/models/iiif_presentation_manifest.rb'
-
 # Offense count: 4
 Rails/I18nLocaleTexts:
   Exclude:
