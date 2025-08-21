@@ -166,6 +166,10 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
       @type ||= content_metadata.type
     end
 
+    def license
+      cocina['access']['license']
+    end
+
     def copyright?
       copyright.present?
     end
