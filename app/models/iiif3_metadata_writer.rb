@@ -130,12 +130,17 @@ class Iiif3MetadataWriter
   end
 
   def coverage
-    coverage_fields = Array(cocina_descriptive['form']) + Array(cocina_descriptive['subject'])
-    vals = coverage_fields.filter_map do
-      it['value'] if ['map coordinates', 'map scale'].include?(it['type'])
-    end
+    coverage_fields = map_coverage_fields.values.flatten
+    coverage_fields.present? ? [iiif_key_value('Coverage', coverage_fields)] : []
+  end
 
-    vals.present? ? [iiif_key_value('Coverage', vals)] : []
+  def map_coverage_fields
+    coverage_fields = Array(cocina_descriptive['form']) + Array(cocina_descriptive['subject'])
+    map_fields = { 'map scale' => [], 'map coordinates' => [] }
+    coverage_fields.each do
+      map_fields[it['type']] << it['value'] if map_fields.key?(it['type'])
+    end
+    map_fields
   end
 
   def dates
