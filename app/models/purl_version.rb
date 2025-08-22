@@ -69,7 +69,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     end
   end
 
-  delegate :rights_metadata, :object_type, :source_id, to: :public_xml
+  delegate :rights_metadata, :object_type, to: :public_xml
 
   def content_metadata
     @content_metadata ||= ContentMetadata.new(public_xml.content_metadata)
