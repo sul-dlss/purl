@@ -437,4 +437,23 @@ RSpec.describe PurlVersion do
       end
     end
   end
+
+  describe '#use_and_reproduction' do
+    before do
+      allow(resource_retriever).to receive(:cocina_body).and_return <<~JSON
+        {
+        "access": {
+            "view": "world",
+            "download": "none",
+            "controlledDigitalLending": false,
+            "useAndReproductionStatement": "Property rights reside with the repository."
+          }
+        }
+      JSON
+    end
+
+    it 'returns the use and reproduction statement' do
+      expect(instance.use_and_reproduction).to eq 'Property rights reside with the repository.'
+    end
+  end
 end

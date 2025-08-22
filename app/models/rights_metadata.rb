@@ -16,10 +16,6 @@ class RightsMetadata
            :world_downloadable?, :stanford_only_downloadable?,
            to: :rights_auth
 
-  def use_and_reproduction_statement
-    document.at_xpath('use/human[@type="useAndReproduction"]').try(:text)
-  end
-
   def copyright_statement
     document.at_xpath('copyright/human').try(:text)
   end
