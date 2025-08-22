@@ -390,13 +390,47 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts the metadata' do
-        expect(metadata.find do
-          it['label'][:en] == ['Format']
-        end['value'][:en]).to eq ['51.5 x 59.8 cm., including title along top and border, with 10 diagrams/maps and 6 columns of titled text.']
-
-        expect(metadata.find do
-          it['label'][:en] == ['Coverage']
-        end['value'][:en]).to eq ['W 180° --E 180°/N 85° --S 85°']
+        expect(metadata.as_json).to eq [
+          { 'label' => { 'en' => ['Available Online'] },
+            'value' => { 'en' => ["<a href='https://purl.stanford.edu/bb157hs6068'>https://purl.stanford.edu/bb157hs6068</a>"] } },
+          { 'label' => { 'en' => ['Title'] },
+            'value' => { 'en' => ['NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES DIVERS MOUVEMENS DES PLANETES ET LEURS DIVERSES REVOLUTIONS, ' \
+                                  'AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE'] } },
+          { 'label' => { 'en' => ['Creator'] }, 'value' => { 'en' => ['Chatelain, Henri Abraham'] } },
+          { 'label' => { 'en' => ['Type'] }, 'value' => { 'en' => ['map', 'Digital Maps', 'Early Maps'] } },
+          { 'label' => { 'en' => ['Format'] },
+            'value' => { 'en' => ['51.5 x 59.8 cm., including title along top and border, with 10 diagrams/maps and 6 columns of titled text.'] } },
+          { 'label' => { 'en' => ['Description'] }, 'value' => { 'en' => [
+            'Tom.1. No.9. (top right).',
+            'California, with open northern edge, suggesting it may be an island and that northwest passage may exist, on 2 small hemisphere maps, ' \
+            'each with 5 cm. diameter. First with title: Hemisphere terrestre pour faire | observer les 6 grands cercles de la sphere. Second with title: ' \
+            'Hemisphere terrestre pour dis= tinguer les 4 petits cercles, et les 5 zo.',
+            "The larger diagrams are entitled: Le monde selon l'hypothese de copernic et la disposition des planetes ala naissance de Louis XIV, " \
+            'Sphere artificielle, Sisteme de Copernic sur les divers mouvemens des planetes, Sisteme de Ticho Brahe,Sisteme de Ptolomée, ' \
+            'Idee generale pour faire comprendre les divers signes que la terre parcourt autour du soleil qui servent a regler les saisons (celestial chart).',
+            "The text is entitled: Remarque sur les divers mouvemens de la terre, Remarque sur le mouvemens et l'arrangement des planetes, " \
+            'Remarque sur la sphere, Remarque sur la maniere dont se font les saisons, Suite de la remarque sur la sphere, Conclusion et reflection morale, ' \
+            "Comment l'hypothese de Copernic est conforme aux loix du mouvemens et de la nature, Inconveniens et difficultez qui resultent des sistemes " \
+            'de Ptolemeé et Ticho Brahe.'
+          ] } },
+          { 'label' => { 'en' => ['References'] },
+            'value' =>
+                             { 'en' =>
+                               ['LC 548, 579; Koeman II, Cha 1,2; UCB; Ashley Baynton-Williams.'] } },
+          { 'label' => { 'en' => ['Publications'] },
+            'value' =>
+                    { 'en' =>
+                      ["First issued in his: Atlas historique, ou nouvelle introduction a l'histoire , à la chronologie & à la géographie ancienne & moderne " \
+                       '... -- Amsterdam. 1705. Reissued in 1721 (with imprint as above).'] } },
+          { 'label' => { 'en' => ['Statement of responsibility'] },
+            'value' => { 'en' => ['[Henry Abraham Châtelain].'] } },
+          { 'label' => { 'en' => ['Subject'] }, 'value' => { 'en' => ['Astronomy--Charts, diagrams, etc', 'California as an island--Maps'] } },
+          { 'label' => { 'en' => ['Coverage'] }, 'value' => { 'en' => ['W 180° --E 180°/N 85° --S 85°'] } },
+          { 'label' => { 'en' => ['Date'] }, 'value' => { 'en' => ['1721'] } },
+          { 'label' => { 'en' => ['Identifier'] }, 'value' => { 'en' => ['1040', 'https://purl.stanford.edu/bb157hs6068'] } },
+          { 'label' => { 'en' => ['Relation'] }, 'value' => { 'en' => ['viewer testing'] } },
+          { 'label' => { 'en' => ['PublishDate'] }, 'value' => { 'en' => ['2025-02-24T15:55:53Z'] } }
+        ]
       end
     end
 
