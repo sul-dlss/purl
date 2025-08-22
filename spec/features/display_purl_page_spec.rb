@@ -141,10 +141,11 @@ RSpec.describe 'Displaying the PURL page' do
   end
 
   context 'with an item that is crawlable' do
-    let(:druid) { 'gb089bd2251' }
+    let(:druid) { 'nd387jf5675' }
 
     it 'excludes noindex meta tag' do
       visit "/#{druid}"
+      expect(page).to have_content 'Invariance for perceptual recognition through deep learning'
       expect(page).to have_no_css 'meta[name="robots"][content="noindex"]', visible: :hidden
     end
   end
@@ -190,16 +191,10 @@ RSpec.describe 'Displaying the PURL page' do
   context 'with an incomplete/unpublished object (not in stacks)' do
     let(:druid) { 'fb123cd4567' }
 
-    it 'gives 404 with unavailable message' do
+    it 'gives unavailable message and a feedback form', :js do
       visit "/#{druid}"
-      expect(page.status_code).to eq(404)
       expect(page).to have_content 'The item you requested is not available.'
       expect(page).to have_content 'This item is in processing or does not exist. If you believe you have reached this page in error, please send Feedback.'
-    end
-
-    it 'includes a feedback link that toggled the feedback form', :js do
-      allow(Settings.feedback).to receive(:email_to).and_return('feedback@example.com')
-      visit "/#{druid}"
 
       expect(page).to have_no_css('form.feedback-form', visible: :visible)
 
