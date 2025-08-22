@@ -201,7 +201,14 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
 
     # @return [String,nil] DOI (with https://doi.org/ prefix) if present
     def doi
-      @doi ||= mods_ng_document.at_xpath('mods:identifier[@type="doi"]', mods: MODS_NS)&.text
+      @doi ||= begin
+        val = JsonPath.new('$.identification.doi').first(cocina) ||
+              JsonPath.new("$.description.identifier[?(@['type'] == 'doi')].value").first(cocina) ||
+              JsonPath.new("$.description.identifier[?(@['uri'] =~ /doi/)].uri").first(cocina)
+        if val
+          val.start_with?('https://doi.org/') ? val : "https://doi.org/#{val}"
+        end
+      end
     end
 
     # @return [String,nil] DOI (without https://doi.org/ prefix) if present
