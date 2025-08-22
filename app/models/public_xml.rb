@@ -17,10 +17,6 @@ class PublicXml
     document.root.at_xpath('contentMetadata')
   end
 
-  def folio_instance_hrid
-    @folio_instance_hrid ||= document.root.at_xpath('identityMetadata/otherId[@name="folio_instance_hrid"]')&.text.presence
-  end
-
   def thumb
     document.root.at_xpath('thumb')&.text
   end

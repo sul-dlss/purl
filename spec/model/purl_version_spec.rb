@@ -271,58 +271,16 @@ RSpec.describe PurlVersion do
   end
 
   describe '#catalog_key' do
-    context 'with a native FOLIO hrid' do
-      before do
-        allow(resource_retriever).to receive(:public_xml_body).and_return <<-EOF
-          <?xml version="1.0" encoding="UTF-8"?>
-          <publicObject>
-            <identityMetadata>
-              <otherId name="folio_instance_hrid">in0001</otherId>
-            </identityMetadata>
-          </publicObject>
-        EOF
-      end
-
-      it 'strips the leading a from the catkey value' do
-        expect(instance.catalog_key).to eq 'in0001'
-      end
-    end
-
     context 'with a FOLIO hrid' do
       let(:druid) { 'bb000br0025' }
 
       it 'strips the leading a from the catkey value' do
-        expect(instance.catalog_key).to eq '12345'
+        expect(instance.catalog_key).to eq '3234065'
       end
     end
 
-    context 'with a catkey' do
-      before do
-        allow(resource_retriever).to receive(:public_xml_body).and_return <<-EOF
-          <?xml version="1.0" encoding="UTF-8"?>
-          <publicObject>
-            <identityMetadata>
-              <otherId name="catkey">12345</otherId>
-            </identityMetadata>
-          </publicObject>
-        EOdu
-      end
-
-      it 'uses the catkey value' do
-        expect(instance.catalog_key).to eq '12345'
-      end
-    end
-
-    context 'without any id data' do
-      before do
-        allow(resource_retriever).to receive(:public_xml_body).and_return <<-EOF
-          <?xml version="1.0" encoding="UTF-8"?>
-          <publicObject>
-            <identityMetadata>
-            </identityMetadata>
-          </publicObject>
-        EOF
-      end
+    context 'without a FOLIO hrid' do
+      let(:druid) { 'zb733jx3137' }
 
       it 'uses the catkey value' do
         expect(instance.catalog_key).to be_nil
