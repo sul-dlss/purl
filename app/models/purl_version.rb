@@ -182,7 +182,11 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
       rights.use_and_reproduction_statement
     end
 
-    delegate :catalog_key, :folio_instance_hrid, to: :public_xml
+    delegate :folio_instance_hrid, to: :public_xml
+
+    def catalog_key
+      @catalog_key ||= folio_instance_hrid&.delete_prefix('a')
+    end
 
     def representative_thumbnail?
       representative_thumbnail.present?

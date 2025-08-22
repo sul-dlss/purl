@@ -288,17 +288,8 @@ RSpec.describe PurlVersion do
       end
     end
 
-    context 'with a migrated FOLIO hrid' do
-      before do
-        allow(resource_retriever).to receive(:public_xml_body).and_return <<-EOF
-          <?xml version="1.0" encoding="UTF-8"?>
-          <publicObject>
-            <identityMetadata>
-              <otherId name="folio_instance_hrid">a12345</otherId>
-            </identityMetadata>
-          </publicObject>
-        EOF
-      end
+    context 'with a FOLIO hrid' do
+      let(:druid) { 'bb000br0025' }
 
       it 'strips the leading a from the catkey value' do
         expect(instance.catalog_key).to eq '12345'
@@ -314,7 +305,7 @@ RSpec.describe PurlVersion do
               <otherId name="catkey">12345</otherId>
             </identityMetadata>
           </publicObject>
-        EOF
+        EOdu
       end
 
       it 'uses the catkey value' do
