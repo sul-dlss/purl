@@ -90,11 +90,33 @@ RSpec.describe 'PURL API' do
       end
     end
 
+    context 'with mods' do
+      it 'returns public mods' do
+        get '/cg767mn6478.mods'
+        xml = Nokogiri::XML(response.body)
+        expect(xml.search('//mods:title', 'mods' => 'http://www.loc.gov/mods/v3').length).to be_present
+      end
+
+      it '404 with unavailable message when no mods' do
+        get '/fb123cd4567.mods'
+        expect(response).to have_http_status(:not_found)
+        expect(response.body).to include 'The item you requested is not available.'
+      end
+    end
+
     context 'with XML' do
       context 'when a version is not provided' do
         it 'returns the public XML' do
           get '/bb157hs6068.xml'
           expect(response).to be_successful
+          xml = Nokogiri::XML(response.body)
+          expect(xml.search('//objectLabel').first.text).to start_with 'NOUVELLE CARTE DE LA SPHERE'
+        end
+
+        it 'returns 404 with unavailable message when no public_xml' do
+          get '/fb123cd4567.xml'
+          expect(response).to have_http_status(:not_found)
+          expect(response.body).to include 'The item you requested is not available.'
         end
       end
 

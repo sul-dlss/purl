@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'purl', type: :feature do
-  let(:unpublished_object) { 'fb123cd4567' }
-
   describe 'manifest' do
     context 'v2' do
       it 'renders the json for a book' do
@@ -67,34 +65,6 @@ RSpec.describe 'purl', type: :feature do
         visit '/wp335yr5649/iiif3/annotation/bc854fy5899_fdsa'
         expect(page.status_code).to eq(404)
       end
-    end
-  end
-
-  describe 'public xml' do
-    it 'returns public xml' do
-      visit '/cg767mn6478.xml'
-      xml = Nokogiri::XML(page.body)
-      expect(xml.search('//objectLabel').first.text).to start_with "(Covers to) Carey's American Atlas"
-    end
-
-    it '404 with unavailable message when no public_xml' do
-      visit "/#{unpublished_object}.xml"
-      expect(page.status_code).to eq(404)
-      expect(page).to have_content 'The item you requested is not available.'
-    end
-  end
-
-  describe 'mods' do
-    it 'returns public mods' do
-      visit '/cg767mn6478.mods'
-      xml = Nokogiri::XML(page.body)
-      expect(xml.search('//mods:title', 'mods' => 'http://www.loc.gov/mods/v3').length).to be_present
-    end
-
-    it '404 with unavailable message when no mods' do
-      visit "/#{unpublished_object}.mods"
-      expect(page.status_code).to eq(404)
-      expect(page).to have_content 'The item you requested is not available.'
     end
   end
 end
