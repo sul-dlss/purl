@@ -5,7 +5,7 @@ task update_metadata: :environment do
     'bb157hs6068', # map, world acccess, has extent in the metadata, member of collection (zb871zd0767)
     'bb253gh8060', # file, stanford-only
     'bb737zp0787', # book, world access, with OCR
-    'bc854fy5899', # book, world access
+    'bc854fy5899', # book, world access, without OCR
     'bd699ky6829', # media, world access, with vtt
     'bd786fy6312', # media
     'bf385jz2076', # book, no-download, with OCR
@@ -32,10 +32,9 @@ task update_metadata: :environment do
     'wm135gp2721', # file, world access, has an ORCiD and DOI
     'wy534zh7137', # the rosette jpg
     'yb533nc1884', # collection with member (gx074xz5520)
-    # 'yk677wc8843', # file, stanford-only OCLC link - can't be updated
-    'yr183sf1341', # book, world access, right-to-left
+    'yr183sf1341', # book, world access, without OCR, right-to-left
     'yy816tv6021', # media, location access
-    'zb733jx3137', # an item with 4 versions
+    'zb733jx3137', # file, world access, has 4 versions
     'zb871zd0767', # collection (that contains bb157hs6068)
     'zf119tw4418', # book, world access, without OCR (OCR exists, but it not published/shelved), resources are images (old style?)
     'zm796xp7877' # book, with first page dark
