@@ -67,13 +67,6 @@ RSpec/MultipleExpectations:
 RSpec/MultipleMemoizedHelpers:
   Max: 8
 
-# Offense count: 24
-# Configuration parameters: EnforcedStyle, IgnoreSharedExamples.
-# SupportedStyles: always, named_only
-RSpec/NamedSubject:
-  Exclude:
-    - 'spec/model/purl_version_spec.rb'
-
 # Offense count: 7
 RSpec/SubjectStub:
   Exclude:

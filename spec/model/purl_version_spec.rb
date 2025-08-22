@@ -80,7 +80,7 @@ RSpec.describe PurlVersion do
       end
 
       it 'checks if the request succeeded' do
-        expect(subject).to be_mods
+        expect(instance).to be_mods
       end
     end
 
@@ -206,7 +206,7 @@ RSpec.describe PurlVersion do
     end
 
     it 'extracts a description from the MODS abstract' do
-      expect(subject.description).to eq 'The abstract from the MODS.'
+      expect(instance.description).to eq 'The abstract from the MODS.'
     end
   end
 
@@ -216,21 +216,21 @@ RSpec.describe PurlVersion do
     end
 
     it 'is ready if the public xml is present' do
-      expect(subject).to be_ready
+      expect(instance).to be_ready
     end
   end
 
   describe '#cache_key' do
-    subject { described_class.new(id: 'oo000oo0000', version_id: 1) }
+    subject(:instance) { described_class.new(id: 'oo000oo0000', version_id: 1) }
 
     it 'namespaces the purl resource' do
-      expect(subject.cache_key).to eq 'purl_resource/druid:oo000oo0000/1'
+      expect(instance.cache_key).to eq 'purl_resource/druid:oo000oo0000/1'
     end
   end
 
   describe '#representative_thumbnail' do
     before do
-      allow(subject).to receive(:iiif_manifest).and_return(iiif_manifest)
+      allow(instance).to receive(:iiif_manifest).and_return(iiif_manifest)
     end
 
     let(:iiif_manifest) do
@@ -240,13 +240,13 @@ RSpec.describe PurlVersion do
     it 'is the representative thumbnail for the object' do
       allow(iiif_manifest).to receive(:thumbnail_base_uri).and_return('http://some/iiif/path')
 
-      expect(subject.representative_thumbnail).to eq 'http://some/iiif/path/full/!400,400/0/default.jpg'
+      expect(instance.representative_thumbnail).to eq 'http://some/iiif/path/full/!400,400/0/default.jpg'
     end
 
     it 'is blank if the object has no appropriate images' do
       allow(iiif_manifest).to receive(:thumbnail_base_uri).and_return(nil)
 
-      expect(subject.representative_thumbnail).to be_blank
+      expect(instance.representative_thumbnail).to be_blank
     end
   end
 
@@ -284,7 +284,7 @@ RSpec.describe PurlVersion do
       end
 
       it 'strips the leading a from the catkey value' do
-        expect(subject.catalog_key).to eq 'in0001'
+        expect(instance.catalog_key).to eq 'in0001'
       end
     end
 
@@ -301,7 +301,7 @@ RSpec.describe PurlVersion do
       end
 
       it 'strips the leading a from the catkey value' do
-        expect(subject.catalog_key).to eq '12345'
+        expect(instance.catalog_key).to eq '12345'
       end
     end
 
@@ -318,7 +318,7 @@ RSpec.describe PurlVersion do
       end
 
       it 'uses the catkey value' do
-        expect(subject.catalog_key).to eq '12345'
+        expect(instance.catalog_key).to eq '12345'
       end
     end
 
@@ -334,7 +334,7 @@ RSpec.describe PurlVersion do
       end
 
       it 'uses the catkey value' do
-        expect(subject.catalog_key).to be_nil
+        expect(instance.catalog_key).to be_nil
       end
     end
   end
@@ -355,8 +355,8 @@ RSpec.describe PurlVersion do
       end
 
       it 'returns the DOI' do
-        expect(subject.doi).to eq 'https://doi.org/10.25740/bb051dp0564'
-        expect(subject.doi_id).to eq '10.25740/bb051dp0564'
+        expect(instance.doi).to eq 'https://doi.org/10.25740/bb051dp0564'
+        expect(instance.doi_id).to eq '10.25740/bb051dp0564'
       end
     end
 
@@ -372,8 +372,8 @@ RSpec.describe PurlVersion do
       end
 
       it 'returns nil' do
-        expect(subject.doi).to be_nil
-        expect(subject.doi_id).to be_nil
+        expect(instance.doi).to be_nil
+        expect(instance.doi_id).to be_nil
       end
     end
   end
@@ -381,7 +381,7 @@ RSpec.describe PurlVersion do
   describe '#object_type and #collection?' do
     context 'when a collection' do
       before do
-        allow(subject).to receive(:public_xml_body).and_return(<<-EOF
+        allow(instance).to receive(:public_xml_body).and_return(<<-EOF
           <?xml version="1.0" encoding="UTF-8"?>
           <publicObject>
             <identityMetadata>
@@ -390,18 +390,18 @@ RSpec.describe PurlVersion do
             </identityMetadata>
           </publicObject>
         EOF
-                                                              )
+                                                               )
       end
 
       it 'pulls the value from the identity metadata' do
-        expect(subject.object_type).to eq 'collection'
-        expect(subject.collection?).to be true
+        expect(instance.object_type).to eq 'collection'
+        expect(instance.collection?).to be true
       end
     end
 
     context 'when an item' do
       before do
-        allow(subject).to receive(:public_xml_body).and_return(<<-EOF
+        allow(instance).to receive(:public_xml_body).and_return(<<-EOF
           <?xml version="1.0" encoding="UTF-8"?>
           <publicObject>
             <identityMetadata>
@@ -410,12 +410,12 @@ RSpec.describe PurlVersion do
             </identityMetadata>
           </publicObject>
         EOF
-                                                              )
+                                                               )
       end
 
       it 'pulls the value from the identity metadata' do
-        expect(subject.object_type).to eq 'item'
-        expect(subject.collection?).to be false
+        expect(instance.object_type).to eq 'item'
+        expect(instance.collection?).to be false
       end
     end
   end
@@ -437,7 +437,7 @@ RSpec.describe PurlVersion do
       end
 
       it 'returns schema.org markup' do
-        expect(subject.schema_dot_org).to include(
+        expect(instance.schema_dot_org).to include(
           '@context': 'http://schema.org',
           '@type': 'Dataset',
           name: 'AVOIDDS: A dataset for vision-based aircraft detection',
@@ -476,7 +476,7 @@ RSpec.describe PurlVersion do
       end
 
       it 'returns schema.org markup' do
-        expect(subject.schema_dot_org).to include(
+        expect(instance.schema_dot_org).to include(
           '@context': 'http://schema.org',
           '@type': 'VideoObject',
           name: 'A Video Title',
@@ -503,7 +503,7 @@ RSpec.describe PurlVersion do
       end
 
       it 'returns false' do
-        expect(subject.schema_dot_org?).to be false
+        expect(instance.schema_dot_org?).to be false
       end
     end
   end
