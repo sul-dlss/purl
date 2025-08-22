@@ -140,7 +140,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     metrics_service.get_metrics(druid)
   end
 
-  concerning :Metadata do
+  concerning :Metadata do # rubocop:disable Metrics/BlockLength
     def title
       if mods?
         Array.wrap(mods.title).join(' -- ')
@@ -182,7 +182,14 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
       rights.use_and_reproduction_statement
     end
 
-    delegate :catalog_key, :folio_instance_hrid, to: :public_xml
+    def folio_instance_hrid
+      @folio_instance_hrid ||= cocina['identification']['catalogLinks']
+                               .find { it['catalog'] == 'folio' }&.fetch('catalogRecordId')
+    end
+
+    def catalog_key
+      @catalog_key ||= folio_instance_hrid&.delete_prefix('a')
+    end
 
     def representative_thumbnail?
       representative_thumbnail.present?

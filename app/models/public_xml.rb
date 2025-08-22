@@ -17,19 +17,6 @@ class PublicXml
     document.root.at_xpath('contentMetadata')
   end
 
-  def catalog_key
-    @catalog_key ||= document.root.at_xpath('identityMetadata/otherId[@name="catkey"]')&.text.presence
-    @catalog_key ||= begin
-      key = folio_instance_hrid
-      key = key.delete_prefix('a') if key&.match?(/^a\d+$/)
-      key
-    end
-  end
-
-  def folio_instance_hrid
-    @folio_instance_hrid ||= document.root.at_xpath('identityMetadata/otherId[@name="folio_instance_hrid"]')&.text.presence
-  end
-
   def thumb
     document.root.at_xpath('thumb')&.text
   end
