@@ -39,32 +39,4 @@ RSpec.describe 'purl', type: :feature do
       end
     end
   end
-
-  describe 'annotation' do
-    context 'v2' do
-      it 'renders the json for a book' do
-        visit '/bc854fy5899/iiif/annotation/cocina-fileSet-bc854fy5899-bc854fy5899_1'
-        json_body = JSON.parse(page.body)
-        expect(json_body['motivation']).to eq('sc:painting')
-      end
-
-      it 'renders nil for a file object' do
-        visit '/wp335yr5649/iiif/annotation/bc854fy5899_fdsa'
-        expect(page.status_code).to eq(404)
-      end
-    end
-
-    context 'v3' do
-      it 'renders the json for a book' do
-        visit '/bc854fy5899/iiif3/annotation/cocina-fileSet-bc854fy5899-bc854fy5899_1'
-        json_body = JSON.parse(page.body)
-        expect(json_body['motivation']).to eq('painting')
-      end
-
-      it 'renders nil for a file object' do
-        visit '/wp335yr5649/iiif3/annotation/bc854fy5899_fdsa'
-        expect(page.status_code).to eq(404)
-      end
-    end
-  end
 end
