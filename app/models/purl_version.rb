@@ -219,19 +219,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     def cache_key
       "purl_resource/druid:#{druid}/#{version_id}"
     end
-
-    def last_modified_header_value
-      t = public_xml_resource.header[:last_modified]
-
-      if t.is_a? String
-        Time.zone.parse(t)
-      else
-        t
-      end
-    rescue ArgumentError => e
-      Rails.logger.info("Unable to parse last modified time: #{e}")
-      Time.zone.now
-    end
   end
 
   delegate :public_xml_body, :cocina_body, to: :resource_retriever
