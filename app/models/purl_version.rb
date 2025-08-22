@@ -64,7 +64,8 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
       return nil unless resource.version(:head).ready?
 
       [resource, resource.version(:head)]
-    rescue DruidNotValid
+    rescue ResourceRetriever::ResourceNotFound => e
+      Honeybadger.notify(e)
       nil
     end
   end

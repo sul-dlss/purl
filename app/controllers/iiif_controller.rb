@@ -87,7 +87,11 @@ class IiifController < ApplicationController
   end
 
   def load_version
-    @version = @purl.version(version_param)
+    @version = begin
+      @purl.version(version_param)
+    rescue ResourceRetriever::ResourceNotFound
+      raise PurlVersion::ObjectNotReady, params[:id]
+    end
     raise PurlVersion::ObjectNotReady, params[:id] unless @version.ready?
   end
 
