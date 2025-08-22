@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ResourceFile
   include ActiveModel::Model
 

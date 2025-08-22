@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'iiif/v3/presentation' # Can we get the iiif-presentation gem to load this?
 

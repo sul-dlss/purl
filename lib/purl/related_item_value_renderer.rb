@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Purl
   class RelatedItemValueRenderer < ModsDisplay::NestedRelatedItem::ValueRenderer
     def render

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'find'
 
 class PurlVersion # rubocop:disable Metrics/ClassLength
@@ -12,7 +14,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
 
   class ObjectNotReady < StandardError; end
 
-  MODS_NS = 'http://www.loc.gov/mods/v3'.freeze
+  MODS_NS = 'http://www.loc.gov/mods/v3'
 
   def persisted?
     true

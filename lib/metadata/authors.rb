@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Metadata
   class Authors
     def self.call(mods_ng_document)

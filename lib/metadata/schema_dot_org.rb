@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Metadata
   class SchemaDotOrg
     def self.call(cocina_json)

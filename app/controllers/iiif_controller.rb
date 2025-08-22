@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class IiifController < ApplicationController
   before_action :load_purl
   before_action :load_version

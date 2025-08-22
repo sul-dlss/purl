@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DocumentCacheResource
   def initialize(path)
     @path = path

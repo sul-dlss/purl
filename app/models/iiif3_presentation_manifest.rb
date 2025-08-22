@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'iiif/presentation'
 require 'iiif/v3/presentation'
 

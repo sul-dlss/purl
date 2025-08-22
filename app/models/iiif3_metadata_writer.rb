@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Iiif3MetadataWriter
   # @param [Hash<Symbol,Object>] cocina_descriptive
   # @param [String] collection_title

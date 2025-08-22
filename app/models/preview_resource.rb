@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # A lighter-weight version of PurlResource
 class PreviewResource
   def initialize(mods)

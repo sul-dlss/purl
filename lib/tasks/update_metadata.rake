@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 task update_metadata: :environment do
   druids = [
     'bb000br0025', # Not crawlable
