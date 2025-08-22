@@ -13,7 +13,6 @@ class RightsMetadata
 
   delegate :stanford_only_rights_for_file, :world_rights_for_file, :stanford_only_unrestricted_file?,
            :restricted_by_location?, :world_downloadable_file?, :stanford_only_downloadable_file?,
-           :world_downloadable?, :stanford_only_downloadable?,
            to: :rights_auth
 
   def copyright_statement

@@ -85,8 +85,11 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   # Show tracked downloads if the object has download permission and is a type that we track
   # If we can't track downloads (e.g. for WARC),or if it's a collection, no point in showing the download count
   def show_download_metrics?
-    (rights.world_downloadable? || rights.stanford_only_downloadable?) &&
+    download_status = cocina.dig('access', 'download')
+    # rubocop:disable Style/MultipleComparison
+    (download_status == 'world' || download_status == 'stanford') &&
       %w[webarchive-seed webarchive-binary].exclude?(type) && !collection?
+    # rubocop:enable Style/MultipleComparison
   end
 
   def rights
