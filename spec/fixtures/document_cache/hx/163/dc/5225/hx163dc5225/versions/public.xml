@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:hx163dc5225" published="2025-08-22T08:33:03Z" publishVersion="cocina-models/0.105.2">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>"A Sketch of the Life of John A. Steinbeck, the Dickson Family and the Jewish Mission in Palestine Asia," approximately 30pp, [233] c. 1917</objectLabel>
+    <sourceId source="sul">sul:M2467_b005_f037_7b62271957faa9ddcdc4456dd9363333</sourceId>
+  </identityMetadata>
+  <contentMetadata objectId="druid:hx163dc5225" type="image">
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_1" sequence="1" type="image">
+      <label>Image 1</label>
+      <file id="hx163dc5225_No233_1917_Sketch_01.jp2" mimetype="image/jp2" size="16055637" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">097e912ee5f47af3c340901fe31bf221</checksum>
+        <checksum type="sha1">4ba92a629c510239110cccc15f8d6a3c9fcfb067</checksum>
+        <imageData height="2501" width="2024"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_2" sequence="2" type="image">
+      <label>Image 2</label>
+      <file id="hx163dc5225_No233_1917_Sketch_02.jp2" mimetype="image/jp2" size="14572687" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">c7033076098b28f51bcce5a20fcb70fa</checksum>
+        <checksum type="sha1">a01f4f8c0797ffc1e24d7840f27ff8be7f87981c</checksum>
+        <imageData height="2517" width="2030"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_3" sequence="3" type="image">
+      <label>Image 3</label>
+      <file id="hx163dc5225_No233_1917_Sketch_03.txt" mimetype="text/plain" size="110" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">ca185818552882e722570dd91d86b265</checksum>
+        <checksum type="sha1">74fb392aaaacdd3335edfd93f6ceda69982c677d</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_03.json" mimetype="application/json" size="1404" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">0d85163a5cd36f4cc244637e7a6e130d</checksum>
+        <checksum type="sha1">4ffb9845afc37e0486729969494c6ecce51d9140</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_03.jp2" mimetype="image/jp2" size="10373838" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">6725cdece488e7494e366266ff8b1865</checksum>
+        <checksum type="sha1">9418bb6552431f17c8050db6d3be70ef1e1d9cb4</checksum>
+        <imageData height="2078" width="1751"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_4" sequence="4" type="image">
+      <label>Image 4</label>
+      <file id="hx163dc5225_No233_1917_Sketch_04.txt" mimetype="text/plain" size="798" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">f53e3b79718bc74c455f4e7e0b6ba04e</checksum>
+        <checksum type="sha1">ebf6d179452f71be3dbe50aeaea98855211b4101</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_04.json" mimetype="application/json" size="2454" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">b979cc21d82f7badb69dab3e3dfa990c</checksum>
+        <checksum type="sha1">3917df9eccbd2b5adaf80aea55006bebc48231ba</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_04.jp2" mimetype="image/jp2" size="14549085" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">d5871f60819d2c43744b3e8fec2ee014</checksum>
+        <checksum type="sha1">85adc9b7e9c9bd8209d0501065b4a85c102860bf</checksum>
+        <imageData height="2510" width="2036"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_5" sequence="5" type="image">
+      <label>Image 5</label>
+      <file id="hx163dc5225_No233_1917_Sketch_05.txt" mimetype="text/plain" size="721" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">1e6de6fc3838adfc8208c266eef12997</checksum>
+        <checksum type="sha1">652f4e519559a72e9f1c25c8493cdb0b2f177e95</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_05.json" mimetype="application/json" size="3289" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">25b696dcb444bd67b5c9138417ee6f20</checksum>
+        <checksum type="sha1">4a98778b3c70bb707d81406c00df2653f75fec9c</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_05.jp2" mimetype="image/jp2" size="14859199" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">0783c9ea9d4b00ac8e0194525649535d</checksum>
+        <checksum type="sha1">647f5e223c65156c281dc4c191fc8fa9c6f6b10d</checksum>
+        <imageData height="2513" width="2021"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_6" sequence="6" type="image">
+      <label>Image 6</label>
+      <file id="hx163dc5225_No233_1917_Sketch_06.txt" mimetype="text/plain" size="713" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">c3eedae146a54ab3d5761c3ad3134b5c</checksum>
+        <checksum type="sha1">a3ae66dd730b3bcd10c5c2edf8c79d4c07df5a87</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_06.json" mimetype="application/json" size="1685" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">4fa8adc2802845253cfea071013f70a6</checksum>
+        <checksum type="sha1">c5e59d99f93dfd4c952075125a8ba2e647afb0d6</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_06.jp2" mimetype="image/jp2" size="14489011" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">ff548db5c99f018d5da263651e287642</checksum>
+        <checksum type="sha1">a04d4bf366382f85b282efe5457abf5f3e96b78c</checksum>
+        <imageData height="2525" width="2050"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_7" sequence="7" type="image">
+      <label>Image 7</label>
+      <file id="hx163dc5225_No233_1917_Sketch_07.txt" mimetype="text/plain" size="708" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">edf611346217dd46b2709d925b66b2b0</checksum>
+        <checksum type="sha1">42b5ea33f42befa045dc24831491d57e9676ec68</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_07.json" mimetype="application/json" size="2751" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">ea8c6994aeda176b32618b2f7e35fdca</checksum>
+        <checksum type="sha1">8f5e3459034f2780b3d0f4f6acd755b15157346d</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_07.jp2" mimetype="image/jp2" size="14721243" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">17011433e9ebd0e21a8d6871afcf6d2f</checksum>
+        <checksum type="sha1">07cf313beae62ba0bc656a76cc8c532a28cc2a9a</checksum>
+        <imageData height="2513" width="2010"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_8" sequence="8" type="image">
+      <label>Image 8</label>
+      <file id="hx163dc5225_No233_1917_Sketch_08.txt" mimetype="text/plain" size="758" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">1029145dca114d2d7354091d310ad19f</checksum>
+        <checksum type="sha1">23d272026aabbe546d9fecf793a9fb2e22148608</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_08.json" mimetype="application/json" size="2873" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">abde281f4ff4789e3597426c6e1dd332</checksum>
+        <checksum type="sha1">7c024b51e77575f472d6cd05feda937dfa6e5952</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_08.jp2" mimetype="image/jp2" size="15015565" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">3e8b4734403b28fcf7491fb81722718e</checksum>
+        <checksum type="sha1">8a6b8e9283c57f5746073cec1bcc469b9026e633</checksum>
+        <imageData height="2531" width="2035"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_9" sequence="9" type="image">
+      <label>Image 9</label>
+      <file id="hx163dc5225_No233_1917_Sketch_09.txt" mimetype="text/plain" size="681" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">1d8c8ebfe7a47c5e32b5421e69268f92</checksum>
+        <checksum type="sha1">9b1f9fa49cca472c84bbe46c7e89d56a0f42d97b</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_09.json" mimetype="application/json" size="1441" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">a8a03858dfba626927ea4f970fae2354</checksum>
+        <checksum type="sha1">a644835aa2531a3bdd714e26c3f1cf1d59a0c569</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_09.jp2" mimetype="image/jp2" size="14867626" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">88e1157c36cfba3634bc96dfee11510f</checksum>
+        <checksum type="sha1">8162cb047dca35160dd085f4224a9a115c57f516</checksum>
+        <imageData height="2515" width="2033"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_10" sequence="10" type="image">
+      <label>Image 10</label>
+      <file id="hx163dc5225_No233_1917_Sketch_10.txt" mimetype="text/plain" size="683" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">f49dc6387e97b755d14444af2c298114</checksum>
+        <checksum type="sha1">ca0d39c4b0a87c1a00f4d7f41f515fc73b4770cf</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_10.json" mimetype="application/json" size="1879" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">dad4b28b0e97a3e204935707983fc91a</checksum>
+        <checksum type="sha1">ac205c543291ddc7ef14ca090c8af609966c358f</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_10.jp2" mimetype="image/jp2" size="14540713" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">5eb239e7f7800d046c348726a76a0b68</checksum>
+        <checksum type="sha1">ef0c57cdb346e48889e62f03a3d5fefbef8208f6</checksum>
+        <imageData height="2514" width="2058"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_11" sequence="11" type="image">
+      <label>Image 11</label>
+      <file id="hx163dc5225_No233_1917_Sketch_11.txt" mimetype="text/plain" size="721" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">d35965047fc531c973f5c923b3d40a51</checksum>
+        <checksum type="sha1">4d6fea80acce681302d758ef60f5c8214a9823ef</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_11.json" mimetype="application/json" size="1695" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">4fc48aaeec441e7341f079b62ac3f105</checksum>
+        <checksum type="sha1">41117aa954a50dc5ec8448698e4bc16d220c1671</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_11.jp2" mimetype="image/jp2" size="13174169" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">9f7f015e10b8b79092dd526db45e10c4</checksum>
+        <checksum type="sha1">8d7cd657cf6716f47458a9e1506a4a20ae5990bf</checksum>
+        <imageData height="2325" width="2036"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_12" sequence="12" type="image">
+      <label>Image 12</label>
+      <file id="hx163dc5225_No233_1917_Sketch_12.txt" mimetype="text/plain" size="669" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">014ca0c718464c0eba75b1b6627bd385</checksum>
+        <checksum type="sha1">aad7754f51b8ef20ad637cdd534a374564404174</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_12.json" mimetype="application/json" size="1419" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">54047d319baad5c2cf029f3b6f7747b6</checksum>
+        <checksum type="sha1">1c8923205abee5cfc6f2268ad4252d6c898a9429</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_12.jp2" mimetype="image/jp2" size="15021715" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">4c916be8ed6841c3c642dc43e6aab146</checksum>
+        <checksum type="sha1">743c7ef3441295619c3c6883db71d6cb976f9b87</checksum>
+        <imageData height="2516" width="2047"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_13" sequence="13" type="image">
+      <label>Image 13</label>
+      <file id="hx163dc5225_No233_1917_Sketch_13.txt" mimetype="text/plain" size="688" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">61398d11d82ba5c8b19df5396ce3864f</checksum>
+        <checksum type="sha1">546407c0e368e3230affe14f2ba976aca3ccb5a2</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_13.json" mimetype="application/json" size="1897" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">9e6345aaeacf5208014998131f5021c5</checksum>
+        <checksum type="sha1">4bf9e8f53eb5674b0ca1fe1272c9137a90d5fb2d</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_13.jp2" mimetype="image/jp2" size="14533528" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">0d11d93eeb5690af63091c0250cef3b5</checksum>
+        <checksum type="sha1">f65e4b86330e363b8d45bd1b37e9432db6636647</checksum>
+        <imageData height="2510" width="2037"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_14" sequence="14" type="image">
+      <label>Image 14</label>
+      <file id="hx163dc5225_No233_1917_Sketch_14.txt" mimetype="text/plain" size="722" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">d03df37a53d1d8450a5874ab4730e4c5</checksum>
+        <checksum type="sha1">532c859f9e939cc9361719c747f875f549cc2cfd</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_14.json" mimetype="application/json" size="2154" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">329c215422ae6ec1e5df2d09c939502c</checksum>
+        <checksum type="sha1">3066d922b0e1f50f5a61a0b3e28fd3b4653705a7</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_14.jp2" mimetype="image/jp2" size="14686969" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">ddc930abc41ddc38af76d75e7dc9307c</checksum>
+        <checksum type="sha1">acc10bb9ecb4a9f09d3c83eef7d7a5361edc80c1</checksum>
+        <imageData height="2497" width="2053"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_15" sequence="15" type="image">
+      <label>Image 15</label>
+      <file id="hx163dc5225_No233_1917_Sketch_15.txt" mimetype="text/plain" size="720" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">87145e98b0e81878bd5f739c8321e3c2</checksum>
+        <checksum type="sha1">1e873aa4225ed6800a47c8785e061360bfeb5756</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_15.json" mimetype="application/json" size="2649" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">de3e741361005444a8674fa32aef1dc0</checksum>
+        <checksum type="sha1">ee61aaf3433eed7f716e63b92c7c4fba64b604db</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_15.jp2" mimetype="image/jp2" size="15244683" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">1865d825de349329f4ac03ffaa973568</checksum>
+        <checksum type="sha1">02fdac045c4d109c025b014ed28f44a47a05246b</checksum>
+        <imageData height="2516" width="2048"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_16" sequence="16" type="image">
+      <label>Image 16</label>
+      <file id="hx163dc5225_No233_1917_Sketch_16.txt" mimetype="text/plain" size="717" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">8d9d51afcaa09a4b65d1f063d6b67633</checksum>
+        <checksum type="sha1">183427e97585cf81ea276dff96b8d85c962e267f</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_16.json" mimetype="application/json" size="1913" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">2a5fa648f8b4c510f9aea55e786a9443</checksum>
+        <checksum type="sha1">0cf8e4b870084e603c37427962bce5c14ebaea13</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_16.jp2" mimetype="image/jp2" size="15142460" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">213cfeb553990cec66cd17e1d0917460</checksum>
+        <checksum type="sha1">83cf4b289bed77dc8f844dea7d5c0c37785e2dbd</checksum>
+        <imageData height="2517" width="2038"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_17" sequence="17" type="image">
+      <label>Image 17</label>
+      <file id="hx163dc5225_No233_1917_Sketch_17.txt" mimetype="text/plain" size="735" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">5bff10aa040054ca1b5aa62eaab2b21b</checksum>
+        <checksum type="sha1">1e1310326c9024ef446aaa5912bc83af36d450ac</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_17.json" mimetype="application/json" size="3060" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">7e1f1b03263aeb14a9c278a583d344ca</checksum>
+        <checksum type="sha1">c2cb2dfcf2a89a7007abff4004e92f6122eb411b</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_17.jp2" mimetype="image/jp2" size="13693130" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">0fd29393a06dd30030e31db481a1a480</checksum>
+        <checksum type="sha1">c9266446f9d66749afc819397e764587aa1f966b</checksum>
+        <imageData height="2333" width="1999"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_18" sequence="18" type="image">
+      <label>Image 18</label>
+      <file id="hx163dc5225_No233_1917_Sketch_18.txt" mimetype="text/plain" size="745" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">461ca51c885987aee961d09b25137be4</checksum>
+        <checksum type="sha1">1a559c889e2557fee338a4631a3e2679068cda09</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_18.json" mimetype="application/json" size="2874" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">158973b60a77f424ed90f6fc474bfa39</checksum>
+        <checksum type="sha1">84a6705e107ed468810ac0ce59f4287c270cb3b9</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_18.jp2" mimetype="image/jp2" size="14903331" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">326b9365eee9b438b7012bf6381288d7</checksum>
+        <checksum type="sha1">a6b2fb0cb8dcbfd76a0eb87102dfc9436dbb756f</checksum>
+        <imageData height="2509" width="2019"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_19" sequence="19" type="image">
+      <label>Image 19</label>
+      <file id="hx163dc5225_No233_1917_Sketch_19.txt" mimetype="text/plain" size="679" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">07d69cb664207de7e5fe02936a18d259</checksum>
+        <checksum type="sha1">f71366217245f5737c56ba7c02b7fc1d58fb8369</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_19.json" mimetype="application/json" size="1883" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">12c6d59e7403b90392bde06af9c212dd</checksum>
+        <checksum type="sha1">f243b5189888e1d42679f236e5a0b6d769457586</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_19.jp2" mimetype="image/jp2" size="14687177" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">0dddebaa7138813acfaf09c7132a19c7</checksum>
+        <checksum type="sha1">e7f9acdbd2f83c75f7d145e1c7157860102a78c9</checksum>
+        <imageData height="2512" width="2072"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_20" sequence="20" type="image">
+      <label>Image 20</label>
+      <file id="hx163dc5225_No233_1917_Sketch_20.txt" mimetype="text/plain" size="644" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">ea239ac2d52fa856e0195c447d652814</checksum>
+        <checksum type="sha1">5a95f16591f4f09f53c91eb411cb6919b2443c35</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_20.json" mimetype="application/json" size="4570" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">d5c9b04bd4b5dab3ee00e36bf88f30d6</checksum>
+        <checksum type="sha1">c835d13bd8852085efa1824a0923ed68bbba0716</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_20.jp2" mimetype="image/jp2" size="15045540" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">b72901782c30d852aaa3b69f8b570ef1</checksum>
+        <checksum type="sha1">891bae67a85667a58d9e4149441cc431729e36fa</checksum>
+        <imageData height="2503" width="2070"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_21" sequence="21" type="image">
+      <label>Image 21</label>
+      <file id="hx163dc5225_No233_1917_Sketch_21.txt" mimetype="text/plain" size="710" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">bc368cdb9727346911a6907cb72ef9e4</checksum>
+        <checksum type="sha1">684d1cc3bef4cb0e1a3f51ca69aa5ccad0047759</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_21.json" mimetype="application/json" size="3483" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">08684c6ef497ea49df17166f7c7716f3</checksum>
+        <checksum type="sha1">203f3e0a35d36c6da10ce0c92a548bd5cabb806d</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_21.jp2" mimetype="image/jp2" size="15343964" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">704d2d5e93a229b5e9154d00c0bed165</checksum>
+        <checksum type="sha1">af77a33fc7b2ec94a51c0acb99d1f6e255c2b6fe</checksum>
+        <imageData height="2521" width="2056"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_22" sequence="22" type="image">
+      <label>Image 22</label>
+      <file id="hx163dc5225_No233_1917_Sketch_22.txt" mimetype="text/plain" size="639" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">ce2c2de2fc218b4beb0fcad2a1d9e61c</checksum>
+        <checksum type="sha1">d8a9908a1f8de0812cf481cc064d4507794d2c88</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_22.json" mimetype="application/json" size="2709" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">a4bbfe32a7231c848efaad03c5bcf8a6</checksum>
+        <checksum type="sha1">b0222ff4d3c324c3f3903d1dc54d0afe1caaa1f3</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_22.jp2" mimetype="image/jp2" size="13730421" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">36a6e5f25fc611be5c2c5cf9378e6625</checksum>
+        <checksum type="sha1">599fbf98af4c3adb8eb6b1c1c07c67dca1e926d5</checksum>
+        <imageData height="2407" width="2028"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_23" sequence="23" type="image">
+      <label>Image 23</label>
+      <file id="hx163dc5225_No233_1917_Sketch_23.txt" mimetype="text/plain" size="682" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">db8e4e25fe78490e6f0a81e51de15c8c</checksum>
+        <checksum type="sha1">383cc70b079f0dd1d46c7c527b11ac320d40ad3a</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_23.json" mimetype="application/json" size="2567" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">b745c0e9c3f7622cf8047f7960ab7857</checksum>
+        <checksum type="sha1">d63a179d483e48c5e834c3ee431dea2cb6564988</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_23.jp2" mimetype="image/jp2" size="14482393" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">e83e6c85226376f24065ee184fef2466</checksum>
+        <checksum type="sha1">d08a0163ef95eb5455ad2f5429f2f0648bb64dc7</checksum>
+        <imageData height="2397" width="2026"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_24" sequence="24" type="image">
+      <label>Image 24</label>
+      <file id="hx163dc5225_No233_1917_Sketch_24.txt" mimetype="text/plain" size="730" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">57f7e33866bebb21de8b4d876c570770</checksum>
+        <checksum type="sha1">7a2c2da7b4df974a5c670360ce4159be10b9d0bd</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_24.json" mimetype="application/json" size="2154" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">1bd98f26c49cec68cd8084e3c2f9e7a4</checksum>
+        <checksum type="sha1">18cad536e66db18e017f66ebd1d4d6a5ad3c0d2a</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_24.jp2" mimetype="image/jp2" size="13749981" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">f11e45262e17d3055d45f8097499f21d</checksum>
+        <checksum type="sha1">e40ec7cca7c5ea321969ffadaf783a1a6ea0f200</checksum>
+        <imageData height="2381" width="2020"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_25" sequence="25" type="image">
+      <label>Image 25</label>
+      <file id="hx163dc5225_No233_1917_Sketch_25.txt" mimetype="text/plain" size="684" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">48f167ad3acbedec01460548b703835b</checksum>
+        <checksum type="sha1">6593c2945c1d914bf245e03211572f052973e91f</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_25.json" mimetype="application/json" size="3201" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">f6857ff2697015b0b7d36f14eff3f440</checksum>
+        <checksum type="sha1">2af77393f3bfb85034b103edd5cdd8a82d71e9e4</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_25.jp2" mimetype="image/jp2" size="15028400" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">c8d50363530a53c5f34473104bd54804</checksum>
+        <checksum type="sha1">a44d566d2ae2a64c638b1ca9c165b5e996204836</checksum>
+        <imageData height="2523" width="2056"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_26" sequence="26" type="image">
+      <label>Image 26</label>
+      <file id="hx163dc5225_No233_1917_Sketch_26.txt" mimetype="text/plain" size="660" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">bd11c20345065eca22b0fe4bc920fb2a</checksum>
+        <checksum type="sha1">38f883a2912090b33662bc0beff3104191d269a6</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_26.json" mimetype="application/json" size="4580" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">dc47dfa1c29902819b57e595994abe7e</checksum>
+        <checksum type="sha1">b562c9458fc1164a287446eeebaf5992726ec9ec</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_26.jp2" mimetype="image/jp2" size="13118675" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">d408fa4ec7ce2d07b76218975a0b3052</checksum>
+        <checksum type="sha1">66bcbd798b43a7360ff1db28478a9b1263e2a148</checksum>
+        <imageData height="2320" width="1953"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_27" sequence="27" type="image">
+      <label>Image 27</label>
+      <file id="hx163dc5225_No233_1917_Sketch_27.txt" mimetype="text/plain" size="734" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">73de152606b39b83bf93c6be2a0593e6</checksum>
+        <checksum type="sha1">a34d9176f508bbe8e9510fb43ac05668bc051be9</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_27.json" mimetype="application/json" size="1937" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">8fb63020376d218956baa8d6ef792256</checksum>
+        <checksum type="sha1">be975c5e8f69df34a4d59e8ec440c1f11a230f91</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_27.jp2" mimetype="image/jp2" size="14901565" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">f8a7e8fa5618fbbfac6e8cf0aef5f0d1</checksum>
+        <checksum type="sha1">45c8bd105b5f38334e1a9f8c549d9efea8462cb0</checksum>
+        <imageData height="2517" width="2060"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_28" sequence="28" type="image">
+      <label>Image 28</label>
+      <file id="hx163dc5225_No233_1917_Sketch_28.txt" mimetype="text/plain" size="698" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">d08491c0a09e9d78f31bc3ffacc1f8af</checksum>
+        <checksum type="sha1">45b50a90cb721562f376e37d652a7af05715f919</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_28.json" mimetype="application/json" size="3270" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">849e02e1123bd0ce18dd0d3ab842257d</checksum>
+        <checksum type="sha1">ddb6036ae92d44d6a908a0fcada51b528aea7d88</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_28.jp2" mimetype="image/jp2" size="15021791" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">92c301aba2b9c315eb0349b2441d0459</checksum>
+        <checksum type="sha1">d9a07130867d7d4c7e89e96438d24f7ebb3592cd</checksum>
+        <imageData height="2525" width="2048"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_29" sequence="29" type="image">
+      <label>Image 29</label>
+      <file id="hx163dc5225_No233_1917_Sketch_29.txt" mimetype="text/plain" size="700" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">bb7d14b89a6120288615448844b105b2</checksum>
+        <checksum type="sha1">04af7a7659bb616cca4e36c651746320c5ca265f</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_29.json" mimetype="application/json" size="3483" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">b9d0cb9564a1bec9554976dc89848fab</checksum>
+        <checksum type="sha1">9b998451923b98377f8ad6729f617f26db554b71</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_29.jp2" mimetype="image/jp2" size="15354226" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">8f89283f0f670793b71be255b16d197a</checksum>
+        <checksum type="sha1">a250445afcbe6398da7c42af8759d0f7dae5b99e</checksum>
+        <imageData height="2525" width="2052"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_30" sequence="30" type="image">
+      <label>Image 30</label>
+      <file id="hx163dc5225_No233_1917_Sketch_30.txt" mimetype="text/plain" size="463" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">078170889314708ba6d5a95b61268c2b</checksum>
+        <checksum type="sha1">464661f0cc48ad1e1fc2b322893f2d68c0018dc6</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_30.json" mimetype="application/json" size="3901" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">a7734bf4b2133c640a08013b5e3afb1c</checksum>
+        <checksum type="sha1">62197005dc34e8a527ac4c2d65c7145356f5c1d6</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_30.jp2" mimetype="image/jp2" size="12654007" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">2ea8ca2d1b1d3ed1847ae7683fa20d54</checksum>
+        <checksum type="sha1">6a7c5785e7542cbe4134f921458bf62bf4dd8cf8</checksum>
+        <imageData height="2181" width="2020"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_31" sequence="31" type="image">
+      <label>Image 31</label>
+      <file id="hx163dc5225_No233_1917_Sketch_31.txt" mimetype="text/plain" size="735" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">089ce3cf5b1ba58cbc52423d95dff57f</checksum>
+        <checksum type="sha1">ba9584bfe6445a3086348e1c3bfacf7f8f0cef24</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_31.json" mimetype="application/json" size="3502" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">330a2cb094a3a52d664d63ff8c61f9b2</checksum>
+        <checksum type="sha1">153c5b8aa7db87fa0438786890dbbd174597d92c</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_31.jp2" mimetype="image/jp2" size="15295009" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">49d795bac7899a2ba04b9c5ce644b10d</checksum>
+        <checksum type="sha1">7befe577b546d4dcaa1f73482214122c82961a11</checksum>
+        <imageData height="2527" width="2045"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_32" sequence="32" type="image">
+      <label>Image 32</label>
+      <file id="hx163dc5225_No233_1917_Sketch_32.txt" mimetype="text/plain" size="723" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">6102c41f404e96a38a453ad476d1f035</checksum>
+        <checksum type="sha1">6b66a9c5bf7728259e0c9a07f0e2d5a6f0928131</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_32.json" mimetype="application/json" size="4406" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">3ad4933eb02f59236ed16466854ac54b</checksum>
+        <checksum type="sha1">3507fa133e576b64487172fbfb593148a9fcc025</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_32.jp2" mimetype="image/jp2" size="13238410" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">0669690d380370e70b2ef46e05d52f93</checksum>
+        <checksum type="sha1">97677f8ef60e9ea467ec0d0d28d5172603e9b273</checksum>
+        <imageData height="2289" width="2019"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_33" sequence="33" type="image">
+      <label>Image 33</label>
+      <file id="hx163dc5225_No233_1917_Sketch_33.txt" mimetype="text/plain" size="679" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">a7721e1c8ce5a22d6b071bbaf444d394</checksum>
+        <checksum type="sha1">3b3f2ac26d796452004a49563b02509b9e6f1e18</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_33.json" mimetype="application/json" size="2749" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">3c55d74e023792d889bf824fa0ae50c1</checksum>
+        <checksum type="sha1">196322df8c48e5258c06f0465a6ae1a60b9c6394</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_33.jp2" mimetype="image/jp2" size="15243791" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">3ef597e8a0c063ff849ec527e624c532</checksum>
+        <checksum type="sha1">b62eecb0f8ee5000d5b8531cbd80dd028471d40d</checksum>
+        <imageData height="2515" width="2056"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_34" sequence="34" type="image">
+      <label>Image 34</label>
+      <file id="hx163dc5225_No233_1917_Sketch_34.txt" mimetype="text/plain" size="571" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">21fc3bc67a7e7d43fd3d6522deb26ca8</checksum>
+        <checksum type="sha1">d8c24e1a1cf810e4f5a5decb103795110e885419</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_34.json" mimetype="application/json" size="2644" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">304100c7ba9437258fcc728d756a0b1c</checksum>
+        <checksum type="sha1">658b333529230ca8a12ea3bba1a90bf262838cd5</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_34.jp2" mimetype="image/jp2" size="14320861" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">d8f54ed428828df0bf2c5f68aa08b3e1</checksum>
+        <checksum type="sha1">1bbee4b52bed921724f99c994d88efc039041707</checksum>
+        <imageData height="2532" width="2012"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_35" sequence="35" type="image">
+      <label>Image 35</label>
+      <file id="hx163dc5225_No233_1917_Sketch_35.txt" mimetype="text/plain" size="357" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">fcfa9ea01886b1f00618e23bb3f176fd</checksum>
+        <checksum type="sha1">3f123c7a1b558740f8bd94371dcdeab7f2767417</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_35.json" mimetype="application/json" size="2851" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">7f5e22a351d4dad566434fbc56952aa6</checksum>
+        <checksum type="sha1">b88e9a7d7d9927171c68ed5bd900c7fe874277fa</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_35.jp2" mimetype="image/jp2" size="15159078" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">889742c08c8f8a534fd4eff226e6e990</checksum>
+        <checksum type="sha1">8fb66df4d03bd91185398d894c0cee364e060a1a</checksum>
+        <imageData height="2521" width="2034"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_36" sequence="36" type="image">
+      <label>Image 36</label>
+      <file id="hx163dc5225_No233_1917_Sketch_36.txt" mimetype="text/plain" size="622" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">b2c2d352775b05c09e2b03d2cff0590e</checksum>
+        <checksum type="sha1">a6408fef6b4267252622edf892c95f4f509664a0</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_36.json" mimetype="application/json" size="1145" publish="yes" shelve="yes" preserve="yes" role="annotations">
+        <checksum type="md5">59a87bac3469fa6512b054fe86ce1473</checksum>
+        <checksum type="sha1">2a9418baddcd27049c8295554090bc69a09d16d0</checksum>
+      </file>
+      <file id="hx163dc5225_No233_1917_Sketch_36.jp2" mimetype="image/jp2" size="2122681" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">9db5668cf68f02566e2e629862f8400d</checksum>
+        <checksum type="sha1">5ebb4743394960968d96929737ff10673d261425</checksum>
+        <imageData height="2031" width="1476"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_37" sequence="37" type="image">
+      <label>Image 37</label>
+      <file id="hx163dc5225_No233_1917_Sketch_37.jp2" mimetype="image/jp2" size="14889164" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">469a74f1a01b21fc1d119060cc237976</checksum>
+        <checksum type="sha1">872c7627f1dc01d955989bcf08f41658485f56e4</checksum>
+        <imageData height="2523" width="2031"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_38" sequence="38" type="image">
+      <label>Image 38</label>
+      <file id="hx163dc5225_No233_1917_Sketch_38.jp2" mimetype="image/jp2" size="14786578" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">2a78c2ba1ef952d0587806e22e13b2ed</checksum>
+        <checksum type="sha1">5fd8c9eadcaee7837e7284063bc6e3cd9f5c14f0</checksum>
+        <imageData height="2498" width="2040"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_39" sequence="39" type="image">
+      <label>Image 39</label>
+      <file id="hx163dc5225_No233_1917_Sketch_39.jp2" mimetype="image/jp2" size="13883818" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">9c21990e1768ed511e7dad3c323496b7</checksum>
+        <checksum type="sha1">66ca49a00192b8e8ea9d23d55872d85631a7dda7</checksum>
+        <imageData height="2421" width="1754"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-hx163dc5225-hx163dc5225_40" sequence="40" type="object">
+      <label>Full PDF</label>
+      <file id="hx163dc5225_No233_1917_Sketch.pdf" mimetype="application/pdf" size="86691107" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">7b62271957faa9ddcdc4456dd9363333</checksum>
+        <checksum type="sha1">0ec79bd04b2ee2576ee725ced06a911de49ecf42</checksum>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">This material is believed to be in the public domain. There are no restrictions on use of public domain materials.</human>
+      <license>https://creativecommons.org/publicdomain/mark/1.0/</license>
+    </use>
+    <copyright>
+      <human>Public Domain.</human>
+    </copyright>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:hx163dc5225">
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:qs016mh3282"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>"A Sketch of the Life of John A. Steinbeck, the Dickson Family and the Jewish Mission in Palestine Asia," approximately 30pp, [233] c. 1917</dc:title>
+    <dc:type>composition book</dc:type>
+    <dc:type>Text</dc:type>
+    <dc:format>39 pages</dc:format>
+    <dc:description>Composition notebook of the history of the John A. Steinbeck and Almira Steinbeck and their families - the Steinbecks and the Dicksons. Includes descriptions of their lives in Germany, Palestine and the United States during the American Civil War.</dc:description>
+    <dc:subject>History</dc:subject>
+    <dc:coverage>United States</dc:coverage>
+    <dc:coverage>Civil War, 1861-1865</dc:coverage>
+    <dc:subject>Missions</dc:subject>
+    <dc:coverage>Middle East</dc:coverage>
+    <dc:subject>Missions--Middle East</dc:subject>
+    <dc:subject>Steinbeck family</dc:subject>
+    <dc:subject/>
+    <dc:coverage>Palestine</dc:coverage>
+    <dc:subject/>
+    <dc:coverage>United States</dc:coverage>
+    <dc:date>1917</dc:date>
+    <dc:identifier>https://purl.stanford.edu/hx163dc5225</dc:identifier>
+    <dc:relation type="repository">Stanford University. Libraries. Department of Special Collections and University Archives</dc:relation>
+    <dc:relation type="collection">S.J. Neighbors collection of John Steinbeck papers, 1859-1999</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>"A Sketch of the Life of John A. Steinbeck, the Dickson Family and the Jewish Mission in Palestine Asia," approximately 30pp, [233] c. 1917</title>
+    </titleInfo>
+    <genre valueURI="http://vocab.getty.edu/page/aat/300422200" authorityURI="http://vocab.getty.edu/aat" authority="aat">composition book</genre>
+    <typeOfResource manuscript="yes">text</typeOfResource>
+    <physicalDescription>
+      <extent>39 pages</extent>
+      <digitalOrigin>reformatted digital</digitalOrigin>
+    </physicalDescription>
+    <abstract>Composition notebook of the history of the John A. Steinbeck and Almira Steinbeck and their families - the Steinbecks and the Dicksons. Includes descriptions of their lives in Germany, Palestine and the United States during the American Civil War.</abstract>
+    <subject altRepGroup="1" valueURI="http://id.loc.gov/authorities/subjects/sh85140205" authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects/">
+      <geographic authority="lcsh">United States</geographic>
+      <topic>History</topic>
+      <temporal>Civil War, 1861-1865</temporal>
+    </subject>
+    <subject altRepGroup="1" valueURI="http://id.loc.gov/authorities/subjects/sh2010102154" authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects/">
+      <topic>Missions</topic>
+      <geographic>Middle East</geographic>
+    </subject>
+    <subject authority="lcsh">
+      <topic authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects/" valueURI="http://id.loc.gov/authorities/subjects/sh2011001610">Steinbeck family</topic>
+    </subject>
+    <subject authority="lcsh">
+      <geographic authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects/" valueURI="http://id.loc.gov/authorities/subjects/sh85097163">Palestine</geographic>
+    </subject>
+    <subject authority="lcsh">
+      <geographic authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects/" valueURI="http://id.loc.gov/authorities/names/n78095330">United States</geographic>
+    </subject>
+    <originInfo>
+      <dateCreated encoding="w3cdtf" keyDate="yes">1917</dateCreated>
+    </originInfo>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/hx163dc5225</url>
+    </location>
+    <location>
+      <physicalLocation type="repository">Stanford University. Libraries. Department of Special Collections and University Archives</physicalLocation>
+    </location>
+    <recordInfo>
+      <languageOfCataloging>
+        <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="text">English</languageTerm>
+        <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="code">eng</languageTerm>
+      </languageOfCataloging>
+      <recordContentSource valueURI="http://id.loc.gov/vocabulary/organizations/cst" authorityURI="http://id.loc.gov/vocabulary/organizations" authority="marcorg">CSt</recordContentSource>
+    </recordInfo>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>S.J. Neighbors collection of John Steinbeck papers, 1859-1999</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/qs016mh3282</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">This material is believed to be in the public domain. There are no restrictions on use of public domain materials.</accessCondition>
+    <accessCondition type="copyright">Public Domain.</accessCondition>
+    <accessCondition type="license" xlink:href="https://creativecommons.org/publicdomain/mark/1.0/">This work has been identified as being free of known restrictions under copyright law, including all related and neighboring rights (Public Domain Mark 1.0).</accessCondition>
+  </mods>
+  <thumb>hx163dc5225/hx163dc5225_No233_1917_Sketch_01.jp2</thumb>
+</publicObject>
