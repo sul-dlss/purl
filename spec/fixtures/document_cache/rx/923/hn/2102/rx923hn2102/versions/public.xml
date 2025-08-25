@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:rx923hn2102" published="2024-10-01T20:35:14Z" publishVersion="cocina-models/0.98.1">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>Interview with Debbie Healy Hammons : Alumni Stories</objectLabel>
+    <sourceId source="sul">sul:SC0932_s1_Hammons_Debbie_script</sourceId>
+  </identityMetadata>
+  <contentMetadata objectId="druid:rx923hn2102" type="book">
+    <bookData readingOrder="ltr"/>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_1" sequence="1" type="page">
+      <label>Page 1</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_01.pdf" mimetype="application/pdf" size="11819" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">b8f43e645f41bff5563f5895019a1df1</checksum>
+        <checksum type="sha1">a50df06cf90c5790efadda1de7e89f72dba827ff</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_01.xml" mimetype="application/xml" size="5664" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">7b68e193ea2ec13b33cc75c6a24ec9ab</checksum>
+        <checksum type="sha1">4522b7d15c024be034b3846688482b33db258269</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_01.jp2" mimetype="image/jp2" size="296179" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">f23b65586f7d09c4de54c0995b08b08b</checksum>
+        <checksum type="sha1">4f0a73e25feefa32686b11f7cbc877fc1b11c8a8</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_2" sequence="2" type="page">
+      <label>Page 2</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_02.pdf" mimetype="application/pdf" size="5780" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">bea99c224bd592f773d319813dd4f98b</checksum>
+        <checksum type="sha1">435ca0fa7783f1a14b16e54647f5e928c3b63134</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_02.xml" mimetype="application/xml" size="1145" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">15464825c0c72bec4790819649cf8267</checksum>
+        <checksum type="sha1">473704808d2db194546a2b939634624f2fed1df8</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_02.jp2" mimetype="image/jp2" size="7829" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">b738d562e422927afac0cfeec0eedd54</checksum>
+        <checksum type="sha1">9bc97336498a804ff3bbf2479a3e3a7bf7c14888</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_3" sequence="3" type="page">
+      <label>Page 3</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_03.pdf" mimetype="application/pdf" size="519416" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">e09aa795db7266248cee0e1d4a10aa18</checksum>
+        <checksum type="sha1">816588db45785305f66ec0486c7c1566059e1293</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_03.xml" mimetype="application/xml" size="6827" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">722ba28a9d446e64fe97c48406d74f21</checksum>
+        <checksum type="sha1">5b5fdd588412e46d1f5856b62dc406b9a1f0e67e</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_03.jp2" mimetype="image/jp2" size="3095212" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">5da6d363615b23094a2822aa7903ff94</checksum>
+        <checksum type="sha1">59f48167b75fd4f28a5d6884f6492a00d51b51e5</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_4" sequence="4" type="page">
+      <label>Page 4</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_04.pdf" mimetype="application/pdf" size="5779" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">2f1241cb05b64205786ebe020665e090</checksum>
+        <checksum type="sha1">0d728f9c5f51248fab12d9d7afb7a2ed802d4da9</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_04.xml" mimetype="application/xml" size="1145" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">c5f5d7bb9d7e9757d5d5ccdeb3fadb54</checksum>
+        <checksum type="sha1">a77cca346f3bc26a03879a8ceeeb9843a76ad908</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_04.jp2" mimetype="image/jp2" size="7829" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">b738d562e422927afac0cfeec0eedd54</checksum>
+        <checksum type="sha1">9bc97336498a804ff3bbf2479a3e3a7bf7c14888</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_5" sequence="5" type="page">
+      <label>Page 5</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_05.pdf" mimetype="application/pdf" size="10407" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">022455ac16c7863cb96535e18314d72f</checksum>
+        <checksum type="sha1">2bf14a94109ef371862f830e8e83213e27306881</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_05.xml" mimetype="application/xml" size="4819" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">15e96d78738a6b39fbedf34925945d2f</checksum>
+        <checksum type="sha1">bbded3d588a9db46e7666c4a1842dbd5f1d773db</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_05.jp2" mimetype="image/jp2" size="157550" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">51137367f1fd051896b924b864a51460</checksum>
+        <checksum type="sha1">9ee19eb705a50fe529a15225c1f9caaaa6bf6546</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_6" sequence="6" type="page">
+      <label>Page 6</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_06.pdf" mimetype="application/pdf" size="6633" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">604f6fb29a6680af9651716204d9881d</checksum>
+        <checksum type="sha1">9b6c9775dccd96d4a5363d0ba2ca023168070220</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_06.xml" mimetype="application/xml" size="1728" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">07f7182ed1f748271a2807bd4c69db52</checksum>
+        <checksum type="sha1">53f2c651e3d7f1d8edf307699e5b88ec60cbac3d</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_06.jp2" mimetype="image/jp2" size="10022" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">6f0561911c658f239de270a55628d3fa</checksum>
+        <checksum type="sha1">03f0451f82c10a280fdadcfa0e42351be64a1d42</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_7" sequence="7" type="page">
+      <label>Page 7</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_07.pdf" mimetype="application/pdf" size="25292" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">d542cffc4f17f09f774bb9b1c0f11620</checksum>
+        <checksum type="sha1">a2b800de74fada77112fedc44fd4030fe821307e</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_07.xml" mimetype="application/xml" size="44775" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">f488b5f481d147be676ffe5e2eb3b4d8</checksum>
+        <checksum type="sha1">ea63a5c957b2ab22422b88416de4dd5485e7b9f7</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_07.jp2" mimetype="image/jp2" size="2716441" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">c18ccb4c814dbfbad54f4339aa9c8841</checksum>
+        <checksum type="sha1">2ede753ac77e59257a89b24d332f46ef0a309328</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_8" sequence="8" type="page">
+      <label>Page 8</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_08.pdf" mimetype="application/pdf" size="16978" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">5325276ef82c730d5f1380d8a72beef4</checksum>
+        <checksum type="sha1">a0e1a8185952548b13a2601428420e3af248513c</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_08.xml" mimetype="application/xml" size="22882" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">4c8bcf8b4123a5b5681da294dea8cec8</checksum>
+        <checksum type="sha1">0ff8a3735c262a3d1eaf94fe2511951989144349</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_08.jp2" mimetype="image/jp2" size="1453259" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">2062770fc1cbf4c8e4cd23a802071845</checksum>
+        <checksum type="sha1">c01ae5e2c63427f95f09d38471055a1876a7832c</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_9" sequence="9" type="page">
+      <label>Page 9</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_09.pdf" mimetype="application/pdf" size="17010" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">7f61fda7b8533a6fd6013abe9171c76e</checksum>
+        <checksum type="sha1">3a8c821c57af504af9a1bdce6d2c86b7fd21f41a</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_09.xml" mimetype="application/xml" size="22884" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">725acf3f9797d65a4eff3122a1522943</checksum>
+        <checksum type="sha1">8e2f4cc4cde21ef9a2b2d47090de612c98f33329</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_09.jp2" mimetype="image/jp2" size="1265522" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">fdd85a31254d8260f037636d11d01fcb</checksum>
+        <checksum type="sha1">7d8561a241a17a27b97726700f17375bf075f32b</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_10" sequence="10" type="page">
+      <label>Page 10</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_10.pdf" mimetype="application/pdf" size="6665" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">fbb4ddd8a98f986ae18fa0f309e00481</checksum>
+        <checksum type="sha1">8b6293504d0a9238318fc34e923ff5531e0282f9</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_10.xml" mimetype="application/xml" size="2034" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">cc0e14768b113c80dd5b9bd9a717555b</checksum>
+        <checksum type="sha1">014026c3067af8f95d781d6ab5360926c5ddd7be</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_10.jp2" mimetype="image/jp2" size="10828" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">e3c9475309ebd0d65b864d3db9e4ce31</checksum>
+        <checksum type="sha1">79bbcd4cc67e2ea07448456c1992adea2e4e41ee</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_11" sequence="11" type="page">
+      <label>Page 11</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_11.pdf" mimetype="application/pdf" size="21499" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">3a46b1c98830b5d069a7afc5d38dfb94</checksum>
+        <checksum type="sha1">ee51b6af3c6528d40ca34527fb045e5930cc17f0</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_11.xml" mimetype="application/xml" size="26976" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">b70dab9acbc5f1a2b77e1c809a85fc8e</checksum>
+        <checksum type="sha1">678357ed95201c424494f8b5a4ff9be9551188ee</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_11.jp2" mimetype="image/jp2" size="1656178" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">113780b8185948dd0c0340374cdaf93b</checksum>
+        <checksum type="sha1">449cd0c75603836c82c796f2cb37e9a271657145</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_12" sequence="12" type="page">
+      <label>Page 12</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_12.pdf" mimetype="application/pdf" size="6659" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">750c373b6fe7adee5b3f3a741f8cc4f0</checksum>
+        <checksum type="sha1">fb17ca029a8b1b0e010eb31f4e2069c1e61266c0</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_12.xml" mimetype="application/xml" size="2034" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">b8bb034a8f7b6f17e042a36a1f93f1ca</checksum>
+        <checksum type="sha1">58731c1ac76f10569a15c10cf7fd23a9a7045674</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_12.jp2" mimetype="image/jp2" size="10836" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">fe37f0204f953d8598c2cc4af0c2a550</checksum>
+        <checksum type="sha1">cb45338f127c723a3e630346e742a110790e5f78</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_13" sequence="13" type="page">
+      <label>Page 13</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_13.pdf" mimetype="application/pdf" size="20688" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">416ca84885fc69a620b01a10e22b624e</checksum>
+        <checksum type="sha1">fa526778a30f83595597a50add936ef5060a8359</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_13.xml" mimetype="application/xml" size="33482" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">74ff0091f3033092a82666c58a04aa06</checksum>
+        <checksum type="sha1">b1e7f0331740dabac19e427658fde6bf06827f79</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_13.jp2" mimetype="image/jp2" size="1844518" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">12507c7a971c1b225edfbcf9b078c85e</checksum>
+        <checksum type="sha1">643a5ce0234a7852300520dc4c7ace71cc60e1f1</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_14" sequence="14" type="page">
+      <label>Page 14</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_14.pdf" mimetype="application/pdf" size="21028" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">11926e5fbf4637d36684bbe6a84e94a7</checksum>
+        <checksum type="sha1">01ba9bbe960290e367097460ba8c5dfeca84a489</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_14.xml" mimetype="application/xml" size="39158" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">7be92b219ba26a1891f19d854ed3e028</checksum>
+        <checksum type="sha1">2d49ec20fd178ded35dab48a236ec884c02b146c</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_14.jp2" mimetype="image/jp2" size="1941403" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">6768b2df0c563ea60ec81fac3fd1768d</checksum>
+        <checksum type="sha1">981b35989007ce448b9bb8f1130eb5cc2e681e04</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_15" sequence="15" type="page">
+      <label>Page 15</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_15.pdf" mimetype="application/pdf" size="20644" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">b24cb3ae970fe57f2f86e826671aedf4</checksum>
+        <checksum type="sha1">15223fc37a0c622598b7ec06f294c2b4d0aa6e2b</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_15.xml" mimetype="application/xml" size="37826" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">6cd5142feb306e2372983a31dc0905e3</checksum>
+        <checksum type="sha1">8b8f265a1a2258d8100bfe70653bfc43bb831e33</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_15.jp2" mimetype="image/jp2" size="1965770" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">bb64934af1de01746e8ee494dd03172d</checksum>
+        <checksum type="sha1">4df49f6000a58668583792f23b0b13c04240e9cf</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_16" sequence="16" type="page">
+      <label>Page 16</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_16.pdf" mimetype="application/pdf" size="22070" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">53411cc752da0ad67fa1d0d96bd2c4ca</checksum>
+        <checksum type="sha1">b0fb5b60075d1abe27bc3cd02231ac6531f88a45</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_16.xml" mimetype="application/xml" size="42516" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">61038d1ab5f592a1cee4b2548ecc23c8</checksum>
+        <checksum type="sha1">89e680edd9651692fc79dc6625b062932b10f84b</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_16.jp2" mimetype="image/jp2" size="2117520" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">0c42d661ebc48f647daa73f1f5329232</checksum>
+        <checksum type="sha1">bebefab97d918ad8fb93c86a3b1eb9b504dbeb04</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_17" sequence="17" type="page">
+      <label>Page 17</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_17.pdf" mimetype="application/pdf" size="20231" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">19002e3353cacf9a64bcf07cefac3c79</checksum>
+        <checksum type="sha1">6f4ca880a6590a5fda692b9dc77a5b1f057b730e</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_17.xml" mimetype="application/xml" size="41251" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">2163c7436a330d6cf02b06d4e81810f9</checksum>
+        <checksum type="sha1">1137c64a7238afadb15a4f3ce0225aed15abed06</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_17.jp2" mimetype="image/jp2" size="2054570" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">8aade11ec86cb73689f1191860b8c0cf</checksum>
+        <checksum type="sha1">0bc3a1281db09a16dc0ff2fe159cb7fe10f69957</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_18" sequence="18" type="page">
+      <label>Page 18</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_18.pdf" mimetype="application/pdf" size="21502" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">f82c4e55b131a3ebef87f160d15c16fd</checksum>
+        <checksum type="sha1">cf98c1fca85d08404494bb4e06207e2ba86d9e80</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_18.xml" mimetype="application/xml" size="39891" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">a50914bae57748d01512f81b04640c55</checksum>
+        <checksum type="sha1">7b5fa4ccfa44fd84905a556d70a789b059ecda03</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_18.jp2" mimetype="image/jp2" size="1966275" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">4c53a6d855d18f6e0ca763e2806fcad7</checksum>
+        <checksum type="sha1">3a84b7613e6a056064cb6c761f3847b28355f343</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_19" sequence="19" type="page">
+      <label>Page 19</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_19.pdf" mimetype="application/pdf" size="20828" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">abbd4c8ca11d8ba238c7112f64715b0a</checksum>
+        <checksum type="sha1">77c577a39286bbb564307f98a3ac9a1102d01c86</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_19.xml" mimetype="application/xml" size="42050" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">a2175a217393ddb1c703040301b32969</checksum>
+        <checksum type="sha1">3c69969f5da60504a46ec05b706aa3dee82dd589</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_19.jp2" mimetype="image/jp2" size="1989854" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">b233024e70179f36811668f3327b322d</checksum>
+        <checksum type="sha1">263fa60940a0eee7010f98ed91d4b4e390565e67</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_20" sequence="20" type="page">
+      <label>Page 20</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_20.pdf" mimetype="application/pdf" size="21240" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">3d0e99b9db600efb9ef82b1cd1f4284e</checksum>
+        <checksum type="sha1">1659311fa0091dd648c9ad4ac21abd804e44b592</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_20.xml" mimetype="application/xml" size="40154" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">660c8b5aac9b31fc23c5b83e3e2491e7</checksum>
+        <checksum type="sha1">7e49de4d07f645bff4aeb6d9b2edd2898f7b2caf</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_20.jp2" mimetype="image/jp2" size="1997377" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">443a8ba9fd40a449bdf7cd1af7dacd92</checksum>
+        <checksum type="sha1">be5bc63315e79698c00d8eda976dffa7a27a266f</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_21" sequence="21" type="page">
+      <label>Page 21</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_21.pdf" mimetype="application/pdf" size="22194" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">df240e8301b67f3232419a5c4fa4dfb8</checksum>
+        <checksum type="sha1">d450b67ec0a03fda7f339ec4a759189a704714b5</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_21.xml" mimetype="application/xml" size="43281" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">30e87c94109c45bbdc7eaebd46cf9ad1</checksum>
+        <checksum type="sha1">cbabad944da5569f36977f7a04669a24a1547400</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_21.jp2" mimetype="image/jp2" size="2154843" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">c686412d87c5a08c2f6079e031893876</checksum>
+        <checksum type="sha1">14afaf9d6efadf327dea4647a0ace5d2816e733d</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_22" sequence="22" type="page">
+      <label>Page 22</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_22.pdf" mimetype="application/pdf" size="20592" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">81b794aaa9a36e8c053ca9c0bf1343c7</checksum>
+        <checksum type="sha1">e48a4fb2e1e89a2fb8f56270bf3f37ce8fc12c9c</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_22.xml" mimetype="application/xml" size="38358" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">07b03a3b8d4d7d8092655e8250dd2463</checksum>
+        <checksum type="sha1">1fdc016558218dba0aaa530d04acd9cb67857f2d</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_22.jp2" mimetype="image/jp2" size="1987851" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">6c7e0d5932b2efa10dd8f52a912759a2</checksum>
+        <checksum type="sha1">02b2f67a80e7dcb2d0b60f4d2f2b45c23df474a8</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_23" sequence="23" type="page">
+      <label>Page 23</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_23.pdf" mimetype="application/pdf" size="22663" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">556b4c7e0ed0febd59ae550c05c46173</checksum>
+        <checksum type="sha1">24f1c583a5a515058dfad9e191d4922a0675f52d</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_23.xml" mimetype="application/xml" size="40606" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">32089010ab47e4c85461ba7b9e6ee6ec</checksum>
+        <checksum type="sha1">8f06db9504579ee0aa23de09c70c7b12c71aa970</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_23.jp2" mimetype="image/jp2" size="2055983" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">61ab8bd1349a0bda161dccbb942b8bdc</checksum>
+        <checksum type="sha1">ce563f6343734e9500dbec3131631c64a68185ec</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_24" sequence="24" type="page">
+      <label>Page 24</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_24.pdf" mimetype="application/pdf" size="21299" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">625acf724daaf257529bb9aa7dc54551</checksum>
+        <checksum type="sha1">fa222adf636157a91f7da834aef8ce7b390a26e6</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_24.xml" mimetype="application/xml" size="43385" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">2bd804fe971f43271473a25daf73552a</checksum>
+        <checksum type="sha1">23ca83c7361b1685f711f1d9aa6445b1002bf2a9</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_24.jp2" mimetype="image/jp2" size="2212882" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">56cd971b6b3daa7796584032372e044b</checksum>
+        <checksum type="sha1">61bd17f5fbbffb4bb8198fbb425d00694961d022</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_25" sequence="25" type="page">
+      <label>Page 25</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_25.pdf" mimetype="application/pdf" size="20088" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">fcc710104d5f04098ebbbdbeced7796b</checksum>
+        <checksum type="sha1">83fc83f65c12a1ac7adf2536e04d45d020c5f0b3</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_25.xml" mimetype="application/xml" size="38516" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">30a51b0d22e84280e76429586c21bd9e</checksum>
+        <checksum type="sha1">223ae45adf47efbafe0f79f6541a5a348a84f68b</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_25.jp2" mimetype="image/jp2" size="2013652" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">2d0753f7980c0e8f21c77a4c12823d8e</checksum>
+        <checksum type="sha1">141687d0e9e83baffba1797dbf617a83b2ceec97</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_26" sequence="26" type="page">
+      <label>Page 26</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_26.pdf" mimetype="application/pdf" size="20860" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">d939d9622b9ab4be5aa027601a70cecf</checksum>
+        <checksum type="sha1">87f1d22859ca1c1db0d4471dc57c9239c3417c05</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_26.xml" mimetype="application/xml" size="41222" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">42c574f4739c915b0969931bfcc9028e</checksum>
+        <checksum type="sha1">8ae825d74c2f85b7ef6a9a7a77af2fde183d1cd7</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_26.jp2" mimetype="image/jp2" size="1990825" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">726e10c23539ed4db6fcb32537d94203</checksum>
+        <checksum type="sha1">bf8356f3e80ee0e53c8ad7bf9ce72183e22b4d79</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_27" sequence="27" type="page">
+      <label>Page 27</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_27.pdf" mimetype="application/pdf" size="21142" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">750d75df496a38a96a4cf8c128171b00</checksum>
+        <checksum type="sha1">79b0c4c52ff894b98b28f4a8a29f21cf23c84e9b</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_27.xml" mimetype="application/xml" size="40968" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">a40e03a9c876480a44ce797ac07d23c8</checksum>
+        <checksum type="sha1">97e67c56886a93483ba3fb4cc52d20942df640ec</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_27.jp2" mimetype="image/jp2" size="1982165" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">1a744668c311501a2ac28a78e8218800</checksum>
+        <checksum type="sha1">fa4d6744ebd73972da89ddfedb8769da2beb1d95</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_28" sequence="28" type="page">
+      <label>Page 28</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_28.pdf" mimetype="application/pdf" size="21379" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">c36348db2ebcf7a5ac14055fd92b97e3</checksum>
+        <checksum type="sha1">85c686ccd3b664ea78db573a7948273f18d2e742</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_28.xml" mimetype="application/xml" size="43993" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">9a3a5b0f4c20be3c54ad7a52da5b5e86</checksum>
+        <checksum type="sha1">2e05664b4696e9b254c6fdcc052c478367287587</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_28.jp2" mimetype="image/jp2" size="2113138" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">56f57393dac0b934c39dcfcd57662929</checksum>
+        <checksum type="sha1">6c33b567d021dcf29cc58a839dfacbcb1a6741c3</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_29" sequence="29" type="page">
+      <label>Page 29</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_29.pdf" mimetype="application/pdf" size="21583" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">35aad007eb18ba9f35cbf4d6edacaf6f</checksum>
+        <checksum type="sha1">82bc6684736551a411e979e425f4bc98b58d9be1</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_29.xml" mimetype="application/xml" size="38630" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">098b31dbc8a6767b9de10c8ce565fcb1</checksum>
+        <checksum type="sha1">acf91998e1430f06237122705d8dffe652149960</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_29.jp2" mimetype="image/jp2" size="2019497" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">052740874903bba1ccaa021a27402449</checksum>
+        <checksum type="sha1">0c9ef42ca59da6b0d0ba884d86a4335ecb9d6fb8</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_30" sequence="30" type="page">
+      <label>Page 30</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_30.pdf" mimetype="application/pdf" size="21561" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">a4d4cc13f89c4bb1958edef57f614726</checksum>
+        <checksum type="sha1">52581a6f5ec95cc3d16158369bedf51cbec8cf55</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_30.xml" mimetype="application/xml" size="40390" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">6e1ed7906aaf452617e7d5ab05569e14</checksum>
+        <checksum type="sha1">674eecfb8361d216ca1629488924a58024bc8cf9</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_30.jp2" mimetype="image/jp2" size="2066121" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">78946b6e7000dc67df8689fb4d865a99</checksum>
+        <checksum type="sha1">07851fa7ce9999c15862d20ff7d6e7207b27f1a0</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_31" sequence="31" type="page">
+      <label>Page 31</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_31.pdf" mimetype="application/pdf" size="21084" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">9a70b9c05adbb12e8f0938f91c519c3c</checksum>
+        <checksum type="sha1">56c2f035ad10c78ab7504afc5de8eacf9d069926</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_31.xml" mimetype="application/xml" size="39924" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">04fe5735c42839ca9718940070b58a51</checksum>
+        <checksum type="sha1">814a06496fbe6ffde0bc864027acc4b345dc6048</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_31.jp2" mimetype="image/jp2" size="1991276" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">da7191197e4bf4eddfe912694b55b7ff</checksum>
+        <checksum type="sha1">38911dd53c62b475bdbf2f0ec4dc837e43d347eb</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_32" sequence="32" type="page">
+      <label>Page 32</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_32.pdf" mimetype="application/pdf" size="21535" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">f95e401dba1134011e6dea279178f201</checksum>
+        <checksum type="sha1">d9c9741ac0eda0f1c29af4e2bff9046545b6d302</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_32.xml" mimetype="application/xml" size="40536" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">2af3d5a8dcd47582901cb4c8968fe3b3</checksum>
+        <checksum type="sha1">687ff28fc232b5e6e9d8c141443fb1083ccc5e63</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_32.jp2" mimetype="image/jp2" size="1992734" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">a24837f1429a3f8ed2de0720b11df471</checksum>
+        <checksum type="sha1">627f9680cd0553473229d530c6b68ca8006c4c75</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_33" sequence="33" type="page">
+      <label>Page 33</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_33.pdf" mimetype="application/pdf" size="20563" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">04d4cecb931ff5fd88030ac4119d5580</checksum>
+        <checksum type="sha1">d0250809b1244ce3c16e05821b81e1799a2077fc</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_33.xml" mimetype="application/xml" size="42680" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">4b018a4bdc7786c0f13c8b1812de60fa</checksum>
+        <checksum type="sha1">c329654d49e4acebd67dd91e2a5ccb2b79436a42</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_33.jp2" mimetype="image/jp2" size="2100891" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">d8a7224fdc0994247f9e43ccab58183b</checksum>
+        <checksum type="sha1">d0e62ec862b652a8844990070d5267684dce3942</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_34" sequence="34" type="page">
+      <label>Page 34</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_34.pdf" mimetype="application/pdf" size="13402" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">38b65c531c0d892f63769eebe79544a7</checksum>
+        <checksum type="sha1">8d19f858bd4eec11019ca1a22eb45cee8cd73c9f</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_34.xml" mimetype="application/xml" size="10155" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">8a37670a7c71b37b286bb7750f4fd252</checksum>
+        <checksum type="sha1">d2d6251f752995eda5371391d12bdc1d117825f7</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_34.jp2" mimetype="image/jp2" size="438840" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">cf59c0f51e5dd8a1380fb3839b2cce94</checksum>
+        <checksum type="sha1">aa2b5f4cc2cea1324f83a131f6dbe32d5eb9312c</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_35" sequence="35" type="page">
+      <label>Page 35</label>
+      <file id="rx923hn2102_Hammons_Debbie_Page_35.pdf" mimetype="application/pdf" size="14938" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">b9daf2f82cf6f4dde392f0dd190411a2</checksum>
+        <checksum type="sha1">a22cd5690e6f9f425e2776331ca551a52a536b67</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_35.xml" mimetype="application/xml" size="13402" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="md5">53a94681cd8f0ad35956407aa5dda715</checksum>
+        <checksum type="sha1">3c3d165bee490ca44b5cb1a077b3bf84cbcd3a56</checksum>
+      </file>
+      <file id="rx923hn2102_Hammons_Debbie_Page_35.jp2" mimetype="image/jp2" size="740528" publish="yes" shelve="yes" preserve="no">
+        <checksum type="md5">4b7564f2c9f0c36980345e1521ee4947</checksum>
+        <checksum type="sha1">6b2ecfe3f5c6a388f44d3a111b2ecfe88358c041</checksum>
+        <imageData height="6600" width="5100"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-rx923hn2102-rx923hn2102_36" sequence="36" type="object">
+      <label>Object 1</label>
+      <file id="rx923hn2102.pdf" mimetype="application/pdf" size="1035985" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">2d1739d383b81801e811a81974308779</checksum>
+        <checksum type="sha1">5463dff1d9dbae088b560e94cd697f51dc65e2d4</checksum>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <location rule="no-download">spec</location>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">The materials are open for research use and may be used freely for non-commercial purposes with an attribution. For commercial permission requests, please contact the Stanford University Archives (universityarchives@stanford.edu).</human>
+      <license/>
+    </use>
+    <copyright>
+      <human>Copyright (c) The Board of Trustees of the Leland Stanford Junior University. All rights reserved.</human>
+    </copyright>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:rx923hn2102">
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:ts561xq4138"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Interview with Debbie Healy Hammons: Alumni Stories</dc:title>
+    <dc:creator>Hammons, Deborah (intervieweeive) (Creatorcre)</dc:creator>
+    <dc:contributor>Leyden, Natalya (Interviewerivr)</dc:contributor>
+    <dc:contributor>Stanford Historical Society (Publisherpbl)</dc:contributor>
+    <dc:type>Text</dc:type>
+    <dc:type>interview</dc:type>
+    <dc:format>1 text file</dc:format>
+    <dc:format>image/tiff</dc:format>
+    <dc:language>Englisheng</dc:language>
+    <dc:description displayLabel="Abstract">Debbie Healy Hammons (BA English, 1973) shares memories of coming to Stanford from Wyoming, living in Toyon during her freshman year, and the political unrest related to the Vietnam War that she witnessed on campus and in the Bay Area. She relates stories of listening to the draft lottery on the radio, hearing windows breaking, the cancellation of classes during spring quarter of her freshman year, and standing in between riot police and students during a protest. She also reflects on the co-existence of two cultural worlds at Stanford, describing co-ed dorms, freedom from rules, and access to birth control on the one hand, and the persistence of the “dolly” culture on the other, with women wearing traditionally feminine dress and makeup. Hammons also remarks on the way clothing acted as a signal for group belonging and touches on her experiences in creative writing in the English Department, being involved in theater, and returning to Wyoming after college. </dc:description>
+    <dc:description displayLabel="Biographical Profile">Debbie and her husband Greg, who lived their adult lives and raised their two sons in Wyoming, recently retired to Colorado. Debbie wrote, hosted and produced over ninety programs for Wyoming PBS, including Main Street, Wyoming and the award-winning Wyoming Voices, which featured over 100 interviews of Wyoming residents and continues to be used to teach Wyoming history in the state’s community colleges and high schools. In addition, Debbie served twelve years on the University of Wyoming Board of Trustees, two years as Board President. She represented House District 27 as a member of the Wyoming House of Representatives for three terms, 2004-2010.  In addition to her position as Minority Whip, she co-authored the Hathaway and Higher Education Endowment Bill, which created an endowment to pay the tuition for Wyoming students who study a pre-college curriculum. Debbie remains a passionate proponent for opportunities for all, and currently serves as Chairman, Public Policy Committee, Women’s Foundation of Colorado. She earned a BA in English and Creative Writing from Stanford University in 1973 and a master’s degree in Applied Positive Psychology from the University of Pennsylvania in 2013.</dc:description>
+    <dc:subject>Hammons, Deborah</dc:subject>
+    <dc:subject>Stanford University</dc:subject>
+    <dc:subject>Universities and colleges</dc:subject>
+    <dc:subject>College students</dc:subject>
+    <dc:date>2023-10-19</dc:date>
+    <dc:publisher>Stanford Historical Society</dc:publisher>
+    <dc:identifier>https://purl.stanford.edu/rx923hn2102</dc:identifier>
+    <dc:relation type="repository">Stanford University. Libraries. Department of Special Collections and University Archives</dc:relation>
+    <dc:relation type="url" href="https://purl.stanford.edu/st574tj4953">Audio</dc:relation>
+    <dc:relation type="collection">Stanford Historical Society Oral History Program interviews, 1999-2013 (inclusive)</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>Interview with Debbie Healy Hammons</title>
+      <subTitle>Alumni Stories</subTitle>
+    </titleInfo>
+    <name valueURI="http://id.loc.gov/authorities/names/no2002078282" authority="naf" authorityURI="https://id.loc.gov/authorities/names" usage="primary" type="personal">
+      <namePart>Hammons, Deborah</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/ive" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">interviewee</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/ive" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">ive</roleTerm>
+      </role>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/cre" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">Creator</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/cre" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">cre</roleTerm>
+      </role>
+    </name>
+    <name authority="local" type="personal">
+      <namePart>Leyden, Natalya</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/ivr" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">Interviewer</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/ivr" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">ivr</roleTerm>
+      </role>
+    </name>
+    <name valueURI="http://id.loc.gov/authorities/names/n86803331" authority="naf" authorityURI="http://id.loc.gov/authorities/names/" type="corporate">
+      <namePart>Stanford Historical Society</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/pbl" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">Publisher</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/pbl" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">pbl</roleTerm>
+      </role>
+    </name>
+    <typeOfResource>text</typeOfResource>
+    <genre valueURI="http://id.loc.gov/vocabulary/marcgt/int" authorityURI="http://id.loc.gov/vocabulary/marcgt" authority="marcgt">interview</genre>
+    <physicalDescription>
+      <internetMediaType>image/tiff</internetMediaType>
+      <extent>1 text file</extent>
+      <reformattingQuality>access</reformattingQuality>
+      <digitalOrigin>born digital</digitalOrigin>
+    </physicalDescription>
+    <language>
+      <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="text">English</languageTerm>
+      <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <abstract displayLabel="Abstract">Debbie Healy Hammons (BA English, 1973) shares memories of coming to Stanford from Wyoming, living in Toyon during her freshman year, and the political unrest related to the Vietnam War that she witnessed on campus and in the Bay Area. She relates stories of listening to the draft lottery on the radio, hearing windows breaking, the cancellation of classes during spring quarter of her freshman year, and standing in between riot police and students during a protest. She also reflects on the co-existence of two cultural worlds at Stanford, describing co-ed dorms, freedom from rules, and access to birth control on the one hand, and the persistence of the “dolly” culture on the other, with women wearing traditionally feminine dress and makeup. Hammons also remarks on the way clothing acted as a signal for group belonging and touches on her experiences in creative writing in the English Department, being involved in theater, and returning to Wyoming after college. </abstract>
+    <note displayLabel="Biographical Profile">Debbie and her husband Greg, who lived their adult lives and raised their two sons in Wyoming, recently retired to Colorado. Debbie wrote, hosted and produced over ninety programs for Wyoming PBS, including Main Street, Wyoming and the award-winning Wyoming Voices, which featured over 100 interviews of Wyoming residents and continues to be used to teach Wyoming history in the state’s community colleges and high schools. In addition, Debbie served twelve years on the University of Wyoming Board of Trustees, two years as Board President. She represented House District 27 as a member of the Wyoming House of Representatives for three terms, 2004-2010.  In addition to her position as Minority Whip, she co-authored the Hathaway and Higher Education Endowment Bill, which created an endowment to pay the tuition for Wyoming students who study a pre-college curriculum. Debbie remains a passionate proponent for opportunities for all, and currently serves as Chairman, Public Policy Committee, Women’s Foundation of Colorado. She earned a BA in English and Creative Writing from Stanford University in 1973 and a master’s degree in Applied Positive Psychology from the University of Pennsylvania in 2013.</note>
+    <subject authority="lcsh">
+      <name authority="naf" authorityURI="https://id.loc.gov/authorities/names" valueURI="http://id.loc.gov/authorities/names/no2002078282" type="personal">
+        <namePart>Hammons, Deborah</namePart>
+      </name>
+    </subject>
+    <subject authority="lcsh">
+      <name authority="naf" authorityURI="http://id.loc.gov/authorities/names/" valueURI="http://id.loc.gov/authorities/names/n79054636" type="corporate">
+        <namePart>Stanford University</namePart>
+      </name>
+    </subject>
+    <subject authority="lcsh">
+      <topic authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects/" valueURI="http://id.loc.gov/authorities/subjects/sh85141086">Universities and colleges</topic>
+    </subject>
+    <subject authority="lcsh">
+      <topic authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects/" valueURI="http://id.loc.gov/authorities/subjects/sh85028356">College students</topic>
+    </subject>
+    <originInfo displayLabel="Place of creation" eventType="Production">
+      <dateCreated encoding="w3cdtf" keyDate="yes">2023-10-19</dateCreated>
+      <place>
+        <placeTerm authority="marccountry" authorityURI="http://id.loc.gov/authorities/names/" valueURI="http://id.loc.gov/authorities/names/n50046557" type="text">Stanford (Calif.)</placeTerm>
+        <placeTerm authority="marccountry" authorityURI="http://id.loc.gov/authorities/names/" valueURI="http://id.loc.gov/authorities/names/n50046557" type="code">cau</placeTerm>
+      </place>
+      <publisher>Stanford Historical Society</publisher>
+    </originInfo>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/rx923hn2102</url>
+    </location>
+    <location>
+      <shelfLocator>SC0932</shelfLocator>
+    </location>
+    <location>
+      <physicalLocation type="repository" valueURI="http://id.loc.gov/authorities/names/no2014019980" authority="naf" script="Latn" lang="eng">Stanford University. Libraries. Department of Special Collections and University Archives</physicalLocation>
+    </location>
+    <recordInfo>
+      <languageOfCataloging usage="primary">
+        <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="text">English</languageTerm>
+        <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="code">eng</languageTerm>
+      </languageOfCataloging>
+      <recordContentSource valueURI="http://id.loc.gov/vocabulary/organizations/cst" authorityURI="http://id.loc.gov/vocabulary/organizations" authority="marcorg">CSt</recordContentSource>
+      <recordOrigin>human prepared</recordOrigin>
+    </recordInfo>
+    <relatedItem type="host" displayLabel="Finding Aid">
+      <titleInfo>
+        <title>Stanford Historical Society Oral History Program Interviews</title>
+      </titleInfo>
+      <location>
+        <url>https://oac.cdlib.org/findaid/ark:/13030/kt9v19s1vm/</url>
+      </location>
+    </relatedItem>
+    <relatedItem type="otherVersion" displayLabel="Audio">
+      <titleInfo>
+        <title>Audio</title>
+      </titleInfo>
+      <location>
+        <url usage="primary display">https://purl.stanford.edu/st574tj4953</url>
+      </location>
+    </relatedItem>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Stanford Historical Society Oral History Program interviews, 1999-2013 (inclusive)</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/ts561xq4138</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">The materials are open for research use and may be used freely for non-commercial purposes with an attribution. For commercial permission requests, please contact the Stanford University Archives (universityarchives@stanford.edu).</accessCondition>
+    <accessCondition type="copyright">Copyright (c) The Board of Trustees of the Leland Stanford Junior University. All rights reserved.</accessCondition>
+  </mods>
+  <thumb>rx923hn2102/rx923hn2102_Hammons_Debbie_Page_01.jp2</thumb>
+</publicObject>
