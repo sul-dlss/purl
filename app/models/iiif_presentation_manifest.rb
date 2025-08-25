@@ -5,7 +5,7 @@ require 'iiif/presentation'
 class IiifPresentationManifest
   include ActiveModel::Model
 
-  delegate :druid, :title, :type, :description, :content_metadata, :public_xml_document, :cocina, :updated_at,
+  delegate :druid, :title, :book?, :description, :content_metadata, :public_xml_document, :cocina, :updated_at,
            :containing_purl_collections, :rights, :collection?, to: :purl_version
   delegate :reading_order, :resources, to: :content_metadata
   delegate :url_for, to: :controller
@@ -31,13 +31,13 @@ class IiifPresentationManifest
 
   def page_images
     @page_images ||= resources.select do |file|
-      image?(file) && %w[image page].include?(file.type) && deliverable_file?(file)
+      image_file?(file) && %w[image page].include?(file.type) && deliverable_file?(file)
     end
   end
 
   def object_files
     @object_files ||= resources.select do |file|
-      object?(file) && downloadable_file?(file)
+      object_file?(file) && downloadable_file?(file)
     end
   end
 
@@ -54,11 +54,11 @@ class IiifPresentationManifest
     content_metadata.grouped_resources.find { |grouped_resource| grouped_resource.id == id }
   end
 
-  def object?(file)
+  def object_file?(file)
     file.type == 'object'
   end
 
-  def image?(file)
+  def image_file?(file)
     file.mimetype == 'image/jp2' && file.height.positive? && file.width.positive?
   end
 
@@ -110,7 +110,7 @@ class IiifPresentationManifest
     manifest.service << content_search_service if content_search_service
 
     # Set viewingHint to paged if this is a book
-    manifest.viewingHint = 'paged' if type == 'book'
+    manifest.viewingHint = 'paged' if book?
 
     manifest.metadata = dc_to_iiif_metadata if dc_to_iiif_metadata.present?
     manifest.metadata.unshift(
