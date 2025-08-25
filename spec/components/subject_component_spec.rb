@@ -17,30 +17,19 @@ RSpec.describe SubjectComponent, type: :component do
   describe 'subjects' do
     let(:component) { described_class.new(document: purl_version) }
 
-    # rubocop:disable Style/OpenStructUse
-    let(:subjects) do
-      [OpenStruct.new(label: 'Subjects', values: [%w[Subject1a Subject1b], %w[Subject2a Subject2b Subject2c]])]
-    end
-    let(:name_subjects) do
-      [OpenStruct.new(label: 'Subjects', values: [OpenStruct.new(name: 'Person Name', roles: %w[Role1 Role2])])]
-    end
-    let(:genres) { [OpenStruct.new(label: 'Genres', values: %w[Genre1 Genre2 Genre3])] }
-    # rubocop:enable Style/OpenStructUse
+    describe '#expand_subject_name' do
+      subject { component.expand_subject_name(mods_subjects) }
 
-    describe '#link_mods_subjects' do
-      let(:linked_subjects) do
-        component.link_mods_subjects(subjects.first.values.last)
+      context 'with subjects that behave like names' do
+        let(:mods_subjects) { [instance_double(ModsDisplay::Name::Person, name: 'Person Name')] }
+
+        it { is_expected.to eq ['Person Name'] }
       end
 
-      it 'returns all subjects' do
-        expect(linked_subjects).to eq %w[Subject2a Subject2b Subject2c]
-      end
-    end
+      context 'with plain strings' do
+        let(:mods_subjects) { %w[Subject2a Subject2b Subject2c] }
 
-    describe '#link_to_mods_subject' do
-      it 'handles subjects that behave like names' do
-        name_subject = component.link_to_mods_subject(name_subjects.first.values.first)
-        expect(name_subject).to match('Person Name (Role1, Role2)')
+        it { is_expected.to eq %w[Subject2a Subject2b Subject2c] }
       end
     end
   end

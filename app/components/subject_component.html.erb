@@ -4,14 +4,14 @@
     <% if subject.present? %>
       <tbody>
         <% subject.each do |field| %>
-          <%= render RowFieldComponent.new(field:, value_transformer: ->(subject_line) { safe_join(link_mods_subjects(subject_line), ' > ') }) %>
+          <%= render RowFieldComponent.new(field:, value_transformer: ->(subject_line) { safe_join(expand_subject_name(subject_line), ' > ') }) %>
         <% end %>
       </tbody>
     <% end %>
     <% if genre.present? %>
       <tbody>
         <% genre.each do |field| %>
-          <%= render RowFieldComponent.new(field:, value_transformer: ->(genre_line) { link_to_mods_subject(genre_line) }) %>
+          <%= render RowFieldComponent.new(field:) %>
         <% end %>
       </tbody>
     <% end %>

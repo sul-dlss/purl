@@ -15,17 +15,10 @@ class SubjectComponent < ViewComponent::Base
     subject.present? || genre.present?
   end
 
-  def link_mods_subjects(subjects)
-    subjects.map { link_to_mods_subject(it) }
-  end
-
-  # @param [ModsDisplay::Name::Person, String] subject
-  def link_to_mods_subject(subject)
-    subject_text = subject.respond_to?(:name) ? subject.name : subject
-    if subject.respond_to?(:roles) && subject.roles.present?
-      "#{subject_text} (#{subject.roles.join(', ')})"
-    else
-      subject_text
+  # @param [Array<ModsDisplay::Name::Person, String>] subjects
+  def expand_subject_name(subjects)
+    subjects.map do |subject|
+      subject.respond_to?(:name) ? subject.name : subject
     end
   end
 end
