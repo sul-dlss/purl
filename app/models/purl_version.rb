@@ -205,7 +205,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     end
 
     def use_and_reproduction
-      rights.use_and_reproduction_statement
+      cocina.dig('access', 'useAndReproductionStatement')
     end
 
     def folio_instance_hrid
