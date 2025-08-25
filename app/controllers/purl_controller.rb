@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PurlController < ApplicationController
   before_action :load_purl, except: [:index]
   before_action :load_version, only: :show

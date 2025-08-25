@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ResourceXmlDeserializer
   def self.build_resources(document, druid)
     document.xpath('resource').map do |resource|

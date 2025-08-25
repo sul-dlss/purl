@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FeedbackMailer < ApplicationMailer
   def submit_feedback(params, request_ip)
     @name = params[:name].presence || 'No name given'
