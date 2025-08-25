@@ -1,6 +1,8 @@
 class ResourceRetriever
   include ActiveSupport::Benchmarkable
 
+  class ResourceNotFound < StandardError; end
+
   def initialize(druid:)
     @druid = druid
   end
@@ -18,7 +20,9 @@ class ResourceRetriever
   end
 
   def version_manifest_body
-    version_manifest_resource.body if version_manifest_resource.success?
+    raise ResourceNotFound, 'Unable to retrieve version manifest' unless version_manifest_resource.success?
+
+    version_manifest_resource.body
   end
 
   def updated_at

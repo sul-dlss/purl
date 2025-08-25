@@ -71,23 +71,6 @@ class PurlResource
   end
 
   def version_manifest
-    @version_manifest ||= version_manifest_body.present? ? JSON.parse(version_manifest_body) : null_version_manifest
-  end
-
-  def null_version_manifest
-    date = begin
-      resource_retriever.updated_at.iso8601
-    rescue Errno::ENOENT
-      nil
-    end
-    {
-      'versions' => {
-        '1' => {
-          'state' => 'available',
-          'date' => date
-        }
-      },
-      'head' => '1'
-    }
+    @version_manifest ||= JSON.parse(version_manifest_body)
   end
 end
