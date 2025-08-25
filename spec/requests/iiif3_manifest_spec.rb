@@ -34,6 +34,27 @@ RSpec.describe 'IIIF v3 manifests' do
     end
   end
 
+  context 'when requesting a /iiif/ route (not /iiif3)' do
+    context 'with a collection' do
+      it 'renders a iiif v3 collection manifest' do
+        get '/sk882gx0113/iiif/manifest'
+
+        expect(json['@context']).to include('http://iiif.io/api/presentation/3/context.json')
+        expect(json['type']).to eq 'Collection'
+      end
+    end
+
+    context 'with a file object' do
+      it 'renders a iiif v3 manifest' do
+        get '/gx074xz5520/iiif/manifest'
+
+        expect(json['@context']).to include('http://iiif.io/api/presentation/3/context.json')
+        expect(json['id']).to eq 'http://www.example.com/gx074xz5520/iiif/manifest'
+        expect(json['label']['en']).to eq ['Minutes, 2006 May 18']
+      end
+    end
+  end
+
   context 'when viewing direction is defined' do
     it 'includes viewing direction' do
       get '/yr183sf1341/iiif3/manifest'
