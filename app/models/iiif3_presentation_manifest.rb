@@ -3,6 +3,7 @@ require 'iiif/v3/presentation'
 
 class Iiif3PresentationManifest < IiifPresentationManifest
   delegate :reading_order, to: :content_metadata
+  delegate :object?, :geo?, :image?, :map?, :three_d?, to: :purl_version
   attr_reader :purl_base_uri
 
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
@@ -28,7 +29,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     manifest = iiif_manifest_class.new(manifest_data)
 
     # Set behavior to paged if this is a book
-    manifest['behavior'] = ['paged'] if type == 'book'
+    manifest['behavior'] = ['paged'] if book?
     (_collection, collection_head_version) = containing_purl_collections&.first
     collection_title = collection_head_version&.title
     metadata_writer = Iiif3MetadataWriter.new(cocina_descriptive: cocina['description'],
@@ -86,25 +87,29 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def build_canvases(manifest)
     # for each resource sequence (SDR term), create a canvas
-    if %w[geo file].include?(type)
+    if object? || geo?
       # Geo can't determine "primary", so we just create a "dummy" canvas here.
       # We don't use the canvases for the file viewer and it slows down the metadata viewer when there are a lot of files
       # IIIF v3 requires Manifests to have at least one canvas. https://iiif.io/api/presentation/3.0/#34-structural-properties
       resource = content_metadata.grouped_resources.first
       file = resource.files.first
       manifest.items << canvas_for_resource(file)
-    elsif %w[book image map].include?(type)
-      content_metadata.grouped_resources.each do |resource_group|
-        file = resource(resource_group)
-        if image?(file) && %w[image page].include?(file.type)
-          manifest.items << canvas_for_resource(resource_group) if deliverable_file?(file)
-        else
-          manifest.rendering += image_rendering_for_resource_group(resource_group)
-        end
-      end
+    elsif book? || image? || map?
+      build_image_canvases(manifest)
     else
       content_metadata.grouped_resources.each do |resource_group|
         manifest.items << canvas_for_resource(resource_group)
+      end
+    end
+  end
+
+  def build_image_canvases(manifest)
+    content_metadata.grouped_resources.each do |resource_group|
+      file = resource(resource_group)
+      if image_file?(file) && %w[image page].include?(file.type)
+        manifest.items << canvas_for_resource(resource_group) if deliverable_file?(file)
+      else
+        manifest.rendering += image_rendering_for_resource_group(resource_group)
       end
     end
   end
@@ -143,7 +148,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     }
     canv.rendering = []
 
-    if image?(resource)
+    if image_file?(resource)
       canv.height = resource.height
       canv.width = resource.width
       if downloadable_file?(resource)
@@ -175,7 +180,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     thumbnail_canvas.label = {
       en: [resource_group.thumbnail_canvas.label.presence || 'image']
     }
-    if image?(resource_group.thumbnail_canvas)
+    if image_file?(resource_group.thumbnail_canvas)
       thumbnail_canvas.height = resource_group.thumbnail_canvas.height
       thumbnail_canvas.width = resource_group.thumbnail_canvas.width
     end
@@ -225,7 +230,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     anno['id'] = annotation_url(resource_id: resource.id)
     anno['target'] = canvas_url(resource_id: resource.id)
 
-    anno.body = if image?(resource)
+    anno.body = if image_file?(resource)
                   image_resource(resource)
                 else
                   binary_resource(resource)
@@ -436,10 +441,6 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     )
   end
   # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
-
-  def three_d?
-    type == '3d'
-  end
 
   def annotation_page_url(**kwargs)
     controller.url_for([:annotation_page, :iiif3, :purl, { id: druid, **kwargs }])

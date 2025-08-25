@@ -110,20 +110,16 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   end
 
   def iiif2_manifest?
-    purl_type = strip_type(cocina['type'])
     return false if cocina['structural'].blank?
 
     virtual_object = cocina['structural']['hasMemberOrders'].present?
-    resource_types = cocina['structural']['contains'].flat_map { strip_type(it['type']) }
-    if %w[image book map].include?(purl_type) && (virtual_object || resource_types.include?('image'))
+    resource_types = cocina['structural']['contains'].pluck('type')
+    if (image? || book? || map?) &&
+       (virtual_object || resource_types.include?('https://cocina.sul.stanford.edu/models/resources/image'))
       true
     else
-      purl_type == 'book' && resource_types.include?('page')
+      book? && resource_types.include?('https://cocina.sul.stanford.edu/models/resources/page')
     end
-  end
-
-  def strip_type(type)
-    type.split('/')[-1]
   end
 
   def iiif3_manifest(**)
@@ -169,7 +165,31 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     end
 
     def type
-      @type ||= content_metadata.type
+      @type ||= cocina['type']
+    end
+
+    def book?
+      type == 'https://cocina.sul.stanford.edu/models/book'
+    end
+
+    def image?
+      type == 'https://cocina.sul.stanford.edu/models/image'
+    end
+
+    def map?
+      type == 'https://cocina.sul.stanford.edu/models/map'
+    end
+
+    def geo?
+      type == 'https://cocina.sul.stanford.edu/models/geo'
+    end
+
+    def three_d?
+      type == 'https://cocina.sul.stanford.edu/models/3d'
+    end
+
+    def object?
+      type == 'https://cocina.sul.stanford.edu/models/object'
     end
 
     def copyright?
