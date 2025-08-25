@@ -45,7 +45,6 @@ Naming/HeredocDelimiterNaming:
 # Prefixes: when, with, without
 RSpec/ContextWording:
   Exclude:
-    - 'spec/features/display_purl_page_spec.rb'
     - 'spec/integration/purl_spec.rb'
 
 # Offense count: 55
