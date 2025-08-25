@@ -31,10 +31,6 @@ class PublicXml
     end
   end
 
-  def object_type
-    document.root.at_xpath('identityMetadata/objectType')&.text
-  end
-
   def mods
     @mods ||= document.xpath('//mods:mods', 'mods' => 'http://www.loc.gov/mods/v3').first
   end

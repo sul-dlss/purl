@@ -70,7 +70,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     end
   end
 
-  delegate :rights_metadata, :object_type, to: :public_xml
+  delegate :rights_metadata, to: :public_xml
 
   def content_metadata
     @content_metadata ||= ContentMetadata.new(public_xml.content_metadata)
@@ -131,7 +131,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   end
 
   def collection?
-    object_type == 'collection'
+    cocina['type'] == 'https://cocina.sul.stanford.edu/models/collection'
   end
 
   def collection_items_link
