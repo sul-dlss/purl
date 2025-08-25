@@ -77,10 +77,9 @@ RSpec.describe PurlVersion do
           </publicObject>
         XML
       end
-      let(:fake_response) { instance_double(Faraday::Response, success?: true, body:) }
 
       before do
-        allow(resource_retriever).to receive(:fetch_resource).and_return(fake_response)
+        allow(resource_retriever).to receive(:public_xml_body).and_return(body)
       end
 
       it 'checks if the request succeeded' do
