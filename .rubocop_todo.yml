@@ -73,12 +73,6 @@ Rails/I18nLocaleTexts:
     - 'app/controllers/webauth_controller.rb'
     - 'app/mailers/feedback_mailer.rb'
 
-# Offense count: 2
-# This cop supports safe autocorrection (--autocorrect).
-Rails/Presence:
-  Exclude:
-    - 'app/mailers/feedback_mailer.rb'
-
 # Offense count: 54
 # This cop supports unsafe autocorrection (--autocorrect-all).
 # Configuration parameters: EnforcedStyle.
