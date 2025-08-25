@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Displaying the PURL page' do
-  context 'book' do
+  context 'with a book' do
     let(:druid) { 'bb737zp0787' }
 
     it 'displays the page' do
@@ -19,7 +19,7 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'map' do
+  context 'with a map' do
     let(:druid) { 'rp193xx6845' }
 
     it 'displays the page' do
@@ -33,7 +33,7 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'etd' do
+  context 'with an etd' do
     let(:druid) { 'nd387jf5675' }
 
     it 'displays the page' do
@@ -50,7 +50,7 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'file type' do
+  context 'with a file type' do
     let(:druid) { 'gx074xz5520' }
 
     it 'displays the page' do
@@ -70,7 +70,7 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'item released to searchworks' do
+  context 'with an item released to searchworks' do
     let(:druid) { 'cp088pb1682' }
 
     it 'displays the page' do
@@ -90,7 +90,7 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'item that is part of collection not released to searchworks' do
+  context 'with an item that is part of collection not released to searchworks' do
     let(:druid) { 'cd027gx5097' }
 
     it 'lists the collection name and does not link to items in collection' do
@@ -100,7 +100,7 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'item with a DOI' do
+  context 'with an item that has a DOI' do
     let(:druid) { 'wm135gp2721' }
 
     it 'includes altmetrics' do
@@ -114,7 +114,7 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'item with ORCID for some contributors' do
+  context 'with an item that has an ORCID for some contributors' do
     let(:druid) { 'wm135gp2721' }
 
     it 'adds ORCID links' do
@@ -161,7 +161,7 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  describe 'legacy object id "ir:rs276tc2764"' do
+  context 'with the legacy object id "ir:rs276tc2764"' do
     let(:druid) { 'rs276tc2764' }
 
     it 'routed to rs276tc2764' do
@@ -170,7 +170,7 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  describe 'license' do
+  context 'with a license' do
     let(:druid) { 'zb733jx3137' }
 
     it 'included in purl page' do
@@ -179,7 +179,7 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  describe 'terms of use' do
+  context 'with terms of use' do
     let(:druid) { 'wm135gp2721' }
 
     it 'included in purl page' do
@@ -226,7 +226,7 @@ RSpec.describe 'Displaying the PURL page' do
     have_css 'section h2', text:
   end
 
-  context 'dataset item' do
+  context 'with a dataset item' do
     let(:druid) { 'rs276tc2764' }
 
     it 'adds schema.org markup for Datasets' do
