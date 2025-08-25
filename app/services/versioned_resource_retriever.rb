@@ -1,6 +1,4 @@
 class VersionedResourceRetriever < ResourceRetriever
-  include ActiveSupport::Benchmarkable
-
   def initialize(druid:, version_id:)
     super(druid:)
     @version_id = version_id
