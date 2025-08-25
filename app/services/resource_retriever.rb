@@ -25,20 +25,13 @@ class ResourceRetriever
     version_manifest_resource.body
   end
 
-  def version_manifest_resource
-    @version_manifest_resource ||= resource_cache.get(Settings.stacks.version_manifest_path % attributes, cache_key(:version_manifest))
+  def druid_path
+    File.join(Settings.stacks.root, "#{druid_tree}/#{druid}/versions")
   end
 
   private
 
   attr_reader :druid
-
-  def attributes
-    {
-      druid:,
-      druid_tree:
-    }
-  end
 
   def resource_cache
     @resource_cache ||= ResourceCache.new
@@ -56,28 +49,20 @@ class ResourceRetriever
     [cache_prefix, key].join('/')
   end
 
-  def public_xml_path
-    Settings.purl_resource.public_xml
-  end
-
   def meta_json_path
-    Settings.purl_resource.versioned.meta
+    File.join(druid_path, 'meta.json')
   end
 
-  def cocina_path
-    Settings.purl_resource.cocina
-  end
-
-  def public_xml_resource
-    @public_xml_resource ||= resource_cache.get(public_xml_path % attributes, cache_key(:public_xml))
+  def version_manifest_path
+    File.join(druid_path, 'versions.json')
   end
 
   def meta_json_resource
-    @meta_json_resource ||= resource_cache.get(meta_json_path % attributes, cache_key(:meta))
+    @meta_json_resource ||= resource_cache.get(meta_json_path, cache_key(:meta))
   end
 
-  def cocina_resource
-    @cocina_resource ||= resource_cache.get(cocina_path % attributes, cache_key(:cocina))
+  def version_manifest_resource
+    @version_manifest_resource ||= resource_cache.get(version_manifest_path, cache_key(:version_manifest))
   end
 
   def last_modified_header_value

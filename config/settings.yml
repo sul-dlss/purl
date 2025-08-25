@@ -1,7 +1,9 @@
 stacks:
   url: "https://stacks.stanford.edu"
   iiif_profile: "http://iiif.io/api/image/2/level2.json"
-  version_manifest_path: "/stacks/%{druid_tree}/%{druid}/versions/versions.json"
+  root: '/stacks'
+
+content_search:
 
 purl_fetcher:
   url: https://purl-fetcher-stage.stanford.edu
@@ -12,17 +14,6 @@ content_search:
 resource_cache:
   enabled: true
   lifetime: <%= 1.hour %>
-
-# These are URLs when running locally, but configured
-# to the local file system on deployed environments
-purl_resource:
-  public_xml: "https://purl.stanford.edu/%{druid}.xml"
-  cocina: "https://purl.stanford.edu/%{druid}.json"
-  meta: "https://purl.stanford.edu/%{druid}.meta_json"
-  versioned:
-    public_xml: "https://purl.stanford.edu/%{druid}/version/%{version_id}.xml"
-    cocina: "https://purl.stanford.edu/%{druid}/version/%{version_id}.json"
-    meta: "https://purl.stanford.edu/%{druid}/meta.json" # versioned meta is not supported
 
 embed:
   url: "https://purl.stanford.edu/%{druid}"

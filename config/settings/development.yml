@@ -1,0 +1,2 @@
+stacks:
+  root: <%= File.join(Rails.root, "spec", "fixtures", "stacks") %>
