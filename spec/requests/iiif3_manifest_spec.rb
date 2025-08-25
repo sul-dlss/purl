@@ -71,6 +71,28 @@ RSpec.describe 'IIIF v3 manifests' do
     end
   end
 
+  context 'with location specific, no download files' do
+    it 'does not include renderings, includes login service' do
+      get '/rx923hn2102/iiif3/manifest'
+
+      expect(json['renderings']).to be_nil
+      canvas = json['items'].first
+      expect(canvas['items'].first['items'].length).to eq 1
+      expect(canvas['items'].first['items'].length).to eq 1
+      expect(canvas['rendering']).to be_nil
+
+      image = canvas['items'].first['items'].first
+      service = image['body']['service'].first
+      expect(service['services']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/external'
+
+      login_service = service['services'].detect { |x| x['profile'] == 'http://iiif.io/api/auth/1/external' }
+      expect(login_service['service']).to include hash_including 'profile' => 'http://iiif.io/api/auth/1/token'
+      expect(login_service['label']).to eq 'External Authentication Required'
+      expect(login_service['failureHeader']).to eq 'Restricted Material'
+      expect(login_service['failureDescription']).to eq 'Restricted content cannot be accessed from your location'
+    end
+  end
+
   context 'with a Stanford-only image' do
     it 'includes authorization services' do
       get '/bb001dq8600/iiif3/manifest'

@@ -49,6 +49,7 @@ Metrics/BlockLength:
   Exclude:
     - app/models/purl_resource.rb
     - spec/**/*
+    - lib/tasks/update_metadata.rake
 RSpec/NestedGroups:
   Max: 4
 

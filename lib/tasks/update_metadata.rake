@@ -39,7 +39,8 @@ task update_metadata: :environment do
     'zb733jx3137', # file, world access, has 4 versions
     'zb871zd0767', # collection (that contains bb157hs6068)
     'zf119tw4418', # book, world access, without OCR (OCR exists, but it not published/shelved), resources are images (old style?)
-    'zm796xp7877' # book, with first page dark
+    'zm796xp7877', # book, with first page dark
+    'rx923hn2102' # book, location specific, files download none
   ]
   druids.each do |druid|
     tree = Dor::Util.create_pair_tree(druid)
