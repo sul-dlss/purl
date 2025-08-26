@@ -8,7 +8,7 @@ class StructuralMetadata
   attr_accessor :json
 
   def virtual_object?
-    json['hasMemberOrders'].present?
+    json.dig('hasMemberOrders', 0, 'members').present?
   end
 
   def resources
@@ -17,5 +17,9 @@ class StructuralMetadata
 
   def find_file_by_filename(filename)
     resources.flat_map(&:files).find { |file| file.filename == filename }
+  end
+
+  def viewing_direction
+    json.dig('hasMemberOrders', 0, 'viewingDirection')
   end
 end
