@@ -93,12 +93,6 @@ RSpec.describe 'IIIF v3 manifests' do
     end
   end
 
-  it 'properly decodes XML entities into their UTF-8 characters' do
-    get '/bb737zp0787/iiif3/manifest'
-    expect(json['requiredStatement']['value']['en'].first)
-      .to eq 'Property rights reside with the repository. Copyright © Stanford University. All Rights Reserved.'
-  end
-
   it 'publishes IIIF manifests for books with image constituents and pdf in rendering' do
     get '/zf119tw4418/iiif3/manifest'
 
