@@ -263,7 +263,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     end
 
     def authors
-      @authors ||= ::Metadata::Authors.call(mods_ng_document)
+      cocina_display.contributors.map(&:display_name)
     end
 
     def schema_dot_org
@@ -289,6 +289,10 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
 
   def cocina
     @cocina ||= JSON.parse(cocina_body)
+  end
+
+  def cocina_display
+    @cocina_display ||= CocinaDisplay::CocinaRecord.new(cocina)
   end
 
   def mods_display_object

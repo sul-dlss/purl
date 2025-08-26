@@ -70,3 +70,5 @@ group :deployment do
   gem 'capistrano-shared_configs'
   gem 'dlss-capistrano'
 end
+
+gem "cocina_display", "~> 1.1"
