@@ -302,4 +302,27 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   def metrics_service
     @metrics_service ||= MetricsService.new
   end
+
+  # @param [ResourceFile]
+  def cocina_file_for_resource(resource)
+    if druid == resource.druid
+      cocina_file(resource.filename)
+    else
+      external_file(resource.druid, resource.filename)
+    end
+  end
+
+  def cocina_file(filename)
+    structural_metadata.find_file_by_filename(filename)
+  end
+
+  private
+
+  def external_file(external_druid, filename)
+    external_cocina = PurlResource.find(external_druid).version(:head)
+    external_cocina.cocina_file(filename)
+  rescue ResourceRetriever::ResourceNotFound
+    Honeybadger.notify("External resource not found for druid: #{druid} and filename: #{filename} on #{druid}")
+    nil
+  end
 end

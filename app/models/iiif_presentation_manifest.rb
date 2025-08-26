@@ -6,7 +6,7 @@ class IiifPresentationManifest
   include ActiveModel::Model
 
   delegate :druid, :title, :book?, :description, :content_metadata, :public_xml_document, :cocina, :updated_at,
-           :containing_purl_collections, :rights, :collection?, to: :purl_version
+           :containing_purl_collections, :cocina_file_for_resource, :collection?, to: :purl_version
   delegate :reading_order, :resources, to: :content_metadata
   delegate :url_for, to: :controller
   alias id druid
@@ -43,10 +43,10 @@ class IiifPresentationManifest
 
   def ocr_files
     @ocr_files ||= resources.select do |file|
-      world_visible, world_rule = rights.world_rights_for_file(file.filename)
-      file.role == 'transcription' &&
-        world_visible &&
-        world_rule != 'no-download'
+      next if file.druid != druid # Skip external files
+
+      download_access = cocina_file_for_resource(file).access.download
+      file.role == 'transcription' && download_access == 'world'
     end
   end
 
@@ -62,16 +62,20 @@ class IiifPresentationManifest
     file.mimetype == 'image/jp2' && file.height.positive? && file.width.positive?
   end
 
-  def deliverable_file?(file)
-    rights.stanford_only_rights_for_file(file.filename).first ||
-      rights.world_rights_for_file(file.filename).first ||
-      rights.restricted_by_location?(file.filename) ||
-      thumbnail?(file)
+  # @param [ResourceFile] resource
+  def deliverable_file?(resource)
+    target_file = cocina_file_for_resource(resource)
+    return false unless target_file
+
+    %w[world stanford location-based].include?(target_file.access.view) || thumbnail?(resource)
   end
 
-  def downloadable_file?(file)
-    rights.world_downloadable_file?(file) ||
-      rights.stanford_only_downloadable_file?(file)
+  # @param [ResourceFile]
+  def downloadable_file?(resource)
+    target_file = cocina_file_for_resource(resource)
+    return false unless target_file
+
+    %w[world stanford].include? target_file.access.download
   end
 
   def ocr_text?
@@ -227,6 +231,7 @@ class IiifPresentationManifest
     other_content
   end
 
+  # @param [ResourceFile] resource
   def annotation_for_resource(resource)
     url = stacks_iiif_base_url(resource.druid, resource.filename)
 
@@ -240,11 +245,16 @@ class IiifPresentationManifest
     img_res.width = resource.width
 
     img_res.service = iiif_service(url)
-    img_res.service['service'] = []
 
-    img_res.service['service'] = [iiif_stacks_login_service] if rights.stanford_only_rights_for_file(resource.filename).first
-
-    img_res.service['service'].append(iiif_location_auth_service) if rights.restricted_by_location?(resource.filename)
+    target_file = cocina_file_for_resource(resource)
+    img_res.service['service'] = case target_file.access.view
+                                 when 'stanford'
+                                   img_res.service['service'] = [iiif_stacks_login_service]
+                                 when 'location-based'
+                                   img_res.service['service'] = [iiif_location_auth_service]
+                                 else
+                                   []
+                                 end
 
     anno.resource = img_res
     anno

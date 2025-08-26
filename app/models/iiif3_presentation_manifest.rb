@@ -251,10 +251,15 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     img_res.width = resource.width
 
     img_res.service = [iiif_image_v2_service(url)]
-    img_res.service[0]['services'] = []
-    img_res.service[0]['services'].append(iiif_stacks_v1_login_service) if rights.stanford_only_rights_for_file(resource.filename).first
-
-    img_res.service[0]['services'].append(iiif_location_auth_service) if rights.restricted_by_location?(resource.filename)
+    target_file = cocina_file_for_resource(resource)
+    img_res.service[0]['services'] = case target_file.access.view
+                                     when 'stanford'
+                                       [iiif_stacks_v1_login_service]
+                                     when 'location-based'
+                                       [iiif_location_auth_service]
+                                     else
+                                       []
+                                     end
 
     img_res
   end
@@ -285,18 +290,21 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   end
 
   def probe_service(resource, file_url)
+    target_file = cocina_file_for_resource(resource)
+
     IIIF::V3::Presentation::Service.new(
       'id' => "#{Settings.stacks.url}/iiif/auth/v2/probe?id=#{URI.encode_uri_component(file_url)}",
       'type' => 'AuthProbeService2',
       'errorHeading' => { 'en' => ['No access'] },
       'errorNote' => { 'en' => ['You do not have permission to access this resource'] }
     ).tap do |probe_service|
-      probe_service.service = if rights.world_rights_for_file(resource.filename).first
+      probe_service.service = case target_file.access.view
+                              when 'world'
                                 # We only need this because a probe service MUST have one or more access services and
                                 # we want to run the probe service so that it can redirect to the streaming server.
                                 # See https://iiif.io/api/auth/2.0/#probe-service-description
                                 [iiif_v2_access_service_external_public]
-                              elsif rights.restricted_by_location?(resource.filename)
+                              when 'location-based'
                                 [iiif_v2_location_restricted]
                               else
                                 [iiif_v2_access_service_active]

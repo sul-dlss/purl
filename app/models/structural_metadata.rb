@@ -14,4 +14,8 @@ class StructuralMetadata
   def resources
     @resources ||= Array(json['contains']).map { FileSet.new(it) }
   end
+
+  def find_file_by_filename(filename)
+    resources.flat_map(&:files).find { |file| file.filename == filename }
+  end
 end
