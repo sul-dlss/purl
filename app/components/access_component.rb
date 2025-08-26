@@ -8,31 +8,10 @@ class AccessComponent < ViewComponent::Base
 
   attr_reader :document
 
-  delegate :mods, to: :document
-
-  def access_conditions
-    mods&.accessCondition
-  end
-
-  def copyright?
-    document.copyright? && (mods.blank? || access_conditions.none? { |x| x.label =~ /Copyright/i })
-  end
-
-  def use_and_reproduction?
-    document.use_and_reproduction? && (mods.blank? || access_conditions.none? { |x| x.label =~ /Use and Reproduction/i })
-  end
-
-  def render_access_conditions
-    safe_join(access_conditions.map { |access_condition| render_field(access_condition) })
-  end
-
-  def render_field(access_condition)
-    value_transformer = ->(text) { stylize_links(helpers.format_mods_html(text, field: access_condition)) }
-    render ModsDisplay::FieldComponent.new(field: access_condition, value_transformer:)
-  end
+  delegate :license, :copyright?, :use_and_reproduction?, to: :document
 
   def render?
-    access_conditions.present? || copyright? || use_and_reproduction?
+    license.present? || copyright? || use_and_reproduction?
   end
 
   def use_and_reproduction
@@ -45,5 +24,9 @@ class AccessComponent < ViewComponent::Base
 
   def copyright
     document.copyright.gsub(/\(c\) Copyright/i, '© Copyright')
+  end
+
+  def license_description
+    License.new(url: license).description
   end
 end
