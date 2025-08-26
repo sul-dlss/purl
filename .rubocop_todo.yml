@@ -21,13 +21,6 @@ Metrics/CyclomaticComplexity:
 Metrics/PerceivedComplexity:
   Max: 10
 
-# Offense count: 5
-# Configuration parameters: ForbiddenDelimiters.
-# ForbiddenDelimiters: (?i-mx:(^|\s)(EO[A-Z]{1}|END)(\s|$))
-Naming/HeredocDelimiterNaming:
-  Exclude:
-    - 'spec/model/purl_version_spec.rb'
-
 # Offense count: 55
 # Configuration parameters: CountAsOne.
 RSpec/ExampleLength:
@@ -36,11 +29,6 @@ RSpec/ExampleLength:
 # Offense count: 83
 RSpec/MultipleExpectations:
   Max: 19
-
-# Offense count: 7
-RSpec/SubjectStub:
-  Exclude:
-    - 'spec/model/purl_version_spec.rb'
 
 # Offense count: 4
 Rails/I18nLocaleTexts:
