@@ -7,7 +7,7 @@ class IiifPresentationManifest
 
   delegate :druid, :title, :book?, :description, :content_metadata, :public_xml_document, :cocina, :updated_at,
            :containing_purl_collections, :cocina_file_for_resource, :collection?, to: :purl_version
-  delegate :reading_order, :resources, to: :content_metadata
+  delegate :resources, to: :content_metadata
   delegate :url_for, to: :controller
   alias id druid
 
@@ -17,11 +17,6 @@ class IiifPresentationManifest
 
   OAI_DC_SCHEMA = 'http://www.openarchives.org/OAI/2.0/oai_dc/'
   MODS_SCHEMA = 'http://www.loc.gov/mods/v3'
-
-  VIEWING_DIRECTION = {
-    'ltr' => 'left-to-right',
-    'rtl' => 'right-to-left'
-  }.freeze
 
   def initialize(purl_version, iiif_namespace: :iiif, controller: nil)
     @purl_version = purl_version
@@ -123,19 +118,13 @@ class IiifPresentationManifest
     )
 
     manifest.description = description_or_note
-    order = reading_order
 
     sequence = IIIF::Presentation::Sequence.new(
       '@id' => "#{manifest_url}#sequence-1",
       'label' => 'Current order'
     )
 
-    sequence.viewingDirection = case order
-                                when nil
-                                  VIEWING_DIRECTION['ltr']
-                                else
-                                  VIEWING_DIRECTION[order]
-                                end
+    sequence.viewingDirection = purl_version.structural_metadata.viewing_direction || 'left-to-right'
 
     manifest.thumbnail = thumbnail_resource
 

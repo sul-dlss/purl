@@ -4,7 +4,6 @@ require 'iiif/presentation'
 require 'iiif/v3/presentation'
 
 class Iiif3PresentationManifest < IiifPresentationManifest
-  delegate :reading_order, to: :content_metadata
   delegate :object?, :geo?, :image?, :map?, :three_d?, to: :purl_version
   attr_reader :purl_base_uri
 
@@ -48,14 +47,8 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     end
 
     manifest.summary = { en: [description_or_note] } if description_or_note.present?
-    order = reading_order
 
-    manifest.viewingDirection = case order
-                                when nil
-                                  VIEWING_DIRECTION['ltr']
-                                else
-                                  VIEWING_DIRECTION[order]
-                                end
+    manifest.viewingDirection = purl_version.structural_metadata.viewing_direction || 'left-to-right'
 
     manifest.thumbnail = [thumbnail_resource] if thumbnail_resource?
 
