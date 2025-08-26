@@ -310,43 +310,23 @@ RSpec.describe PurlVersion do
     end
   end
 
-  describe '#object_type and #collection?' do
+  describe '#collection?' do
     context 'when a collection' do
       before do
-        allow(instance).to receive(:public_xml_body).and_return(<<-EOF
-          <?xml version="1.0" encoding="UTF-8"?>
-          <publicObject>
-            <identityMetadata>
-              <objectType>collection</objectType>
-              <objectLabel>Acquisitions Serials</objectLabel>
-            </identityMetadata>
-          </publicObject>
-        EOF
-                                                               )
+        allow(instance).to receive(:cocina).and_return({ 'type' => 'https://cocina.sul.stanford.edu/models/collection' })
       end
 
-      it 'pulls the value from the identity metadata' do
-        expect(instance.object_type).to eq 'collection'
+      it 'pulls the type from the cocina' do
         expect(instance.collection?).to be true
       end
     end
 
     context 'when an item' do
       before do
-        allow(instance).to receive(:public_xml_body).and_return(<<-EOF
-          <?xml version="1.0" encoding="UTF-8"?>
-          <publicObject>
-            <identityMetadata>
-              <objectLabel>SUL Logo 2015</objectLabel>
-              <objectType>item</objectType>
-            </identityMetadata>
-          </publicObject>
-        EOF
-                                                               )
+        allow(instance).to receive(:cocina).and_return({ 'type' => 'https://cocina.sul.stanford.edu/models/book' })
       end
 
-      it 'pulls the value from the identity metadata' do
-        expect(instance.object_type).to eq 'item'
+      it 'pulls the type from the cocina' do
         expect(instance.collection?).to be false
       end
     end
