@@ -20,7 +20,7 @@ class PurlController < ApplicationController
     maybe_add_flash_message!
 
     # render the landing page based on the format
-    respond_to do |format|
+    respond_to do |format| # rubocop:disable Metrics/BlockLength
       format.html
 
       format.xml do
