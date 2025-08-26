@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
 class StructuralMetadata
-  class FileSet
+  class FileAccess
     def initialize(json)
       @json = json
     end
 
     attr_accessor :json
 
-    def type
-      json['type']
+    def download
+      json['download']
     end
 
-    def files
-      @files ||= Array(json['structural']['contains']).map { File.new(it) }
+    def view
+      json['view']
     end
   end
 end

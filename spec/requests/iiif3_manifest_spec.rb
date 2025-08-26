@@ -204,7 +204,7 @@ RSpec.describe 'IIIF v3 manifests' do
         expect(json['thumbnail']).to be_an Array
         expect(json['thumbnail'].size).to eq 1
         expect(json['thumbnail'].first['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/!400,400/0/default.jpg' # first child
-        expect(json['items'].length).to eq 23
+        expect(json['items'].length).to eq 2 # We only have two of the child items (cg767mn6478 & jw923xn5254) in the test data
 
         canvas = json['items'].first
         expect(canvas['label']['en'].first).to start_with "(Covers to) Carey's American Atlas:"
