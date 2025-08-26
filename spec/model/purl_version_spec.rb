@@ -172,20 +172,20 @@ RSpec.describe PurlVersion do
   describe '#embeddable?' do
     subject { instance.embeddable? }
 
-    let(:content_metadata) { instance_double(ContentMetadata, resources:) }
+    let(:structural_metadata) { instance_double(StructuralMetadata, resources: file_sets) }
 
     before do
-      allow(instance).to receive(:content_metadata).and_return(content_metadata)
+      allow(instance).to receive_messages(structural_metadata: structural_metadata)
     end
 
     context 'with resources' do
-      let(:resources) { [instance_double(ResourceFile)] }
+      let(:file_sets) { [instance_double(StructuralMetadata::FileSet)] }
 
       it { is_expected.to be true }
     end
 
     context 'without resources' do
-      let(:resources) { [] }
+      let(:file_sets) { [] }
 
       it { is_expected.to be false }
     end

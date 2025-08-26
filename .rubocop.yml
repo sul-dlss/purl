@@ -49,6 +49,10 @@ Metrics/BlockLength:
   Exclude:
     - app/models/purl_resource.rb
     - spec/**/*
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 8
+
 RSpec/NestedGroups:
   Max: 4
 

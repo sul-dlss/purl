@@ -78,10 +78,14 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     @content_metadata ||= ContentMetadata.new(public_xml.content_metadata)
   end
 
+  def structural_metadata
+    @structural_metadata ||= StructuralMetadata.new(cocina['structural'])
+  end
+
   # @returns [Bool] are there resources that can be shown?
   # This prevents adding links to the embed service, when that service can't generate a valid response.
   def embeddable?
-    content_metadata.resources.present?
+    structural_metadata.resources.present?
   end
 
   # Show tracked downloads if the object has download permission and is a type that we track
@@ -115,12 +119,11 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   end
 
   def iiif2_manifest?
-    return false if cocina['structural'].blank?
+    return false if collection?
 
-    virtual_object = cocina['structural']['hasMemberOrders'].present?
-    resource_types = cocina['structural']['contains'].pluck('type')
+    resource_types = structural_metadata.resources.map(&:type)
     if (image? || book? || map?) &&
-       (virtual_object || resource_types.include?('https://cocina.sul.stanford.edu/models/resources/image'))
+       (structural_metadata.virtual_object? || resource_types.include?('https://cocina.sul.stanford.edu/models/resources/image'))
       true
     else
       book? && resource_types.include?('https://cocina.sul.stanford.edu/models/resources/page')
