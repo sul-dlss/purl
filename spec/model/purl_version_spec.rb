@@ -256,17 +256,13 @@ RSpec.describe PurlVersion do
     subject { instance.containing_collections }
 
     before do
-      allow(instance).to receive(:public_xml_body).and_return <<-EOF
-      <?xml version="1.0" encoding="UTF-8"?>
-      <publicObject>
-        <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:hydra="http://projecthydra.org/ns/relations#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-        <rdf:Description rdf:about="info:fedora/druid:kn112rm5773">
-        <fedora:isMemberOf rdf:resource="info:fedora/druid:jw357py5564"/>
-        <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:jw357py5564"/>
-        </rdf:Description>
-        </rdf:RDF>
-      </publicObject>
-      EOF
+      allow(resource_retriever).to receive(:cocina_body).and_return <<-COCINA
+      {
+        "structural": {
+          "isMemberOf": [ "druid:jw357py5564" ]
+        }
+      }
+      COCINA
     end
 
     it { is_expected.to eq ['jw357py5564'] }

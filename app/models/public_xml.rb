@@ -23,16 +23,6 @@ class PublicXml
     document.root.at_xpath('thumb')&.text
   end
 
-  def relations(predicate)
-    document.root.xpath(
-      "rdf:RDF/rdf:Description/fedora:#{predicate}",
-      rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
-      fedora: 'info:fedora/fedora-system:def/relations-external#'
-    ).map do |node|
-      node.attribute('resource').text.split('/', 2).last.split(':', 2).last
-    end
-  end
-
   def mods
     @mods ||= document.xpath('//mods:mods', 'mods' => 'http://www.loc.gov/mods/v3').first
   end

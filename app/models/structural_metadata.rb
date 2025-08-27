@@ -22,4 +22,8 @@ class StructuralMetadata
   def viewing_direction
     json.dig('hasMemberOrders', 0, 'viewingDirection')
   end
+
+  def containing_collections
+    Array(json['isMemberOf']).map { it.delete_prefix('druid:') }
+  end
 end

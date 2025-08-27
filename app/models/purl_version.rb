@@ -54,11 +54,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     @public_xml ||= PublicXml.new(public_xml_document)
   end
 
-  # @return [Array<String>] the identifiers of the collections this item is a member of
-  def containing_collections
-    @containing_collections ||= public_xml.relations('isMemberOfCollection')
-  end
-
   # @return [Array<Array>] a list of PURL resources, PurlVersion tuples of the collections this item is a member of
   def containing_purl_collections
     @containing_purl_collections ||= containing_collections.filter_map do |id|
@@ -81,6 +76,8 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   def structural_metadata
     @structural_metadata ||= StructuralMetadata.new(cocina['structural'])
   end
+
+  delegate :containing_collections, to: :structural_metadata
 
   # @returns [Bool] are there resources that can be shown?
   # This prevents adding links to the embed service, when that service can't generate a valid response.
