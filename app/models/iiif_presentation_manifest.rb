@@ -5,7 +5,7 @@ require 'iiif/presentation'
 class IiifPresentationManifest
   include ActiveModel::Model
 
-  delegate :druid, :title, :book?, :description, :content_metadata, :public_xml_document, :cocina, :updated_at,
+  delegate :druid, :title, :book?, :content_metadata, :public_xml_document, :cocina, :updated_at,
            :containing_purl_collections, :cocina_file_for_resource, :collection?, to: :purl_version
   delegate :resources, to: :content_metadata
   delegate :url_for, to: :controller
