@@ -103,7 +103,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       file = resource(resource_group)
       if image_file?(file) && %w[image page].include?(file.type)
         manifest.items << canvas_for_resource(resource_group) if deliverable_file?(file)
-      else
+      elsif downloadable_file?(file)
         manifest.rendering += image_rendering_for_resource_group(resource_group)
       end
     end
@@ -202,8 +202,8 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   end
 
   def renderings_for_resource_group(resource_group)
-    resource_group.other_resources.map do |other_resource|
-      binary_resource(other_resource).to_ordered_hash
+    resource_group.other_resources.filter_map do |other_resource|
+      binary_resource(other_resource).to_ordered_hash if downloadable_file?(other_resource)
     end
   end
 
