@@ -10,16 +10,9 @@
   <%= tag :link, rel: "alternate", title: "MODS XML", type: 'application/xml', href: purl_url(@purl, format: 'mods') if @version.mods? %>
   <%= tag :link, rel: "alternate", title: "IIIF Manifest", type: 'application/json', href: manifest_iiif_purl_url(@purl) %>
   <%= tag :link, rel: "up", href: purl_url(@version.containing_collections.first) if @version.containing_collections.present? %>
-  <%= tag :meta, name: 'citation_title', content: @version.title %>
-  <%= tag :meta, name: 'citation_publication_date', content: @version.publication_date if @version.publication_date %>
-  <% @version.authors.each do |author| %>
-    <%= tag :meta, name: 'citation_author', content: author %>
-  <% end %>
+  <%= render AltmetricsComponent.new(purl_version: @version) %>
   <%= tag :meta, name: 'robots', content: 'noindex' unless @purl.crawlable? %>
 
-  <% if @version.doi %>
-    <%= tag :meta, name: 'citation_doi', content: @version.doi_id %>
-  <% end %>
   <% if @version.schema_dot_org? %>
     <script type="application/ld+json"><%= @version.schema_dot_org.to_json.html_safe %></script>
   <% end %>
