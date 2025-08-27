@@ -61,7 +61,7 @@ RSpec.describe PurlVersion do
   describe 'resource methods' do
     describe '#mods' do
       let(:body) do
-        <<-EOF
+        <<-XML
           <?xml version="1.0" encoding="UTF-8"?>
           <publicObject>
             <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/">
@@ -73,7 +73,7 @@ RSpec.describe PurlVersion do
               </titleInfo>
             </mods>
           </publicObject>
-        EOF
+        XML
       end
       let(:fake_response) { instance_double(Faraday::Response, success?: true, body:) }
 
@@ -107,7 +107,7 @@ RSpec.describe PurlVersion do
 
     context 'with mods' do
       before do
-        allow(instance).to receive(:public_xml_body).and_return public_xml_body
+        allow(resource_retriever).to receive(:public_xml_body).and_return public_xml_body
       end
 
       context 'with a single title' do
@@ -129,7 +129,7 @@ RSpec.describe PurlVersion do
 
       context 'with a primary title' do
         let(:public_xml_body) do
-          <<~EOF
+          <<~XML
             <?xml version="1.0" encoding="UTF-8"?>
             <publicObject>
               <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
@@ -145,7 +145,7 @@ RSpec.describe PurlVersion do
                 </titleInfo>
               </mods>
             </publicObject>
-          EOF
+          XML
         end
 
         it { is_expected.to eq '[ North Korean poster collection]' }
@@ -154,7 +154,7 @@ RSpec.describe PurlVersion do
 
     context 'without mods' do
       before do
-        allow(instance).to receive(:public_xml_body).and_return <<-EOF
+        allow(resource_retriever).to receive(:public_xml_body).and_return <<-XML
 
         <?xml version="1.0" encoding="UTF-8"?>
         <publicObject>
@@ -162,7 +162,7 @@ RSpec.describe PurlVersion do
             <dc:title>The title from the DC</dc:title>
           </oai_dc:dc>
         </publicObject>
-        EOF
+        XML
       end
 
       it { is_expected.to eq 'The title from the DC' }
@@ -172,20 +172,47 @@ RSpec.describe PurlVersion do
   describe '#embeddable?' do
     subject { instance.embeddable? }
 
-    let(:structural_metadata) { instance_double(StructuralMetadata, resources: file_sets) }
-
     before do
-      allow(instance).to receive_messages(structural_metadata: structural_metadata)
+      allow(resource_retriever).to receive(:cocina_body).and_return(cocina)
     end
 
     context 'with resources' do
-      let(:file_sets) { [instance_double(StructuralMetadata::FileSet)] }
+      let(:cocina) do
+        <<~COCINA
+          {
+            "structural":{
+              "contains":[
+                {
+                  "type": "https://cocina.sul.stanford.edu/models/resources/page",
+                  "structural":{
+                    "contains":[
+                      {
+                        "type": "https://cocina.sul.stanford.edu/models/resources/file",
+                        "filename": "bb737zp0787_00_0002.jp2",
+                        "hasMimeType": "image/jp2",
+                        "access": {
+                            "view": "world",
+                            "download": "world"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        COCINA
+      end
 
       it { is_expected.to be true }
     end
 
     context 'without resources' do
-      let(:file_sets) { [] }
+      let(:cocina) do
+        <<~COCINA
+          {}
+        COCINA
+      end
 
       it { is_expected.to be false }
     end
@@ -193,14 +220,14 @@ RSpec.describe PurlVersion do
 
   describe '#description' do
     let(:body) do
-      <<-EOF
+      <<-XML
         <?xml version="1.0" encoding="UTF-8"?>
         <publicObject>
           <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
             <abstract>The abstract from the MODS.</abstract>
           </mods>
         </publicObject>
-      EOF
+      XML
     end
 
     before do
@@ -231,24 +258,116 @@ RSpec.describe PurlVersion do
   end
 
   describe '#representative_thumbnail' do
+    subject(:thumbnail) { instance.representative_thumbnail }
+
+    let(:druid) { 'bb737zp0787' }
+
     before do
-      allow(instance).to receive(:iiif_manifest).and_return(iiif_manifest)
+      allow(resource_retriever).to receive_messages(cocina_body:, public_xml_body: xml)
     end
 
-    let(:iiif_manifest) do
-      @iiif_manifest ||= double
+    context 'when a thumbnail is present' do
+      let(:cocina_body) do
+        <<~COCINA
+          {
+            "structural": {
+              "contains": [
+                  {
+                      "type": "https://cocina.sul.stanford.edu/models/resources/page",
+                      "externalIdentifier": "https://cocina.sul.stanford.edu/fileSet/bb737zp0787-bb737zp0787_1",
+                      "label": "Page 1",
+                      "version": 3,
+                      "structural": {
+                          "contains": [
+                              {
+                                  "type": "https://cocina.sul.stanford.edu/models/file",
+                                  "externalIdentifier": "https://cocina.sul.stanford.edu/file/bb737zp0787-bb737zp0787_1/bb737zp0787_00_0002.jp2",
+                                  "label": "bb737zp0787_00_0002.jp2",
+                                  "filename": "bb737zp0787_00_0002.jp2",
+                                  "size": 493809,
+                                  "version": 3,
+                                  "hasMimeType": "application/xml",
+                                  "use": "transcription",
+                                  "hasMessageDigests": [
+                                      {
+                                          "type": "sha1",
+                                          "digest": "a3168aa033d335294298a21f8b1b1063e8a40867"
+                                      },
+                                      {
+                                          "type": "md5",
+                                          "digest": "e4f2099fd55d7be19906872e2ae015bd"
+                                      }
+                                  ],
+                                  "access": {
+                                      "view": "world",
+                                      "download": "world",
+                                      "controlledDigitalLending": false
+                                  },
+                                  "administrative": {
+                                      "publish": true,
+                                      "sdrPreserve": false,
+                                      "shelve": true
+                                  }
+                              }
+                          ]
+                      }
+                  }
+              ]
+            }
+          }
+        COCINA
+      end
+
+      let(:xml) do
+        <<~XML
+          <?xml version="1.0" encoding="UTF-8"?>
+          <publicObject>
+            <contentMetadata type="book" objectId="druid:bb737zp0787">
+            <resource id="cocina-fileSet-bb737zp0787-bb737zp0787_1" sequence="1" type="page">
+              <label>Page 1</label>
+              <file id="bb737zp0787_00_0002.jp2" mimetype="image/jp2" size="493809" publish="yes" shelve="yes" preserve="no">
+                <checksum type="sha1">a3168aa033d335294298a21f8b1b1063e8a40867</checksum>
+                <checksum type="md5">e4f2099fd55d7be19906872e2ae015bd</checksum>
+                <imageData height="1901" width="1361"/>
+              </file>
+            </resource>
+            </contentMetadata>
+            <rightsMetadata>
+              <access type="discover">
+                <machine>
+                  <world/>
+                </machine>
+              </access>
+              <access type="read">
+                <machine>
+                  <world/>
+                </machine>
+              </access>
+            </rightsMetadata>
+          </publicObject>
+        XML
+      end
+
+      it 'is the representative thumbnail for the object' do
+        expect(thumbnail).to eq 'https://stacks.stanford.edu/image/iiif/bb737zp0787%2Fbb737zp0787_00_0002/full/!400,400/0/default.jpg'
+      end
     end
 
-    it 'is the representative thumbnail for the object' do
-      allow(iiif_manifest).to receive(:thumbnail_base_uri).and_return('http://some/iiif/path')
+    context 'when no thumbnail is present' do
+      let(:xml) do
+        <<~XML
+          <?xml version="1.0" encoding="UTF-8"?>
+          <publicObject>
+            <contentMetadata type="book">
+            </contentMetadata>
+          </publicObject>
+        XML
+      end
+      let(:cocina_body) do
+        '{}'
+      end
 
-      expect(instance.representative_thumbnail).to eq 'http://some/iiif/path/full/!400,400/0/default.jpg'
-    end
-
-    it 'is blank if the object has no appropriate images' do
-      allow(iiif_manifest).to receive(:thumbnail_base_uri).and_return(nil)
-
-      expect(instance.representative_thumbnail).to be_blank
+      it { is_expected.to be_nil }
     end
   end
 
@@ -307,10 +426,12 @@ RSpec.describe PurlVersion do
   end
 
   describe '#collection?' do
+    before do
+      allow(resource_retriever).to receive(:cocina_body).and_return(cocina.to_json)
+    end
+
     context 'when a collection' do
-      before do
-        allow(instance).to receive(:cocina).and_return({ 'type' => 'https://cocina.sul.stanford.edu/models/collection' })
-      end
+      let(:cocina) { { 'type' => 'https://cocina.sul.stanford.edu/models/collection' } }
 
       it 'pulls the type from the cocina' do
         expect(instance.collection?).to be true
@@ -318,9 +439,7 @@ RSpec.describe PurlVersion do
     end
 
     context 'when an item' do
-      before do
-        allow(instance).to receive(:cocina).and_return({ 'type' => 'https://cocina.sul.stanford.edu/models/book' })
-      end
+      let(:cocina) { { 'type' => 'https://cocina.sul.stanford.edu/models/book' } }
 
       it 'pulls the type from the cocina' do
         expect(instance.collection?).to be false
