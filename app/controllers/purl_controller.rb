@@ -2,7 +2,7 @@
 
 class PurlController < ApplicationController
   before_action :load_purl, except: [:index]
-  before_action :load_version, only: :show
+  before_action :load_version, only: %i[show metrics]
   before_action :fix_etag_header
 
   rescue_from ActionController::UnknownFormat, with: :missing_file
@@ -70,7 +70,7 @@ class PurlController < ApplicationController
   end
 
   def metrics
-    render 'purl/_metrics', locals: { document: @purl.version(:head) }
+    render 'purl/_metrics', locals: { document: @version }
   end
 
   private
