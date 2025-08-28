@@ -434,7 +434,7 @@ RSpec.describe PurlVersion do
       end
     end
 
-    context 'with invalid data' do
+    context 'with invalid data (from wf027xk3554)' do
       before do
         allow(resource_retriever).to receive(:cocina_body).and_return <<~JSON
           {
@@ -463,6 +463,31 @@ RSpec.describe PurlVersion do
         expect(instance.publication_date).to be_nil
         expect(Honeybadger).to have_received(:notify)
           .with('Malformed Cocina data: No date value found in description.adminMetadata.event.*.date.value for: wm135gp2721')
+      end
+    end
+
+    context 'with invalid data (from db586ns4974)' do
+      before do
+        allow(resource_retriever).to receive(:cocina_body).and_return <<~JSON
+          {
+            "description": {
+                              "adminMetadata": {
+                                "event":[
+                                  {
+                                    "type":  "creation"
+                                  }
+                                ]
+                              }
+                            }
+          }
+        JSON
+      end
+
+      it 'returns nil' do
+        allow(Honeybadger).to receive(:notify)
+        expect(instance.publication_date).to be_nil
+        expect(Honeybadger).to have_received(:notify)
+          .with('Malformed Cocina data: No date node found in creation event at description.adminMetadata.event.*.date for: wm135gp2721')
       end
     end
   end

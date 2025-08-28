@@ -242,20 +242,26 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     end
 
     # TODO: Move to AltmetricsComponent
-    def publication_date
+    def publication_date # rubocop:disable Metrics/PerceivedComplexity
       @publication_date ||= begin
         admin_metadata = cocina['description']['adminMetadata']
 
         creation_event = admin_metadata && admin_metadata['event']&.find { |node| node['type'] == 'creation' }
 
         if creation_event
-          date_value = creation_event['date'].first['value']
-          if date_value
-            if (matcher = date_value.match(/(\d{4})/))
-              matcher[1]
+          date_node = Array(creation_event['date']).first
+          if date_node
+            date_value = date_node['value']
+            if date_value
+              if (matcher = date_value.match(/(\d{4})/)) # rubocop:disable Metrics/BlockNesting
+                matcher[1]
+              end
+            else
+              Honeybadger.notify("Malformed Cocina data: No date value found in description.adminMetadata.event.*.date.value for: #{druid}")
+              nil
             end
           else
-            Honeybadger.notify("Malformed Cocina data: No date value found in description.adminMetadata.event.*.date.value for: #{druid}")
+            Honeybadger.notify("Malformed Cocina data: No date node found in creation event at description.adminMetadata.event.*.date for: #{druid}")
             nil
           end
         end
