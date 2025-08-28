@@ -8,11 +8,10 @@ RSpec.describe Iiif3MetadataWriter do
     described_class.new(cocina_descriptive: cocina_descriptive,
                         collection_title: 'viewer testing',
                         published_date: '2025-02-24T15:55:53Z',
-                        cocina_display:,
-                        doi:)
+                        cocina_display:)
   end
 
-  let(:cocina_display) { CocinaDisplay::CocinaRecord.new({ 'description' => cocina_descriptive }) }
+  let(:cocina_display) { CocinaDisplay::CocinaRecord.new({ 'identification' => { 'doi' => doi }, 'description' => cocina_descriptive }) }
 
   describe '#write' do
     subject(:metadata) { metadata_writer.write }
@@ -250,11 +249,12 @@ RSpec.describe Iiif3MetadataWriter do
       it 'extracts the metadata' do
         expect(metadata.find { it['label'][:en] == ['Available Online'] }['value'][:en]).to eq ["<a href='https://sul-purl-stage.stanford.edu/zw438wf4318'>https://sul-purl-stage.stanford.edu/zw438wf4318</a>"]
         expect(metadata.find { it['label'][:en] == ['Title'] }['value'][:en]).to eq ['H2 title field']
-        expect(metadata.find { it['label'][:en] == ['Contributor'] }['value'][:en]).to eq ['Author, First (author)', 'contributor, Second (compiler)']
+        expect(metadata.find { it['label'][:en] == ['Creator'] }['value'][:en]).to eq ['Author, First']
+        expect(metadata.find { it['label'][:en] == ['Contributor'] }['value'][:en]).to eq ['contributor, Second (compiler)']
         expect(metadata.find { it['label'][:en] == ['Type'] }['value'][:en]).to eq ['Text', 'Policy brief']
         expect(metadata.find { it['label'][:en] == ['Abstract'] }['value'][:en]).to eq ['This is the abstract field']
         expect(metadata.find { it['label'][:en] == ['Subject'] }['value'][:en]).to eq ['keyword']
-        expect(metadata.find { it['label'][:en] == ['Date'] }['value'][:en]).to eq %w[2025-02-20 2024-04-05 2025-01-03]
+        expect(metadata.find { it['label'][:en] == ['Date'] }['value'][:en]).to eq ['February 20, 2025', 'April  5, 2024', 'January  3, 2025']
         expect(metadata.find { it['label'][:en] == ['Identifier'] }['value'][:en]).to eq ['https://sul-purl-stage.stanford.edu/zw438wf4318', 'doi: https://doi.org/10.80343/zw438wf4318']
         expect(metadata.find { it['label'][:en] == ['Relation'] }['value'][:en]).to eq ['viewer testing']
         expect(metadata.find { it['label'][:en] == ['Preferred citation'] }['value'][:en]).to eq ['This is the citation']
@@ -275,7 +275,7 @@ RSpec.describe Iiif3MetadataWriter do
         end['value'][:en]).to eq ['NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES DIVERS MOUVEMENS DES PLANETES ET LEURS DIVERSES REVOLUTIONS, ' \
                                   'AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE']
         expect(metadata.find { it['label'][:en] == ['Creator'] }['value'][:en]).to eq ['Chatelain, Henri Abraham']
-        expect(metadata.find { it['label'][:en] == ['Type'] }['value'][:en]).to eq ['map', 'Digital Maps', 'Early Maps']
+        expect(metadata.find { it['label'][:en] == ['Type'] }['value'][:en]).to eq ['Map', 'Digital Maps', 'Early Maps']
         expect(metadata.find { it['label'][:en] == ['Subject'] }['value'][:en]).to eq ['Astronomy--Charts, diagrams, etc', 'California as an island--Maps']
         expect(metadata.find { it['label'][:en] == ['Date'] }['value'][:en]).to eq %w[1721]
         expect(metadata.find { it['label'][:en] == ['Identifier'] }['value'][:en]).to eq ['1040', 'https://purl.stanford.edu/bb157hs6068']
@@ -328,7 +328,7 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts the date and contact correctly' do
-        expect(metadata.find { it['label'][:en] == ['Date'] }['value'][:en]).to eq %w[1930-1989]
+        expect(metadata.find { it['label'][:en] == ['Date'] }['value'][:en]).to eq ['1930 - 1989']
         expect(metadata.find { it['label'][:en] == ['Contact'] }).to be_nil
       end
     end
@@ -382,10 +382,12 @@ RSpec.describe Iiif3MetadataWriter do
       it 'extracts the metadata' do
         expect(metadata.find do
           it['label'][:en] == ['Title']
-        end['value'][:en]).to eq ['Erzherzog Johann; ein Charakterbild',
-                                  'mit Beiträgen zur Geschichte der Begründung der zweiten Dynastie Bulgariens nach authentischen ' \
+        end['value'][:en]).to eq ['Erzherzog Johann; ein Charakterbild : mit Beiträgen zur Geschichte ' \
+                                  'der Begründung der zweiten Dynastie Bulgariens nach authentischen ' \
                                   'Quellen und Briefen des Erzherzogs']
-        expect(metadata.find { it['label'][:en] == ['Contributor'] }['value'][:en]).to eq ['Pollak, Heinrich, 1835?-1908', 'John Salvator, 1852-1890']
+        expect(metadata.find do
+          it['label'][:en] == ['Contributor']
+        end['value'][:en]).to eq ['Pollak, Heinrich, 1835?-1908', 'John Salvator, Archduke of Austria, 1852-1890']
       end
     end
 
@@ -402,7 +404,7 @@ RSpec.describe Iiif3MetadataWriter do
             'value' => { 'en' => ['NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES DIVERS MOUVEMENS DES PLANETES ET LEURS DIVERSES REVOLUTIONS, ' \
                                   'AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE'] } },
           { 'label' => { 'en' => ['Creator'] }, 'value' => { 'en' => ['Chatelain, Henri Abraham'] } },
-          { 'label' => { 'en' => ['Type'] }, 'value' => { 'en' => ['map', 'Digital Maps', 'Early Maps'] } },
+          { 'label' => { 'en' => ['Type'] }, 'value' => { 'en' => ['Map', 'Digital Maps', 'Early Maps'] } },
           { 'label' => { 'en' => ['Format'] },
             'value' => { 'en' => ['51.5 x 59.8 cm., including title along top and border, with 10 diagrams/maps and 6 columns of titled text.'] } },
           { 'label' => { 'en' => ['Description'] }, 'value' => { 'en' => [
@@ -474,7 +476,7 @@ RSpec.describe Iiif3MetadataWriter do
       it 'extracts the metadata' do
         expect(metadata.find do
           it['label'][:en] == ['Language']
-        end['value'][:en]).to eq ['eng']
+        end['value'][:en]).to eq ['English']
       end
     end
 

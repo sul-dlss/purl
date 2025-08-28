@@ -4,15 +4,14 @@ class Iiif3MetadataWriter
   # @param [Hash<Symbol,Object>] cocina_descriptive
   # @param [String] collection_title
   # @param [String] published_date the date of publication
-  def initialize(cocina_descriptive:, collection_title:, published_date:, doi:, cocina_display:)
+  def initialize(cocina_descriptive:, collection_title:, published_date:, cocina_display:)
     @cocina_descriptive = cocina_descriptive
     @collection_title = collection_title
     @published_date = published_date
     @cocina_display = cocina_display
-    @doi = doi
   end
 
-  attr_reader :cocina_descriptive, :collection_title, :published_date, :doi, :cocina_display
+  attr_reader :cocina_descriptive, :collection_title, :published_date, :cocina_display
 
   # @return [Array<Hash>] the IIIF v3 metadata structure
   def write # rubocop:disable Metrics/AbcSize
@@ -32,9 +31,8 @@ class Iiif3MetadataWriter
   end
 
   def titles
-    [iiif_key_value('Title', Array(cocina_descriptive['title']).flat_map do
-      Array(it['structuredValue']).map { it['value'] }.presence || it['value']
-    end)]
+    titles = [cocina_display.display_title] + cocina_display.additional_titles
+    [iiif_key_value('Title', titles)]
   end
 
   def collection
@@ -42,44 +40,22 @@ class Iiif3MetadataWriter
   end
 
   def contributors
-    creator = nil
-    contributor_list = []
-    Array(cocina_descriptive['contributor']).each do
-      next unless it['type'] == 'person'
+    creators = cocina_display.contributors.select(&:author?)&.map { |auth| auth.display_name(with_date: true) }
+    contributors = cocina_display.contributors.reject(&:author?)&.map { |auth| contributor_name(auth) }
 
-      name = contributor_name(it.dig('name', 0))
-      role = it.dig('role', 0, 'value')
-      if role == 'creator'
-        creator = name
-      else
-        contributor_list += [role ? "#{name} (#{role})" : name]
-      end
-    end
-
-    result = contributor_list.present? ? [iiif_key_value('Contributor', contributor_list)] : []
-    result += [iiif_key_value('Creator', [creator])] if creator
+    result = creators.present? ? [iiif_key_value('Creator', creators)] : []
+    result += [iiif_key_value('Contributor', contributors)] if contributors.present?
     result
   end
 
   def contributor_name(contributor)
-    structured_name = contributor['structuredValue'].presence
-    return contributor['value'] unless structured_name
+    display_name = contributor.display_name(with_date: true)
+    return display_name unless contributor.role?
 
-    single_name = structured_name.find { it['type'] == 'name' }
-    life_date = structured_name.find { it['type'] == 'life dates' }
-    return name_with_dates(single_name['value'], life_date) if single_name
-
-    forename = structured_name.find { it['type'] == 'forename' }['value']
-    surname = structured_name.find { it['type'] == 'surname' }['value']
-    name_with_dates("#{surname}, #{forename}", life_date)
+    "#{display_name} (#{contributor.display_role})"
   end
 
-  def name_with_dates(name, date_struct)
-    return name if date_struct.blank?
-
-    "#{name}, #{date_struct['value']}"
-  end
-
+  # TODO: accessContact not in cocina_display yet
   def contacts
     access = cocina_descriptive['access']
     return [] unless access
@@ -91,31 +67,27 @@ class Iiif3MetadataWriter
   end
 
   def types
-    [iiif_key_value('Type', genre.presence || resource_types)]
+    [iiif_key_value('Type', cocina_display.genres.presence || resource_types)]
   end
 
   def format
-    vals = filtered_form('extent').pluck('value')
+    vals = cocina_display.extents
     vals.present? ? [iiif_key_value('Format', vals)] : []
   end
 
   def language
-    vals = Array(cocina_descriptive['language']).map { it['value'] || it['code'] }
+    vals = cocina_display.languages.map(&:to_s)
     vals.present? ? [iiif_key_value('Language', vals)] : []
   end
 
-  def genre
-    filtered_form('genre').pluck('value')
-  end
-
+  # TODO: can't use resource_type_values in cocina_display because it doesn't account for
+  # subtypes, which breaks spec/model/iiif3_metadata_writer_spec.rb:249
   def resource_types
-    filtered_form('resource type').flat_map { structured_values(it) }.uniq(&:downcase)
+    resource_types = Array(cocina_descriptive['form']).filter { it['type'] == 'resource type' }
+    resource_types.flat_map { structured_values(it) }.uniq(&:downcase)
   end
 
-  def filtered_form(type)
-    Array(cocina_descriptive['form']).filter { it['type'] == type }
-  end
-
+  # TODO: add notes to cocina_display
   def notes
     extract_notes.map { |k, v| iiif_key_value(k, v) }
   end
@@ -130,13 +102,18 @@ class Iiif3MetadataWriter
     values
   end
 
+  # This needs to be fixed on cocina_display
+  # right not structuredValues aren't getting added to cocina_display.subject_topics or cocina_display.subject_genres
+  # this breaks spec/model/iiif3_metadata_writer_spec.rb:514
   def subjects
     vals = Array(cocina_descriptive['subject']).filter_map do
       structured_values(it).join(' -- ') if structured_values(it, 'type').intersect?(%w[topic genre])
     end
+
     vals.present? ? [iiif_key_value('Subject', vals)] : []
   end
 
+  # TODO: add map scale to cocina_display
   def coverage
     coverage_fields = map_coverage_fields.values.flatten
     coverage_fields.present? ? [iiif_key_value('Coverage', coverage_fields)] : []
@@ -152,17 +129,16 @@ class Iiif3MetadataWriter
   end
 
   def dates
-    vals = Array(cocina_descriptive['event']).flat_map do
-      it['date'].flat_map { date_structured_values(it) }
-    end
+    vals = cocina_display.event_dates.map(&:decoded_value)
 
     vals.present? ? [iiif_key_value('Date', vals)] : []
   end
 
+  # TODO: add other identifiers to cocina_display
   def identifiers
     ids = Array(cocina_descriptive['identifier']).map { |id| format_id(id) }
     ids.push url
-    ids.push "doi: https://doi.org/#{doi}" if doi
+    ids.push "doi: #{cocina_display.doi_url}" if cocina_display.doi
 
     ids.present? ? [iiif_key_value('Identifier', ids)] : []
   end
@@ -178,6 +154,7 @@ class Iiif3MetadataWriter
     [iiif_key_value('Available Online', ["<a href='#{url}'>#{url}</a>"])]
   end
 
+  # TODO: add purl url to cocina_display
   def url
     @url ||= cocina_descriptive['purl']
   end
