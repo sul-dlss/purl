@@ -8,8 +8,11 @@ RSpec.describe Iiif3MetadataWriter do
     described_class.new(cocina_descriptive: cocina_descriptive,
                         collection_title: 'viewer testing',
                         published_date: '2025-02-24T15:55:53Z',
+                        cocina_display:,
                         doi:)
   end
+
+  let(:cocina_display) { CocinaDisplay::CocinaRecord.new({ 'description' => cocina_descriptive }) }
 
   describe '#write' do
     subject(:metadata) { metadata_writer.write }
@@ -522,6 +525,18 @@ RSpec.describe Iiif3MetadataWriter do
         expect(metadata.find do
           it['label'][:en] == ['Contents']
         end['value'][:en]).to include('Of the leaven of pharisees')
+      end
+    end
+
+    context 'with publisher' do
+      let(:cocina_descriptive) do
+        PurlResource.find('zf119tw4418').version(:head).cocina['description']
+      end
+
+      it 'extracts the metadata' do
+        expect(metadata.find do
+          it['label'][:en] == ['Publisher']
+        end['value'][:en]).to eq ['Dept. of Energy, Office of Inspector General']
       end
     end
 

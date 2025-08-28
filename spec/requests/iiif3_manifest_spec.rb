@@ -137,11 +137,11 @@ RSpec.describe 'IIIF v3 manifests' do
     expect(image['body']['width']).to eq 2058
 
     expect(json['items'].length).to eq 57
-    expect(json['metadata'].size).to eq 13
+    expect(json['metadata'].size).to eq 14
     expect(json['metadata'].flat_map do |elem|
       elem['label']['en']
     end).to eq ['Available Online', 'Title', 'Type', 'Language', 'Statement of responsibility', 'Date/sequential designation', 'Description',
-                'Additional physical form', 'System details', 'Subject', 'Date', 'Identifier', 'PublishDate']
+                'Additional physical form', 'System details', 'Subject', 'Date', 'Identifier', 'Publisher', 'PublishDate']
   end
 
   context 'when pages do not have OCR content' do
@@ -374,11 +374,11 @@ RSpec.describe 'IIIF v3 manifests' do
       get "/#{druid}/iiif3/manifest"
       expect(response).to have_http_status(:ok)
       expect(json['label']['en'].first).to eq '10 Meter Contours: Russian River Basin, California'
-      expect(json['metadata'].size).to eq 15
+      expect(json['metadata'].size).to eq 16
       expect(json['metadata'].flat_map do |elem|
         elem['label']['en']
       end).to eq ['Available Online', 'Title', 'Type', 'Format', 'Language', 'Abstract', 'Purpose', 'Preferred citation',
-                  'Supplemental information', 'WGS84 Cartographics', 'Subject', 'Coverage', 'Date', 'Identifier', 'PublishDate']
+                  'Supplemental information', 'WGS84 Cartographics', 'Subject', 'Coverage', 'Date', 'Identifier', 'Publisher', 'PublishDate']
     end
   end
 

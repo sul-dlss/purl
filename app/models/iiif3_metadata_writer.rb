@@ -4,25 +4,31 @@ class Iiif3MetadataWriter
   # @param [Hash<Symbol,Object>] cocina_descriptive
   # @param [String] collection_title
   # @param [String] published_date the date of publication
-  def initialize(cocina_descriptive:, collection_title:, published_date:, doi:)
+  def initialize(cocina_descriptive:, collection_title:, published_date:, doi:, cocina_display:)
     @cocina_descriptive = cocina_descriptive
     @collection_title = collection_title
     @published_date = published_date
+    @cocina_display = cocina_display
     @doi = doi
   end
 
-  attr_reader :cocina_descriptive, :collection_title, :published_date, :doi
+  attr_reader :cocina_descriptive, :collection_title, :published_date, :doi, :cocina_display
 
   # @return [Array<Hash>] the IIIF v3 metadata structure
   def write # rubocop:disable Metrics/AbcSize
     available_online + titles + contributors + contacts + types + format + language +
-      notes + subjects + coverage + dates + identifiers + collection + publication
+      notes + subjects + coverage + dates + identifiers + publisher + collection + publication
   end
 
   private
 
   def publication
     [iiif_key_value('PublishDate', [published_date])]
+  end
+
+  def publisher
+    publishers = cocina_display.publisher_contributors
+    publishers.present? ? [iiif_key_value('Publisher', publishers.map(&:display_name))] : []
   end
 
   def titles
