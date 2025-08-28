@@ -325,7 +325,7 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts the date and contact correctly' do
-        expect(metadata.find { it['label'][:en] == ['Date'] }['value'][:en]).to eq %w[1930 1989]
+        expect(metadata.find { it['label'][:en] == ['Date'] }['value'][:en]).to eq %w[1930-1989]
         expect(metadata.find { it['label'][:en] == ['Contact'] }).to be_nil
       end
     end

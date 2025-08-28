@@ -147,7 +147,7 @@ class Iiif3MetadataWriter
 
   def dates
     vals = Array(cocina_descriptive['event']).flat_map do
-      it['date'].flat_map { structured_values(it) }
+      it['date'].flat_map { date_structured_values(it) }
     end
 
     vals.present? ? [iiif_key_value('Date', vals)] : []
@@ -178,6 +178,12 @@ class Iiif3MetadataWriter
 
   def iiif_key_value(label, values)
     { 'label' => { en: [label] }, 'value' => { en: values.compact_blank } }
+  end
+
+  def date_structured_values(field)
+    return [structured_values(field).join('-')] if field['structuredValue'].presence && field['structuredValue'].first['type'] == 'start'
+
+    structured_values(field)
   end
 
   def structured_values(field, field_key = 'value')
