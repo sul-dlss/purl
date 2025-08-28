@@ -87,10 +87,8 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   # If we can't track downloads (e.g. for WARC),or if it's a collection, no point in showing the download count
   def show_download_metrics?
     download_status = cocina.dig('access', 'download')
-    # rubocop:disable Style/MultipleComparison
-    (download_status == 'world' || download_status == 'stanford') &&
-      %w[webarchive-seed webarchive-binary].exclude?(type) && !collection?
-    # rubocop:enable Style/MultipleComparison
+    %w[world stanford].include?(download_status) &&
+      !webarchive_seed? && !webarchive_binary? && !collection?
   end
 
   def mods
@@ -185,6 +183,14 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
 
     def three_d?
       type == 'https://cocina.sul.stanford.edu/models/3d'
+    end
+
+    def webarchive_seed?
+      type == 'https://cocina.sul.stanford.edu/models/webarchive-seed'
+    end
+
+    def webarchive_binary?
+      type == 'https://cocina.sul.stanford.edu/models/webarchive-binary'
     end
 
     def object?
