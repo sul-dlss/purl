@@ -5,6 +5,7 @@ require 'iiif/v3/presentation'
 
 class Iiif3PresentationManifest < IiifPresentationManifest
   delegate :object?, :geo?, :image?, :map?, :three_d?, to: :purl_version
+  delegate :file_sets, :local_files, to: :structural_metadata
   attr_reader :purl_base_uri
 
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
@@ -86,9 +87,8 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       # Geo can't determine "primary", so we just create a "dummy" canvas here.
       # We don't use the canvases for the file viewer and it slows down the metadata viewer when there are a lot of files
       # IIIF v3 requires Manifests to have at least one canvas. https://iiif.io/api/presentation/3.0/#34-structural-properties
-      resource = content_metadata.grouped_resources.first
-      file = resource.files.first
-      manifest.items << canvas_for_resource(file)
+      file = local_files.first
+      manifest.items << canvas_for_file(file) if file
     elsif book? || image? || map?
       build_image_canvases(manifest)
     else
@@ -100,26 +100,16 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   end
 
   def build_image_canvases(manifest)
-    content_metadata.grouped_resources.each do |resource_group|
-      file = resource(resource_group)
-      if image_file?(file) && %w[image page].include?(file.type)
-        manifest.items << canvas_for_resource(resource_group) if deliverable_file?(file)
-      elsif downloadable_file?(file)
-        manifest.rendering += image_rendering_for_resource_group(resource_group)
-      end
+    page_image_files.each do |file|
+      manifest.items << canvas_for_file(file) if deliverable_file?(file)
+    end
+    file_sets.each do |fs|
+      manifest.rendering += image_rendering_for_resource_group(fs) if fs.files.any? { |file| downloadable_file?(file) }
     end
   end
 
   def attribution
     [copyright || 'Provided by the Stanford University Libraries'].flatten
-  end
-
-  def resources
-    resources = content_metadata.resources
-
-    resources.select! { |x| x.type == '3d' } if three_d?
-
-    resources
   end
 
   def annotation_page(annotation_page_id:)
@@ -128,67 +118,58 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     annotation_page_for_resource(selected_resource) if selected_resource
   end
 
-  def resource(resource_group)
-    return resource_group.primary if resource_group.is_a? ContentMetadata::GroupedResource
-
-    resource_group
-  end
-
-  def canvas_for_resource(resource_group)
-    resource = resource(resource_group)
-    return unless resource # Fileset has no displayable files
-
+  def canvas_for_file(file)
     canv = IIIF::V3::Presentation::Canvas.new
-    canv['id'] = canvas_url(resource_id: resource.id)
+    canv['id'] = canvas_url(resource_id: file.fileset_id)
     canv.label = {
-      en: [resource.label.presence || 'image']
+      en: [file.fileset_label.presence || 'image']
     }
     canv.rendering = []
 
-    if image_file?(resource)
-      canv.height = resource.height
-      canv.width = resource.width
-      if downloadable_file?(resource)
+    if file.image_file?
+      canv.height = file.height
+      canv.width = file.width
+      if downloadable_file?(file)
         canv.rendering += [binary_resource(
-          resource,
-          label: "Original source file (#{number_to_human_size(resource.size)})"
+          file,
+          label: "Original source file (#{number_to_human_size(file.size)})"
         ).to_ordered_hash]
       end
     end
-    canv.items << annotation_page_for_resource(resource)
+    canv.items << annotation_page_for_resource(file)
 
-    if resource_group.is_a?(ContentMetadata::GroupedResource)
-      thumbnail_canvas = thumbnail_canvas_for_resource_group(resource_group)
-      canvas_type = resource.type == 'audio' ? 'accompanyingCanvas' : 'placeholderCanvas'
+    thumbnail_canvas = thumbnail_canvas_for_file_group(file)
+    if thumbnail_canvas
+      canvas_type = file.type == 'audio' ? 'accompanyingCanvas' : 'placeholderCanvas'
       canv[canvas_type] = thumbnail_canvas
 
-      canv['annotations'] = supplementing_resources_annotation_page(resource_group)
-      canv.rendering += renderings_for_resource_group(resource_group)
+      canv['annotations'] = supplementing_resources_annotation_page(file)
+      canv.rendering += renderings_for_resource_group(file)
     end
 
     canv
   end
 
-  def thumbnail_canvas_for_resource_group(resource_group)
-    return unless resource_group.thumbnail_canvas
+  def thumbnail_canvas_for_file_group(file)
+    return unless file.media_file? && structural_metadata.thumbnail
+
+    thumbnail_file = structural_metadata.thumbnail
 
     thumbnail_canvas = IIIF::V3::Presentation::Canvas.new
-    thumbnail_canvas['id'] = canvas_url(resource_id: resource_group.thumbnail_canvas.filename)
-    thumbnail_canvas.label = {
-      en: [resource_group.thumbnail_canvas.label.presence || 'image']
-    }
-    if image_file?(resource_group.thumbnail_canvas)
-      thumbnail_canvas.height = resource_group.thumbnail_canvas.height
-      thumbnail_canvas.width = resource_group.thumbnail_canvas.width
+    thumbnail_canvas['id'] = canvas_url(resource_id: thumbnail_file.filename)
+    thumbnail_canvas.label = { en: [thumbnail_file.label.presence || 'image'] }
+
+    if thumbnail_file.image_file?
+      thumbnail_canvas.height = thumbnail_file.height
+      thumbnail_canvas.width = thumbnail_file.width
     end
 
-    thumbnail_canvas.items << annotation_page_for_resource(resource_group.thumbnail_canvas)
-
+    thumbnail_canvas.items << annotation_page_for_resource(thumbnail_file)
     thumbnail_canvas
   end
 
   def supplementing_resources_annotation_page(resource_group)
-    return unless resource_group.supplementing_resources.any?
+    return unless structural_metadata.supplementing_resources.any?
 
     annotation_page = IIIF::V3::Presentation::AnnotationPage.new
     annotation_page['id'] = "#{annotation_page_url(resource_id: resource_group.primary.id)}/supplement"
@@ -203,15 +184,15 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     [annotation_page]
   end
 
-  def renderings_for_resource_group(resource_group)
-    resource_group.other_resources.filter_map do |other_resource|
+  def renderings_for_resource_group(_resource_group)
+    structural_metadata.other_resources.filter_map do |other_resource|
       binary_resource(other_resource).to_ordered_hash if downloadable_file?(other_resource)
     end
   end
 
   def image_rendering_for_resource_group(resource_group)
-    resource_group.files.map do |resources|
-      binary_resource(resources).to_ordered_hash
+    resource_group.files.map do |file|
+      binary_resource(file).to_ordered_hash
     end
   end
 
@@ -227,7 +208,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     anno['id'] = annotation_url(resource_id: resource.id)
     anno['target'] = canvas_url(resource_id: resource.id)
 
-    anno.body = if image_file?(resource)
+    anno.body = if resource.image_file?
                   image_resource(resource)
                 else
                   binary_resource(resource)
@@ -236,18 +217,17 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     anno
   end
 
-  def image_resource(resource)
-    url = stacks_iiif_base_url(resource.druid, resource.filename)
+  def image_resource(file)
+    url = stacks_iiif_base_url(file.druid, file.filename)
 
     img_res = IIIF::V3::Presentation::ImageResource.new
     img_res['id'] = "#{url}/full/full/0/default.jpg"
     img_res.format = 'image/jpeg'
-    img_res.height = resource.height
-    img_res.width = resource.width
+    img_res.height = file.height
+    img_res.width = file.width
 
     img_res.service = [iiif_image_v2_service(url)]
-    target_file = cocina_file_for_resource(resource)
-    img_res.service[0]['services'] = case target_file.access.view
+    img_res.service[0]['services'] = case file.access.view
                                      when 'stanford'
                                        [iiif_stacks_v1_login_service]
                                      when 'location-based'
@@ -284,16 +264,14 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     bin_res
   end
 
-  def probe_service(resource, file_url)
-    target_file = cocina_file_for_resource(resource)
-
+  def probe_service(file, file_url)
     IIIF::V3::Presentation::Service.new(
       'id' => "#{Settings.stacks.url}/iiif/auth/v2/probe?id=#{URI.encode_uri_component(file_url)}",
       'type' => 'AuthProbeService2',
       'errorHeading' => { 'en' => ['No access'] },
       'errorNote' => { 'en' => ['You do not have permission to access this resource'] }
     ).tap do |probe_service|
-      probe_service.service = case target_file.access.view
+      probe_service.service = case file.access.view
                               when 'world'
                                 # We only need this because a probe service MUST have one or more access services and
                                 # we want to run the probe service so that it can redirect to the streaming server.

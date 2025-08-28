@@ -30,5 +30,10 @@ class StructuralMetadata
     def files
       @files ||= Array(json['structural']['contains']).map { File.new(druid: druid, json: it) }
     end
+
+    def page_image?
+      ['https://cocina.sul.stanford.edu/models/resources/image',
+       'https://cocina.sul.stanford.edu/models/resources/page'].include?(type)
+    end
   end
 end

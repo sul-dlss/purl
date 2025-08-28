@@ -26,10 +26,7 @@ class IiifPresentationManifest
 
   # @return [Array<StructuralMetadata::FileSet>] or []
   def page_image_filesets
-    @page_image_filesets ||= file_sets.select do |fileset|
-      ['https://cocina.sul.stanford.edu/models/resources/image',
-       'https://cocina.sul.stanford.edu/models/resources/page'].include?(fileset.type)
-    end
+    @page_image_filesets ||= file_sets.select(&:page_image?)
   end
 
   # @return [Array<StructuralMetadata::File>] or []
