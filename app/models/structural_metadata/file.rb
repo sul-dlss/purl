@@ -5,9 +5,11 @@ class StructuralMetadata
     def initialize(druid:, json:)
       @druid = druid
       @json = json
+      @fileset_id = fileset.cocina_id
+      @fileset_label = fileset.label
     end
 
-    attr_accessor :json, :druid
+    attr_accessor :json, :druid, :fileset_id, :fileset_label
 
     def filename
       json['filename']
@@ -33,8 +35,44 @@ class StructuralMetadata
       json.dig('presentation', 'width')
     end
 
+    def id
+      json['externalIdentifier']
+    end
+
+    def type
+      json['type']
+    end
+
+    def label
+      json['label']
+    end
+
+    def size
+      json['size']
+    end
+
     def access
       @access ||= FileAccess.new json['access']
+    end
+
+    def role
+      json['use']
+    end
+
+    def mimetype
+      json['hasMimeType']
+    end
+
+    def height
+      json['presentation']['height']
+    end
+
+    def width
+      json['presentation']['width']
+    end
+
+    def image_file?
+      mimetype == 'image/jp2' && height.positive? && width.positive?
     end
   end
 end
