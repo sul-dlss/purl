@@ -425,6 +425,48 @@ RSpec.describe PurlVersion do
     end
   end
 
+  describe '#publication_date' do
+    let(:druid) { 'wm135gp2721' }
+
+    context 'with a publication date' do
+      it 'returns the publication date' do
+        expect(instance.publication_date).to eq '2023'
+      end
+    end
+
+    context 'with invalid data' do
+      before do
+        allow(resource_retriever).to receive(:cocina_body).and_return <<~JSON
+          {
+            "description": {
+                              "adminMetadata": {
+                                "event":[
+                                  {
+                                    "date": [
+                                      {
+                                        "encoding": {
+                                          "code": "marc"
+                                        }
+                                      }
+                                    ],
+                                    "type":  "creation"
+                                  }
+                                ]
+                              }
+                            }
+          }
+        JSON
+      end
+
+      it 'returns nil' do
+        allow(Honeybadger).to receive(:notify)
+        expect(instance.publication_date).to be_nil
+        expect(Honeybadger).to have_received(:notify)
+          .with('Malformed Cocina data: No date value found in description.adminMetadata.event.*.date.value for: wm135gp2721')
+      end
+    end
+  end
+
   describe '#collection?' do
     before do
       allow(resource_retriever).to receive(:cocina_body).and_return(cocina.to_json)

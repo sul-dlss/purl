@@ -241,18 +241,28 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
       doi&.delete_prefix('https://doi.org/')
     end
 
+    # TODO: Move to AltmetricsComponent
     def publication_date
       @publication_date ||= begin
         admin_metadata = cocina['description']['adminMetadata']
 
         creation_event = admin_metadata && admin_metadata['event']&.find { |node| node['type'] == 'creation' }
 
-        if creation_event && (matcher = creation_event['date'].first['value'].match(/(\d{4})/))
-          matcher[1]
+        if creation_event
+          date_value = creation_event['date'].first['value']
+          if date_value
+            if (matcher = date_value.match(/(\d{4})/))
+              matcher[1]
+            end
+          else
+            Honeybadger.notify("Malformed Cocina data: No date value found in description.adminMetadata.event.*.date.value for: #{druid}")
+            nil
+          end
         end
       end
     end
 
+    # TODO: Move to AltmetricsComponent
     def authors
       cocina_display.contributors.map(&:display_name)
     end
