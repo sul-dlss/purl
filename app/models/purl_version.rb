@@ -290,10 +290,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     public_xml_body.present?
   end
 
-  def cocina?
-    cocina_body.present?
-  end
-
   def cocina
     @cocina ||= JSON.parse(cocina_body)
   end
