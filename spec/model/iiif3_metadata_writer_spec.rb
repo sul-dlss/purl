@@ -13,6 +13,14 @@ RSpec.describe Iiif3MetadataWriter do
 
   let(:cocina_display) { CocinaDisplay::CocinaRecord.new({ 'identification' => { 'doi' => doi }, 'description' => cocina_descriptive }) }
 
+  def field_value(field_name)
+    field(field_name)['value'][:en]
+  end
+
+  def field(field_name)
+    metadata.find { |item| item['label'][:en] == [field_name] }
+  end
+
   describe '#write' do
     subject(:metadata) { metadata_writer.write }
 
@@ -247,19 +255,19 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts the metadata' do
-        expect(metadata.find { it['label'][:en] == ['Available Online'] }['value'][:en]).to eq ["<a href='https://sul-purl-stage.stanford.edu/zw438wf4318'>https://sul-purl-stage.stanford.edu/zw438wf4318</a>"]
-        expect(metadata.find { it['label'][:en] == ['Title'] }['value'][:en]).to eq ['H2 title field']
-        expect(metadata.find { it['label'][:en] == ['Creator'] }['value'][:en]).to eq ['Author, First']
-        expect(metadata.find { it['label'][:en] == ['Contributor'] }['value'][:en]).to eq ['contributor, Second (compiler)']
-        expect(metadata.find { it['label'][:en] == ['Type'] }['value'][:en]).to eq ['Text', 'Policy brief']
-        expect(metadata.find { it['label'][:en] == ['Abstract'] }['value'][:en]).to eq ['This is the abstract field']
-        expect(metadata.find { it['label'][:en] == ['Subject'] }['value'][:en]).to eq ['keyword']
-        expect(metadata.find { it['label'][:en] == ['Date'] }['value'][:en]).to eq ['February 20, 2025', 'April  5, 2024', 'January  3, 2025']
-        expect(metadata.find { it['label'][:en] == ['Identifier'] }['value'][:en]).to eq ['https://sul-purl-stage.stanford.edu/zw438wf4318', 'doi: https://doi.org/10.80343/zw438wf4318']
-        expect(metadata.find { it['label'][:en] == ['Relation'] }['value'][:en]).to eq ['viewer testing']
-        expect(metadata.find { it['label'][:en] == ['Preferred citation'] }['value'][:en]).to eq ['This is the citation']
-        expect(metadata.find { it['label'][:en] == ['Contact'] }['value'][:en]).to eq ['bergeraj@stanford.edu']
-        expect(metadata.find { it['label'][:en] == ['PublishDate'] }['value'][:en]).to eq ['2025-02-24T15:55:53Z']
+        expect(field_value('Available Online')).to eq ["<a href='https://sul-purl-stage.stanford.edu/zw438wf4318'>https://sul-purl-stage.stanford.edu/zw438wf4318</a>"]
+        expect(field_value('Title')).to eq ['H2 title field']
+        expect(field_value('Creator')).to eq ['Author, First']
+        expect(field_value('Contributor')).to eq ['contributor, Second (compiler)']
+        expect(field_value('Type')).to eq ['Text', 'Policy brief']
+        expect(field_value('Abstract')).to eq ['This is the abstract field']
+        expect(field_value('Subject')).to eq ['keyword']
+        expect(field_value('Date')).to eq ['February 20, 2025', 'April  5, 2024', 'January  3, 2025']
+        expect(field_value('Identifier')).to eq ['https://sul-purl-stage.stanford.edu/zw438wf4318', 'doi: https://doi.org/10.80343/zw438wf4318']
+        expect(field_value('Relation')).to eq ['viewer testing']
+        expect(field_value('Preferred citation')).to eq ['This is the citation']
+        expect(field_value('Contact')).to eq ['bergeraj@stanford.edu']
+        expect(field_value('PublishDate')).to eq ['2025-02-24T15:55:53Z']
       end
     end
 
@@ -269,21 +277,19 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts the metadata' do
-        expect(metadata.find { it['label'][:en] == ['Available Online'] }['value'][:en]).to eq ["<a href='https://purl.stanford.edu/bb157hs6068'>https://purl.stanford.edu/bb157hs6068</a>"]
-        expect(metadata.find do
-          it['label'][:en] == ['Title']
-        end['value'][:en]).to eq ['NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES DIVERS MOUVEMENS DES PLANETES ET LEURS DIVERSES REVOLUTIONS, ' \
-                                  'AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE']
-        expect(metadata.find { it['label'][:en] == ['Creator'] }['value'][:en]).to eq ['Chatelain, Henri Abraham']
-        expect(metadata.find { it['label'][:en] == ['Type'] }['value'][:en]).to eq ['Map', 'Digital Maps', 'Early Maps']
-        expect(metadata.find { it['label'][:en] == ['Subject'] }['value'][:en]).to eq ['Astronomy--Charts, diagrams, etc', 'California as an island--Maps']
-        expect(metadata.find { it['label'][:en] == ['Date'] }['value'][:en]).to eq %w[1721]
-        expect(metadata.find { it['label'][:en] == ['Identifier'] }['value'][:en]).to eq ['1040', 'https://purl.stanford.edu/bb157hs6068']
-        expect(metadata.find { it['label'][:en] == ['Relation'] }['value'][:en]).to eq ['viewer testing']
-        expect(metadata.find { it['label'][:en] == ['PublishDate'] }['value'][:en]).to eq ['2025-02-24T15:55:53Z']
-        expect(metadata.find { it['label'][:en] == ['Abstract'] }).to be_nil
-        expect(metadata.find { it['label'][:en] == ['Preferred citation'] }).to be_nil
-        expect(metadata.find { it['label'][:en] == ['Contact'] }).to be_nil
+        expect(field_value('Available Online')).to eq ["<a href='https://purl.stanford.edu/bb157hs6068'>https://purl.stanford.edu/bb157hs6068</a>"]
+        expect(field_value('Title')).to eq ['NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES DIVERS MOUVEMENS DES PLANETES ET ' \
+                                            'LEURS DIVERSES REVOLUTIONS, AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE']
+        expect(field_value('Creator')).to eq ['Chatelain, Henri Abraham']
+        expect(field_value('Type')).to eq ['Map', 'Digital Maps', 'Early Maps']
+        expect(field_value('Subject')).to eq ['Astronomy--Charts, diagrams, etc', 'California as an island--Maps']
+        expect(field_value('Date')).to eq %w[1721]
+        expect(field_value('Identifier')).to eq ['1040', 'https://purl.stanford.edu/bb157hs6068']
+        expect(field_value('Relation')).to eq ['viewer testing']
+        expect(field_value('PublishDate')).to eq ['2025-02-24T15:55:53Z']
+        expect(field('Abstract')).to be_nil
+        expect(field('Preferred citation')).to be_nil
+        expect(field('Contact')).to be_nil
       end
     end
 
@@ -328,8 +334,8 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts the date and contact correctly' do
-        expect(metadata.find { it['label'][:en] == ['Date'] }['value'][:en]).to eq ['1930 - 1989']
-        expect(metadata.find { it['label'][:en] == ['Contact'] }).to be_nil
+        expect(field_value('Date')).to eq ['1930 - 1989']
+        expect(field('Contact')).to be_nil
       end
     end
 
@@ -380,14 +386,10 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts the metadata' do
-        expect(metadata.find do
-          it['label'][:en] == ['Title']
-        end['value'][:en]).to eq ['Erzherzog Johann; ein Charakterbild : mit Beiträgen zur Geschichte ' \
-                                  'der Begründung der zweiten Dynastie Bulgariens nach authentischen ' \
-                                  'Quellen und Briefen des Erzherzogs']
-        expect(metadata.find do
-          it['label'][:en] == ['Contributor']
-        end['value'][:en]).to eq ['Pollak, Heinrich, 1835?-1908', 'John Salvator, Archduke of Austria, 1852-1890']
+        expect(field_value('Title')).to eq ['Erzherzog Johann; ein Charakterbild : mit Beiträgen zur Geschichte ' \
+                                            'der Begründung der zweiten Dynastie Bulgariens nach authentischen ' \
+                                            'Quellen und Briefen des Erzherzogs']
+        expect(field_value('Contributor')).to eq ['Pollak, Heinrich, 1835?-1908', 'John Salvator, Archduke of Austria, 1852-1890']
       end
     end
 
@@ -455,9 +457,7 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts the metadata' do
-        expect(metadata.find do
-          it['label'][:en] == ['Coverage']
-        end['value'][:en]).to eq ['[ca.1 => 60,000,000].', 'W 160° --E 20°/N 90° --S 90°']
+        expect(field_value('Coverage')).to eq ['[ca.1 => 60,000,000].', 'W 160° --E 20°/N 90° --S 90°']
       end
     end
 
@@ -474,9 +474,7 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts the metadata' do
-        expect(metadata.find do
-          it['label'][:en] == ['Language']
-        end['value'][:en]).to eq ['English']
+        expect(field_value('Language')).to eq ['English']
       end
     end
 
@@ -512,9 +510,7 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts the metadata' do
-        expect(metadata.find do
-          it['label'][:en] == ['Subject']
-        end['value'][:en]).to eq ['United States, Department of Energy, Office of Inspector General -- Auditing -- Statistics -- Periodicals']
+        expect(field_value('Subject')).to eq ['United States, Department of Energy, Office of Inspector General -- Auditing -- Statistics -- Periodicals']
       end
     end
 
@@ -524,9 +520,7 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts the metadata' do
-        expect(metadata.find do
-          it['label'][:en] == ['Contents']
-        end['value'][:en]).to include('Of the leaven of pharisees')
+        expect(field_value('Contents')).to include('Of the leaven of pharisees')
       end
     end
 
@@ -536,9 +530,7 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts the metadata' do
-        expect(metadata.find do
-          it['label'][:en] == ['Publisher']
-        end['value'][:en]).to eq ['Dept. of Energy, Office of Inspector General']
+        expect(field_value('Publisher')).to eq ['Dept. of Energy, Office of Inspector General']
       end
     end
 
@@ -556,7 +548,7 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts all the identifiers correctly' do
-        expect(metadata.find { it['label'][:en] == ['Identifier'] }['value'][:en]).to eq ['lccn: 30003962', 'localnumber', 'nosourceident']
+        expect(field_value('Identifier')).to eq ['lccn: 30003962', 'localnumber', 'nosourceident']
       end
     end
   end
