@@ -34,6 +34,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     (_collection, collection_head_version) = containing_purl_collections&.first
     collection_title = collection_head_version&.title
     metadata_writer = Iiif3MetadataWriter.new(cocina_descriptive: cocina['description'],
+                                              cocina_display: purl_version.cocina_display,
                                               published_date: updated_at,
                                               collection_title:,
                                               doi: cocina.dig('identification', 'doi'))
