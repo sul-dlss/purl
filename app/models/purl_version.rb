@@ -142,13 +142,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   end
 
   concerning :Metadata do # rubocop:disable Metrics/BlockLength
-    def title
-      if mods?
-        Array.wrap(mods.title).join(' -- ')
-      else
-        public_xml.title
-      end
-    end
+    delegate :display_title, to: :cocina_display
 
     def description
       return unless mods?

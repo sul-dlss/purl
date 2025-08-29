@@ -207,23 +207,23 @@ RSpec.describe 'PURL API' do
                           resource_retriever:)
         end
         let(:resource_retriever) do
-          instance_double(ResourceRetriever, public_xml_body:, cocina_body:)
+          instance_double(ResourceRetriever, public_xml_body: '<xml></xml>', cocina_body:)
         end
 
-        let(:public_xml_body) do
-          <<~XML
-            <?xml version="1.0" encoding="UTF-8"?>
-            <publicObject id="druid:bw368gx2874" published="2023-10-26T11:21:31Z" publishVersion="cocina-models/0.91.4">
-              <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
-                <titleInfo>
-                  <title>Code and Data supplement to "Deterministic Matrices Matching the Compressed Sensing Phase Transitions of Gaussian Random Matrices." -- VERSION 3</title>
-                </titleInfo>
-              </mods>
-            </publicObject>
-          XML
-        end
         let(:cocina_body) do
-          '{"cocinaVersion": "0.100.text", "version": 5,"type": "https://cocina.sul.stanford.edu/models/image", "structural": {}, "description": {}}'
+          <<~COCINA
+            {
+              "cocinaVersion": "0.100.text", "version": 5,"type": "https://cocina.sul.stanford.edu/models/image",
+              "structural": {},
+              "description": {
+                "title": [
+                  {
+                    "value": "Code and Data supplement to \\"Deterministic Matrices Matching the Compressed Sensing Phase Transitions of Gaussian Random Matrices.\\" -- VERSION 3"
+                  }
+                ]
+              }
+            }
+          COCINA
         end
         let(:purl_resource) { PurlResource.new(id: 'bw368gx2874') }
 

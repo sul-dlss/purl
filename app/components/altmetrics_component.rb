@@ -8,5 +8,5 @@ class AltmetricsComponent < ViewComponent::Base
 
   attr_reader :purl_version
 
-  delegate :title, :publication_date, :authors, :doi_id, to: :purl_version
+  delegate :display_title, :publication_date, :authors, :doi_id, to: :purl_version
 end

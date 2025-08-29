@@ -1,4 +1,4 @@
-  <%= tag :meta, name: 'citation_title', content: title %>
+  <%= tag :meta, name: 'citation_title', content: display_title %>
   <%= tag :meta, name: 'citation_publication_date', content: publication_date if publication_date %>
   <% authors.each do |author| %>
     <%= tag :meta, name: 'citation_author', content: author %>

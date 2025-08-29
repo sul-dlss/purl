@@ -5,7 +5,7 @@ require 'iiif/presentation'
 class IiifPresentationManifest
   include ActiveModel::Model
 
-  delegate :druid, :title, :book?, :content_metadata, :public_xml_document, :cocina, :updated_at,
+  delegate :druid, :display_title, :book?, :content_metadata, :public_xml_document, :cocina, :updated_at,
            :containing_purl_collections, :cocina_file_for_resource, :collection?, to: :purl_version
   delegate :resources, to: :content_metadata
   delegate :url_for, to: :controller
@@ -93,7 +93,7 @@ class IiifPresentationManifest
   def body
     manifest_data = {
       '@id' => manifest_url,
-      'label' => title,
+      'label' => display_title,
       'attribution' => copyright || 'Provided by the Stanford University Libraries',
       'logo' => {
         '@id' => 'https://stacks.stanford.edu/image/iiif/wy534zh7137/SULAIR_rosette/full/400,/0/default.jpg',
