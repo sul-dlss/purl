@@ -87,23 +87,28 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       # Geo can't determine "primary", so we just create a "dummy" canvas here.
       # We don't use the canvases for the file viewer and it slows down the metadata viewer when there are a lot of files
       # IIIF v3 requires Manifests to have at least one canvas. https://iiif.io/api/presentation/3.0/#34-structural-properties
-      file = local_files.first
-      manifest.items << canvas_for_file(file) if file
+      fileset = file_sets.first
+      manifest.items << canvas_for_fileset(fileset) if fileset
     elsif book? || image? || map?
       build_image_canvases(manifest)
     else
-      # TODO: not sure about what should differentiate this from the geo/object case above
-      file = local_files.first
-      manifest.items << canvas_for_file(file) if file
+      file_sets.each do |fs|
+        # Our viewer can only handle this type of file for 3d objects
+        next if three_d? && fs.type != 'https://cocina.sul.stanford.edu/models/resources/3d'
+        manifest.items << canvas_for_fileset(fs)
+      end
     end
   end
 
   def build_image_canvases(manifest)
-    page_image_files.each do |file|
-      manifest.items << canvas_for_file(file) if deliverable_file?(file)
-    end
     file_sets.each do |fs|
-      manifest.rendering += image_rendering_for_resource_group(fs) if fs.files.any? { |file| downloadable_file?(file) }
+      file = fs.primary
+      
+      if file.image_file? && fs.page_image?
+        manifest.items << canvas_for_fileset(fs) if deliverable_file?(file)
+      elsif downloadable_file?(file)
+        manifest.rendering += image_rendering_for_fileset(fs)
+      end
     end
   end
 
@@ -117,7 +122,10 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     annotation_page_for_resource(selected_resource) if selected_resource
   end
 
-  def canvas_for_file(file)
+  def canvas_for_fileset(fileset)
+    file = fileset.primary
+    return unless file
+    
     canv = IIIF::V3::Presentation::Canvas.new
     canv['id'] = canvas_url(resource_id: file.fileset_id)
     canv.label = {
@@ -137,20 +145,21 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     end
     canv.items << annotation_page_for_resource(file)
 
-    thumbnail_canvas = thumbnail_canvas_for_file_group(file)
-    if thumbnail_canvas
-      canvas_type = file.type == 'audio' ? 'accompanyingCanvas' : 'placeholderCanvas'
+    thumbnail_canvas = thumbnail_canvas_for_file_group(fileset)
+    if fileset.files.any?
+      canvas_type = fileset.audio? ? 'accompanyingCanvas' : 'placeholderCanvas'
       canv[canvas_type] = thumbnail_canvas
 
-      canv['annotations'] = supplementing_resources_annotation_page(file)
-      canv.rendering += renderings_for_resource_group(file)
+      canv['annotations'] = supplementing_resources_annotation_page(fileset)
+
+      canv.rendering += renderings_for_fileset(fileset)
     end
 
     canv
   end
 
-  def thumbnail_canvas_for_file_group(file)
-    return unless file.media_file? && structural_metadata.thumbnail
+  def thumbnail_canvas_for_file_group(fileset)
+    return unless fileset.media_file && structural_metadata.thumbnail
 
     thumbnail_file = structural_metadata.thumbnail
 
@@ -167,13 +176,13 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     thumbnail_canvas
   end
 
-  def supplementing_resources_annotation_page(resource_group)
-    return unless structural_metadata.supplementing_resources.any?
+  def supplementing_resources_annotation_page(fileset)
+    return unless fileset.supplementing_resources.any?
 
     annotation_page = IIIF::V3::Presentation::AnnotationPage.new
-    annotation_page['id'] = "#{annotation_page_url(resource_id: resource_group.primary.id)}/supplement"
+    annotation_page['id'] = "#{annotation_page_url(resource_id: fileset.primary.id)}/supplement"
 
-    resource_group.supplementing_resources.each do |supplementing_resource|
+    fileset.supplementing_resources.each do |supplementing_resource|
       anno = annotation_for_resource(supplementing_resource)
       anno.id = annotation_url(resource_id: supplementing_resource.filename)
       anno.motivation = 'supplementing'
@@ -183,14 +192,14 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     [annotation_page]
   end
 
-  def renderings_for_resource_group(_resource_group)
-    structural_metadata.other_resources.filter_map do |other_resource|
+  def renderings_for_fileset(fileset)
+    fileset.other_resources.filter_map do |other_resource|
       binary_resource(other_resource).to_ordered_hash if downloadable_file?(other_resource)
     end
   end
 
-  def image_rendering_for_resource_group(resource_group)
-    resource_group.files.map do |file|
+  def image_rendering_for_fileset(fileset)
+    fileset.files.map do |file|
       binary_resource(file).to_ordered_hash
     end
   end
