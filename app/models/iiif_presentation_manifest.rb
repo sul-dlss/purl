@@ -129,6 +129,7 @@ class IiifPresentationManifest
     end
 
     # For each valid virtual object image, create a canvas for its thumbnail
+    # TODO: extract to fix final failing test
     structural_metadata.virtual_object_members&.each do |member_druid|
       purl_version = PurlResource.find(member_druid.delete_prefix('druid:')).version(:head)
       # We are using .thumbail here to get the first image in the object
