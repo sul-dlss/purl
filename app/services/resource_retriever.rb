@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class ResourceRetriever
-  include ActiveSupport::Benchmarkable
-
   class ResourceNotFound < StandardError; end
 
   def initialize(druid:)
@@ -37,12 +35,6 @@ class ResourceRetriever
     end
   end
 
-  def version_manifest_resource
-    @version_manifest_resource ||= cache_resource(:version_manifest) do
-      fetch_resource(:version_manifest, Settings.stacks.version_manifest_path)
-    end
-  end
-
   private
 
   attr_reader :druid
@@ -50,25 +42,16 @@ class ResourceRetriever
   def attributes
     {
       druid:,
-      druid_tree:,
-      root_path:
+      druid_tree:
     }
   end
 
-  def root_path
-    Settings.document_cache_root
+  def resource_cache
+    @resource_cache ||= ResourceCache.new
   end
 
   def druid_tree
     Dor::Util.create_pair_tree(druid) || druid
-  end
-
-  def cache_resource(key, &)
-    if Settings.resource_cache.enabled
-      Rails.cache.fetch(cache_key(key), expires_in: Settings.resource_cache.lifetime, &)
-    else
-      yield
-    end
   end
 
   def cache_prefix
@@ -79,40 +62,20 @@ class ResourceRetriever
     [cache_prefix, key].join('/')
   end
 
-  def public_xml_path
-    Settings.purl_resource.public_xml
-  end
-
   def meta_json_path
-    Settings.purl_resource.versioned.meta
+    Settings.purl_resource.versioned.meta % attributes
   end
 
-  def cocina_path
-    Settings.purl_resource.cocina
-  end
-
-  def public_xml_resource
-    @public_xml_resource ||= cache_resource(:public_xml) do
-      fetch_resource(:public_xml, public_xml_path)
-    end
+  def version_manifest_path
+    Settings.stacks.version_manifest_path % attributes
   end
 
   def meta_json_resource
-    @meta_json_resource ||= cache_resource(:meta) do
-      resource = fetch_resource(:meta, meta_json_path)
-      if resource.success?
-        resource
-      else
-        logger.error("Unable to fetch versioned meta JSON for #{druid}. Falling back to default meta JSON.")
-        fetch_resource(:meta, Settings.purl_resource.meta)
-      end
-    end
+    @meta_json_resource ||= resource_cache.get(meta_json_path, cache_key(:meta))
   end
 
-  def cocina_resource
-    @cocina_resource ||= cache_resource(:cocina) do
-      fetch_resource(:cocina, cocina_path)
-    end
+  def version_manifest_resource
+    @version_manifest_resource ||= resource_cache.get(version_manifest_path, cache_key(:version_manifest))
   end
 
   def last_modified_header_value
@@ -126,22 +89,5 @@ class ResourceRetriever
   rescue ArgumentError => e
     logger.info("Unable to parse last modified time: #{e}")
     Time.zone.now
-  end
-
-  def logger
-    Rails.logger
-  end
-
-  def fetch_resource(key, value)
-    url_or_path = value % attributes
-
-    benchmark "Fetching #{druid} #{key} at #{url_or_path}" do
-      case url_or_path
-      when /^http/
-        Faraday.get(url_or_path)
-      else
-        DocumentCacheResource.new(url_or_path)
-      end
-    end
   end
 end

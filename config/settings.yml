@@ -9,8 +9,6 @@ purl_fetcher:
 content_search:
   url:
 
-document_cache_root: "<%= File.join(Rails.root, 'document_cache') %>"
-
 resource_cache:
   enabled: true
   lifetime: <%= 1.hour %>
@@ -18,9 +16,6 @@ resource_cache:
 # These are URLs when running locally, but configured
 # to the local file system on deployed environments
 purl_resource:
-  public_xml: "https://purl.stanford.edu/%{druid}.xml"
-  cocina: "https://purl.stanford.edu/%{druid}.json"
-  meta: "https://purl.stanford.edu/%{druid}.meta_json"
   versioned:
     public_xml: "https://purl.stanford.edu/%{druid}/version/%{version_id}.xml"
     cocina: "https://purl.stanford.edu/%{druid}/version/%{version_id}.json"
