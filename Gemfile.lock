@@ -489,7 +489,7 @@ DEPENDENCIES
   stimulus-rails
   tophat
   turbo-rails
-  view_component
+  view_component (~> 4.0)
   web-console (>= 3.3.0)
   webmock (~> 3.19)
   whenever
