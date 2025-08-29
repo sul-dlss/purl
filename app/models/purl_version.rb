@@ -80,7 +80,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   # @returns [Bool] are there resources that can be shown?
   # This prevents adding links to the embed service, when that service can't generate a valid response.
   def embeddable?
-    structural_metadata.resources.present?
+    structural_metadata.resources.present? || structural_metadata.virtual_object?
   end
 
   # Show tracked downloads if the object has download permission and is a type that we track
