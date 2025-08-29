@@ -1,4 +1,4 @@
-<% title @version.title %>
+<% title @version.display_title %>
 <% content_for(:head) do %>
   <% if @version.embeddable? %>
     <%= tag :link, rel: "preconnect", href: Settings.stacks.url %>
@@ -24,7 +24,7 @@
 
 <%
 opengraph do |graph|
-  graph.title @version.title
+  graph.title @version.display_title
   graph.description @version.description.truncate(200) if @version.description
   graph.type 'og:website'
   graph.image purl_url(@purl, format: :jpg)
@@ -38,7 +38,7 @@ end
 %>
 <div class="row">
   <div class="col-12">
-    <h1 class="py-2"><%= @version.title %></h1>
+    <h1 class="py-2"><%= @version.display_title %></h1>
   </div>
 </div>
 

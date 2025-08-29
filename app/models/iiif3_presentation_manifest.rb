@@ -12,7 +12,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     manifest_data = {
       '@context' => IIIF::V3::Presentation::CONTEXT,
       'id' => manifest_url,
-      'label' => { en: [title] },
+      'label' => { en: [display_title] },
       'requiredStatement' => {
         'label' => { en: ['Attribution'] },
         'value' => { en: attribution.compact_blank }
@@ -32,7 +32,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     # Set behavior to paged if this is a book
     manifest['behavior'] = ['paged'] if book?
     (_collection, collection_head_version) = containing_purl_collections&.first
-    collection_title = collection_head_version&.title
+    collection_title = collection_head_version&.display_title
     metadata_writer = Iiif3MetadataWriter.new(cocina_descriptive: cocina['description'],
                                               cocina_display: purl_version.cocina_display,
                                               published_date: updated_at,

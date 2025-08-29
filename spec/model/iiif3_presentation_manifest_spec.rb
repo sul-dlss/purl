@@ -284,7 +284,7 @@ RSpec.describe Iiif3PresentationManifest do
       let(:druid) { 'bh502xm3351' }
 
       it 'generates a manifest that includes the login service for the restricted file' do
-        expect(json['label'][:en].first).to eq 'Catgut Acoustical Society newsletter. Number 20, 1973-11-01'
+        expect(json['label'][:en].first).to eq 'The  Catgut Acoustical Society newsletter, Number 20, 1973-11-01'
         expect(json['items'].length).to eq 1
 
         canvas = json['items'].first
