@@ -72,7 +72,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   end
 
   def structural_metadata
-    @structural_metadata ||= StructuralMetadata.new(cocina['structural'])
+    @structural_metadata ||= StructuralMetadata.new(cocina['structural'], druid)
   end
 
   delegate :containing_collections, to: :structural_metadata
@@ -80,7 +80,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   # @returns [Bool] are there resources that can be shown?
   # This prevents adding links to the embed service, when that service can't generate a valid response.
   def embeddable?
-    structural_metadata.resources.present?
+    structural_metadata.file_sets.present?
   end
 
   # Show tracked downloads if the object has download permission and is a type that we track
@@ -112,7 +112,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   def iiif2_manifest?
     return false if collection?
 
-    resource_types = structural_metadata.resources.map(&:type)
+    resource_types = structural_metadata.file_sets.map(&:type)
     if (image? || book? || map?) &&
        (structural_metadata.virtual_object? || resource_types.include?('https://cocina.sul.stanford.edu/models/resources/image'))
       true
@@ -306,15 +306,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
 
   def metrics_service
     @metrics_service ||= MetricsService.new
-  end
-
-  # @param [ResourceFile]
-  def cocina_file_for_resource(resource)
-    if druid == resource.druid
-      cocina_file(resource.filename)
-    else
-      external_file(resource.druid, resource.filename)
-    end
   end
 
   def cocina_file(filename)
