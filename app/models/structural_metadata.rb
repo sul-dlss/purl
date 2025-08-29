@@ -52,45 +52,4 @@ class StructuralMetadata
   def containing_collections
     Array(json['isMemberOf']).map { it.delete_prefix('druid:') }
   end
-
-  def supplementing_resources
-    local_files.select { |f| f.media_file? && f.mimetype == 'text/vtt' }
-  end
-
-  def primary
-    return if local_files.blank?
-    return local_files.first if local_files.length == 1
-
-    return media_file if media_file.present?
-    return image_file if image_file.present?
-
-    pdf_file
-  end
-
-  def media_file
-    local_files.find(&:media_file?)
-  end
-
-  def image_file
-    local_files.find(&:image_file?)
-  end
-
-  def pdf_file
-    @pdf_file ||= local_files.find { |file| file.type == 'document' || file.mimetype == 'application/pdf' }
-  end
-
-  def other_resources
-    return [] unless local_files
-
-    []
-
-    # local_files - [primary, thumbnail_canvas].compact - supplementing_resources
-    # local_files - [primary, thumbnail_canvas].compact - supplementing_resources
-  end
-
-  def thumbnail_canvas
-    return unless media_file
-
-    @thumbnail_canvas ||= image_file
-  end
 end

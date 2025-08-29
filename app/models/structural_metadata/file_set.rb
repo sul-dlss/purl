@@ -35,5 +35,55 @@ class StructuralMetadata
       ['https://cocina.sul.stanford.edu/models/resources/image',
        'https://cocina.sul.stanford.edu/models/resources/page'].include?(type)
     end
+
+    def primary
+      return if files.blank?
+      return files.first if files.length == 1
+
+      return media_file if media_file.present?
+      return image_file if image_file.present?
+
+      pdf_file
+    end
+
+    def audio?
+      type == 'https://cocina.sul.stanford.edu/models/resources/audio'
+    end
+
+    def media_file
+      return nil unless ['https://cocina.sul.stanford.edu/models/resources/video',
+       'https://cocina.sul.stanford.edu/models/resources/audio'].include?(type)
+      
+       files.find{ it.mimetype.start_with?('video/', 'audio/') }
+    end
+
+    def image_file
+      files.find(&:image_file?)
+    end
+
+    def pdf_file
+       return nil unless ['https://cocina.sul.stanford.edu/models/resources/document'].include?(type)
+      
+       files.find{ it.mimetype.start_with?('application/pdf') }
+    end
+
+    def other_resources
+      return [] unless files
+
+      files - [primary, thumbnail_canvas].compact - supplementing_resources
+    end
+
+    def supplementing_resources
+      return [] if media_file.blank?
+
+      files.select { |file| file.mimetype == 'text/vtt' }
+    end
+
+    def thumbnail_canvas
+      return unless media_file
+
+      @thumbnail_canvas ||= image_file
+    end
+
   end
 end

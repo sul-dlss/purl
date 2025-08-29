@@ -74,11 +74,5 @@ class StructuralMetadata
     def image_file?
       mimetype == 'image/jp2' && height.positive? && width.positive?
     end
-
-    def media_file?
-      ['https://cocina.sul.stanford.edu/models/resources/video',
-       'https://cocina.sul.stanford.edu/models/resources/audio'].include?(type) &&
-        mimetype.start_with?('video/', 'audio/')
-    end
   end
 end
