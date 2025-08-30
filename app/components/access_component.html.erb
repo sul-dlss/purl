@@ -1,6 +1,9 @@
 <%= render SectionComponent.new(label: 'Access conditions') do %>
   <dl>
-    <%= render_access_conditions %>
+    <% if license.present? %>
+      <dt>License</dt>
+      <dd><%= license_description %></dd>
+    <% end %>
 
     <% if copyright? %>
       <dt>Copyright</dt>
