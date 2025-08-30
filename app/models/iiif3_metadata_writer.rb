@@ -94,10 +94,10 @@ class Iiif3MetadataWriter
 
   def extract_notes
     values = {}
-    Array(cocina_descriptive['note']).each do
-      key = it['displayLabel'] || it['type']&.capitalize || 'Description'
+    Array(cocina_descriptive['note']).each do |note|
+      key = note['displayLabel'] || note['type']&.capitalize || 'Description'
       values[key] ||= []
-      values[key] += structured_values(it)
+      values[key] += structured_values(note)
     end
     values
   end
@@ -106,8 +106,8 @@ class Iiif3MetadataWriter
   # right not structuredValues aren't getting added to cocina_display.subject_topics or cocina_display.subject_genres
   # this breaks spec/model/iiif3_metadata_writer_spec.rb:514
   def subjects
-    vals = Array(cocina_descriptive['subject']).filter_map do
-      structured_values(it).join(' -- ') if structured_values(it, 'type').intersect?(%w[topic genre])
+    vals = Array(cocina_descriptive['subject']).filter_map do |subject|
+      structured_values(subject).join(' -- ') if structured_values(subject, 'type').intersect?(%w[topic genre])
     end
 
     vals.present? ? [iiif_key_value('Subject', vals)] : []
@@ -122,8 +122,8 @@ class Iiif3MetadataWriter
   def map_coverage_fields
     coverage_fields = Array(cocina_descriptive['form']) + Array(cocina_descriptive['subject'])
     map_fields = { 'map scale' => [], 'map coordinates' => [] }
-    coverage_fields.each do
-      map_fields[it['type']] << it['value'] if map_fields.key?(it['type'])
+    coverage_fields.each do |field|
+      map_fields[field['type']] << field['value'] if map_fields.key?(field['type'])
     end
     map_fields
   end
