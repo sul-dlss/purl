@@ -61,8 +61,8 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
       return nil unless resource.version(:head).ready?
 
       [resource, resource.version(:head)]
-    rescue ResourceRetriever::ResourceNotFound => e
-      Honeybadger.notify(e)
+    rescue ResourceRetriever::ResourceNotFound
+      # The collection is not available, likely because it is "dark"
       nil
     end
   end
