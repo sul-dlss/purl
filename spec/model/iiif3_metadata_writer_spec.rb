@@ -527,6 +527,11 @@ RSpec.describe Iiif3MetadataWriter do
         expect(metadata.find do
           it['label'][:en] == ['Contents']
         end['value'][:en]).to include('Of the leaven of pharisees')
+
+        expect(metadata.find do
+          it['label'][:en] == ['Relation']
+        end['value'][:en]).to eq ['https://stacks.stanford.edu/file/druid:mf281cz1275/MS_296.pdf',
+                                  'https://stacks.stanford.edu/file/druid:tk895wc0796/296.pdf', 'viewer testing']
       end
     end
 
