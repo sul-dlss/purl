@@ -36,7 +36,9 @@ class Iiif3MetadataWriter
   end
 
   def collection
-    collection_title.present? ? [iiif_key_value('Relation', [collection_title])] : []
+    cocina_relations = cocina_display.related_resources.select { |rr| rr.type == 'referenced by' }
+    relations = cocina_relations.map(&:display_title) + [collection_title].compact_blank
+    relations.present? ? [iiif_key_value('Relation', relations)] : []
   end
 
   def contributors
