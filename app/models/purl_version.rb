@@ -37,10 +37,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     @updated_at = value&.to_datetime
   end
 
-  def mods?
-    !!public_xml.mods
-  end
-
   def ready?
     public_xml?
   end
@@ -145,8 +141,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     delegate :display_title, to: :cocina_display
 
     def description
-      return unless mods?
-
       @description ||= begin
         abstract = mods.abstract.detect { |a| a.respond_to? :values }
         if abstract

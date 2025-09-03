@@ -28,11 +28,7 @@ class PurlController < ApplicationController
       end
 
       format.mods do
-        if @version.mods?
-          render xml: @version.public_xml.mods.to_xml
-        else
-          head :not_found
-        end
+        render xml: @version.public_xml.mods.to_xml
       end
 
       format.meta_json do
