@@ -204,6 +204,7 @@ RSpec.describe Iiif3PresentationManifest do
         let(:druid) { 'hj097bm8879' }
 
         it 'generates a correct manifest' do
+          # debugger
           expect(json['label'][:en].first).to start_with 'Carey\'s American Atlas'
           expect(json['thumbnail']).to be_an Array
           expect(json['thumbnail'].size).to eq 1
@@ -235,13 +236,14 @@ RSpec.describe Iiif3PresentationManifest do
 
     context 'with a file object with world access' do
       let(:druid) { 'wm135gp2721' }
-
+      # NOTE: this has the type of id we are expecting 
+      # "https://cocina.sul.stanford.edu/fileSet/wm135gp2721-27313eb4-fb71-423d-9a82-05964f68d39f"
       it 'generates a correct manifest' do
         expect(json['label'][:en].first).to eq 'A Newly Digitised Ice-penetrating Radar Dataset Acquired over the Greenland Ice Sheet in 1971-1979'
         expect(json['items'].length).to eq 1
 
         canvas = json['items'].first
-
+        debugger
         expect(canvas['id']).to eq 'http://test.host/wm135gp2721/iiif/canvas/cocina-fileSet-wm135gp2721-27313eb4-fb71-423d-9a82-05964f68d39f'
         expect(canvas['label'][:en]).to eq ['image']
         expect(canvas['type']).to eq 'Canvas'
