@@ -219,8 +219,7 @@ RSpec.describe PurlVersion do
                                   "filename": "bb737zp0787_00_0002.jp2",
                                   "size": 493809,
                                   "version": 3,
-                                  "hasMimeType": "application/xml",
-                                  "use": "transcription",
+                                  "hasMimeType": "image/jp2",
                                   "hasMessageDigests": [
                                       {
                                           "type": "sha1",
