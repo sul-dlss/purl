@@ -49,7 +49,7 @@ RSpec.describe Iiif3PresentationManifest do
       end
     end
 
-    context 'with location specific, no download files' do
+    context 'with a book that has location specific access, no download files' do
       let(:druid) { 'rx923hn2102' }
 
       it 'does not include renderings, includes login service' do
@@ -307,26 +307,6 @@ RSpec.describe Iiif3PresentationManifest do
       end
     end
 
-    context 'with a 3D object' do
-      let(:druid) { 'bg387kw8222' }
-
-      it 'generates a correct IIIF v3 manifest' do
-        expect(json['label'][:en].first).to start_with 'Department of Anthropology Bone Collection'
-        expect(json['items'].length).to eq 1
-
-        canvas = json['items'].first
-        expect(canvas['items'].length).to eq 1
-        expect(canvas['items'].first['items'].length).to eq 1
-        expect(canvas['height']).not_to be_present
-        expect(canvas['width']).not_to be_present
-
-        obj = canvas['items'].first['items'].first
-        expect(obj['body']['id']).to eq 'https://stacks.stanford.edu/file/bg387kw8222/bg387kw8222_low.glb'
-        expect(obj['body']['format']).to eq 'model/gltf-binary'
-        expect(obj['body']['type']).to eq 'Dataset'
-      end
-    end
-
     context 'with a geo object' do
       let(:druid) { 'cg357zz0321' }
 
@@ -340,7 +320,7 @@ RSpec.describe Iiif3PresentationManifest do
       end
     end
 
-    context 'with a 3D object as obj' do
+    context 'with a 3D object' do
       let(:druid) { 'bg387kw8222' }
 
       it 'only generates a single 3d resource on the canvas' do
