@@ -221,6 +221,8 @@ RSpec.describe 'Displaying the PURL page' do
       visit "/#{druid}/version/3"
       link = page.find('link[rel="alternate"][title="oEmbed Profile"][type="application/json+oembed"]', visible: false)
       expect(link['href']).to eq 'https://embed.stanford.edu/embed.json?url=https%3A%2F%2Fpurl.stanford.edu%2Fzb733jx3137%2Fversion%2F3'
+      link = page.find('link[rel="alternate"][title="IIIF Manifest"]', visible: false)
+      expect(link['href']).to eq 'http://www.example.com/zb733jx3137/iiif/manifest'
     end
   end
 
