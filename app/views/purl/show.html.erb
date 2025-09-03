@@ -36,43 +36,6 @@
   end
 end %>
 
-<div class="row">
-  <div class="col-12">
-    <h1 class="py-2"><%= @version.display_title %></h1>
-  </div>
-</div>
+%>
 
-<% unless @version.withdrawn? %>
-  <% if @version.embeddable? %>
-    <div class="upper-record-metadata row">
-      <div class="col-md-12">
-        <%= render 'embed' %>
-      </div>
-    </div>
-  <% end %>
-
-  <div class="record-metadata row gx-5">
-    <div class="record-sections col-lg-8">
-      <%= render "mods_abstract_contents", mods: @version.mods %>
-      <%= render ModsDescriptionComponent.new(mods: @version.mods) %>
-      <%= render ModsContributorsComponent.new(mods: @version.mods) %>
-      <%= render SubjectComponent.new(mods: @version.mods) %>
-      <%= render BibliographicComponent.new(mods: @version.mods) %>
-    </div>
-    <div class="record-sections col-lg-4">
-      <%= render AccessComponent.new(version: @version) %>
-      <%= render 'mods_citation', mods: @version.mods %>
-      <%= render "collection", version: @version %>
-      <%= render "collection_items", version: @version if @purl.released_to_searchworks? %>
-      <%= render VersionsComponent.new(purl: @purl, version: @version) %>
-      <%= render "mods_contact", mods: @version.mods %>
-      <%= render FindItComponent.new(document: @purl, version: @version) %>
-
-      <% if @version.embeddable? || @version.show_download_metrics? || @version.doi.present? %>
-        <turbo-frame id="metrics-frame" src="<%= purl_metrics_path @purl %>">
-          <p>Loading usage metrics...</p>
-        </turbo-frame>
-      <% end %>
-    </div>
-  </div>
-<% end %>
+<%= render ShowComponent.new(purl: @purl, version: @version) %>

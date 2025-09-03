@@ -1,0 +1,7 @@
+    <div class="record-sections col-lg-8">
+      <%= render "mods_abstract_contents", mods: %>
+      <%= render ModsDescriptionComponent.new(mods:) %>
+      <%= render ModsContributorsComponent.new(mods:) %>
+      <%= render SubjectComponent.new(mods:) %>
+      <%= render BibliographicComponent.new(mods:) %>
+    </div>
