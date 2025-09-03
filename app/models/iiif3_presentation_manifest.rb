@@ -93,7 +93,8 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       build_image_canvases(manifest)
     else
       content_metadata.grouped_resources.each do |resource_group|
-        manifest.items << canvas_for_resource(resource_group)
+        canvas = canvas_for_resource(resource_group)
+        manifest.items << canvas if canvas
       end
     end
   end
@@ -135,6 +136,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def canvas_for_resource(resource_group)
     resource = resource(resource_group)
+    return unless resource # Fileset has no displayable files
 
     canv = IIIF::V3::Presentation::Canvas.new
     canv['id'] = canvas_url(resource_id: resource.id)

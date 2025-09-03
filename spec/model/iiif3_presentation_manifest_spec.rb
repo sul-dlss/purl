@@ -233,50 +233,52 @@ RSpec.describe Iiif3PresentationManifest do
       end
     end
 
-    context 'with a file object with world access' do
-      let(:druid) { 'wm135gp2721' }
+    context 'with a file object' do
+      context 'with world access' do
+        let(:druid) { 'wm135gp2721' }
 
-      it 'generates a correct manifest' do
-        expect(json['label'][:en].first).to eq 'A Newly Digitised Ice-penetrating Radar Dataset Acquired over the Greenland Ice Sheet in 1971-1979'
-        expect(json['items'].length).to eq 1
+        it 'generates a correct manifest' do
+          expect(json['label'][:en].first).to eq 'A Newly Digitised Ice-penetrating Radar Dataset Acquired over the Greenland Ice Sheet in 1971-1979'
+          expect(json['items'].length).to eq 1
 
-        canvas = json['items'].first
+          canvas = json['items'].first
 
-        expect(canvas['id']).to eq 'http://test.host/wm135gp2721/iiif/canvas/cocina-fileSet-wm135gp2721-27313eb4-fb71-423d-9a82-05964f68d39f'
-        expect(canvas['label'][:en]).to eq ['image']
-        expect(canvas['type']).to eq 'Canvas'
+          expect(canvas['id']).to eq 'http://test.host/wm135gp2721/iiif/canvas/cocina-fileSet-wm135gp2721-27313eb4-fb71-423d-9a82-05964f68d39f'
+          expect(canvas['label'][:en]).to eq ['image']
+          expect(canvas['type']).to eq 'Canvas'
+        end
       end
-    end
 
-    context 'with a Stanford-only file object' do
-      let(:druid) { 'bb253gh8060' }
+      context 'with a Stanford-only access' do
+        let(:druid) { 'bb253gh8060' }
 
-      it 'generates a manifest with probe service' do
-        expect(json['label'][:en].first).to eq 'Agenda'
-        expect(json['items'].length).to eq 1
+        it 'generates a manifest with probe service' do
+          expect(json['label'][:en].first).to eq 'Agenda'
+          expect(json['items'].length).to eq 1
 
-        canvas = json['items'].first
+          canvas = json['items'].first
 
-        expect(canvas['id']).to eq 'http://test.host/bb253gh8060/iiif/canvas/cocina-fileSet-bb253gh8060-bb253gh8060_1'
-        expect(canvas['label'][:en]).to eq ['File 1']
-        expect(canvas['type']).to eq 'Canvas'
+          expect(canvas['id']).to eq 'http://test.host/bb253gh8060/iiif/canvas/cocina-fileSet-bb253gh8060-bb253gh8060_1'
+          expect(canvas['label'][:en]).to eq ['File 1']
+          expect(canvas['type']).to eq 'Canvas'
 
-        expect(canvas['items'].length).to eq 1
-        expect(canvas['items'].first['items'].length).to eq 1
-        expect(canvas['height']).not_to be_present
-        expect(canvas['width']).not_to be_present
+          expect(canvas['items'].length).to eq 1
+          expect(canvas['items'].first['items'].length).to eq 1
+          expect(canvas['height']).not_to be_present
+          expect(canvas['width']).not_to be_present
 
-        pdf = canvas['items'].first['items'].first
-        body = pdf.fetch('body')
-        expect(body['id']).to eq 'https://stacks.stanford.edu/file/bb253gh8060/SC0193_Agenda_6381_2010-10-07_001.pdf'
-        expect(body['format']).to eq 'application/pdf'
-        expect(body['type']).to eq 'Text'
+          pdf = canvas['items'].first['items'].first
+          body = pdf.fetch('body')
+          expect(body['id']).to eq 'https://stacks.stanford.edu/file/bb253gh8060/SC0193_Agenda_6381_2010-10-07_001.pdf'
+          expect(body['format']).to eq 'application/pdf'
+          expect(body['type']).to eq 'Text'
 
-        probe_service = body.fetch('service').first
-        expect(probe_service['type']).to eq 'AuthProbeService2'
-        expect(probe_service['id']).to eq 'https://stacks.stanford.edu/iiif/auth/v2/probe?id=https%3A%2F%2Fstacks.stanford.edu%2Ffile%2Fbb253gh8060%2FSC0193_Agenda_6381_2010-10-07_001.pdf'
-        expect(probe_service['service']).to include hash_including 'type' => 'AuthAccessService2'
-        expect(probe_service.dig('service', 0, 'service')).to include hash_including 'type' => 'AuthAccessTokenService2'
+          probe_service = body.fetch('service').first
+          expect(probe_service['type']).to eq 'AuthProbeService2'
+          expect(probe_service['id']).to eq 'https://stacks.stanford.edu/iiif/auth/v2/probe?id=https%3A%2F%2Fstacks.stanford.edu%2Ffile%2Fbb253gh8060%2FSC0193_Agenda_6381_2010-10-07_001.pdf'
+          expect(probe_service['service']).to include hash_including 'type' => 'AuthAccessService2'
+          expect(probe_service.dig('service', 0, 'service')).to include hash_including 'type' => 'AuthAccessTokenService2'
+        end
       end
     end
 
@@ -354,40 +356,57 @@ RSpec.describe Iiif3PresentationManifest do
       end
     end
 
-    context 'with a location restricted media' do
-      let(:druid) { 'yy816tv6021' }
+    context 'with a media object' do
+      context 'with location restrictions' do
+        let(:druid) { 'yy816tv6021' }
 
-      it 'generates a IIIF v3 manifest that includes location authentication information' do
-        external_interaction_service = json['items'].first['items'].first['items'].first['body']['service'].first['service'].first
-        expect(external_interaction_service['profile']).to eq 'active'
-        expect(external_interaction_service['label']['en'].first).to eq 'Restricted content cannot be accessed from your location'
-        expect(external_interaction_service['service'].first['id']).to eq "#{Settings.stacks.url}/iiif/auth/v2/token"
-        expect(external_interaction_service['service'].first['type']).to eq 'AuthAccessTokenService2'
+        it 'generates a IIIF v3 manifest that includes location authentication information' do
+          external_interaction_service = json['items'].first['items'].first['items'].first['body']['service'].first['service'].first
+          expect(external_interaction_service['profile']).to eq 'active'
+          expect(external_interaction_service['label']['en'].first).to eq 'Restricted content cannot be accessed from your location'
+          expect(external_interaction_service['service'].first['id']).to eq "#{Settings.stacks.url}/iiif/auth/v2/token"
+          expect(external_interaction_service['service'].first['type']).to eq 'AuthAccessTokenService2'
+        end
       end
-    end
 
-    context 'with a video object with captions' do
-      let(:druid) { 'bd699ky6829' }
+      context 'with captions' do
+        let(:druid) { 'bd699ky6829' }
 
-      it 'includes a placeholder canvas and caption annotations' do
-        canvas = json.dig('items', 0)
+        it 'includes a placeholder canvas and caption annotations' do
+          canvas = json.dig('items', 0)
 
-        expect(canvas.dig('items', 0, 'items', 0, 'body')).to include('type' => 'Video')
-        expect(canvas.dig('placeholderCanvas', 'items', 0, 'items', 0, 'body')).to include(
-          'type' => 'Image',
-          'service' => include(hash_including('type' => 'ImageService2'))
-        )
-        expect(canvas.dig('annotations', 0, 'items', 0)).to include(
-          'motivation' => 'supplementing',
-          'body' => hash_including(
-            'type' => 'Text',
-            'format' => 'text/vtt'
+          expect(canvas.dig('items', 0, 'items', 0, 'body')).to include('type' => 'Video')
+          expect(canvas.dig('placeholderCanvas', 'items', 0, 'items', 0, 'body')).to include(
+            'type' => 'Image',
+            'service' => include(hash_including('type' => 'ImageService2'))
           )
-        )
+          expect(canvas.dig('annotations', 0, 'items', 0)).to include(
+            'motivation' => 'supplementing',
+            'body' => hash_including(
+              'type' => 'Text',
+              'format' => 'text/vtt'
+            )
+          )
+        end
+      end
+
+      context 'with a fileset that has no primary file (has a disk image)' do
+        let(:druid) { 'fj935vg7746' }
+
+        it "skips making a canvas when we can't display the file" do
+          expect(json['label'][:en].first).to eq 'شيرين'
+          expect(json['items'].length).to eq 2
+
+          canvas = json['items'].first
+
+          expect(canvas['id']).to eq 'http://test.host/fj935vg7746/iiif/canvas/cocina-fileSet-fj935vg7746-fj935vg7746_2'
+          expect(canvas['label'][:en]).to eq ['filelist']
+          expect(canvas['type']).to eq 'Canvas'
+        end
       end
     end
 
-    context 'with an object that has coordinates' do
+    context 'with a map that has coordinates' do
       let(:druid) { 'rp193xx6845' }
 
       it 'generates a correct manifest with navPlace' do
