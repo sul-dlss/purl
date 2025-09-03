@@ -1,0 +1,10 @@
+<%= render SectionComponent.new(label: 'Collection') do %>
+  <% collections.each do |collection_document, version| %>
+    <div class="mb-3">
+      <p class="mb-0"><%= version.display_title %></p>
+      <% if collection_document.released_to_searchworks? %>
+        <%= link_to('View other items in this collection in SearchWorks', version.collection_items_link, class: 'su-underline') %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
