@@ -290,9 +290,9 @@ class IiifPresentationManifest
     return unless thumbnail_image
 
     thumb = IIIF::Presentation::ImageResource.new
-    thumb['@id'] = "#{thumbnail_base_uri}/full/!400,400/0/default.jpg"
+    thumb['@id'] = purl_version.representative_thumbnail
     thumb.format = 'image/jpeg'
-    thumb.service = iiif_service(thumbnail_base_uri)
+    thumb.service = iiif_service(purl_version.thumbnail_base_uri)
     if thumbnail_image.height >= thumbnail_image.width
       thumb.height = 400
       thumb.width = ((400.0 * thumbnail_image.width) / thumbnail_image.height).round
@@ -314,13 +314,9 @@ class IiifPresentationManifest
     }.compact
   end
 
-  # If not available, use the first image to create a thumbnail on the manifest
+  # @return [StructuralMetadata::File]
   def thumbnail_image
-    @thumbnail_image ||= page_images.detect { |file| thumbnail?(file) } || page_images.first
-  end
-
-  def thumbnail_base_uri
-    @thumbnail_base_uri ||= (stacks_iiif_base_url(thumbnail_image.druid, thumbnail_image.filename) if thumbnail_image)
+    @thumbnail_image ||= purl_version.thumbnail
   end
 
   def thumbnail?(file)

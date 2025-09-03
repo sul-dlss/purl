@@ -72,7 +72,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   end
 
   def structural_metadata
-    @structural_metadata ||= StructuralMetadata.new(cocina['structural'])
+    @structural_metadata ||= StructuralMetadata.new(druid:, json: cocina['structural'])
   end
 
   delegate :containing_collections, to: :structural_metadata
@@ -211,11 +211,20 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     end
 
     def representative_thumbnail?
-      representative_thumbnail.present?
+      thumbnail.present?
     end
 
     def representative_thumbnail
-      "#{iiif_manifest.thumbnail_base_uri}/full/!400,400/0/default.jpg" if iiif_manifest.thumbnail_base_uri.present?
+      "#{thumbnail_base_uri}/full/!400,400/0/default.jpg" if thumbnail
+    end
+
+    def thumbnail_base_uri
+      thumbnail.stacks_iiif_base_uri
+    end
+
+    # @return [StructuralMetadata::File] the thumbnail file
+    def thumbnail
+      @thumbnail ||= ThumbnailService.new(structural_metadata).thumb
     end
 
     # @return [String,nil] DOI (with https://doi.org/ prefix) if present
