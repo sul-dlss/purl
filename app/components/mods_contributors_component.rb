@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class ModsContributorsComponent < ViewComponent::Base
-  def initialize(document:)
-    @document = document
+  def initialize(mods:)
+    @mods = mods
     super()
   end
 
-  attr_reader :document
+  attr_reader :mods
 end

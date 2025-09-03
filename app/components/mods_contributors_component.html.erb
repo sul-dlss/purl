@@ -1,4 +1,4 @@
-<% fields = document.mods.name %>
+<% fields = mods.name %>
 <% if fields.present? %>
   <% label_id = "section-creators" %>
   <%= render SectionComponent.new(label: 'Creators/Contributors', label_id: label_id) do %>

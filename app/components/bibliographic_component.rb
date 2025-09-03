@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
 class BibliographicComponent < ViewComponent::Base
-  def initialize(document:)
-    @document = document
+  def initialize(mods:)
+    @mods = mods
     super()
   end
 
-  attr_reader :document
+  attr_reader :mods
 
-  delegate :mods, to: :document
   delegate :identifier, :location, to: :mods
 
   def render?

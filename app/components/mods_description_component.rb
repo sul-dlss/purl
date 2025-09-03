@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 class ModsDescriptionComponent < ViewComponent::Base
-  def initialize(document:)
-    @document = document
+  def initialize(mods:)
+    @mods = mods
     super()
   end
 
-  attr_reader :document
+  attr_reader :mods
 
   def label_id
     'section-description'
@@ -19,26 +19,26 @@ class ModsDescriptionComponent < ViewComponent::Base
   # Ordered list of fields and delimiters to display
   def field_map # rubocop:disable Metrics/AbcSize
     @field_map ||= [
-      [document.mods.mods_field(:title).fields.select { |x| x.label =~ /^Alternative Title/i }, DL],
-      [document.mods.mods_field(:title).fields.reject { |x| x.label =~ /^(Alternative )?Title/i }, COMMA],
-      [document.mods.resourceType, COMMA],
-      [document.mods.form, SEMICOLON],
-      [document.mods.extent, COMMA],
-      [document.mods.place, DL],
-      [document.mods.publisher, COMMA],
-      [document.mods.dateCreated, SEMICOLON],
-      [document.mods.dateCaptured, SEMICOLON],
-      [document.mods.dateValid, SEMICOLON],
-      [document.mods.dateModified, SEMICOLON],
-      [document.mods.dateOther, SEMICOLON],
-      [document.mods.copyrightDate, SEMICOLON],
-      [document.mods.dateIssued, SEMICOLON],
-      [document.mods.issuance, COMMA],
-      [document.mods.frequency, COMMA],
-      [document.mods.edition, COMMA],
-      [document.mods.language, SEMICOLON],
-      [document.mods.description, COMMA],
-      [document.mods.cartographics, COMMA]
+      [mods.mods_field(:title).fields.select { |x| x.label =~ /^Alternative Title/i }, DL],
+      [mods.mods_field(:title).fields.reject { |x| x.label =~ /^(Alternative )?Title/i }, COMMA],
+      [mods.resourceType, COMMA],
+      [mods.form, SEMICOLON],
+      [mods.extent, COMMA],
+      [mods.place, DL],
+      [mods.publisher, COMMA],
+      [mods.dateCreated, SEMICOLON],
+      [mods.dateCaptured, SEMICOLON],
+      [mods.dateValid, SEMICOLON],
+      [mods.dateModified, SEMICOLON],
+      [mods.dateOther, SEMICOLON],
+      [mods.copyrightDate, SEMICOLON],
+      [mods.dateIssued, SEMICOLON],
+      [mods.issuance, COMMA],
+      [mods.frequency, COMMA],
+      [mods.edition, COMMA],
+      [mods.language, SEMICOLON],
+      [mods.description, COMMA],
+      [mods.cartographics, COMMA]
     ].select { |field, _| field.present? }
   end
 
