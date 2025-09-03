@@ -2,7 +2,7 @@
       <%= render AccessComponent.new(version: @version) %>
       <%= render 'purl/mods_citation', mods: @version.mods %>
       <%= render "purl/collection", version: @version %>
-      <%= render "purl/collection_items", version: @version if @purl.released_to_searchworks? %>
+      <%= render CollectionItemsComponent.new(version:) if released_to_searchworks? %>
       <%= render VersionsComponent.new(purl: @purl, version: @version) %>
       <%= render "purl/mods_contact", mods: @version.mods %>
       <%= render FindItComponent.new(document: @purl, version: @version) %>
