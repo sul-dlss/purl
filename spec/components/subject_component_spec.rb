@@ -12,10 +12,10 @@ RSpec.describe SubjectComponent, type: :component do
                     resource_retriever: VersionedResourceRetriever.new(druid:, version_id: '1'))
   end
 
-  before { render_inline(described_class.new(document: purl_version)) }
+  before { render_inline(described_class.new(mods: purl_version.mods)) }
 
   describe 'subjects' do
-    let(:component) { described_class.new(document: purl_version) }
+    let(:component) { described_class.new(mods: purl_version.mods) }
 
     describe '#expand_subject_name' do
       subject { component.expand_subject_name(mods_subjects) }

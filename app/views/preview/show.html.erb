@@ -14,12 +14,12 @@
 
 <div class="record-metadata row">
   <div class="record-sections col-md-8">
-    <%= render AccessComponent.new(document: @purl) %>
-    <%= render "mods_abstract_contents", document: @purl %>
-    <%= render ModsDescriptionComponent.new(document: @purl) %>
-    <%= render ModsContributorsComponent.new(document: @purl) %>
-    <%= render SubjectComponent.new(document: @purl) %>
-    <%= render BibliographicComponent.new(document: @purl) %>
-    <%= render 'mods_citation', document: @purl %>
+    <%= render AccessComponent.new(version: @purl) %>
+    <%= render "mods_abstract_contents", mods: @purl.mods %>
+    <%= render ModsDescriptionComponent.new(mods: @purl.mods) %>
+    <%= render ModsContributorsComponent.new(mods: @purl.mods) %>
+    <%= render SubjectComponent.new(mods: @purl.mods) %>
+    <%= render BibliographicComponent.new(mods: @purl.mods) %>
+    <%= render 'mods_citation', mods: @purl.mods %>
   </div>
 </div>

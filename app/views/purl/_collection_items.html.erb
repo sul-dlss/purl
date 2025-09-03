@@ -1,5 +1,5 @@
-<% if document.collection? %>
+<% if version.collection? %>
   <%= render SectionComponent.new(label: 'Items in collection') do %>
-    <%= link_to 'View items in this collection in SearchWorks', document.collection_items_link, class: 'su-underline' %>
+    <%= link_to 'View items in this collection in SearchWorks', version.collection_items_link, class: 'su-underline' %>
   <% end %>
 <% end %>

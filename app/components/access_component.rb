@@ -1,25 +1,25 @@
 # frozen_string_literal: true
 
 class AccessComponent < ViewComponent::Base
-  def initialize(document:)
-    @document = document
+  def initialize(version:)
+    @version = version
     super()
   end
 
-  attr_reader :document
+  attr_reader :version
 
-  delegate :mods, to: :document
+  delegate :mods, to: :version
 
   def access_conditions
     mods&.accessCondition
   end
 
   def copyright?
-    document.copyright? && (mods.blank? || access_conditions.none? { |x| x.label =~ /Copyright/i })
+    version.copyright? && (mods.blank? || access_conditions.none? { |x| x.label =~ /Copyright/i })
   end
 
   def use_and_reproduction?
-    document.use_and_reproduction? && (mods.blank? || access_conditions.none? { |x| x.label =~ /Use and Reproduction/i })
+    version.use_and_reproduction? && (mods.blank? || access_conditions.none? { |x| x.label =~ /Use and Reproduction/i })
   end
 
   def render_access_conditions

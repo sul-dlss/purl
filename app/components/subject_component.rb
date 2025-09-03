@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
 class SubjectComponent < ViewComponent::Base
-  def initialize(document:)
-    @document = document
+  def initialize(mods:)
+    @mods = mods
     super()
   end
 
-  attr_reader :document
+  attr_reader :mods
 
-  delegate :mods, to: :document
   delegate :genre, :subject, to: :mods
 
   def render?

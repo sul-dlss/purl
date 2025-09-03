@@ -54,20 +54,20 @@ end
   <div class="record-metadata row gx-5">
     <div class="record-sections col-lg-8">
       <% if @version.mods? %>
-        <%= render "mods_abstract_contents", document: @version %>
-        <%= render ModsDescriptionComponent.new(document: @version) %>
-        <%= render ModsContributorsComponent.new(document: @version) %>
-        <%= render SubjectComponent.new(document: @version) %>
-        <%= render BibliographicComponent.new(document: @version) %>
+        <%= render "mods_abstract_contents", mods: @version.mods %>
+        <%= render ModsDescriptionComponent.new(mods: @version.mods) %>
+        <%= render ModsContributorsComponent.new(mods: @version.mods) %>
+        <%= render SubjectComponent.new(mods: @version.mods) %>
+        <%= render BibliographicComponent.new(mods: @version.mods) %>
       <% end %>
     </div>
     <div class="record-sections col-lg-4">
-      <%= render AccessComponent.new(document: @version) %>
-      <%= render 'mods_citation', document: @version %>
-      <%= render "collection", document: @version %>
-      <%= render "collection_items", document: @version if @purl.released_to_searchworks? %>
+      <%= render AccessComponent.new(version: @version) %>
+      <%= render 'mods_citation', mods: @version.mods %>
+      <%= render "collection", version: @version %>
+      <%= render "collection_items", version: @version if @purl.released_to_searchworks? %>
       <%= render VersionsComponent.new(purl: @purl, version: @version) %>
-      <%= render "mods_contact", document: @version %>
+      <%= render "mods_contact", mods: @version.mods %>
       <%= render FindItComponent.new(document: @purl, version: @version) %>
 
       <% if @version.embeddable? || @version.show_download_metrics? || @version.doi.present? %>

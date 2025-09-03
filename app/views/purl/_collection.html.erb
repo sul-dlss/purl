@@ -1,6 +1,6 @@
-<% if document.containing_purl_collections.present? %>
+<% if version.containing_purl_collections.present? %>
   <%= render SectionComponent.new(label: 'Collection') do %>
-    <% document.containing_purl_collections.each do |collection_document, version| %>
+    <% version.containing_purl_collections.each do |collection_document, version| %>
       <div class="mb-3">
         <p class="mb-0"><%= version.display_title %></p>
         <% if collection_document.released_to_searchworks? %>
