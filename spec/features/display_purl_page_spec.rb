@@ -3,11 +3,13 @@
 require 'rails_helper'
 
 RSpec.describe 'Displaying the PURL page' do
-  context 'with a book' do
+  context 'with a book that is not crawlable' do
     let(:druid) { 'bb737zp0787' }
 
-    it 'displays the page' do
+    it 'displays the page including a noindex meta tag' do
       visit "/#{druid}"
+
+      expect(page).to have_css 'meta[name="robots"][content="noindex"]', visible: :hidden
       expect(page).to have_content 'The curate of Cumberworth ; and The vicar of Roost : tales'
       expect(page).to have_metadata_section 'Access conditions'
       expect(page).to have_metadata_section 'Description'
@@ -35,12 +37,14 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'with an etd' do
+  context 'with an etd that is crawlable' do
     let(:druid) { 'nd387jf5675' }
 
-    it 'displays the page' do
+    it 'displays the page without a noindex meta tag' do
       visit "/#{druid}"
       expect(page).to have_content 'Invariance for perceptual recognition through deep learning'
+      expect(page).to have_no_css 'meta[name="robots"][content="noindex"]', visible: :hidden
+
       expect(page).to have_metadata_section 'Access conditions'
       expect(page).to have_metadata_section 'Description'
       expect(page).to have_metadata_section 'Contributors'
@@ -72,7 +76,7 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'with an item released to searchworks' do
+  context 'with an image that is released to searchworks' do
     let(:druid) { 'cp088pb1682' }
 
     it 'displays the page' do
@@ -92,7 +96,7 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'with an item that is part of collection not released to searchworks' do
+  context 'with an book that is part of collection not released to searchworks' do
     let(:druid) { 'cd027gx5097' }
 
     it 'lists the collection name and does not link to items in collection' do
@@ -102,7 +106,7 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'with an item that has a DOI' do
+  context 'with a file item that has a DOI' do
     let(:druid) { 'wm135gp2721' }
 
     it 'includes altmetrics' do
@@ -116,7 +120,7 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'with an item that has an ORCID for some contributors' do
+  context 'with a file item that has an ORCID for some contributors' do
     let(:druid) { 'wm135gp2721' }
 
     it 'adds ORCID links' do
@@ -130,25 +134,6 @@ RSpec.describe 'Displaying the PURL page' do
       icons = page.all('img[alt="ORCiD icon"]')
       expect(icons.size).to eq 3
       icons.each { |icon| expect(icon['src']).to eq 'https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png' }
-    end
-  end
-
-  context 'with an item that is not crawlable' do
-    let(:druid) { 'bb000br0025' }
-
-    it 'includes noindex meta tag' do
-      visit "/#{druid}"
-      expect(page).to have_css 'meta[name="robots"][content="noindex"]', visible: :hidden
-    end
-  end
-
-  context 'with an item that is crawlable' do
-    let(:druid) { 'nd387jf5675' }
-
-    it 'excludes noindex meta tag' do
-      visit "/#{druid}"
-      expect(page).to have_content 'Invariance for perceptual recognition through deep learning'
-      expect(page).to have_no_css 'meta[name="robots"][content="noindex"]', visible: :hidden
     end
   end
 
