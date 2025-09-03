@@ -8,10 +8,6 @@ class PreviewResource
 
   attr_reader :mods
 
-  def mods?
-    true
-  end
-
   def title
     Array.wrap(@mods.title).join(' -- ')
   end

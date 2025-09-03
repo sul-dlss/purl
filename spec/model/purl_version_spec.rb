@@ -60,6 +60,8 @@ RSpec.describe PurlVersion do
 
   describe 'resource methods' do
     describe '#mods' do
+      subject(:mods) { instance.mods }
+
       let(:body) do
         <<-XML
           <?xml version="1.0" encoding="UTF-8"?>
@@ -82,7 +84,7 @@ RSpec.describe PurlVersion do
       end
 
       it 'checks if the request succeeded' do
-        expect(instance).to be_mods
+        expect(mods).to be_present
       end
     end
 
