@@ -81,6 +81,16 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     }
   end
 
+  def canvas(resource_id:)
+    fileset = page_image_filesets.find { |fileset| fileset.cocina_id == resource_id }
+    canvas_for_fileset(fileset) if fileset
+  end
+
+  def annotation(annotation_id:)
+    fileset = page_image_filesets.find { |fileset| fileset.cocina_id == annotation_id }
+    annotation_for_resource(fileset.primary) if fileset
+  end
+
   def build_canvases(manifest)
     # for each resource sequence (SDR term), create a canvas
     if object? || geo?
@@ -88,29 +98,39 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       # We don't use the canvases for the file viewer and it slows down the metadata viewer when there are a lot of files
       # IIIF v3 requires Manifests to have at least one canvas. https://iiif.io/api/presentation/3.0/#34-structural-properties
       fileset = file_sets.first
-      manifest.items << canvas_for_fileset(fileset)
+      manifest.items << canvas_for_fileset(fileset, file: fileset.files.first)
     elsif book? || image? || map?
       build_image_canvases(manifest)
     else
-      file_sets.each do |fs|
-        # Our viewer can only handle this type of file for 3d objects
-        next if three_d? && fs.type != 'https://cocina.sul.stanford.edu/models/resources/3d'
-        manifest.items << canvas_for_fileset(fs)
-      end
+      build_non_image_canvases(manifest)
     end
 
     add_virtual_object_canvases(manifest)
   end
 
+  def build_non_image_canvases(manifest)
+    file_sets.each do |fs|
+      # Sul-embed expects only the files with type 3d for the manifest
+      # model-viewer only supports glTF/GLB 3D models (in cocina type == 3d)
+      next if three_d? && fs.type != 'https://cocina.sul.stanford.edu/models/resources/3d'
+
+      canvas = canvas_for_fileset(fs)
+      manifest.items << canvas if canvas
+    end
+  end
+
+  # Cocina only lists druids for collection objects, not filesets
+  # We need to go grab the PurlResource for the druid
+  # It seems like we are only doing this for type images. I am not sure why
   def add_virtual_object_canvases(manifest)
     # For each valid virtual object image, create a canvas for its thumbnail
-    structural_metadata.virtual_object_members&.each do |member_druid|
+    structural_metadata.members&.each do |member_druid|
       purl_version = PurlResource.find(member_druid.delete_prefix('druid:')).version(:head)
       # We are using .thumbail here to get the first image in the object
-      # thumbnail_file = purl_version.structural_metadata.thumbnail
+      thumbnail_fs = purl_version.thumbnail_service.thumb_fs
       # Overwrite default label for virtual objects
-      thumbnail_file.fileset_label = purl_version.cocina['label']
-      manifest.items << canvas_for_file(thumbnail_file)
+      thumbnail_fs.files.first.fileset_label = purl_version.cocina['label']
+      manifest.items << canvas_for_fileset(thumbnail_fs)
     rescue ResourceRetriever::ResourceNotFound
       Honeybadger.notify('Error occurred retrieving virtual object', context: { druid: member_druid })
     end
@@ -119,7 +139,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   def build_image_canvases(manifest)
     file_sets.each do |fs|
       file = fs.primary
-      
+
       if file.image_file? && fs.page_image?
         manifest.items << canvas_for_fileset(fs) if deliverable_file?(file)
       elsif downloadable_file?(file)
@@ -132,17 +152,14 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     [copyright || 'Provided by the Stanford University Libraries'].flatten
   end
 
-  def annotation_page(annotation_page_id:)
-    selected_resource = resources.find { |resource| resource.id == annotation_page_id }
-    # selected_resource = local_files.find { |file| file.id == annotation_page_id }
-
-    annotation_page_for_resource(selected_resource) if selected_resource
+  def annotation_page(fileset_id:)
+    selected_resource = file_sets.find { |fileset| fileset.cocina_id == fileset_id }
+    annotation_page_for_file(selected_resource.image_file) if selected_resource
   end
 
-  def canvas_for_fileset(fileset)
-    file = fileset.primary || fileset.files.first
+  def canvas_for_fileset(fileset, file: fileset.primary)
     return unless file
-    
+
     canv = IIIF::V3::Presentation::Canvas.new
     canv['id'] = canvas_url(resource_id: file.fileset_id)
     canv.label = {
@@ -160,10 +177,10 @@ class Iiif3PresentationManifest < IiifPresentationManifest
         ).to_ordered_hash]
       end
     end
-    canv.items << annotation_page_for_resource(file)
+    canv.items << annotation_page_for_file(file)
 
-    thumbnail_canvas = thumbnail_canvas_for_file_group(fileset)
     if fileset.files.any?
+      thumbnail_canvas = thumbnail_canvas_for_file_group(fileset)
       canvas_type = fileset.audio? ? 'accompanyingCanvas' : 'placeholderCanvas'
       canv[canvas_type] = thumbnail_canvas
 
@@ -176,20 +193,18 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   end
 
   def thumbnail_canvas_for_file_group(fileset)
-    return unless fileset.media_file && structural_metadata.thumbnail
-
-    thumbnail_file = structural_metadata.thumbnail
+    return unless fileset.media_file && thumbnail_image
 
     thumbnail_canvas = IIIF::V3::Presentation::Canvas.new
-    thumbnail_canvas['id'] = canvas_url(resource_id: thumbnail_file.filename)
-    thumbnail_canvas.label = { en: [thumbnail_file.label.presence || 'image'] }
+    thumbnail_canvas['id'] = canvas_url(resource_id: thumbnail_image.filename)
+    thumbnail_canvas.label = { en: [thumbnail_image.label.presence || 'image'] }
 
-    if thumbnail_file.image_file?
-      thumbnail_canvas.height = thumbnail_file.height
-      thumbnail_canvas.width = thumbnail_file.width
+    if thumbnail_image.image_file?
+      thumbnail_canvas.height = thumbnail_image.height
+      thumbnail_canvas.width = thumbnail_image.width
     end
 
-    thumbnail_canvas.items << annotation_page_for_resource(thumbnail_file)
+    thumbnail_canvas.items << annotation_page_for_file(thumbnail_image)
     thumbnail_canvas
   end
 
@@ -221,7 +236,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     end
   end
 
-  def annotation_page_for_resource(resource)
+  def annotation_page_for_file(resource)
     anno_page = IIIF::V3::Presentation::AnnotationPage.new
     anno_page['id'] = annotation_page_url(resource_id: resource.id)
     anno_page.items << annotation_for_resource(resource)

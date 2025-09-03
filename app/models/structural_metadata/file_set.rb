@@ -21,16 +21,19 @@ class StructuralMetadata
       json['label']
     end
 
-    # TODO: actually change the test to use existing id, delete this method
+    # Most common externalIdentifier formatation is: https://cocina.sul.stanford.edu/fileSet/bc854fy5899-bc854fy5899_112 (uri druid-filesetid)
+    # However non-uri fileset_id exists like hx163dc5225_31, rx923hn2102_35, fj935vg7746_1
+    # There are also some malformed uuids, there is a ticket https://github.com/sul-dlss/purl/issues/1454 for this issue
+    # This cleans the externalIdentifier so it is the same
     def cocina_id
-      # TODO: use sub instead
-      # resource['id'].sub('https://cocina.sul.stanford.edu/fileSet/', 'cocina-fileSet-')
-      path = URI.parse(id).path.delete_prefix('/')
-      "cocina-#{path.tr('/', '-')}"
+      fileset_id = id.split('/')[-1]
+      return "cocina-fileSet-#{druid}-#{fileset_id}" unless fileset_id.start_with?("#{druid}-")
+
+      "cocina-fileSet-#{fileset_id}"
     end
 
     def files
-      @files ||= Array(json['structural']['contains']).map { File.new(druid: druid, json: it) }
+      @files ||= Array(json['structural']['contains']).map { File.new(druid: druid, json: it, fileset: self) }
     end
 
     def page_image?
@@ -54,9 +57,9 @@ class StructuralMetadata
 
     def media_file
       return nil unless ['https://cocina.sul.stanford.edu/models/resources/video',
-       'https://cocina.sul.stanford.edu/models/resources/audio'].include?(type)
-      
-       files.find{ it.mimetype.start_with?('video/', 'audio/') }
+                         'https://cocina.sul.stanford.edu/models/resources/audio'].include?(type)
+
+      files.find { it.mimetype.start_with?('video/', 'audio/') }
     end
 
     def image_file
@@ -64,15 +67,15 @@ class StructuralMetadata
     end
 
     def pdf_file
-       return nil unless ['https://cocina.sul.stanford.edu/models/resources/document'].include?(type)
-      
-       files.find{ it.mimetype.start_with?('application/pdf') }
+      return nil unless ['https://cocina.sul.stanford.edu/models/resources/document'].include?(type)
+
+      files.find { it.mimetype.start_with?('application/pdf') }
     end
 
     def other_resources
       return [] unless files
-  
-      files - [primary, thumbnail_canvas].compact - supplementing_resources
+
+      files - [primary, media_thumbnail].compact - supplementing_resources
     end
 
     def supplementing_resources
@@ -81,11 +84,10 @@ class StructuralMetadata
       files.select { |file| file.mimetype == 'text/vtt' }
     end
 
-    def thumbnail_canvas
+    def media_thumbnail
       return unless media_file
 
-      @thumbnail_canvas ||= image_file
+      @media_thumbnail ||= image_file
     end
-
   end
 end

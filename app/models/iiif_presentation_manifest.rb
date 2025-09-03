@@ -34,10 +34,10 @@ class IiifPresentationManifest
     page_image_filesets.flat_map(&:files).select { |file| file.image_file? && deliverable_file?(file) }
   end
 
-  # @return [Array<StructuralMetadata::File>] or []
-  def object_files
-    @object_files ||= local_files.select do |file|
-      object_file?(file) && downloadable_file?(file)
+  # @return [Array<StructuralMetadata::FileSet>] or []
+  def object_filesets
+    @object_filesets ||= file_sets.select do |fs|
+      object?(fs) && downloadable_file?(fs.primary)
     end
   end
 
@@ -49,17 +49,13 @@ class IiifPresentationManifest
     end
   end
 
-  def ocr_text?
-    ocr_files.present?
-  end
-
-  def object_file?(file)
-    file.type == 'https://cocina.sul.stanford.edu/models/file'
+  def object?(fileset)
+    fileset.type == 'https://cocina.sul.stanford.edu/models/resources/object'
   end
 
   # @param [StructuralMetadata::File]
   def deliverable_file?(file)
-    %w[world stanford location-based].include?(file.access.view) || structural_metadata.thumbnail == file
+    %w[world stanford location-based].include?(file.access.view) || thumbnail_image == file
   end
 
   # @param [StructuralMetadata::File]
@@ -117,8 +113,8 @@ class IiifPresentationManifest
 
     manifest.thumbnail = thumbnail_resource
 
-    renderings = object_files.map do |file|
-      rendering_file(file)
+    renderings = object_filesets.map do |fs|
+      rendering_file(fs.primary, label: "Download #{fs.label}")
     end
 
     sequence['rendering'] = renderings if renderings.present?
@@ -129,11 +125,10 @@ class IiifPresentationManifest
     end
 
     # For each valid virtual object image, create a canvas for its thumbnail
-    # TODO: extract to fix final failing test
-    structural_metadata.virtual_object_members&.each do |member_druid|
+    structural_metadata.members&.each do |member_druid|
       purl_version = PurlResource.find(member_druid.delete_prefix('druid:')).version(:head)
-      # We are using .thumbail here to get the first image in the object
-      thumbnail_file = purl_version.structural_metadata.thumbnail
+      # We are using thumbnail here to get the first image in the object
+      thumbnail_file = purl_version.thumbnail
       # Overwrite default label for virtual objects
       thumbnail_file.fileset_label = purl_version.cocina['label']
       sequence.canvases << canvas_for_file(thumbnail_file)
@@ -147,8 +142,8 @@ class IiifPresentationManifest
 
   # @return [IIIF::Presentation::Canvas] or nil
   def canvas(resource_id:)
-    file = page_image_files.find { |image| image.id == resource_id }
-    canvas_for_file(file) if file
+    fileset = page_image_filesets.find { |fileset| fileset.cocina_id == resource_id }
+    canvas_for_file(fileset.image_file) if fileset
   end
 
   ##
@@ -158,8 +153,7 @@ class IiifPresentationManifest
     return unless local_files.any?
 
     anno_list = IIIF::Presentation::AnnotationList.new
-    # "cocina-fileSet-bc854fy5899-bc854fy5899_1"
-    anno_list['@id'] = annotation_list_url(resource_id: resource_id)
+    anno_list['@id'] = annotation_list_url(resource_id:)
     anno_list.resources = []
     local_files.select { |file| file.role == 'annotations' && file.mimetype == 'application/json' }.each do |file|
       anno_list.resources << JSON.parse(
@@ -172,9 +166,9 @@ class IiifPresentationManifest
   end
 
   def annotation(annotation_id:)
-    file = page_image_files.find { |image| image.id == annotation_id }
+    fileset = page_image_filesets.find { |fileset| fileset.cocina_id == annotation_id }
 
-    annotation_for_file(file) if file
+    annotation_for_file(fileset.image_file) if fileset
   end
 
   def canvas_for_file(file)
@@ -213,13 +207,10 @@ class IiifPresentationManifest
 
   # Setup annotationLists for files with role="annotations"
   def other_content_for_file(file)
-    # debugger
-
     other_content = []
 
     if local_files.any? { |file| file.role == 'annotations' && file.mimetype == 'application/json' }
       anno_list = IIIF::Presentation::AnnotationList.new
-      # TODO: not fileset_id?
       anno_list['@id'] = annotation_list_url(resource_id: file.fileset_id)
       other_content << anno_list
     end
@@ -265,7 +256,7 @@ class IiifPresentationManifest
   end
 
   def content_search_service
-    return nil unless Settings.content_search.url && ocr_text?
+    return nil unless Settings.content_search.url && ocr_files.present?
 
     {
       '@context' => 'http://iiif.io/api/search/1/context.json',
@@ -312,16 +303,7 @@ class IiifPresentationManifest
   end
   # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/AbcSize
 
-  def local_thumbnail_image
-    page_image_files.first
-  end
-
-  def thumbnail_image
-    @thumbnail_image ||= local_thumbnail_image || structural_metadata.virtual_object_thumbnail
-  end
-
   def rendering_file(file, label: "Download #{file.label}", profile: nil)
-    # debugger
     {
       '@id' => stacks_file_url(file.druid, file.filename),
       'label' => label,

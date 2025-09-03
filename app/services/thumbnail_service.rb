@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Responsible for finding a path to a thumbnail based on the contentMetadata of an object
+# Responsible for finding a path to a thumbnail based on the structural metadata of an object
 class ThumbnailService
   # @param [StructuralMetadata] structural cocina json
   def initialize(structural)
@@ -10,7 +10,7 @@ class ThumbnailService
 
   # @return [StructuralMetadata::File] the thumbnail file
   def thumb
-    image = local_image_file
+    image = thumb_fs&.image_file
     return image if image
     return if structural.members.empty?
 
@@ -21,16 +21,14 @@ class ThumbnailService
     end
   end
 
-  private
-
-  attr_reader :structural, :id
-
-  def local_image_file
+  def thumb_fs
     structural.resources.each do |file_set|
-      file_set.files.each do |file|
-        return file if file.image?
-      end
+      return file_set if file_set.image_file.present?
     end
     nil
   end
+
+  private
+
+  attr_reader :structural, :id
 end

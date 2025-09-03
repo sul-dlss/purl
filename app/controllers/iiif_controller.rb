@@ -38,7 +38,7 @@ class IiifController < ApplicationController
     return head :not_found unless iiif_manifest.is_a?(Iiif3PresentationManifest)
 
     manifest = Rails.cache.fetch(cache_key('annotation_page'), expires_in: Settings.resource_cache.lifetime) do
-      iiif_manifest.annotation_page(annotation_page_id: params[:resource_id])&.to_ordered_hash
+      iiif_manifest.annotation_page(fileset_id: params[:resource_id])&.to_ordered_hash
     end
     return head :not_found unless manifest
 

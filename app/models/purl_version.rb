@@ -63,10 +63,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     end
   end
 
-  def content_metadata
-    @content_metadata ||= ContentMetadata.new(public_xml.content_metadata)
-  end
-
   def structural_metadata
     @structural_metadata ||= StructuralMetadata.new(druid:, json: cocina['structural'])
   end
@@ -216,9 +212,13 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
       thumbnail.stacks_iiif_base_uri
     end
 
+    def thumbnail_service
+      @thumbnail_service ||= ThumbnailService.new(structural_metadata)
+    end
+
     # @return [StructuralMetadata::File] the thumbnail file
     def thumbnail
-      @thumbnail ||= ThumbnailService.new(structural_metadata).thumb
+      thumbnail_service.thumb
     end
 
     # @return [String,nil] DOI (with https://doi.org/ prefix) if present
@@ -282,15 +282,5 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
 
   def cocina_file(filename)
     structural_metadata.find_file_by_filename(filename)
-  end
-
-  private
-
-  def external_file(external_druid, filename)
-    external_cocina = PurlResource.find(external_druid).version(:head)
-    external_cocina.cocina_file(filename)
-  rescue ResourceRetriever::ResourceNotFound
-    Honeybadger.notify("External resource not found for druid: #{druid} and filename: #{filename} on #{druid}")
-    nil
   end
 end

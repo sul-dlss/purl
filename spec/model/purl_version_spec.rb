@@ -241,6 +241,10 @@ RSpec.describe PurlVersion do
                                       "publish": true,
                                       "sdrPreserve": false,
                                       "shelve": true
+                                  },
+                                  "presentation": {
+                                      "height": 1901,
+                                      "width": 1361
                                   }
                               }
                           ]

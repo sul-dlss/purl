@@ -2,7 +2,7 @@
 
 class StructuralMetadata
   class File
-    def initialize(druid:, json:)
+    def initialize(druid:, json:, fileset:)
       @druid = druid
       @json = json
       @fileset_id = fileset.cocina_id
@@ -17,10 +17,6 @@ class StructuralMetadata
 
     def mimetype
       json['hasMimeType']
-    end
-
-    def image?
-      mimetype == 'image/jp2'
     end
 
     def stacks_iiif_base_uri
@@ -57,18 +53,6 @@ class StructuralMetadata
 
     def role
       json['use']
-    end
-
-    def mimetype
-      json['hasMimeType']
-    end
-
-    def height
-      json['presentation']['height']
-    end
-
-    def width
-      json['presentation']['width']
     end
 
     def image_file?

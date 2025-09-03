@@ -4,7 +4,6 @@ class StructuralMetadata
   def initialize(druid:, json:)
     @druid = druid
     @json = json || {} # json is nil when the object is a collection
-    @druid = druid
   end
 
   attr_accessor :json, :druid
@@ -21,20 +20,8 @@ class StructuralMetadata
     @resources ||= Array(json['contains']).map { FileSet.new(druid:, json: it) }
   end
 
-  def virtual_object_thumbnail
-    return unless virtual_object_members&.any?
-
-    purl_version = PurlResource.find(virtual_object_members&.first&.delete_prefix('druid:')).version(:head)
-    purl_version.structural_metadata.thumbnail
-  end
-
-  # returns first image_file File
-  def thumbnail
-    file_sets.each { |fs| fs.files.each { |f| return f if f.image_file? } }
-  end
-
   def file_sets
-    @file_sets ||= Array(json['contains']).map { FileSet.new(it, druid) }
+    @file_sets ||= Array(json['contains']).map { FileSet.new(json: it, druid:) }
   end
 
   def local_files
