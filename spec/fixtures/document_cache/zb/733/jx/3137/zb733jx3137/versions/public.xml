@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<publicObject id="druid:zb733jx3137" published="2025-08-08T13:55:50Z" publishVersion="cocina-models/0.105.0">
+<publicObject id="druid:zb733jx3137" published="2025-09-02T19:32:46Z" publishVersion="cocina-models/0.105.2">
   <identityMetadata>
     <objectType>item</objectType>
     <objectLabel>Testing versioning issue with the review workflow in the new application again</objectLabel>
@@ -49,7 +49,7 @@
     <dc:identifier>https://purl.stanford.edu/zb733jx3137</dc:identifier>
     <dc:description type="contact" displayLabel="Contact">testing@me.com</dc:description>
     <dc:relation type="url" href="https://app.honeybadger.io/projects/128495/faults/122573092"/>
-    <dc:relation type="collection">Amy's Test Collection</dc:relation>
+    <dc:relation type="collection">Amy's Test Collection II</dc:relation>
     <dc:identifier>doi: https://doi.org/10.25740/zb733jx3137</dc:identifier>
   </oai_dc:dc>
   <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
@@ -136,7 +136,7 @@
     </relatedItem>
     <relatedItem type="host">
       <titleInfo>
-        <title>Amy's Test Collection</title>
+        <title>Amy's Test Collection II</title>
       </titleInfo>
       <location>
         <url>https://purl.stanford.edu/bz912dc0085</url>

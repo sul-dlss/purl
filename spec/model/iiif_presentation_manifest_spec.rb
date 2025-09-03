@@ -153,16 +153,16 @@ RSpec.describe IiifPresentationManifest do
     end
 
     context 'when the jp2 is not downloadable' do
-      let(:druid) { 'rf433wv2584' }
+      let(:druid) { 'bb000qr5025' }
 
       it 'includes the representative thumbnail as part of the image sequence' do
-        expect(json['thumbnail']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/rf433wv2584%2F9082000/full/!400,400/0/default.jpg'
+        expect(json['thumbnail']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/bb000qr5025%2F88-5A-50_LS026/full/!400,400/0/default.jpg'
 
         expect(json['sequences'].length).to eq 1
         canvas = json['sequences'].first['canvases'].first
         expect(canvas['images'].length).to eq 1
         image = canvas['images'].first
-        expect(image['resource']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/rf433wv2584%2F9082000/full/full/0/default.jpg'
+        expect(image['resource']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/bb000qr5025%2F88-5A-50_LS026/full/full/0/default.jpg'
         expect(canvas['rendering']).to be_nil
       end
     end

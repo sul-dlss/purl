@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<publicObject id="druid:zf119tw4418" published="2025-08-20T20:55:16Z" publishVersion="cocina-models/0.105.2">
+<publicObject id="druid:zf119tw4418" published="2025-08-20T22:12:08Z" publishVersion="cocina-models/0.105.2">
   <identityMetadata>
     <objectType>item</objectType>
     <objectLabel>Semiannual report to Congress for the period of</objectLabel>
@@ -11,6 +11,10 @@
     <bookData readingOrder="ltr"/>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_1" sequence="1" type="image">
       <label>Image 1</label>
+      <file id="zf119tw4418_04_0001.xml" mimetype="application/xml" size="4804" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">71cbbcf7876ef6816a246479c921ba7fbe3be6c0</checksum>
+        <checksum type="md5">e1764913ecb68c43c00dcf90a5b22473</checksum>
+      </file>
       <file id="zf119tw4418_06_0001.pdf" mimetype="application/pdf" size="83006" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">6981ed4352d4fd9bee185898e9159b97997fa990</checksum>
         <checksum type="md5">2211810b1bc788e83c8ce8bf7d2cb6f8</checksum>
@@ -23,6 +27,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_2" sequence="2" type="image">
       <label>Image 2</label>
+      <file id="zf119tw4418_04_0002.xml" mimetype="application/xml" size="13179" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">f813125b0892f5d8eeca9cb00e2f4e0d5181f41e</checksum>
+        <checksum type="md5">5d19545e05d436989a9e206b62279090</checksum>
+      </file>
       <file id="zf119tw4418_06_0002.pdf" mimetype="application/pdf" size="166008" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">073e417102bc89c02279881d6abb454cc23a375f</checksum>
         <checksum type="md5">b97369e1977a92f0865d367fb56e493a</checksum>
@@ -35,6 +43,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_3" sequence="3" type="image">
       <label>Image 3</label>
+      <file id="zf119tw4418_04_0003.xml" mimetype="application/xml" size="8516" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">134af37d79b776f528d0f6af67e45bcadea2add3</checksum>
+        <checksum type="md5">1fb82ac480ad0b8db0042a73a5c64d38</checksum>
+      </file>
       <file id="zf119tw4418_06_0003.pdf" mimetype="application/pdf" size="86559" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">6e29dda540a945f8166a87c086ba9d82aea9c59d</checksum>
         <checksum type="md5">ddbec8e41e867bb340cb96785c16e943</checksum>
@@ -47,6 +59,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_4" sequence="4" type="image">
       <label>Image 4</label>
+      <file id="zf119tw4418_04_0004.xml" mimetype="application/xml" size="42705" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">6b94875353f01be4bf9985ba6fe2b5eab88a9220</checksum>
+        <checksum type="md5">7a7908f7c5e72ca9a99aeddfe1f6b5a2</checksum>
+      </file>
       <file id="zf119tw4418_06_0004.pdf" mimetype="application/pdf" size="163042" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">cae1020ed32c31ab8ef5fed3e8e7e481c68ac8c3</checksum>
         <checksum type="md5">7f11b805640d4a4d5695f2d6f3e119c6</checksum>
@@ -59,6 +75,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_5" sequence="5" type="image">
       <label>Image 5</label>
+      <file id="zf119tw4418_04_0005.xml" mimetype="application/xml" size="6822" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">16de55beb5529b712b5ccd5639a6139c3d73cade</checksum>
+        <checksum type="md5">f0e3904c06c929d184c982ab885f7dc0</checksum>
+      </file>
       <file id="zf119tw4418_06_0005.pdf" mimetype="application/pdf" size="151337" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">99a6cbddc5f3f26ebe5ea5f6e257225022317e9b</checksum>
         <checksum type="md5">318553d1bb25bc6b7fb671a76b889cba</checksum>
@@ -71,6 +91,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_6" sequence="6" type="image">
       <label>Image 6</label>
+      <file id="zf119tw4418_04_0006.xml" mimetype="application/xml" size="16698" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">01d5b08140524d90c0df0a19deb4207dfe9f395f</checksum>
+        <checksum type="md5">3c0b2d3d9674296917bcd1636efc3aa8</checksum>
+      </file>
       <file id="zf119tw4418_06_0006.pdf" mimetype="application/pdf" size="109040" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">2dcbb1c2600fa3f28d17d8bed99a6693a7466a2c</checksum>
         <checksum type="md5">8c4a75181c5f0239c53f7b2c0b8c8b9f</checksum>
@@ -83,6 +107,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_7" sequence="7" type="image">
       <label>Image 7</label>
+      <file id="zf119tw4418_04_0007.xml" mimetype="application/xml" size="59727" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">98be71df05eb0b9badb141e5f4e2e4ca7b6eb566</checksum>
+        <checksum type="md5">501764f935db174cd636ebc68d792942</checksum>
+      </file>
       <file id="zf119tw4418_06_0007.pdf" mimetype="application/pdf" size="171418" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">39292913f03783700976f9556f41e5207505d62a</checksum>
         <checksum type="md5">1cfb12dbe2dca4370bf631c3e5201372</checksum>
@@ -95,6 +123,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_8" sequence="8" type="image">
       <label>Image 8</label>
+      <file id="zf119tw4418_04_0008.xml" mimetype="application/xml" size="29380" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">6dda22ae8020fcc6911cd0722e280cd23fd15bcf</checksum>
+        <checksum type="md5">bb7394b083e26f16528ca6bb402f29f3</checksum>
+      </file>
       <file id="zf119tw4418_06_0008.pdf" mimetype="application/pdf" size="168536" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">6f7be73b407bd89b79fbe98278c31a029b4544d3</checksum>
         <checksum type="md5">369514926266a9a09cd6bd3c41ac6e92</checksum>
@@ -107,6 +139,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_9" sequence="9" type="image">
       <label>Image 9</label>
+      <file id="zf119tw4418_04_0009.xml" mimetype="application/xml" size="54152" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">01df225e496ab6107e4d6d2385136b96cadb2966</checksum>
+        <checksum type="md5">99e15da06745f1bc8ba385e440a2912c</checksum>
+      </file>
       <file id="zf119tw4418_06_0009.pdf" mimetype="application/pdf" size="171159" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">27ed44c049deae7fa48fbbf475313741ab9ee3ad</checksum>
         <checksum type="md5">193afab1ee5dd1976648c19bb817d857</checksum>
@@ -119,6 +155,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_10" sequence="10" type="image">
       <label>Image 10</label>
+      <file id="zf119tw4418_04_0010.xml" mimetype="application/xml" size="57512" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">0a5f1248569d62b85718bf6ec7caa15fcb498dd4</checksum>
+        <checksum type="md5">dc22bdc07339560675ba02cf62b82f9f</checksum>
+      </file>
       <file id="zf119tw4418_06_0010.pdf" mimetype="application/pdf" size="170544" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">42229922fc2e2080fd6ddc6c4951f384bac8006b</checksum>
         <checksum type="md5">6086e6c51dd3bebd1868d13a1111fc64</checksum>
@@ -131,6 +171,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_11" sequence="11" type="image">
       <label>Image 11</label>
+      <file id="zf119tw4418_04_0011.xml" mimetype="application/xml" size="58038" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">37904f65886eda377856cbda577c4523a41a1649</checksum>
+        <checksum type="md5">d08b35f4a41e3eb8242a649d7d8a7e4e</checksum>
+      </file>
       <file id="zf119tw4418_06_0011.pdf" mimetype="application/pdf" size="179881" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">15ad838d94bbfdd7c09defecafbb9a45fa873724</checksum>
         <checksum type="md5">a997e77232dc6380b7a5929ed7741b5a</checksum>
@@ -143,6 +187,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_12" sequence="12" type="image">
       <label>Image 12</label>
+      <file id="zf119tw4418_04_0012.xml" mimetype="application/xml" size="38243" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">115c32bf75aa8ba71445f3e4e90b9cbed7f9dc7d</checksum>
+        <checksum type="md5">6691504454fd4f8e5b31e86819f634a8</checksum>
+      </file>
       <file id="zf119tw4418_06_0012.pdf" mimetype="application/pdf" size="170093" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">350d5522f9e24be029fc283e3faecbd58c019316</checksum>
         <checksum type="md5">468e4c71e2cb0e79b26b4562c46f0495</checksum>
@@ -155,6 +203,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_13" sequence="13" type="image">
       <label>Image 13</label>
+      <file id="zf119tw4418_04_0013.xml" mimetype="application/xml" size="46235" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">7e550fcc7f3a7231263c0d246abfcd2488c73863</checksum>
+        <checksum type="md5">ae2b250ddefeb400b9c63bcb8bc8ff6a</checksum>
+      </file>
       <file id="zf119tw4418_06_0013.pdf" mimetype="application/pdf" size="171328" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">da4360f8a8bd76ed52bd71d0d71916526d2d446c</checksum>
         <checksum type="md5">fdcf016c4e7e197ea7f933d6c6c47b30</checksum>
@@ -167,6 +219,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_14" sequence="14" type="image">
       <label>Image 14</label>
+      <file id="zf119tw4418_04_0014.xml" mimetype="application/xml" size="6426" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">81b5e7f0ad1d73a1f032f9aac1dafe42f3afb8b0</checksum>
+        <checksum type="md5">2d2a49a7207437a4a611f0ce10a08bd3</checksum>
+      </file>
       <file id="zf119tw4418_06_0014.pdf" mimetype="application/pdf" size="157730" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">17620b7ede0594d0cb46fbf321b21c507414dee2</checksum>
         <checksum type="md5">f3d158938e62c1a982e61f604db82ce3</checksum>
@@ -179,6 +235,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_15" sequence="15" type="image">
       <label>Image 15</label>
+      <file id="zf119tw4418_04_0015.xml" mimetype="application/xml" size="54183" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">193e0c63b74f9c4ecb7d9598afb61c674cdffb84</checksum>
+        <checksum type="md5">ac7934e34e6c7e1f257805e958802266</checksum>
+      </file>
       <file id="zf119tw4418_06_0015.pdf" mimetype="application/pdf" size="171032" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">58c2d99183a73de8b032ecf4f4ade1e309dc6b2c</checksum>
         <checksum type="md5">469af11bec35e5767557c8abb82f3fc9</checksum>
@@ -191,6 +251,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_16" sequence="16" type="image">
       <label>Image 16</label>
+      <file id="zf119tw4418_04_0016.xml" mimetype="application/xml" size="57124" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">c22f20e10e35c5cd4814188d1eb4b042d27f33bf</checksum>
+        <checksum type="md5">80d765538af23da08c9fdce6a468f6c2</checksum>
+      </file>
       <file id="zf119tw4418_06_0016.pdf" mimetype="application/pdf" size="171422" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">95bec9053795d04086877e83c4d5aa7061d55334</checksum>
         <checksum type="md5">429da655560cc46b14cbeda900c92354</checksum>
@@ -203,6 +267,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_17" sequence="17" type="image">
       <label>Image 17</label>
+      <file id="zf119tw4418_04_0017.xml" mimetype="application/xml" size="49658" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">3054501215539aaedac4e748f7f8adfd51385a52</checksum>
+        <checksum type="md5">6e04830a0f2800716ef48ff1e6907aee</checksum>
+      </file>
       <file id="zf119tw4418_06_0017.pdf" mimetype="application/pdf" size="170959" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">d38c411dcbbec08272117b9c6cc038fe6d501b5f</checksum>
         <checksum type="md5">2b8cfe56fec2e3a1a85ba9730e4b5387</checksum>
@@ -215,6 +283,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_18" sequence="18" type="image">
       <label>Image 18</label>
+      <file id="zf119tw4418_04_0018.xml" mimetype="application/xml" size="26161" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">67f224fa27fefd8ec3746fbd22b6e3eef77d2257</checksum>
+        <checksum type="md5">4fcd9c9f77625af4db08dc1577306760</checksum>
+      </file>
       <file id="zf119tw4418_06_0018.pdf" mimetype="application/pdf" size="168113" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">370ecab4a351f254388bd6a93846ee68dea5c54b</checksum>
         <checksum type="md5">54824fa9769e383d3ffb2ababa840d6c</checksum>
@@ -227,6 +299,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_19" sequence="19" type="image">
       <label>Image 19</label>
+      <file id="zf119tw4418_04_0019.xml" mimetype="application/xml" size="19233" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">96ba9b4a6ba1718d3e2b93b4e1abe3f0196bf03d</checksum>
+        <checksum type="md5">e8c00dde646e2250478509dcb1d65498</checksum>
+      </file>
       <file id="zf119tw4418_06_0019.pdf" mimetype="application/pdf" size="166887" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">3ce6a1f8250fed8c4887d7998da81d9c564f7362</checksum>
         <checksum type="md5">52d0c12026698b99e80b3f21b8cf2e38</checksum>
@@ -239,6 +315,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_20" sequence="20" type="image">
       <label>Image 20</label>
+      <file id="zf119tw4418_04_0020.xml" mimetype="application/xml" size="6988" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">3604b05f6223420248478ff033bce323ebcfcdc9</checksum>
+        <checksum type="md5">7c54f92a786745884485baae8d64a63c</checksum>
+      </file>
       <file id="zf119tw4418_06_0020.pdf" mimetype="application/pdf" size="158460" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">43a1ceb21de686b296ad385114c5b5a6a3257869</checksum>
         <checksum type="md5">ca21cf7d44b5487c720691f1bbdfb1bd</checksum>
@@ -251,6 +331,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_21" sequence="21" type="image">
       <label>Image 21</label>
+      <file id="zf119tw4418_04_0021.xml" mimetype="application/xml" size="50346" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">c06f22cd2bfe7359c871265091dd40e178716484</checksum>
+        <checksum type="md5">1e4c8811ca39c37307fc7698e2e38c40</checksum>
+      </file>
       <file id="zf119tw4418_06_0021.pdf" mimetype="application/pdf" size="170723" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">bf7e4a2b7ffb1e49d07c2890ebcd5d86f0445fd7</checksum>
         <checksum type="md5">988735f33544ae4ecd4276ed6878f3f8</checksum>
@@ -263,6 +347,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_22" sequence="22" type="image">
       <label>Image 22</label>
+      <file id="zf119tw4418_04_0022.xml" mimetype="application/xml" size="57659" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">27cf89fd65d746a49d594e2d7a96b45cef269a68</checksum>
+        <checksum type="md5">112f871f0eff298b66236f6ae83488bc</checksum>
+      </file>
       <file id="zf119tw4418_06_0022.pdf" mimetype="application/pdf" size="171827" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">6d49bdacda81f334b98f937a99c974689446f47a</checksum>
         <checksum type="md5">3d9f8194916aa75b55f4c0af350e5da1</checksum>
@@ -275,6 +363,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_23" sequence="23" type="image">
       <label>Image 23</label>
+      <file id="zf119tw4418_04_0023.xml" mimetype="application/xml" size="55145" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">919a809d54c5a4480564252ef72449acc185a32b</checksum>
+        <checksum type="md5">4dcdfe2d12dc49149b41264e0298e007</checksum>
+      </file>
       <file id="zf119tw4418_06_0023.pdf" mimetype="application/pdf" size="171208" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">1148aae7f71bd178e722b93cc12edf6631ba83ab</checksum>
         <checksum type="md5">f3f567dab28575beec4a0cb7148b48ee</checksum>
@@ -287,6 +379,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_24" sequence="24" type="image">
       <label>Image 24</label>
+      <file id="zf119tw4418_04_0024.xml" mimetype="application/xml" size="52719" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">e8b61bf469666297ad6836a132db4a1ff5dd6388</checksum>
+        <checksum type="md5">7c9b0d212ea9ae4a6b1c889b8af0df8f</checksum>
+      </file>
       <file id="zf119tw4418_06_0024.pdf" mimetype="application/pdf" size="170880" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">20d6f1eff2eb44ccaa1a669b55906e6c4fba3336</checksum>
         <checksum type="md5">c409b4dd29185cf553558a07c366cec2</checksum>
@@ -299,6 +395,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_25" sequence="25" type="image">
       <label>Image 25</label>
+      <file id="zf119tw4418_04_0025.xml" mimetype="application/xml" size="60341" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">c8ca13cc2dc0ff688acdf5a9d17739571a31cc62</checksum>
+        <checksum type="md5">db8142ce4b10abe82689f206e32f84b2</checksum>
+      </file>
       <file id="zf119tw4418_06_0025.pdf" mimetype="application/pdf" size="172405" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">216c38a20a5f46bfe7f8b4e7385365e6ae076f54</checksum>
         <checksum type="md5">0fe2d8e856fa9135153c382bc947609b</checksum>
@@ -311,6 +411,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_26" sequence="26" type="image">
       <label>Image 26</label>
+      <file id="zf119tw4418_04_0026.xml" mimetype="application/xml" size="49643" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">f3538036adeb3b220793fb83a93e0de847609094</checksum>
+        <checksum type="md5">38658bce3926969d9efe115f22d5b6f1</checksum>
+      </file>
       <file id="zf119tw4418_06_0026.pdf" mimetype="application/pdf" size="179267" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">b9be5c3e05df0e0acdb776be1eb5f1fcdcb3ca0a</checksum>
         <checksum type="md5">8515557e68cb0c1326fa70e1e23da36e</checksum>
@@ -323,6 +427,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_27" sequence="27" type="image">
       <label>Image 27</label>
+      <file id="zf119tw4418_04_0027.xml" mimetype="application/xml" size="55637" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">39adf4b087c14fd619462de96ee3273df6ebdbef</checksum>
+        <checksum type="md5">3b17a48e90f928cde76df6add89b4307</checksum>
+      </file>
       <file id="zf119tw4418_06_0027.pdf" mimetype="application/pdf" size="179459" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">f626c2369cfefec5d568fd2dde2b39c3e6684fea</checksum>
         <checksum type="md5">067e4700cd37afccc71dd28abea0bc5b</checksum>
@@ -335,6 +443,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_28" sequence="28" type="image">
       <label>Image 28</label>
+      <file id="zf119tw4418_04_0028.xml" mimetype="application/xml" size="50808" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">f42ec91416ec76da40da7c99a8b709bbfcdf5bcb</checksum>
+        <checksum type="md5">ef70d96fa23ae9a8a556f90acd0caef1</checksum>
+      </file>
       <file id="zf119tw4418_06_0028.pdf" mimetype="application/pdf" size="179235" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">f1a746544979b608ee46bda6e0a1ec5a36a3cae4</checksum>
         <checksum type="md5">6c1d5fe3799e68cd7a5f3f5070e432d7</checksum>
@@ -347,6 +459,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_29" sequence="29" type="image">
       <label>Image 29</label>
+      <file id="zf119tw4418_04_0029.xml" mimetype="application/xml" size="54485" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">d6d837a194ad678237bfed6f76a67b169224ed9f</checksum>
+        <checksum type="md5">6689b263e060888589e307f43b2a644b</checksum>
+      </file>
       <file id="zf119tw4418_06_0029.pdf" mimetype="application/pdf" size="179515" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">baf66bf3719209b2c209b670a8ffdd46e20b7d67</checksum>
         <checksum type="md5">dc23e53ab06b2ec42108f3c4ff1b40f9</checksum>
@@ -359,6 +475,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_30" sequence="30" type="image">
       <label>Image 30</label>
+      <file id="zf119tw4418_04_0030.xml" mimetype="application/xml" size="34517" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">f55d2e540576fc7fd4593f78a8a5bffe06c80f1e</checksum>
+        <checksum type="md5">ea0d679823fb684cc80e944c6f42f306</checksum>
+      </file>
       <file id="zf119tw4418_06_0030.pdf" mimetype="application/pdf" size="170781" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">7239147039cac4cd659db56c99bfe863afa12efb</checksum>
         <checksum type="md5">5fa9dae780b9cc2265c461444dd2a4ff</checksum>
@@ -371,6 +491,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_31" sequence="31" type="image">
       <label>Image 31</label>
+      <file id="zf119tw4418_04_0031.xml" mimetype="application/xml" size="55276" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">1936ddf8753409115ee4d98777d5279a01167225</checksum>
+        <checksum type="md5">4012fb881704fe712dfa60a75653a50a</checksum>
+      </file>
       <file id="zf119tw4418_06_0031.pdf" mimetype="application/pdf" size="179708" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">83633c8b017a9a2c35e10a40a6e5d86fe2eb5ff9</checksum>
         <checksum type="md5">10c4ee26622f4d197d3c47469b13263f</checksum>
@@ -383,6 +507,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_32" sequence="32" type="image">
       <label>Image 32</label>
+      <file id="zf119tw4418_04_0032.xml" mimetype="application/xml" size="45720" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">b9526cc8ee3050a565b204c6e701f609359faa5c</checksum>
+        <checksum type="md5">76a7fd2a0638223bc073906c75be8a94</checksum>
+      </file>
       <file id="zf119tw4418_06_0032.pdf" mimetype="application/pdf" size="170460" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">80cf95824b9fbf654bb3ef96d4a665a5806b0bf1</checksum>
         <checksum type="md5">ee6cd70b082aa2f7169ee3c4a93f3beb</checksum>
@@ -395,6 +523,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_33" sequence="33" type="image">
       <label>Image 33</label>
+      <file id="zf119tw4418_04_0033.xml" mimetype="application/xml" size="50322" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">8dadc8b921fc20e0fdf0070f7d77c1774e867168</checksum>
+        <checksum type="md5">df36e8db932b810e1f11b2069a672b39</checksum>
+      </file>
       <file id="zf119tw4418_06_0033.pdf" mimetype="application/pdf" size="170988" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">1ac6ae91eae3b3d5b36fe4f6117434b434a450cc</checksum>
         <checksum type="md5">07606f3de4c6e0519bcc5021cb12be2a</checksum>
@@ -407,6 +539,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_34" sequence="34" type="image">
       <label>Image 34</label>
+      <file id="zf119tw4418_04_0034.xml" mimetype="application/xml" size="21270" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">90403bb75e52a9c4bb1d1342455c036d9ed1e425</checksum>
+        <checksum type="md5">b8c136427e0c41b9a099b96b681fb28b</checksum>
+      </file>
       <file id="zf119tw4418_06_0034.pdf" mimetype="application/pdf" size="168790" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">ef7fed0ab9223fb3e3a231af0e132c211820b21f</checksum>
         <checksum type="md5">0bf483cfb7053ca938051d3cb40ca96b</checksum>
@@ -419,6 +555,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_35" sequence="35" type="image">
       <label>Image 35</label>
+      <file id="zf119tw4418_04_0035.xml" mimetype="application/xml" size="52349" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">f9dacb4e57100b8ba657cf81a87d4260995818c3</checksum>
+        <checksum type="md5">48ca3daa25af4f2589fb58a705193a84</checksum>
+      </file>
       <file id="zf119tw4418_06_0035.pdf" mimetype="application/pdf" size="171856" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">95f89ad198c504c9a5faeb40bd33dd34d3936ff4</checksum>
         <checksum type="md5">a8c7f330f623c4cacf1cde705bb423e5</checksum>
@@ -431,6 +571,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_36" sequence="36" type="image">
       <label>Image 36</label>
+      <file id="zf119tw4418_04_0036.xml" mimetype="application/xml" size="53953" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">67889d329204ebcae7f5bb16de5213e2f5ca42a1</checksum>
+        <checksum type="md5">14d8531794a8a65097060f86d7e8aead</checksum>
+      </file>
       <file id="zf119tw4418_06_0036.pdf" mimetype="application/pdf" size="171309" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">d36db09eaaa89e4d296357b66d3ab286964b6c43</checksum>
         <checksum type="md5">ad3718b5e495d6567693dfe0d64edf30</checksum>
@@ -443,6 +587,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_37" sequence="37" type="image">
       <label>Image 37</label>
+      <file id="zf119tw4418_04_0037.xml" mimetype="application/xml" size="54371" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">b3ce375311f649e6c27cb592e0fcf0eb4c175c3c</checksum>
+        <checksum type="md5">97aa55053f675b9d4cb7ff79945766bb</checksum>
+      </file>
       <file id="zf119tw4418_06_0037.pdf" mimetype="application/pdf" size="170588" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">32af40b0a1c3fa8f890ffa62a2f7ac21d9de7389</checksum>
         <checksum type="md5">1577b85340d910e7cd1df612eeb401b9</checksum>
@@ -455,6 +603,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_38" sequence="38" type="image">
       <label>Image 38</label>
+      <file id="zf119tw4418_04_0038.xml" mimetype="application/xml" size="58008" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">cff04291076c6ddac09d2e2637d7192d9cf26761</checksum>
+        <checksum type="md5">0a57cdd13e7566ec9ac3c4fce9ecc7fc</checksum>
+      </file>
       <file id="zf119tw4418_06_0038.pdf" mimetype="application/pdf" size="172180" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">7796dc28f005be0a644d23eca34c42eda7d08d09</checksum>
         <checksum type="md5">068aa3edf4d9284a819f0e55fdb2b2f3</checksum>
@@ -467,6 +619,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_39" sequence="39" type="image">
       <label>Image 39</label>
+      <file id="zf119tw4418_04_0039.xml" mimetype="application/xml" size="43933" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">100b6ffff415df0329d3da39cceadbe76002c06e</checksum>
+        <checksum type="md5">a6bd063894c9b0b0e278e673f015043e</checksum>
+      </file>
       <file id="zf119tw4418_06_0039.pdf" mimetype="application/pdf" size="171432" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">66339d685d977a128f0f042df03842ca629e6201</checksum>
         <checksum type="md5">7149ef0f60e9b8d64080ce3089b9d23f</checksum>
@@ -479,6 +635,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_40" sequence="40" type="image">
       <label>Image 40</label>
+      <file id="zf119tw4418_04_0040.xml" mimetype="application/xml" size="41522" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">67f5729c6dcdccba92af6c9c9b5a1a2c78bfe53f</checksum>
+        <checksum type="md5">20d92c1f9cf8bfc9cdcbfdb8f56b6729</checksum>
+      </file>
       <file id="zf119tw4418_06_0040.pdf" mimetype="application/pdf" size="170213" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">c867923f903a3a832c5e6f3c423286a54ca8ec17</checksum>
         <checksum type="md5">8a6099176ce5c7b8e6679f4a43568940</checksum>
@@ -491,6 +651,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_41" sequence="41" type="image">
       <label>Image 41</label>
+      <file id="zf119tw4418_04_0041.xml" mimetype="application/xml" size="6760" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">e1b3d254430b1539ea8720a004e9f996b9a23a4c</checksum>
+        <checksum type="md5">c7877b7c559914eb70d27af8357eb275</checksum>
+      </file>
       <file id="zf119tw4418_06_0041.pdf" mimetype="application/pdf" size="143712" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">7d07caad8e0dfe9f26434d08347f954bb96814bd</checksum>
         <checksum type="md5">3646d010ee5896a5e4a8cfad2868e06a</checksum>
@@ -503,6 +667,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_42" sequence="42" type="image">
       <label>Image 42</label>
+      <file id="zf119tw4418_04_0042.xml" mimetype="application/xml" size="24464" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">d6625a6a06a5a61eda646824a8f0708a6ef734af</checksum>
+        <checksum type="md5">5ca041e73b543a9a3076218066db1888</checksum>
+      </file>
       <file id="zf119tw4418_06_0042.pdf" mimetype="application/pdf" size="168447" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">a6bfed3dd5d70aebbad13bed12cb2c7f83e56ac2</checksum>
         <checksum type="md5">1a4d244ee714f6398afd3dee0847ed19</checksum>
@@ -515,6 +683,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_43" sequence="43" type="image">
       <label>Image 43</label>
+      <file id="zf119tw4418_04_0043.xml" mimetype="application/xml" size="22048" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">9423a3ac5e94e7974daae4f16c702686693c8bcf</checksum>
+        <checksum type="md5">2d77a24117a561895e7a64a2ed990192</checksum>
+      </file>
       <file id="zf119tw4418_06_0043.pdf" mimetype="application/pdf" size="167403" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">6af58de417ff2599665f22273ec277cb46f0b3a5</checksum>
         <checksum type="md5">9efd94c18ed75628f43c75effb64117a</checksum>
@@ -527,6 +699,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_44" sequence="44" type="image">
       <label>Image 44</label>
+      <file id="zf119tw4418_04_0044.xml" mimetype="application/xml" size="32176" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">0cdf92da62442a68177733bceb594833ae91bcfa</checksum>
+        <checksum type="md5">4b6f171d8e2b90ef0bb0f36d56c6c56d</checksum>
+      </file>
       <file id="zf119tw4418_06_0044.pdf" mimetype="application/pdf" size="176021" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">ec827eaf0087534575a6af7d9b2235a30c603d0e</checksum>
         <checksum type="md5">5f16cf1452d33971b677a707d9bb8e04</checksum>
@@ -539,6 +715,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_45" sequence="45" type="image">
       <label>Image 45</label>
+      <file id="zf119tw4418_04_0045.xml" mimetype="application/xml" size="31808" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">477904b5a90a3f7118a19d53dc90bc7118dd15e1</checksum>
+        <checksum type="md5">68690943b817cd0f65e993412713661b</checksum>
+      </file>
       <file id="zf119tw4418_06_0045.pdf" mimetype="application/pdf" size="176360" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">411cb86ebfb5f5158a1dc7440d31634f46a336ed</checksum>
         <checksum type="md5">18ac58254d1f8a20f95cc30179d0fd22</checksum>
@@ -551,6 +731,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_46" sequence="46" type="image">
       <label>Image 46</label>
+      <file id="zf119tw4418_04_0046.xml" mimetype="application/xml" size="18277" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">9e81f13bc1ad3332a978b532565963acdc563d55</checksum>
+        <checksum type="md5">faadbd2d174952616f3c6d987b6f06e4</checksum>
+      </file>
       <file id="zf119tw4418_06_0046.pdf" mimetype="application/pdf" size="166900" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">950b55493b5dcdac610f0936647a17cc6deb1cad</checksum>
         <checksum type="md5">6f1e8dcc50e9c50433d14afcc6778e6f</checksum>
@@ -563,6 +747,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_47" sequence="47" type="image">
       <label>Image 47</label>
+      <file id="zf119tw4418_04_0047.xml" mimetype="application/xml" size="32358" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">0de6e2d2531026afe8e0248502f6caf8806c994d</checksum>
+        <checksum type="md5">29edfcd2c5f927e3892fa030ebd08072</checksum>
+      </file>
       <file id="zf119tw4418_06_0047.pdf" mimetype="application/pdf" size="171054" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">3e7aa4bf1da98d825270292e222ae420b25f6da7</checksum>
         <checksum type="md5">bbac7dac02e17586429d58731a633b07</checksum>
@@ -575,6 +763,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_48" sequence="48" type="image">
       <label>Image 48</label>
+      <file id="zf119tw4418_04_0048.xml" mimetype="application/xml" size="12965" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">17c15c4cee54d5b082c818329499294c5fb15cee</checksum>
+        <checksum type="md5">59636dd1e5ff6137ce2282aeb33b7c0f</checksum>
+      </file>
       <file id="zf119tw4418_06_0048.pdf" mimetype="application/pdf" size="166710" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">92bd928973a034606a0fba65d4c61f872d53062c</checksum>
         <checksum type="md5">9924b44d2dc1dd25e9d4f99b9fda4ea1</checksum>
@@ -587,6 +779,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_49" sequence="49" type="image">
       <label>Image 49</label>
+      <file id="zf119tw4418_04_0049.xml" mimetype="application/xml" size="30359" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">072e211d2332185d4e3ee2cccf775b0e605c0cc3</checksum>
+        <checksum type="md5">98e9d06cc359c99d30c65e7ed14eca4e</checksum>
+      </file>
       <file id="zf119tw4418_06_0049.pdf" mimetype="application/pdf" size="161053" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">643291097a5c18220063c97916c18fe079b37971</checksum>
         <checksum type="md5">fd3834d8808768b9e55d039ff33a7142</checksum>
@@ -599,6 +795,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_50" sequence="50" type="image">
       <label>Image 50</label>
+      <file id="zf119tw4418_04_0050.xml" mimetype="application/xml" size="12743" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">4b733d405f46039302d56cf4e475256984551106</checksum>
+        <checksum type="md5">a56f389d7359d794c0c74bc95a116459</checksum>
+      </file>
       <file id="zf119tw4418_06_0050.pdf" mimetype="application/pdf" size="167057" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">d0489df09ef76c2ed793c880f0b814a6eea2950b</checksum>
         <checksum type="md5">e6cd916752195e0782d6eb54d42d653c</checksum>
@@ -611,6 +811,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_51" sequence="51" type="image">
       <label>Image 51</label>
+      <file id="zf119tw4418_04_0051.xml" mimetype="application/xml" size="20394" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">1d2d14b8bb595531442b579daedd73c0a9b000c3</checksum>
+        <checksum type="md5">fe0920f6d6f3b28d4e3d325407cfca7e</checksum>
+      </file>
       <file id="zf119tw4418_06_0051.pdf" mimetype="application/pdf" size="168710" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">76c4a6d3feea9f8448806a07131b59e74a0d7b21</checksum>
         <checksum type="md5">e960ef5224c2fdc55fc348a7df66ee00</checksum>
@@ -623,6 +827,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_52" sequence="52" type="image">
       <label>Image 52</label>
+      <file id="zf119tw4418_04_0052.xml" mimetype="application/xml" size="21207" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">429994c290e5b59f4a8b04dad189b9b2bddfd010</checksum>
+        <checksum type="md5">d6501d45cc4e64844bd24677d20f632c</checksum>
+      </file>
       <file id="zf119tw4418_06_0052.pdf" mimetype="application/pdf" size="160708" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">124128c9bc03f0257560fa941837f8058c5d8025</checksum>
         <checksum type="md5">5f5b7e9219fd0dfc3e825de4222a6467</checksum>
@@ -635,6 +843,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_53" sequence="53" type="image">
       <label>Image 53</label>
+      <file id="zf119tw4418_04_0053.xml" mimetype="application/xml" size="38299" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">171dfa160ad609a4c338eaeaf3655e51d6643dba</checksum>
+        <checksum type="md5">3e3fb3232d490d5ff9b4de691b76115d</checksum>
+      </file>
       <file id="zf119tw4418_06_0053.pdf" mimetype="application/pdf" size="169645" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">c32eba2e2774c955970e703b34a3adb54670032e</checksum>
         <checksum type="md5">5cc0ee37b2a82e055dd0508e9fec0b56</checksum>
@@ -647,6 +859,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_54" sequence="54" type="image">
       <label>Image 54</label>
+      <file id="zf119tw4418_04_0054.xml" mimetype="application/xml" size="18458" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">db0f7a00b2c23df2622b0ca9797fddff9b43f226</checksum>
+        <checksum type="md5">ae0f20dcaedc570d7fa85ce352eddff5</checksum>
+      </file>
       <file id="zf119tw4418_06_0054.pdf" mimetype="application/pdf" size="169136" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">247f87153058c6b25cd185d526e4293b8cd542bb</checksum>
         <checksum type="md5">2a015274eb6c7ae29d55d8b4e7f6d893</checksum>
@@ -659,6 +875,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_55" sequence="55" type="image">
       <label>Image 55</label>
+      <file id="zf119tw4418_04_0055.xml" mimetype="application/xml" size="26043" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">7ff72603f7df4b3d433986cb0a5a0987c5de6a9a</checksum>
+        <checksum type="md5">343a159de612026eb6f9f20635d640b3</checksum>
+      </file>
       <file id="zf119tw4418_06_0055.pdf" mimetype="application/pdf" size="140808" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">b973f322e7e4a57121ce29e40051c2c30da333bb</checksum>
         <checksum type="md5">c4deeaf65056869c177c2428842e018a</checksum>
@@ -671,6 +891,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_56" sequence="56" type="image">
       <label>Image 56</label>
+      <file id="zf119tw4418_04_0056.xml" mimetype="application/xml" size="22305" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">23f0c7518a2d977f7edfb37ed546e6bf822a8795</checksum>
+        <checksum type="md5">cbe7c0f7f654eef05affae3b2c5479b5</checksum>
+      </file>
       <file id="zf119tw4418_06_0056.pdf" mimetype="application/pdf" size="146605" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">5fd559ba3a6a610c8dfc915c9091ac744f3207b3</checksum>
         <checksum type="md5">a14efeca496c5f528c36ccdd1370c099</checksum>
@@ -683,6 +907,10 @@
     </resource>
     <resource id="cocina-fileSet-zf119tw4418-zf119tw4418_57" sequence="57" type="image">
       <label>Image 57</label>
+      <file id="zf119tw4418_04_0057.xml" mimetype="application/xml" size="18181" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">b4a4823a958f7030c5350dccc6750df7fe59c7a4</checksum>
+        <checksum type="md5">db36b9eb3ad838c381865980207858d4</checksum>
+      </file>
       <file id="zf119tw4418_06_0057.pdf" mimetype="application/pdf" size="169530" publish="yes" shelve="yes" preserve="yes">
         <checksum type="sha1">063ec9f35d68fc55dca2c41764e37b80bcc50947</checksum>
         <checksum type="md5">0b376e674f7d75a8d4335fdc214c8205</checksum>

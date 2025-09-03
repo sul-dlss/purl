@@ -25,7 +25,7 @@ FIXTURES = [
   'hx163dc5225', # has annotations
   'jw923xn5254', # second child object
   'nd387jf5675', # ETD
-  'rf433wv2584', # image where jp2 is not downloadable
+  'bb000qr5025', # image where jp2 is not downloadable
   'rp193xx6845', # map, world access, has coordinates in the metadata
   'rs276tc2764', # grandfathered namespace
   'sk882gx0113', # a collection released to searchworks with a member (cp088pb1682)
