@@ -36,17 +36,8 @@ class PurlResource
     versions.find { |purl_version| purl_version.version_id == version_id.to_i }
   end
 
-  # Can be crawled / indexed by a crawler, e.g. Googlebot
-  def crawlable?
-    meta_json.fetch('sitemap')
-  end
-
-  def released_to_searchworks?
-    meta_json.fetch('searchworks')
-  end
-
-  def released_to_earthworks?
-    meta_json.fetch('earthworks')
+  def releases
+    @releases ||= Releases.new(meta_json)
   end
 
   # The meta.json contains the properties this purl is released to.

@@ -53,8 +53,8 @@ RSpec.describe PurlResource do
     end
   end
 
-  describe '#crawlable?' do
-    subject { instance.crawlable? }
+  describe '#releases' do
+    subject { instance.releases.crawlable? }
 
     let(:druid) { 'kn112rm5773' }
 
