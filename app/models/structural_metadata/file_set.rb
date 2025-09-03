@@ -23,6 +23,8 @@ class StructuralMetadata
 
     # TODO: actually change the test to use existing id, delete this method
     def cocina_id
+      # TODO: use sub instead
+      # resource['id'].sub('https://cocina.sul.stanford.edu/fileSet/', 'cocina-fileSet-')
       path = URI.parse(id).path.delete_prefix('/')
       "cocina-#{path.tr('/', '-')}"
     end
@@ -69,7 +71,7 @@ class StructuralMetadata
 
     def other_resources
       return [] unless files
-
+  
       files - [primary, thumbnail_canvas].compact - supplementing_resources
     end
 

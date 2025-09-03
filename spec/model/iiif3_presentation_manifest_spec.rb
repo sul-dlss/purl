@@ -204,6 +204,7 @@ RSpec.describe Iiif3PresentationManifest do
         let(:druid) { 'hj097bm8879' }
 
         it 'generates a correct manifest' do
+          # debugger
           expect(json['label'][:en].first).to start_with 'Carey\'s American Atlas'
           expect(json['thumbnail']).to be_an Array
           expect(json['thumbnail'].size).to eq 1

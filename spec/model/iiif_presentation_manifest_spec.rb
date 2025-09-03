@@ -141,12 +141,12 @@ RSpec.describe IiifPresentationManifest do
 
     context 'when object has additional resources' do
       let(:druid) { 'zf119tw4418' }
-
+      
       it 'publishes a rendering section' do
         rendering = json['sequences'].first['rendering']
         expect(rendering).to include(
           '@id' => 'https://stacks.stanford.edu/file/zf119tw4418/zf119tw4418_31_0000.pdf',
-          'label' => 'Download Full PDF',
+          'label' => 'Download zf119tw4418_31_0000.pdf',
           'format' => 'application/pdf'
         )
       end
@@ -195,6 +195,7 @@ RSpec.describe IiifPresentationManifest do
       let(:druid) { 'hx163dc5225' }
 
       it 'provides otherContent for annotations' do
+        # debugger
         expect(json.dig('sequences', 0, 'canvases', 7, 'otherContent')).to eq [
           {
             '@id' => 'http://test.host/hx163dc5225/iiif/annotationList/cocina-fileSet-hx163dc5225-hx163dc5225_8',

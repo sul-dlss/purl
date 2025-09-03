@@ -98,11 +98,25 @@ class Iiif3PresentationManifest < IiifPresentationManifest
         manifest.items << canvas_for_fileset(fs)
       end
     end
+
+    add_virtual_object_canvases(manifest)
+  end
+
+  def add_virtual_object_canvases(manifest)
+    # For each valid virtual object image, create a canvas for its thumbnail
+    structural_metadata.virtual_object_members&.each do |member_druid|
+      purl_version = PurlResource.find(member_druid.delete_prefix('druid:')).version(:head)
+      # We are using .thumbail here to get the first image in the object
+      # thumbnail_file = purl_version.structural_metadata.thumbnail
+      # Overwrite default label for virtual objects
+      thumbnail_file.fileset_label = purl_version.cocina['label']
+      manifest.items << canvas_for_file(thumbnail_file)
+    rescue ResourceRetriever::ResourceNotFound
+      Honeybadger.notify('Error occurred retrieving virtual object', context: { druid: member_druid })
+    end
   end
 
   def build_image_canvases(manifest)
-    # TODO: add virtual object members
-
     file_sets.each do |fs|
       file = fs.primary
       
@@ -120,6 +134,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def annotation_page(annotation_page_id:)
     selected_resource = resources.find { |resource| resource.id == annotation_page_id }
+    # selected_resource = local_files.find { |file| file.id == annotation_page_id }
 
     annotation_page_for_resource(selected_resource) if selected_resource
   end

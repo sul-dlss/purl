@@ -146,19 +146,20 @@ class IiifPresentationManifest
   end
 
   # @return [IIIF::Presentation::Canvas] or nil
-  def canvas(fileset_id:)
-    file = page_image_files.find { |image| image.id == fileset_id }
+  def canvas(resource_id:)
+    file = page_image_files.find { |image| image.id == resource_id }
     canvas_for_file(file) if file
   end
 
   ##
   # Creates an annotationList
   # @return [Array<IIIF::Presentation::AnnotationList>] or nil
-  def annotation_list(fileset_id:)
+  def annotation_list(resource_id:)
     return unless local_files.any?
 
     anno_list = IIIF::Presentation::AnnotationList.new
-    anno_list['@id'] = annotation_list_url(resource_id: fileset_id)
+    # "cocina-fileSet-bc854fy5899-bc854fy5899_1"
+    anno_list['@id'] = annotation_list_url(resource_id: resource_id)
     anno_list.resources = []
     local_files.select { |file| file.role == 'annotations' && file.mimetype == 'application/json' }.each do |file|
       anno_list.resources << JSON.parse(
@@ -212,12 +213,13 @@ class IiifPresentationManifest
 
   # Setup annotationLists for files with role="annotations"
   def other_content_for_file(file)
-    return unless local_files.any?
+    # debugger
 
     other_content = []
 
     if local_files.any? { |file| file.role == 'annotations' && file.mimetype == 'application/json' }
       anno_list = IIIF::Presentation::AnnotationList.new
+      # TODO: not fileset_id?
       anno_list['@id'] = annotation_list_url(resource_id: file.fileset_id)
       other_content << anno_list
     end
@@ -319,6 +321,7 @@ class IiifPresentationManifest
   end
 
   def rendering_file(file, label: "Download #{file.label}", profile: nil)
+    # debugger
     {
       '@id' => stacks_file_url(file.druid, file.filename),
       'label' => label,
