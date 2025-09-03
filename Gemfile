@@ -70,4 +70,4 @@ group :deployment do
   gem 'dlss-capistrano'
 end
 
-gem "cocina_display", "~> 1.1"
+gem "cocina_display", github: 'sul-dlss/cocina_display'
