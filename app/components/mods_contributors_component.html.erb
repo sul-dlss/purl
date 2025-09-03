@@ -1,24 +1,20 @@
-<% fields = mods.name %>
-<% if fields.present? %>
-  <% label_id = "section-creators" %>
-  <%= render SectionComponent.new(label: 'Creators/Contributors', label_id: label_id) do %>
-    <%= render TableComponent.new(label_id: label_id) do %>
-      <% fields.each do |field| %>
-        <%= render TableBodyComponent.new(field:) do |component| %>
-          <% field.values.select(&:present?).each do |name| %>
-            <%= component.with_value do %>
-              <%= tag.td name.name %>
-              <% if name.orcid.present? %>
-                <td>
-                  <span class="orcid">
-                    <% orcid_url = "https://orcid.org/#{name.orcid}" %>
-                    <a href="<%= orcid_url %>" class="su-underline" aria-label="view ORCID page for <%= name.name %>">
-                      <img alt="ORCiD icon" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16">
-                      <%= orcid_url %>
-                    </a>
-                  </span>
-                </td>
-              <% end %>
+<%= render SectionComponent.new(label: 'Creators/Contributors', label_id:) do %>
+  <%= render TableComponent.new(label_id:) do %>
+    <% names.each do |field| %>
+      <%= render TableBodyComponent.new(field:) do |component| %>
+        <% field.values.select(&:present?).each do |name| %>
+          <%= component.with_value do %>
+            <%= tag.td name.name %>
+            <% if name.orcid.present? %>
+              <td>
+                <span class="orcid">
+                  <% orcid_url = "https://orcid.org/#{name.orcid}" %>
+                  <a href="<%= orcid_url %>" class="su-underline" aria-label="view ORCID page for <%= name.name %>">
+                    <img alt="ORCiD icon" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16" />
+                    <%= orcid_url %>
+                  </a>
+                </span>
+              </td>
             <% end %>
           <% end %>
         <% end %>

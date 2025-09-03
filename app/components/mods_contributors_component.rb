@@ -7,4 +7,16 @@ class ModsContributorsComponent < ViewComponent::Base
   end
 
   attr_reader :mods
+
+  def names
+    @names ||= mods.name
+  end
+
+  def render?
+    names.present?
+  end
+
+  def label_id
+    'section-creators'
+  end
 end
