@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'find'
-
 class PurlResource
   include ActiveModel::Model
 
