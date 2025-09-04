@@ -2,6 +2,7 @@
 
 FIXTURES = [
   'bb000br0025', # Not crawlable
+  'bb000qr5025', # image where jp2 is not downloadable
   'bb001dq8600', # image, stanford-only
   'bb157hs6068', # map, world acccess, has extent in the metadata, member of collection (zb871zd0767)
   'bb253gh8060', # file, stanford-only
@@ -25,7 +26,6 @@ FIXTURES = [
   'hx163dc5225', # has annotations
   'jw923xn5254', # second child object
   'nd387jf5675', # ETD
-  'rf433wv2584', # image where jp2 is not downloadable
   'rp193xx6845', # map, world access, has coordinates in the metadata
   'rs276tc2764', # file, world access, a dataset, grandfathered ir: namespace
   'sk882gx0113', # a collection released to searchworks with a member (cp088pb1682)
