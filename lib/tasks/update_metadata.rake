@@ -27,10 +27,10 @@ FIXTURES = [
   'nd387jf5675', # ETD
   'rf433wv2584', # image where jp2 is not downloadable
   'rp193xx6845', # map, world access, has coordinates in the metadata
-  'rs276tc2764', # grandfathered namespace
+  'rs276tc2764', # file, world access, a dataset, grandfathered ir: namespace
   'sk882gx0113', # a collection released to searchworks with a member (cp088pb1682)
   'ss099gb5528', # a collection not released to searchworks with a member (cd027gx5097)
-  'wm135gp2721', # file, world access, has an ORCiD and DOI
+  'wm135gp2721', # file, world access, dataset, has an ORCiD and DOI
   'wy534zh7137', # the rosette jpg
   'yb533nc1884', # collection with member (gx074xz5520)
   'yr183sf1341', # book, world access, without OCR, right-to-left
