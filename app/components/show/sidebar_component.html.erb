@@ -1,10 +1,10 @@
     <div class="record-sections col-lg-4">
       <%= render AccessComponent.new(version: @version) %>
-      <%= render 'mods_citation', mods: @version.mods %>
-      <%= render "collection", version: @version %>
-      <%= render "collection_items", version: @version if @purl.released_to_searchworks? %>
+      <%= render 'purl/mods_citation', mods: @version.mods %>
+      <%= render "purl/collection", version: @version %>
+      <%= render "purl/collection_items", version: @version if @purl.released_to_searchworks? %>
       <%= render VersionsComponent.new(purl: @purl, version: @version) %>
-      <%= render "mods_contact", mods: @version.mods %>
+      <%= render "purl/mods_contact", mods: @version.mods %>
       <%= render FindItComponent.new(document: @purl, version: @version) %>
 
       <% if metrics? %>

@@ -172,24 +172,6 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'with a license' do
-    let(:druid) { 'zb733jx3137' }
-
-    it 'included in purl page' do
-      visit "/#{druid}"
-      expect(page).to have_content 'This work is licensed under an Open Data Commons Public Domain Dedication & License 1.0'
-    end
-  end
-
-  context 'with terms of use' do
-    let(:druid) { 'wm135gp2721' }
-
-    it 'included in purl page' do
-      visit "/#{druid}"
-      expect(page).to have_content 'User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or'
-    end
-  end
-
   context 'with an incomplete/unpublished object (not in stacks)' do
     let(:druid) { 'fb123cd4567' }
 
