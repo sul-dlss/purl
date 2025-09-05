@@ -323,10 +323,10 @@ RSpec.describe PurlVersion do
 
   describe '#catalog_key' do
     context 'with a FOLIO hrid' do
-      let(:druid) { 'bb000br0025' }
+      let(:druid) { 'bb157hs6068' }
 
       it 'strips the leading a from the catkey value' do
-        expect(instance.catalog_key).to eq '3234065'
+        expect(instance.catalog_key).to eq '10624936'
       end
     end
 

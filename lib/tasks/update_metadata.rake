@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
 FIXTURES = [
-  'bb000br0025', # Not crawlable
   'bb000qr5025', # image where jp2 is not downloadable
   'bb001dq8600', # image, stanford-only
-  'bb157hs6068', # map, world acccess, has extent in the metadata, member of collection (zb871zd0767)
+  'bb157hs6068', # map, world acccess, has extent in the metadata, member of collection (zb871zd0767), has HRID (10624936), not crawlable
   'bb253gh8060', # file, stanford-only
   'bb737zp0787', # book, world access, with OCR
   'bc854fy5899', # book, world access, without OCR
