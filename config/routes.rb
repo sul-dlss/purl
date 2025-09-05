@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   get 'feedback' => 'feedback_forms#new'
 
   get 'auth' => 'webauth#login', as: :new_user_session
-  get '/preview' => 'preview#index'
-  post '/preview' => 'preview#show'
 
   get ':id/file/:file' => 'purl#file', as: :purl_file
   get ':id/metrics' => 'purl#metrics', as: :purl_metrics

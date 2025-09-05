@@ -1,7 +1,0 @@
-<% document_notes = document.mods.note.select { |x| x.label =~ /Preferred citation/i } %>
-<% fields = document_notes + document.mods.collection %>
-<% if fields.any? %>
-  <%= render SectionComponent.new(label: 'Preferred citation') do %>
-    <%= render ModsDefinitionListComponent.new(fields: fields) %>
-  <% end %>
-<% end %>
