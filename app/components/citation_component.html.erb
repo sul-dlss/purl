@@ -1,0 +1,10 @@
+<%= render SectionComponent.new(label: 'Preferred citation') do %>
+  <dl>
+  <% items.each do |item| %>
+    <dt class="visually-hidden"><%= item.label %></dt>
+    <%= item.values.each do |value| %>
+      <dd><%= value %></dd>
+    <% end %>
+  <% end %>
+  </dl>
+<% end %>

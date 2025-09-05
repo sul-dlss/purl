@@ -1,6 +1,6 @@
     <div class="record-sections col-lg-4">
       <%= render AccessComponent.new(version:) %>
-      <%= render 'purl/mods_citation', mods: %>
+      <%= render CitationComponent.new(version:) %>
       <%= render CollectionComponent.new(version:) %>
       <%= render CollectionItemsComponent.new(version:) if released_to_searchworks? %>
       <%= render VersionsComponent.new(purl: purl, version:) %>

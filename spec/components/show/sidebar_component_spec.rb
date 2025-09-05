@@ -27,4 +27,13 @@ RSpec.describe Show::SidebarComponent, type: :component do
       expect(page).to have_content 'User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or'
     end
   end
+
+  context 'with a preferred citation' do
+    let(:druid) { 'cg357zz0321' }
+
+    it 'displays the citation' do
+      expect(page).to have_content 'Circuit Rider Productions and  National Oceanic and Atmospheric Administration (2002) ' \
+                                   '10 Meter Contours: Russian River Basin, California. Circuit Rider Productions.'
+    end
+  end
 end
