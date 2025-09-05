@@ -73,14 +73,6 @@ RSpec.describe 'Metrics display', :js do
       end
     end
 
-    context 'when the object is an image' do
-      let(:druid) { 'cp088pb1682' }
-
-      it 'shows the number of downloads' do
-        expect(page).to have_css '#download-count', text: '1'
-      end
-    end
-
     # can't be downloaded
     context 'when the object is a web archive' do
       let(:druid) { 'bd802vw5233' }

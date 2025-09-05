@@ -3,8 +3,17 @@
 require 'rails_helper'
 
 RSpec.describe 'Displaying the PURL page' do
-  context 'with a book' do
+  before do
+    stub_request(:get, "https://sdr-metrics-api-prod.stanford.edu/#{druid}/metrics")
+      .to_return(status: 200, body:, headers: { 'Content-Type' => 'application/json' })
+    visit "/#{druid}"
+  end
+
+  let(:body) { '{"unique_views": 1}' }
+
+  context 'with a book', :js do
     let(:druid) { 'bb737zp0787' }
+    let(:base_url) { "http://#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}" }
 
     it 'displays the page' do
       visit "/#{druid}"
@@ -17,11 +26,12 @@ RSpec.describe 'Displaying the PURL page' do
       expect(page).to have_metadata_section 'Also listed in'
       expect(page).to have_content 'Vicar of Roost'
       expect(page).to have_link 'View in SearchWorks', href: 'https://searchworks.stanford.edu/view/9616533'
-      expect(page).to have_css 'link[rel=up][href="http://www.example.com/jt466yc7169"]', visible: :hidden
+      expect(page).to have_css "link[rel=up][href=\"#{base_url}/jt466yc7169\"]", visible: :hidden
+      expect(page).to have_css '#download-count', text: '1'
     end
   end
 
-  context 'with a map' do
+  context 'with a map', :js do
     let(:druid) { 'rp193xx6845' }
 
     it 'displays the page' do
@@ -35,7 +45,7 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'with an etd' do
+  context 'with a file type that is an etd', :js do
     let(:druid) { 'nd387jf5675' }
 
     it 'displays the page' do
@@ -52,7 +62,7 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'with a file type' do
+  context 'with a file type', :js do
     let(:druid) { 'gx074xz5520' }
 
     it 'displays the page' do
@@ -72,7 +82,7 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'with an item released to searchworks' do
+  context 'with an image that is released to searchworks' do
     let(:druid) { 'cp088pb1682' }
 
     it 'displays the page' do
@@ -89,6 +99,7 @@ RSpec.describe 'Displaying the PURL page' do
       expect(page).to have_content 'Bay Area video arcades : photographs by Ira Nowinski, 1981-1982'
       expect(page).to have_link 'View other items in this collection in SearchWorks', href: 'https://searchworks.stanford.edu/catalog?f[collection][]=a9685083'
       expect(page).to have_link 'View in SearchWorks', href: 'https://searchworks.stanford.edu/view/cp088pb1682'
+      expect(page).to have_css '#download-count', text: '1'
     end
   end
 
