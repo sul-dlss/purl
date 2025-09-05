@@ -198,7 +198,7 @@ RSpec.describe 'Displaying the PURL page' do
   end
 
   context 'with a dataset item' do
-    let(:druid) { 'rs276tc2764' }
+    let(:druid) { 'wm135gp2721' }
 
     it 'adds schema.org markup for Datasets' do
       visit "/#{druid}"
