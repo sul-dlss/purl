@@ -33,6 +33,8 @@
 
   twitter_card('summary_large_image') do |card|
     card.site Settings.twitter.site
+    card.title @version.display_title
+    card.image purl_url(@purl, format: :jpg)
   end
 end %>
 
