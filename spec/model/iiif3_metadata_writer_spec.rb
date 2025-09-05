@@ -14,11 +14,11 @@ RSpec.describe Iiif3MetadataWriter do
   let(:cocina_display) { CocinaDisplay::CocinaRecord.new({ 'identification' => { 'doi' => doi }, 'description' => cocina_descriptive }) }
 
   def field_value(field_name)
-    field(field_name)['value'][:en]
+    field(field_name)['value']['en']
   end
 
   def field(field_name)
-    metadata.find { |item| item['label'][:en] == [field_name] }
+    metadata.find { |item| item['label']['en'] == [field_name] }
   end
 
   describe '#write' do
