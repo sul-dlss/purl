@@ -36,4 +36,12 @@ RSpec.describe Show::SidebarComponent, type: :component do
                                    '10 Meter Contours: Russian River Basin, California. Circuit Rider Productions.'
     end
   end
+
+  context 'with contacts' do
+    let(:druid) { 'gx074xz5520' }
+
+    it 'links to the contact' do
+      expect(page).to have_link 'archivesref@stanford.edu'
+    end
+  end
 end
