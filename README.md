@@ -98,7 +98,7 @@ Then run tests to see if anything needs to be updated.  Commit the changes to th
 Deployment is handled automatically via Jenkins when a release is published to GitHub.
 
 ## Data
-Purl data is stored in a pair-tree structure starting at `Settings.document_cache_root`.  In each pair-tree is a file called `cocina.json` which is the public representation of the current version of the object.  There is also a `meta.json` file that holds information about where this object is released to.  The `meta.json` is not versionable data.  Additionally there is an XML file called `public` which has a representation of the object that was derived from `cocina.json`.
+Purl data is stored in a pair-tree structure starting at `/stacks`.  In each pair-tree is a file called `cocina.json` which is the public representation of the current version of the object.  There is also a `meta.json` file that holds information about where this object is released to.  The `meta.json` is not versionable data.  Additionally there is an XML file called `public` which has a representation of the object that was derived from `cocina.json`.
 
 ## Search engine indexing
 
