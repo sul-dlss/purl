@@ -18,7 +18,7 @@
 
 coverage
 config/honeybadger.yml
-/document_cache
+/stacks
 .byebug_history
 .ruby-gemset
 .ruby-version
@@ -39,4 +39,4 @@ db/development*
 
 public/sitemap*
 spec/examples.txt
-spec/fixtures/document_cache/**/versions/.lock
+spec/fixtures/stacks/**/versions/.lock

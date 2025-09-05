@@ -45,8 +45,8 @@ FIXTURES = [
 task update_metadata: :environment do
   FIXTURES.each do |druid|
     tree = Dor::Util.create_pair_tree(druid)
-    FileUtils.rm_f("spec/fixtures/document_cache/#{tree}")
-    dest = "spec/fixtures/document_cache/#{tree}/#{druid}"
+    FileUtils.rm_f("spec/fixtures/stacks/#{tree}")
+    dest = "spec/fixtures/stacks/#{tree}/#{druid}"
     src = "/stacks/#{tree}/#{druid}/versions"
 
     FileUtils.mkdir_p(dest)

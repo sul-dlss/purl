@@ -1,14 +1,14 @@
 purl_resource:
-  public_xml: "spec/fixtures/document_cache/%{druid_tree}/public"
-  cocina: "spec/fixtures/document_cache/%{druid_tree}/cocina.json"
-  meta: "spec/fixtures/document_cache/%{druid_tree}/meta.json"
+  public_xml: "spec/fixtures/stacks/%{druid_tree}/public"
+  cocina: "spec/fixtures/stacks/%{druid_tree}/cocina.json"
+  meta: "spec/fixtures/stacks/%{druid_tree}/meta.json"
   versioned:
-    public_xml: "spec/fixtures/document_cache/%{druid_tree}/%{druid}/versions/public.%{version_id}.xml"
-    cocina: "spec/fixtures/document_cache/%{druid_tree}/%{druid}/versions/cocina.%{version_id}.json"
-    meta: "spec/fixtures/document_cache/%{druid_tree}/%{druid}/versions/meta.json"
+    public_xml: "spec/fixtures/stacks/%{druid_tree}/%{druid}/versions/public.%{version_id}.xml"
+    cocina: "spec/fixtures/stacks/%{druid_tree}/%{druid}/versions/cocina.%{version_id}.json"
+    meta: "spec/fixtures/stacks/%{druid_tree}/%{druid}/versions/meta.json"
 
 stacks:
-  version_manifest_path: "spec/fixtures/document_cache/%{druid_tree}/%{druid}/versions/versions.json"
+  version_manifest_path: "spec/fixtures/stacks/%{druid_tree}/%{druid}/versions/versions.json"
 
 content_search:
   url: "http://example.com/content_search/%{druid}/search"
