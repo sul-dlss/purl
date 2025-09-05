@@ -29,10 +29,6 @@ class VersionedResourceRetriever < ResourceRetriever
     Settings.purl_resource.versioned.public_xml
   end
 
-  def meta_json_path
-    Settings.purl_resource.versioned.meta
-  end
-
   def cocina_path
     Settings.purl_resource.versioned.cocina
   end
