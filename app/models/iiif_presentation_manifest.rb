@@ -5,10 +5,10 @@ require 'iiif/presentation'
 class IiifPresentationManifest
   include ActiveModel::Model
 
-  delegate :druid, :display_title, :book?, :content_metadata, :public_xml_document, :cocina, :updated_at,
-           :containing_purl_collections, :cocina_file_for_resource, :collection?, to: :purl_version
-  delegate :resources, to: :content_metadata
+  delegate :druid, :display_title, :book?, :structural_metadata, :public_xml_document, :cocina, :updated_at, :containing_purl_collections,
+           :collection?, to: :purl_version
   delegate :url_for, to: :controller
+  delegate :file_sets, :local_files, to: :structural_metadata
   alias id druid
 
   attr_reader :purl_version, :controller, :iiif_namespace
@@ -24,57 +24,43 @@ class IiifPresentationManifest
     @controller = controller
   end
 
-  def page_images
-    @page_images ||= resources.select do |file|
-      image_file?(file) && %w[image page].include?(file.type) && deliverable_file?(file)
+  # @return [Array<StructuralMetadata::FileSet>] or []
+  def page_image_filesets
+    @page_image_filesets ||= file_sets.select(&:page_image?)
+  end
+
+  # @return [Array<StructuralMetadata::File>] or []
+  def page_image_files
+    page_image_filesets.flat_map(&:files).select { |file| file.image_file? && deliverable_file?(file) }
+  end
+
+  # @return [Array<StructuralMetadata::FileSet>] or []
+  def object_filesets
+    @object_filesets ||= file_sets.select do |fs|
+      object?(fs) && downloadable_file?(fs.primary)
     end
   end
 
-  def object_files
-    @object_files ||= resources.select do |file|
-      object_file?(file) && downloadable_file?(file)
-    end
-  end
-
+  # @return [Array<StructuralMetadata::File>] or []
   def ocr_files
-    @ocr_files ||= resources.select do |file|
-      next if file.druid != druid # Skip external files
-
-      download_access = cocina_file_for_resource(file).access.download
+    @ocr_files ||= local_files.select do |file|
+      download_access = file.access.download
       file.role == 'transcription' && download_access == 'world'
     end
   end
 
-  def grouped_resource_by_id(id)
-    content_metadata.grouped_resources.find { |grouped_resource| grouped_resource.id == id }
+  def object?(fileset)
+    fileset.type == 'https://cocina.sul.stanford.edu/models/resources/object'
   end
 
-  def object_file?(file)
-    file.type == 'object'
+  # @param [StructuralMetadata::File]
+  def deliverable_file?(file)
+    %w[world stanford location-based].include?(file.access.view) || thumbnail_image == file
   end
 
-  def image_file?(file)
-    file.mimetype == 'image/jp2' && file.height.positive? && file.width.positive?
-  end
-
-  # @param [ResourceFile] resource
-  def deliverable_file?(resource)
-    target_file = cocina_file_for_resource(resource)
-    return false unless target_file
-
-    %w[world stanford location-based].include?(target_file.access.view) || thumbnail?(resource)
-  end
-
-  # @param [ResourceFile]
-  def downloadable_file?(resource)
-    target_file = cocina_file_for_resource(resource)
-    return false unless target_file
-
-    %w[world stanford].include? target_file.access.download
-  end
-
-  def ocr_text?
-    ocr_files.present?
+  # @param [StructuralMetadata::File]
+  def downloadable_file?(file)
+    %w[world stanford].include? file.access.download
   end
 
   def description_or_note
@@ -88,8 +74,7 @@ class IiifPresentationManifest
     end
   end
 
-  # Bypass this method if there are no image resources in contentMetadata
-  # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+  # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
   def body
     manifest_data = {
       '@id' => manifest_url,
@@ -128,37 +113,49 @@ class IiifPresentationManifest
 
     manifest.thumbnail = thumbnail_resource
 
-    renderings = object_files.map do |resource|
-      rendering_resource(resource)
+    renderings = object_filesets.map do |fs|
+      rendering_file(fs.primary, label: "Download #{fs.label}")
     end
 
     sequence['rendering'] = renderings if renderings.present?
 
-    # for each resource image, create a canvas
-    page_images.each do |resource|
-      sequence.canvases << canvas_for_resource(resource)
+    # For each local file image, create a canvas
+    page_image_files.each do |file|
+      sequence.canvases << canvas_for_file(file)
+    end
+
+    # For each valid virtual object image, create a canvas for its thumbnail
+    structural_metadata.members&.each do |member_druid|
+      purl_version = PurlResource.find(member_druid.delete_prefix('druid:')).version(:head)
+      # We are using thumbnail here to get the first image in the object
+      thumbnail_file = purl_version.thumbnail
+      # Overwrite default label for virtual objects
+      thumbnail_file.fileset_label = purl_version.cocina['label']
+      sequence.canvases << canvas_for_file(thumbnail_file)
+    rescue ResourceRetriever::ResourceNotFound
+      Honeybadger.notify('Error occurred retrieving virtual object', context: { druid: member_druid })
     end
 
     manifest.sequences << sequence
     manifest
   end
 
+  # @return [IIIF::Presentation::Canvas] or nil
   def canvas(resource_id:)
-    resource = page_images.find { |image| image.id == resource_id }
-
-    canvas_for_resource(resource) if resource
+    fileset = page_image_filesets.find { |fileset| fileset.cocina_id == resource_id }
+    canvas_for_file(fileset.image_file) if fileset
   end
 
   ##
   # Creates an annotationList
+  # @return [Array<IIIF::Presentation::AnnotationList>] or nil
   def annotation_list(resource_id:)
-    grouped_resource = grouped_resource_by_id(resource_id)
-    return unless grouped_resource
+    return unless local_files.any?
 
     anno_list = IIIF::Presentation::AnnotationList.new
     anno_list['@id'] = annotation_list_url(resource_id:)
     anno_list.resources = []
-    grouped_resource.files.select { |file| file.role == 'annotations' && file.mimetype == 'application/json' }.each do |file|
+    local_files.select { |file| file.role == 'annotations' && file.mimetype == 'application/json' }.each do |file|
       anno_list.resources << JSON.parse(
         Faraday.get(
           stacks_file_url(druid, file.filename)
@@ -169,74 +166,74 @@ class IiifPresentationManifest
   end
 
   def annotation(annotation_id:)
-    resource = page_images.find { |image| image.id == annotation_id }
+    fileset = page_image_filesets.find { |fileset| fileset.cocina_id == annotation_id }
 
-    annotation_for_resource(resource) if resource
+    annotation_for_file(fileset.image_file) if fileset
   end
 
-  def canvas_for_resource(resource)
+  def canvas_for_file(file)
     canv = IIIF::Presentation::Canvas.new
-    canv['@id'] = canvas_url(resource_id: resource.id)
-    canv.label = resource.label
+    canv['@id'] = canvas_url(resource_id: file.fileset_id)
+    canv.label = file.fileset_label
     canv.label = 'image' if canv.label.blank?
-    canv.height = resource.height
-    canv.width = resource.width
-    if downloadable_file?(resource)
+    canv.height = file.height
+    canv.width = file.width
+    if downloadable_file?(file)
       canv['rendering'] = [
-        rendering_resource(
-          resource,
-          label: "Original source file (#{number_to_human_size(resource.size)})"
+        rendering_file(
+          file,
+          label: "Original source file (#{number_to_human_size(file.size)})"
         )
       ]
     end
-    ocr_file = ocr_files.select { |f| f.id == resource.id }
-    canv['seeAlso'] = ocr_file.map do |f|
-      # Profile for Alto resources. We don't yet really have HOCR transcriptions published as role="transcription"
-      rendering_resource(f, label: 'OCR text', profile: 'http://www.loc.gov/standards/alto/ns-v2#')
+
+    ocr_file = ocr_files.select do |f|
+      f.fileset_id == file.fileset_id
     end
 
-    other_content = other_content_for_resource(resource)
+    canv['seeAlso'] = ocr_file.map do |f|
+      # Profile for Alto resources. We don't yet really have HOCR transcriptions published as role="transcription"
+      rendering_file(f, label: 'OCR text', profile: 'http://www.loc.gov/standards/alto/ns-v2#')
+    end
+
+    other_content = other_content_for_file(file)
     canv.otherContent = other_content if other_content.present?
 
-    anno = annotation_for_resource(resource)
+    anno = annotation_for_file(file)
     anno['on'] = canv['@id']
     canv.images << anno
     canv
   end
 
   # Setup annotationLists for files with role="annotations"
-  def other_content_for_resource(resource)
-    grouped_resource = grouped_resource_by_id(resource.id)
-    return unless grouped_resource
-
+  def other_content_for_file(file)
     other_content = []
 
-    if grouped_resource.files.any? { |file| file.role == 'annotations' && file.mimetype == 'application/json' }
+    if local_files.any? { |file| file.role == 'annotations' && file.mimetype == 'application/json' }
       anno_list = IIIF::Presentation::AnnotationList.new
-      anno_list['@id'] = annotation_list_url(resource_id: resource.id)
+      anno_list['@id'] = annotation_list_url(resource_id: file.fileset_id)
       other_content << anno_list
     end
 
     other_content
   end
 
-  # @param [ResourceFile] resource
-  def annotation_for_resource(resource)
-    url = stacks_iiif_base_url(resource.druid, resource.filename)
+  # @param [StructuralMetadata::File]
+  def annotation_for_file(file)
+    url = stacks_iiif_base_url(file.druid, file.filename)
 
     anno = IIIF::Presentation::Annotation.new
-    anno['@id'] = annotation_url(resource_id: resource.id)
+    anno['@id'] = annotation_url(resource_id: file.id)
 
     img_res = IIIF::Presentation::ImageResource.new
     img_res['@id'] = "#{url}/full/full/0/default.jpg"
     img_res.format = 'image/jpeg'
-    img_res.height = resource.height
-    img_res.width = resource.width
+    img_res.height = file.height
+    img_res.width = file.width
 
     img_res.service = iiif_service(url)
 
-    target_file = cocina_file_for_resource(resource)
-    img_res.service['service'] = case target_file.access.view
+    img_res.service['service'] = case file.access.view
                                  when 'stanford'
                                    img_res.service['service'] = [iiif_stacks_login_service]
                                  when 'location-based'
@@ -259,7 +256,7 @@ class IiifPresentationManifest
   end
 
   def content_search_service
-    return nil unless Settings.content_search.url && ocr_text?
+    return nil unless Settings.content_search.url && ocr_files.present?
 
     {
       '@context' => 'http://iiif.io/api/search/1/context.json',
@@ -286,6 +283,7 @@ class IiifPresentationManifest
   end
 
   # rubocop:disable Metrics/AbcSize
+  # @return [IIIF::Presentation::ImageResource] or nil
   def thumbnail_resource
     return unless thumbnail_image
 
@@ -303,13 +301,13 @@ class IiifPresentationManifest
 
     thumb
   end
-  # rubocop:enable Metrics/AbcSize
+  # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/AbcSize
 
-  def rendering_resource(resource, label: "Download #{resource.label}", profile: nil)
+  def rendering_file(file, label: "Download #{file.label}", profile: nil)
     {
-      '@id' => stacks_file_url(resource.druid, resource.filename),
+      '@id' => stacks_file_url(file.druid, file.filename),
       'label' => label,
-      'format' => resource.mimetype,
+      'format' => file.mimetype,
       'profile' => profile
     }.compact
   end
@@ -317,10 +315,6 @@ class IiifPresentationManifest
   # @return [StructuralMetadata::File]
   def thumbnail_image
     @thumbnail_image ||= purl_version.thumbnail
-  end
-
-  def thumbnail?(file)
-    purl_version.public_xml.thumb == "#{file.druid}/#{file.filename}"
   end
 
   def stacks_iiif_base_url(druid, filename)

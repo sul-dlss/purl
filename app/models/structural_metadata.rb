@@ -20,8 +20,16 @@ class StructuralMetadata
     @resources ||= Array(json['contains']).map { FileSet.new(druid:, json: it) }
   end
 
+  def file_sets
+    @file_sets ||= Array(json['contains']).map { FileSet.new(json: it, druid:) }
+  end
+
+  def local_files
+    @local_files ||= file_sets.flat_map(&:files)
+  end
+
   def find_file_by_filename(filename)
-    resources.flat_map(&:files).find { |file| file.filename == filename }
+    file_sets.flat_map(&:files).find { |file| file.filename == filename }
   end
 
   def viewing_direction

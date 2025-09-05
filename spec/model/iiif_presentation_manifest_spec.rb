@@ -144,6 +144,7 @@ RSpec.describe IiifPresentationManifest do
 
       it 'publishes a rendering section' do
         rendering = json['sequences'].first['rendering']
+        expect(rendering.length).to be 1
         expect(rendering).to include(
           '@id' => 'https://stacks.stanford.edu/file/zf119tw4418/zf119tw4418_31_0000.pdf',
           'label' => 'Download Full PDF',
