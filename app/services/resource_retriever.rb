@@ -39,7 +39,7 @@ class ResourceRetriever
 
   def version_manifest_resource
     @version_manifest_resource ||= cache_resource(:version_manifest) do
-      fetch_resource(:version_manifest, Settings.stacks.version_manifest_path)
+      fetch_resource(Settings.stacks.version_manifest_path)
     end
   end
 
@@ -93,25 +93,25 @@ class ResourceRetriever
 
   def public_xml_resource
     @public_xml_resource ||= cache_resource(:public_xml) do
-      fetch_resource(:public_xml, public_xml_path)
+      fetch_resource(public_xml_path)
     end
   end
 
   def meta_json_resource
     @meta_json_resource ||= cache_resource(:meta) do
-      resource = fetch_resource(:meta, meta_json_path)
+      resource = fetch_resource(meta_json_path)
       if resource.success?
         resource
       else
         logger.error("Unable to fetch versioned meta JSON for #{druid}. Falling back to default meta JSON.")
-        fetch_resource(:meta, Settings.purl_resource.meta)
+        fetch_resource(Settings.purl_resource.meta)
       end
     end
   end
 
   def cocina_resource
     @cocina_resource ||= cache_resource(:cocina) do
-      fetch_resource(:cocina, cocina_path)
+      fetch_resource(cocina_path)
     end
   end
 
@@ -132,16 +132,7 @@ class ResourceRetriever
     Rails.logger
   end
 
-  def fetch_resource(key, value)
-    url_or_path = value % attributes
-
-    benchmark "Fetching #{druid} #{key} at #{url_or_path}" do
-      case url_or_path
-      when /^http/
-        Faraday.get(url_or_path)
-      else
-        DocumentCacheResource.new(url_or_path)
-      end
-    end
+  def fetch_resource(value)
+    DocumentCacheResource.new(value % attributes)
   end
 end
