@@ -26,7 +26,7 @@ class PurlResource
              head: head_version == version_id.to_i,
              updated_at: version_attrs.fetch('date', nil),
              state: version_attrs.fetch('state'),
-             resource_retriever: versioned_layout? ? VersionedResourceRetriever.new(druid:, version_id:) : resource_retriever)
+             resource_retriever: VersionedResourceRetriever.new(druid:, version_id:))
     end
   end
 
@@ -41,11 +41,7 @@ class PurlResource
   end
 
   # The meta.json contains the properties this purl is released to.
-  delegate :meta_json_body, :version_manifest_body, :version_manifest_resource, to: :resource_retriever
-
-  def versioned_layout?
-    version_manifest_resource.success?
-  end
+  delegate :meta_json_body, :version_manifest_body, to: :resource_retriever
 
   def resource_retriever
     @resource_retriever ||= ResourceRetriever.new(druid:)

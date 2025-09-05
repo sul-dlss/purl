@@ -44,21 +44,9 @@ Or you can do this manually:
 3. Create a `config/settings.local.yml` file (if you don't have one already) and add the following:
 
 ```
-# Comment out for lookup to production PURL
-purl_resource:
-  public_xml: "stacks/%{druid_tree}/public"
-  cocina: "stacks/%{druid_tree}/cocina.json"
-  meta: "stacks/%{druid_tree}/meta.json"
-  versioned:
-    public_xml: "stacks/%{druid_tree}/%{druid}/versions/public.%{version_id}.xml"
-    cocina: "stacks/%{druid_tree}/%{druid}/versions/cocina.%{version_id}.json"
-    meta: "stacks/%{druid_tree}/%{druid}/versions/meta.json"
-
 stacks:
-  version_manifest_path: "stacks/%{druid_tree}/%{druid}/versions/versions.json"
+  root: stacks
 ```
-
-If you leave this config uncommented, the local app will find content in the local stacks directory.  If you comment it out, it will revert to the default behavior (look up content on PURL).
 
 ### Debugging
 
@@ -98,7 +86,7 @@ Then run tests to see if anything needs to be updated.  Commit the changes to th
 Deployment is handled automatically via Jenkins when a release is published to GitHub.
 
 ## Data
-Purl data is stored in a pair-tree structure starting at `/stacks`.  In each pair-tree is a file called `cocina.json` which is the public representation of the current version of the object.  There is also a `meta.json` file that holds information about where this object is released to.  The `meta.json` is not versionable data.  Additionally there is an XML file called `public` which has a representation of the object that was derived from `cocina.json`.
+Data is stored in a pair-tree structure starting at `/stacks`.  In each pair-tree is a file called `cocina.json` which is the public representation of the current version of the object.  There is also a `meta.json` file that holds information about where this object is released to.  The `meta.json` is not versionable data.  Additionally there is an XML file called `public` which has a representation of the object that was derived from `cocina.json`.
 
 ## Search engine indexing
 
