@@ -88,7 +88,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def annotation(annotation_id:)
     fileset = page_image_filesets.find { |fileset| fileset.cocina_id == annotation_id }
-    annotation_for_resource(fileset.primary) if fileset
+    annotation_for_file(fileset.primary) if fileset
   end
 
   def build_canvases(manifest)
@@ -215,7 +215,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     annotation_page['id'] = "#{annotation_page_url(resource_id: fileset.primary.id)}/supplement"
 
     fileset.supplementing_resources.each do |supplementing_resource|
-      anno = annotation_for_resource(supplementing_resource)
+      anno = annotation_for_file(supplementing_resource)
       anno.id = annotation_url(resource_id: supplementing_resource.filename)
       anno.motivation = 'supplementing'
       annotation_page.items << anno
@@ -236,22 +236,22 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     end
   end
 
-  def annotation_page_for_file(resource)
+  def annotation_page_for_file(file)
     anno_page = IIIF::V3::Presentation::AnnotationPage.new
-    anno_page['id'] = annotation_page_url(resource_id: resource.id)
-    anno_page.items << annotation_for_resource(resource)
+    anno_page['id'] = annotation_page_url(resource_id: file.fileset_id)
+    anno_page.items << annotation_for_file(file)
     anno_page
   end
 
-  def annotation_for_resource(resource)
+  def annotation_for_file(file)
     anno = IIIF::V3::Presentation::Annotation.new
-    anno['id'] = annotation_url(resource_id: resource.id)
-    anno['target'] = canvas_url(resource_id: resource.id)
+    anno['id'] = annotation_url(resource_id: file.fileset_id)
+    anno['target'] = canvas_url(resource_id: file.fileset_id)
 
-    anno.body = if resource.image_file?
-                  image_resource(resource)
+    anno.body = if file.image_file?
+                  image_resource(file)
                 else
-                  binary_resource(resource)
+                  binary_resource(file)
                 end
 
     anno
