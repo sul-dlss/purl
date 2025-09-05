@@ -1,0 +1,10 @@
+<%= render SectionComponent.new(label: 'Abstract/Contents') do %>
+  <dl>
+  <% items.each do |item| %>
+    <dt><%= item.label %></dt>
+    <%= item.values.each do |value| %>
+      <dd><%= value %></dd>
+    <% end %>
+  <% end %>
+  </dl>
+<% end %>

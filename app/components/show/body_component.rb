@@ -2,11 +2,13 @@
 
 module Show
   class BodyComponent < ViewComponent::Base
-    def initialize(mods:)
-      @mods = mods
+    def initialize(version:)
+      @version = version
       super()
     end
 
-    attr_accessor :mods
+    attr_accessor :version
+
+    delegate :mods, :cocina, to: :version
   end
 end

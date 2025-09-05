@@ -9,5 +9,5 @@ class ShowComponent < ViewComponent::Base
 
   attr_reader :version, :purl
 
-  delegate :display_title, :withdrawn?, :embeddable?, :mods, to: :version
+  delegate :display_title, :withdrawn?, :embeddable?, to: :version
 end
