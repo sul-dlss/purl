@@ -56,7 +56,6 @@ RSpec.describe Iiif3PresentationManifest do
         expect(json['renderings']).to be_nil
         canvas = json['items'].first
         expect(canvas['items'].first['items'].length).to eq 1
-        expect(canvas['items'].first['items'].length).to eq 1
         expect(canvas['rendering']).to be_nil
 
         image = canvas['items'].first['items'].first
