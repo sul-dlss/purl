@@ -27,4 +27,12 @@ RSpec.describe Show::SidebarComponent, type: :component do
       expect(page).to have_content 'User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or'
     end
   end
+
+  context 'with contacts' do
+    let(:druid) { 'gx074xz5520' }
+
+    it 'links to the contact' do
+      expect(page).to have_link 'archivesref@stanford.edu'
+    end
+  end
 end

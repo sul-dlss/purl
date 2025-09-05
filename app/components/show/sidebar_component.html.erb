@@ -4,7 +4,7 @@
       <%= render CollectionComponent.new(version:) %>
       <%= render CollectionItemsComponent.new(version:) if released_to_searchworks? %>
       <%= render VersionsComponent.new(purl:, version:) %>
-      <%= render "purl/mods_contact", mods: %>
+      <%= render ContactComponent.new(version:) %>
       <%= render FindItComponent.new(releases:, version:) %>
 
       <% if metrics? %>
