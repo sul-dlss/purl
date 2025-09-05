@@ -236,22 +236,22 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     end
   end
 
-  def annotation_page_for_file(resource)
+  def annotation_page_for_file(file)
     anno_page = IIIF::V3::Presentation::AnnotationPage.new
-    anno_page['id'] = annotation_page_url(resource_id: resource.id)
-    anno_page.items << annotation_for_resource(resource)
+    anno_page['id'] = annotation_page_url(resource_id: file.fileset_id)
+    anno_page.items << annotation_for_resource(file)
     anno_page
   end
 
-  def annotation_for_resource(resource)
+  def annotation_for_resource(file)
     anno = IIIF::V3::Presentation::Annotation.new
-    anno['id'] = annotation_url(resource_id: resource.id)
-    anno['target'] = canvas_url(resource_id: resource.id)
+    anno['id'] = annotation_url(resource_id: file.fileset_id)
+    anno['target'] = canvas_url(resource_id: file.fileset_id)
 
-    anno.body = if resource.image_file?
-                  image_resource(resource)
+    anno.body = if file.image_file?
+                  image_resource(file)
                 else
-                  binary_resource(resource)
+                  binary_resource(file)
                 end
 
     anno
