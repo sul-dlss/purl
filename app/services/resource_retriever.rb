@@ -27,16 +27,6 @@ class ResourceRetriever
     version_manifest_resource.body
   end
 
-  def updated_at
-    if public_xml_resource.respond_to? :updated_at
-      public_xml_resource.updated_at
-    elsif public_xml_resource.respond_to?(:header) && public_xml_resource.header[:last_modified].present?
-      last_modified_header_value
-    else
-      Time.zone.now
-    end
-  end
-
   def version_manifest_resource
     @version_manifest_resource ||= cache_resource(:version_manifest) do
       fetch_resource(:version_manifest, Settings.stacks.version_manifest_path)

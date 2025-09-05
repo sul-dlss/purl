@@ -12,8 +12,4 @@ class DocumentCacheResource
   def body
     File.read(@path)
   end
-
-  def updated_at
-    File.mtime(@path).utc
-  end
 end
