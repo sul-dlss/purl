@@ -64,17 +64,4 @@ class ResourceRetriever
   def version_manifest_resource
     @version_manifest_resource ||= resource_cache.get(version_manifest_path, cache_key(:version_manifest))
   end
-
-  def last_modified_header_value
-    t = public_xml_resource.header[:last_modified]
-
-    if t.is_a? String
-      Time.zone.parse(t)
-    else
-      t
-    end
-  rescue ArgumentError => e
-    logger.info("Unable to parse last modified time: #{e}")
-    Time.zone.now
-  end
 end
