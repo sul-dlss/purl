@@ -6,20 +6,24 @@ class VersionedResourceRetriever < ResourceRetriever
     @version_id = version_id
   end
 
+  def public_xml_body
+    @public_xml_body ||= public_xml_resource.read
+  end
+
+  def cocina_body
+    @cocina_body ||= cocina_resource.read
+  end
+
   private
 
   attr_reader :version_id
 
-  def cache_key(key)
-    [cache_prefix, version_id, key].join('/')
-  end
-
   def public_xml_resource
-    @public_xml_resource ||= resource_cache.get(public_xml_path, cache_key(:public_xml))
+    @public_xml_resource ||= File.open(public_xml_path)
   end
 
   def cocina_resource
-    @cocina_resource ||= resource_cache.get(cocina_path, cache_key(:cocina))
+    @cocina_resource ||= File.open(cocina_path)
   end
 
   def public_xml_path
