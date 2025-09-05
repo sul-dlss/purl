@@ -32,7 +32,6 @@ FIXTURES = [
   'ss099gb5528', # a collection not released to searchworks with a member (cd027gx5097)
   'tb420df0840', # image, location restricted
   'wm135gp2721', # file, world access, dataset, has an ORCiD and DOI
-  'wy534zh7137', # the rosette jpg
   'yb533nc1884', # collection with member (gx074xz5520)
   'yr183sf1341', # book, world access, without OCR, right-to-left
   'yy816tv6021', # media, location access
