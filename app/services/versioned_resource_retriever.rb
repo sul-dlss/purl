@@ -13,12 +13,7 @@ class VersionedResourceRetriever < ResourceRetriever
   attr_reader :version_id
 
   def attributes
-    {
-      druid:,
-      druid_tree:,
-      root_path:,
-      version_id:
-    }
+    super.merge(version_id:)
   end
 
   def cache_key(key)

@@ -40,13 +40,8 @@ class ResourceRetriever
   def attributes
     {
       druid:,
-      druid_tree:,
-      root_path:
+      druid_tree:
     }
-  end
-
-  def root_path
-    Settings.document_cache_root
   end
 
   def druid_tree

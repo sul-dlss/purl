@@ -9,8 +9,6 @@ purl_fetcher:
 content_search:
   url:
 
-document_cache_root: "<%= File.join(Rails.root, 'document_cache') %>"
-
 resource_cache:
   enabled: true
   lifetime: <%= 1.hour %>

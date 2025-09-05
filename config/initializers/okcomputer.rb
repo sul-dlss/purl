@@ -12,8 +12,7 @@ OkComputer::Registry.deregister "database" # don't check (unused) ActiveRecord d
 #  individual checks also avail at /status/<name-of-check>
 OkComputer::Registry.register 'ruby_version', OkComputer::RubyVersionCheck.new
 
-OkComputer::Registry.register 'document_cache_root',
-  OkComputer::DirectoryCheck.new(Settings.document_cache_root)
+OkComputer::Registry.register 'stacks_fs', OkComputer::DirectoryCheck.new('/stacks')
 
 # NOTE:
 # Settings.purl_resource.public_xml, Settings.purl_resource.mods, and Settings.purl_resource.iiif_manifest
