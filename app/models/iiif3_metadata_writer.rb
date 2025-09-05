@@ -160,7 +160,7 @@ class Iiif3MetadataWriter
   end
 
   def iiif_key_value(label, values)
-    { 'label' => { en: [label] }, 'value' => { en: values.compact_blank } }
+    { 'label' => { 'en' => [label] }, 'value' => { 'en' => values.compact_blank } }
   end
 
   def date_structured_values(field)

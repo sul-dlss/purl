@@ -23,9 +23,9 @@ RSpec.describe Iiif3PresentationManifest do
 
       it 'has correct data' do
         expect(json['@context']).to include 'http://www.w3.org/ns/anno.jsonld', 'http://iiif.io/api/presentation/3/context.json'
-        expect(json['label'][:en].first).to include 'NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES' # ...
-        expect(json['summary'][:en].first).to eq 'Tom.1. No.9. (top right).'
-        expect(json['requiredStatement']['value'][:en].first).to start_with 'This work has been identified as being free of known restrictions'
+        expect(json['label']['en'].first).to include 'NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES' # ...
+        expect(json['summary']['en'].first).to eq 'Tom.1. No.9. (top right).'
+        expect(json['requiredStatement']['value']['en'].first).to start_with 'This work has been identified as being free of known restrictions'
         expect(json['seeAlso'].first['id']).to eq 'http://test.host/bb157hs6068.mods'
         expect(json['thumbnail']).to be_an Array
         expect(json['thumbnail'].size).to eq 1
@@ -104,11 +104,11 @@ RSpec.describe Iiif3PresentationManifest do
         canvas = json['items'].first
         expect(canvas['items'].length).to eq 1
         expect(canvas['items'].first['items'].length).to eq 1
-        expect(canvas['label'][:en].first).to eq 'Image 1'
+        expect(canvas['label']['en'].first).to eq 'Image 1'
         expect(canvas['rendering'].length).to eq 3
-        expect(canvas['rendering'].first['label'][:en]).to eq ['Original source file (1.1 MB)']
+        expect(canvas['rendering'].first['label']['en']).to eq ['Original source file (1.1 MB)']
         expect(canvas['rendering'].first['id']).to end_with '/file/zf119tw4418/zf119tw4418_00_0001.jp2'
-        expect(canvas['rendering'].last['label'][:en]).to eq ['zf119tw4418_06_0001.pdf']
+        expect(canvas['rendering'].last['label']['en']).to eq ['zf119tw4418_06_0001.pdf']
         expect(canvas['rendering'].last['id']).to end_with '/file/zf119tw4418/zf119tw4418_06_0001.pdf'
 
         image = canvas['items'].first['items'].first
@@ -119,7 +119,7 @@ RSpec.describe Iiif3PresentationManifest do
         expect(json['items'].length).to eq 57
         expect(json['metadata'].size).to eq 15
         expect(json['metadata'].flat_map do |elem|
-          elem['label'][:en]
+          elem['label']['en']
         end).to eq ['Available Online', 'Title', 'Contributor', 'Type', 'Language', 'Statement of responsibility', 'Date/sequential designation', 'Description',
                     'Additional physical form', 'System details', 'Subject', 'Date', 'Identifier', 'Publisher', 'PublishDate']
       end
@@ -166,13 +166,13 @@ RSpec.describe Iiif3PresentationManifest do
         let(:druid) { 'cg767mn6478' }
 
         it 'generates a correct manifest' do
-          expect(json['label'][:en].first).to start_with '(Covers to) Carey\'s American Atlas'
+          expect(json['label']['en'].first).to start_with '(Covers to) Carey\'s American Atlas'
           expect(json['items'].length).to eq 1
 
           canvas = json['items'].first
           expect(canvas['items'].length).to eq 1
           expect(canvas['items'].first['items'].length).to eq 1
-          expect(canvas['label'][:en].first).to eq 'Image 1'
+          expect(canvas['label']['en'].first).to eq 'Image 1'
 
           image = canvas['items'].first['items'].first
           expect(image['body']['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/full/0/default.jpg'
@@ -185,13 +185,13 @@ RSpec.describe Iiif3PresentationManifest do
         let(:druid) { 'jw923xn5254' }
 
         it 'generates a correct manifest' do
-          expect(json['label'][:en].first).to start_with '(Title Page to) Carey\'s American Atlas'
+          expect(json['label']['en'].first).to start_with '(Title Page to) Carey\'s American Atlas'
           expect(json['items'].length).to eq 1
 
           canvas = json['items'].first
           expect(canvas['items'].length).to eq 1
           expect(canvas['items'].first['items'].length).to eq 1
-          expect(canvas['label'][:en].first).to eq 'Image 1'
+          expect(canvas['label']['en'].first).to eq 'Image 1'
 
           image = canvas['items'].first['items'].first
           expect(image['body']['id']).to end_with '/image/iiif/jw923xn5254%2F2542B/full/full/0/default.jpg'
@@ -204,14 +204,14 @@ RSpec.describe Iiif3PresentationManifest do
         let(:druid) { 'hj097bm8879' }
 
         it 'generates a correct manifest' do
-          expect(json['label'][:en].first).to start_with 'Carey\'s American Atlas'
+          expect(json['label']['en'].first).to start_with 'Carey\'s American Atlas'
           expect(json['thumbnail']).to be_an Array
           expect(json['thumbnail'].size).to eq 1
           expect(json['thumbnail'].first['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/!400,400/0/default.jpg' # first child
           expect(json['items'].length).to eq 2 # We only have two of the child items (cg767mn6478 & jw923xn5254) in the test data
 
           canvas = json['items'].first
-          expect(canvas['label'][:en].first).to start_with "(Covers to) Carey's American Atlas:"
+          expect(canvas['label']['en'].first).to start_with "(Covers to) Carey's American Atlas:"
 
           expect(canvas['items'].length).to eq 1
           expect(canvas['items'].first['items'].length).to eq 1
@@ -221,7 +221,7 @@ RSpec.describe Iiif3PresentationManifest do
           expect(image['body']['width']).to eq 6475
 
           canvas = json['items'].second
-          expect(canvas['label'][:en].first).to start_with "(Title Page to) Carey's American Atlas:"
+          expect(canvas['label']['en'].first).to start_with "(Title Page to) Carey's American Atlas:"
 
           expect(canvas['items'].length).to eq 1
           expect(canvas['items'].first['items'].length).to eq 1
@@ -238,13 +238,13 @@ RSpec.describe Iiif3PresentationManifest do
         let(:druid) { 'wm135gp2721' }
 
         it 'generates a correct manifest' do
-          expect(json['label'][:en].first).to eq 'A Newly Digitised Ice-penetrating Radar Dataset Acquired over the Greenland Ice Sheet in 1971-1979'
+          expect(json['label']['en'].first).to eq 'A Newly Digitised Ice-penetrating Radar Dataset Acquired over the Greenland Ice Sheet in 1971-1979'
           expect(json['items'].length).to eq 1
 
           canvas = json['items'].first
 
           expect(canvas['id']).to eq 'http://test.host/wm135gp2721/iiif/canvas/cocina-fileSet-wm135gp2721-27313eb4-fb71-423d-9a82-05964f68d39f'
-          expect(canvas['label'][:en]).to eq ['image']
+          expect(canvas['label']['en']).to eq ['image']
           expect(canvas['type']).to eq 'Canvas'
         end
       end
@@ -253,13 +253,13 @@ RSpec.describe Iiif3PresentationManifest do
         let(:druid) { 'bb253gh8060' }
 
         it 'generates a manifest with probe service' do
-          expect(json['label'][:en].first).to eq 'Agenda'
+          expect(json['label']['en'].first).to eq 'Agenda'
           expect(json['items'].length).to eq 1
 
           canvas = json['items'].first
 
           expect(canvas['id']).to eq 'http://test.host/bb253gh8060/iiif/canvas/cocina-fileSet-bb253gh8060-bb253gh8060_1'
-          expect(canvas['label'][:en]).to eq ['File 1']
+          expect(canvas['label']['en']).to eq ['File 1']
           expect(canvas['type']).to eq 'Canvas'
 
           expect(canvas['items'].length).to eq 1
@@ -286,7 +286,7 @@ RSpec.describe Iiif3PresentationManifest do
       let(:druid) { 'bh502xm3351' }
 
       it 'generates a manifest that includes the login service for the restricted file' do
-        expect(json['label'][:en].first).to eq 'The  Catgut Acoustical Society newsletter, Number 20, 1973-11-01'
+        expect(json['label']['en'].first).to eq 'The  Catgut Acoustical Society newsletter, Number 20, 1973-11-01'
         expect(json['items'].length).to eq 1
 
         canvas = json['items'].first
@@ -313,10 +313,10 @@ RSpec.describe Iiif3PresentationManifest do
       let(:druid) { 'cg357zz0321' }
 
       it 'only generates metadata' do
-        expect(json['label'][:en].first).to eq '10 Meter Contours: Russian River Basin, California'
+        expect(json['label']['en'].first).to eq '10 Meter Contours: Russian River Basin, California'
         expect(json['metadata'].size).to eq 18
         expect(json['metadata'].flat_map do |elem|
-          elem['label'][:en]
+          elem['label']['en']
         end).to eq ['Available Online', 'Title', 'Creator', 'Contributor', 'Type', 'Format', 'Language', 'Abstract', 'Purpose', 'Preferred citation',
                     'Supplemental information', 'WGS84 Cartographics', 'Subject', 'Coverage', 'Date', 'Identifier', 'Publisher', 'PublishDate']
       end
@@ -326,7 +326,7 @@ RSpec.describe Iiif3PresentationManifest do
       let(:druid) { 'bg387kw8222' }
 
       it 'only generates a single 3d resource on the canvas' do
-        expect(json['label'][:en].first).to start_with 'Department of Anthropology Bone Collection'
+        expect(json['label']['en'].first).to start_with 'Department of Anthropology Bone Collection'
         expect(json['items'].length).to eq 1
 
         canvas = json['items'].first
@@ -394,13 +394,13 @@ RSpec.describe Iiif3PresentationManifest do
         let(:druid) { 'fj935vg7746' }
 
         it "skips making a canvas when we can't display the file" do
-          expect(json['label'][:en].first).to eq 'شيرين'
+          expect(json['label']['en'].first).to eq 'شيرين'
           expect(json['items'].length).to eq 2
 
           canvas = json['items'].first
 
           expect(canvas['id']).to eq 'http://test.host/fj935vg7746/iiif/canvas/cocina-fileSet-fj935vg7746-fj935vg7746_2'
-          expect(canvas['label'][:en]).to eq ['filelist']
+          expect(canvas['label']['en']).to eq ['filelist']
           expect(canvas['type']).to eq 'Canvas'
         end
       end
