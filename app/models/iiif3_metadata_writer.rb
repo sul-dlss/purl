@@ -40,8 +40,8 @@ class Iiif3MetadataWriter
   end
 
   def contributors
-    creators = cocina_display.contributors.select(&:author?)&.map { |auth| auth.display_name(with_date: true) }
-    contributors = cocina_display.contributors.reject(&:author?)&.map { |auth| contributor_name(auth) }
+    creators = cocina_display.contributors.select(&:author?).map { |auth| auth.display_name(with_date: true) }
+    contributors = cocina_display.contributors.reject(&:author?).map { |auth| contributor_name(auth) }
 
     result = creators.present? ? [iiif_key_value('Creator', creators)] : []
     result += [iiif_key_value('Contributor', contributors)] if contributors.present?
