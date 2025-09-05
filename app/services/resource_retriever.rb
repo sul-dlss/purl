@@ -7,22 +7,14 @@ class ResourceRetriever
     @druid = druid
   end
 
-  def public_xml_body
-    public_xml_resource.body if public_xml_resource.success?
-  end
-
   def meta_json_body
-    meta_json_resource.body if meta_json_resource.success?
-  end
-
-  def cocina_body
-    cocina_resource.body if cocina_resource.success?
+    @meta_json_body ||= meta_json_resource.read
   end
 
   def version_manifest_body
-    raise ResourceNotFound, 'Unable to retrieve version manifest' unless version_manifest_resource.success?
-
-    version_manifest_resource.body
+    @version_manifest_body ||= version_manifest_resource.read
+  rescue Errno::ENOENT
+    raise ResourceNotFound, 'Unable to retrieve version manifest'
   end
 
   def druid_path
@@ -33,20 +25,8 @@ class ResourceRetriever
 
   attr_reader :druid
 
-  def resource_cache
-    @resource_cache ||= ResourceCache.new
-  end
-
   def druid_tree
     Dor::Util.create_pair_tree(druid) || druid
-  end
-
-  def cache_prefix
-    "purl_resource/druid:#{druid}"
-  end
-
-  def cache_key(key)
-    [cache_prefix, key].join('/')
   end
 
   def meta_json_path
@@ -58,11 +38,11 @@ class ResourceRetriever
   end
 
   def meta_json_resource
-    @meta_json_resource ||= resource_cache.get(meta_json_path, cache_key(:meta))
+    @meta_json_resource ||= File.open(meta_json_path)
   end
 
   def version_manifest_resource
-    @version_manifest_resource ||= resource_cache.get(version_manifest_path, cache_key(:version_manifest))
+    @version_manifest_resource ||= File.open(version_manifest_path)
   end
 
   def last_modified_header_value

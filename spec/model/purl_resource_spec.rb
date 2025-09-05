@@ -60,9 +60,8 @@ RSpec.describe PurlResource do
 
     context 'with a meta.json file in the object path' do
       before do
-        allow(Rails.cache).to receive(:fetch).and_yield
-        allow(DocumentCacheResource).to receive(:new).and_return(instance_double(DocumentCacheResource, body:,
-                                                                                                        success?: true))
+        allow(File).to receive(:open).with("#{Settings.stacks.root}/kn/112/rm/5773/kn112rm5773/versions/meta.json")
+                                     .and_return(StringIO.new(body))
       end
 
       context 'when resource has a sitemap target' do
