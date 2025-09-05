@@ -11,6 +11,7 @@ module Show
     attr_accessor :version, :purl
 
     delegate :released_to_searchworks?, to: :purl
+    delegate :mods, to: :version
 
     def metrics?
       version.embeddable? || version.show_download_metrics? || version.doi.present?

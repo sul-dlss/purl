@@ -1,11 +1,11 @@
     <div class="record-sections col-lg-4">
-      <%= render AccessComponent.new(version: @version) %>
-      <%= render 'purl/mods_citation', mods: @version.mods %>
-      <%= render "purl/collection", version: @version %>
+      <%= render AccessComponent.new(version:) %>
+      <%= render 'purl/mods_citation', mods: %>
+      <%= render CollectionComponent.new(version:) %>
       <%= render CollectionItemsComponent.new(version:) if released_to_searchworks? %>
-      <%= render VersionsComponent.new(purl: @purl, version: @version) %>
-      <%= render "purl/mods_contact", mods: @version.mods %>
-      <%= render FindItComponent.new(document: @purl, version: @version) %>
+      <%= render VersionsComponent.new(purl: purl, version:) %>
+      <%= render "purl/mods_contact", mods: %>
+      <%= render FindItComponent.new(document: purl, version:) %>
 
       <% if metrics? %>
         <turbo-frame id="metrics-frame" src="<%= purl_metrics_path purl %>">
