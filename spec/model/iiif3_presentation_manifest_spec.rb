@@ -27,25 +27,42 @@ RSpec.describe Iiif3PresentationManifest do
         expect(json['summary'][:en].first).to eq 'Tom.1. No.9. (top right).'
         expect(json['requiredStatement']['value'][:en].first).to start_with 'This work has been identified as being free of known restrictions'
         expect(json['seeAlso'].first['id']).to eq 'http://test.host/bb157hs6068.mods'
-        expect(json['thumbnail']).to be_an Array
-        expect(json['thumbnail'].size).to eq 1
-        expect(json['thumbnail'].first['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
-        expect(json['thumbnail'].first['type']).to eq 'Image'
-        expect(json['thumbnail'].first['width']).to eq 400
-        expect(json['thumbnail'].first['height']).to eq 345
+        expect(json['thumbnail']).to eq [
+          { 'type' => 'Image',
+            'id' => 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg',
+            'format' => 'image/jpeg',
+            'service' =>
+           [{ 'id' => 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001',
+              'type' => 'ImageService2',
+              'profile' => 'http://iiif.io/api/image/2/level2.json' }],
+            'width' => 400,
+            'height' => 345 }
+        ]
 
         expect(json['items'].length).to eq 1
         canvas = json['items'].first
-
         expect(canvas['height']).to eq 9040
         expect(canvas['width']).to eq 10_481
 
-        expect(canvas['items'].length).to eq 1
-        expect(canvas['items'].first['items'].length).to eq 1
-        image = canvas['items'].first['items'].first
-        expect(image['body']['height']).to eq 9040
-        expect(image['body']['width']).to eq 10_481
-        expect(image['body']['id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/full/0/default.jpg'
+        expect(canvas['items']).to eq(
+          [{ 'type' => 'AnnotationPage',
+             'id' => 'http://test.host/bb157hs6068/iiif3/annotation_page/cocina-fileSet-bb157hs6068-bb157hs6068_1',
+             'items' =>
+             [{ 'type' => 'Annotation',
+                'motivation' => 'painting',
+                'id' => 'http://test.host/bb157hs6068/iiif/annotation/cocina-fileSet-bb157hs6068-bb157hs6068_1',
+                'target' => 'http://test.host/bb157hs6068/iiif/canvas/cocina-fileSet-bb157hs6068-bb157hs6068_1',
+                'body' =>
+                { 'type' => 'Image',
+                  'id' => 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/full/0/default.jpg',
+                  'format' => 'image/jpeg',
+                  'height' => 9040,
+                  'width' => 10_481,
+                  'service' =>
+                  [{ 'id' => 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001',
+                     'type' => 'ImageService2',
+                     'profile' => 'http://iiif.io/api/image/2/level2.json' }] } }] }]
+        )
       end
     end
 
@@ -203,32 +220,66 @@ RSpec.describe Iiif3PresentationManifest do
       describe 'parent object' do
         let(:druid) { 'hj097bm8879' }
 
-        it 'generates a correct manifest' do
+        it 'generates a correct manifest' do # rubocop:disable RSpec/ExampleLength
           expect(json['label'][:en].first).to start_with 'Carey\'s American Atlas'
-          expect(json['thumbnail']).to be_an Array
-          expect(json['thumbnail'].size).to eq 1
-          expect(json['thumbnail'].first['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/!400,400/0/default.jpg' # first child
+          expect(json['thumbnail']).to eq(
+            [{ 'type' => 'Image',
+               'id' => 'https://stacks.stanford.edu/image/iiif/cg767mn6478%2F2542A/full/!400,400/0/default.jpg',
+               'format' => 'image/jpeg',
+               'service' =>
+               [{ 'id' => 'https://stacks.stanford.edu/image/iiif/cg767mn6478%2F2542A',
+                  'type' => 'ImageService2',
+                  'profile' => 'http://iiif.io/api/image/2/level2.json' }],
+               'width' => 400,
+               'height' => 293 }]
+          )
           expect(json['items'].length).to eq 2 # We only have two of the child items (cg767mn6478 & jw923xn5254) in the test data
 
           canvas = json['items'].first
           expect(canvas['label'][:en].first).to start_with "(Covers to) Carey's American Atlas:"
 
-          expect(canvas['items'].length).to eq 1
-          expect(canvas['items'].first['items'].length).to eq 1
-          image = canvas['items'].first['items'].first
-          expect(image['body']['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/full/0/default.jpg' # first child
-          expect(image['body']['height']).to eq 4747
-          expect(image['body']['width']).to eq 6475
+          expect(canvas['items']).to eq(
+            [{ 'type' => 'AnnotationPage',
+               'id' => 'http://test.host/hj097bm8879/iiif3/annotation_page/cocina-fileSet-cg767mn6478-cg767mn6478_1',
+               'items' =>
+               [{ 'type' => 'Annotation',
+                  'motivation' => 'painting',
+                  'id' => 'http://test.host/hj097bm8879/iiif/annotation/cocina-fileSet-cg767mn6478-cg767mn6478_1',
+                  'target' => 'http://test.host/hj097bm8879/iiif/canvas/cocina-fileSet-cg767mn6478-cg767mn6478_1',
+                  'body' =>
+                  { 'type' => 'Image',
+                    'id' => 'https://stacks.stanford.edu/image/iiif/cg767mn6478%2F2542A/full/full/0/default.jpg',
+                    'format' => 'image/jpeg',
+                    'height' => 4747,
+                    'width' => 6475,
+                    'service' =>
+                    [{ 'id' => 'https://stacks.stanford.edu/image/iiif/cg767mn6478%2F2542A',
+                       'type' => 'ImageService2',
+                       'profile' => 'http://iiif.io/api/image/2/level2.json' }] } }] }]
+          )
 
           canvas = json['items'].second
           expect(canvas['label'][:en].first).to start_with "(Title Page to) Carey's American Atlas:"
 
-          expect(canvas['items'].length).to eq 1
-          expect(canvas['items'].first['items'].length).to eq 1
-          image = canvas['items'].first['items'].first
-          expect(image['body']['id']).to end_with '/image/iiif/jw923xn5254%2F2542B/full/full/0/default.jpg' # second child
-          expect(image['body']['height']).to eq 4675
-          expect(image['body']['width']).to eq 3139
+          expect(canvas['items']).to eq(
+            [{ 'type' => 'AnnotationPage',
+               'id' => 'http://test.host/hj097bm8879/iiif3/annotation_page/cocina-fileSet-jw923xn5254-jw923xn5254_1',
+               'items' =>
+               [{ 'type' => 'Annotation',
+                  'motivation' => 'painting',
+                  'id' => 'http://test.host/hj097bm8879/iiif/annotation/cocina-fileSet-jw923xn5254-jw923xn5254_1',
+                  'target' => 'http://test.host/hj097bm8879/iiif/canvas/cocina-fileSet-jw923xn5254-jw923xn5254_1',
+                  'body' =>
+                  { 'type' => 'Image',
+                    'id' => 'https://stacks.stanford.edu/image/iiif/jw923xn5254%2F2542B/full/full/0/default.jpg',
+                    'format' => 'image/jpeg',
+                    'height' => 4675,
+                    'width' => 3139,
+                    'service' =>
+                    [{ 'id' => 'https://stacks.stanford.edu/image/iiif/jw923xn5254%2F2542B',
+                       'type' => 'ImageService2',
+                       'profile' => 'http://iiif.io/api/image/2/level2.json' }] } }] }]
+          )
         end
       end
     end
@@ -261,22 +312,39 @@ RSpec.describe Iiif3PresentationManifest do
         expect(canvas['label'][:en]).to eq ['File 1']
         expect(canvas['type']).to eq 'Canvas'
 
-        expect(canvas['items'].length).to eq 1
-        expect(canvas['items'].first['items'].length).to eq 1
         expect(canvas['height']).not_to be_present
         expect(canvas['width']).not_to be_present
-
-        pdf = canvas['items'].first['items'].first
-        body = pdf.fetch('body')
-        expect(body['id']).to eq 'https://stacks.stanford.edu/file/bb253gh8060/SC0193_Agenda_6381_2010-10-07_001.pdf'
-        expect(body['format']).to eq 'application/pdf'
-        expect(body['type']).to eq 'Text'
-
-        probe_service = body.fetch('service').first
-        expect(probe_service['type']).to eq 'AuthProbeService2'
-        expect(probe_service['id']).to eq 'https://stacks.stanford.edu/iiif/auth/v2/probe?id=https%3A%2F%2Fstacks.stanford.edu%2Ffile%2Fbb253gh8060%2FSC0193_Agenda_6381_2010-10-07_001.pdf'
-        expect(probe_service['service']).to include hash_including 'type' => 'AuthAccessService2'
-        expect(probe_service.dig('service', 0, 'service')).to include hash_including 'type' => 'AuthAccessTokenService2'
+        expect(canvas['items']).to eq(
+          [{ 'type' => 'AnnotationPage',
+             'id' => 'http://test.host/bb253gh8060/iiif3/annotation_page/cocina-fileSet-bb253gh8060-bb253gh8060_1',
+             'items' =>
+             [{ 'type' => 'Annotation',
+                'motivation' => 'painting',
+                'id' => 'http://test.host/bb253gh8060/iiif/annotation/cocina-fileSet-bb253gh8060-bb253gh8060_1',
+                'target' => 'http://test.host/bb253gh8060/iiif/canvas/cocina-fileSet-bb253gh8060-bb253gh8060_1',
+                'body' =>
+                { 'id' => 'https://stacks.stanford.edu/file/bb253gh8060/SC0193_Agenda_6381_2010-10-07_001.pdf',
+                  'type' => 'Text',
+                  'label' => { en: ['SC0193_Agenda_6381_2010-10-07_001.pdf'] },
+                  'format' => 'application/pdf',
+                  'service' =>
+                  [{ 'id' =>
+                     'https://stacks.stanford.edu/iiif/auth/v2/probe?id=https%3A%2F%2Fstacks.stanford.edu%2Ffile%2Fbb253gh8060%2FSC0193_Agenda_6381_2010-10-07_001.pdf',
+                     'type' => 'AuthProbeService2',
+                     'errorHeading' => { 'en' => ['No access'] },
+                     'errorNote' => { 'en' => ['You do not have permission to access this resource'] },
+                     'service' =>
+                     [{ 'id' => 'https://stacks.stanford.edu/auth/iiif',
+                        'type' => 'AuthAccessService2',
+                        'profile' => 'active',
+                        'label' => { 'en' => ['Stanford users: log in to access all available features'] },
+                        'confirmLabel' => { 'en' => ['Log in'] },
+                        'service' =>
+                        [{ 'id' => 'https://stacks.stanford.edu/iiif/auth/v2/token',
+                           'type' => 'AuthAccessTokenService2',
+                           'errorHeading' => { 'en' => ['Something went wrong'] },
+                           'errorNote' => { 'en' => ['Could not get a token.'] } }] }] }] } }] }]
+        )
       end
     end
 
@@ -288,22 +356,34 @@ RSpec.describe Iiif3PresentationManifest do
         expect(json['items'].length).to eq 1
 
         canvas = json['items'].first
-        expect(canvas['items'].length).to eq 1
-        expect(canvas['items'].first['items'].length).to eq 1
-        expect(canvas['height']).not_to be_present
-        expect(canvas['width']).not_to be_present
-
-        pdf = canvas['items'].first['items'].first
-        body = pdf.fetch('body')
-        expect(body['id']).to eq 'https://stacks.stanford.edu/file/bh502xm3351/CAS_bh502xm3351.pdf'
-        expect(body['format']).to eq 'application/pdf'
-        expect(body['type']).to eq 'Text'
-
-        probe_service = body.fetch('service').first
-        expect(probe_service['type']).to eq 'AuthProbeService2'
-        expect(probe_service['id']).to eq 'https://stacks.stanford.edu/iiif/auth/v2/probe?id=https%3A%2F%2Fstacks.stanford.edu%2Ffile%2Fbh502xm3351%2FCAS_bh502xm3351.pdf'
-        expect(probe_service['service']).to include hash_including 'type' => 'AuthAccessService2'
-        expect(probe_service.dig('service', 0, 'service')).to include hash_including 'type' => 'AuthAccessTokenService2'
+        expect(canvas['items']).to eq(
+          [{ 'type' => 'AnnotationPage',
+             'id' => 'http://test.host/bh502xm3351/iiif3/annotation_page/cocina-fileSet-bh502xm3351-bh502xm3351_1',
+             'items' =>
+             [{ 'type' => 'Annotation',
+                'motivation' => 'painting',
+                'id' => 'http://test.host/bh502xm3351/iiif/annotation/cocina-fileSet-bh502xm3351-bh502xm3351_1',
+                'target' => 'http://test.host/bh502xm3351/iiif/canvas/cocina-fileSet-bh502xm3351-bh502xm3351_1',
+                'body' =>
+                { 'id' => 'https://stacks.stanford.edu/file/bh502xm3351/CAS_bh502xm3351.pdf',
+                  'type' => 'Text',
+                  'label' => { en: ['CAS_bh502xm3351.pdf'] },
+                  'format' => 'application/pdf',
+                  'service' =>
+                  [{ 'id' => 'https://stacks.stanford.edu/iiif/auth/v2/probe?id=https%3A%2F%2Fstacks.stanford.edu%2Ffile%2Fbh502xm3351%2FCAS_bh502xm3351.pdf',
+                     'type' => 'AuthProbeService2',
+                     'errorHeading' => { 'en' => ['No access'] },
+                     'errorNote' => { 'en' => ['You do not have permission to access this resource'] },
+                     'service' =>
+                     [{ 'type' => 'AuthAccessService2',
+                        'profile' => 'external',
+                        'label' => { 'en' => ['Public users'] },
+                        'service' =>
+                        [{ 'id' => 'https://stacks.stanford.edu/iiif/auth/v2/token',
+                           'type' => 'AuthAccessTokenService2',
+                           'errorHeading' => { 'en' => ['Something went wrong'] },
+                           'errorNote' => { 'en' => ['Could not get a token.'] } }] }] }] } }] }]
+        )
       end
     end
 
@@ -328,15 +408,34 @@ RSpec.describe Iiif3PresentationManifest do
         expect(json['items'].length).to eq 1
 
         canvas = json['items'].first
-        expect(canvas['items'].length).to eq 1
-        expect(canvas['items'].first['items'].length).to eq 1
-        expect(canvas['height']).not_to be_present
-        expect(canvas['width']).not_to be_present
-
-        obj = canvas['items'].first['items'].first
-        expect(obj['body']['id']).to eq 'https://stacks.stanford.edu/file/bg387kw8222/bg387kw8222_low.glb'
-        expect(obj['body']['format']).to eq 'model/gltf-binary'
-        expect(obj['body']['type']).to eq 'Dataset'
+        expect(canvas['items']).to eq(
+          [{ 'type' => 'AnnotationPage',
+             'id' => 'http://test.host/bg387kw8222/iiif3/annotation_page/cocina-fileSet-bg387kw8222-bg387kw8222_7',
+             'items' =>
+           [{ 'type' => 'Annotation',
+              'motivation' => 'painting',
+              'id' => 'http://test.host/bg387kw8222/iiif/annotation/cocina-fileSet-bg387kw8222-bg387kw8222_7',
+              'target' => 'http://test.host/bg387kw8222/iiif/canvas/cocina-fileSet-bg387kw8222-bg387kw8222_7',
+              'body' =>
+              { 'id' => 'https://stacks.stanford.edu/file/bg387kw8222/bg387kw8222_low.glb',
+                'type' => 'Dataset',
+                'label' => { en: ['bg387kw8222_low.glb'] },
+                'format' => 'model/gltf-binary',
+                'service' =>
+                [{ 'id' => 'https://stacks.stanford.edu/iiif/auth/v2/probe?id=https%3A%2F%2Fstacks.stanford.edu%2Ffile%2Fbg387kw8222%2Fbg387kw8222_low.glb',
+                   'type' => 'AuthProbeService2',
+                   'errorHeading' => { 'en' => ['No access'] },
+                   'errorNote' => { 'en' => ['You do not have permission to access this resource'] },
+                   'service' =>
+                   [{ 'type' => 'AuthAccessService2',
+                      'profile' => 'external',
+                      'label' => { 'en' => ['Public users'] },
+                      'service' =>
+                      [{ 'id' => 'https://stacks.stanford.edu/iiif/auth/v2/token',
+                         'type' => 'AuthAccessTokenService2',
+                         'errorHeading' => { 'en' => ['Something went wrong'] },
+                         'errorNote' => { 'en' => ['Could not get a token.'] } }] }] }] } }] }]
+        )
       end
     end
 
