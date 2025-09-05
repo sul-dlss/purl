@@ -226,10 +226,11 @@ RSpec.describe 'PURL API' do
           COCINA
         end
         let(:purl_resource) { PurlResource.new(id: 'bw368gx2874') }
+        let(:releases) { instance_double(Releases, crawlable?: false) }
 
         before do
           allow(PurlResource).to receive(:find).and_return(purl_resource)
-          allow(purl_resource).to receive_messages(version:, crawlable?: false)
+          allow(purl_resource).to receive_messages(version:, releases:)
         end
 
         it 'returns the PURL page of the requested version with only tombstone information' do

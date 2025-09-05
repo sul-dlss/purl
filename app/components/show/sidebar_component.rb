@@ -10,7 +10,8 @@ module Show
 
     attr_accessor :version, :purl
 
-    delegate :released_to_searchworks?, to: :purl
+    delegate :releases, to: :purl
+    delegate :released_to_searchworks?, to: :releases
     delegate :mods, to: :version
 
     def metrics?

@@ -3,9 +3,9 @@
       <%= render 'purl/mods_citation', mods: %>
       <%= render CollectionComponent.new(version:) %>
       <%= render CollectionItemsComponent.new(version:) if released_to_searchworks? %>
-      <%= render VersionsComponent.new(purl: purl, version:) %>
+      <%= render VersionsComponent.new(purl:, version:) %>
       <%= render "purl/mods_contact", mods: %>
-      <%= render FindItComponent.new(document: purl, version:) %>
+      <%= render FindItComponent.new(releases:, version:) %>
 
       <% if metrics? %>
         <turbo-frame id="metrics-frame" src="<%= purl_metrics_path purl %>">

@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
 class FindItComponent < ViewComponent::Base
-  def initialize(document:, version:)
-    @document = document
+  def initialize(releases:, version:)
+    @releases = releases
     @version = version
     super()
   end
 
-  attr_reader :document, :version
+  attr_reader :releases, :version
 
-  delegate :catalog_key, to: :version
-  delegate :released_to_searchworks?, :released_to_earthworks?, :druid, to: :document
+  delegate :catalog_key, :druid, to: :version
+  delegate :released_to_searchworks?, :released_to_earthworks?, to: :releases
 
   Link = Struct.new('Link', :label, :href)
 
-  def releases
-    @releases ||= [].tap do |links|
+  def release_items
+    @release_items ||= [].tap do |links|
       if released_to_searchworks? && !catalog_key
         links << Link.new(label: 'View in SearchWorks', href: searchworks_url(druid))
       elsif catalog_key

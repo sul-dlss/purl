@@ -3,13 +3,12 @@
 require 'rails_helper'
 
 RSpec.describe FindItComponent, type: :component do
-  subject(:component) { described_class.new(document:, version:) }
+  subject(:component) { described_class.new(releases:, version:) }
 
-  let(:document) { PurlResource.new(id: 'cg357zz0321') }
-  let(:version) { instance_double(PurlVersion, catalog_key: '123') }
+  let(:version) { instance_double(PurlVersion, catalog_key: '123', druid: 'cg357zz0321') }
+  let(:releases) { instance_double(Releases, released_to_searchworks?: searchworks, released_to_earthworks?: earthworks) }
 
   before do
-    allow(document).to receive_messages(released_to_searchworks?: searchworks, released_to_earthworks?: earthworks)
     render_inline(component)
   end
 
@@ -33,8 +32,7 @@ RSpec.describe FindItComponent, type: :component do
   end
 
   context 'when released to SearchWorks and not EarthWorks' do
-    let(:document) { PurlResource.new(id: 'bf973rp9392') }
-    let(:version) { instance_double(PurlVersion, catalog_key: nil) }
+    let(:version) { instance_double(PurlVersion, catalog_key: nil, druid: 'bf973rp9392') }
 
     let(:searchworks) { true }
     let(:earthworks) { false }
