@@ -35,9 +35,9 @@ class IiifPresentationManifest
   end
 
   # @return [Array<StructuralMetadata::FileSet>] or []
-  def object_filesets
-    @object_filesets ||= file_sets.select do |fs|
-      object?(fs) && downloadable_file?(fs.primary)
+  def object_files
+    @object_files ||= local_files.select do |file|
+      object?(file.fileset) && downloadable_file?(file)
     end
   end
 
@@ -113,8 +113,8 @@ class IiifPresentationManifest
 
     manifest.thumbnail = thumbnail_resource
 
-    renderings = object_filesets.map do |fs|
-      rendering_file(fs.primary, label: "Download #{fs.label}")
+    renderings = object_files.map do |file|
+      rendering_file(file, label: "Download #{file.fileset_label}")
     end
 
     sequence['rendering'] = renderings if renderings.present?
