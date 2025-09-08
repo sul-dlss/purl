@@ -282,10 +282,10 @@ RSpec.describe Iiif3PresentationManifest do
     end
 
     context 'with stanford only PDF' do
-      let(:druid) { 'bh502xm3351' }
+      let(:druid) { 'xq467yj8428' }
 
       it 'generates a manifest that includes the login service for the restricted file' do
-        expect(json['label']['en'].first).to eq 'The  Catgut Acoustical Society newsletter, Number 20, 1973-11-01'
+        expect(json['label']['en'].first).to eq 'Marine Life Observatory Photoquadrats - READ ME File'
         expect(json['items'].length).to eq 1
 
         canvas = json['items'].first
@@ -296,13 +296,13 @@ RSpec.describe Iiif3PresentationManifest do
 
         pdf = canvas['items'].first['items'].first
         body = pdf.fetch('body')
-        expect(body['id']).to eq 'https://stacks.stanford.edu/file/bh502xm3351/CAS_bh502xm3351.pdf'
+        expect(body['id']).to eq 'https://stacks.stanford.edu/file/xq467yj8428/READ%20ME_MLOPhotoQuads.pdf'
         expect(body['format']).to eq 'application/pdf'
         expect(body['type']).to eq 'Text'
 
         probe_service = body.fetch('service').first
         expect(probe_service['type']).to eq 'AuthProbeService2'
-        expect(probe_service['id']).to eq 'https://stacks.stanford.edu/iiif/auth/v2/probe?id=https%3A%2F%2Fstacks.stanford.edu%2Ffile%2Fbh502xm3351%2FCAS_bh502xm3351.pdf'
+        expect(probe_service['id']).to eq 'https://stacks.stanford.edu/iiif/auth/v2/probe?id=https%3A%2F%2Fstacks.stanford.edu%2Ffile%2Fxq467yj8428%2FREAD%2520ME_MLOPhotoQuads.pdf'
         expect(probe_service['service']).to include hash_including 'type' => 'AuthAccessService2'
         expect(probe_service.dig('service', 0, 'service')).to include hash_including 'type' => 'AuthAccessTokenService2'
       end

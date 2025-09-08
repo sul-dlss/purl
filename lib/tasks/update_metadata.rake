@@ -13,7 +13,6 @@ FIXTURES = [
   'bf973rp9392', # image, released to searchworks
   'bf995rh7184', # book, stanford-only, with OCR
   'bg387kw8222', # 3d object
-  'bh502xm3351', # document (pdf), with mods.subject.name
   'cd027gx5097', # item that is part of collection (ss099gb5528) not released to searchworks
   'cg357zz0321', # geo object
   'cg767mn6478', # image, world, covers to atlas
@@ -32,6 +31,7 @@ FIXTURES = [
   'ss099gb5528', # a collection not released to searchworks with a member (cd027gx5097)
   'tb420df0840', # image, location restricted
   'wm135gp2721', # file, world access, dataset, has an ORCiD and DOI
+  'xq467yj8428', # document, stanford-only
   'yb533nc1884', # collection with member (gx074xz5520)
   'yr183sf1341', # book, world access, without OCR, right-to-left
   'yy816tv6021', # media, location access

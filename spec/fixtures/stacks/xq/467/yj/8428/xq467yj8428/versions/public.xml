@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:xq467yj8428" published="2025-07-08T13:51:10Z" publishVersion="cocina-models/0.104.1">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>Marine Life Observatory Photoquadrats - READ ME File</objectLabel>
+    <sourceId source="sul">hydrus:object-2657</sourceId>
+  </identityMetadata>
+  <contentMetadata objectId="druid:xq467yj8428" type="document">
+    <resource id="cocina-fileSet-xq467yj8428-xq467yj8428_1" sequence="1" type="document">
+      <file id="READ ME_MLOPhotoQuads.pdf" mimetype="application/pdf" size="189626" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="md5">b1d0c709a53aa51a0accdc87fc206f2e</checksum>
+        <checksum type="sha1">0dccfb249ec30b5444d9345b943790f14b711255</checksum>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <group>stanford</group>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or confidentiality rights of individuals. Content distributed via the Stanford Digital Repository may be subject to additional license and use restrictions applied by the depositor.</human>
+      <license>https://opendatacommons.org/licenses/pddl/1-0/</license>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:xq467yj8428">
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:kk382jq8063"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Marine Life Observatory Photoquadrats - READ ME File</dc:title>
+    <dc:contributor>Micheli, Fiorenza (research team head)</dc:contributor>
+    <dc:type>Data</dc:type>
+    <dc:type>Data sets</dc:type>
+    <dc:type>dataset</dc:type>
+    <dc:description>The purpose of this time series is to document small-scale changes in the sessile benthic community within the Hopkins Marine Life Refuge.  Data are gathered photographically from permanently-marked vertical or steeply-sloped rock surfaces.  Horizontal surfaces were avoided in order to minimize the masking effect of large overlying algae that are more prevalent on horizontal substrates. &#13;
+&#13;
+Permanent 0.5 m2 plots are photographed at least 3 times per year:  in late winter (canopy-minimum, after winter storm disturbance but prior to onset of spring/summer larval recruitment), mid-summer (canopy maximum, peak growth &amp; expansion of seasonal spp. such as tunicates) &amp; late autumn (declining canopy cover, recession of seasonal spp).  Thirty-two locations comprising 52 individual photoquadrats are divided among three sites within the kelp forest adjacent to the marine station (see site data below).  &#13;
+&#13;
+This time series should provide data relevant to topics such as:&#13;
+•	intra- and interspecific interactions for space amongst sessile benthic species; availability of free space.&#13;
+•	growth rates, longevity, &amp; seasonal patterns of expansion / regression of colonial species.&#13;
+•	unusual recruitment events &amp; their consequences (such as the overwhelming settlement of barnacles in 2010 &amp; 2011).&#13;
+•	estimation of transition probabilities amongst sessile benthic species over varying temporal &amp; spatial scales.&#13;
+•	variability in composition of benthic assemblage on spatial scales ranging from cm to meters to 100’s of meters.&#13;
+&#13;
+This document describes the site locations, equipment, &amp; procedures for gathering the images and how the image files are archived.  The framer is stored in the dive locker, camera equipment is in Watanabe’s Boatworks office, primary data archives are on the Optiplex 990 desktop in Watanabe’s office with copies distributed as new images come in.&#13;
+&#13;
+&#13;
+File names&#13;
+Images are JPEG format, 4032 x 3024 pixels&#13;
+Format for image file names is:   ssNNxYYYY-MM.jpg  (e.g. br16b2011-08mf.jpg)&#13;
+	ss	= 	site ('wg' for Wave Gauge, 'br' for Bird Rock, 'hm' for 100m Buoy; see below)&#13;
+	NN	=	quadrat number (01 to 10 at Wave Gauge, 11 to 20 at Bird Rock, 21 to 30 at 100m Buoy)&#13;
+	x 	=	position relative to eyebolts ( 'a' for above the 2 eyebolts, 'b' for below the eyebolts); NOTE that not all quadrat locations have both above &amp; below positions. &#13;
+	YYYY	=	year (e.g. ‘2014’)&#13;
+	MM	=	month (Jan = 01, Dec = 12);  full date should be in the file details.&#13;
+			if an "mf" occurs at the end of the file name, that image contains large mobile macrofauna for population counts of sea stars, gumboot chitons, giant keyhole limpets, etc; if a given quadrat on any date lacks an mf image, there were no macrofauna in the quadrat and counts should be recorded as zeros. &#13;
+Ex.		wg03a2011-08.jpg is the image for Quadrat #3 at the Wave Gauge site taken in Aug 2011; this image came from above the eyebolt quadrat markers and the macrofauna were removed prior to taking the photo (no mf at end of file name).&#13;
+Note: The intertidal time series began in Jun 2014.  File name format is the same as above except for the date portion which includes day, site abbreviations are 'ie' for intertidal east and 'iw' for intertidal west.  e.g. ie02b2014-06-21.jpg would be the filename for intertidal east quadrat 02 below the eyebolts taken on 21 Jun 2014.  Quadrats 1-5 are in the east set and 6-10 are in the west set; all have above &amp; below positions except for 04 and 08.  &#13;
+&#13;
+Images of each quadrat from all sampling dates are stored together in separate subdirectories for each site/location combination.  This convention for naming files permits them to be sorted into chronological order by name within each subdirectory to facilitate viewing time series sequences.</dc:description>
+    <dc:description type="preferred citation">Micheli, Fiorenza. Marine Life Observatory Photoquadrats - READ ME file. Stanford Digital Repository. Available at: https://purl.stanford.edu/xq467yj8428</dc:description>
+    <dc:subject>hopkins marine station</dc:subject>
+    <dc:subject>department of biology</dc:subject>
+    <dc:subject>subtidal</dc:subject>
+    <dc:subject>intertidal</dc:subject>
+    <dc:subject>quadrats</dc:subject>
+    <dc:subject>time series</dc:subject>
+    <dc:subject>ecology</dc:subject>
+    <dc:date>2018-03-30</dc:date>
+    <dc:date>2011-2017</dc:date>
+    <dc:identifier>https://purl.stanford.edu/xq467yj8428</dc:identifier>
+    <dc:description type="contact" displayLabel="Contact">micheli@stanford.edu</dc:description>
+    <dc:relation type="url" href="http://mlo.stanford.edu/"/>
+    <dc:relation type="collection">Marine Life Observatory</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>Marine Life Observatory Photoquadrats - READ ME File</title>
+    </titleInfo>
+    <name usage="primary" type="personal">
+      <namePart type="given">Fiorenza</namePart>
+      <namePart type="family">Micheli</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/rth" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">research team head</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/rth" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">rth</roleTerm>
+      </role>
+    </name>
+    <genre type="H2 type">Data</genre>
+    <genre valueURI="http://id.loc.gov/authorities/genreForms/gf2018026119" authority="lcgft">Data sets</genre>
+    <genre authority="local">dataset</genre>
+    <typeOfResource valueURI="http://id.loc.gov/vocabulary/resourceTypes/dat" authorityURI="http://id.loc.gov/vocabulary/resourceTypes/">Dataset</typeOfResource>
+    <extension displayLabel="datacite">
+      <resourceType resourceTypeGeneral="Dataset">Data</resourceType>
+    </extension>
+    <abstract>The purpose of this time series is to document small-scale changes in the sessile benthic community within the Hopkins Marine Life Refuge.  Data are gathered photographically from permanently-marked vertical or steeply-sloped rock surfaces.  Horizontal surfaces were avoided in order to minimize the masking effect of large overlying algae that are more prevalent on horizontal substrates. &#13;
+&#13;
+Permanent 0.5 m2 plots are photographed at least 3 times per year:  in late winter (canopy-minimum, after winter storm disturbance but prior to onset of spring/summer larval recruitment), mid-summer (canopy maximum, peak growth &amp; expansion of seasonal spp. such as tunicates) &amp; late autumn (declining canopy cover, recession of seasonal spp).  Thirty-two locations comprising 52 individual photoquadrats are divided among three sites within the kelp forest adjacent to the marine station (see site data below).  &#13;
+&#13;
+This time series should provide data relevant to topics such as:&#13;
+•	intra- and interspecific interactions for space amongst sessile benthic species; availability of free space.&#13;
+•	growth rates, longevity, &amp; seasonal patterns of expansion / regression of colonial species.&#13;
+•	unusual recruitment events &amp; their consequences (such as the overwhelming settlement of barnacles in 2010 &amp; 2011).&#13;
+•	estimation of transition probabilities amongst sessile benthic species over varying temporal &amp; spatial scales.&#13;
+•	variability in composition of benthic assemblage on spatial scales ranging from cm to meters to 100’s of meters.&#13;
+&#13;
+This document describes the site locations, equipment, &amp; procedures for gathering the images and how the image files are archived.  The framer is stored in the dive locker, camera equipment is in Watanabe’s Boatworks office, primary data archives are on the Optiplex 990 desktop in Watanabe’s office with copies distributed as new images come in.&#13;
+&#13;
+&#13;
+File names&#13;
+Images are JPEG format, 4032 x 3024 pixels&#13;
+Format for image file names is:   ssNNxYYYY-MM.jpg  (e.g. br16b2011-08mf.jpg)&#13;
+	ss	= 	site ('wg' for Wave Gauge, 'br' for Bird Rock, 'hm' for 100m Buoy; see below)&#13;
+	NN	=	quadrat number (01 to 10 at Wave Gauge, 11 to 20 at Bird Rock, 21 to 30 at 100m Buoy)&#13;
+	x 	=	position relative to eyebolts ( 'a' for above the 2 eyebolts, 'b' for below the eyebolts); NOTE that not all quadrat locations have both above &amp; below positions. &#13;
+	YYYY	=	year (e.g. ‘2014’)&#13;
+	MM	=	month (Jan = 01, Dec = 12);  full date should be in the file details.&#13;
+			if an "mf" occurs at the end of the file name, that image contains large mobile macrofauna for population counts of sea stars, gumboot chitons, giant keyhole limpets, etc; if a given quadrat on any date lacks an mf image, there were no macrofauna in the quadrat and counts should be recorded as zeros. &#13;
+Ex.		wg03a2011-08.jpg is the image for Quadrat #3 at the Wave Gauge site taken in Aug 2011; this image came from above the eyebolt quadrat markers and the macrofauna were removed prior to taking the photo (no mf at end of file name).&#13;
+Note: The intertidal time series began in Jun 2014.  File name format is the same as above except for the date portion which includes day, site abbreviations are 'ie' for intertidal east and 'iw' for intertidal west.  e.g. ie02b2014-06-21.jpg would be the filename for intertidal east quadrat 02 below the eyebolts taken on 21 Jun 2014.  Quadrats 1-5 are in the east set and 6-10 are in the west set; all have above &amp; below positions except for 04 and 08.  &#13;
+&#13;
+Images of each quadrat from all sampling dates are stored together in separate subdirectories for each site/location combination.  This convention for naming files permits them to be sorted into chronological order by name within each subdirectory to facilitate viewing time series sequences.</abstract>
+    <note type="preferred citation">Micheli, Fiorenza. Marine Life Observatory Photoquadrats - READ ME file. Stanford Digital Repository. Available at: https://purl.stanford.edu/xq467yj8428</note>
+    <subject>
+      <topic>hopkins marine station</topic>
+    </subject>
+    <subject>
+      <topic>department of biology</topic>
+    </subject>
+    <subject>
+      <topic>subtidal</topic>
+    </subject>
+    <subject>
+      <topic>intertidal</topic>
+    </subject>
+    <subject>
+      <topic>quadrats</topic>
+    </subject>
+    <subject>
+      <topic>time series</topic>
+    </subject>
+    <subject>
+      <topic>ecology</topic>
+    </subject>
+    <originInfo eventType="deposit">
+      <dateIssued encoding="edtf">2018-03-30</dateIssued>
+    </originInfo>
+    <originInfo eventType="creation">
+      <dateCreated encoding="edtf" point="start">2011</dateCreated>
+      <dateCreated encoding="edtf" point="end">2017</dateCreated>
+    </originInfo>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/xq467yj8428</url>
+    </location>
+    <note type="contact" displayLabel="Contact">micheli@stanford.edu</note>
+    <recordInfo>
+      <recordOrigin>Metadata created by user via Stanford self-deposit application</recordOrigin>
+      <recordCreationDate encoding="edtf">2018-03-30</recordCreationDate>
+    </recordInfo>
+    <relatedItem>
+      <location>
+        <url>http://mlo.stanford.edu/</url>
+      </location>
+    </relatedItem>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Marine Life Observatory</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/kk382jq8063</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or confidentiality rights of individuals. Content distributed via the Stanford Digital Repository may be subject to additional license and use restrictions applied by the depositor.</accessCondition>
+    <accessCondition type="license" xlink:href="https://opendatacommons.org/licenses/pddl/1-0/">This work is licensed under an Open Data Commons Public Domain Dedication &amp; License 1.0.</accessCondition>
+  </mods>
+</publicObject>

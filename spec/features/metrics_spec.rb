@@ -42,7 +42,7 @@ RSpec.describe 'Metrics display', :js do
     end
 
     context 'when the object is a pdf' do
-      let(:druid) { 'bh502xm3351' }
+      let(:druid) { 'xq467yj8428' }
 
       it 'shows the number of downloads' do
         expect(page).to have_css '#download-count', text: '1'
