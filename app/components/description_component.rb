@@ -9,7 +9,7 @@ class DescriptionComponent < ViewComponent::Base
   attr_reader :version
 
   delegate :mods, :cocina_display, to: :version
-  delegate :form, :place, :publisher, :dateCreated, :dateCaptured, :dateValid, :dateModified, :dateOther, :copyrightDate, :dateIssued,
+  delegate :form, :publisher, :dateCreated, :dateCaptured, :dateValid, :dateModified, :dateOther, :copyrightDate, :dateIssued,
            :issuance, :frequency, :edition, :description, to: :mods
   delegate :language_display_data, :map_display_data, to: :cocina_display
 
@@ -28,7 +28,7 @@ class DescriptionComponent < ViewComponent::Base
       [resource_types, COMMA],
       [form, SEMICOLON],
       [extent, COMMA],
-      [place, nil],
+      [publication_places, nil],
       [publisher, COMMA],
       [dateCreated, SEMICOLON],
       [dateCaptured, SEMICOLON],
@@ -62,6 +62,11 @@ class DescriptionComponent < ViewComponent::Base
   def extent
     values = cocina_display.extents
     [CocinaDisplay::DisplayData.new(label: 'Extent', values:)] if values.present?
+  end
+
+  def publication_places
+    values = cocina_display.publication_places
+    [CocinaDisplay::DisplayData.new(label: 'Place', values:)] if values.present?
   end
 
   def render?
