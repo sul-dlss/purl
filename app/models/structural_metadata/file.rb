@@ -5,11 +5,15 @@ class StructuralMetadata
     def initialize(druid:, json:, fileset:)
       @druid = druid
       @json = json
-      @fileset_id = fileset.cocina_id
+      @fileset = fileset
       @fileset_label = fileset.label
     end
 
-    attr_accessor :json, :druid, :fileset_id, :fileset_label
+    attr_accessor :json, :druid, :fileset, :fileset_label
+
+    def fileset_id
+      fileset.cocina_id
+    end
 
     def filename
       json['filename']

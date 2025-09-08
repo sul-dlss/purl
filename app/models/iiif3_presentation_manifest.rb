@@ -138,7 +138,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def build_image_canvases(manifest)
     file_sets.each do |fs|
-      file = fs.primary
+      file = fs.primary || fs.files.first
 
       if file.image_file? && fs.page_image?
         manifest.items << canvas_for_fileset(fs) if deliverable_file?(file)
