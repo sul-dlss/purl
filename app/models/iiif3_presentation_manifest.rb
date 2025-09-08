@@ -34,16 +34,13 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     manifest['behavior'] = ['paged'] if book?
     (_collection, collection_head_version) = containing_purl_collections&.first
     collection_title = collection_head_version&.display_title
-    metadata_writer = Iiif3MetadataWriter.new(cocina_descriptive: cocina['description'],
-                                              cocina_display: purl_version.cocina_display,
+    metadata_writer = Iiif3MetadataWriter.new(cocina_display: purl_version.cocina_display,
                                               published_date: updated_at,
                                               collection_title:)
     manifest.metadata = metadata_writer.write
 
-    map_fields = metadata_writer.send(:map_coverage_fields)
-
-    if nav_place(map_fields)
-      manifest['navPlace'] = nav_place(map_fields)
+    if nav_place
+      manifest['navPlace'] = nav_place
       manifest['@context'] += ['http://iiif.io/api/extension/navplace/context.json']
     end
 
@@ -458,9 +455,9 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     controller.url_for([:annotation_page, :iiif3, :purl, { id: druid, **kwargs }])
   end
 
-  def nav_place(map_fields)
+  def nav_place
     @nav_place ||= begin
-      nav_place = IIIF::V3::Presentation::NavPlace.new(coordinate_texts: map_fields['map coordinates'], base_uri: purl_base_uri)
+      nav_place = IIIF::V3::Presentation::NavPlace.new(coordinate_texts: purl_version.cocina_display.coordinates, base_uri: purl_base_uri)
       nav_place.valid? ? nav_place.build : nil # if coordinates are invalid, do nothing, else return navPlace element
     end
   end
