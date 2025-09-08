@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/sul-dlss/cocina_display.git
-  revision: f57cf88bfeb2cf527057aea98632375faae2967a
+  revision: 0eed2720a46a05430298df83a60a7c2a37fe5fd7
   specs:
     cocina_display (1.1.3)
       activesupport (>= 7)
@@ -171,8 +171,8 @@ GEM
     geo_coord (0.2.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    hashdiff (1.2.0)
-    honeybadger (6.0.6)
+    hashdiff (1.2.1)
+    honeybadger (6.1.0)
       logger
       ostruct
     i18n (1.14.7)
@@ -278,7 +278,7 @@ GEM
       activesupport
       faraday (~> 2.1)
     racc (1.8.1)
-    rack (3.2.0)
+    rack (3.2.1)
     rack-session (2.1.1)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
@@ -328,7 +328,7 @@ GEM
     regexp_parser (2.11.2)
     reline (0.6.2)
       io-console (~> 0.5)
-    rexml (3.4.2)
+    rexml (3.4.3)
     rspec-core (3.13.5)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.5)
@@ -346,7 +346,7 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.5)
-    rubocop (1.80.1)
+    rubocop (1.80.2)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -366,17 +366,17 @@ GEM
     rubocop-factory_bot (2.27.1)
       lint_roller (~> 1.1)
       rubocop (~> 1.72, >= 1.72.1)
-    rubocop-performance (1.25.0)
+    rubocop-performance (1.26.0)
       lint_roller (~> 1.1)
       rubocop (>= 1.75.0, < 2.0)
-      rubocop-ast (>= 1.38.0, < 2.0)
+      rubocop-ast (>= 1.44.0, < 2.0)
     rubocop-rails (2.33.3)
       activesupport (>= 4.2.0)
       lint_roller (~> 1.1)
       rack (>= 1.1)
       rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.44.0, < 2.0)
-    rubocop-rspec (3.6.0)
+    rubocop-rspec (3.7.0)
       lint_roller (~> 1.1)
       rubocop (~> 1.72, >= 1.72.1)
     rubocop-rspec_rails (2.31.0)
@@ -384,7 +384,7 @@ GEM
       rubocop (~> 1.72, >= 1.72.1)
       rubocop-rspec (~> 3.5)
     ruby-progressbar (1.13.0)
-    rubyzip (3.0.2)
+    rubyzip (3.1.0)
     securerandom (0.4.1)
     selenium-webdriver (4.35.0)
       base64 (~> 0.2)
