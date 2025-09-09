@@ -27,12 +27,42 @@ class StructuralMetadata
       "#{Settings.stacks.url}/image/iiif/#{druid}%2F#{ERB::Util.url_encode(::File.basename(filename, '.*'))}"
     end
 
-    def height
+    def image_height
       json.dig('presentation', 'height')
     end
 
-    def width
+    def image_width
       json.dig('presentation', 'width')
+    end
+
+    def height
+      return image_height if viewable?
+
+      thumbnail_height
+    end
+
+    def width
+      return image_width if viewable?
+
+      thumbnail_width
+    end
+
+    # thumbnail width/height sets long edge to 400px
+    # then calculates the correct dimensions for the short edge to preserve aspect ratio
+    def thumbnail_height
+      if height >= width
+        400
+      else
+        ((400.0 * height) / width).round
+      end
+    end
+
+    def thumbnail_width
+      if height >= width
+        ((400.0 * width) / height).round
+      else
+        400
+      end
     end
 
     def id
@@ -53,6 +83,10 @@ class StructuralMetadata
 
     def access
       @access ||= FileAccess.new json['access']
+    end
+
+    def viewable?
+      %w[world stanford location-based].include?(access.view)
     end
 
     def role

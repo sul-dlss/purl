@@ -354,14 +354,8 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     thumb['id'] = purl_version.representative_thumbnail
     thumb.format = 'image/jpeg'
     thumb.service = [iiif_image_v2_service(purl_version.thumbnail_base_uri)]
-    if thumbnail_image.height >= thumbnail_image.width
-      thumb.height = 400
-      thumb.width = ((400.0 * thumbnail_image.width) / thumbnail_image.height).round
-    else
-      thumb.width = 400
-      thumb.height = ((400.0 * thumbnail_image.height) / thumbnail_image.width).round
-    end
-
+    thumb.height = thumbnail_image.thumbnail_height
+    thumb.width = thumbnail_image.thumbnail_width
     thumb
   end
 
