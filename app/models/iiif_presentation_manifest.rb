@@ -55,7 +55,7 @@ class IiifPresentationManifest
 
   # @param [StructuralMetadata::File]
   def deliverable_file?(file)
-    %w[world stanford location-based].include?(file.access.view) || thumbnail_image == file
+    file.viewable? || thumbnail_image.id == file.id
   end
 
   # @param [StructuralMetadata::File]
@@ -178,6 +178,7 @@ class IiifPresentationManifest
     canv.label = 'image' if canv.label.blank?
     canv.height = file.height
     canv.width = file.width
+
     if downloadable_file?(file)
       canv['rendering'] = [
         rendering_file(
@@ -245,7 +246,8 @@ class IiifPresentationManifest
     anno.resource = img_res
     anno
   end
-  # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
+
+  # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/AbcSize, Metrics/MethodLength
 
   def iiif_service(id)
     IIIF::Service.new(
@@ -282,7 +284,6 @@ class IiifPresentationManifest
     { 'label' => label, 'value' => value }
   end
 
-  # rubocop:disable Metrics/AbcSize
   # @return [IIIF::Presentation::ImageResource] or nil
   def thumbnail_resource
     return unless thumbnail_image
@@ -291,17 +292,10 @@ class IiifPresentationManifest
     thumb['@id'] = purl_version.representative_thumbnail
     thumb.format = 'image/jpeg'
     thumb.service = iiif_service(purl_version.thumbnail_base_uri)
-    if thumbnail_image.height >= thumbnail_image.width
-      thumb.height = 400
-      thumb.width = ((400.0 * thumbnail_image.width) / thumbnail_image.height).round
-    else
-      thumb.width = 400
-      thumb.height = ((400.0 * thumbnail_image.height) / thumbnail_image.width).round
-    end
-
+    thumb.width = thumbnail_image.thumbnail_width
+    thumb.height = thumbnail_image.thumbnail_height
     thumb
   end
-  # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/AbcSize
 
   def rendering_file(file, label: "Download #{file.label}", profile: nil)
     {
