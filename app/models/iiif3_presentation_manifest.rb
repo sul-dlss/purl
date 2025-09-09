@@ -13,10 +13,10 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     manifest_data = {
       '@context' => IIIF::V3::Presentation::CONTEXT,
       'id' => manifest_url,
-      'label' => { en: [display_title] },
+      'label' => { 'en' => [display_title] },
       'requiredStatement' => {
-        'label' => { en: ['Attribution'] },
-        'value' => { en: attribution.compact_blank }
+        'label' => { 'en' => ['Attribution'] },
+        'value' => { 'en' => attribution.compact_blank }
       },
       'provider' => [provider],
       'seeAlso' => [{
@@ -47,7 +47,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       manifest['@context'] += ['http://iiif.io/api/extension/navplace/context.json']
     end
 
-    manifest.summary = { en: [description_or_note] } if description_or_note.present?
+    manifest.summary = { 'en' => [description_or_note] } if description_or_note.present?
 
     manifest.viewingDirection = purl_version.structural_metadata.viewing_direction || 'left-to-right'
 
@@ -163,7 +163,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     canv = IIIF::V3::Presentation::Canvas.new
     canv['id'] = canvas_url(resource_id: file.fileset_id)
     canv.label = {
-      en: [file.fileset_label.presence || 'image']
+      'en' => [file.fileset_label.presence || 'image']
     }
     canv.rendering = []
 
@@ -197,7 +197,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
     thumbnail_canvas = IIIF::V3::Presentation::Canvas.new
     thumbnail_canvas['id'] = canvas_url(resource_id: thumbnail_image.filename)
-    thumbnail_canvas.label = { en: [thumbnail_image.label.presence || 'image'] }
+    thumbnail_canvas.label = { 'en' => [thumbnail_image.label.presence || 'image'] }
 
     if thumbnail_image.image_file?
       thumbnail_canvas.height = thumbnail_image.height
@@ -296,7 +296,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     file_url = stacks_version_file_url(resource.druid, resource.filename)
     bin_res['id'] = file_url
     bin_res['type'] = iiif_resource_type(resource)
-    bin_res['label'] = { en: [label] }
+    bin_res['label'] = { 'en' => [label] }
     bin_res.format = resource.mimetype
 
     bin_res.service = [probe_service(resource, file_url)]
