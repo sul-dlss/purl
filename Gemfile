@@ -16,7 +16,7 @@ gem "jbuilder" # Build JSON APIs with ease
 gem "jsonpath"
 gem 'okcomputer' # application monitoring
 gem "propshaft"
-gem "puma", "~> 6.0" # web server for development
+gem "puma", "~> 7.0" # web server for development
 gem "rails", "~> 8.0.0"
 gem 'recaptcha' # prevent robots spamming the feedback form
 gem "sitemap_generator"
