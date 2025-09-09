@@ -25,6 +25,10 @@ class FindItComponent < ViewComponent::Base
     end
   end
 
+  def render?
+    release_items.any?
+  end
+
   def searchworks_url(id)
     Kernel.format(Settings.searchworks.view_template_url, druid: id)
   end

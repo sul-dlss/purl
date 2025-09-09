@@ -41,4 +41,15 @@ RSpec.describe FindItComponent, type: :component do
       expect(page).to have_link 'View in SearchWorks', href: 'https://searchworks.stanford.edu/view/bf973rp9392'
     end
   end
+
+  context 'when released nowhere' do
+    let(:version) { instance_double(PurlVersion, catalog_key: nil, druid: 'bf973rp9392') }
+
+    let(:searchworks) { false }
+    let(:earthworks) { false }
+
+    it 'displays nothing' do
+      expect(page).to have_no_css('*')
+    end
+  end
 end
