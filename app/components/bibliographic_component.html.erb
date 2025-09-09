@@ -1,30 +1,10 @@
 <% label_id = "section-bibliographic-information" %>
 <%= render SectionComponent.new(label: 'Bibliographic information', label_id:) do %>
   <%= render TableComponent.new(label_id:) do %>
-    <% mods.audience.each do |field| %>
-      <tbody>
-        <%= render RowFieldComponent.new(field:, delimiter: ', ') %>
-      </tbody>
-    <% end %>
-    <% note_fields.each do |field| %>
-      <tbody>
-        <%= render RowFieldComponent.new(field:) %>
-      </tbody>
-    <% end %>
-    <% middle_fields.each do |field| %>
-      <tbody>
-        <%= render RowFieldComponent.new(field:, delimiter: '') %>
-      </tbody>
-    <% end %>
-    <% identifier.each do |field| %>
-      <tbody>
-        <%= render RowFieldComponent.new(field:, delimiter: ', ') %>
-      </tbody>
-    <% end %>
-    <% location.each do |field| %>
-      <tbody>
-        <%= render RowFieldComponent.new(field:) %>
-      </tbody>
-    <% end %>
+    <%= render Show::Description::FieldComponent.new(values: mods.audience, delimiter: ', ') %>
+    <%= render Show::Description::FieldComponent.new(values: note_fields, delimiter: nil) %>
+    <%= render Show::Description::FieldComponent.new(values: middle_fields, delimiter: '') %>
+    <%= render Show::Description::FieldComponent.new(values: identifier, delimiter: ', ') %>
+    <%= render Show::Description::FieldComponent.new(values: location, delimiter: nil) %>
   <% end %>
 <% end %>

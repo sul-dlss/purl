@@ -20,6 +20,8 @@ class RowFieldComponent < ViewComponent::Base
   end
 
   def format_value(value)
+    return value if value.is_a?(String) # CocinaDisplay
+
     if @value_transformer
       @value_transformer.call(value)
     else
