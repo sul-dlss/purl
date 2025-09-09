@@ -159,76 +159,36 @@ RSpec.describe Iiif3PresentationManifest do
       end
     end
 
-    # Virtual objects consist of a parent object and children objects who hold the file resources
-    context 'with virtual objects' do
-      describe 'first child object' do
-        let(:druid) { 'cg767mn6478' }
+    # Virtual objects point at a list of other objects that contain files
+    context 'with a virtual object' do
+      let(:druid) { 'hj097bm8879' }
 
-        it 'generates a correct manifest' do
-          expect(json['label']['en'].first).to start_with '(Covers to) Carey\'s American Atlas'
-          expect(json['items'].length).to eq 1
+      it 'generates a correct manifest' do
+        expect(json['label']['en'].first).to start_with 'Carey\'s American Atlas'
+        expect(json['thumbnail']).to be_an Array
+        expect(json['thumbnail'].size).to eq 1
+        expect(json['thumbnail'].first['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/!400,400/0/default.jpg' # first child
+        expect(json['items'].length).to eq 2 # We only have two of the child items (cg767mn6478 & jw923xn5254) in the test data
 
-          canvas = json['items'].first
-          expect(canvas['items'].length).to eq 1
-          expect(canvas['items'].first['items'].length).to eq 1
-          expect(canvas['label']['en'].first).to eq 'Image 1'
+        canvas = json['items'].first
+        expect(canvas['label']['en'].first).to start_with "(Covers to) Carey's American Atlas:"
 
-          image = canvas['items'].first['items'].first
-          expect(image['body']['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/full/0/default.jpg'
-          expect(image['body']['height']).to eq 4747
-          expect(image['body']['width']).to eq 6475
-        end
-      end
+        expect(canvas['items'].length).to eq 1
+        expect(canvas['items'].first['items'].length).to eq 1
+        image = canvas['items'].first['items'].first
+        expect(image['body']['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/full/0/default.jpg' # first child
+        expect(image['body']['height']).to eq 4747
+        expect(image['body']['width']).to eq 6475
 
-      describe 'second child object' do
-        let(:druid) { 'jw923xn5254' }
+        canvas = json['items'].second
+        expect(canvas['label']['en'].first).to start_with "(Title Page to) Carey's American Atlas:"
 
-        it 'generates a correct manifest' do
-          expect(json['label']['en'].first).to start_with '(Title Page to) Carey\'s American Atlas'
-          expect(json['items'].length).to eq 1
-
-          canvas = json['items'].first
-          expect(canvas['items'].length).to eq 1
-          expect(canvas['items'].first['items'].length).to eq 1
-          expect(canvas['label']['en'].first).to eq 'Image 1'
-
-          image = canvas['items'].first['items'].first
-          expect(image['body']['id']).to end_with '/image/iiif/jw923xn5254%2F2542B/full/full/0/default.jpg'
-          expect(image['body']['height']).to eq 4675
-          expect(image['body']['width']).to eq 3139
-        end
-      end
-
-      describe 'parent object' do
-        let(:druid) { 'hj097bm8879' }
-
-        it 'generates a correct manifest' do
-          expect(json['label']['en'].first).to start_with 'Carey\'s American Atlas'
-          expect(json['thumbnail']).to be_an Array
-          expect(json['thumbnail'].size).to eq 1
-          expect(json['thumbnail'].first['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/!400,400/0/default.jpg' # first child
-          expect(json['items'].length).to eq 2 # We only have two of the child items (cg767mn6478 & jw923xn5254) in the test data
-
-          canvas = json['items'].first
-          expect(canvas['label']['en'].first).to start_with "(Covers to) Carey's American Atlas:"
-
-          expect(canvas['items'].length).to eq 1
-          expect(canvas['items'].first['items'].length).to eq 1
-          image = canvas['items'].first['items'].first
-          expect(image['body']['id']).to end_with '/image/iiif/cg767mn6478%2F2542A/full/full/0/default.jpg' # first child
-          expect(image['body']['height']).to eq 4747
-          expect(image['body']['width']).to eq 6475
-
-          canvas = json['items'].second
-          expect(canvas['label']['en'].first).to start_with "(Title Page to) Carey's American Atlas:"
-
-          expect(canvas['items'].length).to eq 1
-          expect(canvas['items'].first['items'].length).to eq 1
-          image = canvas['items'].first['items'].first
-          expect(image['body']['id']).to end_with '/image/iiif/jw923xn5254%2F2542B/full/full/0/default.jpg' # second child
-          expect(image['body']['height']).to eq 4675
-          expect(image['body']['width']).to eq 3139
-        end
+        expect(canvas['items'].length).to eq 1
+        expect(canvas['items'].first['items'].length).to eq 1
+        image = canvas['items'].first['items'].first
+        expect(image['body']['id']).to end_with '/image/iiif/jw923xn5254%2F2542B/full/full/0/default.jpg' # second child
+        expect(image['body']['height']).to eq 4675
+        expect(image['body']['width']).to eq 3139
       end
     end
 
