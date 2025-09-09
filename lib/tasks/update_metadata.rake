@@ -26,7 +26,6 @@ FIXTURES = [
   'jw923xn5254', # second child object
   'nd387jf5675', # ETD
   'rp193xx6845', # map, world access, has coordinates in the metadata
-  'rs276tc2764', # file, world access, a dataset, grandfathered ir: namespace
   'rx923hn2102', # book, location specific, files download none
   'sk882gx0113', # a collection released to searchworks with a member (cp088pb1682)
   'ss099gb5528', # a collection not released to searchworks with a member (cd027gx5097)
