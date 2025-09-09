@@ -27,12 +27,14 @@
     graph.title @version.display_title
     graph.description @version.description.truncate(200) if @version.description
     graph.type 'og:website'
-    graph.image purl_url(@purl, format: :jpg)
+    graph.image @version.representative_thumbnail if @version.representative_thumbnail?
     graph.url purl_url(@purl)
   end
 
   twitter_card('summary_large_image') do |card|
     card.site Settings.twitter.site
+    card.title @version.display_title
+    card.image @version.representative_thumbnail if @version.representative_thumbnail?
   end
 end %>
 
