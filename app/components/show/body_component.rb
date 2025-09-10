@@ -9,6 +9,6 @@ module Show
 
     attr_accessor :version
 
-    delegate :mods, :cocina, to: :version
+    delegate :cocina, to: :version
   end
 end
