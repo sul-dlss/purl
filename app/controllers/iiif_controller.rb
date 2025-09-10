@@ -19,18 +19,6 @@ class IiifController < ApplicationController
     head :not_found
   end
 
-  def canvas
-    @version = @purl.version(:head)
-    return unless stale?(last_modified: @version.updated_at.utc, etag: @version.cache_key + "/#{@version.updated_at.utc}")
-
-    manifest = Rails.cache.fetch(cache_key('canvas'), expires_in: Settings.resource_cache.lifetime) do
-      iiif_manifest.canvas(resource_id: params[:resource_id])&.to_ordered_hash
-    end
-    return head :not_found unless manifest
-
-    render json: JSON.pretty_generate(manifest.as_json)
-  end
-
   # Only available for IIIF v3 manifests
   def annotation_page
     @version = @purl.version(:head)
