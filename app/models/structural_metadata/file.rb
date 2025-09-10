@@ -50,16 +50,16 @@ class StructuralMetadata
     # thumbnail width/height sets long edge to 400px
     # then calculates the correct dimensions for the short edge to preserve aspect ratio
     def thumbnail_height
-      if height >= width
+      if image_height >= image_width
         400
       else
-        ((400.0 * height) / width).round
+        ((400.0 * image_height) / image_width).round
       end
     end
 
     def thumbnail_width
-      if height >= width
-        ((400.0 * width) / height).round
+      if image_height >= image_width
+        ((400.0 * image_width) / image_height).round
       else
         400
       end
