@@ -3,19 +3,10 @@
 class TableBodyComponent < ViewComponent::Base
   renders_many :values
 
-  def initialize(field:)
+  def initialize(label:)
     super()
-
-    @field = field
+    @label = label
   end
 
-  attr_reader :field
-
-  def render?
-    field.values.any?(&:present?)
-  end
-
-  def label
-    field.label&.delete_suffix(':')
-  end
+  attr_reader :label
 end

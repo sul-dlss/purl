@@ -1,0 +1,14 @@
+<%= render SectionComponent.new(label: 'Creators/Contributors', label_id:) do %>
+  <%= render TableComponent.new(label_id:) do %>
+    <% contributors_by_role.each do |label, contributors| %>
+      <%= render TableBodyComponent.new(label:) do |component| %>
+        <% contributors.each do |contributor| %>
+          <%= component.with_value do %>
+            <%= render ContributorComponent.new(contributor:) %>
+
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
