@@ -3,34 +3,22 @@
 require 'rails_helper'
 
 RSpec.describe SubjectComponent, type: :component do
-  include ActionView::Helpers::UrlHelper
+  subject(:component) { described_class.new(version:) }
 
-  let(:druid) { 'bb001dq8600' }
+  let(:version) { PurlResource.new(id: druid).version(:head) }
 
-  let(:purl_version) do
-    PurlVersion.new(id: druid, version_id: '1', head: true, state: 'available', updated_at: '2024-07-29T11:28:33-07:00',
-                    resource_retriever: VersionedResourceRetriever.new(druid:, version_id: '1'))
+  before do
+    render_inline(component)
   end
 
-  before { render_inline(described_class.new(mods: purl_version.mods)) }
+  context 'with a precoordinated subject and a name subject' do
+    let(:druid) { 'bb000qr5025' }
 
-  describe 'subjects' do
-    let(:component) { described_class.new(mods: purl_version.mods) }
-
-    describe '#expand_subject_name' do
-      subject { component.expand_subject_name(mods_subjects) }
-
-      context 'with subjects that behave like names' do
-        let(:mods_subjects) { [instance_double(ModsDisplay::Name::Person, name: 'Person Name')] }
-
-        it { is_expected.to eq ['Person Name'] }
-      end
-
-      context 'with plain strings' do
-        let(:mods_subjects) { %w[Subject2a Subject2b Subject2c] }
-
-        it { is_expected.to eq %w[Subject2a Subject2b Subject2c] }
-      end
+    it 'displays the contents' do
+      expect(page).to have_content 'Jackson, Jesse, 1941-'
+      expect(page).to have_content 'Photography'
+      expect(page).to have_content 'Presidents > Election'
+      expect(page).to have_content 'San Francisco (Calif.)'
     end
   end
 end
