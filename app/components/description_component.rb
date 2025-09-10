@@ -55,18 +55,18 @@ class DescriptionComponent < ViewComponent::Base
   end
 
   def resource_types
-    values = cocina_display.resource_types
-    [CocinaDisplay::DisplayData.new(label: 'Resource Type', values:)] if values.present?
+    objects = cocina_display.resource_types
+    [CocinaDisplay::DisplayData.new(label: 'Resource Type', objects:)] if objects.present?
   end
 
   def extent
-    values = cocina_display.extents
-    [CocinaDisplay::DisplayData.new(label: 'Extent', values:)] if values.present?
+    objects = cocina_display.extents
+    [CocinaDisplay::DisplayData.new(label: 'Extent', objects:)] if objects.present?
   end
 
   def publication_places
-    values = cocina_display.publication_places
-    [CocinaDisplay::DisplayData.new(label: 'Place', values:)] if values.present?
+    objects = cocina_display.publication_places
+    [CocinaDisplay::DisplayData.new(label: 'Place', objects:)] if objects.present?
   end
 
   def render?
