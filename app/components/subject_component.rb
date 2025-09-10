@@ -1,23 +1,17 @@
 # frozen_string_literal: true
 
 class SubjectComponent < ViewComponent::Base
-  def initialize(mods:)
-    @mods = mods
+  def initialize(version:)
+    @version = version
     super()
   end
 
-  attr_reader :mods
+  attr_reader :version
 
-  delegate :genre, :subject, to: :mods
+  delegate :cocina_display, to: :version
+  delegate :subject_display_data, :genre_display_data, to: :cocina_display
 
   def render?
-    subject.present? || genre.present?
-  end
-
-  # @param [Array<ModsDisplay::Name::Person, String>] subjects
-  def expand_subject_name(subjects)
-    subjects.map do |subject|
-      subject.respond_to?(:name) ? subject.name : subject
-    end
+    subject_display_data.present? || genre_display_data.present?
   end
 end
