@@ -1,25 +1,22 @@
 # frozen_string_literal: true
 
 class BibliographicComponent < ViewComponent::Base
-  def initialize(mods:)
-    @mods = mods
+  def initialize(version:)
+    @version = version
     super()
   end
 
-  attr_reader :mods
+  attr_reader :version
 
+  delegate :cocina_display, :mods, to: :version
   delegate :identifier, :location, to: :mods
+  delegate :general_note_display_data, to: :cocina_display
 
   def render?
-    mods.audience.present? ||
-      note_fields.present? ||
+    general_note_display_data.present? ||
       middle_fields.present? ||
       identifier.present? ||
       location.present?
-  end
-
-  def note_fields
-    @note_fields ||= mods.note.reject { |x| x.label =~ /Preferred citation/i }
   end
 
   def middle_fields
