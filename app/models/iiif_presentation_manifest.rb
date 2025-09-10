@@ -140,12 +140,6 @@ class IiifPresentationManifest
     manifest
   end
 
-  # @return [IIIF::Presentation::Canvas] or nil
-  def canvas(resource_id:)
-    fileset = page_image_filesets.find { |fileset| fileset.cocina_id == resource_id }
-    canvas_for_file(fileset.image_file) if fileset
-  end
-
   ##
   # Creates an annotationList
   # @return [Array<IIIF::Presentation::AnnotationList>] or nil
@@ -366,8 +360,10 @@ class IiifPresentationManifest
     controller.url_for([:manifest, iiif_namespace, :purl, { id: druid, **kwargs }])
   end
 
-  def canvas_url(**kwargs)
-    controller.url_for([:canvas, iiif_namespace, :purl, { id: druid, **kwargs }])
+  # Canvases have to be uris but don't have to dereferenced https://iiif.io/api/presentation/3.0/#53-canvas
+  # But we do want a stable unchanging canvas uri no matter the version of IIIF we are using
+  def canvas_url(resource_id:)
+    "#{format(Settings.embed.url, druid:)}/iiif/canvas/#{resource_id}"
   end
 
   def annotation_list_url(**kwargs)

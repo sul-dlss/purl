@@ -31,9 +31,6 @@ Rails.application.routes.draw do
         get 'manifest', to: 'iiif#manifest'
         get 'manifest.json', to: redirect('/%{id}/iiif3/manifest'), format: false
 
-        get 'canvas/:resource_id', to: 'iiif#canvas', as: :canvas, format: false, defaults: { iiif_version: 'v3' }
-        get 'canvas/:resource_id.json', to: redirect('/%{id}/iiif3/canvas/%{resource_id}'), format: false
-
         get 'annotation_page/:resource_id' => 'iiif#annotation_page', as: :annotation_page, format: false, defaults: { iiif_version: 'v3' }
         get 'annotation_page/:resource_id.json', to: redirect('/%{id}/iiif3/annotation_page/%{resource_id}'), format: false
 
@@ -49,9 +46,6 @@ Rails.application.routes.draw do
           get 'manifest', to: 'iiif#manifest', format: false, defaults: { iiif_version: 'v3' }
           get 'manifest.json', to: redirect('/%{id}/iiif/manifest'), format: false
 
-          get 'canvas/:resource_id', to: 'iiif#canvas', format: false, defaults: { iiif_version: 'v3' }
-          get 'canvas/:resource_id.json', to: redirect('/%{id}/iiif/canvas/%{resource_id}'), format: false
-
           get 'annotation_page/:resource_id' => 'iiif#annotation_page', format: false, defaults: { iiif_version: 'v3' }
           get 'annotation_page/:resource_id.json', to: redirect('/%{id}/iiif/annotation_page/%{resource_id}'), format: false
 
@@ -61,9 +55,6 @@ Rails.application.routes.draw do
 
         get 'manifest', to: 'iiif#manifest', format: false
         get 'manifest.json', to: redirect('/%{id}/iiif/manifest'), format: false
-
-        get 'canvas/:resource_id', to: 'iiif#canvas', as: :canvas, format: false
-        get 'canvas/:resource_id.json', to: redirect('/%{id}/iiif/canvas/%{resource_id}'), format: false
 
         get 'annotationList/:resource_id' => 'iiif#annotation_list', as: :annotation_list, format: false
         get 'annotationList/:resource_id.json', to: redirect('/%{id}/iiif/annotationList/%{resource_id}'), format: false

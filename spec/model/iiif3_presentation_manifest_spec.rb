@@ -51,7 +51,7 @@ RSpec.describe Iiif3PresentationManifest do
              [{ 'type' => 'Annotation',
                 'motivation' => 'painting',
                 'id' => 'http://test.host/bb157hs6068/iiif/annotation/cocina-fileSet-bb157hs6068-bb157hs6068_1',
-                'target' => 'http://test.host/bb157hs6068/iiif/canvas/cocina-fileSet-bb157hs6068-bb157hs6068_1',
+                'target' => 'https://purl.stanford.edu/bb157hs6068/iiif/canvas/cocina-fileSet-bb157hs6068-bb157hs6068_1',
                 'body' =>
                 { 'type' => 'Image',
                   'id' => 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/full/0/default.jpg',
@@ -205,7 +205,7 @@ RSpec.describe Iiif3PresentationManifest do
            [{ 'type' => 'Annotation',
               'motivation' => 'painting',
               'id' => 'http://test.host/hj097bm8879/iiif/annotation/cocina-fileSet-cg767mn6478-cg767mn6478_1',
-              'target' => 'http://test.host/hj097bm8879/iiif/canvas/cocina-fileSet-cg767mn6478-cg767mn6478_1',
+              'target' => 'https://purl.stanford.edu/hj097bm8879/iiif/canvas/cocina-fileSet-cg767mn6478-cg767mn6478_1',
               'body' =>
               { 'type' => 'Image',
                 'id' => 'https://stacks.stanford.edu/image/iiif/cg767mn6478%2F2542A/full/full/0/default.jpg',
@@ -227,7 +227,7 @@ RSpec.describe Iiif3PresentationManifest do
            [{ 'type' => 'Annotation',
               'motivation' => 'painting',
               'id' => 'http://test.host/hj097bm8879/iiif/annotation/cocina-fileSet-jw923xn5254-jw923xn5254_1',
-              'target' => 'http://test.host/hj097bm8879/iiif/canvas/cocina-fileSet-jw923xn5254-jw923xn5254_1',
+              'target' => 'https://purl.stanford.edu/hj097bm8879/iiif/canvas/cocina-fileSet-jw923xn5254-jw923xn5254_1',
               'body' =>
               { 'type' => 'Image',
                 'id' => 'https://stacks.stanford.edu/image/iiif/jw923xn5254%2F2542B/full/full/0/default.jpg', # second child
@@ -252,7 +252,7 @@ RSpec.describe Iiif3PresentationManifest do
 
           canvas = json['items'].first
 
-          expect(canvas['id']).to eq 'http://test.host/wm135gp2721/iiif/canvas/cocina-fileSet-wm135gp2721-27313eb4-fb71-423d-9a82-05964f68d39f'
+          expect(canvas['id']).to eq 'https://purl.stanford.edu/wm135gp2721/iiif/canvas/cocina-fileSet-wm135gp2721-27313eb4-fb71-423d-9a82-05964f68d39f'
           expect(canvas['label']['en']).to eq ['image']
           expect(canvas['type']).to eq 'Canvas'
         end
@@ -267,7 +267,7 @@ RSpec.describe Iiif3PresentationManifest do
 
           canvas = json['items'].first
 
-          expect(canvas['id']).to eq 'http://test.host/bb253gh8060/iiif/canvas/cocina-fileSet-bb253gh8060-bb253gh8060_1'
+          expect(canvas['id']).to eq 'https://purl.stanford.edu/bb253gh8060/iiif/canvas/cocina-fileSet-bb253gh8060-bb253gh8060_1'
           expect(canvas['label']['en']).to eq ['File 1']
           expect(canvas['type']).to eq 'Canvas'
 
@@ -280,7 +280,7 @@ RSpec.describe Iiif3PresentationManifest do
               [{ 'type' => 'Annotation',
                  'motivation' => 'painting',
                  'id' => 'http://test.host/bb253gh8060/iiif/annotation/cocina-fileSet-bb253gh8060-bb253gh8060_1',
-                 'target' => 'http://test.host/bb253gh8060/iiif/canvas/cocina-fileSet-bb253gh8060-bb253gh8060_1',
+                 'target' => 'https://purl.stanford.edu/bb253gh8060/iiif/canvas/cocina-fileSet-bb253gh8060-bb253gh8060_1',
                  'body' =>
                   { 'id' => 'https://stacks.stanford.edu/file/bb253gh8060/SC0193_Agenda_6381_2010-10-07_001.pdf',
                     'type' => 'Text',
@@ -323,7 +323,7 @@ RSpec.describe Iiif3PresentationManifest do
              [{ 'type' => 'Annotation',
                 'motivation' => 'painting',
                 'id' => 'http://test.host/xq467yj8428/iiif/annotation/cocina-fileSet-xq467yj8428-xq467yj8428_1',
-                'target' => 'http://test.host/xq467yj8428/iiif/canvas/cocina-fileSet-xq467yj8428-xq467yj8428_1',
+                'target' => 'https://purl.stanford.edu/xq467yj8428/iiif/canvas/cocina-fileSet-xq467yj8428-xq467yj8428_1',
                 'body' =>
                 { 'id' => 'https://stacks.stanford.edu/file/xq467yj8428/READ%20ME_MLOPhotoQuads.pdf',
                   'type' => 'Text',
@@ -382,7 +382,7 @@ RSpec.describe Iiif3PresentationManifest do
            [{ 'type' => 'Annotation',
               'motivation' => 'painting',
               'id' => 'http://test.host/bg387kw8222/iiif/annotation/cocina-fileSet-bg387kw8222-bg387kw8222_7',
-              'target' => 'http://test.host/bg387kw8222/iiif/canvas/cocina-fileSet-bg387kw8222-bg387kw8222_7',
+              'target' => 'https://purl.stanford.edu/bg387kw8222/iiif/canvas/cocina-fileSet-bg387kw8222-bg387kw8222_7',
               'body' =>
               { 'id' => 'https://stacks.stanford.edu/file/bg387kw8222/bg387kw8222_low.glb',
                 'type' => 'Dataset',
@@ -463,7 +463,7 @@ RSpec.describe Iiif3PresentationManifest do
 
           canvas = json['items'].first
 
-          expect(canvas['id']).to eq 'http://test.host/fj935vg7746/iiif/canvas/cocina-fileSet-fj935vg7746-fj935vg7746_2'
+          expect(canvas['id']).to eq 'https://purl.stanford.edu/fj935vg7746/iiif/canvas/cocina-fileSet-fj935vg7746-fj935vg7746_2'
           expect(canvas['label']['en']).to eq ['filelist']
           expect(canvas['type']).to eq 'Canvas'
         end

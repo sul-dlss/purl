@@ -270,11 +270,6 @@ RSpec.describe 'PURL API' do
       expect(response).to redirect_to('/bc000df0000/iiif/manifest')
     end
 
-    it 'redirects canvas json requests' do
-      get '/bc000df0000/iiif/canvas/whatever.json'
-      expect(response).to redirect_to('/bc000df0000/iiif/canvas/whatever')
-    end
-
     it 'responds to OPTIONS requests' do
       options '/bb157hs6068/iiif/manifest'
       expect(response).to be_successful
@@ -301,16 +296,6 @@ RSpec.describe 'PURL API' do
 
       expect(response).to be_successful
       expect(response.headers['Access-Control-Allow-Headers']).to include 'Accept'
-    end
-
-    it 'redirects manifest.json requests' do
-      get '/bc000df0000/iiif3/manifest.json'
-      expect(response).to redirect_to('/bc000df0000/iiif3/manifest')
-    end
-
-    it 'redirects canvas json requests' do
-      get '/bc000df0000/iiif3/canvas/whatever.json'
-      expect(response).to redirect_to('/bc000df0000/iiif3/canvas/whatever')
     end
   end
 end
