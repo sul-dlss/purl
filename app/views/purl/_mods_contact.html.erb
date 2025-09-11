@@ -1,6 +1,0 @@
-<% fields = mods.contact %>
-<% if fields.present? %>
-  <%= render SectionComponent.new(label: 'Contact information') do %>
-    <%= render ModsDefinitionListComponent.new(fields: fields, hide_label: true) %>
-  <% end %>
-<% end %>
