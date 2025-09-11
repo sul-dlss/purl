@@ -55,9 +55,12 @@ class StructuralMetadata
       type == 'https://cocina.sul.stanford.edu/models/resources/audio'
     end
 
+    def media?
+      audio? || type == 'https://cocina.sul.stanford.edu/models/resources/video'
+    end
+
     def media_file
-      return nil unless ['https://cocina.sul.stanford.edu/models/resources/video',
-                         'https://cocina.sul.stanford.edu/models/resources/audio'].include?(type)
+      return nil unless media?
 
       files.find { it.mimetype.start_with?('video/', 'audio/') }
     end

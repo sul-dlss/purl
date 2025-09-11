@@ -144,12 +144,13 @@ class IiifPresentationManifest
   # Creates an annotationList
   # @return [Array<IIIF::Presentation::AnnotationList>] or nil
   def annotation_list(resource_id:)
-    return unless local_files.any?
+    fileset = page_image_filesets.find { |fileset| fileset.cocina_id == resource_id }
+    return if fileset.blank?
 
     anno_list = IIIF::Presentation::AnnotationList.new
     anno_list['@id'] = annotation_list_url(resource_id:)
     anno_list.resources = []
-    local_files.select { |file| file.role == 'annotations' && file.mimetype == 'application/json' }.each do |file|
+    fileset.files.select { |file| file.role == 'annotations' && file.mimetype == 'application/json' }.each do |file|
       anno_list.resources << JSON.parse(
         Faraday.get(
           stacks_file_url(druid, file.filename)

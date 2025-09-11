@@ -34,6 +34,9 @@ Rails.application.routes.draw do
         get 'annotation_page/:resource_id' => 'iiif#annotation_page', as: :annotation_page, format: false, defaults: { iiif_version: 'v3' }
         get 'annotation_page/:resource_id.json', to: redirect('/%{id}/iiif3/annotation_page/%{resource_id}'), format: false
 
+        get 'annotations/:resource_id' => 'iiif#annotation_list', as: :annotation_list, format: false, defaults: { iiif_version: 'v3' }
+        get 'annotations/:resource_id.json', to: redirect('/%{id}/iiif3/annotations/%{resource_id}'), format: false
+
         get 'annotation/:resource_id' => 'iiif#annotation', as: :annotation, format: false, defaults: { iiif_version: 'v3' }
         get 'annotation/:resource_id.json', to: redirect('/%{id}/iiif3/annotation/%{resource_id}'), format: false
       end

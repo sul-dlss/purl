@@ -3,10 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe Iiif3PresentationManifest do
-  subject(:manifest) { described_class.new(resource, controller:) }
+  subject(:manifest) { described_class.new(resource, controller:, iiif_namespace:) }
 
   let(:resource) { PurlVersion.new }
   let(:controller) { PurlController.new }
+  let(:iiif_namespace) { :iiif }
 
   describe '#body' do
     subject(:json) { manifest.body.to_ordered_hash }
@@ -107,6 +108,20 @@ RSpec.describe Iiif3PresentationManifest do
                                                           'ice cannot be reached. If your browser is configured to block pop-up wi' \
                                                           'ndows, try allowing pop-up windows for this site before attempting to l' \
                                                           'og in again.'
+      end
+    end
+
+    context 'with image that has annotations' do
+      let(:druid) { 'hx163dc5225' }
+      let(:iiif_namespace) { :iiif3 }
+
+      it 'provides annotations for annotations' do
+        expect(json.dig('items', 7, 'annotations')).to eq [
+          {
+            id: 'http://test.host/hx163dc5225/iiif3/annotations/cocina-fileSet-hx163dc5225-hx163dc5225_8',
+            type: 'AnnotationPage'
+          }
+        ]
       end
     end
 

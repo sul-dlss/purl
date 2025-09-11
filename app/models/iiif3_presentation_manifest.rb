@@ -179,7 +179,9 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       canvas_type = fileset.audio? ? 'accompanyingCanvas' : 'placeholderCanvas'
       canv[canvas_type] = thumbnail_canvas
 
-      canv['annotations'] = supplementing_resources_annotation_page(fileset)
+      canv['annotations'] = [{ id: annotation_list_url(resource_id: fileset.cocina_id), type: 'AnnotationPage' }] if image_annotations(fileset).present?
+
+      canv['annotations'] = caption_annotations(fileset) if fileset.media?
 
       canv.rendering += renderings_for_fileset(fileset)
     end
@@ -203,7 +205,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     thumbnail_canvas
   end
 
-  def supplementing_resources_annotation_page(fileset)
+  def caption_annotations(fileset)
     return unless fileset.supplementing_resources.any?
 
     annotation_page = IIIF::V3::Presentation::AnnotationPage.new
@@ -250,6 +252,34 @@ class Iiif3PresentationManifest < IiifPresentationManifest
                 end
 
     anno
+  end
+
+  def annotation_list(resource_id:)
+    fileset = file_sets.find { |fileset| fileset.cocina_id == resource_id }
+
+    return if fileset.blank?
+
+    anno_list = IIIF::V3::Presentation::AnnotationPage.new
+    anno_list['id'] = annotation_list_url(resource_id:)
+
+    anno_list.items = []
+
+    image_annotations(fileset).each do |file|
+      annotation = annotation_for_file(file)
+      annotation.body = JSON.parse(
+        Faraday.get(
+          stacks_file_url(druid, file.filename)
+        ).body
+      )
+      anno_list.items << annotation
+    end
+    anno_list
+  end
+
+  def image_annotations(fileset)
+    return [] unless fileset.files
+
+    fileset.files.select { |file| file.role == 'annotations' && file.mimetype == 'application/json' }
   end
 
   def image_resource(file)
