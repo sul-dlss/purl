@@ -81,7 +81,6 @@ RSpec.describe 'Displaying the PURL page' do
 
     it 'displays the page' do
       visit "/#{druid}"
-      visit '/cp088pb1682'
       expect(page).to have_content 'Atari Competition'
       expect(page).to have_metadata_section 'Access conditions'
       expect(page).to have_metadata_section 'Description'
