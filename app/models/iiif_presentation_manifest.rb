@@ -219,6 +219,7 @@ class IiifPresentationManifest
 
     anno = IIIF::Presentation::Annotation.new
     anno['@id'] = annotation_url(resource_id: file.id)
+    anno['on'] = canvas_url(resource_id: file.fileset_id)
 
     img_res = IIIF::Presentation::ImageResource.new
     img_res['@id'] = "#{url}/full/full/0/default.jpg"

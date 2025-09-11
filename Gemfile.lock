@@ -177,7 +177,7 @@ GEM
       ostruct
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
-    iiif-presentation (1.3.0)
+    iiif-presentation (1.4.0)
       activesupport (>= 3.2.18)
       faraday (~> 2.7)
       geo_coord
