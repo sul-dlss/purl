@@ -1,0 +1,34 @@
+<%= tag.title title %>
+
+<% if embeddable? %>
+  <%= tag.link rel: "preconnect", href: Settings.stacks.url %>
+  <%= tag.link rel: "preconnect", href: Settings.embed.url % { druid: '' } %>
+  <%= tag.link rel: "alternate", title: "oEmbed Profile", type: 'application/json+oembed', href: oembed_path('json') %>
+  <%= tag.link rel: "alternate", title: "oEmbed Profile", type: 'application/xml+oembed', href: oembed_path('xml') %>
+  <%= tag.link rel: "alternate", title: "IIIF Manifest", type: 'application/json', href: manifest_iiif_purl_url(druid) %>
+<% end %>
+<%= tag.link rel: "canonical", href: purl_url(druid) %>
+<%= tag.link rel: "alternate", title: "MODS XML", type: 'application/xml', href: purl_url(druid, format: 'mods') %>
+<%= tag.link rel: "up", href: purl_url(containing_collections.first) if containing_collections.present? %>
+<%= render AltmetricsComponent.new(purl_version: version) %>
+<%= tag.meta name: 'robots', content: 'noindex' unless releases.crawlable? %>
+
+<% if schema_dot_org? %>
+  <script type="application/ld+json"><%= schema_dot_org.to_json.html_safe %></script>
+<% end %>
+
+<% unless withdrawn? %>
+  <%= tag.meta name: "keywords", content: keywords %>
+  <%= tag.meta name: "description", content: description&.truncate(200) %>
+
+  <%= tag.meta name: "og:title", content: display_title %>
+  <%= tag.meta name: "og:description", content: description&.truncate(200) %>
+  <%= tag.meta name: "og:type", content: 'og:website' %>
+  <%= tag.meta name: "og:image", content: representative_thumbnail %>
+  <%= tag.meta name: "og:url", content: purl_url(druid) %>
+
+  <%= tag.meta name: "twitter:card", value: "summary_large_image" %>
+  <%= tag.meta name: "twitter:site", value: "@DigitalLib" %>
+  <%= tag.meta name: "twitter:title", value: display_title %>
+  <%= tag.meta name: "twitter:image", value: representative_thumbnail %>
+<% end %>

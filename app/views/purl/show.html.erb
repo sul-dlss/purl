@@ -1,41 +1,6 @@
-<% title @version.display_title %>
 <% content_for(:head) do %>
-  <% if @version.embeddable? %>
-    <%= tag :link, rel: "preconnect", href: Settings.stacks.url %>
-    <%= tag :link, rel: "preconnect", href: Settings.embed.url % { druid: '' } %>
-    <%= tag :link, rel: "alternate", title: "oEmbed Profile", type: 'application/json+oembed', href: oembed_url_template.expand(format: 'json', application_options: oembed_url_template_options, url: embeddable_url(@purl.druid, @version&.version_id)) %>
-    <%= tag :link, rel: "alternate", title: "oEmbed Profile", type: 'application/xml+oembed', href: oembed_url_template.expand(format: 'xml', application_options: oembed_url_template_options, url: embeddable_url(@purl.druid, @version&.version_id)) %>
-    <%= tag :link, rel: "alternate", title: "IIIF Manifest", type: 'application/json', href: manifest_iiif_purl_url(@purl) %>
-  <% end %>
-  <%= tag :link, rel: "canonical", href: purl_url(@purl) %>
-  <%= tag :link, rel: "alternate", title: "MODS XML", type: 'application/xml', href: purl_url(@purl, format: 'mods') %>
-  <%= tag :link, rel: "up", href: purl_url(@version.containing_collections.first) if @version.containing_collections.present? %>
-  <%= render AltmetricsComponent.new(purl_version: @version) %>
-  <%= tag :meta, name: 'robots', content: 'noindex' unless @purl.releases.crawlable? %>
-
-  <% if @version.schema_dot_org? %>
-    <script type="application/ld+json"><%= @version.schema_dot_org.to_json.html_safe %></script>
-  <% end %>
+  <%= render Show::HeadMetadataComponent.new(purl: @purl, version: @version ) %>
 <% end %>
 
-<% unless @version.withdrawn?
-  keywords(@version.mods.subject.compact.map(&:values).join(',')) if @version.mods.subject
-
-  description(@version.description.truncate(200)) if @version.description
-
-  opengraph do |graph|
-    graph.title @version.display_title
-    graph.description @version.description.truncate(200) if @version.description
-    graph.type 'og:website'
-    graph.image @version.representative_thumbnail if @version.representative_thumbnail?
-    graph.url purl_url(@purl)
-  end
-
-  twitter_card('summary_large_image') do |card|
-    card.site Settings.twitter.site
-    card.title @version.display_title
-    card.image @version.representative_thumbnail if @version.representative_thumbnail?
-  end
-end %>
 
 <%= render ShowComponent.new(purl: @purl, version: @version) %>

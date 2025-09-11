@@ -415,8 +415,6 @@ GEM
     stringio (3.1.7)
     thor (1.4.0)
     timeout (0.4.3)
-    tophat (2.3.1)
-      actionpack (>= 3.0.0)
     turbo-rails (2.0.16)
       actionpack (>= 7.1.0)
       railties (>= 7.1.0)
@@ -494,7 +492,6 @@ DEPENDENCIES
   simplecov
   sitemap_generator
   stimulus-rails
-  tophat
   turbo-rails
   view_component (~> 4.0)
   web-console (>= 3.3.0)
