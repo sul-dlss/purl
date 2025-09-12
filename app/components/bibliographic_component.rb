@@ -9,14 +9,14 @@ class BibliographicComponent < ViewComponent::Base
   attr_reader :version
 
   delegate :cocina_display, :mods, to: :version
-  delegate :identifier, :location, to: :mods
-  delegate :general_note_display_data, to: :cocina_display
+  delegate :identifier, to: :mods
+  delegate :general_note_display_data, :access_display_data, to: :cocina_display
 
   def render?
     general_note_display_data.present? ||
       middle_fields.present? ||
       identifier.present? ||
-      location.present?
+      access_display_data.present?
   end
 
   def middle_fields
