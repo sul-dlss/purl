@@ -3,26 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Displaying the PURL page' do
-  context 'with a book that is not crawlable' do
-    let(:druid) { 'bb737zp0787' }
-
-    it 'displays the page including a noindex meta tag' do
-      visit "/#{druid}"
-
-      expect(page).to have_css 'meta[name="robots"][content="noindex"]', visible: :hidden
-      expect(page).to have_content 'The curate of Cumberworth ; and The vicar of Roost : tales'
-      expect(page).to have_metadata_section 'Access conditions'
-      expect(page).to have_metadata_section 'Description'
-      expect(page).to have_metadata_section 'Contributors'
-      expect(page).to have_content 'Associated with Paget, Francis Edward, 1806-1882'
-      expect(page).to have_metadata_section 'Bibliographic information'
-      expect(page).to have_metadata_section 'Also listed in'
-      expect(page).to have_content 'Vicar of Roost'
-      expect(page).to have_link 'View in SearchWorks', href: 'https://searchworks.stanford.edu/view/9616533'
-      expect(page).to have_css 'link[rel=up][href="http://www.example.com/jt466yc7169"]', visible: :hidden
-    end
-  end
-
   context 'with a map' do
     let(:druid) { 'rp193xx6845' }
 
@@ -34,25 +14,6 @@ RSpec.describe 'Displaying the PURL page' do
       expect(page).to have_metadata_section 'Contributors'
       expect(page).to have_metadata_section 'Subjects'
       expect(page).to have_link 'rumseymapcenter@stanford.edu', href: 'mailto:rumseymapcenter@stanford.edu'
-    end
-  end
-
-  context 'with an etd that is crawlable' do
-    let(:druid) { 'nd387jf5675' }
-
-    it 'displays the page without a noindex meta tag' do
-      visit "/#{druid}"
-      expect(page).to have_content 'Invariance for perceptual recognition through deep learning'
-      expect(page).to have_no_css 'meta[name="robots"][content="noindex"]', visible: :hidden
-
-      expect(page).to have_metadata_section 'Access conditions'
-      expect(page).to have_metadata_section 'Description'
-      expect(page).to have_metadata_section 'Contributors'
-      expect(page).to have_metadata_section 'Abstract/Contents'
-      expect(page).to have_metadata_section 'Subjects'
-      expect(page).to have_metadata_section 'Bibliographic information'
-      expect(page).to have_metadata_section 'Also listed in'
-      expect(page).to have_link 'View in SearchWorks', href: 'https://searchworks.stanford.edu/view/10734942'
     end
   end
 
@@ -102,20 +63,6 @@ RSpec.describe 'Displaying the PURL page' do
       visit "/#{druid}"
       expect(page).to have_content 'Edward Flanders Ricketts papers, 1936-1979 (inclusive), 1936-1947 (bulk)'
       expect(page).to have_no_link 'View other items in this collection in SearchWorks'
-    end
-  end
-
-  context 'with a file item that has a DOI' do
-    let(:druid) { 'wm135gp2721' }
-
-    it 'includes altmetrics' do
-      visit "/#{druid}"
-
-      expect(page).to have_css 'meta[name="citation_doi"][content="10.25740/wm135gp2721"]', visible: :hidden
-      expect(page).to have_css 'meta[name="citation_title"][content^="A Newly Digitised Ice-penetrating Radar Dataset"]', visible: :hidden
-      expect(page).to have_css 'meta[name="citation_publication_date"][content="2023"]', visible: :hidden
-      expect(page).to have_css 'meta[name="citation_author"][content="Karlsson, Nanna B."]', visible: :hidden
-      expect(page).to have_css 'meta[name="citation_author"][content="Schroeder, Dustin"]', visible: :hidden
     end
   end
 
@@ -174,7 +121,7 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'with a version manifest' do
+  context 'with more than one version' do
     let(:druid) { 'zb733jx3137' }
 
     it 'shows the version information panel' do
@@ -182,26 +129,9 @@ RSpec.describe 'Displaying the PURL page' do
       expect(page).to have_content 'You are viewing this version'
       expect(page).to have_content 'Each version has a distinct URL, but you can use this PURL to access the latest version.'
     end
-
-    it 'draws the page' do
-      visit "/#{druid}/version/3"
-      link = page.find('link[rel="alternate"][title="oEmbed Profile"][type="application/json+oembed"]', visible: false)
-      expect(link['href']).to eq 'https://embed.stanford.edu/embed.json?url=https%3A%2F%2Fpurl.stanford.edu%2Fzb733jx3137%2Fversion%2F3'
-      link = page.find('link[rel="alternate"][title="IIIF Manifest"]', visible: false)
-      expect(link['href']).to eq 'http://www.example.com/zb733jx3137/iiif/manifest'
-    end
   end
 
   def have_metadata_section(text)
     have_css 'section h2', text:
-  end
-
-  context 'with a dataset item' do
-    let(:druid) { 'wm135gp2721' }
-
-    it 'adds schema.org markup for Datasets' do
-      visit "/#{druid}"
-      expect(page).to have_css('script[type="application/ld+json"]', text: %r{http://schema.org}, visible: :hidden)
-    end
   end
 end

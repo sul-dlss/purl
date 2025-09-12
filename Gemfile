@@ -21,7 +21,6 @@ gem "rails", "~> 8.0.0"
 gem 'recaptcha' # prevent robots spamming the feedback form
 gem "sitemap_generator"
 gem "stimulus-rails" # Hotwire's modest JavaScript framework
-gem 'tophat'
 gem "turbo-rails" # Hotwire's SPA-like page accelerator
 gem "view_component", '~> 4.0'
 gem 'whenever', require: false # cron jobs

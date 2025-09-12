@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="google-site-verification" content="<%= Settings.GOOGLE_SITE_VERIFICATION %>" />
+    <meta name="google-site-verification" content="<%= Settings.GOOGLE_SITE_VERIFICATION %>">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B11RSRZLRJ"></script>
@@ -25,7 +25,6 @@
       gtag('config', 'G-B11RSRZLRJ', config)
     </script>
 
-    <%= title site: application_name, separator: '|', reverse: true %>
     <link rel="icon" href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-01-24/styles/icon.png" type="image/png">
     <link rel="icon" href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-01-24/styles/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-01-24/styles/icon.png">
@@ -36,15 +35,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2024-11-21/styles/sul.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2024-11-21/styles/sul.css">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= csrf_meta_tags %>
-
-    <%= keywords %>
-    <%= description %>
-    <%= opengraph %>
-    <%= twitter_card %>
     <%= content_for(:head) %>
   </head>
   <body>

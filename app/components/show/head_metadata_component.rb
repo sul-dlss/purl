@@ -1,0 +1,38 @@
+# frozen_string_literal: true
+
+module Show
+  class HeadMetadataComponent < ViewComponent::Base
+    def initialize(version:, purl:)
+      @version = version
+      @purl = purl
+      super()
+    end
+
+    attr_accessor :version, :purl
+
+    delegate :embeddable?, :containing_collections, :version_id, :cocina_body, :druid, :display_title, :description,
+             :representative_thumbnail, :representative_thumbnail?, :withdrawn?, to: :version
+    delegate :releases, to: :purl
+    delegate :embeddable_url, :oembed_url_template, :oembed_url_template_options, to: :helpers
+
+    def schema_dot_org?
+      ::Metadata::SchemaDotOrg.schema_type?(cocina_body)
+    end
+
+    def schema_dot_org
+      ::Metadata::SchemaDotOrg.call(cocina_body)
+    end
+
+    def title
+      "#{display_title} | Stanford Digital Repository"
+    end
+
+    def oembed_path(format)
+      oembed_url_template.expand(format: format, application_options: oembed_url_template_options, url: embeddable_url(druid, version_id))
+    end
+
+    def keywords
+      @version.mods.subject.compact.map(&:values).join(',')
+    end
+  end
+end

@@ -123,10 +123,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     "#{Settings.searchworks.url}/catalog?f[collection][]=#{folio_instance_hrid || druid}"
   end
 
-  def schema_dot_org?
-    ::Metadata::SchemaDotOrg.schema_type?(cocina_body)
-  end
-
   def metrics
     metrics_service.get_metrics(druid)
   end
@@ -247,10 +243,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     # TODO: Move to AltmetricsComponent
     def authors
       cocina_display.contributors.map(&:display_name)
-    end
-
-    def schema_dot_org
-      ::Metadata::SchemaDotOrg.call(cocina_body)
     end
   end
 
