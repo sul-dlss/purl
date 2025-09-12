@@ -8,7 +8,7 @@ class AltmetricsComponent < ViewComponent::Base
 
   attr_reader :purl_version
 
-  delegate :display_title, :authors, :doi_id, to: :purl_version
+  delegate :display_title, :doi_id, to: :purl_version
   delegate :cocina_display, :druid, to: :purl_version
 
   def publication_date
@@ -22,5 +22,9 @@ class AltmetricsComponent < ViewComponent::Base
 
     Honeybadger.notify("Malformed Cocina data: No date node found in creation event at description.adminMetadata.event.*.date for: #{druid}")
     nil
+  end
+
+  def authors
+    cocina_display.contributors.map(&:display_name)
   end
 end

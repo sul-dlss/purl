@@ -239,11 +239,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     def doi_id
       doi&.delete_prefix('https://doi.org/')
     end
-
-    # TODO: Move to AltmetricsComponent
-    def authors
-      cocina_display.contributors.map(&:display_name)
-    end
   end
 
   concerning :Caching do
