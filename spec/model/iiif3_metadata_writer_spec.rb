@@ -5,8 +5,7 @@ require 'rails_helper'
 RSpec.describe Iiif3MetadataWriter do
   let(:doi) { nil }
   let(:metadata_writer) do
-    described_class.new(cocina_descriptive: cocina_descriptive,
-                        collection_title: 'viewer testing',
+    described_class.new(collection_title: 'viewer testing',
                         published_date: '2025-02-24T15:55:53Z',
                         cocina_display:)
   end
@@ -259,9 +258,9 @@ RSpec.describe Iiif3MetadataWriter do
         expect(field_value('Title')).to eq ['H2 title field']
         expect(field_value('Creator')).to eq ['Author, First']
         expect(field_value('Contributor')).to eq ['contributor, Second (compiler)']
-        expect(field_value('Type')).to eq ['Text', 'Policy brief']
+        expect(field_value('Type')).to eq ['text > policy brief', 'text']
         expect(field_value('Abstract')).to eq ['This is the abstract field']
-        expect(field_value('Subject')).to eq ['keyword']
+        expect(field_value('Subject')).to eq ['keyword', 'Another neat tool']
         expect(field_value('Date')).to eq ['February 20, 2025', 'April  5, 2024', 'January  3, 2025']
         expect(field_value('Identifier')).to eq ['https://sul-purl-stage.stanford.edu/zw438wf4318', 'doi: https://doi.org/10.80343/zw438wf4318']
         expect(field_value('Relation')).to eq ['viewer testing']
@@ -284,7 +283,7 @@ RSpec.describe Iiif3MetadataWriter do
         expect(field_value('Type')).to eq ['Map', 'Digital Maps', 'Early Maps']
         expect(field_value('Subject')).to eq ['Astronomy--Charts, diagrams, etc', 'California as an island--Maps']
         expect(field_value('Date')).to eq %w[1721]
-        expect(field_value('Identifier')).to eq ['1040', 'https://purl.stanford.edu/bb157hs6068']
+        expect(field_value('Identifier')).to eq ['Post publication map number: 1040', 'https://purl.stanford.edu/bb157hs6068']
         expect(field_value('Relation')).to eq ['viewer testing']
         expect(field_value('PublishDate')).to eq ['2025-02-24T15:55:53Z']
         expect(field('Abstract')).to be_nil
@@ -434,9 +433,9 @@ RSpec.describe Iiif3MetadataWriter do
           { 'label' => { 'en' => ['Statement of responsibility'] },
             'value' => { 'en' => ['[Henry Abraham Châtelain].'] } },
           { 'label' => { 'en' => ['Subject'] }, 'value' => { 'en' => ['Astronomy--Charts, diagrams, etc', 'California as an island--Maps'] } },
-          { 'label' => { 'en' => ['Coverage'] }, 'value' => { 'en' => ['W 180° --E 180°/N 85° --S 85°'] } },
+          { 'label' => { 'en' => ['Coverage'] }, 'value' => { 'en' => ['180°00′00″W -- 180°00′00″E / 85°00′00″N -- 85°00′00″S'] } },
           { 'label' => { 'en' => ['Date'] }, 'value' => { 'en' => ['1721'] } },
-          { 'label' => { 'en' => ['Identifier'] }, 'value' => { 'en' => ['1040', 'https://purl.stanford.edu/bb157hs6068'] } },
+          { 'label' => { 'en' => ['Identifier'] }, 'value' => { 'en' => ['Post publication map number: 1040', 'https://purl.stanford.edu/bb157hs6068'] } },
           { 'label' => { 'en' => ['Relation'] }, 'value' => { 'en' => ['viewer testing'] } },
           { 'label' => { 'en' => ['PublishDate'] }, 'value' => { 'en' => ['2025-02-24T15:55:53Z'] } }
         ]
@@ -448,7 +447,7 @@ RSpec.describe Iiif3MetadataWriter do
         {
           'subject' => [{ 'value' => 'America--Maps', 'type' => 'topic', 'source' => { 'uri' => 'http => //id.loc.gov/authorities/subjects/sh85004277' } },
                         { 'value' => 'California as an island--Maps', 'type' => 'topic' },
-                        { 'value' => 'W 160° --E 20°/N 90° --S 90°', 'type' => 'map coordinates' }],
+                        { 'value' => '160°00′00″W -- 20°00′00″E / 90°00′00″N -- 90°00′00″S', 'type' => 'map coordinates' }],
           'form' => [{ 'type' => 'genre', 'value' => 'map' },
                      { 'source' => { 'value' => 'MODS resource types' }, 'type' => 'resource type', 'value' => 'cartographic' },
                      { 'type' => 'extent', 'value' => '22.5 x 31.7 cm., 22.5 x 33.1 cm. including border.' },
@@ -457,7 +456,7 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts the metadata' do
-        expect(field_value('Coverage')).to eq ['[ca.1 => 60,000,000].', 'W 160° --E 20°/N 90° --S 90°']
+        expect(field_value('Coverage')).to eq ['[ca.1 => 60,000,000].', '160°00′00″W -- 20°00′00″E / 90°00′00″N -- 90°00′00″S']
       end
     end
 
@@ -510,7 +509,7 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts the metadata' do
-        expect(field_value('Subject')).to eq ['United States, Department of Energy, Office of Inspector General -- Auditing -- Statistics -- Periodicals']
+        expect(field_value('Subject')).to eq ['United States, Department of Energy, Office of Inspector General > Auditing > Statistics > Periodicals']
       end
     end
 
@@ -520,7 +519,7 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts the metadata' do
-        expect(field_value('Contents')).to include('Of the leaven of pharisees')
+        expect(field_value('Contents').first).to include('Of the leaven of pharisees')
       end
     end
 
@@ -548,7 +547,7 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts all the identifiers correctly' do
-        expect(field_value('Identifier')).to eq ['lccn: 30003962', 'localnumber', 'nosourceident']
+        expect(field_value('Identifier')).to eq ['LCCN: 30003962', 'localnumber', 'nosourceident']
       end
     end
   end

@@ -26,7 +26,7 @@ gem "view_component", '~> 4.0'
 gem 'whenever', require: false # cron jobs
 
 # DLSS and its community
-gem 'iiif-presentation', '~> 1.3'
+gem 'iiif-presentation', '~> 1.4'
 gem 'mods_display', '~> 1.7'
 gem "purl_fetcher-client", "~> 3.1"
 
