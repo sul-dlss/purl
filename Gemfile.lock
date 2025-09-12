@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/sul-dlss/cocina_display.git
-  revision: 88c69041cb2b77c017265f6376c333037dce499b
+  revision: 99b5613213621b398574a68b87d30192e46cfe89
   specs:
     cocina_display (1.1.3)
       activesupport (>= 7)
