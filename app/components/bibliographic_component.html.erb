@@ -1,8 +1,7 @@
 <% label_id = "section-bibliographic-information" %>
 <%= render SectionComponent.new(label: 'Bibliographic information', label_id:) do %>
   <%= render TableComponent.new(label_id:) do %>
-    <%= render Show::Description::FieldComponent.new(values: mods.audience, delimiter: ', ') %>
-    <%= render Show::Description::FieldComponent.new(values: note_fields, delimiter: nil) %>
+    <%= render Show::Description::FieldComponent.new(values: general_note_display_data, delimiter: nil) %>
     <%= render Show::Description::FieldComponent.new(values: middle_fields, delimiter: '') %>
     <%= render Show::Description::FieldComponent.new(values: identifier, delimiter: ', ') %>
     <%= render Show::Description::FieldComponent.new(values: location, delimiter: nil) %>
