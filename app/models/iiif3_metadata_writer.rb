@@ -51,7 +51,7 @@ class Iiif3MetadataWriter
     display_name = contributor.display_name(with_date: true)
     return display_name unless contributor.role?
 
-    "#{display_name} (#{contributor.display_role})"
+    "#{display_name} (#{contributor.roles.map(&:to_s).join(', ')})"
   end
 
   # TODO: accessContact not in cocina_display yet
