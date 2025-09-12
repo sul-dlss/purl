@@ -9,8 +9,8 @@ class DescriptionComponent < ViewComponent::Base
   attr_reader :version
 
   delegate :mods, :cocina_display, to: :version
-  delegate :form, :dateCreated, :dateCaptured, :dateValid, :dateModified, :dateOther, :copyrightDate, :dateIssued, :description, to: :mods
-  delegate :language_display_data, :map_display_data, :event_note_display_data, to: :cocina_display
+  delegate :dateCreated, :dateCaptured, :dateValid, :dateModified, :dateOther, :copyrightDate, :dateIssued, :description, to: :mods
+  delegate :form_display_data, :language_display_data, :map_display_data, :event_note_display_data, to: :cocina_display
 
   def label_id
     'section-description'
@@ -24,8 +24,7 @@ class DescriptionComponent < ViewComponent::Base
     @field_map ||= [
       [alternative_title, nil],
       [other_title, COMMA],
-      [resource_types, COMMA],
-      [form, SEMICOLON],
+      [form_display_data, SEMICOLON],
       [extent, COMMA],
       [publication_places, nil],
       [publisher, COMMA],
