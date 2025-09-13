@@ -72,7 +72,7 @@ RSpec.describe 'PURL API' do
                           resource_retriever:)
         end
         let(:resource_retriever) do
-          instance_double(ResourceRetriever, public_xml_body: '<xml></xml>', cocina_body:)
+          instance_double(VersionedResourceRetriever, public_xml_body: '<xml></xml>', cocina_body:)
         end
         let(:cocina_body) do
           '{"cocinaVersion": "0.100.text", "version": 5,"type": "https://cocina.sul.stanford.edu/models/image", "structural": {}}'
@@ -146,7 +146,7 @@ RSpec.describe 'PURL API' do
                           resource_retriever:)
         end
         let(:resource_retriever) do
-          instance_double(ResourceRetriever, public_xml_body: '<xml></xml>', cocina_body:)
+          instance_double(VersionedResourceRetriever, public_xml_body: '<xml></xml>', cocina_body:)
         end
         let(:cocina_body) do
           '{"cocinaVersion": "0.100.text", "version": 5,"type": "https://cocina.sul.stanford.edu/models/image", "structural": {}}'
@@ -207,7 +207,7 @@ RSpec.describe 'PURL API' do
                           resource_retriever:)
         end
         let(:resource_retriever) do
-          instance_double(ResourceRetriever, public_xml_body: '<xml></xml>', cocina_body:)
+          instance_double(VersionedResourceRetriever, public_xml_body: '<xml></xml>', cocina_body:)
         end
 
         let(:cocina_body) do
