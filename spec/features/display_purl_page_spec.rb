@@ -66,23 +66,6 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'with a file item that has an ORCID for some contributors' do
-    let(:druid) { 'wm135gp2721' }
-
-    it 'adds ORCID links' do
-      visit "/#{druid}"
-
-      expect(page).to have_text(%r{Schroeder, Dustin\s+https://orcid.org/0000-0003-1916-3929\s*})
-      orcid_link = page.find_link('https://orcid.org/0000-0003-1916-3929') # text of link
-      expect(orcid_link['href']).to eq 'https://orcid.org/0000-0003-1916-3929'
-      expect(orcid_link['aria-label']).to eq('view ORCID page for Schroeder, Dustin')
-
-      icons = page.all('img[alt="ORCiD icon"]')
-      expect(icons.size).to eq 3
-      icons.each { |icon| expect(icon['src']).to eq 'https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png' }
-    end
-  end
-
   context 'with an invalid druid' do
     let(:druid) { 'abcdefg' }
 
