@@ -1,13 +1,12 @@
 GIT
   remote: https://github.com/sul-dlss/cocina_display.git
-  revision: 8f827c4344eab4a8ab589ea5987b4450e32bfdfa
+  revision: 119395f29aac44727932db604a61d8a5b6cb7a49
   specs:
     cocina_display (1.1.3)
       activesupport (>= 7)
       edtf (~> 3.2)
       geo_coord (~> 0.2)
       i18n
-      iso639 (~> 1.3)
       janeway-jsonpath (~> 0.6)
       zeitwerk (~> 2.7)
 
@@ -193,7 +192,6 @@ GEM
       reline (>= 0.4.2)
     iso-639 (0.3.8)
       csv
-    iso639 (1.3.3)
     janeway-jsonpath (0.6.0)
     jbuilder (2.14.1)
       actionview (>= 7.0.0)
