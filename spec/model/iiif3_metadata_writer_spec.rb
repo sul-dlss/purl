@@ -529,6 +529,7 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts the metadata' do
+        expect(field_value('Contributor')).to eq ['United States, Department of Energy, Office of Inspector General']
         expect(field_value('Publisher')).to eq ['Dept. of Energy, Office of Inspector General']
       end
     end
