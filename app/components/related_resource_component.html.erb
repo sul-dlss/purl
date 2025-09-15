@@ -1,0 +1,12 @@
+<%= tag.tbody do %>
+  <%= tag.tr do %>
+    <%= tag.th resource.label %>
+
+    <%= tag.td do %>
+      <dl class="mods_display_related_item">
+        <dt>Title</dt>
+        <dd><%= link_to main_title, url %></dd>
+      </dl>
+    <% end %>
+  <% end %>
+<% end %>

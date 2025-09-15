@@ -10,7 +10,7 @@ RSpec.describe BibliographicComponent, type: :component do
   let(:version) { purl.version(:head) }
 
   before do
-    render_inline(component)
+    puts render_inline(component)
   end
 
   it 'draws the bibliographic information' do
@@ -24,5 +24,14 @@ RSpec.describe BibliographicComponent, type: :component do
     expect(page).to have_content 'Stanford University. Libraries. Department of Special Collections and University Archives'
 
     expect(page).to have_link 'https://purl.stanford.edu/bb000qr5025', href: 'https://purl.stanford.edu/bb000qr5025'
+  end
+
+  context 'with related items' do
+    let(:druid) { 'bb253gh8060' }
+
+    it 'draws the bibliographic information' do
+      expect(page).to have_content 'Finding Aid'
+      expect(page).to have_link 'Stanford University, Academic Council, Records (SC0193)', href: 'http://www.oac.cdlib.org/findaid/ark:/13030/kt5b69s0t3'
+    end
   end
 end
