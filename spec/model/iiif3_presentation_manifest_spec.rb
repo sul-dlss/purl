@@ -374,10 +374,10 @@ RSpec.describe Iiif3PresentationManifest do
 
       it 'only generates metadata' do
         expect(json['label']['en'].first).to eq '10 Meter Contours: Russian River Basin, California'
-        expect(json['metadata'].size).to eq 18
+        expect(json['metadata'].size).to eq 17
         expect(json['metadata'].flat_map do |elem|
           elem['label']['en']
-        end).to eq ['Available Online', 'Title', 'Creator', 'Contributor', 'Type', 'Format', 'Language', 'Abstract', 'Purpose', 'Preferred citation',
+        end).to eq ['Available Online', 'Title', 'Creator', 'Type', 'Format', 'Language', 'Abstract', 'Purpose', 'Preferred citation',
                     'Supplemental information', 'WGS84 Cartographics', 'Subject', 'Coverage', 'Date', 'Identifier', 'Publisher', 'PublishDate']
       end
     end
