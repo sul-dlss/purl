@@ -247,9 +247,9 @@ GEM
     net-ssh (7.3.0)
     newrelic_rpm (9.21.0)
     nio4r (2.7.4)
-    nokogiri (1.18.9-arm64-darwin)
+    nokogiri (1.18.10-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.9-x86_64-linux-gnu)
+    nokogiri (1.18.10-x86_64-linux-gnu)
       racc (~> 1.4)
     nom-xml (1.2.0)
       i18n
@@ -263,7 +263,7 @@ GEM
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
-    prism (1.4.0)
+    prism (1.5.1)
     propshaft (1.2.1)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
@@ -272,7 +272,7 @@ GEM
       date
       stringio
     public_suffix (6.0.2)
-    puma (7.0.2)
+    puma (7.0.3)
       nio4r (~> 2.0)
     purl_fetcher-client (3.1.0)
       activesupport
@@ -324,8 +324,8 @@ GEM
     rdoc (6.14.2)
       erb
       psych (>= 4.0.0)
-    recaptcha (5.20.1)
-    regexp_parser (2.11.2)
+    recaptcha (5.21.0)
+    regexp_parser (2.11.3)
     reline (0.6.2)
       io-console (~> 0.5)
     rexml (3.4.4)
@@ -500,4 +500,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   2.7.1
+   2.7.2
