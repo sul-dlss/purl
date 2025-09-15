@@ -15,6 +15,8 @@ RSpec.describe DescriptionComponent, type: :component do
     let(:druid) { 'nd387jf5675' }
 
     it 'displays the component' do
+      expect(page).to have_content 'Resource Type'
+      expect(page).to have_content 'text'
       expect(page).to have_content 'Form'
       expect(page).to have_content 'electronic; electronic resource; remote'
       expect(page).to have_content 'Extent'
