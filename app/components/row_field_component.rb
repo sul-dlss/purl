@@ -20,8 +20,12 @@ class RowFieldComponent < ViewComponent::Base
   end
 
   def format_value(value)
-    return value unless field.is_a?(ModsDisplay::Values) # CocinaDisplay
+    return format_mods_display_value(value) unless field.is_a?(CocinaDisplay::DisplayData) # CocinaDisplay
 
+    auto_link value
+  end
+
+  def format_mods_display_value(value)
     if @value_transformer
       @value_transformer.call(value)
     else
