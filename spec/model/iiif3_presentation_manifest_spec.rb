@@ -152,7 +152,7 @@ RSpec.describe Iiif3PresentationManifest do
         expect(json['metadata'].flat_map do |elem|
           elem['label']['en']
         end).to eq ['Available Online', 'Title', 'Contributor', 'Type', 'Language', 'Statement of responsibility', 'Date/sequential designation', 'Description',
-                    'Additional physical form', 'System details', 'Subject', 'Date', 'Identifier', 'Publisher', 'PublishDate']
+                    'Additional physical form', 'System details', 'Subject', 'Date', 'Identifier', 'Publisher', 'Record published']
       end
     end
 
@@ -378,7 +378,7 @@ RSpec.describe Iiif3PresentationManifest do
         expect(json['metadata'].flat_map do |elem|
           elem['label']['en']
         end).to eq ['Available Online', 'Title', 'Creator', 'Type', 'Format', 'Language', 'Abstract', 'Purpose', 'Preferred citation',
-                    'Supplemental information', 'WGS84 Cartographics', 'Subject', 'Coverage', 'Date', 'Identifier', 'Publisher', 'PublishDate']
+                    'Supplemental information', 'WGS84 Cartographics', 'Subject', 'Coverage', 'Date', 'Identifier', 'Publisher', 'Record published']
       end
     end
 

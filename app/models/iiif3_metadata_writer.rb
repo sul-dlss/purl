@@ -20,8 +20,12 @@ class Iiif3MetadataWriter
 
   private
 
+  def formatted_published_date
+    published_date.strftime('%Y-%m-%d')
+  end
+
   def publication
-    [iiif_key_value('PublishDate', [published_date])]
+    [iiif_key_value('Record published', [formatted_published_date])]
   end
 
   def publisher
