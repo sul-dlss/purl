@@ -69,4 +69,4 @@ group :deployment do
   gem 'dlss-capistrano'
 end
 
-gem "cocina_display", github: 'sul-dlss/cocina_display'
+gem "cocina_display", github: 'sul-dlss/cocina_display', branch: 'related-display-label'

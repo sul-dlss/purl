@@ -13,13 +13,12 @@ class BibliographicComponent < ViewComponent::Base
 
   def render?
     general_note_display_data.present? ||
-      middle_fields.present? ||
+      related_resources.present? ||
       identifier_display_data.present? ||
       access_display_data.present?
   end
 
-  def middle_fields
-    @middle_fields ||= mods.relatedItem(value_renderer: Purl::RelatedItemValueRenderer) +
-                       mods.nestedRelatedItem(value_renderer: Purl::RelatedItemValueRenderer)
+  def related_resources
+    @related_resources ||= cocina_display.related_resources
   end
 end
