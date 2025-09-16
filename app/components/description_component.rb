@@ -9,7 +9,7 @@ class DescriptionComponent < ViewComponent::Base
   attr_reader :version
 
   delegate :mods, :cocina_display, to: :version
-  delegate :form, :publisher, :dateCreated, :dateCaptured, :dateValid, :dateModified, :dateOther, :copyrightDate, :dateIssued,
+  delegate :form, :dateCreated, :dateCaptured, :dateValid, :dateModified, :dateOther, :copyrightDate, :dateIssued,
            :issuance, :frequency, :edition, :description, to: :mods
   delegate :language_display_data, :map_display_data, to: :cocina_display
 
@@ -67,6 +67,11 @@ class DescriptionComponent < ViewComponent::Base
   def publication_places
     objects = cocina_display.publication_places
     [CocinaDisplay::DisplayData.new(label: 'Place', objects:)] if objects.present?
+  end
+
+  def publisher
+    objects = cocina_display.publisher_names
+    [CocinaDisplay::DisplayData.new(label: 'Publisher', objects:)] if objects.present?
   end
 
   def render?
