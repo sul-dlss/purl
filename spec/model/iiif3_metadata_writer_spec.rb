@@ -6,7 +6,7 @@ RSpec.describe Iiif3MetadataWriter do
   let(:doi) { nil }
   let(:metadata_writer) do
     described_class.new(collection_title: 'viewer testing',
-                        published_date: '2025-02-24T15:55:53Z',
+                        published_date: DateTime.parse('2025-02-24T15:55:53Z'),
                         cocina_display:)
   end
 
@@ -266,7 +266,7 @@ RSpec.describe Iiif3MetadataWriter do
         expect(field_value('Relation')).to eq ['viewer testing']
         expect(field_value('Preferred citation')).to eq ['This is the citation']
         expect(field_value('Contact')).to eq ['bergeraj@stanford.edu']
-        expect(field_value('PublishDate')).to eq ['2025-02-24T15:55:53Z']
+        expect(field_value('Record published')).to eq ['2025-02-24']
       end
     end
 
@@ -285,7 +285,7 @@ RSpec.describe Iiif3MetadataWriter do
         expect(field_value('Date')).to eq %w[1721]
         expect(field_value('Identifier')).to eq ['Post publication map number: 1040', 'https://purl.stanford.edu/bb157hs6068']
         expect(field_value('Relation')).to eq ['viewer testing']
-        expect(field_value('PublishDate')).to eq ['2025-02-24T15:55:53Z']
+        expect(field_value('Record published')).to eq ['2025-02-24']
         expect(field('Abstract')).to be_nil
         expect(field('Preferred citation')).to be_nil
         expect(field('Contact')).to be_nil
@@ -437,7 +437,7 @@ RSpec.describe Iiif3MetadataWriter do
           { 'label' => { 'en' => ['Date'] }, 'value' => { 'en' => ['1721'] } },
           { 'label' => { 'en' => ['Identifier'] }, 'value' => { 'en' => ['Post publication map number: 1040', 'https://purl.stanford.edu/bb157hs6068'] } },
           { 'label' => { 'en' => ['Relation'] }, 'value' => { 'en' => ['viewer testing'] } },
-          { 'label' => { 'en' => ['PublishDate'] }, 'value' => { 'en' => ['2025-02-24T15:55:53Z'] } }
+          { 'label' => { 'en' => ['Record published'] }, 'value' => { 'en' => ['2025-02-24'] } }
         ]
       end
     end
