@@ -23,3 +23,7 @@ en:
   date:
     formats:
       short: "%b %-d, %Y"
+  cocina_display:
+    field_label:
+      form:
+        resource_type: Resource Type
