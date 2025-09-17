@@ -9,8 +9,7 @@ class DescriptionComponent < ViewComponent::Base
   attr_reader :version
 
   delegate :mods, :cocina_display, to: :version
-  delegate :form, :dateCreated, :dateCaptured, :dateValid, :dateModified, :dateOther, :copyrightDate, :dateIssued,
-           :issuance, :frequency, :edition, :description, to: :mods
+  delegate :form, :issuance, :frequency, :edition, :description, to: :mods
   delegate :language_display_data, :map_display_data, to: :cocina_display
 
   def label_id
@@ -21,7 +20,7 @@ class DescriptionComponent < ViewComponent::Base
   SEMICOLON = '; '
 
   # Ordered list of fields and delimiters to display
-  def field_map # rubocop:disable Metrics/AbcSize
+  def field_map
     @field_map ||= [
       [alternative_title, nil],
       [other_title, COMMA],
@@ -30,13 +29,7 @@ class DescriptionComponent < ViewComponent::Base
       [extent, COMMA],
       [publication_places, nil],
       [publisher, COMMA],
-      [dateCreated, SEMICOLON],
-      [dateCaptured, SEMICOLON],
-      [dateValid, SEMICOLON],
-      [dateModified, SEMICOLON],
-      [dateOther, SEMICOLON],
-      [copyrightDate, SEMICOLON],
-      [dateIssued, SEMICOLON],
+      [dates, SEMICOLON],
       [issuance, COMMA],
       [frequency, COMMA],
       [edition, COMMA],
@@ -52,6 +45,20 @@ class DescriptionComponent < ViewComponent::Base
 
   def other_title
     mods.mods_field(:title).fields.reject { |x| x.label =~ /^(Alternative )?Title/i }
+  end
+
+  def dates
+    dates = cocina_display.event_dates.group_by(&:type)
+
+    dates.flat_map do |type, objects|
+      CocinaDisplay::DisplayData.new(label: "#{date_labels[type] || type&.capitalize || 'Other'} date", objects: objects.map(&:decoded_value))
+    end
+  end
+
+  def date_labels
+    { 'copyright' => 'Copyright date', 'capture' => 'Date captured',
+      'creation' => 'Date created', 'modification' => 'Date modified',
+      'validity' => 'Date valid', 'publication' => 'Publication date' }
   end
 
   def resource_types
