@@ -9,9 +9,8 @@ class DescriptionComponent < ViewComponent::Base
   attr_reader :version
 
   delegate :mods, :cocina_display, to: :version
-  delegate :form, :dateCreated, :dateCaptured, :dateValid, :dateModified, :dateOther, :copyrightDate, :dateIssued,
-           :issuance, :frequency, :edition, :description, to: :mods
-  delegate :language_display_data, :map_display_data, to: :cocina_display
+  delegate :form, :dateCreated, :dateCaptured, :dateValid, :dateModified, :dateOther, :copyrightDate, :dateIssued, :description, to: :mods
+  delegate :language_display_data, :map_display_data, :event_note_display_data, to: :cocina_display
 
   def label_id
     'section-description'
@@ -21,7 +20,7 @@ class DescriptionComponent < ViewComponent::Base
   SEMICOLON = '; '
 
   # Ordered list of fields and delimiters to display
-  def field_map # rubocop:disable Metrics/AbcSize
+  def field_map
     @field_map ||= [
       [alternative_title, nil],
       [other_title, COMMA],
@@ -37,9 +36,7 @@ class DescriptionComponent < ViewComponent::Base
       [dateOther, SEMICOLON],
       [copyrightDate, SEMICOLON],
       [dateIssued, SEMICOLON],
-      [issuance, COMMA],
-      [frequency, COMMA],
-      [edition, COMMA],
+      [event_note_display_data, COMMA],
       [language_display_data, SEMICOLON],
       [description, COMMA],
       [map_display_data, COMMA]
