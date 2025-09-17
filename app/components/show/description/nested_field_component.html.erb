@@ -1,0 +1,21 @@
+<% display_data.each do |data| %>
+  <tbody>
+    <tr>
+      <th><%= data.label %></th>
+      <td>
+        <% data.objects.each do |objs| %>
+          <dl class="mods_display_related_item">
+            <% objs.display_data.each do |obj_data| %>
+                <dt><%= obj_data.label %></dt>
+                <% obj_data.values.each do |value| %>
+                  <dd>
+                    <%= auto_link value %>
+                  </dd>
+                <% end %>
+            <% end %>
+          </dl>
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+<% end %>
