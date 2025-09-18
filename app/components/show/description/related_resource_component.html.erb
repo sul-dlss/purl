@@ -1,0 +1,10 @@
+<dl class="mods_display_related_item">
+  <% related_resource.display_data.each do |field| %>
+    <dt><%= field.label %></dt>
+    <% field.values.each do |value| %>
+      <dd>
+        <%= auto_link value %>
+      </dd>
+    <% end %>
+  <% end %>
+</dl>
