@@ -1,16 +1,16 @@
 <% label_id = "section-subjects" %>
 <%= render SectionComponent.new(label: 'Subjects', label_id:) do %>
   <%= render TableComponent.new(label_id:) do %>
-    <% if subject.present? %>
+    <% if subject_display_data.present? %>
       <tbody>
-        <% subject.each do |field| %>
-          <%= render RowFieldComponent.new(field:, value_transformer: ->(subject_line) { safe_join(expand_subject_name(subject_line), ' > ') }) %>
+        <% subject_display_data.each do |field| %>
+          <%= render RowFieldComponent.new(field:) %>
         <% end %>
       </tbody>
     <% end %>
-    <% if genre.present? %>
+    <% if genre_display_data.present? %>
       <tbody>
-        <% genre.each do |field| %>
+        <% genre_display_data.each do |field| %>
           <%= render RowFieldComponent.new(field:) %>
         <% end %>
       </tbody>
