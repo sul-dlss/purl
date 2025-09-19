@@ -281,7 +281,7 @@ RSpec.describe Iiif3MetadataWriter do
                                             'LEURS DIVERSES REVOLUTIONS, AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE']
         expect(field_value('Creator')).to eq ['Chatelain, Henri Abraham']
         expect(field_value('Type')).to eq ['Map', 'Digital Maps', 'Early Maps']
-        expect(field_value('Subject')).to eq ['Astronomy--Charts, diagrams, etc', 'California as an island--Maps']
+        expect(field_value('Subject')).to eq ['Astronomy > Charts, diagrams, etc', 'California as an island > Maps']
         expect(field_value('Date')).to eq %w[1721]
         expect(field_value('Identifier')).to eq ['Post publication map number: 1040', 'https://purl.stanford.edu/bb157hs6068']
         expect(field_value('Relation')).to eq ['viewer testing']
@@ -432,7 +432,7 @@ RSpec.describe Iiif3MetadataWriter do
                        '... -- Amsterdam. 1705. Reissued in 1721 (with imprint as above).'] } },
           { 'label' => { 'en' => ['Statement of responsibility'] },
             'value' => { 'en' => ['[Henry Abraham Châtelain].'] } },
-          { 'label' => { 'en' => ['Subject'] }, 'value' => { 'en' => ['Astronomy--Charts, diagrams, etc', 'California as an island--Maps'] } },
+          { 'label' => { 'en' => ['Subject'] }, 'value' => { 'en' => ['Astronomy > Charts, diagrams, etc', 'California as an island > Maps'] } },
           { 'label' => { 'en' => ['Coverage'] }, 'value' => { 'en' => ['180°00′00″W -- 180°00′00″E / 85°00′00″N -- 85°00′00″S'] } },
           { 'label' => { 'en' => ['Date'] }, 'value' => { 'en' => ['1721'] } },
           { 'label' => { 'en' => ['Identifier'] }, 'value' => { 'en' => ['Post publication map number: 1040', 'https://purl.stanford.edu/bb157hs6068'] } },

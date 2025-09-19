@@ -23,4 +23,17 @@ class ContributorsComponent < ViewComponent::Base
   def label_id
     'section-creators'
   end
+
+  def orcid_icon(contributor, name)
+    orcid = contributor.identifiers.find { it.type == 'ORCID' }
+
+    return unless orcid
+
+    tag.span class: 'orcid' do
+      link_to(orcid.uri, class: 'su-underline orcid-link', aria: { label: "view ORCID page for #{name}" }) do
+        image_tag('https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png', alt: 'ORCiD icon', class: 'orcid-icon') +
+          orcid.uri
+      end
+    end
+  end
 end
