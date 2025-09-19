@@ -551,5 +551,15 @@ RSpec.describe Iiif3MetadataWriter do
         expect(field_value('Identifier')).to eq ['LCCN: 30003962', 'localnumber', 'nosourceident']
       end
     end
+
+    context 'when the title has parallelValues' do
+      let(:cocina_descriptive) do
+        PurlResource.find('bb070yy8209').version(:head).cocina['description']
+      end
+
+      it 'extracts all the titles correctly' do
+        expect(field_value('Title')).to eq ['ال ليل لنا', 'al- Layl lanā']
+      end
+    end
   end
 end

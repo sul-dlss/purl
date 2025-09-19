@@ -5,6 +5,7 @@ stacks:
 landing_page_druids:
   - bb000qr5025 # image where jp2 is not downloadable
   - bb001dq8600 # image, stanford-only
+  - bb070yy8209 # book, with transliterated fields
   - bb157hs6068 # map, world acccess, has extent in the metadata, member of collection (zb871zd0767), has HRID (10624936), not crawlable
   - bb253gh8060 # file, stanford-only
   - bb737zp0787 # book, world access, with OCR
