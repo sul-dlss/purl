@@ -55,7 +55,7 @@ class DescriptionComponent < ViewComponent::Base
   end
 
   def resource_types
-    objects = cocina_display.resource_types
+    objects = cocina_display.mods_resource_types
     [CocinaDisplay::DisplayData.new(label: 'Resource Type', objects:)] if objects.present?
   end
 
