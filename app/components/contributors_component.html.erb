@@ -3,9 +3,13 @@
     <% contributors_by_role.each do |label, contributors| %>
       <%= render TableBodyComponent.new(label:) do |component| %>
         <% contributors.each do |contributor| %>
-          <%= component.with_value do %>
-            <%= render ContributorComponent.new(contributor:) %>
-
+          <% contributor.display_names(with_date: true).each do |contributor_name| %>
+            <%= component.with_value do %>
+              <%= tag.td contributor_name %>
+              <%= tag.td do %>
+              <%= orcid_icon(contributor, contributor_name) %>
+              <% end %>
+            <% end %>
           <% end %>
         <% end %>
       <% end %>
