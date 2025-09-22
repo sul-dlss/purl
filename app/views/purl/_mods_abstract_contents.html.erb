@@ -1,6 +1,0 @@
-<% fields = mods.abstract + mods.contents %>
-<% if fields.present? %>
-  <%= render SectionComponent.new(label: 'Abstract/Contents') do %>
-    <%= render ModsDefinitionListComponent.new(fields: fields) %>
-  <% end %>
-<% end %>
