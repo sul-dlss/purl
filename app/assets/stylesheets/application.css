@@ -103,6 +103,16 @@
       }
     }
   }
+
+  .orcid-link {
+    white-space: nowrap;
+
+    .orcid-icon {
+      width: 16px;
+      height: 16px;
+      margin-inline-end: 0.25rem;
+    }
+  }
 }
 
 .record-metadata {
