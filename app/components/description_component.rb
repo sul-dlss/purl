@@ -9,7 +9,6 @@ class DescriptionComponent < ViewComponent::Base
   attr_reader :version
 
   delegate :mods, :cocina_display, to: :version
-  delegate :dateCreated, :dateCaptured, :dateValid, :dateModified, :dateOther, :copyrightDate, :dateIssued, to: :mods
   delegate :form_display_data, :language_display_data, :map_display_data, :event_note_display_data, to: :cocina_display
 
   def label_id
@@ -28,13 +27,7 @@ class DescriptionComponent < ViewComponent::Base
       [extent, COMMA],
       [publication_places, nil],
       [publisher, COMMA],
-      [dateCreated, SEMICOLON],
-      [dateCaptured, SEMICOLON],
-      [dateValid, SEMICOLON],
-      [dateModified, SEMICOLON],
-      [dateOther, SEMICOLON],
-      [copyrightDate, SEMICOLON],
-      [dateIssued, SEMICOLON],
+      [dates, SEMICOLON],
       [event_note_display_data, COMMA],
       [language_display_data, SEMICOLON],
       [map_display_data, COMMA]
@@ -47,6 +40,20 @@ class DescriptionComponent < ViewComponent::Base
 
   def other_title
     mods.mods_field(:title).fields.reject { |x| x.label =~ /^(Alternative )?Title/i }
+  end
+
+  def dates
+    dates = cocina_display.event_dates.group_by(&:type)
+
+    dates.flat_map do |type, objects|
+      CocinaDisplay::DisplayData.new(label: "#{date_labels[type] || type&.capitalize || 'Other'} date", objects: objects.map(&:decoded_value))
+    end
+  end
+
+  def date_labels
+    { 'copyright' => 'Copyright date', 'capture' => 'Date captured',
+      'creation' => 'Date created', 'modification' => 'Date modified',
+      'validity' => 'Date valid', 'publication' => 'Publication date' }
   end
 
   def resource_types

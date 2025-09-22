@@ -11,6 +11,23 @@ RSpec.describe DescriptionComponent, type: :component do
     render_inline(component)
   end
 
+  context 'with image that has date created' do
+    let(:druid) { 'bb000qr5025' }
+
+    it 'displays the component' do
+      expect(page).to have_content 'Resource Type'
+      expect(page).to have_content 'still image'
+      expect(page).to have_content 'Form'
+      expect(page).to have_content 'other computer carrier'
+      expect(page).to have_content 'Extent'
+      expect(page).to have_content '1 optical disc'
+      expect(page).to have_content 'Date created'
+      expect(page).to have_content 'May 1988'
+      expect(page).to have_content 'Digital origin'
+      expect(page).to have_content 'born digital'
+    end
+  end
+
   context 'with a document (ETD thesis)' do
     let(:druid) { 'nd387jf5675' }
 
