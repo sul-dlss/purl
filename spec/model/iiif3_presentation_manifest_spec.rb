@@ -88,6 +88,20 @@ RSpec.describe Iiif3PresentationManifest do
       end
     end
 
+    context 'with a media item that has spaces' do
+      let(:druid) { 'fs053dj6001' }
+
+      it 'encodes the spaces in the urls' do
+        canvas = json['items'].first
+        expect(canvas['items'].first['items'].length).to eq 1
+        expect(canvas['rendering']).to be_nil
+
+        media = canvas['items'].first['items'].first
+        expect(media['body']['id']).to eq 'https://stacks.stanford.edu/file/fs053dj6001/fs053dj6001_Concierge_77_Digital%20Accessibility_Nov2024_em_sl.mp4'
+        expect(canvas['placeholderCanvas']['id']).to eq 'https://purl.stanford.edu/fs053dj6001/iiif/canvas/fs053dj6001_Concierge_77_Digital%20Accessibility_Nov2024_thumb.jp2'
+      end
+    end
+
     context 'with a Stanford-only image' do
       let(:druid) { 'bb001dq8600' }
 
