@@ -23,7 +23,6 @@ class DescriptionComponent < ViewComponent::Base
     @field_map ||= [
       [title_display_data, COMMA],
       [form_display_data, SEMICOLON],
-      [extent, COMMA],
       [publication_places, nil],
       [publisher, COMMA],
       [dates, SEMICOLON],
@@ -55,11 +54,6 @@ class DescriptionComponent < ViewComponent::Base
   def resource_types
     objects = cocina_display.mods_resource_types
     [CocinaDisplay::DisplayData.new(label: 'Resource Type', objects:)] if objects.present?
-  end
-
-  def extent
-    objects = cocina_display.extents
-    [CocinaDisplay::DisplayData.new(label: 'Extent', objects:)] if objects.present?
   end
 
   def publication_places
