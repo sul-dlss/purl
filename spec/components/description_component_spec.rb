@@ -55,4 +55,13 @@ RSpec.describe DescriptionComponent, type: :component do
       expect(page).to have_content 'English'
     end
   end
+
+  context 'with an image that has digital origin' do
+    let(:druid) { 'cp088pb1682' }
+
+    it 'displays the component' do
+      expect(page).to have_content 'Digital origin'
+      expect(page).to have_content 'reformatted digital'
+    end
+  end
 end

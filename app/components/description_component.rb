@@ -9,7 +9,7 @@ class DescriptionComponent < ViewComponent::Base
   attr_reader :version
 
   delegate :mods, :cocina_display, to: :version
-  delegate :dateCreated, :dateCaptured, :dateValid, :dateModified, :dateOther, :copyrightDate, :dateIssued, :description, to: :mods
+  delegate :dateCreated, :dateCaptured, :dateValid, :dateModified, :dateOther, :copyrightDate, :dateIssued, to: :mods
   delegate :form_display_data, :language_display_data, :map_display_data, :event_note_display_data, to: :cocina_display
 
   def label_id
@@ -37,7 +37,6 @@ class DescriptionComponent < ViewComponent::Base
       [dateIssued, SEMICOLON],
       [event_note_display_data, COMMA],
       [language_display_data, SEMICOLON],
-      [description, COMMA],
       [map_display_data, COMMA]
     ].select { |field, _| field.present? }
   end
