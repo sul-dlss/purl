@@ -365,7 +365,7 @@ class IiifPresentationManifest
   # Canvases have to be uris but don't have to dereferenced https://iiif.io/api/presentation/3.0/#53-canvas
   # But we do want a stable unchanging canvas uri no matter the version of IIIF we are using
   def canvas_url(resource_id:)
-    "#{format(Settings.embed.url, druid:)}/iiif/canvas/#{resource_id}"
+    "#{format(Settings.embed.url, druid:)}/iiif/canvas/#{CGI.escapeURIComponent(resource_id)}"
   end
 
   def annotation_list_url(**kwargs)
