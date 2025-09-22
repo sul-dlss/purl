@@ -17,6 +17,14 @@ class DescriptionComponent < ViewComponent::Base
 
   COMMA = ', '
   SEMICOLON = '; '
+  DATE_LABELS = {
+    'copyright' => 'Copyright date',
+    'capture' => 'Date captured',
+    'creation' => 'Date created',
+    'modification' => 'Date modified',
+    'validity' => 'Date valid',
+    'publication' => 'Publication date'
+  }.freeze
 
   # Ordered list of fields and delimiters to display
   def field_map
@@ -42,14 +50,12 @@ class DescriptionComponent < ViewComponent::Base
     dates = cocina_display.event_dates.group_by(&:type)
 
     dates.flat_map do |type, objects|
-      CocinaDisplay::DisplayData.new(label: "#{date_labels[type] || type&.capitalize || 'Other'} date", objects: objects.map(&:decoded_value))
+      CocinaDisplay::DisplayData.new(label: date_label(type), objects: objects.map(&:decoded_value))
     end
   end
 
-  def date_labels
-    { 'copyright' => 'Copyright date', 'capture' => 'Date captured',
-      'creation' => 'Date created', 'modification' => 'Date modified',
-      'validity' => 'Date valid', 'publication' => 'Publication date' }
+  def date_label(type)
+    DATE_LABELS.fetch(type) { "#{type&.capitalize || 'Other'} date" }
   end
 
   def resource_types
