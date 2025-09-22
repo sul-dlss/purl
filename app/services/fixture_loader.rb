@@ -10,5 +10,7 @@ class FixtureLoader
 
     FileUtils.mkdir_p(dest)
     `scp -r lyberadmin@#{machine}:#{src} #{dest}`
+    FileUtils.rm "#{dest}/versions/cocina.json"
+    FileUtils.rm "#{dest}/versions/public.xml"
   end
 end
