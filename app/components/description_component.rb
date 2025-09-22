@@ -21,8 +21,7 @@ class DescriptionComponent < ViewComponent::Base
   # Ordered list of fields and delimiters to display
   def field_map
     @field_map ||= [
-      [alternative_title, nil],
-      [other_title, COMMA],
+      [title_display_data, COMMA],
       [form_display_data, SEMICOLON],
       [extent, COMMA],
       [publication_places, nil],
@@ -34,12 +33,9 @@ class DescriptionComponent < ViewComponent::Base
     ].select { |field, _| field.present? }
   end
 
-  def alternative_title
-    mods.mods_field(:title).fields.select { |x| x.label =~ /^Alternative Title/i }
-  end
-
-  def other_title
-    mods.mods_field(:title).fields.reject { |x| x.label =~ /^(Alternative )?Title/i }
+  # All the titles, except the main title
+  def title_display_data
+    cocina_display.title_display_data.reject { it.label == 'Title' }
   end
 
   def dates
