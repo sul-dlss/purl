@@ -8,7 +8,7 @@ class BibliographicComponent < ViewComponent::Base
 
   attr_reader :version
 
-  delegate :cocina_display, :mods, to: :version
+  delegate :cocina_display, to: :version
   delegate :general_note_display_data, :identifier_display_data, :access_display_data, :related_resource_display_data, to: :cocina_display
 
   def render?
