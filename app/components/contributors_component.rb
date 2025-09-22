@@ -8,7 +8,7 @@ class ContributorsComponent < ViewComponent::Base
 
   attr_reader :version
 
-  delegate :cocina_display, :mods, to: :version
+  delegate :cocina_display, to: :version
 
   def render?
     contributors_by_role.present?

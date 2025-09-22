@@ -12,7 +12,6 @@ module Show
 
     delegate :releases, to: :purl
     delegate :released_to_searchworks?, to: :releases
-    delegate :mods, to: :version
 
     def metrics?
       version.embeddable? || version.show_download_metrics? || version.doi.present?
