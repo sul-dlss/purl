@@ -177,22 +177,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
       type == 'https://cocina.sul.stanford.edu/models/object'
     end
 
-    def copyright?
-      copyright.present?
-    end
-
-    def copyright
-      cocina['access']['copyright']
-    end
-
-    def use_and_reproduction?
-      use_and_reproduction.present?
-    end
-
-    def use_and_reproduction
-      cocina.dig('access', 'useAndReproductionStatement')
-    end
-
     def folio_instance_hrid
       @folio_instance_hrid ||= cocina['identification']['catalogLinks']
                                .find { it['catalog'] == 'folio' }&.fetch('catalogRecordId')
