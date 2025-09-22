@@ -10,10 +10,11 @@ module Show
 
     attr_accessor :version, :purl
 
-    delegate :embeddable?, :containing_collections, :version_id, :cocina_body, :druid, :display_title, :description,
+    delegate :embeddable?, :containing_collections, :version_id, :cocina_body, :druid, :cocina_display, :display_title,
              :representative_thumbnail, :representative_thumbnail?, :withdrawn?, to: :version
     delegate :releases, to: :purl
     delegate :embeddable_url, to: :helpers
+    delegate :abstract_display_data, :subject_all, to: :cocina_display
 
     def schema_dot_org?
       ::Metadata::SchemaDotOrg.schema_type?(cocina_body)
@@ -40,7 +41,11 @@ module Show
     end
 
     def keywords
-      @version.mods.subject.compact.map(&:values).join(',')
+      subject_all.join(',')
+    end
+
+    def description
+      abstract_display_data.flat_map(&:values).first
     end
   end
 end

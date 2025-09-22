@@ -17,6 +17,7 @@ gem 'okcomputer' # application monitoring
 gem "propshaft"
 gem "puma", "~> 7.0" # web server for development
 gem "rails", "~> 8.0.0"
+gem "rails_autolink", "~> 1.1"
 gem 'recaptcha' # prevent robots spamming the feedback form
 gem "sitemap_generator"
 gem "stimulus-rails" # Hotwire's modest JavaScript framework
@@ -27,7 +28,6 @@ gem 'whenever', require: false # cron jobs
 # DLSS and its community
 gem "cocina_display", "~> 1.2"
 gem 'iiif-presentation', '~> 1.4'
-gem 'mods_display', '~> 1.7'
 gem "purl_fetcher-client", "~> 3.1"
 
 group :production do

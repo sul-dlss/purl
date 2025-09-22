@@ -58,36 +58,6 @@ RSpec.describe PurlVersion do
     end
   end
 
-  describe 'resource methods' do
-    describe '#mods' do
-      subject(:mods) { instance.mods }
-
-      let(:body) do
-        <<-XML
-          <?xml version="1.0" encoding="UTF-8"?>
-          <publicObject>
-            <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/">
-              <dc:title>The title from the DC</dc:title>
-            </oai_dc:dc>
-            <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
-              <titleInfo>
-                <title>The title from the MODS.</title>
-              </titleInfo>
-            </mods>
-          </publicObject>
-        XML
-      end
-
-      before do
-        allow(resource_retriever).to receive(:public_xml_body).and_return(body)
-      end
-
-      it 'checks if the request succeeded' do
-        expect(mods).to be_present
-      end
-    end
-  end
-
   describe '#embeddable?' do
     subject { instance.embeddable? }
 
@@ -134,27 +104,6 @@ RSpec.describe PurlVersion do
       end
 
       it { is_expected.to be false }
-    end
-  end
-
-  describe '#description' do
-    let(:body) do
-      <<-XML
-        <?xml version="1.0" encoding="UTF-8"?>
-        <publicObject>
-          <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
-            <abstract>The abstract from the MODS.</abstract>
-          </mods>
-        </publicObject>
-      XML
-    end
-
-    before do
-      allow(resource_retriever).to receive(:public_xml_body).and_return(body)
-    end
-
-    it 'extracts a description from the MODS abstract' do
-      expect(instance.description).to eq 'The abstract from the MODS.'
     end
   end
 

@@ -16,7 +16,7 @@ class AccessComponent < ViewComponent::Base
   end
 
   def use_and_reproduction
-    @use_and_reproduction ||= stylize_links(helpers.link_urls_and_email(cocina_display.use_and_reproduction))
+    @use_and_reproduction ||= stylize_links(auto_link(cocina_display.use_and_reproduction))
   end
 
   def stylize_links(text)

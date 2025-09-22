@@ -8,7 +8,7 @@ class DescriptionComponent < ViewComponent::Base
 
   attr_reader :version
 
-  delegate :mods, :cocina_display, to: :version
+  delegate :cocina_display, to: :version
   delegate :form_display_data, :language_display_data, :map_display_data, :event_note_display_data, :event_date_display_data, to: :cocina_display
 
   def label_id
