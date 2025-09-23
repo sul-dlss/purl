@@ -249,10 +249,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     @mods_display_object ||= ModsDisplay::Record.new(public_xml.mods.to_xml)
   end
 
-  def mods_ng_document
-    @mods_ng_document ||= public_xml.mods
-  end
-
   def metrics_service
     @metrics_service ||= MetricsService.new
   end
