@@ -46,8 +46,4 @@ module ApplicationHelper
       version_id.present? ? version_purl_url(druid, version_id) : purl_url(druid)
     end
   end
-
-  def with_copyright_symbol(str)
-    str.gsub(/\(c\) Copyright/i, '© Copyright')
-  end
 end
