@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:bh673gm0623" published="2025-09-10T08:02:55Z" publishVersion="cocina-models/0.105.2">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>Learning from Students for Workers’ Rights: A Personal Reflection on Human Rights Close to Home</objectLabel>
+    <sourceId source="sul">h3:object-7636</sourceId>
+  </identityMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <group>stanford</group>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or confidentiality rights of individuals. Content distributed via the Stanford Digital Repository may be subject to additional license and use restrictions applied by the depositor.</human>
+      <license>https://creativecommons.org/licenses/by/4.0/legalcode</license>
+    </use>
+    <copyright>
+      <human/>
+    </copyright>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:bh673gm0623">
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:wh620hw5859"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Learning from Students for Workers’ Rights: A Personal Reflection on Human Rights Close to Home</dc:title>
+    <dc:contributor>Smith, Hannah (author)</dc:contributor>
+    <dc:type>Text</dc:type>
+    <dc:type>Capstone</dc:type>
+    <dc:type>student project report</dc:type>
+    <dc:type>Text</dc:type>
+    <dc:description>For her human rights capstone project, Hannah Smith wrote a self-reflection narrative about her experience as an organizer with the group Students for Workers’ Rights during the start of the 2019 Covid Pandemic. Along with this reflection, Smith provides a brief history of this period of organizing and highlights the ways in which this organizing work represented the culmination of her human rights education at Stanford. Throughout this paper, Smith delineates how successful human rights work operates by continually zooming in and out of power structures and people’s personal experiences. Smith hopes this reflection and personal narrative can be a source of reference and information for future human rights student activists at Stanford.&#13;
+&#13;
+Student project deposited by department for archival purposes. Original work unavailable for public download due to permission restriction preferences of the author.</dc:description>
+    <dc:subject>Labor unions</dc:subject>
+    <dc:subject>College students</dc:subject>
+    <dc:subject>Universal Declaration of Human Rights</dc:subject>
+    <dc:date>2025-08-27</dc:date>
+    <dc:date>2020-06</dc:date>
+    <dc:identifier>https://purl.stanford.edu/bh673gm0623</dc:identifier>
+    <dc:description type="contact" displayLabel="Contact">denisefz@stanford.edu</dc:description>
+    <dc:relation type="collection">Stanford Center for Human Rights and International Justice, Minor in Human Rights Capstone Projects</dc:relation>
+    <dc:identifier>doi: https://doi.org/10.25740/bh673gm0623</dc:identifier>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>Learning from Students for Workers’ Rights: A Personal Reflection on Human Rights Close to Home</title>
+    </titleInfo>
+    <name usage="primary" type="personal">
+      <namePart type="given">Hannah</namePart>
+      <namePart type="family">Smith</namePart>
+      <affiliation>Stanford University, Center for Human Rights and International Justice</affiliation>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">author</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/aut" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">aut</roleTerm>
+      </role>
+    </name>
+    <genre type="H2 type">Text</genre>
+    <genre type="H2 subtype">Capstone</genre>
+    <genre authority="local">student project report</genre>
+    <typeOfResource>text</typeOfResource>
+    <extension displayLabel="datacite">
+      <resourceType resourceTypeGeneral="Text">Capstone</resourceType>
+    </extension>
+    <abstract>For her human rights capstone project, Hannah Smith wrote a self-reflection narrative about her experience as an organizer with the group Students for Workers’ Rights during the start of the 2019 Covid Pandemic. Along with this reflection, Smith provides a brief history of this period of organizing and highlights the ways in which this organizing work represented the culmination of her human rights education at Stanford. Throughout this paper, Smith delineates how successful human rights work operates by continually zooming in and out of power structures and people’s personal experiences. Smith hopes this reflection and personal narrative can be a source of reference and information for future human rights student activists at Stanford.&#13;
+&#13;
+Student project deposited by department for archival purposes. Original work unavailable for public download due to permission restriction preferences of the author.</abstract>
+    <subject authority="fast">
+      <topic authority="fast" authorityURI="http://id.worldcat.org/fast/" valueURI="http://id.worldcat.org/fast/990260/">Labor unions</topic>
+    </subject>
+    <subject authority="fast">
+      <topic authority="fast" authorityURI="http://id.worldcat.org/fast/" valueURI="http://id.worldcat.org/fast/867976/">College students</topic>
+    </subject>
+    <subject>
+      <topic>Universal Declaration of Human Rights</topic>
+    </subject>
+    <originInfo eventType="deposit">
+      <dateIssued encoding="edtf">2025-08-27</dateIssued>
+    </originInfo>
+    <originInfo eventType="publication">
+      <dateIssued encoding="edtf" keyDate="yes">2020-06</dateIssued>
+    </originInfo>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/bh673gm0623</url>
+    </location>
+    <note type="contact" displayLabel="Contact">denisefz@stanford.edu</note>
+    <recordInfo>
+      <recordOrigin>Metadata created by user via Stanford self-deposit application</recordOrigin>
+      <recordCreationDate encoding="edtf">2025-08-27</recordCreationDate>
+    </recordInfo>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Stanford Center for Human Rights and International Justice, Minor in Human Rights Capstone Projects</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/wh620hw5859</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or confidentiality rights of individuals. Content distributed via the Stanford Digital Repository may be subject to additional license and use restrictions applied by the depositor.</accessCondition>
+    <accessCondition type="license" xlink:href="https://creativecommons.org/licenses/by/4.0/legalcode">This work is licensed under a Creative Commons Attribution 4.0 International license (CC BY).</accessCondition>
+    <identifier type="doi" displayLabel="DOI">https://doi.org/10.25740/bh673gm0623</identifier>
+  </mods>
+</publicObject>

@@ -44,6 +44,8 @@ RSpec.describe 'IIIF v3 manifests' do
     before do
       allow(PurlResource).to receive(:find).and_return(resource)
       allow(version).to receive(:iiif3_manifest).and_raise(IIIF::V3::Presentation::MissingRequiredKeyError)
+      allow(version).to receive(:embeddable?)
+      allow(version).to receive(:collection?)
     end
 
     it 'returns 404' do
@@ -59,6 +61,13 @@ RSpec.describe 'IIIF v3 manifests' do
 
         expect(json['@context']).to include('http://iiif.io/api/presentation/3/context.json')
         expect(json['type']).to eq 'Collection'
+      end
+    end
+
+    context 'with a file object with all dark files' do
+      it 'returns 404' do
+        get '/bh673gm0623/iiif/manifest'
+        expect(response).to have_http_status(:not_found)
       end
     end
 
