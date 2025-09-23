@@ -7,7 +7,6 @@ end
 
 gem 'addressable'
 gem 'bootsnap', '>= 1.1.0', require: false # Reduces boot times through caching; required in config/boot.rb
-gem 'cancancan' # authorization
 gem 'config' # simple rails environment specific config
 gem 'faraday' # HTTP client
 gem 'honeybadger' # exception reporting
