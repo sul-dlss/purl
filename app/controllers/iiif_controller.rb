@@ -8,6 +8,7 @@ class IiifController < ApplicationController
     iiif_version = params[:iiif_version] == 'v3' ? 3 : 2
 
     return unless stale?(last_modified: @version.updated_at.utc, etag: "#{@version.cache_key}/#{iiif_version}/#{@version.updated_at.utc}")
+    return render json: { error: 'Not embeddable' }, status: :not_found unless @version.embeddable? || @version.collection?
 
     manifest = Rails.cache.fetch(cache_key('manifest', iiif_version), expires_in: Settings.resource_cache.lifetime) do
       iiif_manifest.body.to_ordered_hash
