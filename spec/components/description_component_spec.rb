@@ -21,7 +21,7 @@ RSpec.describe DescriptionComponent, type: :component do
       expect(page).to have_content 'other computer carrier'
       expect(page).to have_content 'Extent'
       expect(page).to have_content '1 optical disc'
-      expect(page).to have_content 'Date created'
+      expect(page).to have_content 'Creation date'
       expect(page).to have_content 'May 1988'
       expect(page).to have_content 'Digital origin'
       expect(page).to have_content 'born digital'
