@@ -31,7 +31,7 @@ RSpec.describe Show::Description::RelatedResourcesFieldComponent, type: :compone
 
     it 'renders the nested metadata as a <dl>' do
       render_inline(component)
-      expect(rendered_content).to have_css('dl.mods_display_related_item')
+      expect(rendered_content).to have_css('dl.related-item')
       expect(rendered_content).to have_css('dt', text: 'Title')
       expect(rendered_content).to have_css('dd', text: 'The Bury Bible. 122r-241v')
       expect(rendered_content).to have_css('dt', text: 'Rubric')

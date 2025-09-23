@@ -83,11 +83,11 @@
           margin-bottom: 0px;
         }
 
-        dl.mods_display_related_item:not(:first-child) {
+        dl.related-item:not(:first-child) {
           margin-top: 20px;
         }
 
-        dl.mods_display_related_item {
+        dl.related-item {
           margin-bottom: 0px;
 
           dt {
