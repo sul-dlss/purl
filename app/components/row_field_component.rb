@@ -3,12 +3,11 @@
 class RowFieldComponent < ViewComponent::Base
   with_collection_parameter :field
 
-  def initialize(field:, delimiter: nil, label_html_attributes: {}, value_html_attributes: {}, value_transformer: nil)
+  def initialize(field:, delimiter: nil, label_html_attributes: {}, value_html_attributes: {})
     super()
 
     @field = field
     @delimiter = delimiter
-    @value_transformer = value_transformer
     @label_html_attributes = label_html_attributes
     @value_html_attributes = value_html_attributes
   end
@@ -16,29 +15,16 @@ class RowFieldComponent < ViewComponent::Base
   attr_reader :field, :delimiter, :label_html_attributes, :value_html_attributes
 
   def render?
-    field.values.any?(&:present?)
+    formatted_values.present?
   end
 
-  def format_value(value)
-    return format_mods_display_value(value) unless field.is_a?(CocinaDisplay::DisplayData) # CocinaDisplay
-
-    auto_link value
-  end
-
-  def format_mods_display_value(value)
-    if @value_transformer
-      @value_transformer.call(value)
-    else
-      helpers.format_mods_html(value, field:)
-    end
-  end
-
+  # If a delimiter is provided, we join with that. Otherwise we wrap each value in it's own dd tag
   def values
-    if delimiter
-      [safe_join(field.values.compact_blank.map { |value| format_value(value) }, delimiter)]
-    else
-      field.values.compact_blank.map { |value| format_value(value) }
-    end
+    delimiter ? [safe_join(formatted_values, delimiter)] : formatted_values
+  end
+
+  def formatted_values
+    @formatted_values ||= field.values.compact_blank.map { |value| auto_link value }
   end
 
   def label
