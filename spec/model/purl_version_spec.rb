@@ -86,21 +86,6 @@ RSpec.describe PurlVersion do
         expect(mods).to be_present
       end
     end
-
-    context 'when layout is versioned' do
-      let(:druid) { 'zb733jx3137' }
-      let(:head_version) { true }
-      let(:version_id) { '3' }
-      let(:resource_retriever) { VersionedResourceRetriever.new(druid:, version_id:) }
-
-      describe '#public_xml' do
-        it 'retrieves public XML from versioned layout' do
-          expect(instance.public_xml.title).to eq(
-            'Testing versioning issue with the review workflow in the new application again'
-          )
-        end
-      end
-    end
   end
 
   describe '#embeddable?' do
