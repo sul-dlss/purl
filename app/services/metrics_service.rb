@@ -23,10 +23,6 @@ class MetricsService
     nil
   end
 
-  def parse_json(response)
-    response.body.empty? ? nil : JSON.parse(response.body)
-  end
-
   def connection
     @connection ||= Faraday.new(base_url)
   end
