@@ -30,7 +30,7 @@ class Iiif3MetadataWriter
 
   def publisher
     publishers = cocina_display.publisher_contributors
-    publishers.present? ? [iiif_key_value('Publisher', publishers.map(&:display_name))] : []
+    publishers.present? ? [iiif_key_value('Publisher', publishers.flat_map(&:display_names))] : []
   end
 
   def titles
@@ -43,9 +43,8 @@ class Iiif3MetadataWriter
   end
 
   def contributors
-    creators = cocina_display.contributors.select(&:author?).map { |auth| auth.display_name(with_date: true) }
-    contributors = cocina_display.contributors.filter_map { |contrib| contributor_name(contrib) }
-
+    creators = cocina_display.contributors.select(&:author?).flat_map { |auth| auth.display_names(with_date: true) }
+    contributors = cocina_display.contributors.filter_map { |contrib| contributor_name(contrib) }.flatten
     result = creators.present? ? [iiif_key_value('Creator', creators)] : []
     result += [iiif_key_value('Contributor', contributors)] if contributors.present?
     result
@@ -54,10 +53,10 @@ class Iiif3MetadataWriter
   def contributor_name(contributor)
     return if contributor.author? || contributor.publisher?
 
-    display_name = contributor.display_name(with_date: true)
-    return display_name unless contributor.role?
+    display_names = contributor.display_names(with_date: true)
+    return display_names unless contributor.role?
 
-    "#{display_name} (#{contributor.roles.map(&:to_s).join(', ')})"
+    display_names.map { |name| "#{name} (#{contributor.roles.map(&:to_s).join(', ')})" }
   end
 
   # TODO: accessContact not in cocina_display yet
