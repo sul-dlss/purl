@@ -80,5 +80,12 @@ RSpec.describe 'IIIF v3 manifests' do
         expect(json['label']['en']).to eq ['Minutes, 2006 May 18']
       end
     end
+
+    context 'when a requesting an annotation page' do
+      it 'renders' do
+        get '/fs053dj6001/iiif3/annotation_page/cocina-fileSet-fs053dj6001-fs053dj6001_1'
+        expect(response).to have_http_status(:ok)
+      end
+    end
   end
 end

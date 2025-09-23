@@ -146,7 +146,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def annotation_page(fileset_id:)
     selected_resource = file_sets.find { |fileset| fileset.cocina_id == fileset_id }
-    annotation_page_for_file(selected_resource.image_file) if selected_resource
+    annotation_page_for_file(selected_resource.primary) if selected_resource
   end
 
   def canvas_for_fileset(fileset, file: fileset.primary)
