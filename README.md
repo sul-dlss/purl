@@ -48,6 +48,14 @@ stacks:
   root: stacks
 ```
 
+### Lint ERB
+
+We use Herb to lint ERB templates. You can run it manually with:
+
+```shell
+npx @herb-tools/linter
+```
+
 ### Debugging
 
 When the Rails server is run using `bin/dev`, you can start up a debugger session in a separate terminal via:
