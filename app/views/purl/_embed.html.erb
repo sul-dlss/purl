@@ -6,7 +6,5 @@
   <a class="purl-embed-viewer embed su-underline" href="<%= embeddable_url(@purl.druid, @version&.version_id) %>" data-oembed-provider="<%= oembed_provider_url %>">Show Content</a>
 <% end %>
 <noscript>
-  <iframe class="embed-iframe" seamless src="<%= iframe_url(@purl.druid, @version&.version_id) %>">
-    <a href="<%= iframe_url(@purl.druid, @version&.version_id) %>" class="su-underline">Show Content</a>
-  </iframe>
+  <p>Please enable JavaScript to view the embedded content.</p>
 </noscript>

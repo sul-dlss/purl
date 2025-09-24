@@ -17,9 +17,7 @@ RSpec.describe 'purl/_embed' do
 
   it 'displays a non-javascript fallback' do
     render
-    expect(rendered).to have_css 'noscript iframe'
-    iframe = Nokogiri::HTML(rendered).xpath('//iframe')
-    expect(iframe.attr('src').to_s).to eq 'https://embed.stanford.edu/iframe/?url=https%3A%2F%2Fpurl.stanford.edu%2Fbf973rp9392'
+    expect(rendered).to have_css 'noscript'
   end
 
   context 'when a version is specified' do
@@ -41,9 +39,7 @@ RSpec.describe 'purl/_embed' do
 
     it 'displays a non-javascript fallback' do
       render
-      expect(rendered).to have_css 'noscript iframe'
-      iframe = Nokogiri::HTML(rendered).xpath('//iframe')
-      expect(iframe.attr('src').to_s).to eq 'https://embed.stanford.edu/iframe/?url=https%3A%2F%2Fpurl.stanford.edu%2Fbf973rp9392%2Fversion%2F2'
+      expect(rendered).to have_css 'noscript'
     end
   end
 
@@ -65,9 +61,7 @@ RSpec.describe 'purl/_embed' do
 
     it 'displays a non-javascript fallback' do
       render
-      expect(rendered).to have_css 'noscript iframe'
-      iframe = Nokogiri::HTML(rendered).xpath('//iframe')
-      expect(iframe.attr('src').to_s).to eq 'https://embed.stanford.edu/iframe/?url=https%3A%2F%2Fpurl.stanford.edu%2Fbf973rp9392'
+      expect(rendered).to have_css 'noscript'
     end
   end
 end
