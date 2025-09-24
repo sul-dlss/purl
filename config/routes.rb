@@ -13,8 +13,6 @@ Rails.application.routes.draw do
   resource :feedback_form, path: 'feedback', only: [:new, :create]
   get 'feedback' => 'feedback_forms#new'
 
-  get 'auth' => 'webauth#login', as: :new_user_session
-
   get ':id/file/:file' => 'purl#file', as: :purl_file
   get ':id/metrics' => 'purl#metrics', as: :purl_metrics
 

@@ -4,7 +4,7 @@ class FeedbackFormsController < ApplicationController
   def new; end
 
   def create
-    if pass_captcha?
+    if verify_recaptcha(action: 'feedback')
       FeedbackMailer.submit_feedback(params, request.remote_ip).deliver_now
       flash[:success] = 'Thank you! Your feedback has been sent.'
     else
@@ -12,11 +12,5 @@ class FeedbackFormsController < ApplicationController
     end
 
     redirect_to params[:url]
-  end
-
-  protected
-
-  def pass_captcha?
-    current_user.present? || verify_recaptcha(action: 'feedback')
   end
 end

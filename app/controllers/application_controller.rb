@@ -3,17 +3,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception, except: [:options]
 
-  helper_method :current_user
   rescue_from PurlResource::DruidNotValid, with: :invalid_druid
   rescue_from PurlVersion::ObjectNotReady, with: :object_not_ready
-
-  def current_user
-    request.env['REMOTE_USER']
-  end
-
-  def current_user?
-    current_user.present?
-  end
 
   def options
     response.headers['Access-Control-Allow-Origin'] = '*'
