@@ -16,7 +16,7 @@ RSpec.describe FeedbackFormsController, type: :controller do
   describe 'validate' do
     context 'when the user is not logged in and captcha fails' do
       it 'returns an error if the recaptcha is incorrect' do
-        post :create, params: { message: 'I am spamming you!', url: 'http://test.host/' }
+        post :create, params: { message: 'I am spamming you!', url: 'http://purl.stanford.edu/' }
         expect(flash[:error]).to eq 'You must pass the reCAPTCHA challenge'
         expect(FeedbackMailer).not_to have_received(:submit_feedback)
       end
@@ -26,7 +26,7 @@ RSpec.describe FeedbackFormsController, type: :controller do
       let(:verify) { true }
 
       it 'returns success and sends email' do
-        post :create, params: { message: 'I am spamming you!', url: 'http://test.host/' }
+        post :create, params: { message: 'I am spamming you!', url: 'http://purl.stanford.edu/' }
 
         expect(flash[:success]).to eq 'Thank you! Your feedback has been sent.'
         expect(controller).to have_received(:verify_recaptcha)
@@ -38,7 +38,7 @@ RSpec.describe FeedbackFormsController, type: :controller do
       let(:current_user) { 'chester' }
 
       it 'returns success and sends email' do
-        post :create, params: { message: 'I am spamming you!', url: 'http://test.host/' }
+        post :create, params: { message: 'I am spamming you!', url: 'http://purl.stanford.edu/' }
         expect(flash[:error]).to be_nil
         expect(flash[:success]).to eq 'Thank you! Your feedback has been sent.'
         expect(controller).not_to have_received(:verify_recaptcha)

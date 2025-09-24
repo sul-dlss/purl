@@ -17,7 +17,7 @@ RSpec.describe VersionRowComponent, type: :component do
       expect(page).to have_css 'th', text: 'Version 4'
       expect(page).to have_css 'td', text: 'Jul 24, 2024'
       expect(page).to have_link 'View', href: '/zb733jx3137/version/4'
-      expect(page).to have_css '[data-clipboard-url-value="http://test.host/zb733jx3137/version/4"]', text: 'Copy URL'
+      expect(page).to have_css '[data-clipboard-url-value="http://purl.stanford.edu/zb733jx3137/version/4"]', text: 'Copy URL'
     end
   end
 
@@ -29,7 +29,7 @@ RSpec.describe VersionRowComponent, type: :component do
       expect(page).to have_css 'th', text: 'Version 2'
       expect(page).to have_css 'td', text: 'Jul 22, 2024'
       expect(page).to have_css 'td', text: 'You are viewing this version'
-      expect(page).to have_css '[data-clipboard-url-value="http://test.host/zb733jx3137/version/2"]', text: 'Copy URL'
+      expect(page).to have_css '[data-clipboard-url-value="http://purl.stanford.edu/zb733jx3137/version/2"]', text: 'Copy URL'
     end
   end
 
