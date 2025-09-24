@@ -81,6 +81,17 @@ RSpec.describe 'IIIF v3 manifests' do
       end
     end
 
+    context 'with an image object (and content negotiation for v3)' do
+      it 'renders a iiif v3 manifest' do
+        get '/cg767mn6478/iiif/manifest',
+            headers: { 'Accept' => 'application/ld+json;profile="http://iiif.io/api/presentation/3/context.json"' }
+
+        expect(json['@context']).to include('http://iiif.io/api/presentation/3/context.json')
+        expect(json['id']).to eq 'http://www.example.com/cg767mn6478/iiif/manifest'
+        expect(response.content_type).to eq 'application/ld+json; profile="http://iiif.io/api/presentation/3/context.json"; charset=utf-8'
+      end
+    end
+
     context 'when a requesting an annotation page' do
       it 'renders' do
         get '/fs053dj6001/iiif3/annotation_page/cocina-fileSet-fs053dj6001-fs053dj6001_1'

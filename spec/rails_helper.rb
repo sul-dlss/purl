@@ -17,6 +17,12 @@ Rails.root.glob('spec/support/**/*.rb').each { |f| require f }
 ActionDispatch::TestRequest::DEFAULT_ENV['HTTP_HOST'] = 'purl.stanford.edu'
 ActionController::TestRequest::DEFAULT_ENV['HTTP_HOST'] = 'purl.stanford.edu'
 
+RSpec.configure do |config|
+  config.before(:suite) do
+    ActionDispatch::RequestEncoder.register_encoder :jsonld, response_parser: ->(body) { JSON.parse(body, object_class: ActiveSupport::HashWithIndifferentAccess) }
+  end
+end
+
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
