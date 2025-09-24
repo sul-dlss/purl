@@ -21,10 +21,6 @@ module ApplicationHelper
     @oembed_url_template ||= Addressable::Template.new(Settings.embed.url_template)
   end
 
-  def oembed_url_template_options
-    params.permit(*Settings.embed.application_options.to_h.keys).to_h
-  end
-
   def oembed_provider_url(options = {})
     oembed_url_template.expand(format: 'json', application_options: Settings.embed.application_options.to_h.merge(options))
   end
