@@ -4,7 +4,8 @@ require 'iiif/presentation'
 require 'iiif/v3/presentation'
 
 class Iiif3PresentationManifest < IiifPresentationManifest
-  delegate :object?, :geo?, :image?, :map?, :three_d?, to: :purl_version
+  delegate :object?, :geo?, :image?, :map?, :three_d?, to: :item_type
+
   delegate :file_sets, to: :structural_metadata
   attr_reader :purl_base_uri
 
