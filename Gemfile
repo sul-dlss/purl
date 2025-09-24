@@ -25,6 +25,7 @@ gem "view_component", '~> 4.0'
 gem 'whenever', require: false # cron jobs
 
 # DLSS and its community
+gem "cocina_display", "~> 1.2"
 gem 'iiif-presentation', '~> 1.4'
 gem 'mods_display', '~> 1.7'
 gem "purl_fetcher-client", "~> 3.1"
@@ -67,5 +68,3 @@ group :deployment do
   gem 'capistrano-shared_configs'
   gem 'dlss-capistrano'
 end
-
-gem "cocina_display", github: 'sul-dlss/cocina_display'
