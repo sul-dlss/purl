@@ -3,21 +3,20 @@
 require 'rails_helper'
 
 RSpec.describe Metadata::SchemaDotOrg do
-  let(:schema_dot_org) { described_class.call(cocina_json) }
+  let(:schema_dot_org) { described_class.call(cocina_display) }
+  let(:cocina_display) { CocinaDisplay::CocinaRecord.new(cocina_json) }
 
   context 'with dataset genre' do
     let(:cocina_json) do
-      <<~JSON
-        {
-          "externalIdentifier": "druid:hj293cv5980",
-          "label": "AVOIDDS: A dataset for vision-based aircraft detection",
-          "description": {
-                            "form": [{ "value": "dataset",
-                                       "type":  "genre" }],
-                            "identifier": []
-                         }
+      {
+        'externalIdentifier' => 'druid:hj293cv5980',
+        'label' => 'AVOIDDS: A dataset for vision-based aircraft detection',
+        'description' => {
+          'form' => [{ 'value' => 'dataset',
+                       'type' => 'genre' }],
+          'identifier' => []
         }
-      JSON
+      }
     end
 
     it 'has a type of Dataset' do
@@ -30,18 +29,16 @@ RSpec.describe Metadata::SchemaDotOrg do
 
   context 'without a dataset or media form' do
     let(:cocina_json) do
-      <<~JSON
-        {
-          "externalIdentifier": "druid:hj293cv5980",
-          "label": "Not a dataset",
-          "description": {
-                            "form": [{ "value": "audio",
-                                        "type":  "genre" }],
-                            "identifier": []
-                          },
-          "structural": {"contains": [{"type": "https://cocina.sul.stanford.edu/models/resources/audio"}]}
-        }
-      JSON
+      {
+        'externalIdentifier' => 'druid:hj293cv5980',
+        'label' => 'Not a dataset',
+        'description' => {
+          'form' => [{ 'value' => 'audio',
+                       'type' => 'genre' }],
+          'identifier' => []
+        },
+        'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/resources/audio' }] }
+      }
     end
 
     it 'does not have type' do
@@ -51,22 +48,18 @@ RSpec.describe Metadata::SchemaDotOrg do
 
   context 'with a video resources type' do
     let(:cocina_json) do
-      <<~JSON
-        {
-          "externalIdentifier": "druid:hj293cv5980",
-          "label": "A video about robots",
-          "description": {},
-          "structural": {"contains": [{"type": "https://cocina.sul.stanford.edu/models/resources/video",
-                                       "structural": { "contains": [{ "type": "https://cocina.sul.stanford.edu/models/file",
-                                                                      "access": { "view": "world",
-                                                                                  "download": "world",
-                                                                                  "controlledDigitalLending": false },
-                                                                      "hasMimeType": "video/mp4" }] }
-                                      }]
-                         },
-          "access": {"download": "world"}
-        }
-      JSON
+      {
+        'externalIdentifier' => 'druid:hj293cv5980',
+        'label' => 'A video about robots',
+        'description' => {},
+        'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/resources/video',
+                                           'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/file',
+                                                                              'access' => { 'view' => 'world',
+                                                                                            'download' => 'world',
+                                                                                            'controlledDigitalLending' => false },
+                                                                              'hasMimeType' => 'video/mp4' }] } }] },
+        'access' => { 'download' => 'world' }
+      }
     end
 
     it 'has type of VideoObject' do
@@ -79,22 +72,18 @@ RSpec.describe Metadata::SchemaDotOrg do
 
   context 'without a world-downloadable video' do
     let(:cocina_json) do
-      <<~JSON
-        {
-          "externalIdentifier": "druid:hj293cv5980",
-          "label": "A video about robots",
-          "description": {},
-          "structural": {"contains": [{"type": "https://cocina.sul.stanford.edu/models/resources/video",
-                                       "structural": { "contains": [{ "type": "https://cocina.sul.stanford.edu/models/file",
-                                                                      "access": { "view": "world",
-                                                                                  "download": "stanford",
-                                                                                  "controlledDigitalLending": false },
-                                                                      "hasMimeType": "video/mp4" }] }
-                                      }]
-                         },
-          "access": {"download": "world"}
-        }
-      JSON
+      {
+        'externalIdentifier' => 'druid:hj293cv5980',
+        'label' => 'A video about robots',
+        'description' => {},
+        'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/resources/video',
+                                           'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/file',
+                                                                              'access' => { 'view' => 'world',
+                                                                                            'download' => 'stanford',
+                                                                                            'controlledDigitalLending' => false },
+                                                                              'hasMimeType' => 'video/mp4' }] } }] },
+        'access' => { 'download' => 'world' }
+      }
     end
 
     it 'does not have type of VideoObject' do
@@ -106,22 +95,18 @@ RSpec.describe Metadata::SchemaDotOrg do
 
   context 'without a video file' do
     let(:cocina_json) do
-      <<~JSON
-        {
-          "externalIdentifier": "druid:hj293cv5980",
-          "label": "A video about robots",
-          "description": {},
-          "structural": {"contains": [{"type": "https://cocina.sul.stanford.edu/models/resources/video",
-                                       "structural": { "contains": [{ "type": "https://cocina.sul.stanford.edu/models/file",
-                                                                      "access": { "view": "world",
-                                                                                  "download": "world",
-                                                                                  "controlledDigitalLending": false },
-                                                                      "hasMimeType": "audio/mp4" }] }
-                                      }]
-                         },
-          "access": {"download": "world"}
-        }
-      JSON
+      {
+        'externalIdentifier' => 'druid:hj293cv5980',
+        'label' => 'A video about robots',
+        'description' => {},
+        'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/resources/video',
+                                           'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/file',
+                                                                              'access' => { 'view' => 'world',
+                                                                                            'download' => 'world',
+                                                                                            'controlledDigitalLending' => false },
+                                                                              'hasMimeType' => 'audio/mp4' }] } }] },
+        'access' => { 'download' => 'world' }
+      }
     end
 
     it 'does not have type of VideoObject' do
@@ -133,15 +118,13 @@ RSpec.describe Metadata::SchemaDotOrg do
 
   context 'with multiple title values' do
     let(:cocina_json) do
-      <<~JSON
-        {
-          "description": {
-            "title": [{"value": "My Dataset"},
-                      {"value": "More title"}],
-            "identifier": []
-          }
+      {
+        'description' => {
+          'title' => [{ 'value' => 'My Dataset' },
+                      { 'value' => 'More title' }],
+          'identifier' => []
         }
-      JSON
+      }
     end
 
     it 'uses the first title' do
@@ -153,44 +136,40 @@ RSpec.describe Metadata::SchemaDotOrg do
 
   context 'with a structuredValue title' do
     let(:cocina_json) do
-      <<~JSON
-        {
-          "description": {
-            "title": [
-              {"structuredValue": [
-                 {"value": "My Dataset",
-                  "type": "main title"},
-                 {"value": "More title",
-                  "type": "subtitle"}
-                ],
-               "status": "primary"}
-            ],
-            "form": [{ "value": "dataset",
-                       "type":  "genre" }],
-            "identifier": []
-          }
+      {
+        'description' => {
+          'title' => [
+            { 'structuredValue' => [
+                { 'value' => 'My Dataset',
+                  'type' => 'main title' },
+                { 'value' => 'More title',
+                  'type' => 'subtitle' }
+              ],
+              'status' => 'primary' }
+          ],
+          'form' => [{ 'value' => 'dataset',
+                       'type' => 'genre' }],
+          'identifier' => []
         }
-      JSON
+      }
     end
 
     it 'includes the title' do
       expect(schema_dot_org).to include(
-        name: 'My Dataset: More title'
+        name: 'My Dataset : More title'
       )
     end
   end
 
   context 'with description in abstract' do
     let(:cocina_json) do
-      <<~JSON
-        {
-          "description": {
-            "note": [{"type": "abstract", "value": "About this item"}],
-            "form": [{ "value": "dataset",
-                       "type":  "genre" }]
-          }
+      {
+        'description' => {
+          'note' => [{ 'type' => 'abstract', 'value' => 'About this item' }],
+          'form' => [{ 'value' => 'dataset',
+                       'type' => 'genre' }]
         }
-      JSON
+      }
     end
 
     it 'includes the description' do
@@ -202,15 +181,13 @@ RSpec.describe Metadata::SchemaDotOrg do
 
   context 'with description in summary' do
     let(:cocina_json) do
-      <<~JSON
-        {
-          "description": {
-            "note": [{"type": "summary", "value": "About this dataset"}],
-            "form": [{"value": "dataset",
-                      "type":  "genre" }]
-          }
+      {
+        'description' => {
+          'note' => [{ 'type' => 'summary', 'value' => 'About this dataset' }],
+          'form' => [{ 'value' => 'dataset',
+                       'type' => 'genre' }]
         }
-      JSON
+      }
     end
 
     it 'includes the description' do
@@ -222,15 +199,13 @@ RSpec.describe Metadata::SchemaDotOrg do
 
   context 'with no abstract or summary note' do
     let(:cocina_json) do
-      <<~JSON
-        {
-          "description": {
-            "title": [{"value": "My Dataset"}],
-            "form": [{"value": "dataset",
-                      "type":  "genre" }]
-          }
+      {
+        'description' => {
+          'title' => [{ 'value' => 'My Dataset' }],
+          'form' => [{ 'value' => 'dataset',
+                       'type' => 'genre' }]
         }
-      JSON
+      }
     end
 
     it 'does not include a description' do
@@ -241,58 +216,50 @@ RSpec.describe Metadata::SchemaDotOrg do
   context 'with a Dataset' do
     context 'with DOI in identification' do
       let(:cocina_json) do
-        <<~JSON
-          {
-            "description": {
-              "title": [{"value": "My Dataset"}],
-              "form": [{"value": "dataset",
-                        "type":  "genre" }]
-            },
-            "identification": {"doi": "10.25740/hj293cv5980"}
-          }
-        JSON
+        {
+          'description' => {
+            'title' => [{ 'value' => 'My Dataset' }],
+            'form' => [{ 'value' => 'dataset',
+                         'type' => 'genre' }]
+          },
+          'identification' => { 'doi' => '10.25740/hj293cv5980' }
+        }
       end
 
       it 'includes the DOI' do
         expect(schema_dot_org).to include(
-          identifier: ['https://doi.org/10.25740/hj293cv5980']
+          identifier: 'https://doi.org/10.25740/hj293cv5980'
         )
       end
     end
 
     context 'with DOI in identifier uri' do
       let(:cocina_json) do
-        <<~JSON
-          {
-            "description": { "form": [{ "value": "dataset",
-                                        "type":  "genre" }],
-                            "identifier": [
-                              { "uri": "https://doi.org/10.25740/hj293cv5980" }
-                            ]
-                            }
-          }
-        JSON
+        {
+          'description' => { 'form' => [{ 'value' => 'dataset',
+                                          'type' => 'genre' }],
+                             'identifier' => [
+                               { 'uri' => 'https://doi.org/10.25740/hj293cv5980' }
+                             ] }
+        }
       end
 
       it 'includes the DOI' do
         expect(schema_dot_org).to include(
-          identifier: ['https://doi.org/10.25740/hj293cv5980']
+          identifier: 'https://doi.org/10.25740/hj293cv5980'
         )
       end
     end
 
     context 'with non-DOI in identifier uri' do
       let(:cocina_json) do
-        <<~JSON
-          {
-            "description": { "form": [{ "value": "dataset",
-                                        "type":  "genre" }],
-                            "identifier": [
-                              { "uri": "https://identifier.example.com/123" }
-                            ]
-                            }
-          }
-        JSON
+        {
+          'description' => { 'form' => [{ 'value' => 'dataset',
+                                          'type' => 'genre' }],
+                             'identifier' => [
+                               { 'uri' => 'https://identifier.example.com/123' }
+                             ] }
+        }
       end
 
       it 'does not includes the identifier' do
@@ -302,36 +269,30 @@ RSpec.describe Metadata::SchemaDotOrg do
 
     context 'with DOI in identifier value' do
       let(:cocina_json) do
-        <<~JSON
-          {
-            "description": { "form": [{ "value": "dataset",
-                                        "type":  "genre" }],
-                            "identifier": [
-                                { "value": "https://doi.org/10.25740/hj293cv5980",
-                                  "type": "doi" }
-                              ]
-                            }
-          }
-        JSON
+        {
+          'description' => { 'form' => [{ 'value' => 'dataset',
+                                          'type' => 'genre' }],
+                             'identifier' => [
+                               { 'value' => 'https://doi.org/10.25740/hj293cv5980',
+                                 'type' => 'doi' }
+                             ] }
+        }
       end
 
       it 'includes the DOI' do
         expect(schema_dot_org).to include(
-          identifier: ['https://doi.org/10.25740/hj293cv5980']
+          identifier: 'https://doi.org/10.25740/hj293cv5980'
         )
       end
     end
 
     context 'with no identifiers' do
       let(:cocina_json) do
-        <<~JSON
-          {
-            "description": { "form": [{ "value": "dataset",
-                                        "type":  "genre" }],
-                            "identifier": []
-                            }
-          }
-        JSON
+        {
+          'description' => { 'form' => [{ 'value' => 'dataset',
+                                          'type' => 'genre' }],
+                             'identifier' => [] }
+        }
       end
 
       it 'includes no identifier' do
@@ -341,14 +302,11 @@ RSpec.describe Metadata::SchemaDotOrg do
 
     context 'when dataset is world downloadable' do
       let(:cocina_json) do
-        <<~JSON
-          {
-            "description": { "form": [{ "value": "dataset",
-                                        "type":  "genre" }]
-                            },
-            "access": {"download": "world"}
-          }
-        JSON
+        {
+          'description' => { 'form' => [{ 'value' => 'dataset',
+                                          'type' => 'genre' }] },
+          'access' => { 'download' => 'world' }
+        }
       end
 
       it 'is accessibleForFree' do
@@ -360,14 +318,11 @@ RSpec.describe Metadata::SchemaDotOrg do
 
     context 'when not world downloadable' do
       let(:cocina_json) do
-        <<~JSON
-          {
-            "description": { "form": [{ "value": "dataset",
-                                        "type":  "genre" }]
-                            },
-            "access": {"download": "stanford"}
-          }
-        JSON
+        {
+          'description' => { 'form' => [{ 'value' => 'dataset',
+                                          'type' => 'genre' }] },
+          'access' => { 'download' => 'stanford' }
+        }
       end
 
       it 'is not isAccessibleForFree' do
@@ -379,33 +334,27 @@ RSpec.describe Metadata::SchemaDotOrg do
 
     context 'with a license' do
       let(:cocina_json) do
-        <<~JSON
-          {
-            "description": { "form": [{ "value": "dataset",
-                                        "type":  "genre" }]
-                            },
-            "access": {"license": "https://opendatacommons.org/licenses/by/1-0/"}
-          }
-        JSON
+        {
+          'description' => { 'form' => [{ 'value' => 'dataset',
+                                          'type' => 'genre' }] },
+          'access' => { 'license' => 'https://opendatacommons.org/licenses/by/1-0/' }
+        }
       end
 
       it 'includes the license' do
         expect(schema_dot_org).to include(
-          license: 'https://opendatacommons.org/licenses/by/1-0/'
+          license: 'This work is licensed under an Open Data Commons Attribution License v1.0.'
         )
       end
     end
 
     context 'with a purl' do
       let(:cocina_json) do
-        <<~JSON
-          {
-            "description": { "form": [{ "value": "dataset",
-                                        "type":  "genre" }],
-                              "purl": "https://purl.stanford.edu/hj293cv5980"
-                            }
-          }
-        JSON
+        {
+          'description' => { 'form' => [{ 'value' => 'dataset',
+                                          'type' => 'genre' }],
+                             'purl' => 'https://purl.stanford.edu/hj293cv5980' }
+        }
       end
 
       it 'includes a url' do
@@ -417,15 +366,12 @@ RSpec.describe Metadata::SchemaDotOrg do
 
     context 'with contributors in a name' do
       let(:cocina_json) do
-        <<~JSON
-          {
-            "description": { "form": [{ "value": "dataset",
-                                        "type":  "genre" }],
-                            "contributor": [{"name": [{"value": "Doe, Jane"}]},
-                                            {"name": [{"value": "Foo, John"}]}]
-                            }
-          }
-        JSON
+        {
+          'description' => { 'form' => [{ 'value' => 'dataset',
+                                          'type' => 'genre' }],
+                             'contributor' => [{ 'name' => [{ 'value' => 'Doe, Jane' }] },
+                                               { 'name' => [{ 'value' => 'Foo, John' }] }] }
+        }
       end
 
       it 'includes creator' do
@@ -440,31 +386,28 @@ RSpec.describe Metadata::SchemaDotOrg do
 
     context 'with contributors in a structuredValue' do
       let(:cocina_json) do
-        <<~JSON
-          {
-            "description": { "form": [{ "value": "dataset",
-                                        "type":  "genre" }],
-                            "contributor": [
-                              {"name": [
-                                { "structuredValue": [
-                                      { "value": "Jane",
-                                        "type": "forename" },
-                                      { "value": "Doe",
-                                        "type": "surname"}]
-                                  }
-                              ]},
-                              {"name": [
-                                { "structuredValue": [
-                                      { "value": "John",
-                                        "type": "forename"},
-                                      { "value": "Foo",
-                                        "type": "surname"}]
-                                  }
-                              ]}
-                              ]
-                            }
-          }
-        JSON
+        {
+          'description' => { 'form' => [{ 'value' => 'dataset',
+                                          'type' => 'genre' }],
+                             'contributor' => [
+                               { 'name' => [
+                                 { 'structuredValue' => [
+                                   { 'value' => 'Jane',
+                                     'type' => 'forename' },
+                                   { 'value' => 'Doe',
+                                     'type' => 'surname' }
+                                 ] }
+                               ] },
+                               { 'name' => [
+                                 { 'structuredValue' => [
+                                   { 'value' => 'John',
+                                     'type' => 'forename' },
+                                   { 'value' => 'Foo',
+                                     'type' => 'surname' }
+                                 ] }
+                               ] }
+                             ] }
+        }
       end
 
       it 'includes creator' do
@@ -472,13 +415,13 @@ RSpec.describe Metadata::SchemaDotOrg do
           creator: [
             {
               '@type': 'Person',
-              name: 'Jane Doe',
+              name: 'Doe, Jane',
               givenName: 'Jane',
               familyName: 'Doe'
             },
             {
               '@type': 'Person',
-              name: 'John Foo',
+              name: 'Foo, John',
               givenName: 'John',
               familyName: 'Foo'
             }
@@ -489,15 +432,12 @@ RSpec.describe Metadata::SchemaDotOrg do
 
     context 'with an ORCID identifier uri for the contributor' do
       let(:cocina_json) do
-        <<~JSON
-          {
-            "description": { "form": [{ "value": "dataset",
-                                        "type":  "genre" }],
-                            "contributor": [{"name": [{"value": "Doe, Jane"}],
-                                             "identifier": [{"uri": "https://orcid.org/0000-0000-0000-0000"}]}]
-                            }
-          }
-        JSON
+        {
+          'description' => { 'form' => [{ 'value' => 'dataset',
+                                          'type' => 'genre' }],
+                             'contributor' => [{ 'name' => [{ 'value' => 'Doe, Jane' }],
+                                                 'identifier' => [{ 'uri' => 'https://orcid.org/0000-0000-0000-0000' }] }] }
+        }
       end
 
       it 'includes the ORCID' do
@@ -513,17 +453,13 @@ RSpec.describe Metadata::SchemaDotOrg do
 
     context 'with an identifier of ORCID type for the contributor' do
       let(:cocina_json) do
-        <<~JSON
-          {
-            "description": { "form": [{ "value": "dataset",
-                                        "type":  "genre" }],
-                            "contributor": [{"name": [{"value": "Doe, Jane"}],
-                                             "identifier": [{"value": "0000-0000-0000-0000",
-                                                            "type": "ORCID"}]
-                                            }]
-                            }
-          }
-        JSON
+        {
+          'description' => { 'form' => [{ 'value' => 'dataset',
+                                          'type' => 'genre' }],
+                             'contributor' => [{ 'name' => [{ 'value' => 'Doe, Jane' }],
+                                                 'identifier' => [{ 'value' => '0000-0000-0000-0000',
+                                                                    'type' => 'ORCID' }] }] }
+        }
       end
 
       it 'includes the ORCID' do
@@ -539,31 +475,26 @@ RSpec.describe Metadata::SchemaDotOrg do
 
     context 'with a structuredValue name and ORCID' do
       let(:cocina_json) do
-        <<~JSON
-          { "description": { "form": [{ "value": "dataset",
-                                        "type":  "genre" }],
-                            "contributor": [
-                              { "name": [
-                                { "structuredValue": [
-                                      { "value": "Jane",
-                                        "type": "forename" },
-                                      { "value": "Doe",
-                                        "type": "surname"}
-                                      ]
-                                  }
-                                ],
-                                "identifier": [{"uri": "https://orcid.org/0000-0000-0000-0000"}]
-                              }]
-                            }
-          }
-        JSON
+        { 'description' => { 'form' => [{ 'value' => 'dataset',
+                                          'type' => 'genre' }],
+                             'contributor' => [
+                               { 'name' => [
+                                   { 'structuredValue' => [
+                                     { 'value' => 'Jane',
+                                       'type' => 'forename' },
+                                     { 'value' => 'Doe',
+                                       'type' => 'surname' }
+                                   ] }
+                                 ],
+                                 'identifier' => [{ 'uri' => 'https://orcid.org/0000-0000-0000-0000' }] }
+                             ] } }
       end
 
       it 'includes the ORCID' do
         expect(schema_dot_org).to include(
           creator: [{
             '@type': 'Person',
-            name: 'Jane Doe',
+            name: 'Doe, Jane',
             givenName: 'Jane',
             familyName: 'Doe',
             sameAs: 'https://orcid.org/0000-0000-0000-0000'
@@ -575,89 +506,37 @@ RSpec.describe Metadata::SchemaDotOrg do
 
   context 'with a Video' do
     let(:cocina_json) do
-      <<~JSON
-        {
-          "externalIdentifier": "druid:tn153br1253",
-          "description": { "event": [{ "date": [{ "value": "2000", "type": "publication" },
-                                                 { "value": "2014", "status": "primary", "type": "publication" }]
-                                      }]
-                          },
-          "access": {"download": "world"},
-          "structural": {"contains": [{"type": "https://cocina.sul.stanford.edu/models/resources/video",
-                                      "structural": {
-                                                      "contains": [{"filename": "tn153br1253_thumb.jp2",
-                                                                    "hasMimeType": "image/jp2"},
-                                                                   {"filename": "tn153br1253_video_sl.mp4",
-                                                                    "access": { "view": "world",
-                                                                                  "download": "world",
-                                                                                  "controlledDigitalLending": false },
-                                                                    "hasMimeType": "video/mp4"}]
-                                                    }
-                                      }]
-                        }
-        }
-      JSON
-    end
-
-    context 'with a thumbnail' do
-      it 'includes the thumbnail' do
-        expect(schema_dot_org).to include(
-          thumbnailUrl: 'https://stacks.stanford.edu/file/druid:tn153br1253/tn153br1253_thumb.jp2'
-        )
-      end
-    end
-
-    context 'with a thumbnail with spaces in the filename' do
-      let(:cocina_json) do
-        <<~JSON
-          {
-            "externalIdentifier": "druid:tn153br1253",
-            "description": { "event": [{ "date": [{ "value": "2000", "type": "publication" },
-                                                  { "value": "2014", "status": "primary", "type": "publication" }]
-                                        }]
-                            },
-            "access": {"download": "world"},
-            "structural": {"contains": [{"type": "https://cocina.sul.stanford.edu/models/resources/video",
-                                        "structural": {
-                                                        "contains": [{"filename": "tn153br1253_thumb has spaces(andparens).jp2",
-                                                                      "hasMimeType": "image/jp2"},
-                                                                    {"filename": "tn153br1253_video_sl.mp4",
-                                                                      "access": { "view": "world",
-                                                                                    "download": "world",
-                                                                                    "controlledDigitalLending": false },
-                                                                      "hasMimeType": "video/mp4"}]
-                                                      }
-                                        }]
-                          }
-          }
-        JSON
-      end
-
-      it 'includes the thumbnail' do
-        expect(schema_dot_org).to include(
-          thumbnailUrl: 'https://stacks.stanford.edu/file/druid:tn153br1253/tn153br1253_thumb%20has%20spaces(andparens).jp2'
-        )
-      end
+      {
+        'externalIdentifier' => 'druid:tn153br1253',
+        'description' => { 'event' => [{ 'date' => [{ 'value' => '2000', 'type' => 'publication' },
+                                                    { 'value' => '2014', 'status' => 'primary', 'type' => 'publication' }] }] },
+        'access' => { 'download' => 'world' },
+        'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/resources/video',
+                                           'structural' => {
+                                             'contains' => [{ 'filename' => 'tn153br1253_thumb.jp2',
+                                                              'hasMimeType' => 'image/jp2' },
+                                                            { 'filename' => 'tn153br1253_video_sl.mp4',
+                                                              'access' => { 'view' => 'world',
+                                                                            'download' => 'world',
+                                                                            'controlledDigitalLending' => false },
+                                                              'hasMimeType' => 'video/mp4' }]
+                                           } }] }
+      }
     end
 
     context 'with no thumbnail' do
       let(:cocina_json) do
-        <<~JSON
-          {
-            "externalIdentifier": "druid:tn153br1253",
-            "description": { },
-            "access": {"download": "world"},
-            "structural": {"contains": [{"type": "https://cocina.sul.stanford.edu/models/resources/video",
-                                         "structural": {"contains": [{"filename": "tn153br1253_history_sl.mp4",
-                                                                      "access": { "view": "world",
-                                                                                  "download": "world",
-                                                                                  "controlledDigitalLending": false },
-                                                                      "hasMimeType": "video/mp4"}]
-                                                        }
-                                        }]
-                          }
-          }
-        JSON
+        {
+          'externalIdentifier' => 'druid:tn153br1253',
+          'description' => {},
+          'access' => { 'download' => 'world' },
+          'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/resources/video',
+                                             'structural' => { 'contains' => [{ 'filename' => 'tn153br1253_history_sl.mp4',
+                                                                                'access' => { 'view' => 'world',
+                                                                                              'download' => 'world',
+                                                                                              'controlledDigitalLending' => false },
+                                                                                'hasMimeType' => 'video/mp4' }] } }] }
+        }
       end
 
       it 'does not include a thumbnail' do
@@ -667,24 +546,20 @@ RSpec.describe Metadata::SchemaDotOrg do
 
     context 'with a bad thumbnail filename' do
       let(:cocina_json) do
-        <<~JSON
-          {
-            "externalIdentifier": "druid:tn153br1253",
-            "access": {"download": "world"},
-            "structural": {"contains": [{"type": "https://cocina.sul.stanford.edu/models/resources/video",
-                                        "structural": {
-                                                        "contains": [{"filename": "a_problem_thumb.jp2",
-                                                                      "hasMimeType": "image/jp2"},
-                                                                    {"filename": "tn153br1253_video_sl.mp4",
-                                                                      "access": { "view": "world",
-                                                                                    "download": "world",
-                                                                                    "controlledDigitalLending": false },
-                                                                      "hasMimeType": "video/mp4"}]
-                                                      }
-                                        }]
-                          }
-          }
-        JSON
+        {
+          'externalIdentifier' => 'druid:tn153br1253',
+          'access' => { 'download' => 'world' },
+          'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/resources/video',
+                                             'structural' => {
+                                               'contains' => [{ 'filename' => 'a_problem_thumb.jp2',
+                                                                'hasMimeType' => 'image/jp2' },
+                                                              { 'filename' => 'tn153br1253_video_sl.mp4',
+                                                                'access' => { 'view' => 'world',
+                                                                              'download' => 'world',
+                                                                              'controlledDigitalLending' => false },
+                                                                'hasMimeType' => 'video/mp4' }]
+                                             } }] }
+        }
       end
 
       before do
@@ -715,28 +590,22 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       context 'with a structuredValue with status of primary' do
         let(:cocina_json) do
-          <<~JSON
-            {
-              "externalIdentifier": "druid:tn153br1253",
-              "description": { "event": [{ "type": "publication",
-                                            "date": [{ "structuredValue": [{"value": "2000"}],
-                                                       "type": "publication" },
-                                                       { "structuredValue": [{"value": "2014"}],
-                                                       "status": "primary",
-                                                       "type": "publication" }]
-                                          }]
-                              },
-              "structural": {"contains": [{"type": "https://cocina.sul.stanford.edu/models/resources/video",
-                             "structural": { "contains": [{ "type": "https://cocina.sul.stanford.edu/models/file",
-                                                             "access": { "view": "world",
-                                                                         "download": "world",
-                                                                         "controlledDigitalLending": false },
-                                                             "hasMimeType": "video/mp4" }] }
-                             }]
-                },
-              "access": {"download": "world"}
-            }
-          JSON
+          {
+            'externalIdentifier' => 'druid:tn153br1253',
+            'description' => { 'event' => [{ 'type' => 'publication',
+                                             'date' => [{ 'structuredValue' => [{ 'value' => '2000' }],
+                                                          'type' => 'publication' },
+                                                        { 'structuredValue' => [{ 'value' => '2014' }],
+                                                          'status' => 'primary',
+                                                          'type' => 'publication' }] }] },
+            'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/resources/video',
+                                               'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/file',
+                                                                                  'access' => { 'view' => 'world',
+                                                                                                'download' => 'world',
+                                                                                                'controlledDigitalLending' => false },
+                                                                                  'hasMimeType' => 'video/mp4' }] } }] },
+            'access' => { 'download' => 'world' }
+          }
         end
 
         it 'includes the primary uploadDate' do
@@ -748,27 +617,21 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       context 'with no date having a status of primary' do
         let(:cocina_json) do
-          <<~JSON
-            {
-              "externalIdentifier": "druid:tn153br1253",
-              "description": { "event": [{ "type": "publication",
-                                            "date": [{ "value": "2014",
-                                                       "type": "publication" },
-                                                      { "value": "2000",
-                                                       "type": "publication" }]
-                                          }]
-                              },
-              "structural": {"contains": [{"type": "https://cocina.sul.stanford.edu/models/resources/video",
-                              "structural": { "contains": [{ "type": "https://cocina.sul.stanford.edu/models/file",
-                                                              "access": { "view": "world",
-                                                                          "download": "world",
-                                                                          "controlledDigitalLending": false },
-                                                              "hasMimeType": "video/mp4" }] }
-                              }]
-                 },
-              "access": {"download": "world"}
-            }
-          JSON
+          {
+            'externalIdentifier' => 'druid:tn153br1253',
+            'description' => { 'event' => [{ 'type' => 'publication',
+                                             'date' => [{ 'value' => '2014',
+                                                          'type' => 'publication' },
+                                                        { 'value' => '2000',
+                                                          'type' => 'publication' }] }] },
+            'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/resources/video',
+                                               'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/file',
+                                                                                  'access' => { 'view' => 'world',
+                                                                                                'download' => 'world',
+                                                                                                'controlledDigitalLending' => false },
+                                                                                  'hasMimeType' => 'video/mp4' }] } }] },
+            'access' => { 'download' => 'world' }
+          }
         end
 
         it 'selects the first one for the uploadDate' do
@@ -780,27 +643,21 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       context 'with no structuredValue date having a status of primary' do
         let(:cocina_json) do
-          <<~JSON
-            {
-              "externalIdentifier": "druid:tn153br1253",
-              "description": { "event": [{ "type": "publication",
-                                            "date": [{ "structuredValue": [{"value": "2014"}],
-                                                       "type": "publication" },
-                                                     { "structuredValue": [{"value": "2000"}],
-                                                       "type": "publication" }]
-                                          }]
-                              },
-              "structural": {"contains": [{"type": "https://cocina.sul.stanford.edu/models/resources/video",
-                             "structural": { "contains": [{ "type": "https://cocina.sul.stanford.edu/models/file",
-                                                             "access": { "view": "world",
-                                                                         "download": "world",
-                                                                         "controlledDigitalLending": false },
-                                                             "hasMimeType": "video/mp4" }] }
-                             }]
-                },
-              "access": {"download": "world"}
-            }
-          JSON
+          {
+            'externalIdentifier' => 'druid:tn153br1253',
+            'description' => { 'event' => [{ 'type' => 'publication',
+                                             'date' => [{ 'structuredValue' => [{ 'value' => '2014' }],
+                                                          'type' => 'publication' },
+                                                        { 'structuredValue' => [{ 'value' => '2000' }],
+                                                          'type' => 'publication' }] }] },
+            'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/resources/video',
+                                               'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/file',
+                                                                                  'access' => { 'view' => 'world',
+                                                                                                'download' => 'world',
+                                                                                                'controlledDigitalLending' => false },
+                                                                                  'hasMimeType' => 'video/mp4' }] } }] },
+            'access' => { 'download' => 'world' }
+          }
         end
 
         it 'selects the first one for the uploadDate' do
@@ -812,26 +669,19 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       context 'with type publication and structuredValue having no type' do
         let(:cocina_json) do
-          <<~JSON
-            {
-              "externalIdentifier": "druid:tn153br1253",
-              "description": { "event": [{ "type": "publication",
-                                            "date": [{ "structuredValue": [{"value": "2014"}]},
-                                                     { "structuredValue": [{"value": "2000"}]}
-                                                    ]
-                                          }]
-                              },
-              "structural": {"contains": [{"type": "https://cocina.sul.stanford.edu/models/resources/video",
-                             "structural": { "contains": [{ "type": "https://cocina.sul.stanford.edu/models/file",
-                                                             "access": { "view": "world",
-                                                                         "download": "world",
-                                                                         "controlledDigitalLending": false },
-                                                             "hasMimeType": "video/mp4" }] }
-                             }]
-                },
-              "access": {"download": "world"}
-            }
-          JSON
+          {
+            'externalIdentifier' => 'druid:tn153br1253',
+            'description' => { 'event' => [{ 'type' => 'publication',
+                                             'date' => [{ 'structuredValue' => [{ 'value' => '2014' }] },
+                                                        { 'structuredValue' => [{ 'value' => '2000' }] }] }] },
+            'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/resources/video',
+                                               'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/file',
+                                                                                  'access' => { 'view' => 'world',
+                                                                                                'download' => 'world',
+                                                                                                'controlledDigitalLending' => false },
+                                                                                  'hasMimeType' => 'video/mp4' }] } }] },
+            'access' => { 'download' => 'world' }
+          }
         end
 
         it 'selects the first one for the uploadDate' do
@@ -843,25 +693,19 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       context 'with type publication and date having no type' do
         let(:cocina_json) do
-          <<~JSON
-            {
-              "externalIdentifier": "druid:tn153br1253",
-              "description": { "event": [{ "type": "publication",
-                                           "date": [{ "value": "2000", "type": "secondary" },
-                                                    { "value": "2014" }]
-                                         }]
-                              },
-              "structural": {"contains": [{"type": "https://cocina.sul.stanford.edu/models/resources/video",
-                             "structural": { "contains": [{ "type": "https://cocina.sul.stanford.edu/models/file",
-                                                              "access": { "view": "world",
-                                                                          "download": "world",
-                                                                          "controlledDigitalLending": false },
-                                                              "hasMimeType": "video/mp4" }] }
-                            }]
-                 },
-              "access": {"download": "world"}
-            }
-          JSON
+          {
+            'externalIdentifier' => 'druid:tn153br1253',
+            'description' => { 'event' => [{ 'type' => 'publication',
+                                             'date' => [{ 'value' => '2000', 'type' => 'secondary' },
+                                                        { 'value' => '2014' }] }] },
+            'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/resources/video',
+                                               'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/file',
+                                                                                  'access' => { 'view' => 'world',
+                                                                                                'download' => 'world',
+                                                                                                'controlledDigitalLending' => false },
+                                                                                  'hasMimeType' => 'video/mp4' }] } }] },
+            'access' => { 'download' => 'world' }
+          }
         end
 
         it 'selects the first one for the uploadDate' do
@@ -873,24 +717,18 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       context 'with event type having no type' do
         let(:cocina_json) do
-          <<~JSON
-            {
-              "externalIdentifier": "druid:tn153br1253",
-              "description": { "event": [{ "date": [{ "value": "2000", "type": "secondary" },
-                                                    { "value": "2014" }]
-                                         }]
-                              },
-              "structural": {"contains": [{"type": "https://cocina.sul.stanford.edu/models/resources/video",
-                              "structural": { "contains": [{ "type": "https://cocina.sul.stanford.edu/models/file",
-                                                              "access": { "view": "world",
-                                                                          "download": "world",
-                                                                          "controlledDigitalLending": false },
-                                                              "hasMimeType": "video/mp4" }] }
-                              }]
-                 },
-              "access": {"download": "world"}
-            }
-          JSON
+          {
+            'externalIdentifier' => 'druid:tn153br1253',
+            'description' => { 'event' => [{ 'date' => [{ 'value' => '2000', 'type' => 'secondary' },
+                                                        { 'value' => '2014' }] }] },
+            'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/resources/video',
+                                               'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/file',
+                                                                                  'access' => { 'view' => 'world',
+                                                                                                'download' => 'world',
+                                                                                                'controlledDigitalLending' => false },
+                                                                                  'hasMimeType' => 'video/mp4' }] } }] },
+            'access' => { 'download' => 'world' }
+          }
         end
 
         it 'selects the first date for the uploadDate' do
@@ -902,24 +740,18 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       context 'with no relevant event dates' do
         let(:cocina_json) do
-          <<~JSON
-            {
-              "externalIdentifier": "druid:tn153br1253",
-              "description": {"event": [{ "date": [{ "value": "2000", "type": "secondary" },
-                                                     { "value": "2014", "type": "creation" }]
-                                          }]
-                              },
-              "structural": {"contains": [{"type": "https://cocina.sul.stanford.edu/models/resources/video",
-                              "structural": { "contains": [{ "type": "https://cocina.sul.stanford.edu/models/file",
-                                                              "access": { "view": "world",
-                                                                          "download": "world",
-                                                                          "controlledDigitalLending": false },
-                                                              "hasMimeType": "video/mp4" }] }
-                              }]
-                 },
-              "access": {"download": "world"}
-            }
-          JSON
+          {
+            'externalIdentifier' => 'druid:tn153br1253',
+            'description' => { 'event' => [{ 'date' => [{ 'value' => '2000', 'type' => 'secondary' },
+                                                        { 'value' => '2014', 'type' => 'creation' }] }] },
+            'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/resources/video',
+                                               'structural' => { 'contains' => [{ 'type' => 'https://cocina.sul.stanford.edu/models/file',
+                                                                                  'access' => { 'view' => 'world',
+                                                                                                'download' => 'world',
+                                                                                                'controlledDigitalLending' => false },
+                                                                                  'hasMimeType' => 'video/mp4' }] } }] },
+            'access' => { 'download' => 'world' }
+          }
         end
 
         it 'does not include an uploadDate' do
