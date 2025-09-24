@@ -206,6 +206,19 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     @cocina ||= JSON.parse(cocina_body)
   end
 
+  # Extracts the minimal cocina JSON for a withdrawn version
+  # setting the status to 'withdrawn'
+  def withdrawn_cocina
+    {
+      type:,
+      externalIdentifier: cocina['externalIdentifier'],
+      label: cocina['label'],
+      version: cocina['version'],
+      status: 'withdrawn',
+      structural: { contains: [] }
+    }
+  end
+
   def cocina_display
     @cocina_display ||= CocinaDisplay::CocinaRecord.new(cocina)
   end

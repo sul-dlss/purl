@@ -37,7 +37,7 @@ class PurlController < ApplicationController
 
       format.json do
         if @version.withdrawn?
-          render json: withdrawn_cocina
+          render json: @version.withdrawn_cocina
         elsif @version.cocina_body
           render json: @version.cocina_body
         else
@@ -121,20 +121,5 @@ class PurlController < ApplicationController
       flash.now[:alert] = 'A newer version of this item is available.<br>' \
                           "#{view_context.link_to 'View latest version', purl_url(@purl)}"
     end
-  end
-
-  # Extracts the minimal cocina JSON for a withdrawn version
-  # setting the status to 'withdrawn'
-  def withdrawn_cocina
-    cocina_json = JSON.parse(@version.cocina_body)
-
-    {
-      type: cocina_json['type'],
-      externalIdentifier: cocina_json['externalIdentifier'],
-      label: cocina_json['label'],
-      version: cocina_json['version'],
-      status: 'withdrawn',
-      structural: { contains: [] }
-    }.to_json
   end
 end
