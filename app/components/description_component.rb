@@ -9,7 +9,7 @@ class DescriptionComponent < ViewComponent::Base
   attr_reader :version
 
   delegate :mods, :cocina_display, to: :version
-  delegate :form_display_data, :language_display_data, :map_display_data, :event_note_display_data, to: :cocina_display
+  delegate :form_display_data, :language_display_data, :map_display_data, :event_note_display_data, :event_date_display_data, to: :cocina_display
 
   def label_id
     'section-description'
@@ -17,14 +17,6 @@ class DescriptionComponent < ViewComponent::Base
 
   COMMA = ', '
   SEMICOLON = '; '
-  DATE_LABELS = {
-    'copyright' => 'Copyright date',
-    'capture' => 'Date captured',
-    'creation' => 'Date created',
-    'modification' => 'Date modified',
-    'validity' => 'Date valid',
-    'publication' => 'Publication date'
-  }.freeze
 
   # Ordered list of fields and delimiters to display
   def field_map
@@ -33,7 +25,7 @@ class DescriptionComponent < ViewComponent::Base
       [form_display_data, SEMICOLON],
       [publication_places, nil],
       [publisher, COMMA],
-      [dates, SEMICOLON],
+      [event_date_display_data, SEMICOLON],
       [event_note_display_data, COMMA],
       [language_display_data, SEMICOLON],
       [map_display_data, COMMA]
@@ -43,18 +35,6 @@ class DescriptionComponent < ViewComponent::Base
   # All the titles, except the main title
   def title_display_data
     cocina_display.title_display_data.reject { it.label == 'Title' }
-  end
-
-  def dates
-    dates = cocina_display.event_dates.group_by(&:type)
-
-    dates.flat_map do |type, objects|
-      CocinaDisplay::DisplayData.new(label: date_label(type), objects: objects.map(&:decoded_value))
-    end
-  end
-
-  def date_label(type)
-    DATE_LABELS.fetch(type) { "#{type&.capitalize || 'Other'} date" }
   end
 
   def resource_types
