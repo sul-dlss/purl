@@ -7,9 +7,15 @@ class PurlController < ApplicationController
 
   rescue_from ActionController::UnknownFormat, with: :missing_file
 
+  FrontPageItem = Data.define(:purl, :title)
   # Landing page for purl.
   # Shows a list of selected druids.
-  def index; end
+  def index
+    @front_page_items = Settings.landing_page_druids.map do |druid|
+      purl = Purl.find(druid)
+      FrontPageItem.new(purl: purl, title: purl.version(:head).display_title)
+    end
+  end
 
   # entry point into the application
   # rubocop:disable Metrics/AbcSize
