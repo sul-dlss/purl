@@ -23,7 +23,7 @@ RSpec.describe Show::HeadMetadataComponent, type: :component do
       link = page.find('link[rel="alternate"][title="oEmbed Profile"][type="application/json+oembed"]', visible: false)
       expect(link['href']).to eq 'https://embed.stanford.edu/embed.json?url=https%3A%2F%2Fpurl.stanford.edu%2Fzb733jx3137%2Fversion%2F3'
       link = page.find('link[rel="alternate"][title="IIIF Manifest"]', visible: false)
-      expect(link['href']).to eq 'http://test.host/zb733jx3137/iiif/manifest'
+      expect(link['href']).to eq 'http://purl.stanford.edu/zb733jx3137/iiif/manifest'
     end
   end
 
@@ -54,7 +54,7 @@ RSpec.describe Show::HeadMetadataComponent, type: :component do
 
     it 'draws noindex meta tag' do
       expect(page).to have_css 'meta[name="robots"][content="noindex"]', visible: :hidden
-      expect(page).to have_css 'link[rel=up][href="http://test.host/jt466yc7169"]', visible: :hidden
+      expect(page).to have_css 'link[rel=up][href="http://purl.stanford.edu/jt466yc7169"]', visible: :hidden
     end
   end
 

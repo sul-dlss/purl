@@ -198,7 +198,7 @@ RSpec.describe IiifPresentationManifest do
       it 'provides otherContent for annotations' do
         expect(json.dig('sequences', 0, 'canvases', 7, 'otherContent')).to eq [
           {
-            '@id' => 'http://test.host/hx163dc5225/iiif/annotationList/cocina-fileSet-hx163dc5225-hx163dc5225_8',
+            '@id' => 'http://purl.stanford.edu/hx163dc5225/iiif/annotationList/cocina-fileSet-hx163dc5225-hx163dc5225_8',
             '@type' => 'sc:AnnotationList'
           }
         ]
@@ -227,7 +227,7 @@ RSpec.describe IiifPresentationManifest do
         expect(json['label']).to include 'NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES' # ...
         expect(json['description']).to eq 'Tom.1. No.9. (top right).'
         expect(json['attribution']).to start_with 'This work has been identified as being free of known restrictions'
-        expect(json['seeAlso']['@id']).to eq 'http://test.host/bb157hs6068.mods'
+        expect(json['seeAlso']['@id']).to eq 'http://purl.stanford.edu/bb157hs6068.mods'
         expect(json['thumbnail']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
         expect(json['thumbnail']['@type']).to eq 'dctypes:Image'
         expect(json['thumbnail']['width']).to eq 400
@@ -250,7 +250,7 @@ RSpec.describe IiifPresentationManifest do
         expect(json['metadata'].size).to eq(22) # 21 DC elements are there + the publish date + Available Online
         # rubocop:disable Layout/LineLength
         expected_metadata = [
-          { 'label' => 'Available Online', 'value' => "<a href='http://test.host/bb157hs6068'>http://test.host/bb157hs6068</a>" },
+          { 'label' => 'Available Online', 'value' => "<a href='http://purl.stanford.edu/bb157hs6068'>http://purl.stanford.edu/bb157hs6068</a>" },
           { 'label' => 'Title', 'value' => 'NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES DIVERS MOUVEMENS DES PLANETES ET LEURS DIVERSES REVOLUTIONS, AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE' },
           { 'label' => 'Creator', 'value' => 'Chatelain, Henri Abraham' },
           { 'label' => 'Type', 'value' => 'map' },

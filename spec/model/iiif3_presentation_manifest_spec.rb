@@ -27,7 +27,7 @@ RSpec.describe Iiif3PresentationManifest do
         expect(json['label']['en'].first).to include 'NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES' # ...
         expect(json['summary']['en'].first).to eq 'Tom.1. No.9. (top right).'
         expect(json['requiredStatement']['value']['en'].first).to start_with 'This work has been identified as being free of known restrictions'
-        expect(json['seeAlso'].first['id']).to eq 'http://test.host/bb157hs6068.mods'
+        expect(json['seeAlso'].first['id']).to eq 'http://purl.stanford.edu/bb157hs6068.mods'
         expect(json['thumbnail']).to eq [
           { 'type' => 'Image',
             'id' => 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg',
@@ -47,11 +47,11 @@ RSpec.describe Iiif3PresentationManifest do
 
         expect(canvas['items']).to eq(
           [{ 'type' => 'AnnotationPage',
-             'id' => 'http://test.host/bb157hs6068/iiif3/annotation_page/cocina-fileSet-bb157hs6068-bb157hs6068_1',
+             'id' => 'http://purl.stanford.edu/bb157hs6068/iiif3/annotation_page/cocina-fileSet-bb157hs6068-bb157hs6068_1',
              'items' =>
              [{ 'type' => 'Annotation',
                 'motivation' => 'painting',
-                'id' => 'http://test.host/bb157hs6068/iiif/annotation/cocina-fileSet-bb157hs6068-bb157hs6068_1',
+                'id' => 'http://purl.stanford.edu/bb157hs6068/iiif/annotation/cocina-fileSet-bb157hs6068-bb157hs6068_1',
                 'target' => 'https://purl.stanford.edu/bb157hs6068/iiif/canvas/cocina-fileSet-bb157hs6068-bb157hs6068_1',
                 'body' =>
                 { 'type' => 'Image',
@@ -132,7 +132,7 @@ RSpec.describe Iiif3PresentationManifest do
       it 'provides annotations for annotations' do
         expect(json.dig('items', 7, 'annotations')).to eq [
           {
-            id: 'http://test.host/hx163dc5225/iiif3/annotations/cocina-fileSet-hx163dc5225-hx163dc5225_8',
+            id: 'http://purl.stanford.edu/hx163dc5225/iiif3/annotations/cocina-fileSet-hx163dc5225-hx163dc5225_8',
             type: 'AnnotationPage'
           }
         ]
@@ -229,11 +229,11 @@ RSpec.describe Iiif3PresentationManifest do
         expect(canvas['label']['en'].first).to start_with "(Covers to) Carey's American Atlas:"
         expect(canvas['items']).to eq [
           { 'type' => 'AnnotationPage',
-            'id' => 'http://test.host/hj097bm8879/iiif3/annotation_page/cocina-fileSet-cg767mn6478-cg767mn6478_1',
+            'id' => 'http://purl.stanford.edu/hj097bm8879/iiif3/annotation_page/cocina-fileSet-cg767mn6478-cg767mn6478_1',
             'items' =>
            [{ 'type' => 'Annotation',
               'motivation' => 'painting',
-              'id' => 'http://test.host/hj097bm8879/iiif/annotation/cocina-fileSet-cg767mn6478-cg767mn6478_1',
+              'id' => 'http://purl.stanford.edu/hj097bm8879/iiif/annotation/cocina-fileSet-cg767mn6478-cg767mn6478_1',
               'target' => 'https://purl.stanford.edu/hj097bm8879/iiif/canvas/cocina-fileSet-cg767mn6478-cg767mn6478_1',
               'body' =>
               { 'type' => 'Image',
@@ -251,11 +251,11 @@ RSpec.describe Iiif3PresentationManifest do
         expect(canvas['label']['en'].first).to start_with "(Title Page to) Carey's American Atlas:"
         expect(canvas['items']).to eq [
           { 'type' => 'AnnotationPage',
-            'id' => 'http://test.host/hj097bm8879/iiif3/annotation_page/cocina-fileSet-jw923xn5254-jw923xn5254_1',
+            'id' => 'http://purl.stanford.edu/hj097bm8879/iiif3/annotation_page/cocina-fileSet-jw923xn5254-jw923xn5254_1',
             'items' =>
            [{ 'type' => 'Annotation',
               'motivation' => 'painting',
-              'id' => 'http://test.host/hj097bm8879/iiif/annotation/cocina-fileSet-jw923xn5254-jw923xn5254_1',
+              'id' => 'http://purl.stanford.edu/hj097bm8879/iiif/annotation/cocina-fileSet-jw923xn5254-jw923xn5254_1',
               'target' => 'https://purl.stanford.edu/hj097bm8879/iiif/canvas/cocina-fileSet-jw923xn5254-jw923xn5254_1',
               'body' =>
               { 'type' => 'Image',
@@ -304,11 +304,11 @@ RSpec.describe Iiif3PresentationManifest do
           expect(canvas['width']).not_to be_present
           expect(canvas['items']).to eq(
             [{ 'type' => 'AnnotationPage',
-               'id' => 'http://test.host/bb253gh8060/iiif3/annotation_page/cocina-fileSet-bb253gh8060-bb253gh8060_1',
+               'id' => 'http://purl.stanford.edu/bb253gh8060/iiif3/annotation_page/cocina-fileSet-bb253gh8060-bb253gh8060_1',
                'items' =>
               [{ 'type' => 'Annotation',
                  'motivation' => 'painting',
-                 'id' => 'http://test.host/bb253gh8060/iiif/annotation/cocina-fileSet-bb253gh8060-bb253gh8060_1',
+                 'id' => 'http://purl.stanford.edu/bb253gh8060/iiif/annotation/cocina-fileSet-bb253gh8060-bb253gh8060_1',
                  'target' => 'https://purl.stanford.edu/bb253gh8060/iiif/canvas/cocina-fileSet-bb253gh8060-bb253gh8060_1',
                  'body' =>
                   { 'id' => 'https://stacks.stanford.edu/file/bb253gh8060/SC0193_Agenda_6381_2010-10-07_001.pdf',
@@ -347,11 +347,11 @@ RSpec.describe Iiif3PresentationManifest do
         canvas = json['items'].first
         expect(canvas['items']).to eq(
           [{ 'type' => 'AnnotationPage',
-             'id' => 'http://test.host/xq467yj8428/iiif3/annotation_page/cocina-fileSet-xq467yj8428-xq467yj8428_1',
+             'id' => 'http://purl.stanford.edu/xq467yj8428/iiif3/annotation_page/cocina-fileSet-xq467yj8428-xq467yj8428_1',
              'items' =>
              [{ 'type' => 'Annotation',
                 'motivation' => 'painting',
-                'id' => 'http://test.host/xq467yj8428/iiif/annotation/cocina-fileSet-xq467yj8428-xq467yj8428_1',
+                'id' => 'http://purl.stanford.edu/xq467yj8428/iiif/annotation/cocina-fileSet-xq467yj8428-xq467yj8428_1',
                 'target' => 'https://purl.stanford.edu/xq467yj8428/iiif/canvas/cocina-fileSet-xq467yj8428-xq467yj8428_1',
                 'body' =>
                 { 'id' => 'https://stacks.stanford.edu/file/xq467yj8428/READ%20ME_MLOPhotoQuads.pdf',
@@ -406,11 +406,11 @@ RSpec.describe Iiif3PresentationManifest do
         canvas = json['items'].first
         expect(canvas['items']).to eq(
           [{ 'type' => 'AnnotationPage',
-             'id' => 'http://test.host/bg387kw8222/iiif3/annotation_page/cocina-fileSet-bg387kw8222-bg387kw8222_7',
+             'id' => 'http://purl.stanford.edu/bg387kw8222/iiif3/annotation_page/cocina-fileSet-bg387kw8222-bg387kw8222_7',
              'items' =>
            [{ 'type' => 'Annotation',
               'motivation' => 'painting',
-              'id' => 'http://test.host/bg387kw8222/iiif/annotation/cocina-fileSet-bg387kw8222-bg387kw8222_7',
+              'id' => 'http://purl.stanford.edu/bg387kw8222/iiif/annotation/cocina-fileSet-bg387kw8222-bg387kw8222_7',
               'target' => 'https://purl.stanford.edu/bg387kw8222/iiif/canvas/cocina-fileSet-bg387kw8222-bg387kw8222_7',
               'body' =>
               { 'id' => 'https://stacks.stanford.edu/file/bg387kw8222/bg387kw8222_low.glb',

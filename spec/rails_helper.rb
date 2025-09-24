@@ -14,6 +14,9 @@ Capybara.javascript_driver = :selenium_chrome_headless
 # Auto require all files in spec/support.
 Rails.root.glob('spec/support/**/*.rb').each { |f| require f }
 
+ActionDispatch::TestRequest::DEFAULT_ENV['HTTP_HOST'] = 'purl.stanford.edu'
+ActionController::TestRequest::DEFAULT_ENV['HTTP_HOST'] = 'purl.stanford.edu'
+
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
