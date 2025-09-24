@@ -68,6 +68,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   end
 
   delegate :containing_collections, to: :structural_metadata
+  delegate :collection?, :webarchive_seed?, :webarchive_binary?, to: :item_type
 
   # @returns [Bool] are there resources that can be shown?
   # This prevents adding links to the embed service, when that service can't generate a valid response.
@@ -103,20 +104,16 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     return false if collection?
 
     resource_types = structural_metadata.file_sets.map(&:type)
-    if (image? || book? || map?) &&
+    if (item_type.image? || item_type.book? || item_type.map?) &&
        (structural_metadata.virtual_object? || resource_types.include?('https://cocina.sul.stanford.edu/models/resources/image'))
       true
     else
-      book? && resource_types.include?('https://cocina.sul.stanford.edu/models/resources/page')
+      item_type.book? && resource_types.include?('https://cocina.sul.stanford.edu/models/resources/page')
     end
   end
 
   def iiif3_manifest(**)
     @iiif3_manifest ||= Iiif3PresentationManifest.new(self, **)
-  end
-
-  def collection?
-    cocina['type'] == 'https://cocina.sul.stanford.edu/models/collection'
   end
 
   def collection_items_link
@@ -145,36 +142,8 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
       @type ||= cocina['type']
     end
 
-    def book?
-      type == 'https://cocina.sul.stanford.edu/models/book'
-    end
-
-    def image?
-      type == 'https://cocina.sul.stanford.edu/models/image'
-    end
-
-    def map?
-      type == 'https://cocina.sul.stanford.edu/models/map'
-    end
-
-    def geo?
-      type == 'https://cocina.sul.stanford.edu/models/geo'
-    end
-
-    def three_d?
-      type == 'https://cocina.sul.stanford.edu/models/3d'
-    end
-
-    def webarchive_seed?
-      type == 'https://cocina.sul.stanford.edu/models/webarchive-seed'
-    end
-
-    def webarchive_binary?
-      type == 'https://cocina.sul.stanford.edu/models/webarchive-binary'
-    end
-
-    def object?
-      type == 'https://cocina.sul.stanford.edu/models/object'
+    def item_type
+      @item_type ||= ItemType.new(cocina['type'])
     end
 
     def folio_instance_hrid
