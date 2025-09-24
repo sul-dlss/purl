@@ -38,7 +38,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   end
 
   def ready?
-    public_xml?
+    cocina_body.present?
   end
 
   # Fetches the body of the public XML from the public_xml resource
@@ -232,10 +232,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   end
 
   delegate :public_xml_body, :cocina_body, to: :resource_retriever
-
-  def public_xml?
-    public_xml_body.present?
-  end
 
   def cocina
     @cocina ||= JSON.parse(cocina_body)

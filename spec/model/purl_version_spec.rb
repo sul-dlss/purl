@@ -160,10 +160,10 @@ RSpec.describe PurlVersion do
 
   describe '#ready?' do
     before do
-      allow(resource_retriever).to receive(:public_xml_body).and_return('ok')
+      allow(resource_retriever).to receive(:cocina_body).and_return('ok')
     end
 
-    it 'is ready if the public xml is present' do
+    it 'is ready if the public cocina is present' do
       expect(instance).to be_ready
     end
   end
