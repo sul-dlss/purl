@@ -13,7 +13,7 @@ module Show
     delegate :embeddable?, :containing_collections, :version_id, :cocina_body, :druid, :display_title, :description,
              :representative_thumbnail, :representative_thumbnail?, :withdrawn?, to: :version
     delegate :releases, to: :purl
-    delegate :embeddable_url, :oembed_url_template, to: :helpers
+    delegate :embeddable_url, to: :helpers
 
     def schema_dot_org?
       ::Metadata::SchemaDotOrg.schema_type?(cocina_body)
@@ -29,6 +29,10 @@ module Show
 
     def oembed_path(format)
       oembed_url_template.expand(format: format, application_options: oembed_url_template_options, url: embeddable_url(druid, version_id))
+    end
+
+    def oembed_url_template
+      @oembed_url_template ||= Addressable::Template.new(Settings.embed.url_template)
     end
 
     def oembed_url_template_options

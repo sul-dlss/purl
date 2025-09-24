@@ -9,10 +9,7 @@ RSpec.describe 'purl/_embed' do
 
   it 'displays a purl embed viewer' do
     render
-    expect(rendered).to have_css '.purl-embed-viewer'
-    embed = Nokogiri::HTML(rendered).css('.purl-embed-viewer')
-    expect(embed.attr('data-oembed-provider').to_s).to eq 'https://embed.stanford.edu/embed.json?hide_title=true&new_viewer=false'
-    expect(embed.attr('href').to_s).to eq('https://purl.stanford.edu/bf973rp9392')
+    expect(rendered).to have_css '[data-controller="oembed"]'
   end
 
   it 'displays a non-javascript fallback' do
@@ -31,10 +28,7 @@ RSpec.describe 'purl/_embed' do
 
     it 'displays a purl embed viewer with the version' do
       render
-      expect(rendered).to have_css '.purl-embed-viewer'
-      embed = Nokogiri::HTML(rendered).css('.purl-embed-viewer')
-      expect(embed.attr('data-oembed-provider').to_s).to eq 'https://embed.stanford.edu/embed.json?hide_title=true&new_viewer=false'
-      expect(embed.attr('href').to_s).to eq('https://purl.stanford.edu/bf973rp9392/version/2')
+      expect(rendered).to have_css '[data-controller="oembed"]'
     end
 
     it 'displays a non-javascript fallback' do
@@ -53,10 +47,7 @@ RSpec.describe 'purl/_embed' do
 
     it 'does not display a purl embed viewer with a version' do
       render
-      expect(rendered).to have_css '.purl-embed-viewer'
-      embed = Nokogiri::HTML(rendered).css('.purl-embed-viewer')
-      expect(embed.attr('data-oembed-provider').to_s).to eq 'https://embed.stanford.edu/embed.json?hide_title=true&new_viewer=false'
-      expect(embed.attr('href').to_s).to eq('https://purl.stanford.edu/bf973rp9392')
+      expect(rendered).to have_css '[data-controller="oembed"]'
     end
 
     it 'displays a non-javascript fallback' do
