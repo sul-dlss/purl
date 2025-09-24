@@ -25,14 +25,6 @@ module ApplicationHelper
     oembed_url_template.expand(format: 'json', application_options: Settings.embed.application_options.to_h.merge(options))
   end
 
-  def iframe_url_template
-    @iframe_url_template ||= Addressable::Template.new(Settings.embed.iframe.url_template)
-  end
-
-  def iframe_url(druid, version_id = nil)
-    iframe_url_template.expand(url: embeddable_url(druid, version_id))
-  end
-
   def embeddable_url(druid, version_id = nil)
     format(Settings.embed.url, druid:).tap do |embed_url|
       return "#{embed_url}/version/#{version_id}" if version_id.present? && request.path == version_purl_path(druid, version_id)
