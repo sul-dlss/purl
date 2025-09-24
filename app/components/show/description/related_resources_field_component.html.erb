@@ -1,12 +1,10 @@
-<% values.each do |value| %>
 <tbody>
   <tr>
-    <th><%= value.label %></th>
+    <th><%= label %></th>
     <td>
-      <% value.objects.each do |related_resource| %>
-        <%= render child_component(related_resource) %>
+      <% child_components.each do %>
+        <%= render it  %>
       <% end %>
     </td>
   </tr>
 </tbody>
-<% end %>
