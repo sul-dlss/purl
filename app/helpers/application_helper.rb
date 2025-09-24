@@ -13,14 +13,6 @@ module ApplicationHelper
     link_to druid, purl_url(druid), class: 'su-underline'
   end
 
-  def oembed_url_template
-    @oembed_url_template ||= Addressable::Template.new(Settings.embed.url_template)
-  end
-
-  def oembed_provider_url(options = {})
-    oembed_url_template.expand(format: 'json', application_options: Settings.embed.application_options.to_h.merge(options))
-  end
-
   def embeddable_url(druid, version_id = nil)
     format(Settings.embed.url, druid:).tap do |embed_url|
       return "#{embed_url}/version/#{version_id}" if version_id.present? && request.path == version_purl_path(druid, version_id)
