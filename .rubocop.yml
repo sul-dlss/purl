@@ -26,7 +26,7 @@ Layout/LineLength:
     - spec/integration/purl_spec.rb
 
 Metrics/AbcSize:
-  Max: 22
+  Max: 21
   Exclude:
     - app/controllers/iiif_controller.rb
     - app/controllers/iiif_v3_controller.rb
@@ -39,10 +39,7 @@ Metrics/ClassLength:
     - lib/metadata/schema_dot_org.rb
 
 Metrics/MethodLength:
-  Max: 24
-
-Metrics/ModuleLength:
-  Max: 120
+  Max: 22
 
 # Configuration parameters: AllowedMethods, AllowedPatterns.
 Metrics/CyclomaticComplexity:
@@ -54,7 +51,6 @@ Metrics/PerceivedComplexity:
 
 Metrics/BlockLength:
   Exclude:
-    - app/models/purl_resource.rb
     - spec/**/*
 
 # Configuration parameters: CountAsOne.
