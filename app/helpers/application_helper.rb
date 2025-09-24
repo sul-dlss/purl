@@ -13,9 +13,11 @@ module ApplicationHelper
     link_to druid, purl_url(druid), class: 'su-underline'
   end
 
-  def embeddable_url(druid, version_id = nil)
-    format(Settings.embed.url, druid:).tap do |embed_url|
-      return "#{embed_url}/version/#{version_id}" if version_id.present? && request.path == version_purl_path(druid, version_id)
-    end
+  # Create the URL to pass to the embed service.  The embed service will create the viewer we display on the page.
+  def embeddable_url(druid, version_id)
+    args = Rails.env.development? ? { host: 'purl.stanford.edu' } : {}
+    return version_purl_url(druid, version_id, args) if request.path == version_purl_path(druid, version_id)
+
+    purl_url(druid, args)
   end
 end
