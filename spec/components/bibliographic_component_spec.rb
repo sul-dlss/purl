@@ -10,7 +10,7 @@ RSpec.describe BibliographicComponent, type: :component do
   let(:version) { purl.version(:head) }
 
   before do
-    puts render_inline(component)
+    render_inline(component)
   end
 
   it 'draws the bibliographic information' do

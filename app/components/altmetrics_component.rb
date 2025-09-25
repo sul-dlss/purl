@@ -8,7 +8,7 @@ class AltmetricsComponent < ViewComponent::Base
 
   attr_reader :purl_version
 
-  delegate :display_title, :doi_id, to: :purl_version
+  delegate :display_title, :doi, to: :purl_version
   delegate :cocina_display, :druid, to: :purl_version
 
   def publication_date
