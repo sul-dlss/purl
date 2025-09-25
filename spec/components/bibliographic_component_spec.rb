@@ -25,4 +25,13 @@ RSpec.describe BibliographicComponent, type: :component do
 
     expect(page).to have_link 'https://purl.stanford.edu/bb000qr5025', href: 'https://purl.stanford.edu/bb000qr5025'
   end
+
+  context 'with a DOI' do
+    let(:druid) { 'wm135gp2721' }
+
+    it 'draws the DOI' do
+      expect(page).to have_content 'DOI'
+      expect(page).to have_link 'https://doi.org/10.25740/wm135gp2721', href: 'https://doi.org/10.25740/wm135gp2721'
+    end
+  end
 end
