@@ -17,11 +17,11 @@ module Show
     delegate :abstract_display_data, :subject_all, to: :cocina_display
 
     def schema_dot_org?
-      ::Metadata::SchemaDotOrg.schema_type?(cocina_body)
+      ::Metadata::SchemaDotOrg.schema_type?(@version.cocina_display)
     end
 
     def schema_dot_org
-      ::Metadata::SchemaDotOrg.call(cocina_body)
+      ::Metadata::SchemaDotOrg.call(@version.cocina_display, thumbnail: representative_thumbnail)
     end
 
     def title

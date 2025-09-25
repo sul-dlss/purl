@@ -2,22 +2,28 @@
 
 module Metadata
   class SchemaDotOrg
-    def self.call(cocina_json)
-      new(cocina_json).call
+    attr_reader :cocina_display
+
+    def self.call(cocina_display, thumbnail: nil)
+      new(cocina_display, thumbnail:).call
     end
 
-    def self.schema_type?(cocina_json)
-      new(cocina_json).schema_type?
+    def self.schema_type?(cocina_display)
+      new(cocina_display).schema_type?
     end
 
-    def initialize(cocina_json)
-      @cocina_json = cocina_json
+    def initialize(cocina_display, thumbnail: nil)
+      @cocina_json = cocina_display.cocina_doc
+      @cocina_display = cocina_display
+      @thumbnail = thumbnail
     end
+
+    delegate :dataset?, :druid, to: :cocina_display
 
     def call
       { '@context': 'http://schema.org',
         '@type': schema_type,
-        name: title_name,
+        name: cocina_display.display_title,
         description: }
         .merge(format_specific_fields)
         .compact
@@ -38,36 +44,21 @@ module Metadata
       'VideoObject' if render_video_metadata?
     end
 
-    def dataset?
-      # has a form with value of dataset and type of genre
-      dataset = JsonPath.new("$.description.form[?(@['value'] == 'dataset' && @['type'] == 'genre')]").on(@cocina_json)
-      dataset.any?
-    end
-
     def render_video_metadata?
       # Only return video metadata if world-downloadable.
       video = JsonPath.new("$.structural.contains[?(@['type'] == 'https://cocina.sul.stanford.edu/models/resources/video')]").on(@cocina_json)
       video.any? && object_access? && video_access?
     end
 
-    def title_name
-      # title.value or concatenated title.structuredValue 1) for title with status "primary" if present 2) for first title
-      # required for Datasets and Videos
-      titles = JsonPath.new("$.description.title[?(@['status' == 'primary'])].structuredValue[*].value").on(@cocina_json)
-      return titles.join(': ') unless titles.empty?
-
-      JsonPath.new('$.description.title[0].value').first(@cocina_json)
-    end
-
     def format_specific_fields
       if dataset?
-        return { identifier:,
+        return { identifier: cocina_display.doi_url,
                  isAccessibleForFree: object_access?,
-                 license:,
-                 url:,
+                 license: cocina_display.license_display_data.flat_map(&:values).first,
+                 url: cocina_display.purl_url,
                  creator: creators }
       elsif render_video_metadata?
-        return { thumbnailUrl: thumbnail,
+        return { thumbnailUrl: @thumbnail,
                  uploadDate: upload_date,
                  embedUrl: embed_url }
       end
@@ -77,20 +68,8 @@ module Metadata
     def description
       # description.note where type=summary or type=abstract, concatenating with \n if multiple
       # required for Datasets
-      notes = JsonPath.new("$.description.note[?(@['type'] == 'summary' || @['type'] == 'abstract')].value").on(@cocina_json)
+      notes = cocina_display.abstract_display_data.flat_map(&:values) + cocina_display.general_note_display_data.flat_map(&:values)
       notes.join('\n') unless notes.empty?
-    end
-
-    def identifier
-      # identification.doi or identifier.uri including doi.org or identifier.value with type "doi" (case-insensitive), made into URI if identifier only
-      doi_id = JsonPath.new('$.identification.doi').first(@cocina_json) ||
-               JsonPath.new("$.description.identifier[?(@['type'] == 'doi')].value").first(@cocina_json) ||
-               JsonPath.new("$.description.identifier[?(@['uri'] =~ /doi/)].uri").first(@cocina_json)
-      return unless doi_id
-
-      return [doi_id] if doi_id.start_with?('https://doi.org')
-
-      [URI.join('https://doi.org', doi_id).to_s]
     end
 
     def object_access?
@@ -108,58 +87,16 @@ module Metadata
       file_access == 'world'
     end
 
-    def license
-      JsonPath.new('$.access.license').first(@cocina_json)
-    end
-
-    def url
-      JsonPath.new('$.description.purl').first(@cocina_json)
-    end
-
     def creators
-      # contributor.identifier.uri or contributor.identifier.value with type "orcid" (case-insensitive), made into URI if identifier only
-      contributors = JsonPath.new('$.description.contributor[*]').on(@cocina_json)
-
-      contributors.map do |contributor|
+      cocina_display.contributors.map do |contributor|
+        has_orcid = contributor.identifiers.find { it.type == 'ORCID' || it.uri.include?('orcid.org') }
+        orcid_id = has_orcid.present? ? has_orcid.to_s : nil
         { '@type': 'Person',
-          name: creator_name(contributor),
-          givenName: given_name(contributor),
-          familyName: family_name(contributor),
-          sameAs: orcid(contributor) }.compact
+          name: contributor.display_name,
+          givenName: contributor.forename,
+          familyName: contributor.surname,
+          sameAs: orcid_id }.compact
       end
-    end
-
-    def creator_name(contributor)
-      # contributor.name.value or concatenated contributor.name.structuredValue
-      JsonPath.new('$.name[0].value').first(contributor) || structured_name(contributor)
-    end
-
-    def structured_name(contributor)
-      # concatenated contributor.name.structuredValue
-      [given_name(contributor), family_name(contributor)].join(' ')
-    end
-
-    def given_name(contributor)
-      # contributor.name.structuredValue.value with type "forename"
-      JsonPath.new("$.name[0].structuredValue[*].[?(@['type'] == 'forename')].value").first(contributor)
-    end
-
-    def family_name(contributor)
-      # contributor.name.structuredValue.value with type "surname"
-      JsonPath.new("$.name[0].structuredValue[*].[?(@['type'] == 'surname')].value").first(contributor)
-    end
-
-    def orcid(contributor)
-      # contributor.identifier.uri or contributor.identifier.value with type "orcid" (case-insensitive), made into URI if identifier only
-      identifier = JsonPath.new('$.identifier[*].uri').first(contributor)
-      return identifier if identifier.present?
-
-      orcid = JsonPath.new("$.identifier[*].[?(@['type'] == 'ORCID' || @['type'] == 'orcid')].value").first(contributor)
-      return if orcid.blank?
-
-      return orcid if orcid.start_with?('https://orcid.org')
-
-      URI.join('https://orcid.org/', orcid).to_s
     end
 
     def embed_url
@@ -176,10 +113,6 @@ module Metadata
 
     def bare_druid
       druid.delete_prefix('druid:')
-    end
-
-    def druid
-      JsonPath.new('$.externalIdentifier').first(@cocina_json)
     end
 
     def thumbnail
