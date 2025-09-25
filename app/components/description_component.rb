@@ -38,13 +38,11 @@ class DescriptionComponent < ViewComponent::Base
   end
 
   def publication_places
-    objects = cocina_display.publication_places
-    [CocinaDisplay::DisplayData.new(label: 'Place', objects:)] if objects.present?
+    CocinaDisplay::DisplayData.from_strings(cocina_display.publication_places, label: 'Place').presence
   end
 
   def publisher
-    objects = cocina_display.publisher_names
-    [CocinaDisplay::DisplayData.new(label: 'Publisher', objects:)] if objects.present?
+    CocinaDisplay::DisplayData.from_strings(cocina_display.publisher_names, label: 'Publisher').presence
   end
 
   def render?
