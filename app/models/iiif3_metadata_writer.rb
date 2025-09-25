@@ -18,6 +18,10 @@ class Iiif3MetadataWriter
       notes + subjects + coverage + dates + identifiers + publisher + collection + publication
   end
 
+  def summary
+    extract_notes['Description']&.first
+  end
+
   private
 
   def formatted_published_date

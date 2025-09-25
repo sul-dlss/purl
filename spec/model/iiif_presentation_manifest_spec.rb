@@ -83,7 +83,7 @@ RSpec.describe IiifPresentationManifest do
 
       it 'makes the manifest' do
         expect(json['sequences'].length).to eq 1
-        expect(json['metadata'].length).to eq 29
+        expect(json['metadata'].length).to eq 24
       end
     end
 
@@ -250,28 +250,28 @@ RSpec.describe IiifPresentationManifest do
         expect(json['metadata'].size).to eq(22) # 21 DC elements are there + the publish date + Available Online
         # rubocop:disable Layout/LineLength
         expected_metadata = [
-          { 'label' => 'Available Online', 'value' => "<a href='http://purl.stanford.edu/bb157hs6068'>http://purl.stanford.edu/bb157hs6068</a>" },
+          { 'label' => 'Available Online', 'value' => "<a href='https://purl.stanford.edu/bb157hs6068'>https://purl.stanford.edu/bb157hs6068</a>" },
           { 'label' => 'Title', 'value' => 'NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES DIVERS MOUVEMENS DES PLANETES ET LEURS DIVERSES REVOLUTIONS, AVEC DES REMARQUES HISTORIQUES POUR CONDUIRE A CETTE CONNOISSANCE' },
           { 'label' => 'Creator', 'value' => 'Chatelain, Henri Abraham' },
-          { 'label' => 'Type', 'value' => 'map' },
+          { 'label' => 'Type', 'value' => 'Map' },
           { 'label' => 'Type', 'value' => 'Digital Maps' },
           { 'label' => 'Type', 'value' => 'Early Maps' },
           { 'label' => 'Format', 'value' => '51.5 x 59.8 cm., including title along top and border, with 10 diagrams/maps and 6 columns of titled text.' },
           { 'label' => 'Description', 'value' => 'Tom.1. No.9. (top right).' },
-          { 'label' => 'Description', 'value' => 'LC 548, 579; Koeman II, Cha 1,2; UCB; Ashley Baynton-Williams.' },
           { 'label' => 'Description', 'value' => 'California, with open northern edge, suggesting it may be an island and that northwest passage may exist, on 2 small hemisphere maps, each with 5 cm. diameter. First with title: Hemisphere terrestre pour faire | observer les 6 grands cercles de la sphere. Second with title: Hemisphere terrestre pour dis= tinguer les 4 petits cercles, et les 5 zo.' },
           { 'label' => 'Description', 'value' => "The larger diagrams are entitled: Le monde selon l'hypothese de copernic et la disposition des planetes ala naissance de Louis XIV, Sphere artificielle, Sisteme de Copernic sur les divers mouvemens des planetes, Sisteme de Ticho Brahe,Sisteme de Ptolomée, Idee generale pour faire comprendre les divers signes que la terre parcourt autour du soleil qui servent a regler les saisons (celestial chart)." },
           { 'label' => 'Description', 'value' => "The text is entitled: Remarque sur les divers mouvemens de la terre, Remarque sur le mouvemens et l'arrangement des planetes, Remarque sur la sphere, Remarque sur la maniere dont se font les saisons, Suite de la remarque sur la sphere, Conclusion et reflection morale, Comment l'hypothese de Copernic est conforme aux loix du mouvemens et de la nature, Inconveniens et difficultez qui resultent des sistemes de Ptolemeé et Ticho Brahe." },
-          { 'label' => 'Description', 'value' => "First issued in his: Atlas historique, ou nouvelle introduction a l'histoire , à la chronologie & à la géographie ancienne & moderne ... -- Amsterdam. 1705. Reissued in 1721 (with imprint as above)." },
-          { 'label' => 'Description', 'value' => '[Henry Abraham Châtelain].' },
-          { 'label' => 'Subject', 'value' => 'Astronomy--Charts, diagrams, etc' },
-          { 'label' => 'Subject', 'value' => 'California as an island--Maps' },
-          { 'label' => 'Coverage', 'value' => 'W 180° --E 180°/N 85° --S 85°' },
+          { 'label' => 'References', 'value' => 'LC 548, 579; Koeman II, Cha 1,2; UCB; Ashley Baynton-Williams.' },
+          { 'label' => 'Publications', 'value' => "First issued in his: Atlas historique, ou nouvelle introduction a l'histoire , à la chronologie & à la géographie ancienne & moderne ... -- Amsterdam. 1705. Reissued in 1721 (with imprint as above)." },
+          { 'label' => 'Statement of responsibility', 'value' => '[Henry Abraham Châtelain].' },
+          { 'label' => 'Subject', 'value' => 'Astronomy > Charts, diagrams, etc' },
+          { 'label' => 'Subject', 'value' => 'California as an island > Maps' },
+          { 'label' => 'Coverage', 'value' => '180°00′00″W -- 180°00′00″E / 85°00′00″N -- 85°00′00″S' },
           { 'label' => 'Date', 'value' => '1721' },
-          { 'label' => 'Identifier', 'value' => '1040' },
+          { 'label' => 'Identifier', 'value' => 'Post publication map number: 1040' },
           { 'label' => 'Identifier', 'value' => 'https://purl.stanford.edu/bb157hs6068' },
           { 'label' => 'Relation', 'value' => 'The Glen McLaughlin Map Collection of California as an Island' },
-          { 'label' => 'PublishDate', 'value' => '2025-03-11T20:56:17Z' }
+          { 'label' => 'Record published', 'value' => '2025-08-11' }
         ]
         # rubocop:enable Layout/LineLength
         expect(json['metadata']).to eq(expected_metadata)

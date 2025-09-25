@@ -14,8 +14,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
 
   class ObjectNotReady < StandardError; end
 
-  MODS_NS = 'http://www.loc.gov/mods/v3'
-
   def persisted?
     true
   end

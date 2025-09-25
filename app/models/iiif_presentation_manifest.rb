@@ -18,9 +18,6 @@ class IiifPresentationManifest
 
   include ActionView::Helpers::NumberHelper
 
-  OAI_DC_SCHEMA = 'http://www.openarchives.org/OAI/2.0/oai_dc/'
-  MODS_SCHEMA = 'http://www.loc.gov/mods/v3'
-
   def initialize(purl_version, iiif_namespace: :iiif, controller: nil)
     @purl_version = purl_version
     @iiif_namespace = iiif_namespace
@@ -66,17 +63,6 @@ class IiifPresentationManifest
     %w[world stanford].include? file.access.download
   end
 
-  def description_or_note
-    @description_or_note ||= begin
-      ns = {
-        'dc' => 'http://purl.org/dc/elements/1.1/',
-        'oai_dc' => 'http://www.openarchives.org/OAI/2.0/oai_dc/'
-      }
-
-      public_xml_document.at_xpath('//oai_dc:dc/dc:description', ns).try(:text)
-    end
-  end
-
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
   def body
     manifest_data = {
@@ -99,13 +85,12 @@ class IiifPresentationManifest
     # Set viewingHint to paged if this is a book
     manifest.viewingHint = 'paged' if book?
 
-    manifest.metadata = dc_to_iiif_metadata if dc_to_iiif_metadata.present?
-    manifest.metadata.unshift(
-      'label' => 'Available Online',
-      'value' => "<a href='#{controller.purl_url(druid)}'>#{controller.purl_url(druid)}</a>"
-    )
+    metadata_writer = Iiif2MetadataWriter.new(cocina_display: purl_version.cocina_display,
+                                              published_date: updated_at,
+                                              collection_title:)
 
-    manifest.description = description_or_note
+    manifest.metadata = metadata_writer.write.flatten
+    manifest.description = metadata_writer.summary if metadata_writer.summary.present?
 
     sequence = IIIF::Presentation::Sequence.new(
       '@id' => "#{manifest_url}#sequence-1",
@@ -167,6 +152,11 @@ class IiifPresentationManifest
     fileset = page_image_filesets.find { |fileset| fileset.cocina_id == annotation_id }
 
     annotation_for_file(fileset.image_file) if fileset
+  end
+
+  def collection_title
+    (_collection, collection_head_version) = containing_purl_collections&.first
+    collection_head_version&.display_title
   end
 
   def canvas_for_file(file)
@@ -265,22 +255,6 @@ class IiifPresentationManifest
       'profile' => 'http://iiif.io/api/search/1/search',
       'label' => 'Search within this manifest'
     }
-  end
-
-  # transform all DC metadata in the public XML into an array of hashes for inclusion in the IIIF manifest
-  def dc_to_iiif_metadata
-    @dc_to_iiif_metadata ||= begin
-      all_dc_nodes = public_xml_document.xpath '//oai_dc:dc/*', 'oai_dc' => OAI_DC_SCHEMA
-      metadata = all_dc_nodes.filter_map { |dc_node| iiif_key_value(dc_node.name.upcase_first, dc_node.text) }
-      metadata += public_xml_document.xpath('/publicObject/@published').map { |node| iiif_key_value('PublishDate', node.text) } # add published date
-      metadata
-    end
-  end
-
-  def iiif_key_value(label, value)
-    return if value.blank?
-
-    { 'label' => label, 'value' => value }
   end
 
   # @return [IIIF::Presentation::ImageResource] or nil
