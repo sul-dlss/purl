@@ -4,8 +4,6 @@
     <%= render Show::Description::FieldComponent.new(values: general_note_display_data, delimiter: nil) %>
     <%= render Show::Description::RelatedResourcesFieldComponent.with_collection(related_resource_display_data) %>
     <%= render Show::Description::FieldComponent.new(values: identifier_display_data, delimiter: ', ') %>
-
-    <%= render Show::Description::FieldComponent.new(values: doi_display_data, delimiter: ', ') %>
     <%= render Show::Description::FieldComponent.new(values: access_display_data, delimiter: nil) %>
   <% end %>
 <% end %>

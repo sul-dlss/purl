@@ -121,7 +121,6 @@ class Iiif3MetadataWriter
       id.values.map { |i| id.label == 'Identifier' ? i : "#{id.label}: #{i}" }
     end
     ids.push url
-    ids.push "doi: #{cocina_display.doi_url}" if cocina_display.doi
 
     ids.present? ? [iiif_key_value('Identifier', ids)] : []
   end
