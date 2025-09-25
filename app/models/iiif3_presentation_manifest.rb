@@ -33,8 +33,6 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
     # Set behavior to paged if this is a book
     manifest['behavior'] = ['paged'] if book?
-    (_collection, collection_head_version) = containing_purl_collections&.first
-    collection_title = collection_head_version&.display_title
     metadata_writer = Iiif3MetadataWriter.new(cocina_display: purl_version.cocina_display,
                                               published_date: updated_at,
                                               collection_title:)
@@ -45,7 +43,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       manifest['@context'] += ['http://iiif.io/api/extension/navplace/context.json']
     end
 
-    manifest.summary = { 'en' => [description_or_note] } if description_or_note.present?
+    manifest.summary = { 'en' => [metadata_writer.summary] } if metadata_writer.summary.present?
 
     manifest.viewingDirection = purl_version.structural_metadata.viewing_direction || 'left-to-right'
 
