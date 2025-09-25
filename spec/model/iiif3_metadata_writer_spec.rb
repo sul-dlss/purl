@@ -262,7 +262,7 @@ RSpec.describe Iiif3MetadataWriter do
         expect(field_value('Abstract')).to eq ['This is the abstract field']
         expect(field_value('Subject')).to eq ['keyword', 'Another neat tool']
         expect(field_value('Date')).to eq ['February 20, 2025', 'April  5, 2024', 'January  3, 2025']
-        expect(field_value('Identifier')).to eq ['https://sul-purl-stage.stanford.edu/zw438wf4318', 'doi: https://doi.org/10.80343/zw438wf4318']
+        expect(field_value('Identifier')).to eq ['DOI: https://doi.org/10.80343/zw438wf4318', 'https://sul-purl-stage.stanford.edu/zw438wf4318']
         expect(field_value('Relation')).to eq ['viewer testing']
         expect(field_value('Preferred citation')).to eq ['This is the citation']
         expect(field_value('Contact')).to eq ['bergeraj@stanford.edu']
