@@ -37,11 +37,6 @@ class DescriptionComponent < ViewComponent::Base
     cocina_display.title_display_data.reject { it.label == 'Title' }
   end
 
-  def resource_types
-    objects = cocina_display.mods_resource_types
-    [CocinaDisplay::DisplayData.new(label: 'Resource Type', objects:)] if objects.present?
-  end
-
   def publication_places
     objects = cocina_display.publication_places
     [CocinaDisplay::DisplayData.new(label: 'Place', objects:)] if objects.present?
