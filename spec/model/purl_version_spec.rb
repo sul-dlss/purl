@@ -332,8 +332,7 @@ RSpec.describe PurlVersion do
       let(:druid) { 'wm135gp2721' }
 
       it 'returns the DOI' do
-        expect(instance.doi).to eq 'https://doi.org/10.25740/wm135gp2721'
-        expect(instance.doi_id).to eq '10.25740/wm135gp2721'
+        expect(instance.doi).to eq '10.25740/wm135gp2721'
       end
     end
 
@@ -342,7 +341,6 @@ RSpec.describe PurlVersion do
 
       it 'returns nil' do
         expect(instance.doi).to be_nil
-        expect(instance.doi_id).to be_nil
       end
     end
   end

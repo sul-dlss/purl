@@ -9,18 +9,17 @@ class BibliographicComponent < ViewComponent::Base
   attr_reader :version
 
   delegate :cocina_display, to: :version
-  delegate :general_note_display_data, :identifier_display_data, :access_display_data, :related_resource_display_data, to: :cocina_display
-  delegate :doi, to: :version
+  delegate :general_note_display_data, :identifier_display_data, :access_display_data, :related_resource_display_data, :doi_url, to: :cocina_display
 
   def render?
     general_note_display_data.present? ||
       related_resource_display_data.present? ||
       identifier_display_data.present? ||
-      doi.present? ||
+      doi_url.present? ||
       access_display_data.present?
   end
 
   def doi_display_data
-    [CocinaDisplay::DisplayData.new(label: 'DOI', objects: [doi])] if doi.present?
+    [CocinaDisplay::DisplayData.new(label: 'DOI', objects: [doi_url])] if doi_url.present?
   end
 end

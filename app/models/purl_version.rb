@@ -125,7 +125,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   end
 
   concerning :Metadata do # rubocop:disable Metrics/BlockLength
-    delegate :display_title, to: :cocina_display
+    delegate :display_title, :doi, to: :cocina_display
 
     def description
       @description ||= begin
@@ -174,23 +174,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     # @return [StructuralMetadata::File] the thumbnail file
     def thumbnail
       thumbnail_service.thumb
-    end
-
-    # @return [String,nil] DOI (with https://doi.org/ prefix) if present
-    def doi
-      @doi ||= begin
-        val = JsonPath.new('$.identification.doi').first(cocina) ||
-              JsonPath.new("$.description.identifier[?(@['type'] == 'doi')].value").first(cocina) ||
-              JsonPath.new("$.description.identifier[?(@['uri'] =~ /doi/)].uri").first(cocina)
-        if val
-          val.start_with?('https://doi.org/') ? val : "https://doi.org/#{val}"
-        end
-      end
-    end
-
-    # @return [String,nil] DOI (without https://doi.org/ prefix) if present
-    def doi_id
-      doi&.delete_prefix('https://doi.org/')
     end
   end
 
