@@ -10,10 +10,9 @@ module Show
 
     attr_accessor :version, :purl
 
-    delegate :embeddable?, :containing_collections, :cocina_body, :druid, :cocina_display, :display_title,
+    delegate :embeddable?, :containing_collections, :cocina_body, :druid, :version_id, :cocina_display, :display_title,
              :representative_thumbnail, :representative_thumbnail?, :withdrawn?, to: :version
     delegate :releases, to: :purl
-    delegate :embeddable_url, to: :helpers
     delegate :abstract_display_data, :subject_all, to: :cocina_display
 
     def schema_dot_org?
@@ -29,7 +28,7 @@ module Show
     end
 
     def oembed_path(format)
-      oembed_url_template.expand(format: format, application_options: oembed_url_template_options, url: embeddable_url(version))
+      oembed_url_template.expand(format: format, application_options: oembed_url_template_options, url: embeddable_url)
     end
 
     def oembed_url_template
@@ -46,6 +45,14 @@ module Show
 
     def description
       abstract_display_data.flat_map(&:values).first
+    end
+
+    # Create the URL to pass to the embed service.  The embed service will create the viewer we display on the page.
+    def embeddable_url
+      args = Rails.env.development? ? { host: 'purl.stanford.edu' } : {}
+      versioned_path = version_purl_url(druid, version_id, args)
+
+      current_page?(versioned_path) ? versioned_path : purl_url(druid, args)
     end
   end
 end
