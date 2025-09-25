@@ -27,10 +27,6 @@ class PurlController < ApplicationController
         render xml: @version.public_xml_body
       end
 
-      format.mods do
-        render xml: @version.public_xml.mods.to_xml
-      end
-
       format.meta_json do
         render json: @purl.meta_json, content_type: 'application/json'
       end
