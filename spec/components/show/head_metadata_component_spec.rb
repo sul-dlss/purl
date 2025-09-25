@@ -24,10 +24,13 @@ RSpec.describe Show::HeadMetadataComponent, type: :component do
       expect(link['href']).to eq 'https://embed.stanford.edu/embed.json?url=https%3A%2F%2Fpurl.stanford.edu%2Fzb733jx3137%2Fversion%2F3'
       link = page.find('link[rel="alternate"][title="IIIF Manifest"]', visible: false)
       expect(link['href']).to eq 'http://purl.stanford.edu/zb733jx3137/iiif/manifest'
+      expect(page).to have_css 'meta[name="keywords"][content="Web-based Distributed Authoring and Versioning (Standard),Tests"]', visible: :hidden
+      expect(page).to have_css 'meta[name="description"][content="This is a test to see where the issue is with versioning with the review workflow on. ' \
+                               'Something is not quite right here."]', visible: :hidden
     end
   end
 
-  context 'with a crawlable object that has aDOI' do
+  context 'with a crawlable object that has a DOI' do
     let(:druid) { 'wm135gp2721' }
 
     before do

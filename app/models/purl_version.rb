@@ -84,10 +84,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
       !webarchive_seed? && !webarchive_binary? && !collection?
   end
 
-  def mods
-    @mods ||= mods_display_object.mods_display_html&.presence
-  end
-
   def iiif_manifest(**)
     @iiif_manifest ||= if iiif2_manifest?
                          iiif2_manifest(**)
@@ -126,17 +122,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
 
   concerning :Metadata do # rubocop:disable Metrics/BlockLength
     delegate :display_title, to: :cocina_display
-
-    def description
-      @description ||= begin
-        abstract = mods.abstract.detect { |a| a.respond_to? :values }
-        if abstract
-          abstract.values.join.strip
-        else
-          ''
-        end
-      end
-    end
 
     def type
       @type ||= cocina['type']
@@ -221,10 +206,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
 
   def cocina_display
     @cocina_display ||= CocinaDisplay::CocinaRecord.new(cocina)
-  end
-
-  def mods_display_object
-    @mods_display_object ||= ModsDisplay::Record.new(public_xml.mods.to_xml)
   end
 
   def metrics_service
