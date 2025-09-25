@@ -46,6 +46,7 @@ class PurlController < ApplicationController
       end
 
       format.jpeg do
+        # Lane is using these images. See: grep jpg /var/log/apache2/purl_access_ssl.log on the server
         if @version.representative_thumbnail?
           redirect_to @version.representative_thumbnail, allow_other_host: true
         else
