@@ -14,16 +14,19 @@ RSpec.describe Show::HeadMetadataComponent, type: :component do
     let(:druid) { 'zb733jx3137' }
 
     before do
+      vc_test_controller.request.env['HTTPS'] = 'on'
+
       # Required for embeddable_url to work correctly:
-      vc_test_controller.request.path = '/zb733jx3137/version/3'
-      render_inline(component)
+      with_request_url '/zb733jx3137/version/3' do
+        render_inline(component)
+      end
     end
 
     it 'draws the page' do
       link = page.find('link[rel="alternate"][title="oEmbed Profile"][type="application/json+oembed"]', visible: false)
       expect(link['href']).to eq 'https://embed.stanford.edu/embed.json?url=https%3A%2F%2Fpurl.stanford.edu%2Fzb733jx3137%2Fversion%2F3'
       link = page.find('link[rel="alternate"][title="IIIF Manifest"]', visible: false)
-      expect(link['href']).to eq 'http://purl.stanford.edu/zb733jx3137/iiif/manifest'
+      expect(link['href']).to eq 'https://purl.stanford.edu/zb733jx3137/iiif/manifest'
       expect(page).to have_css 'meta[name="keywords"][content="Web-based Distributed Authoring and Versioning (Standard),Tests"]', visible: :hidden
       expect(page).to have_css 'meta[name="description"][content="This is a test to see where the issue is with versioning with the review workflow on. ' \
                                'Something is not quite right here."]', visible: :hidden

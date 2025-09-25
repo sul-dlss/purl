@@ -10,10 +10,6 @@ class VersionsComponent < ViewComponent::Base
 
   attr_reader :purl, :label_id
 
-  def embeddable_url
-    @embeddable_url ||= helpers.embeddable_url(purl.druid)
-  end
-
   def versions
     purl.versions.sort_by(&:version_id).reverse
   end
