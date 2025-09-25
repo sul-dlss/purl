@@ -5,3 +5,4 @@
 
 Mime::Type.register 'application/xml', :mods
 Mime::Type.register 'application/meta+json', :meta_json
+Mime::Type.register "application/ld+json", :jsonld

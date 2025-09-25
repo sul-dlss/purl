@@ -5,16 +5,14 @@ class IiifController < ApplicationController
   before_action :load_version
 
   def manifest
-    iiif_version = params[:iiif_version] == 'v3' ? 3 : 2
-
     return unless stale?(last_modified: @version.updated_at.utc, etag: "#{@version.cache_key}/#{iiif_version}/#{@version.updated_at.utc}")
     return render json: { error: 'Not embeddable' }, status: :not_found unless @version.embeddable? || @version.collection?
 
     manifest = Rails.cache.fetch(cache_key('manifest', iiif_version), expires_in: Settings.resource_cache.lifetime) do
       iiif_manifest.body.to_ordered_hash
     end
-
-    render json: JSON.pretty_generate(manifest.as_json)
+    render json: JSON.pretty_generate(manifest.as_json),
+           content_type: "application/ld+json; profile=\"http://iiif.io/api/presentation/#{iiif_version}/context.json\""
   rescue IIIF::V3::Presentation::MissingRequiredKeyError
     # If the object has no published files, the manifest will not be valid.
     head :not_found
@@ -65,11 +63,20 @@ class IiifController < ApplicationController
   end
 
   def iiif_manifest
-    @iiif_manifest ||= if params[:iiif_version] == 'v3'
+    @iiif_manifest ||= if iiif_version == 3
                          @version.iiif3_manifest(controller: self, iiif_namespace: params[:iiif_scope] == 'iiif3' ? :iiif3 : :iiif)
                        else
                          @version.iiif_manifest(controller: self)
                        end
+  end
+
+  def iiif_version
+    @iiif_version ||= if request.headers['accept'].include?('profile="http://iiif.io/api/presentation/3/context.json"') ||
+                         params[:iiif_version] == 'v3'
+                        3
+                      else
+                        2 # Default to IIIF 2.0 if no version is specified
+                      end
   end
 
   # validate that the id is of the proper format
