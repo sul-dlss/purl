@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe AccessComponent, type: :component do
   subject(:component) { described_class.new(version:) }
 
-  let(:purl) { PurlResource.new(id: druid) }
+  let(:purl) { Purl.new(id: druid) }
   let(:druid) { 'bb737zp0787' }
   let(:version) { purl.version(:head) }
 

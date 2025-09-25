@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe VersionsComponent, type: :component do
   let(:instance) { described_class.new(purl:, version: purl.version(:head)) }
-  let(:purl) { PurlResource.new(id: 'zb733jx3137') }
+  let(:purl) { Purl.new(id: 'zb733jx3137') }
 
   before do
     vc_test_controller.request.env['HTTPS'] = 'on'

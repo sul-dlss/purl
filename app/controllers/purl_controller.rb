@@ -72,7 +72,7 @@ class PurlController < ApplicationController
 
   # validate that the id is of the proper format
   def load_purl
-    @purl = PurlResource.find(params[:id])
+    @purl = Purl.find(params[:id])
   end
 
   def load_version

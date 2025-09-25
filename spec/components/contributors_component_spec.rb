@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe ContributorsComponent, type: :component do
   subject(:component) { described_class.new(version: version) }
 
-  let(:purl) { PurlResource.new(id: druid) }
+  let(:purl) { Purl.new(id: druid) }
   let(:version) { purl.version(:head) }
 
   before do

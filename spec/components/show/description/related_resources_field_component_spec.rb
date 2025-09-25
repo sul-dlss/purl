@@ -6,7 +6,7 @@ RSpec.describe Show::Description::RelatedResourcesFieldComponent, type: :compone
   subject(:component) { described_class.new(related_resources_field:) }
 
   let(:values) do
-    PurlResource.new(id: druid).version(:head).cocina_display.related_resource_display_data
+    Purl.new(id: druid).version(:head).cocina_display.related_resource_display_data
   end
 
   let(:related_resources_field) { values.first }

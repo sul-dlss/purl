@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe SubjectComponent, type: :component do
   subject(:component) { described_class.new(version:) }
 
-  let(:version) { PurlResource.new(id: druid).version(:head) }
+  let(:version) { Purl.new(id: druid).version(:head) }
 
   before do
     render_inline(component)

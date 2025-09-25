@@ -51,7 +51,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   # @return [Array<Array>] a list of PURL resources, PurlVersion tuples of the collections this item is a member of
   def containing_purl_collections
     @containing_purl_collections ||= containing_collections.filter_map do |id|
-      resource = PurlResource.find(id)
+      resource = Purl.find(id)
       return nil unless resource.version(:head).ready?
 
       [resource, resource.version(:head)]

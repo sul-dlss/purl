@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe BibliographicComponent, type: :component do
   subject(:component) { described_class.new(version:) }
 
-  let(:purl) { PurlResource.new(id: druid) }
+  let(:purl) { Purl.new(id: druid) }
   let(:druid) { 'bb000qr5025' }
   let(:version) { purl.version(:head) }
 

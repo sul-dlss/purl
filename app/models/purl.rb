@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class PurlResource
+class Purl
   include ActiveModel::Model
 
   attr_accessor :id
@@ -11,7 +11,7 @@ class PurlResource
   def self.find(id)
     raise DruidNotValid, id unless Dor::Util.validate_druid(id)
 
-    PurlResource.new(id:)
+    Purl.new(id:)
   end
 
   def persisted?

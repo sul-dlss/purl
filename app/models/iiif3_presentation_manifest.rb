@@ -111,12 +111,12 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   end
 
   # Cocina only lists druids for collection objects, not filesets
-  # We need to go grab the PurlResource for the druid
+  # We need to go grab the Purl for the druid
   # It seems like we are only doing this for type images. I am not sure why
   def add_virtual_object_canvases(manifest)
     # For each valid virtual object image, create a canvas for its thumbnail
     structural_metadata.members&.each do |member_druid|
-      purl_version = PurlResource.find(member_druid.delete_prefix('druid:')).version(:head)
+      purl_version = Purl.find(member_druid.delete_prefix('druid:')).version(:head)
       # We are using .thumbail here to get the first image in the object
       thumbnail_fs = purl_version.thumbnail_service.thumb_fs
       # Overwrite default label for virtual objects

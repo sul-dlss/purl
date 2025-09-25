@@ -79,7 +79,7 @@ RSpec.describe 'PURL API' do
         end
 
         before do
-          allow(PurlResource).to receive(:find).and_return(instance_double(PurlResource, version:))
+          allow(Purl).to receive(:find).and_return(instance_double(Purl, version:))
         end
 
         it 'returns the Cocina json for the requested version' do
@@ -153,7 +153,7 @@ RSpec.describe 'PURL API' do
         end
 
         before do
-          allow(PurlResource).to receive(:find).and_return(instance_double(PurlResource, version:))
+          allow(Purl).to receive(:find).and_return(instance_double(Purl, version:))
         end
 
         it 'returns the public XML for the requested version' do
@@ -225,11 +225,11 @@ RSpec.describe 'PURL API' do
             }
           COCINA
         end
-        let(:purl_resource) { PurlResource.new(id: 'bw368gx2874') }
+        let(:purl_resource) { Purl.new(id: 'bw368gx2874') }
         let(:releases) { instance_double(Releases, crawlable?: false) }
 
         before do
-          allow(PurlResource).to receive(:find).and_return(purl_resource)
+          allow(Purl).to receive(:find).and_return(purl_resource)
           allow(purl_resource).to receive_messages(version:, releases:)
         end
 

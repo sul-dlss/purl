@@ -47,7 +47,7 @@ RSpec.describe IiifPresentationManifest do
 
     let(:controller) { PurlController.new }
 
-    let(:resource) { PurlResource.find(druid).version(:head) }
+    let(:resource) { Purl.find(druid).version(:head) }
     let(:request) { ActionDispatch::TestRequest.create }
 
     before do

@@ -272,7 +272,7 @@ RSpec.describe Iiif3MetadataWriter do
 
     context 'with digital collections style data' do
       let(:cocina_descriptive) do
-        PurlResource.find('bb157hs6068').version(:head).cocina['description']
+        Purl.find('bb157hs6068').version(:head).cocina['description']
       end
 
       it 'extracts the metadata' do
@@ -394,7 +394,7 @@ RSpec.describe Iiif3MetadataWriter do
 
     context 'with extent and map coordinates' do
       let(:cocina_descriptive) do
-        PurlResource.find('bb157hs6068').version(:head).cocina['description']
+        Purl.find('bb157hs6068').version(:head).cocina['description']
       end
 
       it 'extracts the metadata' do
@@ -515,7 +515,7 @@ RSpec.describe Iiif3MetadataWriter do
 
     context 'with table of contents in notes' do
       let(:cocina_descriptive) do
-        PurlResource.find('bc854fy5899').version(:head).cocina['description']
+        Purl.find('bc854fy5899').version(:head).cocina['description']
       end
 
       it 'extracts the metadata' do
@@ -525,7 +525,7 @@ RSpec.describe Iiif3MetadataWriter do
 
     context 'with publisher' do
       let(:cocina_descriptive) do
-        PurlResource.find('zf119tw4418').version(:head).cocina['description']
+        Purl.find('zf119tw4418').version(:head).cocina['description']
       end
 
       it 'extracts the metadata' do
@@ -554,7 +554,7 @@ RSpec.describe Iiif3MetadataWriter do
 
     context 'when the title has parallelValues' do
       let(:cocina_descriptive) do
-        PurlResource.find('bb070yy8209').version(:head).cocina['description']
+        Purl.find('bb070yy8209').version(:head).cocina['description']
       end
 
       it 'extracts all the titles and contributors correctly' do
