@@ -558,7 +558,7 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts all the titles and contributors correctly' do
-        expect(field_value('Title')).to eq ['ال ليل لنا', 'al- Layl lanā']
+        expect(field_value('Title')).to eq ['ال ليل لنا', 'al-Layl lanā']
         expect(field_value('Contributor')).to eq ['صباح، 1927-2014 (actor)', 'Ṣabāḥ, 1927-2014 (actor)', 'ذو الفقار، محمود (director)',
                                                   'Dhū al-Fiqār, Maḥmūd (director)']
       end
