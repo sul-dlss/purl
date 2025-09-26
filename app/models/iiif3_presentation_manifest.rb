@@ -27,14 +27,14 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       }]
     }
 
-    manifest_data['rights'] = purl_version.cocina_display.license if purl_version.cocina_display.license
+    manifest_data['rights'] = cocina_display.license if cocina_display.license
     manifest_data['service'] = [content_search_service] if content_search_service
 
     manifest = iiif_manifest_class.new(manifest_data)
 
     # Set behavior to paged if this is a book
     manifest['behavior'] = ['paged'] if book?
-    metadata_writer = Iiif3MetadataWriter.new(cocina_display: purl_version.cocina_display,
+    metadata_writer = Iiif3MetadataWriter.new(cocina_display:,
                                               published_date: updated_at,
                                               collection_title:)
     manifest.metadata = metadata_writer.write
@@ -486,7 +486,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def nav_place
     @nav_place ||= begin
-      nav_place = IIIF::V3::Presentation::NavPlace.new(coordinate_texts: purl_version.cocina_display.coordinates, base_uri: purl_base_uri)
+      nav_place = IIIF::V3::Presentation::NavPlace.new(coordinate_texts: cocina_display.coordinates, base_uri: purl_base_uri)
       nav_place.valid? ? nav_place.build : nil # if coordinates are invalid, do nothing, else return navPlace element
     end
   end
