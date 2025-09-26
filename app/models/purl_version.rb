@@ -182,8 +182,4 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   def metrics_service
     @metrics_service ||= MetricsService.new
   end
-
-  def cocina_file(filename)
-    structural_metadata.find_file_by_filename(filename)
-  end
 end
