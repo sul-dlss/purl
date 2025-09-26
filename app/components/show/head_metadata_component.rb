@@ -10,7 +10,7 @@ module Show
 
     attr_accessor :version, :purl
 
-    delegate :embeddable?, :containing_collections, :version_id, :cocina_body, :druid, :cocina_display, :display_title,
+    delegate :embeddable?, :containing_collections, :cocina_body, :druid, :cocina_display, :display_title,
              :representative_thumbnail, :representative_thumbnail?, :withdrawn?, to: :version
     delegate :releases, to: :purl
     delegate :embeddable_url, to: :helpers
@@ -29,7 +29,7 @@ module Show
     end
 
     def oembed_path(format)
-      oembed_url_template.expand(format: format, application_options: oembed_url_template_options, url: embeddable_url(druid, version_id))
+      oembed_url_template.expand(format: format, application_options: oembed_url_template_options, url: embeddable_url(version))
     end
 
     def oembed_url_template

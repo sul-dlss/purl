@@ -14,10 +14,10 @@ module ApplicationHelper
   end
 
   # Create the URL to pass to the embed service.  The embed service will create the viewer we display on the page.
-  def embeddable_url(druid, version_id)
+  def embeddable_url(purl_version)
     args = Rails.env.development? ? { host: 'purl.stanford.edu' } : {}
-    return version_purl_url(druid, version_id, args) if request.path == version_purl_path(druid, version_id)
+    versioned_path = version_purl_url(purl_version.druid, purl_version.version_id, args)
 
-    purl_url(druid, args)
+    current_page?(versioned_path) ? versioned_path : purl_url(purl_version.druid, args)
   end
 end
