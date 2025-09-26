@@ -222,11 +222,12 @@ RSpec.describe IiifPresentationManifest do
     context 'with a map' do
       let(:druid) { 'bb157hs6068' }
 
-      it 'is successful' do
+      it 'is successful' do # rubocop:disable RSpec/ExampleLength, RSpec/MultipleExpectations
         expect(json['@context']).to eq 'http://iiif.io/api/presentation/2/context.json'
         expect(json['label']).to include 'NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES' # ...
         expect(json['description']).to eq 'Tom.1. No.9. (top right).'
         expect(json['attribution']).to start_with 'This work has been identified as being free of known restrictions'
+        expect(json['license']).to eq 'https://creativecommons.org/publicdomain/mark/1.0/'
         expect(json['seeAlso']['@id']).to eq 'http://purl.stanford.edu/bb157hs6068.mods'
         expect(json['thumbnail']['@id']).to eq 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001/full/!400,400/0/default.jpg'
         expect(json['thumbnail']['@type']).to eq 'dctypes:Image'
