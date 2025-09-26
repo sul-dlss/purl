@@ -38,10 +38,8 @@ class PurlController < ApplicationController
       format.json do
         if @version.withdrawn?
           render json: @version.withdrawn_cocina
-        elsif @version.cocina_body
-          render json: @version.cocina_body
         else
-          head :not_found
+          render json: @version.cocina_body
         end
       end
 
