@@ -85,7 +85,7 @@ class IiifPresentationManifest
     # Set viewingHint to paged if this is a book
     manifest.viewingHint = 'paged' if book?
 
-    metadata_writer = Iiif2MetadataWriter.new(cocina_display: purl_version.cocina_display,
+    metadata_writer = Iiif2MetadataWriter.new(cocina_display:,
                                               published_date: updated_at,
                                               collection_title:)
 
