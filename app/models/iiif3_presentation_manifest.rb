@@ -27,6 +27,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       }]
     }
 
+    manifest_data['rights'] = purl_version.cocina_display.license if purl_version.cocina_display.license
     manifest_data['service'] = [content_search_service] if content_search_service
 
     manifest = iiif_manifest_class.new(manifest_data)
@@ -50,7 +51,6 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     manifest.thumbnail = [thumbnail_resource] if thumbnail_resource?
 
     build_canvases(manifest)
-
     manifest
   end
 

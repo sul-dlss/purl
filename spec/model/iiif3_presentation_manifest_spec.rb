@@ -27,6 +27,7 @@ RSpec.describe Iiif3PresentationManifest do
         expect(json['label']['en'].first).to include 'NOUVELLE CARTE DE LA SPHERE POUR FAIRE CONNOITRE LES' # ...
         expect(json['summary']['en'].first).to eq 'Tom.1. No.9. (top right).'
         expect(json['requiredStatement']['value']['en'].first).to start_with 'This work has been identified as being free of known restrictions'
+        expect(json['rights']).to eq 'https://creativecommons.org/publicdomain/mark/1.0/'
         expect(json['seeAlso'].first['id']).to eq 'http://purl.stanford.edu/bb157hs6068.mods'
         expect(json['thumbnail']).to eq [
           { 'type' => 'Image',
