@@ -121,10 +121,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   concerning :Metadata do # rubocop:disable Metrics/BlockLength
     delegate :display_title, :doi, to: :cocina_display
 
-    def type
-      @type ||= cocina['type']
-    end
-
     def item_type
       @item_type ||= ItemType.new(cocina['type'])
     end
@@ -175,14 +171,8 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   # Extracts the minimal cocina JSON for a withdrawn version
   # setting the status to 'withdrawn'
   def withdrawn_cocina
-    {
-      type:,
-      externalIdentifier: cocina['externalIdentifier'],
-      label: cocina['label'],
-      version: cocina['version'],
-      status: 'withdrawn',
-      structural: { contains: [] }
-    }
+    cocina.slice('type', 'externalIdentifier', 'label', 'version')
+          .merge(status: 'withdrawn', structural: { contains: [] })
   end
 
   def cocina_display
