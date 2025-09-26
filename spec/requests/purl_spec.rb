@@ -21,6 +21,18 @@ RSpec.describe 'PURL API' do
     end
   end
 
+  describe 'redirects' do
+    it 'redirects ir:rs276tc2764 to rs276tc2764' do
+      get '/ir:rs276tc2764'
+      expect(response).to redirect_to('/rs276tc2764')
+    end
+
+    it 'redirects qb590gz1324 to cw402ct1499' do
+      get '/qb590gz1324'
+      expect(response).to redirect_to('/cw402ct1499')
+    end
+  end
+
   describe 'PURL page' do
     it 'responds to OPTIONS requests' do
       options '/bb157hs6068'

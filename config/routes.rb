@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   # handle the singe static grandfathered exception (the first druid/PURL we ever issued for publication)
   get '/ir:rs276tc2764', to: redirect('/rs276tc2764')
 
+
+  # https://jirasul.stanford.edu/jira/browse/SAR-3557
+  # This purl was already published on https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2018.00486/full
+  get '/qb590gz1324', to: redirect('/cw402ct1499')
+
   resource :feedback_form, path: 'feedback', only: [:new, :create]
   get 'feedback' => 'feedback_forms#new'
 
