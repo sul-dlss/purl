@@ -54,7 +54,7 @@ module Metadata
       if dataset?
         return { identifier: cocina_display.doi_url,
                  isAccessibleForFree: object_access?,
-                 license: cocina_display.license_display_data.flat_map(&:values).first,
+                 license: cocina_display.license,
                  url: cocina_display.purl_url,
                  creator: creators }
       elsif render_video_metadata?

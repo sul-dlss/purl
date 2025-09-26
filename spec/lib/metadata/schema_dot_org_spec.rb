@@ -343,7 +343,7 @@ RSpec.describe Metadata::SchemaDotOrg do
 
       it 'includes the license' do
         expect(schema_dot_org).to include(
-          license: 'This work is licensed under an Open Data Commons Attribution License v1.0.'
+          license: 'https://opendatacommons.org/licenses/by/1-0/'
         )
       end
     end
