@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe Show::HeadMetadataComponent, type: :component do
   subject(:component) { described_class.new(purl:, version:) }
 
-  let(:purl) { PurlResource.new(id: druid) }
+  let(:purl) { Purl.new(id: druid) }
   let(:version) { purl.version(:head) }
 
   context 'with a version that is not the head' do

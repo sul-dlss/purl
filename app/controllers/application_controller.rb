@@ -3,7 +3,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception, except: [:options]
 
-  rescue_from PurlResource::DruidNotValid, with: :invalid_druid
+  rescue_from Purl::DruidNotValid, with: :invalid_druid
   rescue_from PurlVersion::ObjectNotReady, with: :object_not_ready
 
   def options

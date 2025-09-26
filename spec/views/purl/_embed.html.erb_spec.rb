@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe 'purl/_embed' do
   before { assign(:purl, purl) }
 
-  let(:purl) { PurlResource.new(id: 'bf973rp9392') }
+  let(:purl) { Purl.new(id: 'bf973rp9392') }
 
   it 'displays a purl embed viewer' do
     render

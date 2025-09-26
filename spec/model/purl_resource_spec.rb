@@ -2,13 +2,13 @@
 
 require 'rails_helper'
 
-RSpec.describe PurlResource do
+RSpec.describe Purl do
   let(:instance) { described_class.new(id: druid) }
   let(:druid) { nil }
 
   describe '.find' do
     it 'validates the druid' do
-      expect { described_class.find('xyz') }.to raise_error PurlResource::DruidNotValid
+      expect { described_class.find('xyz') }.to raise_error Purl::DruidNotValid
     end
   end
 

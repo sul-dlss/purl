@@ -15,8 +15,8 @@ class ThumbnailService
     return if structural.members.empty?
 
     begin
-      self.class.new(PurlResource.find(structural.members.first.delete_prefix('druid:')).version(:head).structural_metadata).thumb
-    rescue PurlResource::DruidNotValid
+      self.class.new(Purl.find(structural.members.first.delete_prefix('druid:')).version(:head).structural_metadata).thumb
+    rescue Purl::DruidNotValid
       Honeybadger.notify("Unable to find thumbnail for #{id}. Tried #{structural.members.first}")
     end
   end

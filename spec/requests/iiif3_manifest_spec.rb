@@ -38,11 +38,11 @@ RSpec.describe 'IIIF v3 manifests' do
 
   context 'when the object has no published files' do
     let(:druid) { 'bg387kw8222' }
-    let(:resource) { instance_double(PurlResource, version:) }
+    let(:resource) { instance_double(Purl, version:) }
     let(:version) { instance_double(PurlVersion, updated_at: 2.days.ago, cache_key: 'resource/xxx', ready?: true) }
 
     before do
-      allow(PurlResource).to receive(:find).and_return(resource)
+      allow(Purl).to receive(:find).and_return(resource)
       allow(version).to receive(:iiif3_manifest).and_raise(IIIF::V3::Presentation::MissingRequiredKeyError)
       allow(version).to receive(:embeddable?)
       allow(version).to receive(:collection?)

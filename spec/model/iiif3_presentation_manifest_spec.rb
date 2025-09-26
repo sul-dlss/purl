@@ -12,7 +12,7 @@ RSpec.describe Iiif3PresentationManifest do
   describe '#body' do
     subject(:json) { manifest.body.to_ordered_hash }
 
-    let(:resource) { PurlResource.find(druid).version(:head) }
+    let(:resource) { Purl.find(druid).version(:head) }
     let(:request) { ActionDispatch::TestRequest.create }
 
     before do

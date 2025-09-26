@@ -81,7 +81,7 @@ class IiifController < ApplicationController
 
   # validate that the id is of the proper format
   def load_purl
-    @purl = PurlResource.find(params[:purl_id] || params[:id])
+    @purl = Purl.find(params[:purl_id] || params[:id])
   end
 
   def load_version

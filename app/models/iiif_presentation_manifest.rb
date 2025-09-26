@@ -114,7 +114,7 @@ class IiifPresentationManifest
 
     # For each valid virtual object image, create a canvas for its thumbnail
     structural_metadata.members&.each do |member_druid|
-      purl_version = PurlResource.find(member_druid.delete_prefix('druid:')).version(:head)
+      purl_version = Purl.find(member_druid.delete_prefix('druid:')).version(:head)
       # We are using thumbnail here to get the first image in the object
       thumbnail_file = purl_version.thumbnail
       # Overwrite default label for virtual objects
