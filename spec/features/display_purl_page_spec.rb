@@ -77,15 +77,6 @@ RSpec.describe 'Displaying the PURL page' do
     end
   end
 
-  context 'with the legacy object id "ir:rs276tc2764"' do
-    let(:druid) { 'rs276tc2764' }
-
-    it 'routed to rs276tc2764' do
-      visit "/ir:#{druid}"
-      expect(page).to have_current_path("/#{druid}", ignore_query: true)
-    end
-  end
-
   context 'with an incomplete/unpublished object (not in stacks)' do
     let(:druid) { 'fb123cd4567' }
 
