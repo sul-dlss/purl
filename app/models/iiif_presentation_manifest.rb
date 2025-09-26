@@ -73,6 +73,7 @@ class IiifPresentationManifest
         '@id' => 'https://stacks.stanford.edu/image/iiif/wy534zh7137/SULAIR_rosette/full/400,/0/default.jpg',
         'service' => iiif_service('https://stacks.stanford.edu/image/iiif/wy534zh7137/SULAIR_rosette')
       },
+      'license' => cocina_display.license,
       'seeAlso' => {
         '@id' => controller.purl_url(druid, format: 'mods'),
         'format' => 'application/mods+xml'
