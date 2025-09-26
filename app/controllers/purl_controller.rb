@@ -71,7 +71,8 @@ class PurlController < ApplicationController
   end
 
   def metrics
-    render 'purl/_metrics', locals: { document: @version }
+    render MetricsComponent.new(version: @version,
+                                metrics: MetricsService.new.get_metrics(@version.druid))
   end
 
   private
