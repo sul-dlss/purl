@@ -23,15 +23,13 @@
   </div>
 </div>
 
-<% if Settings.landing_page_druids.present? %>
 <div class="row">
   <div class="col-md-12">
     <h3>Featured Items</h3>
     <ul>
-      <% Settings.landing_page_druids.each do |druid| %>
-        <li><%= link_to_purl(druid) %></li>
+      <% @front_page_items.each do |item| %>
+        <li><%= link_to item.title, item.purl, class: 'su-underline' %></li>
       <% end %>
     </ul>
   </div>
 </div>
-<% end %>

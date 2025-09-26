@@ -4,6 +4,10 @@ require 'rails_helper'
 
 RSpec.describe 'PURL API' do
   describe 'root page' do
+    before do
+      allow(Settings).to receive(:landing_page_druids).and_return(['bc854fy5899'])
+    end
+
     context 'when html is requested' do
       it 'links to selected druids' do
         get '/'
