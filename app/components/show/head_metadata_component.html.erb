@@ -8,7 +8,6 @@
   <%= tag.link rel: "alternate", title: "IIIF Manifest", type: 'application/json', href: manifest_iiif_purl_url(druid) %>
 <% end %>
 <%= tag.link rel: "canonical", href: purl_url(druid) %>
-<%= tag.link rel: "alternate", title: "MODS XML", type: 'application/xml', href: purl_url(druid, format: 'mods') %>
 <%= tag.link rel: "up", href: purl_url(containing_collections.first) if containing_collections.present? %>
 <%= render AltmetricsComponent.new(purl_version: version) %>
 <%= tag.meta name: 'robots', content: 'noindex' unless releases.crawlable? %>
