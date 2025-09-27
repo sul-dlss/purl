@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class PublicXml
-  def initialize(document)
-    @document = document
+  def initialize(public_xml_body)
+    @document = Nokogiri::XML(public_xml_body)
   end
 
   attr_reader :document
