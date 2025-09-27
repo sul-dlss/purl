@@ -5,13 +5,8 @@
 </div>
 
 <% unless withdrawn? %>
-  <% if embeddable? %>
-    <div class="upper-record-metadata row">
-      <div class="col-md-12">
-        <%= render 'embed' %>
-      </div>
-    </div>
-  <% end %>
+  <%= render EmbedComponent.new(version:) %>
+
 
   <div class="record-metadata row gx-5">
     <%= render Show::BodyComponent.new(version:) %>
