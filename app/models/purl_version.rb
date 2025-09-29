@@ -39,13 +39,8 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     cocina_body.present?
   end
 
-  # Fetches the body of the public XML from the public_xml resource
-  def public_xml_document
-    @public_xml_document ||= Nokogiri::XML(public_xml_body)
-  end
-
   def public_xml
-    @public_xml ||= PublicXml.new(public_xml_document)
+    @public_xml ||= PublicXml.new(public_xml_body)
   end
 
   # @return [Array<Array>] a list of PURL resources, PurlVersion tuples of the collections this item is a member of
