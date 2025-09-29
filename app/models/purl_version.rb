@@ -109,10 +109,6 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     "#{Settings.searchworks.url}/catalog?f[collection][]=#{folio_instance_hrid || druid}"
   end
 
-  def metrics
-    metrics_service.get_metrics(druid)
-  end
-
   concerning :Metadata do # rubocop:disable Metrics/BlockLength
     delegate :display_title, :doi, to: :cocina_display
 
@@ -172,9 +168,5 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
 
   def cocina_display
     @cocina_display ||= CocinaDisplay::CocinaRecord.new(cocina)
-  end
-
-  def metrics_service
-    @metrics_service ||= MetricsService.new
   end
 end

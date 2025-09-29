@@ -1,25 +1,25 @@
 <turbo-frame id="metrics-frame">
   <% label_id = 'section-metrics' %>
   <%= render SectionComponent.new(label: 'Usage metrics', label_id: label_id) do %>
-    <% if document.metrics.present? %>
+    <% if metrics.present? %>
       <%= render TableComponent.new(label_id: label_id) do %>
-      <% if document.embeddable? %>
-      <tbody>
-        <tr>
-          <th>Views</th>
-          <td id="view-count"><%= number_with_delimiter document.metrics['unique_views'] %></td>
-        </tr>
-      </tbody>
+        <% if embeddable? %>
+          <tbody>
+            <tr>
+              <th>Views</th>
+              <td id="view-count"><%= unique_views %></td>
+            </tr>
+          </tbody>
+        <% end %>
+        <% if show_download_metrics? %>
+          <tbody>
+            <tr>
+              <th>Downloads</th>
+              <td id="download-count"><%= unique_downloads %></td>
+            </tr>
+          </tbody>
+        <% end %>
       <% end %>
-      <% if document.show_download_metrics? %>
-      <tbody>
-        <tr>
-          <th>Downloads</th>
-          <td id="download-count"><%= number_with_delimiter document.metrics['unique_downloads'] %></td>
-        </tr>
-      </tbody>
-      <% end %>
-    <% end %>
     <% else %>
       <p>No usage metrics available.</p>
     <% end %>
@@ -27,10 +27,10 @@
       Data collected since December 2023.
       <a href="https://sdr.library.stanford.edu/sdr-metrics" class="su-underline">How are these metrics generated?</a>
     </p>
-    <% if document.doi.present? %>
+    <% if doi.present? %>
       <script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
       <p><a href="https://help.altmetric.com/support/solutions/articles/6000232837-what-is-altmetric-and-what-does-it-provide-" class="su-underline" target="_blank" rel="noopener">Altmetric</a> tracks online attention to this work. A badge is shown only when online mentions are found.</p>
-      <div class="altmetric-embed" data-badge-type="donut" data-doi="<%= document.doi %>" data-badge-popover="right" data-hide-no-mentions="true"></div>
+      <div class="altmetric-embed" data-badge-type="donut" data-doi="<%= doi %>" data-badge-popover="right" data-hide-no-mentions="true"></div>
     <% end %>
   <% end %>
 </turbo-frame>
