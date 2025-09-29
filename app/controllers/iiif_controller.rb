@@ -71,7 +71,7 @@ class IiifController < ApplicationController
   end
 
   def iiif_version
-    @iiif_version ||= if request.headers['accept'].include?('profile="http://iiif.io/api/presentation/3/context.json"') ||
+    @iiif_version ||= if request.headers['accept']&.include?('profile="http://iiif.io/api/presentation/3/context.json"') ||
                          params[:iiif_version] == 'v3'
                         3
                       else

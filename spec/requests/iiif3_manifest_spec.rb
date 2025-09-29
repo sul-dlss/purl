@@ -92,6 +92,16 @@ RSpec.describe 'IIIF v3 manifests' do
       end
     end
 
+    context 'with no accept header' do
+      it 'uses the default iiif version' do
+        get '/cg767mn6478/iiif/manifest',
+            headers: { 'Accept' => nil }
+
+        expect(json['@context']).to include('http://iiif.io/api/presentation/2/context.json')
+        expect(response.content_type).to eq 'application/ld+json; profile="http://iiif.io/api/presentation/2/context.json"; charset=utf-8'
+      end
+    end
+
     context 'when a requesting an annotation page' do
       it 'renders' do
         get '/fs053dj6001/iiif3/annotation_page/cocina-fileSet-fs053dj6001-fs053dj6001_1'
