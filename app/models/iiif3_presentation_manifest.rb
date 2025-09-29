@@ -4,7 +4,7 @@ require 'iiif/presentation'
 require 'iiif/v3/presentation'
 
 class Iiif3PresentationManifest < IiifPresentationManifest
-  delegate :object?, :geo?, :image?, :map?, :three_d?, to: :item_type
+  delegate :object?, :geo?, :image?, :map?, :three_d?, :media?, to: :item_type
 
   delegate :file_sets, to: :structural_metadata
   attr_reader :purl_base_uri
@@ -105,8 +105,14 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       # model-viewer only supports glTF/GLB 3D models (in cocina type == 3d)
       next if three_d? && fs.type != 'https://cocina.sul.stanford.edu/models/resources/3d'
 
-      canvas = canvas_for_fileset(fs)
-      manifest.items << canvas if canvas
+      # For media items, we don't want to add non-image/non-media items to items
+      # they belong in rendering
+      if media? && !fs.media? && !fs.image?
+        manifest.rendering += image_rendering_for_fileset(fs)
+      else
+        canvas = canvas_for_fileset(fs)
+        manifest.items << canvas if canvas
+      end
     end
   end
 
