@@ -1,9 +1,7 @@
 stacks:
   url: "https://stacks.stanford.edu"
   iiif_profile: "http://iiif.io/api/image/2/level2.json"
-  root: '/stacks'
-
-content_search:
+  root: "/stacks"
 
 purl_fetcher:
   url: https://purl-fetcher-stage.stanford.edu
