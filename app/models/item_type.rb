@@ -42,4 +42,8 @@ class ItemType
   def object?
     type == 'https://cocina.sul.stanford.edu/models/object'
   end
+
+  def media?
+    type == 'https://cocina.sul.stanford.edu/models/media'
+  end
 end

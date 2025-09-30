@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:qf378nj5000" published="2024-10-18T06:52:47Z" publishVersion="cocina-models/0.98.1">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>Interviews with five striking Chicana/o students after three days into hunger strike</objectLabel>
+    <sourceId source="sul">sulair:V0392_b1_1</sourceId>
+  </identityMetadata>
+  <contentMetadata objectId="druid:qf378nj5000" type="media">
+    <resource id="cocina-fileSet-qf378nj5000-qf378nj5000_1" sequence="1" type="video">
+      <label>Video file</label>
+      <file id="qf378nj5000_thumb.jp2" mimetype="image/jp2" size="329524" publish="yes" shelve="yes" preserve="yes" role="thumbnail">
+        <checksum type="sha1">07e41793eebecd4f7659e379ca8ec69d8b7b7d85</checksum>
+        <checksum type="md5">1ff937099d9fb7af29f61ad3b3763c99</checksum>
+        <imageData height="480" width="640"/>
+      </file>
+      <file id="qf378nj5000_sl.mp4" mimetype="video/mp4" size="325623720" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">d38bf2c32bc01b44034392680581dfe7216f739c</checksum>
+        <checksum type="md5">cf6b9653e4b65dce66031f6d5565f7af</checksum>
+      </file>
+      <file id="qf378nj5000_cap.vtt" mimetype="text/vtt" size="64791" publish="yes" shelve="yes" preserve="yes" role="caption" language="en">
+        <checksum type="sha1">d64f379d134f73fc8bb7fe6d8423861762696f6d</checksum>
+        <checksum type="md5">a5fe233494b8044de8b645521b818e37</checksum>
+      </file>
+      <file id="qf378nj5000_spa_cap.vtt" mimetype="text/vtt" size="54775" publish="yes" shelve="yes" preserve="yes" role="caption" language="es">
+        <checksum type="md5">d539ab06d214b15f3578ade62ff28536</checksum>
+        <checksum type="sha1">00206149d21e287a859856ba1543bc4ffb3c3ad4</checksum>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-qf378nj5000-qf378nj5000_2" sequence="2" type="file">
+      <label>Transcript (English)</label>
+      <file id="qf378nj5000_script.txt" mimetype="text/plain" size="32234" publish="yes" shelve="yes" preserve="yes" role="transcription" language="en">
+        <checksum type="sha1">47508d17322f9aea9c253caf7425154c3c340a36</checksum>
+        <checksum type="md5">1f1cc98a265efb6beb1587c430dcbc79</checksum>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-qf378nj5000-qf378nj5000_3" sequence="3" type="file">
+      <label>Transcript (Spanish)</label>
+      <file id="qf378nj5000_spa_script.txt" mimetype="text/plain" size="28064" publish="yes" shelve="yes" preserve="yes" role="transcription" language="es">
+        <checksum type="md5">73df409a36b66ec482a89293f67860a5</checksum>
+        <checksum type="sha1">0e5f9201d6545c1423f47b27cbd10f687512fcbb</checksum>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-qf378nj5000-qf378nj5000_4" sequence="4" type="image">
+      <label>Image of media</label>
+      <file id="qf378nj5000_img.jp2" mimetype="image/jp2" size="390934" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">2baa7b6bdc00eba5de08ff9fe125c4cd534c977d</checksum>
+        <checksum type="md5">4056632b4d5b05912952d16e47ef5b8c</checksum>
+        <imageData height="746" width="2720"/>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">The materials are open for research use and may be used freely for non-commercial purposes with an attribution. For commercial permission requests, please contact the Stanford University Archives (universityarchives@stanford.edu).</human>
+      <license/>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:qf378nj5000">
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:sb468hb0198"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Interviews with five striking Chicana/o students after three days into hunger strike</dc:title>
+    <dc:contributor>Genero, Jack (interviewer)</dc:contributor>
+    <dc:type>MovingImage</dc:type>
+    <dc:format>1 tape</dc:format>
+    <dc:format>VHS</dc:format>
+    <dc:format>video/mpeg</dc:format>
+    <dc:language>eng</dc:language>
+    <dc:description type="scope and content">Four Stanford Chicana and one Chicano students discuss the reasons behind their hunger strike and the emotions involved.</dc:description>
+    <dc:subject>Stanford University--Strike, 1994.--Mexican American students--California--Stanford.</dc:subject>
+    <dc:date>1994-05-06</dc:date>
+    <dc:identifier>druid:qf378nj5000</dc:identifier>
+    <dc:identifier>V0392_b1_1</dc:identifier>
+    <dc:identifier>https://purl.stanford.edu/qf378nj5000</dc:identifier>
+    <dc:rights>Digital files from the collections of Special Collections and
+                                University Archives may be accessed freely. All requests to
+                                reproduce, publish, quote from, or otherwise use collection
+                                materials must be submitted to speccollref@stanford.edu. Consent is
+                                given on behalf of Special Collections and University Archives as
+                                the owner of the physical items and is not intended to include or
+                                imply permission from the copyright owner. Such permission must be
+                                obtained from the copyright owner, heir(s) or assigns. </dc:rights>
+    <dc:relation type="collection">Interviews with five striking Chicana/o students after three days into hunger strike : May 6, 1994</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>Interviews with five striking Chicana/o students after three days into hunger strike</title>
+    </titleInfo>
+    <name authority="local" type="personal">
+      <namePart>Genero, Jack</namePart>
+      <role>
+        <roleTerm type="text">interviewer</roleTerm>
+      </role>
+    </name>
+    <typeOfResource>moving image</typeOfResource>
+    <physicalDescription>
+      <form valueURI="http://pbcore.org/pbcore-controlled-vocabularies/instantiationphysical-video-vocabulary/#VHS">VHS</form>
+      <form authority="marcform">electronic</form>
+      <internetMediaType>video/mpeg</internetMediaType>
+      <extent>1 tape</extent>
+      <digitalOrigin>reformatted digital</digitalOrigin>
+    </physicalDescription>
+    <language>
+      <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <abstract type="scope and content">Four Stanford Chicana and one Chicano students discuss the reasons behind their hunger strike and the emotions involved.</abstract>
+    <subject authority="lcsh">
+      <topic>Stanford University--Strike, 1994.</topic>
+      <topic>Mexican American students--California--Stanford.</topic>
+    </subject>
+    <originInfo>
+      <dateCreated encoding="w3cdtf" keyDate="yes">1994-05-06</dateCreated>
+      <place>
+        <placeTerm type="text">Stanford (Calif.)</placeTerm>
+      </place>
+    </originInfo>
+    <identifier displayLabel="SU DRUID" type="local">druid:qf378nj5000</identifier>
+    <identifier displayLabel="Source ID" type="local">V0392_b1_1</identifier>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/qf378nj5000</url>
+    </location>
+    <location>
+      <physicalLocation>Stanford University. Libraries &amp; Academic Information Resources. Dept. of Special Collections &amp; University Archives</physicalLocation>
+    </location>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Interviews with Five Striking Chicana/o Students After Three Days into Hunger Strike (V0392)</title>
+      </titleInfo>
+      <identifier displayLabel="SU DRUID"/>
+      <location>
+        <url>http://www.oac.cdlib.org/findaid/ark:/13030/c88k77gp</url>
+      </location>
+    </relatedItem>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Interviews with five striking Chicana/o students after three days into hunger strike : May 6, 1994</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/sb468hb0198</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">The materials are open for research use and may be used freely for non-commercial purposes with an attribution. For commercial permission requests, please contact the Stanford University Archives (universityarchives@stanford.edu).</accessCondition>
+  </mods>
+  <thumb>qf378nj5000/qf378nj5000_thumb.jp2</thumb>
+</publicObject>

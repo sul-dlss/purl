@@ -59,6 +59,10 @@ class StructuralMetadata
       audio? || type == 'https://cocina.sul.stanford.edu/models/resources/video'
     end
 
+    def image?
+      type == 'https://cocina.sul.stanford.edu/models/resources/image'
+    end
+
     def media_file
       return nil unless media?
 

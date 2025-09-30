@@ -103,6 +103,21 @@ RSpec.describe Iiif3PresentationManifest do
       end
     end
 
+    context 'with media with transcript fileset' do
+      let(:druid) { 'qf378nj5000' }
+
+      it 'add both transcripts to rendering' do
+        rendering = json['rendering']
+        expect(rendering.length).to eq 2
+        expect(rendering.pluck('id')).to eq ['https://stacks.stanford.edu/file/qf378nj5000/qf378nj5000_script.txt', 'https://stacks.stanford.edu/file/qf378nj5000/qf378nj5000_spa_script.txt']
+
+        canvas = json['items'].first
+        media = canvas['items'].first['items'].first
+        expect(media['body']['id']).to eq 'https://stacks.stanford.edu/file/qf378nj5000/qf378nj5000_sl.mp4'
+        expect(canvas['placeholderCanvas']['id']).to eq 'https://purl.stanford.edu/qf378nj5000/iiif/canvas/qf378nj5000_thumb.jp2'
+      end
+    end
+
     context 'with a Stanford-only image' do
       let(:druid) { 'bb001dq8600' }
 
@@ -489,12 +504,12 @@ RSpec.describe Iiif3PresentationManifest do
 
         it "skips making a canvas when we can't display the file" do
           expect(json['label']['en'].first).to eq 'شيرين'
-          expect(json['items'].length).to eq 2
+          expect(json['items'].length).to eq 1
 
           canvas = json['items'].first
 
-          expect(canvas['id']).to eq 'https://purl.stanford.edu/fj935vg7746/iiif/canvas/cocina-fileSet-fj935vg7746-fj935vg7746_2'
-          expect(canvas['label']['en']).to eq ['filelist']
+          expect(canvas['id']).to eq 'https://purl.stanford.edu/fj935vg7746/iiif/canvas/cocina-fileSet-fj935vg7746-fj935vg7746_3'
+          expect(canvas['label']['en']).to eq ['photo of media']
           expect(canvas['type']).to eq 'Canvas'
         end
       end
