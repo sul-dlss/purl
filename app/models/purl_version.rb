@@ -109,7 +109,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     "#{Settings.searchworks.url}/catalog?f[collection][]=#{folio_instance_hrid || druid}"
   end
 
-  concerning :Metadata do # rubocop:disable Metrics/BlockLength
+  concerning :Metadata do
     delegate :display_title, :doi, to: :cocina_display
 
     def item_type
@@ -117,8 +117,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
     end
 
     def folio_instance_hrid
-      @folio_instance_hrid ||= cocina['identification']['catalogLinks']
-                               .find { it['catalog'] == 'folio' }&.fetch('catalogRecordId')
+      @folio_instance_hrid ||= cocina_display.folio_hrid
     end
 
     def catalog_key
