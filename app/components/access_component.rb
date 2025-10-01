@@ -16,11 +16,7 @@ class AccessComponent < ViewComponent::Base
   end
 
   def use_and_reproduction
-    @use_and_reproduction ||= stylize_links(auto_link(cocina_display.use_and_reproduction))
-  end
-
-  def stylize_links(text)
-    text.gsub('<a href=', '<a class="su-underline" href=').html_safe # rubocop:disable Rails/OutputSafety
+    @use_and_reproduction ||= auto_link(simple_format(cocina_display.use_and_reproduction), class: 'su-underline')
   end
 
   def copyright
