@@ -41,7 +41,7 @@
 
     .section-body {
       /* prevent URLs from overflowing the "Abstract" area */
-      overflow-wrap: break-word;
+      word-break: break-word;
 
       th {
         padding-left: 0px;
