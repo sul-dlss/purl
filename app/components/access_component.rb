@@ -16,7 +16,7 @@ class AccessComponent < ViewComponent::Base
   end
 
   def use_and_reproduction
-    @use_and_reproduction ||= auto_link(simple_format(cocina_display.use_and_reproduction), class: 'su-underline')
+    @use_and_reproduction ||= auto_link(simple_format(cocina_display.use_and_reproduction), html: { class: 'su-underline' })
   end
 
   def copyright

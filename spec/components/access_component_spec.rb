@@ -29,8 +29,8 @@ RSpec.describe AccessComponent, type: :component do
 
     it 'draws them' do
       expect(page).to have_css 'br', count: 18
-      expect(page).to have_link 'stacemaples@stanford.edu'
-      expect(page).to have_link 'https://adminguide.stanford.edu/chapter-6/subchapter-2/policy-6-2-1'
+      expect(page).to have_link 'stacemaples@stanford.edu', class: 'su-underline'
+      expect(page).to have_link 'https://adminguide.stanford.edu/chapter-6/subchapter-2/policy-6-2-1', class: 'su-underline'
     end
   end
 end
