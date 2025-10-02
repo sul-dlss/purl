@@ -1,9 +1,3 @@
-:root {
-  /* Colors
-     https://identity.stanford.edu/design-elements/color/primary-colors/ */
-  --stanford-cardinal-rgb: 143, 20, 20;
-}
-
 .bg-cardinal {
   --bs-dark-rgb: var(--stanford-cardinal-rgb);
 }
@@ -93,8 +87,6 @@
   }
 
   .orcid-link {
-    white-space: nowrap;
-
     .orcid-icon {
       width: 16px;
       height: 16px;

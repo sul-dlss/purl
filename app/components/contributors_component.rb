@@ -30,7 +30,7 @@ class ContributorsComponent < ViewComponent::Base
     return unless orcid
 
     tag.span class: 'orcid' do
-      link_to(orcid.uri, class: 'su-underline orcid-link', aria: { label: "view ORCID page for #{name}" }) do
+      link_to(orcid.uri, class: 'su-underline orcid-link text-nowrap', aria: { label: "view ORCID page for #{name}" }) do
         image_tag('https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png', alt: 'ORCiD icon', class: 'orcid-icon') +
           orcid.uri
       end
