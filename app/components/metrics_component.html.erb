@@ -6,7 +6,7 @@
         <% if embeddable? %>
           <tbody>
             <tr>
-              <th>Views</th>
+              <th class="text-nowrap">Views</th>
               <td id="view-count"><%= unique_views %></td>
             </tr>
           </tbody>
@@ -14,7 +14,7 @@
         <% if show_download_metrics? %>
           <tbody>
             <tr>
-              <th>Downloads</th>
+              <th class="text-nowrap">Downloads</th>
               <td id="download-count"><%= unique_downloads %></td>
             </tr>
           </tbody>

@@ -119,11 +119,6 @@
   margin-bottom: 2em;
 }
 
-.version-updated-at,
-.version-identifier {
-  white-space: nowrap;
-}
-
 .section-header {
   color: var(--stanford-cardinal);
 }
