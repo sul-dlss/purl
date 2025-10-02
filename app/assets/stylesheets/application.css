@@ -17,11 +17,6 @@
   min-height: calc(100vh - 323px);
 }
 
-.purl-embed-viewer {
-  display: none;
-  margin-bottom: 15px;
-}
-
 .embed-iframe {
   border: 0;
   width: 100%;
@@ -31,13 +26,6 @@
 .record-sections {
   section {
     margin-bottom: 2rem;
-
-    h2 {
-      span.sul-i {
-        font-size: 18px;
-        margin-right: 5px;
-      }
-    }
 
     .section-body {
       /* prevent URLs from overflowing the "Abstract" area */
