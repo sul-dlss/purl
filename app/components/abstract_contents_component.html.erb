@@ -3,7 +3,7 @@
   <% items.each do |item| %>
     <dt><%= item.label %></dt>
     <% item.values.each do |value| %>
-      <dd><%= value %></dd>
+      <dd><%= auto_link(value, html: { class: 'su-underline' }) %></dd>
     <% end %>
   <% end %>
   </dl>
