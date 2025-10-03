@@ -110,10 +110,10 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   end
 
   concerning :Metadata do
-    delegate :display_title, :doi, to: :cocina_display
+    delegate :display_title, :doi, :content_type, to: :cocina_display
 
     def item_type
-      @item_type ||= ItemType.new(cocina['type'])
+      @item_type ||= ItemType.new(content_type)
     end
 
     def folio_instance_hrid
