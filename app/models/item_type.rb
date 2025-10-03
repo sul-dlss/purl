@@ -8,42 +8,42 @@ class ItemType
   attr_reader :type
 
   def collection?
-    type == 'https://cocina.sul.stanford.edu/models/collection'
+    type == 'collection'
   end
 
   def book?
-    type == 'https://cocina.sul.stanford.edu/models/book'
+    type == 'book'
   end
 
   def image?
-    type == 'https://cocina.sul.stanford.edu/models/image'
+    type == 'image'
   end
 
   def map?
-    type == 'https://cocina.sul.stanford.edu/models/map'
+    type == 'map'
   end
 
   def geo?
-    type == 'https://cocina.sul.stanford.edu/models/geo'
+    type == 'geo'
   end
 
   def three_d?
-    type == 'https://cocina.sul.stanford.edu/models/3d'
+    type == '3d'
   end
 
   def webarchive_seed?
-    type == 'https://cocina.sul.stanford.edu/models/webarchive-seed'
+    type == 'webarchive-seed'
   end
 
   def webarchive_binary?
-    type == 'https://cocina.sul.stanford.edu/models/webarchive-binary'
+    type == 'webarchive-binary'
   end
 
   def object?
-    type == 'https://cocina.sul.stanford.edu/models/object'
+    type == 'object'
   end
 
   def media?
-    type == 'https://cocina.sul.stanford.edu/models/media'
+    type == 'media'
   end
 end
