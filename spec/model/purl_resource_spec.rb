@@ -60,9 +60,12 @@ RSpec.describe Purl do
 
     context 'with a meta.json file in the object path' do
       before do
-        allow(File).to receive(:open).with("#{Settings.stacks.root}/kn/112/rm/5773/kn112rm5773/versions/meta.json")
-                                     .and_return(StringIO.new(body))
+        allow(S3ClientFactory).to receive(:create_client).and_return(s3)
+        allow(s3).to receive(:get_object).with(bucket: 'stacks-test', key: 'kn/112/rm/5773/kn112rm5773/versions/meta.json')
+                                         .and_return(instance_double(Aws::S3::Types::GetObjectOutput, body: StringIO.new(body)))
       end
+
+      let(:s3) { instance_double(Aws::S3::Client) }
 
       context 'when resource has a sitemap target' do
         let(:body) { '{"sitemap":true}' }
