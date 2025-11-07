@@ -73,4 +73,28 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.include Capybara::RSpecMatchers, type: :request
+
+  config.before(:suite) do
+    s3_client = S3ClientFactory.create_client
+    bucket_name = Settings.s3.bucket
+    begin
+      s3_client.create_bucket(bucket: bucket_name)
+    rescue Aws::S3::Errors::BucketAlreadyOwnedByYou
+      # Bucket already exists, do nothing
+    end
+
+    # Add test files into MinIO
+    result = `find spec/fixtures/stacks -type f`
+    files = result.split
+    files.each do |file_path|
+      object_key = file_path.delete_prefix('spec/fixtures/stacks/')
+      File.open(file_path, 'rb') do |file|
+        s3_client.put_object(
+          bucket: bucket_name,
+          key: object_key,
+          body: file
+        )
+      end
+    end
+  end
 end
