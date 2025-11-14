@@ -16,7 +16,7 @@ gem "jsonpath"
 gem 'okcomputer' # application monitoring
 gem "propshaft"
 gem "puma", "~> 7.0" # web server for development
-gem "rails", "~> 8.0.0"
+gem "rails", "~> 8.1.0"
 gem "rails_autolink", "~> 1.1"
 gem 'recaptcha' # prevent robots spamming the feedback form
 gem "sitemap_generator"
