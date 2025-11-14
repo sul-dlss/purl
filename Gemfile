@@ -44,7 +44,7 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug"
 
-  gem 'rspec-rails', '~> 7.1'
+  gem 'rspec-rails', '~> 8.0'
 
   # Rubocop is a static code analyzer (linter) to enforce style.
   gem 'rubocop', require: false
