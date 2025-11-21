@@ -68,3 +68,5 @@ group :deployment do
   gem 'capistrano-shared_configs'
   gem 'dlss-capistrano'
 end
+
+gem "aws-sdk-s3", "~> 1.203"

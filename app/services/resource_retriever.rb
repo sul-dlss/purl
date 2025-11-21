@@ -8,17 +8,11 @@ class ResourceRetriever
   end
 
   def meta_json_body
-    @meta_json_body ||= meta_json_resource.read
+    @meta_json_body ||= open('meta.json')
   end
 
   def version_manifest_body
-    @version_manifest_body ||= version_manifest_resource.read
-  rescue Errno::ENOENT
-    raise ResourceNotFound, 'Unable to retrieve version manifest'
-  end
-
-  def druid_path
-    File.join(Settings.stacks.root, "#{druid_tree}/#{druid}/versions")
+    @version_manifest_body ||= open('versions.json')
   end
 
   private
@@ -29,19 +23,15 @@ class ResourceRetriever
     Dor::Util.create_pair_tree(druid) || druid
   end
 
-  def meta_json_path
-    File.join(druid_path, 'meta.json')
+  def s3_key(filename)
+    File.join(druid_tree, druid, 'versions', filename)
   end
 
-  def version_manifest_path
-    File.join(druid_path, 'versions.json')
-  end
-
-  def meta_json_resource
-    @meta_json_resource ||= File.open(meta_json_path)
-  end
-
-  def version_manifest_resource
-    @version_manifest_resource ||= File.open(version_manifest_path)
+  def open(filename)
+    s3 = S3ClientFactory.create_client
+    resp = s3.get_object(bucket: Settings.s3.bucket, key: s3_key(filename))
+    resp.body.read
+  rescue Aws::S3::Errors::NoSuchKey
+    raise ResourceNotFound, "Resource not found: #{filename}"
   end
 end
