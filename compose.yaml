@@ -1,0 +1,13 @@
+services:
+  minio:
+    image: minio/minio
+    environment:
+      MINIO_ROOT_USER: minio-user
+      MINIO_ROOT_PASSWORD: minio-password
+      MINIO_UPDATE: off
+    command: server /data --json --console-address ':9090'
+    ports: ["9000:9000/tcp", "9090:9090/tcp"] # open http://127.0.0.1:9090 (9000 is the API port)
+    volumes:
+      - minio_data:/data
+volumes:
+  minio_data:

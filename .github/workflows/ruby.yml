@@ -19,8 +19,16 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
+      - name: Start MinIO
+        run: docker compose up -d minio
+      - name: Wait for MinIO to be ready
+        run: |
+          timeout 60 bash -c 'until curl -f http://localhost:9000/minio/health/ready; do sleep 2; done'
       - name: Run tests
         run: bin/rake test:prepare spec
+      - name: Stop MinIO
+        if: always()
+        run: docker compose down
   lint:
     runs-on: ubuntu-latest
     steps:

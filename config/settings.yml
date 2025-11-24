@@ -3,6 +3,12 @@ stacks:
   iiif_profile: "http://iiif.io/api/image/2/level2.json"
   root: "/stacks"
 
+s3:
+  access_key_id: ~
+  secret_access_key: ~
+  bucket: stacks-test
+  endpoint: https://sul-weka-s3.stanford.edu
+
 purl_fetcher:
   url: https://purl-fetcher-stage.stanford.edu
 
