@@ -45,10 +45,7 @@ class StructuralMetadata
       return if files.blank?
       return files.first if files.length == 1
 
-      return media_file if media_file.present?
-      return image_file if image_file.present?
-
-      pdf_file
+      media_file || image_file || pdf_file || files.first
     end
 
     def audio?

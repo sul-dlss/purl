@@ -13,5 +13,10 @@ RSpec.describe 'IIIF Annotation Page' do
       get '/wp335yr5649/iiif3/annotation_page/bc854fy5899_fdsa'
       expect(response).to have_http_status(:not_found)
     end
+
+    it 'renders the json for a jpeg file' do
+      get '/cg357zz0321/iiif3/annotation_page/cocina-fileSet-cg357zz0321-cg357zz0321_1'
+      expect(response).to have_http_status(:ok)
+    end
   end
 end
