@@ -12,8 +12,6 @@ OkComputer::Registry.deregister "database" # don't check (unused) ActiveRecord d
 #  individual checks also avail at /status/<name-of-check>
 OkComputer::Registry.register 'ruby_version', OkComputer::RubyVersionCheck.new
 
-OkComputer::Registry.register 'stacks_fs', OkComputer::DirectoryCheck.new('/stacks')
-
 ActiveSupport.on_load(:action_controller) do
   OkComputer::Registry.register 'feedback_mailer', OkComputer::ActionMailerCheck.new(FeedbackMailer)
 
