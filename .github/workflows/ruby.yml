@@ -19,6 +19,8 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
+      - name: Audit dependencies
+        run: bin/bundler-audit
       - name: Start MinIO
         run: docker compose up -d minio
       - name: Wait for MinIO to be ready
