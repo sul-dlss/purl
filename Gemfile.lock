@@ -81,7 +81,7 @@ GEM
       sshkit (>= 1.6.1, != 1.7.0)
     ast (2.4.3)
     aws-eventstream (1.4.0)
-    aws-partitions (1.1189.0)
+    aws-partitions (1.1190.0)
     aws-sdk-core (3.239.2)
       aws-eventstream (~> 1, >= 1.3.0)
       aws-partitions (~> 1, >= 1.992.0)
@@ -93,15 +93,14 @@ GEM
     aws-sdk-kms (1.118.0)
       aws-sdk-core (~> 3, >= 3.239.1)
       aws-sigv4 (~> 1.5)
-    aws-sdk-s3 (1.205.0)
+    aws-sdk-s3 (1.206.0)
       aws-sdk-core (~> 3, >= 3.234.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.5)
     aws-sigv4 (1.12.1)
       aws-eventstream (~> 1, >= 1.0.2)
     base64 (0.3.0)
-    bcrypt_pbkdf (1.1.1)
-    bcrypt_pbkdf (1.1.1-arm64-darwin)
+    bcrypt_pbkdf (1.1.2)
     benchmark (0.5.0)
     bigdecimal (3.3.1)
     bindex (0.8.1)
@@ -136,7 +135,7 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     chronic (0.10.2)
-    cocina_display (1.4.3)
+    cocina_display (1.5.0)
       activesupport (>= 7)
       edtf (~> 3.2)
       geo_coord (~> 0.2)
@@ -147,7 +146,7 @@ GEM
     config (5.6.1)
       deep_merge (~> 1.2, >= 1.2.1)
       ostruct
-    connection_pool (2.5.5)
+    connection_pool (3.0.2)
     crack (1.0.1)
       bigdecimal
       rexml
@@ -205,7 +204,7 @@ GEM
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
     jmespath (1.6.2)
-    json (2.16.0)
+    json (2.17.1)
     jsonpath (1.1.5)
       multi_json
     language_server-protocol (3.17.0.5)
@@ -225,7 +224,7 @@ GEM
     mini_mime (1.1.5)
     minitest (5.26.2)
     msgpack (1.8.0)
-    multi_json (1.17.0)
+    multi_json (1.18.0)
     net-http (0.8.0)
       uri (>= 0.11.1)
     net-imap (0.5.12)
@@ -242,7 +241,7 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     net-ssh (7.3.0)
-    newrelic_rpm (9.23.0)
+    newrelic_rpm (9.24.0)
     nio4r (2.7.5)
     nokogiri (1.18.10-arm64-darwin)
       racc (~> 1.4)
@@ -279,7 +278,7 @@ GEM
       rack (>= 3.0.0)
     rack-test (2.2.0)
       rack (>= 1.3)
-    rackup (2.2.1)
+    rackup (2.3.1)
       rack (>= 3)
     rails (8.1.1)
       actioncable (= 8.1.1)
@@ -317,7 +316,7 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.3.1)
-    rdoc (6.16.1)
+    rdoc (6.17.0)
       erb
       psych (>= 4.0.0)
       tsort
@@ -383,7 +382,7 @@ GEM
     ruby-progressbar (1.13.0)
     rubyzip (3.2.2)
     securerandom (0.4.1)
-    selenium-webdriver (4.38.0)
+    selenium-webdriver (4.39.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
@@ -406,9 +405,9 @@ GEM
       ostruct
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
-    stringio (3.1.8)
+    stringio (3.1.9)
     thor (1.4.0)
-    timeout (0.4.4)
+    timeout (0.5.0)
     tsort (0.2.0)
     turbo-rails (2.0.20)
       actionpack (>= 7.1.0)
@@ -438,7 +437,7 @@ GEM
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    whenever (1.1.0)
+    whenever (1.1.1)
       chronic (>= 0.6.3)
     xpath (3.2.0)
       nokogiri (~> 1.8)
@@ -497,4 +496,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-  4.0.0.beta2
+  4.0.0
