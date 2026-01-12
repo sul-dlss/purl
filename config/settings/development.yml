@@ -1,6 +1,13 @@
 stacks:
   root: <%= File.join(Rails.root, "spec", "fixtures", "stacks") %>
 
+# Default to using the local MinIO bucket
+s3:
+  access_key_id: minio-user
+  secret_access_key: minio-password
+  bucket: stacks-test
+  endpoint: http://localhost:9000
+
 # These are both the test fixtures and the links from the index page.
 landing_page_druids:
   - bb000qr5025 # image where jp2 is not downloadable
