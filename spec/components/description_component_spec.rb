@@ -81,4 +81,15 @@ RSpec.describe DescriptionComponent, type: :component do
       expect(page).to have_content 'reformatted digital'
     end
   end
+
+  context 'with a media file that has form notes' do
+    let(:druid) { 'bd699ky6829' }
+
+    it 'includes the notes in the display' do
+      expect(page).to have_content 'Type of recording'
+      expect(page).to have_content 'analog'
+      expect(page).to have_content 'Recording medium'
+      expect(page).to have_content 'optical'
+    end
+  end
 end
