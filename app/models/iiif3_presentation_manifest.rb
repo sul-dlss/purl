@@ -294,7 +294,11 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     img_res.height = file.height
     img_res.width = file.width
 
-    img_res.service = [probe_service(file, image_url)]
+    # Add both the IIIF Image Service and the Auth 2.0 probe service
+    img_res.service = [
+      iiif_image_v2_service(url),
+      probe_service(file, image_url)
+    ]
 
     img_res
   end
