@@ -25,9 +25,9 @@
       gtag('config', 'G-B11RSRZLRJ', config)
     </script>
 
-    <link rel="icon" href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-12-19/styles/icon.png" type="image/png">
-    <link rel="icon" href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-12-19/styles/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-12-19/styles/icon.png">
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2026-01-27/styles/icon.png" type="image/png">
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2026-01-27/styles/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2026-01-27/styles/icon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -36,7 +36,7 @@
       @import url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css) layer(framework);
       @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css") layer(framework);
       @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;700&display=swap") layer(framework);
-      @import url("https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-12-19/styles/sul.css") layer(components);
+      @import url("https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2026-01-27/styles/sul.css") layer(components);
     </style>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
@@ -60,7 +60,7 @@
       <%= render 'shared/brand_navbar' %>
     </header>
 
-    <main id="main-container" class="container">
+    <main id="main-container" class="container mt-3">
       <%= render FlashMessageComponent.new(flash:) %>
       <%= yield %>
     </main>
