@@ -258,7 +258,7 @@ RSpec.describe Iiif3MetadataWriter do
         expect(field_value('Title')).to eq ['H2 title field']
         expect(field_value('Creator')).to eq ['Author, First']
         expect(field_value('Contributor')).to eq ['contributor, Second (compiler)']
-        expect(field_value('Type')).to eq ['text > policy brief', 'text']
+        expect(field_value('Type')).to eq ['Text (Policy brief)', 'text']
         expect(field_value('Abstract')).to eq ['This is the abstract field']
         expect(field_value('Subject')).to eq ['keyword', 'Another neat tool']
         expect(field_value('Date')).to eq ['February 20, 2025', 'April  5, 2024', 'January  3, 2025']
