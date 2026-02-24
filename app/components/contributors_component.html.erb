@@ -1,8 +1,8 @@
 <%= render SectionComponent.new(label: 'Creators/Contributors', label_id:) do %>
   <%= render TableComponent.new(label_id:) do %>
-    <% contributors_by_role.each do |label, contributors| %>
-      <%= render TableBodyComponent.new(label:) do |component| %>
-        <% contributors.each do |contributor| %>
+    <% contributor_display_data.each do |field| %>
+      <%= render TableBodyComponent.new(label: field.label) do |component| %>
+        <% field.objects.each do |contributor| %>
           <% contributor.display_names(with_date: true).each do |contributor_name| %>
             <%= component.with_value do %>
               <%= tag.td contributor_name %>

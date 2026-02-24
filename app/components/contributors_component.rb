@@ -9,15 +9,10 @@ class ContributorsComponent < ViewComponent::Base
   attr_reader :version
 
   delegate :cocina_display, to: :version
+  delegate :contributor_display_data, to: :cocina_display
 
   def render?
-    contributors_by_role.present?
-  end
-
-  def contributors_by_role
-    @contributors_by_role ||= cocina_display.contributors_by_role
-                                            .excluding('publisher')
-                                            .transform_keys { it.nil? ? 'Associated with' : it.titleize }
+    contributor_display_data.present?
   end
 
   def label_id
