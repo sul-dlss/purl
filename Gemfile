@@ -26,7 +26,7 @@ gem "view_component", '~> 4.0'
 gem 'whenever', require: false # cron jobs
 
 # DLSS and its community
-gem "cocina_display", "~> 1.2"
+gem "cocina_display", "~> 1.9"
 gem 'iiif-presentation', '~> 1.4'
 gem "purl_fetcher-client", "~> 3.1"
 
