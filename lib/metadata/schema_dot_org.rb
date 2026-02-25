@@ -89,12 +89,11 @@ module Metadata
 
     def creators
       cocina_display.contributors.map do |contributor|
-        orcid_identifier = contributor.identifiers.find { it.type == 'ORCID' || it.uri.include?('orcid.org') }
         { '@type': 'Person',
           name: contributor.display_name,
           givenName: contributor.forename,
           familyName: contributor.surname,
-          sameAs: orcid_identifier&.to_s }.compact
+          sameAs: contributor.orcid }.compact
       end
     end
 
