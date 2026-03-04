@@ -548,7 +548,7 @@ RSpec.describe Iiif3MetadataWriter do
       end
 
       it 'extracts all the identifiers correctly' do
-        expect(field_value('Identifier')).to eq ['LCCN: 30003962', 'localnumber', 'nosourceident']
+        expect(field_value('Identifier')).to eq ['LCCN: 30003962', 'Local identifier: localnumber', 'nosourceident']
       end
     end
 
