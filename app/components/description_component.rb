@@ -20,7 +20,7 @@ class DescriptionComponent < ViewComponent::Base
   # Ordered list of fields and delimiters to display
   def field_map
     @field_map ||= [
-      [title_display_data, COMMA],
+      [cocina_display.title_display_data(exclude_primary: true), COMMA],
       [cocina_display.form_display_data, SEMICOLON],
       [cocina_display.form_note_display_data, COMMA],
       [cocina_display.publication_display_data, COMMA],
@@ -29,11 +29,6 @@ class DescriptionComponent < ViewComponent::Base
       [cocina_display.language_display_data, SEMICOLON],
       [cocina_display.map_display_data, COMMA]
     ].select { |field, _| field.present? }
-  end
-
-  # All the titles, except the main title
-  def title_display_data
-    cocina_display.title_display_data.reject { it.label == 'Title' }
   end
 
   def render?
