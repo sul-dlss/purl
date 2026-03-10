@@ -2,18 +2,18 @@
 <%= render SectionComponent.new(label: 'Subjects', label_id:) do %>
   <%= render TableComponent.new(label_id:) do %>
     <% if subject_display_data.present? %>
-      <tbody>
-        <% subject_display_data.each do |field| %>
+    <% subject_display_data.each do |field| %>
+        <tbody>
           <%= render RowFieldComponent.new(field:) %>
-        <% end %>
-      </tbody>
+        </tbody>
+      <% end %>
     <% end %>
     <% if genre_display_data.present? %>
-      <tbody>
-        <% genre_display_data.each do |field| %>
+      <% genre_display_data.each do |field| %>
+        <tbody>
           <%= render RowFieldComponent.new(field:) %>
-        <% end %>
-      </tbody>
+        </tbody>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
