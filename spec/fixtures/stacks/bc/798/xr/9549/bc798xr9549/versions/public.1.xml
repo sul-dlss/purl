@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publicObject id="druid:bc798xr9549" published="2025-09-10T08:13:19Z" publishVersion="cocina-models/0.105.2">
+  <identityMetadata>
+    <objectType>item</objectType>
+    <objectLabel>Oral history with Kalsang Yulgial, Nov. 15, 2014</objectLabel>
+    <sourceId source="sul">sul:30C_Kalsang_Yulgial.mov</sourceId>
+  </identityMetadata>
+  <contentMetadata objectId="druid:bc798xr9549" type="media">
+    <resource id="cocina-fileSet-bc798xr9549-bc798xr9549_1" sequence="1" type="video">
+      <label>Full video</label>
+      <file id="bc798xr9549_30C_Kalsang_Yulgial_sl.mp4" mimetype="video/mp4" size="1319195042" publish="yes" shelve="yes" preserve="yes">
+        <checksum type="sha1">e98add4b113d2b3ae5fca9c8f93f3e5f3c2f6859</checksum>
+        <checksum type="md5">00bc5500168ac383463278c9a2ebab19</checksum>
+      </file>
+      <file id="bc798xr9549_30C_Kalsang_Yulgial_thumb.jp2" mimetype="image/jp2" size="801229" publish="yes" shelve="yes" preserve="yes" role="thumbnail">
+        <checksum type="sha1">519fbb6e088e23369ef8281f1fb0ec622d3aa4ea</checksum>
+        <checksum type="md5">b9a8d9b075ccc91bcbfffbd67331c4c9</checksum>
+        <imageData height="720" width="1280"/>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-bc798xr9549-bc798xr9549_2" sequence="2" type="file">
+      <label>Transcript</label>
+      <file id="bc798xr9549_30C_Kalsang_Yulgial_script.pdf" mimetype="application/pdf" size="2181774" publish="yes" shelve="yes" preserve="yes" role="transcription">
+        <checksum type="sha1">4c70d262628903ad8d40853b43e6cff2508af2f5</checksum>
+        <checksum type="md5">bd5acba27f1c90b8f55086a8fbe12434</checksum>
+      </file>
+    </resource>
+    <resource id="cocina-fileSet-bc798xr9549-bc798xr9549_3" sequence="3" type="image">
+      <label>Portrait</label>
+      <file id="bc798xr9549_30C_Kalsang_Yulgial_img.jp2" mimetype="image/jp2" size="589553" publish="yes" shelve="yes" preserve="no">
+        <checksum type="sha1">e8373f85f02c2f1079eee819b55aaf97a42f05d2</checksum>
+        <checksum type="md5">f4cdbe610a11552e96bdc44ce400296b</checksum>
+        <imageData height="2100" width="1500"/>
+      </file>
+    </resource>
+  </contentMetadata>
+  <rightsMetadata>
+    <access type="discover">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <access type="read">
+      <machine>
+        <world/>
+      </machine>
+    </access>
+    <use>
+      <human type="useAndReproduction">Property rights reside with the repository. To obtain permission to publish or reproduce, please contact the East Asia Library at eastasialibrary@stanford.edu.</human>
+      <license/>
+    </use>
+  </rightsMetadata>
+  <rdf:RDF xmlns:fedora="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="info:fedora/druid:bc798xr9549">
+      <fedora:isMemberOfCollection rdf:resource="info:fedora/druid:gm872vz2147"/>
+    </rdf:Description>
+  </rdf:RDF>
+  <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title>Oral history with Kalsang Yulgial, Nov. 15, 2014</dc:title>
+    <dc:creator>Kalsang Yulgial (interviewee)</dc:creator>
+    <dc:contributor>Adamski, Marcella (interviewer)</dc:contributor>
+    <dc:contributor>Sondag, Tony (videographer)</dc:contributor>
+    <dc:type>Filmed interviews</dc:type>
+    <dc:type>Interview transcripts</dc:type>
+    <dc:type>MovingImage</dc:type>
+    <dc:type>Text</dc:type>
+    <dc:format>1 video file and 1 PDF</dc:format>
+    <dc:format>video/mp4</dc:format>
+    <dc:language>English</dc:language>
+    <dc:description>Kalsang Yulgial was born in Phari bordering Sikkim in India. He describes Phari as a trading town where many different types of goods were transferred in and out of India. He was lucky to have the opportunity to attend a private school and he describes the curriculum and methods used for teaching. After the Chinese invasion, the Chinese closed all the Tibetan schools and sent the children to a large Chinese-run school in Phari. Some of the students, including Kalsang Yulgial, were later sent to a Chinese school in Lhasa, but they began to suspect the Chinese education was separating them from Tibetan language and culture.
+ 
+Kalsang Yulgial was selected by the Chinese to go to a school in China. He explains how the family evaded this by sending him on a trade mission with his stepfather. By the time they returned many Tibetans had started fleeing from the Chinese through Phari. He recounts the circumstances under which his family made their escape journey through Bhutan and into India.
+ 
+Kalsang Yulgial describes his education in India, then in Denmark and Iran where he received vocational training. He recounts the various positions that he held under the Tibetan government-in-exile after his return to India, starting as a mechanic and finally as a representative of a large refugee settlement.</dc:description>
+    <dc:description displayLabel="Age">67</dc:description>
+    <dc:description displayLabel="Gender">Male</dc:description>
+    <dc:description displayLabel="Keywords">education, Utsang, refugee in India -- life as, escape experiences, Tibetan Government-in-exile, trade, childhood memories, Chinese rule -- life under</dc:description>
+    <dc:description displayLabel="Interview Location">Sakya Monastery, Seattle, Washington, United States</dc:description>
+    <dc:subject/>
+    <dc:coverage>Utsang</dc:coverage>
+    <dc:subject>Invasion and Occupation</dc:subject>
+    <dc:subject>Oral history</dc:subject>
+    <dc:coverage>China</dc:coverage>
+    <dc:coverage>Tibet Autonomous Region</dc:coverage>
+    <dc:subject>Oral history--China--Tibet Autonomous Region</dc:subject>
+    <dc:subject>History</dc:subject>
+    <dc:coverage>Tibet Autonomous Region</dc:coverage>
+    <dc:date>2014-11-15</dc:date>
+    <dc:identifier>30C_Kalsang_Yulgial.mov</dc:identifier>
+    <dc:identifier>https://purl.stanford.edu/bc798xr9549</dc:identifier>
+    <dc:relation type="repository">Stanford University. East Asia Library</dc:relation>
+    <dc:relation type="collection">Tibet Oral History Project</dc:relation>
+  </oai_dc:dc>
+  <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.7" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <titleInfo>
+      <title>Oral history with Kalsang Yulgial, Nov. 15, 2014</title>
+    </titleInfo>
+    <name usage="primary" type="personal">
+      <namePart>Kalsang Yulgial</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/ive" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">interviewee</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/ive" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">ive</roleTerm>
+      </role>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/cre" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">creator</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/cre" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">cre</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart>Adamski, Marcella</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/ivr" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">interviewer</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/ivr" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">ivr</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart>Sondag, Tony</namePart>
+      <role>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/vdg" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="text">videographer</roleTerm>
+        <roleTerm valueURI="http://id.loc.gov/vocabulary/relators/vdg" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/" type="code">vdg</roleTerm>
+      </role>
+    </name>
+    <genre valueURI="http://id.loc.gov/authorities/genreForms/gf2011026269" authorityURI="http://id.loc.gov/authorities/genreForms/" authority="lcgft">Filmed interviews</genre>
+    <genre valueURI="http://id.loc.gov/authorities/genreForms/gf2014026115" authorityURI="http://id.loc.gov/authorities/genreForms/" authority="lcgft">Interview transcripts</genre>
+    <typeOfResource>moving image</typeOfResource>
+    <typeOfResource>text</typeOfResource>
+    <physicalDescription>
+      <reformattingQuality>access</reformattingQuality>
+      <internetMediaType>video/mp4</internetMediaType>
+      <internetMediaType>image/jpeg</internetMediaType>
+      <extent>1 video file and 1 PDF</extent>
+      <digitalOrigin>born digital</digitalOrigin>
+      <note displayLabel="Sound content">Sound</note>
+      <note displayLabel="Color content">Color</note>
+    </physicalDescription>
+    <language>
+      <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="text">English</languageTerm>
+      <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <abstract>Kalsang Yulgial was born in Phari bordering Sikkim in India. He describes Phari as a trading town where many different types of goods were transferred in and out of India. He was lucky to have the opportunity to attend a private school and he describes the curriculum and methods used for teaching. After the Chinese invasion, the Chinese closed all the Tibetan schools and sent the children to a large Chinese-run school in Phari. Some of the students, including Kalsang Yulgial, were later sent to a Chinese school in Lhasa, but they began to suspect the Chinese education was separating them from Tibetan language and culture.
+ 
+Kalsang Yulgial was selected by the Chinese to go to a school in China. He explains how the family evaded this by sending him on a trade mission with his stepfather. By the time they returned many Tibetans had started fleeing from the Chinese through Phari. He recounts the circumstances under which his family made their escape journey through Bhutan and into India.
+ 
+Kalsang Yulgial describes his education in India, then in Denmark and Iran where he received vocational training. He recounts the various positions that he held under the Tibetan government-in-exile after his return to India, starting as a mechanic and finally as a representative of a large refugee settlement.</abstract>
+    <note displayLabel="Age">67</note>
+    <note displayLabel="Gender">Male</note>
+    <note displayLabel="Keywords">education, Utsang, refugee in India -- life as, escape experiences, Tibetan Government-in-exile, trade, childhood memories, Chinese rule -- life under</note>
+    <note displayLabel="Interview Location">Sakya Monastery, Seattle, Washington, United States</note>
+    <subject authority="wikidata" displayLabel="Region">
+      <geographic authority="wikidata" authorityURI="https://www.wikidata.org/wiki" valueURI="https://www.wikidata.org/wiki/Q330785">Utsang</geographic>
+    </subject>
+    <subject authority="local" displayLabel="Main topics">
+      <topic>Invasion and Occupation</topic>
+    </subject>
+    <subject authority="lcsh">
+      <topic authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects/" valueURI="http://id.loc.gov/authorities/subjects/sh85095453">Oral history</topic>
+      <geographic authority="lcsh" authorityURI="http://id.loc.gov/authorities/names/" valueURI="http://id.loc.gov/authorities/names/n79091366">China</geographic>
+      <geographic authority="lcsh" authorityURI="http://id.loc.gov/authorities/names/" valueURI="http://id.loc.gov/authorities/names/n79101132">Tibet Autonomous Region</geographic>
+    </subject>
+    <subject authority="lcsh">
+      <geographic authority="lcsh" authorityURI="http://id.loc.gov/authorities/names/" valueURI="http://id.loc.gov/authorities/names/n79101103">Tibet Autonomous Region</geographic>
+      <topic authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects/" valueURI="http://id.loc.gov/authorities/subjects/sh85061398">History</topic>
+    </subject>
+    <originInfo displayLabel="Interview location" eventType="production">
+      <dateCreated encoding="w3cdtf" keyDate="yes">2014-11-15</dateCreated>
+      <place>
+        <placeTerm authorityURI="http://id.loc.gov/authorities/names/" valueURI="http://id.loc.gov/authorities/names/n79041965" type="text">Seattle (Wash.)</placeTerm>
+      </place>
+    </originInfo>
+    <identifier displayLabel="Source ID" type="local">30C_Kalsang_Yulgial.mov</identifier>
+    <location>
+      <url usage="primary display">https://purl.stanford.edu/bc798xr9549</url>
+    </location>
+    <location>
+      <physicalLocation type="repository" valueURI="http://id.loc.gov/authorities/names/no2016112695" authority="naf">Stanford University. East Asia Library</physicalLocation>
+    </location>
+    <recordInfo>
+      <languageOfCataloging>
+        <languageTerm valueURI="http://id.loc.gov/vocabulary/iso639-2/eng" authorityURI="http://id.loc.gov/vocabulary/iso639-2" authority="iso639-2b" type="code">eng</languageTerm>
+      </languageOfCataloging>
+      <recordContentSource valueURI="http://id.loc.gov/vocabulary/organizations/cst" authorityURI="http://id.loc.gov/vocabulary/organizations" authority="marcorg">CSt</recordContentSource>
+      <recordOrigin>human prepared</recordOrigin>
+    </recordInfo>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Tibet Oral History Project</title>
+      </titleInfo>
+      <location>
+        <url>https://purl.stanford.edu/gm872vz2147</url>
+      </location>
+      <typeOfResource collection="yes"/>
+    </relatedItem>
+    <accessCondition type="useAndReproduction">Property rights reside with the repository. To obtain permission to publish or reproduce, please contact the East Asia Library at eastasialibrary@stanford.edu.</accessCondition>
+  </mods>
+  <thumb>bc798xr9549/bc798xr9549_30C_Kalsang_Yulgial_thumb.jp2</thumb>
+</publicObject>
