@@ -3,7 +3,7 @@
     <dt><%= field.label %></dt>
     <% field.values.each do |value| %>
       <dd>
-        <%= auto_link value %>
+        <%= auto_link value, html: { class: 'su-underline' } %>
       </dd>
     <% end %>
   <% end %>
