@@ -1,18 +1,10 @@
 <%= render SectionComponent.new(label: 'Access conditions') do %>
-  <dl>
-    <% if license_description.present? %>
-      <dt>License</dt>
-      <dd><%= license_description %></dd>
+  <%= tag.dl do %>
+    <% field_map.each do |fields| %>
+      <% fields.each do |field| %>
+        <%= tag.dt field.label %>
+        <%= tag.dd auto_link(simple_format(field.values.join("\n\n")), html: { class: 'su-underline' }) %>
+      <% end %>
     <% end %>
-
-    <% if copyright.present? %>
-      <dt>Copyright</dt>
-      <dd><%= copyright %></dd>
-    <% end %>
-
-    <% if use_and_reproduction.present? %>
-      <dt>Use and Reproduction</dt>
-      <dd><%= use_and_reproduction %></dd>
-    <% end %>
-  </dl>
+  <% end %>
 <% end %>

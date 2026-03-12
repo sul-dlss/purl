@@ -9,17 +9,16 @@ class AccessComponent < ViewComponent::Base
   attr_reader :version
 
   delegate :cocina_display, to: :version
-  delegate :license_description, to: :cocina_display
+
+  def field_map
+    @field_map ||= [
+      cocina_display.use_and_reproduction_display_data,
+      cocina_display.copyright_display_data,
+      cocina_display.license_display_data
+    ].compact_blank
+  end
 
   def render?
-    license_description.present? || copyright.present? || use_and_reproduction.present?
-  end
-
-  def use_and_reproduction
-    @use_and_reproduction ||= auto_link(simple_format(cocina_display.use_and_reproduction), html: { class: 'su-underline' })
-  end
-
-  def copyright
-    @copyright ||= cocina_display.copyright&.gsub(/\(c\) Copyright/i, '© Copyright')
+    field_map.present?
   end
 end
