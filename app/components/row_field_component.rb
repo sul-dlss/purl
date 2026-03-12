@@ -24,7 +24,7 @@ class RowFieldComponent < ViewComponent::Base
   end
 
   def formatted_values
-    @formatted_values ||= field.values.compact_blank.map { |value| auto_link value }
+    @formatted_values ||= field.values.compact_blank.map { |value| auto_link value, html: { class: 'su-underline' } }
   end
 
   def label

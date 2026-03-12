@@ -2,7 +2,7 @@
   <dl>
     <% contact_email_display_data.each do |contact| %>
       <dt class="visually-hidden"><%= contact.label %></dt>
-      <dd><%= auto_link contact.values.first %></dd>
+      <dd><%= auto_link contact.values.first, html: { class: 'su-underline' } %></dd>
     <% end %>
   </dl>
 <% end %>
