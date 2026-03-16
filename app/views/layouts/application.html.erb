@@ -18,6 +18,9 @@
         collection: document.querySelector('link[rel="up"]')?.getAttribute('href')
       }
 
+      <%# To turn off analytics debug mode, exclude the parameter altogether (cannot just set to false)
+        See https://support.google.com/analytics/answer/7201382?hl=en#zippy=%2Cgoogle-tag-websites
+      %>
       <% if Settings.analytics_debug %>
         config.debug_mode = true
       <% end %>
