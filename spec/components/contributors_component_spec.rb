@@ -15,11 +15,12 @@ RSpec.describe ContributorsComponent, type: :component do
   context 'with a book that has a contributor with no role and a publisher' do
     let(:druid) { 'bb737zp0787' }
 
-    it 'shows the contributor name and excludes the publisher' do
+    it 'shows both contributor and publisher' do
       expect(page).to have_css 'section h2', text: 'Creators/Contributors'
       expect(page).to have_css 'th', text: 'Associated with'
       expect(page).to have_css 'td', text: 'Paget, Francis Edward, 1806-1882'
-      expect(page).to have_no_content 'Publisher'
+      expect(page).to have_css 'th', text: 'Publisher'
+      expect(page).to have_css 'td', text: 'J. Masters'
     end
   end
 
