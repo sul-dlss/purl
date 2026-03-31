@@ -51,7 +51,7 @@ RSpec.describe AltmetricsComponent, type: :component do
 
       it 'returns nil' do
         expect(Honeybadger).to have_received(:notify)
-          .with('Invalid date value: ')
+          .with('Malformed Cocina data: No date node found in creation event at description.adminMetadata.event.*.date for: wm135gp2721')
       end
     end
 
