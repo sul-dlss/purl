@@ -87,7 +87,6 @@ class Iiif3MetadataWriter
     cocina_display.send(:resource_type_values)
   end
 
-  # TODO: add notes to cocina_display
   def notes
     extract_notes.map { |k, v| iiif_key_value(k, v) }
   end
@@ -95,7 +94,7 @@ class Iiif3MetadataWriter
   def extract_notes
     values = {}
     cocina_display.notes.each do |note|
-      key = note.display_label || note.type&.capitalize || 'Description'
+      key = note.label == 'Note' ? 'Description' : note.label
       values[key] ||= []
       values[key] += [note.to_s]
     end
