@@ -11,7 +11,7 @@
 # GitHub Repo: https://github.com/marcoroth/herb
 #
 
-version: 0.9.0
+version: 0.9.6
 
 # files:
 #   # Additional patterns beyond the defaults (**.html, **.rhtml, **.html.erb, etc.)
@@ -48,17 +48,22 @@ linter:
   rules:
     erb-no-statement-in-script:
       exclude:
-        - '**/layouts/application.html.erb'
+        - "**/layouts/application.html.erb"
     html-allowed-script-type:
       exclude:
-        - '**/components/show/head_metadata_component.html.erb'
+        - "**/components/show/head_metadata_component.html.erb"
     erb-no-unsafe-raw:
       exclude:
-        - '**/components/flash_message_component.html.erb'
-  
-  #   erb-no-extra-newline:
-  #     enabled: false
-  #
+        - "**/components/flash_message_component.html.erb"
+    html-require-script-nonce:
+      enabled: false
+    source-indentation:
+      enabled: true
+    actionview-no-silent-helper:
+      enabled: false # Due to https://github.com/marcoroth/herb/issues/1629
+    erb-no-extra-newline:
+      enabled: false
+
   #   # Rules can have 'include', 'only', and 'exclude' patterns
   #   some-rule:
   #     # Additional patterns to check (additive, ignored when 'only' is present)
@@ -80,7 +85,6 @@ formatter:
   enabled: false
   indentWidth: 2
   maxLineLength: 80
-
   # # Additional patterns beyond the defaults for formatting
   # include:
   #   - '**/*.xml.erb'
