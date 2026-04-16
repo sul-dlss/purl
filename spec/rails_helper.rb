@@ -83,7 +83,7 @@ RSpec.configure do |config|
       # Bucket already exists, do nothing
     end
 
-    # Add test files into MinIO
+    # Add test files into RustFS
     result = `find spec/fixtures/stacks -type f`
     files = result.split
     files.each do |file_path|

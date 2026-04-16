@@ -2,8 +2,8 @@ stacks:
   root: <%= File.join(Rails.root, "spec", "fixtures", "stacks") %>
 
 s3:
-  access_key_id: minio-user
-  secret_access_key: minio-password
+  access_key_id: rustfs-user
+  secret_access_key: rustfs-password
   bucket: stacks-test
   endpoint: http://localhost:9000
 
