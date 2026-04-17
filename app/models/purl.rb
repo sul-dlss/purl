@@ -37,7 +37,12 @@ class Purl
   end
 
   def releases
-    @releases ||= Releases.new(meta_json)
+    @releases ||= begin
+      Releases.new(meta_json)
+    rescue ResourceRetriever::ResourceNotFound
+      # meta.json not found, so no releases. This may happen if the releaseWF has not yet completed.
+      NullReleases.new
+    end
   end
 
   # The meta.json contains the properties this purl is released to.
