@@ -69,6 +69,10 @@ Rails.application.routes.draw do
         get 'annotation/:resource_id.json', to: redirect('/%{id}/iiif/annotation/%{resource_id}'), format: false
       end
     end
+
+    collection do
+      post 'preview'
+    end
   end
 
   options '/:id', to: 'purl#options'
