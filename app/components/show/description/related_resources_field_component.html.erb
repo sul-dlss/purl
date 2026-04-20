@@ -2,9 +2,7 @@
   <tr>
     <th><%= label %></th>
     <td>
-      <% child_components.each do %>
-        <%= render it %>
-      <% end %>
+      <%= render Show::Description::RelatedResourceComponent.with_collection(related_resources) %>
     </td>
   </tr>
 </tbody>
