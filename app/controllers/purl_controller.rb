@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class PurlController < ApplicationController
-  before_action :load_purl, except: [:index]
+  skip_before_action :verify_authenticity_token, only: [:preview]
+
+  before_action :load_purl, except: %i[index preview]
   before_action :load_version, only: %i[show metrics]
   before_action :fix_etag_header
 
@@ -73,6 +75,12 @@ class PurlController < ApplicationController
   def metrics
     render MetricsComponent.new(version: @version,
                                 metrics: MetricsService.new.get_metrics(@version.druid))
+  end
+
+  PreviewVersion = Struct.new('PreviewVersion', :cocina_display)
+
+  def preview
+    @version = PreviewVersion.new(CocinaDisplay::CocinaRecord.from_json(params[:cocina]))
   end
 
   private
