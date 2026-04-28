@@ -106,3 +106,9 @@
 .grecaptcha-badge {
   visibility: hidden;
 }
+
+/* Don't number table of contents lists, even though they are ordered */
+ol.table-of-contents {
+  list-style-type: none;
+  padding-left: 0;
+}

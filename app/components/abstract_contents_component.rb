@@ -10,11 +10,7 @@ class AbstractContentsComponent < ViewComponent::Base
 
   delegate :cocina_display, to: :version
 
-  def items
-    @items ||= cocina_display.abstract_display_data + cocina_display.table_of_contents_display_data
-  end
-
   def render?
-    items.present?
+    (cocina_display.abstract_display_data + cocina_display.table_of_contents_display_data).present?
   end
 end
