@@ -106,3 +106,26 @@
 .grecaptcha-badge {
   visibility: hidden;
 }
+
+/* Clickable anchor for section headers */
+.heading-anchor {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: underline;
+
+    &::before {
+      visibility: visible;
+    }
+  }
+
+  &::before {
+    content: '#';
+    position: absolute;
+    font-size: 0.75em;
+    margin-left: -0.75em;
+    margin-top: 0.25em;
+    visibility: hidden;
+  }
+}
