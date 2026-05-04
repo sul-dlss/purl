@@ -15,10 +15,10 @@ RSpec.describe SubjectComponent, type: :component do
     let(:druid) { 'bb000qr5025' }
 
     it 'displays the contents' do
-      expect(page).to have_content 'Jackson, Jesse, 1941-'
-      expect(page).to have_content 'Photography'
-      expect(page).to have_content 'Presidents > Election'
-      expect(page).to have_content 'San Francisco (Calif.)'
+      expect(page).to have_text 'Jackson, Jesse, 1941-'
+      expect(page).to have_text 'Photography'
+      expect(page).to have_text 'Presidents > Election'
+      expect(page).to have_text 'San Francisco (Calif.)'
     end
   end
 

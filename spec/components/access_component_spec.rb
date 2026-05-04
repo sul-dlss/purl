@@ -15,9 +15,9 @@ RSpec.describe AccessComponent, type: :component do
 
   it 'draws the access information' do
     expect(page).to have_css 'h2', text: 'Access conditions'
-    expect(page).to have_content 'Use and reproduction'
-    expect(page).to have_content 'Property rights reside with the repository. Literary rights reside with the creators'
-    expect(page).to have_content 'Copyright © Stanford University. All Rights Reserved.'
+    expect(page).to have_text 'Use and reproduction'
+    expect(page).to have_text 'Property rights reside with the repository. Literary rights reside with the creators'
+    expect(page).to have_text 'Copyright © Stanford University. All Rights Reserved.'
   end
 
   context 'when use_and_reproduction has line breaks and urls' do

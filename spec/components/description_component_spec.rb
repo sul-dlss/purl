@@ -15,16 +15,16 @@ RSpec.describe DescriptionComponent, type: :component do
     let(:druid) { 'bb000qr5025' }
 
     it 'displays the component' do
-      expect(page).to have_content 'Resource Type'
-      expect(page).to have_content 'still image'
-      expect(page).to have_content 'Form'
-      expect(page).to have_content 'other computer carrier'
-      expect(page).to have_content 'Extent'
-      expect(page).to have_content '1 optical disc'
-      expect(page).to have_content 'Creation date'
-      expect(page).to have_content 'May 1988'
-      expect(page).to have_content 'Digital origin'
-      expect(page).to have_content 'born digital'
+      expect(page).to have_text 'Resource Type'
+      expect(page).to have_text 'still image'
+      expect(page).to have_text 'Form'
+      expect(page).to have_text 'other computer carrier'
+      expect(page).to have_text 'Extent'
+      expect(page).to have_text '1 optical disc'
+      expect(page).to have_text 'Creation date'
+      expect(page).to have_text 'May 1988'
+      expect(page).to have_text 'Digital origin'
+      expect(page).to have_text 'born digital'
     end
   end
 
@@ -32,18 +32,18 @@ RSpec.describe DescriptionComponent, type: :component do
     let(:druid) { 'nd387jf5675' }
 
     it 'displays the component' do
-      expect(page).to have_content 'Resource Type'
-      expect(page).to have_content 'text'
-      expect(page).to have_content 'Form'
-      expect(page).to have_content 'electronic; electronic resource; remote'
-      expect(page).to have_content 'Extent'
-      expect(page).to have_content '1 online resource'
-      expect(page).to have_content 'Publication date'
-      expect(page).to have_content '2015'
-      expect(page).to have_content 'Issuance'
-      expect(page).to have_content 'monographic'
-      expect(page).to have_content 'Language'
-      expect(page).to have_content 'English'
+      expect(page).to have_text 'Resource Type'
+      expect(page).to have_text 'text'
+      expect(page).to have_text 'Form'
+      expect(page).to have_text 'electronic; electronic resource; remote'
+      expect(page).to have_text 'Extent'
+      expect(page).to have_text '1 online resource'
+      expect(page).to have_text 'Publication date'
+      expect(page).to have_text '2015'
+      expect(page).to have_text 'Issuance'
+      expect(page).to have_text 'monographic'
+      expect(page).to have_text 'Language'
+      expect(page).to have_text 'English'
     end
   end
 
@@ -51,22 +51,22 @@ RSpec.describe DescriptionComponent, type: :component do
     let(:druid) { 'bb737zp0787' }
 
     it 'displays the component' do
-      expect(page).to have_content 'Alternative title'
-      expect(page).to have_content 'Curate of Cumberworth'
-      expect(page).to have_content 'Resource Type'
-      expect(page).to have_content 'text'
-      expect(page).to have_content 'Form'
-      expect(page).to have_content 'print'
-      expect(page).to have_content 'Extent'
-      expect(page).to have_content 'viii, 412, 40 p. ; 18 cm.'
-      expect(page).to have_content 'Imprint'
-      expect(page).to have_content 'London'
-      expect(page).to have_content 'J. Masters'
-      expect(page).to have_content '1859'
-      expect(page).to have_content 'Issuance'
-      expect(page).to have_content 'monographic'
-      expect(page).to have_content 'Language'
-      expect(page).to have_content 'English'
+      expect(page).to have_text 'Alternative title'
+      expect(page).to have_text 'Curate of Cumberworth'
+      expect(page).to have_text 'Resource Type'
+      expect(page).to have_text 'text'
+      expect(page).to have_text 'Form'
+      expect(page).to have_text 'print'
+      expect(page).to have_text 'Extent'
+      expect(page).to have_text 'viii, 412, 40 p. ; 18 cm.'
+      expect(page).to have_text 'Imprint'
+      expect(page).to have_text 'London'
+      expect(page).to have_text 'J. Masters'
+      expect(page).to have_text '1859'
+      expect(page).to have_text 'Issuance'
+      expect(page).to have_text 'monographic'
+      expect(page).to have_text 'Language'
+      expect(page).to have_text 'English'
     end
   end
 
@@ -74,8 +74,8 @@ RSpec.describe DescriptionComponent, type: :component do
     let(:druid) { 'cp088pb1682' }
 
     it 'displays the component' do
-      expect(page).to have_content 'Digital origin'
-      expect(page).to have_content 'reformatted digital'
+      expect(page).to have_text 'Digital origin'
+      expect(page).to have_text 'reformatted digital'
     end
   end
 
@@ -83,10 +83,10 @@ RSpec.describe DescriptionComponent, type: :component do
     let(:druid) { 'bd699ky6829' }
 
     it 'includes the notes in the display' do
-      expect(page).to have_content 'Type of recording'
-      expect(page).to have_content 'analog'
-      expect(page).to have_content 'Recording medium'
-      expect(page).to have_content 'optical'
+      expect(page).to have_text 'Type of recording'
+      expect(page).to have_text 'analog'
+      expect(page).to have_text 'Recording medium'
+      expect(page).to have_text 'optical'
     end
   end
 end
