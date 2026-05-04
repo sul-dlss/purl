@@ -16,7 +16,7 @@ RSpec.describe Show::SidebarComponent, type: :component do
     let(:druid) { 'zb733jx3137' }
 
     it 'included in purl page' do
-      expect(page).to have_content 'This work is licensed under an Open Data Commons Public Domain Dedication & License 1.0'
+      expect(page).to have_text 'This work is licensed under an Open Data Commons Public Domain Dedication & License 1.0'
     end
   end
 
@@ -24,7 +24,7 @@ RSpec.describe Show::SidebarComponent, type: :component do
     let(:druid) { 'wm135gp2721' }
 
     it 'included in purl page' do
-      expect(page).to have_content 'User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or'
+      expect(page).to have_text 'User agrees that, where applicable, content will not be used to identify or to otherwise infringe the privacy or'
     end
   end
 
@@ -32,8 +32,8 @@ RSpec.describe Show::SidebarComponent, type: :component do
     let(:druid) { 'cg357zz0321' }
 
     it 'displays the citation' do
-      expect(page).to have_content 'Circuit Rider Productions and  National Oceanic and Atmospheric Administration (2002) ' \
-                                   '10 Meter Contours: Russian River Basin, California. Circuit Rider Productions.'
+      expect(page).to have_text 'Circuit Rider Productions and  National Oceanic and Atmospheric Administration (2002) ' \
+                                '10 Meter Contours: Russian River Basin, California. Circuit Rider Productions.'
     end
   end
 
