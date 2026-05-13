@@ -199,7 +199,7 @@ class IiifPresentationManifest
   def other_content_for_file(file)
     other_content = []
 
-    if local_files.any? { |file| file.role == 'annotations' && file.mimetype == 'application/json' }
+    if local_files.any? { |file| %w[annotations georeference].include?(file.role) && file.mimetype == 'application/json' }
       anno_list = IIIF::Presentation::AnnotationList.new
       anno_list['@id'] = annotation_list_url(resource_id: file.fileset_id)
       other_content << anno_list
