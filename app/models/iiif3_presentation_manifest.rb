@@ -181,7 +181,10 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       canvas_type = fileset.audio? ? 'accompanyingCanvas' : 'placeholderCanvas'
       canv[canvas_type] = thumbnail_canvas
 
-      canv['annotations'] = [{ id: annotation_list_url(resource_id: fileset.cocina_id), type: 'AnnotationPage' }] if image_annotations(fileset).present?
+      if annotation_list_annotations(fileset).present?
+        canv['annotations'] =
+          [{ id: annotation_list_url(resource_id: fileset.cocina_id), type: 'AnnotationPage' }]
+      end
 
       canv['annotations'] = caption_annotations(fileset) if fileset.media?
 
@@ -266,7 +269,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
     anno_list.items = []
 
-    image_annotations(fileset).each do |file|
+    annotation_list_annotations(fileset).each do |file|
       annotation = annotation_for_file(file)
       annotation.body = JSON.parse(
         Faraday.get(
@@ -278,10 +281,16 @@ class Iiif3PresentationManifest < IiifPresentationManifest
     anno_list
   end
 
-  def image_annotations(fileset)
-    return [] unless fileset.files
+  def annotation_list_annotations(fileset)
+    image_annotations(fileset) + georeference_annotations(fileset)
+  end
 
-    fileset.files.select { |file| file.role == 'annotations' && file.mimetype == 'application/json' }
+  def image_annotations(fileset)
+    Array(fileset.files).select { |file| file.role == 'annotations' && file.mimetype == 'application/json' }
+  end
+
+  def georeference_annotations(fileset)
+    Array(fileset.files).select { |file| file.role == 'georeference' && file.mimetype == 'application/json' }
   end
 
   def image_resource(file)

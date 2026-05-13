@@ -139,7 +139,7 @@ class IiifPresentationManifest
     anno_list = IIIF::Presentation::AnnotationList.new
     anno_list['@id'] = annotation_list_url(resource_id:)
     anno_list.resources = []
-    fileset.files.select { |file| file.role == 'annotations' && file.mimetype == 'application/json' }.each do |file|
+    fileset.files.select { |file| %w[annotations georeference].include?(file.role) && file.mimetype == 'application/json' }.each do |file|
       anno_list.resources << JSON.parse(
         Faraday.get(
           stacks_file_url(druid, file.filename)
@@ -195,11 +195,11 @@ class IiifPresentationManifest
     canv
   end
 
-  # Setup annotationLists for files with role="annotations"
+  # Setup annotationLists for files with role="annotations" or role="georeference"
   def other_content_for_file(file)
     other_content = []
 
-    if local_files.any? { |file| file.role == 'annotations' && file.mimetype == 'application/json' }
+    if local_files.any? { |file| %w[annotations georeference].include?(file.role) && file.mimetype == 'application/json' }
       anno_list = IIIF::Presentation::AnnotationList.new
       anno_list['@id'] = annotation_list_url(resource_id: file.fileset_id)
       other_content << anno_list
