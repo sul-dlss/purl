@@ -1,9 +1,21 @@
 <%= render SectionComponent.new(label: 'Abstract/Contents') do %>
   <dl>
-  <% items.each do |item| %>
+  <% cocina_display.abstract_display_data.each do |item| %>
     <dt><%= item.label %></dt>
     <% item.values.each do |value| %>
       <dd><%= auto_link(value, html: { class: 'su-underline' }) %></dd>
+    <% end %>
+  <% end %>
+  <% cocina_display.table_of_contents_display_data.each do |item| %>
+    <dt><%= item.label %></dt>
+    <% item.objects.each do |toc| %>
+      <dd>
+        <ol class="table-of-contents">
+          <% toc.values.each do |value| %>
+            <li><%= auto_link(value, html: { class: 'su-underline' }) %></li>
+          <% end %>
+        </ol>
+      </dd>
     <% end %>
   <% end %>
   </dl>
