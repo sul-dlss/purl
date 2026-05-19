@@ -7,5 +7,10 @@ class SectionComponent < ViewComponent::Base
     super()
   end
 
-  attr_reader :label, :label_id
+  attr_reader :label
+
+  # Generate a URL-friendly ID from the label if one was not provided
+  def label_id
+    @label_id || label.parameterize
+  end
 end
