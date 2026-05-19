@@ -155,6 +155,20 @@ RSpec.describe Iiif3PresentationManifest do
       end
     end
 
+    context 'with a georeferenced map' do
+      let(:druid) { 'bb013fz9675' }
+      let(:iiif_namespace) { :iiif3 }
+
+      it 'provides annotations for georeference' do
+        expect(json.dig('items', 0, 'annotations')).to eq [
+          {
+            id: 'http://purl.stanford.edu/bb013fz9675/iiif3/annotations/cocina-fileSet-bb013fz9675-bb013fz9675_1',
+            type: 'AnnotationPage'
+          }
+        ]
+      end
+    end
+
     context 'with a book that has image constituents and pdf in rendering' do
       let(:druid) { 'zf119tw4418' }
 
