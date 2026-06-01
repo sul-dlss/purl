@@ -1,8 +1,10 @@
 <%= render SectionComponent.new(label: 'Contact information') do %>
   <dl>
-    <% contact_email_display_data.each do |contact| %>
-      <dt class="visually-hidden"><%= contact.label %></dt>
-      <dd><%= auto_link contact.values.first, html: { class: 'su-underline' } %></dd>
+    <% cocina_display.contact_email_display_data.each do |field| %>
+      <%= tag.dt field.label, class: 'visually-hidden' %>
+      <% field.values.each do |value| %>
+        <%= tag.dd auto_link(value, html: { class: 'su-underline' }) %>
+      <% end %>
     <% end %>
   </dl>
 <% end %>
