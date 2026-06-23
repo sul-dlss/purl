@@ -1,6 +1,6 @@
 <section>
   <%= tag.h2(id: label_id, class: 'section-header') do %>
-    <%= label %>
+    <%= link_to label, "##{label_id}", class: 'heading-anchor', data: { turbo: false } %>
   <% end %>
   <div class="section-body">
     <%= content %>
