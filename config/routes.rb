@@ -24,8 +24,12 @@ Rails.application.routes.draw do
 
   resources :purl, only: [:show], path: '/' do
     member do
-      get 'version/:version', to: 'purl#show', as: :version
-      get 'version/:version/iiif3/manifest', to: 'iiif#manifest', format: false, defaults: { iiif_version: 'v3', iiif_scope: 'iiif3' }
+      get 'version/:version', to: 'purl#show', as: :version, constraints: { version: /\d+/ }
+      get 'version/:version/iiif3/manifest',
+          to: 'iiif#manifest',
+          format: false,
+          defaults: { iiif_version: 'v3', iiif_scope: 'iiif3' },
+          constraints: { version: /\d+/ }
 
       get 'embed', to: redirect("/iframe/?url=#{Settings.embed.url % { druid: '%{id}' }}")
       # These routes should only be used until our viewers support v3 manifests.
