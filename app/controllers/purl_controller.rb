@@ -121,9 +121,7 @@ class PurlController < ApplicationController
       format.html do
         redirect_to purl_url(@purl), flash: { error: "Requested version '#{version_param}' not found. Showing latest version instead." }
       end
-      format.all do
-        head :not_found
-      end
+      format.all { head :not_found }
     end
   end
 

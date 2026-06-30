@@ -6,6 +6,18 @@ require 'iiif/v3/presentation' # Can we get the iiif-presentation gem to load th
 RSpec.describe 'IIIF v3 manifests' do
   let(:json) { response.parsed_body }
 
+  context 'when an invalid version format is requested' do
+    it 'returns 404/Not Found' do
+      get '/zb733jx3137/version/foo/iiif3/manifest'
+      expect(response).to have_http_status(:not_found)
+    end
+
+    it 'handles injection/arbitrary content in version param by returning 404' do
+      get "/zb733jx3137/version/';print(md5(31337));$a='/iiif3/manifest"
+      expect(response).to have_http_status(:not_found)
+    end
+  end
+
   context 'when a specific version is requested' do
     it 'is successful, has correct filepaths and metadata' do
       get '/zb733jx3137/version/2/iiif3/manifest'

@@ -277,6 +277,18 @@ RSpec.describe 'PURL API' do
           expect(response.body).to include('Requested version \'45\' not found. Showing latest version instead.')
         end
       end
+
+      context 'with an invalid version format specified' do
+        it 'returns 404/Not Found' do
+          get '/zb733jx3137/version/foo'
+          expect(response).to have_http_status(:not_found)
+        end
+
+        it 'handles injection/arbitrary content in version param by returning 404' do
+          get "/zb733jx3137/version/';print(md5(31337));$a='"
+          expect(response).to have_http_status(:not_found)
+        end
+      end
     end
   end
 
