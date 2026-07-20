@@ -39,7 +39,7 @@ RSpec.describe FeedbackMailer do
     it 'includes all expected content' do
       expect(mail.subject).to eq('Feedback from PURL')
       expect(mail.to).to eq(['feedback@stanford.edu'])
-      expect(mail.from).to eq(['feedback@purl.stanford.edu'])
+      expect(mail.from).to eq(['purl-feedback@lists.stanford.edu'])
 
       body = mail.body.encoded
 

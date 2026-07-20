@@ -14,7 +14,7 @@ class FeedbackMailer < ApplicationMailer
 
     mail(to: Settings.feedback.email_to,
          subject: 'Feedback from PURL',
-         from: 'feedback@purl.stanford.edu',
+         from: 'purl-feedback@lists.stanford.edu',
          reply_to: Settings.feedback.email_to)
   end
 end
