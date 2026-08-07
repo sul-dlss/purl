@@ -20,8 +20,9 @@ Move into the app and install dependencies
     $ cd purl
     $ bundle install
 
-Start the development server
-
+Start docker and the development server
+    
+    $ docker compose up
     $ bin/dev
 
 ## Configuring
