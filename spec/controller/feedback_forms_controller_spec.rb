@@ -20,6 +20,12 @@ RSpec.describe FeedbackFormsController, type: :controller do
         expect(flash[:error]).to eq 'You must pass the reCAPTCHA challenge'
         expect(FeedbackMailer).not_to have_received(:submit_feedback)
       end
+
+      it 'redirects to the root when the reporting URL is unsafe' do
+        post :create, params: { message: 'I am spamming you!', url: 'file:///etc/passwd' }
+
+        expect(response).to redirect_to(root_path)
+      end
     end
 
     context 'when captcha succeeds' do
@@ -31,6 +37,7 @@ RSpec.describe FeedbackFormsController, type: :controller do
         expect(flash[:success]).to eq 'Thank you! Your feedback has been sent.'
         expect(controller).to have_received(:verify_recaptcha)
         expect(FeedbackMailer).to have_received(:submit_feedback)
+        expect(response).to redirect_to('http://purl.stanford.edu/')
       end
     end
   end
