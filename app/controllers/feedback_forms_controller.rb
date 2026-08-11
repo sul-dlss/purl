@@ -11,6 +11,6 @@ class FeedbackFormsController < ApplicationController
       flash[:error] = 'You must pass the reCAPTCHA challenge'
     end
 
-    redirect_to params[:url]
+    redirect_to url_from(params[:url]) || root_path
   end
 end
