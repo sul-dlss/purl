@@ -4,7 +4,7 @@ class FeedbackFormsController < ApplicationController
   def new; end
 
   def create
-    if verify_recaptcha(action: 'feedback')
+    if verify_recaptcha(action: 'feedback', minimum_score: 0.5)
       FeedbackMailer.submit_feedback(params, request.remote_ip).deliver_now
       flash[:success] = 'Thank you! Your feedback has been sent.'
     else
