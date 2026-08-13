@@ -19,6 +19,7 @@ gem "puma", "~> 7.0" # web server for development
 gem "rails", "~> 8.1.0"
 gem "rails_autolink", "~> 1.1"
 gem 'recaptcha' # prevent robots spamming the feedback form
+gem "rdkafka"
 gem "sitemap_generator"
 gem "stimulus-rails" # Hotwire's modest JavaScript framework
 gem "turbo-rails" # Hotwire's SPA-like page accelerator
@@ -28,7 +29,6 @@ gem 'whenever', require: false # cron jobs
 # DLSS and its community
 gem 'cocina_display', '~> 2'
 gem 'iiif-presentation', '~> 1.4'
-gem "purl_fetcher-client", "~> 3.1"
 
 group :production do
   gem 'newrelic_rpm'
