@@ -25,8 +25,7 @@ SitemapGenerator::Sitemap.create(include_root: false) do
   #   Article.find_each do |article|
   #     add article_path(article), :lastmod => article.updated_at
   #   end
-  client = PurlFetcher::Client::Reader.new(host: Settings.purl_fetcher.url)
-  client.released_to('PURL sitemap').each do |purl|
+  SitemapKafkaReader.new(hosts: Settings.kafka.hosts, topic: Settings.kafka.sitemap_topic).each do |purl|
     add purl_path(purl['druid'].delete_prefix('druid:')), lastmod: purl['updated_at'], changefreq: nil, priority: nil
   end
 end
