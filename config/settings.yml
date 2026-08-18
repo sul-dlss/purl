@@ -9,8 +9,9 @@ s3:
   bucket: stacks-test
   endpoint: https://sul-weka-s3.stanford.edu
 
-purl_fetcher:
-  url: https://purl-fetcher-stage.stanford.edu
+kafka:
+  hosts: localhost:9092
+  sitemap_topic: sitemap_release_prod
 
 content_search:
   url:
