@@ -338,6 +338,24 @@ RSpec.describe Iiif3MetadataWriter do
       end
     end
 
+    context 'with an uncertain date range that has no declared encoding' do
+      let(:cocina_descriptive) do
+        {
+          'event' => [
+            {
+              'date' => [
+                { 'value' => '[1928-193-?]' }
+              ]
+            }
+          ]
+        }
+      end
+
+      it 'preserves the original date value' do
+        expect(field_value('Date')).to eq ['[1928-193-?]']
+      end
+    end
+
     context 'with structured contributor name, that is not forename, surname and a structured title' do
       let(:cocina_descriptive) do
         {
