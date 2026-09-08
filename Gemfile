@@ -12,6 +12,7 @@ gem 'faraday' # HTTP client
 gem 'honeybadger' # exception reporting
 gem "importmap-rails" # Use JavaScript with ESM import maps
 gem "jbuilder" # Build JSON APIs with ease
+gem "json", '~> 2.0' # Pinned until Rails 8.1.4 is released https://github.com/rails/rails/issues/58685
 gem "jsonpath"
 gem 'okcomputer' # application monitoring
 gem "propshaft"
