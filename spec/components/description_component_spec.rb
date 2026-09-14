@@ -89,4 +89,28 @@ RSpec.describe DescriptionComponent, type: :component do
       expect(page).to have_text 'optical'
     end
   end
+
+  context 'with parallel primary and uniform titles' do
+    let(:version) { instance_double(PurlVersion, cocina_display:) }
+    let(:cocina_display) do
+      CocinaDisplay::CocinaRecord.new(
+        'description' => {
+          'title' => [
+            {
+              'parallelValue' => [
+                { 'value' => '첫 제품을 생산하고 있는 로동자들', 'status' => 'primary' },
+                { 'value' => "Ch'ŏt chep'um ŭl saengsan hago innŭn nodongjadŭl", 'type' => 'transliterated', 'displayLabel' => 'Transliterated title' }
+              ]
+            },
+            { 'value' => 'Chŏngje title', 'type' => 'uniform' }
+          ]
+        }
+      )
+    end
+
+    it 'displays the parallel primary title and uniform title' do
+      expect(page).to have_text "Ch'ŏt chep'um ŭl saengsan hago innŭn nodongjadŭl"
+      expect(page).to have_text 'Chŏngje title'
+    end
+  end
 end
