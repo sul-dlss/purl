@@ -114,9 +114,16 @@ class Iiif3MetadataWriter
   end
 
   def dates
-    vals = cocina_display.event_dates.map(&:decoded_value)
+    vals = cocina_display.event_dates.map { |date| decoded_date(date) }
 
     vals.present? ? [iiif_key_value('Date', vals)] : []
+  end
+
+  def decoded_date(date)
+    parsed_date = date.date
+    return date.value.strip if parsed_date.is_a?(EDTF::Interval) && (parsed_date.min.nil? || parsed_date.max.nil?)
+
+    date.decoded_value
   end
 
   def identifiers
