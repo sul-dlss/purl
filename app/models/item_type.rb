@@ -16,7 +16,7 @@ class ItemType
   end
 
   def image?
-    type == 'image'
+    %w[image manuscript].include?(type)
   end
 
   def map?

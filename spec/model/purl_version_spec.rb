@@ -315,4 +315,25 @@ RSpec.describe PurlVersion do
       end
     end
   end
+
+  describe '#iiif2_manifest?' do
+    subject { instance.iiif2_manifest? }
+
+    before do
+      allow(resource_retriever).to receive(:cocina_body).and_return(cocina.to_json)
+    end
+
+    let(:cocina) do
+      {
+        'type' => 'https://cocina.sul.stanford.edu/models/manuscript',
+        'structural' => {
+          'contains' => [
+            { 'type' => 'https://cocina.sul.stanford.edu/models/resources/image' }
+          ]
+        }
+      }
+    end
+
+    it { is_expected.to be true }
+  end
 end
