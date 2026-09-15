@@ -43,4 +43,27 @@ RSpec.describe SubjectComponent, type: :component do
       expect(page).to have_css 'tbody tr:nth-child(2) td', text: 'Interview transcripts'
     end
   end
+
+  context 'with parallel subject values' do
+    let(:version) { instance_double(PurlVersion, cocina_display:) }
+    let(:cocina_display) do
+      CocinaDisplay::CocinaRecord.new(
+        'description' => {
+          'subject' => [
+            {
+              'parallelValue' => [
+                { 'value' => '로동자', 'status' => 'primary', 'valueLanguage' => { 'code' => 'kor' } },
+                { 'value' => 'Nodongja', 'type' => 'transliterated', 'valueLanguage' => { 'code' => 'kor' } }
+              ]
+            }
+          ]
+        }
+      )
+    end
+
+    it 'displays every parallel value' do
+      expect(page).to have_text '로동자'
+      expect(page).to have_text 'Nodongja'
+    end
+  end
 end
