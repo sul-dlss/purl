@@ -70,6 +70,23 @@ class StructuralMetadata
       files.find(&:image_file?)
     end
 
+    # Finds the image used as the file set's thumbnail. Files explicitly assigned the thumbnail role are checked
+    # before falling back to the first JP2, because a file set may contain other JP2s without presentation metadata.
+    #
+    # @return [StructuralMetadata::File, nil] the thumbnail image, or nil when the file set has no valid JP2
+    # @raise [StructuralMetadata::File::MissingPresentationMetadata] if the selected thumbnail has no height or width
+    def thumbnail_file
+      thumbnail = files.find { |file| file.role == 'thumbnail' && file.jp2? } || files.find(&:jp2?)
+      return unless thumbnail
+
+      if thumbnail.image_height.nil? || thumbnail.image_width.nil?
+        raise File::MissingPresentationMetadata,
+              "Thumbnail file #{thumbnail.filename} is missing required presentation height or width"
+      end
+
+      thumbnail if thumbnail.image_file?
+    end
+
     def pdf_file
       return nil unless ['https://cocina.sul.stanford.edu/models/resources/document'].include?(type)
 
@@ -91,7 +108,7 @@ class StructuralMetadata
     def media_thumbnail
       return unless media_file
 
-      @media_thumbnail ||= image_file
+      @media_thumbnail ||= thumbnail_file
     end
   end
 end
