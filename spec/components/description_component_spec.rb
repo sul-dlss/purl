@@ -113,4 +113,34 @@ RSpec.describe DescriptionComponent, type: :component do
       expect(page).to have_text 'Chŏngje title'
     end
   end
+
+  context 'with a parallel event location (jz685db6670)' do
+    let(:version) { instance_double(PurlVersion, cocina_display:) }
+    let(:cocina_display) do
+      CocinaDisplay::CocinaRecord.new(
+        'description' => {
+          'event' => [
+            {
+              'type' => 'creation',
+              'date' => [
+                { 'value' => '1979-01', 'type' => 'creation', 'status' => 'primary', 'encoding' => { 'code' => 'w3cdtf' } }
+              ],
+              'location' => [
+                {
+                  'parallelValue' => [
+                    { 'value' => '개성시', 'valueLanguage' => { 'code' => 'kor', 'valueScript' => { 'code' => 'Kore' } } },
+                    { 'value' => 'Kaesŏng-si', 'valueLanguage' => { 'code' => 'kor', 'valueScript' => { 'code' => 'Latn' } } }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      )
+    end
+
+    it 'displays the vernacular and transliterated place names' do
+      expect(page).to have_text '개성시, Kaesŏng-si, January 1979'
+    end
+  end
 end
