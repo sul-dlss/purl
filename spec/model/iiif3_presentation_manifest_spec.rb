@@ -3,9 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe Iiif3PresentationManifest do
-  subject(:manifest) { described_class.new(resource, controller:, iiif_namespace:) }
+  subject(:manifest) { resource.iiif3_manifest(controller:, iiif_namespace:) }
 
-  let(:resource) { PurlVersion.new }
   let(:controller) { PurlController.new }
   let(:iiif_namespace) { :iiif }
 

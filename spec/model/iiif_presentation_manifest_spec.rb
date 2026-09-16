@@ -3,9 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe IiifPresentationManifest do
-  subject(:manifest) { described_class.new(resource) }
-
-  let(:resource) { PurlVersion.new }
+  subject(:manifest) { described_class.new(IiifObject.new) }
 
   describe '#stacks_iiif_base_url' do
     subject { manifest.stacks_iiif_base_url(druid, filename) }
@@ -41,7 +39,7 @@ RSpec.describe IiifPresentationManifest do
   end
 
   describe '#body' do
-    subject(:manifest) { described_class.new(resource, controller:) }
+    subject(:manifest) { resource.iiif2_manifest(controller:) }
 
     let(:json) { manifest.body.to_ordered_hash }
 
