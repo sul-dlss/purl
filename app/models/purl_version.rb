@@ -86,7 +86,7 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   end
 
   def iiif2_manifest(**)
-    @iiif2_manifest ||= IiifPresentationManifest.new(self, **)
+    @iiif2_manifest ||= IiifPresentationManifest.new(iiif_object, **)
   end
 
   def iiif2_manifest?
@@ -102,7 +102,11 @@ class PurlVersion # rubocop:disable Metrics/ClassLength
   end
 
   def iiif3_manifest(**)
-    @iiif3_manifest ||= Iiif3PresentationManifest.new(self, **)
+    @iiif3_manifest ||= Iiif3PresentationManifest.new(iiif_object, **)
+  end
+
+  def iiif_object
+    @iiif_object ||= IiifObject.from_purl_version(self)
   end
 
   def collection_items_link
