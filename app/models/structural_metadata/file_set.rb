@@ -36,40 +36,6 @@ class StructuralMetadata
       @files ||= Array(json['structural']['contains']).map { File.new(druid: druid, json: it, fileset: self) }
     end
 
-    def page_image?
-      ['https://cocina.sul.stanford.edu/models/resources/image',
-       'https://cocina.sul.stanford.edu/models/resources/page'].include?(type)
-    end
-
-    def primary
-      return if files.blank?
-      return files.first if files.length == 1
-
-      media_file || image_file || pdf_file || files.first
-    end
-
-    def audio?
-      type == 'https://cocina.sul.stanford.edu/models/resources/audio'
-    end
-
-    def media?
-      audio? || type == 'https://cocina.sul.stanford.edu/models/resources/video'
-    end
-
-    def image?
-      type == 'https://cocina.sul.stanford.edu/models/resources/image'
-    end
-
-    def media_file
-      return nil unless media?
-
-      files.find { it.mimetype.start_with?('video/', 'audio/') }
-    end
-
-    def image_file
-      files.find(&:image_file?)
-    end
-
     # Finds the image used as the file set's thumbnail. Files explicitly assigned the thumbnail role are checked
     # before falling back to the first JP2, because a file set may contain other JP2s without presentation metadata.
     #
@@ -85,30 +51,6 @@ class StructuralMetadata
       end
 
       thumbnail if thumbnail.image_file?
-    end
-
-    def pdf_file
-      return nil unless ['https://cocina.sul.stanford.edu/models/resources/document'].include?(type)
-
-      files.find { it.mimetype.start_with?('application/pdf') }
-    end
-
-    def other_resources
-      return [] unless files
-
-      files - [primary, media_thumbnail].compact - supplementing_resources
-    end
-
-    def supplementing_resources
-      return [] if media_file.blank?
-
-      files.select { |file| file.mimetype == 'text/vtt' }
-    end
-
-    def media_thumbnail
-      return unless media_file
-
-      @media_thumbnail ||= thumbnail_file
     end
   end
 end

@@ -6,9 +6,6 @@ require 'iiif/v3/presentation'
 class Iiif3PresentationManifest < IiifPresentationManifest
   delegate :object?, :geo?, :image?, :map?, :three_d?, :media?, to: :item_type
 
-  delegate :file_sets, to: :structural_metadata
-  attr_reader :purl_base_uri
-
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def body
     manifest_data = {
@@ -27,26 +24,23 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       }]
     }
 
-    manifest_data['rights'] = cocina_display.license if cocina_display.license
+    manifest_data['rights'] = iiif_object.license if iiif_object.license
     manifest_data['service'] = [content_search_service] if content_search_service
 
     manifest = iiif_manifest_class.new(manifest_data)
 
     # Set behavior to paged if this is a book
     manifest['behavior'] = ['paged'] if book?
-    metadata_writer = Iiif3MetadataWriter.new(cocina_display:,
-                                              published_date: updated_at,
-                                              collection_title:)
-    manifest.metadata = metadata_writer.write
+    manifest.metadata = iiif_object.iiif3_metadata
 
     if nav_place
       manifest['navPlace'] = nav_place
       manifest['@context'] += ['http://iiif.io/api/extension/navplace/context.json']
     end
 
-    manifest.summary = { 'en' => [metadata_writer.summary] } if metadata_writer.summary.present?
+    manifest.summary = { 'en' => [iiif_object.iiif3_summary] } if iiif_object.iiif3_summary.present?
 
-    manifest.viewingDirection = purl_version.structural_metadata.viewing_direction || 'left-to-right'
+    manifest.viewingDirection = viewing_direction || 'left-to-right'
 
     manifest.thumbnail = [thumbnail_resource] if thumbnail_resource?
 
@@ -121,12 +115,12 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   # It seems like we are only doing this for type images. I am not sure why
   def add_virtual_object_canvases(manifest)
     # For each valid virtual object image, create a canvas for its thumbnail
-    structural_metadata.members&.each do |member_druid|
-      purl_version = Purl.find(member_druid.delete_prefix('druid:')).version(:head)
+    members.each do |member_druid|
+      member = Purl.find(member_druid.delete_prefix('druid:')).version(:head).iiif_object
       # We are using .thumbail here to get the first image in the object
-      thumbnail_fs = purl_version.thumbnail_service.thumb_fs
+      thumbnail_fs = member.thumbnail_file_set
       # Overwrite default label for virtual objects
-      thumbnail_fs.files.first.fileset_label = purl_version.cocina['label']
+      thumbnail_fs.files.first.fileset_label = member.label
       manifest.items << canvas_for_fileset(thumbnail_fs)
     rescue ResourceRetriever::ResourceNotFound
       Honeybadger.notify('Error occurred retrieving virtual object', context: { druid: member_druid })
@@ -151,7 +145,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def annotation_page(fileset_id:)
     selected_resource = file_sets.find { |fileset| fileset.cocina_id == fileset_id }
-    annotation_page_for_file(selected_resource.primary) if selected_resource
+    annotation_page_for_file(selected_resource.primary || selected_resource.files.first) if selected_resource
   end
 
   def canvas_for_fileset(fileset, file: fileset.primary)
@@ -316,13 +310,13 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   end
 
   def stacks_version
-    @purl_version.version_id
+    iiif_object.version_id
   end
 
   def stacks_version_file_url(druid, filename)
     # we can only get versions paths in sul-embed if we pass a parameter.
     # if we are just doing purl/druid we need to return the simple path
-    return stacks_file_url(druid, filename) if @purl_version.head?
+    return stacks_file_url(druid, filename) if iiif_object.head?
 
     "#{Settings.stacks.url}/v2/file/#{druid}/version/#{stacks_version}/#{ERB::Util.url_encode(filename)}"
   end
@@ -387,9 +381,9 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
     thumb = IIIF::V3::Presentation::ImageResource.new
     thumb['type'] = 'Image'
-    thumb['id'] = purl_version.representative_thumbnail
+    thumb['id'] = representative_thumbnail
     thumb.format = 'image/jpeg'
-    thumb.service = [iiif_image_v2_service(purl_version.thumbnail_base_uri)]
+    thumb.service = [iiif_image_v2_service(thumbnail_base_uri)]
     thumb.height = thumbnail_image.thumbnail_height
     thumb.width = thumbnail_image.thumbnail_width
     thumb
@@ -497,13 +491,6 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def annotation_page_url(**kwargs)
     controller.url_for([:annotation_page, :iiif3, :purl, { id: druid, **kwargs }])
-  end
-
-  def nav_place
-    @nav_place ||= begin
-      nav_place = IIIF::V3::Presentation::NavPlace.new(coordinate_texts: cocina_display.coordinates, base_uri: purl_base_uri)
-      nav_place.valid? ? nav_place.build : nil # if coordinates are invalid, do nothing, else return navPlace element
-    end
   end
 
   def iiif_manifest_class

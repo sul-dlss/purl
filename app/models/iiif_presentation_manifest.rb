@@ -5,21 +5,19 @@ require 'iiif/presentation'
 class IiifPresentationManifest
   include ActiveModel::Model
 
-  delegate :druid, :display_title, :structural_metadata, :cocina, :updated_at, :containing_purl_collections,
-           :cocina_display, :item_type, to: :purl_version
-  delegate :collection?, :book?, to: :item_type
-  delegate :copyright, to: :cocina_display
+  delegate :druid, :display_title, :updated_at, :item_type, :copyright, :collection_title, :collection?, :book?,
+           :file_sets, :local_files, :members, :viewing_direction, :thumbnail, :representative_thumbnail,
+           :thumbnail_base_uri, :nav_place, to: :iiif_object
 
   delegate :url_for, to: :controller
-  delegate :file_sets, :local_files, to: :structural_metadata
   alias id druid
 
-  attr_reader :purl_version, :controller, :iiif_namespace
+  attr_reader :iiif_object, :controller, :iiif_namespace
 
   include ActionView::Helpers::NumberHelper
 
-  def initialize(purl_version, iiif_namespace: :iiif, controller: nil)
-    @purl_version = purl_version
+  def initialize(iiif_object, iiif_namespace: :iiif, controller: nil)
+    @iiif_object = iiif_object
     @iiif_namespace = iiif_namespace
     @controller = controller
   end
@@ -73,7 +71,7 @@ class IiifPresentationManifest
         '@id' => 'https://stacks.stanford.edu/image/iiif/wy534zh7137/SULAIR_rosette/full/400,/0/default.jpg',
         'service' => iiif_service('https://stacks.stanford.edu/image/iiif/wy534zh7137/SULAIR_rosette')
       },
-      'license' => cocina_display.license,
+      'license' => iiif_object.license,
       'seeAlso' => {
         '@id' => controller.purl_url(druid, format: 'mods'),
         'format' => 'application/mods+xml'
@@ -86,19 +84,15 @@ class IiifPresentationManifest
     # Set viewingHint to paged if this is a book
     manifest.viewingHint = 'paged' if book?
 
-    metadata_writer = Iiif2MetadataWriter.new(cocina_display:,
-                                              published_date: updated_at,
-                                              collection_title:)
-
-    manifest.metadata = metadata_writer.write.flatten
-    manifest.description = metadata_writer.summary if metadata_writer.summary.present?
+    manifest.metadata = iiif_object.iiif2_metadata
+    manifest.description = iiif_object.iiif2_summary if iiif_object.iiif2_summary.present?
 
     sequence = IIIF::Presentation::Sequence.new(
       '@id' => "#{manifest_url}#sequence-1",
       'label' => 'Current order'
     )
 
-    sequence.viewingDirection = purl_version.structural_metadata.viewing_direction || 'left-to-right'
+    sequence.viewingDirection = viewing_direction || 'left-to-right'
 
     manifest.thumbnail = thumbnail_resource
 
@@ -114,12 +108,12 @@ class IiifPresentationManifest
     end
 
     # For each valid virtual object image, create a canvas for its thumbnail
-    structural_metadata.members&.each do |member_druid|
-      purl_version = Purl.find(member_druid.delete_prefix('druid:')).version(:head)
+    members.each do |member_druid|
+      member = Purl.find(member_druid.delete_prefix('druid:')).version(:head).iiif_object
       # We are using thumbnail here to get the first image in the object
-      thumbnail_file = purl_version.thumbnail
+      thumbnail_file = member.thumbnail
       # Overwrite default label for virtual objects
-      thumbnail_file.fileset_label = purl_version.cocina['label']
+      thumbnail_file.fileset_label = member.label
       sequence.canvases << canvas_for_file(thumbnail_file)
     rescue ResourceRetriever::ResourceNotFound
       Honeybadger.notify('Error occurred retrieving virtual object', context: { druid: member_druid })
@@ -153,11 +147,6 @@ class IiifPresentationManifest
     fileset = page_image_filesets.find { |fileset| fileset.cocina_id == annotation_id }
 
     annotation_for_file(fileset.image_file) if fileset
-  end
-
-  def collection_title
-    (_collection, collection_head_version) = containing_purl_collections&.first
-    collection_head_version&.display_title
   end
 
   def canvas_for_file(file)
@@ -263,9 +252,9 @@ class IiifPresentationManifest
     return unless thumbnail_image
 
     thumb = IIIF::Presentation::ImageResource.new
-    thumb['@id'] = purl_version.representative_thumbnail
+    thumb['@id'] = representative_thumbnail
     thumb.format = 'image/jpeg'
-    thumb.service = iiif_service(purl_version.thumbnail_base_uri)
+    thumb.service = iiif_service(thumbnail_base_uri)
     thumb.width = thumbnail_image.thumbnail_width
     thumb.height = thumbnail_image.thumbnail_height
     thumb
@@ -282,7 +271,7 @@ class IiifPresentationManifest
 
   # @return [StructuralMetadata::File]
   def thumbnail_image
-    @thumbnail_image ||= purl_version.thumbnail
+    thumbnail
   end
 
   def stacks_iiif_base_url(druid, filename)
