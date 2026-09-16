@@ -11,7 +11,7 @@ class IiifPresentationManifest
   delegate :copyright, to: :cocina_display
 
   delegate :url_for, to: :controller
-  delegate :file_sets, :local_files, to: :structural_metadata
+  delegate :local_files, to: :structural_metadata
   alias id druid
 
   attr_reader :purl_version, :controller, :iiif_namespace
@@ -22,6 +22,10 @@ class IiifPresentationManifest
     @purl_version = purl_version
     @iiif_namespace = iiif_namespace
     @controller = controller
+  end
+
+  def file_sets
+    @file_sets ||= structural_metadata.file_sets.map { |file_set| IiifResourceSet.new(file_set, object_type: cocina['type']) }
   end
 
   # @return [Array<StructuralMetadata::FileSet>] or []

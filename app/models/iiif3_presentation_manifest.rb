@@ -6,7 +6,6 @@ require 'iiif/v3/presentation'
 class Iiif3PresentationManifest < IiifPresentationManifest
   delegate :object?, :geo?, :image?, :map?, :three_d?, :media?, to: :item_type
 
-  delegate :file_sets, to: :structural_metadata
   attr_reader :purl_base_uri
 
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
@@ -127,7 +126,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       thumbnail_fs = purl_version.thumbnail_service.thumb_fs
       # Overwrite default label for virtual objects
       thumbnail_fs.files.first.fileset_label = purl_version.cocina['label']
-      manifest.items << canvas_for_fileset(thumbnail_fs)
+      manifest.items << canvas_for_fileset(IiifResourceSet.new(thumbnail_fs, object_type: purl_version.cocina['type']))
     rescue ResourceRetriever::ResourceNotFound
       Honeybadger.notify('Error occurred retrieving virtual object', context: { druid: member_druid })
     end
@@ -151,7 +150,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def annotation_page(fileset_id:)
     selected_resource = file_sets.find { |fileset| fileset.cocina_id == fileset_id }
-    annotation_page_for_file(selected_resource.primary) if selected_resource
+    annotation_page_for_file(selected_resource.primary || selected_resource.files.first) if selected_resource
   end
 
   def canvas_for_fileset(fileset, file: fileset.primary)

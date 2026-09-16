@@ -32,32 +32,6 @@ RSpec.describe StructuralMetadata::FileSet do
     ]
   end
 
-  describe '#image_file' do
-    let(:files) do
-      [
-        {
-          'externalIdentifier' => 'image',
-          'filename' => 'image.jp2',
-          'hasMimeType' => 'image/jp2',
-          'access' => { 'view' => 'world' },
-          'presentation' => { 'height' => 640, 'width' => 480 }
-        },
-        {
-          'externalIdentifier' => 'thumbnail',
-          'filename' => 'thumbnail.jp2',
-          'hasMimeType' => 'image/jp2',
-          'use' => 'thumbnail',
-          'access' => { 'view' => 'world' },
-          'presentation' => { 'height' => 512, 'width' => 512 }
-        }
-      ]
-    end
-
-    it 'returns the first valid JP2 regardless of its role' do
-      expect(file_set.image_file.id).to eq 'image'
-    end
-  end
-
   describe '#thumbnail_file' do
     it 'prefers a thumbnail over an earlier JP2 without presentation metadata' do
       expect(file_set.thumbnail_file.id).to eq 'thumbnail'
