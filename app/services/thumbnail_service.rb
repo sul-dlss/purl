@@ -10,7 +10,7 @@ class ThumbnailService
 
   # @return [StructuralMetadata::File] the thumbnail file
   def thumb
-    image = thumb_fs&.image_file
+    image = thumb_fs&.thumbnail_file
     return image if image
     return if structural.members.empty?
 
@@ -23,7 +23,7 @@ class ThumbnailService
 
   def thumb_fs
     structural.resources.each do |file_set|
-      return file_set if file_set.image_file.present?
+      return file_set if file_set.thumbnail_file.present?
     end
     nil
   end

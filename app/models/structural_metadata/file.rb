@@ -2,6 +2,8 @@
 
 class StructuralMetadata
   class File
+    class MissingPresentationMetadata < StandardError; end
+
     def initialize(druid:, json:, fileset:)
       @druid = druid
       @json = json
@@ -93,8 +95,12 @@ class StructuralMetadata
       json['use']
     end
 
+    def jp2?
+      mimetype == 'image/jp2'
+    end
+
     def image_file?
-      mimetype == 'image/jp2' && height.positive? && width.positive?
+      jp2? && height.positive? && width.positive?
     end
   end
 end
