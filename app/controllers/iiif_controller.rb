@@ -90,7 +90,7 @@ class IiifController < ApplicationController
     rescue ResourceRetriever::ResourceNotFound
       raise PurlVersion::ObjectNotReady, params[:id]
     end
-    raise PurlVersion::ObjectNotReady, params[:id] unless @version.ready?
+    raise PurlVersion::ObjectNotReady, params[:id] unless @version&.ready?
   end
 
   def version_param
