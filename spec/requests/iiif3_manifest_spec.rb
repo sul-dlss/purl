@@ -18,6 +18,13 @@ RSpec.describe 'IIIF v3 manifests' do
     end
   end
 
+  context 'when a version that does not exist is requested' do
+    it 'returns 404/Not Found' do
+      get '/zb733jx3137/version/99/iiif3/manifest'
+      expect(response).to have_http_status(:not_found)
+    end
+  end
+
   context 'when a specific version is requested' do
     it 'is successful, has correct filepaths and metadata' do
       get '/zb733jx3137/version/2/iiif3/manifest'
