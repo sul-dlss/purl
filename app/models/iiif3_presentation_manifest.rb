@@ -9,7 +9,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def body
     manifest_data = {
-      '@context' => IIIF::V3::Presentation::CONTEXT,
+      '@context' => ['http://iiif.io/api/auth/2/context.json', *IIIF::V3::Presentation::CONTEXT],
       'id' => manifest_url,
       'label' => { 'en' => [display_title] },
       'requiredStatement' => {
@@ -289,22 +289,28 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def image_resource(file)
     url = stacks_iiif_base_url(file.druid, file.filename)
+    image_url = "#{url}/full/full/0/default.jpg"
+    # Stacks resolves Auth v2 probes from file URLs, including for IIIF images.
+    auth_probe = probe_service(file, stacks_version_file_url(file.druid, file.filename))
 
     img_res = IIIF::V3::Presentation::ImageResource.new
-    img_res['id'] = "#{url}/full/full/0/default.jpg"
+    img_res['id'] = image_url
     img_res.format = 'image/jpeg'
     img_res.height = file.height
     img_res.width = file.width
 
-    img_res.service = [iiif_image_v2_service(url)]
-    img_res.service[0]['services'] = case file.access.view
-                                     when 'stanford'
-                                       [iiif_stacks_v1_login_service]
-                                     when 'location-based'
-                                       [iiif_location_auth_service]
-                                     else
-                                       []
-                                     end
+    image_service = iiif_image_v2_service(url)
+    image_service.service = [auth_probe]
+    image_service['services'] = case file.access.view
+                                when 'stanford'
+                                  [iiif_stacks_v1_login_service]
+                                when 'location-based'
+                                  [iiif_location_auth_service]
+                                else
+                                  []
+                                end
+
+    img_res.service = [image_service, auth_probe]
 
     img_res
   end
