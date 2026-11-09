@@ -175,7 +175,7 @@ class Iiif3PresentationManifest < IiifPresentationManifest
       canvas_type = fileset.audio? ? 'accompanyingCanvas' : 'placeholderCanvas'
       canv[canvas_type] = thumbnail_canvas
 
-      if annotation_list_annotations(fileset).present?
+      if annotation_files(fileset).present?
         canv['annotations'] =
           [{ id: annotation_list_url(resource_id: fileset.cocina_id), type: 'AnnotationPage' }]
       end
@@ -255,36 +255,28 @@ class Iiif3PresentationManifest < IiifPresentationManifest
 
   def annotation_list(resource_id:)
     fileset = file_sets.find { |fileset| fileset.cocina_id == resource_id }
-
     return if fileset.blank?
+
+    items = annotation_files(fileset).flat_map { |file| annotations_from_file(file) }
+    return if items.empty?
 
     anno_list = IIIF::V3::Presentation::AnnotationPage.new
     anno_list['id'] = annotation_list_url(resource_id:)
-
-    anno_list.items = []
-
-    annotation_list_annotations(fileset).each do |file|
-      annotation = annotation_for_file(file)
-      annotation.body = JSON.parse(
-        Faraday.get(
-          stacks_file_url(druid, file.filename)
-        ).body
-      )
-      anno_list.items << annotation
-    end
+    anno_list.items = items
     anno_list
   end
 
-  def annotation_list_annotations(fileset)
-    image_annotations(fileset) + georeference_annotations(fileset)
+  def annotation_files(fileset)
+    Array(fileset.files).select { |file| %w[annotations georeference].include?(file.role) && file.mimetype == 'application/json' }
   end
 
-  def image_annotations(fileset)
-    Array(fileset.files).select { |file| file.role == 'annotations' && file.mimetype == 'application/json' }
-  end
+  # Use the contents of the file directly as a IIIF annotation (e.g. georeference).
+  # Not to be confused with annotation_for_file.
+  def annotations_from_file(file)
+    json = JSON.parse(Faraday.get(stacks_file_url(druid, file.filename)).body)
+    return [] unless json['type'] == 'AnnotationPage'
 
-  def georeference_annotations(fileset)
-    Array(fileset.files).select { |file| file.role == 'georeference' && file.mimetype == 'application/json' }
+    Array(json['items']).map { |annotation| IIIF::V3::Presentation::Annotation.new(annotation) }
   end
 
   def image_resource(file)

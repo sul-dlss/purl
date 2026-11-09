@@ -36,7 +36,7 @@ class IiifController < ApplicationController
     @version = @purl.version(:head)
     return unless stale?(last_modified: @version.updated_at.utc, etag: @version.cache_key + "/#{@version.updated_at.utc}")
 
-    manifest = Rails.cache.fetch(cache_key('annotation_list'), expires_in: Settings.resource_cache.lifetime) do
+    manifest = Rails.cache.fetch(cache_key('annotation_list', iiif_version), expires_in: Settings.resource_cache.lifetime) do
       iiif_manifest.annotation_list(resource_id: params[:resource_id])&.to_ordered_hash
     end
     return head :not_found unless manifest
@@ -48,7 +48,7 @@ class IiifController < ApplicationController
     @version = @purl.version(:head)
     return unless stale?(last_modified: @version.updated_at.utc, etag: @version.cache_key + "/#{@version.updated_at.utc}")
 
-    manifest = Rails.cache.fetch(cache_key('annotation'), expires_in: Settings.resource_cache.lifetime) do
+    manifest = Rails.cache.fetch(cache_key('annotation', iiif_version), expires_in: Settings.resource_cache.lifetime) do
       iiif_manifest.annotation(annotation_id: params[:resource_id])&.to_ordered_hash
     end
     return head :not_found unless manifest
