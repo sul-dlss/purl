@@ -29,7 +29,7 @@ gem 'whenever', require: false # cron jobs
 
 # DLSS and its community
 gem 'cocina_display', '~> 2'
-gem 'iiif-presentation', '~> 1.4'
+gem 'iiif-presentation', '~> 1.5'
 
 group :production do
   gem 'newrelic_rpm'
