@@ -533,17 +533,19 @@ RSpec.describe Iiif3PresentationManifest do
 
       it 'generates a correct manifest with navPlace' do
         expect(json['@context']).to include 'http://iiif.io/api/extension/navplace/context.json'
+        expect(json['navPlace'][:id]).to eq 'https://purl.stanford.edu/rp193xx6845/feature-collection/1'
         features = json['navPlace'][:features]
         expect(features.length).to eq 1
+        expect(features[0][:id]).to eq 'https://purl.stanford.edu/rp193xx6845/iiif/feature/1'
         expect(features[0][:geometry]).to match({
                                                   type: 'Polygon',
                                                   coordinates: [
                                                     [
-                                                      ['-23.9', '71.316666'],
-                                                      ['53.6', '71.316666'],
-                                                      ['53.6', '33.5'],
-                                                      ['-23.9', '33.5'],
-                                                      ['-23.9', '71.316666']
+                                                      [-23.9, 33.5],
+                                                      [53.6, 33.5],
+                                                      [53.6, 71.316667],
+                                                      [-23.9, 71.316667],
+                                                      [-23.9, 33.5]
                                                     ]
                                                   ]
                                                 })

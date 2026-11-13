@@ -101,7 +101,8 @@ class IiifObject
 
   def nav_place
     @nav_place ||= begin
-      nav_place = IIIF::V3::Presentation::NavPlace.new(coordinate_texts: cocina_display.coordinates, base_uri: nil)
+      nav_place = IIIF::V3::Presentation::NavPlace.new(coordinate_texts: cocina_display.coordinates_as_wkt,
+                                                       base_uri: format(Settings.embed.url, druid:))
       nav_place.valid? ? nav_place.build : nil
     end
   end
