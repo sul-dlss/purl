@@ -74,6 +74,26 @@ RSpec.describe 'IIIF Annotation List' do
         expect(json_body['id']).to eq 'http://www.example.com/bb013fz9675/iiif3/annotations/cocina-fileSet-bb013fz9675-bb013fz9675_1'
         expect(json_body['items']).to eq georeference_annotations.as_json
       end
+
+      context 'when in UAT' do
+        before do
+          allow(Settings.embed).to receive(:url).and_return('https://sul-purl-uat.stanford.edu/%<druid>s')
+        end
+
+        it 'rewrites prod canvas URLs to match UAT environment' do
+          get '/bb013fz9675/iiif3/annotations/cocina-fileSet-bb013fz9675-bb013fz9675_1'
+          json_body = response.parsed_body
+
+          expect(json_body.dig('items', 0, 'target', 'source', 'id')).to eq 'https://sul-purl-uat.stanford.edu/bb013fz9675/iiif/canvas/cocina-fileSet-bb013fz9675-bb013fz9675_1'
+        end
+
+        it 'leaves other URLs alone' do
+          get '/bb013fz9675/iiif3/annotations/cocina-fileSet-bb013fz9675-bb013fz9675_1'
+          json_body = response.parsed_body
+
+          expect(json_body.dig('items', 0, 'id')).to eq 'https://annotations.allmaps.org/maps/00c41531f101722f'
+        end
+      end
     end
 
     context 'with transcription annotations' do

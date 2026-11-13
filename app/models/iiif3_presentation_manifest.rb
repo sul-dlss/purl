@@ -273,10 +273,16 @@ class Iiif3PresentationManifest < IiifPresentationManifest
   # Use the contents of the file directly as a IIIF annotation (e.g. georeference).
   # Not to be confused with annotation_for_file.
   def annotations_from_file(file)
-    json = JSON.parse(Faraday.get(stacks_file_url(druid, file.filename)).body)
+    json = JSON.parse(rewrite_prod_urls(Faraday.get(stacks_file_url(druid, file.filename)).body))
     return [] unless json['type'] == 'AnnotationPage'
 
     Array(json['items']).map { |annotation| IIIF::V3::Presentation::Annotation.new(annotation) }
+  end
+
+  # Rewrite references to production PURL IIIF URLs to whatever environment
+  # the annotation is served from. Makes annotations work in UAT.
+  def rewrite_prod_urls(body)
+    body.gsub("https://purl.stanford.edu/#{druid}", format(Settings.embed.url, druid:))
   end
 
   def image_resource(file)
