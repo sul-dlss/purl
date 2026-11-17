@@ -45,7 +45,7 @@ RSpec.describe Iiif3PresentationManifest do
         expect(canvas['height']).to eq 9040
         expect(canvas['width']).to eq 10_481
 
-        expect(canvas['items']).to eq(
+        expect(canvas['items']).to match(
           [{ 'type' => 'AnnotationPage',
              'id' => 'http://purl.stanford.edu/bb157hs6068/iiif3/annotation_page/cocina-fileSet-bb157hs6068-bb157hs6068_1',
              'items' =>
@@ -59,10 +59,9 @@ RSpec.describe Iiif3PresentationManifest do
                   'format' => 'image/jpeg',
                   'height' => 9040,
                   'width' => 10_481,
-                  'service' =>
-                  [{ 'id' => 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001',
-                     'type' => 'ImageService2',
-                     'profile' => 'http://iiif.io/api/image/2/level2.json' }] } }] }]
+                  'service' => include(hash_including('id' => 'https://stacks.stanford.edu/image/iiif/bb157hs6068%2Fbb157hs6068_05_0001',
+                                                      'type' => 'ImageService2',
+                                                      'profile' => 'http://iiif.io/api/image/2/level2.json')) } }] }]
         )
       end
     end
@@ -137,6 +136,14 @@ RSpec.describe Iiif3PresentationManifest do
                                                           'ice cannot be reached. If your browser is configured to block pop-up wi' \
                                                           'ndows, try allowing pop-up windows for this site before attempting to l' \
                                                           'og in again.'
+
+        probe = image['body']['service'].find { |entry| entry['type'] == 'AuthProbeService2' }
+        expect(probe['id']).to eq "#{Settings.stacks.url}/iiif/auth/v2/probe?id=" \
+                                  'https%3A%2F%2Fstacks.stanford.edu%2Ffile%2Fbb001dq8600%2Fpc0065_b08_f10_i031.jp2'
+        expect(service['service']).to include(probe)
+        expect(probe['service']).to include hash_including('type' => 'AuthAccessService2', 'profile' => 'active')
+        expect(probe.dig('service', 0, 'service')).to include hash_including('type' => 'AuthAccessTokenService2')
+        expect(json['@context'].index('http://iiif.io/api/auth/2/context.json')).to be < json['@context'].index('http://iiif.io/api/presentation/3/context.json')
       end
     end
 
@@ -256,7 +263,7 @@ RSpec.describe Iiif3PresentationManifest do
 
         canvas = json['items'].first
         expect(canvas['label']['en'].first).to start_with "(Covers to) Carey's American Atlas:"
-        expect(canvas['items']).to eq [
+        expect(canvas['items']).to match [
           { 'type' => 'AnnotationPage',
             'id' => 'http://purl.stanford.edu/hj097bm8879/iiif3/annotation_page/cocina-fileSet-cg767mn6478-cg767mn6478_1',
             'items' =>
@@ -270,15 +277,14 @@ RSpec.describe Iiif3PresentationManifest do
                 'format' => 'image/jpeg',
                 'height' => 4747,
                 'width' => 6475,
-                'service' =>
-                [{ 'id' => 'https://stacks.stanford.edu/image/iiif/cg767mn6478%2F2542A',
-                   'type' => 'ImageService2',
-                   'profile' => 'http://iiif.io/api/image/2/level2.json' }] } }] }
+                'service' => include(hash_including('id' => 'https://stacks.stanford.edu/image/iiif/cg767mn6478%2F2542A',
+                                                    'type' => 'ImageService2',
+                                                    'profile' => 'http://iiif.io/api/image/2/level2.json')) } }] }
         ]
 
         canvas = json['items'].second
         expect(canvas['label']['en'].first).to start_with "(Title Page to) Carey's American Atlas:"
-        expect(canvas['items']).to eq [
+        expect(canvas['items']).to match [
           { 'type' => 'AnnotationPage',
             'id' => 'http://purl.stanford.edu/hj097bm8879/iiif3/annotation_page/cocina-fileSet-jw923xn5254-jw923xn5254_1',
             'items' =>
@@ -292,10 +298,9 @@ RSpec.describe Iiif3PresentationManifest do
                 'format' => 'image/jpeg',
                 'height' => 4675,
                 'width' => 3139,
-                'service' =>
-                [{ 'id' => 'https://stacks.stanford.edu/image/iiif/jw923xn5254%2F2542B',
-                   'type' => 'ImageService2',
-                   'profile' => 'http://iiif.io/api/image/2/level2.json' }] } }] }
+                'service' => include(hash_including('id' => 'https://stacks.stanford.edu/image/iiif/jw923xn5254%2F2542B',
+                                                    'type' => 'ImageService2',
+                                                    'profile' => 'http://iiif.io/api/image/2/level2.json')) } }] }
         ]
       end
     end
